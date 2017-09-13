@@ -30,12 +30,12 @@ DescribeProductAsAdminResult::DescribeProductAsAdminResult()
 {
 }
 
-DescribeProductAsAdminResult::DescribeProductAsAdminResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeProductAsAdminResult::DescribeProductAsAdminResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeProductAsAdminResult& DescribeProductAsAdminResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ProductViewDetail"))

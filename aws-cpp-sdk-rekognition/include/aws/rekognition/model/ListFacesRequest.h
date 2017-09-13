@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>ID of the collection from which to list the faces.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>ID of the collection from which to list the faces.</p>
      */
     inline ListFacesRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+
 
     /**
      * <p>If the previous response was incomplete (because there is more data to
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ListFacesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Maximum number of faces to return.</p>
      */
@@ -136,10 +139,13 @@ namespace Model
     inline ListFacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_collectionId;
     bool m_collectionIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

@@ -55,7 +55,7 @@ enum class RedshiftErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCESS_TO_SNAPSHOT_DENIED_FAULT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_TO_SNAPSHOT_DENIED_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   AUTHORIZATION_ALREADY_EXISTS_FAULT,
   AUTHORIZATION_NOT_FOUND_FAULT,
   AUTHORIZATION_QUOTA_EXCEEDED_FAULT,
@@ -142,7 +142,7 @@ enum class RedshiftErrors
 };
 namespace RedshiftErrorMapper
 {
-  AWS_REDSHIFT_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_REDSHIFT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Redshift

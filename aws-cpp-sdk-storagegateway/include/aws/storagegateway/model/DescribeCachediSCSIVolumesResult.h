@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeCachediSCSIVolumesResult();
-    DescribeCachediSCSIVolumesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCachediSCSIVolumesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCachediSCSIVolumesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCachediSCSIVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of objects where each object contains metadata about one cached
@@ -90,6 +91,7 @@ namespace Model
     inline DescribeCachediSCSIVolumesResult& AddCachediSCSIVolumes(CachediSCSIVolume&& value) { m_cachediSCSIVolumes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CachediSCSIVolume> m_cachediSCSIVolumes;
   };
 

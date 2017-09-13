@@ -51,6 +51,7 @@ namespace Model
     AutomationExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The execution ID.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The execution ID.</p>
      */
     inline AutomationExecution& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
+
 
     /**
      * <p>The name of the Automation document used during the execution.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline AutomationExecution& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
+
     /**
      * <p>The version of the document to use during execution.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      */
     inline AutomationExecution& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
+
     /**
      * <p>The time the execution started.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      * <p>The time the execution started.</p>
      */
     inline AutomationExecution& WithExecutionStartTime(Aws::Utils::DateTime&& value) { SetExecutionStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time the execution finished.</p>
@@ -206,6 +211,7 @@ namespace Model
      */
     inline AutomationExecution& WithExecutionEndTime(Aws::Utils::DateTime&& value) { SetExecutionEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The execution status of the Automation.</p>
      */
@@ -230,6 +236,7 @@ namespace Model
      * <p>The execution status of the Automation.</p>
      */
     inline AutomationExecution& WithAutomationExecutionStatus(AutomationExecutionStatus&& value) { SetAutomationExecutionStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
@@ -279,6 +286,7 @@ namespace Model
      * order.</p>
      */
     inline AutomationExecution& AddStepExecutions(StepExecution&& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
@@ -346,6 +354,7 @@ namespace Model
      */
     inline AutomationExecution& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The list of execution outputs as defined in the automation document.</p>
      */
@@ -401,6 +410,7 @@ namespace Model
      */
     inline AutomationExecution& AddOutputs(const char* key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, value); return *this; }
 
+
     /**
      * <p>A message describing why an execution has failed, if the status is set to
      * Failed.</p>
@@ -444,24 +454,34 @@ namespace Model
     inline AutomationExecution& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
   private:
+
     Aws::String m_automationExecutionId;
     bool m_automationExecutionIdHasBeenSet;
+
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::Utils::DateTime m_executionStartTime;
     bool m_executionStartTimeHasBeenSet;
+
     Aws::Utils::DateTime m_executionEndTime;
     bool m_executionEndTimeHasBeenSet;
+
     AutomationExecutionStatus m_automationExecutionStatus;
     bool m_automationExecutionStatusHasBeenSet;
+
     Aws::Vector<StepExecution> m_stepExecutions;
     bool m_stepExecutionsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_outputs;
     bool m_outputsHasBeenSet;
+
     Aws::String m_failureMessage;
     bool m_failureMessageHasBeenSet;
   };

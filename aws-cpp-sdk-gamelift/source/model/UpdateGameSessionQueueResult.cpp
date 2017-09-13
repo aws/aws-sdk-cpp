@@ -30,12 +30,12 @@ UpdateGameSessionQueueResult::UpdateGameSessionQueueResult()
 {
 }
 
-UpdateGameSessionQueueResult::UpdateGameSessionQueueResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateGameSessionQueueResult::UpdateGameSessionQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateGameSessionQueueResult& UpdateGameSessionQueueResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateGameSessionQueueResult& UpdateGameSessionQueueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GameSessionQueue"))

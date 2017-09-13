@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
      * <p>Example: dxvif-456abc78</p> <p>Default: None</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline DeleteBGPPeerRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
 
+
     
     inline int GetAsn() const{ return m_asn; }
 
@@ -90,6 +92,7 @@ namespace Model
 
     
     inline DeleteBGPPeerRequest& WithAsn(int value) { SetAsn(value); return *this;}
+
 
     
     inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
@@ -113,10 +116,13 @@ namespace Model
     inline DeleteBGPPeerRequest& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
   private:
+
     Aws::String m_virtualInterfaceId;
     bool m_virtualInterfaceIdHasBeenSet;
+
     int m_asn;
     bool m_asnHasBeenSet;
+
     Aws::String m_customerAddress;
     bool m_customerAddressHasBeenSet;
   };

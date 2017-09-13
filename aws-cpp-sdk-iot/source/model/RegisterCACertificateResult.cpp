@@ -30,12 +30,12 @@ RegisterCACertificateResult::RegisterCACertificateResult()
 {
 }
 
-RegisterCACertificateResult::RegisterCACertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterCACertificateResult::RegisterCACertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterCACertificateResult& RegisterCACertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterCACertificateResult& RegisterCACertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("certificateArn"))

@@ -45,6 +45,7 @@ namespace Model
     VolumeiSCSIAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the volume target.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the volume target.</p>
      */
     inline VolumeiSCSIAttributes& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
+
 
     /**
      * <p>The network interface identifier.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline VolumeiSCSIAttributes& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
     /**
      * <p>The port used to communicate with iSCSI targets.</p>
      */
@@ -130,6 +133,7 @@ namespace Model
      */
     inline VolumeiSCSIAttributes& WithNetworkInterfacePort(int value) { SetNetworkInterfacePort(value); return *this;}
 
+
     /**
      * <p>The logical disk number.</p>
      */
@@ -144,6 +148,7 @@ namespace Model
      * <p>The logical disk number.</p>
      */
     inline VolumeiSCSIAttributes& WithLunNumber(int value) { SetLunNumber(value); return *this;}
+
 
     /**
      * <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
@@ -161,14 +166,19 @@ namespace Model
     inline VolumeiSCSIAttributes& WithChapEnabled(bool value) { SetChapEnabled(value); return *this;}
 
   private:
+
     Aws::String m_targetARN;
     bool m_targetARNHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     int m_networkInterfacePort;
     bool m_networkInterfacePortHasBeenSet;
+
     int m_lunNumber;
     bool m_lunNumberHasBeenSet;
+
     bool m_chapEnabled;
     bool m_chapEnabledHasBeenSet;
   };

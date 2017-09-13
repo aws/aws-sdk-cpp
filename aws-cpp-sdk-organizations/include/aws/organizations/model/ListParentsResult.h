@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListParentsResult();
-    ListParentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListParentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListParentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListParentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of parents for the specified child account or OU.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of parents for the specified child account or OU.</p>
      */
     inline ListParentsResult& AddParents(Parent&& value) { m_parents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -142,7 +144,9 @@ namespace Model
     inline ListParentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Parent> m_parents;
+
     Aws::String m_nextToken;
   };
 

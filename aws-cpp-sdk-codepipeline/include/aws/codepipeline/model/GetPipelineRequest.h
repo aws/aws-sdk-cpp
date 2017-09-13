@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the pipeline for which you want to get information. Pipeline
      * names must be unique under an Amazon Web Services (AWS) user account.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline GetPipelineRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The version number of the pipeline. If you do not specify a version, defaults
      * to the most current version.</p>
@@ -100,8 +102,10 @@ namespace Model
     inline GetPipelineRequest& WithVersion(int value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
   };

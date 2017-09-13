@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListOnPremisesInstancesResult();
-    ListOnPremisesInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOnPremisesInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOnPremisesInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOnPremisesInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of matching on-premises instance names.</p>
@@ -87,6 +88,7 @@ namespace Model
      * <p>The list of matching on-premises instance names.</p>
      */
     inline ListOnPremisesInstancesResult& AddInstanceNames(const char* value) { m_instanceNames.push_back(value); return *this; }
+
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -138,7 +140,9 @@ namespace Model
     inline ListOnPremisesInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instanceNames;
+
     Aws::String m_nextToken;
   };
 

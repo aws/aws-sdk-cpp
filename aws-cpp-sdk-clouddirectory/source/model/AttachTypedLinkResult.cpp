@@ -30,12 +30,12 @@ AttachTypedLinkResult::AttachTypedLinkResult()
 {
 }
 
-AttachTypedLinkResult::AttachTypedLinkResult(const AmazonWebServiceResult<JsonValue>& result)
+AttachTypedLinkResult::AttachTypedLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AttachTypedLinkResult& AttachTypedLinkResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AttachTypedLinkResult& AttachTypedLinkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TypedLinkSpecifier"))

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the rule.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the rule.</p>
      */
     inline PutTargetsRequest& WithRule(const char* value) { SetRule(value); return *this;}
+
 
     /**
      * <p>The targets to update or add to the rule.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline PutTargetsRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_rule;
     bool m_ruleHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
   };

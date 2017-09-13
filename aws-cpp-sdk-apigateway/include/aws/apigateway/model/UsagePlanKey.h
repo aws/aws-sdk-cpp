@@ -50,6 +50,7 @@ namespace Model
     UsagePlanKey& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Id of a usage plan key.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The Id of a usage plan key.</p>
      */
     inline UsagePlanKey& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The type of a usage plan key. Currently, the valid key type is
@@ -127,6 +129,7 @@ namespace Model
      */
     inline UsagePlanKey& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>The value of a usage plan key.</p>
      */
@@ -161,6 +164,7 @@ namespace Model
      * <p>The value of a usage plan key.</p>
      */
     inline UsagePlanKey& WithValue(const char* value) { SetValue(value); return *this;}
+
 
     /**
      * <p>The name of a usage plan key.</p>
@@ -198,12 +202,16 @@ namespace Model
     inline UsagePlanKey& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

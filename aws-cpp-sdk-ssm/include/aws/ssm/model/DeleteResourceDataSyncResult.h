@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteResourceDataSyncResult();
-    DeleteResourceDataSyncResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteResourceDataSyncResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteResourceDataSyncResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteResourceDataSyncResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

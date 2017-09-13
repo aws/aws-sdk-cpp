@@ -60,6 +60,7 @@ namespace Model
     JobLogs& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A link to an Amazon S3 presigned URL where the job completion report is
      * located.</p>
@@ -102,6 +103,7 @@ namespace Model
      */
     inline JobLogs& WithJobCompletionReportURI(const char* value) { SetJobCompletionReportURI(value); return *this;}
 
+
     /**
      * <p>A link to an Amazon S3 presigned URL where the job success log is
      * located.</p>
@@ -143,6 +145,7 @@ namespace Model
      * located.</p>
      */
     inline JobLogs& WithJobSuccessLogURI(const char* value) { SetJobSuccessLogURI(value); return *this;}
+
 
     /**
      * <p>A link to an Amazon S3 presigned URL where the job failure log is
@@ -187,10 +190,13 @@ namespace Model
     inline JobLogs& WithJobFailureLogURI(const char* value) { SetJobFailureLogURI(value); return *this;}
 
   private:
+
     Aws::String m_jobCompletionReportURI;
     bool m_jobCompletionReportURIHasBeenSet;
+
     Aws::String m_jobSuccessLogURI;
     bool m_jobSuccessLogURIHasBeenSet;
+
     Aws::String m_jobFailureLogURI;
     bool m_jobFailureLogURIHasBeenSet;
   };

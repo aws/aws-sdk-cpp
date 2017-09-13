@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -64,6 +65,7 @@ namespace Model
 
     
     inline HeadObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * Return the object only if its entity tag (ETag) is the same as the one
@@ -107,6 +109,7 @@ namespace Model
      */
     inline HeadObjectRequest& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
 
+
     /**
      * Return the object only if it has been modified since the specified time,
      * otherwise return a 304 (not modified).
@@ -136,6 +139,7 @@ namespace Model
      * otherwise return a 304 (not modified).
      */
     inline HeadObjectRequest& WithIfModifiedSince(Aws::Utils::DateTime&& value) { SetIfModifiedSince(std::move(value)); return *this;}
+
 
     /**
      * Return the object only if its entity tag (ETag) is different from the one
@@ -179,6 +183,7 @@ namespace Model
      */
     inline HeadObjectRequest& WithIfNoneMatch(const char* value) { SetIfNoneMatch(value); return *this;}
 
+
     /**
      * Return the object only if it has not been modified since the specified time,
      * otherwise return a 412 (precondition failed).
@@ -209,6 +214,7 @@ namespace Model
      */
     inline HeadObjectRequest& WithIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetIfUnmodifiedSince(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -229,6 +235,7 @@ namespace Model
 
     
     inline HeadObjectRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * Downloads the specified range bytes of an object. For more information about the
@@ -279,6 +286,7 @@ namespace Model
      */
     inline HeadObjectRequest& WithRange(const char* value) { SetRange(value); return *this;}
 
+
     /**
      * VersionId used to reference a specific version of the object.
      */
@@ -314,6 +322,7 @@ namespace Model
      */
     inline HeadObjectRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
@@ -348,6 +357,7 @@ namespace Model
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
     inline HeadObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -412,6 +422,7 @@ namespace Model
      */
     inline HeadObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
+
     /**
      * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
@@ -461,6 +472,7 @@ namespace Model
      */
     inline HeadObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
+
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
@@ -475,6 +487,7 @@ namespace Model
 
     
     inline HeadObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
+
 
     /**
      * Part number of the object being read. This is a positive integer between 1 and
@@ -501,30 +514,43 @@ namespace Model
     inline HeadObjectRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
+
     Aws::Utils::DateTime m_ifModifiedSince;
     bool m_ifModifiedSinceHasBeenSet;
+
     Aws::String m_ifNoneMatch;
     bool m_ifNoneMatchHasBeenSet;
+
     Aws::Utils::DateTime m_ifUnmodifiedSince;
     bool m_ifUnmodifiedSinceHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_range;
     bool m_rangeHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     Aws::String m_sSECustomerAlgorithm;
     bool m_sSECustomerAlgorithmHasBeenSet;
+
     Aws::String m_sSECustomerKey;
     bool m_sSECustomerKeyHasBeenSet;
+
     Aws::String m_sSECustomerKeyMD5;
     bool m_sSECustomerKeyMD5HasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+
     int m_partNumber;
     bool m_partNumberHasBeenSet;
   };

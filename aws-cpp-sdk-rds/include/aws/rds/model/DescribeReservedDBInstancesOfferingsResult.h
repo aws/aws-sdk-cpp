@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     DescribeReservedDBInstancesOfferingsResult();
-    DescribeReservedDBInstancesOfferingsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReservedDBInstancesOfferingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeReservedDBInstancesOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeReservedDBInstancesOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -100,6 +101,7 @@ namespace Model
      */
     inline DescribeReservedDBInstancesOfferingsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of reserved DB instance offerings.</p>
      */
@@ -135,6 +137,7 @@ namespace Model
      */
     inline DescribeReservedDBInstancesOfferingsResult& AddReservedDBInstancesOfferings(ReservedDBInstancesOffering&& value) { m_reservedDBInstancesOfferings.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -151,8 +154,11 @@ namespace Model
     inline DescribeReservedDBInstancesOfferingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<ReservedDBInstancesOffering> m_reservedDBInstancesOfferings;
+
     ResponseMetadata m_responseMetadata;
   };
 

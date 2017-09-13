@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the cluster to describe.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DescribeClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
   };

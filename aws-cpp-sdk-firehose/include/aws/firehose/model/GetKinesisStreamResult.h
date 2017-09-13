@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetKinesisStreamResult();
-    GetKinesisStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetKinesisStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetKinesisStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetKinesisStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetKinesisStreamARN() const{ return m_kinesisStreamARN; }
@@ -63,6 +64,7 @@ namespace Model
     
     inline GetKinesisStreamResult& WithKinesisStreamARN(const char* value) { SetKinesisStreamARN(value); return *this;}
 
+
     
     inline const SessionCredentials& GetCredentialsForReadingKinesisStream() const{ return m_credentialsForReadingKinesisStream; }
 
@@ -79,7 +81,9 @@ namespace Model
     inline GetKinesisStreamResult& WithCredentialsForReadingKinesisStream(SessionCredentials&& value) { SetCredentialsForReadingKinesisStream(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_kinesisStreamARN;
+
     SessionCredentials m_credentialsForReadingKinesisStream;
   };
 

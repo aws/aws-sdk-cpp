@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether to assign a public IPv4 address to instances launched in a
      * VPC. The public IPv4 address can only be assigned to a network interface for
@@ -79,6 +80,7 @@ namespace Model
      */
     inline ScheduledInstancesNetworkInterface& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 
+
     /**
      * <p>Indicates whether to delete the interface when the instance is
      * terminated.</p>
@@ -96,6 +98,7 @@ namespace Model
      * terminated.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+
 
     /**
      * <p>The description.</p>
@@ -132,6 +135,7 @@ namespace Model
      */
     inline ScheduledInstancesNetworkInterface& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The index of the device for the network interface attachment.</p>
      */
@@ -146,6 +150,7 @@ namespace Model
      * <p>The index of the device for the network interface attachment.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
+
 
     /**
      * <p>The IDs of one or more security groups.</p>
@@ -187,6 +192,7 @@ namespace Model
      */
     inline ScheduledInstancesNetworkInterface& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
+
     /**
      * <p>The number of IPv6 addresses to assign to the network interface. The IPv6
      * addresses are automatically selected from the subnet range.</p>
@@ -204,6 +210,7 @@ namespace Model
      * addresses are automatically selected from the subnet range.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+
 
     /**
      * <p>One or more specific IPv6 addresses from the subnet range.</p>
@@ -240,6 +247,7 @@ namespace Model
      */
     inline ScheduledInstancesNetworkInterface& AddIpv6Addresses(ScheduledInstancesIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the network interface.</p>
      */
@@ -274,6 +282,7 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
 
     /**
      * <p>The IPv4 address of the network interface within the subnet.</p>
@@ -310,6 +319,7 @@ namespace Model
      */
     inline ScheduledInstancesNetworkInterface& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
+
     /**
      * <p>The private IPv4 addresses.</p>
      */
@@ -345,6 +355,7 @@ namespace Model
      */
     inline ScheduledInstancesNetworkInterface& AddPrivateIpAddressConfigs(ScheduledInstancesPrivateIpAddressConfig&& value) { m_privateIpAddressConfigsHasBeenSet = true; m_privateIpAddressConfigs.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The number of secondary private IPv4 addresses.</p>
      */
@@ -359,6 +370,7 @@ namespace Model
      * <p>The number of secondary private IPv4 addresses.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
+
 
     /**
      * <p>The ID of the subnet.</p>
@@ -396,28 +408,40 @@ namespace Model
     inline ScheduledInstancesNetworkInterface& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
+
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet;
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
+
     Aws::Vector<Aws::String> m_groups;
     bool m_groupsHasBeenSet;
+
     int m_ipv6AddressCount;
     bool m_ipv6AddressCountHasBeenSet;
+
     Aws::Vector<ScheduledInstancesIpv6Address> m_ipv6Addresses;
     bool m_ipv6AddressesHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+
     Aws::Vector<ScheduledInstancesPrivateIpAddressConfig> m_privateIpAddressConfigs;
     bool m_privateIpAddressConfigsHasBeenSet;
+
     int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
   };

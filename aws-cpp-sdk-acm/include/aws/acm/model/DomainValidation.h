@@ -48,6 +48,7 @@ namespace Model
     DomainValidation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
      * <code>www.example.com</code> or <code>example.com</code>.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline DomainValidation& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>A list of email addresses that ACM used to send domain validation emails.</p>
      */
@@ -130,6 +132,7 @@ namespace Model
      */
     inline DomainValidation& AddValidationEmails(const char* value) { m_validationEmailsHasBeenSet = true; m_validationEmails.push_back(value); return *this; }
 
+
     /**
      * <p>The domain name that ACM used to send domain validation emails.</p>
      */
@@ -165,6 +168,7 @@ namespace Model
      */
     inline DomainValidation& WithValidationDomain(const char* value) { SetValidationDomain(value); return *this;}
 
+
     /**
      * <p>The validation status of the domain name.</p>
      */
@@ -191,12 +195,16 @@ namespace Model
     inline DomainValidation& WithValidationStatus(DomainStatus&& value) { SetValidationStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_validationEmails;
     bool m_validationEmailsHasBeenSet;
+
     Aws::String m_validationDomain;
     bool m_validationDomainHasBeenSet;
+
     DomainStatus m_validationStatus;
     bool m_validationStatusHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     GetConnectionsFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A criteria string that must match the criteria recorded in the connection
      * definition for that connection definition to be returned.</p>
@@ -96,6 +97,7 @@ namespace Model
      */
     inline GetConnectionsFilter& AddMatchCriteria(const char* value) { m_matchCriteriaHasBeenSet = true; m_matchCriteria.push_back(value); return *this; }
 
+
     /**
      * <p>The type of connections to return.</p>
      */
@@ -122,8 +124,10 @@ namespace Model
     inline GetConnectionsFilter& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_matchCriteria;
     bool m_matchCriteriaHasBeenSet;
+
     ConnectionType m_connectionType;
     bool m_connectionTypeHasBeenSet;
   };

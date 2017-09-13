@@ -30,12 +30,12 @@ ListIdentityProvidersResult::ListIdentityProvidersResult()
 {
 }
 
-ListIdentityProvidersResult::ListIdentityProvidersResult(const AmazonWebServiceResult<JsonValue>& result)
+ListIdentityProvidersResult::ListIdentityProvidersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListIdentityProvidersResult& ListIdentityProvidersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListIdentityProvidersResult& ListIdentityProvidersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Providers"))

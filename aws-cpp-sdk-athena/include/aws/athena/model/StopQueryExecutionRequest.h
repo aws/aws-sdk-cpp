@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique ID of the query execution to stop.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline StopQueryExecutionRequest& WithQueryExecutionId(const char* value) { SetQueryExecutionId(value); return *this;}
 
   private:
+
     Aws::String m_queryExecutionId;
     bool m_queryExecutionIdHasBeenSet;
   };

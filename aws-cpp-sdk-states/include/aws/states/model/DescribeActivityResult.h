@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeActivityResult();
-    DescribeActivityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeActivityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeActivityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeActivityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DescribeActivityResult& WithActivityArn(const char* value) { SetActivityArn(value); return *this;}
 
+
     /**
      * <p>The name of the activity.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline DescribeActivityResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The date the activity was created.</p>
      */
@@ -138,8 +141,11 @@ namespace Model
     inline DescribeActivityResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_activityArn;
+
     Aws::String m_name;
+
     Aws::Utils::DateTime m_creationDate;
   };
 

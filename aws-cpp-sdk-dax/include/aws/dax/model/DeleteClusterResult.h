@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteClusterResult();
-    DeleteClusterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A description of the DAX cluster that is being deleted.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DeleteClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 
   private:
+
     Cluster m_cluster;
   };
 

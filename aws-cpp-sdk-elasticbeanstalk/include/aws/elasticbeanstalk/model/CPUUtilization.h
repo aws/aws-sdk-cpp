@@ -46,6 +46,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Percentage of time that the CPU has spent in the <code>User</code> state over
      * the last 10 seconds.</p>
@@ -63,6 +64,7 @@ namespace Model
      * the last 10 seconds.</p>
      */
     inline CPUUtilization& WithUser(double value) { SetUser(value); return *this;}
+
 
     /**
      * <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over
@@ -82,6 +84,7 @@ namespace Model
      */
     inline CPUUtilization& WithNice(double value) { SetNice(value); return *this;}
 
+
     /**
      * <p>Percentage of time that the CPU has spent in the <code>System</code> state
      * over the last 10 seconds.</p>
@@ -99,6 +102,7 @@ namespace Model
      * over the last 10 seconds.</p>
      */
     inline CPUUtilization& WithSystem(double value) { SetSystem(value); return *this;}
+
 
     /**
      * <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over
@@ -118,6 +122,7 @@ namespace Model
      */
     inline CPUUtilization& WithIdle(double value) { SetIdle(value); return *this;}
 
+
     /**
      * <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state
      * over the last 10 seconds.</p>
@@ -136,6 +141,7 @@ namespace Model
      */
     inline CPUUtilization& WithIOWait(double value) { SetIOWait(value); return *this;}
 
+
     /**
      * <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over
      * the last 10 seconds.</p>
@@ -153,6 +159,7 @@ namespace Model
      * the last 10 seconds.</p>
      */
     inline CPUUtilization& WithIRQ(double value) { SetIRQ(value); return *this;}
+
 
     /**
      * <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state
@@ -173,18 +180,25 @@ namespace Model
     inline CPUUtilization& WithSoftIRQ(double value) { SetSoftIRQ(value); return *this;}
 
   private:
+
     double m_user;
     bool m_userHasBeenSet;
+
     double m_nice;
     bool m_niceHasBeenSet;
+
     double m_system;
     bool m_systemHasBeenSet;
+
     double m_idle;
     bool m_idleHasBeenSet;
+
     double m_iOWait;
     bool m_iOWaitHasBeenSet;
+
     double m_iRQ;
     bool m_iRQHasBeenSet;
+
     double m_softIRQ;
     bool m_softIRQHasBeenSet;
   };

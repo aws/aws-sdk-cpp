@@ -30,9 +30,11 @@ public class C2jModelToGeneratorModelTransformer {
     Map<String, Shape> shapes;
     Map<String, Operation> operations;
     Set<Error> allErrors;
+    boolean standalone;
 
-    public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel) {
+    public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel, boolean standalone) {
         this.c2jServiceModel = c2jServiceModel;
+        this.standalone = standalone;
     }
 
     public ServiceModel convert() {
@@ -88,12 +90,18 @@ public class C2jModelToGeneratorModelTransformer {
         C2jMetadata c2jMetadata = c2jServiceModel.getMetadata();
 
         Metadata metadata = new Metadata();
+        metadata.setStandalone(standalone);
         metadata.setApiVersion(c2jMetadata.getApiVersion());
         metadata.setConcatAPIVersion(c2jMetadata.getApiVersion().replace("-", ""));
         metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
         metadata.setSigningName(c2jMetadata.getSigningName() != null ? c2jMetadata.getSigningName() : c2jMetadata.getEndpointPrefix());
         metadata.setJsonVersion(c2jMetadata.getJsonVersion());
-        metadata.setProtocol(c2jMetadata.getProtocol());
+        if("api-gateway".equalsIgnoreCase(c2jMetadata.getProtocol())) {
+            metadata.setProtocol("application-json");
+            metadata.setStandalone(true);
+        } else {
+            metadata.setProtocol(c2jMetadata.getProtocol());
+        }
         metadata.setNamespace(c2jMetadata.getServiceAbbreviation());
         metadata.setServiceFullName(c2jMetadata.getServiceFullName());
         metadata.setSignatureVersion(c2jMetadata.getSignatureVersion());
@@ -262,6 +270,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         operation.setDocumentation(formatDocumentation(crossLinkedShapeDocs, 9));
         operation.setAuthtype(c2jOperation.getAuthtype());
+        operation.setAuthorizer(c2jOperation.getAuthorizer());
 
         // input
         if (c2jOperation.getInput() != null) {
@@ -280,6 +289,14 @@ public class C2jModelToGeneratorModelTransformer {
             requestShape.setSignBody(true);
             if(operation.getAuthtype() != null && operation.getAuthtype().equals("v4-unsigned-body")) {
                 requestShape.setSignBody(false);
+            }
+
+            if(operation.getAuthtype() == null) {
+                requestShape.setSignerName("Aws::Auth::SIGV4_SIGNER");
+            } else if (operation.getAuthtype().equals("custom")) {
+               requestShape.setSignerName("\"" + operation.getAuthorizer() + "\"");
+            } else {
+                requestShape.setSignerName("Aws::Auth::NULL_SIGNER");
             }
 
             ShapeMember requestMember = new ShapeMember();

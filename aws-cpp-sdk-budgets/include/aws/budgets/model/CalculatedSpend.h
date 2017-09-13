@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * A structure holds the actual and forecasted spend for a budget.<p><h3>See
+   * A structure that holds the actual and forecasted spend for a budget.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CalculatedSpend">AWS
    * API Reference</a></p>
@@ -45,6 +45,7 @@ namespace Model
     CalculatedSpend(const Aws::Utils::Json::JsonValue& jsonValue);
     CalculatedSpend& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
 
     
     inline const Spend& GetActualSpend() const{ return m_actualSpend; }
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline CalculatedSpend& WithActualSpend(Spend&& value) { SetActualSpend(std::move(value)); return *this;}
+
 
     
     inline const Spend& GetForecastedSpend() const{ return m_forecastedSpend; }
@@ -77,8 +79,10 @@ namespace Model
     inline CalculatedSpend& WithForecastedSpend(Spend&& value) { SetForecastedSpend(std::move(value)); return *this;}
 
   private:
+
     Spend m_actualSpend;
     bool m_actualSpendHasBeenSet;
+
     Spend m_forecastedSpend;
     bool m_forecastedSpendHasBeenSet;
   };

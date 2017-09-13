@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user the signing certificate is for.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -93,6 +94,7 @@ namespace Model
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline UploadSigningCertificateRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The contents of the signing certificate.</p> <p>The <a
@@ -172,8 +174,10 @@ namespace Model
     inline UploadSigningCertificateRequest& WithCertificateBody(const char* value) { SetCertificateBody(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_certificateBody;
     bool m_certificateBodyHasBeenSet;
   };

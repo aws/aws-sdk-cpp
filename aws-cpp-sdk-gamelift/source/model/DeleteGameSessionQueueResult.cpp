@@ -30,12 +30,12 @@ DeleteGameSessionQueueResult::DeleteGameSessionQueueResult()
 {
 }
 
-DeleteGameSessionQueueResult::DeleteGameSessionQueueResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteGameSessionQueueResult::DeleteGameSessionQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteGameSessionQueueResult& DeleteGameSessionQueueResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteGameSessionQueueResult& DeleteGameSessionQueueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

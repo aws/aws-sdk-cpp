@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
      * configurations are described.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(const char* value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(value); return *this; }
 
+
     /**
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
@@ -133,6 +135,7 @@ namespace Model
      */
     inline DescribeLaunchConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return with this call. The default value is 50
      * and the maximum value is 100.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline DescribeLaunchConfigurationsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_launchConfigurationNames;
     bool m_launchConfigurationNamesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
   };

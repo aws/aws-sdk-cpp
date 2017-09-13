@@ -34,7 +34,7 @@ PutBotResult::PutBotResult() :
 {
 }
 
-PutBotResult::PutBotResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PutBotResult::PutBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(Status::NOT_SET),
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
@@ -43,7 +43,7 @@ PutBotResult::PutBotResult(const AmazonWebServiceResult<JsonValue>& result) :
   *this = result;
 }
 
-PutBotResult& PutBotResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutBotResult& PutBotResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("name"))

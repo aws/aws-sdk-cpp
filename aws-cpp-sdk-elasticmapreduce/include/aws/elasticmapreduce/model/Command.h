@@ -47,6 +47,7 @@ namespace Model
     Command& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the command.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline Command& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The Amazon S3 location of the command script.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The Amazon S3 location of the command script.</p>
      */
     inline Command& WithScriptPath(const char* value) { SetScriptPath(value); return *this;}
+
 
     /**
      * <p>Arguments for Amazon EMR to pass to the command for execution.</p>
@@ -158,10 +161,13 @@ namespace Model
     inline Command& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_scriptPath;
     bool m_scriptPathHasBeenSet;
+
     Aws::Vector<Aws::String> m_args;
     bool m_argsHasBeenSet;
   };

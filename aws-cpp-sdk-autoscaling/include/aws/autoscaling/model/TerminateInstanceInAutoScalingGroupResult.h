@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     TerminateInstanceInAutoScalingGroupResult();
-    TerminateInstanceInAutoScalingGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    TerminateInstanceInAutoScalingGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    TerminateInstanceInAutoScalingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    TerminateInstanceInAutoScalingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A scaling activity.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline TerminateInstanceInAutoScalingGroupResult& WithActivity(Activity&& value) { SetActivity(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline TerminateInstanceInAutoScalingGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Activity m_activity;
+
     ResponseMetadata m_responseMetadata;
   };
 

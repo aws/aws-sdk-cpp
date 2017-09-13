@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the image layer
      * to download. If you do not specify a registry, the default registry is
@@ -85,6 +86,7 @@ namespace Model
      */
     inline GetDownloadUrlForLayerRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository that is associated with the image layer to
      * download.</p>
@@ -127,6 +129,7 @@ namespace Model
      */
     inline GetDownloadUrlForLayerRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>The digest of the image layer to download.</p>
      */
@@ -163,10 +166,13 @@ namespace Model
     inline GetDownloadUrlForLayerRequest& WithLayerDigest(const char* value) { SetLayerDigest(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_layerDigest;
     bool m_layerDigestHasBeenSet;
   };

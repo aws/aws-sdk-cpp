@@ -46,6 +46,7 @@ namespace Model
     Volume& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
@@ -90,6 +91,7 @@ namespace Model
      * associated with it stop running.</p>
      */
     inline Volume& WithHost(Host&& value) { SetHost(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
@@ -148,8 +150,10 @@ namespace Model
     inline Volume& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Host m_host;
     bool m_hostHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

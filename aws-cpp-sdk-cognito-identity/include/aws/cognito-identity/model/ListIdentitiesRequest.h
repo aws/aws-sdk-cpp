@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline ListIdentitiesRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * <p>The maximum number of identities to return.</p>
      */
@@ -88,6 +90,7 @@ namespace Model
      * <p>The maximum number of identities to return.</p>
      */
     inline ListIdentitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A pagination token.</p>
@@ -124,6 +127,7 @@ namespace Model
      */
     inline ListIdentitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>An optional boolean parameter that allows you to hide disabled identities. If
      * omitted, the ListIdentities API will include disabled identities in the
@@ -146,12 +150,16 @@ namespace Model
     inline ListIdentitiesRequest& WithHideDisabled(bool value) { SetHideDisabled(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     bool m_hideDisabled;
     bool m_hideDisabledHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
      * this value is present, AWS KMS does not return more than the specified number of
@@ -62,6 +63,7 @@ namespace Model
      * it defaults to 50.</p>
      */
     inline ListRetirableGrantsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with
@@ -111,6 +113,7 @@ namespace Model
      * truncated response you just received.</p>
      */
     inline ListRetirableGrantsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the
@@ -204,10 +207,13 @@ namespace Model
     inline ListRetirableGrantsRequest& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
 
   private:
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_retiringPrincipal;
     bool m_retiringPrincipalHasBeenSet;
   };

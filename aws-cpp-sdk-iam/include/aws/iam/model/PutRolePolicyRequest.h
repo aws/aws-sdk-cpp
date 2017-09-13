@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the role to associate the policy with.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -101,6 +102,7 @@ namespace Model
      */
     inline PutRolePolicyRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
+
     /**
      * <p>The name of the policy document.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
@@ -156,6 +158,7 @@ namespace Model
      * can also include any of the following characters: =,.@-</p>
      */
     inline PutRolePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The policy document.</p> <p>The <a
@@ -235,10 +238,13 @@ namespace Model
     inline PutRolePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
   private:
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
   };

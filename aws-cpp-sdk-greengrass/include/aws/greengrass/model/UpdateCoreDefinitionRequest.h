@@ -34,6 +34,7 @@ namespace Model
     UpdateCoreDefinitionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * core definition Id
      */
@@ -68,6 +69,7 @@ namespace Model
      * core definition Id
      */
     inline UpdateCoreDefinitionRequest& WithCoreDefinitionId(const char* value) { SetCoreDefinitionId(value); return *this;}
+
 
     /**
      * name of the definition
@@ -105,8 +107,10 @@ namespace Model
     inline UpdateCoreDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_coreDefinitionId;
     bool m_coreDefinitionIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

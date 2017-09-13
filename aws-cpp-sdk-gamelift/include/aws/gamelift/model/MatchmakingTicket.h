@@ -54,6 +54,7 @@ namespace Model
     MatchmakingTicket& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a matchmaking ticket.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>Unique identifier for a matchmaking ticket.</p>
      */
     inline MatchmakingTicket& WithTicketId(const char* value) { SetTicketId(value); return *this;}
+
 
     /**
      * <p>Name of the <a>MatchmakingConfiguration</a> that is used with this ticket.
@@ -138,120 +140,122 @@ namespace Model
      */
     inline MatchmakingTicket& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
 
+
     /**
-     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> –
+     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> --
      * The matchmaking request has been received and is currently waiting to be
-     * processed.</p> </li> <li> <p> <b>SEARCHING</b> – The matchmaking request is
-     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> – A
+     * processed.</p> </li> <li> <p> <b>SEARCHING</b> -- The matchmaking request is
+     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A
      * match has been proposed and the players must accept the match (see
      * <a>AcceptMatch</a>). This status is used only with requests that use a
      * matchmaking configuration with a player acceptance requirement.</p> </li> <li>
-     * <p> <b>PLACING</b> – The FlexMatch engine has matched players and is in the
+     * <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the
      * process of placing a new game session for the match.</p> </li> <li> <p>
-     * <b>COMPLETED</b> – Players have been matched and a game session is ready to host
-     * the players. A ticket in this state contains the necessary connection
-     * information for players.</p> </li> <li> <p> <b>FAILED</b> – The matchmaking
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to
+     * host the players. A ticket in this state contains the necessary connection
+     * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
      * request was not completed. Tickets with players who fail to accept a proposed
      * match are placed in <code>FAILED</code> status; new matchmaking requests can be
-     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> – The
+     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> -- The
      * matchmaking request was canceled with a call to <a>StopMatchmaking</a>.</p>
-     * </li> <li> <p> <b>TIMED_OUT</b> – The matchmaking request was not completed
+     * </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not completed
      * within the duration specified in the matchmaking configuration. Matchmaking
      * requests that time out can be resubmitted.</p> </li> </ul>
      */
     inline const MatchmakingConfigurationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> –
+     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> --
      * The matchmaking request has been received and is currently waiting to be
-     * processed.</p> </li> <li> <p> <b>SEARCHING</b> – The matchmaking request is
-     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> – A
+     * processed.</p> </li> <li> <p> <b>SEARCHING</b> -- The matchmaking request is
+     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A
      * match has been proposed and the players must accept the match (see
      * <a>AcceptMatch</a>). This status is used only with requests that use a
      * matchmaking configuration with a player acceptance requirement.</p> </li> <li>
-     * <p> <b>PLACING</b> – The FlexMatch engine has matched players and is in the
+     * <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the
      * process of placing a new game session for the match.</p> </li> <li> <p>
-     * <b>COMPLETED</b> – Players have been matched and a game session is ready to host
-     * the players. A ticket in this state contains the necessary connection
-     * information for players.</p> </li> <li> <p> <b>FAILED</b> – The matchmaking
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to
+     * host the players. A ticket in this state contains the necessary connection
+     * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
      * request was not completed. Tickets with players who fail to accept a proposed
      * match are placed in <code>FAILED</code> status; new matchmaking requests can be
-     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> – The
+     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> -- The
      * matchmaking request was canceled with a call to <a>StopMatchmaking</a>.</p>
-     * </li> <li> <p> <b>TIMED_OUT</b> – The matchmaking request was not completed
+     * </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not completed
      * within the duration specified in the matchmaking configuration. Matchmaking
      * requests that time out can be resubmitted.</p> </li> </ul>
      */
     inline void SetStatus(const MatchmakingConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> –
+     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> --
      * The matchmaking request has been received and is currently waiting to be
-     * processed.</p> </li> <li> <p> <b>SEARCHING</b> – The matchmaking request is
-     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> – A
+     * processed.</p> </li> <li> <p> <b>SEARCHING</b> -- The matchmaking request is
+     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A
      * match has been proposed and the players must accept the match (see
      * <a>AcceptMatch</a>). This status is used only with requests that use a
      * matchmaking configuration with a player acceptance requirement.</p> </li> <li>
-     * <p> <b>PLACING</b> – The FlexMatch engine has matched players and is in the
+     * <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the
      * process of placing a new game session for the match.</p> </li> <li> <p>
-     * <b>COMPLETED</b> – Players have been matched and a game session is ready to host
-     * the players. A ticket in this state contains the necessary connection
-     * information for players.</p> </li> <li> <p> <b>FAILED</b> – The matchmaking
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to
+     * host the players. A ticket in this state contains the necessary connection
+     * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
      * request was not completed. Tickets with players who fail to accept a proposed
      * match are placed in <code>FAILED</code> status; new matchmaking requests can be
-     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> – The
+     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> -- The
      * matchmaking request was canceled with a call to <a>StopMatchmaking</a>.</p>
-     * </li> <li> <p> <b>TIMED_OUT</b> – The matchmaking request was not completed
+     * </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not completed
      * within the duration specified in the matchmaking configuration. Matchmaking
      * requests that time out can be resubmitted.</p> </li> </ul>
      */
     inline void SetStatus(MatchmakingConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> –
+     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> --
      * The matchmaking request has been received and is currently waiting to be
-     * processed.</p> </li> <li> <p> <b>SEARCHING</b> – The matchmaking request is
-     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> – A
+     * processed.</p> </li> <li> <p> <b>SEARCHING</b> -- The matchmaking request is
+     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A
      * match has been proposed and the players must accept the match (see
      * <a>AcceptMatch</a>). This status is used only with requests that use a
      * matchmaking configuration with a player acceptance requirement.</p> </li> <li>
-     * <p> <b>PLACING</b> – The FlexMatch engine has matched players and is in the
+     * <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the
      * process of placing a new game session for the match.</p> </li> <li> <p>
-     * <b>COMPLETED</b> – Players have been matched and a game session is ready to host
-     * the players. A ticket in this state contains the necessary connection
-     * information for players.</p> </li> <li> <p> <b>FAILED</b> – The matchmaking
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to
+     * host the players. A ticket in this state contains the necessary connection
+     * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
      * request was not completed. Tickets with players who fail to accept a proposed
      * match are placed in <code>FAILED</code> status; new matchmaking requests can be
-     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> – The
+     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> -- The
      * matchmaking request was canceled with a call to <a>StopMatchmaking</a>.</p>
-     * </li> <li> <p> <b>TIMED_OUT</b> – The matchmaking request was not completed
+     * </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not completed
      * within the duration specified in the matchmaking configuration. Matchmaking
      * requests that time out can be resubmitted.</p> </li> </ul>
      */
     inline MatchmakingTicket& WithStatus(const MatchmakingConfigurationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> –
+     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> --
      * The matchmaking request has been received and is currently waiting to be
-     * processed.</p> </li> <li> <p> <b>SEARCHING</b> – The matchmaking request is
-     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> – A
+     * processed.</p> </li> <li> <p> <b>SEARCHING</b> -- The matchmaking request is
+     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A
      * match has been proposed and the players must accept the match (see
      * <a>AcceptMatch</a>). This status is used only with requests that use a
      * matchmaking configuration with a player acceptance requirement.</p> </li> <li>
-     * <p> <b>PLACING</b> – The FlexMatch engine has matched players and is in the
+     * <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the
      * process of placing a new game session for the match.</p> </li> <li> <p>
-     * <b>COMPLETED</b> – Players have been matched and a game session is ready to host
-     * the players. A ticket in this state contains the necessary connection
-     * information for players.</p> </li> <li> <p> <b>FAILED</b> – The matchmaking
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to
+     * host the players. A ticket in this state contains the necessary connection
+     * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
      * request was not completed. Tickets with players who fail to accept a proposed
      * match are placed in <code>FAILED</code> status; new matchmaking requests can be
-     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> – The
+     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> -- The
      * matchmaking request was canceled with a call to <a>StopMatchmaking</a>.</p>
-     * </li> <li> <p> <b>TIMED_OUT</b> – The matchmaking request was not completed
+     * </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not completed
      * within the duration specified in the matchmaking configuration. Matchmaking
      * requests that time out can be resubmitted.</p> </li> </ul>
      */
     inline MatchmakingTicket& WithStatus(MatchmakingConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Code to explain the current status. For example, a status reason may indicate
@@ -302,6 +306,7 @@ namespace Model
      */
     inline MatchmakingTicket& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
     /**
      * <p>Additional information about the current status.</p>
      */
@@ -337,6 +342,7 @@ namespace Model
      */
     inline MatchmakingTicket& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
@@ -371,6 +377,43 @@ namespace Model
      * "1469498468.057").</p>
      */
     inline MatchmakingTicket& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Time stamp indicating when the matchmaking request stopped being processed
+     * due to successful completion, timeout, or cancellation. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>Time stamp indicating when the matchmaking request stopped being processed
+     * due to successful completion, timeout, or cancellation. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p>Time stamp indicating when the matchmaking request stopped being processed
+     * due to successful completion, timeout, or cancellation. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
+
+    /**
+     * <p>Time stamp indicating when the matchmaking request stopped being processed
+     * due to successful completion, timeout, or cancellation. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
+    inline MatchmakingTicket& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when the matchmaking request stopped being processed
+     * due to successful completion, timeout, or cancellation. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
+    inline MatchmakingTicket& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>A set of <code>Player</code> objects, each representing a player to find
@@ -435,6 +478,7 @@ namespace Model
      */
     inline MatchmakingTicket& AddPlayers(Player&& value) { m_playersHasBeenSet = true; m_players.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
@@ -470,23 +514,56 @@ namespace Model
      */
     inline MatchmakingTicket& WithGameSessionConnectionInfo(GameSessionConnectionInfo&& value) { SetGameSessionConnectionInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Average amount of time (in seconds) that players are currently waiting for a
+     * match. If there is not enough recent data, this property may be empty.</p>
+     */
+    inline int GetEstimatedWaitTime() const{ return m_estimatedWaitTime; }
+
+    /**
+     * <p>Average amount of time (in seconds) that players are currently waiting for a
+     * match. If there is not enough recent data, this property may be empty.</p>
+     */
+    inline void SetEstimatedWaitTime(int value) { m_estimatedWaitTimeHasBeenSet = true; m_estimatedWaitTime = value; }
+
+    /**
+     * <p>Average amount of time (in seconds) that players are currently waiting for a
+     * match. If there is not enough recent data, this property may be empty.</p>
+     */
+    inline MatchmakingTicket& WithEstimatedWaitTime(int value) { SetEstimatedWaitTime(value); return *this;}
+
   private:
+
     Aws::String m_ticketId;
     bool m_ticketIdHasBeenSet;
+
     Aws::String m_configurationName;
     bool m_configurationNameHasBeenSet;
+
     MatchmakingConfigurationStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_endTime;
+    bool m_endTimeHasBeenSet;
+
     Aws::Vector<Player> m_players;
     bool m_playersHasBeenSet;
+
     GameSessionConnectionInfo m_gameSessionConnectionInfo;
     bool m_gameSessionConnectionInfoHasBeenSet;
+
+    int m_estimatedWaitTime;
+    bool m_estimatedWaitTimeHasBeenSet;
   };
 
 } // namespace Model

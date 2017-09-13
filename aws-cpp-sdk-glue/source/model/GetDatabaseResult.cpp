@@ -30,12 +30,12 @@ GetDatabaseResult::GetDatabaseResult()
 {
 }
 
-GetDatabaseResult::GetDatabaseResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDatabaseResult::GetDatabaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDatabaseResult& GetDatabaseResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDatabaseResult& GetDatabaseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Database"))

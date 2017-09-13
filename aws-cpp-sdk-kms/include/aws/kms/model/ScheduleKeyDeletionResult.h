@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ScheduleKeyDeletionResult();
-    ScheduleKeyDeletionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ScheduleKeyDeletionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ScheduleKeyDeletionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ScheduleKeyDeletionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique identifier of the customer master key (CMK) for which deletion is
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ScheduleKeyDeletionResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>The date and time after which AWS KMS deletes the customer master key
      * (CMK).</p>
@@ -115,7 +117,9 @@ namespace Model
     inline ScheduleKeyDeletionResult& WithDeletionDate(Aws::Utils::DateTime&& value) { SetDeletionDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_keyId;
+
     Aws::Utils::DateTime m_deletionDate;
   };
 

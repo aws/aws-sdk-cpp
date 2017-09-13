@@ -30,12 +30,12 @@ GetComplianceDetailsByResourceResult::GetComplianceDetailsByResourceResult()
 {
 }
 
-GetComplianceDetailsByResourceResult::GetComplianceDetailsByResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+GetComplianceDetailsByResourceResult::GetComplianceDetailsByResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetComplianceDetailsByResourceResult& GetComplianceDetailsByResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetComplianceDetailsByResourceResult& GetComplianceDetailsByResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EvaluationResults"))

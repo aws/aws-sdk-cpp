@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ModifyHapgResult();
-    ModifyHapgResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyHapgResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyHapgResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyHapgResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the high-availability partition group.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline ModifyHapgResult& WithHapgArn(const char* value) { SetHapgArn(value); return *this;}
 
   private:
+
     Aws::String m_hapgArn;
   };
 

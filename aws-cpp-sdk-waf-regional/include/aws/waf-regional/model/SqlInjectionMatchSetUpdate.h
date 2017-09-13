@@ -49,6 +49,7 @@ namespace Model
     SqlInjectionMatchSetUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specify <code>INSERT</code> to add a <a>SqlInjectionMatchSetUpdate</a> to a
      * <a>SqlInjectionMatchSet</a>. Use <code>DELETE</code> to remove a
@@ -89,6 +90,7 @@ namespace Model
      */
     inline SqlInjectionMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the part of a web request that you want AWS WAF to inspect for
      * snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the
@@ -125,8 +127,10 @@ namespace Model
     inline SqlInjectionMatchSetUpdate& WithSqlInjectionMatchTuple(SqlInjectionMatchTuple&& value) { SetSqlInjectionMatchTuple(std::move(value)); return *this;}
 
   private:
+
     ChangeAction m_action;
     bool m_actionHasBeenSet;
+
     SqlInjectionMatchTuple m_sqlInjectionMatchTuple;
     bool m_sqlInjectionMatchTupleHasBeenSet;
   };

@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the AWS account for this operation result.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline StackSetOperationResultSummary& WithAccount(const char* value) { SetAccount(value); return *this;}
 
+
     /**
      * <p>The name of the AWS region for this operation result.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>The name of the AWS region for this operation result.</p>
      */
     inline StackSetOperationResultSummary& WithRegion(const char* value) { SetRegion(value); return *this;}
+
 
     /**
      * <p>The result status of the stack set operation for the given account in the
@@ -206,6 +209,7 @@ namespace Model
      */
     inline StackSetOperationResultSummary& WithStatus(StackSetOperationResultStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The reason for the assigned result status.</p>
      */
@@ -241,6 +245,7 @@ namespace Model
      */
     inline StackSetOperationResultSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
     /**
      * <p>The results of the account gate function AWS CloudFormation invokes, if
      * present, before proceeding with stack set operations in an account</p>
@@ -272,14 +277,19 @@ namespace Model
     inline StackSetOperationResultSummary& WithAccountGateResult(AccountGateResult&& value) { SetAccountGateResult(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_account;
     bool m_accountHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     StackSetOperationResultStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
     AccountGateResult m_accountGateResult;
     bool m_accountGateResultHasBeenSet;
   };

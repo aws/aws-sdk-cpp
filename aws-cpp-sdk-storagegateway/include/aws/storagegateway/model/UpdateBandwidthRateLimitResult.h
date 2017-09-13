@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateBandwidthRateLimitResult();
-    UpdateBandwidthRateLimitResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateBandwidthRateLimitResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateBandwidthRateLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -69,6 +70,7 @@ namespace Model
     inline UpdateBandwidthRateLimitResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
   };
 

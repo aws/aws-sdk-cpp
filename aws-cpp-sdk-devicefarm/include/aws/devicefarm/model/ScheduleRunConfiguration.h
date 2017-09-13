@@ -17,6 +17,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/Location.h>
+#include <aws/devicefarm/model/CustomerArtifactPaths.h>
 #include <aws/devicefarm/model/Radios.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/model/BillingMethod.h>
@@ -49,6 +50,7 @@ namespace Model
     ScheduleRunConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
     ScheduleRunConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
 
     /**
      * <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS
@@ -99,6 +101,7 @@ namespace Model
      */
     inline ScheduleRunConfiguration& WithExtraDataPackageArn(const char* value) { SetExtraDataPackageArn(value); return *this;}
 
+
     /**
      * <p>Reserved for internal use.</p>
      */
@@ -133,6 +136,7 @@ namespace Model
      * <p>Reserved for internal use.</p>
      */
     inline ScheduleRunConfiguration& WithNetworkProfileArn(const char* value) { SetNetworkProfileArn(value); return *this;}
+
 
     /**
      * <p>Information about the locale that is used for the run.</p>
@@ -169,6 +173,7 @@ namespace Model
      */
     inline ScheduleRunConfiguration& WithLocale(const char* value) { SetLocale(value); return *this;}
 
+
     /**
      * <p>Information about the location that is used for the run.</p>
      */
@@ -194,6 +199,38 @@ namespace Model
      */
     inline ScheduleRunConfiguration& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
+    inline const CustomerArtifactPaths& GetCustomerArtifactPaths() const{ return m_customerArtifactPaths; }
+
+    /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
+    inline void SetCustomerArtifactPaths(const CustomerArtifactPaths& value) { m_customerArtifactPathsHasBeenSet = true; m_customerArtifactPaths = value; }
+
+    /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
+    inline void SetCustomerArtifactPaths(CustomerArtifactPaths&& value) { m_customerArtifactPathsHasBeenSet = true; m_customerArtifactPaths = std::move(value); }
+
+    /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
+    inline ScheduleRunConfiguration& WithCustomerArtifactPaths(const CustomerArtifactPaths& value) { SetCustomerArtifactPaths(value); return *this;}
+
+    /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
+    inline ScheduleRunConfiguration& WithCustomerArtifactPaths(CustomerArtifactPaths&& value) { SetCustomerArtifactPaths(std::move(value)); return *this;}
+
+
     /**
      * <p>Information about the radio states for the run.</p>
      */
@@ -218,6 +255,7 @@ namespace Model
      * <p>Information about the radio states for the run.</p>
      */
     inline ScheduleRunConfiguration& WithRadios(Radios&& value) { SetRadios(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of auxiliary apps for the run.</p>
@@ -259,6 +297,7 @@ namespace Model
      */
     inline ScheduleRunConfiguration& AddAuxiliaryApps(const char* value) { m_auxiliaryAppsHasBeenSet = true; m_auxiliaryApps.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
@@ -295,18 +334,28 @@ namespace Model
     inline ScheduleRunConfiguration& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_extraDataPackageArn;
     bool m_extraDataPackageArnHasBeenSet;
+
     Aws::String m_networkProfileArn;
     bool m_networkProfileArnHasBeenSet;
+
     Aws::String m_locale;
     bool m_localeHasBeenSet;
+
     Location m_location;
     bool m_locationHasBeenSet;
+
+    CustomerArtifactPaths m_customerArtifactPaths;
+    bool m_customerArtifactPathsHasBeenSet;
+
     Radios m_radios;
     bool m_radiosHasBeenSet;
+
     Aws::Vector<Aws::String> m_auxiliaryApps;
     bool m_auxiliaryAppsHasBeenSet;
+
     BillingMethod m_billingMethod;
     bool m_billingMethodHasBeenSet;
   };

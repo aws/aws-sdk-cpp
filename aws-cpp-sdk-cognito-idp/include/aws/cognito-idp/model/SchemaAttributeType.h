@@ -49,6 +49,7 @@ namespace Model
     SchemaAttributeType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A schema attribute of the name type.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline SchemaAttributeType& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The attribute data type.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      */
     inline SchemaAttributeType& WithAttributeDataType(AttributeDataType&& value) { SetAttributeDataType(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies whether the attribute type is developer only.</p>
      */
@@ -124,6 +127,7 @@ namespace Model
      */
     inline SchemaAttributeType& WithDeveloperOnlyAttribute(bool value) { SetDeveloperOnlyAttribute(value); return *this;}
 
+
     /**
      * <p>Specifies whether the attribute can be changed once it has been created.</p>
      */
@@ -138,6 +142,7 @@ namespace Model
      * <p>Specifies whether the attribute can be changed once it has been created.</p>
      */
     inline SchemaAttributeType& WithMutable(bool value) { SetMutable(value); return *this;}
+
 
     /**
      * <p>Specifies whether a user pool attribute is required. If the attribute is
@@ -159,6 +164,7 @@ namespace Model
      * fail.</p>
      */
     inline SchemaAttributeType& WithRequired(bool value) { SetRequired(value); return *this;}
+
 
     /**
      * <p>Specifies the constraints for an attribute of the number type.</p>
@@ -184,6 +190,7 @@ namespace Model
      * <p>Specifies the constraints for an attribute of the number type.</p>
      */
     inline SchemaAttributeType& WithNumberAttributeConstraints(NumberAttributeConstraintsType&& value) { SetNumberAttributeConstraints(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the constraints for an attribute of the string type.</p>
@@ -211,18 +218,25 @@ namespace Model
     inline SchemaAttributeType& WithStringAttributeConstraints(StringAttributeConstraintsType&& value) { SetStringAttributeConstraints(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     AttributeDataType m_attributeDataType;
     bool m_attributeDataTypeHasBeenSet;
+
     bool m_developerOnlyAttribute;
     bool m_developerOnlyAttributeHasBeenSet;
+
     bool m_mutable;
     bool m_mutableHasBeenSet;
+
     bool m_required;
     bool m_requiredHasBeenSet;
+
     NumberAttributeConstraintsType m_numberAttributeConstraints;
     bool m_numberAttributeConstraintsHasBeenSet;
+
     StringAttributeConstraintsType m_stringAttributeConstraints;
     bool m_stringAttributeConstraintsHasBeenSet;
   };

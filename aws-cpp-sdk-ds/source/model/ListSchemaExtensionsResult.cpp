@@ -30,12 +30,12 @@ ListSchemaExtensionsResult::ListSchemaExtensionsResult()
 {
 }
 
-ListSchemaExtensionsResult::ListSchemaExtensionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListSchemaExtensionsResult::ListSchemaExtensionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListSchemaExtensionsResult& ListSchemaExtensionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListSchemaExtensionsResult& ListSchemaExtensionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SchemaExtensionsInfo"))

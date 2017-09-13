@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the topic to modify.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ARN of the topic to modify.</p>
      */
     inline SetTopicAttributesRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+
 
     /**
      * <p>The name of the attribute you want to set. Only a subset of the topic's
@@ -125,6 +127,7 @@ namespace Model
      */
     inline SetTopicAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
+
     /**
      * <p>The new value for the attribute.</p>
      */
@@ -161,10 +164,13 @@ namespace Model
     inline SetTopicAttributesRequest& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     Aws::String m_attributeValue;
     bool m_attributeValueHasBeenSet;
   };

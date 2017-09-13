@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query IDs.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetNamedQueryRequest& WithNamedQueryId(const char* value) { SetNamedQueryId(value); return *this;}
 
   private:
+
     Aws::String m_namedQueryId;
     bool m_namedQueryIdHasBeenSet;
   };

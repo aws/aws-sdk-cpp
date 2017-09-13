@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the schema to retrieve.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetSchemaAsJsonRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
   };

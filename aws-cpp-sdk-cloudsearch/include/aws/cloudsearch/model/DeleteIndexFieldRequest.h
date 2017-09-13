@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline DeleteIndexFieldRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>The name of the index field your want to remove from the domain's indexing
@@ -107,8 +109,10 @@ namespace Model
     inline DeleteIndexFieldRequest& WithIndexFieldName(const char* value) { SetIndexFieldName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_indexFieldName;
     bool m_indexFieldNameHasBeenSet;
   };

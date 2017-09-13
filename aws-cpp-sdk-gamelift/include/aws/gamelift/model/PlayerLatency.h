@@ -50,6 +50,7 @@ namespace Model
     PlayerLatency& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a player associated with the latency data.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>Unique identifier for a player associated with the latency data.</p>
      */
     inline PlayerLatency& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+
 
     /**
      * <p>Name of the region that is associated with the latency value.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline PlayerLatency& WithRegionIdentifier(const char* value) { SetRegionIdentifier(value); return *this;}
 
+
     /**
      * <p>Amount of time that represents the time lag experienced by the player when
      * connected to the specified region.</p>
@@ -139,10 +142,13 @@ namespace Model
     inline PlayerLatency& WithLatencyInMilliseconds(double value) { SetLatencyInMilliseconds(value); return *this;}
 
   private:
+
     Aws::String m_playerId;
     bool m_playerIdHasBeenSet;
+
     Aws::String m_regionIdentifier;
     bool m_regionIdentifierHasBeenSet;
+
     double m_latencyInMilliseconds;
     bool m_latencyInMillisecondsHasBeenSet;
   };

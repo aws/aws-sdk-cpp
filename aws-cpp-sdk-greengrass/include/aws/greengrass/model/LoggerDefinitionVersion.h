@@ -46,6 +46,7 @@ namespace Model
     LoggerDefinitionVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * List of loggers.
      */
@@ -82,6 +83,7 @@ namespace Model
     inline LoggerDefinitionVersion& AddLoggers(Logger&& value) { m_loggersHasBeenSet = true; m_loggers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Logger> m_loggers;
     bool m_loggersHasBeenSet;
   };

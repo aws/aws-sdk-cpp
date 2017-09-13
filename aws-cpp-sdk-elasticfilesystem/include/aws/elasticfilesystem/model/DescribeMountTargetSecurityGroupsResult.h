@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeMountTargetSecurityGroupsResult();
-    DescribeMountTargetSecurityGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMountTargetSecurityGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMountTargetSecurityGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMountTargetSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Array of security groups.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DescribeMountTargetSecurityGroupsResult& AddSecurityGroups(const char* value) { m_securityGroups.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_securityGroups;
   };
 

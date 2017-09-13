@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
      * find the cluster ID, use <a>DescribeClusters</a>.</p>
@@ -78,6 +79,7 @@ namespace Model
      * find the cluster ID, use <a>DescribeClusters</a>.</p>
      */
     inline UntagResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>A list of one or more tag keys for the tags that you are removing. Specify
@@ -128,8 +130,10 @@ namespace Model
     inline UntagResourceRequest& AddTagKeyList(const char* value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeyList;
     bool m_tagKeyListHasBeenSet;
   };

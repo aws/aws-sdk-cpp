@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListSuitesResult();
-    ListSuitesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSuitesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSuitesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSuitesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the suites.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>Information about the suites.</p>
      */
     inline ListSuitesResult& AddSuites(Suite&& value) { m_suites.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -133,7 +135,9 @@ namespace Model
     inline ListSuitesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Suite> m_suites;
+
     Aws::String m_nextToken;
   };
 

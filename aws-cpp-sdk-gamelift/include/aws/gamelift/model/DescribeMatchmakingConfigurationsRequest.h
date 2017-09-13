@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a matchmaking configuration(s) to retrieve. To request
      * all existing configurations, leave this parameter empty.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DescribeMatchmakingConfigurationsRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
+
     /**
      * <p>Unique identifier for a matchmaking rule set. Use this parameter to retrieve
      * all matchmaking configurations that use this rule set.</p>
@@ -130,6 +132,7 @@ namespace Model
      */
     inline DescribeMatchmakingConfigurationsRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
+
     /**
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. This
@@ -150,6 +153,7 @@ namespace Model
      * parameter is limited to 10.</p>
      */
     inline DescribeMatchmakingConfigurationsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -201,12 +205,16 @@ namespace Model
     inline DescribeMatchmakingConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
+
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

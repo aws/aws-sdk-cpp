@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>List of one or more pronunciation lexicon names you want the service to apply
      * during synthesis. Lexicons are applied only if the language of the lexicon is
@@ -115,6 +116,7 @@ namespace Model
      */
     inline SynthesizeSpeechRequest& AddLexiconNames(const char* value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames.push_back(value); return *this; }
 
+
     /**
      * <p> The format in which the returned output will be encoded. For audio stream,
      * this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
@@ -144,6 +146,7 @@ namespace Model
      * this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
      */
     inline SynthesizeSpeechRequest& WithOutputFormat(OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
+
 
     /**
      * <p> The audio frequency specified in Hz. </p> <p>The valid values for
@@ -201,6 +204,7 @@ namespace Model
      */
     inline SynthesizeSpeechRequest& WithSampleRate(const char* value) { SetSampleRate(value); return *this;}
 
+
     /**
      * <p>The type of speech marks returned for the input text.</p>
      */
@@ -235,6 +239,7 @@ namespace Model
      * <p>The type of speech marks returned for the input text.</p>
      */
     inline SynthesizeSpeechRequest& AddSpeechMarkTypes(SpeechMarkType&& value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> Input text to synthesize. If you specify <code>ssml</code> as the
@@ -278,6 +283,7 @@ namespace Model
      */
     inline SynthesizeSpeechRequest& WithText(const char* value) { SetText(value); return *this;}
 
+
     /**
      * <p> Specifies whether the input text is plain text or SSML. The default value is
      * plain text. For more information, see <a
@@ -312,6 +318,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>.</p>
      */
     inline SynthesizeSpeechRequest& WithTextType(TextType&& value) { SetTextType(std::move(value)); return *this;}
+
 
     /**
      * <p> Voice ID to use for the synthesis. You can get a list of available voice IDs
@@ -354,18 +361,25 @@ namespace Model
     inline SynthesizeSpeechRequest& WithVoiceId(VoiceId&& value) { SetVoiceId(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_lexiconNames;
     bool m_lexiconNamesHasBeenSet;
+
     OutputFormat m_outputFormat;
     bool m_outputFormatHasBeenSet;
+
     Aws::String m_sampleRate;
     bool m_sampleRateHasBeenSet;
+
     Aws::Vector<SpeechMarkType> m_speechMarkTypes;
     bool m_speechMarkTypesHasBeenSet;
+
     Aws::String m_text;
     bool m_textHasBeenSet;
+
     TextType m_textType;
     bool m_textTypeHasBeenSet;
+
     VoiceId m_voiceId;
     bool m_voiceIdHasBeenSet;
   };

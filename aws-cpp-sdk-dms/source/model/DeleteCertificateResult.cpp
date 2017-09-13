@@ -30,12 +30,12 @@ DeleteCertificateResult::DeleteCertificateResult()
 {
 }
 
-DeleteCertificateResult::DeleteCertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCertificateResult::DeleteCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteCertificateResult& DeleteCertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCertificateResult& DeleteCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Certificate"))

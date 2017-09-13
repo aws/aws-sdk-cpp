@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the link.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the link.</p>
      */
     inline EnvironmentLink& WithLinkName(const char* value) { SetLinkName(value); return *this;}
+
 
     /**
      * <p>The name of the linked environment (the dependency).</p>
@@ -123,8 +125,10 @@ namespace Model
     inline EnvironmentLink& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
   private:
+
     Aws::String m_linkName;
     bool m_linkNameHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
   };

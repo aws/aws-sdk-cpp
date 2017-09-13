@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the blue/green deployment for which you want to skip the instance
      * termination wait time.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline SkipWaitTimeForInstanceTerminationRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
   };

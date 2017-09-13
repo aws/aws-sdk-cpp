@@ -50,6 +50,7 @@ namespace Model
     BatchCreateIndex& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline BatchCreateIndex& AddOrderedIndexedAttributeList(AttributeKey&& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether the attribute that is being indexed has unique values or
      * not.</p>
@@ -109,6 +111,7 @@ namespace Model
      * not.</p>
      */
     inline BatchCreateIndex& WithIsUnique(bool value) { SetIsUnique(value); return *this;}
+
 
     /**
      * <p>A reference to the parent object that contains the index object.</p>
@@ -134,6 +137,7 @@ namespace Model
      * <p>A reference to the parent object that contains the index object.</p>
      */
     inline BatchCreateIndex& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the link between the parent object and the index object.</p>
@@ -169,6 +173,7 @@ namespace Model
      * <p>The name of the link between the parent object and the index object.</p>
      */
     inline BatchCreateIndex& WithLinkName(const char* value) { SetLinkName(value); return *this;}
+
 
     /**
      * <p>The batch reference name. See <a
@@ -220,14 +225,19 @@ namespace Model
     inline BatchCreateIndex& WithBatchReferenceName(const char* value) { SetBatchReferenceName(value); return *this;}
 
   private:
+
     Aws::Vector<AttributeKey> m_orderedIndexedAttributeList;
     bool m_orderedIndexedAttributeListHasBeenSet;
+
     bool m_isUnique;
     bool m_isUniqueHasBeenSet;
+
     ObjectReference m_parentReference;
     bool m_parentReferenceHasBeenSet;
+
     Aws::String m_linkName;
     bool m_linkNameHasBeenSet;
+
     Aws::String m_batchReferenceName;
     bool m_batchReferenceNameHasBeenSet;
   };

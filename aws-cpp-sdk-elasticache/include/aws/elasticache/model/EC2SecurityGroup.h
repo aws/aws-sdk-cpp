@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The status of the Amazon EC2 security group.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline EC2SecurityGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon EC2 security group.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The name of the Amazon EC2 security group.</p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
+
 
     /**
      * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_eC2SecurityGroupName;
     bool m_eC2SecurityGroupNameHasBeenSet;
+
     Aws::String m_eC2SecurityGroupOwnerId;
     bool m_eC2SecurityGroupOwnerIdHasBeenSet;
   };

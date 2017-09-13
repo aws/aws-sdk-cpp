@@ -45,6 +45,7 @@ namespace Model
     MappingEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the source table.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of the source table.</p>
      */
     inline MappingEntry& WithSourceTable(const char* value) { SetSourceTable(value); return *this;}
+
 
     /**
      * <p>The source path.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline MappingEntry& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
 
+
     /**
      * <p>The source type.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The source type.</p>
      */
     inline MappingEntry& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+
 
     /**
      * <p>The target table.</p>
@@ -185,6 +189,7 @@ namespace Model
      */
     inline MappingEntry& WithTargetTable(const char* value) { SetTargetTable(value); return *this;}
 
+
     /**
      * <p>The target path.</p>
      */
@@ -219,6 +224,7 @@ namespace Model
      * <p>The target path.</p>
      */
     inline MappingEntry& WithTargetPath(const char* value) { SetTargetPath(value); return *this;}
+
 
     /**
      * <p>The target type.</p>
@@ -256,16 +262,22 @@ namespace Model
     inline MappingEntry& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 
   private:
+
     Aws::String m_sourceTable;
     bool m_sourceTableHasBeenSet;
+
     Aws::String m_sourcePath;
     bool m_sourcePathHasBeenSet;
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::String m_targetTable;
     bool m_targetTableHasBeenSet;
+
     Aws::String m_targetPath;
     bool m_targetPathHasBeenSet;
+
     Aws::String m_targetType;
     bool m_targetTypeHasBeenSet;
   };

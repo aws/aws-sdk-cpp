@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
 
@@ -58,6 +59,7 @@ namespace Model
     inline RefreshCacheRequest& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 
   private:
+
     Aws::String m_fileShareARN;
     bool m_fileShareARNHasBeenSet;
   };

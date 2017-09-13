@@ -43,6 +43,7 @@ namespace Model
     BackendConnectionErrors& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p/>
      */
@@ -57,6 +58,7 @@ namespace Model
      * <p/>
      */
     inline BackendConnectionErrors& WithTimeoutCount(int value) { SetTimeoutCount(value); return *this;}
+
 
     /**
      * <p/>
@@ -73,6 +75,7 @@ namespace Model
      */
     inline BackendConnectionErrors& WithConnectionRefusedCount(int value) { SetConnectionRefusedCount(value); return *this;}
 
+
     /**
      * <p/>
      */
@@ -87,6 +90,7 @@ namespace Model
      * <p/>
      */
     inline BackendConnectionErrors& WithHTTPCode4XXCount(int value) { SetHTTPCode4XXCount(value); return *this;}
+
 
     /**
      * <p/>
@@ -103,6 +107,7 @@ namespace Model
      */
     inline BackendConnectionErrors& WithHTTPCode5XXCount(int value) { SetHTTPCode5XXCount(value); return *this;}
 
+
     /**
      * <p/>
      */
@@ -117,6 +122,7 @@ namespace Model
      * <p/>
      */
     inline BackendConnectionErrors& WithUnknownHostCount(int value) { SetUnknownHostCount(value); return *this;}
+
 
     /**
      * <p/>
@@ -134,16 +140,22 @@ namespace Model
     inline BackendConnectionErrors& WithOtherCount(int value) { SetOtherCount(value); return *this;}
 
   private:
+
     int m_timeoutCount;
     bool m_timeoutCountHasBeenSet;
+
     int m_connectionRefusedCount;
     bool m_connectionRefusedCountHasBeenSet;
+
     int m_hTTPCode4XXCount;
     bool m_hTTPCode4XXCountHasBeenSet;
+
     int m_hTTPCode5XXCount;
     bool m_hTTPCode5XXCountHasBeenSet;
+
     int m_unknownHostCount;
     bool m_unknownHostCountHasBeenSet;
+
     int m_otherCount;
     bool m_otherCountHasBeenSet;
   };

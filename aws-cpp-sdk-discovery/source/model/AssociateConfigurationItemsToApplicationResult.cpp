@@ -30,12 +30,12 @@ AssociateConfigurationItemsToApplicationResult::AssociateConfigurationItemsToApp
 {
 }
 
-AssociateConfigurationItemsToApplicationResult::AssociateConfigurationItemsToApplicationResult(const AmazonWebServiceResult<JsonValue>& result)
+AssociateConfigurationItemsToApplicationResult::AssociateConfigurationItemsToApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AssociateConfigurationItemsToApplicationResult& AssociateConfigurationItemsToApplicationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociateConfigurationItemsToApplicationResult& AssociateConfigurationItemsToApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -52,6 +52,7 @@ namespace Model
     Service& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifier for the service. Unique within the service map.</p>
      */
@@ -66,6 +67,7 @@ namespace Model
      * <p>Identifier for the service. Unique within the service map.</p>
      */
     inline Service& WithReferenceId(int value) { SetReferenceId(value); return *this;}
+
 
     /**
      * <p>The canonical name of the service.</p>
@@ -101,6 +103,7 @@ namespace Model
      * <p>The canonical name of the service.</p>
      */
     inline Service& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A list of names for the service, including the canonical name.</p>
@@ -142,6 +145,7 @@ namespace Model
      */
     inline Service& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
+
     /**
      * <p>Indicates that the service was the first service to process a request.</p>
      */
@@ -156,6 +160,7 @@ namespace Model
      * <p>Indicates that the service was the first service to process a request.</p>
      */
     inline Service& WithRoot(bool value) { SetRoot(value); return *this;}
+
 
     /**
      * <p>Identifier of the AWS account in which the service runs.</p>
@@ -191,6 +196,7 @@ namespace Model
      * <p>Identifier of the AWS account in which the service runs.</p>
      */
     inline Service& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
@@ -283,6 +289,7 @@ namespace Model
      */
     inline Service& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>The service's state.</p>
      */
@@ -318,6 +325,7 @@ namespace Model
      */
     inline Service& WithState(const char* value) { SetState(value); return *this;}
 
+
     /**
      * <p>The start time of the first segment that the service generated.</p>
      */
@@ -343,6 +351,7 @@ namespace Model
      */
     inline Service& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The end time of the last segment that the service generated.</p>
      */
@@ -367,6 +376,7 @@ namespace Model
      * <p>The end time of the last segment that the service generated.</p>
      */
     inline Service& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Connections to downstream services.</p>
@@ -403,6 +413,7 @@ namespace Model
      */
     inline Service& AddEdges(Edge&& value) { m_edgesHasBeenSet = true; m_edges.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Aggregated statistics for the service.</p>
      */
@@ -427,6 +438,7 @@ namespace Model
      * <p>Aggregated statistics for the service.</p>
      */
     inline Service& WithSummaryStatistics(ServiceStatistics&& value) { SetSummaryStatistics(std::move(value)); return *this;}
+
 
     /**
      * <p>A histogram that maps the spread of service durations.</p>
@@ -462,6 +474,7 @@ namespace Model
      * <p>A histogram that maps the spread of service durations.</p>
      */
     inline Service& AddDurationHistogram(HistogramEntry&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A histogram that maps the spread of service response times.</p>
@@ -499,30 +512,43 @@ namespace Model
     inline Service& AddResponseTimeHistogram(HistogramEntry&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_referenceId;
     bool m_referenceIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
+
     bool m_root;
     bool m_rootHasBeenSet;
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_state;
     bool m_stateHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::Vector<Edge> m_edges;
     bool m_edgesHasBeenSet;
+
     ServiceStatistics m_summaryStatistics;
     bool m_summaryStatisticsHasBeenSet;
+
     Aws::Vector<HistogramEntry> m_durationHistogram;
     bool m_durationHistogramHasBeenSet;
+
     Aws::Vector<HistogramEntry> m_responseTimeHistogram;
     bool m_responseTimeHistogramHasBeenSet;
   };

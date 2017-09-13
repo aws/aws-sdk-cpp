@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
      * publish bounce notifications.</p>
@@ -93,6 +94,7 @@ namespace Model
      * publish bounce notifications.</p>
      */
     inline IdentityNotificationAttributes& WithBounceTopic(const char* value) { SetBounceTopic(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
@@ -136,6 +138,7 @@ namespace Model
      */
     inline IdentityNotificationAttributes& WithComplaintTopic(const char* value) { SetComplaintTopic(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
      * publish delivery notifications.</p>
@@ -178,6 +181,7 @@ namespace Model
      */
     inline IdentityNotificationAttributes& WithDeliveryTopic(const char* value) { SetDeliveryTopic(value); return *this;}
 
+
     /**
      * <p>Describes whether Amazon SES will forward bounce and complaint notifications
      * as email. <code>true</code> indicates that Amazon SES will forward bounce and
@@ -204,6 +208,7 @@ namespace Model
      * complaint Amazon SNS topics.</p>
      */
     inline IdentityNotificationAttributes& WithForwardingEnabled(bool value) { SetForwardingEnabled(value); return *this;}
+
 
     /**
      * <p>Describes whether Amazon SES includes the original email headers in Amazon
@@ -232,6 +237,7 @@ namespace Model
      */
     inline IdentityNotificationAttributes& WithHeadersInBounceNotificationsEnabled(bool value) { SetHeadersInBounceNotificationsEnabled(value); return *this;}
 
+
     /**
      * <p>Describes whether Amazon SES includes the original email headers in Amazon
      * SNS notifications of type <code>Complaint</code>. A value of <code>true</code>
@@ -258,6 +264,7 @@ namespace Model
      * in complaint notifications.</p>
      */
     inline IdentityNotificationAttributes& WithHeadersInComplaintNotificationsEnabled(bool value) { SetHeadersInComplaintNotificationsEnabled(value); return *this;}
+
 
     /**
      * <p>Describes whether Amazon SES includes the original email headers in Amazon
@@ -287,18 +294,25 @@ namespace Model
     inline IdentityNotificationAttributes& WithHeadersInDeliveryNotificationsEnabled(bool value) { SetHeadersInDeliveryNotificationsEnabled(value); return *this;}
 
   private:
+
     Aws::String m_bounceTopic;
     bool m_bounceTopicHasBeenSet;
+
     Aws::String m_complaintTopic;
     bool m_complaintTopicHasBeenSet;
+
     Aws::String m_deliveryTopic;
     bool m_deliveryTopicHasBeenSet;
+
     bool m_forwardingEnabled;
     bool m_forwardingEnabledHasBeenSet;
+
     bool m_headersInBounceNotificationsEnabled;
     bool m_headersInBounceNotificationsEnabledHasBeenSet;
+
     bool m_headersInComplaintNotificationsEnabled;
     bool m_headersInComplaintNotificationsEnabledHasBeenSet;
+
     bool m_headersInDeliveryNotificationsEnabled;
     bool m_headersInDeliveryNotificationsEnabledHasBeenSet;
   };

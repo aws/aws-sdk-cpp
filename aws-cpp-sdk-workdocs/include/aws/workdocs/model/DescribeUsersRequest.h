@@ -45,6 +45,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline DescribeUsersRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the organization.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The ID of the organization.</p>
      */
     inline DescribeUsersRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+
 
     /**
      * <p>The IDs of the users.</p>
@@ -157,6 +160,7 @@ namespace Model
      */
     inline DescribeUsersRequest& WithUserIds(const char* value) { SetUserIds(value); return *this;}
 
+
     /**
      * <p>A query to filter users by user name.</p>
      */
@@ -192,6 +196,7 @@ namespace Model
      */
     inline DescribeUsersRequest& WithQuery(const char* value) { SetQuery(value); return *this;}
 
+
     /**
      * <p>The state of the users. Specify "ALL" to include inactive users.</p>
      */
@@ -216,6 +221,7 @@ namespace Model
      * <p>The state of the users. Specify "ALL" to include inactive users.</p>
      */
     inline DescribeUsersRequest& WithInclude(UserFilterType&& value) { SetInclude(std::move(value)); return *this;}
+
 
     /**
      * <p>The order for the results.</p>
@@ -242,6 +248,7 @@ namespace Model
      */
     inline DescribeUsersRequest& WithOrder(OrderType&& value) { SetOrder(std::move(value)); return *this;}
 
+
     /**
      * <p>The sorting criteria.</p>
      */
@@ -266,6 +273,7 @@ namespace Model
      * <p>The sorting criteria.</p>
      */
     inline DescribeUsersRequest& WithSort(UserSortType&& value) { SetSort(std::move(value)); return *this;}
+
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -309,6 +317,7 @@ namespace Model
      */
     inline DescribeUsersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return.</p>
      */
@@ -323,6 +332,7 @@ namespace Model
      * <p>The maximum number of items to return.</p>
      */
     inline DescribeUsersRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the
@@ -367,24 +377,34 @@ namespace Model
     inline DescribeUsersRequest& WithFields(const char* value) { SetFields(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet;
+
     Aws::String m_userIds;
     bool m_userIdsHasBeenSet;
+
     Aws::String m_query;
     bool m_queryHasBeenSet;
+
     UserFilterType m_include;
     bool m_includeHasBeenSet;
+
     OrderType m_order;
     bool m_orderHasBeenSet;
+
     UserSortType m_sort;
     bool m_sortHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_fields;
     bool m_fieldsHasBeenSet;
   };

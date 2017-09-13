@@ -60,6 +60,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
@@ -95,6 +96,7 @@ namespace Model
      */
     inline ReservedInstances& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The duration of the Reserved Instance, in seconds.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The duration of the Reserved Instance, in seconds.</p>
      */
     inline ReservedInstances& WithDuration(long long value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The time when the Reserved Instance expires.</p>
@@ -135,6 +138,7 @@ namespace Model
      */
     inline ReservedInstances& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
 
+
     /**
      * <p>The purchase price of the Reserved Instance.</p>
      */
@@ -150,6 +154,7 @@ namespace Model
      */
     inline ReservedInstances& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
 
+
     /**
      * <p>The number of reservations purchased.</p>
      */
@@ -164,6 +169,7 @@ namespace Model
      * <p>The number of reservations purchased.</p>
      */
     inline ReservedInstances& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>The instance type on which the Reserved Instance can be used.</p>
@@ -190,6 +196,7 @@ namespace Model
      */
     inline ReservedInstances& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The Reserved Instance product platform description.</p>
      */
@@ -214,6 +221,7 @@ namespace Model
      * <p>The Reserved Instance product platform description.</p>
      */
     inline ReservedInstances& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Reserved Instance.</p>
@@ -250,6 +258,7 @@ namespace Model
      */
     inline ReservedInstances& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
+
     /**
      * <p>The date and time the Reserved Instance started.</p>
      */
@@ -274,6 +283,7 @@ namespace Model
      * <p>The date and time the Reserved Instance started.</p>
      */
     inline ReservedInstances& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
+
 
     /**
      * <p>The state of the Reserved Instance purchase.</p>
@@ -300,6 +310,7 @@ namespace Model
      */
     inline ReservedInstances& WithState(ReservedInstanceState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The usage price of the Reserved Instance, per hour.</p>
      */
@@ -314,6 +325,7 @@ namespace Model
      * <p>The usage price of the Reserved Instance, per hour.</p>
      */
     inline ReservedInstances& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
+
 
     /**
      * <p>The currency of the Reserved Instance. It's specified using ISO 4217 standard
@@ -350,6 +362,7 @@ namespace Model
      */
     inline ReservedInstances& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
+
     /**
      * <p>The tenancy of the instance.</p>
      */
@@ -374,6 +387,7 @@ namespace Model
      * <p>The tenancy of the instance.</p>
      */
     inline ReservedInstances& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
+
 
     /**
      * <p>The offering class of the Reserved Instance.</p>
@@ -400,6 +414,7 @@ namespace Model
      */
     inline ReservedInstances& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
 
+
     /**
      * <p>The Reserved Instance offering type.</p>
      */
@@ -424,6 +439,7 @@ namespace Model
      * <p>The Reserved Instance offering type.</p>
      */
     inline ReservedInstances& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
+
 
     /**
      * <p>The recurring charge tag assigned to the resource.</p>
@@ -460,6 +476,7 @@ namespace Model
      */
     inline ReservedInstances& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The scope of the Reserved Instance.</p>
      */
@@ -484,6 +501,7 @@ namespace Model
      * <p>The scope of the Reserved Instance.</p>
      */
     inline ReservedInstances& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+
 
     /**
      * <p>Any tags assigned to the resource.</p>
@@ -521,40 +539,58 @@ namespace Model
     inline ReservedInstances& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     long long m_duration;
     bool m_durationHasBeenSet;
+
     Aws::Utils::DateTime m_end;
     bool m_endHasBeenSet;
+
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     RIProductDescription m_productDescription;
     bool m_productDescriptionHasBeenSet;
+
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet;
+
     Aws::Utils::DateTime m_start;
     bool m_startHasBeenSet;
+
     ReservedInstanceState m_state;
     bool m_stateHasBeenSet;
+
     double m_usagePrice;
     bool m_usagePriceHasBeenSet;
+
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+
     Tenancy m_instanceTenancy;
     bool m_instanceTenancyHasBeenSet;
+
     OfferingClassType m_offeringClass;
     bool m_offeringClassHasBeenSet;
+
     OfferingTypeValues m_offeringType;
     bool m_offeringTypeHasBeenSet;
+
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
+
     Scope m_scope;
     bool m_scopeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeFleetPortSettingsResult();
-    DescribeFleetPortSettingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFleetPortSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFleetPortSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFleetPortSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that contains port settings for the requested fleet ID.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeFleetPortSettingsResult& AddInboundPermissions(IpPermission&& value) { m_inboundPermissions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<IpPermission> m_inboundPermissions;
   };
 

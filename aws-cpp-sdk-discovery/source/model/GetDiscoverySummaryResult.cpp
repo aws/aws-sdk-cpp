@@ -34,7 +34,7 @@ GetDiscoverySummaryResult::GetDiscoverySummaryResult() :
 {
 }
 
-GetDiscoverySummaryResult::GetDiscoverySummaryResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetDiscoverySummaryResult::GetDiscoverySummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_servers(0),
     m_applications(0),
     m_serversMappedToApplications(0),
@@ -43,7 +43,7 @@ GetDiscoverySummaryResult::GetDiscoverySummaryResult(const AmazonWebServiceResul
   *this = result;
 }
 
-GetDiscoverySummaryResult& GetDiscoverySummaryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDiscoverySummaryResult& GetDiscoverySummaryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("servers"))

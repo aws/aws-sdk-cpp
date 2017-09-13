@@ -45,6 +45,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
      * be unique.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline CreateFleetRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Human-readable description of a fleet.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>Human-readable description of a fleet.</p>
      */
     inline CreateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Unique identifier for a build to be deployed on the new fleet. The build must
@@ -178,6 +181,7 @@ namespace Model
      */
     inline CreateFleetRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
+
     /**
      * <p>This parameter is no longer used. Instead, specify a server launch path using
      * the <code>RuntimeConfiguration</code> parameter. (Requests that specify a server
@@ -234,6 +238,7 @@ namespace Model
      */
     inline CreateFleetRequest& WithServerLaunchPath(const char* value) { SetServerLaunchPath(value); return *this;}
 
+
     /**
      * <p>This parameter is no longer used. Instead, specify server launch parameters
      * in the <code>RuntimeConfiguration</code> parameter. (Requests that specify a
@@ -289,6 +294,7 @@ namespace Model
      * will continue to work.)</p>
      */
     inline CreateFleetRequest& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
+
 
     /**
      * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
@@ -370,6 +376,7 @@ namespace Model
      */
     inline CreateFleetRequest& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
+
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
@@ -419,6 +426,7 @@ namespace Model
      * for detailed descriptions.</p>
      */
     inline CreateFleetRequest& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(std::move(value)); return *this;}
+
 
     /**
      * <p>Range of IP addresses and port settings that permit inbound traffic to access
@@ -483,16 +491,17 @@ namespace Model
      */
     inline CreateFleetRequest& AddEC2InboundPermissions(IpPermission&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
      * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
 
@@ -502,10 +511,10 @@ namespace Model
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
      * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
      */
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
@@ -515,10 +524,10 @@ namespace Model
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
      * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
      */
     inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
 
@@ -528,10 +537,10 @@ namespace Model
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
      * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
      */
     inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
@@ -541,12 +550,13 @@ namespace Model
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
      * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
      */
     inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
@@ -623,6 +633,7 @@ namespace Model
      */
     inline CreateFleetRequest& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Policy that limits the number of game sessions an individual player can
      * create over a span of time for this fleet.</p>
@@ -652,6 +663,7 @@ namespace Model
      * create over a span of time for this fleet.</p>
      */
     inline CreateFleetRequest& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>Names of metric groups to add this fleet to. Use an existing metric group
@@ -709,31 +721,156 @@ namespace Model
      */
     inline CreateFleetRequest& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
+
+    /**
+     * <p>Unique identifier for the AWS account with the VPC that you want to peer your
+     * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
+     * Console under account settings.</p>
+     */
+    inline const Aws::String& GetPeerVpcAwsAccountId() const{ return m_peerVpcAwsAccountId; }
+
+    /**
+     * <p>Unique identifier for the AWS account with the VPC that you want to peer your
+     * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
+     * Console under account settings.</p>
+     */
+    inline void SetPeerVpcAwsAccountId(const Aws::String& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = value; }
+
+    /**
+     * <p>Unique identifier for the AWS account with the VPC that you want to peer your
+     * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
+     * Console under account settings.</p>
+     */
+    inline void SetPeerVpcAwsAccountId(Aws::String&& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = std::move(value); }
+
+    /**
+     * <p>Unique identifier for the AWS account with the VPC that you want to peer your
+     * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
+     * Console under account settings.</p>
+     */
+    inline void SetPeerVpcAwsAccountId(const char* value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId.assign(value); }
+
+    /**
+     * <p>Unique identifier for the AWS account with the VPC that you want to peer your
+     * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
+     * Console under account settings.</p>
+     */
+    inline CreateFleetRequest& WithPeerVpcAwsAccountId(const Aws::String& value) { SetPeerVpcAwsAccountId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for the AWS account with the VPC that you want to peer your
+     * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
+     * Console under account settings.</p>
+     */
+    inline CreateFleetRequest& WithPeerVpcAwsAccountId(Aws::String&& value) { SetPeerVpcAwsAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier for the AWS account with the VPC that you want to peer your
+     * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
+     * Console under account settings.</p>
+     */
+    inline CreateFleetRequest& WithPeerVpcAwsAccountId(const char* value) { SetPeerVpcAwsAccountId(value); return *this;}
+
+
+    /**
+     * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
+     * To get VPC information, including IDs, use the Virtual Private Cloud service
+     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     */
+    inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
+
+    /**
+     * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
+     * To get VPC information, including IDs, use the Virtual Private Cloud service
+     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     */
+    inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
+
+    /**
+     * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
+     * To get VPC information, including IDs, use the Virtual Private Cloud service
+     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     */
+    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
+
+    /**
+     * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
+     * To get VPC information, including IDs, use the Virtual Private Cloud service
+     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     */
+    inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
+
+    /**
+     * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
+     * To get VPC information, including IDs, use the Virtual Private Cloud service
+     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     */
+    inline CreateFleetRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
+     * To get VPC information, including IDs, use the Virtual Private Cloud service
+     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     */
+    inline CreateFleetRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
+     * To get VPC information, including IDs, use the Virtual Private Cloud service
+     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     */
+    inline CreateFleetRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
+
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_buildId;
     bool m_buildIdHasBeenSet;
+
     Aws::String m_serverLaunchPath;
     bool m_serverLaunchPathHasBeenSet;
+
     Aws::String m_serverLaunchParameters;
     bool m_serverLaunchParametersHasBeenSet;
+
     Aws::Vector<Aws::String> m_logPaths;
     bool m_logPathsHasBeenSet;
+
     EC2InstanceType m_eC2InstanceType;
     bool m_eC2InstanceTypeHasBeenSet;
+
     Aws::Vector<IpPermission> m_eC2InboundPermissions;
     bool m_eC2InboundPermissionsHasBeenSet;
+
     ProtectionPolicy m_newGameSessionProtectionPolicy;
     bool m_newGameSessionProtectionPolicyHasBeenSet;
+
     RuntimeConfiguration m_runtimeConfiguration;
     bool m_runtimeConfigurationHasBeenSet;
+
     ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
     bool m_resourceCreationLimitPolicyHasBeenSet;
+
     Aws::Vector<Aws::String> m_metricGroups;
     bool m_metricGroupsHasBeenSet;
+
+    Aws::String m_peerVpcAwsAccountId;
+    bool m_peerVpcAwsAccountIdHasBeenSet;
+
+    Aws::String m_peerVpcId;
+    bool m_peerVpcIdHasBeenSet;
   };
 
 } // namespace Model

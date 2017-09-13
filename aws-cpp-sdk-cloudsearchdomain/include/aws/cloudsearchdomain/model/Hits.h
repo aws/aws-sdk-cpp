@@ -48,6 +48,7 @@ namespace Model
     Hits& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The total number of documents that match the search request.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      */
     inline Hits& WithFound(long long value) { SetFound(value); return *this;}
 
+
     /**
      * <p>The index of the first matching document.</p>
      */
@@ -77,6 +79,7 @@ namespace Model
      * <p>The index of the first matching document.</p>
      */
     inline Hits& WithStart(long long value) { SetStart(value); return *this;}
+
 
     /**
      * <p>A cursor that can be used to retrieve the next set of matching documents when
@@ -120,6 +123,7 @@ namespace Model
      */
     inline Hits& WithCursor(const char* value) { SetCursor(value); return *this;}
 
+
     /**
      * <p>A document that matches the search request.</p>
      */
@@ -156,12 +160,16 @@ namespace Model
     inline Hits& AddHit(Hit&& value) { m_hitHasBeenSet = true; m_hit.push_back(std::move(value)); return *this; }
 
   private:
+
     long long m_found;
     bool m_foundHasBeenSet;
+
     long long m_start;
     bool m_startHasBeenSet;
+
     Aws::String m_cursor;
     bool m_cursorHasBeenSet;
+
     Aws::Vector<Hit> m_hit;
     bool m_hitHasBeenSet;
   };

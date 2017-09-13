@@ -29,12 +29,12 @@ GetCheckerIpRangesResult::GetCheckerIpRangesResult()
 {
 }
 
-GetCheckerIpRangesResult::GetCheckerIpRangesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetCheckerIpRangesResult::GetCheckerIpRangesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetCheckerIpRangesResult& GetCheckerIpRangesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetCheckerIpRangesResult& GetCheckerIpRangesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

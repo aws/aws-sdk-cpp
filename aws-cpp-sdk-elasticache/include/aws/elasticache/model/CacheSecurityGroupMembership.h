@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cache security group.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the cache security group.</p>
      */
     inline CacheSecurityGroupMembership& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
+
 
     /**
      * <p>The membership status in the cache security group. The status changes when a
@@ -134,8 +136,10 @@ namespace Model
     inline CacheSecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_cacheSecurityGroupName;
     bool m_cacheSecurityGroupNameHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

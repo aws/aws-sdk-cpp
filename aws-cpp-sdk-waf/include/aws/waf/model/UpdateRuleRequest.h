@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update.
      * <code>RuleId</code> is returned by <code>CreateRule</code> and by
@@ -87,6 +88,7 @@ namespace Model
      */
     inline UpdateRuleRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline UpdateRuleRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
@@ -200,10 +203,13 @@ namespace Model
     inline UpdateRuleRequest& AddUpdates(RuleUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
+
     Aws::Vector<RuleUpdate> m_updates;
     bool m_updatesHasBeenSet;
   };

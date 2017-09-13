@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Kinesis Analytics application name.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The version ID of the Kinesis Analytics application.</p>
      */
@@ -86,6 +88,7 @@ namespace Model
      * <p>The version ID of the Kinesis Analytics application.</p>
      */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+
 
     /**
      * <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM
@@ -123,10 +126,13 @@ namespace Model
     inline AddApplicationCloudWatchLoggingOptionRequest& WithCloudWatchLoggingOption(CloudWatchLoggingOption&& value) { SetCloudWatchLoggingOption(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     long long m_currentApplicationVersionId;
     bool m_currentApplicationVersionIdHasBeenSet;
+
     CloudWatchLoggingOption m_cloudWatchLoggingOption;
     bool m_cloudWatchLoggingOptionHasBeenSet;
   };

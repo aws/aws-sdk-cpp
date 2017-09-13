@@ -30,12 +30,12 @@ ListRootsResult::ListRootsResult()
 {
 }
 
-ListRootsResult::ListRootsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListRootsResult::ListRootsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListRootsResult& ListRootsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListRootsResult& ListRootsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Roots"))

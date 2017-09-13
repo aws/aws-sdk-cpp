@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The state of a CIDR block.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The state of a CIDR block.</p>
      */
     inline SubnetCidrBlockState& WithState(SubnetCidrBlockStateCode&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>A message about the status of the CIDR block, if applicable.</p>
@@ -110,8 +112,10 @@ namespace Model
     inline SubnetCidrBlockState& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
   private:
+
     SubnetCidrBlockStateCode m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
   };

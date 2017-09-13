@@ -8,7 +8,7 @@
 #if($operation.result)
         typedef Aws::Utils::Outcome<${operation.result.shape.name}, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ${operation.name}Outcome;
 #else
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ${operation.name}Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ${operation.name}Outcome;
 #end
 #end
 

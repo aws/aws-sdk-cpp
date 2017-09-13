@@ -35,6 +35,7 @@ namespace Model
     UpdateApnsChannelRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const APNSChannelRequest& GetAPNSChannelRequest() const{ return m_aPNSChannelRequest; }
 
@@ -49,6 +50,7 @@ namespace Model
 
     
     inline UpdateApnsChannelRequest& WithAPNSChannelRequest(APNSChannelRequest&& value) { SetAPNSChannelRequest(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
@@ -72,8 +74,10 @@ namespace Model
     inline UpdateApnsChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
   private:
+
     APNSChannelRequest m_aPNSChannelRequest;
     bool m_aPNSChannelRequestHasBeenSet;
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
   };

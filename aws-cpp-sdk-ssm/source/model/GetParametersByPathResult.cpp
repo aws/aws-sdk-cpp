@@ -30,12 +30,12 @@ GetParametersByPathResult::GetParametersByPathResult()
 {
 }
 
-GetParametersByPathResult::GetParametersByPathResult(const AmazonWebServiceResult<JsonValue>& result)
+GetParametersByPathResult::GetParametersByPathResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetParametersByPathResult& GetParametersByPathResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetParametersByPathResult& GetParametersByPathResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Parameters"))

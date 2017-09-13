@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of
      * results. If you have more than <code>MaxItems</code> distributions that satisfy
@@ -114,6 +115,7 @@ namespace Model
      */
     inline ListDistributionsByWebACLId2017_03_25Request& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of distributions that you want CloudFront to return in the
      * response body. The maximum and default values are both 100.</p>
@@ -155,6 +157,7 @@ namespace Model
      * response body. The maximum and default values are both 100.</p>
      */
     inline ListDistributionsByWebACLId2017_03_25Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+
 
     /**
      * <p>The ID of the AWS WAF web ACL that you want to list the associated
@@ -206,10 +209,13 @@ namespace Model
     inline ListDistributionsByWebACLId2017_03_25Request& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
+
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
   };

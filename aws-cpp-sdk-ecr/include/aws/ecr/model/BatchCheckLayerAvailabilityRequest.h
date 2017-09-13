@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the image
      * layers to check. If you do not specify a registry, the default registry is
@@ -86,6 +87,7 @@ namespace Model
      */
     inline BatchCheckLayerAvailabilityRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository that is associated with the image layers to
      * check.</p>
@@ -128,6 +130,7 @@ namespace Model
      */
     inline BatchCheckLayerAvailabilityRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>The digests of the image layers to check.</p>
      */
@@ -169,10 +172,13 @@ namespace Model
     inline BatchCheckLayerAvailabilityRequest& AddLayerDigests(const char* value) { m_layerDigestsHasBeenSet = true; m_layerDigests.push_back(value); return *this; }
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_layerDigests;
     bool m_layerDigestsHasBeenSet;
   };

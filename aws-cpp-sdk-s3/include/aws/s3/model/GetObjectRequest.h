@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -64,6 +65,7 @@ namespace Model
 
     
     inline GetObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * Return the object only if its entity tag (ETag) is the same as the one
@@ -107,6 +109,7 @@ namespace Model
      */
     inline GetObjectRequest& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
 
+
     /**
      * Return the object only if it has been modified since the specified time,
      * otherwise return a 304 (not modified).
@@ -136,6 +139,7 @@ namespace Model
      * otherwise return a 304 (not modified).
      */
     inline GetObjectRequest& WithIfModifiedSince(Aws::Utils::DateTime&& value) { SetIfModifiedSince(std::move(value)); return *this;}
+
 
     /**
      * Return the object only if its entity tag (ETag) is different from the one
@@ -179,6 +183,7 @@ namespace Model
      */
     inline GetObjectRequest& WithIfNoneMatch(const char* value) { SetIfNoneMatch(value); return *this;}
 
+
     /**
      * Return the object only if it has not been modified since the specified time,
      * otherwise return a 412 (precondition failed).
@@ -209,6 +214,7 @@ namespace Model
      */
     inline GetObjectRequest& WithIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetIfUnmodifiedSince(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -229,6 +235,7 @@ namespace Model
 
     
     inline GetObjectRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * Downloads the specified range bytes of an object. For more information about the
@@ -279,6 +286,7 @@ namespace Model
      */
     inline GetObjectRequest& WithRange(const char* value) { SetRange(value); return *this;}
 
+
     /**
      * Sets the Cache-Control header of the response.
      */
@@ -313,6 +321,7 @@ namespace Model
      * Sets the Cache-Control header of the response.
      */
     inline GetObjectRequest& WithResponseCacheControl(const char* value) { SetResponseCacheControl(value); return *this;}
+
 
     /**
      * Sets the Content-Disposition header of the response
@@ -349,6 +358,7 @@ namespace Model
      */
     inline GetObjectRequest& WithResponseContentDisposition(const char* value) { SetResponseContentDisposition(value); return *this;}
 
+
     /**
      * Sets the Content-Encoding header of the response.
      */
@@ -383,6 +393,7 @@ namespace Model
      * Sets the Content-Encoding header of the response.
      */
     inline GetObjectRequest& WithResponseContentEncoding(const char* value) { SetResponseContentEncoding(value); return *this;}
+
 
     /**
      * Sets the Content-Language header of the response.
@@ -419,6 +430,7 @@ namespace Model
      */
     inline GetObjectRequest& WithResponseContentLanguage(const char* value) { SetResponseContentLanguage(value); return *this;}
 
+
     /**
      * Sets the Content-Type header of the response.
      */
@@ -454,6 +466,7 @@ namespace Model
      */
     inline GetObjectRequest& WithResponseContentType(const char* value) { SetResponseContentType(value); return *this;}
 
+
     /**
      * Sets the Expires header of the response.
      */
@@ -478,6 +491,7 @@ namespace Model
      * Sets the Expires header of the response.
      */
     inline GetObjectRequest& WithResponseExpires(Aws::Utils::DateTime&& value) { SetResponseExpires(std::move(value)); return *this;}
+
 
     /**
      * VersionId used to reference a specific version of the object.
@@ -514,6 +528,7 @@ namespace Model
      */
     inline GetObjectRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
@@ -548,6 +563,7 @@ namespace Model
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
     inline GetObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -612,6 +628,7 @@ namespace Model
      */
     inline GetObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
+
     /**
      * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
@@ -661,6 +678,7 @@ namespace Model
      */
     inline GetObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
+
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
@@ -675,6 +693,7 @@ namespace Model
 
     
     inline GetObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
+
 
     /**
      * Part number of the object being read. This is a positive integer between 1 and
@@ -698,42 +717,61 @@ namespace Model
     inline GetObjectRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
+
     Aws::Utils::DateTime m_ifModifiedSince;
     bool m_ifModifiedSinceHasBeenSet;
+
     Aws::String m_ifNoneMatch;
     bool m_ifNoneMatchHasBeenSet;
+
     Aws::Utils::DateTime m_ifUnmodifiedSince;
     bool m_ifUnmodifiedSinceHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_range;
     bool m_rangeHasBeenSet;
+
     Aws::String m_responseCacheControl;
     bool m_responseCacheControlHasBeenSet;
+
     Aws::String m_responseContentDisposition;
     bool m_responseContentDispositionHasBeenSet;
+
     Aws::String m_responseContentEncoding;
     bool m_responseContentEncodingHasBeenSet;
+
     Aws::String m_responseContentLanguage;
     bool m_responseContentLanguageHasBeenSet;
+
     Aws::String m_responseContentType;
     bool m_responseContentTypeHasBeenSet;
+
     Aws::Utils::DateTime m_responseExpires;
     bool m_responseExpiresHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     Aws::String m_sSECustomerAlgorithm;
     bool m_sSECustomerAlgorithmHasBeenSet;
+
     Aws::String m_sSECustomerKey;
     bool m_sSECustomerKeyHasBeenSet;
+
     Aws::String m_sSECustomerKeyMD5;
     bool m_sSECustomerKeyMD5HasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+
     int m_partNumber;
     bool m_partNumberHasBeenSet;
   };

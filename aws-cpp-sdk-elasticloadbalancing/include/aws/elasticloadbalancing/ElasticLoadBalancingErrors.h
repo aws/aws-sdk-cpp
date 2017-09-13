@@ -55,7 +55,7 @@ enum class ElasticLoadBalancingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCESS_POINT_NOT_FOUND= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_POINT_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CERTIFICATE_NOT_FOUND,
   DEPENDENCY_THROTTLE,
   DUPLICATE_ACCESS_POINT_NAME,
@@ -79,7 +79,7 @@ enum class ElasticLoadBalancingErrors
 };
 namespace ElasticLoadBalancingErrorMapper
 {
-  AWS_ELASTICLOADBALANCING_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ELASTICLOADBALANCING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ElasticLoadBalancing

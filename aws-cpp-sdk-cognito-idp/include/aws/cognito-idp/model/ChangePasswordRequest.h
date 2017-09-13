@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The old password in the change password request.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline ChangePasswordRequest& WithPreviousPassword(const char* value) { SetPreviousPassword(value); return *this;}
 
+
     /**
      * <p>The new password in the change password request.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The new password in the change password request.</p>
      */
     inline ChangePasswordRequest& WithProposedPassword(const char* value) { SetProposedPassword(value); return *this;}
+
 
     /**
      * <p>The access token in the change password request.</p>
@@ -146,10 +149,13 @@ namespace Model
     inline ChangePasswordRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
   private:
+
     Aws::String m_previousPassword;
     bool m_previousPasswordHasBeenSet;
+
     Aws::String m_proposedPassword;
     bool m_proposedPasswordHasBeenSet;
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
   };

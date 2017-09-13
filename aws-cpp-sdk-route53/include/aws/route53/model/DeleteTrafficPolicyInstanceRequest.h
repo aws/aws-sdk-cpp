@@ -38,6 +38,7 @@ namespace Model
     DeleteTrafficPolicyInstanceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the traffic policy instance that you want to delete. </p>
      * <important> <p>When you delete a traffic policy instance, Amazon Route 53 also
@@ -95,6 +96,7 @@ namespace Model
     inline DeleteTrafficPolicyInstanceRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

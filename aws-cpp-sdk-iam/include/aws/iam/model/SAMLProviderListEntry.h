@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline SAMLProviderListEntry& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The expiration date and time for the SAML provider.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The expiration date and time for the SAML provider.</p>
      */
     inline SAMLProviderListEntry& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time when the SAML provider was created.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline SAMLProviderListEntry& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
   };

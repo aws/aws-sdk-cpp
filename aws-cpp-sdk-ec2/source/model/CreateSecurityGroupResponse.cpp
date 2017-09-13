@@ -31,12 +31,12 @@ CreateSecurityGroupResponse::CreateSecurityGroupResponse()
 {
 }
 
-CreateSecurityGroupResponse::CreateSecurityGroupResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateSecurityGroupResponse::CreateSecurityGroupResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateSecurityGroupResponse& CreateSecurityGroupResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateSecurityGroupResponse& CreateSecurityGroupResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

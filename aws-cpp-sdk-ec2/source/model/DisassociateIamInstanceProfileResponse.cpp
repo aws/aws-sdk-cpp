@@ -31,12 +31,12 @@ DisassociateIamInstanceProfileResponse::DisassociateIamInstanceProfileResponse()
 {
 }
 
-DisassociateIamInstanceProfileResponse::DisassociateIamInstanceProfileResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DisassociateIamInstanceProfileResponse::DisassociateIamInstanceProfileResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DisassociateIamInstanceProfileResponse& DisassociateIamInstanceProfileResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DisassociateIamInstanceProfileResponse& DisassociateIamInstanceProfileResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

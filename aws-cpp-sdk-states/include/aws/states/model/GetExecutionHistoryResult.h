@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetExecutionHistoryResult();
-    GetExecutionHistoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetExecutionHistoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetExecutionHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetExecutionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of events that occurred in the execution.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of events that occurred in the execution.</p>
      */
     inline GetExecutionHistoryResult& AddEvents(HistoryEvent&& value) { m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To
@@ -142,7 +144,9 @@ namespace Model
     inline GetExecutionHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<HistoryEvent> m_events;
+
     Aws::String m_nextToken;
   };
 

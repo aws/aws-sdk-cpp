@@ -30,12 +30,12 @@ ShutdownGatewayResult::ShutdownGatewayResult()
 {
 }
 
-ShutdownGatewayResult::ShutdownGatewayResult(const AmazonWebServiceResult<JsonValue>& result)
+ShutdownGatewayResult::ShutdownGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ShutdownGatewayResult& ShutdownGatewayResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ShutdownGatewayResult& ShutdownGatewayResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

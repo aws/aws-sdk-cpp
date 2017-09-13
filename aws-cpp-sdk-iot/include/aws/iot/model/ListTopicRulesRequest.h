@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The topic.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListTopicRulesRequest& WithTopic(const char* value) { SetTopic(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return.</p>
      */
@@ -92,6 +94,7 @@ namespace Model
      * <p>The maximum number of results to return.</p>
      */
     inline ListTopicRulesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A token used to retrieve the next value.</p>
@@ -128,6 +131,7 @@ namespace Model
      */
     inline ListTopicRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Specifies whether the rule is disabled.</p>
      */
@@ -144,12 +148,16 @@ namespace Model
     inline ListTopicRulesRequest& WithRuleDisabled(bool value) { SetRuleDisabled(value); return *this;}
 
   private:
+
     Aws::String m_topic;
     bool m_topicHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     bool m_ruleDisabled;
     bool m_ruleDisabledHasBeenSet;
   };

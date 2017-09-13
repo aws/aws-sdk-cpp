@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListDirectoriesResult();
-    ListDirectoriesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDirectoriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDirectoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDirectoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Lists all directories that are associated with your account in pagination
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListDirectoriesResult& AddDirectories(Directory&& value) { m_directories.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -121,7 +123,9 @@ namespace Model
     inline ListDirectoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Directory> m_directories;
+
     Aws::String m_nextToken;
   };
 

@@ -60,13 +60,13 @@ GetJobOutputResult& GetJobOutputResult::operator=(GetJobOutputResult&& toMove)
    return *this;
 }
 
-GetJobOutputResult::GetJobOutputResult(AmazonWebServiceResult<ResponseStream>&& result) : 
+GetJobOutputResult::GetJobOutputResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
     m_status(0)
 {
   *this = std::move(result);
 }
 
-GetJobOutputResult& GetJobOutputResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+GetJobOutputResult& GetJobOutputResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_body = result.TakeOwnershipOfPayload();
 

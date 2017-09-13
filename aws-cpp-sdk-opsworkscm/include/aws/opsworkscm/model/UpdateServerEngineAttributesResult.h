@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateServerEngineAttributesResult();
-    UpdateServerEngineAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateServerEngineAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateServerEngineAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateServerEngineAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Contains the response to an <code>UpdateServerEngineAttributes</code>
@@ -72,6 +73,7 @@ namespace Model
     inline UpdateServerEngineAttributesResult& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
 
   private:
+
     Server m_server;
   };
 

@@ -35,6 +35,7 @@ namespace Model
     TagResourceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ARN (Amazon Resource Name) of the Lambda function.</p>
      */
@@ -69,6 +70,7 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) of the Lambda function.</p>
      */
     inline TagResourceRequest& WithResource(const char* value) { SetResource(value); return *this;}
+
 
     /**
      * <p>The list of tags (key-value pairs) you are assigning to the Lambda
@@ -143,8 +145,10 @@ namespace Model
     inline TagResourceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
   };

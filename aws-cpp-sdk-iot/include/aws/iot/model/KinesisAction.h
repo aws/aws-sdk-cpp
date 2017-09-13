@@ -46,6 +46,7 @@ namespace Model
     KinesisAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline KinesisAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The name of the Amazon Kinesis stream.</p>
      */
     inline KinesisAction& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>The partition key.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline KinesisAction& WithPartitionKey(const char* value) { SetPartitionKey(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::String m_partitionKey;
     bool m_partitionKeyHasBeenSet;
   };

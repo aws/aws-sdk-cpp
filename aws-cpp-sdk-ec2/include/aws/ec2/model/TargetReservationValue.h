@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The total value of the Convertible Reserved Instances that make up the
      * exchange. This is the sum of the list value, remaining upfront price, and
@@ -85,6 +86,7 @@ namespace Model
      */
     inline TargetReservationValue& WithReservationValue(ReservationValue&& value) { SetReservationValue(std::move(value)); return *this;}
 
+
     /**
      * <p>The configuration of the Convertible Reserved Instances that make up the
      * exchange.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline TargetReservationValue& WithTargetConfiguration(TargetConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
 
   private:
+
     ReservationValue m_reservationValue;
     bool m_reservationValueHasBeenSet;
+
     TargetConfiguration m_targetConfiguration;
     bool m_targetConfigurationHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline SetTimeBasedAutoScalingRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline SetTimeBasedAutoScalingRequest& WithAutoScalingSchedule(WeeklyAutoScalingSchedule&& value) { SetAutoScalingSchedule(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     WeeklyAutoScalingSchedule m_autoScalingSchedule;
     bool m_autoScalingScheduleHasBeenSet;
   };

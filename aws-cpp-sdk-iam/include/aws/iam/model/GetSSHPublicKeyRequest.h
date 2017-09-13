@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -102,6 +103,7 @@ namespace Model
      */
     inline GetSSHPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
@@ -151,6 +153,7 @@ namespace Model
      */
     inline GetSSHPublicKeyRequest& WithSSHPublicKeyId(const char* value) { SetSSHPublicKeyId(value); return *this;}
 
+
     /**
      * <p>Specifies the public key encoding format to use in the response. To retrieve
      * the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public
@@ -187,10 +190,13 @@ namespace Model
     inline GetSSHPublicKeyRequest& WithEncoding(EncodingType&& value) { SetEncoding(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_sSHPublicKeyId;
     bool m_sSHPublicKeyIdHasBeenSet;
+
     EncodingType m_encoding;
     bool m_encodingHasBeenSet;
   };

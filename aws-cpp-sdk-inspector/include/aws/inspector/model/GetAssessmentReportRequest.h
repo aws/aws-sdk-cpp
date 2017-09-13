@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN that specifies the assessment run for which you want to generate a
      * report.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline GetAssessmentReportRequest& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
 
+
     /**
      * <p>Specifies the file format (html or pdf) of the assessment report that you
      * want to generate.</p>
@@ -109,6 +111,7 @@ namespace Model
      * want to generate.</p>
      */
     inline GetAssessmentReportRequest& WithReportFileFormat(ReportFileFormat&& value) { SetReportFileFormat(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the type of the assessment report that you want to generate. There
@@ -156,10 +159,13 @@ namespace Model
     inline GetAssessmentReportRequest& WithReportType(ReportType&& value) { SetReportType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_assessmentRunArn;
     bool m_assessmentRunArnHasBeenSet;
+
     ReportFileFormat m_reportFileFormat;
     bool m_reportFileFormatHasBeenSet;
+
     ReportType m_reportType;
     bool m_reportTypeHasBeenSet;
   };

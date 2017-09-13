@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the Amazon Kinesis Analytics application to update.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline UpdateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The current application version ID. You can use the
      * <a>DescribeApplication</a> operation to get this value.</p>
@@ -89,6 +91,7 @@ namespace Model
      * <a>DescribeApplication</a> operation to get this value.</p>
      */
     inline UpdateApplicationRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+
 
     /**
      * <p>Describes application updates.</p>
@@ -116,10 +119,13 @@ namespace Model
     inline UpdateApplicationRequest& WithApplicationUpdate(ApplicationUpdate&& value) { SetApplicationUpdate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     long long m_currentApplicationVersionId;
     bool m_currentApplicationVersionIdHasBeenSet;
+
     ApplicationUpdate m_applicationUpdate;
     bool m_applicationUpdateHasBeenSet;
   };

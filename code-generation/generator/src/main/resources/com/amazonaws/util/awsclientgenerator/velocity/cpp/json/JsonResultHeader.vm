@@ -2,6 +2,8 @@
 
 #pragma once
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 #foreach($header in $typeInfo.headerIncludes)
 \#include $header
@@ -19,7 +21,12 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace $metadata.namespace
+#if($rootNamespace != "Aws")
+}
+namespace ${rootNamespace}
+{
+#end
+namespace ${serviceNamespace}
 {
 namespace Model
 {
@@ -34,13 +41,13 @@ namespace Model
   {
   public:
     ${typeInfo.className}();
-    ${typeInfo.className}(const AmazonWebServiceResult<${jsonRef}>& result);
-    ${classNameRef} operator=(const AmazonWebServiceResult<${jsonRef}>& result);
+    ${typeInfo.className}(const Aws::AmazonWebServiceResult<${jsonRef}>& result);
+    ${classNameRef} operator=(const Aws::AmazonWebServiceResult<${jsonRef}>& result);
 
 #set($useRequiredField = false)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
   };
 
 } // namespace Model
-} // namespace $metadata.namespace
-} // namespace Aws
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

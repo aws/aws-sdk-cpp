@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
      * this value is present, AWS KMS does not return more than the specified number of
@@ -62,6 +63,7 @@ namespace Model
      * it defaults to 50.</p>
      */
     inline ListGrantsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with
@@ -111,6 +113,7 @@ namespace Model
      * truncated response you just received.</p>
      */
     inline ListGrantsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
@@ -183,10 +186,13 @@ namespace Model
     inline ListGrantsRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     MoveAddressToVpcResponse();
-    MoveAddressToVpcResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    MoveAddressToVpcResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    MoveAddressToVpcResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    MoveAddressToVpcResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The allocation ID for the Elastic IP address.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline MoveAddressToVpcResponse& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
+
     /**
      * <p>The status of the move of the IP address.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      */
     inline MoveAddressToVpcResponse& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -124,8 +127,11 @@ namespace Model
     inline MoveAddressToVpcResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_allocationId;
+
     Status m_status;
+
     ResponseMetadata m_responseMetadata;
   };
 

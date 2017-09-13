@@ -30,12 +30,12 @@ GetVaultLockResult::GetVaultLockResult()
 {
 }
 
-GetVaultLockResult::GetVaultLockResult(const AmazonWebServiceResult<JsonValue>& result)
+GetVaultLockResult::GetVaultLockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetVaultLockResult& GetVaultLockResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetVaultLockResult& GetVaultLockResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Policy"))

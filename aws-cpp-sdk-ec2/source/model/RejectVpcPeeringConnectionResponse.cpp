@@ -32,13 +32,13 @@ RejectVpcPeeringConnectionResponse::RejectVpcPeeringConnectionResponse() :
 {
 }
 
-RejectVpcPeeringConnectionResponse::RejectVpcPeeringConnectionResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+RejectVpcPeeringConnectionResponse::RejectVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-RejectVpcPeeringConnectionResponse& RejectVpcPeeringConnectionResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RejectVpcPeeringConnectionResponse& RejectVpcPeeringConnectionResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

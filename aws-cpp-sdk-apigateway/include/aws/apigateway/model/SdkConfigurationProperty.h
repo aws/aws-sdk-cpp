@@ -45,6 +45,7 @@ namespace Model
     SdkConfigurationProperty& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of a an <a>SdkType</a> configuration property.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of a an <a>SdkType</a> configuration property.</p>
      */
     inline SdkConfigurationProperty& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline SdkConfigurationProperty& WithFriendlyName(const char* value) { SetFriendlyName(value); return *this;}
 
+
     /**
      * <p>The description of an <a>SdkType</a> configuration property.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      */
     inline SdkConfigurationProperty& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A boolean flag of an <a>SdkType</a> configuration property to indicate if the
      * associated SDK configuration property is required (<code>true</code>) or not
@@ -170,6 +174,7 @@ namespace Model
      * (<code>false</code>).</p>
      */
     inline SdkConfigurationProperty& WithRequired(bool value) { SetRequired(value); return *this;}
+
 
     /**
      * <p>The default value of an <a>SdkType</a> configuration property.</p>
@@ -207,14 +212,19 @@ namespace Model
     inline SdkConfigurationProperty& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_friendlyName;
     bool m_friendlyNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_required;
     bool m_requiredHasBeenSet;
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
   };

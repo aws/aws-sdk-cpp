@@ -48,6 +48,7 @@ namespace Model
     ChildWorkflowExecutionFailedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The child workflow execution that failed.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline ChildWorkflowExecutionFailedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of the child workflow execution.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      * <p>The type of the child workflow execution.</p>
      */
     inline ChildWorkflowExecutionFailedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for the failure (if provided).</p>
@@ -133,6 +136,7 @@ namespace Model
      */
     inline ChildWorkflowExecutionFailedEventAttributes& WithReason(const char* value) { SetReason(value); return *this;}
 
+
     /**
      * <p>The details of the failure (if provided).</p>
      */
@@ -168,6 +172,7 @@ namespace Model
      */
     inline ChildWorkflowExecutionFailedEventAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
      * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
@@ -195,6 +200,7 @@ namespace Model
      */
     inline ChildWorkflowExecutionFailedEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when
      * this child workflow execution was started. This information can be useful for
@@ -220,16 +226,22 @@ namespace Model
     inline ChildWorkflowExecutionFailedEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
   private:
+
     WorkflowExecution m_workflowExecution;
     bool m_workflowExecutionHasBeenSet;
+
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
+
     long long m_initiatedEventId;
     bool m_initiatedEventIdHasBeenSet;
+
     long long m_startedEventId;
     bool m_startedEventIdHasBeenSet;
   };

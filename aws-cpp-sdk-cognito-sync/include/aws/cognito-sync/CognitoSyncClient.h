@@ -113,7 +113,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListIdentityPoolUsageResult, Aws::Client::AWSError<CognitoSyncErrors>> ListIdentityPoolUsageOutcome;
         typedef Aws::Utils::Outcome<ListRecordsResult, Aws::Client::AWSError<CognitoSyncErrors>> ListRecordsOutcome;
         typedef Aws::Utils::Outcome<RegisterDeviceResult, Aws::Client::AWSError<CognitoSyncErrors>> RegisterDeviceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoSyncErrors>> SetCognitoEventsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoSyncErrors>> SetCognitoEventsOutcome;
         typedef Aws::Utils::Outcome<SetIdentityPoolConfigurationResult, Aws::Client::AWSError<CognitoSyncErrors>> SetIdentityPoolConfigurationOutcome;
         typedef Aws::Utils::Outcome<SubscribeToDatasetResult, Aws::Client::AWSError<CognitoSyncErrors>> SubscribeToDatasetOutcome;
         typedef Aws::Utils::Outcome<UnsubscribeFromDatasetResult, Aws::Client::AWSError<CognitoSyncErrors>> UnsubscribeFromDatasetOutcome;
@@ -189,22 +189,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CognitoSyncClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CognitoSyncClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CognitoSyncClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CognitoSyncClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CognitoSyncClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CognitoSyncClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CognitoSyncClient();
+
 
         /**
          * <p>Initiates a bulk publish of all existing datasets for an Identity Pool to the
@@ -843,7 +844,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void BulkPublishAsyncHelper(const Model::BulkPublishRequest& request, const BulkPublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

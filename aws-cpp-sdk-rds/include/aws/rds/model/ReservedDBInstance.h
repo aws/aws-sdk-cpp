@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The unique identifier for the reservation.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The unique identifier for the reservation.</p>
      */
     inline ReservedDBInstance& WithReservedDBInstanceId(const char* value) { SetReservedDBInstanceId(value); return *this;}
+
 
     /**
      * <p>The offering identifier.</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline ReservedDBInstance& WithReservedDBInstancesOfferingId(const char* value) { SetReservedDBInstancesOfferingId(value); return *this;}
 
+
     /**
      * <p>The DB instance class for the reserved DB instance.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      */
     inline ReservedDBInstance& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
+
     /**
      * <p>The time the reservation started.</p>
      */
@@ -184,6 +188,7 @@ namespace Model
      */
     inline ReservedDBInstance& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
@@ -198,6 +203,7 @@ namespace Model
      * <p>The duration of the reservation in seconds.</p>
      */
     inline ReservedDBInstance& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The fixed price charged for this reserved DB instance.</p>
@@ -214,6 +220,7 @@ namespace Model
      */
     inline ReservedDBInstance& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
 
+
     /**
      * <p>The hourly price charged for this reserved DB instance.</p>
      */
@@ -228,6 +235,7 @@ namespace Model
      * <p>The hourly price charged for this reserved DB instance.</p>
      */
     inline ReservedDBInstance& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
+
 
     /**
      * <p>The currency code for the reserved DB instance.</p>
@@ -264,6 +272,7 @@ namespace Model
      */
     inline ReservedDBInstance& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
 
+
     /**
      * <p>The number of reserved DB instances.</p>
      */
@@ -278,6 +287,7 @@ namespace Model
      * <p>The number of reserved DB instances.</p>
      */
     inline ReservedDBInstance& WithDBInstanceCount(int value) { SetDBInstanceCount(value); return *this;}
+
 
     /**
      * <p>The description of the reserved DB instance.</p>
@@ -314,6 +324,7 @@ namespace Model
      */
     inline ReservedDBInstance& WithProductDescription(const char* value) { SetProductDescription(value); return *this;}
 
+
     /**
      * <p>The offering type of this reserved DB instance.</p>
      */
@@ -349,6 +360,7 @@ namespace Model
      */
     inline ReservedDBInstance& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
 
+
     /**
      * <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
      */
@@ -363,6 +375,7 @@ namespace Model
      * <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
      */
     inline ReservedDBInstance& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>The state of the reserved DB instance.</p>
@@ -399,6 +412,7 @@ namespace Model
      */
     inline ReservedDBInstance& WithState(const char* value) { SetState(value); return *this;}
 
+
     /**
      * <p>The recurring price charged to run this reserved DB instance.</p>
      */
@@ -433,6 +447,7 @@ namespace Model
      * <p>The recurring price charged to run this reserved DB instance.</p>
      */
     inline ReservedDBInstance& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
@@ -470,34 +485,49 @@ namespace Model
     inline ReservedDBInstance& WithReservedDBInstanceArn(const char* value) { SetReservedDBInstanceArn(value); return *this;}
 
   private:
+
     Aws::String m_reservedDBInstanceId;
     bool m_reservedDBInstanceIdHasBeenSet;
+
     Aws::String m_reservedDBInstancesOfferingId;
     bool m_reservedDBInstancesOfferingIdHasBeenSet;
+
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
+
     double m_usagePrice;
     bool m_usagePriceHasBeenSet;
+
     Aws::String m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+
     int m_dBInstanceCount;
     bool m_dBInstanceCountHasBeenSet;
+
     Aws::String m_productDescription;
     bool m_productDescriptionHasBeenSet;
+
     Aws::String m_offeringType;
     bool m_offeringTypeHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::String m_state;
     bool m_stateHasBeenSet;
+
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
+
     Aws::String m_reservedDBInstanceArn;
     bool m_reservedDBInstanceArnHasBeenSet;
   };

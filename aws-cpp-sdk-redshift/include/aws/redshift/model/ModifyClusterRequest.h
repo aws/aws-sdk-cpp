@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The unique identifier of the cluster to be modified.</p> <p>Example:
      * <code>examplecluster</code> </p>
@@ -83,6 +84,7 @@ namespace Model
      * <code>examplecluster</code> </p>
      */
     inline ModifyClusterRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The new cluster type.</p> <p>When you submit your cluster resize request,
@@ -160,6 +162,7 @@ namespace Model
      * </p>
      */
     inline ModifyClusterRequest& WithClusterType(const char* value) { SetClusterType(value); return *this;}
+
 
     /**
      * <p>The new node type of the cluster. If you specify a new node type, you must
@@ -266,6 +269,7 @@ namespace Model
      */
     inline ModifyClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
+
     /**
      * <p>The new number of nodes of the cluster. If you specify a new number of nodes,
      * you must also specify the node type parameter.</p> <p>When you submit your
@@ -304,6 +308,7 @@ namespace Model
      * request. </p> <p>Valid Values: Integer greater than <code>0</code>.</p>
      */
     inline ModifyClusterRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
+
 
     /**
      * <p>A list of cluster security groups to be authorized on this cluster. This
@@ -393,6 +398,7 @@ namespace Model
      */
     inline ModifyClusterRequest& AddClusterSecurityGroups(const char* value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(value); return *this; }
 
+
     /**
      * <p>A list of virtual private cloud (VPC) security groups to be associated with
      * the cluster.</p>
@@ -440,6 +446,7 @@ namespace Model
      * the cluster.</p>
      */
     inline ModifyClusterRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p>The new password for the cluster master user. This change is asynchronously
@@ -553,6 +560,7 @@ namespace Model
      */
     inline ModifyClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
+
     /**
      * <p>The name of the cluster parameter group to apply to this cluster. This change
      * is applied only after the cluster is rebooted. To reboot a cluster use
@@ -616,6 +624,7 @@ namespace Model
      */
     inline ModifyClusterRequest& WithClusterParameterGroupName(const char* value) { SetClusterParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
@@ -648,6 +657,7 @@ namespace Model
      * Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline ModifyClusterRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+
 
     /**
      * <p>The weekly time range (in UTC) during which system maintenance can occur, if
@@ -740,6 +750,7 @@ namespace Model
      */
     inline ModifyClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
      * <p>For major version upgrades, if a non-default cluster parameter group is
@@ -831,6 +842,7 @@ namespace Model
      */
     inline ModifyClusterRequest& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, major version upgrades will be applied automatically to
      * the cluster during the maintenance window. </p> <p>Default: <code>false</code>
@@ -851,6 +863,7 @@ namespace Model
      * </p>
      */
     inline ModifyClusterRequest& WithAllowVersionUpgrade(bool value) { SetAllowVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
@@ -894,6 +907,7 @@ namespace Model
      */
     inline ModifyClusterRequest& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
+
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
@@ -935,6 +949,7 @@ namespace Model
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
     inline ModifyClusterRequest& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
+
 
     /**
      * <p>The new identifier for the cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must
@@ -1006,6 +1021,7 @@ namespace Model
      */
     inline ModifyClusterRequest& WithNewClusterIdentifier(const char* value) { SetNewClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, the cluster can be accessed from a public network. Only
      * clusters in VPCs can be set to be publicly available.</p>
@@ -1023,6 +1039,7 @@ namespace Model
      * clusters in VPCs can be set to be publicly available.</p>
      */
     inline ModifyClusterRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
 
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
@@ -1094,6 +1111,7 @@ namespace Model
      */
     inline ModifyClusterRequest& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
 
+
     /**
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
@@ -1128,40 +1146,58 @@ namespace Model
     inline ModifyClusterRequest& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::String m_clusterType;
     bool m_clusterTypeHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
+
     Aws::Vector<Aws::String> m_clusterSecurityGroups;
     bool m_clusterSecurityGroupsHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;
+
     Aws::String m_clusterParameterGroupName;
     bool m_clusterParameterGroupNameHasBeenSet;
+
     int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
     bool m_allowVersionUpgrade;
     bool m_allowVersionUpgradeHasBeenSet;
+
     Aws::String m_hsmClientCertificateIdentifier;
     bool m_hsmClientCertificateIdentifierHasBeenSet;
+
     Aws::String m_hsmConfigurationIdentifier;
     bool m_hsmConfigurationIdentifierHasBeenSet;
+
     Aws::String m_newClusterIdentifier;
     bool m_newClusterIdentifierHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     Aws::String m_elasticIp;
     bool m_elasticIpHasBeenSet;
+
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreatePortfolioShareResult();
-    CreatePortfolioShareResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePortfolioShareResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePortfolioShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePortfolioShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

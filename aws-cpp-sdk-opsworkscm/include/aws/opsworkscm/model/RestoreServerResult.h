@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     RestoreServerResult();
-    RestoreServerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RestoreServerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RestoreServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RestoreServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

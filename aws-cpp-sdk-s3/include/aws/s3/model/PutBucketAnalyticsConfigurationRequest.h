@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * The name of the bucket to which an analytics configuration is stored.
      */
@@ -75,6 +76,7 @@ namespace Model
      * The name of the bucket to which an analytics configuration is stored.
      */
     inline PutBucketAnalyticsConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * The identifier used to represent an analytics configuration.
@@ -111,6 +113,7 @@ namespace Model
      */
     inline PutBucketAnalyticsConfigurationRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * The configuration and any analyses for the analytics filter.
      */
@@ -137,10 +140,13 @@ namespace Model
     inline PutBucketAnalyticsConfigurationRequest& WithAnalyticsConfiguration(AnalyticsConfiguration&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     AnalyticsConfiguration m_analyticsConfiguration;
     bool m_analyticsConfigurationHasBeenSet;
   };

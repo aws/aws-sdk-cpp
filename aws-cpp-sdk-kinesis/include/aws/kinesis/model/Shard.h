@@ -48,6 +48,7 @@ namespace Model
     Shard& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier of the shard within the stream.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The unique identifier of the shard within the stream.</p>
      */
     inline Shard& WithShardId(const char* value) { SetShardId(value); return *this;}
+
 
     /**
      * <p>The shard ID of the shard's parent.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline Shard& WithParentShardId(const char* value) { SetParentShardId(value); return *this;}
 
+
     /**
      * <p>The shard ID of the shard adjacent to the shard's parent.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      */
     inline Shard& WithAdjacentParentShardId(const char* value) { SetAdjacentParentShardId(value); return *this;}
 
+
     /**
      * <p>The range of possible hash key values for the shard, which is a set of
      * ordered contiguous positive integers.</p>
@@ -183,6 +187,7 @@ namespace Model
      */
     inline Shard& WithHashKeyRange(HashKeyRange&& value) { SetHashKeyRange(std::move(value)); return *this;}
 
+
     /**
      * <p>The range of possible sequence numbers for the shard.</p>
      */
@@ -209,14 +214,19 @@ namespace Model
     inline Shard& WithSequenceNumberRange(SequenceNumberRange&& value) { SetSequenceNumberRange(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet;
+
     Aws::String m_parentShardId;
     bool m_parentShardIdHasBeenSet;
+
     Aws::String m_adjacentParentShardId;
     bool m_adjacentParentShardIdHasBeenSet;
+
     HashKeyRange m_hashKeyRange;
     bool m_hashKeyRangeHasBeenSet;
+
     SequenceNumberRange m_sequenceNumberRange;
     bool m_sequenceNumberRangeHasBeenSet;
   };

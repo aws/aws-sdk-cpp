@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cache parameter group to modify.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The name of the cache parameter group to modify.</p>
      */
     inline ModifyCacheParameterGroupRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
+
 
     /**
      * <p>An array of parameter names and values for the parameter update. You must
@@ -129,8 +131,10 @@ namespace Model
     inline ModifyCacheParameterGroupRequest& AddParameterNameValues(ParameterNameValue&& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_cacheParameterGroupName;
     bool m_cacheParameterGroupNameHasBeenSet;
+
     Aws::Vector<ParameterNameValue> m_parameterNameValues;
     bool m_parameterNameValuesHasBeenSet;
   };

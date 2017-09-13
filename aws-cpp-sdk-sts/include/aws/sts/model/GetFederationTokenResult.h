@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetFederationTokenResult();
-    GetFederationTokenResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetFederationTokenResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetFederationTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetFederationTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
@@ -100,6 +101,7 @@ namespace Model
      */
     inline GetFederationTokenResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
 
+
     /**
      * <p>Identifiers for the federated user associated with the credentials (such as
      * <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
@@ -140,6 +142,7 @@ namespace Model
      */
     inline GetFederationTokenResult& WithFederatedUser(FederatedUser&& value) { SetFederatedUser(std::move(value)); return *this;}
 
+
     /**
      * <p>A percentage value indicating the size of the policy in packed form. The
      * service rejects policies for which the packed size is greater than 100 percent
@@ -161,6 +164,7 @@ namespace Model
      */
     inline GetFederationTokenResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -177,9 +181,13 @@ namespace Model
     inline GetFederationTokenResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Credentials m_credentials;
+
     FederatedUser m_federatedUser;
+
     int m_packedPolicySize;
+
     ResponseMetadata m_responseMetadata;
   };
 

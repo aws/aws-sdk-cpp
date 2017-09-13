@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The Lambda function to delete.</p> <p> You can specify the function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
@@ -137,6 +138,7 @@ namespace Model
      * 64 characters in length. </p>
      */
     inline DeleteFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+
 
     /**
      * <p>Using this optional parameter you can specify a function version (but not the
@@ -244,8 +246,10 @@ namespace Model
     inline DeleteFunctionRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet;
   };

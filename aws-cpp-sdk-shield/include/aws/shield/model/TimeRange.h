@@ -45,6 +45,7 @@ namespace Model
     TimeRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The start time, in the format 2016-12-16T13:50Z.</p>
      */
@@ -69,6 +70,7 @@ namespace Model
      * <p>The start time, in the format 2016-12-16T13:50Z.</p>
      */
     inline TimeRange& WithFromInclusive(Aws::Utils::DateTime&& value) { SetFromInclusive(std::move(value)); return *this;}
+
 
     /**
      * <p>The end time, in the format 2016-12-16T15:50Z.</p>
@@ -96,8 +98,10 @@ namespace Model
     inline TimeRange& WithToExclusive(Aws::Utils::DateTime&& value) { SetToExclusive(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_fromInclusive;
     bool m_fromInclusiveHasBeenSet;
+
     Aws::Utils::DateTime m_toExclusive;
     bool m_toExclusiveHasBeenSet;
   };

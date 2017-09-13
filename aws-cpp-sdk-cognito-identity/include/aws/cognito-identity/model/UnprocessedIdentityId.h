@@ -47,6 +47,7 @@ namespace Model
     UnprocessedIdentityId& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline UnprocessedIdentityId& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
+
     /**
      * <p>The error code indicating the type of error that occurred.</p>
      */
@@ -108,8 +110,10 @@ namespace Model
     inline UnprocessedIdentityId& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     ErrorCode m_errorCode;
     bool m_errorCodeHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeEC2InstanceLimitsResult::DescribeEC2InstanceLimitsResult()
 {
 }
 
-DescribeEC2InstanceLimitsResult::DescribeEC2InstanceLimitsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEC2InstanceLimitsResult::DescribeEC2InstanceLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeEC2InstanceLimitsResult& DescribeEC2InstanceLimitsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEC2InstanceLimitsResult& DescribeEC2InstanceLimitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EC2InstanceLimits"))

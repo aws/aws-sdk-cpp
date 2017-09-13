@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A list of policies for which you want the list of context keys referenced in
      * those policies. Each document is specified as a string containing the complete,
@@ -144,6 +145,7 @@ namespace Model
     inline GetContextKeysForCustomPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_policyInputList;
     bool m_policyInputListHasBeenSet;
   };

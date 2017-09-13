@@ -50,6 +50,7 @@ namespace Model
     ElasticsearchDomainConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
      */
     inline ElasticsearchDomainConfig& WithElasticsearchVersion(ElasticsearchVersionStatus&& value) { SetElasticsearchVersion(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch
@@ -105,6 +107,7 @@ namespace Model
      */
     inline ElasticsearchDomainConfig& WithElasticsearchClusterConfig(ElasticsearchClusterConfigStatus&& value) { SetElasticsearchClusterConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>
      */
@@ -129,6 +132,7 @@ namespace Model
      * <p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>
      */
     inline ElasticsearchDomainConfig& WithEBSOptions(EBSOptionsStatus&& value) { SetEBSOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>IAM access policy as a JSON-formatted string.</p>
@@ -155,6 +159,7 @@ namespace Model
      */
     inline ElasticsearchDomainConfig& WithAccessPolicies(AccessPoliciesStatus&& value) { SetAccessPolicies(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>
      */
@@ -179,6 +184,7 @@ namespace Model
      * <p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>
      */
     inline ElasticsearchDomainConfig& WithSnapshotOptions(SnapshotOptionsStatus&& value) { SetSnapshotOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a
@@ -216,16 +222,22 @@ namespace Model
     inline ElasticsearchDomainConfig& WithAdvancedOptions(AdvancedOptionsStatus&& value) { SetAdvancedOptions(std::move(value)); return *this;}
 
   private:
+
     ElasticsearchVersionStatus m_elasticsearchVersion;
     bool m_elasticsearchVersionHasBeenSet;
+
     ElasticsearchClusterConfigStatus m_elasticsearchClusterConfig;
     bool m_elasticsearchClusterConfigHasBeenSet;
+
     EBSOptionsStatus m_eBSOptions;
     bool m_eBSOptionsHasBeenSet;
+
     AccessPoliciesStatus m_accessPolicies;
     bool m_accessPoliciesHasBeenSet;
+
     SnapshotOptionsStatus m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet;
+
     AdvancedOptionsStatus m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
   };

@@ -30,12 +30,12 @@ StartUserImportJobResult::StartUserImportJobResult()
 {
 }
 
-StartUserImportJobResult::StartUserImportJobResult(const AmazonWebServiceResult<JsonValue>& result)
+StartUserImportJobResult::StartUserImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartUserImportJobResult& StartUserImportJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartUserImportJobResult& StartUserImportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UserImportJob"))

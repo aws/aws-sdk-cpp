@@ -30,12 +30,12 @@ DeleteEndpointResult::DeleteEndpointResult()
 {
 }
 
-DeleteEndpointResult::DeleteEndpointResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteEndpointResult::DeleteEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteEndpointResult& DeleteEndpointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteEndpointResult& DeleteEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Endpoint"))

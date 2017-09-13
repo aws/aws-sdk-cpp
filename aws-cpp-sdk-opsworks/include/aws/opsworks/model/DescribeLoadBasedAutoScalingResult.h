@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeLoadBasedAutoScalingResult();
-    DescribeLoadBasedAutoScalingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLoadBasedAutoScalingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLoadBasedAutoScalingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLoadBasedAutoScalingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeLoadBasedAutoScalingResult& AddLoadBasedAutoScalingConfigurations(LoadBasedAutoScalingConfiguration&& value) { m_loadBasedAutoScalingConfigurations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<LoadBasedAutoScalingConfiguration> m_loadBasedAutoScalingConfigurations;
   };
 

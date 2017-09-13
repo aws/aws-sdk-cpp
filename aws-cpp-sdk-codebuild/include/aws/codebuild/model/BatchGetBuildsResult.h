@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     BatchGetBuildsResult();
-    BatchGetBuildsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetBuildsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetBuildsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetBuildsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the requested builds.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about the requested builds.</p>
      */
     inline BatchGetBuildsResult& AddBuilds(Build&& value) { m_builds.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The IDs of builds for which information could not be found.</p>
@@ -119,7 +121,9 @@ namespace Model
     inline BatchGetBuildsResult& AddBuildsNotFound(const char* value) { m_buildsNotFound.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Build> m_builds;
+
     Aws::Vector<Aws::String> m_buildsNotFound;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A token used for advancing to the next page of results from your get
      * instances request.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline GetInstancesRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

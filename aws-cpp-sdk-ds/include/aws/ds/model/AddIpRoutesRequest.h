@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Identifier (ID) of the directory to which to add the address block.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>Identifier (ID) of the directory to which to add the address block.</p>
      */
     inline AddIpRoutesRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>IP address blocks, using CIDR format, of the traffic to route. This is often
@@ -114,6 +116,7 @@ namespace Model
      * the IP address block of the DNS server used for your on-premises domain.</p>
      */
     inline AddIpRoutesRequest& AddIpRoutes(IpRoute&& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If set to true, updates the inbound and outbound rules of the security group
@@ -203,10 +206,13 @@ namespace Model
     inline AddIpRoutesRequest& WithUpdateSecurityGroupForDirectoryControllers(bool value) { SetUpdateSecurityGroupForDirectoryControllers(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::Vector<IpRoute> m_ipRoutes;
     bool m_ipRoutesHasBeenSet;
+
     bool m_updateSecurityGroupForDirectoryControllers;
     bool m_updateSecurityGroupForDirectoryControllersHasBeenSet;
   };

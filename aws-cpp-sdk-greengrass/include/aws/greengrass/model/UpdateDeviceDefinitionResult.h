@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateDeviceDefinitionResult();
-    UpdateDeviceDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDeviceDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDeviceDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDeviceDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

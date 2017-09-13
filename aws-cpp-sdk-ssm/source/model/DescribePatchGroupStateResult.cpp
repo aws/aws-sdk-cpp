@@ -36,7 +36,7 @@ DescribePatchGroupStateResult::DescribePatchGroupStateResult() :
 {
 }
 
-DescribePatchGroupStateResult::DescribePatchGroupStateResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribePatchGroupStateResult::DescribePatchGroupStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_instances(0),
     m_instancesWithInstalledPatches(0),
     m_instancesWithInstalledOtherPatches(0),
@@ -47,7 +47,7 @@ DescribePatchGroupStateResult::DescribePatchGroupStateResult(const AmazonWebServ
   *this = result;
 }
 
-DescribePatchGroupStateResult& DescribePatchGroupStateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribePatchGroupStateResult& DescribePatchGroupStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Instances"))

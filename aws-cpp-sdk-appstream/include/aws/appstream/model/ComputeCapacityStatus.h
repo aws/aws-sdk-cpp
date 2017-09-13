@@ -43,6 +43,7 @@ namespace Model
     ComputeCapacityStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The desired number of streaming instances.</p>
      */
@@ -57,6 +58,7 @@ namespace Model
      * <p>The desired number of streaming instances.</p>
      */
     inline ComputeCapacityStatus& WithDesired(int value) { SetDesired(value); return *this;}
+
 
     /**
      * <p>The total number of simultaneous streaming instances that are running.</p>
@@ -73,6 +75,7 @@ namespace Model
      */
     inline ComputeCapacityStatus& WithRunning(int value) { SetRunning(value); return *this;}
 
+
     /**
      * <p>The number of instances that are being used for streaming.</p>
      */
@@ -87,6 +90,7 @@ namespace Model
      * <p>The number of instances that are being used for streaming.</p>
      */
     inline ComputeCapacityStatus& WithInUse(int value) { SetInUse(value); return *this;}
+
 
     /**
      * <p>The number of currently available instances that can be used to stream
@@ -107,12 +111,16 @@ namespace Model
     inline ComputeCapacityStatus& WithAvailable(int value) { SetAvailable(value); return *this;}
 
   private:
+
     int m_desired;
     bool m_desiredHasBeenSet;
+
     int m_running;
     bool m_runningHasBeenSet;
+
     int m_inUse;
     bool m_inUseHasBeenSet;
+
     int m_available;
     bool m_availableHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     InputParallelism& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Number of in-application streams to create. For more information, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
@@ -68,6 +69,7 @@ namespace Model
     inline InputParallelism& WithCount(int value) { SetCount(value); return *this;}
 
   private:
+
     int m_count;
     bool m_countHasBeenSet;
   };

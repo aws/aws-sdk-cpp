@@ -48,6 +48,7 @@ namespace Model
     PipelineOutputConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the
      * transcoded files. Specify this value when all of the following are true:</p>
@@ -167,6 +168,7 @@ namespace Model
      */
     inline PipelineOutputConfig& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     /**
      * <p> The Amazon S3 storage class, <code>Standard</code> or
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
@@ -215,6 +217,7 @@ namespace Model
      * the video files and playlists that it stores in your Amazon S3 bucket. </p>
      */
     inline PipelineOutputConfig& WithStorageClass(const char* value) { SetStorageClass(value); return *this;}
+
 
     /**
      * <p>Optional. The <code>Permissions</code> object specifies which users and/or
@@ -329,10 +332,13 @@ namespace Model
     inline PipelineOutputConfig& AddPermissions(Permission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_storageClass;
     bool m_storageClassHasBeenSet;
+
     Aws::Vector<Permission> m_permissions;
     bool m_permissionsHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The access token.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The access token.</p>
      */
     inline UpdateDeviceStatusRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+
 
     /**
      * <p>The device key.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline UpdateDeviceStatusRequest& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
 
+
     /**
      * <p>The status of whether a device is remembered.</p>
      */
@@ -137,10 +140,13 @@ namespace Model
     inline UpdateDeviceStatusRequest& WithDeviceRememberedStatus(DeviceRememberedStatusType&& value) { SetDeviceRememberedStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
+
     Aws::String m_deviceKey;
     bool m_deviceKeyHasBeenSet;
+
     DeviceRememberedStatusType m_deviceRememberedStatus;
     bool m_deviceRememberedStatusHasBeenSet;
   };

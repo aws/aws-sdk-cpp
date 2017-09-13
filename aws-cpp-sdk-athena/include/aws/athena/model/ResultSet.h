@@ -48,6 +48,7 @@ namespace Model
     ResultSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The rows in the table.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ResultSet& AddRows(Row&& value) { m_rowsHasBeenSet = true; m_rows.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The metadata that describes the column structure and data types of a table of
      * query results.</p>
@@ -114,8 +116,10 @@ namespace Model
     inline ResultSet& WithResultSetMetadata(ResultSetMetadata&& value) { SetResultSetMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Row> m_rows;
     bool m_rowsHasBeenSet;
+
     ResultSetMetadata m_resultSetMetadata;
     bool m_resultSetMetadataHasBeenSet;
   };

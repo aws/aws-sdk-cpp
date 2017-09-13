@@ -133,7 +133,7 @@ namespace Model
         class UpdateFolderRequest;
         class UpdateUserRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> AbortDocumentVersionUploadOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> AbortDocumentVersionUploadOutcome;
         typedef Aws::Utils::Outcome<ActivateUserResult, Aws::Client::AWSError<WorkDocsErrors>> ActivateUserOutcome;
         typedef Aws::Utils::Outcome<AddResourcePermissionsResult, Aws::Client::AWSError<WorkDocsErrors>> AddResourcePermissionsOutcome;
         typedef Aws::Utils::Outcome<CreateCommentResult, Aws::Client::AWSError<WorkDocsErrors>> CreateCommentOutcome;
@@ -142,15 +142,15 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateLabelsResult, Aws::Client::AWSError<WorkDocsErrors>> CreateLabelsOutcome;
         typedef Aws::Utils::Outcome<CreateNotificationSubscriptionResult, Aws::Client::AWSError<WorkDocsErrors>> CreateNotificationSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, Aws::Client::AWSError<WorkDocsErrors>> CreateUserOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeactivateUserOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteCommentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeactivateUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteCommentOutcome;
         typedef Aws::Utils::Outcome<DeleteCustomMetadataResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteCustomMetadataOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteDocumentOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteFolderOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteFolderContentsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteDocumentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteFolderOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteFolderContentsOutcome;
         typedef Aws::Utils::Outcome<DeleteLabelsResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteLabelsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteNotificationSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteNotificationSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<DescribeActivitiesResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeActivitiesOutcome;
         typedef Aws::Utils::Outcome<DescribeCommentsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeCommentsOutcome;
         typedef Aws::Utils::Outcome<DescribeDocumentVersionsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeDocumentVersionsOutcome;
@@ -166,11 +166,11 @@ namespace Model
         typedef Aws::Utils::Outcome<GetFolderResult, Aws::Client::AWSError<WorkDocsErrors>> GetFolderOutcome;
         typedef Aws::Utils::Outcome<GetFolderPathResult, Aws::Client::AWSError<WorkDocsErrors>> GetFolderPathOutcome;
         typedef Aws::Utils::Outcome<InitiateDocumentVersionUploadResult, Aws::Client::AWSError<WorkDocsErrors>> InitiateDocumentVersionUploadOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> RemoveAllResourcePermissionsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> RemoveResourcePermissionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateDocumentOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateDocumentVersionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateFolderOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> RemoveAllResourcePermissionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> RemoveResourcePermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateDocumentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateDocumentVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateFolderOutcome;
         typedef Aws::Utils::Outcome<UpdateUserResult, Aws::Client::AWSError<WorkDocsErrors>> UpdateUserOutcome;
 
         typedef std::future<AbortDocumentVersionUploadOutcome> AbortDocumentVersionUploadOutcomeCallable;
@@ -292,22 +292,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        WorkDocsClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        WorkDocsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        WorkDocsClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        WorkDocsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        WorkDocsClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        WorkDocsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~WorkDocsClient();
+
 
         /**
          * <p>Aborts the upload of the specified document version that was previously
@@ -1493,7 +1494,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AbortDocumentVersionUploadAsyncHelper(const Model::AbortDocumentVersionUploadRequest& request, const AbortDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

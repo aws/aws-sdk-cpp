@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The IP address range of the AWS service.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      */
     inline PrefixList& AddCidrs(const char* value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the prefix.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>The ID of the prefix.</p>
      */
     inline PrefixList& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
+
 
     /**
      * <p>The name of the prefix.</p>
@@ -160,10 +163,13 @@ namespace Model
     inline PrefixList& WithPrefixListName(const char* value) { SetPrefixListName(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_cidrs;
     bool m_cidrsHasBeenSet;
+
     Aws::String m_prefixListId;
     bool m_prefixListIdHasBeenSet;
+
     Aws::String m_prefixListName;
     bool m_prefixListNameHasBeenSet;
   };

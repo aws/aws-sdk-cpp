@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListServicesResult();
-    ListServicesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListServicesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of full Amazon Resource Name (ARN) entries for each service
@@ -89,6 +90,7 @@ namespace Model
      * associated with the specified cluster.</p>
      */
     inline ListServicesResult& AddServiceArns(const char* value) { m_serviceArns.push_back(value); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -154,7 +156,9 @@ namespace Model
     inline ListServicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_serviceArns;
+
     Aws::String m_nextToken;
   };
 

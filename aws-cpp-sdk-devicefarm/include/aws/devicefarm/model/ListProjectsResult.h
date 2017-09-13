@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListProjectsResult();
-    ListProjectsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProjectsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the projects.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the projects.</p>
      */
     inline ListProjectsResult& AddProjects(Project&& value) { m_projects.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -134,7 +136,9 @@ namespace Model
     inline ListProjectsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Project> m_projects;
+
     Aws::String m_nextToken;
   };
 

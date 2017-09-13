@@ -55,7 +55,7 @@ enum class SFNErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACTIVITY_DOES_NOT_EXIST= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACTIVITY_DOES_NOT_EXIST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ACTIVITY_LIMIT_EXCEEDED,
   ACTIVITY_WORKER_LIMIT_EXCEEDED,
   EXECUTION_ALREADY_EXISTS,
@@ -76,7 +76,7 @@ enum class SFNErrors
 };
 namespace SFNErrorMapper
 {
-  AWS_SFN_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_SFN_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace SFN

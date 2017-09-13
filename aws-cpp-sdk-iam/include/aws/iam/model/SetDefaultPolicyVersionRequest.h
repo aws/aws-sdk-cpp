@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you
      * want to set.</p> <p>For more information about ARNs, see <a
@@ -101,6 +102,7 @@ namespace Model
      */
     inline SetDefaultPolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
+
     /**
      * <p>The version of the policy to set as the default (operative) version.</p>
      * <p>For more information about managed policy versions, see <a
@@ -158,8 +160,10 @@ namespace Model
     inline SetDefaultPolicyVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
+
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
   };

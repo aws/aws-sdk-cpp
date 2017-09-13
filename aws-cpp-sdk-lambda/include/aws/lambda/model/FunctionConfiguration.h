@@ -51,6 +51,7 @@ namespace Model
     FunctionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the function. Note that the length constraint applies only to the
      * ARN. If you specify only the function name, it is limited to 64 characters in
@@ -100,6 +101,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) assigned to the function.</p>
      */
@@ -135,6 +137,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
+
     /**
      * <p>The runtime environment for the Lambda function.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      * <p>The runtime environment for the Lambda function.</p>
      */
     inline FunctionConfiguration& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
@@ -209,6 +213,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithRole(const char* value) { SetRole(value); return *this;}
 
+
     /**
      * <p>The function Lambda calls to begin executing your function.</p>
      */
@@ -244,6 +249,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithHandler(const char* value) { SetHandler(value); return *this;}
 
+
     /**
      * <p>The size, in bytes, of the function .zip file you uploaded.</p>
      */
@@ -258,6 +264,7 @@ namespace Model
      * <p>The size, in bytes, of the function .zip file you uploaded.</p>
      */
     inline FunctionConfiguration& WithCodeSize(long long value) { SetCodeSize(value); return *this;}
+
 
     /**
      * <p>The user-provided description.</p>
@@ -294,6 +301,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
@@ -315,6 +323,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithTimeout(int value) { SetTimeout(value); return *this;}
 
+
     /**
      * <p>The memory size, in MB, you configured for the function. Must be a multiple
      * of 64 MB.</p>
@@ -332,6 +341,7 @@ namespace Model
      * of 64 MB.</p>
      */
     inline FunctionConfiguration& WithMemorySize(int value) { SetMemorySize(value); return *this;}
+
 
     /**
      * <p>The time stamp of the last time you updated the function. The time stamp is
@@ -389,6 +399,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithLastModified(const char* value) { SetLastModified(value); return *this;}
 
+
     /**
      * <p>It is the SHA256 hash of your function deployment package.</p>
      */
@@ -423,6 +434,7 @@ namespace Model
      * <p>It is the SHA256 hash of your function deployment package.</p>
      */
     inline FunctionConfiguration& WithCodeSha256(const char* value) { SetCodeSha256(value); return *this;}
+
 
     /**
      * <p>The version of the Lambda function.</p>
@@ -459,6 +471,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>VPC configuration associated with your Lambda function.</p>
      */
@@ -483,6 +496,7 @@ namespace Model
      * <p>VPC configuration associated with your Lambda function.</p>
      */
     inline FunctionConfiguration& WithVpcConfig(VpcConfigResponse&& value) { SetVpcConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
@@ -514,6 +528,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>The parent object that contains your environment's configuration
      * settings.</p>
@@ -543,6 +558,7 @@ namespace Model
      * settings.</p>
      */
     inline FunctionConfiguration& WithEnvironment(EnvironmentResponse&& value) { SetEnvironment(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
@@ -593,6 +609,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
+
     /**
      * <p>The parent object that contains your function's tracing settings.</p>
      */
@@ -617,6 +634,7 @@ namespace Model
      * <p>The parent object that contains your function's tracing settings.</p>
      */
     inline FunctionConfiguration& WithTracingConfig(TracingConfigResponse&& value) { SetTracingConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>Returns the ARN (Amazon Resource Name) of the master function.</p>
@@ -654,40 +672,58 @@ namespace Model
     inline FunctionConfiguration& WithMasterArn(const char* value) { SetMasterArn(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_functionArn;
     bool m_functionArnHasBeenSet;
+
     Runtime m_runtime;
     bool m_runtimeHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     Aws::String m_handler;
     bool m_handlerHasBeenSet;
+
     long long m_codeSize;
     bool m_codeSizeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     int m_timeout;
     bool m_timeoutHasBeenSet;
+
     int m_memorySize;
     bool m_memorySizeHasBeenSet;
+
     Aws::String m_lastModified;
     bool m_lastModifiedHasBeenSet;
+
     Aws::String m_codeSha256;
     bool m_codeSha256HasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     VpcConfigResponse m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet;
+
     EnvironmentResponse m_environment;
     bool m_environmentHasBeenSet;
+
     Aws::String m_kMSKeyArn;
     bool m_kMSKeyArnHasBeenSet;
+
     TracingConfigResponse m_tracingConfig;
     bool m_tracingConfigHasBeenSet;
+
     Aws::String m_masterArn;
     bool m_masterArnHasBeenSet;
   };

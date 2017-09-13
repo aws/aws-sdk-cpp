@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The domain string.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeUserPoolDomainRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
   };

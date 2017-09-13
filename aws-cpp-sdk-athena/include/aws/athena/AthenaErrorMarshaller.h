@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ATHENA_API AthenaErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_ATHENA_API AthenaErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Athena
+} // namespace Client
 } // namespace Aws

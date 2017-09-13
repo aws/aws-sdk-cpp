@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or unique ID of the stack set that you're deleting. You can obtain
      * this value by running <a>ListStackSets</a>.</p>
@@ -81,6 +82,7 @@ namespace Model
     inline DeleteStackSetRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
   };

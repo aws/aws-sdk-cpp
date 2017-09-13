@@ -38,6 +38,7 @@ namespace Model
     CreateStreamingDistributionWithTags2017_03_25Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p> The streaming distribution's configuration information. </p>
      */
@@ -64,6 +65,7 @@ namespace Model
     inline CreateStreamingDistributionWithTags2017_03_25Request& WithStreamingDistributionConfigWithTags(StreamingDistributionConfigWithTags&& value) { SetStreamingDistributionConfigWithTags(std::move(value)); return *this;}
 
   private:
+
     StreamingDistributionConfigWithTags m_streamingDistributionConfigWithTags;
     bool m_streamingDistributionConfigWithTagsHasBeenSet;
   };

@@ -30,12 +30,12 @@ DeleteParametersResult::DeleteParametersResult()
 {
 }
 
-DeleteParametersResult::DeleteParametersResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteParametersResult::DeleteParametersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteParametersResult& DeleteParametersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteParametersResult& DeleteParametersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DeletedParameters"))

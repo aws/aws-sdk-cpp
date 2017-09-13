@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the receipt rule set that contains the receipt rule to
      * delete.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DeleteReceiptRuleRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
+
     /**
      * <p>The name of the receipt rule to delete.</p>
      */
@@ -122,8 +124,10 @@ namespace Model
     inline DeleteReceiptRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
   private:
+
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
+
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet;
   };

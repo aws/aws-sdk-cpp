@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateBuildResult();
-    UpdateBuildResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateBuildResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateBuildResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that contains the updated build record.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline UpdateBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 
   private:
+
     Build m_build;
   };
 

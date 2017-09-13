@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A required parameter. Options available for the given engine name will be
      * described.</p>
@@ -84,6 +85,7 @@ namespace Model
      * described.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+
 
     /**
      * <p>If specified, filters the results to include only options for the specified
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeOptionGroupOptionsRequest& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
 
+
     /**
      * <p>This parameter is not currently supported.</p>
      */
@@ -162,6 +165,7 @@ namespace Model
      */
     inline DescribeOptionGroupOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -185,6 +189,7 @@ namespace Model
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
@@ -236,14 +241,19 @@ namespace Model
     inline DescribeOptionGroupOptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet;
+
     Aws::String m_majorEngineVersion;
     bool m_majorEngineVersionHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

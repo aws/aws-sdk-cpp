@@ -153,20 +153,20 @@ namespace Model
         class TerminateInstanceInAutoScalingGroupRequest;
         class UpdateAutoScalingGroupRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> AttachInstancesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> AttachInstancesOutcome;
         typedef Aws::Utils::Outcome<AttachLoadBalancerTargetGroupsResult, Aws::Client::AWSError<AutoScalingErrors>> AttachLoadBalancerTargetGroupsOutcome;
         typedef Aws::Utils::Outcome<AttachLoadBalancersResult, Aws::Client::AWSError<AutoScalingErrors>> AttachLoadBalancersOutcome;
         typedef Aws::Utils::Outcome<CompleteLifecycleActionResult, Aws::Client::AWSError<AutoScalingErrors>> CompleteLifecycleActionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> CreateAutoScalingGroupOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> CreateLaunchConfigurationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> CreateOrUpdateTagsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteAutoScalingGroupOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteLaunchConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> CreateAutoScalingGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> CreateLaunchConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> CreateOrUpdateTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteAutoScalingGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteLaunchConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteLifecycleHookResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteLifecycleHookOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteNotificationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeletePolicyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteScheduledActionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteNotificationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeletePolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteScheduledActionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeAccountLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeAdjustmentTypesResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeAdjustmentTypesOutcome;
         typedef Aws::Utils::Outcome<DescribeAutoScalingGroupsResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeAutoScalingGroupsOutcome;
@@ -188,23 +188,23 @@ namespace Model
         typedef Aws::Utils::Outcome<DetachInstancesResult, Aws::Client::AWSError<AutoScalingErrors>> DetachInstancesOutcome;
         typedef Aws::Utils::Outcome<DetachLoadBalancerTargetGroupsResult, Aws::Client::AWSError<AutoScalingErrors>> DetachLoadBalancerTargetGroupsOutcome;
         typedef Aws::Utils::Outcome<DetachLoadBalancersResult, Aws::Client::AWSError<AutoScalingErrors>> DetachLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> DisableMetricsCollectionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> EnableMetricsCollectionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> DisableMetricsCollectionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> EnableMetricsCollectionOutcome;
         typedef Aws::Utils::Outcome<EnterStandbyResult, Aws::Client::AWSError<AutoScalingErrors>> EnterStandbyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> ExecutePolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> ExecutePolicyOutcome;
         typedef Aws::Utils::Outcome<ExitStandbyResult, Aws::Client::AWSError<AutoScalingErrors>> ExitStandbyOutcome;
         typedef Aws::Utils::Outcome<PutLifecycleHookResult, Aws::Client::AWSError<AutoScalingErrors>> PutLifecycleHookOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> PutNotificationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> PutNotificationConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutScalingPolicyResult, Aws::Client::AWSError<AutoScalingErrors>> PutScalingPolicyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> PutScheduledUpdateGroupActionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> PutScheduledUpdateGroupActionOutcome;
         typedef Aws::Utils::Outcome<RecordLifecycleActionHeartbeatResult, Aws::Client::AWSError<AutoScalingErrors>> RecordLifecycleActionHeartbeatOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> ResumeProcessesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> SetDesiredCapacityOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> SetInstanceHealthOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> ResumeProcessesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> SetDesiredCapacityOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> SetInstanceHealthOutcome;
         typedef Aws::Utils::Outcome<SetInstanceProtectionResult, Aws::Client::AWSError<AutoScalingErrors>> SetInstanceProtectionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> SuspendProcessesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> SuspendProcessesOutcome;
         typedef Aws::Utils::Outcome<TerminateInstanceInAutoScalingGroupResult, Aws::Client::AWSError<AutoScalingErrors>> TerminateInstanceInAutoScalingGroupOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> UpdateAutoScalingGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> UpdateAutoScalingGroupOutcome;
 
         typedef std::future<AttachInstancesOutcome> AttachInstancesOutcomeCallable;
         typedef std::future<AttachLoadBalancerTargetGroupsOutcome> AttachLoadBalancerTargetGroupsOutcomeCallable;
@@ -330,27 +330,28 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AutoScalingClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        AutoScalingClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AutoScalingClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        AutoScalingClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        AutoScalingClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        AutoScalingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~AutoScalingClient();
+
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
 
         /**
@@ -2360,7 +2361,7 @@ namespace Model
 
 
   private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AttachInstancesAsyncHelper(const Model::AttachInstancesRequest& request, const AttachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2417,7 +2418,7 @@ namespace Model
         void UpdateAutoScalingGroupAsyncHelper(const Model::UpdateAutoScalingGroupRequest& request, const UpdateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace AutoScaling

@@ -46,6 +46,7 @@ namespace Model
     Alias& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The canonical name of the alias.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The canonical name of the alias.</p>
      */
     inline Alias& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A list of names for the alias, including the canonical name.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline Alias& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
+
     /**
      * <p>The type of the alias.</p>
      */
@@ -157,10 +160,13 @@ namespace Model
     inline Alias& WithType(const char* value) { SetType(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
   };

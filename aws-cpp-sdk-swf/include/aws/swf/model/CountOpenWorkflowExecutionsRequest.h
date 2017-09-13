@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain containing the workflow executions to count.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline CountOpenWorkflowExecutionsRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>Specifies the start time criteria that workflow executions must meet in order
      * to be counted.</p>
@@ -104,6 +106,7 @@ namespace Model
      * to be counted.</p>
      */
     inline CountOpenWorkflowExecutionsRequest& WithStartTimeFilter(ExecutionTimeFilter&& value) { SetStartTimeFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the type of the workflow executions to be counted.</p> <note> <p>
@@ -145,6 +148,7 @@ namespace Model
      */
     inline CountOpenWorkflowExecutionsRequest& WithTypeFilter(WorkflowTypeFilter&& value) { SetTypeFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>If specified, only executions that have a tag that matches the filter are
      * counted.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code>
@@ -184,6 +188,7 @@ namespace Model
      * of these in a request.</p> </note>
      */
     inline CountOpenWorkflowExecutionsRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>If specified, only workflow executions matching the <code>WorkflowId</code>
@@ -226,14 +231,19 @@ namespace Model
     inline CountOpenWorkflowExecutionsRequest& WithExecutionFilter(WorkflowExecutionFilter&& value) { SetExecutionFilter(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     ExecutionTimeFilter m_startTimeFilter;
     bool m_startTimeFilterHasBeenSet;
+
     WorkflowTypeFilter m_typeFilter;
     bool m_typeFilterHasBeenSet;
+
     TagFilter m_tagFilter;
     bool m_tagFilterHasBeenSet;
+
     WorkflowExecutionFilter m_executionFilter;
     bool m_executionFilterHasBeenSet;
   };

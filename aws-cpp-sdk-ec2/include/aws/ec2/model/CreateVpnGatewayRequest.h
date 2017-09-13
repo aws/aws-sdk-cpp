@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Availability Zone for the virtual private gateway.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CreateVpnGatewayRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The type of VPN connection this virtual private gateway supports.</p>
      */
@@ -101,6 +103,7 @@ namespace Model
      * <p>The type of VPN connection this virtual private gateway supports.</p>
      */
     inline CreateVpnGatewayRequest& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Checks whether you have the required permissions for the action, without
@@ -127,10 +130,13 @@ namespace Model
     inline CreateVpnGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     GatewayType m_type;
     bool m_typeHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

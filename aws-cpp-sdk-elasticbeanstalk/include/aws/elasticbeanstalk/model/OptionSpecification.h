@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A unique resource name for a time-based scaling configuration option.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline OptionSpecification& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
     /**
      * <p>A unique namespace identifying the option's associated AWS resource.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>A unique namespace identifying the option's associated AWS resource.</p>
      */
     inline OptionSpecification& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+
 
     /**
      * <p>The name of the configuration option.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline OptionSpecification& WithOptionName(const char* value) { SetOptionName(value); return *this;}
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Aws::String m_optionName;
     bool m_optionNameHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     ExtraParam& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the additional parameter required by the top-level domain.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Name of the additional parameter required by the top-level domain.</p>
      */
     inline ExtraParam& WithName(ExtraParamName&& value) { SetName(std::move(value)); return *this;}
+
 
     /**
      * <p>Values corresponding to the additional parameter names required by some
@@ -114,8 +116,10 @@ namespace Model
     inline ExtraParam& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     ExtraParamName m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

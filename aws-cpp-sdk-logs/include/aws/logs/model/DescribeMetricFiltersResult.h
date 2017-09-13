@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeMetricFiltersResult();
-    DescribeMetricFiltersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMetricFiltersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMetricFiltersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMetricFiltersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The metric filters.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeMetricFiltersResult& AddMetricFilters(MetricFilter&& value) { m_metricFilters.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeMetricFiltersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<MetricFilter> m_metricFilters;
+
     Aws::String m_nextToken;
   };
 

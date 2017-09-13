@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListGroupsResult();
-    ListGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The group objects for the groups.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The group objects for the groups.</p>
      */
     inline ListGroupsResult& AddGroups(GroupType&& value) { m_groups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -121,7 +123,9 @@ namespace Model
     inline ListGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<GroupType> m_groups;
+
     Aws::String m_nextToken;
   };
 

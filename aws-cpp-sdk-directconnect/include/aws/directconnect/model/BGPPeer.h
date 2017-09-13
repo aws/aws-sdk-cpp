@@ -49,6 +49,7 @@ namespace Model
     BGPPeer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline int GetAsn() const{ return m_asn; }
 
@@ -57,6 +58,7 @@ namespace Model
 
     
     inline BGPPeer& WithAsn(int value) { SetAsn(value); return *this;}
+
 
     
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
@@ -79,6 +81,7 @@ namespace Model
     
     inline BGPPeer& WithAuthKey(const char* value) { SetAuthKey(value); return *this;}
 
+
     
     inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
 
@@ -93,6 +96,7 @@ namespace Model
 
     
     inline BGPPeer& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetAmazonAddress() const{ return m_amazonAddress; }
@@ -115,6 +119,7 @@ namespace Model
     
     inline BGPPeer& WithAmazonAddress(const char* value) { SetAmazonAddress(value); return *this;}
 
+
     
     inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
 
@@ -136,6 +141,7 @@ namespace Model
     
     inline BGPPeer& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
+
     
     inline const BGPPeerState& GetBgpPeerState() const{ return m_bgpPeerState; }
 
@@ -150,6 +156,7 @@ namespace Model
 
     
     inline BGPPeer& WithBgpPeerState(BGPPeerState&& value) { SetBgpPeerState(std::move(value)); return *this;}
+
 
     
     inline const BGPStatus& GetBgpStatus() const{ return m_bgpStatus; }
@@ -167,18 +174,25 @@ namespace Model
     inline BGPPeer& WithBgpStatus(BGPStatus&& value) { SetBgpStatus(std::move(value)); return *this;}
 
   private:
+
     int m_asn;
     bool m_asnHasBeenSet;
+
     Aws::String m_authKey;
     bool m_authKeyHasBeenSet;
+
     AddressFamily m_addressFamily;
     bool m_addressFamilyHasBeenSet;
+
     Aws::String m_amazonAddress;
     bool m_amazonAddressHasBeenSet;
+
     Aws::String m_customerAddress;
     bool m_customerAddressHasBeenSet;
+
     BGPPeerState m_bgpPeerState;
     bool m_bgpPeerStateHasBeenSet;
+
     BGPStatus m_bgpStatus;
     bool m_bgpStatusHasBeenSet;
   };

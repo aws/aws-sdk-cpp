@@ -31,12 +31,12 @@ UpdateApplicationVersionResult::UpdateApplicationVersionResult()
 {
 }
 
-UpdateApplicationVersionResult::UpdateApplicationVersionResult(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateApplicationVersionResult::UpdateApplicationVersionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateApplicationVersionResult& UpdateApplicationVersionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateApplicationVersionResult& UpdateApplicationVersionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

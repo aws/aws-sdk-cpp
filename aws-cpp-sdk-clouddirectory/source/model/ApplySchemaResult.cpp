@@ -30,12 +30,12 @@ ApplySchemaResult::ApplySchemaResult()
 {
 }
 
-ApplySchemaResult::ApplySchemaResult(const AmazonWebServiceResult<JsonValue>& result)
+ApplySchemaResult::ApplySchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ApplySchemaResult& ApplySchemaResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ApplySchemaResult& ApplySchemaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AppliedSchemaArn"))

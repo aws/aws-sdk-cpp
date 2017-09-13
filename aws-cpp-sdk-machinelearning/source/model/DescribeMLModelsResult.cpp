@@ -30,12 +30,12 @@ DescribeMLModelsResult::DescribeMLModelsResult()
 {
 }
 
-DescribeMLModelsResult::DescribeMLModelsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMLModelsResult::DescribeMLModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeMLModelsResult& DescribeMLModelsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMLModelsResult& DescribeMLModelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Results"))

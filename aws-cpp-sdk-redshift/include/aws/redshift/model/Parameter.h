@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the parameter.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The name of the parameter.</p>
      */
     inline Parameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+
 
     /**
      * <p>The value of the parameter.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline Parameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
 
+
     /**
      * <p>A description of the parameter.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>A description of the parameter.</p>
      */
     inline Parameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The source of the parameter value, such as "engine-default" or "user".</p>
@@ -190,6 +194,7 @@ namespace Model
      */
     inline Parameter& WithSource(const char* value) { SetSource(value); return *this;}
 
+
     /**
      * <p>The data type of the parameter.</p>
      */
@@ -225,6 +230,7 @@ namespace Model
      */
     inline Parameter& WithDataType(const char* value) { SetDataType(value); return *this;}
 
+
     /**
      * <p>The valid range of values for the parameter.</p>
      */
@@ -259,6 +265,7 @@ namespace Model
      * <p>The valid range of values for the parameter.</p>
      */
     inline Parameter& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
+
 
     /**
      * <p>Specifies how to apply the WLM configuration parameter. Some properties can
@@ -315,6 +322,7 @@ namespace Model
      */
     inline Parameter& WithApplyType(ParameterApplyType&& value) { SetApplyType(std::move(value)); return *this;}
 
+
     /**
      * <p>If <code>true</code>, the parameter can be modified. Some parameters have
      * security or operational implications that prevent them from being changed. </p>
@@ -332,6 +340,7 @@ namespace Model
      * security or operational implications that prevent them from being changed. </p>
      */
     inline Parameter& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
+
 
     /**
      * <p>The earliest engine version to which the parameter can apply.</p>
@@ -369,22 +378,31 @@ namespace Model
     inline Parameter& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
 
   private:
+
     Aws::String m_parameterName;
     bool m_parameterNameHasBeenSet;
+
     Aws::String m_parameterValue;
     bool m_parameterValueHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     Aws::String m_dataType;
     bool m_dataTypeHasBeenSet;
+
     Aws::String m_allowedValues;
     bool m_allowedValuesHasBeenSet;
+
     ParameterApplyType m_applyType;
     bool m_applyTypeHasBeenSet;
+
     bool m_isModifiable;
     bool m_isModifiableHasBeenSet;
+
     Aws::String m_minimumEngineVersion;
     bool m_minimumEngineVersionHasBeenSet;
   };

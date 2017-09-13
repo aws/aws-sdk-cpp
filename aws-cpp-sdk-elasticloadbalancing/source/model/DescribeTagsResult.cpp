@@ -31,12 +31,12 @@ DescribeTagsResult::DescribeTagsResult()
 {
 }
 
-DescribeTagsResult::DescribeTagsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeTagsResult::DescribeTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeTagsResult& DescribeTagsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

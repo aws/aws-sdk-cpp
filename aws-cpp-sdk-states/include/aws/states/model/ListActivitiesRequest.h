@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The maximum number of results that will be returned per call.
      * <code>nextToken</code> can be used to obtain further pages of results. The
@@ -62,6 +63,7 @@ namespace Model
      * than the specified maximum.</p>
      */
     inline ListActivitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>If a <code>nextToken</code> was returned by a previous call, there are more
@@ -127,8 +129,10 @@ namespace Model
     inline ListActivitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetTemplateSummaryResult();
-    GetTemplateSummaryResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetTemplateSummaryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetTemplateSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetTemplateSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of parameter declarations that describe various properties for each
@@ -93,6 +94,7 @@ namespace Model
      */
     inline GetTemplateSummaryResult& AddParameters(ParameterDeclaration&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The value that is defined in the <code>Description</code> property of the
      * template.</p>
@@ -134,6 +136,7 @@ namespace Model
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The capabilities found within the template. If your template contains IAM
@@ -212,6 +215,7 @@ namespace Model
      */
     inline GetTemplateSummaryResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The list of resources that generated the values in the
      * <code>Capabilities</code> response element.</p>
@@ -253,6 +257,7 @@ namespace Model
      * <code>Capabilities</code> response element.</p>
      */
     inline GetTemplateSummaryResult& WithCapabilitiesReason(const char* value) { SetCapabilitiesReason(value); return *this;}
+
 
     /**
      * <p>A list of all the template resource types that are defined in the template,
@@ -310,6 +315,7 @@ namespace Model
      */
     inline GetTemplateSummaryResult& AddResourceTypes(const char* value) { m_resourceTypes.push_back(value); return *this; }
 
+
     /**
      * <p>The AWS template format version, which identifies the capabilities of the
      * template.</p>
@@ -351,6 +357,7 @@ namespace Model
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The value that is defined for the <code>Metadata</code> property of the
@@ -394,6 +401,7 @@ namespace Model
      */
     inline GetTemplateSummaryResult& WithMetadata(const char* value) { SetMetadata(value); return *this;}
 
+
     /**
      * <p>A list of the transforms that are declared in the template.</p>
      */
@@ -434,6 +442,7 @@ namespace Model
      */
     inline GetTemplateSummaryResult& AddDeclaredTransforms(const char* value) { m_declaredTransforms.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -450,14 +459,23 @@ namespace Model
     inline GetTemplateSummaryResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ParameterDeclaration> m_parameters;
+
     Aws::String m_description;
+
     Aws::Vector<Capability> m_capabilities;
+
     Aws::String m_capabilitiesReason;
+
     Aws::Vector<Aws::String> m_resourceTypes;
+
     Aws::String m_version;
+
     Aws::String m_metadata;
+
     Aws::Vector<Aws::String> m_declaredTransforms;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -48,6 +48,7 @@ namespace Model
     BatchListObjectAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Reference of the object whose attributes need to be listed.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>Reference of the object whose attributes need to be listed.</p>
      */
     inline BatchListObjectAttributes& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline BatchListObjectAttributes& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
@@ -125,6 +128,7 @@ namespace Model
      * approximate number.</p>
      */
     inline BatchListObjectAttributes& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Used to filter the list of object attributes that are associated with a
@@ -157,12 +161,16 @@ namespace Model
     inline BatchListObjectAttributes& WithFacetFilter(SchemaFacet&& value) { SetFacetFilter(std::move(value)); return *this;}
 
   private:
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     SchemaFacet m_facetFilter;
     bool m_facetFilterHasBeenSet;
   };

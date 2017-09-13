@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StopTaskResult();
-    StopTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The task that was stopped.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline StopTaskResult& WithTask(Task&& value) { SetTask(std::move(value)); return *this;}
 
   private:
+
     Task m_task;
   };
 

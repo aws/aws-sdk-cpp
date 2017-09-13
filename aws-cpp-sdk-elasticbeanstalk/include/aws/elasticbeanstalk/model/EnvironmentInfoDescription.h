@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The type of information retrieved.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The type of information retrieved.</p>
      */
     inline EnvironmentInfoDescription& WithInfoType(EnvironmentInfoType&& value) { SetInfoType(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon EC2 Instance ID for this information.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline EnvironmentInfoDescription& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 
+
     /**
      * <p>The time stamp when this information was retrieved.</p>
      */
@@ -135,6 +138,7 @@ namespace Model
      * <p>The time stamp when this information was retrieved.</p>
      */
     inline EnvironmentInfoDescription& WithSampleTimestamp(Aws::Utils::DateTime&& value) { SetSampleTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The retrieved information.</p>
@@ -172,12 +176,16 @@ namespace Model
     inline EnvironmentInfoDescription& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     EnvironmentInfoType m_infoType;
     bool m_infoTypeHasBeenSet;
+
     Aws::String m_ec2InstanceId;
     bool m_ec2InstanceIdHasBeenSet;
+
     Aws::Utils::DateTime m_sampleTimestamp;
     bool m_sampleTimestampHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

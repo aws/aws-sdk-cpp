@@ -48,6 +48,7 @@ namespace Model
     ChildWorkflowExecutionCompletedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The child workflow execution that was completed.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline ChildWorkflowExecutionCompletedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of the child workflow execution.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      * <p>The type of the child workflow execution.</p>
      */
     inline ChildWorkflowExecutionCompletedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+
 
     /**
      * <p>The result of the child workflow execution.</p>
@@ -133,6 +136,7 @@ namespace Model
      */
     inline ChildWorkflowExecutionCompletedEventAttributes& WithResult(const char* value) { SetResult(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
      * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
@@ -160,6 +164,7 @@ namespace Model
      */
     inline ChildWorkflowExecutionCompletedEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when
      * this child workflow execution was started. This information can be useful for
@@ -185,14 +190,19 @@ namespace Model
     inline ChildWorkflowExecutionCompletedEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
   private:
+
     WorkflowExecution m_workflowExecution;
     bool m_workflowExecutionHasBeenSet;
+
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet;
+
     Aws::String m_result;
     bool m_resultHasBeenSet;
+
     long long m_initiatedEventId;
     bool m_initiatedEventIdHasBeenSet;
+
     long long m_startedEventId;
     bool m_startedEventIdHasBeenSet;
   };

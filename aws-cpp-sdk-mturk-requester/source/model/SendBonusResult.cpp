@@ -30,12 +30,12 @@ SendBonusResult::SendBonusResult()
 {
 }
 
-SendBonusResult::SendBonusResult(const AmazonWebServiceResult<JsonValue>& result)
+SendBonusResult::SendBonusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SendBonusResult& SendBonusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SendBonusResult& SendBonusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

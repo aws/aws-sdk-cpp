@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A user-supplied ID that uniquely identifies the
      * <code>BatchPrediction</code>.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <code>BatchPrediction</code>.</p>
      */
     inline CreateBatchPredictionRequest& WithBatchPredictionId(const char* value) { SetBatchPredictionId(value); return *this;}
+
 
     /**
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.
@@ -120,6 +122,7 @@ namespace Model
      */
     inline CreateBatchPredictionRequest& WithBatchPredictionName(const char* value) { SetBatchPredictionName(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>MLModel</code> that will generate predictions for the
      * group of observations. </p>
@@ -162,6 +165,7 @@ namespace Model
      */
     inline CreateBatchPredictionRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DataSource</code> that points to the group of
      * observations to predict.</p>
@@ -203,6 +207,7 @@ namespace Model
      * observations to predict.</p>
      */
     inline CreateBatchPredictionRequest& WithBatchPredictionDataSourceId(const char* value) { SetBatchPredictionDataSourceId(value); return *this;}
+
 
     /**
      * <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or
@@ -282,14 +287,19 @@ namespace Model
     inline CreateBatchPredictionRequest& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}
 
   private:
+
     Aws::String m_batchPredictionId;
     bool m_batchPredictionIdHasBeenSet;
+
     Aws::String m_batchPredictionName;
     bool m_batchPredictionNameHasBeenSet;
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
+
     Aws::String m_batchPredictionDataSourceId;
     bool m_batchPredictionDataSourceIdHasBeenSet;
+
     Aws::String m_outputUri;
     bool m_outputUriHasBeenSet;
   };

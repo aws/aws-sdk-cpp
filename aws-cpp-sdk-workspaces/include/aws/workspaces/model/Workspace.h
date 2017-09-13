@@ -47,6 +47,7 @@ namespace Model
     Workspace& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The identifier of the WorkSpace.</p>
      */
     inline Workspace& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+
 
     /**
      * <p>The identifier of the AWS Directory Service directory that the WorkSpace
@@ -124,6 +126,7 @@ namespace Model
      */
     inline Workspace& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
+
     /**
      * <p>The user that the WorkSpace is assigned to.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      * <p>The user that the WorkSpace is assigned to.</p>
      */
     inline Workspace& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The IP address of the WorkSpace.</p>
@@ -194,6 +198,7 @@ namespace Model
      */
     inline Workspace& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
+
     /**
      * <p>The operational state of the WorkSpace.</p>
      */
@@ -218,6 +223,7 @@ namespace Model
      * <p>The operational state of the WorkSpace.</p>
      */
     inline Workspace& WithState(WorkspaceState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the bundle that the WorkSpace was created from.</p>
@@ -254,6 +260,7 @@ namespace Model
      */
     inline Workspace& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
+
     /**
      * <p>The identifier of the subnet that the WorkSpace is in.</p>
      */
@@ -288,6 +295,7 @@ namespace Model
      * <p>The identifier of the subnet that the WorkSpace is in.</p>
      */
     inline Workspace& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>If the WorkSpace could not be created, this contains a textual error message
@@ -331,6 +339,7 @@ namespace Model
      */
     inline Workspace& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
+
     /**
      * <p>If the WorkSpace could not be created, this contains the error code.</p>
      */
@@ -365,6 +374,7 @@ namespace Model
      * <p>If the WorkSpace could not be created, this contains the error code.</p>
      */
     inline Workspace& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The name of the WorkSpace as seen by the operating system.</p>
@@ -401,6 +411,7 @@ namespace Model
      */
     inline Workspace& WithComputerName(const char* value) { SetComputerName(value); return *this;}
 
+
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
      */
@@ -436,6 +447,7 @@ namespace Model
      */
     inline Workspace& WithVolumeEncryptionKey(const char* value) { SetVolumeEncryptionKey(value); return *this;}
 
+
     /**
      * <p>Specifies whether the data stored on the user volume, or D: drive, is
      * encrypted.</p>
@@ -453,6 +465,7 @@ namespace Model
      * encrypted.</p>
      */
     inline Workspace& WithUserVolumeEncryptionEnabled(bool value) { SetUserVolumeEncryptionEnabled(value); return *this;}
+
 
     /**
      * <p>Specifies whether the data stored on the root volume, or C: drive, is
@@ -472,6 +485,7 @@ namespace Model
      */
     inline Workspace& WithRootVolumeEncryptionEnabled(bool value) { SetRootVolumeEncryptionEnabled(value); return *this;}
 
+
     
     inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
 
@@ -488,32 +502,46 @@ namespace Model
     inline Workspace& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet;
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     WorkspaceState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_computerName;
     bool m_computerNameHasBeenSet;
+
     Aws::String m_volumeEncryptionKey;
     bool m_volumeEncryptionKeyHasBeenSet;
+
     bool m_userVolumeEncryptionEnabled;
     bool m_userVolumeEncryptionEnabledHasBeenSet;
+
     bool m_rootVolumeEncryptionEnabled;
     bool m_rootVolumeEncryptionEnabledHasBeenSet;
+
     WorkspaceProperties m_workspaceProperties;
     bool m_workspacePropertiesHasBeenSet;
   };

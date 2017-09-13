@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline TextOptions& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
+
     
     inline const Aws::String& GetSourceField() const{ return m_sourceField; }
 
@@ -106,6 +108,7 @@ namespace Model
     
     inline TextOptions& WithSourceField(const char* value) { SetSourceField(value); return *this;}
 
+
     /**
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
@@ -120,6 +123,7 @@ namespace Model
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
     inline TextOptions& WithReturnEnabled(bool value) { SetReturnEnabled(value); return *this;}
+
 
     /**
      * <p>Whether the field can be used to sort the search results.</p>
@@ -136,6 +140,7 @@ namespace Model
      */
     inline TextOptions& WithSortEnabled(bool value) { SetSortEnabled(value); return *this;}
 
+
     /**
      * <p>Whether highlights can be returned for the field.</p>
      */
@@ -150,6 +155,7 @@ namespace Model
      * <p>Whether highlights can be returned for the field.</p>
      */
     inline TextOptions& WithHighlightEnabled(bool value) { SetHighlightEnabled(value); return *this;}
+
 
     /**
      * <p>The name of an analysis scheme for a <code>text</code> field.</p>
@@ -187,16 +193,22 @@ namespace Model
     inline TextOptions& WithAnalysisScheme(const char* value) { SetAnalysisScheme(value); return *this;}
 
   private:
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     Aws::String m_sourceField;
     bool m_sourceFieldHasBeenSet;
+
     bool m_returnEnabled;
     bool m_returnEnabledHasBeenSet;
+
     bool m_sortEnabled;
     bool m_sortEnabledHasBeenSet;
+
     bool m_highlightEnabled;
     bool m_highlightEnabledHasBeenSet;
+
     Aws::String m_analysisScheme;
     bool m_analysisSchemeHasBeenSet;
   };

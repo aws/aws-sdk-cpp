@@ -30,12 +30,12 @@ ListAcceptedPortfolioSharesResult::ListAcceptedPortfolioSharesResult()
 {
 }
 
-ListAcceptedPortfolioSharesResult::ListAcceptedPortfolioSharesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListAcceptedPortfolioSharesResult::ListAcceptedPortfolioSharesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListAcceptedPortfolioSharesResult& ListAcceptedPortfolioSharesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListAcceptedPortfolioSharesResult& ListAcceptedPortfolioSharesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PortfolioDetails"))

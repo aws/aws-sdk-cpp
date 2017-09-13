@@ -30,12 +30,12 @@ UpdateRuntimeConfigurationResult::UpdateRuntimeConfigurationResult()
 {
 }
 
-UpdateRuntimeConfigurationResult::UpdateRuntimeConfigurationResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRuntimeConfigurationResult::UpdateRuntimeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateRuntimeConfigurationResult& UpdateRuntimeConfigurationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRuntimeConfigurationResult& UpdateRuntimeConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RuntimeConfiguration"))

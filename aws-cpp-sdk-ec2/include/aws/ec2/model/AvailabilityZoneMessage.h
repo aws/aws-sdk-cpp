@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The message about the Availability Zone.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
     inline AvailabilityZoneMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

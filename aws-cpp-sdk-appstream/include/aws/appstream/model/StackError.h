@@ -46,6 +46,7 @@ namespace Model
     StackError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The error code of a stack error.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The error code of a stack error.</p>
      */
     inline StackError& WithErrorCode(StackErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The error message of a stack error.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline StackError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     StackErrorCode m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

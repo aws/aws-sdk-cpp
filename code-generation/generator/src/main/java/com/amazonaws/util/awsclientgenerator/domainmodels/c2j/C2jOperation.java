@@ -24,6 +24,7 @@ import java.util.List;
 public class C2jOperation {
     private String name;
     private String authtype;
+    private String authorizer;
     private C2jHttp http;
     private C2jShapeMember input;
     private C2jShapeMember output;

@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The value of <code>Key</code> depends on the operation that you want to
      * perform:</p> <ul> <li> <p> <b>Add a tag to a health check or hosted zone</b>:
@@ -145,6 +146,7 @@ namespace Model
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The value of <code>Value</code> depends on the operation that you want to
      * perform:</p> <ul> <li> <p> <b>Add a tag to a health check or hosted zone</b>:
@@ -209,8 +211,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

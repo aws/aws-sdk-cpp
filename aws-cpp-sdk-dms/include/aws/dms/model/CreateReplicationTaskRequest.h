@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
@@ -99,6 +100,7 @@ namespace Model
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskIdentifier(const char* value) { SetReplicationTaskIdentifier(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
@@ -140,6 +142,7 @@ namespace Model
      * endpoint.</p>
      */
     inline CreateReplicationTaskRequest& WithSourceEndpointArn(const char* value) { SetSourceEndpointArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
@@ -183,6 +186,7 @@ namespace Model
      */
     inline CreateReplicationTaskRequest& WithTargetEndpointArn(const char* value) { SetTargetEndpointArn(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
@@ -218,6 +222,7 @@ namespace Model
      */
     inline CreateReplicationTaskRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 
+
     /**
      * <p>The migration type.</p>
      */
@@ -242,6 +247,7 @@ namespace Model
      * <p>The migration type.</p>
      */
     inline CreateReplicationTaskRequest& WithMigrationType(MigrationTypeValue&& value) { SetMigrationType(std::move(value)); return *this;}
+
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
@@ -299,6 +305,7 @@ namespace Model
      */
     inline CreateReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 
+
     /**
      * <p>Settings for the task, such as target metadata settings. For a complete list
      * of task settings, see <a
@@ -355,6 +362,7 @@ namespace Model
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const char* value) { SetReplicationTaskSettings(value); return *this;}
 
+
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
@@ -379,6 +387,7 @@ namespace Model
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
     inline CreateReplicationTaskRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Tags to be added to the replication instance.</p>
@@ -416,22 +425,31 @@ namespace Model
     inline CreateReplicationTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_replicationTaskIdentifier;
     bool m_replicationTaskIdentifierHasBeenSet;
+
     Aws::String m_sourceEndpointArn;
     bool m_sourceEndpointArnHasBeenSet;
+
     Aws::String m_targetEndpointArn;
     bool m_targetEndpointArnHasBeenSet;
+
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet;
+
     MigrationTypeValue m_migrationType;
     bool m_migrationTypeHasBeenSet;
+
     Aws::String m_tableMappings;
     bool m_tableMappingsHasBeenSet;
+
     Aws::String m_replicationTaskSettings;
     bool m_replicationTaskSettingsHasBeenSet;
+
     Aws::Utils::DateTime m_cdcStartTime;
     bool m_cdcStartTimeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

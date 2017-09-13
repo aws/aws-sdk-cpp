@@ -44,6 +44,7 @@ namespace Model
     WorkflowExecutionOpenCounts& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
      */
     inline WorkflowExecutionOpenCounts& WithOpenActivityTasks(int value) { SetOpenActivityTasks(value); return *this;}
+
 
     /**
      * <p>The count of decision tasks whose status is OPEN. A workflow execution can
@@ -77,6 +79,7 @@ namespace Model
      */
     inline WorkflowExecutionOpenCounts& WithOpenDecisionTasks(int value) { SetOpenDecisionTasks(value); return *this;}
 
+
     /**
      * <p>The count of timers started by this workflow execution that have not fired
      * yet.</p>
@@ -95,6 +98,7 @@ namespace Model
      */
     inline WorkflowExecutionOpenCounts& WithOpenTimers(int value) { SetOpenTimers(value); return *this;}
 
+
     /**
      * <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
      */
@@ -109,6 +113,7 @@ namespace Model
      * <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
      */
     inline WorkflowExecutionOpenCounts& WithOpenChildWorkflowExecutions(int value) { SetOpenChildWorkflowExecutions(value); return *this;}
+
 
     /**
      * <p>The count of Lambda tasks whose status is <code>OPEN</code>.</p>
@@ -126,14 +131,19 @@ namespace Model
     inline WorkflowExecutionOpenCounts& WithOpenLambdaFunctions(int value) { SetOpenLambdaFunctions(value); return *this;}
 
   private:
+
     int m_openActivityTasks;
     bool m_openActivityTasksHasBeenSet;
+
     int m_openDecisionTasks;
     bool m_openDecisionTasksHasBeenSet;
+
     int m_openTimers;
     bool m_openTimersHasBeenSet;
+
     int m_openChildWorkflowExecutions;
     bool m_openChildWorkflowExecutionsHasBeenSet;
+
     int m_openLambdaFunctions;
     bool m_openLambdaFunctionsHasBeenSet;
   };

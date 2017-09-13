@@ -30,12 +30,12 @@ RequestUploadCredentialsResult::RequestUploadCredentialsResult()
 {
 }
 
-RequestUploadCredentialsResult::RequestUploadCredentialsResult(const AmazonWebServiceResult<JsonValue>& result)
+RequestUploadCredentialsResult::RequestUploadCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RequestUploadCredentialsResult& RequestUploadCredentialsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RequestUploadCredentialsResult& RequestUploadCredentialsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UploadCredentials"))

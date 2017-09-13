@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     AdminRespondToAuthChallengeResult();
-    AdminRespondToAuthChallengeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminRespondToAuthChallengeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminRespondToAuthChallengeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminRespondToAuthChallengeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the challenge. For more information, see <a
@@ -79,6 +80,7 @@ namespace Model
      * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
      */
     inline AdminRespondToAuthChallengeResult& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(std::move(value)); return *this;}
+
 
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
@@ -149,6 +151,7 @@ namespace Model
      * to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline AdminRespondToAuthChallengeResult& WithSession(const char* value) { SetSession(value); return *this;}
+
 
     /**
      * <p>The challenge parameters. For more information, see <a
@@ -222,6 +225,7 @@ namespace Model
      */
     inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const char* key, const char* value) { m_challengeParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The result returned by the server in response to the authentication
      * request.</p>
@@ -253,9 +257,13 @@ namespace Model
     inline AdminRespondToAuthChallengeResult& WithAuthenticationResult(AuthenticationResultType&& value) { SetAuthenticationResult(std::move(value)); return *this;}
 
   private:
+
     ChallengeNameType m_challengeName;
+
     Aws::String m_session;
+
     Aws::Map<Aws::String, Aws::String> m_challengeParameters;
+
     AuthenticationResultType m_authenticationResult;
   };
 

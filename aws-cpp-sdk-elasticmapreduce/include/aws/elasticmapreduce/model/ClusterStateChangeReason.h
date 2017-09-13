@@ -47,6 +47,7 @@ namespace Model
     ClusterStateChangeReason& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The programmatic code for the state change reason.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The programmatic code for the state change reason.</p>
      */
     inline ClusterStateChangeReason& WithCode(ClusterStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The descriptive message for the state change reason.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline ClusterStateChangeReason& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     ClusterStateChangeReasonCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The layer ID.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline SetLoadBasedAutoScalingRequest& WithLayerId(const char* value) { SetLayerId(value); return *this;}
 
+
     /**
      * <p>Enables load-based auto scaling for the layer.</p>
      */
@@ -86,6 +88,7 @@ namespace Model
      * <p>Enables load-based auto scaling for the layer.</p>
      */
     inline SetLoadBasedAutoScalingRequest& WithEnable(bool value) { SetEnable(value); return *this;}
+
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold
@@ -121,6 +124,7 @@ namespace Model
      * time, AWS OpsWorks Stacks starts a specified number of instances.</p>
      */
     inline SetLoadBasedAutoScalingRequest& WithUpScaling(AutoScalingThresholds&& value) { SetUpScaling(std::move(value)); return *this;}
+
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold
@@ -158,12 +162,16 @@ namespace Model
     inline SetLoadBasedAutoScalingRequest& WithDownScaling(AutoScalingThresholds&& value) { SetDownScaling(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_layerId;
     bool m_layerIdHasBeenSet;
+
     bool m_enable;
     bool m_enableHasBeenSet;
+
     AutoScalingThresholds m_upScaling;
     bool m_upScalingHasBeenSet;
+
     AutoScalingThresholds m_downScaling;
     bool m_downScalingHasBeenSet;
   };

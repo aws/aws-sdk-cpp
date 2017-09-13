@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeDirectoriesResult();
-    DescribeDirectoriesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDirectoriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDirectoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDirectoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
@@ -112,6 +113,7 @@ namespace Model
      */
     inline DescribeDirectoriesResult& AddDirectoryDescriptions(DirectoryDescription&& value) { m_directoryDescriptions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If not null, more results are available. Pass this value for the
      * <i>NextToken</i> parameter in a subsequent call to <a>DescribeDirectories</a> to
@@ -162,7 +164,9 @@ namespace Model
     inline DescribeDirectoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DirectoryDescription> m_directoryDescriptions;
+
     Aws::String m_nextToken;
   };
 

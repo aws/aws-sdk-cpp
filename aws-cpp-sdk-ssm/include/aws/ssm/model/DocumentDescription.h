@@ -52,6 +52,7 @@ namespace Model
     DocumentDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The SHA1 hash of the document, which you can use for verification
      * purposes.</p>
@@ -93,6 +94,7 @@ namespace Model
      * purposes.</p>
      */
     inline DocumentDescription& WithSha1(const char* value) { SetSha1(value); return *this;}
+
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
@@ -136,6 +138,7 @@ namespace Model
      */
     inline DocumentDescription& WithHash(const char* value) { SetHash(value); return *this;}
 
+
     /**
      * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
@@ -160,6 +163,7 @@ namespace Model
      * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
     inline DocumentDescription& WithHashType(DocumentHashType&& value) { SetHashType(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the SSM document.</p>
@@ -196,6 +200,7 @@ namespace Model
      */
     inline DocumentDescription& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The AWS user account of the person who created the document.</p>
      */
@@ -231,6 +236,7 @@ namespace Model
      */
     inline DocumentDescription& WithOwner(const char* value) { SetOwner(value); return *this;}
 
+
     /**
      * <p>The date when the document was created.</p>
      */
@@ -256,6 +262,7 @@ namespace Model
      */
     inline DocumentDescription& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of the SSM document.</p>
      */
@@ -280,6 +287,7 @@ namespace Model
      * <p>The status of the SSM document.</p>
      */
     inline DocumentDescription& WithStatus(DocumentStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The document version.</p>
@@ -316,6 +324,7 @@ namespace Model
      */
     inline DocumentDescription& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
+
     /**
      * <p>A description of the document. </p>
      */
@@ -350,6 +359,7 @@ namespace Model
      * <p>A description of the document. </p>
      */
     inline DocumentDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A description of the parameters for a document.</p>
@@ -386,6 +396,7 @@ namespace Model
      */
     inline DocumentDescription& AddParameters(DocumentParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The list of OS platforms compatible with this SSM document. </p>
      */
@@ -421,6 +432,7 @@ namespace Model
      */
     inline DocumentDescription& AddPlatformTypes(PlatformType&& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The type of document. </p>
      */
@@ -445,6 +457,7 @@ namespace Model
      * <p>The type of document. </p>
      */
     inline DocumentDescription& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
+
 
     /**
      * <p>The schema version.</p>
@@ -481,6 +494,7 @@ namespace Model
      */
     inline DocumentDescription& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
 
+
     /**
      * <p>The latest version of the document.</p>
      */
@@ -515,6 +529,7 @@ namespace Model
      * <p>The latest version of the document.</p>
      */
     inline DocumentDescription& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
+
 
     /**
      * <p>The default version.</p>
@@ -552,34 +567,49 @@ namespace Model
     inline DocumentDescription& WithDefaultVersion(const char* value) { SetDefaultVersion(value); return *this;}
 
   private:
+
     Aws::String m_sha1;
     bool m_sha1HasBeenSet;
+
     Aws::String m_hash;
     bool m_hashHasBeenSet;
+
     DocumentHashType m_hashType;
     bool m_hashTypeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     DocumentStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<DocumentParameter> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Vector<PlatformType> m_platformTypes;
     bool m_platformTypesHasBeenSet;
+
     DocumentType m_documentType;
     bool m_documentTypeHasBeenSet;
+
     Aws::String m_schemaVersion;
     bool m_schemaVersionHasBeenSet;
+
     Aws::String m_latestVersion;
     bool m_latestVersionHasBeenSet;
+
     Aws::String m_defaultVersion;
     bool m_defaultVersionHasBeenSet;
   };

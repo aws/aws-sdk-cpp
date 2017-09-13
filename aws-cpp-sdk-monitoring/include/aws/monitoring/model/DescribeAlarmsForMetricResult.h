@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeAlarmsForMetricResult();
-    DescribeAlarmsForMetricResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAlarmsForMetricResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAlarmsForMetricResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAlarmsForMetricResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The information for each alarm with the specified metric.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeAlarmsForMetricResult& AddMetricAlarms(MetricAlarm&& value) { m_metricAlarms.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline DescribeAlarmsForMetricResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<MetricAlarm> m_metricAlarms;
+
     ResponseMetadata m_responseMetadata;
   };
 

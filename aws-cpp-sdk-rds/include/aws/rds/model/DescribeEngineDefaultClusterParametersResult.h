@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeEngineDefaultClusterParametersResult();
-    DescribeEngineDefaultClusterParametersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEngineDefaultClusterParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEngineDefaultClusterParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEngineDefaultClusterParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const EngineDefaults& GetEngineDefaults() const{ return m_engineDefaults; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline DescribeEngineDefaultClusterParametersResult& WithEngineDefaults(EngineDefaults&& value) { SetEngineDefaults(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline DescribeEngineDefaultClusterParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     EngineDefaults m_engineDefaults;
+
     ResponseMetadata m_responseMetadata;
   };
 

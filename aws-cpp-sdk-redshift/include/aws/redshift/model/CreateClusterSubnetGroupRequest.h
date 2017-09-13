@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name for the subnet group. Amazon Redshift stores the value as a
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
@@ -113,6 +114,7 @@ namespace Model
      */
     inline CreateClusterSubnetGroupRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>A description for the subnet group.</p>
      */
@@ -147,6 +149,7 @@ namespace Model
      * <p>A description for the subnet group.</p>
      */
     inline CreateClusterSubnetGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
@@ -196,6 +199,7 @@ namespace Model
      */
     inline CreateClusterSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     /**
      * <p>A list of tag instances.</p>
      */
@@ -232,12 +236,16 @@ namespace Model
     inline CreateClusterSubnetGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clusterSubnetGroupName;
     bool m_clusterSubnetGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

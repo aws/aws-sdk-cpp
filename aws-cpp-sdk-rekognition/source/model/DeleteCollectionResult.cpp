@@ -31,13 +31,13 @@ DeleteCollectionResult::DeleteCollectionResult() :
 {
 }
 
-DeleteCollectionResult::DeleteCollectionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DeleteCollectionResult::DeleteCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_statusCode(0)
 {
   *this = result;
 }
 
-DeleteCollectionResult& DeleteCollectionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCollectionResult& DeleteCollectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StatusCode"))

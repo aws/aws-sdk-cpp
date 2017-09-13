@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
      * (ASN).</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline CustomerGateway& WithBgpAsn(const char* value) { SetBgpAsn(value); return *this;}
 
+
     /**
      * <p>The ID of the customer gateway.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>The ID of the customer gateway.</p>
      */
     inline CustomerGateway& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
+
 
     /**
      * <p>The Internet-routable IP address of the customer gateway's outside
@@ -169,6 +172,7 @@ namespace Model
      */
     inline CustomerGateway& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
+
     /**
      * <p>The current state of the customer gateway (<code>pending | available |
      * deleting | deleted</code>).</p>
@@ -210,6 +214,7 @@ namespace Model
      * deleting | deleted</code>).</p>
      */
     inline CustomerGateway& WithState(const char* value) { SetState(value); return *this;}
+
 
     /**
      * <p>The type of VPN connection the customer gateway supports
@@ -253,6 +258,7 @@ namespace Model
      */
     inline CustomerGateway& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>Any tags assigned to the customer gateway.</p>
      */
@@ -289,16 +295,22 @@ namespace Model
     inline CustomerGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_bgpAsn;
     bool m_bgpAsnHasBeenSet;
+
     Aws::String m_customerGatewayId;
     bool m_customerGatewayIdHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     Aws::String m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -57,6 +58,7 @@ namespace Model
     
     inline CreateCachediSCSIVolumeRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     
     inline long long GetVolumeSizeInBytes() const{ return m_volumeSizeInBytes; }
 
@@ -65,6 +67,7 @@ namespace Model
 
     
     inline CreateCachediSCSIVolumeRequest& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}
+
 
     
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
@@ -87,6 +90,7 @@ namespace Model
     
     inline CreateCachediSCSIVolumeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
 
@@ -107,6 +111,7 @@ namespace Model
 
     
     inline CreateCachediSCSIVolumeRequest& WithTargetName(const char* value) { SetTargetName(value); return *this;}
+
 
     /**
      * <p>The ARN for an existing volume. Specifying this ARN makes the new volume into
@@ -164,6 +169,7 @@ namespace Model
      */
     inline CreateCachediSCSIVolumeRequest& WithSourceVolumeARN(const char* value) { SetSourceVolumeARN(value); return *this;}
 
+
     
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
@@ -184,6 +190,7 @@ namespace Model
 
     
     inline CreateCachediSCSIVolumeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
 
     
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -207,18 +214,25 @@ namespace Model
     inline CreateCachediSCSIVolumeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     long long m_volumeSizeInBytes;
     bool m_volumeSizeInBytesHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     Aws::String m_targetName;
     bool m_targetNameHasBeenSet;
+
     Aws::String m_sourceVolumeARN;
     bool m_sourceVolumeARNHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
   };

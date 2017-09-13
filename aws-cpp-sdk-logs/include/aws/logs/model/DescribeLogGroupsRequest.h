@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The prefix to match.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The prefix to match.</p>
      */
     inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(const char* value) { SetLogGroupNamePrefix(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -113,6 +115,7 @@ namespace Model
      */
     inline DescribeLogGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the
      * default is up to 50 items.</p>
@@ -132,10 +135,13 @@ namespace Model
     inline DescribeLogGroupsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_logGroupNamePrefix;
     bool m_logGroupNamePrefixHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

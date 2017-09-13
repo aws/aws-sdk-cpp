@@ -31,12 +31,12 @@ CreateConfigurationSetResult::CreateConfigurationSetResult()
 {
 }
 
-CreateConfigurationSetResult::CreateConfigurationSetResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateConfigurationSetResult::CreateConfigurationSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateConfigurationSetResult& CreateConfigurationSetResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateConfigurationSetResult& CreateConfigurationSetResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

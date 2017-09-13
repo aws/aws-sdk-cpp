@@ -45,6 +45,7 @@ namespace Model
     DefaultMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The message body of the notification, the email body or the text message.
      */
@@ -79,6 +80,7 @@ namespace Model
      * The message body of the notification, the email body or the text message.
      */
     inline DefaultMessage& WithBody(const char* value) { SetBody(value); return *this;}
+
 
     /**
      * Default message substitutions. Can be overridden by individual address
@@ -147,8 +149,10 @@ namespace Model
     inline DefaultMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
     bool m_substitutionsHasBeenSet;
   };

@@ -30,12 +30,12 @@ GetDevEndpointsResult::GetDevEndpointsResult()
 {
 }
 
-GetDevEndpointsResult::GetDevEndpointsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDevEndpointsResult::GetDevEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDevEndpointsResult& GetDevEndpointsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDevEndpointsResult& GetDevEndpointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DevEndpoints"))

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeThingTypeResult();
-    DescribeThingTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeThingTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeThingTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeThingTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the thing type.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeThingTypeResult& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
 
+
     /**
      * <p>The ThingTypeProperties contains information about the thing type including
      * description, and a list of searchable thing attribute names.</p>
@@ -112,6 +114,7 @@ namespace Model
      * description, and a list of searchable thing attribute names.</p>
      */
     inline DescribeThingTypeResult& WithThingTypeProperties(ThingTypeProperties&& value) { SetThingTypeProperties(std::move(value)); return *this;}
+
 
     /**
      * <p>The ThingTypeMetadata contains additional information about the thing type
@@ -149,8 +152,11 @@ namespace Model
     inline DescribeThingTypeResult& WithThingTypeMetadata(ThingTypeMetadata&& value) { SetThingTypeMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_thingTypeName;
+
     ThingTypeProperties m_thingTypeProperties;
+
     ThingTypeMetadata m_thingTypeMetadata;
   };
 

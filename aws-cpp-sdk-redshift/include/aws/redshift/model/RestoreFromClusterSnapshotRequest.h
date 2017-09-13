@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the cluster that will be created from restoring the
      * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
@@ -112,6 +113,7 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
      * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
@@ -153,6 +155,7 @@ namespace Model
      * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
@@ -203,6 +206,7 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotClusterIdentifier(const char* value) { SetSnapshotClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The port number on which the cluster accepts connections.</p> <p>Default: The
      * same port as the original cluster.</p> <p>Constraints: Must be between
@@ -223,6 +227,7 @@ namespace Model
      * <code>1115</code> and <code>65535</code>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
@@ -273,6 +278,7 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, major version upgrades can be applied during the
      * maintenance window to the Amazon Redshift engine that is running on the cluster.
@@ -293,6 +299,7 @@ namespace Model
      * </p> <p>Default: <code>true</code> </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithAllowVersionUpgrade(bool value) { SetAllowVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>The name of the subnet group where you want to cluster restored.</p> <p>A
@@ -343,6 +350,7 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
      */
@@ -357,6 +365,7 @@ namespace Model
      * <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
 
     /**
      * <p>The AWS customer account used to create or copy the snapshot. Required if you
@@ -400,6 +409,7 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
+
     /**
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
      * uses to retrieve the data encryption keys stored in an HSM.</p>
@@ -441,6 +451,7 @@ namespace Model
      * uses to retrieve the data encryption keys stored in an HSM.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
+
 
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
@@ -484,6 +495,7 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
 
+
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
      */
@@ -518,6 +530,7 @@ namespace Model
      * <p>The elastic IP (EIP) address for the cluster.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
+
 
     /**
      * <p>The name of the parameter group to be associated with this cluster.</p>
@@ -603,6 +616,7 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithClusterParameterGroupName(const char* value) { SetClusterParameterGroupName(value); return *this;}
 
+
     /**
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
      * The default cluster security group for Amazon Redshift.</p> <p>Cluster security
@@ -659,6 +673,7 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& AddClusterSecurityGroups(const char* value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(value); return *this; }
 
+
     /**
      * <p>A list of Virtual Private Cloud (VPC) security groups to be associated with
      * the cluster.</p> <p>Default: The default VPC security group is associated with
@@ -714,6 +729,7 @@ namespace Model
      * the cluster.</p> <p>VPC security groups only apply to clusters in VPCs.</p>
      */
     inline RestoreFromClusterSnapshotRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p>The weekly time range (in UTC) during which automated cluster maintenance can
@@ -799,6 +815,7 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
@@ -828,6 +845,7 @@ namespace Model
      * from 0 to 35.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+
 
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
@@ -877,6 +895,7 @@ namespace Model
      * snapshot.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
 
     /**
      * <p>The node type that the restored cluster will be provisioned with.</p>
@@ -983,6 +1002,7 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
+
     /**
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
@@ -1015,6 +1035,7 @@ namespace Model
      * false</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
+
 
     /**
      * <p>Reserved.</p>
@@ -1050,6 +1071,7 @@ namespace Model
      * <p>Reserved.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
@@ -1124,48 +1146,70 @@ namespace Model
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
     Aws::String m_snapshotClusterIdentifier;
     bool m_snapshotClusterIdentifierHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     bool m_allowVersionUpgrade;
     bool m_allowVersionUpgradeHasBeenSet;
+
     Aws::String m_clusterSubnetGroupName;
     bool m_clusterSubnetGroupNameHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet;
+
     Aws::String m_hsmClientCertificateIdentifier;
     bool m_hsmClientCertificateIdentifierHasBeenSet;
+
     Aws::String m_hsmConfigurationIdentifier;
     bool m_hsmConfigurationIdentifierHasBeenSet;
+
     Aws::String m_elasticIp;
     bool m_elasticIpHasBeenSet;
+
     Aws::String m_clusterParameterGroupName;
     bool m_clusterParameterGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_clusterSecurityGroups;
     bool m_clusterSecurityGroupsHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet;
+
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
+
     Aws::Vector<Aws::String> m_iamRoles;
     bool m_iamRolesHasBeenSet;
   };

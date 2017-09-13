@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListPipelinesResult();
-    ListPipelinesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPipelinesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPipelinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPipelinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Pipeline</code> objects.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>An array of <code>Pipeline</code> objects.</p>
      */
     inline ListPipelinesResult& AddPipelines(Pipeline&& value) { m_pipelines.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A value that you use to access the second and subsequent pages of results, if
@@ -134,7 +136,9 @@ namespace Model
     inline ListPipelinesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Pipeline> m_pipelines;
+
     Aws::String m_nextPageToken;
   };
 

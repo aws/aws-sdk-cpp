@@ -31,12 +31,12 @@ UnmonitorInstancesResponse::UnmonitorInstancesResponse()
 {
 }
 
-UnmonitorInstancesResponse::UnmonitorInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+UnmonitorInstancesResponse::UnmonitorInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UnmonitorInstancesResponse& UnmonitorInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UnmonitorInstancesResponse& UnmonitorInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

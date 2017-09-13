@@ -31,12 +31,12 @@ CopyOptionGroupResult::CopyOptionGroupResult()
 {
 }
 
-CopyOptionGroupResult::CopyOptionGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+CopyOptionGroupResult::CopyOptionGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CopyOptionGroupResult& CopyOptionGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CopyOptionGroupResult& CopyOptionGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

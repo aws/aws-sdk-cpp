@@ -55,7 +55,7 @@ enum class RDSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AUTHORIZATION_ALREADY_EXISTS_FAULT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AUTHORIZATION_ALREADY_EXISTS_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   AUTHORIZATION_NOT_FOUND_FAULT,
   AUTHORIZATION_QUOTA_EXCEEDED_FAULT,
   CERTIFICATE_NOT_FOUND_FAULT,
@@ -134,7 +134,7 @@ enum class RDSErrors
 };
 namespace RDSErrorMapper
 {
-  AWS_RDS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_RDS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace RDS

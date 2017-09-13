@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>User identifier for the source user. The value should be a
      * <code>DeveloperUserIdentifier</code>.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline MergeDeveloperIdentitiesRequest& WithSourceUserIdentifier(const char* value) { SetSourceUserIdentifier(value); return *this;}
 
+
     /**
      * <p>User identifier for the destination user. The value should be a
      * <code>DeveloperUserIdentifier</code>.</p>
@@ -123,6 +125,7 @@ namespace Model
      * <code>DeveloperUserIdentifier</code>.</p>
      */
     inline MergeDeveloperIdentitiesRequest& WithDestinationUserIdentifier(const char* value) { SetDestinationUserIdentifier(value); return *this;}
+
 
     /**
      * <p>The "domain" by which Cognito will refer to your users. This is a (pseudo)
@@ -187,6 +190,7 @@ namespace Model
      */
     inline MergeDeveloperIdentitiesRequest& WithDeveloperProviderName(const char* value) { SetDeveloperProviderName(value); return *this;}
 
+
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
@@ -223,12 +227,16 @@ namespace Model
     inline MergeDeveloperIdentitiesRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
   private:
+
     Aws::String m_sourceUserIdentifier;
     bool m_sourceUserIdentifierHasBeenSet;
+
     Aws::String m_destinationUserIdentifier;
     bool m_destinationUserIdentifierHasBeenSet;
+
     Aws::String m_developerProviderName;
     bool m_developerProviderNameHasBeenSet;
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
   };

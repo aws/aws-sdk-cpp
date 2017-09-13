@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     DeleteBudgetResult();
-    DeleteBudgetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteBudgetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteBudgetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteBudgetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -58,6 +58,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the receipt rule. The name must:</p> <ul> <li> <p>Contain only
      * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
@@ -114,6 +115,7 @@ namespace Model
      */
     inline ReceiptRule& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, the receipt rule is active. The default value is
      * <code>false</code>.</p>
@@ -131,6 +133,7 @@ namespace Model
      * <code>false</code>.</p>
      */
     inline ReceiptRule& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>Specifies whether Amazon SES should require that incoming email is delivered
@@ -171,6 +174,7 @@ namespace Model
      * not received over TLS. The default is <code>Optional</code>.</p>
      */
     inline ReceiptRule& WithTlsPolicy(TlsPolicy&& value) { SetTlsPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>The recipient domains and email addresses to which the receipt rule applies.
@@ -228,6 +232,7 @@ namespace Model
      */
     inline ReceiptRule& AddRecipients(const char* value) { m_recipientsHasBeenSet = true; m_recipients.push_back(value); return *this; }
 
+
     /**
      * <p>An ordered list of actions to perform on messages that match at least one of
      * the recipient email addresses or domains specified in the receipt rule.</p>
@@ -270,6 +275,7 @@ namespace Model
      */
     inline ReceiptRule& AddActions(ReceiptAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If <code>true</code>, then messages to which this receipt rule applies are
      * scanned for spam and viruses. The default value is <code>false</code>.</p>
@@ -289,16 +295,22 @@ namespace Model
     inline ReceiptRule& WithScanEnabled(bool value) { SetScanEnabled(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     TlsPolicy m_tlsPolicy;
     bool m_tlsPolicyHasBeenSet;
+
     Aws::Vector<Aws::String> m_recipients;
     bool m_recipientsHasBeenSet;
+
     Aws::Vector<ReceiptAction> m_actions;
     bool m_actionsHasBeenSet;
+
     bool m_scanEnabled;
     bool m_scanEnabledHasBeenSet;
   };

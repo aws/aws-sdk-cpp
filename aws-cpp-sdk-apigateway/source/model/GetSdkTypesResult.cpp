@@ -30,12 +30,12 @@ GetSdkTypesResult::GetSdkTypesResult()
 {
 }
 
-GetSdkTypesResult::GetSdkTypesResult(const AmazonWebServiceResult<JsonValue>& result)
+GetSdkTypesResult::GetSdkTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetSdkTypesResult& GetSdkTypesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSdkTypesResult& GetSdkTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("position"))

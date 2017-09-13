@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
      * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
@@ -99,6 +100,7 @@ namespace Model
      */
     inline DescribeRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The names of one or more regions.</p>
      */
@@ -139,6 +141,7 @@ namespace Model
      */
     inline DescribeRegionsRequest& AddRegionNames(const char* value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -164,10 +167,13 @@ namespace Model
     inline DescribeRegionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_regionNames;
     bool m_regionNamesHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     Slot& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the slot.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the slot.</p>
      */
     inline Slot& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description of the slot.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline Slot& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Specifies whether the slot is required or optional. </p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>Specifies whether the slot is required or optional. </p>
      */
     inline Slot& WithSlotConstraint(SlotConstraint&& value) { SetSlotConstraint(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of the slot, either a custom slot type that you defined or one of
@@ -185,6 +189,7 @@ namespace Model
      */
     inline Slot& WithSlotType(const char* value) { SetSlotType(value); return *this;}
 
+
     /**
      * <p>The version of the slot type.</p>
      */
@@ -220,6 +225,7 @@ namespace Model
      */
     inline Slot& WithSlotTypeVersion(const char* value) { SetSlotTypeVersion(value); return *this;}
 
+
     /**
      * <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
      */
@@ -245,6 +251,7 @@ namespace Model
      */
     inline Slot& WithValueElicitationPrompt(Prompt&& value) { SetValueElicitationPrompt(std::move(value)); return *this;}
 
+
     /**
      * <p> Directs Lex the order in which to elicit this slot value from the user. For
      * example, if the intent has two slots with priorities 1 and 2, AWS Lex first
@@ -268,6 +275,7 @@ namespace Model
      * same priority, the order in which Lex elicits values is arbitrary.</p>
      */
     inline Slot& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p> If you know a specific pattern with which users might respond to an Amazon
@@ -333,6 +341,7 @@ namespace Model
      */
     inline Slot& AddSampleUtterances(const char* value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.push_back(value); return *this; }
 
+
     /**
      * <p> A set of possible responses for the slot type used by text-based clients. A
      * user chooses an option from the response card, instead of using text to reply.
@@ -383,22 +392,31 @@ namespace Model
     inline Slot& WithResponseCard(const char* value) { SetResponseCard(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     SlotConstraint m_slotConstraint;
     bool m_slotConstraintHasBeenSet;
+
     Aws::String m_slotType;
     bool m_slotTypeHasBeenSet;
+
     Aws::String m_slotTypeVersion;
     bool m_slotTypeVersionHasBeenSet;
+
     Prompt m_valueElicitationPrompt;
     bool m_valueElicitationPromptHasBeenSet;
+
     int m_priority;
     bool m_priorityHasBeenSet;
+
     Aws::Vector<Aws::String> m_sampleUtterances;
     bool m_sampleUtterancesHasBeenSet;
+
     Aws::String m_responseCard;
     bool m_responseCardHasBeenSet;
   };

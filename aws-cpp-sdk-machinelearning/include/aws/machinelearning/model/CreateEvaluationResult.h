@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     CreateEvaluationResult();
-    CreateEvaluationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateEvaluationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateEvaluationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>.
@@ -100,6 +101,7 @@ namespace Model
     inline CreateEvaluationResult& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
 
   private:
+
     Aws::String m_evaluationId;
   };
 

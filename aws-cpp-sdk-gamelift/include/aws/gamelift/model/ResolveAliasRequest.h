@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for the alias you want to resolve.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline ResolveAliasRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 
   private:
+
     Aws::String m_aliasId;
     bool m_aliasIdHasBeenSet;
   };

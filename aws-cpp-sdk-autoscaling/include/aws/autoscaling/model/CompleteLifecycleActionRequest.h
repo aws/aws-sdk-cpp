@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the lifecycle hook.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CompleteLifecycleActionRequest& WithLifecycleHookName(const char* value) { SetLifecycleHookName(value); return *this;}
 
+
     /**
      * <p>The name of the group for the lifecycle hook.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The name of the group for the lifecycle hook.</p>
      */
     inline CompleteLifecycleActionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
@@ -161,6 +164,7 @@ namespace Model
      */
     inline CompleteLifecycleActionRequest& WithLifecycleActionToken(const char* value) { SetLifecycleActionToken(value); return *this;}
 
+
     /**
      * <p>The action for the group to take. This parameter can be either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
@@ -203,6 +207,7 @@ namespace Model
      */
     inline CompleteLifecycleActionRequest& WithLifecycleActionResult(const char* value) { SetLifecycleActionResult(value); return *this;}
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -239,14 +244,19 @@ namespace Model
     inline CompleteLifecycleActionRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_lifecycleHookName;
     bool m_lifecycleHookNameHasBeenSet;
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_lifecycleActionToken;
     bool m_lifecycleActionTokenHasBeenSet;
+
     Aws::String m_lifecycleActionResult;
     bool m_lifecycleActionResultHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

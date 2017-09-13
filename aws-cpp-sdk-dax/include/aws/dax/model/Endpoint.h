@@ -47,6 +47,7 @@ namespace Model
     Endpoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The DNS hostname of the endpoint.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 
+
     /**
      * <p>The port number that applications should use to connect to the endpoint.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
 
   private:
+
     Aws::String m_address;
     bool m_addressHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
   };

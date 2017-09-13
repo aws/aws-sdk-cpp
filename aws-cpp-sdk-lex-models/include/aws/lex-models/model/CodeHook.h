@@ -46,6 +46,7 @@ namespace Model
     CodeHook& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline CodeHook& WithUri(const char* value) { SetUri(value); return *this;}
+
 
     /**
      * <p>The version of the request-response that you want Amazon Lex to use to invoke
@@ -124,8 +126,10 @@ namespace Model
     inline CodeHook& WithMessageVersion(const char* value) { SetMessageVersion(value); return *this;}
 
   private:
+
     Aws::String m_uri;
     bool m_uriHasBeenSet;
+
     Aws::String m_messageVersion;
     bool m_messageVersionHasBeenSet;
   };

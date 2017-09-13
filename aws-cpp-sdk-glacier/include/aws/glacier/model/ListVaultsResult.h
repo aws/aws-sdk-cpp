@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListVaultsResult();
-    ListVaultsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVaultsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListVaultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListVaultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of vaults.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>List of vaults.</p>
      */
     inline ListVaultsResult& AddVaultList(DescribeVaultOutput&& value) { m_vaultList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The vault ARN at which to continue pagination of the results. You use the
@@ -127,7 +129,9 @@ namespace Model
     inline ListVaultsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<DescribeVaultOutput> m_vaultList;
+
     Aws::String m_marker;
   };
 

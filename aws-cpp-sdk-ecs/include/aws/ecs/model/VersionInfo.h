@@ -46,6 +46,7 @@ namespace Model
     VersionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The version number of the Amazon ECS container agent.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The version number of the Amazon ECS container agent.</p>
      */
     inline VersionInfo& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
 
     /**
      * <p>The Git commit hash for the Amazon ECS container agent build on the <a
@@ -130,6 +132,7 @@ namespace Model
      */
     inline VersionInfo& WithAgentHash(const char* value) { SetAgentHash(value); return *this;}
 
+
     /**
      * <p>The Docker version running on the container instance.</p>
      */
@@ -166,10 +169,13 @@ namespace Model
     inline VersionInfo& WithDockerVersion(const char* value) { SetDockerVersion(value); return *this;}
 
   private:
+
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet;
+
     Aws::String m_agentHash;
     bool m_agentHashHasBeenSet;
+
     Aws::String m_dockerVersion;
     bool m_dockerVersionHasBeenSet;
   };

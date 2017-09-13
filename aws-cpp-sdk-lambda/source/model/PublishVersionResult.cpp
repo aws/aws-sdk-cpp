@@ -34,7 +34,7 @@ PublishVersionResult::PublishVersionResult() :
 {
 }
 
-PublishVersionResult::PublishVersionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PublishVersionResult::PublishVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_runtime(Runtime::NOT_SET),
     m_codeSize(0),
     m_timeout(0),
@@ -43,7 +43,7 @@ PublishVersionResult::PublishVersionResult(const AmazonWebServiceResult<JsonValu
   *this = result;
 }
 
-PublishVersionResult& PublishVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PublishVersionResult& PublishVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FunctionName"))

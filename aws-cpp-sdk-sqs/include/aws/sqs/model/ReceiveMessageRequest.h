@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
      * <p>Queue URLs are case-sensitive.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>Queue URLs are case-sensitive.</p>
      */
     inline ReceiveMessageRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
@@ -358,6 +360,7 @@ namespace Model
      */
     inline ReceiveMessageRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
      * <p>The name can contain alphanumeric characters and the underscore
@@ -502,6 +505,7 @@ namespace Model
      */
     inline ReceiveMessageRequest& AddMessageAttributeNames(const char* value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of messages to return. Amazon SQS never returns more
      * messages than this value (however, fewer messages might be returned). Valid
@@ -522,6 +526,7 @@ namespace Model
      * values are 1 to 10. Default is 1.</p>
      */
     inline ReceiveMessageRequest& WithMaxNumberOfMessages(int value) { SetMaxNumberOfMessages(value); return *this;}
+
 
     /**
      * <p>The duration (in seconds) that the received messages are hidden from
@@ -544,6 +549,7 @@ namespace Model
      */
     inline ReceiveMessageRequest& WithVisibilityTimeout(int value) { SetVisibilityTimeout(value); return *this;}
 
+
     /**
      * <p>The duration (in seconds) for which the call waits for a message to arrive in
      * the queue before returning. If a message is available, the call returns sooner
@@ -564,6 +570,7 @@ namespace Model
      * than <code>WaitTimeSeconds</code>.</p>
      */
     inline ReceiveMessageRequest& WithWaitTimeSeconds(int value) { SetWaitTimeSeconds(value); return *this;}
+
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
@@ -923,18 +930,25 @@ namespace Model
     inline ReceiveMessageRequest& WithReceiveRequestAttemptId(const char* value) { SetReceiveRequestAttemptId(value); return *this;}
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::Vector<QueueAttributeName> m_attributeNames;
     bool m_attributeNamesHasBeenSet;
+
     Aws::Vector<Aws::String> m_messageAttributeNames;
     bool m_messageAttributeNamesHasBeenSet;
+
     int m_maxNumberOfMessages;
     bool m_maxNumberOfMessagesHasBeenSet;
+
     int m_visibilityTimeout;
     bool m_visibilityTimeoutHasBeenSet;
+
     int m_waitTimeSeconds;
     bool m_waitTimeSecondsHasBeenSet;
+
     Aws::String m_receiveRequestAttemptId;
     bool m_receiveRequestAttemptIdHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The names of the AWS Config rules for which you want details. If you do not
      * specify any names, AWS Config returns details for all your rules.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DescribeConfigRulesRequest& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 
+
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
@@ -131,8 +133,10 @@ namespace Model
     inline DescribeConfigRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_configRuleNames;
     bool m_configRuleNamesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

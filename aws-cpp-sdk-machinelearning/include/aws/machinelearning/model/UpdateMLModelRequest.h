@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
      */
     inline UpdateMLModelRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline UpdateMLModelRequest& WithMLModelName(const char* value) { SetMLModelName(value); return *this;}
 
+
     /**
      * <p>The <code>ScoreThreshold</code> used in binary classification
      * <code>MLModel</code> that marks the boundary between a positive prediction and a
@@ -140,10 +143,13 @@ namespace Model
     inline UpdateMLModelRequest& WithScoreThreshold(double value) { SetScoreThreshold(value); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
+
     Aws::String m_mLModelName;
     bool m_mLModelNameHasBeenSet;
+
     double m_scoreThreshold;
     bool m_scoreThresholdHasBeenSet;
   };

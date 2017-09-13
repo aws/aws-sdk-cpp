@@ -30,12 +30,12 @@ DeleteParameterResult::DeleteParameterResult()
 {
 }
 
-DeleteParameterResult::DeleteParameterResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteParameterResult::DeleteParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteParameterResult& DeleteParameterResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteParameterResult& DeleteParameterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

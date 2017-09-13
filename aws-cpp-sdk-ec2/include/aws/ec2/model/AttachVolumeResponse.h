@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     AttachVolumeResponse();
-    AttachVolumeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AttachVolumeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AttachVolumeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AttachVolumeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The time stamp when the attachment initiated.</p>
@@ -73,6 +74,7 @@ namespace Model
      * <p>The time stamp when the attachment initiated.</p>
      */
     inline AttachVolumeResponse& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The device name.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline AttachVolumeResponse& WithDevice(const char* value) { SetDevice(value); return *this;}
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      */
     inline AttachVolumeResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The attachment state of the volume.</p>
      */
@@ -168,6 +172,7 @@ namespace Model
      * <p>The attachment state of the volume.</p>
      */
     inline AttachVolumeResponse& WithState(VolumeAttachmentState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the volume.</p>
@@ -204,6 +209,7 @@ namespace Model
      */
     inline AttachVolumeResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
      */
@@ -218,6 +224,7 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
      */
     inline AttachVolumeResponse& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -235,12 +242,19 @@ namespace Model
     inline AttachVolumeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_attachTime;
+
     Aws::String m_device;
+
     Aws::String m_instanceId;
+
     VolumeAttachmentState m_state;
+
     Aws::String m_volumeId;
+
     bool m_deleteOnTermination;
+
     ResponseMetadata m_responseMetadata;
   };
 

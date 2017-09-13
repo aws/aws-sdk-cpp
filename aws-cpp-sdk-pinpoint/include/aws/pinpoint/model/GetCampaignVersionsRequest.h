@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -61,6 +62,7 @@ namespace Model
     
     inline GetCampaignVersionsRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
 
@@ -81,6 +83,7 @@ namespace Model
 
     
     inline GetCampaignVersionsRequest& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
+
 
     /**
      * The number of entries you want on each page in the response.
@@ -116,6 +119,7 @@ namespace Model
      * The number of entries you want on each page in the response.
      */
     inline GetCampaignVersionsRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
+
 
     /**
      * The NextToken string returned on a previous page that you use to get the next
@@ -160,12 +164,16 @@ namespace Model
     inline GetCampaignVersionsRequest& WithToken(const char* value) { SetToken(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_campaignId;
     bool m_campaignIdHasBeenSet;
+
     Aws::String m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     Aws::String m_token;
     bool m_tokenHasBeenSet;
   };

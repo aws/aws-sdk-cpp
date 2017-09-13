@@ -31,12 +31,12 @@ AssociateRouteTableResponse::AssociateRouteTableResponse()
 {
 }
 
-AssociateRouteTableResponse::AssociateRouteTableResponse(const AmazonWebServiceResult<XmlDocument>& result)
+AssociateRouteTableResponse::AssociateRouteTableResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AssociateRouteTableResponse& AssociateRouteTableResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AssociateRouteTableResponse& AssociateRouteTableResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

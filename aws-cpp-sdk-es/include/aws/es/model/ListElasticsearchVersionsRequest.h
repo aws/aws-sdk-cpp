@@ -48,6 +48,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p> Set this value to limit the number of results returned. Value provided must
      * be greater than 10 else it wont be honored. </p>
@@ -65,6 +66,7 @@ namespace Model
      * be greater than 10 else it wont be honored. </p>
      */
     inline ListElasticsearchVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -88,8 +90,10 @@ namespace Model
     inline ListElasticsearchVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

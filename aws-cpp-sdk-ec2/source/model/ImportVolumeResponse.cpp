@@ -31,12 +31,12 @@ ImportVolumeResponse::ImportVolumeResponse()
 {
 }
 
-ImportVolumeResponse::ImportVolumeResponse(const AmazonWebServiceResult<XmlDocument>& result)
+ImportVolumeResponse::ImportVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ImportVolumeResponse& ImportVolumeResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ImportVolumeResponse& ImportVolumeResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

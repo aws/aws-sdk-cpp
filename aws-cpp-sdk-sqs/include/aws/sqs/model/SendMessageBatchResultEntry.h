@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>An identifier for the message in this batch.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline SendMessageBatchResultEntry& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>An identifier for the message.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>An identifier for the message.</p>
      */
     inline SendMessageBatchResultEntry& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
@@ -175,6 +178,7 @@ namespace Model
      */
     inline SendMessageBatchResultEntry& WithMD5OfMessageBody(const char* value) { SetMD5OfMessageBody(value); return *this;}
 
+
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
@@ -230,6 +234,7 @@ namespace Model
      * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline SendMessageBatchResultEntry& WithMD5OfMessageAttributes(const char* value) { SetMD5OfMessageAttributes(value); return *this;}
+
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
@@ -295,14 +300,19 @@ namespace Model
     inline SendMessageBatchResultEntry& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet;
+
     Aws::String m_mD5OfMessageBody;
     bool m_mD5OfMessageBodyHasBeenSet;
+
     Aws::String m_mD5OfMessageAttributes;
     bool m_mD5OfMessageAttributesHasBeenSet;
+
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet;
   };

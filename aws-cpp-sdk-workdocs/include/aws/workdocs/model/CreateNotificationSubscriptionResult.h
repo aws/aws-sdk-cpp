@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateNotificationSubscriptionResult();
-    CreateNotificationSubscriptionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateNotificationSubscriptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateNotificationSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateNotificationSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The subscription.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateNotificationSubscriptionResult& WithSubscription(Subscription&& value) { SetSubscription(std::move(value)); return *this;}
 
   private:
+
     Subscription m_subscription;
   };
 

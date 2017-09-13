@@ -48,6 +48,7 @@ namespace Model
     ThingTypeMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be
      * associated with this type.</p>
@@ -65,6 +66,7 @@ namespace Model
      * associated with this type.</p>
      */
     inline ThingTypeMetadata& WithDeprecated(bool value) { SetDeprecated(value); return *this;}
+
 
     /**
      * <p>The date and time when the thing type was deprecated.</p>
@@ -90,6 +92,7 @@ namespace Model
      * <p>The date and time when the thing type was deprecated.</p>
      */
     inline ThingTypeMetadata& WithDeprecationDate(Aws::Utils::DateTime&& value) { SetDeprecationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time when the thing type was created.</p>
@@ -117,10 +120,13 @@ namespace Model
     inline ThingTypeMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     bool m_deprecated;
     bool m_deprecatedHasBeenSet;
+
     Aws::Utils::DateTime m_deprecationDate;
     bool m_deprecationDateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

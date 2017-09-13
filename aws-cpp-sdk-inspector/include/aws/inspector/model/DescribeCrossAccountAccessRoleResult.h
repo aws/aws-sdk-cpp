@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeCrossAccountAccessRoleResult();
-    DescribeCrossAccountAccessRoleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCrossAccountAccessRoleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCrossAccountAccessRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCrossAccountAccessRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeCrossAccountAccessRoleResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>A Boolean value that specifies whether the IAM role has the necessary
      * policies attached to enable Amazon Inspector to access your AWS account.</p>
@@ -101,6 +103,7 @@ namespace Model
      * policies attached to enable Amazon Inspector to access your AWS account.</p>
      */
     inline DescribeCrossAccountAccessRoleResult& WithValid(bool value) { SetValid(value); return *this;}
+
 
     /**
      * <p>The date when the cross-account access role was registered.</p>
@@ -128,8 +131,11 @@ namespace Model
     inline DescribeCrossAccountAccessRoleResult& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleArn;
+
     bool m_valid;
+
     Aws::Utils::DateTime m_registeredAt;
   };
 

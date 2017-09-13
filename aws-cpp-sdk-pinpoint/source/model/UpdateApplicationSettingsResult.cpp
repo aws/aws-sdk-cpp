@@ -30,12 +30,12 @@ UpdateApplicationSettingsResult::UpdateApplicationSettingsResult()
 {
 }
 
-UpdateApplicationSettingsResult::UpdateApplicationSettingsResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateApplicationSettingsResult::UpdateApplicationSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateApplicationSettingsResult& UpdateApplicationSettingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateApplicationSettingsResult& UpdateApplicationSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ApplicationSettingsResource"))

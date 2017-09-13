@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * in which the object will be created. For more information, see <a>arns</a>.</p>
@@ -81,6 +82,7 @@ namespace Model
      * in which the object will be created. For more information, see <a>arns</a>.</p>
      */
     inline CreateObjectRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+
 
     /**
      * <p>A list of schema facets to be associated with the object that contains
@@ -131,6 +133,7 @@ namespace Model
      */
     inline CreateObjectRequest& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The attribute map whose attribute ARN contains the key and attribute value as
      * the map value.</p>
@@ -173,6 +176,7 @@ namespace Model
      */
     inline CreateObjectRequest& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
      */
@@ -197,6 +201,7 @@ namespace Model
      * <p>If specified, the parent reference to which this object will be attached.</p>
      */
     inline CreateObjectRequest& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of link that is used to attach this object to a parent.</p>
@@ -234,14 +239,19 @@ namespace Model
     inline CreateObjectRequest& WithLinkName(const char* value) { SetLinkName(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     Aws::Vector<SchemaFacet> m_schemaFacets;
     bool m_schemaFacetsHasBeenSet;
+
     Aws::Vector<AttributeKeyAndValue> m_objectAttributeList;
     bool m_objectAttributeListHasBeenSet;
+
     ObjectReference m_parentReference;
     bool m_parentReferenceHasBeenSet;
+
     Aws::String m_linkName;
     bool m_linkNameHasBeenSet;
   };

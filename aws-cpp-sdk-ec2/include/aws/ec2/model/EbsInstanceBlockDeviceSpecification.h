@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
     inline EbsInstanceBlockDeviceSpecification& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+
 
     /**
      * <p>The ID of the EBS volume.</p>
@@ -100,8 +102,10 @@ namespace Model
     inline EbsInstanceBlockDeviceSpecification& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
   private:
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     Blueprint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID for the virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline Blueprint& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
 
+
     /**
      * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
      */
     inline Blueprint& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
@@ -159,6 +162,7 @@ namespace Model
      */
     inline Blueprint& WithGroup(const char* value) { SetGroup(value); return *this;}
 
+
     /**
      * <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
      */
@@ -183,6 +187,7 @@ namespace Model
      * <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
      */
     inline Blueprint& WithType(BlueprintType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The description of the blueprint.</p>
@@ -219,6 +224,7 @@ namespace Model
      */
     inline Blueprint& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A Boolean value indicating whether the blueprint is active. When you update
      * your blueprints, you will inactivate old blueprints and keep the most recent
@@ -240,6 +246,7 @@ namespace Model
      */
     inline Blueprint& WithIsActive(bool value) { SetIsActive(value); return *this;}
 
+
     /**
      * <p>The minimum machine size required to run this blueprint. <code>0</code>
      * indicates that the blueprint runs on all instances.</p>
@@ -257,6 +264,7 @@ namespace Model
      * indicates that the blueprint runs on all instances.</p>
      */
     inline Blueprint& WithMinPower(int value) { SetMinPower(value); return *this;}
+
 
     /**
      * <p>The version number of the operating system, application, or stack (e.g.,
@@ -300,6 +308,7 @@ namespace Model
      */
     inline Blueprint& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>The version code.</p>
      */
@@ -335,6 +344,7 @@ namespace Model
      */
     inline Blueprint& WithVersionCode(const char* value) { SetVersionCode(value); return *this;}
 
+
     /**
      * <p>The product URL to learn more about the image or blueprint.</p>
      */
@@ -369,6 +379,7 @@ namespace Model
      * <p>The product URL to learn more about the image or blueprint.</p>
      */
     inline Blueprint& WithProductUrl(const char* value) { SetProductUrl(value); return *this;}
+
 
     /**
      * <p>The end-user license agreement URL for the image or blueprint.</p>
@@ -406,26 +417,37 @@ namespace Model
     inline Blueprint& WithLicenseUrl(const char* value) { SetLicenseUrl(value); return *this;}
 
   private:
+
     Aws::String m_blueprintId;
     bool m_blueprintIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_group;
     bool m_groupHasBeenSet;
+
     BlueprintType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_isActive;
     bool m_isActiveHasBeenSet;
+
     int m_minPower;
     bool m_minPowerHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_versionCode;
     bool m_versionCodeHasBeenSet;
+
     Aws::String m_productUrl;
     bool m_productUrlHasBeenSet;
+
     Aws::String m_licenseUrl;
     bool m_licenseUrlHasBeenSet;
   };

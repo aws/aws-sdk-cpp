@@ -31,12 +31,12 @@ DescribeDBLogFilesResult::DescribeDBLogFilesResult()
 {
 }
 
-DescribeDBLogFilesResult::DescribeDBLogFilesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBLogFilesResult::DescribeDBLogFilesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeDBLogFilesResult& DescribeDBLogFilesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBLogFilesResult& DescribeDBLogFilesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

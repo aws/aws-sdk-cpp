@@ -30,12 +30,12 @@ GetDeployablePatchSnapshotForInstanceResult::GetDeployablePatchSnapshotForInstan
 {
 }
 
-GetDeployablePatchSnapshotForInstanceResult::GetDeployablePatchSnapshotForInstanceResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDeployablePatchSnapshotForInstanceResult::GetDeployablePatchSnapshotForInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDeployablePatchSnapshotForInstanceResult& GetDeployablePatchSnapshotForInstanceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDeployablePatchSnapshotForInstanceResult& GetDeployablePatchSnapshotForInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("InstanceId"))

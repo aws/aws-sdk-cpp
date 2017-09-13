@@ -30,12 +30,12 @@ GetWorkflowExecutionHistoryResult::GetWorkflowExecutionHistoryResult()
 {
 }
 
-GetWorkflowExecutionHistoryResult::GetWorkflowExecutionHistoryResult(const AmazonWebServiceResult<JsonValue>& result)
+GetWorkflowExecutionHistoryResult::GetWorkflowExecutionHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetWorkflowExecutionHistoryResult& GetWorkflowExecutionHistoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetWorkflowExecutionHistoryResult& GetWorkflowExecutionHistoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("events"))

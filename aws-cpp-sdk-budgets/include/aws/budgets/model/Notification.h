@@ -17,6 +17,7 @@
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/budgets/model/NotificationType.h>
 #include <aws/budgets/model/ComparisonOperator.h>
+#include <aws/budgets/model/ThresholdType.h>
 #include <utility>
 
 namespace Aws
@@ -47,6 +48,7 @@ namespace Model
     Notification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
 
@@ -61,6 +63,7 @@ namespace Model
 
     
     inline Notification& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+
 
     
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
@@ -77,6 +80,7 @@ namespace Model
     
     inline Notification& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
+
     
     inline double GetThreshold() const{ return m_threshold; }
 
@@ -86,13 +90,35 @@ namespace Model
     
     inline Notification& WithThreshold(double value) { SetThreshold(value); return *this;}
 
+
+    
+    inline const ThresholdType& GetThresholdType() const{ return m_thresholdType; }
+
+    
+    inline void SetThresholdType(const ThresholdType& value) { m_thresholdTypeHasBeenSet = true; m_thresholdType = value; }
+
+    
+    inline void SetThresholdType(ThresholdType&& value) { m_thresholdTypeHasBeenSet = true; m_thresholdType = std::move(value); }
+
+    
+    inline Notification& WithThresholdType(const ThresholdType& value) { SetThresholdType(value); return *this;}
+
+    
+    inline Notification& WithThresholdType(ThresholdType&& value) { SetThresholdType(std::move(value)); return *this;}
+
   private:
+
     NotificationType m_notificationType;
     bool m_notificationTypeHasBeenSet;
+
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+
     double m_threshold;
     bool m_thresholdHasBeenSet;
+
+    ThresholdType m_thresholdType;
+    bool m_thresholdTypeHasBeenSet;
   };
 
 } // namespace Model

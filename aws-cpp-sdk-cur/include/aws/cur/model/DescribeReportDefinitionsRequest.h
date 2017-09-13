@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -47,6 +48,7 @@ namespace Model
 
     
     inline DescribeReportDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -70,8 +72,10 @@ namespace Model
     inline DescribeReportDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

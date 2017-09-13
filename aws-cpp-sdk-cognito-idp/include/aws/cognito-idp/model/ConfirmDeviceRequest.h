@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The access token.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The access token.</p>
      */
     inline ConfirmDeviceRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+
 
     /**
      * <p>The device key.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline ConfirmDeviceRequest& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
 
+
     /**
      * <p>The configuration of the device secret verifier.</p>
      */
@@ -134,6 +137,7 @@ namespace Model
      * <p>The configuration of the device secret verifier.</p>
      */
     inline ConfirmDeviceRequest& WithDeviceSecretVerifierConfig(DeviceSecretVerifierConfigType&& value) { SetDeviceSecretVerifierConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The device name.</p>
@@ -171,12 +175,16 @@ namespace Model
     inline ConfirmDeviceRequest& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
   private:
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
+
     Aws::String m_deviceKey;
     bool m_deviceKeyHasBeenSet;
+
     DeviceSecretVerifierConfigType m_deviceSecretVerifierConfig;
     bool m_deviceSecretVerifierConfigHasBeenSet;
+
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet;
   };

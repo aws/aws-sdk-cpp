@@ -33,14 +33,14 @@ GetStatusResult::GetStatusResult() :
 {
 }
 
-GetStatusResult::GetStatusResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetStatusResult::GetStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_jobType(JobType::NOT_SET),
     m_errorCount(0)
 {
   *this = result;
 }
 
-GetStatusResult& GetStatusResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetStatusResult& GetStatusResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

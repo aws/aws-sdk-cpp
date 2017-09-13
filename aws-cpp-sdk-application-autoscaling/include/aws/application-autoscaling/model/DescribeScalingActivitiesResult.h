@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeScalingActivitiesResult();
-    DescribeScalingActivitiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeScalingActivitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeScalingActivitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeScalingActivitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of scaling activity objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of scaling activity objects.</p>
      */
     inline DescribeScalingActivitiesResult& AddScalingActivities(ScalingActivity&& value) { m_scalingActivities.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token required to get the next set of results. This value is
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeScalingActivitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ScalingActivity> m_scalingActivities;
+
     Aws::String m_nextToken;
   };
 

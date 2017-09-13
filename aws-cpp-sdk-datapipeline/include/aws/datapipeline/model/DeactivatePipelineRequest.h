@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the pipeline.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline DeactivatePipelineRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
 
+
     /**
      * <p>Indicates whether to cancel any running objects. The default is true, which
      * sets the state of any running objects to <code>CANCELED</code>. If this value is
@@ -96,8 +98,10 @@ namespace Model
     inline DeactivatePipelineRequest& WithCancelActive(bool value) { SetCancelActive(value); return *this;}
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     bool m_cancelActive;
     bool m_cancelActiveHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The name of the intent for which versions should be returned.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the intent for which versions should be returned.</p>
      */
     inline GetIntentVersionsRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A pagination token for fetching the next page of intent versions. If the
@@ -131,6 +133,7 @@ namespace Model
      */
     inline GetIntentVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of intent versions to return in the response. The default
      * is 10.</p>
@@ -150,10 +153,13 @@ namespace Model
     inline GetIntentVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

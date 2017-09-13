@@ -30,12 +30,12 @@ GetRecordsResult::GetRecordsResult()
 {
 }
 
-GetRecordsResult::GetRecordsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetRecordsResult::GetRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetRecordsResult& GetRecordsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetRecordsResult& GetRecordsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Records"))

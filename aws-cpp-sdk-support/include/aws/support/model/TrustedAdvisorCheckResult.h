@@ -50,6 +50,7 @@ namespace Model
     TrustedAdvisorCheckResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline TrustedAdvisorCheckResult& WithCheckId(const char* value) { SetCheckId(value); return *this;}
 
+
     /**
      * <p>The time of the last refresh of the check.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The time of the last refresh of the check.</p>
      */
     inline TrustedAdvisorCheckResult& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
+
 
     /**
      * <p>The alert status of the check: "ok" (green), "warning" (yellow), "error"
@@ -162,6 +165,7 @@ namespace Model
      */
     inline TrustedAdvisorCheckResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     
     inline const TrustedAdvisorResourcesSummary& GetResourcesSummary() const{ return m_resourcesSummary; }
 
@@ -176,6 +180,7 @@ namespace Model
 
     
     inline TrustedAdvisorCheckResult& WithResourcesSummary(TrustedAdvisorResourcesSummary&& value) { SetResourcesSummary(std::move(value)); return *this;}
+
 
     /**
      * <p>Summary information that relates to the category of the check. Cost
@@ -206,6 +211,7 @@ namespace Model
      * Optimizing is the only category that is currently supported.</p>
      */
     inline TrustedAdvisorCheckResult& WithCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary&& value) { SetCategorySpecificSummary(std::move(value)); return *this;}
+
 
     /**
      * <p>The details about each resource listed in the check result.</p>
@@ -243,16 +249,22 @@ namespace Model
     inline TrustedAdvisorCheckResult& AddFlaggedResources(TrustedAdvisorResourceDetail&& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_checkId;
     bool m_checkIdHasBeenSet;
+
     Aws::String m_timestamp;
     bool m_timestampHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     TrustedAdvisorResourcesSummary m_resourcesSummary;
     bool m_resourcesSummaryHasBeenSet;
+
     TrustedAdvisorCategorySpecificSummary m_categorySpecificSummary;
     bool m_categorySpecificSummaryHasBeenSet;
+
     Aws::Vector<TrustedAdvisorResourceDetail> m_flaggedResources;
     bool m_flaggedResourcesHasBeenSet;
   };

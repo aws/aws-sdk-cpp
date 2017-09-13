@@ -30,12 +30,12 @@ CreateLabelsResult::CreateLabelsResult()
 {
 }
 
-CreateLabelsResult::CreateLabelsResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateLabelsResult::CreateLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateLabelsResult& CreateLabelsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateLabelsResult& CreateLabelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

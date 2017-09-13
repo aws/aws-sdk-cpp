@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline UpdateInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The instance's layer IDs.</p>
@@ -113,6 +115,7 @@ namespace Model
      * <p>The instance's layer IDs.</p>
      */
     inline UpdateInstanceRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
 
     /**
      * <p>The instance type, such as <code>t2.micro</code>. For a list of supported
@@ -198,6 +201,7 @@ namespace Model
      */
     inline UpdateInstanceRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>For load-based or time-based instances, the type. Windows stacks can use only
      * time-based instances.</p>
@@ -227,6 +231,7 @@ namespace Model
      * time-based instances.</p>
      */
     inline UpdateInstanceRequest& WithAutoScalingType(AutoScalingType&& value) { SetAutoScalingType(std::move(value)); return *this;}
+
 
     /**
      * <p>The instance host name.</p>
@@ -262,6 +267,7 @@ namespace Model
      * <p>The instance host name.</p>
      */
     inline UpdateInstanceRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
+
 
     /**
      * <p>The instance's operating system, which must be set to one of the following.
@@ -480,6 +486,7 @@ namespace Model
      */
     inline UpdateInstanceRequest& WithOs(const char* value) { SetOs(value); return *this;}
 
+
     /**
      * <p>The ID of the AMI that was used to create the instance. The value of this
      * parameter must be the same AMI ID that the instance is already using. You cannot
@@ -536,6 +543,7 @@ namespace Model
      */
     inline UpdateInstanceRequest& WithAmiId(const char* value) { SetAmiId(value); return *this;}
 
+
     /**
      * <p>The instance's Amazon EC2 key name.</p>
      */
@@ -570,6 +578,7 @@ namespace Model
      * <p>The instance's Amazon EC2 key name.</p>
      */
     inline UpdateInstanceRequest& WithSshKeyName(const char* value) { SetSshKeyName(value); return *this;}
+
 
     /**
      * <p>The instance architecture. Instance types do not necessarily support both
@@ -616,6 +625,7 @@ namespace Model
      */
     inline UpdateInstanceRequest& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether to install operating system and package updates when the instance
      * boots. The default value is <code>true</code>. To control when updates are
@@ -655,6 +665,7 @@ namespace Model
      */
     inline UpdateInstanceRequest& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 
+
     /**
      * <p>This property cannot be updated.</p>
      */
@@ -669,6 +680,7 @@ namespace Model
      * <p>This property cannot be updated.</p>
      */
     inline UpdateInstanceRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+
 
     /**
      * <p>The default AWS OpsWorks Stacks agent version. You have the following
@@ -776,28 +788,40 @@ namespace Model
     inline UpdateInstanceRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_layerIds;
     bool m_layerIdsHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     AutoScalingType m_autoScalingType;
     bool m_autoScalingTypeHasBeenSet;
+
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
     Aws::String m_os;
     bool m_osHasBeenSet;
+
     Aws::String m_amiId;
     bool m_amiIdHasBeenSet;
+
     Aws::String m_sshKeyName;
     bool m_sshKeyNameHasBeenSet;
+
     Architecture m_architecture;
     bool m_architectureHasBeenSet;
+
     bool m_installUpdatesOnBoot;
     bool m_installUpdatesOnBootHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet;
   };

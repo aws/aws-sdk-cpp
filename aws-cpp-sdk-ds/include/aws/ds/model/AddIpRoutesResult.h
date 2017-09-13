@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AddIpRoutesResult();
-    AddIpRoutesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddIpRoutesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddIpRoutesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddIpRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

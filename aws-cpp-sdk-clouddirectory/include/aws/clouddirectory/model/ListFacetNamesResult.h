@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListFacetNamesResult();
-    ListFacetNamesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFacetNamesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFacetNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFacetNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The names of facets that exist within the schema.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ListFacetNamesResult& AddFacetNames(const char* value) { m_facetNames.push_back(value); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -118,7 +120,9 @@ namespace Model
     inline ListFacetNamesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_facetNames;
+
     Aws::String m_nextToken;
   };
 

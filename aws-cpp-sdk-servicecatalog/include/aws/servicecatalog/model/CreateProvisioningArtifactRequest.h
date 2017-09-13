@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline CreateProvisioningArtifactRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The product identifier.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      */
     inline CreateProvisioningArtifactRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 
+
     /**
      * <p>The parameters to use when creating the new provisioning artifact.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      * <p>The parameters to use when creating the new provisioning artifact.</p>
      */
     inline CreateProvisioningArtifactRequest& WithParameters(ProvisioningArtifactProperties&& value) { SetParameters(std::move(value)); return *this;}
+
 
     /**
      * <p>A token to disambiguate duplicate requests. You can create multiple resources
@@ -197,12 +201,16 @@ namespace Model
     inline CreateProvisioningArtifactRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     ProvisioningArtifactProperties m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     CreatedArtifact& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An ARN that uniquely identifies the result of a migration task.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>An ARN that uniquely identifies the result of a migration task.</p>
      */
     inline CreatedArtifact& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description that can be free-form text to record additional detail about
@@ -124,8 +126,10 @@ namespace Model
     inline CreatedArtifact& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

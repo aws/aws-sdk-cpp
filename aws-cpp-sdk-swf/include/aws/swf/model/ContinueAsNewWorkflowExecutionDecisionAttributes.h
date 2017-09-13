@@ -67,6 +67,7 @@ namespace Model
     ContinueAsNewWorkflowExecutionDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The input provided to the new workflow execution.</p>
      */
@@ -101,6 +102,7 @@ namespace Model
      * <p>The input provided to the new workflow execution.</p>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
@@ -193,6 +195,7 @@ namespace Model
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithExecutionStartToCloseTimeout(const char* value) { SetExecutionStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>The task list to use for the decisions of the new (continued) workflow
      * execution.</p>
@@ -222,6 +225,7 @@ namespace Model
      * execution.</p>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p> The task priority that, if set, specifies the priority for the decision
@@ -306,6 +310,7 @@ namespace Model
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
+
 
     /**
      * <p>Specifies the maximum duration of decision tasks for the new workflow
@@ -404,6 +409,7 @@ namespace Model
      * registration time then a fault is returned.</p> </note>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskStartToCloseTimeout(const char* value) { SetTaskStartToCloseTimeout(value); return *this;}
+
 
     /**
      * <p>If set, specifies the policy to use for the child workflow executions of the
@@ -505,6 +511,7 @@ namespace Model
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>The list of tags to associate with the new workflow execution. A maximum of 5
      * tags can be specified. You can list workflow executions with a specific tag by
@@ -569,6 +576,7 @@ namespace Model
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& AddTagList(const char* value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
 
+
     /**
      * <p>The version of the workflow to start.</p>
      */
@@ -603,6 +611,7 @@ namespace Model
      * <p>The version of the workflow to start.</p>
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithWorkflowTypeVersion(const char* value) { SetWorkflowTypeVersion(value); return *this;}
+
 
     /**
      * <p>The IAM role to attach to the new (continued) execution.</p>
@@ -640,22 +649,31 @@ namespace Model
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithLambdaRole(const char* value) { SetLambdaRole(value); return *this;}
 
   private:
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_executionStartToCloseTimeout;
     bool m_executionStartToCloseTimeoutHasBeenSet;
+
     TaskList m_taskList;
     bool m_taskListHasBeenSet;
+
     Aws::String m_taskPriority;
     bool m_taskPriorityHasBeenSet;
+
     Aws::String m_taskStartToCloseTimeout;
     bool m_taskStartToCloseTimeoutHasBeenSet;
+
     ChildPolicy m_childPolicy;
     bool m_childPolicyHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagList;
     bool m_tagListHasBeenSet;
+
     Aws::String m_workflowTypeVersion;
     bool m_workflowTypeVersionHasBeenSet;
+
     Aws::String m_lambdaRole;
     bool m_lambdaRoleHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the instance for which you want to get metrics data.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetInstanceMetricDataRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
+
     /**
      * <p>The metric name to get data about. </p>
      */
@@ -101,6 +103,7 @@ namespace Model
      */
     inline GetInstanceMetricDataRequest& WithMetricName(InstanceMetricName&& value) { SetMetricName(std::move(value)); return *this;}
 
+
     /**
      * <p>The time period for which you are requesting data.</p>
      */
@@ -115,6 +118,7 @@ namespace Model
      * <p>The time period for which you are requesting data.</p>
      */
     inline GetInstanceMetricDataRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
+
 
     /**
      * <p>The start time of the time period.</p>
@@ -141,6 +145,7 @@ namespace Model
      */
     inline GetInstanceMetricDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The end time of the time period.</p>
      */
@@ -166,6 +171,7 @@ namespace Model
      */
     inline GetInstanceMetricDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The unit. The list of valid values is below.</p>
      */
@@ -190,6 +196,7 @@ namespace Model
      * <p>The unit. The list of valid values is below.</p>
      */
     inline GetInstanceMetricDataRequest& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}
+
 
     /**
      * <p>The instance statistics. </p>
@@ -227,18 +234,25 @@ namespace Model
     inline GetInstanceMetricDataRequest& AddStatistics(MetricStatistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
+
     InstanceMetricName m_metricName;
     bool m_metricNameHasBeenSet;
+
     int m_period;
     bool m_periodHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     MetricUnit m_unit;
     bool m_unitHasBeenSet;
+
     Aws::Vector<MetricStatistic> m_statistics;
     bool m_statisticsHasBeenSet;
   };

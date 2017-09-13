@@ -30,12 +30,12 @@ ListBootstrapActionsResult::ListBootstrapActionsResult()
 {
 }
 
-ListBootstrapActionsResult::ListBootstrapActionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListBootstrapActionsResult::ListBootstrapActionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListBootstrapActionsResult& ListBootstrapActionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListBootstrapActionsResult& ListBootstrapActionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BootstrapActions"))

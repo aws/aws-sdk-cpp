@@ -49,6 +49,7 @@ namespace Model
     CreateAccountStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) that references this request. You get this value
      * from the response of the initial <a>CreateAccount</a> request to create the
@@ -112,6 +113,7 @@ namespace Model
      */
     inline CreateAccountStatus& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The account name given to the account when it was created.</p>
      */
@@ -147,6 +149,7 @@ namespace Model
      */
     inline CreateAccountStatus& WithAccountName(const char* value) { SetAccountName(value); return *this;}
 
+
     /**
      * <p>The status of the request.</p>
      */
@@ -171,6 +174,7 @@ namespace Model
      * <p>The status of the request.</p>
      */
     inline CreateAccountStatus& WithState(CreateAccountState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time that the request was made for the account creation.</p>
@@ -197,6 +201,7 @@ namespace Model
      */
     inline CreateAccountStatus& WithRequestedTimestamp(Aws::Utils::DateTime&& value) { SetRequestedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time that the account was created and the request completed.</p>
      */
@@ -221,6 +226,7 @@ namespace Model
      * <p>The date and time that the account was created and the request completed.</p>
      */
     inline CreateAccountStatus& WithCompletedTimestamp(Aws::Utils::DateTime&& value) { SetCompletedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
@@ -270,6 +276,7 @@ namespace Model
      * pattern</a> for an account ID string requires exactly 12 digits.</p>
      */
     inline CreateAccountStatus& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     /**
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
@@ -347,18 +354,25 @@ namespace Model
     inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_accountName;
     bool m_accountNameHasBeenSet;
+
     CreateAccountState m_state;
     bool m_stateHasBeenSet;
+
     Aws::Utils::DateTime m_requestedTimestamp;
     bool m_requestedTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_completedTimestamp;
     bool m_completedTimestampHasBeenSet;
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     CreateAccountFailureReason m_failureReason;
     bool m_failureReasonHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     Rule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of attribute validation rule.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The type of attribute validation rule.</p>
      */
     inline Rule& WithType(RuleType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The minimum and maximum parameters that are associated with the rule.</p>
@@ -134,8 +136,10 @@ namespace Model
     inline Rule& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
   private:
+
     RuleType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
   };

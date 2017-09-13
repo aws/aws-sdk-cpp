@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeNetworkInterfacePermissionsResponse();
-    DescribeNetworkInterfacePermissionsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeNetworkInterfacePermissionsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeNetworkInterfacePermissionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeNetworkInterfacePermissionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The network interface permissions.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeNetworkInterfacePermissionsResponse& AddNetworkInterfacePermissions(NetworkInterfacePermission&& value) { m_networkInterfacePermissions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline DescribeNetworkInterfacePermissionsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -136,8 +139,11 @@ namespace Model
     inline DescribeNetworkInterfacePermissionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<NetworkInterfacePermission> m_networkInterfacePermissions;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool on which the search should be
      * performed.</p>
@@ -81,6 +82,7 @@ namespace Model
      * performed.</p>
      */
     inline ListUsersRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>An array of strings, where each string is the name of a user attribute to be
@@ -138,6 +140,7 @@ namespace Model
      */
     inline ListUsersRequest& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
+
     /**
      * <p>Maximum number of users to be returned.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>Maximum number of users to be returned.</p>
      */
     inline ListUsersRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -194,6 +198,7 @@ namespace Model
      * which can be used to return the next set of items in the list.</p>
      */
     inline ListUsersRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
+
 
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
@@ -392,14 +397,19 @@ namespace Model
     inline ListUsersRequest& WithFilter(const char* value) { SetFilter(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_paginationToken;
     bool m_paginationTokenHasBeenSet;
+
     Aws::String m_filter;
     bool m_filterHasBeenSet;
   };

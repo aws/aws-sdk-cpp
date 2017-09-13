@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the pipeline that contains the objects.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ID of the pipeline that contains the objects.</p>
      */
     inline SetStatusRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+
 
     /**
      * <p>The IDs of the objects. The corresponding objects can be either physical or
@@ -122,6 +124,7 @@ namespace Model
      * components, but not a mix of both types.</p>
      */
     inline SetStatusRequest& AddObjectIds(const char* value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(value); return *this; }
+
 
     /**
      * <p>The status to be set on all the objects specified in <code>objectIds</code>.
@@ -180,10 +183,13 @@ namespace Model
     inline SetStatusRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_objectIds;
     bool m_objectIdsHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

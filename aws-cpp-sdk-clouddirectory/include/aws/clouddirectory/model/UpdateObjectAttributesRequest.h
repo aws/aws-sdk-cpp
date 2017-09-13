@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where the object resides. For more information, see <a>arns</a>.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline UpdateObjectAttributesRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>The reference that identifies the object.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The reference that identifies the object.</p>
      */
     inline UpdateObjectAttributesRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The attributes update structure.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline UpdateObjectAttributesRequest& AddAttributeUpdates(ObjectAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     Aws::Vector<ObjectAttributeUpdate> m_attributeUpdates;
     bool m_attributeUpdatesHasBeenSet;
   };

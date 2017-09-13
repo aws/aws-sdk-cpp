@@ -50,6 +50,7 @@ namespace Model
     MigrationTaskSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An AWS resource used for access control. It should uniquely identify the
      * migration tool as it is used for all updates made by the tool.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline MigrationTaskSummary& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
 
+
     /**
      * <p>Unique identifier that references the migration task.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      */
     inline MigrationTaskSummary& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 
+
     /**
      * <p>Status of the task.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline MigrationTaskSummary& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p/>
      */
@@ -166,6 +170,7 @@ namespace Model
      * <p/>
      */
     inline MigrationTaskSummary& WithProgressPercent(int value) { SetProgressPercent(value); return *this;}
+
 
     /**
      * <p>Detail information of what is being done within the overall status state.</p>
@@ -202,6 +207,7 @@ namespace Model
      */
     inline MigrationTaskSummary& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
 
+
     /**
      * <p>The timestamp when the task was gathered.</p>
      */
@@ -228,16 +234,22 @@ namespace Model
     inline MigrationTaskSummary& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_progressUpdateStream;
     bool m_progressUpdateStreamHasBeenSet;
+
     Aws::String m_migrationTaskName;
     bool m_migrationTaskNameHasBeenSet;
+
     Status m_status;
     bool m_statusHasBeenSet;
+
     int m_progressPercent;
     bool m_progressPercentHasBeenSet;
+
     Aws::String m_statusDetail;
     bool m_statusDetailHasBeenSet;
+
     Aws::Utils::DateTime m_updateDateTime;
     bool m_updateDateTimeHasBeenSet;
   };

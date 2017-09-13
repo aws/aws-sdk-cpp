@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory for which to update the RADIUS server
      * information.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline UpdateRadiusRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
+
     /**
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
      * server.</p>
@@ -114,8 +116,10 @@ namespace Model
     inline UpdateRadiusRequest& WithRadiusSettings(RadiusSettings&& value) { SetRadiusSettings(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     RadiusSettings m_radiusSettings;
     bool m_radiusSettingsHasBeenSet;
   };

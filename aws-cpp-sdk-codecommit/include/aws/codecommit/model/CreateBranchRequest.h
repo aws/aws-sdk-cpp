@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository in which you want to create the new branch.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline CreateBranchRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>The name of the new branch to create.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The name of the new branch to create.</p>
      */
     inline CreateBranchRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
+
 
     /**
      * <p>The ID of the commit to point the new branch to.</p>
@@ -146,10 +149,13 @@ namespace Model
     inline CreateBranchRequest& WithCommitId(const char* value) { SetCommitId(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_branchName;
     bool m_branchNameHasBeenSet;
+
     Aws::String m_commitId;
     bool m_commitIdHasBeenSet;
   };

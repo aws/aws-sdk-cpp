@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique ID of a deployment.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The unique ID of a deployment.</p>
      */
     inline ListDeploymentInstancesRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+
 
     /**
      * <p>An identifier returned from the previous list deployment instances call. It
@@ -119,6 +121,7 @@ namespace Model
      * can be used to return the next set of deployment instances in the list.</p>
      */
     inline ListDeploymentInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>A subset of instances to list by status:</p> <ul> <li> <p>Pending: Include
@@ -204,6 +207,7 @@ namespace Model
      */
     inline ListDeploymentInstancesRequest& AddInstanceStatusFilter(InstanceStatus&& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The set of instances in a blue/green deployment, either those in the original
      * environment ("BLUE") or those in the replacement environment ("GREEN"), for
@@ -254,12 +258,16 @@ namespace Model
     inline ListDeploymentInstancesRequest& AddInstanceTypeFilter(InstanceType&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<InstanceStatus> m_instanceStatusFilter;
     bool m_instanceStatusFilterHasBeenSet;
+
     Aws::Vector<InstanceType> m_instanceTypeFilter;
     bool m_instanceTypeFilterHasBeenSet;
   };

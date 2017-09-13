@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetPipelineResult();
-    GetPipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Represents the structure of actions and stages to be performed in the
@@ -77,6 +78,7 @@ namespace Model
     inline GetPipelineResult& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
 
   private:
+
     PipelineDeclaration m_pipeline;
   };
 

@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     ListStackInstancesResult();
-    ListStackInstancesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListStackInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListStackInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListStackInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of <code>StackInstanceSummary</code> structures that contain
@@ -85,6 +86,7 @@ namespace Model
      * information about the specified stack instances.</p>
      */
     inline ListStackInstancesResult& AddSummaries(StackInstanceSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the request doesn't return all of the remaining results,
@@ -149,6 +151,7 @@ namespace Model
      */
     inline ListStackInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -165,8 +168,11 @@ namespace Model
     inline ListStackInstancesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<StackInstanceSummary> m_summaries;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -31,12 +31,12 @@ SetIdentityFeedbackForwardingEnabledResult::SetIdentityFeedbackForwardingEnabled
 {
 }
 
-SetIdentityFeedbackForwardingEnabledResult::SetIdentityFeedbackForwardingEnabledResult(const AmazonWebServiceResult<XmlDocument>& result)
+SetIdentityFeedbackForwardingEnabledResult::SetIdentityFeedbackForwardingEnabledResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SetIdentityFeedbackForwardingEnabledResult& SetIdentityFeedbackForwardingEnabledResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SetIdentityFeedbackForwardingEnabledResult& SetIdentityFeedbackForwardingEnabledResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

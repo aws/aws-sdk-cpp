@@ -47,6 +47,7 @@ namespace Model
     ApplicationSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the application.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>Name of the application.</p>
      */
     inline ApplicationSummary& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>ARN of the application.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ApplicationSummary& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
 
+
     /**
      * <p>Status of the application.</p>
      */
@@ -143,10 +146,13 @@ namespace Model
     inline ApplicationSummary& WithApplicationStatus(ApplicationStatus&& value) { SetApplicationStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_applicationARN;
     bool m_applicationARNHasBeenSet;
+
     ApplicationStatus m_applicationStatus;
     bool m_applicationStatusHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
     InitiateVaultLockRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
      * the AWS account ID associated with the credentials used to sign the request. You
@@ -109,6 +110,7 @@ namespace Model
      */
     inline InitiateVaultLockRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -144,6 +146,7 @@ namespace Model
      */
     inline InitiateVaultLockRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
 
+
     /**
      * <p>The vault lock policy as a JSON string, which uses "\" as an escape
      * character.</p>
@@ -175,10 +178,13 @@ namespace Model
     inline InitiateVaultLockRequest& WithPolicy(VaultLockPolicy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     VaultLockPolicy m_policy;
     bool m_policyHasBeenSet;
   };

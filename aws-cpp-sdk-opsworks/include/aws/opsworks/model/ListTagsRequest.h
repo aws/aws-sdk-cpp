@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack or layer's Amazon Resource Number (ARN).</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline ListTagsRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
+
     /**
      * <p>Do not use. A validation exception occurs if you add a
      * <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
@@ -88,6 +90,7 @@ namespace Model
      * <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
      */
     inline ListTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Do not use. A validation exception occurs if you add a <code>NextToken</code>
@@ -132,10 +135,13 @@ namespace Model
     inline ListTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

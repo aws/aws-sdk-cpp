@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier for an existing Automation execution that you want to
      * send the signal to.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline SendAutomationSignalRequest& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
 
+
     /**
      * <p>The type of signal. Valid signal types include the following: Approve and
      * Reject </p>
@@ -110,6 +112,7 @@ namespace Model
      * Reject </p>
      */
     inline SendAutomationSignalRequest& WithSignalType(SignalType&& value) { SetSignalType(std::move(value)); return *this;}
+
 
     /**
      * <p>The data sent with the signal. The data schema depends on the type of signal
@@ -178,10 +181,13 @@ namespace Model
     inline SendAutomationSignalRequest& AddPayload(const char* key, const Aws::Vector<Aws::String>& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_automationExecutionId;
     bool m_automationExecutionIdHasBeenSet;
+
     SignalType m_signalType;
     bool m_signalTypeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_payload;
     bool m_payloadHasBeenSet;
   };

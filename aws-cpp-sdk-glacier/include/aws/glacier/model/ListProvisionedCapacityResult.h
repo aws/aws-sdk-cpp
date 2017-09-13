@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListProvisionedCapacityResult();
-    ListProvisionedCapacityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProvisionedCapacityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProvisionedCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProvisionedCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The response body contains the following JSON fields.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline ListProvisionedCapacityResult& AddProvisionedCapacityList(ProvisionedCapacityDescription&& value) { m_provisionedCapacityList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ProvisionedCapacityDescription> m_provisionedCapacityList;
   };
 

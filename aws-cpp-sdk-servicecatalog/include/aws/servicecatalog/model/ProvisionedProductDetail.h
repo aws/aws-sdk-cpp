@@ -48,6 +48,7 @@ namespace Model
     ProvisionedProductDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user-friendly name of the ProvisionedProduct object.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The user-friendly name of the ProvisionedProduct object.</p>
      */
     inline ProvisionedProductDetail& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ARN associated with the ProvisionedProduct object.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline ProvisionedProductDetail& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The type of the ProvisionedProduct object.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      */
     inline ProvisionedProductDetail& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
      */
@@ -187,6 +191,7 @@ namespace Model
      * <p>The identifier of the ProvisionedProduct object.</p>
      */
     inline ProvisionedProductDetail& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code>
@@ -268,6 +273,7 @@ namespace Model
      */
     inline ProvisionedProductDetail& WithStatus(ProvisionedProductStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The current status message of the ProvisionedProduct.</p>
      */
@@ -303,6 +309,7 @@ namespace Model
      */
     inline ProvisionedProductDetail& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
@@ -327,6 +334,7 @@ namespace Model
      * <p>The UTC timestamp of the creation time.</p>
      */
     inline ProvisionedProductDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>A token to disambiguate duplicate requests. You can create multiple resources
@@ -377,6 +385,7 @@ namespace Model
      */
     inline ProvisionedProductDetail& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
+
     /**
      * <p>The record identifier of the last request performed on this
      * ProvisionedProduct object.</p>
@@ -420,22 +429,31 @@ namespace Model
     inline ProvisionedProductDetail& WithLastRecordId(const char* value) { SetLastRecordId(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     ProvisionedProductStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
+
     Aws::String m_lastRecordId;
     bool m_lastRecordIdHasBeenSet;
   };

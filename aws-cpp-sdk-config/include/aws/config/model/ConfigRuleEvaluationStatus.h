@@ -49,6 +49,7 @@ namespace Model
     ConfigRuleEvaluationStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the AWS Config rule.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the AWS Config rule.</p>
      */
     inline ConfigRuleEvaluationStatus& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Config rule.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline ConfigRuleEvaluationStatus& WithConfigRuleArn(const char* value) { SetConfigRuleArn(value); return *this;}
 
+
     /**
      * <p>The ID of the AWS Config rule.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline ConfigRuleEvaluationStatus& WithConfigRuleId(const char* value) { SetConfigRuleId(value); return *this;}
 
+
     /**
      * <p>The time that AWS Config last successfully invoked the AWS Config rule to
      * evaluate your AWS resources.</p>
@@ -183,6 +187,7 @@ namespace Model
      * evaluate your AWS resources.</p>
      */
     inline ConfigRuleEvaluationStatus& WithLastSuccessfulInvocationTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulInvocationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time that AWS Config last failed to invoke the AWS Config rule to
@@ -214,6 +219,7 @@ namespace Model
      */
     inline ConfigRuleEvaluationStatus& WithLastFailedInvocationTime(Aws::Utils::DateTime&& value) { SetLastFailedInvocationTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time that AWS Config last successfully evaluated your AWS resources
      * against the rule.</p>
@@ -243,6 +249,7 @@ namespace Model
      * against the rule.</p>
      */
     inline ConfigRuleEvaluationStatus& WithLastSuccessfulEvaluationTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulEvaluationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time that AWS Config last failed to evaluate your AWS resources against
@@ -274,6 +281,7 @@ namespace Model
      */
     inline ConfigRuleEvaluationStatus& WithLastFailedEvaluationTime(Aws::Utils::DateTime&& value) { SetLastFailedEvaluationTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time that you first activated the AWS Config rule.</p>
      */
@@ -298,6 +306,7 @@ namespace Model
      * <p>The time that you first activated the AWS Config rule.</p>
      */
     inline ConfigRuleEvaluationStatus& WithFirstActivatedTime(Aws::Utils::DateTime&& value) { SetFirstActivatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The error code that AWS Config returned when the rule last failed.</p>
@@ -334,6 +343,7 @@ namespace Model
      */
     inline ConfigRuleEvaluationStatus& WithLastErrorCode(const char* value) { SetLastErrorCode(value); return *this;}
 
+
     /**
      * <p>The error message that AWS Config returned when the rule last failed.</p>
      */
@@ -369,6 +379,7 @@ namespace Model
      */
     inline ConfigRuleEvaluationStatus& WithLastErrorMessage(const char* value) { SetLastErrorMessage(value); return *this;}
 
+
     /**
      * <p>Indicates whether AWS Config has evaluated your resources against the rule at
      * least once.</p> <ul> <li> <p> <code>true</code> - AWS Config has evaluated your
@@ -397,26 +408,37 @@ namespace Model
     inline ConfigRuleEvaluationStatus& WithFirstEvaluationStarted(bool value) { SetFirstEvaluationStarted(value); return *this;}
 
   private:
+
     Aws::String m_configRuleName;
     bool m_configRuleNameHasBeenSet;
+
     Aws::String m_configRuleArn;
     bool m_configRuleArnHasBeenSet;
+
     Aws::String m_configRuleId;
     bool m_configRuleIdHasBeenSet;
+
     Aws::Utils::DateTime m_lastSuccessfulInvocationTime;
     bool m_lastSuccessfulInvocationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastFailedInvocationTime;
     bool m_lastFailedInvocationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastSuccessfulEvaluationTime;
     bool m_lastSuccessfulEvaluationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastFailedEvaluationTime;
     bool m_lastFailedEvaluationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_firstActivatedTime;
     bool m_firstActivatedTimeHasBeenSet;
+
     Aws::String m_lastErrorCode;
     bool m_lastErrorCodeHasBeenSet;
+
     Aws::String m_lastErrorMessage;
     bool m_lastErrorMessageHasBeenSet;
+
     bool m_firstEvaluationStarted;
     bool m_firstEvaluationStartedHasBeenSet;
   };

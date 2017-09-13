@@ -45,6 +45,7 @@ namespace Model
     Policy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The policy name.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The policy name.</p>
      */
     inline Policy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The policy ARN.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline Policy& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet;
   };

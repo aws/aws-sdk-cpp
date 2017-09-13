@@ -38,6 +38,7 @@ namespace Model
     CreateModelRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <a>RestApi</a> identifier under which the <a>Model</a> will be
      * created.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline CreateModelRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>The name of the model.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      */
     inline CreateModelRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The description of the model.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The description of the model.</p>
      */
     inline CreateModelRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
@@ -199,6 +203,7 @@ namespace Model
      */
     inline CreateModelRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
 
+
     /**
      * <p>The content-type for the model.</p>
      */
@@ -235,14 +240,19 @@ namespace Model
     inline CreateModelRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_schema;
     bool m_schemaHasBeenSet;
+
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the table to be described.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeTimeToLiveRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
   };

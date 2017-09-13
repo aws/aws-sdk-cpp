@@ -30,12 +30,12 @@ DeregisterTaskDefinitionResult::DeregisterTaskDefinitionResult()
 {
 }
 
-DeregisterTaskDefinitionResult::DeregisterTaskDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterTaskDefinitionResult::DeregisterTaskDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeregisterTaskDefinitionResult& DeregisterTaskDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterTaskDefinitionResult& DeregisterTaskDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("taskDefinition"))

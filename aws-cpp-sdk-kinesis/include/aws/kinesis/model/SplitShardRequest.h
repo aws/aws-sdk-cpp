@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream for the shard split.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline SplitShardRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
     /**
      * <p>The shard ID of the shard to split.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The shard ID of the shard to split.</p>
      */
     inline SplitShardRequest& WithShardToSplit(const char* value) { SetShardToSplit(value); return *this;}
+
 
     /**
      * <p>A hash key value for the starting hash key of one of the child shards created
@@ -188,10 +191,13 @@ namespace Model
     inline SplitShardRequest& WithNewStartingHashKey(const char* value) { SetNewStartingHashKey(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::String m_shardToSplit;
     bool m_shardToSplitHasBeenSet;
+
     Aws::String m_newStartingHashKey;
     bool m_newStartingHashKeyHasBeenSet;
   };

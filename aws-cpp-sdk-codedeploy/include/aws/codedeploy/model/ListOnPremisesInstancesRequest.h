@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The registration status of the on-premises instances:</p> <ul> <li>
      * <p>Deregistered: Include deregistered on-premises instances in the resulting
@@ -82,6 +83,7 @@ namespace Model
      * the resulting list.</p> </li> </ul>
      */
     inline ListOnPremisesInstancesRequest& WithRegistrationStatus(RegistrationStatus&& value) { SetRegistrationStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The on-premises instance tags that will be used to restrict the corresponding
@@ -124,6 +126,7 @@ namespace Model
      * on-premises instance names returned.</p>
      */
     inline ListOnPremisesInstancesRequest& AddTagFilters(TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier returned from the previous list on-premises instances call. It
@@ -168,10 +171,13 @@ namespace Model
     inline ListOnPremisesInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     RegistrationStatus m_registrationStatus;
     bool m_registrationStatusHasBeenSet;
+
     Aws::Vector<TagFilter> m_tagFilters;
     bool m_tagFiltersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

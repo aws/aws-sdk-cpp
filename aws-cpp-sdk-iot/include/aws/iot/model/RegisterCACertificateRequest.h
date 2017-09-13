@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The CA certificate.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The CA certificate.</p>
      */
     inline RegisterCACertificateRequest& WithCaCertificate(const char* value) { SetCaCertificate(value); return *this;}
+
 
     /**
      * <p>The private key verification certificate.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline RegisterCACertificateRequest& WithVerificationCertificate(const char* value) { SetVerificationCertificate(value); return *this;}
 
+
     /**
      * <p>A boolean value that specifies if the CA certificate is set to active.</p>
      */
@@ -128,6 +131,7 @@ namespace Model
      * <p>A boolean value that specifies if the CA certificate is set to active.</p>
      */
     inline RegisterCACertificateRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
+
 
     /**
      * <p>Allows this CA certificate to be used for auto registration of device
@@ -148,12 +152,16 @@ namespace Model
     inline RegisterCACertificateRequest& WithAllowAutoRegistration(bool value) { SetAllowAutoRegistration(value); return *this;}
 
   private:
+
     Aws::String m_caCertificate;
     bool m_caCertificateHasBeenSet;
+
     Aws::String m_verificationCertificate;
     bool m_verificationCertificateHasBeenSet;
+
     bool m_setAsActive;
     bool m_setAsActiveHasBeenSet;
+
     bool m_allowAutoRegistration;
     bool m_allowAutoRegistrationHasBeenSet;
   };

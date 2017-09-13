@@ -46,6 +46,7 @@ namespace Model
     RedshiftDatabase& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
@@ -66,6 +67,7 @@ namespace Model
 
     
     inline RedshiftDatabase& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+
 
     
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
@@ -89,8 +91,10 @@ namespace Model
     inline RedshiftDatabase& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
   };

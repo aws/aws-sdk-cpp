@@ -46,6 +46,7 @@ namespace Model
     ExternalWorkflowExecutionSignaledEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The external workflow execution that the signal was delivered to.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The external workflow execution that the signal was delivered to.</p>
      */
     inline ExternalWorkflowExecutionSignaledEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event
@@ -96,8 +98,10 @@ namespace Model
     inline ExternalWorkflowExecutionSignaledEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
 
   private:
+
     WorkflowExecution m_workflowExecution;
     bool m_workflowExecutionHasBeenSet;
+
     long long m_initiatedEventId;
     bool m_initiatedEventIdHasBeenSet;
   };

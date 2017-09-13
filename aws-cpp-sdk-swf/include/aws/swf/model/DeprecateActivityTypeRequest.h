@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain in which the activity type is registered.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DeprecateActivityTypeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>The activity type to deprecate.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline DeprecateActivityTypeRequest& WithActivityType(ActivityType&& value) { SetActivityType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     ActivityType m_activityType;
     bool m_activityTypeHasBeenSet;
   };

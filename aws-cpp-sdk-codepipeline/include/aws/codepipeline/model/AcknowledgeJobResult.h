@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     AcknowledgeJobResult();
-    AcknowledgeJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcknowledgeJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AcknowledgeJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AcknowledgeJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Whether the job worker has received the specified job.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline AcknowledgeJobResult& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     JobStatus m_status;
   };
 

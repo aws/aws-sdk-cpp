@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListStacksResult();
-    ListStacksResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListStacksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of <code>StackSummary</code> structures containing information about
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ListStacksResult& AddStackSummaries(StackSummary&& value) { m_stackSummaries.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
      * stacks. If no additional page exists, this value is null.</p>
@@ -133,6 +135,7 @@ namespace Model
      */
     inline ListStacksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -149,8 +152,11 @@ namespace Model
     inline ListStacksResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<StackSummary> m_stackSummaries;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

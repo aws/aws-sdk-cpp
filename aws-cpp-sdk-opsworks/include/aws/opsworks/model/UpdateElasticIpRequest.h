@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The address.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The address.</p>
      */
     inline UpdateElasticIpRequest& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
+
 
     /**
      * <p>The new name.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline UpdateElasticIpRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_elasticIp;
     bool m_elasticIpHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

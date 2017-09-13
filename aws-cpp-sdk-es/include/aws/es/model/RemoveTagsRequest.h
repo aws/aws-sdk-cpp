@@ -40,6 +40,7 @@ namespace Model
     RemoveTagsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you
      * want to delete the specified tags.</p>
@@ -81,6 +82,7 @@ namespace Model
      * want to delete the specified tags.</p>
      */
     inline RemoveTagsRequest& WithARN(const char* value) { SetARN(value); return *this;}
+
 
     /**
      * <p>Specifies the <code>TagKey</code> list which you want to remove from the
@@ -131,8 +133,10 @@ namespace Model
     inline RemoveTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

@@ -30,12 +30,12 @@ DeleteApplicationCloudWatchLoggingOptionResult::DeleteApplicationCloudWatchLoggi
 {
 }
 
-DeleteApplicationCloudWatchLoggingOptionResult::DeleteApplicationCloudWatchLoggingOptionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteApplicationCloudWatchLoggingOptionResult::DeleteApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteApplicationCloudWatchLoggingOptionResult& DeleteApplicationCloudWatchLoggingOptionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteApplicationCloudWatchLoggingOptionResult& DeleteApplicationCloudWatchLoggingOptionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

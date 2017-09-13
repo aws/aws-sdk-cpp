@@ -47,6 +47,7 @@ namespace Model
     ParameterStringFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the filter.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the filter.</p>
      */
     inline ParameterStringFilter& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>Valid options are Equals and BeginsWith. For Path filter, valid options are
@@ -124,6 +126,7 @@ namespace Model
      */
     inline ParameterStringFilter& WithOption(const char* value) { SetOption(value); return *this;}
 
+
     /**
      * <p>The value you want to search for.</p>
      */
@@ -165,10 +168,13 @@ namespace Model
     inline ParameterStringFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_option;
     bool m_optionHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

@@ -31,12 +31,12 @@ ModifyDBParameterGroupResult::ModifyDBParameterGroupResult()
 {
 }
 
-ModifyDBParameterGroupResult::ModifyDBParameterGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyDBParameterGroupResult::ModifyDBParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyDBParameterGroupResult& ModifyDBParameterGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyDBParameterGroupResult& ModifyDBParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -30,12 +30,12 @@ DeleteSegmentResult::DeleteSegmentResult()
 {
 }
 
-DeleteSegmentResult::DeleteSegmentResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSegmentResult::DeleteSegmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSegmentResult& DeleteSegmentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSegmentResult& DeleteSegmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SegmentResponse"))

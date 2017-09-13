@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListActivitiesResult();
-    ListActivitiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListActivitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListActivitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListActivitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of activities.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of activities.</p>
      */
     inline ListActivitiesResult& AddActivities(ActivityListItem&& value) { m_activities.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To
@@ -142,7 +144,9 @@ namespace Model
     inline ListActivitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ActivityListItem> m_activities;
+
     Aws::String m_nextToken;
   };
 

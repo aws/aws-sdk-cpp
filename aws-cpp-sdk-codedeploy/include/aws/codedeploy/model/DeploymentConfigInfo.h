@@ -47,6 +47,7 @@ namespace Model
     DeploymentConfigInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The deployment configuration ID.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The deployment configuration ID.</p>
      */
     inline DeploymentConfigInfo& WithDeploymentConfigId(const char* value) { SetDeploymentConfigId(value); return *this;}
+
 
     /**
      * <p>The deployment configuration name.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline DeploymentConfigInfo& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
+
     /**
      * <p>Information about the number or percentage of minimum healthy instance.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>Information about the number or percentage of minimum healthy instance.</p>
      */
     inline DeploymentConfigInfo& WithMinimumHealthyHosts(MinimumHealthyHosts&& value) { SetMinimumHealthyHosts(std::move(value)); return *this;}
+
 
     /**
      * <p>The time at which the deployment configuration was created.</p>
@@ -168,12 +172,16 @@ namespace Model
     inline DeploymentConfigInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deploymentConfigId;
     bool m_deploymentConfigIdHasBeenSet;
+
     Aws::String m_deploymentConfigName;
     bool m_deploymentConfigNameHasBeenSet;
+
     MinimumHealthyHosts m_minimumHealthyHosts;
     bool m_minimumHealthyHostsHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
   };

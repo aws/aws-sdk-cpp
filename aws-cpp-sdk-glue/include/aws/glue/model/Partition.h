@@ -49,6 +49,7 @@ namespace Model
     Partition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The values of the partition.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      */
     inline Partition& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
+
     /**
      * <p>The name of the catalog database where the table in question is located.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>The name of the catalog database where the table in question is located.</p>
      */
     inline Partition& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+
 
     /**
      * <p>The name of the table in question.</p>
@@ -159,6 +162,7 @@ namespace Model
      */
     inline Partition& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>The time at which the partition was created.</p>
      */
@@ -184,6 +188,7 @@ namespace Model
      */
     inline Partition& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The last time at which the partition was accessed.</p>
      */
@@ -208,6 +213,7 @@ namespace Model
      * <p>The last time at which the partition was accessed.</p>
      */
     inline Partition& WithLastAccessTime(Aws::Utils::DateTime&& value) { SetLastAccessTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides information about the physical location where the partition is
@@ -238,6 +244,7 @@ namespace Model
      * stored.</p>
      */
     inline Partition& WithStorageDescriptor(StorageDescriptor&& value) { SetStorageDescriptor(std::move(value)); return *this;}
+
 
     /**
      * <p>Partition parameters, in the form of a list of key-value pairs.</p>
@@ -299,6 +306,7 @@ namespace Model
      */
     inline Partition& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The last time at which column statistics were computed for this
      * partition.</p>
@@ -330,20 +338,28 @@ namespace Model
     inline Partition& WithLastAnalyzedTime(Aws::Utils::DateTime&& value) { SetLastAnalyzedTime(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastAccessTime;
     bool m_lastAccessTimeHasBeenSet;
+
     StorageDescriptor m_storageDescriptor;
     bool m_storageDescriptorHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Utils::DateTime m_lastAnalyzedTime;
     bool m_lastAnalyzedTimeHasBeenSet;
   };

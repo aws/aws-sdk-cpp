@@ -30,12 +30,12 @@ DeleteHapgResult::DeleteHapgResult()
 {
 }
 
-DeleteHapgResult::DeleteHapgResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteHapgResult::DeleteHapgResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteHapgResult& DeleteHapgResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteHapgResult& DeleteHapgResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Status"))

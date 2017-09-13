@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline FilterLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>Optional list of log stream names.</p>
@@ -112,47 +114,50 @@ namespace Model
      */
     inline FilterLogEventsRequest& AddLogStreamNames(const char* value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
 
+
     /**
-     * <p>The start of the time range, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
      * returned.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The start of the time range, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
      * returned.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The start of the time range, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
      * returned.</p>
      */
     inline FilterLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 
+
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
      * returned.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
      * returned.</p>
      */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
      * returned.</p>
      */
     inline FilterLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
+
 
     /**
      * <p>The filter pattern to use. If not provided, all the events are matched.</p>
@@ -188,6 +193,7 @@ namespace Model
      * <p>The filter pattern to use. If not provided, all the events are matched.</p>
      */
     inline FilterLogEventsRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+
 
     /**
      * <p>The token for the next set of events to return. (You received this token from
@@ -231,6 +237,7 @@ namespace Model
      */
     inline FilterLogEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of events to return. The default is 10,000 events.</p>
      */
@@ -246,10 +253,11 @@ namespace Model
      */
     inline FilterLogEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
+
     /**
      * <p>If the value is true, the operation makes a best effort to provide responses
-     * that contain events from multiple log streams within the log group interleaved
-     * in a single response. If the value is false all the matched log events in the
+     * that contain events from multiple log streams within the log group, interleaved
+     * in a single response. If the value is false, all the matched log events in the
      * first log stream are searched first, then those in the next log stream, and so
      * on. The default is false.</p>
      */
@@ -257,8 +265,8 @@ namespace Model
 
     /**
      * <p>If the value is true, the operation makes a best effort to provide responses
-     * that contain events from multiple log streams within the log group interleaved
-     * in a single response. If the value is false all the matched log events in the
+     * that contain events from multiple log streams within the log group, interleaved
+     * in a single response. If the value is false, all the matched log events in the
      * first log stream are searched first, then those in the next log stream, and so
      * on. The default is false.</p>
      */
@@ -266,28 +274,36 @@ namespace Model
 
     /**
      * <p>If the value is true, the operation makes a best effort to provide responses
-     * that contain events from multiple log streams within the log group interleaved
-     * in a single response. If the value is false all the matched log events in the
+     * that contain events from multiple log streams within the log group, interleaved
+     * in a single response. If the value is false, all the matched log events in the
      * first log stream are searched first, then those in the next log stream, and so
      * on. The default is false.</p>
      */
     inline FilterLogEventsRequest& WithInterleaved(bool value) { SetInterleaved(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_logStreamNames;
     bool m_logStreamNamesHasBeenSet;
+
     long long m_startTime;
     bool m_startTimeHasBeenSet;
+
     long long m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_filterPattern;
     bool m_filterPatternHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     bool m_interleaved;
     bool m_interleavedHasBeenSet;
   };

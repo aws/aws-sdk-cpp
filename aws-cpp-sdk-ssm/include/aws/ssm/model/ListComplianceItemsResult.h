@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListComplianceItemsResult();
-    ListComplianceItemsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListComplianceItemsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListComplianceItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListComplianceItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of compliance information for the specified resource ID. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of compliance information for the specified resource ID. </p>
      */
     inline ListComplianceItemsResult& AddComplianceItems(ComplianceItem&& value) { m_complianceItems.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token for the next set of items to return. Use this token to get the next
@@ -121,7 +123,9 @@ namespace Model
     inline ListComplianceItemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ComplianceItem> m_complianceItems;
+
     Aws::String m_nextToken;
   };
 

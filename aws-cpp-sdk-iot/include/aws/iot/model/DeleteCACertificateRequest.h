@@ -37,6 +37,7 @@ namespace Model
     DeleteCACertificateRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the certificate to delete.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline DeleteCACertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
   private:
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
   };

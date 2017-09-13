@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory of which to take a snapshot.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The identifier of the directory of which to take a snapshot.</p>
      */
     inline CreateSnapshotRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The descriptive name to apply to the snapshot.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline CreateSnapshotRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     ListReceiptRuleSetsResult();
-    ListReceiptRuleSetsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListReceiptRuleSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListReceiptRuleSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListReceiptRuleSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The metadata for the currently active receipt rule set. The metadata consists
@@ -91,6 +92,7 @@ namespace Model
      * of the rule set name and the timestamp of when the rule set was created.</p>
      */
     inline ListReceiptRuleSetsResult& AddRuleSets(ReceiptRuleSetMetadata&& value) { m_ruleSets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token indicating that there are additional receipt rule sets available to
@@ -148,6 +150,7 @@ namespace Model
      */
     inline ListReceiptRuleSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -164,8 +167,11 @@ namespace Model
     inline ListReceiptRuleSetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ReceiptRuleSetMetadata> m_ruleSets;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

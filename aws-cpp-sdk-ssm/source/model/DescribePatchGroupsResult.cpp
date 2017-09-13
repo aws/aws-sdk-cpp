@@ -30,12 +30,12 @@ DescribePatchGroupsResult::DescribePatchGroupsResult()
 {
 }
 
-DescribePatchGroupsResult::DescribePatchGroupsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribePatchGroupsResult::DescribePatchGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribePatchGroupsResult& DescribePatchGroupsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribePatchGroupsResult& DescribePatchGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Mappings"))

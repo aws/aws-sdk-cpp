@@ -46,6 +46,7 @@ namespace Model
     InstanceHardware& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of vCPUs the instance has.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The number of vCPUs the instance has.</p>
      */
     inline InstanceHardware& WithCpuCount(int value) { SetCpuCount(value); return *this;}
+
 
     /**
      * <p>The disks attached to the instance.</p>
@@ -96,6 +98,7 @@ namespace Model
      */
     inline InstanceHardware& AddDisks(Disk&& value) { m_disksHasBeenSet = true; m_disks.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
      */
@@ -112,10 +115,13 @@ namespace Model
     inline InstanceHardware& WithRamSizeInGb(double value) { SetRamSizeInGb(value); return *this;}
 
   private:
+
     int m_cpuCount;
     bool m_cpuCountHasBeenSet;
+
     Aws::Vector<Disk> m_disks;
     bool m_disksHasBeenSet;
+
     double m_ramSizeInGb;
     bool m_ramSizeInGbHasBeenSet;
   };

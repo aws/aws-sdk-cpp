@@ -31,13 +31,13 @@ DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult() :
 {
 }
 
-DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
   *this = result;
 }
 
-DeleteVirtualInterfaceResult& DeleteVirtualInterfaceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteVirtualInterfaceResult& DeleteVirtualInterfaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("virtualInterfaceState"))

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     PutScalingPolicyResult();
-    PutScalingPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutScalingPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
@@ -90,6 +91,7 @@ namespace Model
     inline PutScalingPolicyResult& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
   };
 

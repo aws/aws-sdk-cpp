@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>An Amazon S3 storage location.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline Storage& WithS3(S3Storage&& value) { SetS3(std::move(value)); return *this;}
 
   private:
+
     S3Storage m_s3;
     bool m_s3HasBeenSet;
   };

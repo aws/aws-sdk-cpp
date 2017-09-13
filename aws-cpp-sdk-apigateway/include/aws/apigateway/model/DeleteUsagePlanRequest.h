@@ -38,6 +38,7 @@ namespace Model
     DeleteUsagePlanRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Id of the to-be-deleted usage plan.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DeleteUsagePlanRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
   private:
+
     Aws::String m_usagePlanId;
     bool m_usagePlanIdHasBeenSet;
   };

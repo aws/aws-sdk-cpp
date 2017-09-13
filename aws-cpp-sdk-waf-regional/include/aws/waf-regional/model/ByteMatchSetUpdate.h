@@ -48,6 +48,7 @@ namespace Model
     ByteMatchSetUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies whether to insert or delete a <a>ByteMatchTuple</a>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>Specifies whether to insert or delete a <a>ByteMatchTuple</a>.</p>
      */
     inline ByteMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the part of a web request that you want AWS WAF to inspect
@@ -124,8 +126,10 @@ namespace Model
     inline ByteMatchSetUpdate& WithByteMatchTuple(ByteMatchTuple&& value) { SetByteMatchTuple(std::move(value)); return *this;}
 
   private:
+
     ChangeAction m_action;
     bool m_actionHasBeenSet;
+
     ByteMatchTuple m_byteMatchTuple;
     bool m_byteMatchTupleHasBeenSet;
   };

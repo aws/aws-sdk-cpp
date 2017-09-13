@@ -46,6 +46,7 @@ namespace Model
     CloseStatusFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The close status that must match the close status of an execution for it to
      * meet the criteria of this filter.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CloseStatusFilter& WithStatus(CloseStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     CloseStatus m_status;
     bool m_statusHasBeenSet;
   };

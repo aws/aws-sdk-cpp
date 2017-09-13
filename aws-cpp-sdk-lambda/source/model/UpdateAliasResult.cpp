@@ -30,12 +30,12 @@ UpdateAliasResult::UpdateAliasResult()
 {
 }
 
-UpdateAliasResult::UpdateAliasResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateAliasResult::UpdateAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateAliasResult& UpdateAliasResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateAliasResult& UpdateAliasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AliasArn"))

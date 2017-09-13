@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeCreateAccountStatusResult();
-    DescribeCreateAccountStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCreateAccountStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCreateAccountStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCreateAccountStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains the current status of an account creation
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeCreateAccountStatusResult& WithCreateAccountStatus(CreateAccountStatus&& value) { SetCreateAccountStatus(std::move(value)); return *this;}
 
   private:
+
     CreateAccountStatus m_createAccountStatus;
   };
 

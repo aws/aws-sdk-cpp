@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteInterconnectResult();
-    DeleteInterconnectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteInterconnectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteInterconnectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteInterconnectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const InterconnectState& GetInterconnectState() const{ return m_interconnectState; }
@@ -63,6 +64,7 @@ namespace Model
     inline DeleteInterconnectResult& WithInterconnectState(InterconnectState&& value) { SetInterconnectState(std::move(value)); return *this;}
 
   private:
+
     InterconnectState m_interconnectState;
   };
 

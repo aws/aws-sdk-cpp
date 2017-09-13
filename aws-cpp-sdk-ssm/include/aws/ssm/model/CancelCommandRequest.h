@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the command you want to cancel.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ID of the command you want to cancel.</p>
      */
     inline CancelCommandRequest& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+
 
     /**
      * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
@@ -132,8 +134,10 @@ namespace Model
     inline CancelCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_commandId;
     bool m_commandIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
   };

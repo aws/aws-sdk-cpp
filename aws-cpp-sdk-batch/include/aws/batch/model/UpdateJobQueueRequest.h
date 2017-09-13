@@ -37,6 +37,7 @@ namespace Model
     UpdateJobQueueRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline UpdateJobQueueRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
+
     /**
      * <p>Describes the queue's ability to accept new jobs.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>Describes the queue's ability to accept new jobs.</p>
      */
     inline UpdateJobQueueRequest& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The priority of the job queue. Job queues with a higher priority (or a lower
@@ -126,6 +129,7 @@ namespace Model
      * <code>10</code>.</p>
      */
     inline UpdateJobQueueRequest& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
@@ -177,12 +181,16 @@ namespace Model
     inline UpdateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_jobQueue;
     bool m_jobQueueHasBeenSet;
+
     JQState m_state;
     bool m_stateHasBeenSet;
+
     int m_priority;
     bool m_priorityHasBeenSet;
+
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
     bool m_computeEnvironmentOrderHasBeenSet;
   };

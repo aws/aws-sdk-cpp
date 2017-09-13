@@ -51,6 +51,7 @@ namespace Model
     RecordDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the ProvisionedProduct object record.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline RecordDetail& WithRecordId(const char* value) { SetRecordId(value); return *this;}
 
+
     /**
      * <p>The user-friendly name of the ProvisionedProduct object.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>The user-friendly name of the ProvisionedProduct object.</p>
      */
     inline RecordDetail& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
+
 
     /**
      * <p>The status of the ProvisionedProduct object.</p> <p> <code>CREATED</code> -
@@ -181,6 +184,7 @@ namespace Model
      */
     inline RecordDetail& WithStatus(RecordStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
@@ -205,6 +209,7 @@ namespace Model
      * <p>The UTC timestamp of the creation time.</p>
      */
     inline RecordDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time when the record for the ProvisionedProduct object was last
@@ -235,6 +240,7 @@ namespace Model
      * updated.</p>
      */
     inline RecordDetail& WithUpdatedTime(Aws::Utils::DateTime&& value) { SetUpdatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of the ProvisionedProduct object.</p>
@@ -271,6 +277,7 @@ namespace Model
      */
     inline RecordDetail& WithProvisionedProductType(const char* value) { SetProvisionedProductType(value); return *this;}
 
+
     /**
      * <p>The record type for this record.</p>
      */
@@ -305,6 +312,7 @@ namespace Model
      * <p>The record type for this record.</p>
      */
     inline RecordDetail& WithRecordType(const char* value) { SetRecordType(value); return *this;}
+
 
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
@@ -341,6 +349,7 @@ namespace Model
      */
     inline RecordDetail& WithProvisionedProductId(const char* value) { SetProvisionedProductId(value); return *this;}
 
+
     /**
      * <p>The product identifier.</p>
      */
@@ -375,6 +384,7 @@ namespace Model
      * <p>The product identifier.</p>
      */
     inline RecordDetail& WithProductId(const char* value) { SetProductId(value); return *this;}
+
 
     /**
      * <p>The provisioning artifact identifier for this product. This is sometimes
@@ -418,6 +428,7 @@ namespace Model
      */
     inline RecordDetail& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
+
     /**
      * <p>The identifier of the path for this product's provisioning.</p>
      */
@@ -453,6 +464,7 @@ namespace Model
      */
     inline RecordDetail& WithPathId(const char* value) { SetPathId(value); return *this;}
 
+
     /**
      * <p>A list of errors that occurred while processing the request.</p>
      */
@@ -487,6 +499,7 @@ namespace Model
      * <p>A list of errors that occurred while processing the request.</p>
      */
     inline RecordDetail& AddRecordErrors(RecordError&& value) { m_recordErrorsHasBeenSet = true; m_recordErrors.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>List of tags associated with this record.</p>
@@ -524,30 +537,43 @@ namespace Model
     inline RecordDetail& AddRecordTags(RecordTag&& value) { m_recordTagsHasBeenSet = true; m_recordTags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_recordId;
     bool m_recordIdHasBeenSet;
+
     Aws::String m_provisionedProductName;
     bool m_provisionedProductNameHasBeenSet;
+
     RecordStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
     Aws::Utils::DateTime m_updatedTime;
     bool m_updatedTimeHasBeenSet;
+
     Aws::String m_provisionedProductType;
     bool m_provisionedProductTypeHasBeenSet;
+
     Aws::String m_recordType;
     bool m_recordTypeHasBeenSet;
+
     Aws::String m_provisionedProductId;
     bool m_provisionedProductIdHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     Aws::String m_provisioningArtifactId;
     bool m_provisioningArtifactIdHasBeenSet;
+
     Aws::String m_pathId;
     bool m_pathIdHasBeenSet;
+
     Aws::Vector<RecordError> m_recordErrors;
     bool m_recordErrorsHasBeenSet;
+
     Aws::Vector<RecordTag> m_recordTags;
     bool m_recordTagsHasBeenSet;
   };

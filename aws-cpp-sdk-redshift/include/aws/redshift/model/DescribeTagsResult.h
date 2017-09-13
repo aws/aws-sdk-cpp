@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeTagsResult();
-    DescribeTagsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of tags with their associated resources.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of tags with their associated resources.</p>
      */
     inline DescribeTagsResult& AddTaggedResources(TaggedResource&& value) { m_taggedResources.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -154,6 +156,7 @@ namespace Model
      */
     inline DescribeTagsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -170,8 +173,11 @@ namespace Model
     inline DescribeTagsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<TaggedResource> m_taggedResources;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

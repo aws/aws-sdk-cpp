@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListDocumentVersionsResult();
-    ListDocumentVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDocumentVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDocumentVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDocumentVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The document versions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The document versions.</p>
      */
     inline ListDocumentVersionsResult& AddDocumentVersions(DocumentVersionInfo&& value) { m_documentVersions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline ListDocumentVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DocumentVersionInfo> m_documentVersions;
+
     Aws::String m_nextToken;
   };
 

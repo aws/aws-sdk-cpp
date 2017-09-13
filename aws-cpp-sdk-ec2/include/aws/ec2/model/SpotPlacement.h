@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone.</p> <p>[Spot fleet only] To specify multiple
      * Availability Zones, separate them using commas; for example, "us-west-2a,
@@ -98,6 +99,7 @@ namespace Model
      */
     inline SpotPlacement& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The name of the placement group (for cluster instances).</p>
      */
@@ -132,6 +134,7 @@ namespace Model
      * <p>The name of the placement group (for cluster instances).</p>
      */
     inline SpotPlacement& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
@@ -169,10 +172,13 @@ namespace Model
     inline SpotPlacement& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Tenancy m_tenancy;
     bool m_tenancyHasBeenSet;
   };

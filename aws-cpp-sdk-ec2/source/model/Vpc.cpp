@@ -39,6 +39,7 @@ Vpc::Vpc() :
     m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
+    m_cidrBlockAssociationSetHasBeenSet(false),
     m_isDefault(false),
     m_isDefaultHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -54,6 +55,7 @@ Vpc::Vpc(const XmlNode& xmlNode) :
     m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
+    m_cidrBlockAssociationSetHasBeenSet(false),
     m_isDefault(false),
     m_isDefaultHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -108,6 +110,18 @@ Vpc& Vpc::operator =(const XmlNode& xmlNode)
       }
 
       m_ipv6CidrBlockAssociationSetHasBeenSet = true;
+    }
+    XmlNode cidrBlockAssociationSetNode = resultNode.FirstChild("cidrBlockAssociationSet");
+    if(!cidrBlockAssociationSetNode.IsNull())
+    {
+      XmlNode cidrBlockAssociationSetMember = cidrBlockAssociationSetNode.FirstChild("item");
+      while(!cidrBlockAssociationSetMember.IsNull())
+      {
+        m_cidrBlockAssociationSet.push_back(cidrBlockAssociationSetMember);
+        cidrBlockAssociationSetMember = cidrBlockAssociationSetMember.NextNode("item");
+      }
+
+      m_cidrBlockAssociationSetHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("isDefault");
     if(!isDefaultNode.IsNull())
@@ -170,6 +184,17 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
       }
   }
 
+  if(m_cidrBlockAssociationSetHasBeenSet)
+  {
+      unsigned cidrBlockAssociationSetIdx = 1;
+      for(auto& item : m_cidrBlockAssociationSet)
+      {
+        Aws::StringStream cidrBlockAssociationSetSs;
+        cidrBlockAssociationSetSs << location << index << locationValue << ".CidrBlockAssociationSet." << cidrBlockAssociationSetIdx++;
+        item.OutputToStream(oStream, cidrBlockAssociationSetSs.str().c_str());
+      }
+  }
+
   if(m_isDefaultHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
@@ -218,6 +243,16 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
         Aws::StringStream ipv6CidrBlockAssociationSetSs;
         ipv6CidrBlockAssociationSetSs << location <<  ".Ipv6CidrBlockAssociationSet." << ipv6CidrBlockAssociationSetIdx++;
         item.OutputToStream(oStream, ipv6CidrBlockAssociationSetSs.str().c_str());
+      }
+  }
+  if(m_cidrBlockAssociationSetHasBeenSet)
+  {
+      unsigned cidrBlockAssociationSetIdx = 1;
+      for(auto& item : m_cidrBlockAssociationSet)
+      {
+        Aws::StringStream cidrBlockAssociationSetSs;
+        cidrBlockAssociationSetSs << location <<  ".CidrBlockAssociationSet." << cidrBlockAssociationSetIdx++;
+        item.OutputToStream(oStream, cidrBlockAssociationSetSs.str().c_str());
       }
   }
   if(m_isDefaultHasBeenSet)

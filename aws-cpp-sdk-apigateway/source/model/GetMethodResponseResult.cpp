@@ -30,12 +30,12 @@ GetMethodResponseResult::GetMethodResponseResult()
 {
 }
 
-GetMethodResponseResult::GetMethodResponseResult(const AmazonWebServiceResult<JsonValue>& result)
+GetMethodResponseResult::GetMethodResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetMethodResponseResult& GetMethodResponseResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetMethodResponseResult& GetMethodResponseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("statusCode"))

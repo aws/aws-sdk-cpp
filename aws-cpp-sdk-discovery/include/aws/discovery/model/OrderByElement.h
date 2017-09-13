@@ -46,6 +46,7 @@ namespace Model
     OrderByElement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The field on which to order.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline OrderByElement& WithFieldName(const char* value) { SetFieldName(value); return *this;}
 
+
     /**
      * <p>Ordering direction.</p>
      */
@@ -107,8 +109,10 @@ namespace Model
     inline OrderByElement& WithSortOrder(OrderString&& value) { SetSortOrder(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_fieldName;
     bool m_fieldNameHasBeenSet;
+
     OrderString m_sortOrder;
     bool m_sortOrderHasBeenSet;
   };

@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     StartApplicationResult();
-    StartApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

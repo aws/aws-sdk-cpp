@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The offering identifier.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The offering identifier.</p>
      */
     inline ReservedNodeOffering& WithReservedNodeOfferingId(const char* value) { SetReservedNodeOfferingId(value); return *this;}
+
 
     /**
      * <p>The node type offered by the reserved node offering.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ReservedNodeOffering& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
+
     /**
      * <p>The duration, in seconds, for which the offering will reserve the node.</p>
      */
@@ -134,6 +137,7 @@ namespace Model
      * <p>The duration, in seconds, for which the offering will reserve the node.</p>
      */
     inline ReservedNodeOffering& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The upfront fixed charge you will pay to purchase the specific reserved node
@@ -153,6 +157,7 @@ namespace Model
      */
     inline ReservedNodeOffering& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
 
+
     /**
      * <p>The rate you are charged for each hour the cluster that is using the offering
      * is running.</p>
@@ -170,6 +175,7 @@ namespace Model
      * is running.</p>
      */
     inline ReservedNodeOffering& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
+
 
     /**
      * <p>The currency code for the compute nodes offering.</p>
@@ -205,6 +211,7 @@ namespace Model
      * <p>The currency code for the compute nodes offering.</p>
      */
     inline ReservedNodeOffering& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+
 
     /**
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
@@ -247,6 +254,7 @@ namespace Model
      * node offering.</p>
      */
     inline ReservedNodeOffering& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
+
 
     /**
      * <p>The charge to your account regardless of whether you are creating any
@@ -298,20 +306,28 @@ namespace Model
     inline ReservedNodeOffering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_reservedNodeOfferingId;
     bool m_reservedNodeOfferingIdHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
+
     double m_usagePrice;
     bool m_usagePriceHasBeenSet;
+
     Aws::String m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+
     Aws::String m_offeringType;
     bool m_offeringTypeHasBeenSet;
+
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
   };

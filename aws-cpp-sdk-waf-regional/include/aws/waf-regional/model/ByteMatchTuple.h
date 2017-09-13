@@ -50,6 +50,7 @@ namespace Model
     ByteMatchTuple& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The part of a web request that you want AWS WAF to search, such as a
      * specified header or a query string. For more information, see
@@ -84,6 +85,7 @@ namespace Model
      * <a>FieldToMatch</a>.</p>
      */
     inline ByteMatchTuple& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+
 
     /**
      * <p>The value that you want AWS WAF to search for. AWS WAF searches for the
@@ -280,6 +282,7 @@ namespace Model
      */
     inline ByteMatchTuple& WithTargetString(Aws::Utils::ByteBuffer&& value) { SetTargetString(std::move(value)); return *this;}
 
+
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
@@ -460,6 +463,7 @@ namespace Model
      */
     inline ByteMatchTuple& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(std::move(value)); return *this;}
 
+
     /**
      * <p>Within the portion of a web request that you want to search (for example, in
      * the query string, if any), specify where you want AWS WAF to search. Valid
@@ -611,12 +615,16 @@ namespace Model
     inline ByteMatchTuple& WithPositionalConstraint(PositionalConstraint&& value) { SetPositionalConstraint(std::move(value)); return *this;}
 
   private:
+
     FieldToMatch m_fieldToMatch;
     bool m_fieldToMatchHasBeenSet;
+
     Aws::Utils::ByteBuffer m_targetString;
     bool m_targetStringHasBeenSet;
+
     TextTransformation m_textTransformation;
     bool m_textTransformationHasBeenSet;
+
     PositionalConstraint m_positionalConstraint;
     bool m_positionalConstraintHasBeenSet;
   };

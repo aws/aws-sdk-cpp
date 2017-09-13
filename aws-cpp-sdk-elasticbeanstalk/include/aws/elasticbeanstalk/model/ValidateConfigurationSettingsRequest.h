@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application that the configuration template or environment
      * belongs to.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline ValidateConfigurationSettingsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The name of the configuration template to validate the settings against.</p>
      * <p>Condition: You cannot specify both this and an environment name.</p>
@@ -127,6 +129,7 @@ namespace Model
      * <p>Condition: You cannot specify both this and an environment name.</p>
      */
     inline ValidateConfigurationSettingsRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+
 
     /**
      * <p>The name of the environment to validate the settings against.</p>
@@ -177,6 +180,7 @@ namespace Model
      */
     inline ValidateConfigurationSettingsRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>A list of the options and desired values to evaluate.</p>
      */
@@ -213,12 +217,16 @@ namespace Model
     inline ValidateConfigurationSettingsRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
   };

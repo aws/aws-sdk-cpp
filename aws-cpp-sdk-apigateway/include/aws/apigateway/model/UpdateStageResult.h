@@ -51,8 +51,9 @@ namespace Model
   {
   public:
     UpdateStageResult();
-    UpdateStageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateStageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateStageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateStageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline UpdateStageResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
+
     /**
      * <p>The identifier of a client certificate for an API stage.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>The identifier of a client certificate for an API stage.</p>
      */
     inline UpdateStageResult& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
+
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
@@ -166,6 +169,7 @@ namespace Model
      */
     inline UpdateStageResult& WithStageName(const char* value) { SetStageName(value); return *this;}
 
+
     /**
      * <p>The stage's description.</p>
      */
@@ -201,6 +205,7 @@ namespace Model
      */
     inline UpdateStageResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Specifies whether a cache cluster is enabled for the stage.</p>
      */
@@ -215,6 +220,7 @@ namespace Model
      * <p>Specifies whether a cache cluster is enabled for the stage.</p>
      */
     inline UpdateStageResult& WithCacheClusterEnabled(bool value) { SetCacheClusterEnabled(value); return *this;}
+
 
     /**
      * <p>The size of the cache cluster for the stage, if enabled.</p>
@@ -241,6 +247,7 @@ namespace Model
      */
     inline UpdateStageResult& WithCacheClusterSize(CacheClusterSize&& value) { SetCacheClusterSize(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of the cache cluster for the stage, if enabled.</p>
      */
@@ -265,6 +272,7 @@ namespace Model
      * <p>The status of the cache cluster for the stage, if enabled.</p>
      */
     inline UpdateStageResult& WithCacheClusterStatus(CacheClusterStatus&& value) { SetCacheClusterStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
@@ -354,6 +362,7 @@ namespace Model
      */
     inline UpdateStageResult& AddMethodSettings(const char* key, const MethodSetting& value) { m_methodSettings.emplace(key, value); return *this; }
 
+
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
      * names can have alphanumeric and underscore characters, and the values must match
@@ -438,6 +447,7 @@ namespace Model
      */
     inline UpdateStageResult& AddVariables(const char* key, const char* value) { m_variables.emplace(key, value); return *this; }
 
+
     /**
      * <p>The version of the associated API documentation.</p>
      */
@@ -473,6 +483,7 @@ namespace Model
      */
     inline UpdateStageResult& WithDocumentationVersion(const char* value) { SetDocumentationVersion(value); return *this;}
 
+
     /**
      * <p>The timestamp when the stage was created.</p>
      */
@@ -497,6 +508,7 @@ namespace Model
      * <p>The timestamp when the stage was created.</p>
      */
     inline UpdateStageResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The timestamp when the stage last updated.</p>
@@ -524,17 +536,29 @@ namespace Model
     inline UpdateStageResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deploymentId;
+
     Aws::String m_clientCertificateId;
+
     Aws::String m_stageName;
+
     Aws::String m_description;
+
     bool m_cacheClusterEnabled;
+
     CacheClusterSize m_cacheClusterSize;
+
     CacheClusterStatus m_cacheClusterStatus;
+
     Aws::Map<Aws::String, MethodSetting> m_methodSettings;
+
     Aws::Map<Aws::String, Aws::String> m_variables;
+
     Aws::String m_documentationVersion;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
   };
 

@@ -51,6 +51,7 @@ namespace Model
     ScalingRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name used to identify an automatic scaling rule. Rule names must be
      * unique within a scaling policy.</p>
@@ -93,6 +94,7 @@ namespace Model
      */
     inline ScalingRule& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A friendly, more verbose description of the automatic scaling rule.</p>
      */
@@ -128,6 +130,7 @@ namespace Model
      */
     inline ScalingRule& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The conditions that trigger an automatic scaling activity.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The conditions that trigger an automatic scaling activity.</p>
      */
     inline ScalingRule& WithAction(ScalingAction&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>The CloudWatch alarm definition that determines when automatic scaling
@@ -184,12 +188,16 @@ namespace Model
     inline ScalingRule& WithTrigger(ScalingTrigger&& value) { SetTrigger(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ScalingAction m_action;
     bool m_actionHasBeenSet;
+
     ScalingTrigger m_trigger;
     bool m_triggerHasBeenSet;
   };

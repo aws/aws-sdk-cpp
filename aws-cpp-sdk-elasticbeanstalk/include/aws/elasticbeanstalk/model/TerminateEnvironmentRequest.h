@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the environment to terminate.</p> <p> Condition: You must specify
      * either this or an EnvironmentName, or both. If you do not specify either, AWS
@@ -89,6 +90,7 @@ namespace Model
      * Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
      */
     inline TerminateEnvironmentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The name of the environment to terminate.</p> <p> Condition: You must specify
@@ -139,6 +141,7 @@ namespace Model
      */
     inline TerminateEnvironmentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>Indicates whether the associated AWS resources should shut down when the
      * environment is terminated:</p> <ul> <li> <p> <code>true</code>: The specified
@@ -178,6 +181,7 @@ namespace Model
      */
     inline TerminateEnvironmentRequest& WithTerminateResources(bool value) { SetTerminateResources(value); return *this;}
 
+
     /**
      * <p>Terminates the target environment even if another environment in the same
      * group is dependent on it.</p>
@@ -197,12 +201,16 @@ namespace Model
     inline TerminateEnvironmentRequest& WithForceTerminate(bool value) { SetForceTerminate(value); return *this;}
 
   private:
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     bool m_terminateResources;
     bool m_terminateResourcesHasBeenSet;
+
     bool m_forceTerminate;
     bool m_forceTerminateHasBeenSet;
   };

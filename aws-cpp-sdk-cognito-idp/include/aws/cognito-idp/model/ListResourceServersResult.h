@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListResourceServersResult();
-    ListResourceServersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourceServersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourceServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourceServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resource servers.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The resource servers.</p>
      */
     inline ListResourceServersResult& AddResourceServers(ResourceServerType&& value) { m_resourceServers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline ListResourceServersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ResourceServerType> m_resourceServers;
+
     Aws::String m_nextToken;
   };
 

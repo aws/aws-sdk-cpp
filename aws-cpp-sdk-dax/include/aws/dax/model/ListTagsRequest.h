@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the DAX resource to which the tags belong.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the DAX resource to which the tags belong.</p>
      */
     inline ListTagsRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
 
     /**
      * <p>An optional token returned from a prior request. Use this token for
@@ -121,8 +123,10 @@ namespace Model
     inline ListTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

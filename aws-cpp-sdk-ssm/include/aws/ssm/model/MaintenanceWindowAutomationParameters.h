@@ -47,6 +47,7 @@ namespace Model
     MaintenanceWindowAutomationParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The version of an Automation document to use during task execution.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The version of an Automation document to use during task execution.</p>
      */
     inline MaintenanceWindowAutomationParameters& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
 
     /**
      * <p>The parameters for the AUTOMATION task.</p>
@@ -138,8 +140,10 @@ namespace Model
     inline MaintenanceWindowAutomationParameters& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
   };

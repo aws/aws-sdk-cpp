@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the CMK you are tagging. You can use the unique key
      * ID or the Amazon Resource Name (ARN) of the CMK. Examples:</p> <ul> <li>
@@ -108,6 +109,7 @@ namespace Model
      */
     inline TagResourceRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value.</p>
      */
@@ -144,8 +146,10 @@ namespace Model
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

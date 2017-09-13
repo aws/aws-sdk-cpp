@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     RegisterDeviceResult();
-    RegisterDeviceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterDeviceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique ID generated for this device by Cognito.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline RegisterDeviceResult& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
 
   private:
+
     Aws::String m_deviceId;
   };
 

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue whose attributes are set.</p> <p>Queue URLs
      * are case-sensitive.</p>
@@ -84,6 +85,7 @@ namespace Model
      * are case-sensitive.</p>
      */
     inline SetQueueAttributesRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+
 
     /**
      * <p>A map of attributes to set.</p> <p>The following lists the names,
@@ -1065,8 +1067,10 @@ namespace Model
     inline SetQueueAttributesRequest& AddAttributes(const QueueAttributeName& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::Map<QueueAttributeName, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
   };

@@ -48,8 +48,9 @@ namespace Model
     GetSdkResult& operator=(const GetSdkResult&) = delete;
 
 
-    GetSdkResult(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
-    GetSdkResult& operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
+    GetSdkResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    GetSdkResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+
 
 
     /**
@@ -87,6 +88,7 @@ namespace Model
      */
     inline GetSdkResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
     /**
      * <p>The content-disposition header value in the HTTP response.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      */
     inline GetSdkResult& WithContentDisposition(const char* value) { SetContentDisposition(value); return *this;}
 
+
     /**
      * <p>The binary blob response to <a>GetSdk</a>, which contains the generated
      * SDK.</p>
@@ -135,9 +138,12 @@ namespace Model
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
     
   private:
+
     Aws::String m_contentType;
+
     Aws::String m_contentDisposition;
-    Utils::Stream::ResponseStream m_body;
+
+  Aws::Utils::Stream::ResponseStream m_body;
   };
 
 } // namespace Model

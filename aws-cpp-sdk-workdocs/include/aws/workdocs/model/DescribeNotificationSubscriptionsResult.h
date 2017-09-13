@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeNotificationSubscriptionsResult();
-    DescribeNotificationSubscriptionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeNotificationSubscriptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeNotificationSubscriptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeNotificationSubscriptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The subscriptions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The subscriptions.</p>
      */
     inline DescribeNotificationSubscriptionsResult& AddSubscriptions(Subscription&& value) { m_subscriptions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeNotificationSubscriptionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Subscription> m_subscriptions;
+
     Aws::String m_marker;
   };
 

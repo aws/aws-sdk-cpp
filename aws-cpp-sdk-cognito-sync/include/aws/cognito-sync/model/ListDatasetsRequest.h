@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
@@ -84,6 +85,7 @@ namespace Model
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
     inline ListDatasetsRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -127,6 +129,7 @@ namespace Model
      */
     inline ListDatasetsRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
+
     /**
      * A pagination token for obtaining the next page of results.
      */
@@ -162,6 +165,7 @@ namespace Model
      */
     inline ListDatasetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * The maximum number of results to be returned.
      */
@@ -178,12 +182,16 @@ namespace Model
     inline ListDatasetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

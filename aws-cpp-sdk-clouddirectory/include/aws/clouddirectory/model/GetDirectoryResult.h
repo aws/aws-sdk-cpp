@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetDirectoryResult();
-    GetDirectoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDirectoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Metadata about the directory.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetDirectoryResult& WithDirectory(Directory&& value) { SetDirectory(std::move(value)); return *this;}
 
   private:
+
     Directory m_directory;
   };
 

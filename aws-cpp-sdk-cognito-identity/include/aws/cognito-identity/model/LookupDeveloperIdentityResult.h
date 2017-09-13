@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     LookupDeveloperIdentityResult();
-    LookupDeveloperIdentityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    LookupDeveloperIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    LookupDeveloperIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    LookupDeveloperIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline LookupDeveloperIdentityResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * <p>This is the list of developer user identifiers associated with an identity
@@ -138,6 +140,7 @@ namespace Model
      * an identity ID.</p>
      */
     inline LookupDeveloperIdentityResult& AddDeveloperUserIdentifierList(const char* value) { m_developerUserIdentifierList.push_back(value); return *this; }
+
 
     /**
      * <p>A pagination token. The first call you make will have <code>NextToken</code>
@@ -210,8 +213,11 @@ namespace Model
     inline LookupDeveloperIdentityResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_identityId;
+
     Aws::Vector<Aws::String> m_developerUserIdentifierList;
+
     Aws::String m_nextToken;
   };
 

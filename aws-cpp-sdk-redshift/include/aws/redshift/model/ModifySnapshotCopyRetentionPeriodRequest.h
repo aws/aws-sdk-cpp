@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The unique identifier of the cluster for which you want to change the
      * retention period for automated snapshots that are copied to a destination
@@ -97,6 +98,7 @@ namespace Model
      */
     inline ModifySnapshotCopyRetentionPeriodRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The number of days to retain automated snapshots in the destination region
      * after they are copied from the source region.</p> <p>If you decrease the
@@ -128,8 +130,10 @@ namespace Model
     inline ModifySnapshotCopyRetentionPeriodRequest& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     int m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;
   };

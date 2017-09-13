@@ -30,12 +30,12 @@ SendTaskHeartbeatResult::SendTaskHeartbeatResult()
 {
 }
 
-SendTaskHeartbeatResult::SendTaskHeartbeatResult(const AmazonWebServiceResult<JsonValue>& result)
+SendTaskHeartbeatResult::SendTaskHeartbeatResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SendTaskHeartbeatResult& SendTaskHeartbeatResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SendTaskHeartbeatResult& SendTaskHeartbeatResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

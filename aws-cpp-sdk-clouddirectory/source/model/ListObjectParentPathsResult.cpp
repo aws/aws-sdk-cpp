@@ -30,12 +30,12 @@ ListObjectParentPathsResult::ListObjectParentPathsResult()
 {
 }
 
-ListObjectParentPathsResult::ListObjectParentPathsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListObjectParentPathsResult::ListObjectParentPathsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListObjectParentPathsResult& ListObjectParentPathsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListObjectParentPathsResult& ListObjectParentPathsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PathToObjectIdentifiersList"))

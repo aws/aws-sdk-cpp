@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * the unique Id of the lambda definition
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline ListFunctionDefinitionVersionsRequest& WithFunctionDefinitionId(const char* value) { SetFunctionDefinitionId(value); return *this;}
 
+
     /**
      * Specifies the maximum number of list results to be returned in this page
      */
@@ -109,6 +111,7 @@ namespace Model
      * Specifies the maximum number of list results to be returned in this page
      */
     inline ListFunctionDefinitionVersionsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
+
 
     /**
      * Specifies the pagination token used when iterating through a paginated request
@@ -146,10 +149,13 @@ namespace Model
     inline ListFunctionDefinitionVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_functionDefinitionId;
     bool m_functionDefinitionIdHasBeenSet;
+
     Aws::String m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

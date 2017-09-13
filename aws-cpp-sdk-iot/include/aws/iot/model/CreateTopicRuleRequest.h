@@ -38,6 +38,7 @@ namespace Model
     CreateTopicRuleRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the rule.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateTopicRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
+
     /**
      * <p>The rule payload.</p>
      */
@@ -99,8 +101,10 @@ namespace Model
     inline CreateTopicRuleRequest& WithTopicRulePayload(TopicRulePayload&& value) { SetTopicRulePayload(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet;
+
     TopicRulePayload m_topicRulePayload;
     bool m_topicRulePayloadHasBeenSet;
   };

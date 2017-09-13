@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cache security group to revoke ingress from.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline RevokeCacheSecurityGroupIngressRequest& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon EC2 security group to revoke access from.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The name of the Amazon EC2 security group to revoke access from.</p>
      */
     inline RevokeCacheSecurityGroupIngressRequest& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
+
 
     /**
      * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
@@ -162,10 +165,13 @@ namespace Model
     inline RevokeCacheSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
   private:
+
     Aws::String m_cacheSecurityGroupName;
     bool m_cacheSecurityGroupNameHasBeenSet;
+
     Aws::String m_eC2SecurityGroupName;
     bool m_eC2SecurityGroupNameHasBeenSet;
+
     Aws::String m_eC2SecurityGroupOwnerId;
     bool m_eC2SecurityGroupOwnerIdHasBeenSet;
   };

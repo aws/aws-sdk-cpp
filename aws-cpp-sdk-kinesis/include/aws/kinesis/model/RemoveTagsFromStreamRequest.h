@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the stream.</p>
      */
     inline RemoveTagsFromStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline RemoveTagsFromStreamRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

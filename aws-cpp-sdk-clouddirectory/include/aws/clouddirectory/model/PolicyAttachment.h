@@ -49,6 +49,7 @@ namespace Model
     PolicyAttachment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+
 
     /**
      * <p>The <code>ObjectIdentifier</code> that is associated with
@@ -125,6 +127,7 @@ namespace Model
      * <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
+
 
     /**
      * <p>The type of policy that can be associated with
@@ -169,10 +172,13 @@ namespace Model
     inline PolicyAttachment& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
 
   private:
+
     Aws::String m_policyId;
     bool m_policyIdHasBeenSet;
+
     Aws::String m_objectIdentifier;
     bool m_objectIdentifierHasBeenSet;
+
     Aws::String m_policyType;
     bool m_policyTypeHasBeenSet;
   };

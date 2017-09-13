@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more instance IDs.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline SetInstanceProtectionRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
+
     /**
      * <p>The name of the group.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline SetInstanceProtectionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
+
     /**
      * <p>Indicates whether the instance is protected from termination by Auto Scaling
      * when scaling in.</p>
@@ -137,10 +140,13 @@ namespace Model
     inline SetInstanceProtectionRequest& WithProtectedFromScaleIn(bool value) { SetProtectedFromScaleIn(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     bool m_protectedFromScaleIn;
     bool m_protectedFromScaleInHasBeenSet;
   };

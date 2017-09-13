@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> Associate a public IP address with a server that you are launching. Valid
      * values are <code>true</code> or <code>false</code>. The default value is
@@ -59,6 +60,7 @@ namespace Model
      */
     inline CreateServerRequest& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 
+
     /**
      * <p> Enable or disable scheduled backups. Valid values are <code>true</code> or
      * <code>false</code>. The default value is <code>true</code>. </p>
@@ -76,6 +78,7 @@ namespace Model
      * <code>false</code>. The default value is <code>true</code>. </p>
      */
     inline CreateServerRequest& WithDisableAutomatedBackup(bool value) { SetDisableAutomatedBackup(value); return *this;}
+
 
     /**
      * <p> The configuration management engine to use. Valid values include
@@ -119,6 +122,7 @@ namespace Model
      */
     inline CreateServerRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
     /**
      * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
      */
@@ -153,6 +157,7 @@ namespace Model
      * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
      */
     inline CreateServerRequest& WithEngineModel(const char* value) { SetEngineModel(value); return *this;}
+
 
     /**
      * <p> The major release version of the engine that you want to use. Values depend
@@ -195,6 +200,7 @@ namespace Model
      * on the engine that you choose. </p>
      */
     inline CreateServerRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
@@ -308,6 +314,7 @@ namespace Model
      */
     inline CreateServerRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> The number of automated backups that you want to keep. Whenever a new backup
      * is created, AWS OpsWorks for Chef Automate deletes the oldest backups if this
@@ -328,6 +335,7 @@ namespace Model
      * number is exceeded. The default value is <code>1</code>. </p>
      */
     inline CreateServerRequest& WithBackupRetentionCount(int value) { SetBackupRetentionCount(value); return *this;}
+
 
     /**
      * <p> The name of the server. The server name must be unique within your AWS
@@ -384,6 +392,7 @@ namespace Model
      * </p>
      */
     inline CreateServerRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
+
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
@@ -462,6 +471,7 @@ namespace Model
      */
     inline CreateServerRequest& WithInstanceProfileArn(const char* value) { SetInstanceProfileArn(value); return *this;}
 
+
     /**
      * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
@@ -518,6 +528,7 @@ namespace Model
      */
     inline CreateServerRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
      * if desired, you may specify this parameter to connect to your instances by using
@@ -566,6 +577,7 @@ namespace Model
      * SSH. </p>
      */
     inline CreateServerRequest& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
+
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks for
@@ -643,6 +655,7 @@ namespace Model
      * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline CreateServerRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
@@ -735,6 +748,7 @@ namespace Model
      */
     inline CreateServerRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
+
     /**
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
      * add this parameter, the specified security groups must be within the VPC that is
@@ -806,6 +820,7 @@ namespace Model
      * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
      */
     inline CreateServerRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p> The service role that the AWS OpsWorks for Chef Automate service backend
@@ -890,6 +905,7 @@ namespace Model
      * need. </p>
      */
     inline CreateServerRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+
 
     /**
      * <p> The IDs of subnets in which to launch the server EC2 instance. </p> <p>
@@ -1003,6 +1019,7 @@ namespace Model
      */
     inline CreateServerRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     /**
      * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
      * by using the backup represented by BackupId. </p>
@@ -1046,38 +1063,55 @@ namespace Model
     inline CreateServerRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 
   private:
+
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet;
+
     bool m_disableAutomatedBackup;
     bool m_disableAutomatedBackupHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineModel;
     bool m_engineModelHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::Vector<EngineAttribute> m_engineAttributes;
     bool m_engineAttributesHasBeenSet;
+
     int m_backupRetentionCount;
     bool m_backupRetentionCountHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::String m_instanceProfileArn;
     bool m_instanceProfileArnHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_keyPair;
     bool m_keyPairHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet;
   };

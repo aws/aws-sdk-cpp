@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the project to which you will add the IAM user.</p>
      */
@@ -71,54 +72,56 @@ namespace Model
      */
     inline AssociateTeamMemberRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
 
+
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline AssociateTeamMemberRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline AssociateTeamMemberRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline AssociateTeamMemberRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
@@ -162,6 +165,7 @@ namespace Model
      */
     inline AssociateTeamMemberRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 
+
     /**
      * <p>The AWS CodeStar project role that will apply to this user. This role
      * determines what actions a user can take in an AWS CodeStar project.</p>
@@ -204,6 +208,7 @@ namespace Model
      */
     inline AssociateTeamMemberRequest& WithProjectRole(const char* value) { SetProjectRole(value); return *this;}
 
+
     /**
      * <p>Whether the team member is allowed to use an SSH public/private key pair to
      * remotely access project resources, for example Amazon EC2 instances.</p>
@@ -223,14 +228,19 @@ namespace Model
     inline AssociateTeamMemberRequest& WithRemoteAccessAllowed(bool value) { SetRemoteAccessAllowed(value); return *this;}
 
   private:
+
     Aws::String m_projectId;
     bool m_projectIdHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
+
     Aws::String m_projectRole;
     bool m_projectRoleHasBeenSet;
+
     bool m_remoteAccessAllowed;
     bool m_remoteAccessAllowedHasBeenSet;
   };

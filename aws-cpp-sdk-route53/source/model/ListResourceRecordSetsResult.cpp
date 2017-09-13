@@ -31,14 +31,14 @@ ListResourceRecordSetsResult::ListResourceRecordSetsResult() :
 {
 }
 
-ListResourceRecordSetsResult::ListResourceRecordSetsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListResourceRecordSetsResult::ListResourceRecordSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false),
     m_nextRecordType(RRType::NOT_SET)
 {
   *this = result;
 }
 
-ListResourceRecordSetsResult& ListResourceRecordSetsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListResourceRecordSetsResult& ListResourceRecordSetsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

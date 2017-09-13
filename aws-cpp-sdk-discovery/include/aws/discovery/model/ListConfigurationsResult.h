@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListConfigurationsResult();
-    ListConfigurationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListConfigurationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Returns configuration details, including the configuration ID, attribute
@@ -84,6 +85,7 @@ namespace Model
      * names, and attribute values.</p>
      */
     inline ListConfigurationsResult& AddConfigurations(Aws::Map<Aws::String, Aws::String>&& value) { m_configurations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token to retrieve the next set of results. For example, if your call to
@@ -149,7 +151,9 @@ namespace Model
     inline ListConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_configurations;
+
     Aws::String m_nextToken;
   };
 

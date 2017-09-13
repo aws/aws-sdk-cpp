@@ -46,6 +46,7 @@ namespace Model
     EnvironmentError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The error code returned by the environment error object.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The error code returned by the environment error object.</p>
      */
     inline EnvironmentError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The message returned by the environment error object.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline EnvironmentError& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

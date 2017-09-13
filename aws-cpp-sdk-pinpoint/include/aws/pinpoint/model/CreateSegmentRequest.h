@@ -35,6 +35,7 @@ namespace Model
     CreateSegmentRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -56,6 +57,7 @@ namespace Model
     
     inline CreateSegmentRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     
     inline const WriteSegmentRequest& GetWriteSegmentRequest() const{ return m_writeSegmentRequest; }
 
@@ -72,8 +74,10 @@ namespace Model
     inline CreateSegmentRequest& WithWriteSegmentRequest(WriteSegmentRequest&& value) { SetWriteSegmentRequest(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     WriteSegmentRequest m_writeSegmentRequest;
     bool m_writeSegmentRequestHasBeenSet;
   };

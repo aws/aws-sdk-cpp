@@ -31,13 +31,13 @@ DescribeTagsResult::DescribeTagsResult() :
 {
 }
 
-DescribeTagsResult::DescribeTagsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeTagsResult::DescribeTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_resourceType(TaggableResourceType::NOT_SET)
 {
   *this = result;
 }
 
-DescribeTagsResult& DescribeTagsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTagsResult& DescribeTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ResourceId"))

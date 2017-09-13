@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the assignment that contains the question with a
      * FileUploadAnswer.</p>
@@ -77,6 +78,7 @@ namespace Model
      * FileUploadAnswer.</p>
      */
     inline GetFileUploadURLRequest& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
+
 
     /**
      * <p>The identifier of the question with a FileUploadAnswer, as specified in the
@@ -121,8 +123,10 @@ namespace Model
     inline GetFileUploadURLRequest& WithQuestionIdentifier(const char* value) { SetQuestionIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_assignmentId;
     bool m_assignmentIdHasBeenSet;
+
     Aws::String m_questionIdentifier;
     bool m_questionIdentifierHasBeenSet;
   };

@@ -30,12 +30,12 @@ GetDocumentPathResult::GetDocumentPathResult()
 {
 }
 
-GetDocumentPathResult::GetDocumentPathResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDocumentPathResult::GetDocumentPathResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDocumentPathResult& GetDocumentPathResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDocumentPathResult& GetDocumentPathResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Path"))

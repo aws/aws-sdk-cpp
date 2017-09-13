@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeApplicationStateResult();
-    DescribeApplicationStateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeApplicationStateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeApplicationStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeApplicationStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Status of the application - Not Started, In-Progress, Complete.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>Status of the application - Not Started, In-Progress, Complete.</p>
      */
     inline DescribeApplicationStateResult& WithApplicationStatus(ApplicationStatus&& value) { SetApplicationStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The timestamp when the application status was last updated.</p>
@@ -93,7 +95,9 @@ namespace Model
     inline DescribeApplicationStateResult& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
   private:
+
     ApplicationStatus m_applicationStatus;
+
     Aws::Utils::DateTime m_lastUpdatedTime;
   };
 

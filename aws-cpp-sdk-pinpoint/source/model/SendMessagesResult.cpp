@@ -30,12 +30,12 @@ SendMessagesResult::SendMessagesResult()
 {
 }
 
-SendMessagesResult::SendMessagesResult(const AmazonWebServiceResult<JsonValue>& result)
+SendMessagesResult::SendMessagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SendMessagesResult& SendMessagesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SendMessagesResult& SendMessagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MessageResponse"))

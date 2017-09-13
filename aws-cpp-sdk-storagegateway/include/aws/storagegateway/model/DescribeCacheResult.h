@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeCacheResult();
-    DescribeCacheResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCacheResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -62,6 +63,7 @@ namespace Model
 
     
     inline DescribeCacheResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     
     inline const Aws::Vector<Aws::String>& GetDiskIds() const{ return m_diskIds; }
@@ -87,6 +89,7 @@ namespace Model
     
     inline DescribeCacheResult& AddDiskIds(const char* value) { m_diskIds.push_back(value); return *this; }
 
+
     
     inline long long GetCacheAllocatedInBytes() const{ return m_cacheAllocatedInBytes; }
 
@@ -95,6 +98,7 @@ namespace Model
 
     
     inline DescribeCacheResult& WithCacheAllocatedInBytes(long long value) { SetCacheAllocatedInBytes(value); return *this;}
+
 
     
     inline double GetCacheUsedPercentage() const{ return m_cacheUsedPercentage; }
@@ -105,6 +109,7 @@ namespace Model
     
     inline DescribeCacheResult& WithCacheUsedPercentage(double value) { SetCacheUsedPercentage(value); return *this;}
 
+
     
     inline double GetCacheDirtyPercentage() const{ return m_cacheDirtyPercentage; }
 
@@ -114,6 +119,7 @@ namespace Model
     
     inline DescribeCacheResult& WithCacheDirtyPercentage(double value) { SetCacheDirtyPercentage(value); return *this;}
 
+
     
     inline double GetCacheHitPercentage() const{ return m_cacheHitPercentage; }
 
@@ -122,6 +128,7 @@ namespace Model
 
     
     inline DescribeCacheResult& WithCacheHitPercentage(double value) { SetCacheHitPercentage(value); return *this;}
+
 
     
     inline double GetCacheMissPercentage() const{ return m_cacheMissPercentage; }
@@ -133,12 +140,19 @@ namespace Model
     inline DescribeCacheResult& WithCacheMissPercentage(double value) { SetCacheMissPercentage(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
+
     Aws::Vector<Aws::String> m_diskIds;
+
     long long m_cacheAllocatedInBytes;
+
     double m_cacheUsedPercentage;
+
     double m_cacheDirtyPercentage;
+
     double m_cacheHitPercentage;
+
     double m_cacheMissPercentage;
   };
 

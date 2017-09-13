@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want
      * to update. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline UpdateXssMatchSetRequest& WithXssMatchSetId(const char* value) { SetXssMatchSetId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline UpdateXssMatchSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
@@ -203,10 +206,13 @@ namespace Model
     inline UpdateXssMatchSetRequest& AddUpdates(XssMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_xssMatchSetId;
     bool m_xssMatchSetIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
+
     Aws::Vector<XssMatchSetUpdate> m_updates;
     bool m_updatesHasBeenSet;
   };

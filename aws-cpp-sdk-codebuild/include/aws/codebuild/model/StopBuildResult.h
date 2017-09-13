@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StopBuildResult();
-    StopBuildResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopBuildResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopBuildResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the build.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline StopBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 
   private:
+
     Build m_build;
   };
 

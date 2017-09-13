@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeTagsResult();
-    DescribeTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Depending on the input, this is a list of configuration items tagged with a
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeTagsResult& AddTags(ConfigurationTag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The call returns a token. Use this token to get the next set of results.</p>
      */
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeTagsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ConfigurationTag> m_tags;
+
     Aws::String m_nextToken;
   };
 

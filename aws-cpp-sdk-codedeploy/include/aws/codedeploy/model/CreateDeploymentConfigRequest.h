@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the deployment configuration to create.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the deployment configuration to create.</p>
      */
     inline CreateDeploymentConfigRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
+
 
     /**
      * <p>The minimum number of healthy instances that should be available at any time
@@ -157,8 +159,10 @@ namespace Model
     inline CreateDeploymentConfigRequest& WithMinimumHealthyHosts(MinimumHealthyHosts&& value) { SetMinimumHealthyHosts(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deploymentConfigName;
     bool m_deploymentConfigNameHasBeenSet;
+
     MinimumHealthyHosts m_minimumHealthyHosts;
     bool m_minimumHealthyHostsHasBeenSet;
   };

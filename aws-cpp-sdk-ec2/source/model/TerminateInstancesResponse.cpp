@@ -31,12 +31,12 @@ TerminateInstancesResponse::TerminateInstancesResponse()
 {
 }
 
-TerminateInstancesResponse::TerminateInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+TerminateInstancesResponse::TerminateInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-TerminateInstancesResponse& TerminateInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+TerminateInstancesResponse& TerminateInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

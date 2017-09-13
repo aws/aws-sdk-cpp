@@ -46,6 +46,7 @@ namespace Model
     ListRecordHistorySearchFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The filter key.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The filter key.</p>
      */
     inline ListRecordHistorySearchFilter& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The filter value for <code>Key</code>.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline ListRecordHistorySearchFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

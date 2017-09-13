@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The maximum number of streams to list.</p>
      */
@@ -54,6 +55,7 @@ namespace Model
      * <p>The maximum number of streams to list.</p>
      */
     inline ListStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The name of the stream to start the list with.</p>
@@ -91,8 +93,10 @@ namespace Model
     inline ListStreamsRequest& WithExclusiveStartStreamName(const char* value) { SetExclusiveStartStreamName(value); return *this;}
 
   private:
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_exclusiveStartStreamName;
     bool m_exclusiveStartStreamNameHasBeenSet;
   };

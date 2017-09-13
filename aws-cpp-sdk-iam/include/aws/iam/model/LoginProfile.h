@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the user, which can be used for signing in to the AWS Management
      * Console.</p>
@@ -93,6 +94,7 @@ namespace Model
      */
     inline LoginProfile& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The date when the password for the user was created.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline LoginProfile& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies whether the user is required to set a new password on next
      * sign-in.</p>
@@ -137,10 +140,13 @@ namespace Model
     inline LoginProfile& WithPasswordResetRequired(bool value) { SetPasswordResetRequired(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     bool m_passwordResetRequired;
     bool m_passwordResetRequiredHasBeenSet;
   };

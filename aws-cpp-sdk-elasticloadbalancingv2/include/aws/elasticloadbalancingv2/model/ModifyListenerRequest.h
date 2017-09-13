@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline ModifyListenerRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
 
+
     /**
      * <p>The port for connections from clients to the load balancer.</p>
      */
@@ -92,30 +94,42 @@ namespace Model
      */
     inline ModifyListenerRequest& WithPort(int value) { SetPort(value); return *this;}
 
+
     /**
-     * <p>The protocol for connections from clients to the load balancer.</p>
+     * <p>The protocol for connections from clients to the load balancer. Application
+     * Load Balancers support HTTP and HTTPS and Network Load Balancers support
+     * TCP.</p>
      */
     inline const ProtocolEnum& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol for connections from clients to the load balancer.</p>
+     * <p>The protocol for connections from clients to the load balancer. Application
+     * Load Balancers support HTTP and HTTPS and Network Load Balancers support
+     * TCP.</p>
      */
     inline void SetProtocol(const ProtocolEnum& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol for connections from clients to the load balancer.</p>
+     * <p>The protocol for connections from clients to the load balancer. Application
+     * Load Balancers support HTTP and HTTPS and Network Load Balancers support
+     * TCP.</p>
      */
     inline void SetProtocol(ProtocolEnum&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol for connections from clients to the load balancer.</p>
+     * <p>The protocol for connections from clients to the load balancer. Application
+     * Load Balancers support HTTP and HTTPS and Network Load Balancers support
+     * TCP.</p>
      */
     inline ModifyListenerRequest& WithProtocol(const ProtocolEnum& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol for connections from clients to the load balancer.</p>
+     * <p>The protocol for connections from clients to the load balancer. Application
+     * Load Balancers support HTTP and HTTPS and Network Load Balancers support
+     * TCP.</p>
      */
     inline ModifyListenerRequest& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
+
 
     /**
      * <p>The security policy that defines which protocols and ciphers are supported.
@@ -173,6 +187,7 @@ namespace Model
      */
     inline ModifyListenerRequest& WithSslPolicy(const char* value) { SetSslPolicy(value); return *this;}
 
+
     /**
      * <p>The SSL server certificate.</p>
      */
@@ -208,52 +223,73 @@ namespace Model
      */
     inline ModifyListenerRequest& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
 
+
     /**
-     * <p>The default actions.</p>
+     * <p>The default action. For Application Load Balancers, the protocol of the
+     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
+     * protocol of the specified target group must be TCP.</p>
      */
     inline const Aws::Vector<Action>& GetDefaultActions() const{ return m_defaultActions; }
 
     /**
-     * <p>The default actions.</p>
+     * <p>The default action. For Application Load Balancers, the protocol of the
+     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
+     * protocol of the specified target group must be TCP.</p>
      */
     inline void SetDefaultActions(const Aws::Vector<Action>& value) { m_defaultActionsHasBeenSet = true; m_defaultActions = value; }
 
     /**
-     * <p>The default actions.</p>
+     * <p>The default action. For Application Load Balancers, the protocol of the
+     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
+     * protocol of the specified target group must be TCP.</p>
      */
     inline void SetDefaultActions(Aws::Vector<Action>&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions = std::move(value); }
 
     /**
-     * <p>The default actions.</p>
+     * <p>The default action. For Application Load Balancers, the protocol of the
+     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
+     * protocol of the specified target group must be TCP.</p>
      */
     inline ModifyListenerRequest& WithDefaultActions(const Aws::Vector<Action>& value) { SetDefaultActions(value); return *this;}
 
     /**
-     * <p>The default actions.</p>
+     * <p>The default action. For Application Load Balancers, the protocol of the
+     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
+     * protocol of the specified target group must be TCP.</p>
      */
     inline ModifyListenerRequest& WithDefaultActions(Aws::Vector<Action>&& value) { SetDefaultActions(std::move(value)); return *this;}
 
     /**
-     * <p>The default actions.</p>
+     * <p>The default action. For Application Load Balancers, the protocol of the
+     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
+     * protocol of the specified target group must be TCP.</p>
      */
     inline ModifyListenerRequest& AddDefaultActions(const Action& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(value); return *this; }
 
     /**
-     * <p>The default actions.</p>
+     * <p>The default action. For Application Load Balancers, the protocol of the
+     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
+     * protocol of the specified target group must be TCP.</p>
      */
     inline ModifyListenerRequest& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_listenerArn;
     bool m_listenerArnHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     ProtocolEnum m_protocol;
     bool m_protocolHasBeenSet;
+
     Aws::String m_sslPolicy;
     bool m_sslPolicyHasBeenSet;
+
     Aws::Vector<Certificate> m_certificates;
     bool m_certificatesHasBeenSet;
+
     Aws::Vector<Action> m_defaultActions;
     bool m_defaultActionsHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the attribute to modify.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ModifyImageAttributeRequest& WithAttribute(const char* value) { SetAttribute(value); return *this;}
 
+
     /**
      * <p>A description for the AMI.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>A description for the AMI.</p>
      */
     inline ModifyImageAttributeRequest& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the AMI.</p>
@@ -141,6 +144,7 @@ namespace Model
      */
     inline ModifyImageAttributeRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 
+
     /**
      * <p>A launch permission modification.</p>
      */
@@ -166,6 +170,7 @@ namespace Model
      */
     inline ModifyImageAttributeRequest& WithLaunchPermission(LaunchPermissionModifications&& value) { SetLaunchPermission(std::move(value)); return *this;}
 
+
     /**
      * <p>The operation type.</p>
      */
@@ -190,6 +195,7 @@ namespace Model
      * <p>The operation type.</p>
      */
     inline ModifyImageAttributeRequest& WithOperationType(OperationType&& value) { SetOperationType(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more product codes. After you add a product code to an AMI, it can't
@@ -247,6 +253,7 @@ namespace Model
      */
     inline ModifyImageAttributeRequest& AddProductCodes(const char* value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
 
+
     /**
      * <p>One or more user groups. This is only valid when modifying the
      * <code>launchPermission</code> attribute.</p>
@@ -294,6 +301,7 @@ namespace Model
      * <code>launchPermission</code> attribute.</p>
      */
     inline ModifyImageAttributeRequest& AddUserGroups(const char* value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
+
 
     /**
      * <p>One or more AWS account IDs. This is only valid when modifying the
@@ -343,6 +351,7 @@ namespace Model
      */
     inline ModifyImageAttributeRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
+
     /**
      * <p>The value of the attribute being modified. This is only valid when modifying
      * the <code>description</code> attribute.</p>
@@ -385,6 +394,7 @@ namespace Model
      */
     inline ModifyImageAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -410,24 +420,34 @@ namespace Model
     inline ModifyImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_attribute;
     bool m_attributeHasBeenSet;
+
     AttributeValue m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     LaunchPermissionModifications m_launchPermission;
     bool m_launchPermissionHasBeenSet;
+
     OperationType m_operationType;
     bool m_operationTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_productCodes;
     bool m_productCodesHasBeenSet;
+
     Aws::Vector<Aws::String> m_userGroups;
     bool m_userGroupsHasBeenSet;
+
     Aws::Vector<Aws::String> m_userIds;
     bool m_userIdsHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

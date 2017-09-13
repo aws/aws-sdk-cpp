@@ -31,13 +31,13 @@ GetServersResult::GetServersResult() :
 {
 }
 
-GetServersResult::GetServersResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetServersResult::GetServersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_serverCatalogStatus(ServerCatalogStatus::NOT_SET)
 {
   *this = result;
 }
 
-GetServersResult& GetServersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetServersResult& GetServersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("lastModifiedOn"))

@@ -31,13 +31,13 @@ ListAssignmentsForHITResult::ListAssignmentsForHITResult() :
 {
 }
 
-ListAssignmentsForHITResult::ListAssignmentsForHITResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListAssignmentsForHITResult::ListAssignmentsForHITResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_numResults(0)
 {
   *this = result;
 }
 
-ListAssignmentsForHITResult& ListAssignmentsForHITResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListAssignmentsForHITResult& ListAssignmentsForHITResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

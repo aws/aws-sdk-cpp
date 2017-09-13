@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GenerateCredentialReportResult();
-    GenerateCredentialReportResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GenerateCredentialReportResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GenerateCredentialReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GenerateCredentialReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the state of the credential report.</p>
@@ -73,6 +74,7 @@ namespace Model
      * <p>Information about the state of the credential report.</p>
      */
     inline GenerateCredentialReportResult& WithState(ReportStateType&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the credential report.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline GenerateCredentialReportResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -125,8 +128,11 @@ namespace Model
     inline GenerateCredentialReportResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ReportStateType m_state;
+
     Aws::String m_description;
+
     ResponseMetadata m_responseMetadata;
   };
 

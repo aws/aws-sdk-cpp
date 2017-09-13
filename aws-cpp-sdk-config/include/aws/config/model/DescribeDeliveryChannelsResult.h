@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeDeliveryChannelsResult();
-    DescribeDeliveryChannelsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDeliveryChannelsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDeliveryChannelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDeliveryChannelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list that contains the descriptions of the specified delivery channel.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeDeliveryChannelsResult& AddDeliveryChannels(DeliveryChannel&& value) { m_deliveryChannels.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<DeliveryChannel> m_deliveryChannels;
   };
 

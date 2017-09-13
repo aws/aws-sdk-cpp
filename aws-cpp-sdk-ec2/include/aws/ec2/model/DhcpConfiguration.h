@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of a DHCP option.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The name of a DHCP option.</p>
      */
     inline DhcpConfiguration& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>One or more values for the DHCP option.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline DhcpConfiguration& AddValues(AttributeValue&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<AttributeValue> m_values;
     bool m_valuesHasBeenSet;
   };

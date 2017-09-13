@@ -30,12 +30,12 @@ UpdateVTLDeviceTypeResult::UpdateVTLDeviceTypeResult()
 {
 }
 
-UpdateVTLDeviceTypeResult::UpdateVTLDeviceTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateVTLDeviceTypeResult::UpdateVTLDeviceTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateVTLDeviceTypeResult& UpdateVTLDeviceTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateVTLDeviceTypeResult& UpdateVTLDeviceTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("VTLDeviceARN"))

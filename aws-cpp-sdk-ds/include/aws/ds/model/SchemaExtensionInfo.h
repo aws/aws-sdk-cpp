@@ -47,6 +47,7 @@ namespace Model
     SchemaExtensionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the directory to which the schema extension is applied.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The identifier of the directory to which the schema extension is applied.</p>
      */
     inline SchemaExtensionInfo& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The identifier of the schema extension.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline SchemaExtensionInfo& WithSchemaExtensionId(const char* value) { SetSchemaExtensionId(value); return *this;}
 
+
     /**
      * <p>A description of the schema extension.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline SchemaExtensionInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The current status of the schema extension.</p>
      */
@@ -176,6 +180,7 @@ namespace Model
      * <p>The current status of the schema extension.</p>
      */
     inline SchemaExtensionInfo& WithSchemaExtensionStatus(SchemaExtensionStatus&& value) { SetSchemaExtensionStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
@@ -212,6 +217,7 @@ namespace Model
      */
     inline SchemaExtensionInfo& WithSchemaExtensionStatusReason(const char* value) { SetSchemaExtensionStatusReason(value); return *this;}
 
+
     /**
      * <p>The date and time that the schema extension started being applied to the
      * directory.</p>
@@ -242,6 +248,7 @@ namespace Model
      */
     inline SchemaExtensionInfo& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time that the schema extension was completed.</p>
      */
@@ -268,18 +275,25 @@ namespace Model
     inline SchemaExtensionInfo& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_schemaExtensionId;
     bool m_schemaExtensionIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     SchemaExtensionStatus m_schemaExtensionStatus;
     bool m_schemaExtensionStatusHasBeenSet;
+
     Aws::String m_schemaExtensionStatusReason;
     bool m_schemaExtensionStatusReasonHasBeenSet;
+
     Aws::Utils::DateTime m_startDateTime;
     bool m_startDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endDateTime;
     bool m_endDateTimeHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The port on which the EC2 instance is listening.</p>
      */
@@ -64,6 +65,7 @@ namespace Model
      * <p>The port on which the EC2 instance is listening.</p>
      */
     inline BackendServerDescription& WithInstancePort(int value) { SetInstancePort(value); return *this;}
+
 
     /**
      * <p>The names of the policies enabled for the EC2 instance.</p>
@@ -106,8 +108,10 @@ namespace Model
     inline BackendServerDescription& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
   private:
+
     int m_instancePort;
     bool m_instancePortHasBeenSet;
+
     Aws::Vector<Aws::String> m_policyNames;
     bool m_policyNamesHasBeenSet;
   };

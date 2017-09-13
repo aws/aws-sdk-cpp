@@ -30,12 +30,12 @@ CancelCommandResult::CancelCommandResult()
 {
 }
 
-CancelCommandResult::CancelCommandResult(const AmazonWebServiceResult<JsonValue>& result)
+CancelCommandResult::CancelCommandResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CancelCommandResult& CancelCommandResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CancelCommandResult& CancelCommandResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -49,6 +49,7 @@ namespace Model
     PipelineExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the pipeline that was executed.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline PipelineExecution& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
 
+
     /**
      * <p>The version number of the pipeline that was executed.</p>
      */
@@ -98,6 +100,7 @@ namespace Model
      * <p>The version number of the pipeline that was executed.</p>
      */
     inline PipelineExecution& WithPipelineVersion(int value) { SetPipelineVersion(value); return *this;}
+
 
     /**
      * <p>The ID of the pipeline execution.</p>
@@ -133,6 +136,7 @@ namespace Model
      * <p>The ID of the pipeline execution.</p>
      */
     inline PipelineExecution& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
+
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
@@ -189,6 +193,7 @@ namespace Model
      */
     inline PipelineExecution& WithStatus(PipelineExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
      */
@@ -225,14 +230,19 @@ namespace Model
     inline PipelineExecution& AddArtifactRevisions(ArtifactRevision&& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet;
+
     int m_pipelineVersion;
     bool m_pipelineVersionHasBeenSet;
+
     Aws::String m_pipelineExecutionId;
     bool m_pipelineExecutionIdHasBeenSet;
+
     PipelineExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Vector<ArtifactRevision> m_artifactRevisions;
     bool m_artifactRevisionsHasBeenSet;
   };

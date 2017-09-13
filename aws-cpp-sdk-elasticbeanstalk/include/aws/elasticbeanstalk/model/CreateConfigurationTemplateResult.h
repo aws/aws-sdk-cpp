@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     CreateConfigurationTemplateResult();
-    CreateConfigurationTemplateResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateConfigurationTemplateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The name of the solution stack this configuration set uses.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline CreateConfigurationTemplateResult& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
+
     /**
      * <p>The ARN of the platform.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      */
     inline CreateConfigurationTemplateResult& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
 
+
     /**
      * <p>The name of the application associated with this configuration set.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The name of the application associated with this configuration set.</p>
      */
     inline CreateConfigurationTemplateResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p> If not <code>null</code>, the name of the configuration template for this
@@ -198,6 +202,7 @@ namespace Model
      */
     inline CreateConfigurationTemplateResult& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
+
     /**
      * <p>Describes this configuration set.</p>
      */
@@ -232,6 +237,7 @@ namespace Model
      * <p>Describes this configuration set.</p>
      */
     inline CreateConfigurationTemplateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p> If not <code>null</code>, the name of the environment for this configuration
@@ -274,6 +280,7 @@ namespace Model
      * set. </p>
      */
     inline CreateConfigurationTemplateResult& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+
 
     /**
      * <p> If this configuration set is associated with an environment, the
@@ -340,6 +347,7 @@ namespace Model
      */
     inline CreateConfigurationTemplateResult& WithDeploymentStatus(ConfigurationDeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date (in UTC time) when this configuration set was created.</p>
      */
@@ -365,6 +373,7 @@ namespace Model
      */
     inline CreateConfigurationTemplateResult& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
 
+
     /**
      * <p>The date (in UTC time) when this configuration set was last modified.</p>
      */
@@ -389,6 +398,7 @@ namespace Model
      * <p>The date (in UTC time) when this configuration set was last modified.</p>
      */
     inline CreateConfigurationTemplateResult& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the configuration options and their values in this configuration
@@ -432,6 +442,7 @@ namespace Model
      */
     inline CreateConfigurationTemplateResult& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettings.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -448,16 +459,27 @@ namespace Model
     inline CreateConfigurationTemplateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_solutionStackName;
+
     Aws::String m_platformArn;
+
     Aws::String m_applicationName;
+
     Aws::String m_templateName;
+
     Aws::String m_description;
+
     Aws::String m_environmentName;
+
     ConfigurationDeploymentStatus m_deploymentStatus;
+
     Aws::Utils::DateTime m_dateCreated;
+
     Aws::Utils::DateTime m_dateUpdated;
+
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListDeploymentGroupsResult();
-    ListDeploymentGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeploymentGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeploymentGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeploymentGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The application name.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The application name.</p>
      */
     inline ListDeploymentGroupsResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>A list of corresponding deployment group names.</p>
@@ -122,6 +124,7 @@ namespace Model
      * <p>A list of corresponding deployment group names.</p>
      */
     inline ListDeploymentGroupsResult& AddDeploymentGroups(const char* value) { m_deploymentGroups.push_back(value); return *this; }
+
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -173,8 +176,11 @@ namespace Model
     inline ListDeploymentGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
+
     Aws::Vector<Aws::String> m_deploymentGroups;
+
     Aws::String m_nextToken;
   };
 

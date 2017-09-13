@@ -45,6 +45,7 @@ namespace Model
     EcsCluster& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The cluster's ARN.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The cluster's ARN.</p>
      */
     inline EcsCluster& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
+
 
     /**
      * <p>The cluster name.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline EcsCluster& WithEcsClusterName(const char* value) { SetEcsClusterName(value); return *this;}
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline EcsCluster& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The time and date that the cluster was registered with the stack.</p>
@@ -186,12 +190,16 @@ namespace Model
     inline EcsCluster& WithRegisteredAt(const char* value) { SetRegisteredAt(value); return *this;}
 
   private:
+
     Aws::String m_ecsClusterArn;
     bool m_ecsClusterArnHasBeenSet;
+
     Aws::String m_ecsClusterName;
     bool m_ecsClusterNameHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_registeredAt;
     bool m_registeredAtHasBeenSet;
   };

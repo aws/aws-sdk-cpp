@@ -47,6 +47,7 @@ namespace Model
     ArtifactLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of artifact in the location.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The type of artifact in the location.</p>
      */
     inline ArtifactLocation& WithType(ArtifactLocationType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon S3 bucket that contains the artifact.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline ArtifactLocation& WithS3Location(S3ArtifactLocation&& value) { SetS3Location(std::move(value)); return *this;}
 
   private:
+
     ArtifactLocationType m_type;
     bool m_typeHasBeenSet;
+
     S3ArtifactLocation m_s3Location;
     bool m_s3LocationHasBeenSet;
   };

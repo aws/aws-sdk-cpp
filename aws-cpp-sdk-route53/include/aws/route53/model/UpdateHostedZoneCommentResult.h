@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateHostedZoneCommentResult();
-    UpdateHostedZoneCommentResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateHostedZoneCommentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateHostedZoneCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateHostedZoneCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const HostedZone& GetHostedZone() const{ return m_hostedZone; }
@@ -63,6 +64,7 @@ namespace Model
     inline UpdateHostedZoneCommentResult& WithHostedZone(HostedZone&& value) { SetHostedZone(std::move(value)); return *this;}
 
   private:
+
     HostedZone m_hostedZone;
   };
 

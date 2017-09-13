@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The primary cluster ID that is applied immediately (if
      * <code>--apply-immediately</code> was specified), or during the next maintenance
@@ -99,6 +100,7 @@ namespace Model
      */
     inline ReplicationGroupPendingModifiedValues& WithPrimaryClusterId(const char* value) { SetPrimaryClusterId(value); return *this;}
 
+
     /**
      * <p>Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
      * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
@@ -145,8 +147,10 @@ namespace Model
     inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { SetAutomaticFailoverStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_primaryClusterId;
     bool m_primaryClusterIdHasBeenSet;
+
     PendingAutomaticFailoverStatus m_automaticFailoverStatus;
     bool m_automaticFailoverStatusHasBeenSet;
   };

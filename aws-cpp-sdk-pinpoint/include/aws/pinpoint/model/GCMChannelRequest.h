@@ -43,6 +43,7 @@ namespace Model
     GCMChannelRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Platform credential API key from Google.
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline GCMChannelRequest& WithApiKey(const char* value) { SetApiKey(value); return *this;}
 
+
     /**
      * If the channel is enabled for sending messages.
      */
@@ -94,8 +96,10 @@ namespace Model
     inline GCMChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     Aws::String m_apiKey;
     bool m_apiKeyHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

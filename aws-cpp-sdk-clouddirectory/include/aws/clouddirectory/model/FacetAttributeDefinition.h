@@ -51,6 +51,7 @@ namespace Model
     FacetAttributeDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of the attribute.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The type of the attribute.</p>
      */
     inline FacetAttributeDefinition& WithType(FacetAttributeType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The default value of the attribute (if configured).</p>
@@ -101,6 +103,7 @@ namespace Model
      */
     inline FacetAttributeDefinition& WithDefaultValue(TypedAttributeValue&& value) { SetDefaultValue(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether the attribute is mutable or not.</p>
      */
@@ -115,6 +118,7 @@ namespace Model
      * <p>Whether the attribute is mutable or not.</p>
      */
     inline FacetAttributeDefinition& WithIsImmutable(bool value) { SetIsImmutable(value); return *this;}
+
 
     /**
      * <p>Validation rules attached to the attribute definition.</p>
@@ -172,12 +176,16 @@ namespace Model
     inline FacetAttributeDefinition& AddRules(const char* key, const Rule& value) { m_rulesHasBeenSet = true; m_rules.emplace(key, value); return *this; }
 
   private:
+
     FacetAttributeType m_type;
     bool m_typeHasBeenSet;
+
     TypedAttributeValue m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     bool m_isImmutable;
     bool m_isImmutableHasBeenSet;
+
     Aws::Map<Aws::String, Rule> m_rules;
     bool m_rulesHasBeenSet;
   };

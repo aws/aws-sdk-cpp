@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -64,6 +65,7 @@ namespace Model
 
     
     inline DefineIndexFieldRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>The index field and field options you want to configure. </p>
@@ -91,8 +93,10 @@ namespace Model
     inline DefineIndexFieldRequest& WithIndexField(IndexField&& value) { SetIndexField(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     IndexField m_indexField;
     bool m_indexFieldHasBeenSet;
   };

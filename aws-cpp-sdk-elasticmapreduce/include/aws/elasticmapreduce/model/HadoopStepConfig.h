@@ -49,6 +49,7 @@ namespace Model
     HadoopStepConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The path to the JAR file that runs during the step.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The path to the JAR file that runs during the step.</p>
      */
     inline HadoopStepConfig& WithJar(const char* value) { SetJar(value); return *this;}
+
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
@@ -156,6 +158,7 @@ namespace Model
      */
     inline HadoopStepConfig& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
+
     /**
      * <p>The name of the main class in the specified Java file. If not specified, the
      * JAR file should specify a main class in its manifest file.</p>
@@ -197,6 +200,7 @@ namespace Model
      * JAR file should specify a main class in its manifest file.</p>
      */
     inline HadoopStepConfig& WithMainClass(const char* value) { SetMainClass(value); return *this;}
+
 
     /**
      * <p>The list of command line arguments to pass to the JAR file's main function
@@ -247,12 +251,16 @@ namespace Model
     inline HadoopStepConfig& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
 
   private:
+
     Aws::String m_jar;
     bool m_jarHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_properties;
     bool m_propertiesHasBeenSet;
+
     Aws::String m_mainClass;
     bool m_mainClassHasBeenSet;
+
     Aws::Vector<Aws::String> m_args;
     bool m_argsHasBeenSet;
   };

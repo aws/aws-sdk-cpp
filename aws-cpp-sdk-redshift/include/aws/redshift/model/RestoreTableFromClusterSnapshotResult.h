@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     RestoreTableFromClusterSnapshotResult();
-    RestoreTableFromClusterSnapshotResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreTableFromClusterSnapshotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RestoreTableFromClusterSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RestoreTableFromClusterSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const TableRestoreStatus& GetTableRestoreStatus() const{ return m_tableRestoreStatus; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline RestoreTableFromClusterSnapshotResult& WithTableRestoreStatus(TableRestoreStatus&& value) { SetTableRestoreStatus(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline RestoreTableFromClusterSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     TableRestoreStatus m_tableRestoreStatus;
+
     ResponseMetadata m_responseMetadata;
   };
 

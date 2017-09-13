@@ -30,12 +30,12 @@ CreateApplicationResult::CreateApplicationResult()
 {
 }
 
-CreateApplicationResult::CreateApplicationResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateApplicationResult::CreateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateApplicationResult& CreateApplicationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("applicationId"))

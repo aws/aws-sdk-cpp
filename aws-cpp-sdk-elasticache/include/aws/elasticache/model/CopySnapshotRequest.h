@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of an existing snapshot from which to make a copy.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name of an existing snapshot from which to make a copy.</p>
      */
     inline CopySnapshotRequest& WithSourceSnapshotName(const char* value) { SetSourceSnapshotName(value); return *this;}
+
 
     /**
      * <p>A name for the snapshot copy. ElastiCache does not permit overwriting a
@@ -125,6 +127,7 @@ namespace Model
      * an Amazon S3 bucket if exporting.</p>
      */
     inline CopySnapshotRequest& WithTargetSnapshotName(const char* value) { SetTargetSnapshotName(value); return *this;}
+
 
     /**
      * <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is
@@ -218,10 +221,13 @@ namespace Model
     inline CopySnapshotRequest& WithTargetBucket(const char* value) { SetTargetBucket(value); return *this;}
 
   private:
+
     Aws::String m_sourceSnapshotName;
     bool m_sourceSnapshotNameHasBeenSet;
+
     Aws::String m_targetSnapshotName;
     bool m_targetSnapshotNameHasBeenSet;
+
     Aws::String m_targetBucket;
     bool m_targetBucketHasBeenSet;
   };

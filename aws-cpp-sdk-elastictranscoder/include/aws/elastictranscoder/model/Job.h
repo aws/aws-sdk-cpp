@@ -52,6 +52,7 @@ namespace Model
     Job& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier that Elastic Transcoder assigned to the job. You use this
      * value to get settings for the job or to delete the job.</p>
@@ -94,6 +95,7 @@ namespace Model
      */
     inline Job& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the job.</p>
      */
@@ -128,6 +130,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the job.</p>
      */
     inline Job& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p> The <code>Id</code> of the pipeline that you want Elastic Transcoder to use
@@ -185,6 +188,7 @@ namespace Model
      */
     inline Job& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
 
+
     /**
      * <p>A section of the request or response body that provides information about the
      * file that is being transcoded.</p>
@@ -214,6 +218,7 @@ namespace Model
      * file that is being transcoded.</p>
      */
     inline Job& WithInput(JobInput&& value) { SetInput(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the files that you're transcoding. If you specified
@@ -264,6 +269,7 @@ namespace Model
      */
     inline Job& AddInputs(JobInput&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If you specified one output for a job, information about that output. If you
      * specified multiple outputs for a job, the Output object lists information about
@@ -313,6 +319,7 @@ namespace Model
      * provides information about the transcoded (target) file. </p>
      */
     inline Job& WithOutput(JobOutput&& value) { SetOutput(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the output files. We recommend that you use the
@@ -391,6 +398,7 @@ namespace Model
      */
     inline Job& AddOutputs(JobOutput&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The value, if any, that you want Elastic Transcoder to prepend to the names
      * of all files that this job creates, including output files, thumbnails, and
@@ -446,6 +454,7 @@ namespace Model
      * the <code>OutputKeyPrefix</code>.</p>
      */
     inline Job& WithOutputKeyPrefix(const char* value) { SetOutputKeyPrefix(value); return *this;}
+
 
     /**
      * <important> <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
@@ -517,6 +526,7 @@ namespace Model
      */
     inline Job& AddPlaylists(Playlist&& value) { m_playlistsHasBeenSet = true; m_playlists.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> The status of the job: <code>Submitted</code>, <code>Progressing</code>,
      * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>. </p>
@@ -558,6 +568,7 @@ namespace Model
      * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>. </p>
      */
     inline Job& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -715,6 +726,7 @@ namespace Model
      */
     inline Job& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 
+
     /**
      * <p>Details about the timing of a job.</p>
      */
@@ -741,28 +753,40 @@ namespace Model
     inline Job& WithTiming(Timing&& value) { SetTiming(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     JobInput m_input;
     bool m_inputHasBeenSet;
+
     Aws::Vector<JobInput> m_inputs;
     bool m_inputsHasBeenSet;
+
     JobOutput m_output;
     bool m_outputHasBeenSet;
+
     Aws::Vector<JobOutput> m_outputs;
     bool m_outputsHasBeenSet;
+
     Aws::String m_outputKeyPrefix;
     bool m_outputKeyPrefixHasBeenSet;
+
     Aws::Vector<Playlist> m_playlists;
     bool m_playlistsHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_userMetadata;
     bool m_userMetadataHasBeenSet;
+
     Timing m_timing;
     bool m_timingHasBeenSet;
   };

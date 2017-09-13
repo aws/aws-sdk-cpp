@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     CreateTagsResult();
-    CreateTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

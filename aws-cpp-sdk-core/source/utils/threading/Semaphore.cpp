@@ -36,7 +36,7 @@ void Semaphore::WaitOne()
 void Semaphore::Release()
 {
     std::lock_guard<std::mutex> locker(m_mutex);
-    m_count = std::min(m_maxCount, m_count + 1);
+    m_count = (std::min)(m_maxCount, m_count + 1);
     m_syncPoint.notify_one();
 }
 

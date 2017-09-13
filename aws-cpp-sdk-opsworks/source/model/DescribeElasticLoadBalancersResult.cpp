@@ -30,12 +30,12 @@ DescribeElasticLoadBalancersResult::DescribeElasticLoadBalancersResult()
 {
 }
 
-DescribeElasticLoadBalancersResult::DescribeElasticLoadBalancersResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeElasticLoadBalancersResult::DescribeElasticLoadBalancersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeElasticLoadBalancersResult& DescribeElasticLoadBalancersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeElasticLoadBalancersResult& DescribeElasticLoadBalancersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ElasticLoadBalancers"))

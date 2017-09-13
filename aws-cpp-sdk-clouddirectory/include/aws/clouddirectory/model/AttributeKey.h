@@ -45,6 +45,7 @@ namespace Model
     AttributeKey& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the schema that contains the facet and
      * attribute.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline AttributeKey& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
+
     /**
      * <p>The name of the facet that the attribute exists within.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The name of the facet that the attribute exists within.</p>
      */
     inline AttributeKey& WithFacetName(const char* value) { SetFacetName(value); return *this;}
+
 
     /**
      * <p>The name of the attribute.</p>
@@ -158,10 +161,13 @@ namespace Model
     inline AttributeKey& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_facetName;
     bool m_facetNameHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

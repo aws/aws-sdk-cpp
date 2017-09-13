@@ -47,6 +47,7 @@ namespace Model
     ValueWithServiceIds& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Values of the annotation.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>Values of the annotation.</p>
      */
     inline ValueWithServiceIds& WithAnnotationValue(AnnotationValue&& value) { SetAnnotationValue(std::move(value)); return *this;}
+
 
     /**
      * <p>Services to which the annotation applies.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline ValueWithServiceIds& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
 
   private:
+
     AnnotationValue m_annotationValue;
     bool m_annotationValueHasBeenSet;
+
     Aws::Vector<ServiceId> m_serviceIds;
     bool m_serviceIdsHasBeenSet;
   };

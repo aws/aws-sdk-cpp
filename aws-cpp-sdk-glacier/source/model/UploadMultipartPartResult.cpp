@@ -31,12 +31,12 @@ UploadMultipartPartResult::UploadMultipartPartResult()
 {
 }
 
-UploadMultipartPartResult::UploadMultipartPartResult(const AmazonWebServiceResult<JsonValue>& result)
+UploadMultipartPartResult::UploadMultipartPartResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UploadMultipartPartResult& UploadMultipartPartResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UploadMultipartPartResult& UploadMultipartPartResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

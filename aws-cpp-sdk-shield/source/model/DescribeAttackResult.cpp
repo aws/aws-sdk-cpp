@@ -30,12 +30,12 @@ DescribeAttackResult::DescribeAttackResult()
 {
 }
 
-DescribeAttackResult::DescribeAttackResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAttackResult::DescribeAttackResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeAttackResult& DescribeAttackResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAttackResult& DescribeAttackResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Attack"))

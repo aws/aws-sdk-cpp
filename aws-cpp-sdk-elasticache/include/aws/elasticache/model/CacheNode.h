@@ -81,6 +81,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002,
      * etc.). The combination of cluster ID and node ID uniquely identifies every cache
@@ -130,6 +131,7 @@ namespace Model
      */
     inline CacheNode& WithCacheNodeId(const char* value) { SetCacheNodeId(value); return *this;}
 
+
     /**
      * <p>The current state of this cache node.</p>
      */
@@ -165,6 +167,7 @@ namespace Model
      */
     inline CacheNode& WithCacheNodeStatus(const char* value) { SetCacheNodeStatus(value); return *this;}
 
+
     /**
      * <p>The date and time when the cache node was created.</p>
      */
@@ -190,6 +193,7 @@ namespace Model
      */
     inline CacheNode& WithCacheNodeCreateTime(Aws::Utils::DateTime&& value) { SetCacheNodeCreateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The hostname for connecting to this cache node.</p>
      */
@@ -214,6 +218,7 @@ namespace Model
      * <p>The hostname for connecting to this cache node.</p>
      */
     inline CacheNode& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the parameter group applied to this cache node.</p>
@@ -249,6 +254,7 @@ namespace Model
      * <p>The status of the parameter group applied to this cache node.</p>
      */
     inline CacheNode& WithParameterGroupStatus(const char* value) { SetParameterGroupStatus(value); return *this;}
+
 
     /**
      * <p>The ID of the primary node to which this read replica node is synchronized.
@@ -299,6 +305,7 @@ namespace Model
      */
     inline CacheNode& WithSourceCacheNodeId(const char* value) { SetSourceCacheNodeId(value); return *this;}
 
+
     /**
      * <p>The Availability Zone where this node was created and now resides.</p>
      */
@@ -335,18 +342,25 @@ namespace Model
     inline CacheNode& WithCustomerAvailabilityZone(const char* value) { SetCustomerAvailabilityZone(value); return *this;}
 
   private:
+
     Aws::String m_cacheNodeId;
     bool m_cacheNodeIdHasBeenSet;
+
     Aws::String m_cacheNodeStatus;
     bool m_cacheNodeStatusHasBeenSet;
+
     Aws::Utils::DateTime m_cacheNodeCreateTime;
     bool m_cacheNodeCreateTimeHasBeenSet;
+
     Endpoint m_endpoint;
     bool m_endpointHasBeenSet;
+
     Aws::String m_parameterGroupStatus;
     bool m_parameterGroupStatusHasBeenSet;
+
     Aws::String m_sourceCacheNodeId;
     bool m_sourceCacheNodeIdHasBeenSet;
+
     Aws::String m_customerAvailabilityZone;
     bool m_customerAvailabilityZoneHasBeenSet;
   };

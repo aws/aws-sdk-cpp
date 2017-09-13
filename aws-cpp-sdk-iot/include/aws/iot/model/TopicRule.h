@@ -48,6 +48,7 @@ namespace Model
     TopicRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the rule.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the rule.</p>
      */
     inline TopicRule& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+
 
     /**
      * <p>The SQL statement used to query the topic. When using a SQL query with
@@ -125,6 +127,7 @@ namespace Model
      */
     inline TopicRule& WithSql(const char* value) { SetSql(value); return *this;}
 
+
     /**
      * <p>The description of the rule.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      */
     inline TopicRule& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The date and time the rule was created.</p>
      */
@@ -184,6 +188,7 @@ namespace Model
      * <p>The date and time the rule was created.</p>
      */
     inline TopicRule& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The actions associated with the rule.</p>
@@ -220,6 +225,7 @@ namespace Model
      */
     inline TopicRule& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies whether the rule is disabled.</p>
      */
@@ -234,6 +240,7 @@ namespace Model
      * <p>Specifies whether the rule is disabled.</p>
      */
     inline TopicRule& WithRuleDisabled(bool value) { SetRuleDisabled(value); return *this;}
+
 
     /**
      * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
@@ -271,18 +278,25 @@ namespace Model
     inline TopicRule& WithAwsIotSqlVersion(const char* value) { SetAwsIotSqlVersion(value); return *this;}
 
   private:
+
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet;
+
     Aws::String m_sql;
     bool m_sqlHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet;
+
     bool m_ruleDisabled;
     bool m_ruleDisabledHasBeenSet;
+
     Aws::String m_awsIotSqlVersion;
     bool m_awsIotSqlVersionHasBeenSet;
   };

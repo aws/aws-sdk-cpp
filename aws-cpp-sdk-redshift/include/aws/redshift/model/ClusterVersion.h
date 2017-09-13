@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The version number used by the cluster.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ClusterVersion& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
 
+
     /**
      * <p>The name of the cluster parameter group family for the cluster.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The name of the cluster parameter group family for the cluster.</p>
      */
     inline ClusterVersion& WithClusterParameterGroupFamily(const char* value) { SetClusterParameterGroupFamily(value); return *this;}
+
 
     /**
      * <p>The description of the cluster version.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline ClusterVersion& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
     Aws::String m_clusterParameterGroupFamily;
     bool m_clusterParameterGroupFamilyHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

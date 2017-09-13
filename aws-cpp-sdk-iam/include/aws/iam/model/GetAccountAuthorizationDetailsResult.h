@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     GetAccountAuthorizationDetailsResult();
-    GetAccountAuthorizationDetailsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccountAuthorizationDetailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetAccountAuthorizationDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetAccountAuthorizationDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list containing information about IAM users.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline GetAccountAuthorizationDetailsResult& AddUserDetailList(UserDetail&& value) { m_userDetailList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list containing information about IAM groups.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>A list containing information about IAM groups.</p>
      */
     inline GetAccountAuthorizationDetailsResult& AddGroupDetailList(GroupDetail&& value) { m_groupDetailList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list containing information about IAM roles.</p>
@@ -158,6 +161,7 @@ namespace Model
      */
     inline GetAccountAuthorizationDetailsResult& AddRoleDetailList(RoleDetail&& value) { m_roleDetailList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list containing information about managed policies.</p>
      */
@@ -193,6 +197,7 @@ namespace Model
      */
     inline GetAccountAuthorizationDetailsResult& AddPolicies(ManagedPolicyDetail&& value) { m_policies.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
@@ -225,6 +230,7 @@ namespace Model
      * results.</p>
      */
     inline GetAccountAuthorizationDetailsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -275,6 +281,7 @@ namespace Model
      */
     inline GetAccountAuthorizationDetailsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -291,12 +298,19 @@ namespace Model
     inline GetAccountAuthorizationDetailsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<UserDetail> m_userDetailList;
+
     Aws::Vector<GroupDetail> m_groupDetailList;
+
     Aws::Vector<RoleDetail> m_roleDetailList;
+
     Aws::Vector<ManagedPolicyDetail> m_policies;
+
     bool m_isTruncated;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -181,6 +181,7 @@ namespace Model
     Decision& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the type of the decision.</p>
      */
@@ -205,6 +206,7 @@ namespace Model
      * <p>Specifies the type of the decision.</p>
      */
     inline Decision& WithDecisionType(DecisionType&& value) { SetDecisionType(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the details of the <code>ScheduleActivityTask</code> decision. It
@@ -236,6 +238,7 @@ namespace Model
      */
     inline Decision& WithScheduleActivityTaskDecisionAttributes(ScheduleActivityTaskDecisionAttributes&& value) { SetScheduleActivityTaskDecisionAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the details of the <code>RequestCancelActivityTask</code> decision.
      * It isn't set for other decision types.</p>
@@ -265,6 +268,7 @@ namespace Model
      * It isn't set for other decision types.</p>
      */
     inline Decision& WithRequestCancelActivityTaskDecisionAttributes(RequestCancelActivityTaskDecisionAttributes&& value) { SetRequestCancelActivityTaskDecisionAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision.
@@ -296,6 +300,7 @@ namespace Model
      */
     inline Decision& WithCompleteWorkflowExecutionDecisionAttributes(CompleteWorkflowExecutionDecisionAttributes&& value) { SetCompleteWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the details of the <code>FailWorkflowExecution</code> decision. It
      * isn't set for other decision types.</p>
@@ -325,6 +330,7 @@ namespace Model
      * isn't set for other decision types.</p>
      */
     inline Decision& WithFailWorkflowExecutionDecisionAttributes(FailWorkflowExecutionDecisionAttributes&& value) { SetFailWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the details of the <code>CancelWorkflowExecution</code> decision. It
@@ -356,6 +362,7 @@ namespace Model
      */
     inline Decision& WithCancelWorkflowExecutionDecisionAttributes(CancelWorkflowExecutionDecisionAttributes&& value) { SetCancelWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code>
      * decision. It isn't set for other decision types.</p>
@@ -385,6 +392,7 @@ namespace Model
      * decision. It isn't set for other decision types.</p>
      */
     inline Decision& WithContinueAsNewWorkflowExecutionDecisionAttributes(ContinueAsNewWorkflowExecutionDecisionAttributes&& value) { SetContinueAsNewWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the details of the <code>RecordMarker</code> decision. It isn't set
@@ -416,6 +424,7 @@ namespace Model
      */
     inline Decision& WithRecordMarkerDecisionAttributes(RecordMarkerDecisionAttributes&& value) { SetRecordMarkerDecisionAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the details of the <code>StartTimer</code> decision. It isn't set
      * for other decision types.</p>
@@ -445,6 +454,7 @@ namespace Model
      * for other decision types.</p>
      */
     inline Decision& WithStartTimerDecisionAttributes(StartTimerDecisionAttributes&& value) { SetStartTimerDecisionAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the details of the <code>CancelTimer</code> decision. It isn't set
@@ -476,6 +486,7 @@ namespace Model
      */
     inline Decision& WithCancelTimerDecisionAttributes(CancelTimerDecisionAttributes&& value) { SetCancelTimerDecisionAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the details of the <code>SignalExternalWorkflowExecution</code>
      * decision. It isn't set for other decision types.</p>
@@ -505,6 +516,7 @@ namespace Model
      * decision. It isn't set for other decision types.</p>
      */
     inline Decision& WithSignalExternalWorkflowExecutionDecisionAttributes(SignalExternalWorkflowExecutionDecisionAttributes&& value) { SetSignalExternalWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the details of the
@@ -541,6 +553,7 @@ namespace Model
      */
     inline Decision& WithRequestCancelExternalWorkflowExecutionDecisionAttributes(RequestCancelExternalWorkflowExecutionDecisionAttributes&& value) { SetRequestCancelExternalWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the details of the <code>StartChildWorkflowExecution</code>
      * decision. It isn't set for other decision types.</p>
@@ -570,6 +583,7 @@ namespace Model
      * decision. It isn't set for other decision types.</p>
      */
     inline Decision& WithStartChildWorkflowExecutionDecisionAttributes(StartChildWorkflowExecutionDecisionAttributes&& value) { SetStartChildWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the details of the <code>ScheduleLambdaFunction</code> decision. It
@@ -602,32 +616,46 @@ namespace Model
     inline Decision& WithScheduleLambdaFunctionDecisionAttributes(ScheduleLambdaFunctionDecisionAttributes&& value) { SetScheduleLambdaFunctionDecisionAttributes(std::move(value)); return *this;}
 
   private:
+
     DecisionType m_decisionType;
     bool m_decisionTypeHasBeenSet;
+
     ScheduleActivityTaskDecisionAttributes m_scheduleActivityTaskDecisionAttributes;
     bool m_scheduleActivityTaskDecisionAttributesHasBeenSet;
+
     RequestCancelActivityTaskDecisionAttributes m_requestCancelActivityTaskDecisionAttributes;
     bool m_requestCancelActivityTaskDecisionAttributesHasBeenSet;
+
     CompleteWorkflowExecutionDecisionAttributes m_completeWorkflowExecutionDecisionAttributes;
     bool m_completeWorkflowExecutionDecisionAttributesHasBeenSet;
+
     FailWorkflowExecutionDecisionAttributes m_failWorkflowExecutionDecisionAttributes;
     bool m_failWorkflowExecutionDecisionAttributesHasBeenSet;
+
     CancelWorkflowExecutionDecisionAttributes m_cancelWorkflowExecutionDecisionAttributes;
     bool m_cancelWorkflowExecutionDecisionAttributesHasBeenSet;
+
     ContinueAsNewWorkflowExecutionDecisionAttributes m_continueAsNewWorkflowExecutionDecisionAttributes;
     bool m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet;
+
     RecordMarkerDecisionAttributes m_recordMarkerDecisionAttributes;
     bool m_recordMarkerDecisionAttributesHasBeenSet;
+
     StartTimerDecisionAttributes m_startTimerDecisionAttributes;
     bool m_startTimerDecisionAttributesHasBeenSet;
+
     CancelTimerDecisionAttributes m_cancelTimerDecisionAttributes;
     bool m_cancelTimerDecisionAttributesHasBeenSet;
+
     SignalExternalWorkflowExecutionDecisionAttributes m_signalExternalWorkflowExecutionDecisionAttributes;
     bool m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet;
+
     RequestCancelExternalWorkflowExecutionDecisionAttributes m_requestCancelExternalWorkflowExecutionDecisionAttributes;
     bool m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet;
+
     StartChildWorkflowExecutionDecisionAttributes m_startChildWorkflowExecutionDecisionAttributes;
     bool m_startChildWorkflowExecutionDecisionAttributesHasBeenSet;
+
     ScheduleLambdaFunctionDecisionAttributes m_scheduleLambdaFunctionDecisionAttributes;
     bool m_scheduleLambdaFunctionDecisionAttributesHasBeenSet;
   };

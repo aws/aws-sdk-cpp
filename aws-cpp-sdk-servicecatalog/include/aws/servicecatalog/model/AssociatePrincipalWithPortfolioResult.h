@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AssociatePrincipalWithPortfolioResult();
-    AssociatePrincipalWithPortfolioResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociatePrincipalWithPortfolioResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociatePrincipalWithPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociatePrincipalWithPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

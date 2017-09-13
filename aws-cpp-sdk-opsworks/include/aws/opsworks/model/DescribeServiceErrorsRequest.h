@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code>
      * returns descriptions of the errors associated with the specified stack.</p>
@@ -78,6 +79,7 @@ namespace Model
      * returns descriptions of the errors associated with the specified stack.</p>
      */
     inline DescribeServiceErrorsRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The instance ID. If you use this parameter,
@@ -127,6 +129,7 @@ namespace Model
      * with the specified instance.</p>
      */
     inline DescribeServiceErrorsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>An array of service error IDs. If you use this parameter,
@@ -185,10 +188,13 @@ namespace Model
     inline DescribeServiceErrorsRequest& AddServiceErrorIds(const char* value) { m_serviceErrorIdsHasBeenSet = true; m_serviceErrorIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_serviceErrorIds;
     bool m_serviceErrorIdsHasBeenSet;
   };

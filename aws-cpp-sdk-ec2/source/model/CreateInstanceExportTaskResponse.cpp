@@ -31,12 +31,12 @@ CreateInstanceExportTaskResponse::CreateInstanceExportTaskResponse()
 {
 }
 
-CreateInstanceExportTaskResponse::CreateInstanceExportTaskResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateInstanceExportTaskResponse::CreateInstanceExportTaskResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateInstanceExportTaskResponse& CreateInstanceExportTaskResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateInstanceExportTaskResponse& CreateInstanceExportTaskResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

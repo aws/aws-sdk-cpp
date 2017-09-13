@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreatePresetResult();
-    CreatePresetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePresetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A section of the response body that provides information about the preset
@@ -77,6 +78,7 @@ namespace Model
      * that is created.</p>
      */
     inline CreatePresetResult& WithPreset(Preset&& value) { SetPreset(std::move(value)); return *this;}
+
 
     /**
      * <p>If the preset settings don't comply with the standards for the video codec
@@ -135,7 +137,9 @@ namespace Model
     inline CreatePresetResult& WithWarning(const char* value) { SetWarning(value); return *this;}
 
   private:
+
     Preset m_preset;
+
     Aws::String m_warning;
   };
 

@@ -31,12 +31,12 @@ TerminateInstanceInAutoScalingGroupResult::TerminateInstanceInAutoScalingGroupRe
 {
 }
 
-TerminateInstanceInAutoScalingGroupResult::TerminateInstanceInAutoScalingGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+TerminateInstanceInAutoScalingGroupResult::TerminateInstanceInAutoScalingGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-TerminateInstanceInAutoScalingGroupResult& TerminateInstanceInAutoScalingGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+TerminateInstanceInAutoScalingGroupResult& TerminateInstanceInAutoScalingGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

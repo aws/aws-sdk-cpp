@@ -30,12 +30,12 @@ DescribeRaidArraysResult::DescribeRaidArraysResult()
 {
 }
 
-DescribeRaidArraysResult::DescribeRaidArraysResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRaidArraysResult::DescribeRaidArraysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeRaidArraysResult& DescribeRaidArraysResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRaidArraysResult& DescribeRaidArraysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RaidArrays"))

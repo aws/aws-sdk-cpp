@@ -30,12 +30,12 @@ DeleteSubnetGroupResult::DeleteSubnetGroupResult()
 {
 }
 
-DeleteSubnetGroupResult::DeleteSubnetGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSubnetGroupResult::DeleteSubnetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSubnetGroupResult& DeleteSubnetGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSubnetGroupResult& DeleteSubnetGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DeletionMessage"))

@@ -30,12 +30,12 @@ GetFunctionResult::GetFunctionResult()
 {
 }
 
-GetFunctionResult::GetFunctionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetFunctionResult::GetFunctionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetFunctionResult& GetFunctionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetFunctionResult& GetFunctionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Configuration"))

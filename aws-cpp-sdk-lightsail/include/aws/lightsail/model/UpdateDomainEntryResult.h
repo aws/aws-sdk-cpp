@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     UpdateDomainEntryResult();
-    UpdateDomainEntryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDomainEntryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDomainEntryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDomainEntryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the request
@@ -85,6 +86,7 @@ namespace Model
     inline UpdateDomainEntryResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Operation> m_operations;
   };
 

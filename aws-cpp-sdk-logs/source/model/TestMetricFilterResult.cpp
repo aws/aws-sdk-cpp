@@ -30,12 +30,12 @@ TestMetricFilterResult::TestMetricFilterResult()
 {
 }
 
-TestMetricFilterResult::TestMetricFilterResult(const AmazonWebServiceResult<JsonValue>& result)
+TestMetricFilterResult::TestMetricFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TestMetricFilterResult& TestMetricFilterResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TestMetricFilterResult& TestMetricFilterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("matches"))

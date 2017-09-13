@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeExportTasksResult();
-    DescribeExportTasksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeExportTasksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeExportTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeExportTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The export tasks.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeExportTasksResult& AddExportTasks(ExportTask&& value) { m_exportTasks.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeExportTasksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ExportTask> m_exportTasks;
+
     Aws::String m_nextToken;
   };
 

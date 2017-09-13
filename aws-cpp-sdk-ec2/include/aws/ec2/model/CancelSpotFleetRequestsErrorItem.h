@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The error.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The error.</p>
      */
     inline CancelSpotFleetRequestsErrorItem& WithError(CancelSpotFleetRequestsError&& value) { SetError(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline CancelSpotFleetRequestsErrorItem& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
   private:
+
     CancelSpotFleetRequestsError m_error;
     bool m_errorHasBeenSet;
+
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;
   };

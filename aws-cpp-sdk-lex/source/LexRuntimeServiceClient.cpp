@@ -105,7 +105,7 @@ PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest
   ss << "/user/";
   ss << request.GetUserId();
   ss << "/content";
- uri.SetPath(uri.GetPath() + ss.str());
+  uri.SetPath(uri.GetPath() + ss.str());
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
@@ -146,8 +146,8 @@ PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request
   ss << "/user/";
   ss << request.GetUserId();
   ss << "/text";
- uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PostTextOutcome(PostTextResult(outcome.GetResult()));

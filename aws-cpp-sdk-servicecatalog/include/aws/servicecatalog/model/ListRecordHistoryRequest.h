@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline ListRecordHistoryRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The access level for obtaining results. If left unspecified,
      * <code>User</code> level access is used.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ListRecordHistoryRequest& WithAccessLevelFilter(AccessLevelFilter&& value) { SetAccessLevelFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>The filter to limit search results. </p>
      */
@@ -142,6 +145,7 @@ namespace Model
      */
     inline ListRecordHistoryRequest& WithSearchFilter(ListRecordHistorySearchFilter&& value) { SetSearchFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of items to return in the results. If more results exist
      * than fit in the specified <code>PageSize</code>, the value of
@@ -162,6 +166,7 @@ namespace Model
      * <code>NextPageToken</code> in the response is non-null.</p>
      */
     inline ListRecordHistoryRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first
@@ -206,14 +211,19 @@ namespace Model
     inline ListRecordHistoryRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     AccessLevelFilter m_accessLevelFilter;
     bool m_accessLevelFilterHasBeenSet;
+
     ListRecordHistorySearchFilter m_searchFilter;
     bool m_searchFilterHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

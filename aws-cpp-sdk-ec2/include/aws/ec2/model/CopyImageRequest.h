@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
@@ -104,6 +105,7 @@ namespace Model
      */
     inline CopyImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>A description for the new AMI in the destination region.</p>
      */
@@ -139,6 +141,7 @@ namespace Model
      */
     inline CopyImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Specifies whether the destination snapshots of the copied image should be
      * encrypted. The default CMK for EBS is used unless a non-default AWS Key
@@ -168,6 +171,7 @@ namespace Model
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CopyImageRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when
@@ -274,6 +278,7 @@ namespace Model
      */
     inline CopyImageRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>The name of the new AMI in the destination region.</p>
      */
@@ -308,6 +313,7 @@ namespace Model
      * <p>The name of the new AMI in the destination region.</p>
      */
     inline CopyImageRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ID of the AMI to copy.</p>
@@ -344,6 +350,7 @@ namespace Model
      */
     inline CopyImageRequest& WithSourceImageId(const char* value) { SetSourceImageId(value); return *this;}
 
+
     /**
      * <p>The name of the region that contains the AMI to copy.</p>
      */
@@ -379,6 +386,7 @@ namespace Model
      */
     inline CopyImageRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -404,20 +412,28 @@ namespace Model
     inline CopyImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_sourceImageId;
     bool m_sourceImageIdHasBeenSet;
+
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribePlatformVersionResult();
-    DescribePlatformVersionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribePlatformVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribePlatformVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribePlatformVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Detailed information about the version of the platform.</p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline DescribePlatformVersionResult& WithPlatformDescription(PlatformDescription&& value) { SetPlatformDescription(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -83,7 +85,9 @@ namespace Model
     inline DescribePlatformVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     PlatformDescription m_platformDescription;
+
     ResponseMetadata m_responseMetadata;
   };
 

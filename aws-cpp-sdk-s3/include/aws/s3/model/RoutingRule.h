@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * A container for describing a condition that must be met for the specified
      * redirect to apply. For example, 1. If request is for pages in the /docs folder,
@@ -82,6 +83,7 @@ namespace Model
      */
     inline RoutingRule& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
 
+
     /**
      * Container for redirect information. You can redirect requests to another host,
      * to another page, or with another protocol. In the event of an error, you can can
@@ -118,8 +120,10 @@ namespace Model
     inline RoutingRule& WithRedirect(Redirect&& value) { SetRedirect(std::move(value)); return *this;}
 
   private:
+
     Condition m_condition;
     bool m_conditionHasBeenSet;
+
     Redirect m_redirect;
     bool m_redirectHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     UpdateContainerInstancesStateResult();
-    UpdateContainerInstancesStateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateContainerInstancesStateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateContainerInstancesStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateContainerInstancesStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of container instances.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of container instances.</p>
      */
     inline UpdateContainerInstancesStateResult& AddContainerInstances(ContainerInstance&& value) { m_containerInstances.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline UpdateContainerInstancesStateResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ContainerInstance> m_containerInstances;
+
     Aws::Vector<Failure> m_failures;
   };
 

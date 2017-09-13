@@ -52,6 +52,7 @@ namespace Model
     CloudWatchAlarmDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Determines how the metric specified by <code>MetricName</code> is compared to
      * the value specified by <code>Threshold</code>.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CloudWatchAlarmDefinition& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of periods, expressed in seconds using <code>Period</code>, during
      * which the alarm condition must exist before the alarm triggers automatic scaling
@@ -102,6 +104,7 @@ namespace Model
      * activity. The default value is <code>1</code>.</p>
      */
     inline CloudWatchAlarmDefinition& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
+
 
     /**
      * <p>The name of the CloudWatch metric that is watched to determine an alarm
@@ -145,6 +148,7 @@ namespace Model
      */
     inline CloudWatchAlarmDefinition& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
+
     /**
      * <p>The namespace for the CloudWatch metric. The default is
      * <code>AWS/ElasticMapReduce</code>.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline CloudWatchAlarmDefinition& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
     /**
      * <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch
      * metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch
@@ -207,6 +212,7 @@ namespace Model
      * metric is specified, specify <code>300</code>.</p>
      */
     inline CloudWatchAlarmDefinition& WithPeriod(int value) { SetPeriod(value); return *this;}
+
 
     /**
      * <p>The statistic to apply to the metric associated with the alarm. The default
@@ -238,6 +244,7 @@ namespace Model
      */
     inline CloudWatchAlarmDefinition& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
 
+
     /**
      * <p>The value against which the specified statistic is compared.</p>
      */
@@ -252,6 +259,7 @@ namespace Model
      * <p>The value against which the specified statistic is compared.</p>
      */
     inline CloudWatchAlarmDefinition& WithThreshold(double value) { SetThreshold(value); return *this;}
+
 
     /**
      * <p>The unit of measure associated with the CloudWatch metric being watched. The
@@ -287,6 +295,7 @@ namespace Model
      * the CloudWatch metric.</p>
      */
     inline CloudWatchAlarmDefinition& WithUnit(Unit&& value) { SetUnit(std::move(value)); return *this;}
+
 
     /**
      * <p>A CloudWatch metric dimension.</p>
@@ -324,22 +333,31 @@ namespace Model
     inline CloudWatchAlarmDefinition& AddDimensions(MetricDimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
   private:
+
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+
     int m_evaluationPeriods;
     bool m_evaluationPeriodsHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     int m_period;
     bool m_periodHasBeenSet;
+
     Statistic m_statistic;
     bool m_statisticHasBeenSet;
+
     double m_threshold;
     bool m_thresholdHasBeenSet;
+
     Unit m_unit;
     bool m_unitHasBeenSet;
+
     Aws::Vector<MetricDimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
   };

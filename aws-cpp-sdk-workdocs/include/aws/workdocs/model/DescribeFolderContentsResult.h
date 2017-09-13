@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeFolderContentsResult();
-    DescribeFolderContentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFolderContentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFolderContentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFolderContentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The subfolders in the specified folder.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeFolderContentsResult& AddFolders(FolderMetadata&& value) { m_folders.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The documents in the specified folder.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The documents in the specified folder.</p>
      */
     inline DescribeFolderContentsResult& AddDocuments(DocumentMetadata&& value) { m_documents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -157,8 +160,11 @@ namespace Model
     inline DescribeFolderContentsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<FolderMetadata> m_folders;
+
     Aws::Vector<DocumentMetadata> m_documents;
+
     Aws::String m_marker;
   };
 

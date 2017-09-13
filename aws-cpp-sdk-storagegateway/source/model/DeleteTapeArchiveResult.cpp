@@ -30,12 +30,12 @@ DeleteTapeArchiveResult::DeleteTapeArchiveResult()
 {
 }
 
-DeleteTapeArchiveResult::DeleteTapeArchiveResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTapeArchiveResult::DeleteTapeArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteTapeArchiveResult& DeleteTapeArchiveResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTapeArchiveResult& DeleteTapeArchiveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TapeARN"))

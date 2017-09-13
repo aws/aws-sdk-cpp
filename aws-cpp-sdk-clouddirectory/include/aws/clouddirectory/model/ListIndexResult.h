@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListIndexResult();
-    ListIndexResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIndexResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The objects and indexed values attached to the index.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The objects and indexed values attached to the index.</p>
      */
     inline ListIndexResult& AddIndexAttachments(IndexAttachment&& value) { m_indexAttachments.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline ListIndexResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<IndexAttachment> m_indexAttachments;
+
     Aws::String m_nextToken;
   };
 

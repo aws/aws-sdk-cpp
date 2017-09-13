@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
      * instance family (e.g., <code>m4</code>).</p> </li> <li> <p>
@@ -117,6 +118,7 @@ namespace Model
      */
     inline DescribeHostReservationsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more host reservation IDs.</p>
      */
@@ -157,6 +159,7 @@ namespace Model
      */
     inline DescribeHostReservationsRequest& AddHostReservationIdSet(const char* value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
@@ -183,6 +186,7 @@ namespace Model
      * error.</p>
      */
     inline DescribeHostReservationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>
@@ -220,12 +224,16 @@ namespace Model
     inline DescribeHostReservationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filter;
     bool m_filterHasBeenSet;
+
     Aws::Vector<Aws::String> m_hostReservationIdSet;
     bool m_hostReservationIdSetHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

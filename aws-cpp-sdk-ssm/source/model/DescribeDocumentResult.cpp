@@ -30,12 +30,12 @@ DescribeDocumentResult::DescribeDocumentResult()
 {
 }
 
-DescribeDocumentResult::DescribeDocumentResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDocumentResult::DescribeDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeDocumentResult& DescribeDocumentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDocumentResult& DescribeDocumentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Document"))

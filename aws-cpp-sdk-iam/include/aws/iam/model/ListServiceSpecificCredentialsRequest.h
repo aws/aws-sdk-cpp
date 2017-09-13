@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user whose service-specific credentials you want information
      * about. If this value is not specified then the operation assumes the user whose
@@ -108,6 +109,7 @@ namespace Model
      */
     inline ListServiceSpecificCredentialsRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>Filters the returned results to only those for the specified AWS service. If
      * not specified, then AWS returns service-specific credentials for all
@@ -158,8 +160,10 @@ namespace Model
     inline ListServiceSpecificCredentialsRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;
   };

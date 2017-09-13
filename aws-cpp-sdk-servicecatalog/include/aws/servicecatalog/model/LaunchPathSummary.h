@@ -49,6 +49,7 @@ namespace Model
     LaunchPathSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier of the product path.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The unique identifier of the product path.</p>
      */
     inline LaunchPathSummary& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>List of constraints on the portfolio-product relationship.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline LaunchPathSummary& AddConstraintSummaries(ConstraintSummary&& value) { m_constraintSummariesHasBeenSet = true; m_constraintSummaries.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>List of tags used by this launch path.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>List of tags used by this launch path.</p>
      */
     inline LaunchPathSummary& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Corresponds to the name of the portfolio to which the user was assigned.</p>
@@ -190,12 +194,16 @@ namespace Model
     inline LaunchPathSummary& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Vector<ConstraintSummary> m_constraintSummaries;
     bool m_constraintSummariesHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

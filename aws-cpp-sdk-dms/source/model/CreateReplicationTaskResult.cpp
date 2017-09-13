@@ -30,12 +30,12 @@ CreateReplicationTaskResult::CreateReplicationTaskResult()
 {
 }
 
-CreateReplicationTaskResult::CreateReplicationTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateReplicationTaskResult::CreateReplicationTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateReplicationTaskResult& CreateReplicationTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateReplicationTaskResult& CreateReplicationTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ReplicationTask"))

@@ -37,6 +37,7 @@ namespace Model
     DeleteResourceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline DeleteResourceRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The identifier of the <a>Resource</a> resource.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline DeleteResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
   };

@@ -53,6 +53,7 @@ namespace Model
     InstanceTypeConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline InstanceTypeConfig& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The number of units that a provisioned instance of this type provides toward
      * fulfilling the target capacities defined in <a>InstanceFleetConfig</a>. This
@@ -111,6 +113,7 @@ namespace Model
      * task instance fleets. Defaults to 1 if not specified. </p>
      */
     inline InstanceTypeConfig& WithWeightedCapacity(int value) { SetWeightedCapacity(value); return *this;}
+
 
     /**
      * <p>The bid price for each EC2 Spot instance type as defined by
@@ -168,6 +171,7 @@ namespace Model
      */
     inline InstanceTypeConfig& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
+
     /**
      * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
@@ -194,6 +198,7 @@ namespace Model
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
      */
     inline InstanceTypeConfig& WithBidPriceAsPercentageOfOnDemandPrice(double value) { SetBidPriceAsPercentageOfOnDemandPrice(value); return *this;}
+
 
     /**
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
@@ -224,6 +229,7 @@ namespace Model
      * instance as defined by <code>InstanceType</code>. </p>
      */
     inline InstanceTypeConfig& WithEbsConfiguration(EbsConfiguration&& value) { SetEbsConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>A configuration classification that applies when provisioning cluster
@@ -275,16 +281,22 @@ namespace Model
     inline InstanceTypeConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_weightedCapacity;
     bool m_weightedCapacityHasBeenSet;
+
     Aws::String m_bidPrice;
     bool m_bidPriceHasBeenSet;
+
     double m_bidPriceAsPercentageOfOnDemandPrice;
     bool m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet;
+
     EbsConfiguration m_ebsConfiguration;
     bool m_ebsConfigurationHasBeenSet;
+
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
   };

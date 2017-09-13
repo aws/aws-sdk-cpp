@@ -31,12 +31,12 @@ GetServerCertificateResult::GetServerCertificateResult()
 {
 }
 
-GetServerCertificateResult::GetServerCertificateResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetServerCertificateResult::GetServerCertificateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetServerCertificateResult& GetServerCertificateResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetServerCertificateResult& GetServerCertificateResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

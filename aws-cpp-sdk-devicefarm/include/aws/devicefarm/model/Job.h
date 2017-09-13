@@ -52,6 +52,7 @@ namespace Model
     Job& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The job's ARN.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline Job& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The job's name.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The job's name.</p>
      */
     inline Job& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The job's type.</p> <p>Allowed values include the following:</p> <ul> <li>
@@ -212,6 +215,7 @@ namespace Model
      */
     inline Job& WithType(TestType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>When the job was created.</p>
      */
@@ -236,6 +240,7 @@ namespace Model
      * <p>When the job was created.</p>
      */
     inline Job& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
 
     /**
      * <p>The job's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
@@ -292,6 +297,7 @@ namespace Model
      */
     inline Job& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The job's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
      * pending condition.</p> </li> <li> <p>PASSED: A passing condition.</p> </li> <li>
@@ -342,6 +348,7 @@ namespace Model
      */
     inline Job& WithResult(ExecutionResult&& value) { SetResult(std::move(value)); return *this;}
 
+
     /**
      * <p>The job's start time.</p>
      */
@@ -366,6 +373,7 @@ namespace Model
      * <p>The job's start time.</p>
      */
     inline Job& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(std::move(value)); return *this;}
+
 
     /**
      * <p>The job's stop time.</p>
@@ -392,6 +400,7 @@ namespace Model
      */
     inline Job& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(std::move(value)); return *this;}
 
+
     /**
      * <p>The job's result counters.</p>
      */
@@ -416,6 +425,7 @@ namespace Model
      * <p>The job's result counters.</p>
      */
     inline Job& WithCounters(Counters&& value) { SetCounters(std::move(value)); return *this;}
+
 
     /**
      * <p>A message about the job's result.</p>
@@ -452,6 +462,7 @@ namespace Model
      */
     inline Job& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The device (phone or tablet).</p>
      */
@@ -476,6 +487,7 @@ namespace Model
      * <p>The device (phone or tablet).</p>
      */
     inline Job& WithDevice(Device&& value) { SetDevice(std::move(value)); return *this;}
+
 
     /**
      * <p>Represents the total (metered or unmetered) minutes used by the job.</p>
@@ -503,28 +515,40 @@ namespace Model
     inline Job& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     TestType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
+
     ExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     ExecutionResult m_result;
     bool m_resultHasBeenSet;
+
     Aws::Utils::DateTime m_started;
     bool m_startedHasBeenSet;
+
     Aws::Utils::DateTime m_stopped;
     bool m_stoppedHasBeenSet;
+
     Counters m_counters;
     bool m_countersHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Device m_device;
     bool m_deviceHasBeenSet;
+
     DeviceMinutes m_deviceMinutes;
     bool m_deviceMinutesHasBeenSet;
   };

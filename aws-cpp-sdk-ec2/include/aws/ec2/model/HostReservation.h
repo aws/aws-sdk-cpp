@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The number of Dedicated Hosts the reservation is associated with.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The number of Dedicated Hosts the reservation is associated with.</p>
      */
     inline HostReservation& WithCount(int value) { SetCount(value); return *this;}
+
 
     /**
      * <p>The currency in which the <code>upfrontPrice</code> and
@@ -104,6 +106,7 @@ namespace Model
      */
     inline HostReservation& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
+
     /**
      * <p>The length of the reservation's term, specified in seconds. Can be
      * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.</p>
@@ -121,6 +124,7 @@ namespace Model
      * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.</p>
      */
     inline HostReservation& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The date and time that the reservation ends.</p>
@@ -146,6 +150,7 @@ namespace Model
      * <p>The date and time that the reservation ends.</p>
      */
     inline HostReservation& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
+
 
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
@@ -187,6 +192,7 @@ namespace Model
      */
     inline HostReservation& AddHostIdSet(const char* value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
      */
@@ -222,6 +228,7 @@ namespace Model
      */
     inline HostReservation& WithHostReservationId(const char* value) { SetHostReservationId(value); return *this;}
 
+
     /**
      * <p>The hourly price of the reservation.</p>
      */
@@ -256,6 +263,7 @@ namespace Model
      * <p>The hourly price of the reservation.</p>
      */
     inline HostReservation& WithHourlyPrice(const char* value) { SetHourlyPrice(value); return *this;}
+
 
     /**
      * <p>The instance family of the Dedicated Host Reservation. The instance family on
@@ -306,6 +314,7 @@ namespace Model
      */
     inline HostReservation& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
 
+
     /**
      * <p>The ID of the reservation. This remains the same regardless of which
      * Dedicated Hosts are associated with it.</p>
@@ -348,6 +357,7 @@ namespace Model
      */
     inline HostReservation& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 
+
     /**
      * <p>The payment option selected for this reservation.</p>
      */
@@ -372,6 +382,7 @@ namespace Model
      * <p>The payment option selected for this reservation.</p>
      */
     inline HostReservation& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time that the reservation started.</p>
@@ -398,6 +409,7 @@ namespace Model
      */
     inline HostReservation& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
 
+
     /**
      * <p>The state of the reservation.</p>
      */
@@ -422,6 +434,7 @@ namespace Model
      * <p>The state of the reservation.</p>
      */
     inline HostReservation& WithState(ReservationState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The upfront price of the reservation.</p>
@@ -459,30 +472,43 @@ namespace Model
     inline HostReservation& WithUpfrontPrice(const char* value) { SetUpfrontPrice(value); return *this;}
 
   private:
+
     int m_count;
     bool m_countHasBeenSet;
+
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     Aws::Utils::DateTime m_end;
     bool m_endHasBeenSet;
+
     Aws::Vector<Aws::String> m_hostIdSet;
     bool m_hostIdSetHasBeenSet;
+
     Aws::String m_hostReservationId;
     bool m_hostReservationIdHasBeenSet;
+
     Aws::String m_hourlyPrice;
     bool m_hourlyPriceHasBeenSet;
+
     Aws::String m_instanceFamily;
     bool m_instanceFamilyHasBeenSet;
+
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet;
+
     PaymentOption m_paymentOption;
     bool m_paymentOptionHasBeenSet;
+
     Aws::Utils::DateTime m_start;
     bool m_startHasBeenSet;
+
     ReservationState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_upfrontPrice;
     bool m_upfrontPriceHasBeenSet;
   };

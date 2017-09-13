@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>ID of the collection to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteCollectionRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
 
   private:
+
     Aws::String m_collectionId;
     bool m_collectionIdHasBeenSet;
   };

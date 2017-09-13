@@ -46,6 +46,7 @@ namespace Model
     JobDependency& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The job ID of the AWS Batch job associated with this dependency.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline JobDependency& WithJobId(const char* value) { SetJobId(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
   };

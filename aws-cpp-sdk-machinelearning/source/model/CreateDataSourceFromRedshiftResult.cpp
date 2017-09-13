@@ -30,12 +30,12 @@ CreateDataSourceFromRedshiftResult::CreateDataSourceFromRedshiftResult()
 {
 }
 
-CreateDataSourceFromRedshiftResult::CreateDataSourceFromRedshiftResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateDataSourceFromRedshiftResult::CreateDataSourceFromRedshiftResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateDataSourceFromRedshiftResult& CreateDataSourceFromRedshiftResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateDataSourceFromRedshiftResult& CreateDataSourceFromRedshiftResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DataSourceId"))

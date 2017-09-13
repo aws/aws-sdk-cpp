@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application with which the environment is associated.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of the application with which the environment is associated.</p>
      */
     inline UpdateEnvironmentRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The ID of the environment to update.</p> <p>If no environment with this ID
@@ -143,6 +145,7 @@ namespace Model
      */
     inline UpdateEnvironmentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 
+
     /**
      * <p>The name of the environment to update. If no environment with this name
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
@@ -205,6 +208,7 @@ namespace Model
      * <code>MissingRequiredParameter</code> error. </p>
      */
     inline UpdateEnvironmentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+
 
     /**
      * <p>The name of the group to which the target environment belongs. Specify a
@@ -269,6 +273,7 @@ namespace Model
      */
     inline UpdateEnvironmentRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
      * of this environment.</p>
@@ -311,6 +316,7 @@ namespace Model
      */
     inline UpdateEnvironmentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>This specifies the tier to use to update the environment.</p> <p>Condition:
      * At this time, if you change the tier version, name, or type, AWS Elastic
@@ -345,6 +351,7 @@ namespace Model
      * Beanstalk returns <code>InvalidParameterValue</code> error. </p>
      */
     inline UpdateEnvironmentRequest& WithTier(EnvironmentTier&& value) { SetTier(std::move(value)); return *this;}
+
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named
@@ -394,6 +401,7 @@ namespace Model
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
     inline UpdateEnvironmentRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk deploys this
@@ -451,6 +459,7 @@ namespace Model
      */
     inline UpdateEnvironmentRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
+
     /**
      * <p>This specifies the platform version that the environment will run after the
      * environment is updated.</p>
@@ -493,6 +502,7 @@ namespace Model
      */
     inline UpdateEnvironmentRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
+
     /**
      * <p>The ARN of the platform, if used.</p>
      */
@@ -527,6 +537,7 @@ namespace Model
      * <p>The ARN of the platform, if used.</p>
      */
     inline UpdateEnvironmentRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
 
     /**
      * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
@@ -577,6 +588,7 @@ namespace Model
      */
     inline UpdateEnvironmentRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of custom user-defined configuration options to remove from the
      * configuration set for this environment.</p>
@@ -620,28 +632,40 @@ namespace Model
     inline UpdateEnvironmentRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     EnvironmentTier m_tier;
     bool m_tierHasBeenSet;
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
+
     Aws::String m_platformArn;
     bool m_platformArnHasBeenSet;
+
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
+
     Aws::Vector<OptionSpecification> m_optionsToRemove;
     bool m_optionsToRemoveHasBeenSet;
   };

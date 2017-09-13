@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateDomainResult();
-    CreateDomainResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DomainStatus& GetDomainStatus() const{ return m_domainStatus; }
@@ -62,6 +63,7 @@ namespace Model
 
     
     inline CreateDomainResult& WithDomainStatus(DomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -79,7 +81,9 @@ namespace Model
     inline CreateDomainResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DomainStatus m_domainStatus;
+
     ResponseMetadata m_responseMetadata;
   };
 

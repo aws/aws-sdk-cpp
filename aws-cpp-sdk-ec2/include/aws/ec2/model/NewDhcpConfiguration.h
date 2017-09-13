@@ -44,6 +44,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -64,6 +65,7 @@ namespace Model
 
     
     inline NewDhcpConfiguration& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
@@ -90,8 +92,10 @@ namespace Model
     inline NewDhcpConfiguration& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateUserPoolDomainResult::CreateUserPoolDomainResult()
 {
 }
 
-CreateUserPoolDomainResult::CreateUserPoolDomainResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateUserPoolDomainResult::CreateUserPoolDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateUserPoolDomainResult& CreateUserPoolDomainResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateUserPoolDomainResult& CreateUserPoolDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

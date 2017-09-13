@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetXssMatchSetResult();
-    GetXssMatchSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetXssMatchSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetXssMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetXssMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the <a>XssMatchSet</a> that you specified in the
@@ -108,6 +109,7 @@ namespace Model
     inline GetXssMatchSetResult& WithXssMatchSet(XssMatchSet&& value) { SetXssMatchSet(std::move(value)); return *this;}
 
   private:
+
     XssMatchSet m_xssMatchSet;
   };
 

@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the receipt rule set. The name must:</p> <ul> <li> <p>Contain
      * only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or
@@ -110,6 +111,7 @@ namespace Model
      */
     inline ReceiptRuleSetMetadata& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The date and time the receipt rule set was created.</p>
      */
@@ -136,8 +138,10 @@ namespace Model
     inline ReceiptRuleSetMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet;
   };

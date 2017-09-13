@@ -48,6 +48,7 @@ namespace Model
     MaintenanceWindowTaskInvocationParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The parameters for a RUN_COMMAND task type.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The parameters for a RUN_COMMAND task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithRunCommand(MaintenanceWindowRunCommandParameters&& value) { SetRunCommand(std::move(value)); return *this;}
+
 
     /**
      * <p>The parameters for a AUTOMATION task type.</p>
@@ -98,6 +100,7 @@ namespace Model
      */
     inline MaintenanceWindowTaskInvocationParameters& WithAutomation(MaintenanceWindowAutomationParameters&& value) { SetAutomation(std::move(value)); return *this;}
 
+
     /**
      * <p>The parameters for a STEP_FUNCTION task type.</p>
      */
@@ -122,6 +125,7 @@ namespace Model
      * <p>The parameters for a STEP_FUNCTION task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithStepFunctions(MaintenanceWindowStepFunctionsParameters&& value) { SetStepFunctions(std::move(value)); return *this;}
+
 
     /**
      * <p>The parameters for a LAMBDA task type.</p>
@@ -149,12 +153,16 @@ namespace Model
     inline MaintenanceWindowTaskInvocationParameters& WithLambda(MaintenanceWindowLambdaParameters&& value) { SetLambda(std::move(value)); return *this;}
 
   private:
+
     MaintenanceWindowRunCommandParameters m_runCommand;
     bool m_runCommandHasBeenSet;
+
     MaintenanceWindowAutomationParameters m_automation;
     bool m_automationHasBeenSet;
+
     MaintenanceWindowStepFunctionsParameters m_stepFunctions;
     bool m_stepFunctionsHasBeenSet;
+
     MaintenanceWindowLambdaParameters m_lambda;
     bool m_lambdaHasBeenSet;
   };

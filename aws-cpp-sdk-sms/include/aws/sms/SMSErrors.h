@@ -55,7 +55,7 @@ enum class SMSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_PARAMETER,
   MISSING_REQUIRED_PARAMETER,
   NO_CONNECTORS_AVAILABLE,
@@ -68,7 +68,7 @@ enum class SMSErrors
 };
 namespace SMSErrorMapper
 {
-  AWS_SMS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_SMS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace SMS

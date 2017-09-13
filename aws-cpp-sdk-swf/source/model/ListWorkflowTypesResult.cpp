@@ -30,12 +30,12 @@ ListWorkflowTypesResult::ListWorkflowTypesResult()
 {
 }
 
-ListWorkflowTypesResult::ListWorkflowTypesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListWorkflowTypesResult::ListWorkflowTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListWorkflowTypesResult& ListWorkflowTypesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListWorkflowTypesResult& ListWorkflowTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("typeInfos"))

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The input image. You can provide a blob of image bytes or an S3 object.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      */
     inline DetectLabelsRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
+
     /**
      * <p>Maximum number of labels you want the service to return in the response. The
      * service returns the specified number of highest confidence labels. </p>
@@ -78,6 +80,7 @@ namespace Model
      * service returns the specified number of highest confidence labels. </p>
      */
     inline DetectLabelsRequest& WithMaxLabels(int value) { SetMaxLabels(value); return *this;}
+
 
     /**
      * <p>Specifies the minimum confidence level for the labels to return. Amazon
@@ -104,10 +107,13 @@ namespace Model
     inline DetectLabelsRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
 
   private:
+
     Image m_image;
     bool m_imageHasBeenSet;
+
     int m_maxLabels;
     bool m_maxLabelsHasBeenSet;
+
     double m_minConfidence;
     bool m_minConfidenceHasBeenSet;
   };

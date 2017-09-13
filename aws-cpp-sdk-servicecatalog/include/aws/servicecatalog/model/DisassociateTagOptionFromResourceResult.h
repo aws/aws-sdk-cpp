@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DisassociateTagOptionFromResourceResult();
-    DisassociateTagOptionFromResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateTagOptionFromResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateTagOptionFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateTagOptionFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

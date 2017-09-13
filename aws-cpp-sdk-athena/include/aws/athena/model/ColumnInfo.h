@@ -47,6 +47,7 @@ namespace Model
     ColumnInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The catalog to which the query results belong.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The catalog to which the query results belong.</p>
      */
     inline ColumnInfo& WithCatalogName(const char* value) { SetCatalogName(value); return *this;}
+
 
     /**
      * <p>The schema name (database name) to which the query results belong.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ColumnInfo& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
 
+
     /**
      * <p>The table name for the query results.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The table name for the query results.</p>
      */
     inline ColumnInfo& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>The name of the column.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline ColumnInfo& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A column label.</p>
      */
@@ -221,6 +226,7 @@ namespace Model
      * <p>A column label.</p>
      */
     inline ColumnInfo& WithLabel(const char* value) { SetLabel(value); return *this;}
+
 
     /**
      * <p>The data type of the column.</p>
@@ -257,6 +263,7 @@ namespace Model
      */
     inline ColumnInfo& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up
      * to 38. For performance reasons, we recommend up to 18 digits.</p>
@@ -275,6 +282,7 @@ namespace Model
      */
     inline ColumnInfo& WithPrecision(int value) { SetPrecision(value); return *this;}
 
+
     /**
      * <p>For <code>DECIMAL</code> data types, specifies the total number of digits in
      * the fractional part of the value. Defaults to 0.</p>
@@ -292,6 +300,7 @@ namespace Model
      * the fractional part of the value. Defaults to 0.</p>
      */
     inline ColumnInfo& WithScale(int value) { SetScale(value); return *this;}
+
 
     /**
      * <p>Indicates the column's nullable status.</p>
@@ -318,6 +327,7 @@ namespace Model
      */
     inline ColumnInfo& WithNullable(ColumnNullable&& value) { SetNullable(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether values in the column are case-sensitive.</p>
      */
@@ -334,24 +344,34 @@ namespace Model
     inline ColumnInfo& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
 
   private:
+
     Aws::String m_catalogName;
     bool m_catalogNameHasBeenSet;
+
     Aws::String m_schemaName;
     bool m_schemaNameHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     int m_precision;
     bool m_precisionHasBeenSet;
+
     int m_scale;
     bool m_scaleHasBeenSet;
+
     ColumnNullable m_nullable;
     bool m_nullableHasBeenSet;
+
     bool m_caseSensitive;
     bool m_caseSensitiveHasBeenSet;
   };

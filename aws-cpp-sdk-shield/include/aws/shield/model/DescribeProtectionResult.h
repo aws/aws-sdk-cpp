@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeProtectionResult();
-    DescribeProtectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeProtectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <a>Protection</a> object that is described.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeProtectionResult& WithProtection(Protection&& value) { SetProtection(std::move(value)); return *this;}
 
   private:
+
     Protection m_protection;
   };
 

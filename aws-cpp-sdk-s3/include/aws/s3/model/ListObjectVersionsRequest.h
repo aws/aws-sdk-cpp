@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline ListObjectVersionsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * A delimiter is a character you use to group keys.
@@ -97,6 +99,7 @@ namespace Model
      */
     inline ListObjectVersionsRequest& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
+
     
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
@@ -111,6 +114,7 @@ namespace Model
 
     
     inline ListObjectVersionsRequest& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
+
 
     /**
      * Specifies the key to start with when listing objects in a bucket.
@@ -147,6 +151,7 @@ namespace Model
      */
     inline ListObjectVersionsRequest& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
+
     /**
      * Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.
@@ -164,6 +169,7 @@ namespace Model
      * contain fewer keys but will never contain more.
      */
     inline ListObjectVersionsRequest& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
+
 
     /**
      * Limits the response to keys that begin with the specified prefix.
@@ -199,6 +205,7 @@ namespace Model
      * Limits the response to keys that begin with the specified prefix.
      */
     inline ListObjectVersionsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+
 
     /**
      * Specifies the object version you want to start listing from.
@@ -236,18 +243,25 @@ namespace Model
     inline ListObjectVersionsRequest& WithVersionIdMarker(const char* value) { SetVersionIdMarker(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_delimiter;
     bool m_delimiterHasBeenSet;
+
     EncodingType m_encodingType;
     bool m_encodingTypeHasBeenSet;
+
     Aws::String m_keyMarker;
     bool m_keyMarkerHasBeenSet;
+
     int m_maxKeys;
     bool m_maxKeysHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     Aws::String m_versionIdMarker;
     bool m_versionIdMarkerHasBeenSet;
   };

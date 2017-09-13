@@ -31,13 +31,13 @@ CreateApiKeyResult::CreateApiKeyResult() :
 {
 }
 
-CreateApiKeyResult::CreateApiKeyResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateApiKeyResult::CreateApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_enabled(false)
 {
   *this = result;
 }
 
-CreateApiKeyResult& CreateApiKeyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateApiKeyResult& CreateApiKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

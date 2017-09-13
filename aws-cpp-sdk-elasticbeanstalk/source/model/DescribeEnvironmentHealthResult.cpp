@@ -32,13 +32,13 @@ DescribeEnvironmentHealthResult::DescribeEnvironmentHealthResult() :
 {
 }
 
-DescribeEnvironmentHealthResult::DescribeEnvironmentHealthResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+DescribeEnvironmentHealthResult::DescribeEnvironmentHealthResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_status(EnvironmentHealth::NOT_SET)
 {
   *this = result;
 }
 
-DescribeEnvironmentHealthResult& DescribeEnvironmentHealthResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeEnvironmentHealthResult& DescribeEnvironmentHealthResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

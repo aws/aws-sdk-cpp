@@ -30,12 +30,12 @@ CreateAssociationResult::CreateAssociationResult()
 {
 }
 
-CreateAssociationResult::CreateAssociationResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateAssociationResult::CreateAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateAssociationResult& CreateAssociationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateAssociationResult& CreateAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AssociationDescription"))

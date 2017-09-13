@@ -31,12 +31,12 @@ ListPlatformVersionsResult::ListPlatformVersionsResult()
 {
 }
 
-ListPlatformVersionsResult::ListPlatformVersionsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListPlatformVersionsResult::ListPlatformVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListPlatformVersionsResult& ListPlatformVersionsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListPlatformVersionsResult& ListPlatformVersionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

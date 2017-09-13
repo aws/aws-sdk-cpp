@@ -38,6 +38,7 @@ namespace Model
     CreateTrafficPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the traffic policy.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the traffic policy.</p>
      */
     inline CreateTrafficPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
@@ -129,6 +131,7 @@ namespace Model
      */
     inline CreateTrafficPolicyRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
 
+
     /**
      * <p>(Optional) Any comments that you want to include about the traffic
      * policy.</p>
@@ -172,10 +175,13 @@ namespace Model
     inline CreateTrafficPolicyRequest& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_document;
     bool m_documentHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
   };

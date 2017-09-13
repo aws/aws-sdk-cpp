@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateConnectivityInfoResult();
-    UpdateConnectivityInfoResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateConnectivityInfoResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateConnectivityInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateConnectivityInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Response Text
@@ -75,6 +76,7 @@ namespace Model
      * Response Text
      */
     inline UpdateConnectivityInfoResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * New Version
@@ -112,7 +114,9 @@ namespace Model
     inline UpdateConnectivityInfoResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_message;
+
     Aws::String m_version;
   };
 

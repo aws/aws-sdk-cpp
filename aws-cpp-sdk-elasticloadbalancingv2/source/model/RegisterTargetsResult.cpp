@@ -31,12 +31,12 @@ RegisterTargetsResult::RegisterTargetsResult()
 {
 }
 
-RegisterTargetsResult::RegisterTargetsResult(const AmazonWebServiceResult<XmlDocument>& result)
+RegisterTargetsResult::RegisterTargetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RegisterTargetsResult& RegisterTargetsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RegisterTargetsResult& RegisterTargetsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeVolumesModificationsResponse();
-    DescribeVolumesModificationsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVolumesModificationsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVolumesModificationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVolumesModificationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of returned <a>VolumeModification</a> objects.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeVolumesModificationsResponse& AddVolumesModifications(VolumeModification&& value) { m_volumesModifications.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Token for pagination, null if there are no more results </p>
      */
@@ -114,6 +116,7 @@ namespace Model
      */
     inline DescribeVolumesModificationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -130,8 +133,11 @@ namespace Model
     inline DescribeVolumesModificationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<VolumeModification> m_volumesModifications;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

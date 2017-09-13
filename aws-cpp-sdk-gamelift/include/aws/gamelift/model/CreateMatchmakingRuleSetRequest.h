@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a matchmaking rule set. This name is used to identify
      * the rule set associated with a matchmaking configuration.</p>
@@ -80,6 +81,7 @@ namespace Model
      * the rule set associated with a matchmaking configuration.</p>
      */
     inline CreateMatchmakingRuleSetRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
@@ -131,8 +133,10 @@ namespace Model
     inline CreateMatchmakingRuleSetRequest& WithRuleSetBody(const char* value) { SetRuleSetBody(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_ruleSetBody;
     bool m_ruleSetBodyHasBeenSet;
   };

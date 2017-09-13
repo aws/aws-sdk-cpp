@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
@@ -71,6 +72,7 @@ namespace Model
     inline ServiceEndpoint& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
   private:
+
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
   };

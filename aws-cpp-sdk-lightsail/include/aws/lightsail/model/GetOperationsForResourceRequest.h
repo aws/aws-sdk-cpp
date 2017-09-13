@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the resource for which you are requesting information.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the resource for which you are requesting information.</p>
      */
     inline GetOperationsForResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
 
     /**
      * <p>A token used for advancing to the next page of results from your get
@@ -114,8 +116,10 @@ namespace Model
     inline GetOperationsForResourceRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

@@ -23,7 +23,7 @@ namespace Aws
 {
 namespace Inspector
 {
-  class AWS_INSPECTOR_API InspectorRequest : public AmazonSerializableWebServiceRequest
+  class AWS_INSPECTOR_API InspectorRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~InspectorRequest () {}
@@ -37,7 +37,7 @@ namespace Inspector
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_JSON_CONTENT_TYPE_1_1 ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_1 ));
       }
 
       return headers;

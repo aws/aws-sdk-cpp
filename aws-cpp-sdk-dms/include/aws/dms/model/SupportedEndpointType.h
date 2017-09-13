@@ -46,6 +46,7 @@ namespace Model
     SupportedEndpointType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
      * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
@@ -95,6 +96,7 @@ namespace Model
      */
     inline SupportedEndpointType& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
+
     /**
      * <p>Indicates if Change Data Capture (CDC) is supported.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>Indicates if Change Data Capture (CDC) is supported.</p>
      */
     inline SupportedEndpointType& WithSupportsCDC(bool value) { SetSupportsCDC(value); return *this;}
+
 
     /**
      * <p>The type of endpoint.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline SupportedEndpointType& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet;
+
     bool m_supportsCDC;
     bool m_supportsCDCHasBeenSet;
+
     ReplicationEndpointTypeValue m_endpointType;
     bool m_endpointTypeHasBeenSet;
   };

@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_POLLY_API PollyErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_POLLY_API PollyErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Polly
+} // namespace Client
 } // namespace Aws

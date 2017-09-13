@@ -60,6 +60,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The architecture of the image.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The architecture of the image.</p>
      */
     inline Image& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time the image was created.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline Image& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
+
     /**
      * <p>The ID of the AMI.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The ID of the AMI.</p>
      */
     inline Image& WithImageId(const char* value) { SetImageId(value); return *this;}
+
 
     /**
      * <p>The location of the AMI.</p>
@@ -190,6 +194,7 @@ namespace Model
      */
     inline Image& WithImageLocation(const char* value) { SetImageLocation(value); return *this;}
 
+
     /**
      * <p>The type of image.</p>
      */
@@ -215,6 +220,7 @@ namespace Model
      */
     inline Image& WithImageType(ImageTypeValues&& value) { SetImageType(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether the image has public launch permissions. The value is
      * <code>true</code> if this image has public launch permissions or
@@ -235,6 +241,7 @@ namespace Model
      * <code>false</code> if it has only implicit and explicit launch permissions.</p>
      */
     inline Image& WithPublic(bool value) { SetPublic(value); return *this;}
+
 
     /**
      * <p>The kernel associated with the image, if any. Only applicable for machine
@@ -278,6 +285,7 @@ namespace Model
      */
     inline Image& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
+
     /**
      * <p>The AWS account ID of the image owner.</p>
      */
@@ -313,6 +321,7 @@ namespace Model
      */
     inline Image& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
     /**
      * <p>The value is <code>Windows</code> for Windows AMIs; otherwise blank.</p>
      */
@@ -337,6 +346,7 @@ namespace Model
      * <p>The value is <code>Windows</code> for Windows AMIs; otherwise blank.</p>
      */
     inline Image& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
+
 
     /**
      * <p>Any product codes associated with the AMI.</p>
@@ -372,6 +382,7 @@ namespace Model
      * <p>Any product codes associated with the AMI.</p>
      */
     inline Image& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The RAM disk associated with the image, if any. Only applicable for machine
@@ -415,6 +426,7 @@ namespace Model
      */
     inline Image& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
+
     /**
      * <p>The current state of the AMI. If the state is <code>available</code>, the
      * image is successfully registered and can be used to launch an instance.</p>
@@ -444,6 +456,7 @@ namespace Model
      * image is successfully registered and can be used to launch an instance.</p>
      */
     inline Image& WithState(ImageState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>Any block device mapping entries.</p>
@@ -480,6 +493,7 @@ namespace Model
      */
     inline Image& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The description of the AMI that was provided during image creation.</p>
      */
@@ -515,6 +529,7 @@ namespace Model
      */
     inline Image& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Specifies whether enhanced networking with ENA is enabled.</p>
      */
@@ -529,6 +544,7 @@ namespace Model
      * <p>Specifies whether enhanced networking with ENA is enabled.</p>
      */
     inline Image& WithEnaSupport(bool value) { SetEnaSupport(value); return *this;}
+
 
     /**
      * <p>The hypervisor type of the image.</p>
@@ -554,6 +570,7 @@ namespace Model
      * <p>The hypervisor type of the image.</p>
      */
     inline Image& WithHypervisor(HypervisorType&& value) { SetHypervisor(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
@@ -597,6 +614,7 @@ namespace Model
      */
     inline Image& WithImageOwnerAlias(const char* value) { SetImageOwnerAlias(value); return *this;}
 
+
     /**
      * <p>The name of the AMI that was provided during image creation.</p>
      */
@@ -631,6 +649,7 @@ namespace Model
      * <p>The name of the AMI that was provided during image creation.</p>
      */
     inline Image& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The device name of the root device (for example, <code>/dev/sda1</code> or
@@ -674,6 +693,7 @@ namespace Model
      */
     inline Image& WithRootDeviceName(const char* value) { SetRootDeviceName(value); return *this;}
 
+
     /**
      * <p>The type of root device used by the AMI. The AMI can use an EBS volume or an
      * instance store volume.</p>
@@ -703,6 +723,7 @@ namespace Model
      * instance store volume.</p>
      */
     inline Image& WithRootDeviceType(DeviceType&& value) { SetRootDeviceType(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
@@ -746,6 +767,7 @@ namespace Model
      */
     inline Image& WithSriovNetSupport(const char* value) { SetSriovNetSupport(value); return *this;}
 
+
     /**
      * <p>The reason for the state change.</p>
      */
@@ -770,6 +792,7 @@ namespace Model
      * <p>The reason for the state change.</p>
      */
     inline Image& WithStateReason(StateReason&& value) { SetStateReason(std::move(value)); return *this;}
+
 
     /**
      * <p>Any tags assigned to the image.</p>
@@ -806,6 +829,7 @@ namespace Model
      */
     inline Image& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The type of virtualization of the AMI.</p>
      */
@@ -832,52 +856,76 @@ namespace Model
     inline Image& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(std::move(value)); return *this;}
 
   private:
+
     ArchitectureValues m_architecture;
     bool m_architectureHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     Aws::String m_imageLocation;
     bool m_imageLocationHasBeenSet;
+
     ImageTypeValues m_imageType;
     bool m_imageTypeHasBeenSet;
+
     bool m_public;
     bool m_publicHasBeenSet;
+
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet;
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     PlatformValues m_platform;
     bool m_platformHasBeenSet;
+
     Aws::Vector<ProductCode> m_productCodes;
     bool m_productCodesHasBeenSet;
+
     Aws::String m_ramdiskId;
     bool m_ramdiskIdHasBeenSet;
+
     ImageState m_state;
     bool m_stateHasBeenSet;
+
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_enaSupport;
     bool m_enaSupportHasBeenSet;
+
     HypervisorType m_hypervisor;
     bool m_hypervisorHasBeenSet;
+
     Aws::String m_imageOwnerAlias;
     bool m_imageOwnerAliasHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_rootDeviceName;
     bool m_rootDeviceNameHasBeenSet;
+
     DeviceType m_rootDeviceType;
     bool m_rootDeviceTypeHasBeenSet;
+
     Aws::String m_sriovNetSupport;
     bool m_sriovNetSupportHasBeenSet;
+
     StateReason m_stateReason;
     bool m_stateReasonHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     VirtualizationType m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
   };

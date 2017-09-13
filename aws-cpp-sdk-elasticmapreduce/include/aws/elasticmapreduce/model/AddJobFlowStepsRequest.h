@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A string that uniquely identifies the job flow. This identifier is returned
      * by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline AddJobFlowStepsRequest& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
 
+
     /**
      * <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
      */
@@ -120,8 +122,10 @@ namespace Model
     inline AddJobFlowStepsRequest& AddSteps(StepConfig&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_jobFlowId;
     bool m_jobFlowIdHasBeenSet;
+
     Aws::Vector<StepConfig> m_steps;
     bool m_stepsHasBeenSet;
   };

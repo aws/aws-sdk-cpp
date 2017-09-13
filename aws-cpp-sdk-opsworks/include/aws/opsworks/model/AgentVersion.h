@@ -46,6 +46,7 @@ namespace Model
     AgentVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The agent version.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline AgentVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>The configuration manager.</p>
      */
@@ -107,8 +109,10 @@ namespace Model
     inline AgentVersion& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     StackConfigurationManager m_configurationManager;
     bool m_configurationManagerHasBeenSet;
   };

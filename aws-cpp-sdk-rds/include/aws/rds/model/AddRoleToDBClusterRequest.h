@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the DB cluster to associate the IAM role with.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the DB cluster to associate the IAM role with.</p>
      */
     inline AddRoleToDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora
@@ -123,8 +125,10 @@ namespace Model
     inline AddRoleToDBClusterRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

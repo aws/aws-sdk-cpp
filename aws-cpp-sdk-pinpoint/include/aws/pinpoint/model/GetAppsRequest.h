@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     
     inline const Aws::String& GetPageSize() const{ return m_pageSize; }
 
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline GetAppsRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
+
 
     
     inline const Aws::String& GetToken() const{ return m_token; }
@@ -83,8 +85,10 @@ namespace Model
     inline GetAppsRequest& WithToken(const char* value) { SetToken(value); return *this;}
 
   private:
+
     Aws::String m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     Aws::String m_token;
     bool m_tokenHasBeenSet;
   };

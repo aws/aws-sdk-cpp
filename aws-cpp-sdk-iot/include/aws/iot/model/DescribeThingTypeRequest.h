@@ -37,6 +37,7 @@ namespace Model
     DescribeThingTypeRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the thing type.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeThingTypeRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
 
   private:
+
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
   };

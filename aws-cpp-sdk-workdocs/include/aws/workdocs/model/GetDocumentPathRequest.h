@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline GetDocumentPathRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the document.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline GetDocumentPathRequest& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
 
+
     /**
      * <p>The maximum number of levels in the hierarchy to return.</p>
      */
@@ -133,6 +136,7 @@ namespace Model
      * <p>The maximum number of levels in the hierarchy to return.</p>
      */
     inline GetDocumentPathRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>A comma-separated list of values. Specify <code>NAME</code> to include the
@@ -176,6 +180,7 @@ namespace Model
      */
     inline GetDocumentPathRequest& WithFields(const char* value) { SetFields(value); return *this;}
 
+
     /**
      * <p>This value is not supported.</p>
      */
@@ -212,14 +217,19 @@ namespace Model
     inline GetDocumentPathRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_documentId;
     bool m_documentIdHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_fields;
     bool m_fieldsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

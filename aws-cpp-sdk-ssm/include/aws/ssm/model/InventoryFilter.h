@@ -48,6 +48,7 @@ namespace Model
     InventoryFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the filter key.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the filter key.</p>
      */
     inline InventoryFilter& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>Inventory filter values. Example: inventory filter where instance IDs are
@@ -139,6 +141,7 @@ namespace Model
      */
     inline InventoryFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
+
     /**
      * <p>The type of filter. Valid values include the following:
      * "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"</p>
@@ -170,10 +173,13 @@ namespace Model
     inline InventoryFilter& WithType(InventoryQueryOperatorType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
     InventoryQueryOperatorType m_type;
     bool m_typeHasBeenSet;
   };

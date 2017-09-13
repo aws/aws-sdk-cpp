@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline UnlinkIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
@@ -148,6 +150,7 @@ namespace Model
      */
     inline UnlinkIdentityRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins.emplace(key, value); return *this; }
 
+
     /**
      * <p>Provider names to unlink from this identity.</p>
      */
@@ -189,10 +192,13 @@ namespace Model
     inline UnlinkIdentityRequest& AddLoginsToRemove(const char* value) { m_loginsToRemoveHasBeenSet = true; m_loginsToRemove.push_back(value); return *this; }
 
   private:
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_logins;
     bool m_loginsHasBeenSet;
+
     Aws::Vector<Aws::String> m_loginsToRemove;
     bool m_loginsToRemoveHasBeenSet;
   };

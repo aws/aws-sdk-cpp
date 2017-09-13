@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the environment.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      * <p>The name of the environment.</p>
      */
     inline EnvironmentResourceDescription& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+
 
     /**
      * <p> The <code>AutoScalingGroups</code> used by this environment. </p>
@@ -126,6 +128,7 @@ namespace Model
      */
     inline EnvironmentResourceDescription& AddAutoScalingGroups(AutoScalingGroup&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The Amazon EC2 instances used by this environment.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      * <p>The Amazon EC2 instances used by this environment.</p>
      */
     inline EnvironmentResourceDescription& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Auto Scaling launch configurations in use by this environment.</p>
@@ -196,6 +200,7 @@ namespace Model
      */
     inline EnvironmentResourceDescription& AddLaunchConfigurations(LaunchConfiguration&& value) { m_launchConfigurationsHasBeenSet = true; m_launchConfigurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The LoadBalancers in use by this environment.</p>
      */
@@ -231,6 +236,7 @@ namespace Model
      */
     inline EnvironmentResourceDescription& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
      */
@@ -265,6 +271,7 @@ namespace Model
      * <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
      */
     inline EnvironmentResourceDescription& AddTriggers(Trigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The queues used by this environment.</p>
@@ -302,18 +309,25 @@ namespace Model
     inline EnvironmentResourceDescription& AddQueues(Queue&& value) { m_queuesHasBeenSet = true; m_queues.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
     bool m_autoScalingGroupsHasBeenSet;
+
     Aws::Vector<Instance> m_instances;
     bool m_instancesHasBeenSet;
+
     Aws::Vector<LaunchConfiguration> m_launchConfigurations;
     bool m_launchConfigurationsHasBeenSet;
+
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet;
+
     Aws::Vector<Trigger> m_triggers;
     bool m_triggersHasBeenSet;
+
     Aws::Vector<Queue> m_queues;
     bool m_queuesHasBeenSet;
   };

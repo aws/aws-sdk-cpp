@@ -31,12 +31,12 @@ DeleteReceiptRuleResult::DeleteReceiptRuleResult()
 {
 }
 
-DeleteReceiptRuleResult::DeleteReceiptRuleResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteReceiptRuleResult::DeleteReceiptRuleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteReceiptRuleResult& DeleteReceiptRuleResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteReceiptRuleResult& DeleteReceiptRuleResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

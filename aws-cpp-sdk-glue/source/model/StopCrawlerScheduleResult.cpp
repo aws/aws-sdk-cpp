@@ -30,12 +30,12 @@ StopCrawlerScheduleResult::StopCrawlerScheduleResult()
 {
 }
 
-StopCrawlerScheduleResult::StopCrawlerScheduleResult(const AmazonWebServiceResult<JsonValue>& result)
+StopCrawlerScheduleResult::StopCrawlerScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopCrawlerScheduleResult& StopCrawlerScheduleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopCrawlerScheduleResult& StopCrawlerScheduleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

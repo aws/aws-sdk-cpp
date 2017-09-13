@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdatePartitionResult();
-    UpdatePartitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePartitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePartitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePartitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

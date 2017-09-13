@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
      * information, see <a>arns</a>.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline UpdateTypedLinkFacetRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
+
     /**
      * <p>The unique name of the typed link facet.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      */
     inline UpdateTypedLinkFacetRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Attributes update structure.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>Attributes update structure.</p>
      */
     inline UpdateTypedLinkFacetRequest& AddAttributeUpdates(TypedLinkFacetAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The order of identity attributes for the facet, from most significant to
@@ -263,12 +267,16 @@ namespace Model
     inline UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(const char* value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<TypedLinkFacetAttributeUpdate> m_attributeUpdates;
     bool m_attributeUpdatesHasBeenSet;
+
     Aws::Vector<Aws::String> m_identityAttributeOrder;
     bool m_identityAttributeOrderHasBeenSet;
   };

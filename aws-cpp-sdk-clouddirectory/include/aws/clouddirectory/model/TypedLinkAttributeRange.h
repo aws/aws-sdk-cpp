@@ -47,6 +47,7 @@ namespace Model
     TypedLinkAttributeRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique name of the typed link attribute.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline TypedLinkAttributeRange& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
+
     /**
      * <p>The range of attribute values that are being selected.</p>
      */
@@ -108,8 +110,10 @@ namespace Model
     inline TypedLinkAttributeRange& WithRange(TypedAttributeValueRange&& value) { SetRange(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     TypedAttributeValueRange m_range;
     bool m_rangeHasBeenSet;
   };

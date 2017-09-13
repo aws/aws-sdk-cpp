@@ -30,12 +30,12 @@ ResolveCustomerResult::ResolveCustomerResult()
 {
 }
 
-ResolveCustomerResult::ResolveCustomerResult(const AmazonWebServiceResult<JsonValue>& result)
+ResolveCustomerResult::ResolveCustomerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ResolveCustomerResult& ResolveCustomerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ResolveCustomerResult& ResolveCustomerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CustomerIdentifier"))

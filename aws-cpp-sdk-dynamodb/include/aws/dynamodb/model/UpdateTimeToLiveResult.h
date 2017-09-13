@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateTimeToLiveResult();
-    UpdateTimeToLiveResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTimeToLiveResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTimeToLiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTimeToLiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateTimeToLiveResult& WithTimeToLiveSpecification(TimeToLiveSpecification&& value) { SetTimeToLiveSpecification(std::move(value)); return *this;}
 
   private:
+
     TimeToLiveSpecification m_timeToLiveSpecification;
   };
 

@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The tag key-value pairs to remove from the on-premises instances.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The tag key-value pairs to remove from the on-premises instances.</p>
      */
     inline RemoveTagsFromOnPremisesInstancesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The names of the on-premises instances from which to remove tags.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline RemoveTagsFromOnPremisesInstancesRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Vector<Aws::String> m_instanceNames;
     bool m_instanceNamesHasBeenSet;
   };

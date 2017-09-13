@@ -46,6 +46,7 @@ namespace Model
     ResourceGroupTag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A tag key.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>A tag key.</p>
      */
     inline ResourceGroupTag& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The value assigned to a tag key.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline ResourceGroupTag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name for the security group. Amazon Redshift stores the value as a
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
@@ -113,6 +114,7 @@ namespace Model
      */
     inline CreateClusterSecurityGroupRequest& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>A description for the security group.</p>
      */
@@ -147,6 +149,7 @@ namespace Model
      * <p>A description for the security group.</p>
      */
     inline CreateClusterSecurityGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of tag instances.</p>
@@ -184,10 +187,13 @@ namespace Model
     inline CreateClusterSecurityGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clusterSecurityGroupName;
     bool m_clusterSecurityGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

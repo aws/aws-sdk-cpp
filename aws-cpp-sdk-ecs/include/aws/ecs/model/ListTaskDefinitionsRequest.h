@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The full family name with which to filter the
      * <code>ListTaskDefinitions</code> results. Specifying a <code>familyPrefix</code>
@@ -94,6 +95,7 @@ namespace Model
      */
     inline ListTaskDefinitionsRequest& WithFamilyPrefix(const char* value) { SetFamilyPrefix(value); return *this;}
 
+
     /**
      * <p>The task definition status with which to filter the
      * <code>ListTaskDefinitions</code> results. By default, only <code>ACTIVE</code>
@@ -149,6 +151,7 @@ namespace Model
      */
     inline ListTaskDefinitionsRequest& WithStatus(TaskDefinitionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The order in which to sort the results. Valid values are <code>ASC</code> and
      * <code>DESC</code>. By default (<code>ASC</code>), task definitions are listed
@@ -198,6 +201,7 @@ namespace Model
      * revision so that the newest task definitions in a family are listed first.</p>
      */
     inline ListTaskDefinitionsRequest& WithSort(SortOrder&& value) { SetSort(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -283,6 +287,7 @@ namespace Model
      */
     inline ListTaskDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of task definition results returned by
      * <code>ListTaskDefinitions</code> in paginated output. When this parameter is
@@ -323,14 +328,19 @@ namespace Model
     inline ListTaskDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_familyPrefix;
     bool m_familyPrefixHasBeenSet;
+
     TaskDefinitionStatus m_status;
     bool m_statusHasBeenSet;
+
     SortOrder m_sort;
     bool m_sortHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

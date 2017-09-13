@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the application to be created.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Name of the application to be created.</p>
      */
     inline CreateApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Description of the application to be created.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline CreateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

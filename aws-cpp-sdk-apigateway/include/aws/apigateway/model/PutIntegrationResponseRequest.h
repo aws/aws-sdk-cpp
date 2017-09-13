@@ -39,6 +39,7 @@ namespace Model
     PutIntegrationResponseRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline PutIntegrationResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>Specifies a put integration response request's resource identifier.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline PutIntegrationResponseRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>Specifies a put integration response request's HTTP method.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      * <p>Specifies a put integration response request's HTTP method.</p>
      */
     inline PutIntegrationResponseRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
+
 
     /**
      * <p>Specifies the status code that is used to map the integration response to an
@@ -186,6 +190,7 @@ namespace Model
      */
     inline PutIntegrationResponseRequest& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 
+
     /**
      * <p>Specifies the selection pattern of a put integration response.</p>
      */
@@ -220,6 +225,7 @@ namespace Model
      * <p>Specifies the selection pattern of a put integration response.</p>
      */
     inline PutIntegrationResponseRequest& WithSelectionPattern(const char* value) { SetSelectionPattern(value); return *this;}
+
 
     /**
      * <p>A key-value map specifying response parameters that are passed to the method
@@ -413,6 +419,7 @@ namespace Model
      */
     inline PutIntegrationResponseRequest& AddResponseParameters(const char* key, const char* value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Specifies a put integration response's templates.</p>
      */
@@ -472,6 +479,7 @@ namespace Model
      * <p>Specifies a put integration response's templates.</p>
      */
     inline PutIntegrationResponseRequest& AddResponseTemplates(const char* key, const char* value) { m_responseTemplatesHasBeenSet = true; m_responseTemplates.emplace(key, value); return *this; }
+
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
@@ -534,20 +542,28 @@ namespace Model
     inline PutIntegrationResponseRequest& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::String m_selectionPattern;
     bool m_selectionPatternHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
     bool m_responseParametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
     bool m_responseTemplatesHasBeenSet;
+
     ContentHandlingStrategy m_contentHandling;
     bool m_contentHandlingHasBeenSet;
   };

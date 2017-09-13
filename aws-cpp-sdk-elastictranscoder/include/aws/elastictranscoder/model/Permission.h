@@ -46,6 +46,7 @@ namespace Model
     Permission& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
      * <code>Canonical</code>: Either the canonical user ID for an AWS account or an
@@ -130,6 +131,7 @@ namespace Model
      */
     inline Permission& WithGranteeType(const char* value) { SetGranteeType(value); return *this;}
 
+
     /**
      * <p>The AWS user or group that you want to have access to transcoded files and
      * playlists. To identify the user or group, you can specify the canonical user ID
@@ -185,6 +187,7 @@ namespace Model
      * registered email address of an AWS account, or a predefined Amazon S3 group.</p>
      */
     inline Permission& WithGrantee(const char* value) { SetGrantee(value); return *this;}
+
 
     /**
      * <p> The permission that you want to give to the AWS user that is listed in
@@ -299,10 +302,13 @@ namespace Model
     inline Permission& AddAccess(const char* value) { m_accessHasBeenSet = true; m_access.push_back(value); return *this; }
 
   private:
+
     Aws::String m_granteeType;
     bool m_granteeTypeHasBeenSet;
+
     Aws::String m_grantee;
     bool m_granteeHasBeenSet;
+
     Aws::Vector<Aws::String> m_access;
     bool m_accessHasBeenSet;
   };

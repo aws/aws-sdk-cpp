@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetBasePathMappingResult();
-    GetBasePathMappingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBasePathMappingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBasePathMappingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBasePathMappingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
@@ -93,6 +94,7 @@ namespace Model
      */
     inline GetBasePathMappingResult& WithBasePath(const char* value) { SetBasePath(value); return *this;}
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetBasePathMappingResult& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The name of the associated stage.</p>
@@ -164,8 +167,11 @@ namespace Model
     inline GetBasePathMappingResult& WithStage(const char* value) { SetStage(value); return *this;}
 
   private:
+
     Aws::String m_basePath;
+
     Aws::String m_restApiId;
+
     Aws::String m_stage;
   };
 

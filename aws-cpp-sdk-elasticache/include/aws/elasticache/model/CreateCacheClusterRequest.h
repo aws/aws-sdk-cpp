@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
      * string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1
@@ -107,6 +108,7 @@ namespace Model
      * two consecutive hyphens.</p> </li> </ul>
      */
     inline CreateCacheClusterRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+
 
     /**
      * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
@@ -213,6 +215,7 @@ namespace Model
      */
     inline CreateCacheClusterRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the nodes in this Memcached cluster are created in a single
      * Availability Zone or created across multiple Availability Zones in the cluster's
@@ -262,6 +265,7 @@ namespace Model
      * <code>single-az</code> mode.</p>
      */
     inline CreateCacheClusterRequest& WithAZMode(AZMode&& value) { SetAZMode(std::move(value)); return *this;}
+
 
     /**
      * <p>The EC2 Availability Zone in which the cache cluster is created.</p> <p>All
@@ -325,6 +329,7 @@ namespace Model
      * chosen Availability Zone.</p>
      */
     inline CreateCacheClusterRequest& WithPreferredAvailabilityZone(const char* value) { SetPreferredAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
@@ -438,6 +443,7 @@ namespace Model
      */
     inline CreateCacheClusterRequest& AddPreferredAvailabilityZones(const char* value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
 
+
     /**
      * <p>The initial number of cache nodes that the cache cluster has.</p> <p>For
      * clusters running Redis, this value must be 1. For clusters running Memcached,
@@ -467,6 +473,7 @@ namespace Model
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
      */
     inline CreateCacheClusterRequest& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
+
 
     /**
      * <p>The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -713,6 +720,7 @@ namespace Model
      */
     inline CreateCacheClusterRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
+
     /**
      * <p>The name of the cache engine to be used for this cache cluster.</p> <p>Valid
      * values for this parameter are: <code>memcached</code> | <code>redis</code> </p>
@@ -754,6 +762,7 @@ namespace Model
      * values for this parameter are: <code>memcached</code> | <code>redis</code> </p>
      */
     inline CreateCacheClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The version number of the cache engine to be used for this cache cluster. To
@@ -846,6 +855,7 @@ namespace Model
      */
     inline CreateCacheClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>The name of the parameter group to associate with this cache cluster. If this
      * argument is omitted, the default parameter group for the specified engine is
@@ -901,6 +911,7 @@ namespace Model
      * <code>cluster-enabled='yes'</code> when creating a cluster.</p>
      */
     inline CreateCacheClusterRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the subnet group to be used for the cache cluster.</p> <p>Use
@@ -979,6 +990,7 @@ namespace Model
      */
     inline CreateCacheClusterRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>A list of security group names to associate with this cache cluster.</p>
      * <p>Use this parameter only when you are creating a cache cluster outside of an
@@ -1034,6 +1046,7 @@ namespace Model
      * Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
     inline CreateCacheClusterRequest& AddCacheSecurityGroupNames(const char* value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
+
 
     /**
      * <p>One or more VPC security groups associated with the cache cluster.</p> <p>Use
@@ -1091,6 +1104,7 @@ namespace Model
      */
     inline CreateCacheClusterRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>A list of cost allocation tags to be added to this resource. A tag is a
      * key-value pair. A tag key must be accompanied by a tag value.</p>
@@ -1132,6 +1146,7 @@ namespace Model
      * key-value pair. A tag key must be accompanied by a tag value.</p>
      */
     inline CreateCacheClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
@@ -1213,6 +1228,7 @@ namespace Model
      */
     inline CreateCacheClusterRequest& AddSnapshotArns(const char* value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
 
+
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
      * group (shard). The snapshot status changes to <code>restoring</code> while the
@@ -1268,6 +1284,7 @@ namespace Model
      * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline CreateCacheClusterRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
@@ -1381,6 +1398,7 @@ namespace Model
      */
     inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The port number on which each of the cache nodes accepts connections.</p>
      */
@@ -1395,6 +1413,7 @@ namespace Model
      * <p>The port number on which each of the cache nodes accepts connections.</p>
      */
     inline CreateCacheClusterRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -1445,6 +1464,7 @@ namespace Model
      */
     inline CreateCacheClusterRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
 
+
     /**
      * <p>This parameter is currently disabled.</p>
      */
@@ -1459,6 +1479,7 @@ namespace Model
      * <p>This parameter is currently disabled.</p>
      */
     inline CreateCacheClusterRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>The number of days for which ElastiCache retains automatic snapshots before
@@ -1489,6 +1510,7 @@ namespace Model
      * disabled for this cache cluster).</p>
      */
     inline CreateCacheClusterRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
+
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -1552,6 +1574,7 @@ namespace Model
      * the <code>Engine</code> parameter is <code>redis</code>.</p>
      */
     inline CreateCacheClusterRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
+
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
@@ -1631,50 +1654,73 @@ namespace Model
     inline CreateCacheClusterRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}
 
   private:
+
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
     AZMode m_aZMode;
     bool m_aZModeHasBeenSet;
+
     Aws::String m_preferredAvailabilityZone;
     bool m_preferredAvailabilityZoneHasBeenSet;
+
     Aws::Vector<Aws::String> m_preferredAvailabilityZones;
     bool m_preferredAvailabilityZonesHasBeenSet;
+
     int m_numCacheNodes;
     bool m_numCacheNodesHasBeenSet;
+
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_cacheParameterGroupName;
     bool m_cacheParameterGroupNameHasBeenSet;
+
     Aws::String m_cacheSubnetGroupName;
     bool m_cacheSubnetGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_cacheSecurityGroupNames;
     bool m_cacheSecurityGroupNamesHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Vector<Aws::String> m_snapshotArns;
     bool m_snapshotArnsHasBeenSet;
+
     Aws::String m_snapshotName;
     bool m_snapshotNameHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_notificationTopicArn;
     bool m_notificationTopicArnHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
+
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;
+
     Aws::String m_authToken;
     bool m_authTokenHasBeenSet;
   };

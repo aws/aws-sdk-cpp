@@ -55,7 +55,7 @@ enum class CodeStarErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_NEXT_TOKEN,
   INVALID_SERVICE_ROLE,
   LIMIT_EXCEEDED,
@@ -70,7 +70,7 @@ enum class CodeStarErrors
 };
 namespace CodeStarErrorMapper
 {
-  AWS_CODESTAR_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CODESTAR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CodeStar

@@ -38,6 +38,7 @@ namespace Model
     GetDomainNameRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline GetDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

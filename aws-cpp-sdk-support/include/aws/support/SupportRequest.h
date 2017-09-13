@@ -23,7 +23,7 @@ namespace Aws
 {
 namespace Support
 {
-  class AWS_SUPPORT_API SupportRequest : public AmazonSerializableWebServiceRequest
+  class AWS_SUPPORT_API SupportRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~SupportRequest () {}
@@ -37,7 +37,7 @@ namespace Support
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_JSON_CONTENT_TYPE_1_1 ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_1 ));
       }
 
       return headers;

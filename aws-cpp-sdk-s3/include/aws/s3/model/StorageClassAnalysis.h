@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * A container used to describe how data related to the storage class analysis
      * should be exported.
@@ -72,6 +73,7 @@ namespace Model
     inline StorageClassAnalysis& WithDataExport(StorageClassAnalysisDataExport&& value) { SetDataExport(std::move(value)); return *this;}
 
   private:
+
     StorageClassAnalysisDataExport m_dataExport;
     bool m_dataExportHasBeenSet;
   };

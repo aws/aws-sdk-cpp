@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1
@@ -104,6 +105,7 @@ namespace Model
      */
     inline DeleteClusterRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>Determines whether a final snapshot of the cluster is created before Amazon
      * Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is
@@ -133,6 +135,7 @@ namespace Model
      * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
      */
     inline DeleteClusterRequest& WithSkipFinalClusterSnapshot(bool value) { SetSkipFinalClusterSnapshot(value); return *this;}
+
 
     /**
      * <p>The identifier of the final snapshot that is to be created immediately before
@@ -205,10 +208,13 @@ namespace Model
     inline DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(const char* value) { SetFinalClusterSnapshotIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     bool m_skipFinalClusterSnapshot;
     bool m_skipFinalClusterSnapshotHasBeenSet;
+
     Aws::String m_finalClusterSnapshotIdentifier;
     bool m_finalClusterSnapshotIdentifierHasBeenSet;
   };

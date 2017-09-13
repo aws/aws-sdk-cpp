@@ -48,6 +48,7 @@ namespace Model
     JobAlbumArt& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A policy that determines how Elastic Transcoder handles the existence of
      * multiple album artwork files.</p> <ul> <li> <p> <code>Replace:</code> The
@@ -139,6 +140,7 @@ namespace Model
      */
     inline JobAlbumArt& WithMergePolicy(const char* value) { SetMergePolicy(value); return *this;}
 
+
     /**
      * <p>The file to be used as album art. There can be multiple artworks associated
      * with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and
@@ -189,8 +191,10 @@ namespace Model
     inline JobAlbumArt& AddArtwork(Artwork&& value) { m_artworkHasBeenSet = true; m_artwork.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_mergePolicy;
     bool m_mergePolicyHasBeenSet;
+
     Aws::Vector<Artwork> m_artwork;
     bool m_artworkHasBeenSet;
   };

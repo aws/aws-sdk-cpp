@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DecodeAuthorizationMessageResult();
-    DecodeAuthorizationMessageResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DecodeAuthorizationMessageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DecodeAuthorizationMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DecodeAuthorizationMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>An XML document that contains the decoded message.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DecodeAuthorizationMessageResult& WithDecodedMessage(const char* value) { SetDecodedMessage(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DecodeAuthorizationMessageResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_decodedMessage;
+
     ResponseMetadata m_responseMetadata;
   };
 

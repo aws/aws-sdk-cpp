@@ -29,12 +29,12 @@ CreateVPCAssociationAuthorizationResult::CreateVPCAssociationAuthorizationResult
 {
 }
 
-CreateVPCAssociationAuthorizationResult::CreateVPCAssociationAuthorizationResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVPCAssociationAuthorizationResult::CreateVPCAssociationAuthorizationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateVPCAssociationAuthorizationResult& CreateVPCAssociationAuthorizationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVPCAssociationAuthorizationResult& CreateVPCAssociationAuthorizationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

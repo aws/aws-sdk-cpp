@@ -34,6 +34,7 @@ namespace Model
     DeleteBotAliasRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the alias to delete. The name is case sensitive. </p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The name of the alias to delete. The name is case sensitive. </p>
      */
     inline DeleteBotAliasRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The name of the bot that the alias points to.</p>
@@ -105,8 +107,10 @@ namespace Model
     inline DeleteBotAliasRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
   };

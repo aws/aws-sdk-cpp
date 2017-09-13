@@ -54,6 +54,7 @@ namespace Model
     Integration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the integration's type. The valid value is <code>HTTP</code> for
      * integrating with an HTTP back end, <code>AWS</code> for any AWS service
@@ -104,6 +105,7 @@ namespace Model
      */
     inline Integration& WithType(IntegrationType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the integration's HTTP method type.</p>
      */
@@ -138,6 +140,7 @@ namespace Model
      * <p>Specifies the integration's HTTP method type.</p>
      */
     inline Integration& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
+
 
     /**
      * <p>Specifies the integration's Uniform Resource Identifier (URI). For HTTP
@@ -251,6 +254,7 @@ namespace Model
      */
     inline Integration& WithUri(const char* value) { SetUri(value); return *this;}
 
+
     /**
      * <p>Specifies the credentials required for the integration, if any. For AWS
      * integrations, three options are available. To specify an IAM Role for Amazon API
@@ -320,6 +324,7 @@ namespace Model
      * supported AWS services, specify null.</p>
      */
     inline Integration& WithCredentials(const char* value) { SetCredentials(value); return *this;}
+
 
     /**
      * <p>A key-value map specifying request parameters that are passed from the method
@@ -465,6 +470,7 @@ namespace Model
      */
     inline Integration& AddRequestParameters(const char* key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
      * payload based on the value of the Content-Type header sent by the client. The
@@ -560,6 +566,7 @@ namespace Model
      * value.</p>
      */
     inline Integration& AddRequestTemplates(const char* key, const char* value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(key, value); return *this; }
+
 
     /**
      * <div> <p> Specifies how the method request body of an unmapped content type will
@@ -729,6 +736,7 @@ namespace Model
      */
     inline Integration& WithPassthroughBehavior(const char* value) { SetPassthroughBehavior(value); return *this;}
 
+
     /**
      * <p>Specifies how to handle request payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
@@ -799,6 +807,7 @@ namespace Model
      */
     inline Integration& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the integration's cache namespace.</p>
      */
@@ -833,6 +842,7 @@ namespace Model
      * <p>Specifies the integration's cache namespace.</p>
      */
     inline Integration& WithCacheNamespace(const char* value) { SetCacheNamespace(value); return *this;}
+
 
     /**
      * <p>Specifies the integration's cache key parameters.</p>
@@ -873,6 +883,7 @@ namespace Model
      * <p>Specifies the integration's cache key parameters.</p>
      */
     inline Integration& AddCacheKeyParameters(const char* value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
+
 
     /**
      * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
@@ -1183,26 +1194,37 @@ namespace Model
     inline Integration& AddIntegrationResponses(const char* key, const IntegrationResponse& value) { m_integrationResponsesHasBeenSet = true; m_integrationResponses.emplace(key, value); return *this; }
 
   private:
+
     IntegrationType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+
     Aws::String m_uri;
     bool m_uriHasBeenSet;
+
     Aws::String m_credentials;
     bool m_credentialsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_requestParameters;
     bool m_requestParametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_requestTemplates;
     bool m_requestTemplatesHasBeenSet;
+
     Aws::String m_passthroughBehavior;
     bool m_passthroughBehaviorHasBeenSet;
+
     ContentHandlingStrategy m_contentHandling;
     bool m_contentHandlingHasBeenSet;
+
     Aws::String m_cacheNamespace;
     bool m_cacheNamespaceHasBeenSet;
+
     Aws::Vector<Aws::String> m_cacheKeyParameters;
     bool m_cacheKeyParametersHasBeenSet;
+
     Aws::Map<Aws::String, IntegrationResponse> m_integrationResponses;
     bool m_integrationResponsesHasBeenSet;
   };

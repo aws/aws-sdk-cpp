@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListSchemaExtensionsResult();
-    ListSchemaExtensionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSchemaExtensionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSchemaExtensionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSchemaExtensionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the schema extensions applied to the directory.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about the schema extensions applied to the directory.</p>
      */
     inline ListSchemaExtensionsResult& AddSchemaExtensionsInfo(SchemaExtensionInfo&& value) { m_schemaExtensionsInfo.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If not null, more results are available. Pass this value for the
@@ -128,7 +130,9 @@ namespace Model
     inline ListSchemaExtensionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<SchemaExtensionInfo> m_schemaExtensionsInfo;
+
     Aws::String m_nextToken;
   };
 

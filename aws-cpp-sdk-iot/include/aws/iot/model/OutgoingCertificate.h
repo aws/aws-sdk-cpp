@@ -47,6 +47,7 @@ namespace Model
     OutgoingCertificate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The certificate ARN.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The certificate ARN.</p>
      */
     inline OutgoingCertificate& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
 
     /**
      * <p>The certificate ID.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline OutgoingCertificate& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p>The AWS account to which the transfer was made.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline OutgoingCertificate& WithTransferredTo(const char* value) { SetTransferredTo(value); return *this;}
 
+
     /**
      * <p>The date the transfer was initiated.</p>
      */
@@ -176,6 +180,7 @@ namespace Model
      * <p>The date the transfer was initiated.</p>
      */
     inline OutgoingCertificate& WithTransferDate(Aws::Utils::DateTime&& value) { SetTransferDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The transfer message.</p>
@@ -212,6 +217,7 @@ namespace Model
      */
     inline OutgoingCertificate& WithTransferMessage(const char* value) { SetTransferMessage(value); return *this;}
 
+
     /**
      * <p>The certificate creation date.</p>
      */
@@ -238,16 +244,22 @@ namespace Model
     inline OutgoingCertificate& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     Aws::String m_transferredTo;
     bool m_transferredToHasBeenSet;
+
     Aws::Utils::DateTime m_transferDate;
     bool m_transferDateHasBeenSet;
+
     Aws::String m_transferMessage;
     bool m_transferMessageHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

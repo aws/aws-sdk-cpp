@@ -30,12 +30,12 @@ TerminateProvisionedProductResult::TerminateProvisionedProductResult()
 {
 }
 
-TerminateProvisionedProductResult::TerminateProvisionedProductResult(const AmazonWebServiceResult<JsonValue>& result)
+TerminateProvisionedProductResult::TerminateProvisionedProductResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TerminateProvisionedProductResult& TerminateProvisionedProductResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TerminateProvisionedProductResult& TerminateProvisionedProductResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RecordDetail"))

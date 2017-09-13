@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the policy for which you want to know its
      * attachments.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
@@ -91,6 +92,7 @@ namespace Model
      * lower-case letters or digits.</p>
      */
     inline ListTargetsForPolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -148,6 +150,7 @@ namespace Model
      */
     inline ListTargetsForPolicyRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this to limit the number of results you want included in the
      * response. If you do not include this parameter, it defaults to a value that is
@@ -188,10 +191,13 @@ namespace Model
     inline ListTargetsForPolicyRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_policyId;
     bool m_policyIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

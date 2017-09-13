@@ -48,6 +48,7 @@ namespace Model
     VideoParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The video codec for the output file. Valid values include <code>gif</code>,
      * <code>H.264</code>, <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>.
@@ -117,6 +118,7 @@ namespace Model
      * <code>mpg</code>.</p>
      */
     inline VideoParameters& WithCodec(const char* value) { SetCodec(value); return *this;}
+
 
     /**
      * <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p> <p>The H.264 profile that you want
@@ -1222,6 +1224,7 @@ namespace Model
      */
     inline VideoParameters& AddCodecOptions(const char* key, const char* value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(key, value); return *this; }
 
+
     /**
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
      * <code>MPEG2</code>, or <code>VP8</code>.</p> <p>The maximum number of frames
@@ -1369,6 +1372,7 @@ namespace Model
      */
     inline VideoParameters& WithKeyframesMaxDist(const char* value) { SetKeyframesMaxDist(value); return *this;}
 
+
     /**
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
      * <code>MPEG2</code>, or <code>VP8</code>.</p> <p>Whether to use a fixed value for
@@ -1459,6 +1463,7 @@ namespace Model
      * <code>fmp4</code> containers.</p> </important>
      */
     inline VideoParameters& WithFixedGOP(const char* value) { SetFixedGOP(value); return *this;}
+
 
     /**
      * <p>The bit rate of the video stream in the output file, in kilobits/second.
@@ -1578,6 +1583,7 @@ namespace Model
      * - 20000 : 25000</p> </li> <li> <p>4.1 - 50000 : 62500</p> </li> </ul>
      */
     inline VideoParameters& WithBitRate(const char* value) { SetBitRate(value); return *this;}
+
 
     /**
      * <p>The frames per second for the video stream in the output file. Valid values
@@ -1747,6 +1753,7 @@ namespace Model
      */
     inline VideoParameters& WithFrameRate(const char* value) { SetFrameRate(value); return *this;}
 
+
     /**
      * <p>If you specify <code>auto</code> for <code>FrameRate</code>, Elastic
      * Transcoder uses the frame rate of the input video for the frame rate of the
@@ -1823,6 +1830,7 @@ namespace Model
      * <code>29.97</code>, <code>30</code>, <code>60</code>.</p>
      */
     inline VideoParameters& WithMaxFrameRate(const char* value) { SetMaxFrameRate(value); return *this;}
+
 
     /**
      * <important> <p>To better control resolution and aspect ratio of output videos,
@@ -2034,6 +2042,7 @@ namespace Model
      */
     inline VideoParameters& WithResolution(const char* value) { SetResolution(value); return *this;}
 
+
     /**
      * <important> <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
@@ -2160,6 +2169,7 @@ namespace Model
      */
     inline VideoParameters& WithAspectRatio(const char* value) { SetAspectRatio(value); return *this;}
 
+
     /**
      * <p> The maximum width of the output video in pixels. If you specify
      * <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value.
@@ -2208,6 +2218,7 @@ namespace Model
      * If you specify a numeric value, enter an even integer between 128 and 4096. </p>
      */
     inline VideoParameters& WithMaxWidth(const char* value) { SetMaxWidth(value); return *this;}
+
 
     /**
      * <p>The maximum height of the output video in pixels. If you specify
@@ -2258,6 +2269,7 @@ namespace Model
      */
     inline VideoParameters& WithMaxHeight(const char* value) { SetMaxHeight(value); return *this;}
 
+
     /**
      * <p>The value that Elastic Transcoder adds to the metadata in the output
      * file.</p>
@@ -2299,6 +2311,7 @@ namespace Model
      * file.</p>
      */
     inline VideoParameters& WithDisplayAspectRatio(const char* value) { SetDisplayAspectRatio(value); return *this;}
+
 
     /**
      * <p>Specify one of the following values to control scaling of the output
@@ -2503,6 +2516,7 @@ namespace Model
      */
     inline VideoParameters& WithSizingPolicy(const char* value) { SetSizingPolicy(value); return *this;}
 
+
     /**
      * <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
      * Transcoder may add black bars to the top and bottom and/or left and right sides
@@ -2558,6 +2572,7 @@ namespace Model
      * that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
      */
     inline VideoParameters& WithPaddingPolicy(const char* value) { SetPaddingPolicy(value); return *this;}
+
 
     /**
      * <p>Settings for the size, location, and opacity of graphics that you want
@@ -2665,34 +2680,49 @@ namespace Model
     inline VideoParameters& AddWatermarks(PresetWatermark&& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_codec;
     bool m_codecHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_codecOptions;
     bool m_codecOptionsHasBeenSet;
+
     Aws::String m_keyframesMaxDist;
     bool m_keyframesMaxDistHasBeenSet;
+
     Aws::String m_fixedGOP;
     bool m_fixedGOPHasBeenSet;
+
     Aws::String m_bitRate;
     bool m_bitRateHasBeenSet;
+
     Aws::String m_frameRate;
     bool m_frameRateHasBeenSet;
+
     Aws::String m_maxFrameRate;
     bool m_maxFrameRateHasBeenSet;
+
     Aws::String m_resolution;
     bool m_resolutionHasBeenSet;
+
     Aws::String m_aspectRatio;
     bool m_aspectRatioHasBeenSet;
+
     Aws::String m_maxWidth;
     bool m_maxWidthHasBeenSet;
+
     Aws::String m_maxHeight;
     bool m_maxHeightHasBeenSet;
+
     Aws::String m_displayAspectRatio;
     bool m_displayAspectRatioHasBeenSet;
+
     Aws::String m_sizingPolicy;
     bool m_sizingPolicyHasBeenSet;
+
     Aws::String m_paddingPolicy;
     bool m_paddingPolicyHasBeenSet;
+
     Aws::Vector<PresetWatermark> m_watermarks;
     bool m_watermarksHasBeenSet;
   };

@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     AllocatePrivateVirtualInterfaceResult();
-    AllocatePrivateVirtualInterfaceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AllocatePrivateVirtualInterfaceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AllocatePrivateVirtualInterfaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AllocatePrivateVirtualInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The AWS account that will own the new virtual interface.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline AllocatePrivateVirtualInterfaceResult& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
+
     
     inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
 
@@ -107,6 +109,7 @@ namespace Model
 
     
     inline AllocatePrivateVirtualInterfaceResult& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
+
 
     
     inline const Aws::String& GetLocation() const{ return m_location; }
@@ -129,6 +132,7 @@ namespace Model
     
     inline AllocatePrivateVirtualInterfaceResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
@@ -149,6 +153,7 @@ namespace Model
 
     
     inline AllocatePrivateVirtualInterfaceResult& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+
 
     
     inline const Aws::String& GetVirtualInterfaceType() const{ return m_virtualInterfaceType; }
@@ -171,6 +176,7 @@ namespace Model
     
     inline AllocatePrivateVirtualInterfaceResult& WithVirtualInterfaceType(const char* value) { SetVirtualInterfaceType(value); return *this;}
 
+
     
     inline const Aws::String& GetVirtualInterfaceName() const{ return m_virtualInterfaceName; }
 
@@ -192,6 +198,7 @@ namespace Model
     
     inline AllocatePrivateVirtualInterfaceResult& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
 
+
     
     inline int GetVlan() const{ return m_vlan; }
 
@@ -201,6 +208,7 @@ namespace Model
     
     inline AllocatePrivateVirtualInterfaceResult& WithVlan(int value) { SetVlan(value); return *this;}
 
+
     
     inline int GetAsn() const{ return m_asn; }
 
@@ -209,6 +217,7 @@ namespace Model
 
     
     inline AllocatePrivateVirtualInterfaceResult& WithAsn(int value) { SetAsn(value); return *this;}
+
 
     
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
@@ -231,6 +240,7 @@ namespace Model
     
     inline AllocatePrivateVirtualInterfaceResult& WithAuthKey(const char* value) { SetAuthKey(value); return *this;}
 
+
     
     inline const Aws::String& GetAmazonAddress() const{ return m_amazonAddress; }
 
@@ -251,6 +261,7 @@ namespace Model
 
     
     inline AllocatePrivateVirtualInterfaceResult& WithAmazonAddress(const char* value) { SetAmazonAddress(value); return *this;}
+
 
     
     inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
@@ -273,6 +284,7 @@ namespace Model
     
     inline AllocatePrivateVirtualInterfaceResult& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
+
     
     inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
 
@@ -288,6 +300,7 @@ namespace Model
     
     inline AllocatePrivateVirtualInterfaceResult& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(std::move(value)); return *this;}
 
+
     
     inline const VirtualInterfaceState& GetVirtualInterfaceState() const{ return m_virtualInterfaceState; }
 
@@ -302,6 +315,7 @@ namespace Model
 
     
     inline AllocatePrivateVirtualInterfaceResult& WithVirtualInterfaceState(VirtualInterfaceState&& value) { SetVirtualInterfaceState(std::move(value)); return *this;}
+
 
     /**
      * <p>Information for generating the customer router configuration.</p>
@@ -338,6 +352,7 @@ namespace Model
      */
     inline AllocatePrivateVirtualInterfaceResult& WithCustomerRouterConfig(const char* value) { SetCustomerRouterConfig(value); return *this;}
 
+
     
     inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
 
@@ -359,6 +374,7 @@ namespace Model
     
     inline AllocatePrivateVirtualInterfaceResult& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
 
+
     
     inline const Aws::Vector<RouteFilterPrefix>& GetRouteFilterPrefixes() const{ return m_routeFilterPrefixes; }
 
@@ -379,6 +395,7 @@ namespace Model
 
     
     inline AllocatePrivateVirtualInterfaceResult& AddRouteFilterPrefixes(RouteFilterPrefix&& value) { m_routeFilterPrefixes.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::Vector<BGPPeer>& GetBgpPeers() const{ return m_bgpPeers; }
@@ -402,22 +419,39 @@ namespace Model
     inline AllocatePrivateVirtualInterfaceResult& AddBgpPeers(BGPPeer&& value) { m_bgpPeers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_ownerAccount;
+
     Aws::String m_virtualInterfaceId;
+
     Aws::String m_location;
+
     Aws::String m_connectionId;
+
     Aws::String m_virtualInterfaceType;
+
     Aws::String m_virtualInterfaceName;
+
     int m_vlan;
+
     int m_asn;
+
     Aws::String m_authKey;
+
     Aws::String m_amazonAddress;
+
     Aws::String m_customerAddress;
+
     AddressFamily m_addressFamily;
+
     VirtualInterfaceState m_virtualInterfaceState;
+
     Aws::String m_customerRouterConfig;
+
     Aws::String m_virtualGatewayId;
+
     Aws::Vector<RouteFilterPrefix> m_routeFilterPrefixes;
+
     Aws::Vector<BGPPeer> m_bgpPeers;
   };
 

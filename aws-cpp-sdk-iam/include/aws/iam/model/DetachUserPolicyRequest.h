@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name (friendly name, not ARN) of the IAM user to detach the policy
      * from.</p> <p>This parameter allows (per its <a
@@ -100,6 +101,7 @@ namespace Model
      * can also include any of the following characters: =,.@-</p>
      */
     inline DetachUserPolicyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
@@ -165,8 +167,10 @@ namespace Model
     inline DetachUserPolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet;
   };

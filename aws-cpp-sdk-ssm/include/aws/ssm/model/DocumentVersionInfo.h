@@ -46,6 +46,7 @@ namespace Model
     DocumentVersionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The document name.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The document name.</p>
      */
     inline DocumentVersionInfo& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The document version.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline DocumentVersionInfo& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
+
     /**
      * <p>The date the document was created.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      */
     inline DocumentVersionInfo& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>An identifier for the default version of the document.</p>
      */
@@ -157,12 +161,16 @@ namespace Model
     inline DocumentVersionInfo& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     bool m_isDefaultVersion;
     bool m_isDefaultVersionHasBeenSet;
   };

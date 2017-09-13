@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetJobResult();
-    GetJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An object containing information about the requested job.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline GetJobResult& WithJob(Job&& value) { SetJob(std::move(value)); return *this;}
 
   private:
+
     Job m_job;
   };
 

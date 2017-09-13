@@ -30,12 +30,12 @@ CancelClusterResult::CancelClusterResult()
 {
 }
 
-CancelClusterResult::CancelClusterResult(const AmazonWebServiceResult<JsonValue>& result)
+CancelClusterResult::CancelClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CancelClusterResult& CancelClusterResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CancelClusterResult& CancelClusterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the export task. Specifying a task ID filters the results to zero
      * or one export tasks.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeExportTasksRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 
+
     /**
      * <p>The status code of the export task. Specifying a status code filters the
      * results to zero or more export tasks.</p>
@@ -108,6 +110,7 @@ namespace Model
      * results to zero or more export tasks.</p>
      */
     inline DescribeExportTasksRequest& WithStatusCode(ExportTaskStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -151,6 +154,7 @@ namespace Model
      */
     inline DescribeExportTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the
      * default is up to 50 items.</p>
@@ -170,12 +174,16 @@ namespace Model
     inline DescribeExportTasksRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet;
+
     ExportTaskStatusCode m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

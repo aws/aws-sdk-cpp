@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The time stamp when the attachment initiated.</p>
      */
     inline InstanceNetworkInterfaceAttachment& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the network interface attachment.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline InstanceNetworkInterfaceAttachment& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
 
+
     /**
      * <p>Indicates whether the network interface is deleted when the instance is
      * terminated.</p>
@@ -128,6 +131,7 @@ namespace Model
      */
     inline InstanceNetworkInterfaceAttachment& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
+
     /**
      * <p>The index of the device on the instance for the network interface
      * attachment.</p>
@@ -145,6 +149,7 @@ namespace Model
      * attachment.</p>
      */
     inline InstanceNetworkInterfaceAttachment& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
+
 
     /**
      * <p>The attachment state.</p>
@@ -172,14 +177,19 @@ namespace Model
     inline InstanceNetworkInterfaceAttachment& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_attachTime;
     bool m_attachTimeHasBeenSet;
+
     Aws::String m_attachmentId;
     bool m_attachmentIdHasBeenSet;
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+
     int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
+
     AttachmentStatus m_status;
     bool m_statusHasBeenSet;
   };

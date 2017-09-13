@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RefreshCacheResult();
-    RefreshCacheResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RefreshCacheResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RefreshCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RefreshCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
@@ -63,6 +64,7 @@ namespace Model
     inline RefreshCacheResult& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 
   private:
+
     Aws::String m_fileShareARN;
   };
 

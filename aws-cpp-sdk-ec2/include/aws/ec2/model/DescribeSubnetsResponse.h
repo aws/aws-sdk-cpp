@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeSubnetsResponse();
-    DescribeSubnetsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSubnetsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSubnetsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSubnetsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more subnets.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeSubnetsResponse& AddSubnets(Subnet&& value) { m_subnets.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeSubnetsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Subnet> m_subnets;
+
     ResponseMetadata m_responseMetadata;
   };
 

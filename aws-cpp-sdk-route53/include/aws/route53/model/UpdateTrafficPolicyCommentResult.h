@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateTrafficPolicyCommentResult();
-    UpdateTrafficPolicyCommentResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateTrafficPolicyCommentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateTrafficPolicyCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateTrafficPolicyCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains settings for the specified traffic policy.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline UpdateTrafficPolicyCommentResult& WithTrafficPolicy(TrafficPolicy&& value) { SetTrafficPolicy(std::move(value)); return *this;}
 
   private:
+
     TrafficPolicy m_trafficPolicy;
   };
 

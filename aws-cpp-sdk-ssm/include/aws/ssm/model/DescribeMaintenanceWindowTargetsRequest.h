@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Maintenance Window whose targets should be retrieved.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The ID of the Maintenance Window whose targets should be retrieved.</p>
      */
     inline DescribeMaintenanceWindowTargetsRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>Optional filters that can be used to narrow down the scope of the returned
@@ -122,6 +124,7 @@ namespace Model
      */
     inline DescribeMaintenanceWindowTargetsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -142,6 +145,7 @@ namespace Model
      * results.</p>
      */
     inline DescribeMaintenanceWindowTargetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -186,12 +190,16 @@ namespace Model
     inline DescribeMaintenanceWindowTargetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::Vector<MaintenanceWindowFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

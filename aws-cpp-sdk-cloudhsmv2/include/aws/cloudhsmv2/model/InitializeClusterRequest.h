@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier (ID) of the cluster that you are claiming. To find the cluster
      * ID, use <a>DescribeClusters</a>.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline InitializeClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The cluster certificate issued (signed) by your issuing certificate authority
      * (CA). The certificate must be in PEM format.</p>
@@ -119,6 +121,7 @@ namespace Model
      * (CA). The certificate must be in PEM format.</p>
      */
     inline InitializeClusterRequest& WithSignedCert(const char* value) { SetSignedCert(value); return *this;}
+
 
     /**
      * <p>The issuing certificate of the issuing certificate authority (CA) that issued
@@ -184,10 +187,13 @@ namespace Model
     inline InitializeClusterRequest& WithTrustAnchor(const char* value) { SetTrustAnchor(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_signedCert;
     bool m_signedCertHasBeenSet;
+
     Aws::String m_trustAnchor;
     bool m_trustAnchorHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     EventDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Summary information about the event.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>Summary information about the event.</p>
      */
     inline EventDetails& WithEvent(Event&& value) { SetEvent(std::move(value)); return *this;}
+
 
     /**
      * <p>The most recent description of the event.</p>
@@ -109,6 +111,7 @@ namespace Model
      * <p>The most recent description of the event.</p>
      */
     inline EventDetails& WithEventDescription(const char* value) { SetEventDescription(value); return *this;}
+
 
     /**
      * <p>Additional metadata about the event.</p>
@@ -171,10 +174,13 @@ namespace Model
     inline EventDetails& AddEventMetadata(const char* key, const char* value) { m_eventMetadataHasBeenSet = true; m_eventMetadata.emplace(key, value); return *this; }
 
   private:
+
     Event m_event;
     bool m_eventHasBeenSet;
+
     Aws::String m_eventDescription;
     bool m_eventDescriptionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_eventMetadata;
     bool m_eventMetadataHasBeenSet;
   };

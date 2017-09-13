@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteMatchmakingConfigurationResult();
-    DeleteMatchmakingConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteMatchmakingConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteMatchmakingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteMatchmakingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

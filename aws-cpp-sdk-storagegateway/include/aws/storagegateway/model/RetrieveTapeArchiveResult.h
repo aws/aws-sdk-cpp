@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     RetrieveTapeArchiveResult();
-    RetrieveTapeArchiveResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetrieveTapeArchiveResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RetrieveTapeArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RetrieveTapeArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline RetrieveTapeArchiveResult& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
   };
 

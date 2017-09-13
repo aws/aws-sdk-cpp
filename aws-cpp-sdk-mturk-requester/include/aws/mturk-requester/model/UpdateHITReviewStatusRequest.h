@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The ID of the HIT to update. </p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline UpdateHITReviewStatusRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
 
+
     /**
      * <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
      * <ul> <li> <p> Setting this to false will only transition a HIT from
@@ -99,8 +101,10 @@ namespace Model
     inline UpdateHITReviewStatusRequest& WithRevert(bool value) { SetRevert(value); return *this;}
 
   private:
+
     Aws::String m_hITId;
     bool m_hITIdHasBeenSet;
+
     bool m_revert;
     bool m_revertHasBeenSet;
   };

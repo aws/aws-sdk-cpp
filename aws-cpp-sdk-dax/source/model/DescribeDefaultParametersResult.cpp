@@ -30,12 +30,12 @@ DescribeDefaultParametersResult::DescribeDefaultParametersResult()
 {
 }
 
-DescribeDefaultParametersResult::DescribeDefaultParametersResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDefaultParametersResult::DescribeDefaultParametersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeDefaultParametersResult& DescribeDefaultParametersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDefaultParametersResult& DescribeDefaultParametersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

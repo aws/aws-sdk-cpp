@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteJobResult();
-    DeleteJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the job that was deleted.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteJobResult& WithJobName(const char* value) { SetJobName(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
   };
 

@@ -46,6 +46,7 @@ namespace Model
     PutItemInput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The table where the message data will be written</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline PutItemInput& WithTableName(const char* value) { SetTableName(value); return *this;}
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetCurrentUserResult();
-    GetCurrentUserResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCurrentUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCurrentUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCurrentUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Metadata of the user.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetCurrentUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
 
   private:
+
     User m_user;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of an existing application.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline DeleteApplicationReferenceDataSourceRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Version of the application. You can use the <a>DescribeApplication</a>
      * operation to get the current application version. If the version specified is
@@ -94,6 +96,7 @@ namespace Model
      * returned.</p>
      */
     inline DeleteApplicationReferenceDataSourceRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+
 
     /**
      * <p>ID of the reference data source. When you add a reference data source to your
@@ -152,10 +155,13 @@ namespace Model
     inline DeleteApplicationReferenceDataSourceRequest& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     long long m_currentApplicationVersionId;
     bool m_currentApplicationVersionIdHasBeenSet;
+
     Aws::String m_referenceId;
     bool m_referenceIdHasBeenSet;
   };

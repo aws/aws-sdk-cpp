@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateCrawlerResult();
-    UpdateCrawlerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateCrawlerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateCrawlerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateCrawlerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

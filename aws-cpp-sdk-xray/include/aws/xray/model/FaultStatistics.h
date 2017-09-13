@@ -44,6 +44,7 @@ namespace Model
     FaultStatistics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of requests that failed with untracked 5xx Server Error status
      * codes.</p>
@@ -61,6 +62,7 @@ namespace Model
      * codes.</p>
      */
     inline FaultStatistics& WithOtherCount(long long value) { SetOtherCount(value); return *this;}
+
 
     /**
      * <p>The total number of requests that failed with a 5xx Server Error status
@@ -81,8 +83,10 @@ namespace Model
     inline FaultStatistics& WithTotalCount(long long value) { SetTotalCount(value); return *this;}
 
   private:
+
     long long m_otherCount;
     bool m_otherCountHasBeenSet;
+
     long long m_totalCount;
     bool m_totalCountHasBeenSet;
   };

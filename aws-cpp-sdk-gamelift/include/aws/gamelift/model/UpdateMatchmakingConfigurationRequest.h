@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a matchmaking configuration to update.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline UpdateMatchmakingConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Descriptive label that is associated with matchmaking configuration.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>Descriptive label that is associated with matchmaking configuration.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Amazon Resource Name (<a
@@ -191,6 +194,7 @@ namespace Model
      */
     inline UpdateMatchmakingConfigurationRequest& AddGameSessionQueueArns(const char* value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns.push_back(value); return *this; }
 
+
     /**
      * <p>Maximum duration, in seconds, that a matchmaking ticket can remain in process
      * before timing out. Requests that time out can be resubmitted as needed.</p>
@@ -208,6 +212,7 @@ namespace Model
      * before timing out. Requests that time out can be resubmitted as needed.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithRequestTimeoutSeconds(int value) { SetRequestTimeoutSeconds(value); return *this;}
+
 
     /**
      * <p>Length of time (in seconds) to wait for players to accept a proposed match.
@@ -230,6 +235,7 @@ namespace Model
      */
     inline UpdateMatchmakingConfigurationRequest& WithAcceptanceTimeoutSeconds(int value) { SetAcceptanceTimeoutSeconds(value); return *this;}
 
+
     /**
      * <p>Flag that determines whether or not a match that was created with this
      * configuration must be accepted by the matched players. To require acceptance,
@@ -250,6 +256,7 @@ namespace Model
      * set to TRUE.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithAcceptanceRequired(bool value) { SetAcceptanceRequired(value); return *this;}
+
 
     /**
      * <p>Unique identifier for a matchmaking rule set to use with this configuration.
@@ -300,6 +307,7 @@ namespace Model
      */
     inline UpdateMatchmakingConfigurationRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
+
     /**
      * <p>SNS topic ARN that is set up to receive matchmaking notifications. See <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
@@ -349,6 +357,7 @@ namespace Model
      */
     inline UpdateMatchmakingConfigurationRequest& WithNotificationTarget(const char* value) { SetNotificationTarget(value); return *this;}
 
+
     /**
      * <p>Number of player slots in a match to keep open for future players. For
      * example, if the configuration's rule set specifies a match for a single
@@ -372,6 +381,7 @@ namespace Model
      * selected for the match.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithAdditionalPlayerCount(int value) { SetAdditionalPlayerCount(value); return *this;}
+
 
     /**
      * <p>Information to attached to all events related to the matchmaking
@@ -414,6 +424,7 @@ namespace Model
      * configuration. </p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithCustomEventData(const char* value) { SetCustomEventData(value); return *this;}
+
 
     /**
      * <p>Set of developer-defined properties for a game session, formatted as a set of
@@ -492,6 +503,7 @@ namespace Model
      */
     inline UpdateMatchmakingConfigurationRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Set of developer-defined game session properties, formatted as a single
      * string value. This data is included in the <a>GameSession</a> object, which is
@@ -563,28 +575,40 @@ namespace Model
     inline UpdateMatchmakingConfigurationRequest& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_gameSessionQueueArns;
     bool m_gameSessionQueueArnsHasBeenSet;
+
     int m_requestTimeoutSeconds;
     bool m_requestTimeoutSecondsHasBeenSet;
+
     int m_acceptanceTimeoutSeconds;
     bool m_acceptanceTimeoutSecondsHasBeenSet;
+
     bool m_acceptanceRequired;
     bool m_acceptanceRequiredHasBeenSet;
+
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
+
     Aws::String m_notificationTarget;
     bool m_notificationTargetHasBeenSet;
+
     int m_additionalPlayerCount;
     bool m_additionalPlayerCountHasBeenSet;
+
     Aws::String m_customEventData;
     bool m_customEventDataHasBeenSet;
+
     Aws::Vector<GameProperty> m_gameProperties;
     bool m_gamePropertiesHasBeenSet;
+
     Aws::String m_gameSessionData;
     bool m_gameSessionDataHasBeenSet;
   };

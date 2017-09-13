@@ -36,7 +36,10 @@ namespace Model
 
   /**
    * <p>The user-specified preferences for how AWS CloudFormation performs a stack
-   * set operation.</p><p><h3>See Also:</h3>   <a
+   * set operation. </p> <p>For more information on maximum concurrent accounts and
+   * failure tolerance, see <a
+   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+   * set operation options</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetOperationPreferences">AWS
    * API Reference</a></p>
    */
@@ -49,6 +52,7 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
 
     /**
      * <p>The order of the regions in where you want to perform the stack
@@ -98,6 +102,7 @@ namespace Model
      */
     inline StackSetOperationPreferences& AddRegionOrder(const char* value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(value); return *this; }
 
+
     /**
      * <p>The number of accounts, per region, for which this operation can fail before
      * AWS CloudFormation stops the operation in that region. If the operation is
@@ -127,6 +132,7 @@ namespace Model
      * (but not both).</p>
      */
     inline StackSetOperationPreferences& WithFailureToleranceCount(int value) { SetFailureToleranceCount(value); return *this;}
+
 
     /**
      * <p>The percentage of accounts, per region, for which this stack operation can
@@ -164,6 +170,7 @@ namespace Model
      */
     inline StackSetOperationPreferences& WithFailureTolerancePercentage(int value) { SetFailureTolerancePercentage(value); return *this;}
 
+
     /**
      * <p>The maximum number of accounts in which to perform this operation at one
      * time. This is dependent on the value of
@@ -193,6 +200,7 @@ namespace Model
      * <code>MaxConcurrentPercentage</code>, but not both.</p>
      */
     inline StackSetOperationPreferences& WithMaxConcurrentCount(int value) { SetMaxConcurrentCount(value); return *this;}
+
 
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one
@@ -228,14 +236,19 @@ namespace Model
     inline StackSetOperationPreferences& WithMaxConcurrentPercentage(int value) { SetMaxConcurrentPercentage(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_regionOrder;
     bool m_regionOrderHasBeenSet;
+
     int m_failureToleranceCount;
     bool m_failureToleranceCountHasBeenSet;
+
     int m_failureTolerancePercentage;
     bool m_failureTolerancePercentageHasBeenSet;
+
     int m_maxConcurrentCount;
     bool m_maxConcurrentCountHasBeenSet;
+
     int m_maxConcurrentPercentage;
     bool m_maxConcurrentPercentageHasBeenSet;
   };

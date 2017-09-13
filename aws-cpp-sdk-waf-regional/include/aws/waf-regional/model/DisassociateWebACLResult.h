@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DisassociateWebACLResult();
-    DisassociateWebACLResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateWebACLResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

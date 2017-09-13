@@ -45,6 +45,7 @@ namespace Model
     Predecessor& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the predecessor job.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of the predecessor job.</p>
      */
     inline Predecessor& WithJobName(const char* value) { SetJobName(value); return *this;}
+
 
     /**
      * <p>The job-run ID of the precessor job run.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline Predecessor& WithRunId(const char* value) { SetRunId(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     Aws::String m_runId;
     bool m_runIdHasBeenSet;
   };

@@ -30,12 +30,12 @@ DisassociateTeamMemberResult::DisassociateTeamMemberResult()
 {
 }
 
-DisassociateTeamMemberResult::DisassociateTeamMemberResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateTeamMemberResult::DisassociateTeamMemberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateTeamMemberResult& DisassociateTeamMemberResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateTeamMemberResult& DisassociateTeamMemberResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

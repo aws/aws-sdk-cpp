@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     ReadPresetResult();
-    ReadPresetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReadPresetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReadPresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReadPresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A section of the response body that provides information about the
@@ -77,6 +78,7 @@ namespace Model
     inline ReadPresetResult& WithPreset(Preset&& value) { SetPreset(std::move(value)); return *this;}
 
   private:
+
     Preset m_preset;
   };
 

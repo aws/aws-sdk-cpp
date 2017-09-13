@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ResetJobBookmarkResult();
-    ResetJobBookmarkResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResetJobBookmarkResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResetJobBookmarkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResetJobBookmarkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The reset bookmark entry.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline ResetJobBookmarkResult& WithJobBookmarkEntry(JobBookmarkEntry&& value) { SetJobBookmarkEntry(std::move(value)); return *this;}
 
   private:
+
     JobBookmarkEntry m_jobBookmarkEntry;
   };
 

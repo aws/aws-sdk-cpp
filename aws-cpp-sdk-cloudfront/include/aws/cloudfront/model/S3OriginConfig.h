@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The CloudFront origin access identity to associate with the origin. Use an
      * origin access identity to configure the origin so that viewers can <i>only</i>
@@ -203,6 +204,7 @@ namespace Model
     inline S3OriginConfig& WithOriginAccessIdentity(const char* value) { SetOriginAccessIdentity(value); return *this;}
 
   private:
+
     Aws::String m_originAccessIdentity;
     bool m_originAccessIdentityHasBeenSet;
   };

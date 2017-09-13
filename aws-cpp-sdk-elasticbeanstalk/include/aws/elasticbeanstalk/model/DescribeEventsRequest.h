@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those associated with this application.</p>
@@ -85,6 +86,7 @@ namespace Model
      * include only those associated with this application.</p>
      */
     inline DescribeEventsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
@@ -128,6 +130,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
+
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those that are associated with this environment configuration.</p>
@@ -169,6 +172,7 @@ namespace Model
      * those that are associated with this environment configuration.</p>
      */
     inline DescribeEventsRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
@@ -212,6 +216,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 
+
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those associated with this environment.</p>
@@ -254,6 +259,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The ARN of the version of the custom platform.</p>
      */
@@ -288,6 +294,7 @@ namespace Model
      * <p>The ARN of the version of the custom platform.</p>
      */
     inline DescribeEventsRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the described events to include
@@ -331,6 +338,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
     /**
      * <p>If specified, limits the events returned from this call to include only those
      * with the specified severity or higher.</p>
@@ -360,6 +368,7 @@ namespace Model
      * with the specified severity or higher.</p>
      */
     inline DescribeEventsRequest& WithSeverity(EventSeverity&& value) { SetSeverity(std::move(value)); return *this;}
+
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
@@ -391,6 +400,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those that occur up to, but not including, the <code>EndTime</code>. </p>
@@ -421,6 +431,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the maximum number of events that can be returned, beginning with
      * the most recent event.</p>
@@ -438,6 +449,7 @@ namespace Model
      * the most recent event.</p>
      */
     inline DescribeEventsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>Pagination token. If specified, the events return the next batch of
@@ -482,28 +494,40 @@ namespace Model
     inline DescribeEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::String m_platformArn;
     bool m_platformArnHasBeenSet;
+
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
+
     EventSeverity m_severity;
     bool m_severityHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

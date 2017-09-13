@@ -47,6 +47,7 @@ namespace Model
     AgentAlreadyRunningAssessment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>ID of the agent that is running on an EC2 instance that is already
      * participating in another started assessment run.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline AgentAlreadyRunningAssessment& WithAgentId(const char* value) { SetAgentId(value); return *this;}
 
+
     /**
      * <p>The ARN of the assessment run that has already been started.</p>
      */
@@ -125,8 +127,10 @@ namespace Model
     inline AgentAlreadyRunningAssessment& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
 
   private:
+
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet;
+
     Aws::String m_assessmentRunArn;
     bool m_assessmentRunArnHasBeenSet;
   };

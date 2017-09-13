@@ -39,6 +39,7 @@ namespace Model
     CreateEventSourceMappingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
      * stream that is the event source. Any record added to this stream could cause AWS
@@ -101,6 +102,7 @@ namespace Model
      * function as JSON.</p>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
+
 
     /**
      * <p>The Lambda function to invoke when AWS Lambda detects an event on the
@@ -228,6 +230,7 @@ namespace Model
      */
     inline CreateEventSourceMappingRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>Indicates whether AWS Lambda should begin polling the event source. By
      * default, <code>Enabled</code> is true. </p>
@@ -245,6 +248,7 @@ namespace Model
      * default, <code>Enabled</code> is true. </p>
      */
     inline CreateEventSourceMappingRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The largest number of records that AWS Lambda will retrieve from your event
@@ -266,6 +270,7 @@ namespace Model
      * with all the retrieved records. The default is 100 records.</p>
      */
     inline CreateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
+
 
     /**
      * <p>The position in the stream where AWS Lambda should start reading. Valid only
@@ -306,6 +311,7 @@ namespace Model
      * in the <i>Amazon Kinesis API Reference</i>. </p>
      */
     inline CreateEventSourceMappingRequest& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(std::move(value)); return *this;}
+
 
     /**
      * <p>The timestamp of the data record from which to start reading. Used with <a
@@ -358,16 +364,22 @@ namespace Model
     inline CreateEventSourceMappingRequest& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_eventSourceArn;
     bool m_eventSourceArnHasBeenSet;
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     int m_batchSize;
     bool m_batchSizeHasBeenSet;
+
     EventSourcePosition m_startingPosition;
     bool m_startingPositionHasBeenSet;
+
     Aws::Utils::DateTime m_startingPositionTimestamp;
     bool m_startingPositionTimestampHasBeenSet;
   };

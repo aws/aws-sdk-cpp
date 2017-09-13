@@ -48,6 +48,7 @@ namespace Model
     Directory& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the directory.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the directory.</p>
      */
     inline Directory& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the directory. For
@@ -125,6 +127,7 @@ namespace Model
      */
     inline Directory& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>The state of the directory. Can be either <code>Enabled</code>,
      * <code>Disabled</code>, or <code>Deleted</code>.</p>
@@ -155,6 +158,7 @@ namespace Model
      */
     inline Directory& WithState(DirectoryState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time when the directory was created.</p>
      */
@@ -181,12 +185,16 @@ namespace Model
     inline Directory& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     DirectoryState m_state;
     bool m_stateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet;
   };

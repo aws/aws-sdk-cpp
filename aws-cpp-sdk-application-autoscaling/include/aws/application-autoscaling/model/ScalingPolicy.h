@@ -53,6 +53,7 @@ namespace Model
     ScalingPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
      */
     inline ScalingPolicy& WithPolicyARN(const char* value) { SetPolicyARN(value); return *this;}
+
 
     /**
      * <p>The name of the scaling policy.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline ScalingPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
+
     /**
      * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
@@ -157,6 +160,7 @@ namespace Model
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline ScalingPolicy& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the resource associated with the scaling policy. This
@@ -312,6 +316,7 @@ namespace Model
      */
     inline ScalingPolicy& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The scalable dimension. This string consists of the service namespace,
      * resource type, and scaling property.</p> <ul> <li> <p>
@@ -417,6 +422,7 @@ namespace Model
      */
     inline ScalingPolicy& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
+
     /**
      * <p>The scaling policy type.</p>
      */
@@ -441,6 +447,7 @@ namespace Model
      * <p>The scaling policy type.</p>
      */
     inline ScalingPolicy& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
+
 
     /**
      * <p>A step scaling policy.</p>
@@ -467,6 +474,7 @@ namespace Model
      */
     inline ScalingPolicy& WithStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { SetStepScalingPolicyConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>A target tracking policy.</p>
      */
@@ -491,6 +499,7 @@ namespace Model
      * <p>A target tracking policy.</p>
      */
     inline ScalingPolicy& WithTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { SetTargetTrackingScalingPolicyConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The CloudWatch alarms associated with the scaling policy.</p>
@@ -527,6 +536,7 @@ namespace Model
      */
     inline ScalingPolicy& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The Unix timestamp for when the scaling policy was created.</p>
      */
@@ -553,24 +563,34 @@ namespace Model
     inline ScalingPolicy& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_policyARN;
     bool m_policyARNHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     ServiceNamespace m_serviceNamespace;
     bool m_serviceNamespaceHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     ScalableDimension m_scalableDimension;
     bool m_scalableDimensionHasBeenSet;
+
     PolicyType m_policyType;
     bool m_policyTypeHasBeenSet;
+
     StepScalingPolicyConfiguration m_stepScalingPolicyConfiguration;
     bool m_stepScalingPolicyConfigurationHasBeenSet;
+
     TargetTrackingScalingPolicyConfiguration m_targetTrackingScalingPolicyConfiguration;
     bool m_targetTrackingScalingPolicyConfigurationHasBeenSet;
+
     Aws::Vector<Alarm> m_alarms;
     bool m_alarmsHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
   };

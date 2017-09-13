@@ -50,6 +50,7 @@ namespace Model
     Classifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A GrokClassifier object.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline Classifier& WithGrokClassifier(GrokClassifier&& value) { SetGrokClassifier(std::move(value)); return *this;}
 
   private:
+
     GrokClassifier m_grokClassifier;
     bool m_grokClassifierHasBeenSet;
   };

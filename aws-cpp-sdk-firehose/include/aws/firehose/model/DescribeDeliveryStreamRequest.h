@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the delivery stream.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline DescribeDeliveryStreamRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
+
     /**
      * <p>The limit on the number of destinations to return. Currently, you can have
      * one destination per delivery stream.</p>
@@ -88,6 +90,7 @@ namespace Model
      * one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The ID of the destination to start returning the destination information.
@@ -132,10 +135,13 @@ namespace Model
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(const char* value) { SetExclusiveStartDestinationId(value); return *this;}
 
   private:
+
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_exclusiveStartDestinationId;
     bool m_exclusiveStartDestinationIdHasBeenSet;
   };

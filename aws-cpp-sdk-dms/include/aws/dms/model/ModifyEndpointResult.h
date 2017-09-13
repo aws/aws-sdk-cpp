@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     ModifyEndpointResult();
-    ModifyEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The modified endpoint.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline ModifyEndpointResult& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
 
   private:
+
     Endpoint m_endpoint;
   };
 

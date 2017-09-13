@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the application that corresponds to the revision.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetApplicationRevisionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Information about the application revision to get, including type and
      * location.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline GetApplicationRevisionRequest& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     RevisionLocation m_revision;
     bool m_revisionHasBeenSet;
   };

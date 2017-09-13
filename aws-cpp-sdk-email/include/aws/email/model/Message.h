@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The subject of the message: A short summary of the content, which will appear
      * in the recipient's inbox.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline Message& WithSubject(Content&& value) { SetSubject(std::move(value)); return *this;}
 
+
     /**
      * <p>The message body.</p>
      */
@@ -106,8 +108,10 @@ namespace Model
     inline Message& WithBody(Body&& value) { SetBody(std::move(value)); return *this;}
 
   private:
+
     Content m_subject;
     bool m_subjectHasBeenSet;
+
     Body m_body;
     bool m_bodyHasBeenSet;
   };

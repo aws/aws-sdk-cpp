@@ -46,6 +46,7 @@ namespace Model
     MessageRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * A map of destination addresses, with the address as the key(Email address, phone
      * number or push token) and the Address Configuration as the value.
@@ -111,6 +112,7 @@ namespace Model
      * number or push token) and the Address Configuration as the value.
      */
     inline MessageRequest& AddAddresses(const char* key, const AddressConfiguration& value) { m_addressesHasBeenSet = true; m_addresses.emplace(key, value); return *this; }
+
 
     /**
      * A map of custom attributes to attributes to be attached to the message. This
@@ -196,6 +198,7 @@ namespace Model
      */
     inline MessageRequest& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
 
+
     /**
      * Message configuration.
      */
@@ -222,10 +225,13 @@ namespace Model
     inline MessageRequest& WithMessageConfiguration(DirectMessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, AddressConfiguration> m_addresses;
     bool m_addressesHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_context;
     bool m_contextHasBeenSet;
+
     DirectMessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
   };

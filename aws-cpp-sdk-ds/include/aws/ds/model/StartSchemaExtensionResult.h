@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StartSchemaExtensionResult();
-    StartSchemaExtensionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartSchemaExtensionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartSchemaExtensionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartSchemaExtensionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of the schema extension that will be applied.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline StartSchemaExtensionResult& WithSchemaExtensionId(const char* value) { SetSchemaExtensionId(value); return *this;}
 
   private:
+
     Aws::String m_schemaExtensionId;
   };
 

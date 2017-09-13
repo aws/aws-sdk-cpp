@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Represents information about an action type.</p>
      */
@@ -65,6 +66,7 @@ namespace Model
      */
     inline PollForThirdPartyJobsRequest& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
      */
@@ -81,8 +83,10 @@ namespace Model
     inline PollForThirdPartyJobsRequest& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
 
   private:
+
     ActionTypeId m_actionTypeId;
     bool m_actionTypeIdHasBeenSet;
+
     int m_maxBatchSize;
     bool m_maxBatchSizeHasBeenSet;
   };

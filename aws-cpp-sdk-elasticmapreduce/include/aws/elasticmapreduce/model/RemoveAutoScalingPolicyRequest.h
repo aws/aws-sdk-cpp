@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the ID of a cluster. The instance group to which the automatic
      * scaling policy is applied is within this cluster.</p>
@@ -77,6 +78,7 @@ namespace Model
      * scaling policy is applied is within this cluster.</p>
      */
     inline RemoveAutoScalingPolicyRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
 
     /**
      * <p>Specifies the ID of the instance group to which the scaling policy is
@@ -121,8 +123,10 @@ namespace Model
     inline RemoveAutoScalingPolicyRequest& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_instanceGroupId;
     bool m_instanceGroupIdHasBeenSet;
   };

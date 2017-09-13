@@ -51,6 +51,7 @@ namespace Model
     EventFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of event ARNs (unique identifiers). For example:
      * <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
@@ -106,6 +107,7 @@ namespace Model
      * "arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz"</code> </p>
      */
     inline EventFilter& AddEventArns(const char* value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(value); return *this; }
+
 
     /**
      * <p>A list of unique identifiers for event types. For example,
@@ -163,6 +165,7 @@ namespace Model
      */
     inline EventFilter& AddEventTypeCodes(const char* value) { m_eventTypeCodesHasBeenSet = true; m_eventTypeCodes.push_back(value); return *this; }
 
+
     /**
      * <p>The AWS services associated with the event. For example, <code>EC2</code>,
      * <code>RDS</code>.</p>
@@ -211,6 +214,7 @@ namespace Model
      */
     inline EventFilter& AddServices(const char* value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
+
     /**
      * <p>A list of AWS regions.</p>
      */
@@ -250,6 +254,7 @@ namespace Model
      * <p>A list of AWS regions.</p>
      */
     inline EventFilter& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
 
     /**
      * <p>A list of AWS availability zones.</p>
@@ -291,6 +296,7 @@ namespace Model
      */
     inline EventFilter& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
+
     /**
      * <p>A list of dates and times that the event began.</p>
      */
@@ -325,6 +331,7 @@ namespace Model
      * <p>A list of dates and times that the event began.</p>
      */
     inline EventFilter& AddStartTimes(DateTimeRange&& value) { m_startTimesHasBeenSet = true; m_startTimes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of dates and times that the event ended.</p>
@@ -361,6 +368,7 @@ namespace Model
      */
     inline EventFilter& AddEndTimes(DateTimeRange&& value) { m_endTimesHasBeenSet = true; m_endTimes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of dates and times that the event was last updated.</p>
      */
@@ -395,6 +403,7 @@ namespace Model
      * <p>A list of dates and times that the event was last updated.</p>
      */
     inline EventFilter& AddLastUpdatedTimes(DateTimeRange&& value) { m_lastUpdatedTimesHasBeenSet = true; m_lastUpdatedTimes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of entity ARNs (unique identifiers).</p>
@@ -435,6 +444,7 @@ namespace Model
      * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline EventFilter& AddEntityArns(const char* value) { m_entityArnsHasBeenSet = true; m_entityArns.push_back(value); return *this; }
+
 
     /**
      * <p>A list of entity identifiers, such as EC2 instance IDs
@@ -484,6 +494,7 @@ namespace Model
      */
     inline EventFilter& AddEntityValues(const char* value) { m_entityValuesHasBeenSet = true; m_entityValues.push_back(value); return *this; }
 
+
     /**
      * <p>A list of event type category codes (<code>issue</code>,
      * <code>scheduledChange</code>, or <code>accountNotification</code>).</p>
@@ -526,6 +537,7 @@ namespace Model
      */
     inline EventFilter& AddEventTypeCategories(EventTypeCategory&& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
@@ -560,6 +572,7 @@ namespace Model
      * <p>A map of entity tags attached to the affected entity.</p>
      */
     inline EventFilter& AddTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of event status codes.</p>
@@ -597,30 +610,43 @@ namespace Model
     inline EventFilter& AddEventStatusCodes(EventStatusCode&& value) { m_eventStatusCodesHasBeenSet = true; m_eventStatusCodes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_eventArns;
     bool m_eventArnsHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventTypeCodes;
     bool m_eventTypeCodesHasBeenSet;
+
     Aws::Vector<Aws::String> m_services;
     bool m_servicesHasBeenSet;
+
     Aws::Vector<Aws::String> m_regions;
     bool m_regionsHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     Aws::Vector<DateTimeRange> m_startTimes;
     bool m_startTimesHasBeenSet;
+
     Aws::Vector<DateTimeRange> m_endTimes;
     bool m_endTimesHasBeenSet;
+
     Aws::Vector<DateTimeRange> m_lastUpdatedTimes;
     bool m_lastUpdatedTimesHasBeenSet;
+
     Aws::Vector<Aws::String> m_entityArns;
     bool m_entityArnsHasBeenSet;
+
     Aws::Vector<Aws::String> m_entityValues;
     bool m_entityValuesHasBeenSet;
+
     Aws::Vector<EventTypeCategory> m_eventTypeCategories;
     bool m_eventTypeCategoriesHasBeenSet;
+
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Vector<EventStatusCode> m_eventStatusCodes;
     bool m_eventStatusCodesHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeExportTasksResponse();
-    DescribeExportTasksResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeExportTasksResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeExportTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeExportTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the export tasks.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeExportTasksResponse& AddExportTasks(ExportTask&& value) { m_exportTasks.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeExportTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ExportTask> m_exportTasks;
+
     ResponseMetadata m_responseMetadata;
   };
 

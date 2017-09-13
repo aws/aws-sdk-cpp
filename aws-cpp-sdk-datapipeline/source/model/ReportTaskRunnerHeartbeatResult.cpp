@@ -31,13 +31,13 @@ ReportTaskRunnerHeartbeatResult::ReportTaskRunnerHeartbeatResult() :
 {
 }
 
-ReportTaskRunnerHeartbeatResult::ReportTaskRunnerHeartbeatResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ReportTaskRunnerHeartbeatResult::ReportTaskRunnerHeartbeatResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_terminate(false)
 {
   *this = result;
 }
 
-ReportTaskRunnerHeartbeatResult& ReportTaskRunnerHeartbeatResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ReportTaskRunnerHeartbeatResult& ReportTaskRunnerHeartbeatResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("terminate"))

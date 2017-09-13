@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeScalingActivitiesResult();
-    DescribeScalingActivitiesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeScalingActivitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeScalingActivitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeScalingActivitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The scaling activities. Activities are sorted by start time. Activities still
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeScalingActivitiesResult& AddActivities(Activity&& value) { m_activities.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeScalingActivitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeScalingActivitiesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Activity> m_activities;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

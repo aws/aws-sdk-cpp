@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of structures that specify the WorkSpaces to rebuild.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline RebuildWorkspacesRequest& AddRebuildWorkspaceRequests(RebuildRequest&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<RebuildRequest> m_rebuildWorkspaceRequests;
     bool m_rebuildWorkspaceRequestsHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     Label& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name (label) of the object.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline Label& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Level of confidence.</p>
      */
@@ -97,8 +99,10 @@ namespace Model
     inline Label& WithConfidence(double value) { SetConfidence(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
   };

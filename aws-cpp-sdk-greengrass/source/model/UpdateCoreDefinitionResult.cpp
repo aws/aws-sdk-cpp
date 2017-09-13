@@ -30,12 +30,12 @@ UpdateCoreDefinitionResult::UpdateCoreDefinitionResult()
 {
 }
 
-UpdateCoreDefinitionResult::UpdateCoreDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateCoreDefinitionResult::UpdateCoreDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateCoreDefinitionResult& UpdateCoreDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateCoreDefinitionResult& UpdateCoreDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -30,12 +30,12 @@ AdminResetUserPasswordResult::AdminResetUserPasswordResult()
 {
 }
 
-AdminResetUserPasswordResult::AdminResetUserPasswordResult(const AmazonWebServiceResult<JsonValue>& result)
+AdminResetUserPasswordResult::AdminResetUserPasswordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AdminResetUserPasswordResult& AdminResetUserPasswordResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminResetUserPasswordResult& AdminResetUserPasswordResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

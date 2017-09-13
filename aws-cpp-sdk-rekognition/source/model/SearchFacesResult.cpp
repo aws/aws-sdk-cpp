@@ -30,12 +30,12 @@ SearchFacesResult::SearchFacesResult()
 {
 }
 
-SearchFacesResult::SearchFacesResult(const AmazonWebServiceResult<JsonValue>& result)
+SearchFacesResult::SearchFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SearchFacesResult& SearchFacesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SearchFacesResult& SearchFacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SearchedFaceId"))

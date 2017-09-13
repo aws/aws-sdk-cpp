@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListGroupCertificateAuthoritiesResult();
-    ListGroupCertificateAuthoritiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListGroupCertificateAuthoritiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListGroupCertificateAuthoritiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListGroupCertificateAuthoritiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * List of certificate authorities associated with the group.
@@ -78,6 +79,7 @@ namespace Model
     inline ListGroupCertificateAuthoritiesResult& AddGroupCertificateAuthorities(GroupCertificateAuthorityProperties&& value) { m_groupCertificateAuthorities.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<GroupCertificateAuthorityProperties> m_groupCertificateAuthorities;
   };
 

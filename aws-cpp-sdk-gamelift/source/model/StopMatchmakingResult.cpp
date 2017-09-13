@@ -30,12 +30,12 @@ StopMatchmakingResult::StopMatchmakingResult()
 {
 }
 
-StopMatchmakingResult::StopMatchmakingResult(const AmazonWebServiceResult<JsonValue>& result)
+StopMatchmakingResult::StopMatchmakingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopMatchmakingResult& StopMatchmakingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopMatchmakingResult& StopMatchmakingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

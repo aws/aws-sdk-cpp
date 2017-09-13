@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeReservedNodeOfferingsResult();
-    DescribeReservedNodeOfferingsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReservedNodeOfferingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeReservedNodeOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeReservedNodeOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -119,6 +120,7 @@ namespace Model
      */
     inline DescribeReservedNodeOfferingsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of <code>ReservedNodeOffering</code> objects.</p>
      */
@@ -154,6 +156,7 @@ namespace Model
      */
     inline DescribeReservedNodeOfferingsResult& AddReservedNodeOfferings(ReservedNodeOffering&& value) { m_reservedNodeOfferings.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -170,8 +173,11 @@ namespace Model
     inline DescribeReservedNodeOfferingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<ReservedNodeOffering> m_reservedNodeOfferings;
+
     ResponseMetadata m_responseMetadata;
   };
 

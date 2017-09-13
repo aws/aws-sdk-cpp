@@ -30,12 +30,12 @@ ConnectDirectoryResult::ConnectDirectoryResult()
 {
 }
 
-ConnectDirectoryResult::ConnectDirectoryResult(const AmazonWebServiceResult<JsonValue>& result)
+ConnectDirectoryResult::ConnectDirectoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ConnectDirectoryResult& ConnectDirectoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ConnectDirectoryResult& ConnectDirectoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DirectoryId"))

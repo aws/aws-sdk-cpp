@@ -30,12 +30,12 @@ CreateActivityResult::CreateActivityResult()
 {
 }
 
-CreateActivityResult::CreateActivityResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateActivityResult::CreateActivityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateActivityResult& CreateActivityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateActivityResult& CreateActivityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("activityArn"))

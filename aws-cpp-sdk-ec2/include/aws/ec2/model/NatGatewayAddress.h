@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The allocation ID of the Elastic IP address that's associated with the NAT
      * gateway.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline NatGatewayAddress& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
+
     /**
      * <p>The ID of the network interface associated with the NAT gateway.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      */
     inline NatGatewayAddress& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
     /**
      * <p>The private IP address associated with the Elastic IP address.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      * <p>The private IP address associated with the Elastic IP address.</p>
      */
     inline NatGatewayAddress& WithPrivateIp(const char* value) { SetPrivateIp(value); return *this;}
+
 
     /**
      * <p>The Elastic IP address associated with the NAT gateway.</p>
@@ -197,12 +201,16 @@ namespace Model
     inline NatGatewayAddress& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
   private:
+
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_privateIp;
     bool m_privateIpHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
   };

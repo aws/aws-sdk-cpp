@@ -31,13 +31,13 @@ ListWorkerBlocksResult::ListWorkerBlocksResult() :
 {
 }
 
-ListWorkerBlocksResult::ListWorkerBlocksResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListWorkerBlocksResult::ListWorkerBlocksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_numResults(0)
 {
   *this = result;
 }
 
-ListWorkerBlocksResult& ListWorkerBlocksResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListWorkerBlocksResult& ListWorkerBlocksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

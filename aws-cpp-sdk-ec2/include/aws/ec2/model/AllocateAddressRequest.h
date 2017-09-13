@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
      * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
@@ -71,6 +72,7 @@ namespace Model
      * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
      */
     inline AllocateAddressRequest& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
+
 
     /**
      * <p>[EC2-VPC] The Elastic IP address to recover.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline AllocateAddressRequest& WithAddress(const char* value) { SetAddress(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -132,10 +135,13 @@ namespace Model
     inline AllocateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     DomainType m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_address;
     bool m_addressHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

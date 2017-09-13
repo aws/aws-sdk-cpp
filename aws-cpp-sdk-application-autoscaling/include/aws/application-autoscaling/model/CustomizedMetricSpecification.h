@@ -49,6 +49,7 @@ namespace Model
     CustomizedMetricSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the metric.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the metric.</p>
      */
     inline CustomizedMetricSpecification& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+
 
     /**
      * <p>The namespace of the metric.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline CustomizedMetricSpecification& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
     /**
      * <p>The dimensions of the metric.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline CustomizedMetricSpecification& AddDimensions(MetricDimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The statistic of the metric.</p>
      */
@@ -178,6 +182,7 @@ namespace Model
      * <p>The statistic of the metric.</p>
      */
     inline CustomizedMetricSpecification& WithStatistic(MetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
+
 
     /**
      * <p>The unit of the metric.</p>
@@ -215,14 +220,19 @@ namespace Model
     inline CustomizedMetricSpecification& WithUnit(const char* value) { SetUnit(value); return *this;}
 
   private:
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Aws::Vector<MetricDimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
+
     MetricStatistic m_statistic;
     bool m_statisticHasBeenSet;
+
     Aws::String m_unit;
     bool m_unitHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the ProgressUpdateStream. </p>
      */
     inline NotifyMigrationTaskStateRequest& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
+
 
     /**
      * <p>Unique identifier that references the migration task.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline NotifyMigrationTaskStateRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 
+
     /**
      * <p>Information about the task's progress and status.</p>
      */
@@ -132,6 +135,7 @@ namespace Model
      * <p>Information about the task's progress and status.</p>
      */
     inline NotifyMigrationTaskStateRequest& WithTask(Task&& value) { SetTask(std::move(value)); return *this;}
+
 
     /**
      * <p>The timestamp when the task was gathered.</p>
@@ -158,6 +162,7 @@ namespace Model
      */
     inline NotifyMigrationTaskStateRequest& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Number of seconds after the UpdateDateTime within which the Migration Hub can
      * expect an update. If Migration Hub does not receive an update within the
@@ -179,6 +184,7 @@ namespace Model
      */
     inline NotifyMigrationTaskStateRequest& WithNextUpdateSeconds(int value) { SetNextUpdateSeconds(value); return *this;}
 
+
     /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
@@ -198,16 +204,22 @@ namespace Model
     inline NotifyMigrationTaskStateRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_progressUpdateStream;
     bool m_progressUpdateStreamHasBeenSet;
+
     Aws::String m_migrationTaskName;
     bool m_migrationTaskNameHasBeenSet;
+
     Task m_task;
     bool m_taskHasBeenSet;
+
     Aws::Utils::DateTime m_updateDateTime;
     bool m_updateDateTimeHasBeenSet;
+
     int m_nextUpdateSeconds;
     bool m_nextUpdateSecondsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

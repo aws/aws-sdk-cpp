@@ -47,6 +47,7 @@ namespace Model
     UserImportJobType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The job name for the user import job.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline UserImportJobType& WithJobName(const char* value) { SetJobName(value); return *this;}
 
+
     /**
      * <p>The job ID for the user import job.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The job ID for the user import job.</p>
      */
     inline UserImportJobType& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>The user pool ID for the user pool that the users are being imported
@@ -159,6 +162,7 @@ namespace Model
      */
     inline UserImportJobType& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
      */
@@ -194,6 +198,7 @@ namespace Model
      */
     inline UserImportJobType& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
+
     /**
      * <p>The date the user import job was created.</p>
      */
@@ -218,6 +223,7 @@ namespace Model
      * <p>The date the user import job was created.</p>
      */
     inline UserImportJobType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date when the user import job was started.</p>
@@ -244,6 +250,7 @@ namespace Model
      */
     inline UserImportJobType& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date when the user import job was completed.</p>
      */
@@ -268,6 +275,7 @@ namespace Model
      * <p>The date when the user import job was completed.</p>
      */
     inline UserImportJobType& WithCompletionDate(Aws::Utils::DateTime&& value) { SetCompletionDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the user import job. One of the following:</p> <ul> <li> <p>
@@ -354,6 +362,7 @@ namespace Model
      */
     inline UserImportJobType& WithStatus(UserImportJobStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.
      * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
@@ -403,6 +412,7 @@ namespace Model
      */
     inline UserImportJobType& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}
 
+
     /**
      * <p>The number of users that were successfully imported.</p>
      */
@@ -417,6 +427,7 @@ namespace Model
      * <p>The number of users that were successfully imported.</p>
      */
     inline UserImportJobType& WithImportedUsers(long long value) { SetImportedUsers(value); return *this;}
+
 
     /**
      * <p>The number of users that were skipped.</p>
@@ -433,6 +444,7 @@ namespace Model
      */
     inline UserImportJobType& WithSkippedUsers(long long value) { SetSkippedUsers(value); return *this;}
 
+
     /**
      * <p>The number of users that could not be imported.</p>
      */
@@ -447,6 +459,7 @@ namespace Model
      * <p>The number of users that could not be imported.</p>
      */
     inline UserImportJobType& WithFailedUsers(long long value) { SetFailedUsers(value); return *this;}
+
 
     /**
      * <p>The message returned when the user import job is completed.</p>
@@ -484,30 +497,43 @@ namespace Model
     inline UserImportJobType& WithCompletionMessage(const char* value) { SetCompletionMessage(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_preSignedUrl;
     bool m_preSignedUrlHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::Utils::DateTime m_startDate;
     bool m_startDateHasBeenSet;
+
     Aws::Utils::DateTime m_completionDate;
     bool m_completionDateHasBeenSet;
+
     UserImportJobStatusType m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_cloudWatchLogsRoleArn;
     bool m_cloudWatchLogsRoleArnHasBeenSet;
+
     long long m_importedUsers;
     bool m_importedUsersHasBeenSet;
+
     long long m_skippedUsers;
     bool m_skippedUsersHasBeenSet;
+
     long long m_failedUsers;
     bool m_failedUsersHasBeenSet;
+
     Aws::String m_completionMessage;
     bool m_completionMessageHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     KeyListEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier of the key.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>Unique identifier of the key.</p>
      */
     inline KeyListEntry& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+
 
     /**
      * <p>ARN of the key.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline KeyListEntry& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_keyArn;
     bool m_keyArnHasBeenSet;
   };

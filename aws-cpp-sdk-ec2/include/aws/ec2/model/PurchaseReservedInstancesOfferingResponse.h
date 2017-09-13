@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     PurchaseReservedInstancesOfferingResponse();
-    PurchaseReservedInstancesOfferingResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PurchaseReservedInstancesOfferingResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PurchaseReservedInstancesOfferingResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PurchaseReservedInstancesOfferingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The IDs of the purchased Reserved Instances.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline PurchaseReservedInstancesOfferingResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_reservedInstancesId;
+
     ResponseMetadata m_responseMetadata;
   };
 

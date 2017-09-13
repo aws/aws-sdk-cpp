@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The domain of the workflow execution to terminate.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The domain of the workflow execution to terminate.</p>
      */
     inline TerminateWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>The workflowId of the workflow execution to terminate.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline TerminateWorkflowExecutionRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
+
     /**
      * <p>The runId of the workflow execution to terminate.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>The runId of the workflow execution to terminate.</p>
      */
     inline TerminateWorkflowExecutionRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
+
 
     /**
      * <p> A descriptive reason for terminating the workflow execution.</p>
@@ -177,6 +181,7 @@ namespace Model
      */
     inline TerminateWorkflowExecutionRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
+
     /**
      * <p> Details for terminating the workflow execution.</p>
      */
@@ -211,6 +216,7 @@ namespace Model
      * <p> Details for terminating the workflow execution.</p>
      */
     inline TerminateWorkflowExecutionRequest& WithDetails(const char* value) { SetDetails(value); return *this;}
+
 
     /**
      * <p>If set, specifies the policy to use for the child workflow executions of the
@@ -303,16 +309,22 @@ namespace Model
     inline TerminateWorkflowExecutionRequest& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet;
+
     Aws::String m_runId;
     bool m_runIdHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
+
     ChildPolicy m_childPolicy;
     bool m_childPolicyHasBeenSet;
   };

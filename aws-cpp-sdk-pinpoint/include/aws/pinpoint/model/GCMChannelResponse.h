@@ -43,6 +43,7 @@ namespace Model
     GCMChannelResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The ID of the application to which the channel applies.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The ID of the application to which the channel applies.
      */
     inline GCMChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     /**
      * When was this segment created
@@ -113,6 +115,7 @@ namespace Model
      */
     inline GCMChannelResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
+
     /**
      * The GCM API key from Google.
      */
@@ -148,6 +151,7 @@ namespace Model
      */
     inline GCMChannelResponse& WithCredential(const char* value) { SetCredential(value); return *this;}
 
+
     /**
      * If the channel is enabled for sending messages.
      */
@@ -162,6 +166,7 @@ namespace Model
      * If the channel is enabled for sending messages.
      */
     inline GCMChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * Channel ID. Not used. Present only for backwards compatibility.
@@ -198,6 +203,7 @@ namespace Model
      */
     inline GCMChannelResponse& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * Is this channel archived
      */
@@ -212,6 +218,7 @@ namespace Model
      * Is this channel archived
      */
     inline GCMChannelResponse& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
+
 
     /**
      * Who last updated this entry
@@ -248,6 +255,7 @@ namespace Model
      */
     inline GCMChannelResponse& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
+
     /**
      * Last date this was updated
      */
@@ -282,6 +290,7 @@ namespace Model
      * Last date this was updated
      */
     inline GCMChannelResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
+
 
     /**
      * The platform type. Will be GCM
@@ -318,6 +327,7 @@ namespace Model
      */
     inline GCMChannelResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
+
     /**
      * Version of channel
      */
@@ -334,24 +344,34 @@ namespace Model
     inline GCMChannelResponse& WithVersion(int value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::String m_credential;
     bool m_credentialHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     bool m_isArchived;
     bool m_isArchivedHasBeenSet;
+
     Aws::String m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet;
+
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
   };

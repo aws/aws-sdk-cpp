@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the DevEndpoint.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteDevEndpointRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 
   private:
+
     Aws::String m_endpointName;
     bool m_endpointNameHasBeenSet;
   };

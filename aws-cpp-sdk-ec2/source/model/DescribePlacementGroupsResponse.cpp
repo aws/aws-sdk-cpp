@@ -31,12 +31,12 @@ DescribePlacementGroupsResponse::DescribePlacementGroupsResponse()
 {
 }
 
-DescribePlacementGroupsResponse::DescribePlacementGroupsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribePlacementGroupsResponse::DescribePlacementGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribePlacementGroupsResponse& DescribePlacementGroupsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribePlacementGroupsResponse& DescribePlacementGroupsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

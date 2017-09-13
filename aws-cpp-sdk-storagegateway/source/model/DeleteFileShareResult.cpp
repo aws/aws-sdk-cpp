@@ -30,12 +30,12 @@ DeleteFileShareResult::DeleteFileShareResult()
 {
 }
 
-DeleteFileShareResult::DeleteFileShareResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteFileShareResult::DeleteFileShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteFileShareResult& DeleteFileShareResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteFileShareResult& DeleteFileShareResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FileShareARN"))

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DeleteFlowLogsResponse();
-    DeleteFlowLogsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteFlowLogsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteFlowLogsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteFlowLogsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the flow logs that could not be deleted successfully.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DeleteFlowLogsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DeleteFlowLogsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<UnsuccessfulItem> m_unsuccessful;
+
     ResponseMetadata m_responseMetadata;
   };
 

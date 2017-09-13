@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline EbsInstanceBlockDevice& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
@@ -90,6 +92,7 @@ namespace Model
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
     inline EbsInstanceBlockDevice& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+
 
     /**
      * <p>The attachment state.</p>
@@ -115,6 +118,7 @@ namespace Model
      * <p>The attachment state.</p>
      */
     inline EbsInstanceBlockDevice& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the EBS volume.</p>
@@ -152,12 +156,16 @@ namespace Model
     inline EbsInstanceBlockDevice& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_attachTime;
     bool m_attachTimeHasBeenSet;
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+
     AttachmentStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
   };

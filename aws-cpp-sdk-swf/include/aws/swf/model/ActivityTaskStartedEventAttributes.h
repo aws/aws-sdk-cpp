@@ -46,6 +46,7 @@ namespace Model
     ActivityTaskStartedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identity of the worker that was assigned this task. This aids diagnostics
      * when problems arise. The form of this identity is user defined.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ActivityTaskStartedEventAttributes& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when
      * this activity task was scheduled. This information can be useful for diagnosing
@@ -110,8 +112,10 @@ namespace Model
     inline ActivityTaskStartedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     long long m_scheduledEventId;
     bool m_scheduledEventIdHasBeenSet;
   };

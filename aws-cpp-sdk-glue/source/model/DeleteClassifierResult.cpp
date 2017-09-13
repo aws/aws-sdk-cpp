@@ -30,12 +30,12 @@ DeleteClassifierResult::DeleteClassifierResult()
 {
 }
 
-DeleteClassifierResult::DeleteClassifierResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteClassifierResult::DeleteClassifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteClassifierResult& DeleteClassifierResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteClassifierResult& DeleteClassifierResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -46,6 +46,7 @@ namespace Model
     Row& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The data that populates a row in a query result table.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline Row& AddData(Datum&& value) { m_dataHasBeenSet = true; m_data.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Datum> m_data;
     bool m_dataHasBeenSet;
   };

@@ -44,6 +44,7 @@ namespace Model
     RecencyDimension& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The length of time during which users have been active or inactive with your
      * app.
@@ -78,6 +79,7 @@ Valid values: HR_24, DAY_7, DAY_14, DAY_30
 Valid values: HR_24, DAY_7, DAY_14, DAY_30
      */
     inline RecencyDimension& WithDuration(Duration&& value) { SetDuration(std::move(value)); return *this;}
+
 
     /**
      * The recency dimension type:
@@ -125,8 +127,10 @@ INACTIVE - Users who have not
     inline RecencyDimension& WithRecencyType(RecencyType&& value) { SetRecencyType(std::move(value)); return *this;}
 
   private:
+
     Duration m_duration;
     bool m_durationHasBeenSet;
+
     RecencyType m_recencyType;
     bool m_recencyTypeHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     S3DataSpec& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The location of the data file(s) used by a <code>DataSource</code>. The URI
      * specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory
@@ -94,6 +95,7 @@ namespace Model
      * or bucket containing data files.</p>
      */
     inline S3DataSpec& WithDataLocationS3(const char* value) { SetDataLocationS3(value); return *this;}
+
 
     /**
      * <p>A JSON string that represents the splitting and rearrangement processing to
@@ -536,6 +538,7 @@ namespace Model
      */
     inline S3DataSpec& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
 
+
     /**
      * <p> A JSON string that represents the schema for an Amazon S3
      * <code>DataSource</code>. The <code>DataSchema</code> defines the structure of
@@ -697,6 +700,7 @@ namespace Model
      */
     inline S3DataSpec& WithDataSchema(const char* value) { SetDataSchema(value); return *this;}
 
+
     /**
      * <p>Describes the schema location in Amazon S3. You must provide either the
      * <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
@@ -740,12 +744,16 @@ namespace Model
     inline S3DataSpec& WithDataSchemaLocationS3(const char* value) { SetDataSchemaLocationS3(value); return *this;}
 
   private:
+
     Aws::String m_dataLocationS3;
     bool m_dataLocationS3HasBeenSet;
+
     Aws::String m_dataRearrangement;
     bool m_dataRearrangementHasBeenSet;
+
     Aws::String m_dataSchema;
     bool m_dataSchemaHasBeenSet;
+
     Aws::String m_dataSchemaLocationS3;
     bool m_dataSchemaLocationS3HasBeenSet;
   };

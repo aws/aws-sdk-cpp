@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     StartCrawlerScheduleResult();
-    StartCrawlerScheduleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartCrawlerScheduleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartCrawlerScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartCrawlerScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

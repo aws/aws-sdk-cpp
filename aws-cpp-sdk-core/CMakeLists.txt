@@ -309,20 +309,22 @@ if(MSVC)
 
 endif(MSVC)
 
+add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_NATIVE_SDK_SRC})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
 if(PLATFORM_CUSTOM)
   if(COMMAND add_custom_core_include_directories)
     add_custom_core_include_directories(CORE_CUSTOM_INCLUDE)
     SET(Core_INCLUDES ${Core_INCLUDES} ${CORE_CUSTOM_INCLUDE})
+    target_include_directories(${PROJECT_NAME} PRIVATE "${Core_INCLUDES}")
   endif()
   if(COMMAND add_custom_definitions)
     add_custom_definitions()
   endif()
 endif()
 
-add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_NATIVE_SDK_SRC})
-add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 if(NOT PLATFORM_CUSTOM)
     target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/platform/refs")

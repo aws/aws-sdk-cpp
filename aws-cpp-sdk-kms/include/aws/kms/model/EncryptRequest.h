@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier, a fully specified ARN to either an alias or a key, or an
@@ -123,6 +124,7 @@ namespace Model
      */
     inline EncryptRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>Data to be encrypted.</p>
      */
@@ -147,6 +149,7 @@ namespace Model
      * <p>Data to be encrypted.</p>
      */
     inline EncryptRequest& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
+
 
     /**
      * <p>Name-value pair that specifies the encryption context to be used for
@@ -256,6 +259,7 @@ namespace Model
      */
     inline EncryptRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
+
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
@@ -313,12 +317,16 @@ namespace Model
     inline EncryptRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::Utils::ByteBuffer m_plaintext;
     bool m_plaintextHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
     bool m_encryptionContextHasBeenSet;
+
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet;
   };

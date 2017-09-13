@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteStateMachineResult();
-    DeleteStateMachineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteStateMachineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteStateMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteStateMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

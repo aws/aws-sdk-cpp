@@ -55,7 +55,7 @@ enum class SWFErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DEFAULT_UNDEFINED_FAULT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DEFAULT_UNDEFINED_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DOMAIN_ALREADY_EXISTS_FAULT,
   DOMAIN_DEPRECATED_FAULT,
   LIMIT_EXCEEDED_FAULT,
@@ -67,7 +67,7 @@ enum class SWFErrors
 };
 namespace SWFErrorMapper
 {
-  AWS_SWF_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_SWF_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace SWF

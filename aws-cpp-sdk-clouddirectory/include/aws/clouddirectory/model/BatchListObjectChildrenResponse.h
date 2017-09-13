@@ -47,6 +47,7 @@ namespace Model
     BatchListObjectChildrenResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The children structure, which is a map with the key as the
      * <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
@@ -119,6 +120,7 @@ namespace Model
      */
     inline BatchListObjectChildrenResponse& AddChildren(const char* key, const char* value) { m_childrenHasBeenSet = true; m_children.emplace(key, value); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -155,8 +157,10 @@ namespace Model
     inline BatchListObjectChildrenResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_children;
     bool m_childrenHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

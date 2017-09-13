@@ -30,12 +30,12 @@ ModifyDocumentPermissionResult::ModifyDocumentPermissionResult()
 {
 }
 
-ModifyDocumentPermissionResult::ModifyDocumentPermissionResult(const AmazonWebServiceResult<JsonValue>& result)
+ModifyDocumentPermissionResult::ModifyDocumentPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ModifyDocumentPermissionResult& ModifyDocumentPermissionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ModifyDocumentPermissionResult& ModifyDocumentPermissionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateThingTypeResult();
-    CreateThingTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateThingTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateThingTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateThingTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the thing type.</p>
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the thing type.</p>
      */
     inline CreateThingTypeResult& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the thing type.</p>
@@ -117,7 +119,9 @@ namespace Model
     inline CreateThingTypeResult& WithThingTypeArn(const char* value) { SetThingTypeArn(value); return *this;}
 
   private:
+
     Aws::String m_thingTypeName;
+
     Aws::String m_thingTypeArn;
   };
 

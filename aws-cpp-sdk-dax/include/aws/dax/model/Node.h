@@ -47,6 +47,7 @@ namespace Model
     Node& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A system-generated identifier for the node.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>A system-generated identifier for the node.</p>
      */
     inline Node& WithNodeId(const char* value) { SetNodeId(value); return *this;}
+
 
     /**
      * <p>The endpoint for the node, consisting of a DNS name and a port number. Client
@@ -122,6 +124,7 @@ namespace Model
      */
     inline Node& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time (in UNIX epoch format) when the node was launched.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      * <p>The date and time (in UNIX epoch format) when the node was launched.</p>
      */
     inline Node& WithNodeCreateTime(Aws::Utils::DateTime&& value) { SetNodeCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The Availability Zone (AZ) in which the node has been deployed.</p>
@@ -182,6 +186,7 @@ namespace Model
      */
     inline Node& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The current status of the node. For example: <code>available</code>.</p>
      */
@@ -216,6 +221,7 @@ namespace Model
      * <p>The current status of the node. For example: <code>available</code>.</p>
      */
     inline Node& WithNodeStatus(const char* value) { SetNodeStatus(value); return *this;}
+
 
     /**
      * <p>The status of the parameter group associated with this node. For example,
@@ -260,16 +266,22 @@ namespace Model
     inline Node& WithParameterGroupStatus(const char* value) { SetParameterGroupStatus(value); return *this;}
 
   private:
+
     Aws::String m_nodeId;
     bool m_nodeIdHasBeenSet;
+
     Endpoint m_endpoint;
     bool m_endpointHasBeenSet;
+
     Aws::Utils::DateTime m_nodeCreateTime;
     bool m_nodeCreateTimeHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_nodeStatus;
     bool m_nodeStatusHasBeenSet;
+
     Aws::String m_parameterGroupStatus;
     bool m_parameterGroupStatusHasBeenSet;
   };

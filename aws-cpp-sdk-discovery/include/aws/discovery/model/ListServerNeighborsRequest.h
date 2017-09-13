@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Configuration ID of the server for which neighbors are being listed.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ListServerNeighborsRequest& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 
+
     /**
      * <p>Flag to indicate if port and protocol information is needed as part of the
      * response.</p>
@@ -89,6 +91,7 @@ namespace Model
      * response.</p>
      */
     inline ListServerNeighborsRequest& WithPortInformationNeeded(bool value) { SetPortInformationNeeded(value); return *this;}
+
 
     /**
      * <p>List of configuration IDs to test for one-hop-away.</p>
@@ -130,6 +133,7 @@ namespace Model
      */
     inline ListServerNeighborsRequest& AddNeighborConfigurationIds(const char* value) { m_neighborConfigurationIdsHasBeenSet = true; m_neighborConfigurationIds.push_back(value); return *this; }
 
+
     /**
      * <p>Maximum number of results to return in a single page of output.</p>
      */
@@ -144,6 +148,7 @@ namespace Model
      * <p>Maximum number of results to return in a single page of output.</p>
      */
     inline ListServerNeighborsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Token to retrieve the next set of results. For example, if you previously
@@ -216,14 +221,19 @@ namespace Model
     inline ListServerNeighborsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_configurationId;
     bool m_configurationIdHasBeenSet;
+
     bool m_portInformationNeeded;
     bool m_portInformationNeededHasBeenSet;
+
     Aws::Vector<Aws::String> m_neighborConfigurationIds;
     bool m_neighborConfigurationIdsHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

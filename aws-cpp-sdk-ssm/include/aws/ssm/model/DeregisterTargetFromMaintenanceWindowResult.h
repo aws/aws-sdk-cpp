@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeregisterTargetFromMaintenanceWindowResult();
-    DeregisterTargetFromMaintenanceWindowResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterTargetFromMaintenanceWindowResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterTargetFromMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterTargetFromMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the Maintenance Window the target was removed from.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ID of the Maintenance Window the target was removed from.</p>
      */
     inline DeregisterTargetFromMaintenanceWindowResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The ID of the removed target definition.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline DeregisterTargetFromMaintenanceWindowResult& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
+
     Aws::String m_windowTargetId;
   };
 

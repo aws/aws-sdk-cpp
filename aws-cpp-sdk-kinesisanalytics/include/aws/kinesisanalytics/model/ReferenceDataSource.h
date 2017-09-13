@@ -50,6 +50,7 @@ namespace Model
     ReferenceDataSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the in-application table to create.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ReferenceDataSource& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     
     inline const S3ReferenceDataSource& GetS3ReferenceDataSource() const{ return m_s3ReferenceDataSource; }
 
@@ -99,6 +101,7 @@ namespace Model
 
     
     inline ReferenceDataSource& WithS3ReferenceDataSource(S3ReferenceDataSource&& value) { SetS3ReferenceDataSource(std::move(value)); return *this;}
+
 
     
     inline const SourceSchema& GetReferenceSchema() const{ return m_referenceSchema; }
@@ -116,10 +119,13 @@ namespace Model
     inline ReferenceDataSource& WithReferenceSchema(SourceSchema&& value) { SetReferenceSchema(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     S3ReferenceDataSource m_s3ReferenceDataSource;
     bool m_s3ReferenceDataSourceHasBeenSet;
+
     SourceSchema m_referenceSchema;
     bool m_referenceSchemaHasBeenSet;
   };

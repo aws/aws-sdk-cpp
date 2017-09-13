@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>SqlInjectionMatchSetId</code> of the
      * <code>SqlInjectionMatchSet</code> that you want to update.
@@ -98,6 +99,7 @@ namespace Model
      */
     inline UpdateSqlInjectionMatchSetRequest& WithSqlInjectionMatchSetId(const char* value) { SetSqlInjectionMatchSetId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -132,6 +134,7 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline UpdateSqlInjectionMatchSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+
 
     /**
      * <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to
@@ -218,10 +221,13 @@ namespace Model
     inline UpdateSqlInjectionMatchSetRequest& AddUpdates(SqlInjectionMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_sqlInjectionMatchSetId;
     bool m_sqlInjectionMatchSetIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
+
     Aws::Vector<SqlInjectionMatchSetUpdate> m_updates;
     bool m_updatesHasBeenSet;
   };

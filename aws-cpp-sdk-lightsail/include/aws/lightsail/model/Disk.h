@@ -48,6 +48,7 @@ namespace Model
     Disk& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the disk.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Disk& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the disk.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the disk.</p>
      */
     inline Disk& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -167,6 +170,7 @@ namespace Model
      */
     inline Disk& WithSupportCode(const char* value) { SetSupportCode(value); return *this;}
 
+
     /**
      * <p>The date when the disk was created.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      * <p>The date when the disk was created.</p>
      */
     inline Disk& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The region and Availability Zone where the disk is located.</p>
@@ -217,6 +222,7 @@ namespace Model
      */
     inline Disk& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
+
     /**
      * <p>The resource type of the disk. </p>
      */
@@ -242,6 +248,7 @@ namespace Model
      */
     inline Disk& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The size of the disk in GB.</p>
      */
@@ -257,6 +264,7 @@ namespace Model
      */
     inline Disk& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
 
+
     /**
      * <p>The number of GB in use by the disk.</p>
      */
@@ -271,6 +279,7 @@ namespace Model
      * <p>The number of GB in use by the disk.</p>
      */
     inline Disk& WithGbInUse(int value) { SetGbInUse(value); return *this;}
+
 
     /**
      * <p>A Boolean value indicating whether this disk is a system disk (has an
@@ -290,6 +299,7 @@ namespace Model
      */
     inline Disk& WithIsSystemDisk(bool value) { SetIsSystemDisk(value); return *this;}
 
+
     /**
      * <p>The input/output operations per second (IOPS) of the disk.</p>
      */
@@ -304,6 +314,7 @@ namespace Model
      * <p>The input/output operations per second (IOPS) of the disk.</p>
      */
     inline Disk& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p>The disk path.</p>
@@ -340,6 +351,7 @@ namespace Model
      */
     inline Disk& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The resources to which the disk is attached.</p>
      */
@@ -375,6 +387,7 @@ namespace Model
      */
     inline Disk& WithAttachedTo(const char* value) { SetAttachedTo(value); return *this;}
 
+
     /**
      * <p>A Boolean value indicating whether the disk is attached.</p>
      */
@@ -389,6 +402,7 @@ namespace Model
      * <p>A Boolean value indicating whether the disk is attached.</p>
      */
     inline Disk& WithIsAttached(bool value) { SetIsAttached(value); return *this;}
+
 
     /**
      * <p>The attachment state of the disk.</p>
@@ -426,32 +440,46 @@ namespace Model
     inline Disk& WithAttachmentState(const char* value) { SetAttachmentState(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_supportCode;
     bool m_supportCodeHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     ResourceLocation m_location;
     bool m_locationHasBeenSet;
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     int m_sizeInGb;
     bool m_sizeInGbHasBeenSet;
+
     int m_gbInUse;
     bool m_gbInUseHasBeenSet;
+
     bool m_isSystemDisk;
     bool m_isSystemDiskHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_attachedTo;
     bool m_attachedToHasBeenSet;
+
     bool m_isAttached;
     bool m_isAttachedHasBeenSet;
+
     Aws::String m_attachmentState;
     bool m_attachmentStateHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdateSmsChannelResult::UpdateSmsChannelResult()
 {
 }
 
-UpdateSmsChannelResult::UpdateSmsChannelResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateSmsChannelResult::UpdateSmsChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateSmsChannelResult& UpdateSmsChannelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateSmsChannelResult& UpdateSmsChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SMSChannelResponse"))

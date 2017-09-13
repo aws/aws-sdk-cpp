@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace DynamoDBStreams
+} // namespace Client
 } // namespace Aws

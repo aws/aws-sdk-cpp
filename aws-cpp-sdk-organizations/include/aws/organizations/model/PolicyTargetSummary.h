@@ -47,6 +47,7 @@ namespace Model
     PolicyTargetSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) of the policy target.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string
@@ -138,6 +139,7 @@ namespace Model
      */
     inline PolicyTargetSummary& WithTargetId(const char* value) { SetTargetId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the policy target.</p> <p>For more
      * information about ARNs in Organizations, see <a
@@ -201,6 +203,7 @@ namespace Model
      */
     inline PolicyTargetSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The friendly name of the policy target.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
@@ -257,6 +260,7 @@ namespace Model
      */
     inline PolicyTargetSummary& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The type of the policy target.</p>
      */
@@ -283,12 +287,16 @@ namespace Model
     inline PolicyTargetSummary& WithType(TargetType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     TargetType m_type;
     bool m_typeHasBeenSet;
   };

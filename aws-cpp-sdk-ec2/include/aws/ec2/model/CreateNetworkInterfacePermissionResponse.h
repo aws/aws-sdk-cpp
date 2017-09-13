@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateNetworkInterfacePermissionResponse();
-    CreateNetworkInterfacePermissionResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateNetworkInterfacePermissionResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateNetworkInterfacePermissionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateNetworkInterfacePermissionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the permission for the network interface.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateNetworkInterfacePermissionResponse& WithInterfacePermission(NetworkInterfacePermission&& value) { SetInterfacePermission(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline CreateNetworkInterfacePermissionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     NetworkInterfacePermission m_interfacePermission;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The current state of the attachment.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The current state of the attachment.</p>
      */
     inline InternetGatewayAttachment& WithState(AttachmentStatus&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline InternetGatewayAttachment& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     AttachmentStatus m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

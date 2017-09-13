@@ -33,14 +33,16 @@ namespace Model
 TargetDescription::TargetDescription() : 
     m_idHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false)
 {
 }
 
 TargetDescription::TargetDescription(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -63,6 +65,12 @@ TargetDescription& TargetDescription::operator =(const XmlNode& xmlNode)
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
     }
+    XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
+    if(!availabilityZoneNode.IsNull())
+    {
+      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZoneHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -80,6 +88,11 @@ void TargetDescription::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
   }
 
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
 }
 
 void TargetDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -91,6 +104,10 @@ void TargetDescription::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_portHasBeenSet)
   {
       oStream << location << ".Port=" << m_port << "&";
+  }
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 }
 

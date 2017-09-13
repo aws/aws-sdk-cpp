@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateVirtualMFADeviceResult();
-    CreateVirtualMFADeviceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateVirtualMFADeviceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateVirtualMFADeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateVirtualMFADeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure containing details about the new virtual MFA device.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateVirtualMFADeviceResult& WithVirtualMFADevice(VirtualMFADevice&& value) { SetVirtualMFADevice(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline CreateVirtualMFADeviceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     VirtualMFADevice m_virtualMFADevice;
+
     ResponseMetadata m_responseMetadata;
   };
 

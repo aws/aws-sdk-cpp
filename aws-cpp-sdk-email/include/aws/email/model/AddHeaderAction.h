@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the header to add. Must be between 1 and 50 characters,
      * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
@@ -101,6 +102,7 @@ namespace Model
      */
     inline AddHeaderAction& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
 
+
     /**
      * <p>Must be less than 2048 characters, and must not contain newline characters
      * ("\r" or "\n").</p>
@@ -144,8 +146,10 @@ namespace Model
     inline AddHeaderAction& WithHeaderValue(const char* value) { SetHeaderValue(value); return *this;}
 
   private:
+
     Aws::String m_headerName;
     bool m_headerNameHasBeenSet;
+
     Aws::String m_headerValue;
     bool m_headerValueHasBeenSet;
   };

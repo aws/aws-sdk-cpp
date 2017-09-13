@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
@@ -67,6 +68,7 @@ namespace Model
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
      */
     inline StaleIpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
+
 
     /**
      * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
@@ -124,6 +126,7 @@ namespace Model
      */
     inline StaleIpPermission& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
 
+
     /**
      * <p>One or more IP ranges. Not applicable for stale security group rules.</p>
      */
@@ -163,6 +166,7 @@ namespace Model
      * <p>One or more IP ranges. Not applicable for stale security group rules.</p>
      */
     inline StaleIpPermission& AddIpRanges(const char* value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(value); return *this; }
+
 
     /**
      * <p>One or more prefix list IDs for an AWS service. Not applicable for stale
@@ -212,6 +216,7 @@ namespace Model
      */
     inline StaleIpPermission& AddPrefixListIds(const char* value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
 
+
     /**
      * <p>The end of the port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
@@ -229,6 +234,7 @@ namespace Model
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
      */
     inline StaleIpPermission& WithToPort(int value) { SetToPort(value); return *this;}
+
 
     /**
      * <p>One or more security group pairs. Returns the ID of the referenced security
@@ -273,16 +279,22 @@ namespace Model
     inline StaleIpPermission& AddUserIdGroupPairs(UserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_fromPort;
     bool m_fromPortHasBeenSet;
+
     Aws::String m_ipProtocol;
     bool m_ipProtocolHasBeenSet;
+
     Aws::Vector<Aws::String> m_ipRanges;
     bool m_ipRangesHasBeenSet;
+
     Aws::Vector<Aws::String> m_prefixListIds;
     bool m_prefixListIdsHasBeenSet;
+
     int m_toPort;
     bool m_toPortHasBeenSet;
+
     Aws::Vector<UserIdGroupPair> m_userIdGroupPairs;
     bool m_userIdGroupPairsHasBeenSet;
   };

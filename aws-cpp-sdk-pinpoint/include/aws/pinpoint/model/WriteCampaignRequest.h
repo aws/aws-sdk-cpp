@@ -48,6 +48,7 @@ namespace Model
     WriteCampaignRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Treatments that are defined in addition to the default treatment.
      */
@@ -82,6 +83,7 @@ namespace Model
      * Treatments that are defined in addition to the default treatment.
      */
     inline WriteCampaignRequest& AddAdditionalTreatments(WriteTreatmentResource&& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments.push_back(std::move(value)); return *this; }
+
 
     /**
      * A description of the campaign.
@@ -118,6 +120,7 @@ namespace Model
      */
     inline WriteCampaignRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * The allocated percentage of end users who will not receive messages from this
      * campaign.
@@ -136,6 +139,7 @@ namespace Model
      */
     inline WriteCampaignRequest& WithHoldoutPercent(int value) { SetHoldoutPercent(value); return *this;}
 
+
     /**
      * Indicates whether the campaign is paused. A paused campaign does not send
      * messages unless you resume it by setting IsPaused to false.
@@ -153,6 +157,7 @@ namespace Model
      * messages unless you resume it by setting IsPaused to false.
      */
     inline WriteCampaignRequest& WithIsPaused(bool value) { SetIsPaused(value); return *this;}
+
 
     /**
      * The campaign limits settings.
@@ -179,6 +184,7 @@ namespace Model
      */
     inline WriteCampaignRequest& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
 
+
     /**
      * The message configuration settings.
      */
@@ -203,6 +209,7 @@ namespace Model
      * The message configuration settings.
      */
     inline WriteCampaignRequest& WithMessageConfiguration(MessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
+
 
     /**
      * The custom name of the campaign.
@@ -239,6 +246,7 @@ namespace Model
      */
     inline WriteCampaignRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * The campaign schedule.
      */
@@ -263,6 +271,7 @@ namespace Model
      * The campaign schedule.
      */
     inline WriteCampaignRequest& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
+
 
     /**
      * The ID of the segment to which the campaign sends messages.
@@ -299,6 +308,7 @@ namespace Model
      */
     inline WriteCampaignRequest& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
 
+
     /**
      * The version of the segment to which the campaign sends messages.
      */
@@ -313,6 +323,7 @@ namespace Model
      * The version of the segment to which the campaign sends messages.
      */
     inline WriteCampaignRequest& WithSegmentVersion(int value) { SetSegmentVersion(value); return *this;}
+
 
     /**
      * A custom description for the treatment.
@@ -348,6 +359,7 @@ namespace Model
      * A custom description for the treatment.
      */
     inline WriteCampaignRequest& WithTreatmentDescription(const char* value) { SetTreatmentDescription(value); return *this;}
+
 
     /**
      * The custom name of a variation of the campaign used for A/B testing.
@@ -385,28 +397,40 @@ namespace Model
     inline WriteCampaignRequest& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
 
   private:
+
     Aws::Vector<WriteTreatmentResource> m_additionalTreatments;
     bool m_additionalTreatmentsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     int m_holdoutPercent;
     bool m_holdoutPercentHasBeenSet;
+
     bool m_isPaused;
     bool m_isPausedHasBeenSet;
+
     CampaignLimits m_limits;
     bool m_limitsHasBeenSet;
+
     MessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Schedule m_schedule;
     bool m_scheduleHasBeenSet;
+
     Aws::String m_segmentId;
     bool m_segmentIdHasBeenSet;
+
     int m_segmentVersion;
     bool m_segmentVersionHasBeenSet;
+
     Aws::String m_treatmentDescription;
     bool m_treatmentDescriptionHasBeenSet;
+
     Aws::String m_treatmentName;
     bool m_treatmentNameHasBeenSet;
   };

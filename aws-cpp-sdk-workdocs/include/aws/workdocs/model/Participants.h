@@ -47,6 +47,7 @@ namespace Model
     Participants& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The list of users.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The list of users.</p>
      */
     inline Participants& AddUsers(UserMetadata&& value) { m_usersHasBeenSet = true; m_users.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The list of user groups.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline Participants& AddGroups(GroupMetadata&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<UserMetadata> m_users;
     bool m_usersHasBeenSet;
+
     Aws::Vector<GroupMetadata> m_groups;
     bool m_groupsHasBeenSet;
   };

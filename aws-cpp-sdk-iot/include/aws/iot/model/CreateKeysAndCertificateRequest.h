@@ -42,6 +42,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Specifies whether the certificate is active.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
     inline CreateKeysAndCertificateRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
 
   private:
+
     bool m_setAsActive;
     bool m_setAsActiveHasBeenSet;
   };

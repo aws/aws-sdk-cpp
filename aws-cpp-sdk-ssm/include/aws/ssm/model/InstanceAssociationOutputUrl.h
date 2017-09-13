@@ -46,6 +46,7 @@ namespace Model
     InstanceAssociationOutputUrl& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The URL of Amazon S3 bucket where you want to store the results of this
      * request.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline InstanceAssociationOutputUrl& WithS3OutputUrl(S3OutputUrl&& value) { SetS3OutputUrl(std::move(value)); return *this;}
 
   private:
+
     S3OutputUrl m_s3OutputUrl;
     bool m_s3OutputUrlHasBeenSet;
   };

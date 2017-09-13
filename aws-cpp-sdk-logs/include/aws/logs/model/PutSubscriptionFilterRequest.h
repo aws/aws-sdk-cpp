@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -72,10 +73,11 @@ namespace Model
      */
     inline PutSubscriptionFilterRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
+
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call will fail because you cannot associate a second filter with a log group. To
+     * call fails because you cannot associate a second filter with a log group. To
      * find the name of the filter currently associated with a log group, use
      * <a>DescribeSubscriptionFilters</a>.</p>
      */
@@ -84,7 +86,7 @@ namespace Model
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call will fail because you cannot associate a second filter with a log group. To
+     * call fails because you cannot associate a second filter with a log group. To
      * find the name of the filter currently associated with a log group, use
      * <a>DescribeSubscriptionFilters</a>.</p>
      */
@@ -93,7 +95,7 @@ namespace Model
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call will fail because you cannot associate a second filter with a log group. To
+     * call fails because you cannot associate a second filter with a log group. To
      * find the name of the filter currently associated with a log group, use
      * <a>DescribeSubscriptionFilters</a>.</p>
      */
@@ -102,7 +104,7 @@ namespace Model
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call will fail because you cannot associate a second filter with a log group. To
+     * call fails because you cannot associate a second filter with a log group. To
      * find the name of the filter currently associated with a log group, use
      * <a>DescribeSubscriptionFilters</a>.</p>
      */
@@ -111,7 +113,7 @@ namespace Model
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call will fail because you cannot associate a second filter with a log group. To
+     * call fails because you cannot associate a second filter with a log group. To
      * find the name of the filter currently associated with a log group, use
      * <a>DescribeSubscriptionFilters</a>.</p>
      */
@@ -120,7 +122,7 @@ namespace Model
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call will fail because you cannot associate a second filter with a log group. To
+     * call fails because you cannot associate a second filter with a log group. To
      * find the name of the filter currently associated with a log group, use
      * <a>DescribeSubscriptionFilters</a>.</p>
      */
@@ -129,11 +131,12 @@ namespace Model
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
-     * call will fail because you cannot associate a second filter with a log group. To
+     * call fails because you cannot associate a second filter with a log group. To
      * find the name of the filter currently associated with a log group, use
      * <a>DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
+
 
     /**
      * <p>A filter pattern for subscribing to a filtered stream of log events.</p>
@@ -170,16 +173,17 @@ namespace Model
      */
     inline PutSubscriptionFilterRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
 
+
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
      * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose stream belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda function
-     * belonging to the same account as the subscription filter, for same-account
-     * delivery.</p> </li> </ul>
+     * Kinesis Firehose delivery stream belonging to the same account as the
+     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
+     * function belonging to the same account as the subscription filter, for
+     * same-account delivery.</p> </li> </ul>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
 
@@ -189,10 +193,10 @@ namespace Model
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
      * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose stream belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda function
-     * belonging to the same account as the subscription filter, for same-account
-     * delivery.</p> </li> </ul>
+     * Kinesis Firehose delivery stream belonging to the same account as the
+     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
+     * function belonging to the same account as the subscription filter, for
+     * same-account delivery.</p> </li> </ul>
      */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
@@ -202,10 +206,10 @@ namespace Model
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
      * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose stream belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda function
-     * belonging to the same account as the subscription filter, for same-account
-     * delivery.</p> </li> </ul>
+     * Kinesis Firehose delivery stream belonging to the same account as the
+     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
+     * function belonging to the same account as the subscription filter, for
+     * same-account delivery.</p> </li> </ul>
      */
     inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
 
@@ -215,10 +219,10 @@ namespace Model
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
      * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose stream belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda function
-     * belonging to the same account as the subscription filter, for same-account
-     * delivery.</p> </li> </ul>
+     * Kinesis Firehose delivery stream belonging to the same account as the
+     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
+     * function belonging to the same account as the subscription filter, for
+     * same-account delivery.</p> </li> </ul>
      */
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
 
@@ -228,10 +232,10 @@ namespace Model
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
      * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose stream belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda function
-     * belonging to the same account as the subscription filter, for same-account
-     * delivery.</p> </li> </ul>
+     * Kinesis Firehose delivery stream belonging to the same account as the
+     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
+     * function belonging to the same account as the subscription filter, for
+     * same-account delivery.</p> </li> </ul>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
 
@@ -241,10 +245,10 @@ namespace Model
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
      * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose stream belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda function
-     * belonging to the same account as the subscription filter, for same-account
-     * delivery.</p> </li> </ul>
+     * Kinesis Firehose delivery stream belonging to the same account as the
+     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
+     * function belonging to the same account as the subscription filter, for
+     * same-account delivery.</p> </li> </ul>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
 
@@ -254,12 +258,13 @@ namespace Model
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
      * different account, for cross-account delivery.</p> </li> <li> <p>An Amazon
-     * Kinesis Firehose stream belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda function
-     * belonging to the same account as the subscription filter, for same-account
-     * delivery.</p> </li> </ul>
+     * Kinesis Firehose delivery stream belonging to the same account as the
+     * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
+     * function belonging to the same account as the subscription filter, for
+     * same-account delivery.</p> </li> </ul>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
@@ -310,6 +315,7 @@ namespace Model
      */
     inline PutSubscriptionFilterRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The method used to distribute log data to the destination, when the
      * destination is an Amazon Kinesis stream. By default, log data is grouped by log
@@ -346,16 +352,22 @@ namespace Model
     inline PutSubscriptionFilterRequest& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_filterName;
     bool m_filterNameHasBeenSet;
+
     Aws::String m_filterPattern;
     bool m_filterPatternHasBeenSet;
+
     Aws::String m_destinationArn;
     bool m_destinationArnHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Distribution m_distribution;
     bool m_distributionHasBeenSet;
   };

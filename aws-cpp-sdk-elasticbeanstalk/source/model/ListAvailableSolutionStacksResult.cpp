@@ -31,12 +31,12 @@ ListAvailableSolutionStacksResult::ListAvailableSolutionStacksResult()
 {
 }
 
-ListAvailableSolutionStacksResult::ListAvailableSolutionStacksResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListAvailableSolutionStacksResult::ListAvailableSolutionStacksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListAvailableSolutionStacksResult& ListAvailableSolutionStacksResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListAvailableSolutionStacksResult& ListAvailableSolutionStacksResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

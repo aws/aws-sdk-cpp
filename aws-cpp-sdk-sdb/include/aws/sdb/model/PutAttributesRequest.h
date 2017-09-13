@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * The name of the domain in which to perform the operation.
      */
@@ -75,6 +76,7 @@ namespace Model
      * The name of the domain in which to perform the operation.
      */
     inline PutAttributesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * The name of the item.
@@ -111,6 +113,7 @@ namespace Model
      */
     inline PutAttributesRequest& WithItemName(const char* value) { SetItemName(value); return *this;}
 
+
     /**
      * The list of attributes.
      */
@@ -145,6 +148,7 @@ namespace Model
      * The list of attributes.
      */
     inline PutAttributesRequest& AddAttributes(ReplaceableAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * The update condition which, if specified, determines whether the specified
@@ -182,12 +186,16 @@ namespace Model
     inline PutAttributesRequest& WithExpected(UpdateCondition&& value) { SetExpected(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_itemName;
     bool m_itemNameHasBeenSet;
+
     Aws::Vector<ReplaceableAttribute> m_attributes;
     bool m_attributesHasBeenSet;
+
     UpdateCondition m_expected;
     bool m_expectedHasBeenSet;
   };

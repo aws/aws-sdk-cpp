@@ -31,12 +31,12 @@ DescribeSpotDatafeedSubscriptionResponse::DescribeSpotDatafeedSubscriptionRespon
 {
 }
 
-DescribeSpotDatafeedSubscriptionResponse::DescribeSpotDatafeedSubscriptionResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSpotDatafeedSubscriptionResponse::DescribeSpotDatafeedSubscriptionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeSpotDatafeedSubscriptionResponse& DescribeSpotDatafeedSubscriptionResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSpotDatafeedSubscriptionResponse& DescribeSpotDatafeedSubscriptionResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

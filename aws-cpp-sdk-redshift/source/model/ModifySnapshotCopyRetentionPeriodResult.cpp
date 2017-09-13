@@ -31,12 +31,12 @@ ModifySnapshotCopyRetentionPeriodResult::ModifySnapshotCopyRetentionPeriodResult
 {
 }
 
-ModifySnapshotCopyRetentionPeriodResult::ModifySnapshotCopyRetentionPeriodResult(const AmazonWebServiceResult<XmlDocument>& result)
+ModifySnapshotCopyRetentionPeriodResult::ModifySnapshotCopyRetentionPeriodResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifySnapshotCopyRetentionPeriodResult& ModifySnapshotCopyRetentionPeriodResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifySnapshotCopyRetentionPeriodResult& ModifySnapshotCopyRetentionPeriodResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

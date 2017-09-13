@@ -47,6 +47,7 @@ namespace Model
     ByteMatchSetSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
      * <code>ByteMatchSetId</code> to get information about a
@@ -117,6 +118,7 @@ namespace Model
      */
     inline ByteMatchSetSummary& WithByteMatchSetId(const char* value) { SetByteMatchSetId(value); return *this;}
 
+
     /**
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
      * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
@@ -160,8 +162,10 @@ namespace Model
     inline ByteMatchSetSummary& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_byteMatchSetId;
     bool m_byteMatchSetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

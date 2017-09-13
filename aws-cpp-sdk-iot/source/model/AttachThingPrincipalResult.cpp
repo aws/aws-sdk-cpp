@@ -30,12 +30,12 @@ AttachThingPrincipalResult::AttachThingPrincipalResult()
 {
 }
 
-AttachThingPrincipalResult::AttachThingPrincipalResult(const AmazonWebServiceResult<JsonValue>& result)
+AttachThingPrincipalResult::AttachThingPrincipalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AttachThingPrincipalResult& AttachThingPrincipalResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AttachThingPrincipalResult& AttachThingPrincipalResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

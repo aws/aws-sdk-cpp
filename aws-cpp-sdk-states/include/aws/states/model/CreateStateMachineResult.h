@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateStateMachineResult();
-    CreateStateMachineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateStateMachineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateStateMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateStateMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CreateStateMachineResult& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
 
+
     /**
      * <p>The date the state machine was created.</p>
      */
@@ -103,7 +105,9 @@ namespace Model
     inline CreateStateMachineResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stateMachineArn;
+
     Aws::Utils::DateTime m_creationDate;
   };
 

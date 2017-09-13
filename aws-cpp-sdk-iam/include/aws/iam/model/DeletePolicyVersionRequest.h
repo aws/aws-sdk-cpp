@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
      * delete a version.</p> <p>For more information about ARNs, see <a
@@ -100,6 +101,7 @@ namespace Model
      * Reference</i>.</p>
      */
     inline DeletePolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+
 
     /**
      * <p>The policy version to delete.</p> <p>This parameter allows (per its <a
@@ -179,8 +181,10 @@ namespace Model
     inline DeletePolicyVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
+
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier of the cluster.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The unique identifier of the cluster.</p>
      */
     inline ListInstanceFleetsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline ListInstanceFleetsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

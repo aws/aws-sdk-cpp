@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetInvalidation2017_03_25Result();
-    GetInvalidation2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetInvalidation2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetInvalidation2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetInvalidation2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The invalidation's information. For more information, see <a
@@ -83,6 +84,7 @@ namespace Model
     inline GetInvalidation2017_03_25Result& WithInvalidation(Invalidation&& value) { SetInvalidation(std::move(value)); return *this;}
 
   private:
+
     Invalidation m_invalidation;
   };
 

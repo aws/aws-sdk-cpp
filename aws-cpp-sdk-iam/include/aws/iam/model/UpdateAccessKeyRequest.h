@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -94,6 +95,7 @@ namespace Model
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline UpdateAccessKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The access key ID of the secret access key you want to update.</p> <p>This
@@ -151,6 +153,7 @@ namespace Model
      */
     inline UpdateAccessKeyRequest& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
+
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
      * means the key can be used for API calls to AWS, while <code>Inactive</code>
@@ -187,10 +190,13 @@ namespace Model
     inline UpdateAccessKeyRequest& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
   };

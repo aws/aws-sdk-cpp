@@ -30,12 +30,12 @@ PutApprovalResultResult::PutApprovalResultResult()
 {
 }
 
-PutApprovalResultResult::PutApprovalResultResult(const AmazonWebServiceResult<JsonValue>& result)
+PutApprovalResultResult::PutApprovalResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutApprovalResultResult& PutApprovalResultResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutApprovalResultResult& PutApprovalResultResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("approvedAt"))

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateAliasResult();
-    UpdateAliasResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that contains the updated alias configuration.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline UpdateAliasResult& WithAlias(Alias&& value) { SetAlias(std::move(value)); return *this;}
 
   private:
+
     Alias m_alias;
   };
 

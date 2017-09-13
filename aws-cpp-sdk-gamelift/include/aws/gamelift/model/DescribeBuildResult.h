@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeBuildResult();
-    DescribeBuildResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBuildResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBuildResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Set of properties describing the requested build.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 
   private:
+
     Build m_build;
   };
 

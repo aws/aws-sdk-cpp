@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DisassociateRoleFromGroupResult();
-    DisassociateRoleFromGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateRoleFromGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateRoleFromGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateRoleFromGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Time when the role was disassociated from the group.
@@ -77,6 +78,7 @@ namespace Model
     inline DisassociateRoleFromGroupResult& WithDisassociatedAt(const char* value) { SetDisassociatedAt(value); return *this;}
 
   private:
+
     Aws::String m_disassociatedAt;
   };
 

@@ -30,12 +30,12 @@ ListProvisioningArtifactsResult::ListProvisioningArtifactsResult()
 {
 }
 
-ListProvisioningArtifactsResult::ListProvisioningArtifactsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListProvisioningArtifactsResult::ListProvisioningArtifactsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListProvisioningArtifactsResult& ListProvisioningArtifactsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListProvisioningArtifactsResult& ListProvisioningArtifactsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ProvisioningArtifactDetails"))

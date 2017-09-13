@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 AssociateVpcCidrBlockRequest::AssociateVpcCidrBlockRequest() : 
     m_amazonProvidedIpv6CidrBlock(false),
     m_amazonProvidedIpv6CidrBlockHasBeenSet(false),
+    m_cidrBlockHasBeenSet(false),
     m_vpcIdHasBeenSet(false)
 {
 }
@@ -34,6 +35,11 @@ Aws::String AssociateVpcCidrBlockRequest::SerializePayload() const
   if(m_amazonProvidedIpv6CidrBlockHasBeenSet)
   {
     ss << "AmazonProvidedIpv6CidrBlock=" << std::boolalpha << m_amazonProvidedIpv6CidrBlock << "&";
+  }
+
+  if(m_cidrBlockHasBeenSet)
+  {
+    ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
 
   if(m_vpcIdHasBeenSet)

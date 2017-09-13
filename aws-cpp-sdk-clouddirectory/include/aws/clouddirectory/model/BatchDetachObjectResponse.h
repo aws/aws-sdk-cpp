@@ -46,6 +46,7 @@ namespace Model
     BatchDetachObjectResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>ObjectIdentifier</code> of the detached object.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline BatchDetachObjectResponse& WithDetachedObjectIdentifier(const char* value) { SetDetachedObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_detachedObjectIdentifier;
     bool m_detachedObjectIdentifierHasBeenSet;
   };

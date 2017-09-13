@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreatePlatformEndpointResult();
-    CreatePlatformEndpointResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreatePlatformEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreatePlatformEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreatePlatformEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>EndpointArn returned from CreateEndpoint action.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CreatePlatformEndpointResult& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline CreatePlatformEndpointResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_endpointArn;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -31,12 +31,12 @@ CreateVpnConnectionResponse::CreateVpnConnectionResponse()
 {
 }
 
-CreateVpnConnectionResponse::CreateVpnConnectionResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVpnConnectionResponse::CreateVpnConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateVpnConnectionResponse& CreateVpnConnectionResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVpnConnectionResponse& CreateVpnConnectionResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

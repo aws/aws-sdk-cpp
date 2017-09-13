@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     InitiateJobResult();
-    InitiateJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InitiateJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The relative URI path of the job.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The relative URI path of the job.</p>
      */
     inline InitiateJobResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+
 
     /**
      * <p>The ID of the job.</p>
@@ -118,7 +120,9 @@ namespace Model
     inline InitiateJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
   private:
+
     Aws::String m_location;
+
     Aws::String m_jobId;
   };
 

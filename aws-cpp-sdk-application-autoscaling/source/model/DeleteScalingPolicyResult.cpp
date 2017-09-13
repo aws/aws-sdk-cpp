@@ -30,12 +30,12 @@ DeleteScalingPolicyResult::DeleteScalingPolicyResult()
 {
 }
 
-DeleteScalingPolicyResult::DeleteScalingPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteScalingPolicyResult::DeleteScalingPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteScalingPolicyResult& DeleteScalingPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteScalingPolicyResult& DeleteScalingPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

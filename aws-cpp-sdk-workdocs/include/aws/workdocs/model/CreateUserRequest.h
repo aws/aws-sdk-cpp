@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the organization.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The ID of the organization.</p>
      */
     inline CreateUserRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+
 
     /**
      * <p>The login name of the user.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline CreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
     /**
      * <p>The email address of the user.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>The email address of the user.</p>
      */
     inline CreateUserRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+
 
     /**
      * <p>The given name of the user.</p>
@@ -177,6 +181,7 @@ namespace Model
      */
     inline CreateUserRequest& WithGivenName(const char* value) { SetGivenName(value); return *this;}
 
+
     /**
      * <p>The surname of the user.</p>
      */
@@ -211,6 +216,7 @@ namespace Model
      * <p>The surname of the user.</p>
      */
     inline CreateUserRequest& WithSurname(const char* value) { SetSurname(value); return *this;}
+
 
     /**
      * <p>The password of the user.</p>
@@ -247,6 +253,7 @@ namespace Model
      */
     inline CreateUserRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p>The time zone ID of the user.</p>
      */
@@ -282,6 +289,7 @@ namespace Model
      */
     inline CreateUserRequest& WithTimeZoneId(const char* value) { SetTimeZoneId(value); return *this;}
 
+
     /**
      * <p>The amount of storage for the user.</p>
      */
@@ -306,6 +314,7 @@ namespace Model
      * <p>The amount of storage for the user.</p>
      */
     inline CreateUserRequest& WithStorageRule(StorageRuleType&& value) { SetStorageRule(std::move(value)); return *this;}
+
 
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
@@ -350,22 +359,31 @@ namespace Model
     inline CreateUserRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
   private:
+
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_emailAddress;
     bool m_emailAddressHasBeenSet;
+
     Aws::String m_givenName;
     bool m_givenNameHasBeenSet;
+
     Aws::String m_surname;
     bool m_surnameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     Aws::String m_timeZoneId;
     bool m_timeZoneIdHasBeenSet;
+
     StorageRuleType m_storageRule;
     bool m_storageRuleHasBeenSet;
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
   };

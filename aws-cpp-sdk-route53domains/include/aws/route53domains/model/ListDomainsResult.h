@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListDomainsResult();
-    ListDomainsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDomainsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A summary of domains.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A summary of domains.</p>
      */
     inline ListDomainsResult& AddDomains(DomainSummary&& value) { m_domains.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the
@@ -134,7 +136,9 @@ namespace Model
     inline ListDomainsResult& WithNextPageMarker(const char* value) { SetNextPageMarker(value); return *this;}
 
   private:
+
     Aws::Vector<DomainSummary> m_domains;
+
     Aws::String m_nextPageMarker;
   };
 

@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>NextToken string is used when calling ListPlatformApplications action to
      * retrieve additional records that are available after the first page results.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline ListPlatformApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

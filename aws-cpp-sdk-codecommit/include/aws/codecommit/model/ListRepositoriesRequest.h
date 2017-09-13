@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
@@ -98,6 +99,7 @@ namespace Model
      */
     inline ListRepositoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The criteria used to sort the results of a list repositories operation.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The criteria used to sort the results of a list repositories operation.</p>
      */
     inline ListRepositoriesRequest& WithSortBy(SortByEnum&& value) { SetSortBy(std::move(value)); return *this;}
+
 
     /**
      * <p>The order in which to sort the results of a list repositories operation.</p>
@@ -149,10 +152,13 @@ namespace Model
     inline ListRepositoriesRequest& WithOrder(OrderEnum&& value) { SetOrder(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     SortByEnum m_sortBy;
     bool m_sortByHasBeenSet;
+
     OrderEnum m_order;
     bool m_orderHasBeenSet;
   };

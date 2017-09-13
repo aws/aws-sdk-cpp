@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AddTagsToResourceResult();
-    AddTagsToResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddTagsToResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddTagsToResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddTagsToResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the operation.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline AddTagsToResourceResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_status;
   };
 

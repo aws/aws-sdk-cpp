@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The regular expression pattern that a string configuration option value with
      * this restriction must match.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline OptionRestrictionRegex& WithPattern(const char* value) { SetPattern(value); return *this;}
 
+
     /**
      * <p>A unique name representing this regular expression.</p>
      */
@@ -127,8 +129,10 @@ namespace Model
     inline OptionRestrictionRegex& WithLabel(const char* value) { SetLabel(value); return *this;}
 
   private:
+
     Aws::String m_pattern;
     bool m_patternHasBeenSet;
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
   };

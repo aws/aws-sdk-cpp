@@ -23,7 +23,7 @@ namespace Aws
 {
 namespace CloudWatch
 {
-  class AWS_CLOUDWATCH_API CloudWatchRequest : public AmazonSerializableWebServiceRequest
+  class AWS_CLOUDWATCH_API CloudWatchRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~CloudWatchRequest () {}
@@ -37,7 +37,7 @@ namespace CloudWatch
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, FORM_CONTENT_TYPE ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::FORM_CONTENT_TYPE ));
       }
 
       return headers;

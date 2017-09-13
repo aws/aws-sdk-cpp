@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeWorkflowTypeResult();
-    DescribeWorkflowTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkflowTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkflowTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkflowTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>General information about the workflow type.</p> <p>The status of the
@@ -107,6 +108,7 @@ namespace Model
      */
     inline DescribeWorkflowTypeResult& WithTypeInfo(WorkflowTypeInfo&& value) { SetTypeInfo(std::move(value)); return *this;}
 
+
     /**
      * <p>Configuration settings of the workflow type registered through
      * <a>RegisterWorkflowType</a> </p>
@@ -138,7 +140,9 @@ namespace Model
     inline DescribeWorkflowTypeResult& WithConfiguration(WorkflowTypeConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
   private:
+
     WorkflowTypeInfo m_typeInfo;
+
     WorkflowTypeConfiguration m_configuration;
   };
 

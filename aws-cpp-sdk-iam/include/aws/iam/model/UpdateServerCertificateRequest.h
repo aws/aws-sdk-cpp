@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the server certificate that you want to update.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -100,6 +101,7 @@ namespace Model
      * following characters: =,.@-</p>
      */
     inline UpdateServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
+
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
@@ -178,6 +180,7 @@ namespace Model
      */
     inline UpdateServerCertificateRequest& WithNewPath(const char* value) { SetNewPath(value); return *this;}
 
+
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
@@ -249,10 +252,13 @@ namespace Model
     inline UpdateServerCertificateRequest& WithNewServerCertificateName(const char* value) { SetNewServerCertificateName(value); return *this;}
 
   private:
+
     Aws::String m_serverCertificateName;
     bool m_serverCertificateNameHasBeenSet;
+
     Aws::String m_newPath;
     bool m_newPathHasBeenSet;
+
     Aws::String m_newServerCertificateName;
     bool m_newServerCertificateNameHasBeenSet;
   };

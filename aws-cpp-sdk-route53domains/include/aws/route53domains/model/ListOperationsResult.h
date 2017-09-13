@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListOperationsResult();
-    ListOperationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOperationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOperationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOperationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Lists summaries of the operations.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Lists summaries of the operations.</p>
      */
     inline ListOperationsResult& AddOperations(OperationSummary&& value) { m_operations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If there are more operations than you specified for <code>MaxItems</code> in
@@ -134,7 +136,9 @@ namespace Model
     inline ListOperationsResult& WithNextPageMarker(const char* value) { SetNextPageMarker(value); return *this;}
 
   private:
+
     Aws::Vector<OperationSummary> m_operations;
+
     Aws::String m_nextPageMarker;
   };
 

@@ -38,6 +38,7 @@ namespace Model
     CreateDistributionWithTags2017_03_25Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The distribution's configuration information. </p>
      */
@@ -64,6 +65,7 @@ namespace Model
     inline CreateDistributionWithTags2017_03_25Request& WithDistributionConfigWithTags(DistributionConfigWithTags&& value) { SetDistributionConfigWithTags(std::move(value)); return *this;}
 
   private:
+
     DistributionConfigWithTags m_distributionConfigWithTags;
     bool m_distributionConfigWithTagsHasBeenSet;
   };

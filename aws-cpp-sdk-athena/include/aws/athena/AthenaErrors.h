@@ -55,13 +55,13 @@ enum class AthenaErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_REQUEST,
   TOO_MANY_REQUESTS
 };
 namespace AthenaErrorMapper
 {
-  AWS_ATHENA_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ATHENA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Athena

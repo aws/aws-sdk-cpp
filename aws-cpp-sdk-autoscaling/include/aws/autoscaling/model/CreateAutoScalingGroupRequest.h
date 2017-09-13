@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the group. This name must be unique within the scope of your AWS
      * account.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
+
     /**
      * <p>The name of the launch configuration. Alternatively, specify an EC2 instance
      * instead of a launch configuration.</p>
@@ -127,6 +129,7 @@ namespace Model
      * instead of a launch configuration.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
+
 
     /**
      * <p>The ID of the instance used to create a launch configuration for the group.
@@ -219,6 +222,7 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The minimum size of the group.</p>
      */
@@ -234,6 +238,7 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
 
+
     /**
      * <p>The maximum size of the group.</p>
      */
@@ -248,6 +253,7 @@ namespace Model
      * <p>The maximum size of the group.</p>
      */
     inline CreateAutoScalingGroupRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
+
 
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
@@ -269,6 +275,7 @@ namespace Model
      * equal to the maximum size of the group.</p>
      */
     inline CreateAutoScalingGroupRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
+
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
@@ -296,6 +303,7 @@ namespace Model
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithDefaultCooldown(int value) { SetDefaultCooldown(value); return *this;}
+
 
     /**
      * <p>One or more Availability Zones for the group. This parameter is optional if
@@ -344,6 +352,7 @@ namespace Model
      * you specify one or more subnets.</p>
      */
     inline CreateAutoScalingGroupRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
 
     /**
      * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
@@ -417,6 +426,7 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
+
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups.</p>
      */
@@ -456,6 +466,7 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the target groups.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTargetGroupARNs(const char* value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
+
 
     /**
      * <p>The service to use for the health checks. The valid values are
@@ -527,6 +538,7 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
+
     /**
      * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
      * health status of an EC2 instance that has come into service. During this time,
@@ -559,6 +571,7 @@ namespace Model
      * Checks</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
+
 
     /**
      * <p>The name of the placement group into which you'll launch your instances, if
@@ -615,6 +628,7 @@ namespace Model
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
+
 
     /**
      * <p>A comma-separated list of subnet identifiers for your virtual private cloud
@@ -685,6 +699,7 @@ namespace Model
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithVPCZoneIdentifier(const char* value) { SetVPCZoneIdentifier(value); return *this;}
+
 
     /**
      * <p>One or more termination policies used to select the instance to terminate.
@@ -766,6 +781,7 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
+
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
      * Auto Scaling when scaling in.</p>
@@ -783,6 +799,7 @@ namespace Model
      * Auto Scaling when scaling in.</p>
      */
     inline CreateAutoScalingGroupRequest& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
+
 
     /**
      * <p>One or more tags.</p> <p>For more information, see <a
@@ -834,38 +851,55 @@ namespace Model
     inline CreateAutoScalingGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_launchConfigurationName;
     bool m_launchConfigurationNameHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     int m_minSize;
     bool m_minSizeHasBeenSet;
+
     int m_maxSize;
     bool m_maxSizeHasBeenSet;
+
     int m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
+
     int m_defaultCooldown;
     bool m_defaultCooldownHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     Aws::Vector<Aws::String> m_loadBalancerNames;
     bool m_loadBalancerNamesHasBeenSet;
+
     Aws::Vector<Aws::String> m_targetGroupARNs;
     bool m_targetGroupARNsHasBeenSet;
+
     Aws::String m_healthCheckType;
     bool m_healthCheckTypeHasBeenSet;
+
     int m_healthCheckGracePeriod;
     bool m_healthCheckGracePeriodHasBeenSet;
+
     Aws::String m_placementGroup;
     bool m_placementGroupHasBeenSet;
+
     Aws::String m_vPCZoneIdentifier;
     bool m_vPCZoneIdentifierHasBeenSet;
+
     Aws::Vector<Aws::String> m_terminationPolicies;
     bool m_terminationPoliciesHasBeenSet;
+
     bool m_newInstancesProtectedFromScaleIn;
     bool m_newInstancesProtectedFromScaleInHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

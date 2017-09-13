@@ -34,6 +34,7 @@ namespace Model
     UpdateGroupCertificateConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * Amount of time when the certificate expires in milliseconds.
      */
@@ -68,6 +69,7 @@ namespace Model
      * Amount of time when the certificate expires in milliseconds.
      */
     inline UpdateGroupCertificateConfigurationRequest& WithCertificateExpiryInMilliseconds(const char* value) { SetCertificateExpiryInMilliseconds(value); return *this;}
+
 
     /**
      * The unique Id of the AWS Greengrass Group
@@ -105,8 +107,10 @@ namespace Model
     inline UpdateGroupCertificateConfigurationRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
   private:
+
     Aws::String m_certificateExpiryInMilliseconds;
     bool m_certificateExpiryInMillisecondsHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
   };

@@ -30,12 +30,12 @@ ListTargetsForPolicyResult::ListTargetsForPolicyResult()
 {
 }
 
-ListTargetsForPolicyResult::ListTargetsForPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+ListTargetsForPolicyResult::ListTargetsForPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListTargetsForPolicyResult& ListTargetsForPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTargetsForPolicyResult& ListTargetsForPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Targets"))

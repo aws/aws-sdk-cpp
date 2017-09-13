@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StartExportTaskResult();
-    StartExportTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartExportTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartExportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartExportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique identifier used to query the status of an export request.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline StartExportTaskResult& WithExportId(const char* value) { SetExportId(value); return *this;}
 
   private:
+
     Aws::String m_exportId;
   };
 

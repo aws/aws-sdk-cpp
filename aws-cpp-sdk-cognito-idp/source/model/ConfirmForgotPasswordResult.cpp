@@ -30,12 +30,12 @@ ConfirmForgotPasswordResult::ConfirmForgotPasswordResult()
 {
 }
 
-ConfirmForgotPasswordResult::ConfirmForgotPasswordResult(const AmazonWebServiceResult<JsonValue>& result)
+ConfirmForgotPasswordResult::ConfirmForgotPasswordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ConfirmForgotPasswordResult& ConfirmForgotPasswordResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ConfirmForgotPasswordResult& ConfirmForgotPasswordResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

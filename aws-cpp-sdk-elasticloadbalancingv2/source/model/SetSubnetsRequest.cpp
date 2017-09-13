@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 
 SetSubnetsRequest::SetSubnetsRequest() : 
     m_loadBalancerArnHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+    m_subnetsHasBeenSet(false),
+    m_subnetMappingsHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,16 @@ Aws::String SetSubnetsRequest::SerializePayload() const
       ss << "Subnets.member." << subnetsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       subnetsCount++;
+    }
+  }
+
+  if(m_subnetMappingsHasBeenSet)
+  {
+    unsigned subnetMappingsCount = 1;
+    for(auto& item : m_subnetMappings)
+    {
+      item.OutputToStream(ss, "SubnetMappings.member.", subnetMappingsCount, "");
+      subnetMappingsCount++;
     }
   }
 

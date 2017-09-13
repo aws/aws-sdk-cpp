@@ -49,6 +49,7 @@ namespace Model
     RDSDataSpec& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
      * of an Amazon RDS database.</p>
@@ -78,6 +79,7 @@ namespace Model
      * of an Amazon RDS database.</p>
      */
     inline RDSDataSpec& WithDatabaseInformation(RDSDatabase&& value) { SetDatabaseInformation(std::move(value)); return *this;}
+
 
     /**
      * <p>The query that is used to retrieve the observation data for the
@@ -121,6 +123,7 @@ namespace Model
      */
     inline RDSDataSpec& WithSelectSqlQuery(const char* value) { SetSelectSqlQuery(value); return *this;}
 
+
     /**
      * <p>The AWS Identity and Access Management (IAM) credentials that are used
      * connect to the Amazon RDS database.</p>
@@ -150,6 +153,7 @@ namespace Model
      * connect to the Amazon RDS database.</p>
      */
     inline RDSDataSpec& WithDatabaseCredentials(RDSDatabaseCredentials&& value) { SetDatabaseCredentials(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon S3 location for staging Amazon RDS data. The data retrieved from
@@ -192,6 +196,7 @@ namespace Model
      * Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
      */
     inline RDSDataSpec& WithS3StagingLocation(const char* value) { SetS3StagingLocation(value); return *this;}
+
 
     /**
      * <p>A JSON string that represents the splitting and rearrangement processing to
@@ -634,6 +639,7 @@ namespace Model
      */
     inline RDSDataSpec& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
 
+
     /**
      * <p>A JSON string that represents the schema for an Amazon RDS
      * <code>DataSource</code>. The <code>DataSchema</code> defines the structure of
@@ -788,6 +794,7 @@ namespace Model
      */
     inline RDSDataSpec& WithDataSchema(const char* value) { SetDataSchema(value); return *this;}
 
+
     /**
      * <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
      */
@@ -822,6 +829,7 @@ namespace Model
      * <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
      */
     inline RDSDataSpec& WithDataSchemaUri(const char* value) { SetDataSchemaUri(value); return *this;}
+
 
     /**
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic
@@ -886,6 +894,7 @@ namespace Model
      */
     inline RDSDataSpec& WithResourceRole(const char* value) { SetResourceRole(value); return *this;}
 
+
     /**
      * <p>The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to
      * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
@@ -949,6 +958,7 @@ namespace Model
      */
     inline RDSDataSpec& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+
     /**
      * <p>The subnet ID to be used to access a VPC-based RDS DB instance. This
      * attribute is used by Data Pipeline to carry out the copy task from Amazon RDS to
@@ -997,6 +1007,7 @@ namespace Model
      * Amazon S3.</p>
      */
     inline RDSDataSpec& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The security group IDs to be used to access a VPC-based RDS DB instance.
@@ -1063,26 +1074,37 @@ namespace Model
     inline RDSDataSpec& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
   private:
+
     RDSDatabase m_databaseInformation;
     bool m_databaseInformationHasBeenSet;
+
     Aws::String m_selectSqlQuery;
     bool m_selectSqlQueryHasBeenSet;
+
     RDSDatabaseCredentials m_databaseCredentials;
     bool m_databaseCredentialsHasBeenSet;
+
     Aws::String m_s3StagingLocation;
     bool m_s3StagingLocationHasBeenSet;
+
     Aws::String m_dataRearrangement;
     bool m_dataRearrangementHasBeenSet;
+
     Aws::String m_dataSchema;
     bool m_dataSchemaHasBeenSet;
+
     Aws::String m_dataSchemaUri;
     bool m_dataSchemaUriHasBeenSet;
+
     Aws::String m_resourceRole;
     bool m_resourceRoleHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
   };

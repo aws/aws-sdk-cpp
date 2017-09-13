@@ -30,12 +30,12 @@ ListTagsForVaultResult::ListTagsForVaultResult()
 {
 }
 
-ListTagsForVaultResult::ListTagsForVaultResult(const AmazonWebServiceResult<JsonValue>& result)
+ListTagsForVaultResult::ListTagsForVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListTagsForVaultResult& ListTagsForVaultResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTagsForVaultResult& ListTagsForVaultResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Tags"))

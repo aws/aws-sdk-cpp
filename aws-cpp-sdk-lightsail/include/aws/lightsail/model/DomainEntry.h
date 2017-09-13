@@ -46,6 +46,7 @@ namespace Model
     DomainEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the domain recordset entry.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The ID of the domain recordset entry.</p>
      */
     inline DomainEntry& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the domain.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline DomainEntry& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      */
     inline DomainEntry& WithTarget(const char* value) { SetTarget(value); return *this;}
 
+
     /**
      * <p>The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).</p>
      */
@@ -185,6 +189,7 @@ namespace Model
      * <p>The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).</p>
      */
     inline DomainEntry& WithType(const char* value) { SetType(value); return *this;}
+
 
     /**
      * <p>The options for the domain entry.</p>
@@ -247,14 +252,19 @@ namespace Model
     inline DomainEntry& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_target;
     bool m_targetHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_options;
     bool m_optionsHasBeenSet;
   };

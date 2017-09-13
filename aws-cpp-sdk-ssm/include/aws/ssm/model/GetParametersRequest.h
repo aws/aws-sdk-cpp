@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Names of the parameters for which you want to query information.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetParametersRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
+
     /**
      * <p>Return decrypted secure string value. Return decrypted values for secure
      * string parameters. This flag is ignored for String and StringList parameter
@@ -99,8 +101,10 @@ namespace Model
     inline GetParametersRequest& WithWithDecryption(bool value) { SetWithDecryption(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
+
     bool m_withDecryption;
     bool m_withDecryptionHasBeenSet;
   };

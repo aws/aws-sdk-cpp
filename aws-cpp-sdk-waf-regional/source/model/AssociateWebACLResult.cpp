@@ -30,12 +30,12 @@ AssociateWebACLResult::AssociateWebACLResult()
 {
 }
 
-AssociateWebACLResult::AssociateWebACLResult(const AmazonWebServiceResult<JsonValue>& result)
+AssociateWebACLResult::AssociateWebACLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AssociateWebACLResult& AssociateWebACLResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociateWebACLResult& AssociateWebACLResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

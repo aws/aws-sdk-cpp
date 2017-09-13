@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateJobResult();
-    CreateJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A section of the response body that provides information about the job that
@@ -77,6 +78,7 @@ namespace Model
     inline CreateJobResult& WithJob(Job&& value) { SetJob(std::move(value)); return *this;}
 
   private:
+
     Job m_job;
   };
 

@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ID of the pipeline for which you want to get job information.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The ID of the pipeline for which you want to get job information.</p>
      */
     inline ListJobsByPipelineRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+
 
     /**
      * <p> To list jobs in chronological order by the date and time that they were
@@ -127,6 +129,7 @@ namespace Model
      * enter <code>false</code>. </p>
      */
     inline ListJobsByPipelineRequest& WithAscending(const char* value) { SetAscending(value); return *this;}
+
 
     /**
      * <p> When Elastic Transcoder returns more than one page of results, use
@@ -178,10 +181,13 @@ namespace Model
     inline ListJobsByPipelineRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Aws::String m_ascending;
     bool m_ascendingHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

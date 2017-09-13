@@ -48,6 +48,7 @@ namespace Model
     EBSOptions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies whether EBS-based storage is enabled.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
      * <p>Specifies whether EBS-based storage is enabled.</p>
      */
     inline EBSOptions& WithEBSEnabled(bool value) { SetEBSEnabled(value); return *this;}
+
 
     /**
      * <p> Specifies the volume type for EBS-based storage.</p>
@@ -88,6 +90,7 @@ namespace Model
      */
     inline EBSOptions& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
+
     /**
      * <p> Integer to specify the size of an EBS volume.</p>
      */
@@ -102,6 +105,7 @@ namespace Model
      * <p> Integer to specify the size of an EBS volume.</p>
      */
     inline EBSOptions& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
+
 
     /**
      * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>
@@ -119,12 +123,16 @@ namespace Model
     inline EBSOptions& WithIops(int value) { SetIops(value); return *this;}
 
   private:
+
     bool m_eBSEnabled;
     bool m_eBSEnabledHasBeenSet;
+
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
   };

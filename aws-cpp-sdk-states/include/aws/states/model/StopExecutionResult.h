@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StopExecutionResult();
-    StopExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The date the execution was stopped.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline StopExecutionResult& WithStopDate(Aws::Utils::DateTime&& value) { SetStopDate(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_stopDate;
   };
 

@@ -30,12 +30,12 @@ RenewDomainResult::RenewDomainResult()
 {
 }
 
-RenewDomainResult::RenewDomainResult(const AmazonWebServiceResult<JsonValue>& result)
+RenewDomainResult::RenewDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RenewDomainResult& RenewDomainResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RenewDomainResult& RenewDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OperationId"))

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool that the users are being imported
      * into.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline StopUserImportJobRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The job ID for the user import job.</p>
      */
@@ -118,8 +120,10 @@ namespace Model
     inline StopUserImportJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
   };

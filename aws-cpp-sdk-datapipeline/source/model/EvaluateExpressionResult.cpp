@@ -30,12 +30,12 @@ EvaluateExpressionResult::EvaluateExpressionResult()
 {
 }
 
-EvaluateExpressionResult::EvaluateExpressionResult(const AmazonWebServiceResult<JsonValue>& result)
+EvaluateExpressionResult::EvaluateExpressionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-EvaluateExpressionResult& EvaluateExpressionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+EvaluateExpressionResult& EvaluateExpressionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("evaluatedExpression"))

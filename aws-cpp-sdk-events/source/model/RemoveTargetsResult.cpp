@@ -31,13 +31,13 @@ RemoveTargetsResult::RemoveTargetsResult() :
 {
 }
 
-RemoveTargetsResult::RemoveTargetsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+RemoveTargetsResult::RemoveTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_failedEntryCount(0)
 {
   *this = result;
 }
 
-RemoveTargetsResult& RemoveTargetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RemoveTargetsResult& RemoveTargetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FailedEntryCount"))

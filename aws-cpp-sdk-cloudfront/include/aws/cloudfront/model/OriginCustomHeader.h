@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The name of a header that you want CloudFront to forward to your origin. For
      * more information, see <a
@@ -111,6 +112,7 @@ namespace Model
      */
     inline OriginCustomHeader& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
 
+
     /**
      * <p>The value for the header that you specified in the <code>HeaderName</code>
      * field.</p>
@@ -154,8 +156,10 @@ namespace Model
     inline OriginCustomHeader& WithHeaderValue(const char* value) { SetHeaderValue(value); return *this;}
 
   private:
+
     Aws::String m_headerName;
     bool m_headerNameHasBeenSet;
+
     Aws::String m_headerValue;
     bool m_headerValueHasBeenSet;
   };

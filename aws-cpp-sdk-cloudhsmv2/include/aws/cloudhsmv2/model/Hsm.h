@@ -47,6 +47,7 @@ namespace Model
     Hsm& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Availability Zone that contains the HSM.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The Availability Zone that contains the HSM.</p>
      */
     inline Hsm& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>The identifier (ID) of the cluster that contains the HSM.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline Hsm& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
      */
     inline Hsm& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline Hsm& WithEniId(const char* value) { SetEniId(value); return *this;}
 
+
     /**
      * <p>The IP address of the HSM's elastic network interface (ENI).</p>
      */
@@ -221,6 +226,7 @@ namespace Model
      * <p>The IP address of the HSM's elastic network interface (ENI).</p>
      */
     inline Hsm& WithEniIp(const char* value) { SetEniIp(value); return *this;}
+
 
     /**
      * <p>The HSM's identifier (ID).</p>
@@ -257,6 +263,7 @@ namespace Model
      */
     inline Hsm& WithHsmId(const char* value) { SetHsmId(value); return *this;}
 
+
     /**
      * <p>The HSM's state.</p>
      */
@@ -281,6 +288,7 @@ namespace Model
      * <p>The HSM's state.</p>
      */
     inline Hsm& WithState(HsmState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the HSM's state.</p>
@@ -318,20 +326,28 @@ namespace Model
     inline Hsm& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_eniId;
     bool m_eniIdHasBeenSet;
+
     Aws::String m_eniIp;
     bool m_eniIpHasBeenSet;
+
     Aws::String m_hsmId;
     bool m_hsmIdHasBeenSet;
+
     HsmState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_stateMessage;
     bool m_stateMessageHasBeenSet;
   };

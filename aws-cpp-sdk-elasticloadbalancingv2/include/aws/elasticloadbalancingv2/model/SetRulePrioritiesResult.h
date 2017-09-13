@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     SetRulePrioritiesResult();
-    SetRulePrioritiesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetRulePrioritiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetRulePrioritiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetRulePrioritiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the rules.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline SetRulePrioritiesResult& AddRules(Rule&& value) { m_rules.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline SetRulePrioritiesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Rule> m_rules;
+
     ResponseMetadata m_responseMetadata;
   };
 

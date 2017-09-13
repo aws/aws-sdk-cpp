@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the application associated with the configuration.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the application associated with the configuration.</p>
      */
     inline SourceConfiguration& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The name of the configuration template.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline SourceConfiguration& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
   };

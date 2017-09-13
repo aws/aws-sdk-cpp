@@ -30,12 +30,12 @@ StartFleetResult::StartFleetResult()
 {
 }
 
-StartFleetResult::StartFleetResult(const AmazonWebServiceResult<JsonValue>& result)
+StartFleetResult::StartFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartFleetResult& StartFleetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartFleetResult& StartFleetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

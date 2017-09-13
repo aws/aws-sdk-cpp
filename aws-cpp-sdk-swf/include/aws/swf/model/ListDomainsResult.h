@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListDomainsResult();
-    ListDomainsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDomainsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of DomainInfo structures.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of DomainInfo structures.</p>
      */
     inline ListDomainsResult& AddDomainInfos(DomainInfo&& value) { m_domainInfos.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -148,7 +150,9 @@ namespace Model
     inline ListDomainsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<DomainInfo> m_domainInfos;
+
     Aws::String m_nextPageToken;
   };
 

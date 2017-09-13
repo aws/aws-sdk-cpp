@@ -44,6 +44,7 @@ namespace Model
     WriteApplicationSettingsRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The default campaign limits for the app. These limits apply to each campaign for
      * the app, unless the campaign overrides the default with limits of its own.
@@ -73,6 +74,7 @@ namespace Model
      * the app, unless the campaign overrides the default with limits of its own.
      */
     inline WriteApplicationSettingsRequest& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
+
 
     /**
      * The default quiet time for the app. Each campaign for this app sends no messages
@@ -110,8 +112,10 @@ namespace Model
     inline WriteApplicationSettingsRequest& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
 
   private:
+
     CampaignLimits m_limits;
     bool m_limitsHasBeenSet;
+
     QuietTime m_quietTime;
     bool m_quietTimeHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Your gateway activation key. You can obtain the activation key by sending an
      * HTTP GET request with redirects enabled to the gateway IP address (port 80). The
@@ -124,6 +125,7 @@ namespace Model
      */
     inline ActivateGatewayRequest& WithActivationKey(const char* value) { SetActivationKey(value); return *this;}
 
+
     /**
      * <p>The name you configured for your gateway.</p>
      */
@@ -158,6 +160,7 @@ namespace Model
      * <p>The name you configured for your gateway.</p>
      */
     inline ActivateGatewayRequest& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
+
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
@@ -221,6 +224,7 @@ namespace Model
      * your gateway's maintenance schedule.</p>
      */
     inline ActivateGatewayRequest& WithGatewayTimezone(const char* value) { SetGatewayTimezone(value); return *this;}
+
 
     /**
      * <p>A value that indicates the region where you want to store your data. The
@@ -313,6 +317,7 @@ namespace Model
      */
     inline ActivateGatewayRequest& WithGatewayRegion(const char* value) { SetGatewayRegion(value); return *this;}
 
+
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
      * critical to all later functions of the gateway and cannot be changed after
@@ -369,6 +374,7 @@ namespace Model
      */
     inline ActivateGatewayRequest& WithGatewayType(const char* value) { SetGatewayType(value); return *this;}
 
+
     /**
      * <p>The value that indicates the type of tape drive to use for tape gateway. This
      * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
@@ -410,6 +416,7 @@ namespace Model
      * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
     inline ActivateGatewayRequest& WithTapeDriveType(const char* value) { SetTapeDriveType(value); return *this;}
+
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
@@ -454,18 +461,25 @@ namespace Model
     inline ActivateGatewayRequest& WithMediumChangerType(const char* value) { SetMediumChangerType(value); return *this;}
 
   private:
+
     Aws::String m_activationKey;
     bool m_activationKeyHasBeenSet;
+
     Aws::String m_gatewayName;
     bool m_gatewayNameHasBeenSet;
+
     Aws::String m_gatewayTimezone;
     bool m_gatewayTimezoneHasBeenSet;
+
     Aws::String m_gatewayRegion;
     bool m_gatewayRegionHasBeenSet;
+
     Aws::String m_gatewayType;
     bool m_gatewayTypeHasBeenSet;
+
     Aws::String m_tapeDriveType;
     bool m_tapeDriveTypeHasBeenSet;
+
     Aws::String m_mediumChangerType;
     bool m_mediumChangerTypeHasBeenSet;
   };

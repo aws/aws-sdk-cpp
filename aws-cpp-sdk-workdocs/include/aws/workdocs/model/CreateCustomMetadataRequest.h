@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline CreateCustomMetadataRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the resource.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline CreateCustomMetadataRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>The ID of the version, if the custom metadata is being added to a document
@@ -161,6 +164,7 @@ namespace Model
      * version.</p>
      */
     inline CreateCustomMetadataRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+
 
     /**
      * <p>Custom metadata in the form of name-value pairs.</p>
@@ -223,12 +227,16 @@ namespace Model
     inline CreateCustomMetadataRequest& AddCustomMetadata(const char* key, const char* value) { m_customMetadataHasBeenSet = true; m_customMetadata.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_customMetadata;
     bool m_customMetadataHasBeenSet;
   };

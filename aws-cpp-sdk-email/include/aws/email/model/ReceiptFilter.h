@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the IP address filter. The name must:</p> <ul> <li> <p>Contain
      * only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or
@@ -109,6 +110,7 @@ namespace Model
      */
     inline ReceiptFilter& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A structure that provides the IP addresses to block or allow, and whether to
      * block or allow incoming mail from them.</p>
@@ -140,8 +142,10 @@ namespace Model
     inline ReceiptFilter& WithIpFilter(ReceiptIpFilter&& value) { SetIpFilter(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ReceiptIpFilter m_ipFilter;
     bool m_ipFilterHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Filters used to scope down the returned patches.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline DescribeAvailablePatchesRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of patches to return (per page).</p>
      */
@@ -87,6 +89,7 @@ namespace Model
      * <p>The maximum number of patches to return (per page).</p>
      */
     inline DescribeAvailablePatchesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -131,10 +134,13 @@ namespace Model
     inline DescribeAvailablePatchesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PatchOrchestratorFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

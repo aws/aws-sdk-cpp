@@ -51,6 +51,7 @@ namespace Model
     AttributeValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A String data type.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>A String data type.</p>
      */
     inline AttributeValue& WithS(const char* value) { SetS(value); return *this;}
+
 
     /**
      * <p>A Number data type.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline AttributeValue& WithN(const char* value) { SetN(value); return *this;}
 
+
     /**
      * <p>A Binary data type.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>A Binary data type.</p>
      */
     inline AttributeValue& WithB(Aws::Utils::ByteBuffer&& value) { SetB(std::move(value)); return *this;}
+
 
     /**
      * <p>A String Set data type.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline AttributeValue& AddSS(const char* value) { m_sSHasBeenSet = true; m_sS.push_back(value); return *this; }
 
+
     /**
      * <p>A Number Set data type.</p>
      */
@@ -226,6 +231,7 @@ namespace Model
      */
     inline AttributeValue& AddNS(const char* value) { m_nSHasBeenSet = true; m_nS.push_back(value); return *this; }
 
+
     /**
      * <p>A Binary Set data type.</p>
      */
@@ -260,6 +266,7 @@ namespace Model
      * <p>A Binary Set data type.</p>
      */
     inline AttributeValue& AddBS(Aws::Utils::ByteBuffer&& value) { m_bSHasBeenSet = true; m_bS.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A Map data type.</p>
@@ -316,6 +323,7 @@ namespace Model
      */
     inline AttributeValue& AddM(const char* key, const AttributeValue& value) { m_mHasBeenSet = true; m_m.emplace(key, value); return *this; }
 
+
     /**
      * <p>A List data type.</p>
      */
@@ -351,6 +359,7 @@ namespace Model
      */
     inline AttributeValue& AddL(AttributeValue&& value) { m_lHasBeenSet = true; m_l.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A Null data type.</p>
      */
@@ -365,6 +374,7 @@ namespace Model
      * <p>A Null data type.</p>
      */
     inline AttributeValue& WithNULL(bool value) { SetNULL(value); return *this;}
+
 
     /**
      * <p> A Boolean data type.</p>
@@ -382,24 +392,34 @@ namespace Model
     inline AttributeValue& WithBOOL(bool value) { SetBOOL(value); return *this;}
 
   private:
+
     Aws::String m_s;
     bool m_sHasBeenSet;
+
     Aws::String m_n;
     bool m_nHasBeenSet;
+
     Aws::Utils::ByteBuffer m_b;
     bool m_bHasBeenSet;
+
     Aws::Vector<Aws::String> m_sS;
     bool m_sSHasBeenSet;
+
     Aws::Vector<Aws::String> m_nS;
     bool m_nSHasBeenSet;
+
     Aws::Vector<Aws::Utils::ByteBuffer> m_bS;
     bool m_bSHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_m;
     bool m_mHasBeenSet;
+
     Aws::Vector<AttributeValue> m_l;
     bool m_lHasBeenSet;
+
     bool m_nULL;
     bool m_nULLHasBeenSet;
+
     bool m_bOOL;
     bool m_bOOLHasBeenSet;
   };

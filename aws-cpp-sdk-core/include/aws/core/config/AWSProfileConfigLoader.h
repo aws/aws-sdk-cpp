@@ -44,6 +44,13 @@ namespace Aws
             inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
             inline const Aws::String& GetSourceProfile() const { return m_sourceProfile; }
             inline void SetSourceProfile(const Aws::String& value ) { m_sourceProfile = value; }
+            inline void SetAllKeyValPairs(const Aws::Map<Aws::String, Aws::String>& map) { m_allKeyValPairs = map; }
+            inline const Aws::String GetValue(const Aws::String& key) 
+            {
+                auto iter = m_allKeyValPairs.find(key);
+                if (iter == m_allKeyValPairs.end()) return "";
+                return iter->second;
+            }
 
         private:
             Aws::String m_name;
@@ -51,6 +58,8 @@ namespace Aws
             Aws::Auth::AWSCredentials m_credentials;
             Aws::String m_roleArn;
             Aws::String m_sourceProfile;
+
+            Aws::Map<Aws::String, Aws::String> m_allKeyValPairs;
         };
 
         /**

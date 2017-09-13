@@ -30,12 +30,12 @@ BatchCheckLayerAvailabilityResult::BatchCheckLayerAvailabilityResult()
 {
 }
 
-BatchCheckLayerAvailabilityResult::BatchCheckLayerAvailabilityResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchCheckLayerAvailabilityResult::BatchCheckLayerAvailabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchCheckLayerAvailabilityResult& BatchCheckLayerAvailabilityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchCheckLayerAvailabilityResult& BatchCheckLayerAvailabilityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("layers"))

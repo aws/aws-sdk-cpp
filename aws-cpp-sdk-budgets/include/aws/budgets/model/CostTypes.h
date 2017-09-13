@@ -44,6 +44,7 @@ namespace Model
     CostTypes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline bool GetIncludeTax() const{ return m_includeTax; }
 
@@ -53,6 +54,7 @@ namespace Model
     
     inline CostTypes& WithIncludeTax(bool value) { SetIncludeTax(value); return *this;}
 
+
     
     inline bool GetIncludeSubscription() const{ return m_includeSubscription; }
 
@@ -61,6 +63,7 @@ namespace Model
 
     
     inline CostTypes& WithIncludeSubscription(bool value) { SetIncludeSubscription(value); return *this;}
+
 
     
     inline bool GetUseBlended() const{ return m_useBlended; }
@@ -72,10 +75,13 @@ namespace Model
     inline CostTypes& WithUseBlended(bool value) { SetUseBlended(value); return *this;}
 
   private:
+
     bool m_includeTax;
     bool m_includeTaxHasBeenSet;
+
     bool m_includeSubscription;
     bool m_includeSubscriptionHasBeenSet;
+
     bool m_useBlended;
     bool m_useBlendedHasBeenSet;
   };

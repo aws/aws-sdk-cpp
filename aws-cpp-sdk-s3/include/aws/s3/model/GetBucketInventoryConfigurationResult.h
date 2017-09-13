@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetBucketInventoryConfigurationResult();
-    GetBucketInventoryConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketInventoryConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketInventoryConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketInventoryConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * Specifies the inventory configuration.
@@ -67,6 +68,7 @@ namespace Model
     inline GetBucketInventoryConfigurationResult& WithInventoryConfiguration(InventoryConfiguration&& value) { SetInventoryConfiguration(std::move(value)); return *this;}
 
   private:
+
     InventoryConfiguration m_inventoryConfiguration;
   };
 

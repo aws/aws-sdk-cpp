@@ -57,6 +57,7 @@ namespace Model
     Condition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the <code>ComparisonOperator</code> being
@@ -147,6 +148,7 @@ namespace Model
      * compares binary values.</p>
      */
     inline Condition& AddAttributeValueList(AttributeValue&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A comparator for evaluating attributes. For example, equals, greater than,
@@ -704,8 +706,10 @@ namespace Model
     inline Condition& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AttributeValue> m_attributeValueList;
     bool m_attributeValueListHasBeenSet;
+
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
   };

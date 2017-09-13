@@ -55,7 +55,7 @@ enum class CloudHSMV2Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLOUD_HSM_ACCESS_DENIED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLOUD_HSM_ACCESS_DENIED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CLOUD_HSM_INTERNAL_FAILURE,
   CLOUD_HSM_INVALID_REQUEST,
   CLOUD_HSM_RESOURCE_NOT_FOUND,
@@ -63,7 +63,7 @@ enum class CloudHSMV2Errors
 };
 namespace CloudHSMV2ErrorMapper
 {
-  AWS_CLOUDHSMV2_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CLOUDHSMV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CloudHSMV2

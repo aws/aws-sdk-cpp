@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     BatchGetImageResult();
-    BatchGetImageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetImageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of image objects corresponding to the image references in the
@@ -85,6 +86,7 @@ namespace Model
      */
     inline BatchGetImageResult& AddImages(Image&& value) { m_images.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Any failures associated with the call.</p>
      */
@@ -121,7 +123,9 @@ namespace Model
     inline BatchGetImageResult& AddFailures(ImageFailure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Image> m_images;
+
     Aws::Vector<ImageFailure> m_failures;
   };
 

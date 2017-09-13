@@ -48,6 +48,7 @@ namespace Model
     ReviewPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
      * ScoreMyKnownAnswers/2011-09-01 </p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ReviewPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
+
     /**
      * <p>Name of the parameter from the Review policy.</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline ReviewPolicy& AddParameters(PolicyParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::Vector<PolicyParameter> m_parameters;
     bool m_parametersHasBeenSet;
   };

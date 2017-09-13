@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     InitiateAuthResult();
-    InitiateAuthResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InitiateAuthResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateAuthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateAuthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the challenge which you are responding to with this call. This is
@@ -164,6 +165,7 @@ namespace Model
      */
     inline InitiateAuthResult& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(std::move(value)); return *this;}
 
+
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
      * the service. If the <a href="API_InitiateAuth.html">InitiateAuth</a> or <a
@@ -233,6 +235,7 @@ namespace Model
      * to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline InitiateAuthResult& WithSession(const char* value) { SetSession(value); return *this;}
+
 
     /**
      * <p>The challenge parameters. These are returned to you in the
@@ -342,6 +345,7 @@ namespace Model
      */
     inline InitiateAuthResult& AddChallengeParameters(const char* key, const char* value) { m_challengeParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The result of the authentication response. This is only returned if the
      * caller does not need to pass another challenge. If the caller does need to pass
@@ -383,9 +387,13 @@ namespace Model
     inline InitiateAuthResult& WithAuthenticationResult(AuthenticationResultType&& value) { SetAuthenticationResult(std::move(value)); return *this;}
 
   private:
+
     ChallengeNameType m_challengeName;
+
     Aws::String m_session;
+
     Aws::Map<Aws::String, Aws::String> m_challengeParameters;
+
     AuthenticationResultType m_authenticationResult;
   };
 

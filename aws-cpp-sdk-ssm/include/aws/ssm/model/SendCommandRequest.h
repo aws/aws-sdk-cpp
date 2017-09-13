@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The instance IDs where the command should execute. You can specify a maximum
      * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
@@ -121,6 +122,7 @@ namespace Model
      */
     inline SendCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
+
     /**
      * <p>(Optional) An array of search criteria that targets instances using a
      * Key,Value combination that you specify. Targets is required if you don't provide
@@ -191,6 +193,7 @@ namespace Model
      */
     inline SendCommandRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Required. The name of the Systems Manager document to execute. This can be a
      * public document or a custom document.</p>
@@ -232,6 +235,7 @@ namespace Model
      * public document or a custom document.</p>
      */
     inline SendCommandRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
+
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
@@ -275,6 +279,7 @@ namespace Model
      */
     inline SendCommandRequest& WithDocumentHash(const char* value) { SetDocumentHash(value); return *this;}
 
+
     /**
      * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
@@ -300,6 +305,7 @@ namespace Model
      */
     inline SendCommandRequest& WithDocumentHashType(DocumentHashType&& value) { SetDocumentHashType(std::move(value)); return *this;}
 
+
     /**
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute.</p>
@@ -317,6 +323,7 @@ namespace Model
      * will not execute.</p>
      */
     inline SendCommandRequest& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
+
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -359,6 +366,7 @@ namespace Model
      * what the command should do.</p>
      */
     inline SendCommandRequest& WithComment(const char* value) { SetComment(value); return *this;}
+
 
     /**
      * <p>The required and optional parameters specified in the document being
@@ -426,6 +434,7 @@ namespace Model
      */
     inline SendCommandRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
      * Instead, Systems Manager automatically determines the Amazon S3 bucket
@@ -475,6 +484,7 @@ namespace Model
      */
     inline SendCommandRequest& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 
+
     /**
      * <p>The name of the S3 bucket where command execution responses should be
      * stored.</p>
@@ -517,6 +527,7 @@ namespace Model
      */
     inline SendCommandRequest& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
 
+
     /**
      * <p>The directory structure within the S3 bucket where the responses should be
      * stored.</p>
@@ -558,6 +569,7 @@ namespace Model
      * stored.</p>
      */
     inline SendCommandRequest& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
+
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
@@ -628,6 +640,7 @@ namespace Model
      * Concurrency Controls</a>.</p>
      */
     inline SendCommandRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+
 
     /**
      * <p>The maximum number of errors allowed without the command failing. When the
@@ -706,6 +719,7 @@ namespace Model
      */
     inline SendCommandRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
+
     /**
      * <p>The IAM role that Systems Manager uses to send notifications. </p>
      */
@@ -741,6 +755,7 @@ namespace Model
      */
     inline SendCommandRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
+
     /**
      * <p>Configurations for sending notifications.</p>
      */
@@ -767,34 +782,49 @@ namespace Model
     inline SendCommandRequest& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+
     Aws::String m_documentHash;
     bool m_documentHashHasBeenSet;
+
     DocumentHashType m_documentHashType;
     bool m_documentHashTypeHasBeenSet;
+
     int m_timeoutSeconds;
     bool m_timeoutSecondsHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::String m_outputS3Region;
     bool m_outputS3RegionHasBeenSet;
+
     Aws::String m_outputS3BucketName;
     bool m_outputS3BucketNameHasBeenSet;
+
     Aws::String m_outputS3KeyPrefix;
     bool m_outputS3KeyPrefixHasBeenSet;
+
     Aws::String m_maxConcurrency;
     bool m_maxConcurrencyHasBeenSet;
+
     Aws::String m_maxErrors;
     bool m_maxErrorsHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     NotificationConfig m_notificationConfig;
     bool m_notificationConfigHasBeenSet;
   };

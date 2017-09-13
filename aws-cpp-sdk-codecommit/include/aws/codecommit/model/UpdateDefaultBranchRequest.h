@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository to set or change the default branch for.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the repository to set or change the default branch for.</p>
      */
     inline UpdateDefaultBranchRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The name of the branch to set as the default.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline UpdateDefaultBranchRequest& WithDefaultBranchName(const char* value) { SetDefaultBranchName(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_defaultBranchName;
     bool m_defaultBranchNameHasBeenSet;
   };

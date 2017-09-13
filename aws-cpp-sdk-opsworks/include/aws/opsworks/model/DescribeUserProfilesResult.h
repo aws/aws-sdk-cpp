@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeUserProfilesResult();
-    DescribeUserProfilesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeUserProfilesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUserProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUserProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <code>Users</code> object that describes the specified users.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeUserProfilesResult& AddUserProfiles(UserProfile&& value) { m_userProfiles.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<UserProfile> m_userProfiles;
   };
 

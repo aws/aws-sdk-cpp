@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
      * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
@@ -105,6 +106,7 @@ namespace Model
      */
     inline DescribeStackEventsRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>A string that identifies the next page of events that you want to
      * retrieve.</p>
@@ -148,8 +150,10 @@ namespace Model
     inline DescribeStackEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

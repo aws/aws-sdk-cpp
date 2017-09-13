@@ -24,7 +24,7 @@ namespace Aws
 {
 namespace CloudSearchDomain
 {
-  class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainRequest : public AmazonSerializableWebServiceRequest
+  class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~CloudSearchDomainRequest () {}
@@ -38,7 +38,7 @@ namespace CloudSearchDomain
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_JSON_CONTENT_TYPE_1_1 ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_1 ));
       }
 
       return headers;
@@ -49,7 +49,7 @@ namespace CloudSearchDomain
 
   };
 
-  typedef AmazonStreamingWebServiceRequest StreamingCloudSearchDomainRequest;
+  typedef Aws::AmazonStreamingWebServiceRequest StreamingCloudSearchDomainRequest;
 
 } // namespace CloudSearchDomain
 } // namespace Aws

@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::Vector<CORSRule>& GetCORSRules() const{ return m_cORSRules; }
 
@@ -64,6 +65,7 @@ namespace Model
     inline CORSConfiguration& AddCORSRules(CORSRule&& value) { m_cORSRulesHasBeenSet = true; m_cORSRules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CORSRule> m_cORSRules;
     bool m_cORSRulesHasBeenSet;
   };

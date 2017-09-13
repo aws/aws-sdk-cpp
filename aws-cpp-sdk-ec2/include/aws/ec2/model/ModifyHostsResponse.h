@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ModifyHostsResponse();
-    ModifyHostsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyHostsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyHostsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyHostsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
@@ -88,6 +89,7 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
      */
     inline ModifyHostsResponse& AddSuccessful(const char* value) { m_successful.push_back(value); return *this; }
+
 
     /**
      * <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
@@ -131,6 +133,7 @@ namespace Model
      */
     inline ModifyHostsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -147,8 +150,11 @@ namespace Model
     inline ModifyHostsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_successful;
+
     Aws::Vector<UnsuccessfulItem> m_unsuccessful;
+
     ResponseMetadata m_responseMetadata;
   };
 

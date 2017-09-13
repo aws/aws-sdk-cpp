@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeregisterPatchBaselineForPatchGroupResult();
-    DeregisterPatchBaselineForPatchGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterPatchBaselineForPatchGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterPatchBaselineForPatchGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the patch baseline the patch group was deregistered from.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ID of the patch baseline the patch group was deregistered from.</p>
      */
     inline DeregisterPatchBaselineForPatchGroupResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
+
 
     /**
      * <p>The name of the patch group deregistered from the patch baseline.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline DeregisterPatchBaselineForPatchGroupResult& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
 
   private:
+
     Aws::String m_baselineId;
+
     Aws::String m_patchGroup;
   };
 

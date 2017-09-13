@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     SelectResult();
-    SelectResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SelectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SelectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SelectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * A list of items that match the select expression.
@@ -78,6 +79,7 @@ namespace Model
      * A list of items that match the select expression.
      */
     inline SelectResult& AddItems(Item&& value) { m_items.push_back(std::move(value)); return *this; }
+
 
     /**
      * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
@@ -128,6 +130,7 @@ namespace Model
      */
     inline SelectResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -144,8 +147,11 @@ namespace Model
     inline SelectResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Item> m_items;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

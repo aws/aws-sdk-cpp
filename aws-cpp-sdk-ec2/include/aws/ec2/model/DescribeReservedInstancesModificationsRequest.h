@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
      * idempotency token for the modification request.</p> </li> <li> <p>
@@ -240,6 +241,7 @@ namespace Model
      */
     inline DescribeReservedInstancesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>IDs for the submitted modification request.</p>
      */
@@ -280,6 +282,7 @@ namespace Model
      */
     inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(const char* value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(value); return *this; }
 
+
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
@@ -316,10 +319,13 @@ namespace Model
     inline DescribeReservedInstancesModificationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_reservedInstancesModificationIds;
     bool m_reservedInstancesModificationIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

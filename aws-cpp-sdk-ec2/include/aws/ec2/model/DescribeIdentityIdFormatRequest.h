@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the principal, which can be an IAM role, IAM user, or the root
      * user.</p>
@@ -83,6 +84,7 @@ namespace Model
      * user.</p>
      */
     inline DescribeIdentityIdFormatRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+
 
     /**
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
@@ -127,8 +129,10 @@ namespace Model
     inline DescribeIdentityIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
 
   private:
+
     Aws::String m_principalArn;
     bool m_principalArnHasBeenSet;
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
   };

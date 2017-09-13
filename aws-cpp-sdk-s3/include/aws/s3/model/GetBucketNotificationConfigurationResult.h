@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetBucketNotificationConfigurationResult();
-    GetBucketNotificationConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketNotificationConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketNotificationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketNotificationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::Vector<TopicConfiguration>& GetTopicConfigurations() const{ return m_topicConfigurations; }
@@ -72,6 +73,7 @@ namespace Model
     
     inline GetBucketNotificationConfigurationResult& AddTopicConfigurations(TopicConfiguration&& value) { m_topicConfigurations.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::Vector<QueueConfiguration>& GetQueueConfigurations() const{ return m_queueConfigurations; }
 
@@ -92,6 +94,7 @@ namespace Model
 
     
     inline GetBucketNotificationConfigurationResult& AddQueueConfigurations(QueueConfiguration&& value) { m_queueConfigurations.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::Vector<LambdaFunctionConfiguration>& GetLambdaFunctionConfigurations() const{ return m_lambdaFunctionConfigurations; }
@@ -115,8 +118,11 @@ namespace Model
     inline GetBucketNotificationConfigurationResult& AddLambdaFunctionConfigurations(LambdaFunctionConfiguration&& value) { m_lambdaFunctionConfigurations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<TopicConfiguration> m_topicConfigurations;
+
     Aws::Vector<QueueConfiguration> m_queueConfigurations;
+
     Aws::Vector<LambdaFunctionConfiguration> m_lambdaFunctionConfigurations;
   };
 

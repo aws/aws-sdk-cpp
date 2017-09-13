@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Information about the event.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>Information about the event.</p>
      */
     inline HistoryRecord& WithEventInformation(EventInformation&& value) { SetEventInformation(std::move(value)); return *this;}
+
 
     /**
      * <p>The event type.</p> <ul> <li> <p> <code>error</code> - Indicates an error
@@ -121,6 +123,7 @@ namespace Model
      */
     inline HistoryRecord& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time of the event, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
@@ -152,10 +155,13 @@ namespace Model
     inline HistoryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
   private:
+
     EventInformation m_eventInformation;
     bool m_eventInformationHasBeenSet;
+
     EventType m_eventType;
     bool m_eventTypeHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
   };

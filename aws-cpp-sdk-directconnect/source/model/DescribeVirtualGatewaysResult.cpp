@@ -30,12 +30,12 @@ DescribeVirtualGatewaysResult::DescribeVirtualGatewaysResult()
 {
 }
 
-DescribeVirtualGatewaysResult::DescribeVirtualGatewaysResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeVirtualGatewaysResult::DescribeVirtualGatewaysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeVirtualGatewaysResult& DescribeVirtualGatewaysResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeVirtualGatewaysResult& DescribeVirtualGatewaysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("virtualGateways"))

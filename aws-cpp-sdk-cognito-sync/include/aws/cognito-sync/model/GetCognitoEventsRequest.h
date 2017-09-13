@@ -38,6 +38,7 @@ namespace Model
     GetCognitoEventsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Cognito Identity Pool ID for the request</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline GetCognitoEventsRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
   };

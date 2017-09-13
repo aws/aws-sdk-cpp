@@ -46,6 +46,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
      * is enabled.</p>
@@ -65,6 +66,7 @@ namespace Model
     inline RunInstancesMonitoringEnabled& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

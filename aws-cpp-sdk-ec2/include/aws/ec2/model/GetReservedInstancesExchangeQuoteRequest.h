@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -67,6 +68,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The IDs of the Convertible Reserved Instances to exchange.</p>
@@ -107,6 +109,7 @@ namespace Model
      * <p>The IDs of the Convertible Reserved Instances to exchange.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(const char* value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds.push_back(value); return *this; }
+
 
     /**
      * <p>The configuration requirements of the Convertible Reserved Instances to
@@ -151,10 +154,13 @@ namespace Model
     inline GetReservedInstancesExchangeQuoteRequest& AddTargetConfigurations(TargetConfigurationRequest&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations.push_back(std::move(value)); return *this; }
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Aws::String> m_reservedInstanceIds;
     bool m_reservedInstanceIdsHasBeenSet;
+
     Aws::Vector<TargetConfigurationRequest> m_targetConfigurations;
     bool m_targetConfigurationsHasBeenSet;
   };

@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -64,6 +65,7 @@ namespace Model
 
     
     inline UploadPartCopyRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * The name of the source bucket and key name of the source object, separated by a
@@ -107,6 +109,7 @@ namespace Model
      */
     inline UploadPartCopyRequest& WithCopySource(const char* value) { SetCopySource(value); return *this;}
 
+
     /**
      * Copies the object if its entity tag (ETag) matches the specified tag.
      */
@@ -142,6 +145,7 @@ namespace Model
      */
     inline UploadPartCopyRequest& WithCopySourceIfMatch(const char* value) { SetCopySourceIfMatch(value); return *this;}
 
+
     /**
      * Copies the object if it has been modified since the specified time.
      */
@@ -166,6 +170,7 @@ namespace Model
      * Copies the object if it has been modified since the specified time.
      */
     inline UploadPartCopyRequest& WithCopySourceIfModifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfModifiedSince(std::move(value)); return *this;}
+
 
     /**
      * Copies the object if its entity tag (ETag) is different than the specified ETag.
@@ -202,6 +207,7 @@ namespace Model
      */
     inline UploadPartCopyRequest& WithCopySourceIfNoneMatch(const char* value) { SetCopySourceIfNoneMatch(value); return *this;}
 
+
     /**
      * Copies the object if it hasn't been modified since the specified time.
      */
@@ -226,6 +232,7 @@ namespace Model
      * Copies the object if it hasn't been modified since the specified time.
      */
     inline UploadPartCopyRequest& WithCopySourceIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfUnmodifiedSince(std::move(value)); return *this;}
+
 
     /**
      * The range of bytes to copy from the source object. The range value must use the
@@ -290,6 +297,7 @@ namespace Model
      */
     inline UploadPartCopyRequest& WithCopySourceRange(const char* value) { SetCopySourceRange(value); return *this;}
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -311,6 +319,7 @@ namespace Model
     
     inline UploadPartCopyRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * Part number of part being copied. This is a positive integer between 1 and
      * 10,000.
@@ -328,6 +337,7 @@ namespace Model
      * 10,000.
      */
     inline UploadPartCopyRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
+
 
     /**
      * Upload ID identifying the multipart upload whose part is being copied.
@@ -364,6 +374,7 @@ namespace Model
      */
     inline UploadPartCopyRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     /**
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
@@ -398,6 +409,7 @@ namespace Model
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
     inline UploadPartCopyRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -469,6 +481,7 @@ namespace Model
      */
     inline UploadPartCopyRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
+
     /**
      * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
@@ -518,6 +531,7 @@ namespace Model
      */
     inline UploadPartCopyRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
+
     /**
      * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
      */
@@ -552,6 +566,7 @@ namespace Model
      * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
      */
     inline UploadPartCopyRequest& WithCopySourceSSECustomerAlgorithm(const char* value) { SetCopySourceSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use to decrypt
@@ -602,6 +617,7 @@ namespace Model
      */
     inline UploadPartCopyRequest& WithCopySourceSSECustomerKey(const char* value) { SetCopySourceSSECustomerKey(value); return *this;}
 
+
     /**
      * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
@@ -651,6 +667,7 @@ namespace Model
      */
     inline UploadPartCopyRequest& WithCopySourceSSECustomerKeyMD5(const char* value) { SetCopySourceSSECustomerKeyMD5(value); return *this;}
 
+
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
@@ -667,38 +684,55 @@ namespace Model
     inline UploadPartCopyRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_copySource;
     bool m_copySourceHasBeenSet;
+
     Aws::String m_copySourceIfMatch;
     bool m_copySourceIfMatchHasBeenSet;
+
     Aws::Utils::DateTime m_copySourceIfModifiedSince;
     bool m_copySourceIfModifiedSinceHasBeenSet;
+
     Aws::String m_copySourceIfNoneMatch;
     bool m_copySourceIfNoneMatchHasBeenSet;
+
     Aws::Utils::DateTime m_copySourceIfUnmodifiedSince;
     bool m_copySourceIfUnmodifiedSinceHasBeenSet;
+
     Aws::String m_copySourceRange;
     bool m_copySourceRangeHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     int m_partNumber;
     bool m_partNumberHasBeenSet;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
+
     Aws::String m_sSECustomerAlgorithm;
     bool m_sSECustomerAlgorithmHasBeenSet;
+
     Aws::String m_sSECustomerKey;
     bool m_sSECustomerKeyHasBeenSet;
+
     Aws::String m_sSECustomerKeyMD5;
     bool m_sSECustomerKeyMD5HasBeenSet;
+
     Aws::String m_copySourceSSECustomerAlgorithm;
     bool m_copySourceSSECustomerAlgorithmHasBeenSet;
+
     Aws::String m_copySourceSSECustomerKey;
     bool m_copySourceSSECustomerKeyHasBeenSet;
+
     Aws::String m_copySourceSSECustomerKeyMD5;
     bool m_copySourceSSECustomerKeyMD5HasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

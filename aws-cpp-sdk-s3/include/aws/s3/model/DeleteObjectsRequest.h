@@ -40,6 +40,7 @@ namespace Model
 
     inline bool ShouldComputeContentMd5() const override { return true; }
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -61,6 +62,7 @@ namespace Model
     
     inline DeleteObjectsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     
     inline const Delete& GetDelete() const{ return m_delete; }
 
@@ -75,6 +77,7 @@ namespace Model
 
     
     inline DeleteObjectsRequest& WithDelete(Delete&& value) { SetDelete(std::move(value)); return *this;}
+
 
     /**
      * The concatenation of the authentication device's serial number, a space, and the
@@ -118,6 +121,7 @@ namespace Model
      */
     inline DeleteObjectsRequest& WithMFA(const char* value) { SetMFA(value); return *this;}
 
+
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
@@ -134,12 +138,16 @@ namespace Model
     inline DeleteObjectsRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Delete m_delete;
     bool m_deleteHasBeenSet;
+
     Aws::String m_mFA;
     bool m_mFAHasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

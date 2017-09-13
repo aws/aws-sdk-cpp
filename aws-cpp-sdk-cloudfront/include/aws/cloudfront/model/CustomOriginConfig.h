@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The HTTP port the custom origin listens on.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
      */
     inline CustomOriginConfig& WithHTTPPort(int value) { SetHTTPPort(value); return *this;}
 
+
     /**
      * <p>The HTTPS port the custom origin listens on.</p>
      */
@@ -76,6 +78,7 @@ namespace Model
      * <p>The HTTPS port the custom origin listens on.</p>
      */
     inline CustomOriginConfig& WithHTTPSPort(int value) { SetHTTPSPort(value); return *this;}
+
 
     /**
      * <p>The origin protocol policy to apply to your origin.</p>
@@ -101,6 +104,7 @@ namespace Model
      * <p>The origin protocol policy to apply to your origin.</p>
      */
     inline CustomOriginConfig& WithOriginProtocolPolicy(OriginProtocolPolicy&& value) { SetOriginProtocolPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>The SSL/TLS protocols that you want CloudFront to use when communicating with
@@ -132,6 +136,7 @@ namespace Model
      */
     inline CustomOriginConfig& WithOriginSslProtocols(OriginSslProtocols&& value) { SetOriginSslProtocols(std::move(value)); return *this;}
 
+
     /**
      * <p>You can create a custom origin read timeout. All timeout units are in
      * seconds. The default origin read timeout is 30 seconds, but you can configure
@@ -161,6 +166,7 @@ namespace Model
      * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
      */
     inline CustomOriginConfig& WithOriginReadTimeout(int value) { SetOriginReadTimeout(value); return *this;}
+
 
     /**
      * <p>You can create a custom keep-alive timeout. All timeout units are in seconds.
@@ -193,16 +199,22 @@ namespace Model
     inline CustomOriginConfig& WithOriginKeepaliveTimeout(int value) { SetOriginKeepaliveTimeout(value); return *this;}
 
   private:
+
     int m_hTTPPort;
     bool m_hTTPPortHasBeenSet;
+
     int m_hTTPSPort;
     bool m_hTTPSPortHasBeenSet;
+
     OriginProtocolPolicy m_originProtocolPolicy;
     bool m_originProtocolPolicyHasBeenSet;
+
     OriginSslProtocols m_originSslProtocols;
     bool m_originSslProtocolsHasBeenSet;
+
     int m_originReadTimeout;
     bool m_originReadTimeoutHasBeenSet;
+
     int m_originKeepaliveTimeout;
     bool m_originKeepaliveTimeoutHasBeenSet;
   };

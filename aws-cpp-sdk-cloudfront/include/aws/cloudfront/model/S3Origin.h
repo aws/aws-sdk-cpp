@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The DNS name of the Amazon S3 origin. </p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The DNS name of the Amazon S3 origin. </p>
      */
     inline S3Origin& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>The CloudFront origin access identity to associate with the RTMP
@@ -203,8 +205,10 @@ namespace Model
     inline S3Origin& WithOriginAccessIdentity(const char* value) { SetOriginAccessIdentity(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_originAccessIdentity;
     bool m_originAccessIdentityHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     Projection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
@@ -98,6 +99,7 @@ namespace Model
      * table attributes are projected into the index.</p> </li> </ul>
      */
     inline Projection& WithProjectionType(ProjectionType&& value) { SetProjectionType(std::move(value)); return *this;}
+
 
     /**
      * <p>Represents the non-key attribute names which will be projected into the
@@ -172,8 +174,10 @@ namespace Model
     inline Projection& AddNonKeyAttributes(const char* value) { m_nonKeyAttributesHasBeenSet = true; m_nonKeyAttributes.push_back(value); return *this; }
 
   private:
+
     ProjectionType m_projectionType;
     bool m_projectionTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_nonKeyAttributes;
     bool m_nonKeyAttributesHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetInstancesResult();
-    GetInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about your instances.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about your instances.</p>
      */
     inline GetInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token used for advancing to the next page of results from your get
@@ -121,7 +123,9 @@ namespace Model
     inline GetInstancesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Instance> m_instances;
+
     Aws::String m_nextPageToken;
   };
 

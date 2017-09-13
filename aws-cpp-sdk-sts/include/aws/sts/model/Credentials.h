@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The access key ID that identifies the temporary security credentials.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline Credentials& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
+
     /**
      * <p>The secret access key that can be used to sign requests.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The secret access key that can be used to sign requests.</p>
      */
     inline Credentials& WithSecretAccessKey(const char* value) { SetSecretAccessKey(value); return *this;}
+
 
     /**
      * <p>The token that users must pass to the service API to use the temporary
@@ -161,6 +164,7 @@ namespace Model
      */
     inline Credentials& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
 
+
     /**
      * <p>The date on which the current credentials expire.</p>
      */
@@ -187,12 +191,16 @@ namespace Model
     inline Credentials& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
+
     Aws::String m_secretAccessKey;
     bool m_secretAccessKeyHasBeenSet;
+
     Aws::String m_sessionToken;
     bool m_sessionTokenHasBeenSet;
+
     Aws::Utils::DateTime m_expiration;
     bool m_expirationHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     PutTelemetryRecordsResult();
-    PutTelemetryRecordsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutTelemetryRecordsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutTelemetryRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutTelemetryRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

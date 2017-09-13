@@ -33,14 +33,14 @@ DescribeChangeSetResult::DescribeChangeSetResult() :
 {
 }
 
-DescribeChangeSetResult::DescribeChangeSetResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_executionStatus(ExecutionStatus::NOT_SET),
     m_status(ChangeSetStatus::NOT_SET)
 {
   *this = result;
 }
 
-DescribeChangeSetResult& DescribeChangeSetResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
@@ -118,6 +118,11 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const AmazonWebServ
         notificationARNsMember = notificationARNsMember.NextNode("member");
       }
 
+    }
+    XmlNode rollbackConfigurationNode = resultNode.FirstChild("RollbackConfiguration");
+    if(!rollbackConfigurationNode.IsNull())
+    {
+      m_rollbackConfiguration = rollbackConfigurationNode;
     }
     XmlNode capabilitiesNode = resultNode.FirstChild("Capabilities");
     if(!capabilitiesNode.IsNull())

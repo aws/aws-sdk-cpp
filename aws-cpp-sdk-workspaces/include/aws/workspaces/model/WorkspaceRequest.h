@@ -49,6 +49,7 @@ namespace Model
     WorkspaceRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the AWS Directory Service directory to create the WorkSpace
      * in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a
@@ -97,6 +98,7 @@ namespace Model
      * list of the directories that are available.</p>
      */
     inline WorkspaceRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The username that the WorkSpace is assigned to. This username must exist in
@@ -147,6 +149,7 @@ namespace Model
      */
     inline WorkspaceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The identifier of the bundle to create the WorkSpace from. You can use the
      * <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that
@@ -196,6 +199,7 @@ namespace Model
      */
     inline WorkspaceRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
+
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
      */
@@ -231,6 +235,7 @@ namespace Model
      */
     inline WorkspaceRequest& WithVolumeEncryptionKey(const char* value) { SetVolumeEncryptionKey(value); return *this;}
 
+
     /**
      * <p>Specifies whether the data stored on the user volume, or D: drive, is
      * encrypted.</p>
@@ -248,6 +253,7 @@ namespace Model
      * encrypted.</p>
      */
     inline WorkspaceRequest& WithUserVolumeEncryptionEnabled(bool value) { SetUserVolumeEncryptionEnabled(value); return *this;}
+
 
     /**
      * <p>Specifies whether the data stored on the root volume, or C: drive, is
@@ -267,6 +273,7 @@ namespace Model
      */
     inline WorkspaceRequest& WithRootVolumeEncryptionEnabled(bool value) { SetRootVolumeEncryptionEnabled(value); return *this;}
 
+
     
     inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
 
@@ -281,6 +288,7 @@ namespace Model
 
     
     inline WorkspaceRequest& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(std::move(value)); return *this;}
+
 
     /**
      * <p>The tags of the WorkSpace request.</p>
@@ -318,20 +326,28 @@ namespace Model
     inline WorkspaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
     Aws::String m_volumeEncryptionKey;
     bool m_volumeEncryptionKeyHasBeenSet;
+
     bool m_userVolumeEncryptionEnabled;
     bool m_userVolumeEncryptionEnabledHasBeenSet;
+
     bool m_rootVolumeEncryptionEnabled;
     bool m_rootVolumeEncryptionEnabledHasBeenSet;
+
     WorkspaceProperties m_workspaceProperties;
     bool m_workspacePropertiesHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

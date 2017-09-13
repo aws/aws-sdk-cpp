@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The health status.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline ElasticGpuHealth& WithStatus(ElasticGpuStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     ElasticGpuStatus m_status;
     bool m_statusHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     ParameterNameValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the parameter.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of the parameter.</p>
      */
     inline ParameterNameValue& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+
 
     /**
      * <p>The value of the parameter.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline ParameterNameValue& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
 
   private:
+
     Aws::String m_parameterName;
     bool m_parameterNameHasBeenSet;
+
     Aws::String m_parameterValue;
     bool m_parameterValueHasBeenSet;
   };

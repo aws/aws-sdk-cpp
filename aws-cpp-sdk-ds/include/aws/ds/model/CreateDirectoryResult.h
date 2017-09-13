@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateDirectoryResult();
-    CreateDirectoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDirectoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of the directory that was created.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateDirectoryResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
   };
 

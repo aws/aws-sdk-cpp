@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateFunctionDefinitionVersionResult();
-    CreateFunctionDefinitionVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateFunctionDefinitionVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateFunctionDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateFunctionDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the version.
@@ -76,6 +77,7 @@ namespace Model
      */
     inline CreateFunctionDefinitionVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * Timestamp of when the version was created.
      */
@@ -111,6 +113,7 @@ namespace Model
      */
     inline CreateFunctionDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
+
     /**
      * Id of the resource container.
      */
@@ -145,6 +148,7 @@ namespace Model
      * Id of the resource container.
      */
     inline CreateFunctionDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Unique Id of a version.
@@ -182,9 +186,13 @@ namespace Model
     inline CreateFunctionDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_arn;
+
     Aws::String m_creationTimestamp;
+
     Aws::String m_id;
+
     Aws::String m_version;
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteHsmResult();
-    DeleteHsmResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteHsmResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier (ID) of the HSM that was deleted.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteHsmResult& WithHsmId(const char* value) { SetHsmId(value); return *this;}
 
   private:
+
     Aws::String m_hsmId;
   };
 

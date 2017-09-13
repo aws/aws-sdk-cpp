@@ -47,6 +47,7 @@ namespace Model
     EC2InstanceLimit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
@@ -97,6 +98,7 @@ namespace Model
      */
     inline EC2InstanceLimit& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>Number of instances of the specified type that are currently in use by this
      * AWS account.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline EC2InstanceLimit& WithCurrentInstances(int value) { SetCurrentInstances(value); return *this;}
 
+
     /**
      * <p>Number of instances allowed.</p>
      */
@@ -131,10 +134,13 @@ namespace Model
     inline EC2InstanceLimit& WithInstanceLimit(int value) { SetInstanceLimit(value); return *this;}
 
   private:
+
     EC2InstanceType m_eC2InstanceType;
     bool m_eC2InstanceTypeHasBeenSet;
+
     int m_currentInstances;
     bool m_currentInstancesHasBeenSet;
+
     int m_instanceLimit;
     bool m_instanceLimitHasBeenSet;
   };

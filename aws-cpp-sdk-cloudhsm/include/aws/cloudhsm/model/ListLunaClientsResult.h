@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListLunaClientsResult();
-    ListLunaClientsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLunaClientsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListLunaClientsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListLunaClientsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of clients.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The list of clients.</p>
      */
     inline ListLunaClientsResult& AddClientList(const char* value) { m_clientList.push_back(value); return *this; }
+
 
     /**
      * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
@@ -125,7 +127,9 @@ namespace Model
     inline ListLunaClientsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_clientList;
+
     Aws::String m_nextToken;
   };
 

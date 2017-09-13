@@ -30,12 +30,12 @@ GetCSVHeaderResult::GetCSVHeaderResult()
 {
 }
 
-GetCSVHeaderResult::GetCSVHeaderResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCSVHeaderResult::GetCSVHeaderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCSVHeaderResult& GetCSVHeaderResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCSVHeaderResult& GetCSVHeaderResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UserPoolId"))

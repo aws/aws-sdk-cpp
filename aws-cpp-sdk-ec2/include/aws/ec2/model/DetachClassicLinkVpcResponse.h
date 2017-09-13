@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DetachClassicLinkVpcResponse();
-    DetachClassicLinkVpcResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DetachClassicLinkVpcResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DetachClassicLinkVpcResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DetachClassicLinkVpcResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
@@ -64,6 +65,7 @@ namespace Model
      */
     inline DetachClassicLinkVpcResponse& WithReturn(bool value) { SetReturn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -80,7 +82,9 @@ namespace Model
     inline DetachClassicLinkVpcResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     bool m_return;
+
     ResponseMetadata m_responseMetadata;
   };
 

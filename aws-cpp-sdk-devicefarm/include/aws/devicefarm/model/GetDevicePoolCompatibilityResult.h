@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetDevicePoolCompatibilityResult();
-    GetDevicePoolCompatibilityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDevicePoolCompatibilityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDevicePoolCompatibilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDevicePoolCompatibilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about compatible devices.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>Information about compatible devices.</p>
      */
     inline GetDevicePoolCompatibilityResult& AddCompatibleDevices(DevicePoolCompatibilityResult&& value) { m_compatibleDevices.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Information about incompatible devices.</p>
@@ -119,7 +121,9 @@ namespace Model
     inline GetDevicePoolCompatibilityResult& AddIncompatibleDevices(DevicePoolCompatibilityResult&& value) { m_incompatibleDevices.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<DevicePoolCompatibilityResult> m_compatibleDevices;
+
     Aws::Vector<DevicePoolCompatibilityResult> m_incompatibleDevices;
   };
 

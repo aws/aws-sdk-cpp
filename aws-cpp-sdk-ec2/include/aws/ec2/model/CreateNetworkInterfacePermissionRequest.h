@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the network interface.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline CreateNetworkInterfacePermissionRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
 
     /**
      * <p>The AWS account ID.</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline CreateNetworkInterfacePermissionRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
+
     /**
      * <p>The AWS service. Currently not supported.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      */
     inline CreateNetworkInterfacePermissionRequest& WithAwsService(const char* value) { SetAwsService(value); return *this;}
 
+
     /**
      * <p>The type of permission to grant.</p>
      */
@@ -172,6 +176,7 @@ namespace Model
      * <p>The type of permission to grant.</p>
      */
     inline CreateNetworkInterfacePermissionRequest& WithPermission(InterfacePermissionType&& value) { SetPermission(std::move(value)); return *this;}
+
 
     /**
      * <p>Checks whether you have the required permissions for the action, without
@@ -198,14 +203,19 @@ namespace Model
     inline CreateNetworkInterfacePermissionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet;
+
     Aws::String m_awsService;
     bool m_awsServiceHasBeenSet;
+
     InterfacePermissionType m_permission;
     bool m_permissionHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

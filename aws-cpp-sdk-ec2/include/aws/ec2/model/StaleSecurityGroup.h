@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The description of the security group.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The description of the security group.</p>
      */
     inline StaleSecurityGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The ID of the security group.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline StaleSecurityGroup& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
+
     /**
      * <p>The name of the security group.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The name of the security group.</p>
      */
     inline StaleSecurityGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>Information about the stale inbound rules in the security group.</p>
@@ -191,6 +195,7 @@ namespace Model
      */
     inline StaleSecurityGroup& AddStaleIpPermissions(StaleIpPermission&& value) { m_staleIpPermissionsHasBeenSet = true; m_staleIpPermissions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Information about the stale outbound rules in the security group.</p>
      */
@@ -225,6 +230,7 @@ namespace Model
      * <p>Information about the stale outbound rules in the security group.</p>
      */
     inline StaleSecurityGroup& AddStaleIpPermissionsEgress(StaleIpPermission&& value) { m_staleIpPermissionsEgressHasBeenSet = true; m_staleIpPermissionsEgress.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the VPC for the security group.</p>
@@ -262,16 +268,22 @@ namespace Model
     inline StaleSecurityGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::Vector<StaleIpPermission> m_staleIpPermissions;
     bool m_staleIpPermissionsHasBeenSet;
+
     Aws::Vector<StaleIpPermission> m_staleIpPermissionsEgress;
     bool m_staleIpPermissionsEgressHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

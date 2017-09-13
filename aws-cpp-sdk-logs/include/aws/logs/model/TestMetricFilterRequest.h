@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
 
@@ -57,6 +58,7 @@ namespace Model
 
     
     inline TestMetricFilterRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+
 
     /**
      * <p>The log event messages to test.</p>
@@ -99,8 +101,10 @@ namespace Model
     inline TestMetricFilterRequest& AddLogEventMessages(const char* value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.push_back(value); return *this; }
 
   private:
+
     Aws::String m_filterPattern;
     bool m_filterPatternHasBeenSet;
+
     Aws::Vector<Aws::String> m_logEventMessages;
     bool m_logEventMessagesHasBeenSet;
   };

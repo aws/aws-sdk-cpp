@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/codebuild/model/BatchDeleteBuildsResult.h>
 #include <aws/codebuild/model/BatchGetBuildsResult.h>
 #include <aws/codebuild/model/BatchGetProjectsResult.h>
 #include <aws/codebuild/model/CreateProjectResult.h>
@@ -77,6 +78,7 @@ namespace CodeBuild
 
 namespace Model
 {
+        class BatchDeleteBuildsRequest;
         class BatchGetBuildsRequest;
         class BatchGetProjectsRequest;
         class CreateProjectRequest;
@@ -89,6 +91,7 @@ namespace Model
         class StopBuildRequest;
         class UpdateProjectRequest;
 
+        typedef Aws::Utils::Outcome<BatchDeleteBuildsResult, Aws::Client::AWSError<CodeBuildErrors>> BatchDeleteBuildsOutcome;
         typedef Aws::Utils::Outcome<BatchGetBuildsResult, Aws::Client::AWSError<CodeBuildErrors>> BatchGetBuildsOutcome;
         typedef Aws::Utils::Outcome<BatchGetProjectsResult, Aws::Client::AWSError<CodeBuildErrors>> BatchGetProjectsOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<CodeBuildErrors>> CreateProjectOutcome;
@@ -101,6 +104,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StopBuildResult, Aws::Client::AWSError<CodeBuildErrors>> StopBuildOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<CodeBuildErrors>> UpdateProjectOutcome;
 
+        typedef std::future<BatchDeleteBuildsOutcome> BatchDeleteBuildsOutcomeCallable;
         typedef std::future<BatchGetBuildsOutcome> BatchGetBuildsOutcomeCallable;
         typedef std::future<BatchGetProjectsOutcome> BatchGetProjectsOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
@@ -116,6 +120,7 @@ namespace Model
 
   class CodeBuildClient;
 
+    typedef std::function<void(const CodeBuildClient*, const Model::BatchDeleteBuildsRequest&, const Model::BatchDeleteBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetBuildsRequest&, const Model::BatchGetBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetProjectsRequest&, const Model::BatchGetProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetProjectsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
@@ -139,7 +144,8 @@ namespace Model
    * scales automatically to meet peak build requests, and you pay only for the build
    * time you consume. For more information about AWS CodeBuild, see the <i>AWS
    * CodeBuild User Guide</i>.</p> <p>AWS CodeBuild supports these operations:</p>
-   * <ul> <li> <p> <code>BatchGetProjects</code>: Gets information about one or more
+   * <ul> <li> <p> <code>BatchDeleteBuilds</code>: Deletes one or more builds.</p>
+   * </li> <li> <p> <code>BatchGetProjects</code>: Gets information about one or more
    * build projects. A <i>build project</i> defines how AWS CodeBuild will run a
    * build. This includes information such as where to get the source code to build,
    * the build environment to use, the build commands to run, and where to store the
@@ -171,22 +177,48 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeBuildClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CodeBuildClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeBuildClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CodeBuildClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CodeBuildClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CodeBuildClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CodeBuildClient();
+
+
+        /**
+         * <p>Deletes one or more builds.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteBuildsOutcome BatchDeleteBuilds(const Model::BatchDeleteBuildsRequest& request) const;
+
+        /**
+         * <p>Deletes one or more builds.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDeleteBuildsOutcomeCallable BatchDeleteBuildsCallable(const Model::BatchDeleteBuildsRequest& request) const;
+
+        /**
+         * <p>Deletes one or more builds.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDeleteBuildsAsync(const Model::BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about builds.</p><p><h3>See Also:</h3>   <a
@@ -477,9 +509,10 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void BatchDeleteBuildsAsyncHelper(const Model::BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetBuildsAsyncHelper(const Model::BatchGetBuildsRequest& request, const BatchGetBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetProjectsAsyncHelper(const Model::BatchGetProjectsRequest& request, const BatchGetProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

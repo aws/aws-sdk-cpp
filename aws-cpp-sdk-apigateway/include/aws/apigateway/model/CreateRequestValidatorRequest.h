@@ -38,6 +38,7 @@ namespace Model
     CreateRequestValidatorRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline CreateRequestValidatorRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline CreateRequestValidatorRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A Boolean flag to indicate whether to validate request body according to the
      * configured model schema for the method (<code>true</code>) or not
@@ -129,6 +132,7 @@ namespace Model
      */
     inline CreateRequestValidatorRequest& WithValidateRequestBody(bool value) { SetValidateRequestBody(value); return *this;}
 
+
     /**
      * <p>A Boolean flag to indicate whether to validate request parameters,
      * <code>true</code>, or not <code>false</code>.</p>
@@ -148,12 +152,16 @@ namespace Model
     inline CreateRequestValidatorRequest& WithValidateRequestParameters(bool value) { SetValidateRequestParameters(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     bool m_validateRequestBody;
     bool m_validateRequestBodyHasBeenSet;
+
     bool m_validateRequestParameters;
     bool m_validateRequestParametersHasBeenSet;
   };

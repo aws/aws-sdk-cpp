@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     UpdateBatchPredictionResult();
-    UpdateBatchPredictionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateBatchPredictionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateBatchPredictionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateBatchPredictionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID assigned to the <code>BatchPrediction</code> during creation. This
@@ -98,6 +99,7 @@ namespace Model
     inline UpdateBatchPredictionResult& WithBatchPredictionId(const char* value) { SetBatchPredictionId(value); return *this;}
 
   private:
+
     Aws::String m_batchPredictionId;
   };
 

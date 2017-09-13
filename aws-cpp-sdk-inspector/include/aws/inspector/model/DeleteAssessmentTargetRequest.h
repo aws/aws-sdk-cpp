@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN that specifies the assessment target that you want to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteAssessmentTargetRequest& WithAssessmentTargetArn(const char* value) { SetAssessmentTargetArn(value); return *this;}
 
   private:
+
     Aws::String m_assessmentTargetArn;
     bool m_assessmentTargetArnHasBeenSet;
   };

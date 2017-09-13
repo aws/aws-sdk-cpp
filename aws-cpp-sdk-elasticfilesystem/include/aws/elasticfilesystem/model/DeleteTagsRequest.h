@@ -38,6 +38,7 @@ namespace Model
     DeleteTagsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>ID of the file system whose tags you want to delete (String).</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>ID of the file system whose tags you want to delete (String).</p>
      */
     inline DeleteTagsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+
 
     /**
      * <p>List of tag keys to delete.</p>
@@ -114,8 +116,10 @@ namespace Model
     inline DeleteTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

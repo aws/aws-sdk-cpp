@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -58,6 +59,7 @@ namespace Model
     
     inline PutBucketVersioningRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
@@ -78,6 +80,7 @@ namespace Model
 
     
     inline PutBucketVersioningRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
+
 
     /**
      * The concatenation of the authentication device's serial number, a space, and the
@@ -121,6 +124,7 @@ namespace Model
      */
     inline PutBucketVersioningRequest& WithMFA(const char* value) { SetMFA(value); return *this;}
 
+
     
     inline const VersioningConfiguration& GetVersioningConfiguration() const{ return m_versioningConfiguration; }
 
@@ -137,12 +141,16 @@ namespace Model
     inline PutBucketVersioningRequest& WithVersioningConfiguration(VersioningConfiguration&& value) { SetVersioningConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
+
     Aws::String m_mFA;
     bool m_mFAHasBeenSet;
+
     VersioningConfiguration m_versioningConfiguration;
     bool m_versioningConfigurationHasBeenSet;
   };

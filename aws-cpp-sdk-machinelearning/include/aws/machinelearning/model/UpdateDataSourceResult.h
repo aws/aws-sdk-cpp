@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     UpdateDataSourceResult();
-    UpdateDataSourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDataSourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID assigned to the <code>DataSource</code> during creation. This value
@@ -98,6 +99,7 @@ namespace Model
     inline UpdateDataSourceResult& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
   };
 

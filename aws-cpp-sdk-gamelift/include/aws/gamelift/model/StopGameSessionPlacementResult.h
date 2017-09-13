@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     StopGameSessionPlacementResult();
-    StopGameSessionPlacementResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopGameSessionPlacementResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopGameSessionPlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopGameSessionPlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that describes the canceled game session placement, with
@@ -78,6 +79,7 @@ namespace Model
     inline StopGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(std::move(value)); return *this;}
 
   private:
+
     GameSessionPlacement m_gameSessionPlacement;
   };
 

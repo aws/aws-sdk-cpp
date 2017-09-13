@@ -50,6 +50,7 @@ namespace Model
     NFSFileShareDefaults& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Unix file mode in the form "nnnn". For example, "0666" represents the
      * default file mode inside the file share. The default value is 0666. </p>
@@ -91,6 +92,7 @@ namespace Model
      * default file mode inside the file share. The default value is 0666. </p>
      */
     inline NFSFileShareDefaults& WithFileMode(const char* value) { SetFileMode(value); return *this;}
+
 
     /**
      * <p>The Unix directory mode in the form "nnnn". For example, "0666" represents
@@ -141,6 +143,7 @@ namespace Model
      */
     inline NFSFileShareDefaults& WithDirectoryMode(const char* value) { SetDirectoryMode(value); return *this;}
 
+
     /**
      * <p>The default group ID for the file share (unless the files have another group
      * ID specified). The default value is nfsnobody. </p>
@@ -158,6 +161,7 @@ namespace Model
      * ID specified). The default value is nfsnobody. </p>
      */
     inline NFSFileShareDefaults& WithGroupId(long long value) { SetGroupId(value); return *this;}
+
 
     /**
      * <p>The default owner ID for files in the file share (unless the files have
@@ -178,12 +182,16 @@ namespace Model
     inline NFSFileShareDefaults& WithOwnerId(long long value) { SetOwnerId(value); return *this;}
 
   private:
+
     Aws::String m_fileMode;
     bool m_fileModeHasBeenSet;
+
     Aws::String m_directoryMode;
     bool m_directoryModeHasBeenSet;
+
     long long m_groupId;
     bool m_groupIdHasBeenSet;
+
     long long m_ownerId;
     bool m_ownerIdHasBeenSet;
   };

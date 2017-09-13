@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name (friendly name, not ARN) of the IAM user to attach the policy
      * to.</p> <p>This parameter allows (per its <a
@@ -100,6 +101,7 @@ namespace Model
      * can also include any of the following characters: =,.@-</p>
      */
     inline AttachUserPolicyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
@@ -165,8 +167,10 @@ namespace Model
     inline AttachUserPolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet;
   };

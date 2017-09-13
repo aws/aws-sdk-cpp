@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ExitStandbyResult();
-    ExitStandbyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ExitStandbyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ExitStandbyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ExitStandbyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The activities related to moving instances out of <code>Standby</code>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ExitStandbyResult& AddActivities(Activity&& value) { m_activities.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -106,7 +108,9 @@ namespace Model
     inline ExitStandbyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Activity> m_activities;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The existing name of the repository.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The existing name of the repository.</p>
      */
     inline UpdateRepositoryNameRequest& WithOldName(const char* value) { SetOldName(value); return *this;}
+
 
     /**
      * <p>The new name for the repository.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline UpdateRepositoryNameRequest& WithNewName(const char* value) { SetNewName(value); return *this;}
 
   private:
+
     Aws::String m_oldName;
     bool m_oldNameHasBeenSet;
+
     Aws::String m_newName;
     bool m_newNameHasBeenSet;
   };

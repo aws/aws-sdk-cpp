@@ -43,6 +43,7 @@ namespace Model
     WriteEventStream& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
      * stream to which you want to publish events.
@@ -113,6 +114,7 @@ namespace Model
      */
     inline WriteEventStream& WithDestinationStreamArn(const char* value) { SetDestinationStreamArn(value); return *this;}
 
+
     /**
      * The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish
      * to the stream.
@@ -154,6 +156,7 @@ namespace Model
      * to the stream.
      */
     inline WriteEventStream& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
 
     /**
      * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
@@ -198,10 +201,13 @@ namespace Model
     inline WriteEventStream& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_destinationStreamArn;
     bool m_destinationStreamArnHasBeenSet;
+
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

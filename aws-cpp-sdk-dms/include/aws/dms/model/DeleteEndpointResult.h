@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DeleteEndpointResult();
-    DeleteEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The endpoint that was deleted.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteEndpointResult& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
 
   private:
+
     Endpoint m_endpoint;
   };
 

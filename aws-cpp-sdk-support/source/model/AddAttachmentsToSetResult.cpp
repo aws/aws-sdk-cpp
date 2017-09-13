@@ -30,12 +30,12 @@ AddAttachmentsToSetResult::AddAttachmentsToSetResult()
 {
 }
 
-AddAttachmentsToSetResult::AddAttachmentsToSetResult(const AmazonWebServiceResult<JsonValue>& result)
+AddAttachmentsToSetResult::AddAttachmentsToSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddAttachmentsToSetResult& AddAttachmentsToSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddAttachmentsToSetResult& AddAttachmentsToSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("attachmentSetId"))

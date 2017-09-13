@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetCurrentUserRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
   };

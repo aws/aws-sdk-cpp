@@ -30,12 +30,12 @@ CreateEvaluationResult::CreateEvaluationResult()
 {
 }
 
-CreateEvaluationResult::CreateEvaluationResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateEvaluationResult::CreateEvaluationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateEvaluationResult& CreateEvaluationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateEvaluationResult& CreateEvaluationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EvaluationId"))

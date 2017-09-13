@@ -31,12 +31,12 @@ DeleteMessageBatchResult::DeleteMessageBatchResult()
 {
 }
 
-DeleteMessageBatchResult::DeleteMessageBatchResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteMessageBatchResult::DeleteMessageBatchResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteMessageBatchResult& DeleteMessageBatchResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteMessageBatchResult& DeleteMessageBatchResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

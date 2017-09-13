@@ -31,12 +31,12 @@ ListSubscriptionsByTopicResult::ListSubscriptionsByTopicResult()
 {
 }
 
-ListSubscriptionsByTopicResult::ListSubscriptionsByTopicResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListSubscriptionsByTopicResult::ListSubscriptionsByTopicResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListSubscriptionsByTopicResult& ListSubscriptionsByTopicResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListSubscriptionsByTopicResult& ListSubscriptionsByTopicResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

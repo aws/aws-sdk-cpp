@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>String that contains the ARN of the ACM Certificate for which you want to
      * list the tags. This has the following form:</p> <p>
@@ -107,6 +108,7 @@ namespace Model
     inline ListTagsForCertificateRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
   };

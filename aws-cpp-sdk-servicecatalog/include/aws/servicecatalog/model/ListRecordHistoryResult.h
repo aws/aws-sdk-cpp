@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListRecordHistoryResult();
-    ListRecordHistoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRecordHistoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRecordHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRecordHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of record detail objects, listed in reverse chronological order.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of record detail objects, listed in reverse chronological order.</p>
      */
     inline ListRecordHistoryResult& AddRecordDetails(RecordDetail&& value) { m_recordDetails.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -121,7 +123,9 @@ namespace Model
     inline ListRecordHistoryResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<RecordDetail> m_recordDetails;
+
     Aws::String m_nextPageToken;
   };
 

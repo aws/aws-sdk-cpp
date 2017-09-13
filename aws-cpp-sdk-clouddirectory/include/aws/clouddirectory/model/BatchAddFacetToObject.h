@@ -49,6 +49,7 @@ namespace Model
     BatchAddFacetToObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Represents the facet being added to the object.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>Represents the facet being added to the object.</p>
      */
     inline BatchAddFacetToObject& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
+
 
     /**
      * <p>The attributes to set on the object.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline BatchAddFacetToObject& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A reference to the object being mutated.</p>
      */
@@ -135,10 +138,13 @@ namespace Model
     inline BatchAddFacetToObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
+
     SchemaFacet m_schemaFacet;
     bool m_schemaFacetHasBeenSet;
+
     Aws::Vector<AttributeKeyAndValue> m_objectAttributeList;
     bool m_objectAttributeListHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
   };

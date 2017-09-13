@@ -49,6 +49,7 @@ namespace Model
     Record& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier of the record within its shard.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline Record& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
+
     /**
      * <p>The approximate time that the record was inserted into the stream.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      * <p>The approximate time that the record was inserted into the stream.</p>
      */
     inline Record& WithApproximateArrivalTimestamp(Aws::Utils::DateTime&& value) { SetApproximateArrivalTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to the
@@ -154,6 +157,7 @@ namespace Model
      */
     inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
+
     /**
      * <p>Identifies which shard in the stream the data record is assigned to.</p>
      */
@@ -188,6 +192,7 @@ namespace Model
      * <p>Identifies which shard in the stream the data record is assigned to.</p>
      */
     inline Record& WithPartitionKey(const char* value) { SetPartitionKey(value); return *this;}
+
 
     /**
      * <p>The encryption type used on the record. This parameter can be one of the
@@ -235,14 +240,19 @@ namespace Model
     inline Record& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet;
+
     Aws::Utils::DateTime m_approximateArrivalTimestamp;
     bool m_approximateArrivalTimestampHasBeenSet;
+
     Aws::Utils::ByteBuffer m_data;
     bool m_dataHasBeenSet;
+
     Aws::String m_partitionKey;
     bool m_partitionKeyHasBeenSet;
+
     EncryptionType m_encryptionType;
     bool m_encryptionTypeHasBeenSet;
   };

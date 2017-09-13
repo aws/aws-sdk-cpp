@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetNamedQueryResult();
-    GetNamedQueryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetNamedQueryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetNamedQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetNamedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the query.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetNamedQueryResult& WithNamedQuery(NamedQuery&& value) { SetNamedQuery(std::move(value)); return *this;}
 
   private:
+
     NamedQuery m_namedQuery;
   };
 

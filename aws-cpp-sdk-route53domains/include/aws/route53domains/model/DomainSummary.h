@@ -46,6 +46,7 @@ namespace Model
     DomainSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the domain that the summary information applies to.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline DomainSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
      */
@@ -95,6 +97,7 @@ namespace Model
      * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
      */
     inline DomainSummary& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
+
 
     /**
      * <p>Indicates whether a domain is locked from unauthorized transfer to another
@@ -113,6 +116,7 @@ namespace Model
      * party.</p>
      */
     inline DomainSummary& WithTransferLock(bool value) { SetTransferLock(value); return *this;}
+
 
     /**
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
@@ -140,12 +144,16 @@ namespace Model
     inline DomainSummary& WithExpiry(Aws::Utils::DateTime&& value) { SetExpiry(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     bool m_autoRenew;
     bool m_autoRenewHasBeenSet;
+
     bool m_transferLock;
     bool m_transferLockHasBeenSet;
+
     Aws::Utils::DateTime m_expiry;
     bool m_expiryHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdateExpirationForHITResult::UpdateExpirationForHITResult()
 {
 }
 
-UpdateExpirationForHITResult::UpdateExpirationForHITResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateExpirationForHITResult::UpdateExpirationForHITResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateExpirationForHITResult& UpdateExpirationForHITResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateExpirationForHITResult& UpdateExpirationForHITResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

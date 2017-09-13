@@ -46,6 +46,7 @@ namespace Model
     Record& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The key for the record.
      */
@@ -80,6 +81,7 @@ namespace Model
      * The key for the record.
      */
     inline Record& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * The value for the record.
@@ -116,6 +118,7 @@ namespace Model
      */
     inline Record& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * The server sync count for this record.
      */
@@ -130,6 +133,7 @@ namespace Model
      * The server sync count for this record.
      */
     inline Record& WithSyncCount(long long value) { SetSyncCount(value); return *this;}
+
 
     /**
      * The date on which the record was last modified.
@@ -155,6 +159,7 @@ namespace Model
      * The date on which the record was last modified.
      */
     inline Record& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+
 
     /**
      * The user/device that made the last change to this record.
@@ -191,6 +196,7 @@ namespace Model
      */
     inline Record& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
+
     /**
      * The last modified date of the client device.
      */
@@ -217,16 +223,22 @@ namespace Model
     inline Record& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     long long m_syncCount;
     bool m_syncCountHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::String m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet;
+
     Aws::Utils::DateTime m_deviceLastModifiedDate;
     bool m_deviceLastModifiedDateHasBeenSet;
   };

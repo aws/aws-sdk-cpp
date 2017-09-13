@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The account alias to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
@@ -95,6 +96,7 @@ namespace Model
     inline CreateAccountAliasRequest& WithAccountAlias(const char* value) { SetAccountAlias(value); return *this;}
 
   private:
+
     Aws::String m_accountAlias;
     bool m_accountAliasHasBeenSet;
   };

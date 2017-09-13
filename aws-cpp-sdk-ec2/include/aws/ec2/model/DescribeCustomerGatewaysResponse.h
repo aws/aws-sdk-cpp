@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeCustomerGatewaysResponse();
-    DescribeCustomerGatewaysResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCustomerGatewaysResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeCustomerGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeCustomerGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more customer gateways.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeCustomerGatewaysResponse& AddCustomerGateways(CustomerGateway&& value) { m_customerGateways.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeCustomerGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<CustomerGateway> m_customerGateways;
+
     ResponseMetadata m_responseMetadata;
   };
 

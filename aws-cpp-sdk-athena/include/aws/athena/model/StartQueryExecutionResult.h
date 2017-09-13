@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StartQueryExecutionResult();
-    StartQueryExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartQueryExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartQueryExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartQueryExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique ID of the query that ran as a result of this request.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline StartQueryExecutionResult& WithQueryExecutionId(const char* value) { SetQueryExecutionId(value); return *this;}
 
   private:
+
     Aws::String m_queryExecutionId;
   };
 

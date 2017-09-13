@@ -30,12 +30,12 @@ DownloadDefaultKeyPairResult::DownloadDefaultKeyPairResult()
 {
 }
 
-DownloadDefaultKeyPairResult::DownloadDefaultKeyPairResult(const AmazonWebServiceResult<JsonValue>& result)
+DownloadDefaultKeyPairResult::DownloadDefaultKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DownloadDefaultKeyPairResult& DownloadDefaultKeyPairResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DownloadDefaultKeyPairResult& DownloadDefaultKeyPairResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("publicKeyBase64"))

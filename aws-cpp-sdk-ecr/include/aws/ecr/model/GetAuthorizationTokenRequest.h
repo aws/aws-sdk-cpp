@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of AWS account IDs that are associated with the registries for which
      * to get authorization tokens. If you do not specify a registry, the default
@@ -94,6 +95,7 @@ namespace Model
     inline GetAuthorizationTokenRequest& AddRegistryIds(const char* value) { m_registryIdsHasBeenSet = true; m_registryIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_registryIds;
     bool m_registryIdsHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     Protection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) of the protection.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The unique identifier (ID) of the protection.</p>
      */
     inline Protection& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The friendly name of the protection. For example, <code>My CloudFront
@@ -123,6 +125,7 @@ namespace Model
      */
     inline Protection& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>
      */
@@ -159,10 +162,13 @@ namespace Model
     inline Protection& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
   };

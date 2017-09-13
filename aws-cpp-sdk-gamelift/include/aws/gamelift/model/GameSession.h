@@ -63,54 +63,56 @@ namespace Model
     GameSession& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline GameSession& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline GameSession& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline GameSession& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -154,40 +156,42 @@ namespace Model
      */
     inline GameSession& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline GameSession& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline GameSession& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline GameSession& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -218,6 +222,7 @@ namespace Model
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline GameSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
@@ -254,6 +259,7 @@ namespace Model
      */
     inline GameSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Number of players currently in the game session.</p>
      */
@@ -268,6 +274,7 @@ namespace Model
      * <p>Number of players currently in the game session.</p>
      */
     inline GameSession& WithCurrentPlayerSessionCount(int value) { SetCurrentPlayerSessionCount(value); return *this;}
+
 
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
@@ -286,6 +293,7 @@ namespace Model
      * session.</p>
      */
     inline GameSession& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
+
 
     /**
      * <p>Current status of the game session. A game session must have an
@@ -316,6 +324,7 @@ namespace Model
      * <code>ACTIVE</code> status to have player sessions.</p>
      */
     inline GameSession& WithStatus(GameSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Set of developer-defined properties for a game session, formatted as a set of
@@ -387,6 +396,7 @@ namespace Model
      */
     inline GameSession& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number.</p>
@@ -429,6 +439,7 @@ namespace Model
      */
     inline GameSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
+
     /**
      * <p>Port number for the game session. To connect to a Amazon GameLift game
      * server, an app needs both the IP address and port number.</p>
@@ -446,6 +457,7 @@ namespace Model
      * server, an app needs both the IP address and port number.</p>
      */
     inline GameSession& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>Indicates whether or not the game session is accepting new players.</p>
@@ -471,6 +483,7 @@ namespace Model
      * <p>Indicates whether or not the game session is accepting new players.</p>
      */
     inline GameSession& WithPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { SetPlayerSessionCreationPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>Unique identifier for a player. This ID is used to enforce a resource
@@ -520,6 +533,7 @@ namespace Model
      * player can create.</p>
      */
     inline GameSession& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
+
 
     /**
      * <p>Set of developer-defined game session properties, formatted as a single
@@ -585,32 +599,46 @@ namespace Model
     inline GameSession& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
   private:
+
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_terminationTime;
     bool m_terminationTimeHasBeenSet;
+
     int m_currentPlayerSessionCount;
     bool m_currentPlayerSessionCountHasBeenSet;
+
     int m_maximumPlayerSessionCount;
     bool m_maximumPlayerSessionCountHasBeenSet;
+
     GameSessionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Vector<GameProperty> m_gameProperties;
     bool m_gamePropertiesHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     PlayerSessionCreationPolicy m_playerSessionCreationPolicy;
     bool m_playerSessionCreationPolicyHasBeenSet;
+
     Aws::String m_creatorId;
     bool m_creatorIdHasBeenSet;
+
     Aws::String m_gameSessionData;
     bool m_gameSessionDataHasBeenSet;
   };

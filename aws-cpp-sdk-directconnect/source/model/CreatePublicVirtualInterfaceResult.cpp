@@ -34,7 +34,7 @@ CreatePublicVirtualInterfaceResult::CreatePublicVirtualInterfaceResult() :
 {
 }
 
-CreatePublicVirtualInterfaceResult::CreatePublicVirtualInterfaceResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreatePublicVirtualInterfaceResult::CreatePublicVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_vlan(0),
     m_asn(0),
     m_addressFamily(AddressFamily::NOT_SET),
@@ -43,7 +43,7 @@ CreatePublicVirtualInterfaceResult::CreatePublicVirtualInterfaceResult(const Ama
   *this = result;
 }
 
-CreatePublicVirtualInterfaceResult& CreatePublicVirtualInterfaceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreatePublicVirtualInterfaceResult& CreatePublicVirtualInterfaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ownerAccount"))

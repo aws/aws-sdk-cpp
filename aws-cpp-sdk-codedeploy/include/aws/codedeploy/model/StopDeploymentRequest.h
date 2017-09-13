@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique ID of a deployment.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline StopDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
+
     /**
      * <p>Indicates, when a deployment is stopped, whether instances that have been
      * updated should be rolled back to the previous version of the application
@@ -97,8 +99,10 @@ namespace Model
     inline StopDeploymentRequest& WithAutoRollbackEnabled(bool value) { SetAutoRollbackEnabled(value); return *this;}
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     bool m_autoRollbackEnabled;
     bool m_autoRollbackEnabledHasBeenSet;
   };

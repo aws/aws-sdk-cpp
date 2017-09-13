@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     UntagResourceResult();
-    UntagResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The tag keys that have been removed from the cluster.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline UntagResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_tags;
   };
 

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetExpressionName() const{ return m_expressionName; }
 
@@ -70,6 +71,7 @@ namespace Model
 
     
     inline Expression& WithExpressionName(const char* value) { SetExpressionName(value); return *this;}
+
 
     
     inline const Aws::String& GetExpressionValue() const{ return m_expressionValue; }
@@ -93,8 +95,10 @@ namespace Model
     inline Expression& WithExpressionValue(const char* value) { SetExpressionValue(value); return *this;}
 
   private:
+
     Aws::String m_expressionName;
     bool m_expressionNameHasBeenSet;
+
     Aws::String m_expressionValue;
     bool m_expressionValueHasBeenSet;
   };

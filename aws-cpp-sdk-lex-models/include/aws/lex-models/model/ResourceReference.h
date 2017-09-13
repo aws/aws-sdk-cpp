@@ -47,6 +47,7 @@ namespace Model
     ResourceReference& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the resource that is using the resource that you are trying to
      * delete.</p>
@@ -88,6 +89,7 @@ namespace Model
      * delete.</p>
      */
     inline ResourceReference& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The version of the resource that is using the resource that you are trying to
@@ -132,8 +134,10 @@ namespace Model
     inline ResourceReference& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

@@ -31,12 +31,12 @@ DescribeDBSecurityGroupsResult::DescribeDBSecurityGroupsResult()
 {
 }
 
-DescribeDBSecurityGroupsResult::DescribeDBSecurityGroupsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBSecurityGroupsResult::DescribeDBSecurityGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeDBSecurityGroupsResult& DescribeDBSecurityGroupsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBSecurityGroupsResult& DescribeDBSecurityGroupsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

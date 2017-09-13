@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateCertificateFromCsrResult();
-    CreateCertificateFromCsrResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCertificateFromCsrResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCertificateFromCsrResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCertificateFromCsrResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a
@@ -89,6 +90,7 @@ namespace Model
      */
     inline CreateCertificateFromCsrResult& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
     /**
      * <p>The ID of the certificate. Certificate management operations only take a
      * certificateId.</p>
@@ -131,6 +133,7 @@ namespace Model
      */
     inline CreateCertificateFromCsrResult& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p>The certificate data, in PEM format.</p>
      */
@@ -167,8 +170,11 @@ namespace Model
     inline CreateCertificateFromCsrResult& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
+
     Aws::String m_certificateId;
+
     Aws::String m_certificatePem;
   };
 

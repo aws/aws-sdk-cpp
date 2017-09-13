@@ -31,12 +31,12 @@ DescribeReceiptRuleResult::DescribeReceiptRuleResult()
 {
 }
 
-DescribeReceiptRuleResult::DescribeReceiptRuleResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeReceiptRuleResult::DescribeReceiptRuleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeReceiptRuleResult& DescribeReceiptRuleResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeReceiptRuleResult& DescribeReceiptRuleResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

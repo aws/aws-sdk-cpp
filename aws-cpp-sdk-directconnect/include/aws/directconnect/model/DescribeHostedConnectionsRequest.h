@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the interconnect or LAG on which the hosted connections are
      * provisioned.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
@@ -90,6 +91,7 @@ namespace Model
     inline DescribeHostedConnectionsRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
   private:
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
   };

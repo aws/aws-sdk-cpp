@@ -47,6 +47,7 @@ namespace Model
     IpRouteInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifier (ID) of the directory associated with the IP addresses.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>Identifier (ID) of the directory associated with the IP addresses.</p>
      */
     inline IpRouteInfo& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>IP address block in the <a>IpRoute</a>.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline IpRouteInfo& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
 
+
     /**
      * <p>The status of the IP address block.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      */
     inline IpRouteInfo& WithIpRouteStatusMsg(IpRouteStatusMsg&& value) { SetIpRouteStatusMsg(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time the address block was added to the directory.</p>
      */
@@ -166,6 +170,7 @@ namespace Model
      * <p>The date and time the address block was added to the directory.</p>
      */
     inline IpRouteInfo& WithAddedDateTime(Aws::Utils::DateTime&& value) { SetAddedDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for the IpRouteStatusMsg.</p>
@@ -201,6 +206,7 @@ namespace Model
      * <p>The reason for the IpRouteStatusMsg.</p>
      */
     inline IpRouteInfo& WithIpRouteStatusReason(const char* value) { SetIpRouteStatusReason(value); return *this;}
+
 
     /**
      * <p>Description of the <a>IpRouteInfo</a>.</p>
@@ -238,16 +244,22 @@ namespace Model
     inline IpRouteInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_cidrIp;
     bool m_cidrIpHasBeenSet;
+
     IpRouteStatusMsg m_ipRouteStatusMsg;
     bool m_ipRouteStatusMsgHasBeenSet;
+
     Aws::Utils::DateTime m_addedDateTime;
     bool m_addedDateTimeHasBeenSet;
+
     Aws::String m_ipRouteStatusReason;
     bool m_ipRouteStatusReasonHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

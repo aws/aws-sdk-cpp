@@ -30,12 +30,12 @@ DisassociateConnectorResult::DisassociateConnectorResult()
 {
 }
 
-DisassociateConnectorResult::DisassociateConnectorResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateConnectorResult::DisassociateConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateConnectorResult& DisassociateConnectorResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateConnectorResult& DisassociateConnectorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

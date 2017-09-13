@@ -30,12 +30,12 @@ StopRemoteAccessSessionResult::StopRemoteAccessSessionResult()
 {
 }
 
-StopRemoteAccessSessionResult::StopRemoteAccessSessionResult(const AmazonWebServiceResult<JsonValue>& result)
+StopRemoteAccessSessionResult::StopRemoteAccessSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopRemoteAccessSessionResult& StopRemoteAccessSessionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopRemoteAccessSessionResult& StopRemoteAccessSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("remoteAccessSession"))

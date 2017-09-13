@@ -59,7 +59,7 @@ enum class OpsWorksErrors
 };
 namespace OpsWorksErrorMapper
 {
-  AWS_OPSWORKS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_OPSWORKS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace OpsWorks

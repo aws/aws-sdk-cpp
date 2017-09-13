@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline CreateEvaluationRequest& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
 
+
     /**
      * <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
      */
     inline CreateEvaluationRequest& WithEvaluationName(const char* value) { SetEvaluationName(value); return *this;}
+
 
     /**
      * <p>The ID of the <code>MLModel</code> to evaluate.</p> <p>The schema used in
@@ -154,6 +157,7 @@ namespace Model
      * <code>DataSource</code> used in the <code>Evaluation</code>.</p>
      */
     inline CreateEvaluationRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+
 
     /**
      * <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the
@@ -205,12 +209,16 @@ namespace Model
     inline CreateEvaluationRequest& WithEvaluationDataSourceId(const char* value) { SetEvaluationDataSourceId(value); return *this;}
 
   private:
+
     Aws::String m_evaluationId;
     bool m_evaluationIdHasBeenSet;
+
     Aws::String m_evaluationName;
     bool m_evaluationNameHasBeenSet;
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
+
     Aws::String m_evaluationDataSourceId;
     bool m_evaluationDataSourceIdHasBeenSet;
   };

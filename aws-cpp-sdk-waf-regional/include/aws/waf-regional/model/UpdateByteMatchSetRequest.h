@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
      * update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and
@@ -87,6 +88,7 @@ namespace Model
      */
     inline UpdateByteMatchSetRequest& WithByteMatchSetId(const char* value) { SetByteMatchSetId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline UpdateByteMatchSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+
 
     /**
      * <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert
@@ -207,10 +210,13 @@ namespace Model
     inline UpdateByteMatchSetRequest& AddUpdates(ByteMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_byteMatchSetId;
     bool m_byteMatchSetIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
+
     Aws::Vector<ByteMatchSetUpdate> m_updates;
     bool m_updatesHasBeenSet;
   };

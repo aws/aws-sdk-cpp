@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the managed policy that you want
      * information about.</p> <p>For more information about ARNs, see <a
@@ -100,6 +101,7 @@ namespace Model
      * Reference</i>.</p>
      */
     inline GetPolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+
 
     /**
      * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
@@ -165,8 +167,10 @@ namespace Model
     inline GetPolicyVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
+
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
   };

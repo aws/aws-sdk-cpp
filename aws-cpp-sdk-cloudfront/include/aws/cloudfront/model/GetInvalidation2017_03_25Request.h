@@ -38,6 +38,7 @@ namespace Model
     GetInvalidation2017_03_25Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The distribution's ID.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The distribution's ID.</p>
      */
     inline GetInvalidation2017_03_25Request& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
+
 
     /**
      * <p>The identifier for the invalidation request, for example,
@@ -116,8 +118,10 @@ namespace Model
     inline GetInvalidation2017_03_25Request& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_distributionId;
     bool m_distributionIdHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

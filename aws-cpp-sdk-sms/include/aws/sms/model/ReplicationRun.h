@@ -48,6 +48,7 @@ namespace Model
     ReplicationRun& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetReplicationRunId() const{ return m_replicationRunId; }
 
@@ -69,6 +70,7 @@ namespace Model
     
     inline ReplicationRun& WithReplicationRunId(const char* value) { SetReplicationRunId(value); return *this;}
 
+
     
     inline const ReplicationRunState& GetState() const{ return m_state; }
 
@@ -84,6 +86,7 @@ namespace Model
     
     inline ReplicationRun& WithState(ReplicationRunState&& value) { SetState(std::move(value)); return *this;}
 
+
     
     inline const ReplicationRunType& GetType() const{ return m_type; }
 
@@ -98,6 +101,7 @@ namespace Model
 
     
     inline ReplicationRun& WithType(ReplicationRunType&& value) { SetType(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
@@ -120,6 +124,7 @@ namespace Model
     
     inline ReplicationRun& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
 
@@ -141,6 +146,7 @@ namespace Model
     
     inline ReplicationRun& WithAmiId(const char* value) { SetAmiId(value); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetScheduledStartTime() const{ return m_scheduledStartTime; }
 
@@ -156,6 +162,7 @@ namespace Model
     
     inline ReplicationRun& WithScheduledStartTime(Aws::Utils::DateTime&& value) { SetScheduledStartTime(std::move(value)); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetCompletedTime() const{ return m_completedTime; }
 
@@ -170,6 +177,7 @@ namespace Model
 
     
     inline ReplicationRun& WithCompletedTime(Aws::Utils::DateTime&& value) { SetCompletedTime(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -193,20 +201,28 @@ namespace Model
     inline ReplicationRun& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_replicationRunId;
     bool m_replicationRunIdHasBeenSet;
+
     ReplicationRunState m_state;
     bool m_stateHasBeenSet;
+
     ReplicationRunType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::String m_amiId;
     bool m_amiIdHasBeenSet;
+
     Aws::Utils::DateTime m_scheduledStartTime;
     bool m_scheduledStartTimeHasBeenSet;
+
     Aws::Utils::DateTime m_completedTime;
     bool m_completedTimeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

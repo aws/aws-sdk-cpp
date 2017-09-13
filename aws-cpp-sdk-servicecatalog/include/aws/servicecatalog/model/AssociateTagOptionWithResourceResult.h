@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AssociateTagOptionWithResourceResult();
-    AssociateTagOptionWithResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateTagOptionWithResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateTagOptionWithResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateTagOptionWithResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

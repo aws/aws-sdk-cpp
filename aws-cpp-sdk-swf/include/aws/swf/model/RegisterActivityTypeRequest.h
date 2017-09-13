@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain in which this activity is to be registered.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the domain in which this activity is to be registered.</p>
      */
     inline RegisterActivityTypeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
@@ -134,6 +136,7 @@ namespace Model
      * must not contain the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The version of the activity type.</p> <note> <p>The activity type consists of
@@ -212,6 +215,7 @@ namespace Model
      */
     inline RegisterActivityTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>A textual description of the activity type.</p>
      */
@@ -246,6 +250,7 @@ namespace Model
      * <p>A textual description of the activity type.</p>
      */
     inline RegisterActivityTypeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>If set, specifies the default maximum duration that a worker can take to
@@ -316,6 +321,7 @@ namespace Model
      * unlimited duration.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskStartToCloseTimeout(const char* value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
+
 
     /**
      * <p>If set, specifies the default maximum time before which a worker processing a
@@ -422,6 +428,7 @@ namespace Model
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskHeartbeatTimeout(const char* value) { SetDefaultTaskHeartbeatTimeout(value); return *this;}
 
+
     /**
      * <p>If set, specifies the default task list to use for scheduling tasks of this
      * activity type. This default task list is used if a task list isn't provided when
@@ -461,6 +468,7 @@ namespace Model
      * <a>Decision</a>.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
@@ -539,6 +547,7 @@ namespace Model
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskPriority(const char* value) { SetDefaultTaskPriority(value); return *this;}
 
+
     /**
      * <p>If set, specifies the default maximum duration that a task of this activity
      * type can wait before being assigned to a worker. This default can be overridden
@@ -609,6 +618,7 @@ namespace Model
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToStartTimeout(const char* value) { SetDefaultTaskScheduleToStartTimeout(value); return *this;}
 
+
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity
      * type. This default can be overridden when scheduling an activity task using the
@@ -673,24 +683,34 @@ namespace Model
     inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToCloseTimeout(const char* value) { SetDefaultTaskScheduleToCloseTimeout(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_defaultTaskStartToCloseTimeout;
     bool m_defaultTaskStartToCloseTimeoutHasBeenSet;
+
     Aws::String m_defaultTaskHeartbeatTimeout;
     bool m_defaultTaskHeartbeatTimeoutHasBeenSet;
+
     TaskList m_defaultTaskList;
     bool m_defaultTaskListHasBeenSet;
+
     Aws::String m_defaultTaskPriority;
     bool m_defaultTaskPriorityHasBeenSet;
+
     Aws::String m_defaultTaskScheduleToStartTimeout;
     bool m_defaultTaskScheduleToStartTimeoutHasBeenSet;
+
     Aws::String m_defaultTaskScheduleToCloseTimeout;
     bool m_defaultTaskScheduleToCloseTimeoutHasBeenSet;
   };

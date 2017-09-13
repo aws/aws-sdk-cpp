@@ -55,7 +55,7 @@ enum class InspectorErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AGENTS_ALREADY_RUNNING_ASSESSMENT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AGENTS_ALREADY_RUNNING_ASSESSMENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ASSESSMENT_RUN_IN_PROGRESS,
   INTERNAL,
   INVALID_CROSS_ACCOUNT_ROLE,
@@ -66,7 +66,7 @@ enum class InspectorErrors
 };
 namespace InspectorErrorMapper
 {
-  AWS_INSPECTOR_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_INSPECTOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Inspector

@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the alarm.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      * <p>The name of the alarm.</p>
      */
     inline MetricAlarm& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
@@ -125,6 +127,7 @@ namespace Model
      */
     inline MetricAlarm& WithAlarmArn(const char* value) { SetAlarmArn(value); return *this;}
 
+
     /**
      * <p>The description of the alarm.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      */
     inline MetricAlarm& WithAlarmDescription(const char* value) { SetAlarmDescription(value); return *this;}
 
+
     /**
      * <p>The time stamp of the last update to the alarm configuration.</p>
      */
@@ -185,6 +189,7 @@ namespace Model
      */
     inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetAlarmConfigurationUpdatedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether actions should be executed during any changes to the alarm
      * state.</p>
@@ -202,6 +207,7 @@ namespace Model
      * state.</p>
      */
     inline MetricAlarm& WithActionsEnabled(bool value) { SetActionsEnabled(value); return *this;}
+
 
     /**
      * <p>The actions to execute when this alarm transitions to the <code>OK</code>
@@ -259,6 +265,7 @@ namespace Model
      */
     inline MetricAlarm& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
+
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
@@ -314,6 +321,7 @@ namespace Model
      * (ARN).</p>
      */
     inline MetricAlarm& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
+
 
     /**
      * <p>The actions to execute when this alarm transitions to the
@@ -371,6 +379,7 @@ namespace Model
      */
     inline MetricAlarm& AddInsufficientDataActions(const char* value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
+
     /**
      * <p>The state value for the alarm.</p>
      */
@@ -395,6 +404,7 @@ namespace Model
      * <p>The state value for the alarm.</p>
      */
     inline MetricAlarm& WithStateValue(StateValue&& value) { SetStateValue(std::move(value)); return *this;}
+
 
     /**
      * <p>An explanation for the alarm state, in text format.</p>
@@ -431,6 +441,7 @@ namespace Model
      */
     inline MetricAlarm& WithStateReason(const char* value) { SetStateReason(value); return *this;}
 
+
     /**
      * <p>An explanation for the alarm state, in JSON format.</p>
      */
@@ -466,6 +477,7 @@ namespace Model
      */
     inline MetricAlarm& WithStateReasonData(const char* value) { SetStateReasonData(value); return *this;}
 
+
     /**
      * <p>The time stamp of the last update to the alarm state.</p>
      */
@@ -490,6 +502,7 @@ namespace Model
      * <p>The time stamp of the last update to the alarm state.</p>
      */
     inline MetricAlarm& WithStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetStateUpdatedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the metric associated with the alarm.</p>
@@ -526,6 +539,7 @@ namespace Model
      */
     inline MetricAlarm& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
+
     /**
      * <p>The namespace of the metric associated with the alarm.</p>
      */
@@ -561,6 +575,7 @@ namespace Model
      */
     inline MetricAlarm& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
     /**
      * <p>The statistic for the metric associated with the alarm, other than
      * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
@@ -590,6 +605,7 @@ namespace Model
      * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
      */
     inline MetricAlarm& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
+
 
     /**
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
@@ -633,6 +649,7 @@ namespace Model
      */
     inline MetricAlarm& WithExtendedStatistic(const char* value) { SetExtendedStatistic(value); return *this;}
 
+
     /**
      * <p>The dimensions for the metric associated with the alarm.</p>
      */
@@ -668,6 +685,7 @@ namespace Model
      */
     inline MetricAlarm& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The period, in seconds, over which the statistic is applied.</p>
      */
@@ -682,6 +700,7 @@ namespace Model
      * <p>The period, in seconds, over which the statistic is applied.</p>
      */
     inline MetricAlarm& WithPeriod(int value) { SetPeriod(value); return *this;}
+
 
     /**
      * <p>The unit of the metric associated with the alarm.</p>
@@ -708,6 +727,7 @@ namespace Model
      */
     inline MetricAlarm& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of periods over which data is compared to the specified
      * threshold.</p>
@@ -726,6 +746,7 @@ namespace Model
      */
     inline MetricAlarm& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 
+
     /**
      * <p>The value to compare with the specified statistic.</p>
      */
@@ -740,6 +761,7 @@ namespace Model
      * <p>The value to compare with the specified statistic.</p>
      */
     inline MetricAlarm& WithThreshold(double value) { SetThreshold(value); return *this;}
+
 
     /**
      * <p>The arithmetic operation to use when comparing the specified statistic and
@@ -770,6 +792,7 @@ namespace Model
      * threshold. The specified statistic value is used as the first operand.</p>
      */
     inline MetricAlarm& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+
 
     /**
      * <p>Sets how this alarm is to handle missing data points. If this parameter is
@@ -812,6 +835,7 @@ namespace Model
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
     inline MetricAlarm& WithTreatMissingData(const char* value) { SetTreatMissingData(value); return *this;}
+
 
     /**
      * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
@@ -877,52 +901,76 @@ namespace Model
     inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const char* value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
 
   private:
+
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
+
     Aws::String m_alarmArn;
     bool m_alarmArnHasBeenSet;
+
     Aws::String m_alarmDescription;
     bool m_alarmDescriptionHasBeenSet;
+
     Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp;
     bool m_alarmConfigurationUpdatedTimestampHasBeenSet;
+
     bool m_actionsEnabled;
     bool m_actionsEnabledHasBeenSet;
+
     Aws::Vector<Aws::String> m_oKActions;
     bool m_oKActionsHasBeenSet;
+
     Aws::Vector<Aws::String> m_alarmActions;
     bool m_alarmActionsHasBeenSet;
+
     Aws::Vector<Aws::String> m_insufficientDataActions;
     bool m_insufficientDataActionsHasBeenSet;
+
     StateValue m_stateValue;
     bool m_stateValueHasBeenSet;
+
     Aws::String m_stateReason;
     bool m_stateReasonHasBeenSet;
+
     Aws::String m_stateReasonData;
     bool m_stateReasonDataHasBeenSet;
+
     Aws::Utils::DateTime m_stateUpdatedTimestamp;
     bool m_stateUpdatedTimestampHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Statistic m_statistic;
     bool m_statisticHasBeenSet;
+
     Aws::String m_extendedStatistic;
     bool m_extendedStatisticHasBeenSet;
+
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
+
     int m_period;
     bool m_periodHasBeenSet;
+
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
+
     int m_evaluationPeriods;
     bool m_evaluationPeriodsHasBeenSet;
+
     double m_threshold;
     bool m_thresholdHasBeenSet;
+
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+
     Aws::String m_treatMissingData;
     bool m_treatMissingDataHasBeenSet;
+
     Aws::String m_evaluateLowSampleCountPercentile;
     bool m_evaluateLowSampleCountPercentileHasBeenSet;
   };

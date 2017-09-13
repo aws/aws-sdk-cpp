@@ -32,14 +32,14 @@ QueryResult::QueryResult() :
 {
 }
 
-QueryResult::QueryResult(const AmazonWebServiceResult<JsonValue>& result) : 
+QueryResult::QueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_count(0),
     m_scannedCount(0)
 {
   *this = result;
 }
 
-QueryResult& QueryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Items"))

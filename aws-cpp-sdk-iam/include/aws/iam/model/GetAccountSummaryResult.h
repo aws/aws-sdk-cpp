@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetAccountSummaryResult();
-    GetAccountSummaryResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccountSummaryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetAccountSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetAccountSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A set of key value pairs containing information about IAM entity usage and
@@ -91,6 +92,7 @@ namespace Model
      */
     inline GetAccountSummaryResult& AddSummaryMap(SummaryKeyType&& key, int value) { m_summaryMap.emplace(std::move(key), value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -107,7 +109,9 @@ namespace Model
     inline GetAccountSummaryResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<SummaryKeyType, int> m_summaryMap;
+
     ResponseMetadata m_responseMetadata;
   };
 

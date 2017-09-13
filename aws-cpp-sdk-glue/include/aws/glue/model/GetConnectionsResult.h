@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetConnectionsResult();
-    GetConnectionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConnectionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of requested connection definitions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of requested connection definitions.</p>
      */
     inline GetConnectionsResult& AddConnectionList(Connection&& value) { m_connectionList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, if the list of connections returned does not include
@@ -121,7 +123,9 @@ namespace Model
     inline GetConnectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Connection> m_connectionList;
+
     Aws::String m_nextToken;
   };
 

@@ -31,12 +31,12 @@ RunScheduledInstancesResponse::RunScheduledInstancesResponse()
 {
 }
 
-RunScheduledInstancesResponse::RunScheduledInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+RunScheduledInstancesResponse::RunScheduledInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RunScheduledInstancesResponse& RunScheduledInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RunScheduledInstancesResponse& RunScheduledInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

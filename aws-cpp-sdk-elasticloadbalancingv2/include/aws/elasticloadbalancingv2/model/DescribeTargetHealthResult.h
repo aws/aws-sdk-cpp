@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeTargetHealthResult();
-    DescribeTargetHealthResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTargetHealthResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeTargetHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeTargetHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the health of the targets.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeTargetHealthResult& AddTargetHealthDescriptions(TargetHealthDescription&& value) { m_targetHealthDescriptions.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline DescribeTargetHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<TargetHealthDescription> m_targetHealthDescriptions;
+
     ResponseMetadata m_responseMetadata;
   };
 

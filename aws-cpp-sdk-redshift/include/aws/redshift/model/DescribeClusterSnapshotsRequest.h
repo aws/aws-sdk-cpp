@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the cluster for which information about snapshots is
      * requested.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeClusterSnapshotsRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The snapshot identifier of the snapshot about which to return
      * information.</p>
@@ -126,6 +128,7 @@ namespace Model
      * information.</p>
      */
     inline DescribeClusterSnapshotsRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The type of snapshots for which you are requesting information. By default,
@@ -176,6 +179,7 @@ namespace Model
      */
     inline DescribeClusterSnapshotsRequest& WithSnapshotType(const char* value) { SetSnapshotType(value); return *this;}
 
+
     /**
      * <p>A value that requests only snapshots created at or after the specified time.
      * The time value is specified in ISO 8601 format. For more information about ISO
@@ -215,6 +219,7 @@ namespace Model
      * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
      */
     inline DescribeClusterSnapshotsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>A time value that requests only snapshots created at or before the specified
@@ -256,6 +261,7 @@ namespace Model
      */
     inline DescribeClusterSnapshotsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
@@ -285,6 +291,7 @@ namespace Model
      * maximum 100.</p>
      */
     inline DescribeClusterSnapshotsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -356,6 +363,7 @@ namespace Model
      */
     inline DescribeClusterSnapshotsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The AWS customer account used to create or copy the snapshot. Use this field
      * to filter the results to snapshots owned by a particular account. To describe
@@ -411,6 +419,7 @@ namespace Model
      * the parameter.</p>
      */
     inline DescribeClusterSnapshotsRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
+
 
     /**
      * <p>A tag key or keys for which you want to return all matching cluster snapshots
@@ -491,6 +500,7 @@ namespace Model
      * of these tag keys associated with them.</p>
      */
     inline DescribeClusterSnapshotsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+
 
     /**
      * <p>A tag value or values for which you want to return all matching cluster
@@ -573,24 +583,34 @@ namespace Model
     inline DescribeClusterSnapshotsRequest& AddTagValues(const char* value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagValues;
     bool m_tagValuesHasBeenSet;
   };

@@ -30,12 +30,12 @@ ImportDocumentationPartsResult::ImportDocumentationPartsResult()
 {
 }
 
-ImportDocumentationPartsResult::ImportDocumentationPartsResult(const AmazonWebServiceResult<JsonValue>& result)
+ImportDocumentationPartsResult::ImportDocumentationPartsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ImportDocumentationPartsResult& ImportDocumentationPartsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ImportDocumentationPartsResult& ImportDocumentationPartsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ids"))

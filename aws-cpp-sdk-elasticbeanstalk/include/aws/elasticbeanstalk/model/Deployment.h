@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The version label of the application version in the deployment.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline Deployment& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
+
     /**
      * <p>The ID of the deployment. This number increases by one each time that you
      * deploy source code or change instance configuration settings.</p>
@@ -102,6 +104,7 @@ namespace Model
      * deploy source code or change instance configuration settings.</p>
      */
     inline Deployment& WithDeploymentId(long long value) { SetDeploymentId(value); return *this;}
+
 
     /**
      * <p>The status of the deployment:</p> <ul> <li> <p> <code>In Progress</code> :
@@ -159,6 +162,7 @@ namespace Model
      */
     inline Deployment& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>For in-progress deployments, the time that the deployment started.</p> <p>For
      * completed deployments, the time that the deployment ended.</p>
@@ -190,12 +194,16 @@ namespace Model
     inline Deployment& WithDeploymentTime(Aws::Utils::DateTime&& value) { SetDeploymentTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     long long m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_deploymentTime;
     bool m_deploymentTimeHasBeenSet;
   };

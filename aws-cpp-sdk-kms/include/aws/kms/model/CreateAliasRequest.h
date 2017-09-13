@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>String that contains the display name. The name must start with the word
      * "alias" followed by a forward slash (alias/). Aliases that begin with
@@ -84,6 +85,7 @@ namespace Model
      * "alias/AWS" are reserved.</p>
      */
     inline CreateAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
+
 
     /**
      * <p>An identifier of the key for which you are creating the alias. This value
@@ -156,8 +158,10 @@ namespace Model
     inline CreateAliasRequest& WithTargetKeyId(const char* value) { SetTargetKeyId(value); return *this;}
 
   private:
+
     Aws::String m_aliasName;
     bool m_aliasNameHasBeenSet;
+
     Aws::String m_targetKeyId;
     bool m_targetKeyIdHasBeenSet;
   };

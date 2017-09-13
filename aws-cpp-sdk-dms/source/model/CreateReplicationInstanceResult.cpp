@@ -30,12 +30,12 @@ CreateReplicationInstanceResult::CreateReplicationInstanceResult()
 {
 }
 
-CreateReplicationInstanceResult::CreateReplicationInstanceResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateReplicationInstanceResult::CreateReplicationInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateReplicationInstanceResult& CreateReplicationInstanceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateReplicationInstanceResult& CreateReplicationInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ReplicationInstance"))

@@ -47,6 +47,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The number of samples used for the statistic set.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>The number of samples used for the statistic set.</p>
      */
     inline StatisticSet& WithSampleCount(double value) { SetSampleCount(value); return *this;}
+
 
     /**
      * <p>The sum of values for the sample set.</p>
@@ -77,6 +79,7 @@ namespace Model
      */
     inline StatisticSet& WithSum(double value) { SetSum(value); return *this;}
 
+
     /**
      * <p>The minimum value of the sample set.</p>
      */
@@ -91,6 +94,7 @@ namespace Model
      * <p>The minimum value of the sample set.</p>
      */
     inline StatisticSet& WithMinimum(double value) { SetMinimum(value); return *this;}
+
 
     /**
      * <p>The maximum value of the sample set.</p>
@@ -108,12 +112,16 @@ namespace Model
     inline StatisticSet& WithMaximum(double value) { SetMaximum(value); return *this;}
 
   private:
+
     double m_sampleCount;
     bool m_sampleCountHasBeenSet;
+
     double m_sum;
     bool m_sumHasBeenSet;
+
     double m_minimum;
     bool m_minimumHasBeenSet;
+
     double m_maximum;
     bool m_maximumHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     AssessmentTemplate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the assessment template.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline AssessmentTemplate& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The name of the assessment template.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The name of the assessment template.</p>
      */
     inline AssessmentTemplate& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ARN of the assessment target that corresponds to this assessment
@@ -162,6 +165,7 @@ namespace Model
      */
     inline AssessmentTemplate& WithAssessmentTargetArn(const char* value) { SetAssessmentTargetArn(value); return *this;}
 
+
     /**
      * <p>The duration in seconds specified for this assessment tempate. The default
      * value is 3600 seconds (one hour). The maximum value is 86400 seconds (one
@@ -182,6 +186,7 @@ namespace Model
      * day).</p>
      */
     inline AssessmentTemplate& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
+
 
     /**
      * <p>The rules packages that are specified for this assessment template.</p>
@@ -222,6 +227,7 @@ namespace Model
      * <p>The rules packages that are specified for this assessment template.</p>
      */
     inline AssessmentTemplate& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
+
 
     /**
      * <p>The user-defined attributes that are assigned to every generated finding from
@@ -265,6 +271,7 @@ namespace Model
      */
     inline AssessmentTemplate& AddUserAttributesForFindings(Attribute&& value) { m_userAttributesForFindingsHasBeenSet = true; m_userAttributesForFindings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time at which the assessment template is created.</p>
      */
@@ -291,18 +298,25 @@ namespace Model
     inline AssessmentTemplate& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_assessmentTargetArn;
     bool m_assessmentTargetArnHasBeenSet;
+
     int m_durationInSeconds;
     bool m_durationInSecondsHasBeenSet;
+
     Aws::Vector<Aws::String> m_rulesPackageArns;
     bool m_rulesPackageArnsHasBeenSet;
+
     Aws::Vector<Attribute> m_userAttributesForFindings;
     bool m_userAttributesForFindingsHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
   };

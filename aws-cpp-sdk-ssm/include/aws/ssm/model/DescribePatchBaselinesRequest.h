@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Each element in the array is a structure containing: </p> <p>Key: (string,
      * "NAME_PREFIX" or "OWNER")</p> <p>Value: (array of strings, exactly 1 entry,
@@ -87,6 +88,7 @@ namespace Model
      */
     inline DescribePatchBaselinesRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of patch baselines to return (per page).</p>
      */
@@ -101,6 +103,7 @@ namespace Model
      * <p>The maximum number of patch baselines to return (per page).</p>
      */
     inline DescribePatchBaselinesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -145,10 +148,13 @@ namespace Model
     inline DescribePatchBaselinesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PatchOrchestratorFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

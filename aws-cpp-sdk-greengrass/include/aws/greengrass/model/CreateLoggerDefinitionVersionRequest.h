@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The client token used to request idempotent operations.
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateLoggerDefinitionVersionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
+
     /**
      * logger definition Id
      */
@@ -107,6 +109,7 @@ namespace Model
      * logger definition Id
      */
     inline CreateLoggerDefinitionVersionRequest& WithLoggerDefinitionId(const char* value) { SetLoggerDefinitionId(value); return *this;}
+
 
     /**
      * List of loggers.
@@ -144,10 +147,13 @@ namespace Model
     inline CreateLoggerDefinitionVersionRequest& AddLoggers(Logger&& value) { m_loggersHasBeenSet = true; m_loggers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_amznClientToken;
     bool m_amznClientTokenHasBeenSet;
+
     Aws::String m_loggerDefinitionId;
     bool m_loggerDefinitionIdHasBeenSet;
+
     Aws::Vector<Logger> m_loggers;
     bool m_loggersHasBeenSet;
   };

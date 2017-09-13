@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the assessment run that you want to stop.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The ARN of the assessment run that you want to stop.</p>
      */
     inline StopAssessmentRunRequest& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
+
 
     /**
      * <p>An input option that can be set to either START_EVALUATION or
@@ -118,8 +120,10 @@ namespace Model
     inline StopAssessmentRunRequest& WithStopAction(StopAction&& value) { SetStopAction(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_assessmentRunArn;
     bool m_assessmentRunArnHasBeenSet;
+
     StopAction m_stopAction;
     bool m_stopActionHasBeenSet;
   };

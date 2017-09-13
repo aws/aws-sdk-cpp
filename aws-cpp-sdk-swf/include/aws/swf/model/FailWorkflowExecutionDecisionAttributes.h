@@ -59,6 +59,7 @@ namespace Model
     FailWorkflowExecutionDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A descriptive reason for the failure that may help in diagnostics.</p>
      */
@@ -93,6 +94,7 @@ namespace Model
      * <p>A descriptive reason for the failure that may help in diagnostics.</p>
      */
     inline FailWorkflowExecutionDecisionAttributes& WithReason(const char* value) { SetReason(value); return *this;}
+
 
     /**
      * <p> Details of the failure.</p>
@@ -130,8 +132,10 @@ namespace Model
     inline FailWorkflowExecutionDecisionAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 
   private:
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
   };

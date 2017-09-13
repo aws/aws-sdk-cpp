@@ -30,12 +30,12 @@ DeleteBandwidthRateLimitResult::DeleteBandwidthRateLimitResult()
 {
 }
 
-DeleteBandwidthRateLimitResult::DeleteBandwidthRateLimitResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteBandwidthRateLimitResult::DeleteBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteBandwidthRateLimitResult& DeleteBandwidthRateLimitResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteBandwidthRateLimitResult& DeleteBandwidthRateLimitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

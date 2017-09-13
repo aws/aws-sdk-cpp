@@ -30,12 +30,12 @@ CreateUploadResult::CreateUploadResult()
 {
 }
 
-CreateUploadResult::CreateUploadResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateUploadResult::CreateUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateUploadResult& CreateUploadResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateUploadResult& CreateUploadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("upload"))

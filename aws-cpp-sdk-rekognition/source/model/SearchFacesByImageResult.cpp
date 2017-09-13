@@ -31,13 +31,13 @@ SearchFacesByImageResult::SearchFacesByImageResult() :
 {
 }
 
-SearchFacesByImageResult::SearchFacesByImageResult(const AmazonWebServiceResult<JsonValue>& result) : 
+SearchFacesByImageResult::SearchFacesByImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_searchedFaceConfidence(0.0)
 {
   *this = result;
 }
 
-SearchFacesByImageResult& SearchFacesByImageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SearchFacesByImageResult& SearchFacesByImageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SearchedFaceBoundingBox"))

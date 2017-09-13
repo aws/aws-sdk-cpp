@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeAffectedEntitiesResult();
-    DescribeAffectedEntitiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAffectedEntitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAffectedEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAffectedEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The entities that match the filter criteria.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The entities that match the filter criteria.</p>
      */
     inline DescribeAffectedEntitiesResult& AddEntities(AffectedEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -142,7 +144,9 @@ namespace Model
     inline DescribeAffectedEntitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<AffectedEntity> m_entities;
+
     Aws::String m_nextToken;
   };
 

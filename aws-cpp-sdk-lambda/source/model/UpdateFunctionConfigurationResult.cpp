@@ -34,7 +34,7 @@ UpdateFunctionConfigurationResult::UpdateFunctionConfigurationResult() :
 {
 }
 
-UpdateFunctionConfigurationResult::UpdateFunctionConfigurationResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateFunctionConfigurationResult::UpdateFunctionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_runtime(Runtime::NOT_SET),
     m_codeSize(0),
     m_timeout(0),
@@ -43,7 +43,7 @@ UpdateFunctionConfigurationResult::UpdateFunctionConfigurationResult(const Amazo
   *this = result;
 }
 
-UpdateFunctionConfigurationResult& UpdateFunctionConfigurationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateFunctionConfigurationResult& UpdateFunctionConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FunctionName"))

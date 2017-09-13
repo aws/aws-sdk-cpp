@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     ReadJobResult();
-    ReadJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReadJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReadJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReadJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A section of the response body that provides information about the job.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline ReadJobResult& WithJob(Job&& value) { SetJob(std::move(value)); return *this;}
 
   private:
+
     Job m_job;
   };
 

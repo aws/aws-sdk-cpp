@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     TerminateInstancesResponse();
-    TerminateInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    TerminateInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    TerminateInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    TerminateInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more terminated instances.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline TerminateInstancesResponse& AddTerminatingInstances(InstanceStateChange&& value) { m_terminatingInstances.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline TerminateInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<InstanceStateChange> m_terminatingInstances;
+
     ResponseMetadata m_responseMetadata;
   };
 

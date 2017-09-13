@@ -30,12 +30,12 @@ DescribeOrganizationalUnitResult::DescribeOrganizationalUnitResult()
 {
 }
 
-DescribeOrganizationalUnitResult::DescribeOrganizationalUnitResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeOrganizationalUnitResult::DescribeOrganizationalUnitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeOrganizationalUnitResult& DescribeOrganizationalUnitResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeOrganizationalUnitResult& DescribeOrganizationalUnitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OrganizationalUnit"))

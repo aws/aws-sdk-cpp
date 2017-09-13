@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListPhoneNumbersOptedOutResult();
-    ListPhoneNumbersOptedOutResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListPhoneNumbersOptedOutResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListPhoneNumbersOptedOutResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListPhoneNumbersOptedOutResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of phone numbers that are opted out of receiving SMS messages. The
@@ -96,6 +97,7 @@ namespace Model
      * list is paginated, and each page can contain up to 100 phone numbers.</p>
      */
     inline ListPhoneNumbersOptedOutResult& AddPhoneNumbers(const char* value) { m_phoneNumbers.push_back(value); return *this; }
+
 
     /**
      * <p>A <code>NextToken</code> string is returned when you call the
@@ -146,6 +148,7 @@ namespace Model
      */
     inline ListPhoneNumbersOptedOutResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -162,8 +165,11 @@ namespace Model
     inline ListPhoneNumbersOptedOutResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_phoneNumbers;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

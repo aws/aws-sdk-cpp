@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be updated. </p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline UpdateNFSFileShareRequest& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 
+
     /**
      * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional. </p>
@@ -93,6 +95,7 @@ namespace Model
      * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline UpdateNFSFileShareRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
+
 
     /**
      * <p>The KMS key used for Amazon S3 server side encryption. This value can only be
@@ -136,6 +139,7 @@ namespace Model
      */
     inline UpdateNFSFileShareRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
 
+
     /**
      * <p>The default values for the file share. Optional.</p>
      */
@@ -160,6 +164,7 @@ namespace Model
      * <p>The default values for the file share. Optional.</p>
      */
     inline UpdateNFSFileShareRequest& WithNFSFileShareDefaults(NFSFileShareDefaults&& value) { SetNFSFileShareDefaults(std::move(value)); return *this;}
+
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by a file
@@ -210,6 +215,7 @@ namespace Model
      */
     inline UpdateNFSFileShareRequest& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
+
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
@@ -257,6 +263,7 @@ namespace Model
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+
 
     /**
      * <p>The user mapped to anonymous user. Valid options are the following:</p> <ul>
@@ -314,6 +321,7 @@ namespace Model
      */
     inline UpdateNFSFileShareRequest& WithSquash(const char* value) { SetSquash(value); return *this;}
 
+
     /**
      * <p>Sets the write status of a file share: "true" if the write status is
      * read-only, otherwise "false".</p>
@@ -333,20 +341,28 @@ namespace Model
     inline UpdateNFSFileShareRequest& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
   private:
+
     Aws::String m_fileShareARN;
     bool m_fileShareARNHasBeenSet;
+
     bool m_kMSEncrypted;
     bool m_kMSEncryptedHasBeenSet;
+
     Aws::String m_kMSKey;
     bool m_kMSKeyHasBeenSet;
+
     NFSFileShareDefaults m_nFSFileShareDefaults;
     bool m_nFSFileShareDefaultsHasBeenSet;
+
     Aws::String m_defaultStorageClass;
     bool m_defaultStorageClassHasBeenSet;
+
     Aws::Vector<Aws::String> m_clientList;
     bool m_clientListHasBeenSet;
+
     Aws::String m_squash;
     bool m_squashHasBeenSet;
+
     bool m_readOnly;
     bool m_readOnlyHasBeenSet;
   };

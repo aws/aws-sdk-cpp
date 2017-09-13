@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetConfigResult();
-    GetConfigResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConfigResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The type of credentials.</p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetConfigResult& WithConfigType(const char* value) { SetConfigType(value); return *this;}
 
+
     /**
      * <p>The chrystoki.conf configuration file.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The chrystoki.conf configuration file.</p>
      */
     inline GetConfigResult& WithConfigFile(const char* value) { SetConfigFile(value); return *this;}
+
 
     /**
      * <p>The certificate file containing the server.pem files of the HSMs.</p>
@@ -147,8 +150,11 @@ namespace Model
     inline GetConfigResult& WithConfigCred(const char* value) { SetConfigCred(value); return *this;}
 
   private:
+
     Aws::String m_configType;
+
     Aws::String m_configFile;
+
     Aws::String m_configCred;
   };
 

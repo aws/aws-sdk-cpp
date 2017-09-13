@@ -46,6 +46,7 @@ namespace Model
     OfferingPromotion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the offering promotion.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The ID of the offering promotion.</p>
      */
     inline OfferingPromotion& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>A string describing the offering promotion.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline OfferingPromotion& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

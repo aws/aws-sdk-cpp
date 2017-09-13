@@ -38,6 +38,7 @@ namespace Model
     DescribeCACertificateRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The CA certificate identifier.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DescribeCACertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
   private:
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
   };

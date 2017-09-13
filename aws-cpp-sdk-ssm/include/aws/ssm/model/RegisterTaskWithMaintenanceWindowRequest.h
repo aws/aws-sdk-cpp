@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The id of the Maintenance Window the task should be added to.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The id of the Maintenance Window the task should be added to.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -128,6 +130,7 @@ namespace Model
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ARN of the task to execute </p>
      */
@@ -162,6 +165,7 @@ namespace Model
      * <p>The ARN of the task to execute </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+
 
     /**
      * <p>The role that should be assumed when executing the task.</p>
@@ -198,6 +202,7 @@ namespace Model
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
+
     /**
      * <p>The type of task being registered.</p>
      */
@@ -222,6 +227,7 @@ namespace Model
      * <p>The type of task being registered.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
+
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
@@ -278,6 +284,7 @@ namespace Model
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The parameters that the task should use during execution. Populate only the
      * fields that match the task type. All other fields should be empty. </p>
@@ -308,6 +315,7 @@ namespace Model
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { SetTaskInvocationParameters(std::move(value)); return *this;}
 
+
     /**
      * <p>The priority of the task in the Maintenance Window, the lower the number the
      * higher the priority. Tasks in a Maintenance Window are scheduled in priority
@@ -328,6 +336,7 @@ namespace Model
      * order with tasks that have the same priority scheduled in parallel.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p>The maximum number of targets this task can be run for in parallel.</p>
@@ -363,6 +372,7 @@ namespace Model
      * <p>The maximum number of targets this task can be run for in parallel.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
@@ -406,6 +416,7 @@ namespace Model
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
+
     /**
      * <p>A structure containing information about an Amazon S3 bucket to write
      * instance-level logs to. </p>
@@ -435,6 +446,7 @@ namespace Model
      * instance-level logs to. </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>An optional name for the task.</p>
@@ -471,6 +483,7 @@ namespace Model
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>An optional description for the task.</p>
      */
@@ -505,6 +518,7 @@ namespace Model
      * <p>An optional description for the task.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>User-provided idempotency token.</p>
@@ -542,32 +556,46 @@ namespace Model
     inline RegisterTaskWithMaintenanceWindowRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     MaintenanceWindowTaskType m_taskType;
     bool m_taskTypeHasBeenSet;
+
     Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> m_taskParameters;
     bool m_taskParametersHasBeenSet;
+
     MaintenanceWindowTaskInvocationParameters m_taskInvocationParameters;
     bool m_taskInvocationParametersHasBeenSet;
+
     int m_priority;
     bool m_priorityHasBeenSet;
+
     Aws::String m_maxConcurrency;
     bool m_maxConcurrencyHasBeenSet;
+
     Aws::String m_maxErrors;
     bool m_maxErrorsHasBeenSet;
+
     LoggingInfo m_loggingInfo;
     bool m_loggingInfoHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
   };

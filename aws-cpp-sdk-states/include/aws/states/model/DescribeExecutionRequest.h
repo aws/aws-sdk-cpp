@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeExecutionRequest& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
 
   private:
+
     Aws::String m_executionArn;
     bool m_executionArnHasBeenSet;
   };

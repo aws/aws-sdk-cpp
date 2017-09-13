@@ -31,12 +31,12 @@ DescribeEngineDefaultParametersResult::DescribeEngineDefaultParametersResult()
 {
 }
 
-DescribeEngineDefaultParametersResult::DescribeEngineDefaultParametersResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeEngineDefaultParametersResult::DescribeEngineDefaultParametersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeEngineDefaultParametersResult& DescribeEngineDefaultParametersResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeEngineDefaultParametersResult& DescribeEngineDefaultParametersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

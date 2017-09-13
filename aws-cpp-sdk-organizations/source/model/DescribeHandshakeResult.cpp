@@ -30,12 +30,12 @@ DescribeHandshakeResult::DescribeHandshakeResult()
 {
 }
 
-DescribeHandshakeResult::DescribeHandshakeResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeHandshakeResult::DescribeHandshakeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeHandshakeResult& DescribeHandshakeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeHandshakeResult& DescribeHandshakeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Handshake"))

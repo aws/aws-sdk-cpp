@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stack for which to list sessions.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DescribeSessionsRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>The name of the fleet for which to list sessions.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The name of the fleet for which to list sessions.</p>
      */
     inline DescribeSessionsRequest& WithFleetName(const char* value) { SetFleetName(value); return *this;}
+
 
     /**
      * <p>The user for whom to list sessions. Use null to describe all the sessions for
@@ -149,6 +152,7 @@ namespace Model
      */
     inline DescribeSessionsRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 
+
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If this value is null, it retrieves the first page.</p>
@@ -191,6 +195,7 @@ namespace Model
      */
     inline DescribeSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The size of each page of results. The default value is 20 and the maximum
      * supported value is 50.</p>
@@ -208,6 +213,7 @@ namespace Model
      * supported value is 50.</p>
      */
     inline DescribeSessionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The authentication method of the user. It can be <code>API</code> for a user
@@ -250,16 +256,22 @@ namespace Model
     inline DescribeSessionsRequest& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_fleetName;
     bool m_fleetNameHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     AuthenticationType m_authenticationType;
     bool m_authenticationTypeHasBeenSet;
   };

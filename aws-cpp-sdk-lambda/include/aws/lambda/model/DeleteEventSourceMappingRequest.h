@@ -37,6 +37,7 @@ namespace Model
     DeleteEventSourceMappingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The event source mapping ID.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline DeleteEventSourceMappingRequest& WithUUID(const char* value) { SetUUID(value); return *this;}
 
   private:
+
     Aws::String m_uUID;
     bool m_uUIDHasBeenSet;
   };

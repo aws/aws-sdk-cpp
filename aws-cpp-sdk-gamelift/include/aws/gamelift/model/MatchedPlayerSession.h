@@ -33,11 +33,12 @@ namespace Model
 {
 
   /**
-   * <p>New player session created as a result of a successful FlexMatch match. A
-   * successful match automatically creates new player sessions for every player ID
-   * in the original matchmaking request. </p> <p>When players connect to the match's
-   * game session, they must include both player ID and player session ID in order to
-   * claim their assigned player slot.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a new player session that is created as a result of a successful
+   * FlexMatch match. A successful match automatically creates new player sessions
+   * for every player ID in the original matchmaking request. </p> <p>When players
+   * connect to the match's game session, they must include both player ID and player
+   * session ID in order to claim their assigned player slot.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/MatchedPlayerSession">AWS
    * API Reference</a></p>
    */
@@ -48,6 +49,7 @@ namespace Model
     MatchedPlayerSession(const Aws::Utils::Json::JsonValue& jsonValue);
     MatchedPlayerSession& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
 
     /**
      * <p>Unique identifier for a player </p>
@@ -83,6 +85,7 @@ namespace Model
      * <p>Unique identifier for a player </p>
      */
     inline MatchedPlayerSession& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+
 
     /**
      * <p>Unique identifier for a player session</p>
@@ -120,8 +123,10 @@ namespace Model
     inline MatchedPlayerSession& WithPlayerSessionId(const char* value) { SetPlayerSessionId(value); return *this;}
 
   private:
+
     Aws::String m_playerId;
     bool m_playerIdHasBeenSet;
+
     Aws::String m_playerSessionId;
     bool m_playerSessionIdHasBeenSet;
   };

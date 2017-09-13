@@ -30,12 +30,12 @@ GetSqlInjectionMatchSetResult::GetSqlInjectionMatchSetResult()
 {
 }
 
-GetSqlInjectionMatchSetResult::GetSqlInjectionMatchSetResult(const AmazonWebServiceResult<JsonValue>& result)
+GetSqlInjectionMatchSetResult::GetSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetSqlInjectionMatchSetResult& GetSqlInjectionMatchSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSqlInjectionMatchSetResult& GetSqlInjectionMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SqlInjectionMatchSet"))

@@ -30,12 +30,12 @@ ModifyWorkspacePropertiesResult::ModifyWorkspacePropertiesResult()
 {
 }
 
-ModifyWorkspacePropertiesResult::ModifyWorkspacePropertiesResult(const AmazonWebServiceResult<JsonValue>& result)
+ModifyWorkspacePropertiesResult::ModifyWorkspacePropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ModifyWorkspacePropertiesResult& ModifyWorkspacePropertiesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ModifyWorkspacePropertiesResult& ModifyWorkspacePropertiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

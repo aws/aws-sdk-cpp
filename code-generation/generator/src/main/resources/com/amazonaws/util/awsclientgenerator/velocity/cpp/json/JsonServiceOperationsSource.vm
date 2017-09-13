@@ -34,14 +34,14 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #set($partIndex = $partIndex + 1)
 #end
 #if(!$queryStart)
- uri.SetPath(uri.GetPath() + ss.str());
+  uri.SetPath(uri.GetPath() + ss.str());
 #else
- uri.SetQueryString(ss.str());
+  uri.SetQueryString(ss.str());
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_${operation.http.method});
 #else
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method});
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method}, ${operation.request.shape.signerName});
 #end
   if(outcome.IsSuccess())
   {
@@ -86,9 +86,11 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   ss << m_uri << "${operation.http.requestUri}";
 
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method});
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName);
+#elseif($operation.request)
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName);
 #else
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method});
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER);
 #end
   if(outcome.IsSuccess())
   {

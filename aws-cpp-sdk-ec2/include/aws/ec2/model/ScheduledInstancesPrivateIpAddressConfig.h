@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a
      * secondary IPv4 address.</p>
@@ -66,6 +67,7 @@ namespace Model
      * secondary IPv4 address.</p>
      */
     inline ScheduledInstancesPrivateIpAddressConfig& WithPrimary(bool value) { SetPrimary(value); return *this;}
+
 
     /**
      * <p>The IPv4 address.</p>
@@ -103,8 +105,10 @@ namespace Model
     inline ScheduledInstancesPrivateIpAddressConfig& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
   private:
+
     bool m_primary;
     bool m_primaryHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
   };

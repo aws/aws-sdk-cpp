@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -67,6 +68,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeImportSnapshotTasksRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>One or more filters.</p>
@@ -102,6 +104,7 @@ namespace Model
      * <p>One or more filters.</p>
      */
     inline DescribeImportSnapshotTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of import snapshot task IDs.</p>
@@ -143,6 +146,7 @@ namespace Model
      */
     inline DescribeImportSnapshotTasksRequest& AddImportTaskIds(const char* value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned <code>NextToken</code>
@@ -163,6 +167,7 @@ namespace Model
      * value.</p>
      */
     inline DescribeImportSnapshotTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A token that indicates the next page of results.</p>
@@ -200,14 +205,19 @@ namespace Model
     inline DescribeImportSnapshotTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_importTaskIds;
     bool m_importTaskIdsHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

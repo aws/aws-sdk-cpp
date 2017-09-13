@@ -46,6 +46,7 @@ namespace Model
     DefaultWorkspaceCreationProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies if the directory is enabled for Amazon WorkDocs.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>Specifies if the directory is enabled for Amazon WorkDocs.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithEnableWorkDocs(bool value) { SetEnableWorkDocs(value); return *this;}
+
 
     /**
      * <p>A public IP address will be attached to all WorkSpaces that are created or
@@ -78,6 +80,7 @@ namespace Model
      * rebuilt.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithEnableInternetAccess(bool value) { SetEnableInternetAccess(value); return *this;}
+
 
     /**
      * <p>The organizational unit (OU) in the directory that the WorkSpace machine
@@ -121,6 +124,7 @@ namespace Model
      */
     inline DefaultWorkspaceCreationProperties& WithDefaultOu(const char* value) { SetDefaultOu(value); return *this;}
 
+
     /**
      * <p>The identifier of any custom security groups that are applied to the
      * WorkSpaces when they are created.</p>
@@ -163,6 +167,7 @@ namespace Model
      */
     inline DefaultWorkspaceCreationProperties& WithCustomSecurityGroupId(const char* value) { SetCustomSecurityGroupId(value); return *this;}
 
+
     /**
      * <p>The WorkSpace user is an administrator on the WorkSpace.</p>
      */
@@ -179,14 +184,19 @@ namespace Model
     inline DefaultWorkspaceCreationProperties& WithUserEnabledAsLocalAdministrator(bool value) { SetUserEnabledAsLocalAdministrator(value); return *this;}
 
   private:
+
     bool m_enableWorkDocs;
     bool m_enableWorkDocsHasBeenSet;
+
     bool m_enableInternetAccess;
     bool m_enableInternetAccessHasBeenSet;
+
     Aws::String m_defaultOu;
     bool m_defaultOuHasBeenSet;
+
     Aws::String m_customSecurityGroupId;
     bool m_customSecurityGroupIdHasBeenSet;
+
     bool m_userEnabledAsLocalAdministrator;
     bool m_userEnabledAsLocalAdministratorHasBeenSet;
   };

@@ -32,14 +32,14 @@ PutRecordsResult::PutRecordsResult() :
 {
 }
 
-PutRecordsResult::PutRecordsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PutRecordsResult::PutRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_failedRecordCount(0),
     m_encryptionType(EncryptionType::NOT_SET)
 {
   *this = result;
 }
 
-PutRecordsResult& PutRecordsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutRecordsResult& PutRecordsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FailedRecordCount"))

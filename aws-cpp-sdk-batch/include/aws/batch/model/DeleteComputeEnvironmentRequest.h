@@ -34,6 +34,7 @@ namespace Model
     DeleteComputeEnvironmentRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.
      * </p>
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteComputeEnvironmentRequest& WithComputeEnvironment(const char* value) { SetComputeEnvironment(value); return *this;}
 
   private:
+
     Aws::String m_computeEnvironment;
     bool m_computeEnvironmentHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ResendConfirmationCodeResult();
-    ResendConfirmationCodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResendConfirmationCodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResendConfirmationCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResendConfirmationCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The code delivery details returned by the server in response to the request
@@ -78,6 +79,7 @@ namespace Model
     inline ResendConfirmationCodeResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(std::move(value)); return *this;}
 
   private:
+
     CodeDeliveryDetailsType m_codeDeliveryDetails;
   };
 

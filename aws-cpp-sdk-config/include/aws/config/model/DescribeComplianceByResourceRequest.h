@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The types of AWS resources for which you want compliance information; for
      * example, <code>AWS::EC2::Instance</code>. For this action, you can specify that
@@ -97,6 +98,7 @@ namespace Model
      */
     inline DescribeComplianceByResourceRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>The ID of the AWS resource for which you want compliance information. You can
      * specify only one resource ID. If you specify a resource ID, you must also
@@ -145,6 +147,7 @@ namespace Model
      * specify a type for <code>ResourceType</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
@@ -195,6 +198,7 @@ namespace Model
      */
     inline DescribeComplianceByResourceRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
      * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
@@ -215,6 +219,7 @@ namespace Model
      * uses the default.</p>
      */
     inline DescribeComplianceByResourceRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
@@ -259,14 +264,19 @@ namespace Model
     inline DescribeComplianceByResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<ComplianceType> m_complianceTypes;
     bool m_complianceTypesHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

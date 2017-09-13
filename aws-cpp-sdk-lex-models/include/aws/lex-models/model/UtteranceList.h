@@ -49,6 +49,7 @@ namespace Model
     UtteranceList& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The version of the bot that processed the list.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The version of the bot that processed the list.</p>
      */
     inline UtteranceList& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+
 
     /**
      * <p>One or more <a>UtteranceData</a> objects that contain information about the
@@ -134,8 +136,10 @@ namespace Model
     inline UtteranceList& AddUtterances(UtteranceData&& value) { m_utterancesHasBeenSet = true; m_utterances.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_botVersion;
     bool m_botVersionHasBeenSet;
+
     Aws::Vector<UtteranceData> m_utterances;
     bool m_utterancesHasBeenSet;
   };

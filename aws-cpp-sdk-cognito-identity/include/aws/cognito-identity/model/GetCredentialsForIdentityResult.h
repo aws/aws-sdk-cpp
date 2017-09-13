@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetCredentialsForIdentityResult();
-    GetCredentialsForIdentityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCredentialsForIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCredentialsForIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCredentialsForIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline GetCredentialsForIdentityResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
+
     /**
      * <p>Credentials for the provided identity ID.</p>
      */
@@ -109,7 +111,9 @@ namespace Model
     inline GetCredentialsForIdentityResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_identityId;
+
     Credentials m_credentials;
   };
 

@@ -45,6 +45,7 @@ namespace Model
     Location& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The latitude.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      * <p>The latitude.</p>
      */
     inline Location& WithLatitude(double value) { SetLatitude(value); return *this;}
+
 
     /**
      * <p>The longitude.</p>
@@ -76,8 +78,10 @@ namespace Model
     inline Location& WithLongitude(double value) { SetLongitude(value); return *this;}
 
   private:
+
     double m_latitude;
     bool m_latitudeHasBeenSet;
+
     double m_longitude;
     bool m_longitudeHasBeenSet;
   };

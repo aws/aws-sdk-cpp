@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the rule that you are creating or updating.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the rule that you are creating or updating.</p>
      */
     inline PutRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5
@@ -113,6 +115,7 @@ namespace Model
      * minutes)".</p>
      */
     inline PutRuleRequest& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+
 
     /**
      * <p>The event pattern. For more information, see <a
@@ -163,6 +166,7 @@ namespace Model
      */
     inline PutRuleRequest& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
 
+
     /**
      * <p>Indicates whether the rule is enabled or disabled.</p>
      */
@@ -187,6 +191,7 @@ namespace Model
      * <p>Indicates whether the rule is enabled or disabled.</p>
      */
     inline PutRuleRequest& WithState(RuleState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the rule.</p>
@@ -222,6 +227,7 @@ namespace Model
      * <p>A description of the rule.</p>
      */
     inline PutRuleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
@@ -259,16 +265,22 @@ namespace Model
     inline PutRuleRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+
     Aws::String m_eventPattern;
     bool m_eventPatternHasBeenSet;
+
     RuleState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name (friendly name, not ARN) of the group to list attached policies
      * for.</p> <p>This parameter allows (per its <a
@@ -100,6 +101,7 @@ namespace Model
      * can also include any of the following characters: =,.@-</p>
      */
     inline ListAttachedGroupPoliciesRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
@@ -178,6 +180,7 @@ namespace Model
      */
     inline ListAttachedGroupPoliciesRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
 
+
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
      * response indicating that the results are truncated. Set it to the value of the
@@ -234,6 +237,7 @@ namespace Model
      */
     inline ListAttachedGroupPoliciesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this only when paginating results to indicate the maximum
      * number of items you want in the response. If additional items exist beyond the
@@ -271,12 +275,16 @@ namespace Model
     inline ListAttachedGroupPoliciesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_pathPrefix;
     bool m_pathPrefixHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

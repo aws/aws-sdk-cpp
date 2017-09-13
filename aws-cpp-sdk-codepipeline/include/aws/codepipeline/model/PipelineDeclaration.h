@@ -49,6 +49,7 @@ namespace Model
     PipelineDeclaration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the action to be performed.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the action to be performed.</p>
      */
     inline PipelineDeclaration& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform
@@ -133,6 +135,7 @@ namespace Model
      */
     inline PipelineDeclaration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>Represents the context of an action within the stage of a pipeline to a job
      * worker. </p>
@@ -162,6 +165,7 @@ namespace Model
      * worker. </p>
      */
     inline PipelineDeclaration& WithArtifactStore(ArtifactStore&& value) { SetArtifactStore(std::move(value)); return *this;}
+
 
     /**
      * <p>The stage in which to perform the action.</p>
@@ -198,6 +202,7 @@ namespace Model
      */
     inline PipelineDeclaration& AddStages(StageDeclaration&& value) { m_stagesHasBeenSet = true; m_stages.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The version number of the pipeline. A new pipeline always has a version
      * number of 1. This number is automatically incremented when a pipeline is
@@ -220,14 +225,19 @@ namespace Model
     inline PipelineDeclaration& WithVersion(int value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     ArtifactStore m_artifactStore;
     bool m_artifactStoreHasBeenSet;
+
     Aws::Vector<StageDeclaration> m_stages;
     bool m_stagesHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
   };

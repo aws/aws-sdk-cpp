@@ -30,12 +30,12 @@ DescribeComputeEnvironmentsResult::DescribeComputeEnvironmentsResult()
 {
 }
 
-DescribeComputeEnvironmentsResult::DescribeComputeEnvironmentsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeComputeEnvironmentsResult::DescribeComputeEnvironmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeComputeEnvironmentsResult& DescribeComputeEnvironmentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeComputeEnvironmentsResult& DescribeComputeEnvironmentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("computeEnvironments"))

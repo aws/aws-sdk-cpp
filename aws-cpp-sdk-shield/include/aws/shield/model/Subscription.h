@@ -46,6 +46,7 @@ namespace Model
     Subscription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The start time of the subscription, in the format "2016-12-16T13:50Z".</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline Subscription& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
      * account.</p>
@@ -90,8 +92,10 @@ namespace Model
     inline Subscription& WithTimeCommitmentInSeconds(long long value) { SetTimeCommitmentInSeconds(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     long long m_timeCommitmentInSeconds;
     bool m_timeCommitmentInSecondsHasBeenSet;
   };

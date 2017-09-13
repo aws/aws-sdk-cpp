@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTapesResult();
-    DescribeTapesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTapesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTapesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of virtual tape descriptions.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>An array of virtual tape descriptions.</p>
      */
     inline DescribeTapesResult& AddTapes(Tape&& value) { m_tapes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An opaque string which can be used as part of a subsequent DescribeTapes call
@@ -133,7 +135,9 @@ namespace Model
     inline DescribeTapesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Tape> m_tapes;
+
     Aws::String m_marker;
   };
 

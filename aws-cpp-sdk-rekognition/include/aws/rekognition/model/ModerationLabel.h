@@ -48,6 +48,7 @@ namespace Model
     ModerationLabel& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the confidence that Amazon Rekognition has that the label has been
      * correctly identified.</p> <p>If you don't specify the <code>MinConfidence</code>
@@ -71,6 +72,7 @@ namespace Model
      * returns labels with a confidence value greater than or equal to 50 percent.</p>
      */
     inline ModerationLabel& WithConfidence(double value) { SetConfidence(value); return *this;}
+
 
     /**
      * <p>The label name for the type of content detected in the image.</p>
@@ -106,6 +108,7 @@ namespace Model
      * <p>The label name for the type of content detected in the image.</p>
      */
     inline ModerationLabel& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The name for the parent label. Labels at the top-level of the hierarchy have
@@ -150,10 +153,13 @@ namespace Model
     inline ModerationLabel& WithParentName(const char* value) { SetParentName(value); return *this;}
 
   private:
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_parentName;
     bool m_parentNameHasBeenSet;
   };

@@ -143,14 +143,14 @@ namespace Model
         class UpdateStackSetRequest;
         class ValidateTemplateRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> CancelUpdateStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> CancelUpdateStackOutcome;
         typedef Aws::Utils::Outcome<ContinueUpdateRollbackResult, Aws::Client::AWSError<CloudFormationErrors>> ContinueUpdateRollbackOutcome;
         typedef Aws::Utils::Outcome<CreateChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> CreateChangeSetOutcome;
         typedef Aws::Utils::Outcome<CreateStackResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackOutcome;
         typedef Aws::Utils::Outcome<CreateStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackInstancesOutcome;
         typedef Aws::Utils::Outcome<CreateStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackSetOutcome;
         typedef Aws::Utils::Outcome<DeleteChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteChangeSetOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackOutcome;
         typedef Aws::Utils::Outcome<DeleteStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackInstancesOutcome;
         typedef Aws::Utils::Outcome<DeleteStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackSetOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeAccountLimitsOutcome;
@@ -176,8 +176,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListStackSetOperationsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetOperationsOutcome;
         typedef Aws::Utils::Outcome<ListStackSetsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetsOutcome;
         typedef Aws::Utils::Outcome<ListStacksResult, Aws::Client::AWSError<CloudFormationErrors>> ListStacksOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> SetStackPolicyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> SignalResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> SetStackPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> SignalResourceOutcome;
         typedef Aws::Utils::Outcome<StopStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> StopStackSetOperationOutcome;
         typedef Aws::Utils::Outcome<UpdateStackResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackOutcome;
         typedef Aws::Utils::Outcome<UpdateStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackSetOutcome;
@@ -282,153 +282,7 @@ namespace Model
    * CloudFormation Product Page</a>.</p> <p>Amazon CloudFormation makes use of other
    * AWS products. If you need additional technical information about a specific AWS
    * product, you can find the product's technical documentation at <a
-   * href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.</p> <p> <i>APIs for
-   * stacks </i> </p> <p>When you use AWS CloudFormation, you manage related
-   * resources as a single unit called a stack. You create, update, and delete a
-   * collection of resources by creating, updating, and deleting stacks. All the
-   * resources in a stack are defined by the stack's AWS CloudFormation template.
-   * </p> <p>Actions</p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ContinueUpdateRollback.html">ContinueUpdateRollback</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html">CreateStack</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStack.html">DeleteStack</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackEvents.html">DescribeStackEvents</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResource.html">DescribeStackResource</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResources.html">DescribeStackResources</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStacks.html">DescribeStacks</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_EstimateTemplateCost.html">EstimateTemplateCost</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetStackPolicy.html">GetStackPolicy</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplate.html">GetTemplate</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplateSummary.html">GetTemplateSummary</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListExports.html">ListExports</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListImports.html">ListImports</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackResources.html">ListStackResources</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStacks.html">ListStacks</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetStackPolicy.html">SetStackPolicy</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html">UpdateStack</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ValidateTemplate.html">ValidateTemplate</a>
-   * </p> </li> </ul> <p>Data Types</p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Export.html">Export</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ParameterConstraints.html">ParameterConstraints</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ParameterDeclaration.html">ParameterDeclaration</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Stack.html">Stack</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackEvent.html">StackEvent</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResource.html">StackResource</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResourceDetail.html">StackResourceDetail</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResourceSummary.html">StackResourceSummary</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSummary.html">StackSummary</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Tag.html">Tag</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TemplateParameter.html">TemplateParameter</a>
-   * </p> </li> </ul> <p> <i>APIs for change sets</i> </p> <p>If you need to make
-   * changes to the running resources in a stack, you update the stack. Before making
-   * changes to your resources, you can generate a change set, which is summary of
-   * your proposed changes. Change sets allow you to see how your changes might
-   * impact your running resources, especially for critical resources, before
-   * implementing them.</p> <p>Actions</p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteChangeSet.html">DeleteChangeSet</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSet.html">DescribeChangeSet</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListChangeSets.html">ListChangeSets</a>
-   * </p> </li> </ul> <p>Data Types</p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Change.html">Change</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ChangeSetSummary.html">ChangeSetSummary</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceChange.html">ResourceChange</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceChangeDetail.html">ResourceChangeDetail</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceTargetDefinition.html">ResourceTargetDefinition</a>
-   * </p> </li> </ul> <p> <i>APIs for stack sets</i> </p> <p>AWS CloudFormation
-   * StackSets lets you create a collection, or stack set, of stacks that can
-   * automatically and safely provision a common set of AWS resources across multiple
-   * AWS accounts and multiple AWS regions from a single AWS CloudFormation template.
-   * When you create a stack set, AWS CloudFormation provisions a stack in each of
-   * the specified accounts and regions by using the supplied AWS CloudFormation
-   * template and parameters. Stack sets let you manage a common set of AWS resources
-   * in a selection of accounts and regions in a single operation. </p>
-   * <p>Actions</p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackSet.html">CreateStackSet</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackInstances.html">DeleteStackInstances</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackSet.html">DeleteStackSet</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackInstance.html">DescribeStackInstance</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSet.html">DescribeStackSet</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSetOperation.html">DescribeStackSetOperation</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackInstances.html">ListStackInstances</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperationResults">ListStackSetOperationResults</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperations">ListStackSetOperations</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSets">ListStackSets</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StopStackSetOperation.html">StopStackSetOperation</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-   * </p> </li> </ul> <p>Data Types</p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackInstance.html.html">StackInstance</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackInstanceSummary.html.html">StackInstanceSummary</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSet.html">StackSet</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperation.html.html">StackSetOperation</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationPreferences.html.html">StackSetOperationPreferences</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationResultSummary.html.html">StackSetOperationResultSummary</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationSummary.html.html">StackSetOperationSummary</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetSummary.html">StackSetSummary</a>
-   * </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Tag.html">Tag</a>
-   * </p> </li> </ul>
+   * href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.</p>
    */
   class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient
   {
@@ -439,27 +293,28 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudFormationClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudFormationClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudFormationClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudFormationClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CloudFormationClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudFormationClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudFormationClient();
+
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
 
         /**
@@ -1347,12 +1202,13 @@ namespace Model
          * <p>Returns information about a new or existing template. The
          * <code>GetTemplateSummary</code> action is useful for viewing parameter
          * information, such as default parameter values and parameter types, before you
-         * create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code>
-         * action when you submit a template, or you can get template information for a
-         * running or deleted stack.</p> <p>For deleted stacks,
-         * <code>GetTemplateSummary</code> returns the template information for up to 90
-         * days after the stack has been deleted. If the template does not exist, a
-         * <code>ValidationError</code> is returned.</p><p><h3>See Also:</h3>   <a
+         * create or update a stack or stack set.</p> <p>You can use the
+         * <code>GetTemplateSummary</code> action when you submit a template, or you can
+         * get template information for a stack set, or a running or deleted stack.</p>
+         * <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template
+         * information for up to 90 days after the stack has been deleted. If the template
+         * does not exist, a <code>ValidationError</code> is returned.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">AWS
          * API Reference</a></p>
          */
@@ -1362,12 +1218,13 @@ namespace Model
          * <p>Returns information about a new or existing template. The
          * <code>GetTemplateSummary</code> action is useful for viewing parameter
          * information, such as default parameter values and parameter types, before you
-         * create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code>
-         * action when you submit a template, or you can get template information for a
-         * running or deleted stack.</p> <p>For deleted stacks,
-         * <code>GetTemplateSummary</code> returns the template information for up to 90
-         * days after the stack has been deleted. If the template does not exist, a
-         * <code>ValidationError</code> is returned.</p><p><h3>See Also:</h3>   <a
+         * create or update a stack or stack set.</p> <p>You can use the
+         * <code>GetTemplateSummary</code> action when you submit a template, or you can
+         * get template information for a stack set, or a running or deleted stack.</p>
+         * <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template
+         * information for up to 90 days after the stack has been deleted. If the template
+         * does not exist, a <code>ValidationError</code> is returned.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">AWS
          * API Reference</a></p>
          *
@@ -1379,12 +1236,13 @@ namespace Model
          * <p>Returns information about a new or existing template. The
          * <code>GetTemplateSummary</code> action is useful for viewing parameter
          * information, such as default parameter values and parameter types, before you
-         * create or update a stack.</p> <p>You can use the <code>GetTemplateSummary</code>
-         * action when you submit a template, or you can get template information for a
-         * running or deleted stack.</p> <p>For deleted stacks,
-         * <code>GetTemplateSummary</code> returns the template information for up to 90
-         * days after the stack has been deleted. If the template does not exist, a
-         * <code>ValidationError</code> is returned.</p><p><h3>See Also:</h3>   <a
+         * create or update a stack or stack set.</p> <p>You can use the
+         * <code>GetTemplateSummary</code> action when you submit a template, or you can
+         * get template information for a stack set, or a running or deleted stack.</p>
+         * <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template
+         * information for up to 90 days after the stack has been deleted. If the template
+         * does not exist, a <code>ValidationError</code> is returned.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">AWS
          * API Reference</a></p>
          *
@@ -1910,7 +1768,7 @@ namespace Model
 
 
   private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void CancelUpdateStackAsyncHelper(const Model::CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1954,7 +1812,7 @@ namespace Model
         void ValidateTemplateAsyncHelper(const Model::ValidateTemplateRequest& request, const ValidateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace CloudFormation

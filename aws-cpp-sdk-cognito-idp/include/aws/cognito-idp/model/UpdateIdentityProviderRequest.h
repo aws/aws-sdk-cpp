@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline UpdateIdentityProviderRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The identity provider name.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The identity provider name.</p>
      */
     inline UpdateIdentityProviderRequest& WithProviderName(const char* value) { SetProviderName(value); return *this;}
+
 
     /**
      * <p>The identity provider details to be updated, such as <code>MetadataURL</code>
@@ -180,6 +183,7 @@ namespace Model
      */
     inline UpdateIdentityProviderRequest& AddProviderDetails(const char* key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
 
+
     /**
      * <p>The identity provider attribute mapping to be changed.</p>
      */
@@ -240,6 +244,7 @@ namespace Model
      */
     inline UpdateIdentityProviderRequest& AddAttributeMapping(const char* key, const char* value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, value); return *this; }
 
+
     /**
      * <p>A list of identity provider identifiers.</p>
      */
@@ -281,14 +286,19 @@ namespace Model
     inline UpdateIdentityProviderRequest& AddIdpIdentifiers(const char* value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers.push_back(value); return *this; }
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_providerDetails;
     bool m_providerDetailsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributeMapping;
     bool m_attributeMappingHasBeenSet;
+
     Aws::Vector<Aws::String> m_idpIdentifiers;
     bool m_idpIdentifiersHasBeenSet;
   };

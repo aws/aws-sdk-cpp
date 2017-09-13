@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DeletePlatformVersionResult();
-    DeletePlatformVersionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeletePlatformVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeletePlatformVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeletePlatformVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Detailed information about the version of the custom platform.</p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline DeletePlatformVersionResult& WithPlatformSummary(PlatformSummary&& value) { SetPlatformSummary(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -83,7 +85,9 @@ namespace Model
     inline DeletePlatformVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     PlatformSummary m_platformSummary;
+
     ResponseMetadata m_responseMetadata;
   };
 

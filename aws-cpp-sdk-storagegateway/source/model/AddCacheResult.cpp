@@ -30,12 +30,12 @@ AddCacheResult::AddCacheResult()
 {
 }
 
-AddCacheResult::AddCacheResult(const AmazonWebServiceResult<JsonValue>& result)
+AddCacheResult::AddCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddCacheResult& AddCacheResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddCacheResult& AddCacheResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

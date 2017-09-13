@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTapeArchivesResult();
-    DescribeTapeArchivesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTapeArchivesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTapeArchivesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTapeArchivesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of virtual tape objects in the virtual tape shelf (VTS). The
@@ -110,6 +111,7 @@ namespace Model
      * barcode.</p>
      */
     inline DescribeTapeArchivesResult& AddTapeArchives(TapeArchive&& value) { m_tapeArchives.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An opaque string that indicates the position at which the virtual tapes that
@@ -175,7 +177,9 @@ namespace Model
     inline DescribeTapeArchivesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<TapeArchive> m_tapeArchives;
+
     Aws::String m_marker;
   };
 

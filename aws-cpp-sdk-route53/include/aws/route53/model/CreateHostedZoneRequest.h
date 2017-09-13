@@ -40,6 +40,7 @@ namespace Model
     CreateHostedZoneRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the domain. For resource record types that include a domain name,
      * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
@@ -138,6 +139,7 @@ namespace Model
      */
     inline CreateHostedZoneRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
@@ -182,6 +184,7 @@ namespace Model
      * <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
      */
     inline CreateHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
+
 
     /**
      * <p>A unique string that identifies the request and that allows failed
@@ -253,6 +256,7 @@ namespace Model
      */
     inline CreateHostedZoneRequest& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
+
     /**
      * <p>(Optional) A complex type that contains the following optional values:</p>
      * <ul> <li> <p>For public and private hosted zones, an optional comment</p> </li>
@@ -302,6 +306,7 @@ namespace Model
      * other elements.</p>
      */
     inline CreateHostedZoneRequest& WithHostedZoneConfig(HostedZoneConfig&& value) { SetHostedZoneConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
@@ -360,14 +365,19 @@ namespace Model
     inline CreateHostedZoneRequest& WithDelegationSetId(const char* value) { SetDelegationSetId(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     VPC m_vPC;
     bool m_vPCHasBeenSet;
+
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
+
     HostedZoneConfig m_hostedZoneConfig;
     bool m_hostedZoneConfigHasBeenSet;
+
     Aws::String m_delegationSetId;
     bool m_delegationSetIdHasBeenSet;
   };

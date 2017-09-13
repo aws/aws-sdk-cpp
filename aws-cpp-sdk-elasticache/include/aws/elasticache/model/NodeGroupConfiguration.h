@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A string that specifies the keyspace for a particular node group. Keyspaces
      * range from 0 to 16,383. The string is in the format
@@ -101,6 +102,7 @@ namespace Model
      */
     inline NodeGroupConfiguration& WithSlots(const char* value) { SetSlots(value); return *this;}
 
+
     /**
      * <p>The number of read replica nodes in this node group (shard).</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The number of read replica nodes in this node group (shard).</p>
      */
     inline NodeGroupConfiguration& WithReplicaCount(int value) { SetReplicaCount(value); return *this;}
+
 
     /**
      * <p>The Availability Zone where the primary node of this node group (shard) is
@@ -157,6 +160,7 @@ namespace Model
      * launched.</p>
      */
     inline NodeGroupConfiguration& WithPrimaryAvailabilityZone(const char* value) { SetPrimaryAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>A list of Availability Zones to be used for the read replicas. The number of
@@ -223,12 +227,16 @@ namespace Model
     inline NodeGroupConfiguration& AddReplicaAvailabilityZones(const char* value) { m_replicaAvailabilityZonesHasBeenSet = true; m_replicaAvailabilityZones.push_back(value); return *this; }
 
   private:
+
     Aws::String m_slots;
     bool m_slotsHasBeenSet;
+
     int m_replicaCount;
     bool m_replicaCountHasBeenSet;
+
     Aws::String m_primaryAvailabilityZone;
     bool m_primaryAvailabilityZoneHasBeenSet;
+
     Aws::Vector<Aws::String> m_replicaAvailabilityZones;
     bool m_replicaAvailabilityZonesHasBeenSet;
   };

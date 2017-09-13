@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ModifyClusterParameterGroupResult();
-    ModifyClusterParameterGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyClusterParameterGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyClusterParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyClusterParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The name of the cluster parameter group.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the cluster parameter group.</p>
      */
     inline ModifyClusterParameterGroupResult& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+
 
     /**
      * <p>The status of the parameter group. For example, if you made a change to a
@@ -131,6 +133,7 @@ namespace Model
      */
     inline ModifyClusterParameterGroupResult& WithParameterGroupStatus(const char* value) { SetParameterGroupStatus(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -147,8 +150,11 @@ namespace Model
     inline ModifyClusterParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_parameterGroupName;
+
     Aws::String m_parameterGroupStatus;
+
     ResponseMetadata m_responseMetadata;
   };
 

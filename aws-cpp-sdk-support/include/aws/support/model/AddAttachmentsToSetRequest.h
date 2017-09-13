@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not
      * specified, a new attachment set is created, and the ID of the set is returned in
@@ -97,6 +98,7 @@ namespace Model
      */
     inline AddAttachmentsToSetRequest& WithAttachmentSetId(const char* value) { SetAttachmentSetId(value); return *this;}
 
+
     /**
      * <p>One or more attachments to add to the set. The limit is 3 attachments per
      * set, and the size limit is 5 MB per attachment.</p>
@@ -140,8 +142,10 @@ namespace Model
     inline AddAttachmentsToSetRequest& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_attachmentSetId;
     bool m_attachmentSetIdHasBeenSet;
+
     Aws::Vector<Attachment> m_attachments;
     bool m_attachmentsHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PurchaseProvisionedCapacityResult();
-    PurchaseProvisionedCapacityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PurchaseProvisionedCapacityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PurchaseProvisionedCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PurchaseProvisionedCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline PurchaseProvisionedCapacityResult& WithCapacityId(const char* value) { SetCapacityId(value); return *this;}
 
   private:
+
     Aws::String m_capacityId;
   };
 

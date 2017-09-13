@@ -30,12 +30,12 @@ GetAccountSettingsResult::GetAccountSettingsResult()
 {
 }
 
-GetAccountSettingsResult::GetAccountSettingsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetAccountSettingsResult::GetAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetAccountSettingsResult& GetAccountSettingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetAccountSettingsResult& GetAccountSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AccountLimit"))

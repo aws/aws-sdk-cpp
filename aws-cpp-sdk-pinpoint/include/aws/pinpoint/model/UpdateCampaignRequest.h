@@ -35,6 +35,7 @@ namespace Model
     UpdateCampaignRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -55,6 +56,7 @@ namespace Model
 
     
     inline UpdateCampaignRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
@@ -77,6 +79,7 @@ namespace Model
     
     inline UpdateCampaignRequest& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
 
+
     
     inline const WriteCampaignRequest& GetWriteCampaignRequest() const{ return m_writeCampaignRequest; }
 
@@ -93,10 +96,13 @@ namespace Model
     inline UpdateCampaignRequest& WithWriteCampaignRequest(WriteCampaignRequest&& value) { SetWriteCampaignRequest(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_campaignId;
     bool m_campaignIdHasBeenSet;
+
     WriteCampaignRequest m_writeCampaignRequest;
     bool m_writeCampaignRequestHasBeenSet;
   };

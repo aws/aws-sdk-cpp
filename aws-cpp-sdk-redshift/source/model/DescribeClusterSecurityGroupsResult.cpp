@@ -31,12 +31,12 @@ DescribeClusterSecurityGroupsResult::DescribeClusterSecurityGroupsResult()
 {
 }
 
-DescribeClusterSecurityGroupsResult::DescribeClusterSecurityGroupsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeClusterSecurityGroupsResult::DescribeClusterSecurityGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeClusterSecurityGroupsResult& DescribeClusterSecurityGroupsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeClusterSecurityGroupsResult& DescribeClusterSecurityGroupsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

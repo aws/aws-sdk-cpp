@@ -44,6 +44,7 @@ namespace Model
     ImportDocumentationPartsRequest();
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline ImportDocumentationPartsRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>)
@@ -119,6 +121,7 @@ namespace Model
      */
     inline ImportDocumentationPartsRequest& WithMode(PutMode&& value) { SetMode(std::move(value)); return *this;}
 
+
     /**
      * <p>A query parameter to specify whether to rollback the documentation
      * importation (<code>true</code>) or not (<code>false</code>) when a warning is
@@ -141,12 +144,16 @@ namespace Model
     inline ImportDocumentationPartsRequest& WithFailOnWarnings(bool value) { SetFailOnWarnings(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     PutMode m_mode;
     bool m_modeHasBeenSet;
+
     bool m_failOnWarnings;
     bool m_failOnWarningsHasBeenSet;
+
   };
 
 } // namespace Model

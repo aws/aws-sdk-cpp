@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * If the principal is an AWS account, it provides the Canonical User ID. If the
      * principal is an IAM User, it provides a user ARN value.
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Initiator& WithID(const char* value) { SetID(value); return *this;}
 
+
     /**
      * Name of the Principal.
      */
@@ -119,8 +121,10 @@ namespace Model
     inline Initiator& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
   private:
+
     Aws::String m_iD;
     bool m_iDHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
   };

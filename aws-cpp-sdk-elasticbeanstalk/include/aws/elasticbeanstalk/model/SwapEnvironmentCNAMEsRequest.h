@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
@@ -103,6 +104,7 @@ namespace Model
      * <code>DestinationEnvironmentId</code>. </p>
      */
     inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentId(const char* value) { SetSourceEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The name of the source environment.</p> <p> Condition: You must specify at
@@ -167,6 +169,7 @@ namespace Model
      */
     inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentName(const char* value) { SetSourceEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The ID of the destination environment.</p> <p> Condition: You must specify at
      * least the <code>DestinationEnvironmentID</code> or the
@@ -229,6 +232,7 @@ namespace Model
      * <code>DestinationEnvironmentId</code>. </p>
      */
     inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentId(const char* value) { SetDestinationEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The name of the destination environment.</p> <p> Condition: You must specify
@@ -294,12 +298,16 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentName(const char* value) { SetDestinationEnvironmentName(value); return *this;}
 
   private:
+
     Aws::String m_sourceEnvironmentId;
     bool m_sourceEnvironmentIdHasBeenSet;
+
     Aws::String m_sourceEnvironmentName;
     bool m_sourceEnvironmentNameHasBeenSet;
+
     Aws::String m_destinationEnvironmentId;
     bool m_destinationEnvironmentIdHasBeenSet;
+
     Aws::String m_destinationEnvironmentName;
     bool m_destinationEnvironmentNameHasBeenSet;
   };

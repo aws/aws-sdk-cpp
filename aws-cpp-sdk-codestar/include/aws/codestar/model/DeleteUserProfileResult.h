@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteUserProfileResult();
-    DeleteUserProfileResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteUserProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteUserProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteUserProfileResult& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 
   private:
+
     Aws::String m_userArn;
   };
 

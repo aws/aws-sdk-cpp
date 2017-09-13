@@ -32,13 +32,13 @@ ListInstanceProfilesForRoleResult::ListInstanceProfilesForRoleResult() :
 {
 }
 
-ListInstanceProfilesForRoleResult::ListInstanceProfilesForRoleResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListInstanceProfilesForRoleResult::ListInstanceProfilesForRoleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListInstanceProfilesForRoleResult& ListInstanceProfilesForRoleResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListInstanceProfilesForRoleResult& ListInstanceProfilesForRoleResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

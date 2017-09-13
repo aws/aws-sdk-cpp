@@ -31,12 +31,12 @@ DescribeCertificatesResult::DescribeCertificatesResult()
 {
 }
 
-DescribeCertificatesResult::DescribeCertificatesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeCertificatesResult::DescribeCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeCertificatesResult& DescribeCertificatesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

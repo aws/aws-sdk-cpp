@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     AdminUserGlobalSignOutResult();
-    AdminUserGlobalSignOutResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminUserGlobalSignOutResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminUserGlobalSignOutResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminUserGlobalSignOutResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

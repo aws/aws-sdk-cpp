@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -104,6 +105,7 @@ namespace Model
      */
     inline UserDetail& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The friendly name identifying the user.</p>
      */
@@ -138,6 +140,7 @@ namespace Model
      * <p>The friendly name identifying the user.</p>
      */
     inline UserDetail& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The stable and unique string identifying the user. For more information about
@@ -195,6 +198,7 @@ namespace Model
      */
     inline UserDetail& WithUserId(const char* value) { SetUserId(value); return *this;}
 
+
     
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -215,6 +219,7 @@ namespace Model
 
     
     inline UserDetail& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -245,6 +250,7 @@ namespace Model
      * date-time format</a>, when the user was created.</p>
      */
     inline UserDetail& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the inline policies embedded in the user.</p>
@@ -280,6 +286,7 @@ namespace Model
      * <p>A list of the inline policies embedded in the user.</p>
      */
     inline UserDetail& AddUserPolicyList(PolicyDetail&& value) { m_userPolicyListHasBeenSet = true; m_userPolicyList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of IAM groups that the user is in.</p>
@@ -321,6 +328,7 @@ namespace Model
      */
     inline UserDetail& AddGroupList(const char* value) { m_groupListHasBeenSet = true; m_groupList.push_back(value); return *this; }
 
+
     /**
      * <p>A list of the managed policies attached to the user.</p>
      */
@@ -357,20 +365,28 @@ namespace Model
     inline UserDetail& AddAttachedManagedPolicies(AttachedPolicy&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::Vector<PolicyDetail> m_userPolicyList;
     bool m_userPolicyListHasBeenSet;
+
     Aws::Vector<Aws::String> m_groupList;
     bool m_groupListHasBeenSet;
+
     Aws::Vector<AttachedPolicy> m_attachedManagedPolicies;
     bool m_attachedManagedPoliciesHasBeenSet;
   };

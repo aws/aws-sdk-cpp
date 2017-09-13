@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     SetUICustomizationResult();
-    SetUICustomizationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SetUICustomizationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SetUICustomizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SetUICustomizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The UI customization information.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline SetUICustomizationResult& WithUICustomization(UICustomizationType&& value) { SetUICustomization(std::move(value)); return *this;}
 
   private:
+
     UICustomizationType m_uICustomization;
   };
 

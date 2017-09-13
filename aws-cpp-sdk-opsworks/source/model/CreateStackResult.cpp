@@ -30,12 +30,12 @@ CreateStackResult::CreateStackResult()
 {
 }
 
-CreateStackResult::CreateStackResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateStackResult::CreateStackResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateStackResult& CreateStackResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateStackResult& CreateStackResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StackId"))

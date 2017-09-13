@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateGroupCertificateAuthorityResult();
-    CreateGroupCertificateAuthorityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateGroupCertificateAuthorityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateGroupCertificateAuthorityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateGroupCertificateAuthorityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the group certificate authority.
@@ -77,6 +78,7 @@ namespace Model
     inline CreateGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const char* value) { SetGroupCertificateAuthorityArn(value); return *this;}
 
   private:
+
     Aws::String m_groupCertificateAuthorityArn;
   };
 

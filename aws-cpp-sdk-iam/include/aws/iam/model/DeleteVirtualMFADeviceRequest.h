@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
      * devices, the serial number is the same as the ARN.</p> <p>This parameter allows
@@ -102,6 +103,7 @@ namespace Model
     inline DeleteVirtualMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
   private:
+
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
   };

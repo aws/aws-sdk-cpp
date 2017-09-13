@@ -47,6 +47,7 @@ namespace Model
     AttachmentDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the attachment.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The ID of the attachment.</p>
      */
     inline AttachmentDetails& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+
 
     /**
      * <p>The file name of the attachment.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline AttachmentDetails& WithFileName(const char* value) { SetFileName(value); return *this;}
 
   private:
+
     Aws::String m_attachmentId;
     bool m_attachmentIdHasBeenSet;
+
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet;
   };

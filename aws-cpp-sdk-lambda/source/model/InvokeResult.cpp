@@ -54,13 +54,13 @@ InvokeResult& InvokeResult::operator=(InvokeResult&& toMove)
    return *this;
 }
 
-InvokeResult::InvokeResult(AmazonWebServiceResult<ResponseStream>&& result) : 
+InvokeResult::InvokeResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
     m_statusCode(0)
 {
   *this = std::move(result);
 }
 
-InvokeResult& InvokeResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+InvokeResult& InvokeResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_payload = result.TakeOwnershipOfPayload();
 

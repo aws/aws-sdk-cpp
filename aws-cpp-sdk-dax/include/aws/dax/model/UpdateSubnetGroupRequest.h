@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the subnet group.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline UpdateSubnetGroupRequest& WithSubnetGroupName(const char* value) { SetSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>A description of the subnet group.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>A description of the subnet group.</p>
      */
     inline UpdateSubnetGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of subnet IDs in the subnet group.</p>
@@ -148,10 +151,13 @@ namespace Model
     inline UpdateSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_subnetGroupName;
     bool m_subnetGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
   };

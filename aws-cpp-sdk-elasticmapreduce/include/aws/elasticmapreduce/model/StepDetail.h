@@ -47,6 +47,7 @@ namespace Model
     StepDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The step configuration.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The step configuration.</p>
      */
     inline StepDetail& WithStepConfig(StepConfig&& value) { SetStepConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The description of the step status.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline StepDetail& WithExecutionStatusDetail(StepExecutionStatusDetail&& value) { SetExecutionStatusDetail(std::move(value)); return *this;}
 
   private:
+
     StepConfig m_stepConfig;
     bool m_stepConfigHasBeenSet;
+
     StepExecutionStatusDetail m_executionStatusDetail;
     bool m_executionStatusDetailHasBeenSet;
   };

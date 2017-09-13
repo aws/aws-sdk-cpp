@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     SetIdentityPoolConfigurationResult();
-    SetIdentityPoolConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SetIdentityPoolConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SetIdentityPoolConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SetIdentityPoolConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A name-spaced GUID (for example,
@@ -91,6 +92,7 @@ namespace Model
      */
     inline SetIdentityPoolConfigurationResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * <p>Options to apply to this identity pool for push synchronization.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>Options to apply to this identity pool for push synchronization.</p>
      */
     inline SetIdentityPoolConfigurationResult& WithPushSync(PushSync&& value) { SetPushSync(std::move(value)); return *this;}
+
 
     /**
      * Options to apply to this identity pool for Amazon Cognito streams.
@@ -142,8 +145,11 @@ namespace Model
     inline SetIdentityPoolConfigurationResult& WithCognitoStreams(CognitoStreams&& value) { SetCognitoStreams(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
+
     PushSync m_pushSync;
+
     CognitoStreams m_cognitoStreams;
   };
 

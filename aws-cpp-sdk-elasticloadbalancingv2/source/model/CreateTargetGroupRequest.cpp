@@ -39,7 +39,9 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_healthyThresholdCountHasBeenSet(false),
     m_unhealthyThresholdCount(0),
     m_unhealthyThresholdCountHasBeenSet(false),
-    m_matcherHasBeenSet(false)
+    m_matcherHasBeenSet(false),
+    m_targetType(TargetTypeEnum::NOT_SET),
+    m_targetTypeHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,11 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
   if(m_matcherHasBeenSet)
   {
     m_matcher.OutputToStream(ss, "Matcher");
+  }
+
+  if(m_targetTypeHasBeenSet)
+  {
+    ss << "TargetType=" << TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType) << "&";
   }
 
   ss << "Version=2015-12-01";

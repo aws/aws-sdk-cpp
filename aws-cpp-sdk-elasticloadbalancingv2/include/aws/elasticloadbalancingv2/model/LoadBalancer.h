@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      */
     inline LoadBalancer& WithLoadBalancerArn(const char* value) { SetLoadBalancerArn(value); return *this;}
 
+
     /**
      * <p>The public DNS name of the load balancer.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The public DNS name of the load balancer.</p>
      */
     inline LoadBalancer& WithDNSName(const char* value) { SetDNSName(value); return *this;}
+
 
     /**
      * <p>The ID of the Amazon Route 53 hosted zone associated with the load
@@ -167,6 +170,7 @@ namespace Model
      */
     inline LoadBalancer& WithCanonicalHostedZoneId(const char* value) { SetCanonicalHostedZoneId(value); return *this;}
 
+
     /**
      * <p>The date and time the load balancer was created.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      * <p>The date and time the load balancer was created.</p>
      */
     inline LoadBalancer& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the load balancer.</p>
@@ -226,6 +231,7 @@ namespace Model
      * <p>The name of the load balancer.</p>
      */
     inline LoadBalancer& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+
 
     /**
      * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
@@ -287,6 +293,7 @@ namespace Model
      */
     inline LoadBalancer& WithScheme(LoadBalancerSchemeEnum&& value) { SetScheme(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the VPC for the load balancer.</p>
      */
@@ -322,6 +329,7 @@ namespace Model
      */
     inline LoadBalancer& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>The state of the load balancer.</p>
      */
@@ -347,6 +355,7 @@ namespace Model
      */
     inline LoadBalancer& WithState(LoadBalancerState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of load balancer.</p>
      */
@@ -371,6 +380,7 @@ namespace Model
      * <p>The type of load balancer.</p>
      */
     inline LoadBalancer& WithType(LoadBalancerTypeEnum&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The Availability Zones for the load balancer.</p>
@@ -406,6 +416,7 @@ namespace Model
      * <p>The Availability Zones for the load balancer.</p>
      */
     inline LoadBalancer& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The IDs of the security groups for the load balancer.</p>
@@ -447,6 +458,7 @@ namespace Model
      */
     inline LoadBalancer& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
+
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The
      * possible values are <code>ipv4</code> (for IPv4 addresses) and
@@ -483,28 +495,40 @@ namespace Model
     inline LoadBalancer& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_loadBalancerArn;
     bool m_loadBalancerArnHasBeenSet;
+
     Aws::String m_dNSName;
     bool m_dNSNameHasBeenSet;
+
     Aws::String m_canonicalHostedZoneId;
     bool m_canonicalHostedZoneIdHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     LoadBalancerSchemeEnum m_scheme;
     bool m_schemeHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     LoadBalancerState m_state;
     bool m_stateHasBeenSet;
+
     LoadBalancerTypeEnum m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<AvailabilityZone> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet;
   };

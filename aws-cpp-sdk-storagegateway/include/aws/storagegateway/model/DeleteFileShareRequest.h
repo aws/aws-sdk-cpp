@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be deleted. </p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline DeleteFileShareRequest& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 
+
     /**
      * <p>If set to true, deletes a file share immediately and aborts all data uploads
      * to AWS. Otherwise the file share is not deleted until all data is uploaded to
@@ -99,8 +101,10 @@ namespace Model
     inline DeleteFileShareRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 
   private:
+
     Aws::String m_fileShareARN;
     bool m_fileShareARNHasBeenSet;
+
     bool m_forceDelete;
     bool m_forceDeleteHasBeenSet;
   };

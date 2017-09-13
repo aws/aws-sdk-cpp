@@ -31,12 +31,12 @@ GetConsoleScreenshotResponse::GetConsoleScreenshotResponse()
 {
 }
 
-GetConsoleScreenshotResponse::GetConsoleScreenshotResponse(const AmazonWebServiceResult<XmlDocument>& result)
+GetConsoleScreenshotResponse::GetConsoleScreenshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetConsoleScreenshotResponse& GetConsoleScreenshotResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetConsoleScreenshotResponse& GetConsoleScreenshotResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

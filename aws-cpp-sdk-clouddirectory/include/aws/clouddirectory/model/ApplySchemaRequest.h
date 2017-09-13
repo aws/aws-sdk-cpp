@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
      * information, see <a>arns</a>.</p>
@@ -77,6 +78,7 @@ namespace Model
      * information, see <a>arns</a>.</p>
      */
     inline ApplySchemaRequest& WithPublishedSchemaArn(const char* value) { SetPublishedSchemaArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
@@ -121,8 +123,10 @@ namespace Model
     inline ApplySchemaRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
   private:
+
     Aws::String m_publishedSchemaArn;
     bool m_publishedSchemaArnHasBeenSet;
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
   };

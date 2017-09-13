@@ -34,6 +34,7 @@ namespace Model
     GetBotChannelAssociationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the association between the bot and the channel. The name is case
      * sensitive. </p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetBotChannelAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon Lex bot.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The name of the Amazon Lex bot.</p>
      */
     inline GetBotChannelAssociationRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+
 
     /**
      * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
@@ -154,10 +157,13 @@ namespace Model
     inline GetBotChannelAssociationRequest& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::String m_botAlias;
     bool m_botAliasHasBeenSet;
   };

@@ -31,12 +31,12 @@ DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResp
 {
 }
 
-DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeNetworkInterfaceAttributeResponse& DescribeNetworkInterfaceAttributeResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeNetworkInterfaceAttributeResponse& DescribeNetworkInterfaceAttributeResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

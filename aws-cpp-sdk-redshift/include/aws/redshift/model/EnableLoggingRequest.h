@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the cluster on which logging is to be started.</p>
      * <p>Example: <code>examplecluster</code> </p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>Example: <code>examplecluster</code> </p>
      */
     inline EnableLoggingRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The name of an existing S3 bucket where the log files are to be stored.</p>
@@ -138,6 +140,7 @@ namespace Model
      * </li> </ul>
      */
     inline EnableLoggingRequest& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+
 
     /**
      * <p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li>
@@ -210,10 +213,13 @@ namespace Model
     inline EnableLoggingRequest& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet;
+
     Aws::String m_s3KeyPrefix;
     bool m_s3KeyPrefixHasBeenSet;
   };

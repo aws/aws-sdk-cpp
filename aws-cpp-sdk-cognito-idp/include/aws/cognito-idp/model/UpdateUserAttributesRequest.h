@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
      * attributes, you must prepend the <code>custom:</code> prefix to the attribute
@@ -91,6 +92,7 @@ namespace Model
      */
     inline UpdateUserAttributesRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The access token for the request to update user attributes.</p>
      */
@@ -127,8 +129,10 @@ namespace Model
     inline UpdateUserAttributesRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
   private:
+
     Aws::Vector<AttributeType> m_userAttributes;
     bool m_userAttributesHasBeenSet;
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
   };

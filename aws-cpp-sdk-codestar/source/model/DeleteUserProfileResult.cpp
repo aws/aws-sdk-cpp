@@ -30,12 +30,12 @@ DeleteUserProfileResult::DeleteUserProfileResult()
 {
 }
 
-DeleteUserProfileResult::DeleteUserProfileResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteUserProfileResult::DeleteUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteUserProfileResult& DeleteUserProfileResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteUserProfileResult& DeleteUserProfileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("userArn"))

@@ -30,12 +30,12 @@ GetIdentityPoolConfigurationResult::GetIdentityPoolConfigurationResult()
 {
 }
 
-GetIdentityPoolConfigurationResult::GetIdentityPoolConfigurationResult(const AmazonWebServiceResult<JsonValue>& result)
+GetIdentityPoolConfigurationResult::GetIdentityPoolConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetIdentityPoolConfigurationResult& GetIdentityPoolConfigurationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetIdentityPoolConfigurationResult& GetIdentityPoolConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityPoolId"))

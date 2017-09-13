@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListSubscriptionsResult();
-    ListSubscriptionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListSubscriptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListSubscriptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListSubscriptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of subscriptions.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of subscriptions.</p>
      */
     inline ListSubscriptionsResult& AddSubscriptions(Subscription&& value) { m_subscriptions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token to pass along to the next <code>ListSubscriptions</code> request. This
@@ -126,6 +128,7 @@ namespace Model
      */
     inline ListSubscriptionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline ListSubscriptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Subscription> m_subscriptions;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

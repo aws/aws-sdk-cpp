@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetSAMLProviderResult();
-    GetSAMLProviderResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetSAMLProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetSAMLProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetSAMLProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The XML metadata document that includes information about an identity
@@ -91,6 +92,7 @@ namespace Model
      */
     inline GetSAMLProviderResult& WithSAMLMetadataDocument(const char* value) { SetSAMLMetadataDocument(value); return *this;}
 
+
     /**
      * <p>The date and time when the SAML provider was created.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The date and time when the SAML provider was created.</p>
      */
     inline GetSAMLProviderResult& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The expiration date and time for the SAML provider.</p>
@@ -141,6 +144,7 @@ namespace Model
      */
     inline GetSAMLProviderResult& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -157,9 +161,13 @@ namespace Model
     inline GetSAMLProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_sAMLMetadataDocument;
+
     Aws::Utils::DateTime m_createDate;
+
     Aws::Utils::DateTime m_validUntil;
+
     ResponseMetadata m_responseMetadata;
   };
 

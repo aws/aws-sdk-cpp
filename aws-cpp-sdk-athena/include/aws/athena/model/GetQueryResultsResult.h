@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetQueryResultsResult();
-    GetQueryResultsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetQueryResultsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetQueryResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetQueryResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The results of the query execution.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>The results of the query execution.</p>
      */
     inline GetQueryResultsResult& WithResultSet(ResultSet&& value) { SetResultSet(std::move(value)); return *this;}
+
 
     /**
      * <p>A token to be used by the next request if this request is truncated.</p>
@@ -103,7 +105,9 @@ namespace Model
     inline GetQueryResultsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     ResultSet m_resultSet;
+
     Aws::String m_nextToken;
   };
 

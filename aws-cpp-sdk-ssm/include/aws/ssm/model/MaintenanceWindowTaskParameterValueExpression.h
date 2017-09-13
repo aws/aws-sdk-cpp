@@ -46,6 +46,7 @@ namespace Model
     MaintenanceWindowTaskParameterValueExpression& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>This field contains an array of 0 or more strings, each 1 to 255 characters
      * in length.</p>
@@ -95,6 +96,7 @@ namespace Model
     inline MaintenanceWindowTaskParameterValueExpression& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

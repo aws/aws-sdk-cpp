@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the group.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name of the group.</p>
      */
     inline DescribeLifecycleHooksRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
@@ -127,8 +129,10 @@ namespace Model
     inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(const char* value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_lifecycleHookNames;
     bool m_lifecycleHookNamesHasBeenSet;
   };

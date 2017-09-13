@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p> The path to the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -101,6 +102,7 @@ namespace Model
      */
     inline ServerCertificateMetadata& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The name that identifies the server certificate.</p>
      */
@@ -135,6 +137,7 @@ namespace Model
      * <p>The name that identifies the server certificate.</p>
      */
     inline ServerCertificateMetadata& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
+
 
     /**
      * <p> The stable and unique string identifying the server certificate. For more
@@ -192,6 +195,7 @@ namespace Model
      */
     inline ServerCertificateMetadata& WithServerCertificateId(const char* value) { SetServerCertificateId(value); return *this;}
 
+
     /**
      * <p> The Amazon Resource Name (ARN) specifying the server certificate. For more
      * information about ARNs and how to use them in policies, see <a
@@ -248,6 +252,7 @@ namespace Model
      */
     inline ServerCertificateMetadata& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The date when the server certificate was uploaded.</p>
      */
@@ -272,6 +277,7 @@ namespace Model
      * <p>The date when the server certificate was uploaded.</p>
      */
     inline ServerCertificateMetadata& WithUploadDate(Aws::Utils::DateTime&& value) { SetUploadDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date on which the certificate is set to expire.</p>
@@ -299,16 +305,22 @@ namespace Model
     inline ServerCertificateMetadata& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_serverCertificateName;
     bool m_serverCertificateNameHasBeenSet;
+
     Aws::String m_serverCertificateId;
     bool m_serverCertificateIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Utils::DateTime m_uploadDate;
     bool m_uploadDateHasBeenSet;
+
     Aws::Utils::DateTime m_expiration;
     bool m_expirationHasBeenSet;
   };

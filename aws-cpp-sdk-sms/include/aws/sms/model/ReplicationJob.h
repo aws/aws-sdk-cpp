@@ -52,6 +52,7 @@ namespace Model
     ReplicationJob& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
 
@@ -72,6 +73,7 @@ namespace Model
 
     
     inline ReplicationJob& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
+
 
     
     inline const Aws::String& GetServerId() const{ return m_serverId; }
@@ -94,6 +96,7 @@ namespace Model
     
     inline ReplicationJob& WithServerId(const char* value) { SetServerId(value); return *this;}
 
+
     
     inline const ServerType& GetServerType() const{ return m_serverType; }
 
@@ -108,6 +111,7 @@ namespace Model
 
     
     inline ReplicationJob& WithServerType(ServerType&& value) { SetServerType(std::move(value)); return *this;}
+
 
     
     inline const VmServer& GetVmServer() const{ return m_vmServer; }
@@ -124,6 +128,7 @@ namespace Model
     
     inline ReplicationJob& WithVmServer(VmServer&& value) { SetVmServer(std::move(value)); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetSeedReplicationTime() const{ return m_seedReplicationTime; }
 
@@ -139,6 +144,7 @@ namespace Model
     
     inline ReplicationJob& WithSeedReplicationTime(Aws::Utils::DateTime&& value) { SetSeedReplicationTime(std::move(value)); return *this;}
 
+
     
     inline int GetFrequency() const{ return m_frequency; }
 
@@ -147,6 +153,7 @@ namespace Model
 
     
     inline ReplicationJob& WithFrequency(int value) { SetFrequency(value); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetNextReplicationRunStartTime() const{ return m_nextReplicationRunStartTime; }
@@ -163,6 +170,7 @@ namespace Model
     
     inline ReplicationJob& WithNextReplicationRunStartTime(Aws::Utils::DateTime&& value) { SetNextReplicationRunStartTime(std::move(value)); return *this;}
 
+
     
     inline const LicenseType& GetLicenseType() const{ return m_licenseType; }
 
@@ -177,6 +185,7 @@ namespace Model
 
     
     inline ReplicationJob& WithLicenseType(LicenseType&& value) { SetLicenseType(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
@@ -199,6 +208,7 @@ namespace Model
     
     inline ReplicationJob& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
+
     
     inline const Aws::String& GetLatestAmiId() const{ return m_latestAmiId; }
 
@@ -220,6 +230,7 @@ namespace Model
     
     inline ReplicationJob& WithLatestAmiId(const char* value) { SetLatestAmiId(value); return *this;}
 
+
     
     inline const ReplicationJobState& GetState() const{ return m_state; }
 
@@ -234,6 +245,7 @@ namespace Model
 
     
     inline ReplicationJob& WithState(ReplicationJobState&& value) { SetState(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
@@ -256,6 +268,7 @@ namespace Model
     
     inline ReplicationJob& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     
     inline const Aws::String& GetDescription() const{ return m_description; }
 
@@ -276,6 +289,7 @@ namespace Model
 
     
     inline ReplicationJob& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     
     inline const Aws::Vector<ReplicationRun>& GetReplicationRunList() const{ return m_replicationRunList; }
@@ -299,32 +313,46 @@ namespace Model
     inline ReplicationJob& AddReplicationRunList(ReplicationRun&& value) { m_replicationRunListHasBeenSet = true; m_replicationRunList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_replicationJobId;
     bool m_replicationJobIdHasBeenSet;
+
     Aws::String m_serverId;
     bool m_serverIdHasBeenSet;
+
     ServerType m_serverType;
     bool m_serverTypeHasBeenSet;
+
     VmServer m_vmServer;
     bool m_vmServerHasBeenSet;
+
     Aws::Utils::DateTime m_seedReplicationTime;
     bool m_seedReplicationTimeHasBeenSet;
+
     int m_frequency;
     bool m_frequencyHasBeenSet;
+
     Aws::Utils::DateTime m_nextReplicationRunStartTime;
     bool m_nextReplicationRunStartTimeHasBeenSet;
+
     LicenseType m_licenseType;
     bool m_licenseTypeHasBeenSet;
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_latestAmiId;
     bool m_latestAmiIdHasBeenSet;
+
     ReplicationJobState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<ReplicationRun> m_replicationRunList;
     bool m_replicationRunListHasBeenSet;
   };

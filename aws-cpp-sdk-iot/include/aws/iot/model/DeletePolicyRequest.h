@@ -37,6 +37,7 @@ namespace Model
     DeletePolicyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the policy to delete.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline DeletePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
   };

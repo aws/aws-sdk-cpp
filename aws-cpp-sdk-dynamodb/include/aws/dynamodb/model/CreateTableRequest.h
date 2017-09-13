@@ -47,6 +47,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of attributes that describe the key schema for the table and
      * indexes.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline CreateTableRequest& AddAttributeDefinitions(AttributeDefinition&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of the table to create.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>The name of the table to create.</p>
      */
     inline CreateTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>Specifies the attributes that make up the primary key for a table or an
@@ -320,6 +323,7 @@ namespace Model
      */
     inline CreateTableRequest& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
      * the table. Each index is scoped to a given partition key value. There is a 10 GB
@@ -516,6 +520,7 @@ namespace Model
      */
     inline CreateTableRequest& AddLocalSecondaryIndexes(LocalSecondaryIndex&& value) { m_localSecondaryIndexesHasBeenSet = true; m_localSecondaryIndexes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more global secondary indexes (the maximum is five) to be created on
      * the table. Each global secondary index in the array includes the following:</p>
@@ -705,6 +710,7 @@ namespace Model
      */
     inline CreateTableRequest& AddGlobalSecondaryIndexes(GlobalSecondaryIndex&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Represents the provisioned throughput settings for a specified table or
      * index. The settings can be modified using the <code>UpdateTable</code>
@@ -754,6 +760,7 @@ namespace Model
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+
 
     /**
      * <p>The settings for DynamoDB Streams on the table. These settings consist
@@ -841,18 +848,25 @@ namespace Model
     inline CreateTableRequest& WithStreamSpecification(StreamSpecification&& value) { SetStreamSpecification(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
     bool m_attributeDefinitionsHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::Vector<KeySchemaElement> m_keySchema;
     bool m_keySchemaHasBeenSet;
+
     Aws::Vector<LocalSecondaryIndex> m_localSecondaryIndexes;
     bool m_localSecondaryIndexesHasBeenSet;
+
     Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexes;
     bool m_globalSecondaryIndexesHasBeenSet;
+
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet;
+
     StreamSpecification m_streamSpecification;
     bool m_streamSpecificationHasBeenSet;
   };

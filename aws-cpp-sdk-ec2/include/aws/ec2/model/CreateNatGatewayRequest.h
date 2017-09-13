@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
      * If the Elastic IP address is associated with another resource, you must first
@@ -89,6 +90,7 @@ namespace Model
      * disassociate it.</p>
      */
     inline CreateNatGatewayRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -146,6 +148,7 @@ namespace Model
      */
     inline CreateNatGatewayRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The subnet in which to create the NAT gateway.</p>
      */
@@ -182,10 +185,13 @@ namespace Model
     inline CreateNatGatewayRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
+
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
   };

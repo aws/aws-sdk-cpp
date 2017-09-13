@@ -30,12 +30,12 @@ DisassociatePrincipalFromPortfolioResult::DisassociatePrincipalFromPortfolioResu
 {
 }
 
-DisassociatePrincipalFromPortfolioResult::DisassociatePrincipalFromPortfolioResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociatePrincipalFromPortfolioResult::DisassociatePrincipalFromPortfolioResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociatePrincipalFromPortfolioResult& DisassociatePrincipalFromPortfolioResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociatePrincipalFromPortfolioResult& DisassociatePrincipalFromPortfolioResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     AdminGetDeviceResult();
-    AdminGetDeviceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminGetDeviceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminGetDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminGetDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The device.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline AdminGetDeviceResult& WithDevice(DeviceType&& value) { SetDevice(std::move(value)); return *this;}
 
   private:
+
     DeviceType m_device;
   };
 

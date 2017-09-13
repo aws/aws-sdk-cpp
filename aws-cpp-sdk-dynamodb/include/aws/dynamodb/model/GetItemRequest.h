@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the table containing the requested item.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The name of the table containing the requested item.</p>
      */
     inline GetItemRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
@@ -178,6 +180,7 @@ namespace Model
      */
     inline GetItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
 
+
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
@@ -242,6 +245,7 @@ namespace Model
      */
     inline GetItemRequest& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
+
     /**
      * <p>Determines the read consistency model: If set to <code>true</code>, then the
      * operation uses strongly consistent reads; otherwise, the operation uses
@@ -263,6 +267,7 @@ namespace Model
      */
     inline GetItemRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
 
+
     
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
 
@@ -277,6 +282,7 @@ namespace Model
 
     
     inline GetItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>A string that identifies one or more attributes to retrieve from the table.
@@ -361,6 +367,7 @@ namespace Model
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
+
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -687,18 +694,25 @@ namespace Model
     inline GetItemRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
+
     bool m_consistentRead;
     bool m_consistentReadHasBeenSet;
+
     ReturnConsumedCapacity m_returnConsumedCapacity;
     bool m_returnConsumedCapacityHasBeenSet;
+
     Aws::String m_projectionExpression;
     bool m_projectionExpressionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
     bool m_expressionAttributeNamesHasBeenSet;
   };

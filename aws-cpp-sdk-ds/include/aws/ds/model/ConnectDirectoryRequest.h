@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The fully-qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ConnectDirectoryRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
      */
     inline ConnectDirectoryRequest& WithShortName(const char* value) { SetShortName(value); return *this;}
+
 
     /**
      * <p>The password for the on-premises user account.</p>
@@ -154,6 +157,7 @@ namespace Model
      */
     inline ConnectDirectoryRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p>A textual description for the directory.</p>
      */
@@ -189,6 +193,7 @@ namespace Model
      */
     inline ConnectDirectoryRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The size of the directory.</p>
      */
@@ -213,6 +218,7 @@ namespace Model
      * <p>The size of the directory.</p>
      */
     inline ConnectDirectoryRequest& WithSize(DirectorySize&& value) { SetSize(std::move(value)); return *this;}
+
 
     /**
      * <p>A <a>DirectoryConnectSettings</a> object that contains additional information
@@ -245,16 +251,22 @@ namespace Model
     inline ConnectDirectoryRequest& WithConnectSettings(DirectoryConnectSettings&& value) { SetConnectSettings(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_shortName;
     bool m_shortNameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     DirectorySize m_size;
     bool m_sizeHasBeenSet;
+
     DirectoryConnectSettings m_connectSettings;
     bool m_connectSettingsHasBeenSet;
   };

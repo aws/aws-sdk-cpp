@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListIPSetsResult();
-    ListIPSetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIPSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIPSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIPSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If you have more <code>IPSet</code> objects than the number that you
@@ -113,6 +114,7 @@ namespace Model
      */
     inline ListIPSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>An array of <a>IPSetSummary</a> objects.</p>
      */
@@ -149,7 +151,9 @@ namespace Model
     inline ListIPSetsResult& AddIPSets(IPSetSummary&& value) { m_iPSets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<IPSetSummary> m_iPSets;
   };
 

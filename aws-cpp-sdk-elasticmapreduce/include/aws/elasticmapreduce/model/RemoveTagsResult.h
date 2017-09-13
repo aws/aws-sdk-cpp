@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     RemoveTagsResult();
-    RemoveTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

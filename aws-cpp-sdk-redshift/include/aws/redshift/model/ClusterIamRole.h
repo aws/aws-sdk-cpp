@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
@@ -91,6 +92,7 @@ namespace Model
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
     inline ClusterIamRole& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+
 
     /**
      * <p>A value that describes the status of the IAM role's association with an
@@ -170,8 +172,10 @@ namespace Model
     inline ClusterIamRole& WithApplyStatus(const char* value) { SetApplyStatus(value); return *this;}
 
   private:
+
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet;
+
     Aws::String m_applyStatus;
     bool m_applyStatusHasBeenSet;
   };

@@ -30,8 +30,8 @@ namespace Aws
       namespace MatchmakingConfigurationStatusMapper
       {
 
-        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
+        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int PLACING_HASH = HashingUtils::HashString("PLACING");
         static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
@@ -43,13 +43,13 @@ namespace Aws
         MatchmakingConfigurationStatus GetMatchmakingConfigurationStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CANCELED_HASH)
+          if (hashCode == CANCELLED_HASH)
           {
-            return MatchmakingConfigurationStatus::CANCELED;
+            return MatchmakingConfigurationStatus::CANCELLED;
           }
-          else if (hashCode == COMPLETE_HASH)
+          else if (hashCode == COMPLETED_HASH)
           {
-            return MatchmakingConfigurationStatus::COMPLETE;
+            return MatchmakingConfigurationStatus::COMPLETED;
           }
           else if (hashCode == FAILED_HASH)
           {
@@ -89,10 +89,10 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case MatchmakingConfigurationStatus::CANCELED:
-            return "CANCELED";
-          case MatchmakingConfigurationStatus::COMPLETE:
-            return "COMPLETE";
+          case MatchmakingConfigurationStatus::CANCELLED:
+            return "CANCELLED";
+          case MatchmakingConfigurationStatus::COMPLETED:
+            return "COMPLETED";
           case MatchmakingConfigurationStatus::FAILED:
             return "FAILED";
           case MatchmakingConfigurationStatus::PLACING:

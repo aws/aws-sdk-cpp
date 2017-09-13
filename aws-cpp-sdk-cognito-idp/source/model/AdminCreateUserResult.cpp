@@ -30,12 +30,12 @@ AdminCreateUserResult::AdminCreateUserResult()
 {
 }
 
-AdminCreateUserResult::AdminCreateUserResult(const AmazonWebServiceResult<JsonValue>& result)
+AdminCreateUserResult::AdminCreateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AdminCreateUserResult& AdminCreateUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminCreateUserResult& AdminCreateUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("User"))

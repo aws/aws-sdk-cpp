@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeHsmClientCertificatesResult();
-    DescribeHsmClientCertificatesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeHsmClientCertificatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeHsmClientCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeHsmClientCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -119,6 +120,7 @@ namespace Model
      */
     inline DescribeHsmClientCertificatesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of the identifiers for one or more HSM client certificates used by
      * Amazon Redshift clusters to store and retrieve database encryption keys in an
@@ -168,6 +170,7 @@ namespace Model
      */
     inline DescribeHsmClientCertificatesResult& AddHsmClientCertificates(HsmClientCertificate&& value) { m_hsmClientCertificates.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -184,8 +187,11 @@ namespace Model
     inline DescribeHsmClientCertificatesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<HsmClientCertificate> m_hsmClientCertificates;
+
     ResponseMetadata m_responseMetadata;
   };
 

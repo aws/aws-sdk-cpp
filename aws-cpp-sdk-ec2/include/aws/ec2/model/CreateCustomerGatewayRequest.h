@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>For devices that support BGP, the customer gateway's BGP ASN.</p> <p>Default:
      * 65000</p>
@@ -60,6 +61,7 @@ namespace Model
      * 65000</p>
      */
     inline CreateCustomerGatewayRequest& WithBgpAsn(int value) { SetBgpAsn(value); return *this;}
+
 
     /**
      * <p>The Internet-routable IP address for the customer gateway's outside
@@ -103,6 +105,7 @@ namespace Model
      */
     inline CreateCustomerGatewayRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+
     /**
      * <p>The type of VPN connection that this customer gateway supports
      * (<code>ipsec.1</code>).</p>
@@ -133,6 +136,7 @@ namespace Model
      */
     inline CreateCustomerGatewayRequest& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -158,12 +162,16 @@ namespace Model
     inline CreateCustomerGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     int m_bgpAsn;
     bool m_bgpAsnHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
+
     GatewayType m_type;
     bool m_typeHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

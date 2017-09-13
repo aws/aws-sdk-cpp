@@ -30,12 +30,12 @@ DeleteIPSetResult::DeleteIPSetResult()
 {
 }
 
-DeleteIPSetResult::DeleteIPSetResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteIPSetResult::DeleteIPSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteIPSetResult& DeleteIPSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteIPSetResult& DeleteIPSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

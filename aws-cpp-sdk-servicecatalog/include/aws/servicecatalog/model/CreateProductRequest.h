@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline CreateProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The name of the product.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The name of the product.</p>
      */
     inline CreateProductRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The owner of the product.</p>
@@ -160,6 +163,7 @@ namespace Model
      */
     inline CreateProductRequest& WithOwner(const char* value) { SetOwner(value); return *this;}
 
+
     /**
      * <p>The text description of the product.</p>
      */
@@ -194,6 +198,7 @@ namespace Model
      * <p>The text description of the product.</p>
      */
     inline CreateProductRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The distributor of the product.</p>
@@ -230,6 +235,7 @@ namespace Model
      */
     inline CreateProductRequest& WithDistributor(const char* value) { SetDistributor(value); return *this;}
 
+
     /**
      * <p>Support information about the product.</p>
      */
@@ -264,6 +270,7 @@ namespace Model
      * <p>Support information about the product.</p>
      */
     inline CreateProductRequest& WithSupportDescription(const char* value) { SetSupportDescription(value); return *this;}
+
 
     /**
      * <p>Contact email for product support.</p>
@@ -300,6 +307,7 @@ namespace Model
      */
     inline CreateProductRequest& WithSupportEmail(const char* value) { SetSupportEmail(value); return *this;}
 
+
     /**
      * <p>Contact URL for product support.</p>
      */
@@ -335,6 +343,7 @@ namespace Model
      */
     inline CreateProductRequest& WithSupportUrl(const char* value) { SetSupportUrl(value); return *this;}
 
+
     /**
      * <p>The type of the product to create.</p>
      */
@@ -359,6 +368,7 @@ namespace Model
      * <p>The type of the product to create.</p>
      */
     inline CreateProductRequest& WithProductType(ProductType&& value) { SetProductType(std::move(value)); return *this;}
+
 
     /**
      * <p>Tags to associate with the new product.</p>
@@ -395,6 +405,7 @@ namespace Model
      */
     inline CreateProductRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Parameters for the provisioning artifact.</p>
      */
@@ -419,6 +430,7 @@ namespace Model
      * <p>Parameters for the provisioning artifact.</p>
      */
     inline CreateProductRequest& WithProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { SetProvisioningArtifactParameters(std::move(value)); return *this;}
+
 
     /**
      * <p>A token to disambiguate duplicate requests. You can create multiple resources
@@ -470,28 +482,40 @@ namespace Model
     inline CreateProductRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_distributor;
     bool m_distributorHasBeenSet;
+
     Aws::String m_supportDescription;
     bool m_supportDescriptionHasBeenSet;
+
     Aws::String m_supportEmail;
     bool m_supportEmailHasBeenSet;
+
     Aws::String m_supportUrl;
     bool m_supportUrlHasBeenSet;
+
     ProductType m_productType;
     bool m_productTypeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     ProvisioningArtifactProperties m_provisioningArtifactParameters;
     bool m_provisioningArtifactParametersHasBeenSet;
+
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
   };

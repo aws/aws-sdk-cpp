@@ -60,6 +60,7 @@ namespace Model
     FaceDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Bounding box of the face.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>Bounding box of the face.</p>
      */
     inline FaceDetail& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
+
 
     /**
      * <p>The estimated age range, in years, for the face. Low represents the lowest
@@ -115,6 +117,7 @@ namespace Model
      */
     inline FaceDetail& WithAgeRange(AgeRange&& value) { SetAgeRange(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether or not the face is smiling, and the confidence level in the
      * determination.</p>
@@ -144,6 +147,7 @@ namespace Model
      * determination.</p>
      */
     inline FaceDetail& WithSmile(Smile&& value) { SetSmile(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether or not the face is wearing eye glasses, and the confidence
@@ -175,6 +179,7 @@ namespace Model
      */
     inline FaceDetail& WithEyeglasses(Eyeglasses&& value) { SetEyeglasses(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether or not the face is wearing sunglasses, and the confidence
      * level in the determination.</p>
@@ -205,6 +210,7 @@ namespace Model
      */
     inline FaceDetail& WithSunglasses(Sunglasses&& value) { SetSunglasses(std::move(value)); return *this;}
 
+
     /**
      * <p>Gender of the face and the confidence level in the determination.</p>
      */
@@ -229,6 +235,7 @@ namespace Model
      * <p>Gender of the face and the confidence level in the determination.</p>
      */
     inline FaceDetail& WithGender(Gender&& value) { SetGender(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether or not the face has a beard, and the confidence level in
@@ -260,6 +267,7 @@ namespace Model
      */
     inline FaceDetail& WithBeard(Beard&& value) { SetBeard(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether or not the face has a mustache, and the confidence level in
      * the determination.</p>
@@ -289,6 +297,7 @@ namespace Model
      * the determination.</p>
      */
     inline FaceDetail& WithMustache(Mustache&& value) { SetMustache(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether or not the eyes on the face are open, and the confidence
@@ -320,6 +329,7 @@ namespace Model
      */
     inline FaceDetail& WithEyesOpen(EyeOpen&& value) { SetEyesOpen(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether or not the mouth on the face is open, and the confidence
      * level in the determination.</p>
@@ -349,6 +359,7 @@ namespace Model
      * level in the determination.</p>
      */
     inline FaceDetail& WithMouthOpen(MouthOpen&& value) { SetMouthOpen(std::move(value)); return *this;}
+
 
     /**
      * <p>The emotions detected on the face, and the confidence level in the
@@ -392,6 +403,7 @@ namespace Model
      */
     inline FaceDetail& AddEmotions(Emotion&& value) { m_emotionsHasBeenSet = true; m_emotions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates the location of landmarks on the face.</p>
      */
@@ -427,6 +439,7 @@ namespace Model
      */
     inline FaceDetail& AddLandmarks(Landmark&& value) { m_landmarksHasBeenSet = true; m_landmarks.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
      */
@@ -451,6 +464,7 @@ namespace Model
      * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
      */
     inline FaceDetail& WithPose(Pose&& value) { SetPose(std::move(value)); return *this;}
+
 
     /**
      * <p>Identifies image brightness and sharpness.</p>
@@ -477,6 +491,7 @@ namespace Model
      */
     inline FaceDetail& WithQuality(ImageQuality&& value) { SetQuality(std::move(value)); return *this;}
 
+
     /**
      * <p>Confidence level that the bounding box contains a face (and not a different
      * object such as a tree).</p>
@@ -496,34 +511,49 @@ namespace Model
     inline FaceDetail& WithConfidence(double value) { SetConfidence(value); return *this;}
 
   private:
+
     BoundingBox m_boundingBox;
     bool m_boundingBoxHasBeenSet;
+
     AgeRange m_ageRange;
     bool m_ageRangeHasBeenSet;
+
     Smile m_smile;
     bool m_smileHasBeenSet;
+
     Eyeglasses m_eyeglasses;
     bool m_eyeglassesHasBeenSet;
+
     Sunglasses m_sunglasses;
     bool m_sunglassesHasBeenSet;
+
     Gender m_gender;
     bool m_genderHasBeenSet;
+
     Beard m_beard;
     bool m_beardHasBeenSet;
+
     Mustache m_mustache;
     bool m_mustacheHasBeenSet;
+
     EyeOpen m_eyesOpen;
     bool m_eyesOpenHasBeenSet;
+
     MouthOpen m_mouthOpen;
     bool m_mouthOpenHasBeenSet;
+
     Aws::Vector<Emotion> m_emotions;
     bool m_emotionsHasBeenSet;
+
     Aws::Vector<Landmark> m_landmarks;
     bool m_landmarksHasBeenSet;
+
     Pose m_pose;
     bool m_poseHasBeenSet;
+
     ImageQuality m_quality;
     bool m_qualityHasBeenSet;
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
   };

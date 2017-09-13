@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeVolumesResponse();
-    DescribeVolumesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVolumesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVolumesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVolumesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the volumes.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the volumes.</p>
      */
     inline DescribeVolumesResponse& AddVolumes(Volume&& value) { m_volumes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -147,6 +149,7 @@ namespace Model
      */
     inline DescribeVolumesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -163,8 +166,11 @@ namespace Model
     inline DescribeVolumesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Volume> m_volumes;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

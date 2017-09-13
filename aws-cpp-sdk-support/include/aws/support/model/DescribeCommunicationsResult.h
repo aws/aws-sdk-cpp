@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeCommunicationsResult();
-    DescribeCommunicationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCommunicationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCommunicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCommunicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The communications for the case.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The communications for the case.</p>
      */
     inline DescribeCommunicationsResult& AddCommunications(Communication&& value) { m_communications.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A resumption point for pagination.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline DescribeCommunicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Communication> m_communications;
+
     Aws::String m_nextToken;
   };
 

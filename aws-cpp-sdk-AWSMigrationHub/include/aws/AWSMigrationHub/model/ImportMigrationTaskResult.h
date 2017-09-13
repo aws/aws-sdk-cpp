@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     ImportMigrationTaskResult();
-    ImportMigrationTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportMigrationTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportMigrationTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportMigrationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

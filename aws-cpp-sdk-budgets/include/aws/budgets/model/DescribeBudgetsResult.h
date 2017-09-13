@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeBudgetsResult();
-    DescribeBudgetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBudgetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBudgetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBudgetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Vector<Budget>& GetBudgets() const{ return m_budgets; }
@@ -68,6 +69,7 @@ namespace Model
 
     
     inline DescribeBudgetsResult& AddBudgets(Budget&& value) { m_budgets.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -91,7 +93,9 @@ namespace Model
     inline DescribeBudgetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Budget> m_budgets;
+
     Aws::String m_nextToken;
   };
 

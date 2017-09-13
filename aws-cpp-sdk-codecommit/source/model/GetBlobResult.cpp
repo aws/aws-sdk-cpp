@@ -31,12 +31,12 @@ GetBlobResult::GetBlobResult()
 {
 }
 
-GetBlobResult::GetBlobResult(const AmazonWebServiceResult<JsonValue>& result)
+GetBlobResult::GetBlobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetBlobResult& GetBlobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBlobResult& GetBlobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("content"))

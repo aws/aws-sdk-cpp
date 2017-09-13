@@ -45,6 +45,7 @@ namespace Model
     VmServerAddress& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetVmManagerId() const{ return m_vmManagerId; }
 
@@ -65,6 +66,7 @@ namespace Model
 
     
     inline VmServerAddress& WithVmManagerId(const char* value) { SetVmManagerId(value); return *this;}
+
 
     
     inline const Aws::String& GetVmId() const{ return m_vmId; }
@@ -88,8 +90,10 @@ namespace Model
     inline VmServerAddress& WithVmId(const char* value) { SetVmId(value); return *this;}
 
   private:
+
     Aws::String m_vmManagerId;
     bool m_vmManagerIdHasBeenSet;
+
     Aws::String m_vmId;
     bool m_vmIdHasBeenSet;
   };

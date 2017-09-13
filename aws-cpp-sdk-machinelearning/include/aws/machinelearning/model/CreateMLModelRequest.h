@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateMLModelRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
+
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
     inline CreateMLModelRequest& WithMLModelName(const char* value) { SetMLModelName(value); return *this;}
+
 
     /**
      * <p>The category of supervised learning that this <code>MLModel</code> will
@@ -172,6 +175,7 @@ namespace Model
      * Learning Developer Guide</a>.</p>
      */
     inline CreateMLModelRequest& WithMLModelType(MLModelType&& value) { SetMLModelType(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -593,6 +597,7 @@ namespace Model
      */
     inline CreateMLModelRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The <code>DataSource</code> that points to the training data.</p>
      */
@@ -627,6 +632,7 @@ namespace Model
      * <p>The <code>DataSource</code> that points to the training data.</p>
      */
     inline CreateMLModelRequest& WithTrainingDataSourceId(const char* value) { SetTrainingDataSourceId(value); return *this;}
+
 
     /**
      * <p>The data recipe for creating the <code>MLModel</code>. You must specify
@@ -676,6 +682,7 @@ namespace Model
      * ML creates a default.</p>
      */
     inline CreateMLModelRequest& WithRecipe(const char* value) { SetRecipe(value); return *this;}
+
 
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) location and file name that
@@ -734,18 +741,25 @@ namespace Model
     inline CreateMLModelRequest& WithRecipeUri(const char* value) { SetRecipeUri(value); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
+
     Aws::String m_mLModelName;
     bool m_mLModelNameHasBeenSet;
+
     MLModelType m_mLModelType;
     bool m_mLModelTypeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::String m_trainingDataSourceId;
     bool m_trainingDataSourceIdHasBeenSet;
+
     Aws::String m_recipe;
     bool m_recipeHasBeenSet;
+
     Aws::String m_recipeUri;
     bool m_recipeUriHasBeenSet;
   };

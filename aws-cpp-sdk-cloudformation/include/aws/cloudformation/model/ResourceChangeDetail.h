@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A <code>ResourceTargetDefinition</code> structure that describes the field
      * that AWS CloudFormation will change and whether the resource will be
@@ -87,6 +88,7 @@ namespace Model
      * recreated.</p>
      */
     inline ResourceChangeDetail& WithTarget(ResourceTargetDefinition&& value) { SetTarget(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether AWS CloudFormation can determine the target value, and
@@ -177,6 +179,7 @@ namespace Model
      * physical ID, so all references to that resource will also be updated.</p>
      */
     inline ResourceChangeDetail& WithEvaluation(EvaluationType&& value) { SetEvaluation(std::move(value)); return *this;}
+
 
     /**
      * <p>The group to which the <code>CausingEntity</code> value belongs. There are
@@ -293,6 +296,7 @@ namespace Model
      */
     inline ResourceChangeDetail& WithChangeSource(ChangeSource&& value) { SetChangeSource(std::move(value)); return *this;}
 
+
     /**
      * <p>The identity of the entity that triggered this change. This entity is a
      * member of the group that is specified by the <code>ChangeSource</code> field.
@@ -371,12 +375,16 @@ namespace Model
     inline ResourceChangeDetail& WithCausingEntity(const char* value) { SetCausingEntity(value); return *this;}
 
   private:
+
     ResourceTargetDefinition m_target;
     bool m_targetHasBeenSet;
+
     EvaluationType m_evaluation;
     bool m_evaluationHasBeenSet;
+
     ChangeSource m_changeSource;
     bool m_changeSourceHasBeenSet;
+
     Aws::String m_causingEntity;
     bool m_causingEntityHasBeenSet;
   };

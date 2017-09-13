@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>A list of locales that the slot type supports.</p>
      */
@@ -65,6 +66,7 @@ namespace Model
      * <p>A list of locales that the slot type supports.</p>
      */
     inline GetBuiltinSlotTypesRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+
 
     /**
      * <p>Substring to match in built-in slot type signatures. A slot type will be
@@ -114,6 +116,7 @@ namespace Model
      * matches both "xyzabc" and "abcxyz."</p>
      */
     inline GetBuiltinSlotTypesRequest& WithSignatureContains(const char* value) { SetSignatureContains(value); return *this;}
+
 
     /**
      * <p>A pagination token that fetches the next page of slot types. If the response
@@ -171,6 +174,7 @@ namespace Model
      */
     inline GetBuiltinSlotTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of slot types to return in the response. The default is
      * 10.</p>
@@ -190,12 +194,16 @@ namespace Model
     inline GetBuiltinSlotTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Locale m_locale;
     bool m_localeHasBeenSet;
+
     Aws::String m_signatureContains;
     bool m_signatureContainsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

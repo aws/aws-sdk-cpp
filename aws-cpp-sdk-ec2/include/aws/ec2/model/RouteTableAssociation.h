@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether this is the main route table.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>Indicates whether this is the main route table.</p>
      */
     inline RouteTableAssociation& WithMain(bool value) { SetMain(value); return *this;}
+
 
     /**
      * <p>The ID of the association between a route table and a subnet.</p>
@@ -99,6 +101,7 @@ namespace Model
      */
     inline RouteTableAssociation& WithRouteTableAssociationId(const char* value) { SetRouteTableAssociationId(value); return *this;}
 
+
     /**
      * <p>The ID of the route table.</p>
      */
@@ -133,6 +136,7 @@ namespace Model
      * <p>The ID of the route table.</p>
      */
     inline RouteTableAssociation& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+
 
     /**
      * <p>The ID of the subnet. A subnet ID is not returned for an implicit
@@ -177,12 +181,16 @@ namespace Model
     inline RouteTableAssociation& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
+
     bool m_main;
     bool m_mainHasBeenSet;
+
     Aws::String m_routeTableAssociationId;
     bool m_routeTableAssociationIdHasBeenSet;
+
     Aws::String m_routeTableId;
     bool m_routeTableIdHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
   };

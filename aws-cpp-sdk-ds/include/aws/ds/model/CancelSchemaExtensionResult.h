@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CancelSchemaExtensionResult();
-    CancelSchemaExtensionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelSchemaExtensionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelSchemaExtensionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelSchemaExtensionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

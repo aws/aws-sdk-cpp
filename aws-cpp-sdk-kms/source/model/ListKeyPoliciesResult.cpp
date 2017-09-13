@@ -31,13 +31,13 @@ ListKeyPoliciesResult::ListKeyPoliciesResult() :
 {
 }
 
-ListKeyPoliciesResult::ListKeyPoliciesResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListKeyPoliciesResult::ListKeyPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_truncated(false)
 {
   *this = result;
 }
 
-ListKeyPoliciesResult& ListKeyPoliciesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListKeyPoliciesResult& ListKeyPoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PolicyNames"))

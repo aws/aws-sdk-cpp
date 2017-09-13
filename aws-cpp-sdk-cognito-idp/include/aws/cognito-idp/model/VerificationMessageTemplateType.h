@@ -46,6 +46,7 @@ namespace Model
     VerificationMessageTemplateType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The SMS message template.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The SMS message template.</p>
      */
     inline VerificationMessageTemplateType& WithSmsMessage(const char* value) { SetSmsMessage(value); return *this;}
+
 
     /**
      * <p>The email message template.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline VerificationMessageTemplateType& WithEmailMessage(const char* value) { SetEmailMessage(value); return *this;}
 
+
     /**
      * <p>The subject line for the email message template.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      */
     inline VerificationMessageTemplateType& WithEmailSubject(const char* value) { SetEmailSubject(value); return *this;}
 
+
     /**
      * <p>The email message template for sending a confirmation link to the user.</p>
      */
@@ -185,6 +189,7 @@ namespace Model
      * <p>The email message template for sending a confirmation link to the user.</p>
      */
     inline VerificationMessageTemplateType& WithEmailMessageByLink(const char* value) { SetEmailMessageByLink(value); return *this;}
+
 
     /**
      * <p>The subject line for the email message template for sending a confirmation
@@ -228,6 +233,7 @@ namespace Model
      */
     inline VerificationMessageTemplateType& WithEmailSubjectByLink(const char* value) { SetEmailSubjectByLink(value); return *this;}
 
+
     /**
      * <p>The default email option.</p>
      */
@@ -254,16 +260,22 @@ namespace Model
     inline VerificationMessageTemplateType& WithDefaultEmailOption(DefaultEmailOptionType&& value) { SetDefaultEmailOption(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_smsMessage;
     bool m_smsMessageHasBeenSet;
+
     Aws::String m_emailMessage;
     bool m_emailMessageHasBeenSet;
+
     Aws::String m_emailSubject;
     bool m_emailSubjectHasBeenSet;
+
     Aws::String m_emailMessageByLink;
     bool m_emailMessageByLinkHasBeenSet;
+
     Aws::String m_emailSubjectByLink;
     bool m_emailSubjectByLinkHasBeenSet;
+
     DefaultEmailOptionType m_defaultEmailOption;
     bool m_defaultEmailOptionHasBeenSet;
   };

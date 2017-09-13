@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
      */
     inline DescribeStackSetOperationRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+
 
     /**
      * <p>The unique ID of the stack set operation. </p>
@@ -109,8 +111,10 @@ namespace Model
     inline DescribeStackSetOperationRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;
   };

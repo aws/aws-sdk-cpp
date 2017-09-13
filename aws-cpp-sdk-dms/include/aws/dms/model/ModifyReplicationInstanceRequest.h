@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 
+
     /**
      * <p>The amount of storage (in gigabytes) to be allocated for the replication
      * instance.</p>
@@ -93,6 +95,7 @@ namespace Model
      */
     inline ModifyReplicationInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
+
     /**
      * <p>Indicates whether the changes should be applied immediately or during the
      * next maintenance window.</p>
@@ -110,6 +113,7 @@ namespace Model
      * next maintenance window.</p>
      */
     inline ModifyReplicationInstanceRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
+
 
     /**
      * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
@@ -159,6 +163,7 @@ namespace Model
      * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
+
 
     /**
      * <p> Specifies the VPC security group to be used with the replication instance.
@@ -215,6 +220,7 @@ namespace Model
      * instance. </p>
      */
     inline ModifyReplicationInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p>The weekly time range (in UTC) during which system maintenance can occur,
@@ -300,6 +306,7 @@ namespace Model
      */
     inline ModifyReplicationInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
      * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
@@ -320,6 +327,7 @@ namespace Model
      * to <code>true</code>. </p>
      */
     inline ModifyReplicationInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>The engine version number of the replication instance.</p>
@@ -356,6 +364,7 @@ namespace Model
      */
     inline ModifyReplicationInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>Indicates that major version upgrades are allowed. Changing this parameter
      * does not result in an outage and the change is asynchronously applied as soon as
@@ -382,6 +391,7 @@ namespace Model
      * version than the replication instance's current version.</p>
      */
     inline ModifyReplicationInstanceRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p> Indicates that minor version upgrades will be applied automatically to the
@@ -415,6 +425,7 @@ namespace Model
      * engine version. </p>
      */
     inline ModifyReplicationInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
@@ -459,26 +470,37 @@ namespace Model
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceIdentifier(const char* value) { SetReplicationInstanceIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet;
+
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+
     bool m_applyImmediately;
     bool m_applyImmediatelyHasBeenSet;
+
     Aws::String m_replicationInstanceClass;
     bool m_replicationInstanceClassHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     bool m_allowMajorVersionUpgrade;
     bool m_allowMajorVersionUpgradeHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     Aws::String m_replicationInstanceIdentifier;
     bool m_replicationInstanceIdentifierHasBeenSet;
   };

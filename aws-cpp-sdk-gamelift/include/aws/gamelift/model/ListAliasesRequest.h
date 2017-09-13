@@ -40,12 +40,13 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
      * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
-     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> – The alias does
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The alias does
      * not resolve to a fleet but instead can be used to display a message to the user.
      * A terminal alias throws a TerminalRoutingStrategyException with the
      * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
@@ -56,8 +57,8 @@ namespace Model
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
      * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
-     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> – The alias does
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The alias does
      * not resolve to a fleet but instead can be used to display a message to the user.
      * A terminal alias throws a TerminalRoutingStrategyException with the
      * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
@@ -68,8 +69,8 @@ namespace Model
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
      * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
-     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> – The alias does
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The alias does
      * not resolve to a fleet but instead can be used to display a message to the user.
      * A terminal alias throws a TerminalRoutingStrategyException with the
      * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
@@ -80,8 +81,8 @@ namespace Model
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
      * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
-     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> – The alias does
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The alias does
      * not resolve to a fleet but instead can be used to display a message to the user.
      * A terminal alias throws a TerminalRoutingStrategyException with the
      * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
@@ -92,13 +93,14 @@ namespace Model
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
      * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
-     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> – The alias does
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The alias does
      * not resolve to a fleet but instead can be used to display a message to the user.
      * A terminal alias throws a TerminalRoutingStrategyException with the
      * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
      */
     inline ListAliasesRequest& WithRoutingStrategyType(RoutingStrategyType&& value) { SetRoutingStrategyType(std::move(value)); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -142,6 +144,7 @@ namespace Model
      */
     inline ListAliasesRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -159,6 +162,7 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline ListAliasesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -210,12 +214,16 @@ namespace Model
     inline ListAliasesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     RoutingStrategyType m_routingStrategyType;
     bool m_routingStrategyTypeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query
      * for.</p>
@@ -88,6 +89,7 @@ namespace Model
      * for.</p>
      */
     inline TestDNSAnswerRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+
 
     /**
      * <p>The name of the resource record set that you want Amazon Route 53 to simulate
@@ -131,6 +133,7 @@ namespace Model
      */
     inline TestDNSAnswerRequest& WithRecordName(const char* value) { SetRecordName(value); return *this;}
 
+
     /**
      * <p>The type of the resource record set.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The type of the resource record set.</p>
      */
     inline TestDNSAnswerRequest& WithRecordType(RRType&& value) { SetRecordType(std::move(value)); return *this;}
+
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
@@ -212,6 +216,7 @@ namespace Model
      */
     inline TestDNSAnswerRequest& WithResolverIP(const char* value) { SetResolverIP(value); return *this;}
 
+
     /**
      * <p>If the resolver that you specified for resolverip supports EDNS0, specify the
      * IPv4 or IPv6 address of a client in the applicable location, for example,
@@ -260,6 +265,7 @@ namespace Model
      * <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
      */
     inline TestDNSAnswerRequest& WithEDNS0ClientSubnetIP(const char* value) { SetEDNS0ClientSubnetIP(value); return *this;}
+
 
     /**
      * <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can
@@ -339,16 +345,22 @@ namespace Model
     inline TestDNSAnswerRequest& WithEDNS0ClientSubnetMask(const char* value) { SetEDNS0ClientSubnetMask(value); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     Aws::String m_recordName;
     bool m_recordNameHasBeenSet;
+
     RRType m_recordType;
     bool m_recordTypeHasBeenSet;
+
     Aws::String m_resolverIP;
     bool m_resolverIPHasBeenSet;
+
     Aws::String m_eDNS0ClientSubnetIP;
     bool m_eDNS0ClientSubnetIPHasBeenSet;
+
     Aws::String m_eDNS0ClientSubnetMask;
     bool m_eDNS0ClientSubnetMaskHasBeenSet;
   };

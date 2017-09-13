@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     ListStepsResult();
-    ListStepsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStepsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListStepsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListStepsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The filtered list of steps for the cluster.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>The filtered list of steps for the cluster.</p>
      */
     inline ListStepsResult& AddSteps(StepSummary&& value) { m_steps.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -121,7 +123,9 @@ namespace Model
     inline ListStepsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<StepSummary> m_steps;
+
     Aws::String m_marker;
   };
 

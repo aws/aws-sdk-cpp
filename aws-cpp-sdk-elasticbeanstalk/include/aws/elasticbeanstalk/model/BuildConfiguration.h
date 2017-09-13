@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the artifact of the CodeBuild build. If provided, Elastic
      * Beanstalk stores the build artifact in the S3 location
@@ -119,6 +120,7 @@ namespace Model
      */
     inline BuildConfiguration& WithArtifactName(const char* value) { SetArtifactName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on
@@ -167,6 +169,7 @@ namespace Model
      * behalf of the AWS account.</p>
      */
     inline BuildConfiguration& WithCodeBuildServiceRole(const char* value) { SetCodeBuildServiceRole(value); return *this;}
+
 
     /**
      * <p>Information about the compute resources the build project will use.</p> <ul>
@@ -218,6 +221,7 @@ namespace Model
      */
     inline BuildConfiguration& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
      */
@@ -253,6 +257,7 @@ namespace Model
      */
     inline BuildConfiguration& WithImage(const char* value) { SetImage(value); return *this;}
 
+
     /**
      * <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until
      * timing out any related build that does not get marked as completed. The default
@@ -275,14 +280,19 @@ namespace Model
     inline BuildConfiguration& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
 
   private:
+
     Aws::String m_artifactName;
     bool m_artifactNameHasBeenSet;
+
     Aws::String m_codeBuildServiceRole;
     bool m_codeBuildServiceRoleHasBeenSet;
+
     ComputeType m_computeType;
     bool m_computeTypeHasBeenSet;
+
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
   };

@@ -31,13 +31,13 @@ GetBulkPublishDetailsResult::GetBulkPublishDetailsResult() :
 {
 }
 
-GetBulkPublishDetailsResult::GetBulkPublishDetailsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetBulkPublishDetailsResult::GetBulkPublishDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_bulkPublishStatus(BulkPublishStatus::NOT_SET)
 {
   *this = result;
 }
 
-GetBulkPublishDetailsResult& GetBulkPublishDetailsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBulkPublishDetailsResult& GetBulkPublishDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityPoolId"))

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline BatchResultErrorEntry& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the error happened due to the sender's fault.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>Specifies whether the error happened due to the sender's fault.</p>
      */
     inline BatchResultErrorEntry& WithSenderFault(bool value) { SetSenderFault(value); return *this;}
+
 
     /**
      * <p>An error code representing why the action failed on this entry.</p>
@@ -134,6 +137,7 @@ namespace Model
      * <p>An error code representing why the action failed on this entry.</p>
      */
     inline BatchResultErrorEntry& WithCode(const char* value) { SetCode(value); return *this;}
+
 
     /**
      * <p>A message explaining why the action failed on this entry.</p>
@@ -171,12 +175,16 @@ namespace Model
     inline BatchResultErrorEntry& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     bool m_senderFault;
     bool m_senderFaultHasBeenSet;
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

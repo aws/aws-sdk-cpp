@@ -31,8 +31,11 @@
 #include <aws/codestar/model/DisassociateTeamMemberResult.h>
 #include <aws/codestar/model/ListProjectsResult.h>
 #include <aws/codestar/model/ListResourcesResult.h>
+#include <aws/codestar/model/ListTagsForProjectResult.h>
 #include <aws/codestar/model/ListTeamMembersResult.h>
 #include <aws/codestar/model/ListUserProfilesResult.h>
+#include <aws/codestar/model/TagProjectResult.h>
+#include <aws/codestar/model/UntagProjectResult.h>
 #include <aws/codestar/model/UpdateProjectResult.h>
 #include <aws/codestar/model/UpdateTeamMemberResult.h>
 #include <aws/codestar/model/UpdateUserProfileResult.h>
@@ -91,8 +94,11 @@ namespace Model
         class DisassociateTeamMemberRequest;
         class ListProjectsRequest;
         class ListResourcesRequest;
+        class ListTagsForProjectRequest;
         class ListTeamMembersRequest;
         class ListUserProfilesRequest;
+        class TagProjectRequest;
+        class UntagProjectRequest;
         class UpdateProjectRequest;
         class UpdateTeamMemberRequest;
         class UpdateUserProfileRequest;
@@ -107,8 +113,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateTeamMemberResult, Aws::Client::AWSError<CodeStarErrors>> DisassociateTeamMemberOutcome;
         typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<CodeStarErrors>> ListProjectsOutcome;
         typedef Aws::Utils::Outcome<ListResourcesResult, Aws::Client::AWSError<CodeStarErrors>> ListResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForProjectResult, Aws::Client::AWSError<CodeStarErrors>> ListTagsForProjectOutcome;
         typedef Aws::Utils::Outcome<ListTeamMembersResult, Aws::Client::AWSError<CodeStarErrors>> ListTeamMembersOutcome;
         typedef Aws::Utils::Outcome<ListUserProfilesResult, Aws::Client::AWSError<CodeStarErrors>> ListUserProfilesOutcome;
+        typedef Aws::Utils::Outcome<TagProjectResult, Aws::Client::AWSError<CodeStarErrors>> TagProjectOutcome;
+        typedef Aws::Utils::Outcome<UntagProjectResult, Aws::Client::AWSError<CodeStarErrors>> UntagProjectOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<CodeStarErrors>> UpdateProjectOutcome;
         typedef Aws::Utils::Outcome<UpdateTeamMemberResult, Aws::Client::AWSError<CodeStarErrors>> UpdateTeamMemberOutcome;
         typedef Aws::Utils::Outcome<UpdateUserProfileResult, Aws::Client::AWSError<CodeStarErrors>> UpdateUserProfileOutcome;
@@ -123,8 +132,11 @@ namespace Model
         typedef std::future<DisassociateTeamMemberOutcome> DisassociateTeamMemberOutcomeCallable;
         typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
         typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
+        typedef std::future<ListTagsForProjectOutcome> ListTagsForProjectOutcomeCallable;
         typedef std::future<ListTeamMembersOutcome> ListTeamMembersOutcomeCallable;
         typedef std::future<ListUserProfilesOutcome> ListUserProfilesOutcomeCallable;
+        typedef std::future<TagProjectOutcome> TagProjectOutcomeCallable;
+        typedef std::future<UntagProjectOutcome> UntagProjectOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
         typedef std::future<UpdateTeamMemberOutcome> UpdateTeamMemberOutcomeCallable;
         typedef std::future<UpdateUserProfileOutcome> UpdateUserProfileOutcomeCallable;
@@ -142,8 +154,11 @@ namespace Model
     typedef std::function<void(const CodeStarClient*, const Model::DisassociateTeamMemberRequest&, const Model::DisassociateTeamMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTeamMemberResponseReceivedHandler;
     typedef std::function<void(const CodeStarClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
     typedef std::function<void(const CodeStarClient*, const Model::ListResourcesRequest&, const Model::ListResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesResponseReceivedHandler;
+    typedef std::function<void(const CodeStarClient*, const Model::ListTagsForProjectRequest&, const Model::ListTagsForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForProjectResponseReceivedHandler;
     typedef std::function<void(const CodeStarClient*, const Model::ListTeamMembersRequest&, const Model::ListTeamMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTeamMembersResponseReceivedHandler;
     typedef std::function<void(const CodeStarClient*, const Model::ListUserProfilesRequest&, const Model::ListUserProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserProfilesResponseReceivedHandler;
+    typedef std::function<void(const CodeStarClient*, const Model::TagProjectRequest&, const Model::TagProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeStarClient*, const Model::UntagProjectRequest&, const Model::UntagProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagProjectResponseReceivedHandler;
     typedef std::function<void(const CodeStarClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
     typedef std::function<void(const CodeStarClient*, const Model::UpdateTeamMemberRequest&, const Model::UpdateTeamMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTeamMemberResponseReceivedHandler;
     typedef std::function<void(const CodeStarClient*, const Model::UpdateUserProfileRequest&, const Model::UpdateUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserProfileResponseReceivedHandler;
@@ -153,27 +168,32 @@ namespace Model
    * This reference provides descriptions of the operations and data types for the
    * AWS CodeStar API along with usage examples.</p> <p>You can use the AWS CodeStar
    * API to work with:</p> <p>Projects and their resources, by calling the
-   * following:</p> <ul> <li> <p> <a>DeleteProject</a>, which deletes a project in
-   * AWS CodeStar.</p> </li> <li> <p> <a>DescribeProject</a>, which lists the
-   * attributes of a project.</p> </li> <li> <p> <a>ListProjects</a>, which lists all
-   * AWS CodeStar projects associated with your AWS account.</p> </li> <li> <p>
-   * <a>ListResources</a>, which lists the resources associated with an AWS CodeStar
-   * project.</p> </li> <li> <p> <a>UpdateProject</a>, which updates the attributes
-   * of an AWS CodeStar project.</p> </li> </ul> <p>Teams and team members, by
-   * calling the following:</p> <ul> <li> <p> <a>AssociateTeamMember</a>, which adds
-   * an IAM user to the team for an AWS CodeStar project.</p> </li> <li> <p>
-   * <a>DisassociateTeamMember</a>, which removes an IAM user from the team for an
-   * AWS CodeStar project.</p> </li> <li> <p> <a>ListTeamMembers</a>, which lists all
-   * the IAM users in the team for an AWS CodeStar project, including their roles and
-   * attributes.</p> </li> </ul> <p>Users, by calling the following:</p> <ul> <li>
-   * <p> <a>CreateUserProfile</a>, which creates a user profile that contains data
-   * associated with the user across all AWS CodeStar projects.</p> </li> <li> <p>
-   * <a>DeleteUserProfile</a>, which deletes all user profile information across all
-   * AWS CodeStar projects.</p> </li> <li> <p> <a>DescribeUserProfile</a>, which
-   * describes the profile of a user.</p> </li> <li> <p> <a>ListUserProfiles</a>,
-   * which lists all AWS CodeStar user profiles.</p> </li> <li> <p>
-   * <a>UpdateUserProfile</a>, which updates the profile for an AWS CodeStar user.
-   * </p> </li> </ul>
+   * following:</p> <ul> <li> <p> <code>DeleteProject</code>, which deletes a
+   * project.</p> </li> <li> <p> <code>DescribeProject</code>, which lists the
+   * attributes of a project.</p> </li> <li> <p> <code>ListProjects</code>, which
+   * lists all projects associated with your AWS account.</p> </li> <li> <p>
+   * <code>ListResources</code>, which lists the resources associated with a
+   * project.</p> </li> <li> <p> <code>ListTagsForProject</code>, which lists the
+   * tags associated with a project.</p> </li> <li> <p> <code>TagProject</code>,
+   * which adds tags to a project.</p> </li> <li> <p> <code>UntagProject</code>,
+   * which removes tags from a project.</p> </li> <li> <p>
+   * <code>UpdateProject</code>, which updates the attributes of a project.</p> </li>
+   * </ul> <p>Teams and team members, by calling the following:</p> <ul> <li> <p>
+   * <code>AssociateTeamMember</code>, which adds an IAM user to the team for a
+   * project.</p> </li> <li> <p> <code>DisassociateTeamMember</code>, which removes
+   * an IAM user from the team for a project.</p> </li> <li> <p>
+   * <code>ListTeamMembers</code>, which lists all the IAM users in the team for a
+   * project, including their roles and attributes.</p> </li> <li> <p>
+   * <code>UpdateTeamMember</code>, which updates a team member's attributes in a
+   * project.</p> </li> </ul> <p>Users, by calling the following:</p> <ul> <li> <p>
+   * <code>CreateUserProfile</code>, which creates a user profile that contains data
+   * associated with the user across all projects.</p> </li> <li> <p>
+   * <code>DeleteUserProfile</code>, which deletes all user profile information
+   * across all projects.</p> </li> <li> <p> <code>DescribeUserProfile</code>, which
+   * describes the profile of a user.</p> </li> <li> <p>
+   * <code>ListUserProfiles</code>, which lists all user profiles.</p> </li> <li> <p>
+   * <code>UpdateUserProfile</code>, which updates the profile for a user.</p> </li>
+   * </ul>
    */
   class AWS_CODESTAR_API CodeStarClient : public Aws::Client::AWSJsonClient
   {
@@ -184,22 +204,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeStarClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CodeStarClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeStarClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CodeStarClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CodeStarClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CodeStarClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CodeStarClient();
+
 
         /**
          * <p>Adds an IAM user to the team for an AWS CodeStar project.</p><p><h3>See
@@ -506,6 +527,31 @@ namespace Model
         virtual void ListResourcesAsync(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the tags for a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForProjectOutcome ListTagsForProject(const Model::ListTagsForProjectRequest& request) const;
+
+        /**
+         * <p>Gets the tags for a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForProjectOutcomeCallable ListTagsForProjectCallable(const Model::ListTagsForProjectRequest& request) const;
+
+        /**
+         * <p>Gets the tags for a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForProjectAsync(const Model::ListTagsForProjectRequest& request, const ListTagsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all team members associated with a project.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">AWS
@@ -560,6 +606,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUserProfilesAsync(const Model::ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds tags to a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagProjectOutcome TagProject(const Model::TagProjectRequest& request) const;
+
+        /**
+         * <p>Adds tags to a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagProjectOutcomeCallable TagProjectCallable(const Model::TagProjectRequest& request) const;
+
+        /**
+         * <p>Adds tags to a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagProjectAsync(const Model::TagProjectRequest& request, const TagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagProjectOutcome UntagProject(const Model::UntagProjectRequest& request) const;
+
+        /**
+         * <p>Removes tags from a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagProjectOutcomeCallable UntagProjectCallable(const Model::UntagProjectRequest& request) const;
+
+        /**
+         * <p>Removes tags from a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagProjectAsync(const Model::UntagProjectRequest& request, const UntagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a project in AWS CodeStar.</p><p><h3>See Also:</h3>   <a
@@ -653,7 +749,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AssociateTeamMemberAsyncHelper(const Model::AssociateTeamMemberRequest& request, const AssociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -666,8 +762,11 @@ namespace Model
         void DisassociateTeamMemberAsyncHelper(const Model::DisassociateTeamMemberRequest& request, const DisassociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourcesAsyncHelper(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForProjectAsyncHelper(const Model::ListTagsForProjectRequest& request, const ListTagsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTeamMembersAsyncHelper(const Model::ListTeamMembersRequest& request, const ListTeamMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserProfilesAsyncHelper(const Model::ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagProjectAsyncHelper(const Model::TagProjectRequest& request, const TagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagProjectAsyncHelper(const Model::UntagProjectRequest& request, const UntagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTeamMemberAsyncHelper(const Model::UpdateTeamMemberRequest& request, const UpdateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserProfileAsyncHelper(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetBucketAclResult();
-    GetBucketAclResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketAclResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketAclResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketAclResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Owner& GetOwner() const{ return m_owner; }
@@ -57,6 +58,7 @@ namespace Model
 
     
     inline GetBucketAclResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+
 
     /**
      * A list of grants.
@@ -94,7 +96,9 @@ namespace Model
     inline GetBucketAclResult& AddGrants(Grant&& value) { m_grants.push_back(std::move(value)); return *this; }
 
   private:
+
     Owner m_owner;
+
     Aws::Vector<Grant> m_grants;
   };
 

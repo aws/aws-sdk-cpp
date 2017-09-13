@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeDBEngineVersionsResult();
-    DescribeDBEngineVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBEngineVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBEngineVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBEngineVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -99,6 +100,7 @@ namespace Model
      */
     inline DescribeDBEngineVersionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p> A list of <code>DBEngineVersion</code> elements. </p>
      */
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeDBEngineVersionsResult& AddDBEngineVersions(DBEngineVersion&& value) { m_dBEngineVersions.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeDBEngineVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<DBEngineVersion> m_dBEngineVersions;
+
     ResponseMetadata m_responseMetadata;
   };
 

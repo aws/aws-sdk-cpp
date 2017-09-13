@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The
      * instance type size that the Dedicated Host is configured to support.</p> </li>
@@ -155,6 +156,7 @@ namespace Model
      */
     inline DescribeHostsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
@@ -203,6 +205,7 @@ namespace Model
      */
     inline DescribeHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
@@ -232,6 +235,7 @@ namespace Model
      * request.</p>
      */
     inline DescribeHostsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -269,12 +273,16 @@ namespace Model
     inline DescribeHostsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filter;
     bool m_filterHasBeenSet;
+
     Aws::Vector<Aws::String> m_hostIds;
     bool m_hostIdsHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

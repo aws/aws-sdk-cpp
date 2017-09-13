@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListCoreDefinitionsResult();
-    ListCoreDefinitionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCoreDefinitionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCoreDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCoreDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Definitions
@@ -77,6 +78,7 @@ namespace Model
      * Definitions
      */
     inline ListCoreDefinitionsResult& AddDefinitions(DefinitionInformation&& value) { m_definitions.push_back(std::move(value)); return *this; }
+
 
     /**
      * The token for the next set of results, or ''null'' if there are no additional
@@ -121,7 +123,9 @@ namespace Model
     inline ListCoreDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DefinitionInformation> m_definitions;
+
     Aws::String m_nextToken;
   };
 

@@ -30,12 +30,12 @@ DeleteRealtimeEndpointResult::DeleteRealtimeEndpointResult()
 {
 }
 
-DeleteRealtimeEndpointResult::DeleteRealtimeEndpointResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRealtimeEndpointResult::DeleteRealtimeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteRealtimeEndpointResult& DeleteRealtimeEndpointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRealtimeEndpointResult& DeleteRealtimeEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MLModelId"))

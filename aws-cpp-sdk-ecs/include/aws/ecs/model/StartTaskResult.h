@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     StartTaskResult();
-    StartTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A full description of the tasks that were started. Each task that was
@@ -85,6 +86,7 @@ namespace Model
      */
     inline StartTaskResult& AddTasks(Task&& value) { m_tasks.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Any failures associated with the call.</p>
      */
@@ -121,7 +123,9 @@ namespace Model
     inline StartTaskResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Task> m_tasks;
+
     Aws::Vector<Failure> m_failures;
   };
 

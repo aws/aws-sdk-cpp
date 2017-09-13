@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The maximum number of delivery streams to list.</p>
      */
@@ -51,6 +52,7 @@ namespace Model
      * <p>The maximum number of delivery streams to list.</p>
      */
     inline ListDeliveryStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The delivery stream type. This can be one of the following values:</p> <ul>
@@ -102,6 +104,7 @@ namespace Model
      */
     inline ListDeliveryStreamsRequest& WithDeliveryStreamType(DeliveryStreamType&& value) { SetDeliveryStreamType(std::move(value)); return *this;}
 
+
     /**
      * <p>The name of the delivery stream to start the list with.</p>
      */
@@ -138,10 +141,13 @@ namespace Model
     inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(const char* value) { SetExclusiveStartDeliveryStreamName(value); return *this;}
 
   private:
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     DeliveryStreamType m_deliveryStreamType;
     bool m_deliveryStreamTypeHasBeenSet;
+
     Aws::String m_exclusiveStartDeliveryStreamName;
     bool m_exclusiveStartDeliveryStreamNameHasBeenSet;
   };

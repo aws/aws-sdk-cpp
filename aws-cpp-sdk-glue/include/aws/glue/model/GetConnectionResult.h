@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetConnectionResult();
-    GetConnectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConnectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The requested connection definition.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetConnectionResult& WithConnection(Connection&& value) { SetConnection(std::move(value)); return *this;}
 
   private:
+
     Connection m_connection;
   };
 

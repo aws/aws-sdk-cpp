@@ -30,12 +30,12 @@ PutObjectTaggingResult::PutObjectTaggingResult()
 {
 }
 
-PutObjectTaggingResult::PutObjectTaggingResult(const AmazonWebServiceResult<XmlDocument>& result)
+PutObjectTaggingResult::PutObjectTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-PutObjectTaggingResult& PutObjectTaggingResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PutObjectTaggingResult& PutObjectTaggingResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

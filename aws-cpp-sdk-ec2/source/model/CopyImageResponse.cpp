@@ -31,12 +31,12 @@ CopyImageResponse::CopyImageResponse()
 {
 }
 
-CopyImageResponse::CopyImageResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CopyImageResponse::CopyImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CopyImageResponse& CopyImageResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CopyImageResponse& CopyImageResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -30,12 +30,12 @@ RetrieveTapeRecoveryPointResult::RetrieveTapeRecoveryPointResult()
 {
 }
 
-RetrieveTapeRecoveryPointResult::RetrieveTapeRecoveryPointResult(const AmazonWebServiceResult<JsonValue>& result)
+RetrieveTapeRecoveryPointResult::RetrieveTapeRecoveryPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RetrieveTapeRecoveryPointResult& RetrieveTapeRecoveryPointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RetrieveTapeRecoveryPointResult& RetrieveTapeRecoveryPointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TapeARN"))

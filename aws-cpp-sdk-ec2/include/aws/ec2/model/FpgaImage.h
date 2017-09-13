@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The FPGA image identifier (AFI ID).</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The FPGA image identifier (AFI ID).</p>
      */
     inline FpgaImage& WithFpgaImageId(const char* value) { SetFpgaImageId(value); return *this;}
+
 
     /**
      * <p>The global FPGA image identifier (AGFI ID).</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline FpgaImage& WithFpgaImageGlobalId(const char* value) { SetFpgaImageGlobalId(value); return *this;}
 
+
     /**
      * <p>The name of the AFI.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      * <p>The name of the AFI.</p>
      */
     inline FpgaImage& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The description of the AFI.</p>
@@ -194,6 +198,7 @@ namespace Model
      */
     inline FpgaImage& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The version of the AWS Shell that was used to create the bitstream.</p>
      */
@@ -229,6 +234,7 @@ namespace Model
      */
     inline FpgaImage& WithShellVersion(const char* value) { SetShellVersion(value); return *this;}
 
+
     /**
      * <p>Information about the PCI bus.</p>
      */
@@ -253,6 +259,7 @@ namespace Model
      * <p>Information about the PCI bus.</p>
      */
     inline FpgaImage& WithPciId(PciId&& value) { SetPciId(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the state of the AFI.</p>
@@ -279,6 +286,7 @@ namespace Model
      */
     inline FpgaImage& WithState(FpgaImageState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time the AFI was created.</p>
      */
@@ -304,6 +312,7 @@ namespace Model
      */
     inline FpgaImage& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time of the most recent update to the AFI.</p>
      */
@@ -328,6 +337,7 @@ namespace Model
      * <p>The time of the most recent update to the AFI.</p>
      */
     inline FpgaImage& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS account ID of the AFI owner.</p>
@@ -363,6 +373,7 @@ namespace Model
      * <p>The AWS account ID of the AFI owner.</p>
      */
     inline FpgaImage& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
 
     /**
      * <p>The alias of the AFI owner. Possible values include <code>self</code>,
@@ -406,6 +417,7 @@ namespace Model
      */
     inline FpgaImage& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
 
+
     /**
      * <p>The product codes for the AFI.</p>
      */
@@ -440,6 +452,7 @@ namespace Model
      * <p>The product codes for the AFI.</p>
      */
     inline FpgaImage& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Any tags assigned to the AFI.</p>
@@ -477,30 +490,43 @@ namespace Model
     inline FpgaImage& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_fpgaImageId;
     bool m_fpgaImageIdHasBeenSet;
+
     Aws::String m_fpgaImageGlobalId;
     bool m_fpgaImageGlobalIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_shellVersion;
     bool m_shellVersionHasBeenSet;
+
     PciId m_pciId;
     bool m_pciIdHasBeenSet;
+
     FpgaImageState m_state;
     bool m_stateHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet;
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     Aws::String m_ownerAlias;
     bool m_ownerAliasHasBeenSet;
+
     Aws::Vector<ProductCode> m_productCodes;
     bool m_productCodesHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

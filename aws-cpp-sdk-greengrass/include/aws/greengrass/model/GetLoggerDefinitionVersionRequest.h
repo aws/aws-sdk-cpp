@@ -34,6 +34,7 @@ namespace Model
     GetLoggerDefinitionVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * logger definition Id
      */
@@ -68,6 +69,7 @@ namespace Model
      * logger definition Id
      */
     inline GetLoggerDefinitionVersionRequest& WithLoggerDefinitionId(const char* value) { SetLoggerDefinitionId(value); return *this;}
+
 
     /**
      * logger definition version Id
@@ -105,8 +107,10 @@ namespace Model
     inline GetLoggerDefinitionVersionRequest& WithLoggerDefinitionVersionId(const char* value) { SetLoggerDefinitionVersionId(value); return *this;}
 
   private:
+
     Aws::String m_loggerDefinitionId;
     bool m_loggerDefinitionIdHasBeenSet;
+
     Aws::String m_loggerDefinitionVersionId;
     bool m_loggerDefinitionVersionIdHasBeenSet;
   };

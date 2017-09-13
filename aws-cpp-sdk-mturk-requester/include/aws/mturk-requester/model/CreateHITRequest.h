@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The number of times the HIT can be accepted and completed before the HIT
      * becomes unavailable. </p>
@@ -57,6 +58,7 @@ namespace Model
      * becomes unavailable. </p>
      */
     inline CreateHITRequest& WithMaxAssignments(int value) { SetMaxAssignments(value); return *this;}
+
 
     /**
      * <p> The number of seconds after an assignment for the HIT has been submitted,
@@ -78,6 +80,7 @@ namespace Model
      * Requester explicitly rejects it. </p>
      */
     inline CreateHITRequest& WithAutoApprovalDelayInSeconds(long long value) { SetAutoApprovalDelayInSeconds(value); return *this;}
+
 
     /**
      * <p> An amount of time, in seconds, after which the HIT is no longer available
@@ -102,6 +105,7 @@ namespace Model
      * been accepted. </p>
      */
     inline CreateHITRequest& WithLifetimeInSeconds(long long value) { SetLifetimeInSeconds(value); return *this;}
+
 
     /**
      * <p> The amount of time, in seconds, that a Worker has to complete the HIT after
@@ -129,6 +133,7 @@ namespace Model
      * other users to find and accept. </p>
      */
     inline CreateHITRequest& WithAssignmentDurationInSeconds(long long value) { SetAssignmentDurationInSeconds(value); return *this;}
+
 
     /**
      * <p> The amount of money the Requester will pay a Worker for successfully
@@ -171,6 +176,7 @@ namespace Model
      * completing the HIT. </p>
      */
     inline CreateHITRequest& WithReward(const char* value) { SetReward(value); return *this;}
+
 
     /**
      * <p> The title of the HIT. A title should be short and descriptive about the kind
@@ -221,6 +227,7 @@ namespace Model
      */
     inline CreateHITRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
 
+
     /**
      * <p> One or more words or phrases that describe the HIT, separated by commas.
      * These words are used in searches to find HITs. </p>
@@ -262,6 +269,7 @@ namespace Model
      * These words are used in searches to find HITs. </p>
      */
     inline CreateHITRequest& WithKeywords(const char* value) { SetKeywords(value); return *this;}
+
 
     /**
      * <p> A general description of the HIT. A description includes detailed
@@ -326,6 +334,7 @@ namespace Model
      */
     inline CreateHITRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p> The data the person completing the HIT uses to produce the results. </p> <p>
      * Constraints: Must be a QuestionForm data structure, an ExternalQuestion data
@@ -388,6 +397,7 @@ namespace Model
      * <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
      */
     inline CreateHITRequest& WithQuestion(const char* value) { SetQuestion(value); return *this;}
+
 
     /**
      * <p> An arbitrary data field. The RequesterAnnotation parameter lets your
@@ -473,6 +483,7 @@ namespace Model
      */
     inline CreateHITRequest& WithRequesterAnnotation(const char* value) { SetRequesterAnnotation(value); return *this;}
 
+
     /**
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
      * allowed to accept and complete the HIT. </p>
@@ -514,6 +525,7 @@ namespace Model
      * allowed to accept and complete the HIT. </p>
      */
     inline CreateHITRequest& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> A unique identifier for this request which allows you to retry the call on
@@ -613,6 +625,7 @@ namespace Model
      */
     inline CreateHITRequest& WithUniqueRequestToken(const char* value) { SetUniqueRequestToken(value); return *this;}
 
+
     /**
      * <p> The Assignment-level Review Policy applies to the assignments under the HIT.
      * You can specify for Mechanical Turk to take various actions based on the policy.
@@ -648,6 +661,7 @@ namespace Model
      */
     inline CreateHITRequest& WithAssignmentReviewPolicy(ReviewPolicy&& value) { SetAssignmentReviewPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p> The HIT-level Review Policy applies to the HIT. You can specify for
      * Mechanical Turk to take various actions based on the policy. </p>
@@ -677,6 +691,7 @@ namespace Model
      * Mechanical Turk to take various actions based on the policy. </p>
      */
     inline CreateHITRequest& WithHITReviewPolicy(ReviewPolicy&& value) { SetHITReviewPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder
@@ -734,6 +749,7 @@ namespace Model
      */
     inline CreateHITRequest& WithHITLayoutId(const char* value) { SetHITLayoutId(value); return *this;}
 
+
     /**
      * <p> If the HITLayoutId is provided, any placeholder values must be filled in
      * with values using the HITLayoutParameter structure. For more information, see
@@ -784,36 +800,52 @@ namespace Model
     inline CreateHITRequest& AddHITLayoutParameters(HITLayoutParameter&& value) { m_hITLayoutParametersHasBeenSet = true; m_hITLayoutParameters.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_maxAssignments;
     bool m_maxAssignmentsHasBeenSet;
+
     long long m_autoApprovalDelayInSeconds;
     bool m_autoApprovalDelayInSecondsHasBeenSet;
+
     long long m_lifetimeInSeconds;
     bool m_lifetimeInSecondsHasBeenSet;
+
     long long m_assignmentDurationInSeconds;
     bool m_assignmentDurationInSecondsHasBeenSet;
+
     Aws::String m_reward;
     bool m_rewardHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_keywords;
     bool m_keywordsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_question;
     bool m_questionHasBeenSet;
+
     Aws::String m_requesterAnnotation;
     bool m_requesterAnnotationHasBeenSet;
+
     Aws::Vector<QualificationRequirement> m_qualificationRequirements;
     bool m_qualificationRequirementsHasBeenSet;
+
     Aws::String m_uniqueRequestToken;
     bool m_uniqueRequestTokenHasBeenSet;
+
     ReviewPolicy m_assignmentReviewPolicy;
     bool m_assignmentReviewPolicyHasBeenSet;
+
     ReviewPolicy m_hITReviewPolicy;
     bool m_hITReviewPolicyHasBeenSet;
+
     Aws::String m_hITLayoutId;
     bool m_hITLayoutIdHasBeenSet;
+
     Aws::Vector<HITLayoutParameter> m_hITLayoutParameters;
     bool m_hITLayoutParametersHasBeenSet;
   };

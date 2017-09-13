@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline UpdateProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The identifier of the product for the update request.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The identifier of the product for the update request.</p>
      */
     inline UpdateProductRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The updated product name.</p>
@@ -157,6 +160,7 @@ namespace Model
      */
     inline UpdateProductRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The updated owner of the product.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      * <p>The updated owner of the product.</p>
      */
     inline UpdateProductRequest& WithOwner(const char* value) { SetOwner(value); return *this;}
+
 
     /**
      * <p>The updated text description of the product.</p>
@@ -227,6 +232,7 @@ namespace Model
      */
     inline UpdateProductRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The updated distributor of the product.</p>
      */
@@ -261,6 +267,7 @@ namespace Model
      * <p>The updated distributor of the product.</p>
      */
     inline UpdateProductRequest& WithDistributor(const char* value) { SetDistributor(value); return *this;}
+
 
     /**
      * <p>The updated support description for the product.</p>
@@ -297,6 +304,7 @@ namespace Model
      */
     inline UpdateProductRequest& WithSupportDescription(const char* value) { SetSupportDescription(value); return *this;}
 
+
     /**
      * <p>The updated support email for the product.</p>
      */
@@ -331,6 +339,7 @@ namespace Model
      * <p>The updated support email for the product.</p>
      */
     inline UpdateProductRequest& WithSupportEmail(const char* value) { SetSupportEmail(value); return *this;}
+
 
     /**
      * <p>The updated support URL for the product.</p>
@@ -367,6 +376,7 @@ namespace Model
      */
     inline UpdateProductRequest& WithSupportUrl(const char* value) { SetSupportUrl(value); return *this;}
 
+
     /**
      * <p>Tags to add to the existing list of tags associated with the product.</p>
      */
@@ -401,6 +411,7 @@ namespace Model
      * <p>Tags to add to the existing list of tags associated with the product.</p>
      */
     inline UpdateProductRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Tags to remove from the existing list of tags associated with the
@@ -451,26 +462,37 @@ namespace Model
     inline UpdateProductRequest& AddRemoveTags(const char* value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(value); return *this; }
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_distributor;
     bool m_distributorHasBeenSet;
+
     Aws::String m_supportDescription;
     bool m_supportDescriptionHasBeenSet;
+
     Aws::String m_supportEmail;
     bool m_supportEmailHasBeenSet;
+
     Aws::String m_supportUrl;
     bool m_supportUrlHasBeenSet;
+
     Aws::Vector<Tag> m_addTags;
     bool m_addTagsHasBeenSet;
+
     Aws::Vector<Aws::String> m_removeTags;
     bool m_removeTagsHasBeenSet;
   };

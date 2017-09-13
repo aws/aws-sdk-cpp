@@ -31,12 +31,12 @@ CreateLBCookieStickinessPolicyResult::CreateLBCookieStickinessPolicyResult()
 {
 }
 
-CreateLBCookieStickinessPolicyResult::CreateLBCookieStickinessPolicyResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateLBCookieStickinessPolicyResult::CreateLBCookieStickinessPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateLBCookieStickinessPolicyResult& CreateLBCookieStickinessPolicyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateLBCookieStickinessPolicyResult& CreateLBCookieStickinessPolicyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

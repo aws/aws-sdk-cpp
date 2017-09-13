@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Any VPCs attached to the Internet gateway.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline InternetGateway& AddAttachments(InternetGatewayAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the Internet gateway.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>The ID of the Internet gateway.</p>
      */
     inline InternetGateway& WithInternetGatewayId(const char* value) { SetInternetGatewayId(value); return *this;}
+
 
     /**
      * <p>Any tags assigned to the Internet gateway.</p>
@@ -157,10 +160,13 @@ namespace Model
     inline InternetGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<InternetGatewayAttachment> m_attachments;
     bool m_attachmentsHasBeenSet;
+
     Aws::String m_internetGatewayId;
     bool m_internetGatewayIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

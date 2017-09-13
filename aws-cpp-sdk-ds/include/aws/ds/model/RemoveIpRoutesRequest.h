@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Identifier (ID) of the directory from which you want to remove the IP
      * addresses.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline RemoveIpRoutesRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
+
     /**
      * <p>IP address blocks that you want to remove.</p>
      */
@@ -120,8 +122,10 @@ namespace Model
     inline RemoveIpRoutesRequest& AddCidrIps(const char* value) { m_cidrIpsHasBeenSet = true; m_cidrIps.push_back(value); return *this; }
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_cidrIps;
     bool m_cidrIpsHasBeenSet;
   };

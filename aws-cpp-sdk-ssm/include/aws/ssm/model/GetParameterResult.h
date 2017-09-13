@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetParameterResult();
-    GetParameterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetParameterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetParameterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetParameterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about a parameter.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetParameterResult& WithParameter(Parameter&& value) { SetParameter(std::move(value)); return *this;}
 
   private:
+
     Parameter m_parameter;
   };
 

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
      * tags.</p>
@@ -80,6 +81,7 @@ namespace Model
      * tags.</p>
      */
     inline ListTagsForResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+
 
     /**
      * <p>An opaque string that indicates the position at which to begin returning the
@@ -123,6 +125,7 @@ namespace Model
      */
     inline ListTagsForResourceRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Specifies that the list of tags returned be limited to the specified number
      * of items.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline ListTagsForResourceRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_resourceARN;
     bool m_resourceARNHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

@@ -30,12 +30,12 @@ AdminDisableProviderForUserResult::AdminDisableProviderForUserResult()
 {
 }
 
-AdminDisableProviderForUserResult::AdminDisableProviderForUserResult(const AmazonWebServiceResult<JsonValue>& result)
+AdminDisableProviderForUserResult::AdminDisableProviderForUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AdminDisableProviderForUserResult& AdminDisableProviderForUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminDisableProviderForUserResult& AdminDisableProviderForUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

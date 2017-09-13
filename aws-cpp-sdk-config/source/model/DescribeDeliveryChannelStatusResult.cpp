@@ -30,12 +30,12 @@ DescribeDeliveryChannelStatusResult::DescribeDeliveryChannelStatusResult()
 {
 }
 
-DescribeDeliveryChannelStatusResult::DescribeDeliveryChannelStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDeliveryChannelStatusResult::DescribeDeliveryChannelStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeDeliveryChannelStatusResult& DescribeDeliveryChannelStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDeliveryChannelStatusResult& DescribeDeliveryChannelStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DeliveryChannelsStatus"))

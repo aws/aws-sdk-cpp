@@ -57,6 +57,7 @@ namespace Model
     Rule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
      * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
@@ -134,6 +135,7 @@ namespace Model
      */
     inline Rule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
+
     /**
      * <p>The friendly name or description for the <code>Rule</code>. You can't change
      * the name of a <code>Rule</code> after you create it.</p>
@@ -175,6 +177,7 @@ namespace Model
      * the name of a <code>Rule</code> after you create it.</p>
      */
     inline Rule& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
@@ -231,6 +234,7 @@ namespace Model
      * create the <code>Rule</code>.</p>
      */
     inline Rule& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+
 
     /**
      * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
@@ -289,12 +293,16 @@ namespace Model
     inline Rule& AddPredicates(Predicate&& value) { m_predicatesHasBeenSet = true; m_predicates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::Vector<Predicate> m_predicates;
     bool m_predicatesHasBeenSet;
   };

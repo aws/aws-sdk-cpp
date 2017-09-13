@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -72,47 +73,49 @@ namespace Model
      */
     inline DescribeLogStreamsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
+
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(const Aws::String& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::move(value); }
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(const char* value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix.assign(value); }
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}
+
 
     /**
      * <p>If the value is <code>LogStreamName</code>, the results are ordered by log
@@ -121,7 +124,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
      * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
      * updates in less than an hour from ingestion, but may take longer in some rare
      * situations.</p>
@@ -135,7 +138,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
      * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
      * updates in less than an hour from ingestion, but may take longer in some rare
      * situations.</p>
@@ -149,7 +152,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
      * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
      * updates in less than an hour from ingestion, but may take longer in some rare
      * situations.</p>
@@ -163,7 +166,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
      * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
      * updates in less than an hour from ingestion, but may take longer in some rare
      * situations.</p>
@@ -177,12 +180,13 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
      * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
      * updates in less than an hour from ingestion, but may take longer in some rare
      * situations.</p>
      */
     inline DescribeLogStreamsRequest& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
+
 
     /**
      * <p>If the value is true, results are returned in descending order. If the value
@@ -204,6 +208,7 @@ namespace Model
      * false.</p>
      */
     inline DescribeLogStreamsRequest& WithDescending(bool value) { SetDescending(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -247,6 +252,7 @@ namespace Model
      */
     inline DescribeLogStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the
      * default is up to 50 items.</p>
@@ -266,16 +272,22 @@ namespace Model
     inline DescribeLogStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_logStreamNamePrefix;
     bool m_logStreamNamePrefixHasBeenSet;
+
     OrderBy m_orderBy;
     bool m_orderByHasBeenSet;
+
     bool m_descending;
     bool m_descendingHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

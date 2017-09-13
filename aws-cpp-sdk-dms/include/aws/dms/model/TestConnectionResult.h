@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     TestConnectionResult();
-    TestConnectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestConnectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The connection tested.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline TestConnectionResult& WithConnection(Connection&& value) { SetConnection(std::move(value)); return *this;}
 
   private:
+
     Connection m_connection;
   };
 

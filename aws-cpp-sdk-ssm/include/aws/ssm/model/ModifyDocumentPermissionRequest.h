@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the document that you want to share.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline ModifyDocumentPermissionRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The permission type for the document. The permission type can be
      * <i>Share</i>.</p>
@@ -102,6 +104,7 @@ namespace Model
      * <i>Share</i>.</p>
      */
     inline ModifyDocumentPermissionRequest& WithPermissionType(DocumentPermissionType&& value) { SetPermissionType(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS user accounts that should have access to the document. The account
@@ -150,6 +153,7 @@ namespace Model
      * IDs can either be a group of account IDs or <i>All</i>.</p>
      */
     inline ModifyDocumentPermissionRequest& AddAccountIdsToAdd(const char* value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd.push_back(value); return *this; }
+
 
     /**
      * <p>The AWS user accounts that should no longer have access to the document. The
@@ -216,12 +220,16 @@ namespace Model
     inline ModifyDocumentPermissionRequest& AddAccountIdsToRemove(const char* value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove.push_back(value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     DocumentPermissionType m_permissionType;
     bool m_permissionTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_accountIdsToAdd;
     bool m_accountIdsToAddHasBeenSet;
+
     Aws::Vector<Aws::String> m_accountIdsToRemove;
     bool m_accountIdsToRemoveHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
      * <a>DescribeProvisioningParameters</a>.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The desired value for this key.</p>
      */
@@ -125,8 +127,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

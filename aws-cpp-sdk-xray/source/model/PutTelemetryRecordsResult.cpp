@@ -30,12 +30,12 @@ PutTelemetryRecordsResult::PutTelemetryRecordsResult()
 {
 }
 
-PutTelemetryRecordsResult::PutTelemetryRecordsResult(const AmazonWebServiceResult<JsonValue>& result)
+PutTelemetryRecordsResult::PutTelemetryRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutTelemetryRecordsResult& PutTelemetryRecordsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutTelemetryRecordsResult& PutTelemetryRecordsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

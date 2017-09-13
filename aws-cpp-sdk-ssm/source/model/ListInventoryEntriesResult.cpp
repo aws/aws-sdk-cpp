@@ -30,12 +30,12 @@ ListInventoryEntriesResult::ListInventoryEntriesResult()
 {
 }
 
-ListInventoryEntriesResult::ListInventoryEntriesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListInventoryEntriesResult::ListInventoryEntriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListInventoryEntriesResult& ListInventoryEntriesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListInventoryEntriesResult& ListInventoryEntriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TypeName"))

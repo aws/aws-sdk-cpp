@@ -30,12 +30,12 @@ DeleteWebACLResult::DeleteWebACLResult()
 {
 }
 
-DeleteWebACLResult::DeleteWebACLResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteWebACLResult::DeleteWebACLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteWebACLResult& DeleteWebACLResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteWebACLResult& DeleteWebACLResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

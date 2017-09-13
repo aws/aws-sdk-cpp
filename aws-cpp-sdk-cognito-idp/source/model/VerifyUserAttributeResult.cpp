@@ -30,12 +30,12 @@ VerifyUserAttributeResult::VerifyUserAttributeResult()
 {
 }
 
-VerifyUserAttributeResult::VerifyUserAttributeResult(const AmazonWebServiceResult<JsonValue>& result)
+VerifyUserAttributeResult::VerifyUserAttributeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-VerifyUserAttributeResult& VerifyUserAttributeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+VerifyUserAttributeResult& VerifyUserAttributeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

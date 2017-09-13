@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     PutScalingPolicyResult();
-    PutScalingPolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutScalingPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PutScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PutScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
      */
     inline PutScalingPolicyResult& WithPolicyARN(const char* value) { SetPolicyARN(value); return *this;}
+
 
     /**
      * <p>The CloudWatch alarms created for the target tracking policy. This parameter
@@ -133,6 +135,7 @@ namespace Model
      */
     inline PutScalingPolicyResult& AddAlarms(Alarm&& value) { m_alarms.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -149,8 +152,11 @@ namespace Model
     inline PutScalingPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_policyARN;
+
     Aws::Vector<Alarm> m_alarms;
+
     ResponseMetadata m_responseMetadata;
   };
 

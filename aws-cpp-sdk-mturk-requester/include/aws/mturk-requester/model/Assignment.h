@@ -49,6 +49,7 @@ namespace Model
     Assignment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> A unique identifier for the assignment.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p> A unique identifier for the assignment.</p>
      */
     inline Assignment& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
+
 
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Assignment& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
 
+
     /**
      * <p> The ID of the HIT.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline Assignment& WithHITId(const char* value) { SetHITId(value); return *this;}
 
+
     /**
      * <p> The status of the assignment.</p>
      */
@@ -178,6 +182,7 @@ namespace Model
      * <p> The status of the assignment.</p>
      */
     inline Assignment& WithAssignmentStatus(AssignmentStatus&& value) { SetAssignmentStatus(std::move(value)); return *this;}
+
 
     /**
      * <p> If results have been submitted, AutoApprovalTime is the date and time the
@@ -229,6 +234,7 @@ namespace Model
      */
     inline Assignment& WithAutoApprovalTime(Aws::Utils::DateTime&& value) { SetAutoApprovalTime(std::move(value)); return *this;}
 
+
     /**
      * <p> The date and time the Worker accepted the assignment.</p>
      */
@@ -253,6 +259,7 @@ namespace Model
      * <p> The date and time the Worker accepted the assignment.</p>
      */
     inline Assignment& WithAcceptTime(Aws::Utils::DateTime&& value) { SetAcceptTime(std::move(value)); return *this;}
+
 
     /**
      * <p> If the Worker has submitted results, SubmitTime is the date and time the
@@ -288,6 +295,7 @@ namespace Model
      * Worker has not yet submitted results.</p>
      */
     inline Assignment& WithSubmitTime(Aws::Utils::DateTime&& value) { SetSubmitTime(std::move(value)); return *this;}
+
 
     /**
      * <p> If the Worker has submitted results and the Requester has approved the
@@ -329,6 +337,7 @@ namespace Model
      */
     inline Assignment& WithApprovalTime(Aws::Utils::DateTime&& value) { SetApprovalTime(std::move(value)); return *this;}
 
+
     /**
      * <p> If the Worker has submitted results and the Requester has rejected the
      * results, RejectionTime is the date and time the Requester rejected the
@@ -364,6 +373,7 @@ namespace Model
      */
     inline Assignment& WithRejectionTime(Aws::Utils::DateTime&& value) { SetRejectionTime(std::move(value)); return *this;}
 
+
     /**
      * <p> The date and time of the deadline for the assignment. This value is derived
      * from the deadline specification for the HIT and the date and time the Worker
@@ -398,6 +408,7 @@ namespace Model
      * accepted the HIT.</p>
      */
     inline Assignment& WithDeadline(Aws::Utils::DateTime&& value) { SetDeadline(std::move(value)); return *this;}
+
 
     /**
      * <p> The Worker's answers submitted for the HIT contained in a
@@ -455,6 +466,7 @@ namespace Model
      */
     inline Assignment& WithAnswer(const char* value) { SetAnswer(value); return *this;}
 
+
     /**
      * <p> The feedback string included with the call to the ApproveAssignment
      * operation or the RejectAssignment operation, if the Requester approved or
@@ -505,28 +517,40 @@ namespace Model
     inline Assignment& WithRequesterFeedback(const char* value) { SetRequesterFeedback(value); return *this;}
 
   private:
+
     Aws::String m_assignmentId;
     bool m_assignmentIdHasBeenSet;
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
+
     Aws::String m_hITId;
     bool m_hITIdHasBeenSet;
+
     AssignmentStatus m_assignmentStatus;
     bool m_assignmentStatusHasBeenSet;
+
     Aws::Utils::DateTime m_autoApprovalTime;
     bool m_autoApprovalTimeHasBeenSet;
+
     Aws::Utils::DateTime m_acceptTime;
     bool m_acceptTimeHasBeenSet;
+
     Aws::Utils::DateTime m_submitTime;
     bool m_submitTimeHasBeenSet;
+
     Aws::Utils::DateTime m_approvalTime;
     bool m_approvalTimeHasBeenSet;
+
     Aws::Utils::DateTime m_rejectionTime;
     bool m_rejectionTimeHasBeenSet;
+
     Aws::Utils::DateTime m_deadline;
     bool m_deadlineHasBeenSet;
+
     Aws::String m_answer;
     bool m_answerHasBeenSet;
+
     Aws::String m_requesterFeedback;
     bool m_requesterFeedbackHasBeenSet;
   };

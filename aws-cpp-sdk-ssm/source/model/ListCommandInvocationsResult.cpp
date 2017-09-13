@@ -30,12 +30,12 @@ ListCommandInvocationsResult::ListCommandInvocationsResult()
 {
 }
 
-ListCommandInvocationsResult::ListCommandInvocationsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListCommandInvocationsResult::ListCommandInvocationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListCommandInvocationsResult& ListCommandInvocationsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListCommandInvocationsResult& ListCommandInvocationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CommandInvocations"))

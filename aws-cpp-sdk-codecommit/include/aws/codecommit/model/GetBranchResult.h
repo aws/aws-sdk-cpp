@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetBranchResult();
-    GetBranchResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBranchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBranchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBranchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the branch.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline GetBranchResult& WithBranch(BranchInfo&& value) { SetBranch(std::move(value)); return *this;}
 
   private:
+
     BranchInfo m_branch;
   };
 

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     PutRepositoryTriggersResult();
-    PutRepositoryTriggersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRepositoryTriggersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRepositoryTriggersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRepositoryTriggersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The system-generated unique ID for the create or update operation.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline PutRepositoryTriggersResult& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 
   private:
+
     Aws::String m_configurationId;
   };
 

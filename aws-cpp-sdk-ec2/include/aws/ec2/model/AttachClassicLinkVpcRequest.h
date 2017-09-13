@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -66,6 +67,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline AttachClassicLinkVpcRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of one or more of the VPC's security groups. You cannot specify
@@ -115,6 +117,7 @@ namespace Model
      */
     inline AttachClassicLinkVpcRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.</p>
      */
     inline AttachClassicLinkVpcRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The ID of a ClassicLink-enabled VPC.</p>
@@ -186,12 +190,16 @@ namespace Model
     inline AttachClassicLinkVpcRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Aws::String> m_groups;
     bool m_groupsHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

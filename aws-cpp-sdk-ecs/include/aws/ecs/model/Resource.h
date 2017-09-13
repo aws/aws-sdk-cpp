@@ -47,6 +47,7 @@ namespace Model
     Resource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
      * <code>ports</code>, or a user-defined resource.</p>
@@ -88,6 +89,7 @@ namespace Model
      * <code>ports</code>, or a user-defined resource.</p>
      */
     inline Resource& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>,
@@ -131,6 +133,7 @@ namespace Model
      */
     inline Resource& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>When the <code>doubleValue</code> type is set, the value of the resource must
      * be a double precision floating-point type.</p>
@@ -148,6 +151,7 @@ namespace Model
      * be a double precision floating-point type.</p>
      */
     inline Resource& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
+
 
     /**
      * <p>When the <code>longValue</code> type is set, the value of the resource must
@@ -167,6 +171,7 @@ namespace Model
      */
     inline Resource& WithLongValue(long long value) { SetLongValue(value); return *this;}
 
+
     /**
      * <p>When the <code>integerValue</code> type is set, the value of the resource
      * must be an integer.</p>
@@ -184,6 +189,7 @@ namespace Model
      * must be an integer.</p>
      */
     inline Resource& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
+
 
     /**
      * <p>When the <code>stringSetValue</code> type is set, the value of the resource
@@ -234,16 +240,22 @@ namespace Model
     inline Resource& AddStringSetValue(const char* value) { m_stringSetValueHasBeenSet = true; m_stringSetValue.push_back(value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     double m_doubleValue;
     bool m_doubleValueHasBeenSet;
+
     long long m_longValue;
     bool m_longValueHasBeenSet;
+
     int m_integerValue;
     bool m_integerValueHasBeenSet;
+
     Aws::Vector<Aws::String> m_stringSetValue;
     bool m_stringSetValueHasBeenSet;
   };

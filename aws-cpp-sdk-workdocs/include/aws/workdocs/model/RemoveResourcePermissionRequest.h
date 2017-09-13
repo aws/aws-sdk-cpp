@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline RemoveResourcePermissionRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the resource.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline RemoveResourcePermissionRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>The principal ID of the resource.</p>
@@ -155,6 +158,7 @@ namespace Model
      */
     inline RemoveResourcePermissionRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
+
     /**
      * <p>The principal type of the resource.</p>
      */
@@ -181,12 +185,16 @@ namespace Model
     inline RemoveResourcePermissionRequest& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet;
+
     PrincipalType m_principalType;
     bool m_principalTypeHasBeenSet;
   };

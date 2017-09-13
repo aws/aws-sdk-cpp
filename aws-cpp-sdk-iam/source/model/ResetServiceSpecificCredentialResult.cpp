@@ -31,12 +31,12 @@ ResetServiceSpecificCredentialResult::ResetServiceSpecificCredentialResult()
 {
 }
 
-ResetServiceSpecificCredentialResult::ResetServiceSpecificCredentialResult(const AmazonWebServiceResult<XmlDocument>& result)
+ResetServiceSpecificCredentialResult::ResetServiceSpecificCredentialResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ResetServiceSpecificCredentialResult& ResetServiceSpecificCredentialResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ResetServiceSpecificCredentialResult& ResetServiceSpecificCredentialResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

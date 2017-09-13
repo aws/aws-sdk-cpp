@@ -47,6 +47,7 @@ namespace Model
     InstanceAggregatedAssociationOverview& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Detailed status information about the aggregated associations.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>Detailed status information about the aggregated associations.</p>
      */
     inline InstanceAggregatedAssociationOverview& WithDetailedStatus(const char* value) { SetDetailedStatus(value); return *this;}
+
 
     /**
      * <p>The number of associations for the instance(s).</p>
@@ -123,8 +125,10 @@ namespace Model
     inline InstanceAggregatedAssociationOverview& AddInstanceAssociationStatusAggregatedCount(const char* key, int value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_detailedStatus;
     bool m_detailedStatusHasBeenSet;
+
     Aws::Map<Aws::String, int> m_instanceAssociationStatusAggregatedCount;
     bool m_instanceAssociationStatusAggregatedCountHasBeenSet;
   };

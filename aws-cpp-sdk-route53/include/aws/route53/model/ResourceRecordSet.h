@@ -54,6 +54,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The name of the domain you want to perform the action on.</p> <p>Enter a
      * fully qualified domain name, for example, <code>www.example.com</code>. You can
@@ -257,6 +258,7 @@ namespace Model
      */
     inline ResourceRecordSet& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The DNS record type. For information about different record types and how
      * data is encoded for them, see <a
@@ -457,6 +459,7 @@ namespace Model
      */
     inline ResourceRecordSet& WithType(RRType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p> <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An
      * identifier that differentiates among multiple resource record sets that have the
@@ -526,6 +529,7 @@ namespace Model
      * sets.</p>
      */
     inline ResourceRecordSet& WithSetIdentifier(const char* value) { SetSetIdentifier(value); return *this;}
+
 
     /**
      * <p> <i>Weighted resource record sets only:</i> Among resource record sets that
@@ -616,6 +620,7 @@ namespace Model
      * the <i>Amazon Route 53 Developer Guide</i>.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithWeight(long long value) { SetWeight(value); return *this;}
+
 
     /**
      * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
@@ -731,6 +736,7 @@ namespace Model
      * <code>Type</code> elements as latency resource record sets.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithRegion(ResourceRecordSetRegion&& value) { SetRegion(std::move(value)); return *this;}
+
 
     /**
      * <p> <i>Geo location resource record sets only:</i> A complex type that lets you
@@ -901,6 +907,7 @@ namespace Model
      * sets.</p>
      */
     inline ResourceRecordSet& WithGeoLocation(GeoLocation&& value) { SetGeoLocation(std::move(value)); return *this;}
+
 
     /**
      * <p> <i>Failover resource record sets only:</i> To configure failover, you add
@@ -1087,6 +1094,7 @@ namespace Model
      */
     inline ResourceRecordSet& WithFailover(ResourceRecordSetFailover&& value) { SetFailover(std::move(value)); return *this;}
 
+
     /**
      * <p> <i>Multivalue answer resource record sets only</i>: To route traffic
      * approximately randomly to multiple resources, such as web servers, create one
@@ -1153,6 +1161,7 @@ namespace Model
      */
     inline ResourceRecordSet& WithMultiValueAnswer(bool value) { SetMultiValueAnswer(value); return *this;}
 
+
     /**
      * <p>The resource record cache time to live (TTL), in seconds. Note the
      * following:</p> <ul> <li> <p>If you're creating or updating an alias resource
@@ -1210,6 +1219,7 @@ namespace Model
      */
     inline ResourceRecordSet& WithTTL(long long value) { SetTTL(value); return *this;}
 
+
     /**
      * <p>Information about the resource records to act upon.</p> <note> <p>If you're
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
@@ -1258,6 +1268,7 @@ namespace Model
      * </note>
      */
     inline ResourceRecordSet& AddResourceRecords(ResourceRecord&& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
@@ -1348,6 +1359,7 @@ namespace Model
      * Guide</i>.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithAliasTarget(AliasTarget&& value) { SetAliasTarget(std::move(value)); return *this;}
+
 
     /**
      * <p>If you want Amazon Route 53 to return this resource record set in response to
@@ -1776,6 +1788,7 @@ namespace Model
      */
     inline ResourceRecordSet& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
 
+
     /**
      * <p>When you create a traffic policy instance, Amazon Route 53 automatically
      * creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of
@@ -1875,30 +1888,43 @@ namespace Model
     inline ResourceRecordSet& WithTrafficPolicyInstanceId(const char* value) { SetTrafficPolicyInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     RRType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_setIdentifier;
     bool m_setIdentifierHasBeenSet;
+
     long long m_weight;
     bool m_weightHasBeenSet;
+
     ResourceRecordSetRegion m_region;
     bool m_regionHasBeenSet;
+
     GeoLocation m_geoLocation;
     bool m_geoLocationHasBeenSet;
+
     ResourceRecordSetFailover m_failover;
     bool m_failoverHasBeenSet;
+
     bool m_multiValueAnswer;
     bool m_multiValueAnswerHasBeenSet;
+
     long long m_tTL;
     bool m_tTLHasBeenSet;
+
     Aws::Vector<ResourceRecord> m_resourceRecords;
     bool m_resourceRecordsHasBeenSet;
+
     AliasTarget m_aliasTarget;
     bool m_aliasTargetHasBeenSet;
+
     Aws::String m_healthCheckId;
     bool m_healthCheckIdHasBeenSet;
+
     Aws::String m_trafficPolicyInstanceId;
     bool m_trafficPolicyInstanceIdHasBeenSet;
   };

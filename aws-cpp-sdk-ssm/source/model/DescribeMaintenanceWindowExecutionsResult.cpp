@@ -30,12 +30,12 @@ DescribeMaintenanceWindowExecutionsResult::DescribeMaintenanceWindowExecutionsRe
 {
 }
 
-DescribeMaintenanceWindowExecutionsResult::DescribeMaintenanceWindowExecutionsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMaintenanceWindowExecutionsResult::DescribeMaintenanceWindowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeMaintenanceWindowExecutionsResult& DescribeMaintenanceWindowExecutionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMaintenanceWindowExecutionsResult& DescribeMaintenanceWindowExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WindowExecutions"))

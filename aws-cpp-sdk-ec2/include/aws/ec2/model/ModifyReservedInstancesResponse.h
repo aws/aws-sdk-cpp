@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ModifyReservedInstancesResponse();
-    ModifyReservedInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyReservedInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyReservedInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyReservedInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID for the modification.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ModifyReservedInstancesResponse& WithReservedInstancesModificationId(const char* value) { SetReservedInstancesModificationId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline ModifyReservedInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_reservedInstancesModificationId;
+
     ResponseMetadata m_responseMetadata;
   };
 

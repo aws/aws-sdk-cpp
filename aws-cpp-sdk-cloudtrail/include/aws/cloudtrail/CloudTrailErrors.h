@@ -55,7 +55,7 @@ enum class CloudTrailErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLOUD_TRAIL_A_R_N_INVALID= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLOUD_TRAIL_A_R_N_INVALID= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE,
   INSUFFICIENT_ENCRYPTION_POLICY,
   INSUFFICIENT_S3_BUCKET_POLICY,
@@ -90,7 +90,7 @@ enum class CloudTrailErrors
 };
 namespace CloudTrailErrorMapper
 {
-  AWS_CLOUDTRAIL_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CLOUDTRAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CloudTrail

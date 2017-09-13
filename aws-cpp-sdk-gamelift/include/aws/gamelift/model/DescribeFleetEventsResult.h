@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeFleetEventsResult();
-    DescribeFleetEventsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFleetEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFleetEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFleetEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of objects containing event log entries for the specified
@@ -90,6 +91,7 @@ namespace Model
      * fleet.</p>
      */
     inline DescribeFleetEventsResult& AddEvents(Event&& value) { m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -141,7 +143,9 @@ namespace Model
     inline DescribeFleetEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Event> m_events;
+
     Aws::String m_nextToken;
   };
 

@@ -30,12 +30,12 @@ StartOnDemandReplicationRunResult::StartOnDemandReplicationRunResult()
 {
 }
 
-StartOnDemandReplicationRunResult::StartOnDemandReplicationRunResult(const AmazonWebServiceResult<JsonValue>& result)
+StartOnDemandReplicationRunResult::StartOnDemandReplicationRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartOnDemandReplicationRunResult& StartOnDemandReplicationRunResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartOnDemandReplicationRunResult& StartOnDemandReplicationRunResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("replicationRunId"))

@@ -46,6 +46,7 @@ namespace Model
     HlsContentProtection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The content protection method for your output. The only valid value is:
      * <code>aes-128</code>.</p> <p>This value is written into the method attribute of
@@ -94,6 +95,7 @@ namespace Model
      * the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
      */
     inline HlsContentProtection& WithMethod(const char* value) { SetMethod(value); return *this;}
+
 
     /**
      * <p>If you want Elastic Transcoder to generate a key for you, leave this field
@@ -157,6 +159,7 @@ namespace Model
      * <code>192</code>, or <code>256</code>. </p>
      */
     inline HlsContentProtection& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>If Elastic Transcoder is generating your key for you, you must leave this
@@ -228,6 +231,7 @@ namespace Model
      */
     inline HlsContentProtection& WithKeyMd5(const char* value) { SetKeyMd5(value); return *this;}
 
+
     /**
      * <p>If Elastic Transcoder is generating your key for you, you must leave this
      * field blank.</p> <p>The series of random bits created by a random bit generator,
@@ -291,6 +295,7 @@ namespace Model
      */
     inline HlsContentProtection& WithInitializationVector(const char* value) { SetInitializationVector(value); return *this;}
 
+
     /**
      * <p>The location of the license key required to decrypt your HLS playlist. The
      * URL must be an absolute path, and is referenced in the URI attribute of the
@@ -339,6 +344,7 @@ namespace Model
      * EXT-X-KEY metadata tag in the playlist file.</p>
      */
     inline HlsContentProtection& WithLicenseAcquisitionUrl(const char* value) { SetLicenseAcquisitionUrl(value); return *this;}
+
 
     /**
      * <p>Specify whether you want Elastic Transcoder to write your HLS license key to
@@ -397,16 +403,22 @@ namespace Model
     inline HlsContentProtection& WithKeyStoragePolicy(const char* value) { SetKeyStoragePolicy(value); return *this;}
 
   private:
+
     Aws::String m_method;
     bool m_methodHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_keyMd5;
     bool m_keyMd5HasBeenSet;
+
     Aws::String m_initializationVector;
     bool m_initializationVectorHasBeenSet;
+
     Aws::String m_licenseAcquisitionUrl;
     bool m_licenseAcquisitionUrlHasBeenSet;
+
     Aws::String m_keyStoragePolicy;
     bool m_keyStoragePolicyHasBeenSet;
   };

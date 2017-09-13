@@ -45,6 +45,7 @@ namespace Model
     Order& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the column.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline Order& WithColumn(const char* value) { SetColumn(value); return *this;}
 
+
     /**
      * <p>Indicates that the column is sorted in ascending order (<code>== 1</code>),
      * or in descending order (<code>==0</code>).</p>
@@ -99,8 +101,10 @@ namespace Model
     inline Order& WithSortOrder(int value) { SetSortOrder(value); return *this;}
 
   private:
+
     Aws::String m_column;
     bool m_columnHasBeenSet;
+
     int m_sortOrder;
     bool m_sortOrderHasBeenSet;
   };

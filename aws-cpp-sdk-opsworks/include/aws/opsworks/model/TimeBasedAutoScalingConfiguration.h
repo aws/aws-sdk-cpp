@@ -47,6 +47,7 @@ namespace Model
     TimeBasedAutoScalingConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline TimeBasedAutoScalingConfiguration& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance
      * schedule.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline TimeBasedAutoScalingConfiguration& WithAutoScalingSchedule(WeeklyAutoScalingSchedule&& value) { SetAutoScalingSchedule(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     WeeklyAutoScalingSchedule m_autoScalingSchedule;
     bool m_autoScalingScheduleHasBeenSet;
   };

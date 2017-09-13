@@ -47,6 +47,7 @@ namespace Model
     Rule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the rule.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline Rule& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline Rule& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The event pattern of the rule. For more information, see <a
@@ -166,6 +169,7 @@ namespace Model
      */
     inline Rule& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
 
+
     /**
      * <p>The state of the rule.</p>
      */
@@ -190,6 +194,7 @@ namespace Model
      * <p>The state of the rule.</p>
      */
     inline Rule& WithState(RuleState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The description of the rule.</p>
@@ -225,6 +230,7 @@ namespace Model
      * <p>The description of the rule.</p>
      */
     inline Rule& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
@@ -267,6 +273,7 @@ namespace Model
      * minutes)".</p>
      */
     inline Rule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that is used for target
@@ -311,18 +318,25 @@ namespace Model
     inline Rule& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_eventPattern;
     bool m_eventPatternHasBeenSet;
+
     RuleState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_SIMPLEDB_API SimpleDBErrorMarshaller : public Client::XmlErrorMarshaller
+class AWS_SIMPLEDB_API SimpleDBErrorMarshaller : public Aws::Client::XmlErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace SimpleDB
+} // namespace Client
 } // namespace Aws

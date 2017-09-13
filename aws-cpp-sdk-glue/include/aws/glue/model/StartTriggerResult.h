@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StartTriggerResult();
-    StartTriggerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartTriggerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartTriggerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartTriggerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the trigger that was started.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline StartTriggerResult& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
   };
 

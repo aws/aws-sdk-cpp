@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateSubnetResponse();
-    CreateSubnetResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateSubnetResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateSubnetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateSubnetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the subnet.</p>
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateSubnetResponse& WithSubnet(Subnet&& value) { SetSubnet(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,7 +90,9 @@ namespace Model
     inline CreateSubnetResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Subnet m_subnet;
+
     ResponseMetadata m_responseMetadata;
   };
 

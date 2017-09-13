@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     PutIntegrationResponseResult();
-    PutIntegrationResponseResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutIntegrationResponseResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutIntegrationResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutIntegrationResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Specifies the status code that is used to map the integration response to an
@@ -93,6 +94,7 @@ namespace Model
      * existing <a>MethodResponse</a>.</p>
      */
     inline PutIntegrationResponseResult& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>Specifies the regular expression (regex) pattern used to choose an
@@ -177,6 +179,7 @@ namespace Model
      * the HTTP status code is matched.</p>
      */
     inline PutIntegrationResponseResult& WithSelectionPattern(const char* value) { SetSelectionPattern(value); return *this;}
+
 
     /**
      * <p>A key-value map specifying response parameters that are passed to the method
@@ -370,6 +373,7 @@ namespace Model
      */
     inline PutIntegrationResponseResult& AddResponseParameters(const char* key, const char* value) { m_responseParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Specifies the templates used to transform the integration response body.
      * Response templates are represented as a key/value map, with a content-type as
@@ -454,6 +458,7 @@ namespace Model
      */
     inline PutIntegrationResponseResult& AddResponseTemplates(const char* key, const char* value) { m_responseTemplates.emplace(key, value); return *this; }
 
+
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
@@ -515,10 +520,15 @@ namespace Model
     inline PutIntegrationResponseResult& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_statusCode;
+
     Aws::String m_selectionPattern;
+
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
+
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
+
     ContentHandlingStrategy m_contentHandling;
   };
 

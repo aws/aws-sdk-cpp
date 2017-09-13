@@ -30,12 +30,12 @@ CreateUserDefinedFunctionResult::CreateUserDefinedFunctionResult()
 {
 }
 
-CreateUserDefinedFunctionResult::CreateUserDefinedFunctionResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateUserDefinedFunctionResult::CreateUserDefinedFunctionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateUserDefinedFunctionResult& CreateUserDefinedFunctionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateUserDefinedFunctionResult& CreateUserDefinedFunctionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

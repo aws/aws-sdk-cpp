@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListDeadLetterSourceQueuesResult();
-    ListDeadLetterSourceQueuesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListDeadLetterSourceQueuesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListDeadLetterSourceQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListDeadLetterSourceQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
@@ -96,6 +97,7 @@ namespace Model
      */
     inline ListDeadLetterSourceQueuesResult& AddQueueUrls(const char* value) { m_queueUrls.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -112,7 +114,9 @@ namespace Model
     inline ListDeadLetterSourceQueuesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_queueUrls;
+
     ResponseMetadata m_responseMetadata;
   };
 

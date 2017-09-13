@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetParametersResult();
-    GetParametersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of details for a parameter.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of details for a parameter.</p>
      */
     inline GetParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of parameters that are not formatted correctly or do not run when
@@ -127,7 +129,9 @@ namespace Model
     inline GetParametersResult& AddInvalidParameters(const char* value) { m_invalidParameters.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Parameter> m_parameters;
+
     Aws::Vector<Aws::String> m_invalidParameters;
   };
 

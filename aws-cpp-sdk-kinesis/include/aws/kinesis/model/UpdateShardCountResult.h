@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateShardCountResult();
-    UpdateShardCountResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateShardCountResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateShardCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateShardCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the stream.</p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline UpdateShardCountResult& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
     /**
      * <p>The current number of shards.</p>
      */
@@ -90,6 +92,7 @@ namespace Model
      * <p>The current number of shards.</p>
      */
     inline UpdateShardCountResult& WithCurrentShardCount(int value) { SetCurrentShardCount(value); return *this;}
+
 
     /**
      * <p>The updated number of shards.</p>
@@ -107,8 +110,11 @@ namespace Model
     inline UpdateShardCountResult& WithTargetShardCount(int value) { SetTargetShardCount(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
+
     int m_currentShardCount;
+
     int m_targetShardCount;
   };
 

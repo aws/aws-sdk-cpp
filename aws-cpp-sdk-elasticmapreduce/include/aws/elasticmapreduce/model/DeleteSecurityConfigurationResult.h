@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteSecurityConfigurationResult();
-    DeleteSecurityConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSecurityConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSecurityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSecurityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

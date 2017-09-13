@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DeleteEventStreamResult();
-    DeleteEventStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEventStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteEventStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteEventStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const EventStream& GetEventStream() const{ return m_eventStream; }
@@ -60,6 +61,7 @@ namespace Model
     inline DeleteEventStreamResult& WithEventStream(EventStream&& value) { SetEventStream(std::move(value)); return *this;}
 
   private:
+
     EventStream m_eventStream;
   };
 

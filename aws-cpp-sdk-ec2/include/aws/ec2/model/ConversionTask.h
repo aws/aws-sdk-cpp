@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the conversion task.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The ID of the conversion task.</p>
      */
     inline ConversionTask& WithConversionTaskId(const char* value) { SetConversionTaskId(value); return *this;}
+
 
     /**
      * <p>The time when the task expires. If the upload isn't complete before the
@@ -130,6 +132,7 @@ namespace Model
      */
     inline ConversionTask& WithExpirationTime(const char* value) { SetExpirationTime(value); return *this;}
 
+
     /**
      * <p>If the task is for importing an instance, this contains information about the
      * import instance task.</p>
@@ -159,6 +162,7 @@ namespace Model
      * import instance task.</p>
      */
     inline ConversionTask& WithImportInstance(ImportInstanceTaskDetails&& value) { SetImportInstance(std::move(value)); return *this;}
+
 
     /**
      * <p>If the task is for importing a volume, this contains information about the
@@ -190,6 +194,7 @@ namespace Model
      */
     inline ConversionTask& WithImportVolume(ImportVolumeTaskDetails&& value) { SetImportVolume(std::move(value)); return *this;}
 
+
     /**
      * <p>The state of the conversion task.</p>
      */
@@ -214,6 +219,7 @@ namespace Model
      * <p>The state of the conversion task.</p>
      */
     inline ConversionTask& WithState(ConversionTaskState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The status message related to the conversion task.</p>
@@ -249,6 +255,7 @@ namespace Model
      * <p>The status message related to the conversion task.</p>
      */
     inline ConversionTask& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
 
     /**
      * <p>Any tags assigned to the task.</p>
@@ -286,18 +293,25 @@ namespace Model
     inline ConversionTask& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_conversionTaskId;
     bool m_conversionTaskIdHasBeenSet;
+
     Aws::String m_expirationTime;
     bool m_expirationTimeHasBeenSet;
+
     ImportInstanceTaskDetails m_importInstance;
     bool m_importInstanceHasBeenSet;
+
     ImportVolumeTaskDetails m_importVolume;
     bool m_importVolumeHasBeenSet;
+
     ConversionTaskState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -57,6 +57,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of this environment.</p>
      */
@@ -91,6 +92,7 @@ namespace Model
      * <p>The name of this environment.</p>
      */
     inline EnvironmentDescription& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+
 
     /**
      * <p>The ID of this environment.</p>
@@ -127,6 +129,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 
+
     /**
      * <p>The name of the application associated with this environment.</p>
      */
@@ -162,6 +165,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The application version deployed in this environment.</p>
      */
@@ -196,6 +200,7 @@ namespace Model
      * <p>The application version deployed in this environment.</p>
      */
     inline EnvironmentDescription& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+
 
     /**
      * <p> The name of the <code>SolutionStack</code> deployed with this environment.
@@ -239,6 +244,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
+
     /**
      * <p>The ARN of the platform.</p>
      */
@@ -273,6 +279,7 @@ namespace Model
      * <p>The ARN of the platform.</p>
      */
     inline EnvironmentDescription& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
 
     /**
      * <p>The name of the configuration template used to originally launch this
@@ -316,6 +323,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
+
     /**
      * <p>Describes this environment.</p>
      */
@@ -350,6 +358,7 @@ namespace Model
      * <p>Describes this environment.</p>
      */
     inline EnvironmentDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
@@ -393,6 +402,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithEndpointURL(const char* value) { SetEndpointURL(value); return *this;}
 
+
     /**
      * <p>The URL to the CNAME for this environment.</p>
      */
@@ -428,6 +438,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithCNAME(const char* value) { SetCNAME(value); return *this;}
 
+
     /**
      * <p>The creation date for this environment.</p>
      */
@@ -453,6 +464,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
 
+
     /**
      * <p>The last modified date for this environment.</p>
      */
@@ -477,6 +489,7 @@ namespace Model
      * <p>The last modified date for this environment.</p>
      */
     inline EnvironmentDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
+
 
     /**
      * <p>The current operational status of the environment:</p> <ul> <li> <p>
@@ -538,6 +551,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithStatus(EnvironmentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates if there is an in-progress environment configuration update or
      * application version deployment that you can cancel.</p> <p> <code>true:</code>
@@ -561,6 +575,7 @@ namespace Model
      * updates currently in progress. </p>
      */
     inline EnvironmentDescription& WithAbortableOperationInProgress(bool value) { SetAbortableOperationInProgress(value); return *this;}
+
 
     /**
      * <p>Describes the health status of the environment. AWS Elastic Beanstalk
@@ -642,6 +657,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithHealth(EnvironmentHealth&& value) { SetHealth(std::move(value)); return *this;}
 
+
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
@@ -682,6 +698,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithHealthStatus(EnvironmentHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The description of the AWS resources used by this environment.</p>
      */
@@ -707,6 +724,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithResources(EnvironmentResourcesDescription&& value) { SetResources(std::move(value)); return *this;}
 
+
     /**
      * <p>Describes the current tier of this environment.</p>
      */
@@ -731,6 +749,7 @@ namespace Model
      * <p>Describes the current tier of this environment.</p>
      */
     inline EnvironmentDescription& WithTier(EnvironmentTier&& value) { SetTier(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of links to other environments in the same group.</p>
@@ -766,6 +785,7 @@ namespace Model
      * <p>A list of links to other environments in the same group.</p>
      */
     inline EnvironmentDescription& AddEnvironmentLinks(EnvironmentLink&& value) { m_environmentLinksHasBeenSet = true; m_environmentLinks.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
@@ -809,6 +829,7 @@ namespace Model
      */
     inline EnvironmentDescription& WithEnvironmentArn(const char* value) { SetEnvironmentArn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -825,46 +846,67 @@ namespace Model
     inline EnvironmentDescription& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
+
     Aws::String m_platformArn;
     bool m_platformArnHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_endpointURL;
     bool m_endpointURLHasBeenSet;
+
     Aws::String m_cNAME;
     bool m_cNAMEHasBeenSet;
+
     Aws::Utils::DateTime m_dateCreated;
     bool m_dateCreatedHasBeenSet;
+
     Aws::Utils::DateTime m_dateUpdated;
     bool m_dateUpdatedHasBeenSet;
+
     EnvironmentStatus m_status;
     bool m_statusHasBeenSet;
+
     bool m_abortableOperationInProgress;
     bool m_abortableOperationInProgressHasBeenSet;
+
     EnvironmentHealth m_health;
     bool m_healthHasBeenSet;
+
     EnvironmentHealthStatus m_healthStatus;
     bool m_healthStatusHasBeenSet;
+
     EnvironmentResourcesDescription m_resources;
     bool m_resourcesHasBeenSet;
+
     EnvironmentTier m_tier;
     bool m_tierHasBeenSet;
+
     Aws::Vector<EnvironmentLink> m_environmentLinks;
     bool m_environmentLinksHasBeenSet;
+
     Aws::String m_environmentArn;
     bool m_environmentArnHasBeenSet;
+
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;
   };

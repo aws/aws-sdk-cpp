@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     RemoveAttributesFromFindingsResult();
-    RemoveAttributesFromFindingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveAttributesFromFindingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveAttributesFromFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveAttributesFromFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Attributes details that cannot be described. An error code is provided for
@@ -110,6 +111,7 @@ namespace Model
     inline RemoveAttributesFromFindingsResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
   };
 

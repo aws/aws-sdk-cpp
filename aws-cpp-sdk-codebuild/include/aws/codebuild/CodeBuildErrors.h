@@ -55,13 +55,13 @@ enum class CodeBuildErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCOUNT_LIMIT_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_INPUT,
   RESOURCE_ALREADY_EXISTS
 };
 namespace CodeBuildErrorMapper
 {
-  AWS_CODEBUILD_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CODEBUILD_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CodeBuild

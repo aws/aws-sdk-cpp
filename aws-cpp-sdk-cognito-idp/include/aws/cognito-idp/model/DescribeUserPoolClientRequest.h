@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool you want to describe.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The user pool ID for the user pool you want to describe.</p>
      */
     inline DescribeUserPoolClientRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The app client ID of the app associated with the user pool.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline DescribeUserPoolClientRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
   };

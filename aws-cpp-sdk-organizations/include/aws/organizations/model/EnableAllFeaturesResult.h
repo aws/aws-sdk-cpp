@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     EnableAllFeaturesResult();
-    EnableAllFeaturesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableAllFeaturesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableAllFeaturesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableAllFeaturesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains details about the handshake created to support this
@@ -72,6 +73,7 @@ namespace Model
     inline EnableAllFeaturesResult& WithHandshake(Handshake&& value) { SetHandshake(std::move(value)); return *this;}
 
   private:
+
     Handshake m_handshake;
   };
 

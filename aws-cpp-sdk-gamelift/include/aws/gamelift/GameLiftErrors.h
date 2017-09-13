@@ -55,7 +55,7 @@ enum class GameLiftErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   FLEET_CAPACITY_EXCEEDED,
   GAME_SESSION_FULL,
   IDEMPOTENT_PARAMETER_MISMATCH,
@@ -71,7 +71,7 @@ enum class GameLiftErrors
 };
 namespace GameLiftErrorMapper
 {
-  AWS_GAMELIFT_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_GAMELIFT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace GameLift

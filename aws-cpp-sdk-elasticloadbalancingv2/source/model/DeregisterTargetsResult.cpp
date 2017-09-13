@@ -31,12 +31,12 @@ DeregisterTargetsResult::DeregisterTargetsResult()
 {
 }
 
-DeregisterTargetsResult::DeregisterTargetsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeregisterTargetsResult::DeregisterTargetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeregisterTargetsResult& DeregisterTargetsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeregisterTargetsResult& DeregisterTargetsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

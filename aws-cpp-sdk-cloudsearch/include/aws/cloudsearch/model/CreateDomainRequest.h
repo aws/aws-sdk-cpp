@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A name for the domain you are creating. Allowed characters are a-z
      * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
@@ -93,6 +94,7 @@ namespace Model
     inline CreateDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

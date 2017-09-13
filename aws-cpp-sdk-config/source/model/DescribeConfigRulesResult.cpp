@@ -30,12 +30,12 @@ DescribeConfigRulesResult::DescribeConfigRulesResult()
 {
 }
 
-DescribeConfigRulesResult::DescribeConfigRulesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConfigRulesResult::DescribeConfigRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeConfigRulesResult& DescribeConfigRulesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConfigRulesResult& DescribeConfigRulesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ConfigRules"))

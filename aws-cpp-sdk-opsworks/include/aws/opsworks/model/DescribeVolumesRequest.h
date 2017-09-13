@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code>
      * returns descriptions of the volumes associated with the specified instance.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeVolumesRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>A stack ID. The action describes the stack's registered Amazon EBS
      * volumes.</p>
@@ -120,6 +122,7 @@ namespace Model
      * volumes.</p>
      */
     inline DescribeVolumesRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code>
@@ -169,6 +172,7 @@ namespace Model
      * array.</p>
      */
     inline DescribeVolumesRequest& WithRaidArrayId(const char* value) { SetRaidArrayId(value); return *this;}
+
 
     /**
      * <p>Am array of volume IDs. If you use this parameter,
@@ -227,12 +231,16 @@ namespace Model
     inline DescribeVolumesRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_raidArrayId;
     bool m_raidArrayIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_volumeIds;
     bool m_volumeIdsHasBeenSet;
   };

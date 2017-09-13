@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
      */
     inline ReleaseAddressRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+
 
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline ReleaseAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -136,10 +139,13 @@ namespace Model
     inline ReleaseAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

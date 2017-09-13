@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     SendTaskHeartbeatResult();
-    SendTaskHeartbeatResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendTaskHeartbeatResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendTaskHeartbeatResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendTaskHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

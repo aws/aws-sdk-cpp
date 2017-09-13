@@ -37,6 +37,7 @@ namespace Model
     SetLoggingOptionsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The logging options payload.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
     inline SetLoggingOptionsRequest& WithLoggingOptionsPayload(LoggingOptionsPayload&& value) { SetLoggingOptionsPayload(std::move(value)); return *this;}
 
   private:
+
     LoggingOptionsPayload m_loggingOptionsPayload;
     bool m_loggingOptionsPayloadHasBeenSet;
   };

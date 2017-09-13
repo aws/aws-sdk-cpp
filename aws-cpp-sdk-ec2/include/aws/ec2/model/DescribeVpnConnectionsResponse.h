@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeVpnConnectionsResponse();
-    DescribeVpnConnectionsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVpnConnectionsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpnConnectionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpnConnectionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more VPN connections.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeVpnConnectionsResponse& AddVpnConnections(VpnConnection&& value) { m_vpnConnections.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeVpnConnectionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<VpnConnection> m_vpnConnections;
+
     ResponseMetadata m_responseMetadata;
   };
 

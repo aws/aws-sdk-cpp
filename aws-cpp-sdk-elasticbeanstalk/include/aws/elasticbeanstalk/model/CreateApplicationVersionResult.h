@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateApplicationVersionResult();
-    CreateApplicationVersionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateApplicationVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateApplicationVersionResult& WithApplicationVersion(ApplicationVersionDescription&& value) { SetApplicationVersion(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline CreateApplicationVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ApplicationVersionDescription m_applicationVersion;
+
     ResponseMetadata m_responseMetadata;
   };
 

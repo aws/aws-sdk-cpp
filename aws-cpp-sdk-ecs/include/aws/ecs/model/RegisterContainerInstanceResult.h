@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RegisterContainerInstanceResult();
-    RegisterContainerInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterContainerInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterContainerInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterContainerInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The container instance that was registered.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline RegisterContainerInstanceResult& WithContainerInstance(ContainerInstance&& value) { SetContainerInstance(std::move(value)); return *this;}
 
   private:
+
     ContainerInstance m_containerInstance;
   };
 

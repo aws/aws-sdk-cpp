@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of event ARNs (unique identifiers). For example:
      * <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
@@ -93,6 +94,7 @@ namespace Model
      */
     inline DescribeEventDetailsRequest& AddEventArns(const char* value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(value); return *this; }
 
+
     /**
      * <p>The locale (language) to return information in. English (en) is the default
      * and the only supported value at this time.</p>
@@ -136,8 +138,10 @@ namespace Model
     inline DescribeEventDetailsRequest& WithLocale(const char* value) { SetLocale(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_eventArns;
     bool m_eventArnsHasBeenSet;
+
     Aws::String m_locale;
     bool m_localeHasBeenSet;
   };

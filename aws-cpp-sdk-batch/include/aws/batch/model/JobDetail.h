@@ -52,6 +52,7 @@ namespace Model
     JobDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the job.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline JobDetail& WithJobName(const char* value) { SetJobName(value); return *this;}
 
+
     /**
      * <p>The ID for the job.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The ID for the job.</p>
      */
     inline JobDetail& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
@@ -164,6 +167,7 @@ namespace Model
      */
     inline JobDetail& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
+
     /**
      * <p>The current status for the job.</p>
      */
@@ -188,6 +192,7 @@ namespace Model
      * <p>The current status for the job.</p>
      */
     inline JobDetail& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of job attempts associated with this job.</p>
@@ -223,6 +228,7 @@ namespace Model
      * <p>A list of job attempts associated with this job.</p>
      */
     inline JobDetail& AddAttempts(AttemptDetail&& value) { m_attemptsHasBeenSet = true; m_attempts.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -266,6 +272,7 @@ namespace Model
      */
     inline JobDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
     /**
      * <p>The Unix timestamp for when the job was created (when the task entered the
      * <code>PENDING</code> state). </p>
@@ -283,6 +290,7 @@ namespace Model
      * <code>PENDING</code> state). </p>
      */
     inline JobDetail& WithCreatedAt(long long value) { SetCreatedAt(value); return *this;}
+
 
     /**
      * <p>The retry strategy to use for this job if an attempt fails.</p>
@@ -309,6 +317,7 @@ namespace Model
      */
     inline JobDetail& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 
+
     /**
      * <p>The Unix timestamp for when the job was started (when the task transitioned
      * from the <code>PENDING</code> state to the <code>RUNNING</code> state). </p>
@@ -327,6 +336,7 @@ namespace Model
      */
     inline JobDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
+
     /**
      * <p>The Unix timestamp for when the job was stopped (when the task transitioned
      * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
@@ -344,6 +354,7 @@ namespace Model
      * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline JobDetail& WithStoppedAt(long long value) { SetStoppedAt(value); return *this;}
+
 
     /**
      * <p>A list of job names or IDs on which this job depends.</p>
@@ -380,6 +391,7 @@ namespace Model
      */
     inline JobDetail& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The job definition that is used by this job.</p>
      */
@@ -414,6 +426,7 @@ namespace Model
      * <p>The job definition that is used by this job.</p>
      */
     inline JobDetail& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
+
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
@@ -499,6 +512,7 @@ namespace Model
      */
     inline JobDetail& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>An object representing the details of the container that is associated with
      * the job.</p>
@@ -530,32 +544,46 @@ namespace Model
     inline JobDetail& WithContainer(ContainerDetail&& value) { SetContainer(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_jobQueue;
     bool m_jobQueueHasBeenSet;
+
     JobStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Vector<AttemptDetail> m_attempts;
     bool m_attemptsHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
     long long m_createdAt;
     bool m_createdAtHasBeenSet;
+
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet;
+
     long long m_startedAt;
     bool m_startedAtHasBeenSet;
+
     long long m_stoppedAt;
     bool m_stoppedAtHasBeenSet;
+
     Aws::Vector<JobDependency> m_dependsOn;
     bool m_dependsOnHasBeenSet;
+
     Aws::String m_jobDefinition;
     bool m_jobDefinitionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
     ContainerDetail m_container;
     bool m_containerHasBeenSet;
   };

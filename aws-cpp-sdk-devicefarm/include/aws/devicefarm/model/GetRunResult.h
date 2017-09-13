@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetRunResult();
-    GetRunResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRunResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The run you wish to get results from.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline GetRunResult& WithRun(Run&& value) { SetRun(std::move(value)); return *this;}
 
   private:
+
     Run m_run;
   };
 

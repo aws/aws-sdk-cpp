@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
      * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
@@ -113,6 +114,7 @@ namespace Model
      */
     inline CreateClusterSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
 
+
     /**
      * <p>The cluster identifier for which you want a snapshot.</p>
      */
@@ -147,6 +149,7 @@ namespace Model
      * <p>The cluster identifier for which you want a snapshot.</p>
      */
     inline CreateClusterSnapshotRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>A list of tag instances.</p>
@@ -184,10 +187,13 @@ namespace Model
     inline CreateClusterSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

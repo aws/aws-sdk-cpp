@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The device key.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline AdminGetDeviceRequest& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
 
+
     /**
      * <p>The user pool ID.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The user pool ID.</p>
      */
     inline AdminGetDeviceRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The user name.</p>
@@ -146,10 +149,13 @@ namespace Model
     inline AdminGetDeviceRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
   private:
+
     Aws::String m_deviceKey;
     bool m_deviceKeyHasBeenSet;
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
   };

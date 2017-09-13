@@ -32,14 +32,14 @@ CreateConnectionResult::CreateConnectionResult() :
 {
 }
 
-CreateConnectionResult::CreateConnectionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateConnectionResult::CreateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_connectionState(ConnectionState::NOT_SET),
     m_vlan(0)
 {
   *this = result;
 }
 
-CreateConnectionResult& CreateConnectionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateConnectionResult& CreateConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ownerAccount"))

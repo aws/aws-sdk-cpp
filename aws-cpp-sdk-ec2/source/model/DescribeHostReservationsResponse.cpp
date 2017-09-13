@@ -31,12 +31,12 @@ DescribeHostReservationsResponse::DescribeHostReservationsResponse()
 {
 }
 
-DescribeHostReservationsResponse::DescribeHostReservationsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeHostReservationsResponse::DescribeHostReservationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeHostReservationsResponse& DescribeHostReservationsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeHostReservationsResponse& DescribeHostReservationsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

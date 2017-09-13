@@ -30,12 +30,12 @@ DeleteBatchPredictionResult::DeleteBatchPredictionResult()
 {
 }
 
-DeleteBatchPredictionResult::DeleteBatchPredictionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteBatchPredictionResult::DeleteBatchPredictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteBatchPredictionResult& DeleteBatchPredictionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteBatchPredictionResult& DeleteBatchPredictionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BatchPredictionId"))

@@ -31,12 +31,12 @@ EncryptResult::EncryptResult()
 {
 }
 
-EncryptResult::EncryptResult(const AmazonWebServiceResult<JsonValue>& result)
+EncryptResult::EncryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-EncryptResult& EncryptResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+EncryptResult& EncryptResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CiphertextBlob"))

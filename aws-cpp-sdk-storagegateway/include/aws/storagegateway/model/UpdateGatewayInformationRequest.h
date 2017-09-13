@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -57,6 +58,7 @@ namespace Model
     
     inline UpdateGatewayInformationRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     
     inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
 
@@ -77,6 +79,7 @@ namespace Model
 
     
     inline UpdateGatewayInformationRequest& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
+
 
     
     inline const Aws::String& GetGatewayTimezone() const{ return m_gatewayTimezone; }
@@ -100,10 +103,13 @@ namespace Model
     inline UpdateGatewayInformationRequest& WithGatewayTimezone(const char* value) { SetGatewayTimezone(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     Aws::String m_gatewayName;
     bool m_gatewayNameHasBeenSet;
+
     Aws::String m_gatewayTimezone;
     bool m_gatewayTimezoneHasBeenSet;
   };

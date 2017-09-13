@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline UpdateSnapshotScheduleRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
+
     /**
      * <p>The hour of the day at which the snapshot schedule begins represented as
      * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the
@@ -107,6 +109,7 @@ namespace Model
      */
     inline UpdateSnapshotScheduleRequest& WithStartAt(int value) { SetStartAt(value); return *this;}
 
+
     /**
      * <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
      */
@@ -121,6 +124,7 @@ namespace Model
      * <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
      */
     inline UpdateSnapshotScheduleRequest& WithRecurrenceInHours(int value) { SetRecurrenceInHours(value); return *this;}
+
 
     /**
      * <p>Optional description of the snapshot that overwrites the existing
@@ -165,12 +169,16 @@ namespace Model
     inline UpdateSnapshotScheduleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
     bool m_volumeARNHasBeenSet;
+
     int m_startAt;
     bool m_startAtHasBeenSet;
+
     int m_recurrenceInHours;
     bool m_recurrenceInHoursHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

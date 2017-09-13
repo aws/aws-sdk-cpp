@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The number of seconds after an assignment for the HIT has been submitted,
      * after which the assignment is considered Approved automatically unless the
@@ -58,6 +59,7 @@ namespace Model
      * Requester explicitly rejects it. </p>
      */
     inline CreateHITTypeRequest& WithAutoApprovalDelayInSeconds(long long value) { SetAutoApprovalDelayInSeconds(value); return *this;}
+
 
     /**
      * <p> The amount of time, in seconds, that a Worker has to complete the HIT after
@@ -85,6 +87,7 @@ namespace Model
      * other users to find and accept. </p>
      */
     inline CreateHITTypeRequest& WithAssignmentDurationInSeconds(long long value) { SetAssignmentDurationInSeconds(value); return *this;}
+
 
     /**
      * <p> The amount of money the Requester will pay a Worker for successfully
@@ -127,6 +130,7 @@ namespace Model
      * completing the HIT. </p>
      */
     inline CreateHITTypeRequest& WithReward(const char* value) { SetReward(value); return *this;}
+
 
     /**
      * <p> The title of the HIT. A title should be short and descriptive about the kind
@@ -177,6 +181,7 @@ namespace Model
      */
     inline CreateHITTypeRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
 
+
     /**
      * <p> One or more words or phrases that describe the HIT, separated by commas.
      * These words are used in searches to find HITs. </p>
@@ -218,6 +223,7 @@ namespace Model
      * These words are used in searches to find HITs. </p>
      */
     inline CreateHITTypeRequest& WithKeywords(const char* value) { SetKeywords(value); return *this;}
+
 
     /**
      * <p> A general description of the HIT. A description includes detailed
@@ -282,6 +288,7 @@ namespace Model
      */
     inline CreateHITTypeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
      * allowed to accept and complete the HIT. </p>
@@ -325,18 +332,25 @@ namespace Model
     inline CreateHITTypeRequest& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(std::move(value)); return *this; }
 
   private:
+
     long long m_autoApprovalDelayInSeconds;
     bool m_autoApprovalDelayInSecondsHasBeenSet;
+
     long long m_assignmentDurationInSeconds;
     bool m_assignmentDurationInSecondsHasBeenSet;
+
     Aws::String m_reward;
     bool m_rewardHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_keywords;
     bool m_keywordsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<QualificationRequirement> m_qualificationRequirements;
     bool m_qualificationRequirementsHasBeenSet;
   };

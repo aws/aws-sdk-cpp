@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the delivery channel through which the snapshot is delivered.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DeliverConfigSnapshotRequest& WithDeliveryChannelName(const char* value) { SetDeliveryChannelName(value); return *this;}
 
   private:
+
     Aws::String m_deliveryChannelName;
     bool m_deliveryChannelNameHasBeenSet;
   };

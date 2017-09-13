@@ -32,14 +32,14 @@ DescribeUploadBufferResult::DescribeUploadBufferResult() :
 {
 }
 
-DescribeUploadBufferResult::DescribeUploadBufferResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeUploadBufferResult::DescribeUploadBufferResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_uploadBufferUsedInBytes(0),
     m_uploadBufferAllocatedInBytes(0)
 {
   *this = result;
 }
 
-DescribeUploadBufferResult& DescribeUploadBufferResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeUploadBufferResult& DescribeUploadBufferResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

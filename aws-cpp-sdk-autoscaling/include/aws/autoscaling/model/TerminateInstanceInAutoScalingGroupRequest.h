@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline TerminateInstanceInAutoScalingGroupRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, terminating the instance also decrements the size of
      * the Auto Scaling group.</p>
@@ -96,8 +98,10 @@ namespace Model
     inline TerminateInstanceInAutoScalingGroupRequest& WithShouldDecrementDesiredCapacity(bool value) { SetShouldDecrementDesiredCapacity(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     bool m_shouldDecrementDesiredCapacity;
     bool m_shouldDecrementDesiredCapacityHasBeenSet;
   };

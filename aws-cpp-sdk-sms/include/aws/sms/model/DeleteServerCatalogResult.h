@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteServerCatalogResult();
-    DeleteServerCatalogResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteServerCatalogResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteServerCatalogResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteServerCatalogResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

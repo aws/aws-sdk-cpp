@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeDocumentResult();
-    DescribeDocumentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDocumentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the SSM document.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeDocumentResult& WithDocument(DocumentDescription&& value) { SetDocument(std::move(value)); return *this;}
 
   private:
+
     DocumentDescription m_document;
   };
 

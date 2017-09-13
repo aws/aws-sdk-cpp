@@ -43,6 +43,7 @@ namespace Model
     SegmentDemographics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The app version criteria for the segment.
      */
@@ -67,6 +68,7 @@ namespace Model
      * The app version criteria for the segment.
      */
     inline SegmentDemographics& WithAppVersion(SetDimension&& value) { SetAppVersion(std::move(value)); return *this;}
+
 
     /**
      * The channel criteria for the segment.
@@ -93,6 +95,7 @@ namespace Model
      */
     inline SegmentDemographics& WithChannel(SetDimension&& value) { SetChannel(std::move(value)); return *this;}
 
+
     /**
      * The device type criteria for the segment.
      */
@@ -117,6 +120,7 @@ namespace Model
      * The device type criteria for the segment.
      */
     inline SegmentDemographics& WithDeviceType(SetDimension&& value) { SetDeviceType(std::move(value)); return *this;}
+
 
     /**
      * The device make criteria for the segment.
@@ -143,6 +147,7 @@ namespace Model
      */
     inline SegmentDemographics& WithMake(SetDimension&& value) { SetMake(std::move(value)); return *this;}
 
+
     /**
      * The device model criteria for the segment.
      */
@@ -167,6 +172,7 @@ namespace Model
      * The device model criteria for the segment.
      */
     inline SegmentDemographics& WithModel(SetDimension&& value) { SetModel(std::move(value)); return *this;}
+
 
     /**
      * The device platform criteria for the segment.
@@ -194,16 +200,22 @@ namespace Model
     inline SegmentDemographics& WithPlatform(SetDimension&& value) { SetPlatform(std::move(value)); return *this;}
 
   private:
+
     SetDimension m_appVersion;
     bool m_appVersionHasBeenSet;
+
     SetDimension m_channel;
     bool m_channelHasBeenSet;
+
     SetDimension m_deviceType;
     bool m_deviceTypeHasBeenSet;
+
     SetDimension m_make;
     bool m_makeHasBeenSet;
+
     SetDimension m_model;
     bool m_modelHasBeenSet;
+
     SetDimension m_platform;
     bool m_platformHasBeenSet;
   };

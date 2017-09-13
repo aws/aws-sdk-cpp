@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListUsersInGroupResult();
-    ListUsersInGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUsersInGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUsersInGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUsersInGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The users returned in the request to list users.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The users returned in the request to list users.</p>
      */
     inline ListUsersInGroupResult& AddUsers(UserType&& value) { m_users.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -121,7 +123,9 @@ namespace Model
     inline ListUsersInGroupResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<UserType> m_users;
+
     Aws::String m_nextToken;
   };
 

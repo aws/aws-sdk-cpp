@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetDocumentPathResult();
-    GetDocumentPathResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDocumentPathResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDocumentPathResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDocumentPathResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The path information.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetDocumentPathResult& WithPath(ResourcePath&& value) { SetPath(std::move(value)); return *this;}
 
   private:
+
     ResourcePath m_path;
   };
 

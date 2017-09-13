@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     SubscribeToDatasetResult();
-    SubscribeToDatasetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SubscribeToDatasetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SubscribeToDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SubscribeToDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

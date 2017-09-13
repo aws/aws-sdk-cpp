@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to
      * list change sets.</p>
@@ -82,6 +83,7 @@ namespace Model
      * list change sets.</p>
      */
     inline ListChangeSetsRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>A string (provided by the <a>ListChangeSets</a> response output) that
@@ -126,8 +128,10 @@ namespace Model
     inline ListChangeSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

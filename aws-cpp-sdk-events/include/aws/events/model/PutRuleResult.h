@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PutRuleResult();
-    PutRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline PutRuleResult& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
 
   private:
+
     Aws::String m_ruleArn;
   };
 

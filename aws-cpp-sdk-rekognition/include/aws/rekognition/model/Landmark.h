@@ -46,6 +46,7 @@ namespace Model
     Landmark& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Type of the landmark.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline Landmark& WithType(LandmarkType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>x-coordinate from the top left of the landmark expressed as the ratio of the
      * width of the image. For example, if the images is 700x200 and the x-coordinate
@@ -91,6 +93,7 @@ namespace Model
      * of the landmark is at 350 pixels, this value is 0.5. </p>
      */
     inline Landmark& WithX(double value) { SetX(value); return *this;}
+
 
     /**
      * <p>y-coordinate from the top left of the landmark expressed as the ratio of the
@@ -114,10 +117,13 @@ namespace Model
     inline Landmark& WithY(double value) { SetY(value); return *this;}
 
   private:
+
     LandmarkType m_type;
     bool m_typeHasBeenSet;
+
     double m_x;
     bool m_xHasBeenSet;
+
     double m_y;
     bool m_yHasBeenSet;
   };

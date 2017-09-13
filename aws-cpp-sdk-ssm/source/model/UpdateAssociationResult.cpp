@@ -30,12 +30,12 @@ UpdateAssociationResult::UpdateAssociationResult()
 {
 }
 
-UpdateAssociationResult::UpdateAssociationResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateAssociationResult::UpdateAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateAssociationResult& UpdateAssociationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateAssociationResult& UpdateAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AssociationDescription"))

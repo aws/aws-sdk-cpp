@@ -30,12 +30,12 @@ BatchGetApplicationRevisionsResult::BatchGetApplicationRevisionsResult()
 {
 }
 
-BatchGetApplicationRevisionsResult::BatchGetApplicationRevisionsResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetApplicationRevisionsResult::BatchGetApplicationRevisionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchGetApplicationRevisionsResult& BatchGetApplicationRevisionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetApplicationRevisionsResult& BatchGetApplicationRevisionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("applicationName"))

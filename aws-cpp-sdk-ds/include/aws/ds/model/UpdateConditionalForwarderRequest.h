@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The directory ID of the AWS directory for which to update the conditional
      * forwarder.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline UpdateConditionalForwarderRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
+
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you
      * will set up a trust relationship.</p>
@@ -123,6 +125,7 @@ namespace Model
      * will set up a trust relationship.</p>
      */
     inline UpdateConditionalForwarderRequest& WithRemoteDomainName(const char* value) { SetRemoteDomainName(value); return *this;}
+
 
     /**
      * <p>The updated IP addresses of the remote DNS server associated with the
@@ -173,10 +176,13 @@ namespace Model
     inline UpdateConditionalForwarderRequest& AddDnsIpAddrs(const char* value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(value); return *this; }
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_remoteDomainName;
     bool m_remoteDomainNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_dnsIpAddrs;
     bool m_dnsIpAddrsHasBeenSet;
   };

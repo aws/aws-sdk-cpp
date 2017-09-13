@@ -46,6 +46,7 @@ namespace Model
     RDSDatabaseCredentials& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetUsername() const{ return m_username; }
 
@@ -66,6 +67,7 @@ namespace Model
 
     
     inline RDSDatabaseCredentials& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     
     inline const Aws::String& GetPassword() const{ return m_password; }
@@ -89,8 +91,10 @@ namespace Model
     inline RDSDatabaseCredentials& WithPassword(const char* value) { SetPassword(value); return *this;}
 
   private:
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
   };

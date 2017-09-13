@@ -40,6 +40,7 @@ namespace Model
     UpdateDomainNameRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the <a>DomainName</a> resource to be changed.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the <a>DomainName</a> resource to be changed.</p>
      */
     inline UpdateDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -118,8 +120,10 @@ namespace Model
     inline UpdateDomainNameRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<PatchOperation> m_patchOperations;
     bool m_patchOperationsHasBeenSet;
   };

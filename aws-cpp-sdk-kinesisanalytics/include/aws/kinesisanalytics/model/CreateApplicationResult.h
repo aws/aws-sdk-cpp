@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateApplicationResult();
-    CreateApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis
@@ -82,6 +83,7 @@ namespace Model
     inline CreateApplicationResult& WithApplicationSummary(ApplicationSummary&& value) { SetApplicationSummary(std::move(value)); return *this;}
 
   private:
+
     ApplicationSummary m_applicationSummary;
   };
 

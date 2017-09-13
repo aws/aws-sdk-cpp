@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     AddApplicationInputResult();
-    AddApplicationInputResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddApplicationInputResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddApplicationInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddApplicationInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

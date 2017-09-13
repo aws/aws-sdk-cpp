@@ -30,12 +30,12 @@ SuggestResult::SuggestResult()
 {
 }
 
-SuggestResult::SuggestResult(const AmazonWebServiceResult<JsonValue>& result)
+SuggestResult::SuggestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SuggestResult& SuggestResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SuggestResult& SuggestResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("status"))

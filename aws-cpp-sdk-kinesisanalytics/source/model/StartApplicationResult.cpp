@@ -30,12 +30,12 @@ StartApplicationResult::StartApplicationResult()
 {
 }
 
-StartApplicationResult::StartApplicationResult(const AmazonWebServiceResult<JsonValue>& result)
+StartApplicationResult::StartApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartApplicationResult& StartApplicationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartApplicationResult& StartApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The job name for the user import job.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The job name for the user import job.</p>
      */
     inline CreateUserImportJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+
 
     /**
      * <p>The user pool ID for the user pool that the users are being imported
@@ -116,6 +118,7 @@ namespace Model
      * into.</p>
      */
     inline CreateUserImportJobRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The role ARN for the Amazon CloudWatch Logging role for the user import
@@ -160,10 +163,13 @@ namespace Model
     inline CreateUserImportJobRequest& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_cloudWatchLogsRoleArn;
     bool m_cloudWatchLogsRoleArnHasBeenSet;
   };

@@ -31,13 +31,13 @@ UpdateIntegrationResponseResult::UpdateIntegrationResponseResult() :
 {
 }
 
-UpdateIntegrationResponseResult::UpdateIntegrationResponseResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateIntegrationResponseResult::UpdateIntegrationResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_contentHandling(ContentHandlingStrategy::NOT_SET)
 {
   *this = result;
 }
 
-UpdateIntegrationResponseResult& UpdateIntegrationResponseResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateIntegrationResponseResult& UpdateIntegrationResponseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("statusCode"))

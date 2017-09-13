@@ -31,12 +31,14 @@ namespace Model
 {
 
 Ipv6Range::Ipv6Range() : 
-    m_cidrIpv6HasBeenSet(false)
+    m_cidrIpv6HasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
 Ipv6Range::Ipv6Range(const XmlNode& xmlNode) : 
-    m_cidrIpv6HasBeenSet(false)
+    m_cidrIpv6HasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +55,12 @@ Ipv6Range& Ipv6Range::operator =(const XmlNode& xmlNode)
       m_cidrIpv6 = StringUtils::Trim(cidrIpv6Node.GetText().c_str());
       m_cidrIpv6HasBeenSet = true;
     }
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -65,6 +73,11 @@ void Ipv6Range::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".CidrIpv6=" << StringUtils::URLEncode(m_cidrIpv6.c_str()) << "&";
   }
 
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
 }
 
 void Ipv6Range::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -72,6 +85,10 @@ void Ipv6Range::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_cidrIpv6HasBeenSet)
   {
       oStream << location << ".CidrIpv6=" << StringUtils::URLEncode(m_cidrIpv6.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
 

@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The domain for which you want to add or update tags.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The domain for which you want to add or update tags.</p>
      */
     inline UpdateTagsForDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>A list of the tag keys and values that you want to add or update. If you
@@ -120,8 +122,10 @@ namespace Model
     inline UpdateTagsForDomainRequest& AddTagsToUpdate(Tag&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<Tag> m_tagsToUpdate;
     bool m_tagsToUpdateHasBeenSet;
   };

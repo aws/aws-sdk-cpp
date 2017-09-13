@@ -48,6 +48,7 @@ namespace Model
     FolderMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the folder.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The ID of the folder.</p>
      */
     inline FolderMetadata& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the folder.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline FolderMetadata& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The ID of the creator.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The ID of the creator.</p>
      */
     inline FolderMetadata& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
+
 
     /**
      * <p>The ID of the parent folder.</p>
@@ -188,6 +192,7 @@ namespace Model
      */
     inline FolderMetadata& WithParentFolderId(const char* value) { SetParentFolderId(value); return *this;}
 
+
     /**
      * <p>The time when the folder was created.</p>
      */
@@ -212,6 +217,7 @@ namespace Model
      * <p>The time when the folder was created.</p>
      */
     inline FolderMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The time when the folder was updated.</p>
@@ -238,6 +244,7 @@ namespace Model
      */
     inline FolderMetadata& WithModifiedTimestamp(Aws::Utils::DateTime&& value) { SetModifiedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The resource state of the folder.</p>
      */
@@ -262,6 +269,7 @@ namespace Model
      * <p>The resource state of the folder.</p>
      */
     inline FolderMetadata& WithResourceState(ResourceStateType&& value) { SetResourceState(std::move(value)); return *this;}
+
 
     /**
      * <p>The unique identifier created from the subfolders and documents of the
@@ -305,6 +313,7 @@ namespace Model
      */
     inline FolderMetadata& WithSignature(const char* value) { SetSignature(value); return *this;}
 
+
     /**
      * <p>List of labels on the folder.</p>
      */
@@ -345,6 +354,7 @@ namespace Model
      */
     inline FolderMetadata& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
+
     /**
      * <p>The size of the folder metadata.</p>
      */
@@ -359,6 +369,7 @@ namespace Model
      * <p>The size of the folder metadata.</p>
      */
     inline FolderMetadata& WithSize(long long value) { SetSize(value); return *this;}
+
 
     /**
      * <p>The size of the latest version of the folder metadata.</p>
@@ -376,26 +387,37 @@ namespace Model
     inline FolderMetadata& WithLatestVersionSize(long long value) { SetLatestVersionSize(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_creatorId;
     bool m_creatorIdHasBeenSet;
+
     Aws::String m_parentFolderId;
     bool m_parentFolderIdHasBeenSet;
+
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_modifiedTimestamp;
     bool m_modifiedTimestampHasBeenSet;
+
     ResourceStateType m_resourceState;
     bool m_resourceStateHasBeenSet;
+
     Aws::String m_signature;
     bool m_signatureHasBeenSet;
+
     Aws::Vector<Aws::String> m_labels;
     bool m_labelsHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
+
     long long m_latestVersionSize;
     bool m_latestVersionSizeHasBeenSet;
   };

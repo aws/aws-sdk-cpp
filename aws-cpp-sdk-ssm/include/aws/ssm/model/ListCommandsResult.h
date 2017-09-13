@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListCommandsResult();
-    ListCommandsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCommandsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCommandsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCommandsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>(Optional) The list of commands requested by the user. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>(Optional) The list of commands requested by the user. </p>
      */
     inline ListCommandsResult& AddCommands(Command&& value) { m_commands.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>(Optional) The token for the next set of items to return. (You received this
@@ -121,7 +123,9 @@ namespace Model
     inline ListCommandsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Command> m_commands;
+
     Aws::String m_nextToken;
   };
 

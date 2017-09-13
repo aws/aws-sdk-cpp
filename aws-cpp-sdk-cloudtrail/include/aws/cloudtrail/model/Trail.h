@@ -45,6 +45,7 @@ namespace Model
     Trail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the trail set by calling <a>CreateTrail</a>. The maximum length is
      * 128 characters.</p>
@@ -86,6 +87,7 @@ namespace Model
      * 128 characters.</p>
      */
     inline Trail& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Name of the Amazon S3 bucket into which CloudTrail delivers your trail files.
@@ -143,6 +145,7 @@ namespace Model
      */
     inline Trail& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
+
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
@@ -199,6 +202,7 @@ namespace Model
      */
     inline Trail& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 
+
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
      * notifications when log files are delivered. The format of a topic ARN is:</p>
@@ -248,6 +252,7 @@ namespace Model
      */
     inline Trail& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
 
+
     /**
      * <p>Set to <b>True</b> to include AWS API calls from AWS global services such as
      * IAM. Otherwise, <b>False</b>.</p>
@@ -266,6 +271,7 @@ namespace Model
      */
     inline Trail& WithIncludeGlobalServiceEvents(bool value) { SetIncludeGlobalServiceEvents(value); return *this;}
 
+
     /**
      * <p>Specifies whether the trail belongs only to one region or exists in all
      * regions.</p>
@@ -283,6 +289,7 @@ namespace Model
      * regions.</p>
      */
     inline Trail& WithIsMultiRegionTrail(bool value) { SetIsMultiRegionTrail(value); return *this;}
+
 
     /**
      * <p>The region in which the trail was created.</p>
@@ -318,6 +325,7 @@ namespace Model
      * <p>The region in which the trail was created.</p>
      */
     inline Trail& WithHomeRegion(const char* value) { SetHomeRegion(value); return *this;}
+
 
     /**
      * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
@@ -361,6 +369,7 @@ namespace Model
      */
     inline Trail& WithTrailARN(const char* value) { SetTrailARN(value); return *this;}
 
+
     /**
      * <p>Specifies whether log file validation is enabled.</p>
      */
@@ -375,6 +384,7 @@ namespace Model
      * <p>Specifies whether log file validation is enabled.</p>
      */
     inline Trail& WithLogFileValidationEnabled(bool value) { SetLogFileValidationEnabled(value); return *this;}
+
 
     /**
      * <p>Specifies an Amazon Resource Name (ARN), a unique identifier that represents
@@ -418,6 +428,7 @@ namespace Model
      */
     inline Trail& WithCloudWatchLogsLogGroupArn(const char* value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
 
+
     /**
      * <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a
      * user's log group.</p>
@@ -459,6 +470,7 @@ namespace Model
      * user's log group.</p>
      */
     inline Trail& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}
+
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
@@ -516,6 +528,7 @@ namespace Model
      */
     inline Trail& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>Specifies if the trail has custom event selectors.</p>
      */
@@ -532,30 +545,43 @@ namespace Model
     inline Trail& WithHasCustomEventSelectors(bool value) { SetHasCustomEventSelectors(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet;
+
     Aws::String m_s3KeyPrefix;
     bool m_s3KeyPrefixHasBeenSet;
+
     Aws::String m_snsTopicARN;
     bool m_snsTopicARNHasBeenSet;
+
     bool m_includeGlobalServiceEvents;
     bool m_includeGlobalServiceEventsHasBeenSet;
+
     bool m_isMultiRegionTrail;
     bool m_isMultiRegionTrailHasBeenSet;
+
     Aws::String m_homeRegion;
     bool m_homeRegionHasBeenSet;
+
     Aws::String m_trailARN;
     bool m_trailARNHasBeenSet;
+
     bool m_logFileValidationEnabled;
     bool m_logFileValidationEnabledHasBeenSet;
+
     Aws::String m_cloudWatchLogsLogGroupArn;
     bool m_cloudWatchLogsLogGroupArnHasBeenSet;
+
     Aws::String m_cloudWatchLogsRoleArn;
     bool m_cloudWatchLogsRoleArnHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     bool m_hasCustomEventSelectors;
     bool m_hasCustomEventSelectorsHasBeenSet;
   };

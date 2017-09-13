@@ -33,13 +33,13 @@ GetCredentialReportResult::GetCredentialReportResult() :
 {
 }
 
-GetCredentialReportResult::GetCredentialReportResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetCredentialReportResult::GetCredentialReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_reportFormat(ReportFormatType::NOT_SET)
 {
   *this = result;
 }
 
-GetCredentialReportResult& GetCredentialReportResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetCredentialReportResult& GetCredentialReportResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

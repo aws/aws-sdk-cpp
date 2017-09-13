@@ -30,12 +30,12 @@ BatchGetQueryExecutionResult::BatchGetQueryExecutionResult()
 {
 }
 
-BatchGetQueryExecutionResult::BatchGetQueryExecutionResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetQueryExecutionResult::BatchGetQueryExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchGetQueryExecutionResult& BatchGetQueryExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetQueryExecutionResult& BatchGetQueryExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("QueryExecutions"))

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateEventSubscriptionResult();
-    CreateEventSubscriptionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateEventSubscriptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateEventSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateEventSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The event subscription that was created.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline CreateEventSubscriptionResult& WithEventSubscription(EventSubscription&& value) { SetEventSubscription(std::move(value)); return *this;}
 
   private:
+
     EventSubscription m_eventSubscription;
   };
 

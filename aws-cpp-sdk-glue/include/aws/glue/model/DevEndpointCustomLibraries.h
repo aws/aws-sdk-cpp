@@ -46,6 +46,7 @@ namespace Model
     DevEndpointCustomLibraries& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
      * your DevEndpoint.</p>
@@ -87,6 +88,7 @@ namespace Model
      * your DevEndpoint.</p>
      */
     inline DevEndpointCustomLibraries& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
+
 
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
@@ -131,8 +133,10 @@ namespace Model
     inline DevEndpointCustomLibraries& WithExtraJarsS3Path(const char* value) { SetExtraJarsS3Path(value); return *this;}
 
   private:
+
     Aws::String m_extraPythonLibsS3Path;
     bool m_extraPythonLibsS3PathHasBeenSet;
+
     Aws::String m_extraJarsS3Path;
     bool m_extraJarsS3PathHasBeenSet;
   };

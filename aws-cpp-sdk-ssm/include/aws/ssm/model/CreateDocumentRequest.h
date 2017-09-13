@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A valid JSON string.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>A valid JSON string.</p>
      */
     inline CreateDocumentRequest& WithContent(const char* value) { SetContent(value); return *this;}
+
 
     /**
      * <p>A name for the Systems Manager document.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline CreateDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The type of document to create. Valid document types include: Policy,
      * Automation, and Command.</p>
@@ -138,10 +141,13 @@ namespace Model
     inline CreateDocumentRequest& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_content;
     bool m_contentHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     DocumentType m_documentType;
     bool m_documentTypeHasBeenSet;
   };

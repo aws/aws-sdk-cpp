@@ -30,12 +30,12 @@ CreateReplicationJobResult::CreateReplicationJobResult()
 {
 }
 
-CreateReplicationJobResult::CreateReplicationJobResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateReplicationJobResult::CreateReplicationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateReplicationJobResult& CreateReplicationJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateReplicationJobResult& CreateReplicationJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("replicationJobId"))

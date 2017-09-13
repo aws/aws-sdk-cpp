@@ -30,12 +30,12 @@ ListUniqueProblemsResult::ListUniqueProblemsResult()
 {
 }
 
-ListUniqueProblemsResult::ListUniqueProblemsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListUniqueProblemsResult::ListUniqueProblemsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListUniqueProblemsResult& ListUniqueProblemsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListUniqueProblemsResult& ListUniqueProblemsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("uniqueProblems"))

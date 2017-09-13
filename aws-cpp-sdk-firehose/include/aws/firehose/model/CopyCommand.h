@@ -46,6 +46,7 @@ namespace Model
     CopyCommand& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the target table. The table must already exist in the
      * database.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline CopyCommand& WithDataTableName(const char* value) { SetDataTableName(value); return *this;}
 
+
     /**
      * <p>A comma-separated list of column names.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>A comma-separated list of column names.</p>
      */
     inline CopyCommand& WithDataTableColumns(const char* value) { SetDataTableColumns(value); return *this;}
+
 
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
@@ -264,10 +267,13 @@ namespace Model
     inline CopyCommand& WithCopyOptions(const char* value) { SetCopyOptions(value); return *this;}
 
   private:
+
     Aws::String m_dataTableName;
     bool m_dataTableNameHasBeenSet;
+
     Aws::String m_dataTableColumns;
     bool m_dataTableColumnsHasBeenSet;
+
     Aws::String m_copyOptions;
     bool m_copyOptionsHasBeenSet;
   };

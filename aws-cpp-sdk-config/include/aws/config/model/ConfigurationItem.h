@@ -52,6 +52,7 @@ namespace Model
     ConfigurationItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The version number of the resource configuration.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The version number of the resource configuration.</p>
      */
     inline ConfigurationItem& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The 12 digit AWS account ID associated with the resource.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline ConfigurationItem& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The time when the configuration recording was initiated.</p>
      */
@@ -147,6 +150,7 @@ namespace Model
      */
     inline ConfigurationItem& WithConfigurationItemCaptureTime(Aws::Utils::DateTime&& value) { SetConfigurationItemCaptureTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The configuration item status.</p>
      */
@@ -171,6 +175,7 @@ namespace Model
      * <p>The configuration item status.</p>
      */
     inline ConfigurationItem& WithConfigurationItemStatus(ConfigurationItemStatus&& value) { SetConfigurationItemStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>An identifier that indicates the ordering of the configuration items of a
@@ -213,6 +218,7 @@ namespace Model
      * resource.</p>
      */
     inline ConfigurationItem& WithConfigurationStateId(const char* value) { SetConfigurationStateId(value); return *this;}
+
 
     /**
      * <p>Unique MD5 hash that represents the configuration item's state.</p> <p>You
@@ -263,6 +269,7 @@ namespace Model
      */
     inline ConfigurationItem& WithConfigurationItemMD5Hash(const char* value) { SetConfigurationItemMD5Hash(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
@@ -298,6 +305,7 @@ namespace Model
      */
     inline ConfigurationItem& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The type of AWS resource.</p>
      */
@@ -322,6 +330,7 @@ namespace Model
      * <p>The type of AWS resource.</p>
      */
     inline ConfigurationItem& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
@@ -358,6 +367,7 @@ namespace Model
      */
     inline ConfigurationItem& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The custom name of the resource, if available.</p>
      */
@@ -392,6 +402,7 @@ namespace Model
      * <p>The custom name of the resource, if available.</p>
      */
     inline ConfigurationItem& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
 
     /**
      * <p>The region where the resource resides.</p>
@@ -428,6 +439,7 @@ namespace Model
      */
     inline ConfigurationItem& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 
+
     /**
      * <p>The Availability Zone associated with the resource.</p>
      */
@@ -463,6 +475,7 @@ namespace Model
      */
     inline ConfigurationItem& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The time stamp when the resource was created.</p>
      */
@@ -487,6 +500,7 @@ namespace Model
      * <p>The time stamp when the resource was created.</p>
      */
     inline ConfigurationItem& WithResourceCreationTime(Aws::Utils::DateTime&& value) { SetResourceCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>A mapping of key value tags associated with the resource.</p>
@@ -547,6 +561,7 @@ namespace Model
      * <p>A mapping of key value tags associated with the resource.</p>
      */
     inline ConfigurationItem& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
 
     /**
      * <p>A list of CloudTrail event IDs.</p> <p>A populated field indicates that the
@@ -628,6 +643,7 @@ namespace Model
      */
     inline ConfigurationItem& AddRelatedEvents(const char* value) { m_relatedEventsHasBeenSet = true; m_relatedEvents.push_back(value); return *this; }
 
+
     /**
      * <p>A list of related AWS resources.</p>
      */
@@ -663,6 +679,7 @@ namespace Model
      */
     inline ConfigurationItem& AddRelationships(Relationship&& value) { m_relationshipsHasBeenSet = true; m_relationships.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The description of the resource configuration.</p>
      */
@@ -697,6 +714,7 @@ namespace Model
      * <p>The description of the resource configuration.</p>
      */
     inline ConfigurationItem& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
+
 
     /**
      * <p>Configuration attributes that AWS Config returns for certain resource types
@@ -783,40 +801,58 @@ namespace Model
     inline ConfigurationItem& AddSupplementaryConfiguration(const char* key, const char* value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::Utils::DateTime m_configurationItemCaptureTime;
     bool m_configurationItemCaptureTimeHasBeenSet;
+
     ConfigurationItemStatus m_configurationItemStatus;
     bool m_configurationItemStatusHasBeenSet;
+
     Aws::String m_configurationStateId;
     bool m_configurationStateIdHasBeenSet;
+
     Aws::String m_configurationItemMD5Hash;
     bool m_configurationItemMD5HashHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::String m_awsRegion;
     bool m_awsRegionHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::Utils::DateTime m_resourceCreationTime;
     bool m_resourceCreationTimeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Vector<Aws::String> m_relatedEvents;
     bool m_relatedEventsHasBeenSet;
+
     Aws::Vector<Relationship> m_relationships;
     bool m_relationshipsHasBeenSet;
+
     Aws::String m_configuration;
     bool m_configurationHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_supplementaryConfiguration;
     bool m_supplementaryConfigurationHasBeenSet;
   };

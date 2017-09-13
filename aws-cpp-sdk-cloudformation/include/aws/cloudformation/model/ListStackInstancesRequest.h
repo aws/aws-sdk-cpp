@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or unique ID of the stack set that you want to list stack instances
      * for.</p>
@@ -79,6 +80,7 @@ namespace Model
      * for.</p>
      */
     inline ListStackInstancesRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+
 
     /**
      * <p>If the previous request didn't return all of the remaining results, the
@@ -150,6 +152,7 @@ namespace Model
      */
     inline ListStackInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to be returned with a single call. If the
      * number of available results exceeds this maximum, the response includes a
@@ -173,6 +176,7 @@ namespace Model
      * request parameter to get the next set of results.</p>
      */
     inline ListStackInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The name of the AWS account that you want to list stack instances for.</p>
@@ -208,6 +212,7 @@ namespace Model
      * <p>The name of the AWS account that you want to list stack instances for.</p>
      */
     inline ListStackInstancesRequest& WithStackInstanceAccount(const char* value) { SetStackInstanceAccount(value); return *this;}
+
 
     /**
      * <p>The name of the region where you want to list stack instances. </p>
@@ -245,14 +250,19 @@ namespace Model
     inline ListStackInstancesRequest& WithStackInstanceRegion(const char* value) { SetStackInstanceRegion(value); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_stackInstanceAccount;
     bool m_stackInstanceAccountHasBeenSet;
+
     Aws::String m_stackInstanceRegion;
     bool m_stackInstanceRegionHasBeenSet;
   };

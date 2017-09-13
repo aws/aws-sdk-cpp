@@ -44,6 +44,7 @@ namespace Model
     ArtifactDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The minimum number of artifacts allowed for the action type.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>The minimum number of artifacts allowed for the action type.</p>
      */
     inline ArtifactDetails& WithMinimumCount(int value) { SetMinimumCount(value); return *this;}
+
 
     /**
      * <p>The maximum number of artifacts allowed for the action type.</p>
@@ -75,8 +77,10 @@ namespace Model
     inline ArtifactDetails& WithMaximumCount(int value) { SetMaximumCount(value); return *this;}
 
   private:
+
     int m_minimumCount;
     bool m_minimumCountHasBeenSet;
+
     int m_maximumCount;
     bool m_maximumCountHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the project.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the project.</p>
      */
     inline ListResourcesRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+
 
     /**
      * <p>The continuation token for the next set of results, if the results cannot be
@@ -113,29 +115,33 @@ namespace Model
      */
     inline ListResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
-     * <p>he maximum amount of data that can be contained in a single set of
+     * <p>The maximum amount of data that can be contained in a single set of
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>he maximum amount of data that can be contained in a single set of
+     * <p>The maximum amount of data that can be contained in a single set of
      * results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>he maximum amount of data that can be contained in a single set of
+     * <p>The maximum amount of data that can be contained in a single set of
      * results.</p>
      */
     inline ListResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_projectId;
     bool m_projectIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

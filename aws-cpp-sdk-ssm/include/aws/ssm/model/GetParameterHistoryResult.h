@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetParameterHistoryResult();
-    GetParameterHistoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetParameterHistoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetParameterHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetParameterHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of parameters returned by the request.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of parameters returned by the request.</p>
      */
     inline GetParameterHistoryResult& AddParameters(ParameterHistory&& value) { m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline GetParameterHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ParameterHistory> m_parameters;
+
     Aws::String m_nextToken;
   };
 

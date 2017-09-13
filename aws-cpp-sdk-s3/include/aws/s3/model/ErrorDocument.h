@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The object key name to use when a 4XX class error occurs.
      */
@@ -77,6 +78,7 @@ namespace Model
     inline ErrorDocument& WithKey(const char* value) { SetKey(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
   };

@@ -51,6 +51,7 @@ namespace Model
     ContainerProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
@@ -226,6 +227,7 @@ namespace Model
      */
     inline ContainerProperties& WithImage(const char* value) { SetImage(value); return *this;}
 
+
     /**
      * <p>The number of vCPUs reserved for the container. This parameter maps to
      * <code>CpuShares</code> in the <a
@@ -262,6 +264,7 @@ namespace Model
      */
     inline ContainerProperties& WithVcpus(int value) { SetVcpus(value); return *this;}
 
+
     /**
      * <p>The hard limit (in MiB) of memory to present to the container. If your
      * container attempts to exceed the memory specified here, the container is killed.
@@ -297,6 +300,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
     inline ContainerProperties& WithMemory(int value) { SetMemory(value); return *this;}
+
 
     /**
      * <p>The command that is passed to the container. This parameter maps to
@@ -402,6 +406,7 @@ namespace Model
      */
     inline ContainerProperties& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for AWS permissions.</p>
@@ -444,6 +449,7 @@ namespace Model
      */
     inline ContainerProperties& WithJobRoleArn(const char* value) { SetJobRoleArn(value); return *this;}
 
+
     /**
      * <p>A list of data volumes used in a job.</p>
      */
@@ -478,6 +484,7 @@ namespace Model
      * <p>A list of data volumes used in a job.</p>
      */
     inline ContainerProperties& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
@@ -570,6 +577,7 @@ namespace Model
      */
     inline ContainerProperties& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
      * <code>Volumes</code> in the <a
@@ -647,6 +655,7 @@ namespace Model
      */
     inline ContainerProperties& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>When this parameter is true, the container is given read-only access to its
      * root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a
@@ -679,6 +688,7 @@ namespace Model
      * run</code>.</p>
      */
     inline ContainerProperties& WithReadonlyRootFilesystem(bool value) { SetReadonlyRootFilesystem(value); return *this;}
+
 
     /**
      * <p>When this parameter is true, the container is given elevated privileges on
@@ -715,6 +725,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
     inline ContainerProperties& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
+
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
@@ -792,6 +803,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
     inline ContainerProperties& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The user name to use inside the container. This parameter maps to
@@ -871,28 +883,40 @@ namespace Model
     inline ContainerProperties& WithUser(const char* value) { SetUser(value); return *this;}
 
   private:
+
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
     int m_vcpus;
     bool m_vcpusHasBeenSet;
+
     int m_memory;
     bool m_memoryHasBeenSet;
+
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet;
+
     Aws::String m_jobRoleArn;
     bool m_jobRoleArnHasBeenSet;
+
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet;
+
     Aws::Vector<KeyValuePair> m_environment;
     bool m_environmentHasBeenSet;
+
     Aws::Vector<MountPoint> m_mountPoints;
     bool m_mountPointsHasBeenSet;
+
     bool m_readonlyRootFilesystem;
     bool m_readonlyRootFilesystemHasBeenSet;
+
     bool m_privileged;
     bool m_privilegedHasBeenSet;
+
     Aws::Vector<Ulimit> m_ulimits;
     bool m_ulimitsHasBeenSet;
+
     Aws::String m_user;
     bool m_userHasBeenSet;
   };

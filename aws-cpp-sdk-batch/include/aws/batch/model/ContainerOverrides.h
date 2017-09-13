@@ -48,6 +48,7 @@ namespace Model
     ContainerOverrides& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of vCPUs to reserve for the container. This value overrides the
      * value set in the job definition.</p>
@@ -66,6 +67,7 @@ namespace Model
      */
     inline ContainerOverrides& WithVcpus(int value) { SetVcpus(value); return *this;}
 
+
     /**
      * <p>The number of MiB of memory reserved for the job. This value overrides the
      * value set in the job definition.</p>
@@ -83,6 +85,7 @@ namespace Model
      * value set in the job definition.</p>
      */
     inline ContainerOverrides& WithMemory(int value) { SetMemory(value); return *this;}
+
 
     /**
      * <p>The command to send to the container that overrides the default command from
@@ -131,6 +134,7 @@ namespace Model
      * the Docker image or the job definition.</p>
      */
     inline ContainerOverrides& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+
 
     /**
      * <p>The environment variables to send to the container. You can add new
@@ -189,12 +193,16 @@ namespace Model
     inline ContainerOverrides& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_vcpus;
     bool m_vcpusHasBeenSet;
+
     int m_memory;
     bool m_memoryHasBeenSet;
+
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet;
+
     Aws::Vector<KeyValuePair> m_environment;
     bool m_environmentHasBeenSet;
   };

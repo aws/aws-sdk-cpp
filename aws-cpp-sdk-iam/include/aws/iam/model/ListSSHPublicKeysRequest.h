@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
      * the UserName field is determined implicitly based on the AWS access key used to
@@ -108,6 +109,7 @@ namespace Model
      */
     inline ListSSHPublicKeysRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
      * response indicating that the results are truncated. Set it to the value of the
@@ -164,6 +166,7 @@ namespace Model
      */
     inline ListSSHPublicKeysRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this only when paginating results to indicate the maximum
      * number of items you want in the response. If additional items exist beyond the
@@ -201,10 +204,13 @@ namespace Model
     inline ListSSHPublicKeysRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

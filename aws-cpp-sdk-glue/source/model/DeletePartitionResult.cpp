@@ -30,12 +30,12 @@ DeletePartitionResult::DeletePartitionResult()
 {
 }
 
-DeletePartitionResult::DeletePartitionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeletePartitionResult::DeletePartitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeletePartitionResult& DeletePartitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeletePartitionResult& DeletePartitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

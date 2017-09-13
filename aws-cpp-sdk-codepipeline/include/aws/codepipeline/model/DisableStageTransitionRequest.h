@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the pipeline in which you want to disable the flow of artifacts
      * from one stage to another.</p>
@@ -82,6 +83,7 @@ namespace Model
      * from one stage to another.</p>
      */
     inline DisableStageTransitionRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
@@ -125,6 +127,7 @@ namespace Model
      */
     inline DisableStageTransitionRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
+
     /**
      * <p>Specifies whether artifacts will be prevented from transitioning into the
      * stage and being processed by the actions in that stage (inbound), or prevented
@@ -164,6 +167,7 @@ namespace Model
      * in that stage (outbound).</p>
      */
     inline DisableStageTransitionRequest& WithTransitionType(StageTransitionType&& value) { SetTransitionType(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason given to the user why a stage is disabled, such as waiting for
@@ -215,12 +219,16 @@ namespace Model
     inline DisableStageTransitionRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     StageTransitionType m_transitionType;
     bool m_transitionTypeHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

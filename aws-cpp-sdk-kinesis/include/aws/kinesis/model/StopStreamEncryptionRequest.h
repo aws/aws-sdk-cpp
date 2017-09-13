@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream on which to stop encrypting records.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the stream on which to stop encrypting records.</p>
      */
     inline StopStreamEncryptionRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>The encryption type. This parameter can be one of the following values:</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline StopStreamEncryptionRequest& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 
+
     /**
      * <p>The GUID for the customer-managed key that was used for encryption.</p>
      */
@@ -153,10 +156,13 @@ namespace Model
     inline StopStreamEncryptionRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     EncryptionType m_encryptionType;
     bool m_encryptionTypeHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
   };

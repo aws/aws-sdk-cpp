@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetDocumentResult();
-    GetDocumentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDocumentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the SSM document.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetDocumentResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The document version.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The document version.</p>
      */
     inline GetDocumentResult& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
 
     /**
      * <p>The contents of the SSM document.</p>
@@ -147,6 +150,7 @@ namespace Model
      */
     inline GetDocumentResult& WithContent(const char* value) { SetContent(value); return *this;}
 
+
     /**
      * <p>The document type.</p>
      */
@@ -173,9 +177,13 @@ namespace Model
     inline GetDocumentResult& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_documentVersion;
+
     Aws::String m_content;
+
     DocumentType m_documentType;
   };
 

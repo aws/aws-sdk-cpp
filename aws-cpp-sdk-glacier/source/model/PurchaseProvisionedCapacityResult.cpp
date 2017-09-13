@@ -31,12 +31,12 @@ PurchaseProvisionedCapacityResult::PurchaseProvisionedCapacityResult()
 {
 }
 
-PurchaseProvisionedCapacityResult::PurchaseProvisionedCapacityResult(const AmazonWebServiceResult<JsonValue>& result)
+PurchaseProvisionedCapacityResult::PurchaseProvisionedCapacityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PurchaseProvisionedCapacityResult& PurchaseProvisionedCapacityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PurchaseProvisionedCapacityResult& PurchaseProvisionedCapacityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

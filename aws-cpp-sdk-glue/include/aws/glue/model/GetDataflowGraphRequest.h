@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Python script to transform.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetDataflowGraphRequest& WithPythonScript(const char* value) { SetPythonScript(value); return *this;}
 
   private:
+
     Aws::String m_pythonScript;
     bool m_pythonScriptHasBeenSet;
   };

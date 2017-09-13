@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique system-generated ID of the job that failed. This is the same ID
      * returned from PollForJobs.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline PutJobFailureResultRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
     /**
      * <p>The details about the failure of a job.</p>
      */
@@ -109,8 +111,10 @@ namespace Model
     inline PutJobFailureResultRequest& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     FailureDetails m_failureDetails;
     bool m_failureDetailsHasBeenSet;
   };

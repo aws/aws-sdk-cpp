@@ -44,6 +44,7 @@ namespace Model
     SeveritySummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The total number of resources or compliance items that have a severity level
      * of critical. Critical severity is determined by the organization that published
@@ -64,6 +65,7 @@ namespace Model
      * the compliance items.</p>
      */
     inline SeveritySummary& WithCriticalCount(int value) { SetCriticalCount(value); return *this;}
+
 
     /**
      * <p>The total number of resources or compliance items that have a severity level
@@ -86,6 +88,7 @@ namespace Model
      */
     inline SeveritySummary& WithHighCount(int value) { SetHighCount(value); return *this;}
 
+
     /**
      * <p>The total number of resources or compliance items that have a severity level
      * of medium. Medium severity is determined by the organization that published the
@@ -106,6 +109,7 @@ namespace Model
      * compliance items.</p>
      */
     inline SeveritySummary& WithMediumCount(int value) { SetMediumCount(value); return *this;}
+
 
     /**
      * <p>The total number of resources or compliance items that have a severity level
@@ -128,6 +132,7 @@ namespace Model
      */
     inline SeveritySummary& WithLowCount(int value) { SetLowCount(value); return *this;}
 
+
     /**
      * <p>The total number of resources or compliance items that have a severity level
      * of informational. Informational severity is determined by the organization that
@@ -148,6 +153,7 @@ namespace Model
      * published the compliance items.</p>
      */
     inline SeveritySummary& WithInformationalCount(int value) { SetInformationalCount(value); return *this;}
+
 
     /**
      * <p>The total number of resources or compliance items that have a severity level
@@ -171,16 +177,22 @@ namespace Model
     inline SeveritySummary& WithUnspecifiedCount(int value) { SetUnspecifiedCount(value); return *this;}
 
   private:
+
     int m_criticalCount;
     bool m_criticalCountHasBeenSet;
+
     int m_highCount;
     bool m_highCountHasBeenSet;
+
     int m_mediumCount;
     bool m_mediumCountHasBeenSet;
+
     int m_lowCount;
     bool m_lowCountHasBeenSet;
+
     int m_informationalCount;
     bool m_informationalCountHasBeenSet;
+
     int m_unspecifiedCount;
     bool m_unspecifiedCountHasBeenSet;
   };

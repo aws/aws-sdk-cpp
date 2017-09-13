@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the parameter group to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
   };

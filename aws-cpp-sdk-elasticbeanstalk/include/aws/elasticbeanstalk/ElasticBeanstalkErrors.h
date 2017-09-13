@@ -55,7 +55,7 @@ enum class ElasticBeanstalkErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CODE_BUILD_NOT_IN_SERVICE_REGION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CODE_BUILD_NOT_IN_SERVICE_REGION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ELASTIC_BEANSTALK_SERVICE,
   INSUFFICIENT_PRIVILEGES,
   INVALID_REQUEST,
@@ -74,7 +74,7 @@ enum class ElasticBeanstalkErrors
 };
 namespace ElasticBeanstalkErrorMapper
 {
-  AWS_ELASTICBEANSTALK_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ELASTICBEANSTALK_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ElasticBeanstalk

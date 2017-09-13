@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
      * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
@@ -99,6 +100,7 @@ namespace Model
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p> <i>Required</i>. A string containing the value for this tag. You can specify
      * a maximum of 256 characters for a tag value.</p>
@@ -142,8 +144,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

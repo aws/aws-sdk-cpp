@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateAppResult();
-    CreateAppResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAppResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const ApplicationResponse& GetApplicationResponse() const{ return m_applicationResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline CreateAppResult& WithApplicationResponse(ApplicationResponse&& value) { SetApplicationResponse(std::move(value)); return *this;}
 
   private:
+
     ApplicationResponse m_applicationResponse;
   };
 

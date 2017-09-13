@@ -30,12 +30,12 @@ ModifyReplicationSubnetGroupResult::ModifyReplicationSubnetGroupResult()
 {
 }
 
-ModifyReplicationSubnetGroupResult::ModifyReplicationSubnetGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+ModifyReplicationSubnetGroupResult::ModifyReplicationSubnetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ModifyReplicationSubnetGroupResult& ModifyReplicationSubnetGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ModifyReplicationSubnetGroupResult& ModifyReplicationSubnetGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ReplicationSubnetGroup"))

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to retrieve scaling policies for.</p>
      */
@@ -75,75 +76,77 @@ namespace Model
      */
     inline DescribeScalingPoliciesRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
+
     /**
      * <p>Scaling policy status to filter results on. A scaling policy is only in force
-     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> – The
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
      * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATEREQUESTED</b>
-     * – A request to update the scaling policy has been received.</p> </li> <li> <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.</p> </li> <li>
-     * <p> <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been
-     * received.</p> </li> <li> <p> <b>DELETING</b> – The scaling policy is being
-     * deleted.</p> </li> <li> <p> <b>DELETED</b> – The scaling policy has been
-     * deleted.</p> </li> <li> <p> <b>ERROR</b> – An error occurred in creating the
+     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline const ScalingStatusType& GetStatusFilter() const{ return m_statusFilter; }
 
     /**
      * <p>Scaling policy status to filter results on. A scaling policy is only in force
-     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> – The
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
      * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATEREQUESTED</b>
-     * – A request to update the scaling policy has been received.</p> </li> <li> <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.</p> </li> <li>
-     * <p> <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been
-     * received.</p> </li> <li> <p> <b>DELETING</b> – The scaling policy is being
-     * deleted.</p> </li> <li> <p> <b>DELETED</b> – The scaling policy has been
-     * deleted.</p> </li> <li> <p> <b>ERROR</b> – An error occurred in creating the
+     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline void SetStatusFilter(const ScalingStatusType& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
 
     /**
      * <p>Scaling policy status to filter results on. A scaling policy is only in force
-     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> – The
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
      * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATEREQUESTED</b>
-     * – A request to update the scaling policy has been received.</p> </li> <li> <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.</p> </li> <li>
-     * <p> <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been
-     * received.</p> </li> <li> <p> <b>DELETING</b> – The scaling policy is being
-     * deleted.</p> </li> <li> <p> <b>DELETED</b> – The scaling policy has been
-     * deleted.</p> </li> <li> <p> <b>ERROR</b> – An error occurred in creating the
+     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline void SetStatusFilter(ScalingStatusType&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
 
     /**
      * <p>Scaling policy status to filter results on. A scaling policy is only in force
-     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> – The
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
      * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATEREQUESTED</b>
-     * – A request to update the scaling policy has been received.</p> </li> <li> <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.</p> </li> <li>
-     * <p> <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been
-     * received.</p> </li> <li> <p> <b>DELETING</b> – The scaling policy is being
-     * deleted.</p> </li> <li> <p> <b>DELETED</b> – The scaling policy has been
-     * deleted.</p> </li> <li> <p> <b>ERROR</b> – An error occurred in creating the
+     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithStatusFilter(const ScalingStatusType& value) { SetStatusFilter(value); return *this;}
 
     /**
      * <p>Scaling policy status to filter results on. A scaling policy is only in force
-     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> – The
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
      * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATEREQUESTED</b>
-     * – A request to update the scaling policy has been received.</p> </li> <li> <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.</p> </li> <li>
-     * <p> <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been
-     * received.</p> </li> <li> <p> <b>DELETING</b> – The scaling policy is being
-     * deleted.</p> </li> <li> <p> <b>DELETED</b> – The scaling policy has been
-     * deleted.</p> </li> <li> <p> <b>ERROR</b> – An error occurred in creating the
+     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithStatusFilter(ScalingStatusType&& value) { SetStatusFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>Maximum number of results to return. Use this parameter with
@@ -162,6 +165,7 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline DescribeScalingPoliciesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -213,12 +217,16 @@ namespace Model
     inline DescribeScalingPoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     ScalingStatusType m_statusFilter;
     bool m_statusFilterHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

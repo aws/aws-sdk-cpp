@@ -36,8 +36,9 @@ namespace Model
   {
   public:
     TestEventPatternResult();
-    TestEventPatternResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestEventPatternResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestEventPatternResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestEventPatternResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Indicates whether the event matches the event pattern.</p>
@@ -55,6 +56,7 @@ namespace Model
     inline TestEventPatternResult& WithResult(bool value) { SetResult(value); return *this;}
 
   private:
+
     bool m_result;
   };
 

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListPublicKeysResult();
-    ListPublicKeysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPublicKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPublicKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPublicKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ListPublicKeysResult& AddPublicKeyList(PublicKey&& value) { m_publicKeyList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -127,7 +129,9 @@ namespace Model
     inline ListPublicKeysResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PublicKey> m_publicKeyList;
+
     Aws::String m_nextToken;
   };
 

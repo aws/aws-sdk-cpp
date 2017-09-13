@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Information about the public port you are trying to close.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>Information about the public port you are trying to close.</p>
      */
     inline CloseInstancePublicPortsRequest& WithPortInfo(PortInfo&& value) { SetPortInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the instance on which you're attempting to close the public
@@ -105,8 +107,10 @@ namespace Model
     inline CloseInstancePublicPortsRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
   private:
+
     PortInfo m_portInfo;
     bool m_portInfoHasBeenSet;
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
   };

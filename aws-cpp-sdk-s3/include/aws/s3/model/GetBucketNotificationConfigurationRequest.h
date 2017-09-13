@@ -34,6 +34,7 @@ namespace Model
     GetBucketNotificationConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * Name of the bucket to get the notification configuration for.
      */
@@ -70,6 +71,7 @@ namespace Model
     inline GetBucketNotificationConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
   };

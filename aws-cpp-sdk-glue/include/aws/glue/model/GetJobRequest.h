@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the job to retrieve.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
   };

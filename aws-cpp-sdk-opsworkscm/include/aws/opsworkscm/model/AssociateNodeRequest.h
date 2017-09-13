@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the server with which to associate the node. </p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline AssociateNodeRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
+
     /**
      * <p>The name of the Chef client node. </p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The name of the Chef client node. </p>
      */
     inline AssociateNodeRequest& WithNodeName(const char* value) { SetNodeName(value); return *this;}
+
 
     /**
      * <p>Engine attributes used for associating the node. </p> <p class="title">
@@ -186,10 +189,13 @@ namespace Model
     inline AssociateNodeRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet;
+
     Aws::Vector<EngineAttribute> m_engineAttributes;
     bool m_engineAttributesHasBeenSet;
   };

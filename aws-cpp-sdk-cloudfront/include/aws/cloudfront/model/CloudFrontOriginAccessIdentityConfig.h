@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>A unique number that ensures the request can't be replayed.</p> <p>If the
      * <code>CallerReference</code> is new (no matter the content of the
@@ -160,6 +161,7 @@ namespace Model
      */
     inline CloudFrontOriginAccessIdentityConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
+
     /**
      * <p>Any comments you want to include about the origin access identity. </p>
      */
@@ -196,8 +198,10 @@ namespace Model
     inline CloudFrontOriginAccessIdentityConfig& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:
+
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
   };

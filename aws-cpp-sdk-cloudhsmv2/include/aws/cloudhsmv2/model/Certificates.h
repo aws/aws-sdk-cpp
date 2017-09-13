@@ -46,6 +46,7 @@ namespace Model
     Certificates& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The cluster's certificate signing request (CSR). The CSR exists only when the
      * cluster's state is <code>UNINITIALIZED</code>.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline Certificates& WithClusterCsr(const char* value) { SetClusterCsr(value); return *this;}
 
+
     /**
      * <p>The HSM certificate issued (signed) by the HSM hardware.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      */
     inline Certificates& WithHsmCertificate(const char* value) { SetHsmCertificate(value); return *this;}
 
+
     /**
      * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
      */
     inline Certificates& WithAwsHardwareCertificate(const char* value) { SetAwsHardwareCertificate(value); return *this;}
+
 
     /**
      * <p>The HSM hardware certificate issued (signed) by the hardware
@@ -199,6 +203,7 @@ namespace Model
      * manufacturer.</p>
      */
     inline Certificates& WithManufacturerHardwareCertificate(const char* value) { SetManufacturerHardwareCertificate(value); return *this;}
+
 
     /**
      * <p>The cluster certificate issued (signed) by the issuing certificate authority
@@ -243,14 +248,19 @@ namespace Model
     inline Certificates& WithClusterCertificate(const char* value) { SetClusterCertificate(value); return *this;}
 
   private:
+
     Aws::String m_clusterCsr;
     bool m_clusterCsrHasBeenSet;
+
     Aws::String m_hsmCertificate;
     bool m_hsmCertificateHasBeenSet;
+
     Aws::String m_awsHardwareCertificate;
     bool m_awsHardwareCertificateHasBeenSet;
+
     Aws::String m_manufacturerHardwareCertificate;
     bool m_manufacturerHardwareCertificateHasBeenSet;
+
     Aws::String m_clusterCertificate;
     bool m_clusterCertificateHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline AssociatePrincipalWithPortfolioRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The portfolio identifier.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>The portfolio identifier.</p>
      */
     inline AssociatePrincipalWithPortfolioRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
+
 
     /**
      * <p>The ARN representing the principal (IAM user, role, or group).</p>
@@ -156,6 +159,7 @@ namespace Model
      */
     inline AssociatePrincipalWithPortfolioRequest& WithPrincipalARN(const char* value) { SetPrincipalARN(value); return *this;}
 
+
     /**
      * <p>The principal type. Must be <code>IAM</code> </p>
      */
@@ -182,12 +186,16 @@ namespace Model
     inline AssociatePrincipalWithPortfolioRequest& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_portfolioId;
     bool m_portfolioIdHasBeenSet;
+
     Aws::String m_principalARN;
     bool m_principalARNHasBeenSet;
+
     PrincipalType m_principalType;
     bool m_principalTypeHasBeenSet;
   };

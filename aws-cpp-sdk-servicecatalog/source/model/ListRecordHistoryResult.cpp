@@ -30,12 +30,12 @@ ListRecordHistoryResult::ListRecordHistoryResult()
 {
 }
 
-ListRecordHistoryResult::ListRecordHistoryResult(const AmazonWebServiceResult<JsonValue>& result)
+ListRecordHistoryResult::ListRecordHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListRecordHistoryResult& ListRecordHistoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListRecordHistoryResult& ListRecordHistoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RecordDetails"))

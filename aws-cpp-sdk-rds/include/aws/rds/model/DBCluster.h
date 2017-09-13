@@ -60,6 +60,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code>
      * specifies the allocated storage size in gigabytes (GB). For Aurora,
@@ -83,6 +84,7 @@ namespace Model
      * storage size is not fixed, but instead automatically adjusts as needed.</p>
      */
     inline DBCluster& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
 
     /**
      * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
@@ -132,6 +134,7 @@ namespace Model
      */
     inline DBCluster& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies the number of days for which automatic DB snapshots are
      * retained.</p>
@@ -149,6 +152,7 @@ namespace Model
      * retained.</p>
      */
     inline DBCluster& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
+
 
     /**
      * <p>If present, specifies the name of the character set that this cluster is
@@ -191,6 +195,7 @@ namespace Model
      * associated with.</p>
      */
     inline DBCluster& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
+
 
     /**
      * <p>Contains the name of the initial database of this DB cluster that was
@@ -241,6 +246,7 @@ namespace Model
      */
     inline DBCluster& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>Contains a user-supplied DB cluster identifier. This identifier is the unique
      * key that identifies a DB cluster.</p>
@@ -283,6 +289,7 @@ namespace Model
      */
     inline DBCluster& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
      */
@@ -317,6 +324,7 @@ namespace Model
      * <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
      */
     inline DBCluster& WithDBClusterParameterGroup(const char* value) { SetDBClusterParameterGroup(value); return *this;}
+
 
     /**
      * <p>Specifies information on the subnet group associated with the DB cluster,
@@ -360,6 +368,7 @@ namespace Model
      */
     inline DBCluster& WithDBSubnetGroup(const char* value) { SetDBSubnetGroup(value); return *this;}
 
+
     /**
      * <p>Specifies the current state of this DB cluster.</p>
      */
@@ -394,6 +403,7 @@ namespace Model
      * <p>Specifies the current state of this DB cluster.</p>
      */
     inline DBCluster& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>Specifies the progress of the operation as a percentage.</p>
@@ -430,6 +440,7 @@ namespace Model
      */
     inline DBCluster& WithPercentProgress(const char* value) { SetPercentProgress(value); return *this;}
 
+
     /**
      * <p>Specifies the earliest time to which a database can be restored with
      * point-in-time restore.</p>
@@ -459,6 +470,7 @@ namespace Model
      * point-in-time restore.</p>
      */
     inline DBCluster& WithEarliestRestorableTime(Aws::Utils::DateTime&& value) { SetEarliestRestorableTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the connection endpoint for the primary instance of the DB
@@ -501,6 +513,7 @@ namespace Model
      * cluster.</p>
      */
     inline DBCluster& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+
 
     /**
      * <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster
@@ -600,6 +613,7 @@ namespace Model
      */
     inline DBCluster& WithReaderEndpoint(const char* value) { SetReaderEndpoint(value); return *this;}
 
+
     /**
      * <p>Specifies whether the DB cluster has instances in multiple Availability
      * Zones.</p>
@@ -617,6 +631,7 @@ namespace Model
      * Zones.</p>
      */
     inline DBCluster& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>Provides the name of the database engine to be used for this DB cluster.</p>
@@ -653,6 +668,7 @@ namespace Model
      */
     inline DBCluster& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
     /**
      * <p>Indicates the database engine version.</p>
      */
@@ -688,6 +704,7 @@ namespace Model
      */
     inline DBCluster& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p>
@@ -718,6 +735,7 @@ namespace Model
      */
     inline DBCluster& WithLatestRestorableTime(Aws::Utils::DateTime&& value) { SetLatestRestorableTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the port that the database engine is listening on.</p>
      */
@@ -732,6 +750,7 @@ namespace Model
      * <p>Specifies the port that the database engine is listening on.</p>
      */
     inline DBCluster& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>Contains the master username for the DB cluster.</p>
@@ -768,6 +787,7 @@ namespace Model
      */
     inline DBCluster& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
+
     /**
      * <p>Provides the list of option group memberships for this DB cluster.</p>
      */
@@ -802,6 +822,7 @@ namespace Model
      * <p>Provides the list of option group memberships for this DB cluster.</p>
      */
     inline DBCluster& AddDBClusterOptionGroupMemberships(DBClusterOptionGroupStatus&& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
@@ -852,6 +873,7 @@ namespace Model
      */
     inline DBCluster& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
+
     /**
      * <p>Specifies the weekly time range during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p>
@@ -894,6 +916,7 @@ namespace Model
      */
     inline DBCluster& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
      * Replica.</p>
@@ -935,6 +958,7 @@ namespace Model
      * Replica.</p>
      */
     inline DBCluster& WithReplicationSourceIdentifier(const char* value) { SetReplicationSourceIdentifier(value); return *this;}
+
 
     /**
      * <p>Contains one or more identifiers of the Read Replicas associated with this DB
@@ -984,6 +1008,7 @@ namespace Model
      */
     inline DBCluster& AddReadReplicaIdentifiers(const char* value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(value); return *this; }
 
+
     /**
      * <p>Provides the list of instances that make up the DB cluster.</p>
      */
@@ -1019,6 +1044,7 @@ namespace Model
      */
     inline DBCluster& AddDBClusterMembers(DBClusterMember&& value) { m_dBClusterMembersHasBeenSet = true; m_dBClusterMembers.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
      */
@@ -1053,6 +1079,7 @@ namespace Model
      * <p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
      */
     inline DBCluster& AddVpcSecurityGroups(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
@@ -1096,6 +1123,7 @@ namespace Model
      */
     inline DBCluster& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the DB cluster is encrypted.</p>
      */
@@ -1110,6 +1138,7 @@ namespace Model
      * <p>Specifies whether the DB cluster is encrypted.</p>
      */
     inline DBCluster& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
+
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
@@ -1152,6 +1181,7 @@ namespace Model
      * encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
 
     /**
      * <p>The region-unique, immutable identifier for the DB cluster. This identifier
@@ -1202,6 +1232,7 @@ namespace Model
      */
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
      */
@@ -1236,6 +1267,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
      */
     inline DBCluster& WithDBClusterArn(const char* value) { SetDBClusterArn(value); return *this;}
+
 
     /**
      * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
@@ -1293,6 +1325,7 @@ namespace Model
      */
     inline DBCluster& AddAssociatedRoles(DBClusterRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
      * database accounts is enabled; otherwise false.</p>
@@ -1310,6 +1343,7 @@ namespace Model
      * database accounts is enabled; otherwise false.</p>
      */
     inline DBCluster& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
+
 
     /**
      * <p>Identifies the clone group to which the DB cluster is associated.</p>
@@ -1346,6 +1380,7 @@ namespace Model
      */
     inline DBCluster& WithCloneGroupId(const char* value) { SetCloneGroupId(value); return *this;}
 
+
     /**
      * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
      * Time (UTC).</p>
@@ -1377,74 +1412,109 @@ namespace Model
     inline DBCluster& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(std::move(value)); return *this;}
 
   private:
+
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
+
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     Aws::String m_dBClusterParameterGroup;
     bool m_dBClusterParameterGroupHasBeenSet;
+
     Aws::String m_dBSubnetGroup;
     bool m_dBSubnetGroupHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_percentProgress;
     bool m_percentProgressHasBeenSet;
+
     Aws::Utils::DateTime m_earliestRestorableTime;
     bool m_earliestRestorableTimeHasBeenSet;
+
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+
     Aws::String m_readerEndpoint;
     bool m_readerEndpointHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::Utils::DateTime m_latestRestorableTime;
     bool m_latestRestorableTimeHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;
+
     Aws::Vector<DBClusterOptionGroupStatus> m_dBClusterOptionGroupMemberships;
     bool m_dBClusterOptionGroupMembershipsHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_replicationSourceIdentifier;
     bool m_replicationSourceIdentifierHasBeenSet;
+
     Aws::Vector<Aws::String> m_readReplicaIdentifiers;
     bool m_readReplicaIdentifiersHasBeenSet;
+
     Aws::Vector<DBClusterMember> m_dBClusterMembers;
     bool m_dBClusterMembersHasBeenSet;
+
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
     bool m_vpcSecurityGroupsHasBeenSet;
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     bool m_storageEncrypted;
     bool m_storageEncryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_dbClusterResourceId;
     bool m_dbClusterResourceIdHasBeenSet;
+
     Aws::String m_dBClusterArn;
     bool m_dBClusterArnHasBeenSet;
+
     Aws::Vector<DBClusterRole> m_associatedRoles;
     bool m_associatedRolesHasBeenSet;
+
     bool m_iAMDatabaseAuthenticationEnabled;
     bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+
     Aws::String m_cloneGroupId;
     bool m_cloneGroupIdHasBeenSet;
+
     Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
   };

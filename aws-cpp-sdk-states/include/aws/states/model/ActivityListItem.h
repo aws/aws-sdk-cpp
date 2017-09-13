@@ -41,6 +41,7 @@ namespace Model
     ActivityListItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
      */
     inline ActivityListItem& WithActivityArn(const char* value) { SetActivityArn(value); return *this;}
+
 
     /**
      * <p>The name of the activity.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline ActivityListItem& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The date the activity was created.</p>
      */
@@ -137,10 +140,13 @@ namespace Model
     inline ActivityListItem& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_activityArn;
     bool m_activityArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

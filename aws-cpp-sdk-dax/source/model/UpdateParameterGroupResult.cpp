@@ -30,12 +30,12 @@ UpdateParameterGroupResult::UpdateParameterGroupResult()
 {
 }
 
-UpdateParameterGroupResult::UpdateParameterGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateParameterGroupResult::UpdateParameterGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateParameterGroupResult& UpdateParameterGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateParameterGroupResult& UpdateParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ParameterGroup"))

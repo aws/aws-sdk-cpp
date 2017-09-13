@@ -57,6 +57,7 @@ namespace Model
     WeeklyAutoScalingSchedule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The schedule for Monday.</p>
      */
@@ -116,6 +117,7 @@ namespace Model
      * <p>The schedule for Monday.</p>
      */
     inline WeeklyAutoScalingSchedule& AddMonday(const char* key, const char* value) { m_mondayHasBeenSet = true; m_monday.emplace(key, value); return *this; }
+
 
     /**
      * <p>The schedule for Tuesday.</p>
@@ -177,6 +179,7 @@ namespace Model
      */
     inline WeeklyAutoScalingSchedule& AddTuesday(const char* key, const char* value) { m_tuesdayHasBeenSet = true; m_tuesday.emplace(key, value); return *this; }
 
+
     /**
      * <p>The schedule for Wednesday.</p>
      */
@@ -236,6 +239,7 @@ namespace Model
      * <p>The schedule for Wednesday.</p>
      */
     inline WeeklyAutoScalingSchedule& AddWednesday(const char* key, const char* value) { m_wednesdayHasBeenSet = true; m_wednesday.emplace(key, value); return *this; }
+
 
     /**
      * <p>The schedule for Thursday.</p>
@@ -297,6 +301,7 @@ namespace Model
      */
     inline WeeklyAutoScalingSchedule& AddThursday(const char* key, const char* value) { m_thursdayHasBeenSet = true; m_thursday.emplace(key, value); return *this; }
 
+
     /**
      * <p>The schedule for Friday.</p>
      */
@@ -357,6 +362,7 @@ namespace Model
      */
     inline WeeklyAutoScalingSchedule& AddFriday(const char* key, const char* value) { m_fridayHasBeenSet = true; m_friday.emplace(key, value); return *this; }
 
+
     /**
      * <p>The schedule for Saturday.</p>
      */
@@ -416,6 +422,7 @@ namespace Model
      * <p>The schedule for Saturday.</p>
      */
     inline WeeklyAutoScalingSchedule& AddSaturday(const char* key, const char* value) { m_saturdayHasBeenSet = true; m_saturday.emplace(key, value); return *this; }
+
 
     /**
      * <p>The schedule for Sunday.</p>
@@ -478,18 +485,25 @@ namespace Model
     inline WeeklyAutoScalingSchedule& AddSunday(const char* key, const char* value) { m_sundayHasBeenSet = true; m_sunday.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_monday;
     bool m_mondayHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tuesday;
     bool m_tuesdayHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_wednesday;
     bool m_wednesdayHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_thursday;
     bool m_thursdayHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_friday;
     bool m_fridayHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_saturday;
     bool m_saturdayHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_sunday;
     bool m_sundayHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     TracingConfigResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The tracing mode associated with your Lambda function.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline TracingConfigResponse& WithMode(TracingMode&& value) { SetMode(std::move(value)); return *this;}
 
   private:
+
     TracingMode m_mode;
     bool m_modeHasBeenSet;
   };

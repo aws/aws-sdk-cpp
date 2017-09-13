@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The names to use for your new Lightsail instances. Separate multiple values
      * using quotation marks and commas, for example:
@@ -92,6 +93,7 @@ namespace Model
      * <code>["MyFirstInstance","MySecondInstance"]</code> </p>
      */
     inline CreateInstancesRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
+
 
     /**
      * <p>The Availability Zone in which to create your instance. Use the following
@@ -163,6 +165,7 @@ namespace Model
      */
     inline CreateInstancesRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The ID for a virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
@@ -219,6 +222,7 @@ namespace Model
      */
     inline CreateInstancesRequest& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
 
+
     /**
      * <p>The bundle of specification information for your virtual private server (or
      * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
@@ -260,6 +264,7 @@ namespace Model
      * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
      */
     inline CreateInstancesRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+
 
     /**
      * <p>A launch script you can create that configures a server with additional user
@@ -345,6 +350,7 @@ namespace Model
      */
     inline CreateInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
+
     /**
      * <p>The name of your key pair.</p>
      */
@@ -381,16 +387,22 @@ namespace Model
     inline CreateInstancesRequest& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instanceNames;
     bool m_instanceNamesHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_blueprintId;
     bool m_blueprintIdHasBeenSet;
+
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
     Aws::String m_userData;
     bool m_userDataHasBeenSet;
+
     Aws::String m_keyPairName;
     bool m_keyPairNameHasBeenSet;
   };

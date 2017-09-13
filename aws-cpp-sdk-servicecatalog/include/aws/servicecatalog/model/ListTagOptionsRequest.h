@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The list of filters with which to limit search results. If no search filters
      * are specified, the output is all TagOptions. </p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline ListTagOptionsRequest& WithFilters(ListTagOptionsFilters&& value) { SetFilters(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of items to return in the results. If more results exist
      * than fit in the specified <code>PageSize</code>, the value of
@@ -87,6 +89,7 @@ namespace Model
      * <code>NextPageToken</code> in the response is non-null.</p>
      */
     inline ListTagOptionsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first
@@ -131,10 +134,13 @@ namespace Model
     inline ListTagOptionsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     ListTagOptionsFilters m_filters;
     bool m_filtersHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

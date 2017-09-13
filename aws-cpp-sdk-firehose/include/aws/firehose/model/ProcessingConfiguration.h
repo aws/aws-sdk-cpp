@@ -46,6 +46,7 @@ namespace Model
     ProcessingConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Enables or disables data processing.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>Enables or disables data processing.</p>
      */
     inline ProcessingConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The data processors.</p>
@@ -97,8 +99,10 @@ namespace Model
     inline ProcessingConfiguration& AddProcessors(Processor&& value) { m_processorsHasBeenSet = true; m_processors.push_back(std::move(value)); return *this; }
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::Vector<Processor> m_processors;
     bool m_processorsHasBeenSet;
   };

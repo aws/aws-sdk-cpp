@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
      * are requesting information.</p>
@@ -82,6 +83,7 @@ namespace Model
      * are requesting information.</p>
      */
     inline InstallToRemoteAccessSessionRequest& WithRemoteAccessSessionArn(const char* value) { SetRemoteAccessSessionArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the app about which you are requesting
@@ -126,8 +128,10 @@ namespace Model
     inline InstallToRemoteAccessSessionRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
 
   private:
+
     Aws::String m_remoteAccessSessionArn;
     bool m_remoteAccessSessionArnHasBeenSet;
+
     Aws::String m_appArn;
     bool m_appArnHasBeenSet;
   };

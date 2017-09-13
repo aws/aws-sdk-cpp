@@ -30,12 +30,12 @@ RetryStageExecutionResult::RetryStageExecutionResult()
 {
 }
 
-RetryStageExecutionResult::RetryStageExecutionResult(const AmazonWebServiceResult<JsonValue>& result)
+RetryStageExecutionResult::RetryStageExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RetryStageExecutionResult& RetryStageExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RetryStageExecutionResult& RetryStageExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("pipelineExecutionId"))

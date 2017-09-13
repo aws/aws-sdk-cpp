@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identity that is associated with the policy for which the policies will
      * be listed. You can specify an identity by using its name or by using its Amazon
@@ -117,6 +118,7 @@ namespace Model
     inline ListIdentityPoliciesRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
   };

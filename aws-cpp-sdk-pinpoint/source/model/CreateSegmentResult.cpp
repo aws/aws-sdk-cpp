@@ -30,12 +30,12 @@ CreateSegmentResult::CreateSegmentResult()
 {
 }
 
-CreateSegmentResult::CreateSegmentResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateSegmentResult::CreateSegmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateSegmentResult& CreateSegmentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateSegmentResult& CreateSegmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SegmentResponse"))

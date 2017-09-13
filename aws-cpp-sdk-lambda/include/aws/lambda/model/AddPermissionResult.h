@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     AddPermissionResult();
-    AddPermissionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddPermissionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The permission statement you specified in the request. The response returns
@@ -96,6 +97,7 @@ namespace Model
     inline AddPermissionResult& WithStatement(const char* value) { SetStatement(value); return *this;}
 
   private:
+
     Aws::String m_statement;
   };
 

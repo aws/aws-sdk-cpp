@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DefineExpressionResult();
-    DefineExpressionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DefineExpressionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DefineExpressionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DefineExpressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ExpressionStatus& GetExpression() const{ return m_expression; }
@@ -62,6 +63,7 @@ namespace Model
 
     
     inline DefineExpressionResult& WithExpression(ExpressionStatus&& value) { SetExpression(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -79,7 +81,9 @@ namespace Model
     inline DefineExpressionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ExpressionStatus m_expression;
+
     ResponseMetadata m_responseMetadata;
   };
 

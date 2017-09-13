@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteScalingPolicyResult();
-    DeleteScalingPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteScalingPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

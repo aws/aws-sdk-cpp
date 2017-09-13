@@ -30,12 +30,12 @@ StartGameSessionPlacementResult::StartGameSessionPlacementResult()
 {
 }
 
-StartGameSessionPlacementResult::StartGameSessionPlacementResult(const AmazonWebServiceResult<JsonValue>& result)
+StartGameSessionPlacementResult::StartGameSessionPlacementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartGameSessionPlacementResult& StartGameSessionPlacementResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartGameSessionPlacementResult& StartGameSessionPlacementResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GameSessionPlacement"))

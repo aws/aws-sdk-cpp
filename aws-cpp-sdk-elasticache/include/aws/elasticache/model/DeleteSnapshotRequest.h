@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the snapshot to be deleted.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline DeleteSnapshotRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
 
   private:
+
     Aws::String m_snapshotName;
     bool m_snapshotNameHasBeenSet;
   };

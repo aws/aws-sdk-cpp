@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     CancelCommandResult();
-    CancelCommandResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelCommandResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelCommandResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelCommandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

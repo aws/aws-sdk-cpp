@@ -34,6 +34,7 @@ namespace Model
     CreateAppRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const CreateApplicationRequest& GetCreateApplicationRequest() const{ return m_createApplicationRequest; }
 
@@ -50,6 +51,7 @@ namespace Model
     inline CreateAppRequest& WithCreateApplicationRequest(CreateApplicationRequest&& value) { SetCreateApplicationRequest(std::move(value)); return *this;}
 
   private:
+
     CreateApplicationRequest m_createApplicationRequest;
     bool m_createApplicationRequestHasBeenSet;
   };

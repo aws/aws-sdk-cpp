@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The resource identifier.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The resource identifier.</p>
      */
     inline AssociateTagOptionWithResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>The TagOption identifier.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline AssociateTagOptionWithResourceRequest& WithTagOptionId(const char* value) { SetTagOptionId(value); return *this;}
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_tagOptionId;
     bool m_tagOptionIdHasBeenSet;
   };

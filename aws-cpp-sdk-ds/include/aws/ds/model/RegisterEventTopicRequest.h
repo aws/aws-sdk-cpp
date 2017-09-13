@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Directory ID that will publish status messages to the SNS topic.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The Directory ID that will publish status messages to the SNS topic.</p>
      */
     inline RegisterEventTopicRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The SNS topic name to which the directory will publish status messages. This
@@ -117,8 +119,10 @@ namespace Model
     inline RegisterEventTopicRequest& WithTopicName(const char* value) { SetTopicName(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_topicName;
     bool m_topicNameHasBeenSet;
   };

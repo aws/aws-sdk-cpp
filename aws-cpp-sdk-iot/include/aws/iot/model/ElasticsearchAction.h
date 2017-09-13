@@ -46,6 +46,7 @@ namespace Model
     ElasticsearchAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The IAM role ARN that has access to Elasticsearch.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The IAM role ARN that has access to Elasticsearch.</p>
      */
     inline ElasticsearchAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>The endpoint of your Elasticsearch domain.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline ElasticsearchAction& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
+
     /**
      * <p>The Elasticsearch index where you want to store your data.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      */
     inline ElasticsearchAction& WithIndex(const char* value) { SetIndex(value); return *this;}
 
+
     /**
      * <p>The type of document you are storing.</p>
      */
@@ -185,6 +189,7 @@ namespace Model
      * <p>The type of document you are storing.</p>
      */
     inline ElasticsearchAction& WithType(const char* value) { SetType(value); return *this;}
+
 
     /**
      * <p>The unique identifier for the document you are storing.</p>
@@ -222,14 +227,19 @@ namespace Model
     inline ElasticsearchAction& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+
     Aws::String m_index;
     bool m_indexHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

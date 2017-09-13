@@ -47,6 +47,7 @@ namespace Model
     TelemetryMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A specific type of behavioral data that is collected by the agent.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline TelemetryMetadata& WithMessageType(const char* value) { SetMessageType(value); return *this;}
 
+
     /**
      * <p>The count of messages that the agent sends to the Amazon Inspector
      * service.</p>
@@ -99,6 +101,7 @@ namespace Model
      * service.</p>
      */
     inline TelemetryMetadata& WithCount(long long value) { SetCount(value); return *this;}
+
 
     /**
      * <p>The data size of messages that the agent sends to the Amazon Inspector
@@ -119,10 +122,13 @@ namespace Model
     inline TelemetryMetadata& WithDataSize(long long value) { SetDataSize(value); return *this;}
 
   private:
+
     Aws::String m_messageType;
     bool m_messageTypeHasBeenSet;
+
     long long m_count;
     bool m_countHasBeenSet;
+
     long long m_dataSize;
     bool m_dataSizeHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ModifyClusterResult();
-    ModifyClusterResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Cluster& GetCluster() const{ return m_cluster; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline ModifyClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline ModifyClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Cluster m_cluster;
+
     ResponseMetadata m_responseMetadata;
   };
 

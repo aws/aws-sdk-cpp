@@ -31,12 +31,12 @@ DeleteSuggesterResult::DeleteSuggesterResult()
 {
 }
 
-DeleteSuggesterResult::DeleteSuggesterResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteSuggesterResult::DeleteSuggesterResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteSuggesterResult& DeleteSuggesterResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteSuggesterResult& DeleteSuggesterResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

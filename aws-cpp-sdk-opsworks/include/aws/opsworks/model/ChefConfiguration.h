@@ -45,6 +45,7 @@ namespace Model
     ChefConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Whether to enable Berkshelf.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      * <p>Whether to enable Berkshelf.</p>
      */
     inline ChefConfiguration& WithManageBerkshelf(bool value) { SetManageBerkshelf(value); return *this;}
+
 
     /**
      * <p>The Berkshelf version.</p>
@@ -96,8 +98,10 @@ namespace Model
     inline ChefConfiguration& WithBerkshelfVersion(const char* value) { SetBerkshelfVersion(value); return *this;}
 
   private:
+
     bool m_manageBerkshelf;
     bool m_manageBerkshelfHasBeenSet;
+
     Aws::String m_berkshelfVersion;
     bool m_berkshelfVersionHasBeenSet;
   };

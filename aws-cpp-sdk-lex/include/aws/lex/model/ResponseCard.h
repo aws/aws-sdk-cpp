@@ -52,6 +52,7 @@ namespace Model
     ResponseCard& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The version of the response card format.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline ResponseCard& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>The content type of the response.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The content type of the response.</p>
      */
     inline ResponseCard& WithContentType(ContentType&& value) { SetContentType(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of attachment objects representing options.</p>
@@ -148,10 +151,13 @@ namespace Model
     inline ResponseCard& AddGenericAttachments(GenericAttachment&& value) { m_genericAttachmentsHasBeenSet = true; m_genericAttachments.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     ContentType m_contentType;
     bool m_contentTypeHasBeenSet;
+
     Aws::Vector<GenericAttachment> m_genericAttachments;
     bool m_genericAttachmentsHasBeenSet;
   };

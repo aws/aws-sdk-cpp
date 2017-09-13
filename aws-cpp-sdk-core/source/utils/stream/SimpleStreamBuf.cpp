@@ -48,7 +48,7 @@ SimpleStreamBuf::SimpleStreamBuf(const Aws::String& value) :
     m_buffer(nullptr),
     m_bufferSize(0)
 {
-    size_t baseSize = std::max(value.size(), static_cast<std::size_t>(DEFAULT_BUFFER_SIZE));
+    size_t baseSize = (std::max)(value.size(), static_cast<std::size_t>(DEFAULT_BUFFER_SIZE));
 
     m_buffer = Aws::NewArray<char>(baseSize, SIMPLE_STREAMBUF_ALLOCATION_TAG);
     m_bufferSize = baseSize;
@@ -190,8 +190,8 @@ std::streamsize SimpleStreamBuf::xsputn(const char* s, std::streamsize n)
 
         if (current_pptr < current_epptr)
         {
-            std::size_t copySize = std::min(static_cast< std::size_t >(n - writeCount),
-                                            static_cast< std::size_t >(current_epptr - current_pptr));
+            std::size_t copySize = (std::min)(static_cast< std::size_t >(n - writeCount),
+                                              static_cast< std::size_t >(current_epptr - current_pptr));
 
             std::memcpy(current_pptr, s + writeCount, copySize);
             writeCount += copySize;

@@ -30,12 +30,12 @@ ListQueryExecutionsResult::ListQueryExecutionsResult()
 {
 }
 
-ListQueryExecutionsResult::ListQueryExecutionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListQueryExecutionsResult::ListQueryExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListQueryExecutionsResult& ListQueryExecutionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListQueryExecutionsResult& ListQueryExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("QueryExecutionIds"))

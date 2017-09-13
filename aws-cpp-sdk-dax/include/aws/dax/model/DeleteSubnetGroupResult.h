@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteSubnetGroupResult();
-    DeleteSubnetGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSubnetGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-specified message for this action (i.e., a reason for deleting the
@@ -84,6 +85,7 @@ namespace Model
     inline DeleteSubnetGroupResult& WithDeletionMessage(const char* value) { SetDeletionMessage(value); return *this;}
 
   private:
+
     Aws::String m_deletionMessage;
   };
 

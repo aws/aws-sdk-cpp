@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or unique ID of the stack set that you want to create stack
      * instances from.</p>
@@ -82,6 +83,7 @@ namespace Model
      * instances from.</p>
      */
     inline CreateStackInstancesRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+
 
     /**
      * <p>The names of one or more AWS accounts that you want to create stack instances
@@ -131,6 +133,7 @@ namespace Model
      */
     inline CreateStackInstancesRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
+
     /**
      * <p>The names of one or more regions where you want to create stack instances
      * using the specified AWS account(s). </p>
@@ -179,6 +182,7 @@ namespace Model
      */
     inline CreateStackInstancesRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
+
     /**
      * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
      */
@@ -203,6 +207,7 @@ namespace Model
      * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
      */
     inline CreateStackInstancesRequest& WithOperationPreferences(StackSetOperationPreferences&& value) { SetOperationPreferences(std::move(value)); return *this;}
+
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>The operation ID
@@ -289,14 +294,19 @@ namespace Model
     inline CreateStackInstancesRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_accounts;
     bool m_accountsHasBeenSet;
+
     Aws::Vector<Aws::String> m_regions;
     bool m_regionsHasBeenSet;
+
     StackSetOperationPreferences m_operationPreferences;
     bool m_operationPreferencesHasBeenSet;
+
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;
   };

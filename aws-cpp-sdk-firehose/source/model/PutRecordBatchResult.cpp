@@ -31,13 +31,13 @@ PutRecordBatchResult::PutRecordBatchResult() :
 {
 }
 
-PutRecordBatchResult::PutRecordBatchResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PutRecordBatchResult::PutRecordBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_failedPutCount(0)
 {
   *this = result;
 }
 
-PutRecordBatchResult& PutRecordBatchResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutRecordBatchResult& PutRecordBatchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FailedPutCount"))

@@ -53,6 +53,7 @@ namespace Model
     KeysAndAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The primary key attribute values that define the items and the attributes
      * associated with the items.</p>
@@ -94,6 +95,7 @@ namespace Model
      * associated with the items.</p>
      */
     inline KeysAndAttributes& AddKeys(Aws::Map<Aws::String, AttributeValue>&& value) { m_keysHasBeenSet = true; m_keys.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
@@ -159,6 +161,7 @@ namespace Model
      */
     inline KeysAndAttributes& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
+
     /**
      * <p>The consistency of a read operation. If set to <code>true</code>, then a
      * strongly consistent read is used; otherwise, an eventually consistent read is
@@ -179,6 +182,7 @@ namespace Model
      * used.</p>
      */
     inline KeysAndAttributes& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
+
 
     /**
      * <p>A string that identifies one or more attributes to retrieve from the table.
@@ -263,6 +267,7 @@ namespace Model
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline KeysAndAttributes& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
+
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -589,14 +594,19 @@ namespace Model
     inline KeysAndAttributes& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
   private:
+
     Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_keys;
     bool m_keysHasBeenSet;
+
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
+
     bool m_consistentRead;
     bool m_consistentReadHasBeenSet;
+
     Aws::String m_projectionExpression;
     bool m_projectionExpressionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
     bool m_expressionAttributeNamesHasBeenSet;
   };

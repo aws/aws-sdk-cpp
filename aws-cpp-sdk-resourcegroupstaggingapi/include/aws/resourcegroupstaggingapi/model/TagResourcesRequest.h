@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
      * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An
@@ -118,6 +119,7 @@ namespace Model
      */
     inline TagResourcesRequest& AddResourceARNList(const char* value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
 
+
     /**
      * <p>The tags that you want to add to the specified resources. A tag consists of a
      * key and a value that you define.</p>
@@ -191,8 +193,10 @@ namespace Model
     inline TagResourcesRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_resourceARNList;
     bool m_resourceARNListHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
   };

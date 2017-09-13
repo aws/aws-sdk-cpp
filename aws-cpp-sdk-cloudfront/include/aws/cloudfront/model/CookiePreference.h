@@ -52,6 +52,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>Specifies which cookies to forward to the origin for this cache behavior:
      * all, none, or the list of cookies specified in the <code>WhitelistedNames</code>
@@ -96,6 +97,7 @@ namespace Model
      * <code>Forward</code> element. </p>
      */
     inline CookiePreference& WithForward(ItemSelection&& value) { SetForward(std::move(value)); return *this;}
+
 
     /**
      * <p>Required if you specify <code>whitelist</code> for the value of
@@ -178,8 +180,10 @@ namespace Model
     inline CookiePreference& WithWhitelistedNames(CookieNames&& value) { SetWhitelistedNames(std::move(value)); return *this;}
 
   private:
+
     ItemSelection m_forward;
     bool m_forwardHasBeenSet;
+
     CookieNames m_whitelistedNames;
     bool m_whitelistedNamesHasBeenSet;
   };

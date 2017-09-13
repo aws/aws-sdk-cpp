@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
      * VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR
@@ -58,6 +59,43 @@ namespace Model
      * block.</p>
      */
     inline AssociateVpcCidrBlockRequest& WithAmazonProvidedIpv6CidrBlock(bool value) { SetAmazonProvidedIpv6CidrBlock(value); return *this;}
+
+
+    /**
+     * <p>An IPv4 CIDR block to associate with the VPC.</p>
+     */
+    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+
+    /**
+     * <p>An IPv4 CIDR block to associate with the VPC.</p>
+     */
+    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+
+    /**
+     * <p>An IPv4 CIDR block to associate with the VPC.</p>
+     */
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
+
+    /**
+     * <p>An IPv4 CIDR block to associate with the VPC.</p>
+     */
+    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
+
+    /**
+     * <p>An IPv4 CIDR block to associate with the VPC.</p>
+     */
+    inline AssociateVpcCidrBlockRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
+
+    /**
+     * <p>An IPv4 CIDR block to associate with the VPC.</p>
+     */
+    inline AssociateVpcCidrBlockRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
+
+    /**
+     * <p>An IPv4 CIDR block to associate with the VPC.</p>
+     */
+    inline AssociateVpcCidrBlockRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -95,8 +133,13 @@ namespace Model
     inline AssociateVpcCidrBlockRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     bool m_amazonProvidedIpv6CidrBlock;
     bool m_amazonProvidedIpv6CidrBlockHasBeenSet;
+
+    Aws::String m_cidrBlock;
+    bool m_cidrBlockHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

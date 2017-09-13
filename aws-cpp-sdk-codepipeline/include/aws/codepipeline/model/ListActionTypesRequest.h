@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Filters the list of action types to those created by a specified entity.</p>
      */
@@ -65,6 +66,7 @@ namespace Model
      * <p>Filters the list of action types to those created by a specified entity.</p>
      */
     inline ListActionTypesRequest& WithActionOwnerFilter(ActionOwner&& value) { SetActionOwnerFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>An identifier that was returned from the previous list action types call,
@@ -109,8 +111,10 @@ namespace Model
     inline ListActionTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     ActionOwner m_actionOwnerFilter;
     bool m_actionOwnerFilterHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

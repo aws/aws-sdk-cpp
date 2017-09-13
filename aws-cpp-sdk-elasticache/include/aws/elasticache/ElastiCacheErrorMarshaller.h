@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ELASTICACHE_API ElastiCacheErrorMarshaller : public Client::XmlErrorMarshaller
+class AWS_ELASTICACHE_API ElastiCacheErrorMarshaller : public Aws::Client::XmlErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace ElastiCache
+} // namespace Client
 } // namespace Aws

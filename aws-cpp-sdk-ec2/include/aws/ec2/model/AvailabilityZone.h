@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The state of the Availability Zone.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The state of the Availability Zone.</p>
      */
     inline AvailabilityZone& WithState(AvailabilityZoneState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>Any messages about the Availability Zone.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline AvailabilityZone& AddMessages(AvailabilityZoneMessage&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of the region.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>The name of the region.</p>
      */
     inline AvailabilityZone& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+
 
     /**
      * <p>The name of the Availability Zone.</p>
@@ -182,12 +186,16 @@ namespace Model
     inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
 
   private:
+
     AvailabilityZoneState m_state;
     bool m_stateHasBeenSet;
+
     Aws::Vector<AvailabilityZoneMessage> m_messages;
     bool m_messagesHasBeenSet;
+
     Aws::String m_regionName;
     bool m_regionNameHasBeenSet;
+
     Aws::String m_zoneName;
     bool m_zoneNameHasBeenSet;
   };

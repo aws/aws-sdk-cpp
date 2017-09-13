@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the rule set to which to add the rule.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of the rule set to which to add the rule.</p>
      */
     inline CreateReceiptRuleRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
+
 
     /**
      * <p>The name of an existing rule after which the new rule will be placed. If this
@@ -129,6 +131,7 @@ namespace Model
      */
     inline CreateReceiptRuleRequest& WithAfter(const char* value) { SetAfter(value); return *this;}
 
+
     /**
      * <p>A data structure that contains the specified rule's name, actions,
      * recipients, domains, enabled status, scan status, and TLS policy.</p>
@@ -160,10 +163,13 @@ namespace Model
     inline CreateReceiptRuleRequest& WithRule(ReceiptRule&& value) { SetRule(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
+
     Aws::String m_after;
     bool m_afterHasBeenSet;
+
     ReceiptRule m_rule;
     bool m_ruleHasBeenSet;
   };

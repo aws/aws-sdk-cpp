@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListHsmsResult();
-    ListHsmsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListHsmsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListHsmsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListHsmsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of ARNs that identify the HSMs.</p>
@@ -87,6 +88,7 @@ namespace Model
      * <p>The list of ARNs that identify the HSMs.</p>
      */
     inline ListHsmsResult& AddHsmList(const char* value) { m_hsmList.push_back(value); return *this; }
+
 
     /**
      * <p>If not null, more results are available. Pass this value to <a>ListHsms</a>
@@ -131,7 +133,9 @@ namespace Model
     inline ListHsmsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_hsmList;
+
     Aws::String m_nextToken;
   };
 

@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The identifier for the invalidation request. For example:
      * <code>IDFDVBD632BHDS5</code>.</p>
@@ -89,6 +90,7 @@ namespace Model
      * <code>IDFDVBD632BHDS5</code>.</p>
      */
     inline Invalidation& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The status of the invalidation request. When the invalidation batch is
@@ -132,6 +134,7 @@ namespace Model
      */
     inline Invalidation& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The date and time the invalidation request was first made. </p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The date and time the invalidation request was first made. </p>
      */
     inline Invalidation& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The current invalidation information for the batch request. </p>
@@ -183,12 +187,16 @@ namespace Model
     inline Invalidation& WithInvalidationBatch(InvalidationBatch&& value) { SetInvalidationBatch(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     InvalidationBatch m_invalidationBatch;
     bool m_invalidationBatchHasBeenSet;
   };

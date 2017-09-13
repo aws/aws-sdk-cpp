@@ -46,6 +46,7 @@ namespace Model
     Emotion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Type of emotion detected.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline Emotion& WithType(EmotionName&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>Level of confidence in the determination.</p>
      */
@@ -87,8 +89,10 @@ namespace Model
     inline Emotion& WithConfidence(double value) { SetConfidence(value); return *this;}
 
   private:
+
     EmotionName m_type;
     bool m_typeHasBeenSet;
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
   };

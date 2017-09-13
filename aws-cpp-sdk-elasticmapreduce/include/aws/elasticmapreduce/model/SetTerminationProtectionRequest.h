@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> A list of strings that uniquely identify the clusters to protect. This
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
@@ -97,6 +98,7 @@ namespace Model
      */
     inline SetTerminationProtectionRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
+
     /**
      * <p>A Boolean that indicates whether to protect the cluster and prevent the
      * Amazon EC2 instances in the cluster from shutting down due to API calls, user
@@ -119,8 +121,10 @@ namespace Model
     inline SetTerminationProtectionRequest& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_jobFlowIds;
     bool m_jobFlowIdsHasBeenSet;
+
     bool m_terminationProtected;
     bool m_terminationProtectedHasBeenSet;
   };

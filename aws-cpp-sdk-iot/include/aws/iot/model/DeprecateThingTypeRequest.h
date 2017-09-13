@@ -37,6 +37,7 @@ namespace Model
     DeprecateThingTypeRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the thing type to deprecate.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DeprecateThingTypeRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
 
+
     /**
      * <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing
      * type will not be deprecated anymore and you can associate it with things.</p>
@@ -91,8 +93,10 @@ namespace Model
     inline DeprecateThingTypeRequest& WithUndoDeprecate(bool value) { SetUndoDeprecate(value); return *this;}
 
   private:
+
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
+
     bool m_undoDeprecate;
     bool m_undoDeprecateHasBeenSet;
   };

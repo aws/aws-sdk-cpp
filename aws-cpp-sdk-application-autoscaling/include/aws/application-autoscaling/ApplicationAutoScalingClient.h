@@ -132,9 +132,10 @@ namespace Model
    * Developer Guide</i>.</p> </li> <li> <p>Provisioned read and write capacity for
    * Amazon DynamoDB tables and global secondary indexes. For more information, see
    * <a
-   * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TargetTracking.html">Auto
-   * Scaling for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-   * </li> </ul> <p>For a list of supported regions, see <a
+   * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html">Managing
+   * Throughput Capacity Automatically with DynamoDB Auto Scaling</a> in the
+   * <i>Amazon DynamoDB Developer Guide</i>.</p> </li> </ul> <p>For a list of
+   * supported regions, see <a
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS
    * Regions and Endpoints: Application Auto Scaling</a> in the <i>AWS General
    * Reference</i>.</p>
@@ -148,22 +149,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ApplicationAutoScalingClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        ApplicationAutoScalingClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ApplicationAutoScalingClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        ApplicationAutoScalingClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        ApplicationAutoScalingClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        ApplicationAutoScalingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ApplicationAutoScalingClient();
+
 
         /**
          * <p>Deletes the specified Application Auto Scaling scaling policy.</p>
@@ -468,7 +470,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void DeleteScalingPolicyAsyncHelper(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

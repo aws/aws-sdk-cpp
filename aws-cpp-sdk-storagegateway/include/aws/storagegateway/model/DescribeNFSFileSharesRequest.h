@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
      * described. </p>
@@ -89,6 +90,7 @@ namespace Model
     inline DescribeNFSFileSharesRequest& AddFileShareARNList(const char* value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_fileShareARNList;
     bool m_fileShareARNListHasBeenSet;
   };

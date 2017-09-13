@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteSchemaResult();
-    DeleteSchemaResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The input ARN that is returned as part of the response. For more information,
@@ -84,6 +85,7 @@ namespace Model
     inline DeleteSchemaResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
   };
 

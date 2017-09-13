@@ -30,12 +30,12 @@ ListCreateAccountStatusResult::ListCreateAccountStatusResult()
 {
 }
 
-ListCreateAccountStatusResult::ListCreateAccountStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+ListCreateAccountStatusResult::ListCreateAccountStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListCreateAccountStatusResult& ListCreateAccountStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListCreateAccountStatusResult& ListCreateAccountStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CreateAccountStatuses"))

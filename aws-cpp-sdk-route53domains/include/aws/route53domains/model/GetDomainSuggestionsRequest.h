@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A domain name that you want to use as the basis for a list of possible domain
      * names. The domain name must contain a top-level domain (TLD), such as .com, that
@@ -106,6 +107,7 @@ namespace Model
      */
     inline GetDomainSuggestionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The number of suggested domain names that you want Amazon Route 53 to
      * return.</p>
@@ -123,6 +125,7 @@ namespace Model
      * return.</p>
      */
     inline GetDomainSuggestionsRequest& WithSuggestionCount(int value) { SetSuggestionCount(value); return *this;}
+
 
     /**
      * <p>If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns
@@ -155,10 +158,13 @@ namespace Model
     inline GetDomainSuggestionsRequest& WithOnlyAvailable(bool value) { SetOnlyAvailable(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     int m_suggestionCount;
     bool m_suggestionCountHasBeenSet;
+
     bool m_onlyAvailable;
     bool m_onlyAvailableHasBeenSet;
   };

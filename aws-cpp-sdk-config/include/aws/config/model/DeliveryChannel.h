@@ -47,6 +47,7 @@ namespace Model
     DeliveryChannel& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the delivery channel. By default, AWS Config assigns the name
      * "default" when creating the delivery channel. To change the delivery channel
@@ -109,6 +110,7 @@ namespace Model
      * a delivery channel that has the desired name.</p>
      */
     inline DeliveryChannel& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
@@ -180,6 +182,7 @@ namespace Model
      */
     inline DeliveryChannel& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
+
     /**
      * <p>The prefix for the specified Amazon S3 bucket.</p>
      */
@@ -214,6 +217,7 @@ namespace Model
      * <p>The prefix for the specified Amazon S3 bucket.</p>
      */
     inline DeliveryChannel& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
@@ -285,6 +289,7 @@ namespace Model
      */
     inline DeliveryChannel& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
 
+
     /**
      * <p>The options for how often AWS Config delivers configuration snapshots to the
      * Amazon S3 bucket.</p>
@@ -316,14 +321,19 @@ namespace Model
     inline DeliveryChannel& WithConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties&& value) { SetConfigSnapshotDeliveryProperties(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet;
+
     Aws::String m_s3KeyPrefix;
     bool m_s3KeyPrefixHasBeenSet;
+
     Aws::String m_snsTopicARN;
     bool m_snsTopicARNHasBeenSet;
+
     ConfigSnapshotDeliveryProperties m_configSnapshotDeliveryProperties;
     bool m_configSnapshotDeliveryPropertiesHasBeenSet;
   };

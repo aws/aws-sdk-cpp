@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DeleteObjectsResult();
-    DeleteObjectsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteObjectsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteObjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteObjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::Vector<DeletedObject>& GetDeleted() const{ return m_deleted; }
@@ -65,6 +66,7 @@ namespace Model
     
     inline DeleteObjectsResult& AddDeleted(DeletedObject&& value) { m_deleted.push_back(std::move(value)); return *this; }
 
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -79,6 +81,7 @@ namespace Model
 
     
     inline DeleteObjectsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
+
 
     
     inline const Aws::Vector<Error>& GetErrors() const{ return m_errors; }
@@ -102,8 +105,11 @@ namespace Model
     inline DeleteObjectsResult& AddErrors(Error&& value) { m_errors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<DeletedObject> m_deleted;
+
     RequestCharged m_requestCharged;
+
     Aws::Vector<Error> m_errors;
   };
 

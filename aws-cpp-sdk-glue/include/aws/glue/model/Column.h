@@ -45,6 +45,7 @@ namespace Model
     Column& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the <code>Column</code>.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline Column& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The datatype of data in the <code>Column</code>.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>The datatype of data in the <code>Column</code>.</p>
      */
     inline Column& WithType(const char* value) { SetType(value); return *this;}
+
 
     /**
      * <p>Free-form text comment.</p>
@@ -151,10 +154,13 @@ namespace Model
     inline Column& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
   };

@@ -59,6 +59,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>Enabled is <code>true</code> if any of the AWS accounts listed in the
      * <code>TrustedSigners</code> complex type for this RTMP distribution have active
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ActiveTrustedSigners& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each
      * trusted signer specified in the <code>TrustedSigners</code> complex type.</p>
@@ -103,6 +105,7 @@ namespace Model
      * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline ActiveTrustedSigners& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each
@@ -154,10 +157,13 @@ namespace Model
     inline ActiveTrustedSigners& AddItems(Signer&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<Signer> m_items;
     bool m_itemsHasBeenSet;
   };

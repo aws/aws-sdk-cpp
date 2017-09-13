@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     AttachThingPrincipalResult();
-    AttachThingPrincipalResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachThingPrincipalResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachThingPrincipalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachThingPrincipalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

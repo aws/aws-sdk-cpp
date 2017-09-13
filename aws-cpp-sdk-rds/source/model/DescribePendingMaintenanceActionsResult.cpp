@@ -31,12 +31,12 @@ DescribePendingMaintenanceActionsResult::DescribePendingMaintenanceActionsResult
 {
 }
 
-DescribePendingMaintenanceActionsResult::DescribePendingMaintenanceActionsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribePendingMaintenanceActionsResult::DescribePendingMaintenanceActionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribePendingMaintenanceActionsResult& DescribePendingMaintenanceActionsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribePendingMaintenanceActionsResult& DescribePendingMaintenanceActionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

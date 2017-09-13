@@ -30,12 +30,12 @@ CreateComputeEnvironmentResult::CreateComputeEnvironmentResult()
 {
 }
 
-CreateComputeEnvironmentResult::CreateComputeEnvironmentResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateComputeEnvironmentResult::CreateComputeEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateComputeEnvironmentResult& CreateComputeEnvironmentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateComputeEnvironmentResult& CreateComputeEnvironmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("computeEnvironmentName"))

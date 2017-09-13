@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Amazon Cognito user pool.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The ID of the Amazon Cognito user pool.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The app client ID.</p>
@@ -112,6 +114,7 @@ namespace Model
      */
     inline AdminRespondToAuthChallengeRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 
+
     /**
      * <p>The challenge name. For more information, see <a
      * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
@@ -141,6 +144,7 @@ namespace Model
      * href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(std::move(value)); return *this;}
+
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
@@ -406,6 +410,7 @@ namespace Model
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const char* key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 
+
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
      * the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code>
@@ -470,14 +475,19 @@ namespace Model
     inline AdminRespondToAuthChallengeRequest& WithSession(const char* value) { SetSession(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     ChallengeNameType m_challengeName;
     bool m_challengeNameHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_challengeResponses;
     bool m_challengeResponsesHasBeenSet;
+
     Aws::String m_session;
     bool m_sessionHasBeenSet;
   };

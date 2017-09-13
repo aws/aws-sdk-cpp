@@ -31,12 +31,12 @@ SetSubnetsResult::SetSubnetsResult()
 {
 }
 
-SetSubnetsResult::SetSubnetsResult(const AmazonWebServiceResult<XmlDocument>& result)
+SetSubnetsResult::SetSubnetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SetSubnetsResult& SetSubnetsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SetSubnetsResult& SetSubnetsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -30,12 +30,12 @@ GetRegistrationCodeResult::GetRegistrationCodeResult()
 {
 }
 
-GetRegistrationCodeResult::GetRegistrationCodeResult(const AmazonWebServiceResult<JsonValue>& result)
+GetRegistrationCodeResult::GetRegistrationCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetRegistrationCodeResult& GetRegistrationCodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetRegistrationCodeResult& GetRegistrationCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("registrationCode"))

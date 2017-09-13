@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetVaultAccessPolicyResult();
-    GetVaultAccessPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetVaultAccessPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetVaultAccessPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetVaultAccessPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Contains the returned vault access policy as a JSON string.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline GetVaultAccessPolicyResult& WithPolicy(VaultAccessPolicy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
+
     VaultAccessPolicy m_policy;
   };
 

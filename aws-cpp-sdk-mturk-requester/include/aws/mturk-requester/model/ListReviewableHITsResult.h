@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListReviewableHITsResult();
-    ListReviewableHITsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListReviewableHITsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListReviewableHITsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListReviewableHITsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -64,6 +65,7 @@ namespace Model
     
     inline ListReviewableHITsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> The number of HITs on this page in the filtered results list, equivalent to
      * the number of HITs being returned by this call. </p>
@@ -81,6 +83,7 @@ namespace Model
      * the number of HITs being returned by this call. </p>
      */
     inline ListReviewableHITsResult& WithNumResults(int value) { SetNumResults(value); return *this;}
+
 
     /**
      * <p> The list of HIT elements returned by the query.</p>
@@ -118,8 +121,11 @@ namespace Model
     inline ListReviewableHITsResult& AddHITs(HIT&& value) { m_hITs.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     int m_numResults;
+
     Aws::Vector<HIT> m_hITs;
   };
 

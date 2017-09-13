@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * only include those with the specified names.</p>
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeApplicationsRequest& AddApplicationNames(const char* value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_applicationNames;
     bool m_applicationNamesHasBeenSet;
   };

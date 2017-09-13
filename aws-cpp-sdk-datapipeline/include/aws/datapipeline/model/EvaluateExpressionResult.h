@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     EvaluateExpressionResult();
-    EvaluateExpressionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EvaluateExpressionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EvaluateExpressionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EvaluateExpressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The evaluated expression.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline EvaluateExpressionResult& WithEvaluatedExpression(const char* value) { SetEvaluatedExpression(value); return *this;}
 
   private:
+
     Aws::String m_evaluatedExpression;
   };
 

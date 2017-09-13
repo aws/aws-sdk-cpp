@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the association between a network ACL and a subnet.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline NetworkAclAssociation& WithNetworkAclAssociationId(const char* value) { SetNetworkAclAssociationId(value); return *this;}
 
+
     /**
      * <p>The ID of the network ACL.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The ID of the network ACL.</p>
      */
     inline NetworkAclAssociation& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
+
 
     /**
      * <p>The ID of the subnet.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline NetworkAclAssociation& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
+
     Aws::String m_networkAclAssociationId;
     bool m_networkAclAssociationIdHasBeenSet;
+
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     PutComplianceItemsResult();
-    PutComplianceItemsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutComplianceItemsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutComplianceItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutComplianceItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

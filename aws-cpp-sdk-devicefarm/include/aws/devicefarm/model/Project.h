@@ -47,6 +47,7 @@ namespace Model
     Project& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The project's ARN.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The project's ARN.</p>
      */
     inline Project& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The project's name.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline Project& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The default number of minutes (at the project level) a test run will execute
      * before it times out. Default value is 60 minutes.</p>
@@ -134,6 +137,7 @@ namespace Model
      * before it times out. Default value is 60 minutes.</p>
      */
     inline Project& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
+
 
     /**
      * <p>When the project was created.</p>
@@ -161,12 +165,16 @@ namespace Model
     inline Project& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_defaultJobTimeoutMinutes;
     bool m_defaultJobTimeoutMinutesHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
   };

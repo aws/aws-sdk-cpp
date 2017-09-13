@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ReleaseStaticIpResult();
-    ReleaseStaticIpResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReleaseStaticIpResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReleaseStaticIpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReleaseStaticIpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the request
@@ -85,6 +86,7 @@ namespace Model
     inline ReleaseStaticIpResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Operation> m_operations;
   };
 

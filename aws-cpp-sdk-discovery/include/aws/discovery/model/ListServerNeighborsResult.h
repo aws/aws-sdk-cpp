@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListServerNeighborsResult();
-    ListServerNeighborsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListServerNeighborsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListServerNeighborsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListServerNeighborsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of distinct servers that are one hop away from the given server.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>List of distinct servers that are one hop away from the given server.</p>
      */
     inline ListServerNeighborsResult& AddNeighbors(NeighborConnectionDetail&& value) { m_neighbors.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token to retrieve the next set of results. For example, if you specified 100
@@ -141,6 +143,7 @@ namespace Model
      */
     inline ListServerNeighborsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Count of distinct servers that are one hop away from the given server.</p>
      */
@@ -157,8 +160,11 @@ namespace Model
     inline ListServerNeighborsResult& WithKnownDependencyCount(long long value) { SetKnownDependencyCount(value); return *this;}
 
   private:
+
     Aws::Vector<NeighborConnectionDetail> m_neighbors;
+
     Aws::String m_nextToken;
+
     long long m_knownDependencyCount;
   };
 

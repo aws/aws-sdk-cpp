@@ -47,6 +47,7 @@ namespace Model
     ResultSetMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Information about the columns in a query execution result.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
     inline ResultSetMetadata& AddColumnInfo(ColumnInfo&& value) { m_columnInfoHasBeenSet = true; m_columnInfo.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ColumnInfo> m_columnInfo;
     bool m_columnInfoHasBeenSet;
   };

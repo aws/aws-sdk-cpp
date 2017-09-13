@@ -46,6 +46,7 @@ namespace Model
     EcsParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the task definition to use if the event target is an Amazon ECS
      * cluster. </p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline EcsParameters& WithTaskDefinitionArn(const char* value) { SetTaskDefinitionArn(value); return *this;}
 
+
     /**
      * <p>The number of tasks to create based on the <code>TaskDefinition</code>. The
      * default is one.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline EcsParameters& WithTaskCount(int value) { SetTaskCount(value); return *this;}
 
   private:
+
     Aws::String m_taskDefinitionArn;
     bool m_taskDefinitionArnHasBeenSet;
+
     int m_taskCount;
     bool m_taskCountHasBeenSet;
   };

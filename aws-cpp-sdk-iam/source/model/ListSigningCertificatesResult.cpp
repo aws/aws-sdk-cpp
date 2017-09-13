@@ -32,13 +32,13 @@ ListSigningCertificatesResult::ListSigningCertificatesResult() :
 {
 }
 
-ListSigningCertificatesResult::ListSigningCertificatesResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListSigningCertificatesResult::ListSigningCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListSigningCertificatesResult& ListSigningCertificatesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListSigningCertificatesResult& ListSigningCertificatesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

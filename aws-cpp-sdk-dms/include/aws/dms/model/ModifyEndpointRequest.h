@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
@@ -85,6 +86,7 @@ namespace Model
      * endpoint.</p>
      */
     inline ModifyEndpointRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
@@ -135,6 +137,7 @@ namespace Model
      */
     inline ModifyEndpointRequest& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
 
+
     /**
      * <p>The type of endpoint.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      * <p>The type of endpoint.</p>
      */
     inline ModifyEndpointRequest& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
@@ -209,6 +213,7 @@ namespace Model
      */
     inline ModifyEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
+
     /**
      * <p>The user name to be used to login to the endpoint database.</p>
      */
@@ -243,6 +248,7 @@ namespace Model
      * <p>The user name to be used to login to the endpoint database.</p>
      */
     inline ModifyEndpointRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>The password to be used to login to the endpoint database.</p>
@@ -279,6 +285,7 @@ namespace Model
      */
     inline ModifyEndpointRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p>The name of the server where the endpoint database resides.</p>
      */
@@ -314,6 +321,7 @@ namespace Model
      */
     inline ModifyEndpointRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
+
     /**
      * <p>The port used by the endpoint database.</p>
      */
@@ -328,6 +336,7 @@ namespace Model
      * <p>The port used by the endpoint database.</p>
      */
     inline ModifyEndpointRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The name of the endpoint database.</p>
@@ -364,6 +373,7 @@ namespace Model
      */
     inline ModifyEndpointRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>Additional attributes associated with the connection.</p>
      */
@@ -398,6 +408,7 @@ namespace Model
      * <p>Additional attributes associated with the connection.</p>
      */
     inline ModifyEndpointRequest& WithExtraConnectionAttributes(const char* value) { SetExtraConnectionAttributes(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate used for SSL
@@ -441,6 +452,7 @@ namespace Model
      */
     inline ModifyEndpointRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
     /**
      * <p>The SSL mode to be used.</p> <p>SSL mode can be one of four values: none,
      * require, verify-ca, verify-full. </p> <p>The default value is none.</p>
@@ -470,6 +482,7 @@ namespace Model
      * require, verify-ca, verify-full. </p> <p>The default value is none.</p>
      */
     inline ModifyEndpointRequest& WithSslMode(DmsSslModeValue&& value) { SetSslMode(std::move(value)); return *this;}
+
 
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
@@ -521,6 +534,7 @@ namespace Model
      */
     inline ModifyEndpointRequest& WithDynamoDbSettings(DynamoDbSettings&& value) { SetDynamoDbSettings(std::move(value)); return *this;}
 
+
     /**
      * <p>Settings in JSON format for the target S3 endpoint. For more information
      * about the available settings, see the <b>Extra Connection Attributes</b> section
@@ -565,6 +579,7 @@ namespace Model
      * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
      */
     inline ModifyEndpointRequest& WithS3Settings(S3Settings&& value) { SetS3Settings(std::move(value)); return *this;}
+
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
@@ -612,34 +627,49 @@ namespace Model
     inline ModifyEndpointRequest& WithMongoDbSettings(MongoDbSettings&& value) { SetMongoDbSettings(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet;
+
     Aws::String m_endpointIdentifier;
     bool m_endpointIdentifierHasBeenSet;
+
     ReplicationEndpointTypeValue m_endpointType;
     bool m_endpointTypeHasBeenSet;
+
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_extraConnectionAttributes;
     bool m_extraConnectionAttributesHasBeenSet;
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     DmsSslModeValue m_sslMode;
     bool m_sslModeHasBeenSet;
+
     DynamoDbSettings m_dynamoDbSettings;
     bool m_dynamoDbSettingsHasBeenSet;
+
     S3Settings m_s3Settings;
     bool m_s3SettingsHasBeenSet;
+
     MongoDbSettings m_mongoDbSettings;
     bool m_mongoDbSettingsHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeReplicationInstancesResult::DescribeReplicationInstancesResult()
 {
 }
 
-DescribeReplicationInstancesResult::DescribeReplicationInstancesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeReplicationInstancesResult::DescribeReplicationInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeReplicationInstancesResult& DescribeReplicationInstancesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeReplicationInstancesResult& DescribeReplicationInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Marker"))

@@ -47,6 +47,7 @@ namespace Model
     TimeToLiveDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The Time to Live status for the table.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p> The Time to Live status for the table.</p>
      */
     inline TimeToLiveDescription& WithTimeToLiveStatus(TimeToLiveStatus&& value) { SetTimeToLiveStatus(std::move(value)); return *this;}
+
 
     /**
      * <p> The name of the Time to Live attribute for items in the table.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline TimeToLiveDescription& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
   private:
+
     TimeToLiveStatus m_timeToLiveStatus;
     bool m_timeToLiveStatusHasBeenSet;
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
   };

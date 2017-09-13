@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetServerCertificateResult();
-    GetServerCertificateResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetServerCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetServerCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetServerCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure containing details about the server certificate.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline GetServerCertificateResult& WithServerCertificate(ServerCertificate&& value) { SetServerCertificate(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline GetServerCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ServerCertificate m_serverCertificate;
+
     ResponseMetadata m_responseMetadata;
   };
 

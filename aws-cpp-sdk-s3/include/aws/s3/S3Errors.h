@@ -55,7 +55,7 @@ enum class S3Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BUCKET_ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BUCKET_ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BUCKET_ALREADY_OWNED_BY_YOU,
   NO_SUCH_BUCKET,
   NO_SUCH_KEY,
@@ -65,7 +65,7 @@ enum class S3Errors
 };
 namespace S3ErrorMapper
 {
-  AWS_S3_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_S3_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace S3

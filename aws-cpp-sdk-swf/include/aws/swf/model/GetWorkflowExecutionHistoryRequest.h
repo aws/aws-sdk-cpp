@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain containing the workflow execution.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline GetWorkflowExecutionHistoryRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>Specifies the workflow execution for which to return the history.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>Specifies the workflow execution for which to return the history.</p>
      */
     inline GetWorkflowExecutionHistoryRequest& WithExecution(WorkflowExecution&& value) { SetExecution(std::move(value)); return *this;}
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -160,6 +163,7 @@ namespace Model
      */
     inline GetWorkflowExecutionHistoryRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results that are returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of results. The
@@ -190,6 +194,7 @@ namespace Model
      */
     inline GetWorkflowExecutionHistoryRequest& WithMaximumPageSize(int value) { SetMaximumPageSize(value); return *this;}
 
+
     /**
      * <p>When set to <code>true</code>, returns the events in reverse order. By
      * default the results are returned in ascending order of the
@@ -212,14 +217,19 @@ namespace Model
     inline GetWorkflowExecutionHistoryRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     WorkflowExecution m_execution;
     bool m_executionHasBeenSet;
+
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;
+
     int m_maximumPageSize;
     bool m_maximumPageSizeHasBeenSet;
+
     bool m_reverseOrder;
     bool m_reverseOrderHasBeenSet;
   };

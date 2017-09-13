@@ -30,12 +30,12 @@ LookupPolicyResult::LookupPolicyResult()
 {
 }
 
-LookupPolicyResult::LookupPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+LookupPolicyResult::LookupPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-LookupPolicyResult& LookupPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+LookupPolicyResult& LookupPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PolicyToPathList"))

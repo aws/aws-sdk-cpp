@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A GUID used to identify the operation.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetOperationRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
   private:
+
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;
   };

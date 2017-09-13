@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of query execution IDs.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline BatchGetQueryExecutionRequest& AddQueryExecutionIds(const char* value) { m_queryExecutionIdsHasBeenSet = true; m_queryExecutionIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_queryExecutionIds;
     bool m_queryExecutionIdsHasBeenSet;
   };

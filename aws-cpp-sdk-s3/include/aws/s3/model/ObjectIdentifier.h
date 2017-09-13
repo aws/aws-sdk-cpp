@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Key name of the object to delete.
      */
@@ -75,6 +76,7 @@ namespace Model
      * Key name of the object to delete.
      */
     inline ObjectIdentifier& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * VersionId for the specific version of the object to delete.
@@ -112,8 +114,10 @@ namespace Model
     inline ObjectIdentifier& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
   };

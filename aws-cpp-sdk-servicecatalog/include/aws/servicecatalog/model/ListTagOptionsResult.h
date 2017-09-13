@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListTagOptionsResult();
-    ListTagOptionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resulting detailed TagOption information.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The resulting detailed TagOption information.</p>
      */
     inline ListTagOptionsResult& AddTagOptionDetails(TagOptionDetail&& value) { m_tagOptionDetails.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first
@@ -121,7 +123,9 @@ namespace Model
     inline ListTagOptionsResult& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<TagOptionDetail> m_tagOptionDetails;
+
     Aws::String m_pageToken;
   };
 

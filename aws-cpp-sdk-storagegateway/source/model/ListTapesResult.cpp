@@ -30,12 +30,12 @@ ListTapesResult::ListTapesResult()
 {
 }
 
-ListTapesResult::ListTapesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListTapesResult::ListTapesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListTapesResult& ListTapesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTapesResult& ListTapesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TapeInfos"))

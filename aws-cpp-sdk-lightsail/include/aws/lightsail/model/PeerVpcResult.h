@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PeerVpcResult();
-    PeerVpcResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PeerVpcResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PeerVpcResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PeerVpcResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the request
@@ -72,6 +73,7 @@ namespace Model
     inline PeerVpcResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
+
     Operation m_operation;
   };
 

@@ -45,6 +45,7 @@ namespace Model
     MessageTemplateType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The message template for SMS messages.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline MessageTemplateType& WithSMSMessage(const char* value) { SetSMSMessage(value); return *this;}
 
+
     /**
      * <p>The message template for email messages.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>The message template for email messages.</p>
      */
     inline MessageTemplateType& WithEmailMessage(const char* value) { SetEmailMessage(value); return *this;}
+
 
     /**
      * <p>The subject line for email messages.</p>
@@ -151,10 +154,13 @@ namespace Model
     inline MessageTemplateType& WithEmailSubject(const char* value) { SetEmailSubject(value); return *this;}
 
   private:
+
     Aws::String m_sMSMessage;
     bool m_sMSMessageHasBeenSet;
+
     Aws::String m_emailMessage;
     bool m_emailMessageHasBeenSet;
+
     Aws::String m_emailSubject;
     bool m_emailSubjectHasBeenSet;
   };

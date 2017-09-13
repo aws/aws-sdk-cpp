@@ -46,6 +46,7 @@ namespace Model
     Repository& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
@@ -109,6 +110,7 @@ namespace Model
      */
     inline Repository& WithRepositoryArn(const char* value) { SetRepositoryArn(value); return *this;}
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the
      * repository.</p>
@@ -151,6 +153,7 @@ namespace Model
      */
     inline Repository& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository.</p>
      */
@@ -185,6 +188,7 @@ namespace Model
      * <p>The name of the repository.</p>
      */
     inline Repository& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
@@ -228,6 +232,7 @@ namespace Model
      */
     inline Repository& WithRepositoryUri(const char* value) { SetRepositoryUri(value); return *this;}
 
+
     /**
      * <p>The date and time, in JavaScript date/time format, when the repository was
      * created.</p>
@@ -259,14 +264,19 @@ namespace Model
     inline Repository& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_repositoryArn;
     bool m_repositoryArnHasBeenSet;
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_repositoryUri;
     bool m_repositoryUriHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
      * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
@@ -99,6 +100,7 @@ namespace Model
      */
     inline PutKeyPolicyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>The name of the key policy.</p> <p>This value must be
      * <code>default</code>.</p>
@@ -140,6 +142,7 @@ namespace Model
      * <code>default</code>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The key policy to attach to the CMK.</p> <p>If you do not set
@@ -288,6 +291,7 @@ namespace Model
      */
     inline PutKeyPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
+
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
      * <important> <p>Setting this value to true increases the likelihood that the CMK
@@ -331,12 +335,16 @@ namespace Model
     inline PutKeyPolicyRequest& WithBypassPolicyLockoutSafetyCheck(bool value) { SetBypassPolicyLockoutSafetyCheck(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policy;
     bool m_policyHasBeenSet;
+
     bool m_bypassPolicyLockoutSafetyCheck;
     bool m_bypassPolicyLockoutSafetyCheckHasBeenSet;
   };

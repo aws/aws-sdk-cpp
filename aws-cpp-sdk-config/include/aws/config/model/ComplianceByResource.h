@@ -49,6 +49,7 @@ namespace Model
     ComplianceByResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of the AWS resource that was evaluated.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The type of the AWS resource that was evaluated.</p>
      */
     inline ComplianceByResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
 
     /**
      * <p>The ID of the AWS resource that was evaluated.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline ComplianceByResource& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>Indicates whether the AWS resource complies with all of the AWS Config rules
      * that evaluated it.</p>
@@ -150,10 +153,13 @@ namespace Model
     inline ComplianceByResource& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Compliance m_compliance;
     bool m_complianceHasBeenSet;
   };

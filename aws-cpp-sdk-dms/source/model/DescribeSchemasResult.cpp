@@ -30,12 +30,12 @@ DescribeSchemasResult::DescribeSchemasResult()
 {
 }
 
-DescribeSchemasResult::DescribeSchemasResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeSchemasResult::DescribeSchemasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeSchemasResult& DescribeSchemasResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeSchemasResult& DescribeSchemasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Marker"))

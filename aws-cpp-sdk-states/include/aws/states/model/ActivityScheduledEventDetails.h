@@ -40,6 +40,7 @@ namespace Model
     ActivityScheduledEventDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
      */
     inline ActivityScheduledEventDetails& WithResource(const char* value) { SetResource(value); return *this;}
+
 
     /**
      * <p>The JSON data input to the activity task.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline ActivityScheduledEventDetails& WithInput(const char* value) { SetInput(value); return *this;}
 
+
     /**
      * <p>The maximum allowed duration of the activity task.</p>
      */
@@ -124,6 +127,7 @@ namespace Model
      * <p>The maximum allowed duration of the activity task.</p>
      */
     inline ActivityScheduledEventDetails& WithTimeoutInSeconds(long long value) { SetTimeoutInSeconds(value); return *this;}
+
 
     /**
      * <p>The maximum allowed duration between two heartbeats for the activity
@@ -144,12 +148,16 @@ namespace Model
     inline ActivityScheduledEventDetails& WithHeartbeatInSeconds(long long value) { SetHeartbeatInSeconds(value); return *this;}
 
   private:
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     long long m_timeoutInSeconds;
     bool m_timeoutInSecondsHasBeenSet;
+
     long long m_heartbeatInSeconds;
     bool m_heartbeatInSecondsHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DeleteRuleRequest& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
 
   private:
+
     Aws::String m_ruleArn;
     bool m_ruleArnHasBeenSet;
   };

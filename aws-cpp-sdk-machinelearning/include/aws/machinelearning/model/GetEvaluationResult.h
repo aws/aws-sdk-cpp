@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetEvaluationResult();
-    GetEvaluationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEvaluationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetEvaluationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The evaluation ID which is same as the <code>EvaluationId</code> in the
@@ -92,6 +93,7 @@ namespace Model
      */
     inline GetEvaluationResult& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>MLModel</code> that was the focus of the evaluation.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      */
     inline GetEvaluationResult& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
+
     /**
      * <p>The <code>DataSource</code> used for this evaluation.</p>
      */
@@ -161,6 +164,7 @@ namespace Model
      * <p>The <code>DataSource</code> used for this evaluation.</p>
      */
     inline GetEvaluationResult& WithEvaluationDataSourceId(const char* value) { SetEvaluationDataSourceId(value); return *this;}
+
 
     /**
      * <p>The location of the data file or directory in Amazon Simple Storage Service
@@ -203,6 +207,7 @@ namespace Model
      * (Amazon S3).</p>
      */
     inline GetEvaluationResult& WithInputDataLocationS3(const char* value) { SetInputDataLocationS3(value); return *this;}
+
 
     /**
      * <p>The AWS user account that invoked the evaluation. The account type can be
@@ -253,6 +258,7 @@ namespace Model
      */
     inline GetEvaluationResult& WithCreatedByIamUser(const char* value) { SetCreatedByIamUser(value); return *this;}
 
+
     /**
      * <p>The time that the <code>Evaluation</code> was created. The time is expressed
      * in epoch time.</p>
@@ -283,6 +289,7 @@ namespace Model
      */
     inline GetEvaluationResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
      * expressed in epoch time.</p>
@@ -312,6 +319,7 @@ namespace Model
      * expressed in epoch time.</p>
      */
     inline GetEvaluationResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
@@ -347,6 +355,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
      */
     inline GetEvaluationResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The status of the evaluation. This element can have one of the following
@@ -407,6 +416,7 @@ namespace Model
      * <code>Evaluation</code> is marked as deleted. It is not usable.</li> </ul>
      */
     inline GetEvaluationResult& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Measurements of how well the <code>MLModel</code> performed using
@@ -493,6 +503,7 @@ namespace Model
      */
     inline GetEvaluationResult& WithPerformanceMetrics(PerformanceMetrics&& value) { SetPerformanceMetrics(std::move(value)); return *this;}
 
+
     /**
      * <p>A link to the file that contains logs of the <code>CreateEvaluation</code>
      * operation.</p>
@@ -534,6 +545,7 @@ namespace Model
      * operation.</p>
      */
     inline GetEvaluationResult& WithLogUri(const char* value) { SetLogUri(value); return *this;}
+
 
     /**
      * <p>A description of the most recent details about evaluating the
@@ -577,6 +589,7 @@ namespace Model
      */
     inline GetEvaluationResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
      * processing the <code>Evaluation</code>, normalized and scaled on computation
@@ -600,6 +613,7 @@ namespace Model
      * <code>Evaluation</code> is in the <code>COMPLETED</code> state.</p>
      */
     inline GetEvaluationResult& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
 
     /**
      * <p>The epoch time when Amazon Machine Learning marked the
@@ -640,6 +654,7 @@ namespace Model
      * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
      */
     inline GetEvaluationResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The epoch time when Amazon Machine Learning marked the
@@ -682,20 +697,35 @@ namespace Model
     inline GetEvaluationResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_evaluationId;
+
     Aws::String m_mLModelId;
+
     Aws::String m_evaluationDataSourceId;
+
     Aws::String m_inputDataLocationS3;
+
     Aws::String m_createdByIamUser;
+
     Aws::Utils::DateTime m_createdAt;
+
     Aws::Utils::DateTime m_lastUpdatedAt;
+
     Aws::String m_name;
+
     EntityStatus m_status;
+
     PerformanceMetrics m_performanceMetrics;
+
     Aws::String m_logUri;
+
     Aws::String m_message;
+
     long long m_computeTime;
+
     Aws::Utils::DateTime m_finishedAt;
+
     Aws::Utils::DateTime m_startedAt;
   };
 

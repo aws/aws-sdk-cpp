@@ -45,6 +45,7 @@ namespace Model
     ProjectSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the project.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID of the project.</p>
      */
     inline ProjectSummary& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the project.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline ProjectSummary& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
 
   private:
+
     Aws::String m_projectId;
     bool m_projectIdHasBeenSet;
+
     Aws::String m_projectArn;
     bool m_projectArnHasBeenSet;
   };

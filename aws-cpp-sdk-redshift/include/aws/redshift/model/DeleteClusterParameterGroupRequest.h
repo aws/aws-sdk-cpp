@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the parameter group to be deleted.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
@@ -91,6 +92,7 @@ namespace Model
     inline DeleteClusterParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
   };

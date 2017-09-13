@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The desired data set type.</p> <p> <ul> <li>
      * <strong>customer_subscriber_hourly_monthly_subscriptions</strong> <p>From
@@ -378,6 +379,7 @@ namespace Model
      */
     inline GenerateDataSetRequest& WithDataSetType(DataSetType&& value) { SetDataSetType(std::move(value)); return *this;}
 
+
     /**
      * The date a data set was published. For daily data sets, provide a date with
      * day-level granularity for the desired day. For weekly data sets, provide a date
@@ -423,6 +425,7 @@ namespace Model
      */
     inline GenerateDataSetRequest& WithDataSetPublicationDate(Aws::Utils::DateTime&& value) { SetDataSetPublicationDate(std::move(value)); return *this;}
 
+
     /**
      * The Amazon Resource Name (ARN) of the Role with an attached permissions policy
      * to interact with the provided AWS services.
@@ -465,6 +468,7 @@ namespace Model
      */
     inline GenerateDataSetRequest& WithRoleNameArn(const char* value) { SetRoleNameArn(value); return *this;}
 
+
     /**
      * The name (friendly name, not ARN) of the destination S3 bucket.
      */
@@ -499,6 +503,7 @@ namespace Model
      * The name (friendly name, not ARN) of the destination S3 bucket.
      */
     inline GenerateDataSetRequest& WithDestinationS3BucketName(const char* value) { SetDestinationS3BucketName(value); return *this;}
+
 
     /**
      * (Optional) The desired S3 prefix for the published data set, similar to a
@@ -570,6 +575,7 @@ namespace Model
      */
     inline GenerateDataSetRequest& WithDestinationS3Prefix(const char* value) { SetDestinationS3Prefix(value); return *this;}
 
+
     /**
      * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data
      * set has been published or if an error has occurred.
@@ -611,6 +617,7 @@ namespace Model
      * set has been published or if an error has occurred.
      */
     inline GenerateDataSetRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+
 
     /**
      * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS
@@ -697,18 +704,25 @@ namespace Model
     inline GenerateDataSetRequest& AddCustomerDefinedValues(const char* key, const char* value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(key, value); return *this; }
 
   private:
+
     DataSetType m_dataSetType;
     bool m_dataSetTypeHasBeenSet;
+
     Aws::Utils::DateTime m_dataSetPublicationDate;
     bool m_dataSetPublicationDateHasBeenSet;
+
     Aws::String m_roleNameArn;
     bool m_roleNameArnHasBeenSet;
+
     Aws::String m_destinationS3BucketName;
     bool m_destinationS3BucketNameHasBeenSet;
+
     Aws::String m_destinationS3Prefix;
     bool m_destinationS3PrefixHasBeenSet;
+
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_customerDefinedValues;
     bool m_customerDefinedValuesHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     AdditionalLimit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Name of Additional Limit is specific to a given InstanceType and for each of
      * it's <code> <a>InstanceRole</a> </code> etc. <br/> Attributes and their details:
@@ -138,6 +139,7 @@ namespace Model
      */
     inline AdditionalLimit& WithLimitName(const char* value) { SetLimitName(value); return *this;}
 
+
     /**
      * <p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>
      */
@@ -179,8 +181,10 @@ namespace Model
     inline AdditionalLimit& AddLimitValues(const char* value) { m_limitValuesHasBeenSet = true; m_limitValues.push_back(value); return *this; }
 
   private:
+
     Aws::String m_limitName;
     bool m_limitNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_limitValues;
     bool m_limitValuesHasBeenSet;
   };

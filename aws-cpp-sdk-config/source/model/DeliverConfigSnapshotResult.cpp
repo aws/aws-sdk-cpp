@@ -30,12 +30,12 @@ DeliverConfigSnapshotResult::DeliverConfigSnapshotResult()
 {
 }
 
-DeliverConfigSnapshotResult::DeliverConfigSnapshotResult(const AmazonWebServiceResult<JsonValue>& result)
+DeliverConfigSnapshotResult::DeliverConfigSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeliverConfigSnapshotResult& DeliverConfigSnapshotResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeliverConfigSnapshotResult& DeliverConfigSnapshotResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("configSnapshotId"))

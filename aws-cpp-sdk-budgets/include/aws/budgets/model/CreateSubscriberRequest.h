@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline CreateSubscriberRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
@@ -83,6 +85,7 @@ namespace Model
     
     inline CreateSubscriberRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
 
+
     
     inline const Notification& GetNotification() const{ return m_notification; }
 
@@ -97,6 +100,7 @@ namespace Model
 
     
     inline CreateSubscriberRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
+
 
     
     inline const Subscriber& GetSubscriber() const{ return m_subscriber; }
@@ -114,12 +118,16 @@ namespace Model
     inline CreateSubscriberRequest& WithSubscriber(Subscriber&& value) { SetSubscriber(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_budgetName;
     bool m_budgetNameHasBeenSet;
+
     Notification m_notification;
     bool m_notificationHasBeenSet;
+
     Subscriber m_subscriber;
     bool m_subscriberHasBeenSet;
   };

@@ -31,12 +31,12 @@ AssociateAddressResponse::AssociateAddressResponse()
 {
 }
 
-AssociateAddressResponse::AssociateAddressResponse(const AmazonWebServiceResult<XmlDocument>& result)
+AssociateAddressResponse::AssociateAddressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AssociateAddressResponse& AssociateAddressResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AssociateAddressResponse& AssociateAddressResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

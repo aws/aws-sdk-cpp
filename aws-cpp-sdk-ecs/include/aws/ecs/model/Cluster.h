@@ -48,6 +48,7 @@ namespace Model
     Cluster& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the region of the cluster,
@@ -118,6 +119,7 @@ namespace Model
      */
     inline Cluster& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
 
+
     /**
      * <p>A user-generated string that you use to identify your cluster.</p>
      */
@@ -152,6 +154,7 @@ namespace Model
      * <p>A user-generated string that you use to identify your cluster.</p>
      */
     inline Cluster& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+
 
     /**
      * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
@@ -209,6 +212,7 @@ namespace Model
      */
     inline Cluster& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The number of container instances registered into the cluster.</p>
      */
@@ -223,6 +227,7 @@ namespace Model
      * <p>The number of container instances registered into the cluster.</p>
      */
     inline Cluster& WithRegisteredContainerInstancesCount(int value) { SetRegisteredContainerInstancesCount(value); return *this;}
+
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
@@ -242,6 +247,7 @@ namespace Model
      */
     inline Cluster& WithRunningTasksCount(int value) { SetRunningTasksCount(value); return *this;}
 
+
     /**
      * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
      * state.</p>
@@ -259,6 +265,7 @@ namespace Model
      * state.</p>
      */
     inline Cluster& WithPendingTasksCount(int value) { SetPendingTasksCount(value); return *this;}
+
 
     /**
      * <p>The number of services that are running on the cluster in an
@@ -282,18 +289,25 @@ namespace Model
     inline Cluster& WithActiveServicesCount(int value) { SetActiveServicesCount(value); return *this;}
 
   private:
+
     Aws::String m_clusterArn;
     bool m_clusterArnHasBeenSet;
+
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     int m_registeredContainerInstancesCount;
     bool m_registeredContainerInstancesCountHasBeenSet;
+
     int m_runningTasksCount;
     bool m_runningTasksCountHasBeenSet;
+
     int m_pendingTasksCount;
     bool m_pendingTasksCountHasBeenSet;
+
     int m_activeServicesCount;
     bool m_activeServicesCountHasBeenSet;
   };

@@ -31,12 +31,12 @@ GenerateRandomResult::GenerateRandomResult()
 {
 }
 
-GenerateRandomResult::GenerateRandomResult(const AmazonWebServiceResult<JsonValue>& result)
+GenerateRandomResult::GenerateRandomResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GenerateRandomResult& GenerateRandomResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GenerateRandomResult& GenerateRandomResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Plaintext"))

@@ -30,12 +30,12 @@ DescribePipelinesResult::DescribePipelinesResult()
 {
 }
 
-DescribePipelinesResult::DescribePipelinesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribePipelinesResult::DescribePipelinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribePipelinesResult& DescribePipelinesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribePipelinesResult& DescribePipelinesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("pipelineDescriptionList"))

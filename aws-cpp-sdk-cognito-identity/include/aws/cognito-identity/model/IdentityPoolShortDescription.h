@@ -45,6 +45,7 @@ namespace Model
     IdentityPoolShortDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline IdentityPoolShortDescription& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+
 
     /**
      * <p>A string that you provide.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline IdentityPoolShortDescription& WithIdentityPoolName(const char* value) { SetIdentityPoolName(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::String m_identityPoolName;
     bool m_identityPoolNameHasBeenSet;
   };

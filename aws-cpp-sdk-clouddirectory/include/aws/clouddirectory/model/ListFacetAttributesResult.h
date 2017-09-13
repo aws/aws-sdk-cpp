@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListFacetAttributesResult();
-    ListFacetAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFacetAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFacetAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFacetAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The attributes attached to the facet.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The attributes attached to the facet.</p>
      */
     inline ListFacetAttributesResult& AddAttributes(FacetAttribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline ListFacetAttributesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<FacetAttribute> m_attributes;
+
     Aws::String m_nextToken;
   };
 

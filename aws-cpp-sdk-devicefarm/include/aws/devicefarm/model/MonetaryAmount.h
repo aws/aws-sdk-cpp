@@ -46,6 +46,7 @@ namespace Model
     MonetaryAmount& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The numerical amount of an offering or transaction.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The numerical amount of an offering or transaction.</p>
      */
     inline MonetaryAmount& WithAmount(double value) { SetAmount(value); return *this;}
+
 
     /**
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
@@ -92,8 +94,10 @@ namespace Model
     inline MonetaryAmount& WithCurrencyCode(CurrencyCode&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
   private:
+
     double m_amount;
     bool m_amountHasBeenSet;
+
     CurrencyCode m_currencyCode;
     bool m_currencyCodeHasBeenSet;
   };

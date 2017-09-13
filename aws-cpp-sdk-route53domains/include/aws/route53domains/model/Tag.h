@@ -45,6 +45,7 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key (name) of a tag.</p> <p>Valid values: A-Z, a-z, 0-9, space,
      * ".:/=+\-@"</p> <p>Constraints: Each key can be 1-128 characters long.</p>
@@ -86,6 +87,7 @@ namespace Model
      * ".:/=+\-@"</p> <p>Constraints: Each key can be 1-128 characters long.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The value of a tag.</p> <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
@@ -130,8 +132,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

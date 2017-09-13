@@ -45,6 +45,7 @@ namespace Model
     PipelineIdName& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
      * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline PipelineIdName& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name of the pipeline.</p>
      */
@@ -123,8 +125,10 @@ namespace Model
     inline PipelineIdName& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

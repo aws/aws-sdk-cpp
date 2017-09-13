@@ -48,6 +48,7 @@ namespace Model
     Pipeline& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier for the pipeline. You use this value to identify the pipeline
      * in which you want to perform a variety of operations, such as creating a job or
@@ -97,6 +98,7 @@ namespace Model
      */
     inline Pipeline& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the pipeline.</p>
      */
@@ -131,6 +133,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the pipeline.</p>
      */
     inline Pipeline& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The name of the pipeline. We recommend that the name be unique within the AWS
@@ -181,6 +184,7 @@ namespace Model
      */
     inline Pipeline& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The current status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
      * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
@@ -229,6 +233,7 @@ namespace Model
      * pipeline is not currently processing jobs.</p> </li> </ul>
      */
     inline Pipeline& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The Amazon S3 bucket from which Elastic Transcoder gets media files for
@@ -279,6 +284,7 @@ namespace Model
      */
     inline Pipeline& WithInputBucket(const char* value) { SetInputBucket(value); return *this;}
 
+
     /**
      * <p>The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded
      * files, thumbnails, and playlists. Either you specify this value, or you specify
@@ -328,6 +334,7 @@ namespace Model
      */
     inline Pipeline& WithOutputBucket(const char* value) { SetOutputBucket(value); return *this;}
 
+
     /**
      * <p>The IAM Amazon Resource Name (ARN) for the role that Elastic Transcoder uses
      * to transcode jobs for this pipeline.</p>
@@ -369,6 +376,7 @@ namespace Model
      * to transcode jobs for this pipeline.</p>
      */
     inline Pipeline& WithRole(const char* value) { SetRole(value); return *this;}
+
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
@@ -446,6 +454,7 @@ namespace Model
      * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
      */
     inline Pipeline& WithAwsKmsKeyArn(const char* value) { SetAwsKmsKeyArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
@@ -526,6 +535,7 @@ namespace Model
      * </li> </ul>
      */
     inline Pipeline& WithNotifications(Notifications&& value) { SetNotifications(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the Amazon S3 bucket in which you want Elastic Transcoder
@@ -696,6 +706,7 @@ namespace Model
      * files and playlists that it stores in your Amazon S3 bucket. </p> </li> </ul>
      */
     inline Pipeline& WithContentConfig(PipelineOutputConfig&& value) { SetContentConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the Amazon S3 bucket in which you want Elastic Transcoder
@@ -873,26 +884,37 @@ namespace Model
     inline Pipeline& WithThumbnailConfig(PipelineOutputConfig&& value) { SetThumbnailConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_inputBucket;
     bool m_inputBucketHasBeenSet;
+
     Aws::String m_outputBucket;
     bool m_outputBucketHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     Aws::String m_awsKmsKeyArn;
     bool m_awsKmsKeyArnHasBeenSet;
+
     Notifications m_notifications;
     bool m_notificationsHasBeenSet;
+
     PipelineOutputConfig m_contentConfig;
     bool m_contentConfigHasBeenSet;
+
     PipelineOutputConfig m_thumbnailConfig;
     bool m_thumbnailConfigHasBeenSet;
   };

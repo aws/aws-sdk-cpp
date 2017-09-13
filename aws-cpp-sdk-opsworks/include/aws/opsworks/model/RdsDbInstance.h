@@ -45,6 +45,7 @@ namespace Model
     RdsDbInstance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The instance's ARN.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The instance's ARN.</p>
      */
     inline RdsDbInstance& WithRdsDbInstanceArn(const char* value) { SetRdsDbInstanceArn(value); return *this;}
+
 
     /**
      * <p>The DB instance identifier.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline RdsDbInstance& WithDbInstanceIdentifier(const char* value) { SetDbInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>The master user name.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The master user name.</p>
      */
     inline RdsDbInstance& WithDbUser(const char* value) { SetDbUser(value); return *this;}
+
 
     /**
      * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
@@ -192,6 +196,7 @@ namespace Model
      */
     inline RdsDbInstance& WithDbPassword(const char* value) { SetDbPassword(value); return *this;}
 
+
     /**
      * <p>The instance's AWS region.</p>
      */
@@ -226,6 +231,7 @@ namespace Model
      * <p>The instance's AWS region.</p>
      */
     inline RdsDbInstance& WithRegion(const char* value) { SetRegion(value); return *this;}
+
 
     /**
      * <p>The instance's address.</p>
@@ -262,6 +268,7 @@ namespace Model
      */
     inline RdsDbInstance& WithAddress(const char* value) { SetAddress(value); return *this;}
 
+
     /**
      * <p>The instance's database engine.</p>
      */
@@ -296,6 +303,7 @@ namespace Model
      * <p>The instance's database engine.</p>
      */
     inline RdsDbInstance& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The ID of the stack with which the instance is registered.</p>
@@ -332,6 +340,7 @@ namespace Model
      */
     inline RdsDbInstance& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the
      * Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only
@@ -357,22 +366,31 @@ namespace Model
     inline RdsDbInstance& WithMissingOnRds(bool value) { SetMissingOnRds(value); return *this;}
 
   private:
+
     Aws::String m_rdsDbInstanceArn;
     bool m_rdsDbInstanceArnHasBeenSet;
+
     Aws::String m_dbInstanceIdentifier;
     bool m_dbInstanceIdentifierHasBeenSet;
+
     Aws::String m_dbUser;
     bool m_dbUserHasBeenSet;
+
     Aws::String m_dbPassword;
     bool m_dbPasswordHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_address;
     bool m_addressHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     bool m_missingOnRds;
     bool m_missingOnRdsHasBeenSet;
   };

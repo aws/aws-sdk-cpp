@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeUserPoolDomainResult();
-    DescribeUserPoolDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeUserPoolDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUserPoolDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUserPoolDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A domain description object containing information about the domain.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeUserPoolDomainResult& WithDomainDescription(DomainDescriptionType&& value) { SetDomainDescription(std::move(value)); return *this;}
 
   private:
+
     DomainDescriptionType m_domainDescription;
   };
 

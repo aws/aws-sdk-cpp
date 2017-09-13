@@ -1,12 +1,14 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/core/client/AWSError.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
 
 using namespace Aws::Client;
-using namespace Aws::${metadata.namespace};
+using namespace ${rootNamespace}::${serviceNamespace};
 
 AWSError<CoreErrors> ${metadata.classNamePrefix}ErrorMarshaller::FindErrorByName(const char* errorName) const
 {

@@ -30,12 +30,12 @@ DescribeDomainControllersResult::DescribeDomainControllersResult()
 {
 }
 
-DescribeDomainControllersResult::DescribeDomainControllersResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDomainControllersResult::DescribeDomainControllersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeDomainControllersResult& DescribeDomainControllersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDomainControllersResult& DescribeDomainControllersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DomainControllers"))

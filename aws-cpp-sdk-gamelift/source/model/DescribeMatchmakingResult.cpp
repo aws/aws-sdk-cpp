@@ -30,12 +30,12 @@ DescribeMatchmakingResult::DescribeMatchmakingResult()
 {
 }
 
-DescribeMatchmakingResult::DescribeMatchmakingResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMatchmakingResult::DescribeMatchmakingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeMatchmakingResult& DescribeMatchmakingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMatchmakingResult& DescribeMatchmakingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TicketList"))

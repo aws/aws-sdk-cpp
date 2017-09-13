@@ -30,12 +30,12 @@ UpdateTagsForDomainResult::UpdateTagsForDomainResult()
 {
 }
 
-UpdateTagsForDomainResult::UpdateTagsForDomainResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateTagsForDomainResult::UpdateTagsForDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateTagsForDomainResult& UpdateTagsForDomainResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateTagsForDomainResult& UpdateTagsForDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

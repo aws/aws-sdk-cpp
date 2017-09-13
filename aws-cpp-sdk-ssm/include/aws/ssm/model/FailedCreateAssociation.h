@@ -47,6 +47,7 @@ namespace Model
     FailedCreateAssociation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The association.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The association.</p>
      */
     inline FailedCreateAssociation& WithEntry(CreateAssociationBatchRequestEntry&& value) { SetEntry(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the failure.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline FailedCreateAssociation& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The source of the failure.</p>
      */
@@ -133,10 +136,13 @@ namespace Model
     inline FailedCreateAssociation& WithFault(Fault&& value) { SetFault(std::move(value)); return *this;}
 
   private:
+
     CreateAssociationBatchRequestEntry m_entry;
     bool m_entryHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Fault m_fault;
     bool m_faultHasBeenSet;
   };

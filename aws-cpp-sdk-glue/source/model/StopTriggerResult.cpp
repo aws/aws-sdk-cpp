@@ -30,12 +30,12 @@ StopTriggerResult::StopTriggerResult()
 {
 }
 
-StopTriggerResult::StopTriggerResult(const AmazonWebServiceResult<JsonValue>& result)
+StopTriggerResult::StopTriggerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopTriggerResult& StopTriggerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopTriggerResult& StopTriggerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Name"))

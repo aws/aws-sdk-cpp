@@ -50,6 +50,7 @@ namespace Model
     ComputeEnvironmentDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the compute environment. </p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentArn(const char* value) { SetComputeEnvironmentArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
@@ -162,6 +165,7 @@ namespace Model
      */
     inline ComputeEnvironmentDetail& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
 
+
     /**
      * <p>The type of the compute environment.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      * <p>The type of the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithType(CEType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The state of the compute environment. The valid values are
@@ -227,6 +232,7 @@ namespace Model
      */
     inline ComputeEnvironmentDetail& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The current status of the compute environment (for example,
      * <code>CREATING</code> or <code>VALID</code>).</p>
@@ -256,6 +262,7 @@ namespace Model
      * <code>CREATING</code> or <code>VALID</code>).</p>
      */
     inline ComputeEnvironmentDetail& WithStatus(CEStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -299,6 +306,7 @@ namespace Model
      */
     inline ComputeEnvironmentDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
     /**
      * <p>The compute resources defined for the compute environment. </p>
      */
@@ -323,6 +331,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. </p>
      */
     inline ComputeEnvironmentDetail& WithComputeResources(ComputeResource&& value) { SetComputeResources(std::move(value)); return *this;}
+
 
     /**
      * <p>The service role associated with the compute environment that allows AWS
@@ -367,22 +376,31 @@ namespace Model
     inline ComputeEnvironmentDetail& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
   private:
+
     Aws::String m_computeEnvironmentName;
     bool m_computeEnvironmentNameHasBeenSet;
+
     Aws::String m_computeEnvironmentArn;
     bool m_computeEnvironmentArnHasBeenSet;
+
     Aws::String m_ecsClusterArn;
     bool m_ecsClusterArnHasBeenSet;
+
     CEType m_type;
     bool m_typeHasBeenSet;
+
     CEState m_state;
     bool m_stateHasBeenSet;
+
     CEStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
     ComputeResource m_computeResources;
     bool m_computeResourcesHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
   };

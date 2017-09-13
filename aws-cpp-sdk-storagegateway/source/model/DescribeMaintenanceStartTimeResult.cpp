@@ -33,7 +33,7 @@ DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult() :
 {
 }
 
-DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_hourOfDay(0),
     m_minuteOfHour(0),
     m_dayOfWeek(0)
@@ -41,7 +41,7 @@ DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult(const Ama
   *this = result;
 }
 
-DescribeMaintenanceStartTimeResult& DescribeMaintenanceStartTimeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMaintenanceStartTimeResult& DescribeMaintenanceStartTimeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

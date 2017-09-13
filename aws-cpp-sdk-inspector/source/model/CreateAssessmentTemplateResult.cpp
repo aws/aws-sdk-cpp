@@ -30,12 +30,12 @@ CreateAssessmentTemplateResult::CreateAssessmentTemplateResult()
 {
 }
 
-CreateAssessmentTemplateResult::CreateAssessmentTemplateResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateAssessmentTemplateResult::CreateAssessmentTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateAssessmentTemplateResult& CreateAssessmentTemplateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateAssessmentTemplateResult& CreateAssessmentTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("assessmentTemplateArn"))

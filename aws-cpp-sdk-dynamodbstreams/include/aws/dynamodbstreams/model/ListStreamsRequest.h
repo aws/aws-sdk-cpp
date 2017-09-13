@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>If this parameter is provided, then only the streams associated with this
      * table name are returned.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline ListStreamsRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>The maximum number of streams to return. The upper limit is 100.</p>
      */
@@ -93,6 +95,7 @@ namespace Model
      * <p>The maximum number of streams to return. The upper limit is 100.</p>
      */
     inline ListStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The ARN (Amazon Resource Name) of the first item that this operation will
@@ -144,10 +147,13 @@ namespace Model
     inline ListStreamsRequest& WithExclusiveStartStreamArn(const char* value) { SetExclusiveStartStreamArn(value); return *this;}
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_exclusiveStartStreamArn;
     bool m_exclusiveStartStreamArnHasBeenSet;
   };

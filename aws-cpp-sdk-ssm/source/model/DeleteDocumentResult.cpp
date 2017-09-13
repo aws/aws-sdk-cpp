@@ -30,12 +30,12 @@ DeleteDocumentResult::DeleteDocumentResult()
 {
 }
 
-DeleteDocumentResult::DeleteDocumentResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDocumentResult::DeleteDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteDocumentResult& DeleteDocumentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDocumentResult& DeleteDocumentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

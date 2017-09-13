@@ -30,12 +30,12 @@ UnsubscribeFromDatasetResult::UnsubscribeFromDatasetResult()
 {
 }
 
-UnsubscribeFromDatasetResult::UnsubscribeFromDatasetResult(const AmazonWebServiceResult<JsonValue>& result)
+UnsubscribeFromDatasetResult::UnsubscribeFromDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UnsubscribeFromDatasetResult& UnsubscribeFromDatasetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UnsubscribeFromDatasetResult& UnsubscribeFromDatasetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

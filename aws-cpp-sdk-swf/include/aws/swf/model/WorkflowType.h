@@ -45,6 +45,7 @@ namespace Model
     WorkflowType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The name of the workflow type.</p> <note> <p>The combination of workflow
      * type name and version must be unique with in a domain.</p> </note>
@@ -86,6 +87,7 @@ namespace Model
      * type name and version must be unique with in a domain.</p> </note>
      */
     inline WorkflowType& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p> The version of the workflow type.</p> <note> <p>The combination of workflow
@@ -130,8 +132,10 @@ namespace Model
     inline WorkflowType& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

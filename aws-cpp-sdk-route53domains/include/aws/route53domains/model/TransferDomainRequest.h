@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that you want to transfer to Amazon Route 53.</p>
      * <p>Constraints: The domain name can contain only the letters a through z, the
@@ -99,6 +100,7 @@ namespace Model
      */
     inline TransferDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -134,6 +136,7 @@ namespace Model
      */
     inline TransferDomainRequest& WithIdnLangCode(const char* value) { SetIdnLangCode(value); return *this;}
 
+
     /**
      * <p>The number of years that you want to register the domain for. Domains are
      * registered for a minimum of one year. The maximum period depends on the
@@ -154,6 +157,7 @@ namespace Model
      * top-level domain.</p> <p>Default: 1</p>
      */
     inline TransferDomainRequest& WithDurationInYears(int value) { SetDurationInYears(value); return *this;}
+
 
     /**
      * <p>Contains details for the host and glue IP addresses.</p>
@@ -189,6 +193,7 @@ namespace Model
      * <p>Contains details for the host and glue IP addresses.</p>
      */
     inline TransferDomainRequest& AddNameservers(Nameserver&& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The authorization code for the domain. You get this value from the current
@@ -232,6 +237,7 @@ namespace Model
      */
     inline TransferDomainRequest& WithAuthCode(const char* value) { SetAuthCode(value); return *this;}
 
+
     /**
      * <p>Indicates whether the domain will be automatically renewed (true) or not
      * (false). Autorenewal only takes effect after the account is charged.</p>
@@ -252,6 +258,7 @@ namespace Model
      * <p>Default: true</p>
      */
     inline TransferDomainRequest& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
+
 
     /**
      * <p>Provides detailed contact information.</p>
@@ -278,6 +285,7 @@ namespace Model
      */
     inline TransferDomainRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides detailed contact information.</p>
      */
@@ -302,6 +310,7 @@ namespace Model
      * <p>Provides detailed contact information.</p>
      */
     inline TransferDomainRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides detailed contact information.</p>
@@ -328,6 +337,7 @@ namespace Model
      */
     inline TransferDomainRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries will return contact
@@ -352,6 +362,7 @@ namespace Model
      */
     inline TransferDomainRequest& WithPrivacyProtectAdminContact(bool value) { SetPrivacyProtectAdminContact(value); return *this;}
 
+
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries will return contact
@@ -375,6 +386,7 @@ namespace Model
      * that you enter.</p> <p>Default: <code>true</code> </p>
      */
     inline TransferDomainRequest& WithPrivacyProtectRegistrantContact(bool value) { SetPrivacyProtectRegistrantContact(value); return *this;}
+
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
@@ -401,28 +413,40 @@ namespace Model
     inline TransferDomainRequest& WithPrivacyProtectTechContact(bool value) { SetPrivacyProtectTechContact(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_idnLangCode;
     bool m_idnLangCodeHasBeenSet;
+
     int m_durationInYears;
     bool m_durationInYearsHasBeenSet;
+
     Aws::Vector<Nameserver> m_nameservers;
     bool m_nameserversHasBeenSet;
+
     Aws::String m_authCode;
     bool m_authCodeHasBeenSet;
+
     bool m_autoRenew;
     bool m_autoRenewHasBeenSet;
+
     ContactDetail m_adminContact;
     bool m_adminContactHasBeenSet;
+
     ContactDetail m_registrantContact;
     bool m_registrantContactHasBeenSet;
+
     ContactDetail m_techContact;
     bool m_techContactHasBeenSet;
+
     bool m_privacyProtectAdminContact;
     bool m_privacyProtectAdminContactHasBeenSet;
+
     bool m_privacyProtectRegistrantContact;
     bool m_privacyProtectRegistrantContactHasBeenSet;
+
     bool m_privacyProtectTechContact;
     bool m_privacyProtectTechContactHasBeenSet;
   };

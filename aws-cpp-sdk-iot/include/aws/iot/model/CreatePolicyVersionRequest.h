@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The policy name.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The policy name.</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
@@ -121,6 +123,7 @@ namespace Model
      */
     inline CreatePolicyVersionRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
+
     /**
      * <p>Specifies whether the policy version is set as the default. When this
      * parameter is true, the new policy version becomes the operative version (that
@@ -146,10 +149,13 @@ namespace Model
     inline CreatePolicyVersionRequest& WithSetAsDefault(bool value) { SetSetAsDefault(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
+
     bool m_setAsDefault;
     bool m_setAsDefaultHasBeenSet;
   };

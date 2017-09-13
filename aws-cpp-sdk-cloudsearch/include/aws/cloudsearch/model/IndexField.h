@@ -62,6 +62,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A string that represents the name of an index field. CloudSearch supports
      * regular index fields as well as dynamic fields. A dynamic field's name defines a
@@ -167,6 +168,7 @@ namespace Model
      */
     inline IndexField& WithIndexFieldName(const char* value) { SetIndexFieldName(value); return *this;}
 
+
     
     inline const IndexFieldType& GetIndexFieldType() const{ return m_indexFieldType; }
 
@@ -181,6 +183,7 @@ namespace Model
 
     
     inline IndexField& WithIndexFieldType(IndexFieldType&& value) { SetIndexFieldType(std::move(value)); return *this;}
+
 
     
     inline const IntOptions& GetIntOptions() const{ return m_intOptions; }
@@ -197,6 +200,7 @@ namespace Model
     
     inline IndexField& WithIntOptions(IntOptions&& value) { SetIntOptions(std::move(value)); return *this;}
 
+
     
     inline const DoubleOptions& GetDoubleOptions() const{ return m_doubleOptions; }
 
@@ -211,6 +215,7 @@ namespace Model
 
     
     inline IndexField& WithDoubleOptions(DoubleOptions&& value) { SetDoubleOptions(std::move(value)); return *this;}
+
 
     
     inline const LiteralOptions& GetLiteralOptions() const{ return m_literalOptions; }
@@ -227,6 +232,7 @@ namespace Model
     
     inline IndexField& WithLiteralOptions(LiteralOptions&& value) { SetLiteralOptions(std::move(value)); return *this;}
 
+
     
     inline const TextOptions& GetTextOptions() const{ return m_textOptions; }
 
@@ -241,6 +247,7 @@ namespace Model
 
     
     inline IndexField& WithTextOptions(TextOptions&& value) { SetTextOptions(std::move(value)); return *this;}
+
 
     
     inline const DateOptions& GetDateOptions() const{ return m_dateOptions; }
@@ -257,6 +264,7 @@ namespace Model
     
     inline IndexField& WithDateOptions(DateOptions&& value) { SetDateOptions(std::move(value)); return *this;}
 
+
     
     inline const LatLonOptions& GetLatLonOptions() const{ return m_latLonOptions; }
 
@@ -271,6 +279,7 @@ namespace Model
 
     
     inline IndexField& WithLatLonOptions(LatLonOptions&& value) { SetLatLonOptions(std::move(value)); return *this;}
+
 
     
     inline const IntArrayOptions& GetIntArrayOptions() const{ return m_intArrayOptions; }
@@ -287,6 +296,7 @@ namespace Model
     
     inline IndexField& WithIntArrayOptions(IntArrayOptions&& value) { SetIntArrayOptions(std::move(value)); return *this;}
 
+
     
     inline const DoubleArrayOptions& GetDoubleArrayOptions() const{ return m_doubleArrayOptions; }
 
@@ -301,6 +311,7 @@ namespace Model
 
     
     inline IndexField& WithDoubleArrayOptions(DoubleArrayOptions&& value) { SetDoubleArrayOptions(std::move(value)); return *this;}
+
 
     
     inline const LiteralArrayOptions& GetLiteralArrayOptions() const{ return m_literalArrayOptions; }
@@ -317,6 +328,7 @@ namespace Model
     
     inline IndexField& WithLiteralArrayOptions(LiteralArrayOptions&& value) { SetLiteralArrayOptions(std::move(value)); return *this;}
 
+
     
     inline const TextArrayOptions& GetTextArrayOptions() const{ return m_textArrayOptions; }
 
@@ -331,6 +343,7 @@ namespace Model
 
     
     inline IndexField& WithTextArrayOptions(TextArrayOptions&& value) { SetTextArrayOptions(std::move(value)); return *this;}
+
 
     
     inline const DateArrayOptions& GetDateArrayOptions() const{ return m_dateArrayOptions; }
@@ -348,30 +361,43 @@ namespace Model
     inline IndexField& WithDateArrayOptions(DateArrayOptions&& value) { SetDateArrayOptions(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_indexFieldName;
     bool m_indexFieldNameHasBeenSet;
+
     IndexFieldType m_indexFieldType;
     bool m_indexFieldTypeHasBeenSet;
+
     IntOptions m_intOptions;
     bool m_intOptionsHasBeenSet;
+
     DoubleOptions m_doubleOptions;
     bool m_doubleOptionsHasBeenSet;
+
     LiteralOptions m_literalOptions;
     bool m_literalOptionsHasBeenSet;
+
     TextOptions m_textOptions;
     bool m_textOptionsHasBeenSet;
+
     DateOptions m_dateOptions;
     bool m_dateOptionsHasBeenSet;
+
     LatLonOptions m_latLonOptions;
     bool m_latLonOptionsHasBeenSet;
+
     IntArrayOptions m_intArrayOptions;
     bool m_intArrayOptionsHasBeenSet;
+
     DoubleArrayOptions m_doubleArrayOptions;
     bool m_doubleArrayOptionsHasBeenSet;
+
     LiteralArrayOptions m_literalArrayOptions;
     bool m_literalArrayOptionsHasBeenSet;
+
     TextArrayOptions m_textArrayOptions;
     bool m_textArrayOptionsHasBeenSet;
+
     DateArrayOptions m_dateArrayOptions;
     bool m_dateArrayOptionsHasBeenSet;
   };

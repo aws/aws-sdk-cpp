@@ -30,12 +30,12 @@ AssociatePrincipalWithPortfolioResult::AssociatePrincipalWithPortfolioResult()
 {
 }
 
-AssociatePrincipalWithPortfolioResult::AssociatePrincipalWithPortfolioResult(const AmazonWebServiceResult<JsonValue>& result)
+AssociatePrincipalWithPortfolioResult::AssociatePrincipalWithPortfolioResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AssociatePrincipalWithPortfolioResult& AssociatePrincipalWithPortfolioResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociatePrincipalWithPortfolioResult& AssociatePrincipalWithPortfolioResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -50,6 +50,7 @@ namespace Model
     RenewalSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The status of ACM's <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
@@ -84,6 +85,7 @@ namespace Model
      * renewal</a> of the certificate.</p>
      */
     inline RenewalSummary& WithRenewalStatus(RenewalStatus&& value) { SetRenewalStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Contains information about the validation of each domain name in the
@@ -156,8 +158,10 @@ namespace Model
     inline RenewalSummary& AddDomainValidationOptions(DomainValidation&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
 
   private:
+
     RenewalStatus m_renewalStatus;
     bool m_renewalStatusHasBeenSet;
+
     Aws::Vector<DomainValidation> m_domainValidationOptions;
     bool m_domainValidationOptionsHasBeenSet;
   };

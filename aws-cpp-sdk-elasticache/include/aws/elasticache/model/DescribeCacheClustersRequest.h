@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The user-supplied cluster identifier. If this parameter is specified, only
      * information about that specific cache cluster is returned. This parameter isn't
@@ -91,6 +92,7 @@ namespace Model
      */
     inline DescribeCacheClustersRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 
+
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a marker is included in
@@ -114,6 +116,7 @@ namespace Model
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
     inline DescribeCacheClustersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -171,6 +174,7 @@ namespace Model
      */
     inline DescribeCacheClustersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>An optional flag that can be included in the
      * <code>DescribeCacheCluster</code> request to retrieve information about the
@@ -191,6 +195,7 @@ namespace Model
      * individual cache nodes.</p>
      */
     inline DescribeCacheClustersRequest& WithShowCacheNodeInfo(bool value) { SetShowCacheNodeInfo(value); return *this;}
+
 
     /**
      * <p>An optional flag that can be included in the
@@ -217,14 +222,19 @@ namespace Model
     inline DescribeCacheClustersRequest& WithShowCacheClustersNotInReplicationGroups(bool value) { SetShowCacheClustersNotInReplicationGroups(value); return *this;}
 
   private:
+
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     bool m_showCacheNodeInfo;
     bool m_showCacheNodeInfoHasBeenSet;
+
     bool m_showCacheClustersNotInReplicationGroups;
     bool m_showCacheClustersNotInReplicationGroupsHasBeenSet;
   };

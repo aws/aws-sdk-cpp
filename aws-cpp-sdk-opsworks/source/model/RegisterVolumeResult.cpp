@@ -30,12 +30,12 @@ RegisterVolumeResult::RegisterVolumeResult()
 {
 }
 
-RegisterVolumeResult::RegisterVolumeResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterVolumeResult::RegisterVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterVolumeResult& RegisterVolumeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterVolumeResult& RegisterVolumeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("VolumeId"))

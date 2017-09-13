@@ -44,6 +44,7 @@ namespace Model
     DurationRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The minimum value of the duration range. Must be greater than zero.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>The minimum value of the duration range. Must be greater than zero.</p>
      */
     inline DurationRange& WithMinSeconds(int value) { SetMinSeconds(value); return *this;}
+
 
     /**
      * <p>The maximum value of the duration range. Must be less than or equal to 604800
@@ -78,8 +80,10 @@ namespace Model
     inline DurationRange& WithMaxSeconds(int value) { SetMaxSeconds(value); return *this;}
 
   private:
+
     int m_minSeconds;
     bool m_minSecondsHasBeenSet;
+
     int m_maxSeconds;
     bool m_maxSecondsHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     ReviewResultDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> A unique identifier of the Review action result. </p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p> A unique identifier of the Review action result. </p>
      */
     inline ReviewResultDetail& WithActionId(const char* value) { SetActionId(value); return *this;}
+
 
     /**
      * <p>The HITID or AssignmentId about which this result was taken. Note that
@@ -137,6 +139,7 @@ namespace Model
      */
     inline ReviewResultDetail& WithSubjectId(const char* value) { SetSubjectId(value); return *this;}
 
+
     /**
      * <p> The type of the object from the SubjectId field.</p>
      */
@@ -171,6 +174,7 @@ namespace Model
      * <p> The type of the object from the SubjectId field.</p>
      */
     inline ReviewResultDetail& WithSubjectType(const char* value) { SetSubjectType(value); return *this;}
+
 
     /**
      * <p> Specifies the QuestionId the result is describing. Depending on whether the
@@ -242,6 +246,7 @@ namespace Model
      */
     inline ReviewResultDetail& WithQuestionId(const char* value) { SetQuestionId(value); return *this;}
 
+
     /**
      * <p> Key identifies the particular piece of reviewed information. </p>
      */
@@ -276,6 +281,7 @@ namespace Model
      * <p> Key identifies the particular piece of reviewed information. </p>
      */
     inline ReviewResultDetail& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p> The values of Key provided by the review policies you have selected. </p>
@@ -313,16 +319,22 @@ namespace Model
     inline ReviewResultDetail& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_actionId;
     bool m_actionIdHasBeenSet;
+
     Aws::String m_subjectId;
     bool m_subjectIdHasBeenSet;
+
     Aws::String m_subjectType;
     bool m_subjectTypeHasBeenSet;
+
     Aws::String m_questionId;
     bool m_questionIdHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

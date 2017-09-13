@@ -30,12 +30,12 @@ BatchGetProjectsResult::BatchGetProjectsResult()
 {
 }
 
-BatchGetProjectsResult::BatchGetProjectsResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetProjectsResult::BatchGetProjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchGetProjectsResult& BatchGetProjectsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetProjectsResult& BatchGetProjectsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("projects"))

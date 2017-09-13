@@ -43,6 +43,7 @@ namespace Model
     ImportJobResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The unique ID of the application to which the import job applies.
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ImportJobResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     /**
      * The number of pieces that have successfully imported as of the time of the
      * request.
@@ -95,6 +97,7 @@ namespace Model
      * request.
      */
     inline ImportJobResponse& WithCompletedPieces(int value) { SetCompletedPieces(value); return *this;}
+
 
     /**
      * The date the import job completed in ISO 8601 format.
@@ -131,6 +134,7 @@ namespace Model
      */
     inline ImportJobResponse& WithCompletionDate(const char* value) { SetCompletionDate(value); return *this;}
 
+
     /**
      * The date the import job was created in ISO 8601 format.
      */
@@ -166,6 +170,7 @@ namespace Model
      */
     inline ImportJobResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
+
     /**
      * The import job settings.
      */
@@ -191,6 +196,7 @@ namespace Model
      */
     inline ImportJobResponse& WithDefinition(ImportJobResource&& value) { SetDefinition(std::move(value)); return *this;}
 
+
     /**
      * The number of pieces that have failed to import as of the time of the request.
      */
@@ -205,6 +211,7 @@ namespace Model
      * The number of pieces that have failed to import as of the time of the request.
      */
     inline ImportJobResponse& WithFailedPieces(int value) { SetFailedPieces(value); return *this;}
+
 
     /**
      * Provides up to 100 of the first failed entries for the job, if any exist.
@@ -246,6 +253,7 @@ namespace Model
      */
     inline ImportJobResponse& AddFailures(const char* value) { m_failuresHasBeenSet = true; m_failures.push_back(value); return *this; }
 
+
     /**
      * The unique ID of the import job.
      */
@@ -280,6 +288,7 @@ namespace Model
      * The unique ID of the import job.
      */
     inline ImportJobResponse& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * The status of the import job.
@@ -331,6 +340,7 @@ The job status is FAILED if one or more
      */
     inline ImportJobResponse& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
+
     /**
      * The number of endpoints that failed to import; for example, because of syntax
      * errors.
@@ -348,6 +358,7 @@ The job status is FAILED if one or more
      * errors.
      */
     inline ImportJobResponse& WithTotalFailures(int value) { SetTotalFailures(value); return *this;}
+
 
     /**
      * The total number of pieces that must be imported to finish the job. Each piece
@@ -367,6 +378,7 @@ The job status is FAILED if one or more
      */
     inline ImportJobResponse& WithTotalPieces(int value) { SetTotalPieces(value); return *this;}
 
+
     /**
      * The number of endpoints that were processed by the import job.
      */
@@ -381,6 +393,7 @@ The job status is FAILED if one or more
      * The number of endpoints that were processed by the import job.
      */
     inline ImportJobResponse& WithTotalProcessed(int value) { SetTotalProcessed(value); return *this;}
+
 
     /**
      * The job type. Will be Import.
@@ -418,30 +431,43 @@ The job status is FAILED if one or more
     inline ImportJobResponse& WithType(const char* value) { SetType(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     int m_completedPieces;
     bool m_completedPiecesHasBeenSet;
+
     Aws::String m_completionDate;
     bool m_completionDateHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+
     ImportJobResource m_definition;
     bool m_definitionHasBeenSet;
+
     int m_failedPieces;
     bool m_failedPiecesHasBeenSet;
+
     Aws::Vector<Aws::String> m_failures;
     bool m_failuresHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     JobStatus m_jobStatus;
     bool m_jobStatusHasBeenSet;
+
     int m_totalFailures;
     bool m_totalFailuresHasBeenSet;
+
     int m_totalPieces;
     bool m_totalPiecesHasBeenSet;
+
     int m_totalProcessed;
     bool m_totalProcessedHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * The name of the bucket where the inventory configuration will be stored.
      */
@@ -75,6 +76,7 @@ namespace Model
      * The name of the bucket where the inventory configuration will be stored.
      */
     inline PutBucketInventoryConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * The ID used to identify the inventory configuration.
@@ -111,6 +113,7 @@ namespace Model
      */
     inline PutBucketInventoryConfigurationRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * Specifies the inventory configuration.
      */
@@ -137,10 +140,13 @@ namespace Model
     inline PutBucketInventoryConfigurationRequest& WithInventoryConfiguration(InventoryConfiguration&& value) { SetInventoryConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     InventoryConfiguration m_inventoryConfiguration;
     bool m_inventoryConfigurationHasBeenSet;
   };

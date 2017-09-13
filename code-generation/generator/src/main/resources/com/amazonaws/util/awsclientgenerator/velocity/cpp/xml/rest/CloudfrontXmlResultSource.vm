@@ -1,6 +1,8 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/core/AmazonWebServiceResult.h>
@@ -11,7 +13,7 @@
 
 \#include <utility>
 
-using namespace Aws::${metadata.namespace}::Model;
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;

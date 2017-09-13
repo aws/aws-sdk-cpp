@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateAliasResult();
-    CreateAliasResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Lambda function ARN that is qualified using the alias name as the suffix. For
@@ -103,6 +104,7 @@ namespace Model
      */
     inline CreateAliasResult& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
 
+
     /**
      * <p>Alias name.</p>
      */
@@ -138,6 +140,7 @@ namespace Model
      */
     inline CreateAliasResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Function version to which the alias points.</p>
      */
@@ -172,6 +175,7 @@ namespace Model
      * <p>Function version to which the alias points.</p>
      */
     inline CreateAliasResult& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
+
 
     /**
      * <p>Alias description.</p>
@@ -209,9 +213,13 @@ namespace Model
     inline CreateAliasResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_aliasArn;
+
     Aws::String m_name;
+
     Aws::String m_functionVersion;
+
     Aws::String m_description;
   };
 

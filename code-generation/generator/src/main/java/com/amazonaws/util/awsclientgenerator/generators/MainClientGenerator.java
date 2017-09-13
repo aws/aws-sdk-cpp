@@ -31,15 +31,16 @@ import java.util.zip.ZipOutputStream;
 
 public class MainClientGenerator {
 
-    public File generateSourceFromC2jModel(C2jServiceModel c2jModel, String serviceName, String languageBinding) throws Exception {
+    public File generateSourceFromC2jModel(C2jServiceModel c2jModel, String serviceName, String languageBinding, String namespace, boolean generateStandalonePackage) throws Exception {
 
         SdkSpec spec = new SdkSpec(languageBinding, serviceName, null);
         // Transform to ServiceModel
-        ServiceModel serviceModel = new C2jModelToGeneratorModelTransformer(c2jModel).convert();
+        ServiceModel serviceModel = new C2jModelToGeneratorModelTransformer(c2jModel, generateStandalonePackage).convert();
 
         serviceModel.setRuntimeMajorVersion("@RUNTIME_MAJOR_VERSION@");
         serviceModel.setRuntimeMajorVersionUpperBound("@RUNTIME_MAJOR_VERSION_UPPER_BOUND@");
         serviceModel.setRuntimeMinorVersion("@RUNTIME_MINOR_VERSION@");
+        serviceModel.setNamespace(namespace);
 
         spec.setVersion(serviceModel.getMetadata().getApiVersion());
 

@@ -30,12 +30,12 @@ ListObjectPoliciesResult::ListObjectPoliciesResult()
 {
 }
 
-ListObjectPoliciesResult::ListObjectPoliciesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListObjectPoliciesResult::ListObjectPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListObjectPoliciesResult& ListObjectPoliciesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListObjectPoliciesResult& ListObjectPoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AttachedPolicyIds"))

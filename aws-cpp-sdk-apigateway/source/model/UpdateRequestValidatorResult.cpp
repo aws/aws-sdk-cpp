@@ -32,14 +32,14 @@ UpdateRequestValidatorResult::UpdateRequestValidatorResult() :
 {
 }
 
-UpdateRequestValidatorResult::UpdateRequestValidatorResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateRequestValidatorResult::UpdateRequestValidatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_validateRequestBody(false),
     m_validateRequestParameters(false)
 {
   *this = result;
 }
 
-UpdateRequestValidatorResult& UpdateRequestValidatorResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRequestValidatorResult& UpdateRequestValidatorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

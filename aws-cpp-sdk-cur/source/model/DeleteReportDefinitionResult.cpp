@@ -30,12 +30,12 @@ DeleteReportDefinitionResult::DeleteReportDefinitionResult()
 {
 }
 
-DeleteReportDefinitionResult::DeleteReportDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteReportDefinitionResult::DeleteReportDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteReportDefinitionResult& DeleteReportDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteReportDefinitionResult& DeleteReportDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ResponseMessage"))

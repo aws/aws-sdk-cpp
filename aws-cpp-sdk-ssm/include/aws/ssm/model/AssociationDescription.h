@@ -52,6 +52,7 @@ namespace Model
     AssociationDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the SSM document.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the SSM document.</p>
      */
     inline AssociationDescription& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline AssociationDescription& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The association version.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      */
     inline AssociationDescription& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
 
+
     /**
      * <p>The date when the association was made.</p>
      */
@@ -181,6 +185,7 @@ namespace Model
      * <p>The date when the association was made.</p>
      */
     inline AssociationDescription& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date when the association was last updated.</p>
@@ -207,6 +212,7 @@ namespace Model
      */
     inline AssociationDescription& WithLastUpdateAssociationDate(Aws::Utils::DateTime&& value) { SetLastUpdateAssociationDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The association status.</p>
      */
@@ -232,6 +238,7 @@ namespace Model
      */
     inline AssociationDescription& WithStatus(AssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the association.</p>
      */
@@ -256,6 +263,7 @@ namespace Model
      * <p>Information about the association.</p>
      */
     inline AssociationDescription& WithOverview(AssociationOverview&& value) { SetOverview(std::move(value)); return *this;}
+
 
     /**
      * <p>The document version.</p>
@@ -291,6 +299,7 @@ namespace Model
      * <p>The document version.</p>
      */
     inline AssociationDescription& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
 
     /**
      * <p>A description of the parameters for a document. </p>
@@ -347,6 +356,7 @@ namespace Model
      */
     inline AssociationDescription& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The association ID.</p>
      */
@@ -381,6 +391,7 @@ namespace Model
      * <p>The association ID.</p>
      */
     inline AssociationDescription& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
 
     /**
      * <p>The instances targeted by the request. </p>
@@ -417,6 +428,7 @@ namespace Model
      */
     inline AssociationDescription& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>
      */
@@ -452,6 +464,7 @@ namespace Model
      */
     inline AssociationDescription& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
+
     /**
      * <p>An Amazon S3 bucket where you want to store the output details of the
      * request.</p>
@@ -482,6 +495,7 @@ namespace Model
      */
     inline AssociationDescription& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
 
+
     /**
      * <p>The date on which the association was last run.</p>
      */
@@ -507,6 +521,7 @@ namespace Model
      */
     inline AssociationDescription& WithLastExecutionDate(Aws::Utils::DateTime&& value) { SetLastExecutionDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The last date on which the association was successfully run.</p>
      */
@@ -531,6 +546,7 @@ namespace Model
      * <p>The last date on which the association was successfully run.</p>
      */
     inline AssociationDescription& WithLastSuccessfulExecutionDate(Aws::Utils::DateTime&& value) { SetLastSuccessfulExecutionDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The association name.</p>
@@ -568,36 +584,52 @@ namespace Model
     inline AssociationDescription& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_associationVersion;
     bool m_associationVersionHasBeenSet;
+
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdateAssociationDate;
     bool m_lastUpdateAssociationDateHasBeenSet;
+
     AssociationStatus m_status;
     bool m_statusHasBeenSet;
+
     AssociationOverview m_overview;
     bool m_overviewHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+
     InstanceAssociationOutputLocation m_outputLocation;
     bool m_outputLocationHasBeenSet;
+
     Aws::Utils::DateTime m_lastExecutionDate;
     bool m_lastExecutionDateHasBeenSet;
+
     Aws::Utils::DateTime m_lastSuccessfulExecutionDate;
     bool m_lastSuccessfulExecutionDateHasBeenSet;
+
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     UpdateEvaluationResult();
-    UpdateEvaluationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEvaluationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateEvaluationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID assigned to the <code>Evaluation</code> during creation. This value
@@ -98,6 +99,7 @@ namespace Model
     inline UpdateEvaluationResult& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
 
   private:
+
     Aws::String m_evaluationId;
   };
 

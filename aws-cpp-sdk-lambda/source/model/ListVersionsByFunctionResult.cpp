@@ -30,12 +30,12 @@ ListVersionsByFunctionResult::ListVersionsByFunctionResult()
 {
 }
 
-ListVersionsByFunctionResult::ListVersionsByFunctionResult(const AmazonWebServiceResult<JsonValue>& result)
+ListVersionsByFunctionResult::ListVersionsByFunctionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListVersionsByFunctionResult& ListVersionsByFunctionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListVersionsByFunctionResult& ListVersionsByFunctionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextMarker"))

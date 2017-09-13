@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     ApproveAssignmentResult();
-    ApproveAssignmentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ApproveAssignmentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ApproveAssignmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ApproveAssignmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

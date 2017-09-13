@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is
      * left blank, all applicable resources for this account will be included.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline ListAttacksRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
+
     /**
      * <p>The time period for the attacks.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      */
     inline ListAttacksRequest& WithStartTime(TimeRange&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The end of the time period for the attacks.</p>
      */
@@ -135,6 +138,7 @@ namespace Model
      * <p>The end of the time period for the attacks.</p>
      */
     inline ListAttacksRequest& WithEndTime(TimeRange&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to
@@ -178,6 +182,7 @@ namespace Model
      */
     inline ListAttacksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is
      * left blank, the first 20 results will be returned.</p>
@@ -197,14 +202,19 @@ namespace Model
     inline ListAttacksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_resourceArns;
     bool m_resourceArnsHasBeenSet;
+
     TimeRange m_startTime;
     bool m_startTimeHasBeenSet;
+
     TimeRange m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

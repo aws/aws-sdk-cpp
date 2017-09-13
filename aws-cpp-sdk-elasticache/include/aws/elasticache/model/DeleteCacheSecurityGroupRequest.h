@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cache security group to delete.</p> <note> <p>You cannot
      * delete the default security group.</p> </note>
@@ -85,6 +86,7 @@ namespace Model
     inline DeleteCacheSecurityGroupRequest& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
 
   private:
+
     Aws::String m_cacheSecurityGroupName;
     bool m_cacheSecurityGroupNameHasBeenSet;
   };

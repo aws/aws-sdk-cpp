@@ -30,12 +30,12 @@ CreateLayerResult::CreateLayerResult()
 {
 }
 
-CreateLayerResult::CreateLayerResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateLayerResult::CreateLayerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateLayerResult& CreateLayerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateLayerResult& CreateLayerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("LayerId"))

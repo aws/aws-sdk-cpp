@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
@@ -103,6 +104,7 @@ namespace Model
      */
     inline PurchaseHostReservationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The currency in which the <code>totalUpfrontPrice</code>,
      * <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are
@@ -137,6 +139,7 @@ namespace Model
      * specified. At this time, the only supported currency is <code>USD</code>.</p>
      */
     inline PurchaseHostReservationRequest& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
@@ -185,6 +188,7 @@ namespace Model
      * with.</p>
      */
     inline PurchaseHostReservationRequest& AddHostIdSet(const char* value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
+
 
     /**
      * <p>The specified limit is checked against the total upfront cost of the
@@ -263,6 +267,7 @@ namespace Model
      */
     inline PurchaseHostReservationRequest& WithLimitPrice(const char* value) { SetLimitPrice(value); return *this;}
 
+
     /**
      * <p>The ID of the offering.</p>
      */
@@ -299,14 +304,19 @@ namespace Model
     inline PurchaseHostReservationRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 
   private:
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+
     Aws::Vector<Aws::String> m_hostIdSet;
     bool m_hostIdSetHasBeenSet;
+
     Aws::String m_limitPrice;
     bool m_limitPriceHasBeenSet;
+
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet;
   };

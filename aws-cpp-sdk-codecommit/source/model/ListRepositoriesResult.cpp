@@ -30,12 +30,12 @@ ListRepositoriesResult::ListRepositoriesResult()
 {
 }
 
-ListRepositoriesResult::ListRepositoriesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListRepositoriesResult::ListRepositoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListRepositoriesResult& ListRepositoriesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListRepositoriesResult& ListRepositoriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("repositories"))

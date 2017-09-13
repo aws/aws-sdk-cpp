@@ -40,6 +40,7 @@ namespace Model
     ActivityScheduleFailedEventDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The error code of the failure.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The error code of the failure.</p>
      */
     inline ActivityScheduleFailedEventDetails& WithError(const char* value) { SetError(value); return *this;}
+
 
     /**
      * <p>A more detailed explanation of the cause of the failure.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline ActivityScheduleFailedEventDetails& WithCause(const char* value) { SetCause(value); return *this;}
 
   private:
+
     Aws::String m_error;
     bool m_errorHasBeenSet;
+
     Aws::String m_cause;
     bool m_causeHasBeenSet;
   };

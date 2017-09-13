@@ -48,6 +48,7 @@ namespace Model
     Segment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The segment's ID.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The segment's ID.</p>
      */
     inline Segment& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The segment document</p>
@@ -119,8 +121,10 @@ namespace Model
     inline Segment& WithDocument(const char* value) { SetDocument(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_document;
     bool m_documentHasBeenSet;
   };

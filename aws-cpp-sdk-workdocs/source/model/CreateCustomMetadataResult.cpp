@@ -30,12 +30,12 @@ CreateCustomMetadataResult::CreateCustomMetadataResult()
 {
 }
 
-CreateCustomMetadataResult::CreateCustomMetadataResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateCustomMetadataResult::CreateCustomMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateCustomMetadataResult& CreateCustomMetadataResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateCustomMetadataResult& CreateCustomMetadataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

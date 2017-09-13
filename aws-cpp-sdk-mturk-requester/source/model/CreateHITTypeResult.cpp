@@ -30,12 +30,12 @@ CreateHITTypeResult::CreateHITTypeResult()
 {
 }
 
-CreateHITTypeResult::CreateHITTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateHITTypeResult::CreateHITTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateHITTypeResult& CreateHITTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateHITTypeResult& CreateHITTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HITTypeId"))

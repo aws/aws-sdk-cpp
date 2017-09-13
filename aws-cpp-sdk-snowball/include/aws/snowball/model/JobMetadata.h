@@ -58,6 +58,7 @@ namespace Model
     JobMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -100,6 +101,7 @@ namespace Model
      */
     inline JobMetadata& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
     /**
      * <p>The current status of the jobs.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The current status of the jobs.</p>
      */
     inline JobMetadata& WithJobState(JobState&& value) { SetJobState(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of job.</p>
@@ -150,6 +153,7 @@ namespace Model
      */
     inline JobMetadata& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of appliance used with this job.</p>
      */
@@ -175,6 +179,7 @@ namespace Model
      */
     inline JobMetadata& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
+
     /**
      * <p>The creation date for this job.</p>
      */
@@ -199,6 +204,7 @@ namespace Model
      * <p>The creation date for this job.</p>
      */
     inline JobMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code>
@@ -235,6 +241,7 @@ namespace Model
      */
     inline JobMetadata& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
 
+
     /**
      * <p>The description of the job, provided at job creation.</p>
      */
@@ -269,6 +276,7 @@ namespace Model
      * <p>The description of the job, provided at job creation.</p>
      */
     inline JobMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
@@ -326,6 +334,7 @@ namespace Model
      */
     inline JobMetadata& WithKmsKeyARN(const char* value) { SetKmsKeyARN(value); return *this;}
 
+
     /**
      * <p>The role ARN associated with this job. This ARN was created using the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
@@ -375,6 +384,7 @@ namespace Model
      */
     inline JobMetadata& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
      */
@@ -410,6 +420,7 @@ namespace Model
      */
     inline JobMetadata& WithAddressId(const char* value) { SetAddressId(value); return *this;}
 
+
     /**
      * <p>A job's shipping information, including inbound and outbound tracking numbers
      * and shipping speed options.</p>
@@ -439,6 +450,7 @@ namespace Model
      * and shipping speed options.</p>
      */
     inline JobMetadata& WithShippingDetails(ShippingDetails&& value) { SetShippingDetails(std::move(value)); return *this;}
+
 
     /**
      * <p>The Snowball capacity preference for this job, specified at job creation. In
@@ -474,6 +486,7 @@ namespace Model
      * use 80 TB capacity Snowballs.</p>
      */
     inline JobMetadata& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings
@@ -515,6 +528,7 @@ namespace Model
      */
     inline JobMetadata& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
+
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
      * the appliance is at AWS. This data is only available while a job has a
@@ -555,6 +569,7 @@ namespace Model
      */
     inline JobMetadata& WithDataTransferProgress(DataTransfer&& value) { SetDataTransferProgress(std::move(value)); return *this;}
 
+
     /**
      * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
      * jobs, the PDF job report becomes available at the end of the import process. For
@@ -594,6 +609,7 @@ namespace Model
      * your job part is being delivered to you.</p>
      */
     inline JobMetadata& WithJobLogInfo(JobLogs&& value) { SetJobLogInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>The 39-character ID for the cluster, for example
@@ -636,6 +652,7 @@ namespace Model
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
     inline JobMetadata& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
 
     /**
      * <p>The ID of the address that you want a job shipped to, after it will be
@@ -680,38 +697,55 @@ namespace Model
     inline JobMetadata& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     JobState m_jobState;
     bool m_jobStateHasBeenSet;
+
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
+
     SnowballType m_snowballType;
     bool m_snowballTypeHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_kmsKeyARN;
     bool m_kmsKeyARNHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;
+
     ShippingDetails m_shippingDetails;
     bool m_shippingDetailsHasBeenSet;
+
     SnowballCapacity m_snowballCapacityPreference;
     bool m_snowballCapacityPreferenceHasBeenSet;
+
     Notification m_notification;
     bool m_notificationHasBeenSet;
+
     DataTransfer m_dataTransferProgress;
     bool m_dataTransferProgressHasBeenSet;
+
     JobLogs m_jobLogInfo;
     bool m_jobLogInfoHasBeenSet;
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_forwardingAddressId;
     bool m_forwardingAddressIdHasBeenSet;
   };

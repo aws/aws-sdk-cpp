@@ -31,12 +31,12 @@ GetIdentityVerificationAttributesResult::GetIdentityVerificationAttributesResult
 {
 }
 
-GetIdentityVerificationAttributesResult::GetIdentityVerificationAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetIdentityVerificationAttributesResult::GetIdentityVerificationAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetIdentityVerificationAttributesResult& GetIdentityVerificationAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetIdentityVerificationAttributesResult& GetIdentityVerificationAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetDataRetrievalPolicyResult();
-    GetDataRetrievalPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDataRetrievalPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDataRetrievalPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDataRetrievalPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Contains the returned data retrieval policy in JSON format.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline GetDataRetrievalPolicyResult& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
+
     DataRetrievalPolicy m_policy;
   };
 

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository that contains the branch for which you want to
      * retrieve information.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline GetBranchRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>The name of the branch for which you want to retrieve information.</p>
      */
@@ -117,8 +119,10 @@ namespace Model
     inline GetBranchRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_branchName;
     bool m_branchNameHasBeenSet;
   };

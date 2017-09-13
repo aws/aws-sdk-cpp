@@ -47,6 +47,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the table containing the requested items; or, if you provide
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>
@@ -88,6 +89,7 @@ namespace Model
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>
      */
     inline ScanRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>The name of a secondary index to scan. This index can be any local secondary
@@ -137,6 +139,7 @@ namespace Model
      * parameter, you must also provide <code>TableName</code>.</p>
      */
     inline ScanRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
 
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
@@ -202,6 +205,7 @@ namespace Model
      */
     inline ScanRequest& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of items to evaluate (not necessarily the number of
      * matching items). If DynamoDB processes the number of items up to the limit while
@@ -246,6 +250,7 @@ namespace Model
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The attributes to be returned in the result. You can retrieve all item
@@ -442,6 +447,7 @@ namespace Model
      */
     inline ScanRequest& WithSelect(Select&& value) { SetSelect(std::move(value)); return *this;}
 
+
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
@@ -530,6 +536,7 @@ namespace Model
      */
     inline ScanRequest& AddScanFilter(const char* key, const Condition& value) { m_scanFilterHasBeenSet = true; m_scanFilter.emplace(key, value); return *this; }
 
+
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
@@ -569,6 +576,7 @@ namespace Model
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(std::move(value)); return *this;}
+
 
     /**
      * <p>The primary key of the first item that this operation will evaluate. Use the
@@ -691,6 +699,7 @@ namespace Model
      */
     inline ScanRequest& AddExclusiveStartKey(const char* key, const AttributeValue& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(key, value); return *this; }
 
+
     
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
 
@@ -705,6 +714,7 @@ namespace Model
 
     
     inline ScanRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code>
@@ -750,6 +760,7 @@ namespace Model
      * <code>Segment</code>.</p>
      */
     inline ScanRequest& WithTotalSegments(int value) { SetTotalSegments(value); return *this;}
+
 
     /**
      * <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an
@@ -798,6 +809,7 @@ namespace Model
      * also provide <code>TotalSegments</code>.</p>
      */
     inline ScanRequest& WithSegment(int value) { SetSegment(value); return *this;}
+
 
     /**
      * <p>A string that identifies one or more attributes to retrieve from the
@@ -883,6 +895,7 @@ namespace Model
      */
     inline ScanRequest& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
 
+
     /**
      * <p>A string that contains conditions that DynamoDB applies after the
      * <code>Scan</code> operation, but before the data is returned to you. Items that
@@ -966,6 +979,7 @@ namespace Model
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
+
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -1291,6 +1305,7 @@ namespace Model
      */
     inline ScanRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
+
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
@@ -1478,6 +1493,7 @@ namespace Model
      */
     inline ScanRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
+
     /**
      * <p>A Boolean value that determines the read consistency model during the
      * scan:</p> <ul> <li> <p>If <code>ConsistentRead</code> is <code>false</code>,
@@ -1527,36 +1543,52 @@ namespace Model
     inline ScanRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Select m_select;
     bool m_selectHasBeenSet;
+
     Aws::Map<Aws::String, Condition> m_scanFilter;
     bool m_scanFilterHasBeenSet;
+
     ConditionalOperator m_conditionalOperator;
     bool m_conditionalOperatorHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_exclusiveStartKey;
     bool m_exclusiveStartKeyHasBeenSet;
+
     ReturnConsumedCapacity m_returnConsumedCapacity;
     bool m_returnConsumedCapacityHasBeenSet;
+
     int m_totalSegments;
     bool m_totalSegmentsHasBeenSet;
+
     int m_segment;
     bool m_segmentHasBeenSet;
+
     Aws::String m_projectionExpression;
     bool m_projectionExpressionHasBeenSet;
+
     Aws::String m_filterExpression;
     bool m_filterExpressionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
     bool m_expressionAttributeNamesHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
     bool m_expressionAttributeValuesHasBeenSet;
+
     bool m_consistentRead;
     bool m_consistentReadHasBeenSet;
   };

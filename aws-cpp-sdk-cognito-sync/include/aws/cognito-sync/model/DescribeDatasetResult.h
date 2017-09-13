@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DescribeDatasetResult();
-    DescribeDatasetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDatasetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Meta data for a collection of data for an identity. An identity can have
@@ -92,6 +93,7 @@ namespace Model
     inline DescribeDatasetResult& WithDataset(Dataset&& value) { SetDataset(std::move(value)); return *this;}
 
   private:
+
     Dataset m_dataset;
   };
 

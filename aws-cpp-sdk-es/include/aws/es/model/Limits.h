@@ -51,6 +51,7 @@ namespace Model
     Limits& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>StorageType represents the list of storage related types and attributes that
      * are available for given InstanceType. </p>
@@ -93,6 +94,7 @@ namespace Model
      */
     inline Limits& AddStorageTypes(StorageType&& value) { m_storageTypesHasBeenSet = true; m_storageTypes.push_back(std::move(value)); return *this; }
 
+
     
     inline const InstanceLimits& GetInstanceLimits() const{ return m_instanceLimits; }
 
@@ -107,6 +109,7 @@ namespace Model
 
     
     inline Limits& WithInstanceLimits(InstanceLimits&& value) { SetInstanceLimits(std::move(value)); return *this;}
+
 
     /**
      * <p> List of additional limits that are specific to a given InstanceType and for
@@ -151,10 +154,13 @@ namespace Model
     inline Limits& AddAdditionalLimits(AdditionalLimit&& value) { m_additionalLimitsHasBeenSet = true; m_additionalLimits.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<StorageType> m_storageTypes;
     bool m_storageTypesHasBeenSet;
+
     InstanceLimits m_instanceLimits;
     bool m_instanceLimitsHasBeenSet;
+
     Aws::Vector<AdditionalLimit> m_additionalLimits;
     bool m_additionalLimitsHasBeenSet;
   };

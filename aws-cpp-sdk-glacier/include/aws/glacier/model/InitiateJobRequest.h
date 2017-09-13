@@ -39,6 +39,7 @@ namespace Model
     InitiateJobRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -102,6 +103,7 @@ namespace Model
      */
     inline InitiateJobRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -137,6 +139,7 @@ namespace Model
      */
     inline InitiateJobRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
 
+
     /**
      * <p>Provides options for specifying job information.</p>
      */
@@ -163,10 +166,13 @@ namespace Model
     inline InitiateJobRequest& WithJobParameters(JobParameters&& value) { SetJobParameters(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     JobParameters m_jobParameters;
     bool m_jobParametersHasBeenSet;
   };

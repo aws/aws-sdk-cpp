@@ -31,13 +31,13 @@ UpdateEventSourceMappingResult::UpdateEventSourceMappingResult() :
 {
 }
 
-UpdateEventSourceMappingResult::UpdateEventSourceMappingResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateEventSourceMappingResult::UpdateEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_batchSize(0)
 {
   *this = result;
 }
 
-UpdateEventSourceMappingResult& UpdateEventSourceMappingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateEventSourceMappingResult& UpdateEventSourceMappingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UUID"))

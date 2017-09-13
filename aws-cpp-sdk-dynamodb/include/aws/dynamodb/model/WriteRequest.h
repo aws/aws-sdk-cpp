@@ -50,6 +50,7 @@ namespace Model
     WriteRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A request to perform a <code>PutItem</code> operation.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>A request to perform a <code>PutItem</code> operation.</p>
      */
     inline WriteRequest& WithPutRequest(PutRequest&& value) { SetPutRequest(std::move(value)); return *this;}
+
 
     /**
      * <p>A request to perform a <code>DeleteItem</code> operation.</p>
@@ -101,8 +103,10 @@ namespace Model
     inline WriteRequest& WithDeleteRequest(DeleteRequest&& value) { SetDeleteRequest(std::move(value)); return *this;}
 
   private:
+
     PutRequest m_putRequest;
     bool m_putRequestHasBeenSet;
+
     DeleteRequest m_deleteRequest;
     bool m_deleteRequestHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeCommandsResult();
-    DescribeCommandsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCommandsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCommandsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCommandsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Command</code> objects that describe each of the specified
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeCommandsResult& AddCommands(Command&& value) { m_commands.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Command> m_commands;
   };
 

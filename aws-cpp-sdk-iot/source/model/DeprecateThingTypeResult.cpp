@@ -30,12 +30,12 @@ DeprecateThingTypeResult::DeprecateThingTypeResult()
 {
 }
 
-DeprecateThingTypeResult::DeprecateThingTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+DeprecateThingTypeResult::DeprecateThingTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeprecateThingTypeResult& DeprecateThingTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeprecateThingTypeResult& DeprecateThingTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeTimeToLiveResult();
-    DescribeTimeToLiveResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTimeToLiveResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTimeToLiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTimeToLiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p/>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeTimeToLiveResult& WithTimeToLiveDescription(TimeToLiveDescription&& value) { SetTimeToLiveDescription(std::move(value)); return *this;}
 
   private:
+
     TimeToLiveDescription m_timeToLiveDescription;
   };
 

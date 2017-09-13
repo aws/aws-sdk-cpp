@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetUserResult();
-    GetUserResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure containing details about the IAM user.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline GetUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline GetUserResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     User m_user;
+
     ResponseMetadata m_responseMetadata;
   };
 

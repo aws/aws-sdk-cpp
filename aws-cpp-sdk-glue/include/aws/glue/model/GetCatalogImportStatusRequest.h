@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the catalog to migrate. Currently, this should be the AWS account
      * ID.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline GetCatalogImportStatusRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
   private:
+
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
   };

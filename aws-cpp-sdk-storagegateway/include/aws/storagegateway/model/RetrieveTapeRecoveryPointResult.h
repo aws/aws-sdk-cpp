@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     RetrieveTapeRecoveryPointResult();
-    RetrieveTapeRecoveryPointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetrieveTapeRecoveryPointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RetrieveTapeRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RetrieveTapeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
@@ -89,6 +90,7 @@ namespace Model
     inline RetrieveTapeRecoveryPointResult& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
   };
 

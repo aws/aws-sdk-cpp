@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribePipelinesResult();
-    DescribePipelinesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePipelinesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePipelinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePipelinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of descriptions for the specified pipelines.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DescribePipelinesResult& AddPipelineDescriptionList(PipelineDescription&& value) { m_pipelineDescriptionList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<PipelineDescription> m_pipelineDescriptionList;
   };
 

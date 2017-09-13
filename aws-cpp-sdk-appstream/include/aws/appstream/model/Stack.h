@@ -49,6 +49,7 @@ namespace Model
     Stack& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the stack.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ARN of the stack.</p>
      */
     inline Stack& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The unique identifier of the stack.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Stack& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A meaningful description for the stack.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>A meaningful description for the stack.</p>
      */
     inline Stack& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A display name for the stack.</p>
@@ -189,6 +193,7 @@ namespace Model
      */
     inline Stack& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
     /**
      * <p>The time stamp when the stack was created.</p>
      */
@@ -213,6 +218,7 @@ namespace Model
      * <p>The time stamp when the stack was created.</p>
      */
     inline Stack& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The storage connectors to be enabled for the stack.</p>
@@ -248,6 +254,7 @@ namespace Model
      * <p>The storage connectors to be enabled for the stack.</p>
      */
     inline Stack& AddStorageConnectors(StorageConnector&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The list of errors associated with the stack.</p>
@@ -285,18 +292,25 @@ namespace Model
     inline Stack& AddStackErrors(StackError&& value) { m_stackErrorsHasBeenSet = true; m_stackErrors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
     Aws::Vector<StorageConnector> m_storageConnectors;
     bool m_storageConnectorsHasBeenSet;
+
     Aws::Vector<StackError> m_stackErrors;
     bool m_stackErrorsHasBeenSet;
   };

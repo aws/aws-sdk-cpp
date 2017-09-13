@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetChangeResult();
-    GetChangeResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetChangeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetChangeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetChangeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains information about the specified change
@@ -78,6 +79,7 @@ namespace Model
     inline GetChangeResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
 
   private:
+
     ChangeInfo m_changeInfo;
   };
 

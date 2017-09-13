@@ -34,6 +34,7 @@ namespace Model
     GetBuiltinIntentRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The unique identifier for a built-in intent. To find the signature for an
      * intent, see <a
@@ -91,6 +92,7 @@ namespace Model
     inline GetBuiltinIntentRequest& WithSignature(const char* value) { SetSignature(value); return *this;}
 
   private:
+
     Aws::String m_signature;
     bool m_signatureHasBeenSet;
   };

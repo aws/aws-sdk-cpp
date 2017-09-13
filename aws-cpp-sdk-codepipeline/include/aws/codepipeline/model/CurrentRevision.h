@@ -47,6 +47,7 @@ namespace Model
     CurrentRevision& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The revision ID of the current version of an artifact.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The revision ID of the current version of an artifact.</p>
      */
     inline CurrentRevision& WithRevision(const char* value) { SetRevision(value); return *this;}
+
 
     /**
      * <p>The change identifier for the current revision.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline CurrentRevision& WithChangeIdentifier(const char* value) { SetChangeIdentifier(value); return *this;}
 
+
     /**
      * <p>The date and time when the most recent revision of the artifact was created,
      * in timestamp format.</p>
@@ -146,6 +149,7 @@ namespace Model
      * in timestamp format.</p>
      */
     inline CurrentRevision& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
 
     /**
      * <p>The summary of the most recent revision of the artifact.</p>
@@ -183,12 +187,16 @@ namespace Model
     inline CurrentRevision& WithRevisionSummary(const char* value) { SetRevisionSummary(value); return *this;}
 
   private:
+
     Aws::String m_revision;
     bool m_revisionHasBeenSet;
+
     Aws::String m_changeIdentifier;
     bool m_changeIdentifierHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
+
     Aws::String m_revisionSummary;
     bool m_revisionSummaryHasBeenSet;
   };

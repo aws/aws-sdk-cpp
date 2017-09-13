@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the application.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of the application.</p>
      */
     inline ApplicationDescription& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>User-defined description of the application.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline ApplicationDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The date when the application was created.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      */
     inline ApplicationDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
 
+
     /**
      * <p>The date when the application was last modified.</p>
      */
@@ -170,6 +174,7 @@ namespace Model
      * <p>The date when the application was last modified.</p>
      */
     inline ApplicationDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
+
 
     /**
      * <p>The names of the versions for this application.</p>
@@ -210,6 +215,7 @@ namespace Model
      * <p>The names of the versions for this application.</p>
      */
     inline ApplicationDescription& AddVersions(const char* value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
+
 
     /**
      * <p>The names of the configuration templates associated with this
@@ -259,6 +265,7 @@ namespace Model
      */
     inline ApplicationDescription& AddConfigurationTemplates(const char* value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates.push_back(value); return *this; }
 
+
     /**
      * <p>The lifecycle settings for the application.</p>
      */
@@ -285,18 +292,25 @@ namespace Model
     inline ApplicationDescription& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_dateCreated;
     bool m_dateCreatedHasBeenSet;
+
     Aws::Utils::DateTime m_dateUpdated;
     bool m_dateUpdatedHasBeenSet;
+
     Aws::Vector<Aws::String> m_versions;
     bool m_versionsHasBeenSet;
+
     Aws::Vector<Aws::String> m_configurationTemplates;
     bool m_configurationTemplatesHasBeenSet;
+
     ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
     bool m_resourceLifecycleConfigHasBeenSet;
   };

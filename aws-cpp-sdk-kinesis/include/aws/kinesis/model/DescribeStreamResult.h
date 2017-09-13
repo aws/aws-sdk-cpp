@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeStreamResult();
-    DescribeStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The current status of the stream, the stream ARN, an array of shard objects
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeStreamResult& WithStreamDescription(StreamDescription&& value) { SetStreamDescription(std::move(value)); return *this;}
 
   private:
+
     StreamDescription m_streamDescription;
   };
 

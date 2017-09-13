@@ -47,6 +47,7 @@ namespace Model
     NewBGPPeer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline int GetAsn() const{ return m_asn; }
 
@@ -55,6 +56,7 @@ namespace Model
 
     
     inline NewBGPPeer& WithAsn(int value) { SetAsn(value); return *this;}
+
 
     
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
@@ -77,6 +79,7 @@ namespace Model
     
     inline NewBGPPeer& WithAuthKey(const char* value) { SetAuthKey(value); return *this;}
 
+
     
     inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
 
@@ -91,6 +94,7 @@ namespace Model
 
     
     inline NewBGPPeer& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetAmazonAddress() const{ return m_amazonAddress; }
@@ -112,6 +116,7 @@ namespace Model
 
     
     inline NewBGPPeer& WithAmazonAddress(const char* value) { SetAmazonAddress(value); return *this;}
+
 
     
     inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
@@ -135,14 +140,19 @@ namespace Model
     inline NewBGPPeer& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
   private:
+
     int m_asn;
     bool m_asnHasBeenSet;
+
     Aws::String m_authKey;
     bool m_authKeyHasBeenSet;
+
     AddressFamily m_addressFamily;
     bool m_addressFamilyHasBeenSet;
+
     Aws::String m_amazonAddress;
     bool m_amazonAddressHasBeenSet;
+
     Aws::String m_customerAddress;
     bool m_customerAddressHasBeenSet;
   };

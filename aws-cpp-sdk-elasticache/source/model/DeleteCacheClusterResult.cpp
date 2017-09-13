@@ -31,12 +31,12 @@ DeleteCacheClusterResult::DeleteCacheClusterResult()
 {
 }
 
-DeleteCacheClusterResult::DeleteCacheClusterResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteCacheClusterResult::DeleteCacheClusterResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteCacheClusterResult& DeleteCacheClusterResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteCacheClusterResult& DeleteCacheClusterResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

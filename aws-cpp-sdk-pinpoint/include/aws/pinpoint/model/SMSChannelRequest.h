@@ -43,6 +43,7 @@ namespace Model
     SMSChannelRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * If the channel is enabled for sending messages.
      */
@@ -57,6 +58,7 @@ namespace Model
      * If the channel is enabled for sending messages.
      */
     inline SMSChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * Sender identifier of your messages.
@@ -94,8 +96,10 @@ namespace Model
     inline SMSChannelRequest& WithSenderId(const char* value) { SetSenderId(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_senderId;
     bool m_senderIdHasBeenSet;
   };

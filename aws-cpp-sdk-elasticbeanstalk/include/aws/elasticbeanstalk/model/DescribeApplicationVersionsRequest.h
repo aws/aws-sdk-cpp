@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Specify an application name to show only application versions for that
      * application.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeApplicationVersionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Specify a version label to show a specific application version.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      */
     inline DescribeApplicationVersionsRequest& AddVersionLabels(const char* value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
 
+
     /**
      * <p>For a paginated request. Specify a maximum number of application versions to
      * include in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
@@ -144,6 +147,7 @@ namespace Model
      * available application versions are retrieved in a single response.</p>
      */
     inline DescribeApplicationVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>For a paginated request. Specify a token from a previous response page to
@@ -202,12 +206,16 @@ namespace Model
     inline DescribeApplicationVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_versionLabels;
     bool m_versionLabelsHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

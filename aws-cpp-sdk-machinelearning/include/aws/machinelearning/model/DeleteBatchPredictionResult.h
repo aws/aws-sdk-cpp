@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DeleteBatchPredictionResult();
-    DeleteBatchPredictionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteBatchPredictionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteBatchPredictionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteBatchPredictionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.
@@ -100,6 +101,7 @@ namespace Model
     inline DeleteBatchPredictionResult& WithBatchPredictionId(const char* value) { SetBatchPredictionId(value); return *this;}
 
   private:
+
     Aws::String m_batchPredictionId;
   };
 

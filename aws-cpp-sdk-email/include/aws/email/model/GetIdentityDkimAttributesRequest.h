@@ -48,6 +48,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A list of one or more verified identities - email addresses, domains, or
      * both.</p>
@@ -97,6 +98,7 @@ namespace Model
     inline GetIdentityDkimAttributesRequest& AddIdentities(const char* value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_identities;
     bool m_identitiesHasBeenSet;
   };

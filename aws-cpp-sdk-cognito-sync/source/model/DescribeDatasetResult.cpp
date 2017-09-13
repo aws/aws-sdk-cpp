@@ -30,12 +30,12 @@ DescribeDatasetResult::DescribeDatasetResult()
 {
 }
 
-DescribeDatasetResult::DescribeDatasetResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDatasetResult::DescribeDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeDatasetResult& DescribeDatasetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDatasetResult& DescribeDatasetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Dataset"))

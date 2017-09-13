@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetInterconnectId() const{ return m_interconnectId; }
 
@@ -62,6 +63,7 @@ namespace Model
     inline DeleteInterconnectRequest& WithInterconnectId(const char* value) { SetInterconnectId(value); return *this;}
 
   private:
+
     Aws::String m_interconnectId;
     bool m_interconnectIdHasBeenSet;
   };

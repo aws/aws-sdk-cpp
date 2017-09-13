@@ -44,6 +44,7 @@ namespace Model
     WriteSegmentRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The segment dimensions attributes.
      */
@@ -68,6 +69,7 @@ namespace Model
      * The segment dimensions attributes.
      */
     inline WriteSegmentRequest& WithDimensions(SegmentDimensions&& value) { SetDimensions(std::move(value)); return *this;}
+
 
     /**
      * The name of segment
@@ -105,8 +107,10 @@ namespace Model
     inline WriteSegmentRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     SegmentDimensions m_dimensions;
     bool m_dimensionsHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

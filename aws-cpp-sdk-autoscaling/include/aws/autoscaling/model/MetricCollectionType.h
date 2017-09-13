@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
      * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
@@ -133,6 +134,7 @@ namespace Model
     inline MetricCollectionType& WithMetric(const char* value) { SetMetric(value); return *this;}
 
   private:
+
     Aws::String m_metric;
     bool m_metricHasBeenSet;
   };

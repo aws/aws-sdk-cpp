@@ -47,6 +47,7 @@ namespace Model
     ActionRevision& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The system-generated unique ID that identifies the revision number of the
      * action.</p>
@@ -88,6 +89,7 @@ namespace Model
      * action.</p>
      */
     inline ActionRevision& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
 
     /**
      * <p>The unique identifier of the change that set the state to this revision, for
@@ -131,6 +133,7 @@ namespace Model
      */
     inline ActionRevision& WithRevisionChangeId(const char* value) { SetRevisionChangeId(value); return *this;}
 
+
     /**
      * <p>The date and time when the most recent version of the action was created, in
      * timestamp format.</p>
@@ -162,10 +165,13 @@ namespace Model
     inline ActionRevision& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet;
+
     Aws::String m_revisionChangeId;
     bool m_revisionChangeIdHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
   };

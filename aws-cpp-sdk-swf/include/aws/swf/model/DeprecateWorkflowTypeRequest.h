@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain in which the workflow type is registered.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DeprecateWorkflowTypeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>The workflow type to deprecate.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline DeprecateWorkflowTypeRequest& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet;
   };

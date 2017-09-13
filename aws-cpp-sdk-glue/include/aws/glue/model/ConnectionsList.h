@@ -46,6 +46,7 @@ namespace Model
     ConnectionsList& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of connections used by the job.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
     inline ConnectionsList& AddConnections(const char* value) { m_connectionsHasBeenSet = true; m_connections.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_connections;
     bool m_connectionsHasBeenSet;
   };

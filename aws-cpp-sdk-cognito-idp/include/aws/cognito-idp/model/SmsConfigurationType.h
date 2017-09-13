@@ -45,6 +45,7 @@ namespace Model
     SmsConfigurationType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline SmsConfigurationType& WithSnsCallerArn(const char* value) { SetSnsCallerArn(value); return *this;}
 
+
     /**
      * <p>The external ID.</p>
      */
@@ -123,8 +125,10 @@ namespace Model
     inline SmsConfigurationType& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
   private:
+
     Aws::String m_snsCallerArn;
     bool m_snsCallerArnHasBeenSet;
+
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
   };

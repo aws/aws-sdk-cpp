@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeReceiptRuleResult();
-    DescribeReceiptRuleResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReceiptRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeReceiptRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeReceiptRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A data structure that contains the specified receipt rule's name, actions,
@@ -82,6 +83,7 @@ namespace Model
      */
     inline DescribeReceiptRuleResult& WithRule(ReceiptRule&& value) { SetRule(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline DescribeReceiptRuleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ReceiptRule m_rule;
+
     ResponseMetadata m_responseMetadata;
   };
 

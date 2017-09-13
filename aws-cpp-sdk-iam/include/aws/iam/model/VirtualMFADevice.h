@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline VirtualMFADevice& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
+
     /**
      * <p> The Base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
@@ -121,6 +123,7 @@ namespace Model
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline VirtualMFADevice& WithBase32StringSeed(Aws::Utils::ByteBuffer&& value) { SetBase32StringSeed(std::move(value)); return *this;}
+
 
     /**
      * <p> A QR code PNG image that encodes
@@ -172,6 +175,7 @@ namespace Model
      */
     inline VirtualMFADevice& WithQRCodePNG(Aws::Utils::ByteBuffer&& value) { SetQRCodePNG(std::move(value)); return *this;}
 
+
     /**
      * <p>The IAM user associated with this virtual MFA device.</p>
      */
@@ -196,6 +200,7 @@ namespace Model
      * <p>The IAM user associated with this virtual MFA device.</p>
      */
     inline VirtualMFADevice& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time on which the virtual MFA device was enabled.</p>
@@ -223,14 +228,19 @@ namespace Model
     inline VirtualMFADevice& WithEnableDate(Aws::Utils::DateTime&& value) { SetEnableDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
+
     Aws::Utils::ByteBuffer m_base32StringSeed;
     bool m_base32StringSeedHasBeenSet;
+
     Aws::Utils::ByteBuffer m_qRCodePNG;
     bool m_qRCodePNGHasBeenSet;
+
     User m_user;
     bool m_userHasBeenSet;
+
     Aws::Utils::DateTime m_enableDate;
     bool m_enableDateHasBeenSet;
   };

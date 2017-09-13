@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     BatchWriteResult();
-    BatchWriteResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchWriteResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchWriteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchWriteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of all the responses for each batch write.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline BatchWriteResult& AddResponses(BatchWriteOperationResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<BatchWriteOperationResponse> m_responses;
   };
 

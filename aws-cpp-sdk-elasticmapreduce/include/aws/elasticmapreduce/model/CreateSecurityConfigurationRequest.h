@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the security configuration.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the security configuration.</p>
      */
     inline CreateSecurityConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The security configuration details in JSON format.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline CreateSecurityConfigurationRequest& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet;
   };

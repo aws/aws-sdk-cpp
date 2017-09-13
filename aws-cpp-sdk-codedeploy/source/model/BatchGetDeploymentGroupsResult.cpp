@@ -30,12 +30,12 @@ BatchGetDeploymentGroupsResult::BatchGetDeploymentGroupsResult()
 {
 }
 
-BatchGetDeploymentGroupsResult::BatchGetDeploymentGroupsResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetDeploymentGroupsResult::BatchGetDeploymentGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchGetDeploymentGroupsResult& BatchGetDeploymentGroupsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetDeploymentGroupsResult& BatchGetDeploymentGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("deploymentGroupsInfo"))

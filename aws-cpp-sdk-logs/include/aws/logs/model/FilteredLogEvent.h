@@ -45,6 +45,7 @@ namespace Model
     FilteredLogEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the log stream this event belongs to.</p>
      */
@@ -80,23 +81,25 @@ namespace Model
      */
     inline FilteredLogEvent& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
+
     /**
-     * <p>The time the event occurred, expressed as the number of milliseconds since
+     * <p>The time the event occurred, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The time the event occurred, expressed as the number of milliseconds since
+     * <p>The time the event occurred, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The time the event occurred, expressed as the number of milliseconds since
+     * <p>The time the event occurred, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline FilteredLogEvent& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
+
 
     /**
      * <p>The data contained in the log event.</p>
@@ -133,23 +136,25 @@ namespace Model
      */
     inline FilteredLogEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The time the event was ingested, expressed as the number of milliseconds
-     * since Jan 1, 1970 00:00:00 UTC.</p>
+     * after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetIngestionTime() const{ return m_ingestionTime; }
 
     /**
      * <p>The time the event was ingested, expressed as the number of milliseconds
-     * since Jan 1, 1970 00:00:00 UTC.</p>
+     * after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetIngestionTime(long long value) { m_ingestionTimeHasBeenSet = true; m_ingestionTime = value; }
 
     /**
      * <p>The time the event was ingested, expressed as the number of milliseconds
-     * since Jan 1, 1970 00:00:00 UTC.</p>
+     * after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline FilteredLogEvent& WithIngestionTime(long long value) { SetIngestionTime(value); return *this;}
+
 
     /**
      * <p>The ID of the event.</p>
@@ -187,14 +192,19 @@ namespace Model
     inline FilteredLogEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
 
   private:
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
+
     long long m_timestamp;
     bool m_timestampHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     long long m_ingestionTime;
     bool m_ingestionTimeHasBeenSet;
+
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;
   };

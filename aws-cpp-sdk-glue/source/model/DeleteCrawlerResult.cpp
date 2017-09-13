@@ -30,12 +30,12 @@ DeleteCrawlerResult::DeleteCrawlerResult()
 {
 }
 
-DeleteCrawlerResult::DeleteCrawlerResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCrawlerResult::DeleteCrawlerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteCrawlerResult& DeleteCrawlerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCrawlerResult& DeleteCrawlerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

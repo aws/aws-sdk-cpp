@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     GenerateClientCertificateResult();
-    GenerateClientCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateClientCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GenerateClientCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GenerateClientCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of the client certificate.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline GenerateClientCertificateResult& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
 
+
     /**
      * <p>The description of the client certificate.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The description of the client certificate.</p>
      */
     inline GenerateClientCertificateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The PEM-encoded public key of the client certificate, which can be used to
@@ -165,6 +168,7 @@ namespace Model
      */
     inline GenerateClientCertificateResult& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
 
+
     /**
      * <p>The timestamp when the client certificate was created.</p>
      */
@@ -189,6 +193,7 @@ namespace Model
      * <p>The timestamp when the client certificate was created.</p>
      */
     inline GenerateClientCertificateResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The timestamp when the client certificate will expire.</p>
@@ -216,10 +221,15 @@ namespace Model
     inline GenerateClientCertificateResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clientCertificateId;
+
     Aws::String m_description;
+
     Aws::String m_pemEncodedCertificate;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::Utils::DateTime m_expirationDate;
   };
 

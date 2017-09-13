@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateSnapshotResult();
-    CreateSnapshotResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSnapshotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was
@@ -87,6 +88,7 @@ namespace Model
      * taken.</p>
      */
     inline CreateSnapshotResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+
 
     /**
      * <p>The snapshot ID that is used to refer to the snapshot in future operations
@@ -145,7 +147,9 @@ namespace Model
     inline CreateSnapshotResult& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
+
     Aws::String m_snapshotId;
   };
 

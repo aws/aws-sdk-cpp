@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
      * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
@@ -89,6 +90,7 @@ namespace Model
      */
     inline PutMetricDataRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
     /**
      * <p>The data for the metric.</p>
      */
@@ -125,8 +127,10 @@ namespace Model
     inline PutMetricDataRequest& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Aws::Vector<MetricDatum> m_metricData;
     bool m_metricDataHasBeenSet;
   };

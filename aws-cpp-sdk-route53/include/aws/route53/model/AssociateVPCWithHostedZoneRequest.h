@@ -39,6 +39,7 @@ namespace Model
     AssociateVPCWithHostedZoneRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the private hosted zone that you want to associate an Amazon VPC
      * with.</p> <p>Note that you can't associate a VPC with a hosted zone that doesn't
@@ -88,6 +89,7 @@ namespace Model
      */
     inline AssociateVPCWithHostedZoneRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
+
     /**
      * <p>A complex type that contains information about the VPC that you want to
      * associate with a private hosted zone.</p>
@@ -117,6 +119,7 @@ namespace Model
      * associate with a private hosted zone.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
+
 
     /**
      * <p> <i>Optional:</i> A comment about the association request.</p>
@@ -154,10 +157,13 @@ namespace Model
     inline AssociateVPCWithHostedZoneRequest& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     VPC m_vPC;
     bool m_vPCHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
   };

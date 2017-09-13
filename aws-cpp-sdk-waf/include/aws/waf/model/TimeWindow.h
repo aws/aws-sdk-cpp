@@ -54,6 +54,7 @@ namespace Model
     TimeWindow& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The beginning of the time range from which you want
      * <code>GetSampledRequests</code> to return a sample of the requests that your AWS
@@ -99,6 +100,7 @@ namespace Model
      */
     inline TimeWindow& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
      * to return a sample of the requests that your AWS resource received. Specify the
@@ -140,8 +142,10 @@ namespace Model
     inline TimeWindow& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
     UpdateThingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the thing to update.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the thing to update.</p>
      */
     inline UpdateThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+
 
     /**
      * <p>The name of the thing type.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline UpdateThingRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
 
+
     /**
      * <p>A list of thing attributes, a JSON string containing name-value pairs. For
      * example:</p> <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
@@ -143,6 +146,7 @@ namespace Model
      */
     inline UpdateThingRequest& WithAttributePayload(AttributePayload&& value) { SetAttributePayload(std::move(value)); return *this;}
 
+
     /**
      * <p>The expected version of the thing record in the registry. If the version of
      * the record in the registry does not match the expected version specified in the
@@ -167,6 +171,7 @@ namespace Model
      */
     inline UpdateThingRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
 
+
     /**
      * <p>Remove a thing type association. If <b>true</b>, the assocation is
      * removed.</p>
@@ -186,14 +191,19 @@ namespace Model
     inline UpdateThingRequest& WithRemoveThingType(bool value) { SetRemoveThingType(value); return *this;}
 
   private:
+
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
+
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
+
     AttributePayload m_attributePayload;
     bool m_attributePayloadHasBeenSet;
+
     long long m_expectedVersion;
     bool m_expectedVersionHasBeenSet;
+
     bool m_removeThingType;
     bool m_removeThingTypeHasBeenSet;
   };

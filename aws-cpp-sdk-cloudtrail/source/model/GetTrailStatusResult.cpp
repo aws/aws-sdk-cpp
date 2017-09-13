@@ -31,13 +31,13 @@ GetTrailStatusResult::GetTrailStatusResult() :
 {
 }
 
-GetTrailStatusResult::GetTrailStatusResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetTrailStatusResult::GetTrailStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_isLogging(false)
 {
   *this = result;
 }
 
-GetTrailStatusResult& GetTrailStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetTrailStatusResult& GetTrailStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IsLogging"))

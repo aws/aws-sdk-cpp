@@ -30,12 +30,12 @@ DescribeActivityResult::DescribeActivityResult()
 {
 }
 
-DescribeActivityResult::DescribeActivityResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeActivityResult::DescribeActivityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeActivityResult& DescribeActivityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeActivityResult& DescribeActivityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("activityArn"))

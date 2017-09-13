@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     AcceptReservedInstancesExchangeQuoteResponse();
-    AcceptReservedInstancesExchangeQuoteResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AcceptReservedInstancesExchangeQuoteResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AcceptReservedInstancesExchangeQuoteResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AcceptReservedInstancesExchangeQuoteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the successful exchange.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline AcceptReservedInstancesExchangeQuoteResponse& WithExchangeId(const char* value) { SetExchangeId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline AcceptReservedInstancesExchangeQuoteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_exchangeId;
+
     ResponseMetadata m_responseMetadata;
   };
 

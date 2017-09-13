@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of structures that specify the WorkSpaces to create.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline CreateWorkspacesRequest& AddWorkspaces(WorkspaceRequest&& value) { m_workspacesHasBeenSet = true; m_workspaces.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<WorkspaceRequest> m_workspaces;
     bool m_workspacesHasBeenSet;
   };

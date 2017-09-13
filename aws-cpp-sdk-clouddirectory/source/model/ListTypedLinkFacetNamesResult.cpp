@@ -30,12 +30,12 @@ ListTypedLinkFacetNamesResult::ListTypedLinkFacetNamesResult()
 {
 }
 
-ListTypedLinkFacetNamesResult::ListTypedLinkFacetNamesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListTypedLinkFacetNamesResult::ListTypedLinkFacetNamesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListTypedLinkFacetNamesResult& ListTypedLinkFacetNamesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTypedLinkFacetNamesResult& ListTypedLinkFacetNamesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FacetNames"))

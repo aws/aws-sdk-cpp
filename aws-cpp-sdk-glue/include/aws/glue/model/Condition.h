@@ -42,6 +42,7 @@ namespace Model
     Condition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const LogicalOperator& GetLogicalOperator() const{ return m_logicalOperator; }
 
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline Condition& WithLogicalOperator(LogicalOperator&& value) { SetLogicalOperator(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetJobName() const{ return m_jobName; }
@@ -78,6 +80,7 @@ namespace Model
     
     inline Condition& WithJobName(const char* value) { SetJobName(value); return *this;}
 
+
     
     inline const JobRunState& GetState() const{ return m_state; }
 
@@ -94,10 +97,13 @@ namespace Model
     inline Condition& WithState(JobRunState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     LogicalOperator m_logicalOperator;
     bool m_logicalOperatorHasBeenSet;
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     JobRunState m_state;
     bool m_stateHasBeenSet;
   };

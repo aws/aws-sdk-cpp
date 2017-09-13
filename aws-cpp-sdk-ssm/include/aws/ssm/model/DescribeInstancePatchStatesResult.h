@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeInstancePatchStatesResult();
-    DescribeInstancePatchStatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInstancePatchStatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInstancePatchStatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInstancePatchStatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The high-level patch state for the requested instances.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The high-level patch state for the requested instances.</p>
      */
     inline DescribeInstancePatchStatesResult& AddInstancePatchStates(InstancePatchState&& value) { m_instancePatchStates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeInstancePatchStatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<InstancePatchState> m_instancePatchStates;
+
     Aws::String m_nextToken;
   };
 

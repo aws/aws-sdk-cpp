@@ -30,12 +30,12 @@ SearchResult::SearchResult()
 {
 }
 
-SearchResult::SearchResult(const AmazonWebServiceResult<JsonValue>& result)
+SearchResult::SearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SearchResult& SearchResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SearchResult& SearchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("status"))

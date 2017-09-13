@@ -45,6 +45,7 @@ namespace Model
     WriteTreatmentResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The message configuration settings.
      */
@@ -69,6 +70,7 @@ namespace Model
      * The message configuration settings.
      */
     inline WriteTreatmentResource& WithMessageConfiguration(MessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
+
 
     /**
      * The campaign schedule.
@@ -95,6 +97,7 @@ namespace Model
      */
     inline WriteTreatmentResource& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
 
+
     /**
      * The allocated percentage of users for this treatment.
      */
@@ -109,6 +112,7 @@ namespace Model
      * The allocated percentage of users for this treatment.
      */
     inline WriteTreatmentResource& WithSizePercent(int value) { SetSizePercent(value); return *this;}
+
 
     /**
      * A custom description for the treatment.
@@ -144,6 +148,7 @@ namespace Model
      * A custom description for the treatment.
      */
     inline WriteTreatmentResource& WithTreatmentDescription(const char* value) { SetTreatmentDescription(value); return *this;}
+
 
     /**
      * The custom name of a variation of the campaign used for A/B testing.
@@ -181,14 +186,19 @@ namespace Model
     inline WriteTreatmentResource& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
 
   private:
+
     MessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
+
     Schedule m_schedule;
     bool m_scheduleHasBeenSet;
+
     int m_sizePercent;
     bool m_sizePercentHasBeenSet;
+
     Aws::String m_treatmentDescription;
     bool m_treatmentDescriptionHasBeenSet;
+
     Aws::String m_treatmentName;
     bool m_treatmentNameHasBeenSet;
   };

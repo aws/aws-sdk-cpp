@@ -46,6 +46,7 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for the tag. Valid characters include Unicode letters,
      * digits, white space, _, ., /, =, +, -, %, and @.</p>
@@ -87,6 +88,7 @@ namespace Model
      * digits, white space, _, ., /, =, +, -, %, and @.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>An optional string, typically used to describe or define the tag. Valid
@@ -138,8 +140,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

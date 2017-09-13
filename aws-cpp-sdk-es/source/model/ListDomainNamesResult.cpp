@@ -30,12 +30,12 @@ ListDomainNamesResult::ListDomainNamesResult()
 {
 }
 
-ListDomainNamesResult::ListDomainNamesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListDomainNamesResult::ListDomainNamesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListDomainNamesResult& ListDomainNamesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListDomainNamesResult& ListDomainNamesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DomainNames"))

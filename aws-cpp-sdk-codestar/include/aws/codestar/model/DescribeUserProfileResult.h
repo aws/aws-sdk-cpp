@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeUserProfileResult();
-    DescribeUserProfileResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeUserProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUserProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user.</p>
@@ -76,6 +77,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline DescribeUserProfileResult& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+
 
     /**
      * <p>The display name shown for the user in AWS CodeStar projects. For example,
@@ -168,6 +170,7 @@ namespace Model
      */
     inline DescribeUserProfileResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
     /**
      * <p>The email address for the user. Optional.</p>
      */
@@ -202,6 +205,7 @@ namespace Model
      * <p>The email address for the user. Optional.</p>
      */
     inline DescribeUserProfileResult& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+
 
     /**
      * <p>The SSH public key associated with the user. This SSH public key is
@@ -259,6 +263,7 @@ namespace Model
      */
     inline DescribeUserProfileResult& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
 
+
     /**
      * <p>The date and time when the user profile was created in AWS CodeStar, in
      * timestamp format.</p>
@@ -288,6 +293,7 @@ namespace Model
      * timestamp format.</p>
      */
     inline DescribeUserProfileResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time when the user profile was last modified, in timestamp
@@ -320,11 +326,17 @@ namespace Model
     inline DescribeUserProfileResult& WithLastModifiedTimestamp(Aws::Utils::DateTime&& value) { SetLastModifiedTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userArn;
+
     Aws::String m_displayName;
+
     Aws::String m_emailAddress;
+
     Aws::String m_sshPublicKey;
+
     Aws::Utils::DateTime m_createdTimestamp;
+
     Aws::Utils::DateTime m_lastModifiedTimestamp;
   };
 

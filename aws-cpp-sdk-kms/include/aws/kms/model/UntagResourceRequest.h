@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the CMK from which you are removing tags. You can use
      * the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:</p>
@@ -107,6 +108,7 @@ namespace Model
      */
     inline UntagResourceRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
@@ -148,8 +150,10 @@ namespace Model
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

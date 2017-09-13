@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateGameSessionQueueResult();
-    UpdateGameSessionQueueResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGameSessionQueueResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateGameSessionQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateGameSessionQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that describes the newly updated game session queue.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline UpdateGameSessionQueueResult& WithGameSessionQueue(GameSessionQueue&& value) { SetGameSessionQueue(std::move(value)); return *this;}
 
   private:
+
     GameSessionQueue m_gameSessionQueue;
   };
 

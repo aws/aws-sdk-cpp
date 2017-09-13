@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListResourceTagsResult();
-    ListResourceTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourceTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourceTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourceTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
      */
     inline ListResourceTagsResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -127,6 +129,7 @@ namespace Model
      */
     inline ListResourceTagsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To retrieve more items,
@@ -152,8 +155,11 @@ namespace Model
     inline ListResourceTagsResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
   private:
+
     Aws::Vector<Tag> m_tags;
+
     Aws::String m_nextMarker;
+
     bool m_truncated;
   };
 

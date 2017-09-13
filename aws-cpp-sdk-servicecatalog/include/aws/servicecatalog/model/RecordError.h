@@ -46,6 +46,7 @@ namespace Model
     RecordError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The numeric value of the error.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The numeric value of the error.</p>
      */
     inline RecordError& WithCode(const char* value) { SetCode(value); return *this;}
+
 
     /**
      * <p>The text description of the error.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline RecordError& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

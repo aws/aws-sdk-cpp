@@ -30,12 +30,12 @@ BatchGetDeploymentsResult::BatchGetDeploymentsResult()
 {
 }
 
-BatchGetDeploymentsResult::BatchGetDeploymentsResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetDeploymentsResult::BatchGetDeploymentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchGetDeploymentsResult& BatchGetDeploymentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetDeploymentsResult& BatchGetDeploymentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("deploymentsInfo"))

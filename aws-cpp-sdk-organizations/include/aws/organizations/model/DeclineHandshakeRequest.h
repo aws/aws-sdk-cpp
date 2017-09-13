@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the handshake that you want to decline. You can
      * get the ID from the <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
@@ -93,6 +94,7 @@ namespace Model
     inline DeclineHandshakeRequest& WithHandshakeId(const char* value) { SetHandshakeId(value); return *this;}
 
   private:
+
     Aws::String m_handshakeId;
     bool m_handshakeIdHasBeenSet;
   };

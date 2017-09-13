@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool where you want to reset the user's
      * password.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline AdminResetUserPasswordRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The user name of the user whose password you wish to reset.</p>
      */
@@ -118,8 +120,10 @@ namespace Model
     inline AdminResetUserPasswordRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
   };

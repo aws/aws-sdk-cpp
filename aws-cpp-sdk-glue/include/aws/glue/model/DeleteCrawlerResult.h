@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteCrawlerResult();
-    DeleteCrawlerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCrawlerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteCrawlerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteCrawlerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

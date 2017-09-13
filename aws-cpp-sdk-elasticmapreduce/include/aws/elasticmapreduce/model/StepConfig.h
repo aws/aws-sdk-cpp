@@ -47,6 +47,7 @@ namespace Model
     StepConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the step.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline StepConfig& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The action to take if the step fails.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The action to take if the step fails.</p>
      */
     inline StepConfig& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(std::move(value)); return *this;}
+
 
     /**
      * <p>The JAR file used for the step.</p>
@@ -133,10 +136,13 @@ namespace Model
     inline StepConfig& WithHadoopJarStep(HadoopJarStepConfig&& value) { SetHadoopJarStep(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ActionOnFailure m_actionOnFailure;
     bool m_actionOnFailureHasBeenSet;
+
     HadoopJarStepConfig m_hadoopJarStep;
     bool m_hadoopJarStepHasBeenSet;
   };

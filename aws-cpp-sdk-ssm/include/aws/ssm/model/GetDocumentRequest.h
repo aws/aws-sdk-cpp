@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the SSM document.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the SSM document.</p>
      */
     inline GetDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The document version for which you want information.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline GetDocumentRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
   };

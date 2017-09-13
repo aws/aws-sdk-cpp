@@ -30,12 +30,12 @@ StartSupportDataExportResult::StartSupportDataExportResult()
 {
 }
 
-StartSupportDataExportResult::StartSupportDataExportResult(const AmazonWebServiceResult<JsonValue>& result)
+StartSupportDataExportResult::StartSupportDataExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartSupportDataExportResult& StartSupportDataExportResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartSupportDataExportResult& StartSupportDataExportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("dataSetRequestId"))

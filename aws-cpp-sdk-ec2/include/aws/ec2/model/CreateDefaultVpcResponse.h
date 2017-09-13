@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateDefaultVpcResponse();
-    CreateDefaultVpcResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDefaultVpcResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDefaultVpcResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDefaultVpcResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the VPC.</p>
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateDefaultVpcResponse& WithVpc(Vpc&& value) { SetVpc(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,7 +90,9 @@ namespace Model
     inline CreateDefaultVpcResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Vpc m_vpc;
+
     ResponseMetadata m_responseMetadata;
   };
 

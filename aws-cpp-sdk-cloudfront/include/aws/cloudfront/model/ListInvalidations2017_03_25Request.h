@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The distribution's ID.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The distribution's ID.</p>
      */
     inline ListInvalidations2017_03_25Request& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
+
 
     /**
      * <p>Use this parameter when paginating results to indicate where to begin in your
@@ -155,6 +157,7 @@ namespace Model
      */
     inline ListInvalidations2017_03_25Request& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of invalidation batches that you want in the response
      * body.</p>
@@ -198,10 +201,13 @@ namespace Model
     inline ListInvalidations2017_03_25Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_distributionId;
     bool m_distributionIdHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

@@ -32,14 +32,14 @@ GetOperationDetailResult::GetOperationDetailResult() :
 {
 }
 
-GetOperationDetailResult::GetOperationDetailResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetOperationDetailResult::GetOperationDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(OperationStatus::NOT_SET),
     m_type(OperationType::NOT_SET)
 {
   *this = result;
 }
 
-GetOperationDetailResult& GetOperationDetailResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetOperationDetailResult& GetOperationDetailResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OperationId"))

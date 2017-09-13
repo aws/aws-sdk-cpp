@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the job being run.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Name of the job being run.</p>
      */
     inline GetJobRunRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+
 
     /**
      * <p>The ID of the job run.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline GetJobRunRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
 
+
     /**
      * <p>A list of the predecessor runs to return as well.</p>
      */
@@ -122,10 +125,13 @@ namespace Model
     inline GetJobRunRequest& WithPredecessorsIncluded(bool value) { SetPredecessorsIncluded(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     Aws::String m_runId;
     bool m_runIdHasBeenSet;
+
     bool m_predecessorsIncluded;
     bool m_predecessorsIncludedHasBeenSet;
   };

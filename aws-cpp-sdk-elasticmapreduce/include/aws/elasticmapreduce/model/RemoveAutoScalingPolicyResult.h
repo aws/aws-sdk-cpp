@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     RemoveAutoScalingPolicyResult();
-    RemoveAutoScalingPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveAutoScalingPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveAutoScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveAutoScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

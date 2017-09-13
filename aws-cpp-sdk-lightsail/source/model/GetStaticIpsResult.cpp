@@ -30,12 +30,12 @@ GetStaticIpsResult::GetStaticIpsResult()
 {
 }
 
-GetStaticIpsResult::GetStaticIpsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetStaticIpsResult::GetStaticIpsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetStaticIpsResult& GetStaticIpsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetStaticIpsResult& GetStaticIpsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("staticIps"))

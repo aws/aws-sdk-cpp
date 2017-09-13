@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The dimension name to be matched.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The dimension name to be matched.</p>
      */
     inline DimensionFilter& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The value of the dimension to be matched.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline DimensionFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

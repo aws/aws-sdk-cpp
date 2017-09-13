@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The source type, such as cluster or cluster-snapshot, that the returned
      * categories belong to.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline EventCategoriesMap& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 
+
     /**
      * <p>The events in the event category.</p>
      */
@@ -128,8 +130,10 @@ namespace Model
     inline EventCategoriesMap& AddEvents(EventInfoMap&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Vector<EventInfoMap> m_events;
     bool m_eventsHasBeenSet;
   };

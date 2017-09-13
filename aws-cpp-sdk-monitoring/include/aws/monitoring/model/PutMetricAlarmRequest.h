@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name for the alarm. This name must be unique within the AWS account.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name for the alarm. This name must be unique within the AWS account.</p>
      */
     inline PutMetricAlarmRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+
 
     /**
      * <p>The description for the alarm.</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline PutMetricAlarmRequest& WithAlarmDescription(const char* value) { SetAlarmDescription(value); return *this;}
 
+
     /**
      * <p>Indicates whether actions should be executed during any changes to the alarm
      * state.</p>
@@ -130,6 +133,7 @@ namespace Model
      * state.</p>
      */
     inline PutMetricAlarmRequest& WithActionsEnabled(bool value) { SetActionsEnabled(value); return *this;}
+
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
@@ -251,6 +255,7 @@ namespace Model
      */
     inline PutMetricAlarmRequest& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
+
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
@@ -370,6 +375,7 @@ namespace Model
      * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
+
 
     /**
      * <p>The actions to execute when this alarm transitions to the
@@ -499,6 +505,7 @@ namespace Model
      */
     inline PutMetricAlarmRequest& AddInsufficientDataActions(const char* value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
+
     /**
      * <p>The name for the metric associated with the alarm.</p>
      */
@@ -533,6 +540,7 @@ namespace Model
      * <p>The name for the metric associated with the alarm.</p>
      */
     inline PutMetricAlarmRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+
 
     /**
      * <p>The namespace for the metric associated with the alarm.</p>
@@ -569,6 +577,7 @@ namespace Model
      */
     inline PutMetricAlarmRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
     /**
      * <p>The statistic for the metric associated with the alarm, other than
      * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
@@ -598,6 +607,7 @@ namespace Model
      * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
      */
     inline PutMetricAlarmRequest& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
+
 
     /**
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
@@ -641,6 +651,7 @@ namespace Model
      */
     inline PutMetricAlarmRequest& WithExtendedStatistic(const char* value) { SetExtendedStatistic(value); return *this;}
 
+
     /**
      * <p>The dimensions for the metric associated with the alarm.</p>
      */
@@ -675,6 +686,7 @@ namespace Model
      * <p>The dimensions for the metric associated with the alarm.</p>
      */
     inline PutMetricAlarmRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The period, in seconds, over which the specified statistic is applied. Valid
@@ -729,6 +741,7 @@ namespace Model
      * <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
      */
     inline PutMetricAlarmRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
+
 
     /**
      * <p>The unit of measure for the statistic. For example, the units for the Amazon
@@ -790,6 +803,7 @@ namespace Model
      */
     inline PutMetricAlarmRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of periods over which data is compared to the specified threshold.
      * An alarm's total current evaluation period can be no longer than one day, so
@@ -814,6 +828,7 @@ namespace Model
      */
     inline PutMetricAlarmRequest& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 
+
     /**
      * <p>The value against which the specified statistic is compared.</p>
      */
@@ -828,6 +843,7 @@ namespace Model
      * <p>The value against which the specified statistic is compared.</p>
      */
     inline PutMetricAlarmRequest& WithThreshold(double value) { SetThreshold(value); return *this;}
+
 
     /**
      * <p> The arithmetic operation to use when comparing the specified statistic and
@@ -858,6 +874,7 @@ namespace Model
      * threshold. The specified statistic value is used as the first operand.</p>
      */
     inline PutMetricAlarmRequest& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+
 
     /**
      * <p> Sets how this alarm is to handle missing data points. If
@@ -928,6 +945,7 @@ namespace Model
      * <code>breaching | notBreaching | ignore | missing</code> </p>
      */
     inline PutMetricAlarmRequest& WithTreatMissingData(const char* value) { SetTreatMissingData(value); return *this;}
+
 
     /**
      * <p> Used only for alarms based on percentiles. If you specify
@@ -1021,40 +1039,58 @@ namespace Model
     inline PutMetricAlarmRequest& WithEvaluateLowSampleCountPercentile(const char* value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
 
   private:
+
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
+
     Aws::String m_alarmDescription;
     bool m_alarmDescriptionHasBeenSet;
+
     bool m_actionsEnabled;
     bool m_actionsEnabledHasBeenSet;
+
     Aws::Vector<Aws::String> m_oKActions;
     bool m_oKActionsHasBeenSet;
+
     Aws::Vector<Aws::String> m_alarmActions;
     bool m_alarmActionsHasBeenSet;
+
     Aws::Vector<Aws::String> m_insufficientDataActions;
     bool m_insufficientDataActionsHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Statistic m_statistic;
     bool m_statisticHasBeenSet;
+
     Aws::String m_extendedStatistic;
     bool m_extendedStatisticHasBeenSet;
+
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
+
     int m_period;
     bool m_periodHasBeenSet;
+
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
+
     int m_evaluationPeriods;
     bool m_evaluationPeriodsHasBeenSet;
+
     double m_threshold;
     bool m_thresholdHasBeenSet;
+
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+
     Aws::String m_treatMissingData;
     bool m_treatMissingDataHasBeenSet;
+
     Aws::String m_evaluateLowSampleCountPercentile;
     bool m_evaluateLowSampleCountPercentileHasBeenSet;
   };

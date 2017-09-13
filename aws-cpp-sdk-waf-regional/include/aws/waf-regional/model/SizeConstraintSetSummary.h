@@ -46,6 +46,7 @@ namespace Model
     SizeConstraintSetSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
      * <code>SizeConstraintSetId</code> to get information about a
@@ -144,6 +145,7 @@ namespace Model
      */
     inline SizeConstraintSetSummary& WithSizeConstraintSetId(const char* value) { SetSizeConstraintSetId(value); return *this;}
 
+
     /**
      * <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
      */
@@ -180,8 +182,10 @@ namespace Model
     inline SizeConstraintSetSummary& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_sizeConstraintSetId;
     bool m_sizeConstraintSetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

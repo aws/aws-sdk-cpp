@@ -31,12 +31,12 @@ CancelImportTaskResponse::CancelImportTaskResponse()
 {
 }
 
-CancelImportTaskResponse::CancelImportTaskResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CancelImportTaskResponse::CancelImportTaskResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CancelImportTaskResponse& CancelImportTaskResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CancelImportTaskResponse& CancelImportTaskResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

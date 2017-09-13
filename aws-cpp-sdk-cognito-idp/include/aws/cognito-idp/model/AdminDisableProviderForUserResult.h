@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AdminDisableProviderForUserResult();
-    AdminDisableProviderForUserResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminDisableProviderForUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminDisableProviderForUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminDisableProviderForUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

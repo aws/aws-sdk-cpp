@@ -47,6 +47,7 @@ namespace Model
     SerDeInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the SerDe.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>Name of the SerDe.</p>
      */
     inline SerDeInfo& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Usually the class that implements the SerDe. An example is:
@@ -123,6 +125,7 @@ namespace Model
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline SerDeInfo& WithSerializationLibrary(const char* value) { SetSerializationLibrary(value); return *this;}
+
 
     /**
      * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
@@ -185,10 +188,13 @@ namespace Model
     inline SerDeInfo& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_serializationLibrary;
     bool m_serializationLibraryHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
   };

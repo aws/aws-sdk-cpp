@@ -48,6 +48,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Specifies whether source/destination checking is enabled. A value of
      * <code>true</code> means that checking is enabled, and <code>false</code> means
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ModifyInstanceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
+
     /**
      * <p>The name of the attribute.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The name of the attribute.</p>
      */
     inline ModifyInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+
 
     /**
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
@@ -204,6 +207,7 @@ namespace Model
      */
     inline ModifyInstanceAttributeRequest& AddBlockDeviceMappings(InstanceBlockDeviceMappingSpecification&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
      * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
@@ -239,6 +243,7 @@ namespace Model
      */
     inline ModifyInstanceAttributeRequest& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(std::move(value)); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -262,6 +267,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>Specifies whether the instance is optimized for EBS I/O. This optimization
@@ -308,6 +314,7 @@ namespace Model
      */
     inline ModifyInstanceAttributeRequest& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
 
+
     /**
      * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
      * instance.</p> <p>This option is supported only for HVM instances. Specifying
@@ -342,6 +349,7 @@ namespace Model
      * this option with a PV instance can make it unreachable.</p>
      */
     inline ModifyInstanceAttributeRequest& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
+
 
     /**
      * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
@@ -399,6 +407,7 @@ namespace Model
      */
     inline ModifyInstanceAttributeRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -434,6 +443,7 @@ namespace Model
      */
     inline ModifyInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>Specifies whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
@@ -463,6 +473,7 @@ namespace Model
      * from the instance (using the operating system command for system shutdown).</p>
      */
     inline ModifyInstanceAttributeRequest& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
+
 
     /**
      * <p>Changes the instance type to the specified value. For more information, see
@@ -509,6 +520,7 @@ namespace Model
      */
     inline ModifyInstanceAttributeRequest& WithInstanceType(AttributeValue&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>Changes the instance's kernel to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
@@ -544,6 +556,7 @@ namespace Model
      */
     inline ModifyInstanceAttributeRequest& WithKernel(AttributeValue&& value) { SetKernel(std::move(value)); return *this;}
 
+
     /**
      * <p>Changes the instance's RAM disk to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
@@ -578,6 +591,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithRamdisk(AttributeValue&& value) { SetRamdisk(std::move(value)); return *this;}
+
 
     /**
      * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
@@ -624,6 +638,7 @@ namespace Model
      */
     inline ModifyInstanceAttributeRequest& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
 
+
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
      * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
@@ -658,6 +673,7 @@ namespace Model
      * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(BlobAttributeValue&& value) { SetUserData(std::move(value)); return *this;}
+
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
@@ -709,36 +725,52 @@ namespace Model
     inline ModifyInstanceAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     AttributeBooleanValue m_sourceDestCheck;
     bool m_sourceDestCheckHasBeenSet;
+
     InstanceAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+
     Aws::Vector<InstanceBlockDeviceMappingSpecification> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     AttributeBooleanValue m_disableApiTermination;
     bool m_disableApiTerminationHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     AttributeBooleanValue m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     AttributeBooleanValue m_enaSupport;
     bool m_enaSupportHasBeenSet;
+
     Aws::Vector<Aws::String> m_groups;
     bool m_groupsHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     AttributeValue m_instanceInitiatedShutdownBehavior;
     bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+
     AttributeValue m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     AttributeValue m_kernel;
     bool m_kernelHasBeenSet;
+
     AttributeValue m_ramdisk;
     bool m_ramdiskHasBeenSet;
+
     AttributeValue m_sriovNetSupport;
     bool m_sriovNetSupportHasBeenSet;
+
     BlobAttributeValue m_userData;
     bool m_userDataHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

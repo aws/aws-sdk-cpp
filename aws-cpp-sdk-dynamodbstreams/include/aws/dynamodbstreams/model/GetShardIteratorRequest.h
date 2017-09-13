@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
     inline GetShardIteratorRequest& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+
 
     /**
      * <p>The identifier of the shard. The iterator will be returned for this shard
@@ -114,6 +116,7 @@ namespace Model
      * ID.</p>
      */
     inline GetShardIteratorRequest& WithShardId(const char* value) { SetShardId(value); return *this;}
+
 
     /**
      * <p>Determines how the shard iterator is used to start reading stream records
@@ -195,6 +198,7 @@ namespace Model
      */
     inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType&& value) { SetShardIteratorType(std::move(value)); return *this;}
 
+
     /**
      * <p>The sequence number of a stream record in the shard from which to start
      * reading.</p>
@@ -238,12 +242,16 @@ namespace Model
     inline GetShardIteratorRequest& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
   private:
+
     Aws::String m_streamArn;
     bool m_streamArnHasBeenSet;
+
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet;
+
     ShardIteratorType m_shardIteratorType;
     bool m_shardIteratorTypeHasBeenSet;
+
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet;
   };

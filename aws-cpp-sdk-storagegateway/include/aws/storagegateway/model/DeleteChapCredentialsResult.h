@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DeleteChapCredentialsResult();
-    DeleteChapCredentialsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteChapCredentialsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteChapCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteChapCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target.</p>
@@ -80,6 +81,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the target.</p>
      */
     inline DeleteChapCredentialsResult& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
+
 
     /**
      * <p>The iSCSI initiator that connects to the target.</p>
@@ -117,7 +119,9 @@ namespace Model
     inline DeleteChapCredentialsResult& WithInitiatorName(const char* value) { SetInitiatorName(value); return *this;}
 
   private:
+
     Aws::String m_targetARN;
+
     Aws::String m_initiatorName;
   };
 

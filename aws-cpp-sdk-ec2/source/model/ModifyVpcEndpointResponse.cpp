@@ -32,13 +32,13 @@ ModifyVpcEndpointResponse::ModifyVpcEndpointResponse() :
 {
 }
 
-ModifyVpcEndpointResponse::ModifyVpcEndpointResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+ModifyVpcEndpointResponse::ModifyVpcEndpointResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-ModifyVpcEndpointResponse& ModifyVpcEndpointResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyVpcEndpointResponse& ModifyVpcEndpointResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

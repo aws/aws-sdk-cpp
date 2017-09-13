@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DeleteFileShareResult();
-    DeleteFileShareResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteFileShareResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteFileShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteFileShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the deleted file share. </p>
@@ -82,6 +83,7 @@ namespace Model
     inline DeleteFileShareResult& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 
   private:
+
     Aws::String m_fileShareARN;
   };
 

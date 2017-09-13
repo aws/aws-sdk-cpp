@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The CA certificate identifier.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline UpdateCACertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p>The updated status of the CA certificate.</p> <p> <b>Note:</b> The status
      * value REGISTER_INACTIVE is deprecated and should not be used.</p>
@@ -109,6 +111,7 @@ namespace Model
      * value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline UpdateCACertificateRequest& WithNewStatus(CACertificateStatus&& value) { SetNewStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
@@ -141,10 +144,13 @@ namespace Model
     inline UpdateCACertificateRequest& WithNewAutoRegistrationStatus(AutoRegistrationStatus&& value) { SetNewAutoRegistrationStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     CACertificateStatus m_newStatus;
     bool m_newStatusHasBeenSet;
+
     AutoRegistrationStatus m_newAutoRegistrationStatus;
     bool m_newAutoRegistrationStatusHasBeenSet;
   };

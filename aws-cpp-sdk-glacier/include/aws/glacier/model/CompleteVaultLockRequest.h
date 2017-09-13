@@ -38,6 +38,7 @@ namespace Model
     CompleteVaultLockRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
      * the AWS account ID associated with the credentials used to sign the request. You
@@ -108,6 +109,7 @@ namespace Model
      */
     inline CompleteVaultLockRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -142,6 +144,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline CompleteVaultLockRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>The <code>lockId</code> value is the lock ID obtained from a
@@ -186,10 +189,13 @@ namespace Model
     inline CompleteVaultLockRequest& WithLockId(const char* value) { SetLockId(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_lockId;
     bool m_lockIdHasBeenSet;
   };

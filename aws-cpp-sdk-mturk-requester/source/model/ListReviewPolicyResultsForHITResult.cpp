@@ -30,12 +30,12 @@ ListReviewPolicyResultsForHITResult::ListReviewPolicyResultsForHITResult()
 {
 }
 
-ListReviewPolicyResultsForHITResult::ListReviewPolicyResultsForHITResult(const AmazonWebServiceResult<JsonValue>& result)
+ListReviewPolicyResultsForHITResult::ListReviewPolicyResultsForHITResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListReviewPolicyResultsForHITResult& ListReviewPolicyResultsForHITResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListReviewPolicyResultsForHITResult& ListReviewPolicyResultsForHITResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HITId"))

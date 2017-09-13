@@ -48,6 +48,7 @@ namespace Model
     BatchUpdateObjectAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Reference that identifies the object.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>Reference that identifies the object.</p>
      */
     inline BatchUpdateObjectAttributes& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>Attributes update structure.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline BatchUpdateObjectAttributes& AddAttributeUpdates(ObjectAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
 
   private:
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     Aws::Vector<ObjectAttributeUpdate> m_attributeUpdates;
     bool m_attributeUpdatesHasBeenSet;
   };

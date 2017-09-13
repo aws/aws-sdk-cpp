@@ -84,7 +84,7 @@ namespace Aws
                     m_accumulatorFraction = temp % m_replenishDenominator;
 
                     // the accumulator is capped based on the maximum rate
-                    m_accumulator = std::min(m_accumulator, m_maxRate);
+                    m_accumulator = (std::min)(m_accumulator, m_maxRate);
                     if (m_accumulator == m_maxRate)
                     {
                         m_accumulatorFraction = 0;
@@ -124,7 +124,7 @@ namespace Aws
                     std::lock_guard<std::recursive_mutex> lock(m_accumulatorLock);
 
                     // rate must always be positive
-                    rate = std::max(static_cast<int64_t>(1), rate);
+                    rate = (std::max)(static_cast<int64_t>(1), rate);
 
                     if (resetAccumulator)
                     {

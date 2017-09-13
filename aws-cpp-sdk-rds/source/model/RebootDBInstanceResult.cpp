@@ -31,12 +31,12 @@ RebootDBInstanceResult::RebootDBInstanceResult()
 {
 }
 
-RebootDBInstanceResult::RebootDBInstanceResult(const AmazonWebServiceResult<XmlDocument>& result)
+RebootDBInstanceResult::RebootDBInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RebootDBInstanceResult& RebootDBInstanceResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RebootDBInstanceResult& RebootDBInstanceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

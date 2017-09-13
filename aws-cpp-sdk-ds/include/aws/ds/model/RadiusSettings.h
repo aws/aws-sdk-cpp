@@ -48,6 +48,7 @@ namespace Model
     RadiusSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An array of strings that contains the IP addresses of the RADIUS server
      * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
@@ -96,6 +97,7 @@ namespace Model
      */
     inline RadiusSettings& AddRadiusServers(const char* value) { m_radiusServersHasBeenSet = true; m_radiusServers.push_back(value); return *this; }
 
+
     /**
      * <p>The port that your RADIUS server is using for communications. Your
      * on-premises network must allow inbound traffic over this port from the AWS
@@ -117,6 +119,7 @@ namespace Model
      */
     inline RadiusSettings& WithRadiusPort(int value) { SetRadiusPort(value); return *this;}
 
+
     /**
      * <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
      */
@@ -131,6 +134,7 @@ namespace Model
      * <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
      */
     inline RadiusSettings& WithRadiusTimeout(int value) { SetRadiusTimeout(value); return *this;}
+
 
     /**
      * <p>The maximum number of times that communication with the RADIUS server is
@@ -149,6 +153,7 @@ namespace Model
      * attempted.</p>
      */
     inline RadiusSettings& WithRadiusRetries(int value) { SetRadiusRetries(value); return *this;}
+
 
     /**
      * <p>Not currently used.</p>
@@ -185,6 +190,7 @@ namespace Model
      */
     inline RadiusSettings& WithSharedSecret(const char* value) { SetSharedSecret(value); return *this;}
 
+
     /**
      * <p>The protocol specified for your RADIUS endpoints.</p>
      */
@@ -209,6 +215,7 @@ namespace Model
      * <p>The protocol specified for your RADIUS endpoints.</p>
      */
     inline RadiusSettings& WithAuthenticationProtocol(RadiusAuthenticationProtocol&& value) { SetAuthenticationProtocol(std::move(value)); return *this;}
+
 
     /**
      * <p>Not currently used.</p>
@@ -245,6 +252,7 @@ namespace Model
      */
     inline RadiusSettings& WithDisplayLabel(const char* value) { SetDisplayLabel(value); return *this;}
 
+
     /**
      * <p>Not currently used.</p>
      */
@@ -261,20 +269,28 @@ namespace Model
     inline RadiusSettings& WithUseSameUsername(bool value) { SetUseSameUsername(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_radiusServers;
     bool m_radiusServersHasBeenSet;
+
     int m_radiusPort;
     bool m_radiusPortHasBeenSet;
+
     int m_radiusTimeout;
     bool m_radiusTimeoutHasBeenSet;
+
     int m_radiusRetries;
     bool m_radiusRetriesHasBeenSet;
+
     Aws::String m_sharedSecret;
     bool m_sharedSecretHasBeenSet;
+
     RadiusAuthenticationProtocol m_authenticationProtocol;
     bool m_authenticationProtocolHasBeenSet;
+
     Aws::String m_displayLabel;
     bool m_displayLabelHasBeenSet;
+
     bool m_useSameUsername;
     bool m_useSameUsernameHasBeenSet;
   };

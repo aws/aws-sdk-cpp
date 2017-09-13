@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateAdditionalAssignmentsForHITResult();
-    CreateAdditionalAssignmentsForHITResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAdditionalAssignmentsForHITResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAdditionalAssignmentsForHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAdditionalAssignmentsForHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -30,12 +30,12 @@ DescribeAgentsResult::DescribeAgentsResult()
 {
 }
 
-DescribeAgentsResult::DescribeAgentsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAgentsResult::DescribeAgentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeAgentsResult& DescribeAgentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAgentsResult& DescribeAgentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("agentsInfo"))

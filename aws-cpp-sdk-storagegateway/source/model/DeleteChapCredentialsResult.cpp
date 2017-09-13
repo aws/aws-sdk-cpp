@@ -30,12 +30,12 @@ DeleteChapCredentialsResult::DeleteChapCredentialsResult()
 {
 }
 
-DeleteChapCredentialsResult::DeleteChapCredentialsResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteChapCredentialsResult::DeleteChapCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteChapCredentialsResult& DeleteChapCredentialsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteChapCredentialsResult& DeleteChapCredentialsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TargetARN"))

@@ -31,13 +31,13 @@ IndexFacesResult::IndexFacesResult() :
 {
 }
 
-IndexFacesResult::IndexFacesResult(const AmazonWebServiceResult<JsonValue>& result) : 
+IndexFacesResult::IndexFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_orientationCorrection(OrientationCorrection::NOT_SET)
 {
   *this = result;
 }
 
-IndexFacesResult& IndexFacesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+IndexFacesResult& IndexFacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FaceRecords"))

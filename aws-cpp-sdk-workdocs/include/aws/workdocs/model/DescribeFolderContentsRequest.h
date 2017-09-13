@@ -45,6 +45,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline DescribeFolderContentsRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the folder.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      */
     inline DescribeFolderContentsRequest& WithFolderId(const char* value) { SetFolderId(value); return *this;}
 
+
     /**
      * <p>The sorting criteria.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      * <p>The sorting criteria.</p>
      */
     inline DescribeFolderContentsRequest& WithSort(ResourceSortType&& value) { SetSort(std::move(value)); return *this;}
+
 
     /**
      * <p>The order for the contents of the folder.</p>
@@ -172,6 +176,7 @@ namespace Model
      */
     inline DescribeFolderContentsRequest& WithOrder(OrderType&& value) { SetOrder(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
@@ -186,6 +191,7 @@ namespace Model
      * <p>The maximum number of items to return with this call.</p>
      */
     inline DescribeFolderContentsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The marker for the next set of results. This marker was received from a
@@ -229,6 +235,7 @@ namespace Model
      */
     inline DescribeFolderContentsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The type of items.</p>
      */
@@ -253,6 +260,7 @@ namespace Model
      * <p>The type of items.</p>
      */
     inline DescribeFolderContentsRequest& WithType(FolderContentType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The contents to include. Specify "INITIALIZED" to include initialized
@@ -297,20 +305,28 @@ namespace Model
     inline DescribeFolderContentsRequest& WithInclude(const char* value) { SetInclude(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_folderId;
     bool m_folderIdHasBeenSet;
+
     ResourceSortType m_sort;
     bool m_sortHasBeenSet;
+
     OrderType m_order;
     bool m_orderHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     FolderContentType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_include;
     bool m_includeHasBeenSet;
   };

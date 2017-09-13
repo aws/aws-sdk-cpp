@@ -30,12 +30,12 @@ RemoveAttributesFromFindingsResult::RemoveAttributesFromFindingsResult()
 {
 }
 
-RemoveAttributesFromFindingsResult::RemoveAttributesFromFindingsResult(const AmazonWebServiceResult<JsonValue>& result)
+RemoveAttributesFromFindingsResult::RemoveAttributesFromFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RemoveAttributesFromFindingsResult& RemoveAttributesFromFindingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RemoveAttributesFromFindingsResult& RemoveAttributesFromFindingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("failedItems"))

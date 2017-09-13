@@ -57,6 +57,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name that's associated with the stack set.</p>
      */
@@ -92,6 +93,7 @@ namespace Model
      */
     inline StackSet& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
+
     /**
      * <p>The ID of the stack set.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>The ID of the stack set.</p>
      */
     inline StackSet& WithStackSetId(const char* value) { SetStackSetId(value); return *this;}
+
 
     /**
      * <p>A description of the stack set that you specify when the stack set is created
@@ -169,6 +172,7 @@ namespace Model
      */
     inline StackSet& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The status of the stack set.</p>
      */
@@ -193,6 +197,7 @@ namespace Model
      * <p>The status of the stack set.</p>
      */
     inline StackSet& WithStatus(StackSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The structure that contains the body of the template that was used to create
@@ -236,6 +241,7 @@ namespace Model
      */
     inline StackSet& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
+
     /**
      * <p>A list of input parameters for a stack set.</p>
      */
@@ -270,6 +276,7 @@ namespace Model
      * <p>A list of input parameters for a stack set.</p>
      */
     inline StackSet& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
@@ -341,6 +348,7 @@ namespace Model
      */
     inline StackSet& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of tags that specify information about the stack set. A maximum number
      * of 50 tags can be specified.</p>
@@ -384,20 +392,28 @@ namespace Model
     inline StackSet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
     Aws::String m_stackSetId;
     bool m_stackSetIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     StackSetStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_templateBody;
     bool m_templateBodyHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Vector<Capability> m_capabilities;
     bool m_capabilitiesHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

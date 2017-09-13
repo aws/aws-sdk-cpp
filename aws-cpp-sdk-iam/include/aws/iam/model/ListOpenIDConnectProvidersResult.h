@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListOpenIDConnectProvidersResult();
-    ListOpenIDConnectProvidersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListOpenIDConnectProvidersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListOpenIDConnectProvidersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListOpenIDConnectProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The list of IAM OIDC provider resource objects defined in the AWS
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ListOpenIDConnectProvidersResult& AddOpenIDConnectProviderList(OpenIDConnectProviderListEntry&& value) { m_openIDConnectProviderList.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -107,7 +109,9 @@ namespace Model
     inline ListOpenIDConnectProvidersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<OpenIDConnectProviderListEntry> m_openIDConnectProviderList;
+
     ResponseMetadata m_responseMetadata;
   };
 

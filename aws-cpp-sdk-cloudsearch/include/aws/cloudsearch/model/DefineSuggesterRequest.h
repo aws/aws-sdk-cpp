@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -65,6 +66,7 @@ namespace Model
     
     inline DefineSuggesterRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     
     inline const Suggester& GetSuggester() const{ return m_suggester; }
 
@@ -81,8 +83,10 @@ namespace Model
     inline DefineSuggesterRequest& WithSuggester(Suggester&& value) { SetSuggester(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Suggester m_suggester;
     bool m_suggesterHasBeenSet;
   };

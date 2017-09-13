@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
      * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ListPoliciesRequest& WithScope(PolicyScopeType&& value) { SetScope(std::move(value)); return *this;}
 
+
     /**
      * <p>A flag to filter the results to only the attached policies.</p> <p>When
      * <code>OnlyAttached</code> is <code>true</code>, the returned list contains only
@@ -110,6 +112,7 @@ namespace Model
      * included, all policies are returned.</p>
      */
     inline ListPoliciesRequest& WithOnlyAttached(bool value) { SetOnlyAttached(value); return *this;}
+
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
@@ -188,6 +191,7 @@ namespace Model
      */
     inline ListPoliciesRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
 
+
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
      * response indicating that the results are truncated. Set it to the value of the
@@ -244,6 +248,7 @@ namespace Model
      */
     inline ListPoliciesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this only when paginating results to indicate the maximum
      * number of items you want in the response. If additional items exist beyond the
@@ -281,14 +286,19 @@ namespace Model
     inline ListPoliciesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     PolicyScopeType m_scope;
     bool m_scopeHasBeenSet;
+
     bool m_onlyAttached;
     bool m_onlyAttachedHasBeenSet;
+
     Aws::String m_pathPrefix;
     bool m_pathPrefixHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

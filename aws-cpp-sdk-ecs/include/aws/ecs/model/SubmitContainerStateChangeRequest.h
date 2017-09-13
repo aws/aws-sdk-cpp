@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the container.</p>
@@ -79,6 +80,7 @@ namespace Model
      * the container.</p>
      */
     inline SubmitContainerStateChangeRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the
@@ -122,6 +124,7 @@ namespace Model
      */
     inline SubmitContainerStateChangeRequest& WithTask(const char* value) { SetTask(value); return *this;}
 
+
     /**
      * <p>The name of the container.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The name of the container.</p>
      */
     inline SubmitContainerStateChangeRequest& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+
 
     /**
      * <p>The status of the state change request.</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline SubmitContainerStateChangeRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The exit code returned for the state change request.</p>
      */
@@ -206,6 +211,7 @@ namespace Model
      * <p>The exit code returned for the state change request.</p>
      */
     inline SubmitContainerStateChangeRequest& WithExitCode(int value) { SetExitCode(value); return *this;}
+
 
     /**
      * <p>The reason for the state change request.</p>
@@ -241,6 +247,7 @@ namespace Model
      * <p>The reason for the state change request.</p>
      */
     inline SubmitContainerStateChangeRequest& WithReason(const char* value) { SetReason(value); return *this;}
+
 
     /**
      * <p>The network bindings of the container.</p>
@@ -278,18 +285,25 @@ namespace Model
     inline SubmitContainerStateChangeRequest& AddNetworkBindings(NetworkBinding&& value) { m_networkBindingsHasBeenSet = true; m_networkBindings.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_task;
     bool m_taskHasBeenSet;
+
     Aws::String m_containerName;
     bool m_containerNameHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     int m_exitCode;
     bool m_exitCodeHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::Vector<NetworkBinding> m_networkBindings;
     bool m_networkBindingsHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
     PutMethodRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline PutMethodRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline PutMethodRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>Specifies the method request's HTTP method type.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      * <p>Specifies the method request's HTTP method type.</p>
      */
     inline PutMethodRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
+
 
     /**
      * <p>The method's authorization type. Valid values are <code>NONE</code> for open
@@ -200,6 +204,7 @@ namespace Model
      */
     inline PutMethodRequest& WithAuthorizationType(const char* value) { SetAuthorizationType(value); return *this;}
 
+
     /**
      * <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if
      * the type is CUSTOM.</p>
@@ -242,6 +247,7 @@ namespace Model
      */
     inline PutMethodRequest& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the method required a valid <a>ApiKey</a>.</p>
      */
@@ -256,6 +262,7 @@ namespace Model
      * <p>Specifies whether the method required a valid <a>ApiKey</a>.</p>
      */
     inline PutMethodRequest& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
+
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
@@ -319,6 +326,7 @@ namespace Model
      * example.</p>
      */
     inline PutMethodRequest& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -424,6 +432,7 @@ namespace Model
      */
     inline PutMethodRequest& AddRequestParameters(const char* key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Specifies the <a>Model</a> resources used for the request's content type.
      * Request models are represented as a key/value map, with a content type as the
@@ -508,6 +517,7 @@ namespace Model
      */
     inline PutMethodRequest& AddRequestModels(const char* key, const char* value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(key, value); return *this; }
 
+
     /**
      * <p>The identifier of a <a>RequestValidator</a> for validating the method
      * request.</p>
@@ -551,24 +561,34 @@ namespace Model
     inline PutMethodRequest& WithRequestValidatorId(const char* value) { SetRequestValidatorId(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+
     Aws::String m_authorizationType;
     bool m_authorizationTypeHasBeenSet;
+
     Aws::String m_authorizerId;
     bool m_authorizerIdHasBeenSet;
+
     bool m_apiKeyRequired;
     bool m_apiKeyRequiredHasBeenSet;
+
     Aws::String m_operationName;
     bool m_operationNameHasBeenSet;
+
     Aws::Map<Aws::String, bool> m_requestParameters;
     bool m_requestParametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_requestModels;
     bool m_requestModelsHasBeenSet;
+
     Aws::String m_requestValidatorId;
     bool m_requestValidatorIdHasBeenSet;
   };

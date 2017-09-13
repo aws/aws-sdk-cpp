@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
      * ID, use <a>DescribeClusters</a>.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline DeleteClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
   };

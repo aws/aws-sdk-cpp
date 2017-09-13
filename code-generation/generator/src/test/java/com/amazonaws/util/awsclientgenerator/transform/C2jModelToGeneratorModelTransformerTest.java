@@ -45,7 +45,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         c2jMetadata.setUid("service-9089-34-54");
 
         c2jServiceModel.setMetadata(c2jMetadata);
-        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, false);
         Metadata metadata = c2jModelToGeneratorModelTransformer.convertMetadata();
         assertEquals(c2jMetadata.getApiVersion(), metadata.getApiVersion());
         assertEquals(c2jMetadata.getEndpointPrefix(), metadata.getEndpointPrefix());
@@ -67,6 +67,27 @@ public class C2jModelToGeneratorModelTransformerTest {
         assertEquals(c2jMetadata.getServiceFullName(), metadata.getServiceFullName());
         assertEquals(c2jMetadata.getSignatureVersion(), metadata.getSignatureVersion());
         assertEquals(c2jMetadata.getTargetPrefix(), metadata.getTargetPrefix());
+    }
+
+    @Test
+    public void testMetadataConversationWithStandalonePackages() {
+        C2jServiceModel c2jServiceModel = new C2jServiceModel();
+        C2jMetadata c2jMetadata = new C2jMetadata();
+        c2jMetadata.setApiVersion("API Version");
+        c2jMetadata.setServiceAbbreviation("Amazon AWS Servi_ce Ab-br");
+        c2jMetadata.setApiVersion("API Version");
+        c2jMetadata.setEndpointPrefix("service-abbr");
+        c2jMetadata.setJsonVersion("1.1");
+        c2jMetadata.setProtocol("api-gateway");
+        c2jMetadata.setServiceFullName("Amazon AWS Service Abbr Full Name");
+        c2jMetadata.setSignatureVersion("v4");
+        c2jMetadata.setTargetPrefix("ServiceAbbr.");
+        c2jMetadata.setUid("service-9089-34-54");
+        c2jServiceModel.setMetadata(c2jMetadata);
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, true);
+        Metadata metadata = c2jModelToGeneratorModelTransformer.convertMetadata();
+        assertTrue(metadata.isStandalone());
+        assertEquals("application-json", metadata.getProtocol());
     }
 
     @Test
@@ -109,7 +130,7 @@ public class C2jModelToGeneratorModelTransformerTest {
 
         c2jServiceModel.setShapes(c2jShapeMap);
 
-        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, false);
         c2jModelToGeneratorModelTransformer.convertShapes();
 
         Map<String, Shape> shapes = c2jModelToGeneratorModelTransformer.shapes;
@@ -164,7 +185,7 @@ public class C2jModelToGeneratorModelTransformerTest {
 
         c2jServiceModel.setShapes(c2jShapeMap);
 
-        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, false);
         c2jModelToGeneratorModelTransformer.convertShapes();
 
         Map<String, Shape> shapes = c2jModelToGeneratorModelTransformer.shapes;
@@ -211,7 +232,7 @@ public class C2jModelToGeneratorModelTransformerTest {
 
         c2jServiceModel.setShapes(c2jShapeMap);
 
-        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, false);
         c2jModelToGeneratorModelTransformer.convertShapes();
 
         Map<String, Shape> shapes = c2jModelToGeneratorModelTransformer.shapes;
@@ -292,7 +313,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         c2jServiceModel.setOperations(new HashMap<>());
         c2jServiceModel.getOperations().put("Operation", operation);
 
-        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, false);
         c2jModelToGeneratorModelTransformer.convertShapes();
         c2jModelToGeneratorModelTransformer.convertOperations();
 

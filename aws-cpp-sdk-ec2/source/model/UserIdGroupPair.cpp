@@ -31,6 +31,7 @@ namespace Model
 {
 
 UserIdGroupPair::UserIdGroupPair() : 
+    m_descriptionHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_peeringStatusHasBeenSet(false),
@@ -41,6 +42,7 @@ UserIdGroupPair::UserIdGroupPair() :
 }
 
 UserIdGroupPair::UserIdGroupPair(const XmlNode& xmlNode) : 
+    m_descriptionHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_peeringStatusHasBeenSet(false),
@@ -57,6 +59,12 @@ UserIdGroupPair& UserIdGroupPair::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
@@ -100,6 +108,11 @@ UserIdGroupPair& UserIdGroupPair::operator =(const XmlNode& xmlNode)
 
 void UserIdGroupPair::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
   if(m_groupIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
@@ -134,6 +147,10 @@ void UserIdGroupPair::OutputToStream(Aws::OStream& oStream, const char* location
 
 void UserIdGroupPair::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
   if(m_groupIdHasBeenSet)
   {
       oStream << location << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";

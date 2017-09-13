@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
      * <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p>
@@ -108,6 +109,7 @@ namespace Model
      */
     inline GetGeoLocationRequest& WithContinentCode(const char* value) { SetContinentCode(value); return *this;}
 
+
     /**
      * <p>Amazon Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
@@ -156,6 +158,7 @@ namespace Model
      * alpha-2</a>.</p>
      */
     inline GetGeoLocationRequest& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}
+
 
     /**
      * <p>Amazon Route 53 uses the one- to three-letter subdivision codes that are
@@ -221,10 +224,13 @@ namespace Model
     inline GetGeoLocationRequest& WithSubdivisionCode(const char* value) { SetSubdivisionCode(value); return *this;}
 
   private:
+
     Aws::String m_continentCode;
     bool m_continentCodeHasBeenSet;
+
     Aws::String m_countryCode;
     bool m_countryCodeHasBeenSet;
+
     Aws::String m_subdivisionCode;
     bool m_subdivisionCodeHasBeenSet;
   };

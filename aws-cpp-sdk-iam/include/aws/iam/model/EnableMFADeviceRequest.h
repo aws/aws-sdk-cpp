@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
      * <p>This parameter allows (per its <a
@@ -101,6 +102,7 @@ namespace Model
      */
     inline EnableMFADeviceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
      * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
@@ -163,6 +165,7 @@ namespace Model
      * spaces. You can also include any of the following characters: =,.@:/-</p>
      */
     inline EnableMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
+
 
     /**
      * <p>An authentication code emitted by the device. </p> <p>The format for this
@@ -254,6 +257,7 @@ namespace Model
      * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode1(const char* value) { SetAuthenticationCode1(value); return *this;}
+
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
@@ -347,12 +351,16 @@ namespace Model
     inline EnableMFADeviceRequest& WithAuthenticationCode2(const char* value) { SetAuthenticationCode2(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
+
     Aws::String m_authenticationCode1;
     bool m_authenticationCode1HasBeenSet;
+
     Aws::String m_authenticationCode2;
     bool m_authenticationCode2HasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The content of the message, in text format. Use this for text-based email
      * clients, or clients on high-latency networks (such as mobile devices).</p>
@@ -79,6 +80,7 @@ namespace Model
      * clients, or clients on high-latency networks (such as mobile devices).</p>
      */
     inline Body& WithText(Content&& value) { SetText(std::move(value)); return *this;}
+
 
     /**
      * <p>The content of the message, in HTML format. Use this for email clients that
@@ -116,8 +118,10 @@ namespace Model
     inline Body& WithHtml(Content&& value) { SetHtml(std::move(value)); return *this;}
 
   private:
+
     Content m_text;
     bool m_textHasBeenSet;
+
     Content m_html;
     bool m_htmlHasBeenSet;
   };

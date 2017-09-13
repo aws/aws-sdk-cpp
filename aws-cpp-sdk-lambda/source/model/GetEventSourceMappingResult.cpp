@@ -31,13 +31,13 @@ GetEventSourceMappingResult::GetEventSourceMappingResult() :
 {
 }
 
-GetEventSourceMappingResult::GetEventSourceMappingResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetEventSourceMappingResult::GetEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_batchSize(0)
 {
   *this = result;
 }
 
-GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UUID"))

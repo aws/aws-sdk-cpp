@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * A time period indicated the start date and end date of a budget.<p><h3>See
+   * A time period indicating the start date and end date of a budget.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/TimePeriod">AWS
    * API Reference</a></p>
@@ -45,6 +45,7 @@ namespace Model
     TimePeriod(const Aws::Utils::Json::JsonValue& jsonValue);
     TimePeriod& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
 
     
     inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline TimePeriod& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
@@ -77,8 +79,10 @@ namespace Model
     inline TimePeriod& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_start;
     bool m_startHasBeenSet;
+
     Aws::Utils::DateTime m_end;
     bool m_endHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     InstancePatchStateFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key for the filter. Supported values are FailedCount, InstalledCount,
      * InstalledOtherCount, MissingCount and NotApplicableCount.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline InstancePatchStateFilter& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The value for the filter, must be an integer greater than or equal to 0.</p>
      */
@@ -130,6 +132,7 @@ namespace Model
      */
     inline InstancePatchStateFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
+
     /**
      * <p>The type of comparison that should be performed for the value: Equal,
      * NotEqual, LessThan or GreaterThan.</p>
@@ -161,10 +164,13 @@ namespace Model
     inline InstancePatchStateFilter& WithType(InstancePatchStateOperatorType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
     InstancePatchStateOperatorType m_type;
     bool m_typeHasBeenSet;
   };

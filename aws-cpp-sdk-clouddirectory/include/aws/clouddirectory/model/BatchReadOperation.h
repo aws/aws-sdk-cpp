@@ -56,6 +56,7 @@ namespace Model
     BatchReadOperation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Lists all attributes that are associated with an object.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>Lists all attributes that are associated with an object.</p>
      */
     inline BatchReadOperation& WithListObjectAttributes(BatchListObjectAttributes&& value) { SetListObjectAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Returns a paginated list of child objects that are associated with a given
@@ -111,6 +113,7 @@ namespace Model
      */
     inline BatchReadOperation& WithListObjectChildren(BatchListObjectChildren&& value) { SetListObjectChildren(std::move(value)); return *this;}
 
+
     /**
      * <p>Lists indices attached to an object.</p>
      */
@@ -135,6 +138,7 @@ namespace Model
      * <p>Lists indices attached to an object.</p>
      */
     inline BatchReadOperation& WithListAttachedIndices(BatchListAttachedIndices&& value) { SetListAttachedIndices(std::move(value)); return *this;}
+
 
     /**
      * <p>Retrieves all available parent paths for any object type such as node, leaf
@@ -181,6 +185,7 @@ namespace Model
      */
     inline BatchReadOperation& WithListObjectParentPaths(BatchListObjectParentPaths&& value) { SetListObjectParentPaths(std::move(value)); return *this;}
 
+
     /**
      * <p>Retrieves metadata about an object.</p>
      */
@@ -206,6 +211,7 @@ namespace Model
      */
     inline BatchReadOperation& WithGetObjectInformation(BatchGetObjectInformation&& value) { SetGetObjectInformation(std::move(value)); return *this;}
 
+
     /**
      * <p>Returns policies attached to an object in pagination fashion.</p>
      */
@@ -230,6 +236,7 @@ namespace Model
      * <p>Returns policies attached to an object in pagination fashion.</p>
      */
     inline BatchReadOperation& WithListObjectPolicies(BatchListObjectPolicies&& value) { SetListObjectPolicies(std::move(value)); return *this;}
+
 
     /**
      * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
@@ -260,6 +267,7 @@ namespace Model
      * attached.</p>
      */
     inline BatchReadOperation& WithListPolicyAttachments(BatchListPolicyAttachments&& value) { SetListPolicyAttachments(std::move(value)); return *this;}
+
 
     /**
      * <p>Lists all policies from the root of the <a>Directory</a> to the object
@@ -321,6 +329,7 @@ namespace Model
      */
     inline BatchReadOperation& WithLookupPolicy(BatchLookupPolicy&& value) { SetLookupPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>Lists objects attached to the specified index.</p>
      */
@@ -345,6 +354,7 @@ namespace Model
      * <p>Lists objects attached to the specified index.</p>
      */
     inline BatchReadOperation& WithListIndex(BatchListIndex&& value) { SetListIndex(std::move(value)); return *this;}
+
 
     /**
      * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
@@ -390,6 +400,7 @@ namespace Model
      * link</a>.</p>
      */
     inline BatchReadOperation& WithListOutgoingTypedLinks(BatchListOutgoingTypedLinks&& value) { SetListOutgoingTypedLinks(std::move(value)); return *this;}
+
 
     /**
      * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
@@ -437,26 +448,37 @@ namespace Model
     inline BatchReadOperation& WithListIncomingTypedLinks(BatchListIncomingTypedLinks&& value) { SetListIncomingTypedLinks(std::move(value)); return *this;}
 
   private:
+
     BatchListObjectAttributes m_listObjectAttributes;
     bool m_listObjectAttributesHasBeenSet;
+
     BatchListObjectChildren m_listObjectChildren;
     bool m_listObjectChildrenHasBeenSet;
+
     BatchListAttachedIndices m_listAttachedIndices;
     bool m_listAttachedIndicesHasBeenSet;
+
     BatchListObjectParentPaths m_listObjectParentPaths;
     bool m_listObjectParentPathsHasBeenSet;
+
     BatchGetObjectInformation m_getObjectInformation;
     bool m_getObjectInformationHasBeenSet;
+
     BatchListObjectPolicies m_listObjectPolicies;
     bool m_listObjectPoliciesHasBeenSet;
+
     BatchListPolicyAttachments m_listPolicyAttachments;
     bool m_listPolicyAttachmentsHasBeenSet;
+
     BatchLookupPolicy m_lookupPolicy;
     bool m_lookupPolicyHasBeenSet;
+
     BatchListIndex m_listIndex;
     bool m_listIndexHasBeenSet;
+
     BatchListOutgoingTypedLinks m_listOutgoingTypedLinks;
     bool m_listOutgoingTypedLinksHasBeenSet;
+
     BatchListIncomingTypedLinks m_listIncomingTypedLinks;
     bool m_listIncomingTypedLinksHasBeenSet;
   };

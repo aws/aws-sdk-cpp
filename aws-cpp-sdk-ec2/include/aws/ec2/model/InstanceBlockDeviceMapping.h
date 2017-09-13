@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
      * or <code>xvdh</code>).</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline InstanceBlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
+
     /**
      * <p>Parameters used to automatically set up EBS volumes when the instance is
      * launched.</p>
@@ -122,8 +124,10 @@ namespace Model
     inline InstanceBlockDeviceMapping& WithEbs(EbsInstanceBlockDevice&& value) { SetEbs(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet;
+
     EbsInstanceBlockDevice m_ebs;
     bool m_ebsHasBeenSet;
   };

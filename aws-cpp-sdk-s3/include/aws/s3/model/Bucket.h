@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The name of the bucket.
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline Bucket& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * Date the bucket was created.
      */
@@ -103,8 +105,10 @@ namespace Model
     inline Bucket& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

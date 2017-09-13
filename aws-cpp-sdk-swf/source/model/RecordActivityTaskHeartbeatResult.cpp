@@ -31,13 +31,13 @@ RecordActivityTaskHeartbeatResult::RecordActivityTaskHeartbeatResult() :
 {
 }
 
-RecordActivityTaskHeartbeatResult::RecordActivityTaskHeartbeatResult(const AmazonWebServiceResult<JsonValue>& result) : 
+RecordActivityTaskHeartbeatResult::RecordActivityTaskHeartbeatResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_cancelRequested(false)
 {
   *this = result;
 }
 
-RecordActivityTaskHeartbeatResult& RecordActivityTaskHeartbeatResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RecordActivityTaskHeartbeatResult& RecordActivityTaskHeartbeatResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("cancelRequested"))

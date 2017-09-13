@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeIdentityProviderResult();
-    DescribeIdentityProviderResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeIdentityProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeIdentityProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identity provider that was deleted.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeIdentityProviderResult& WithIdentityProvider(IdentityProviderType&& value) { SetIdentityProvider(std::move(value)); return *this;}
 
   private:
+
     IdentityProviderType m_identityProvider;
   };
 

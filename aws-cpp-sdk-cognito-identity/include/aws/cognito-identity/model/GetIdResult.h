@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetIdResult();
-    GetIdResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetIdResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline GetIdResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
   private:
+
     Aws::String m_identityId;
   };
 

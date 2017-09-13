@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace MarketplaceEntitlementService
+} // namespace Client
 } // namespace Aws

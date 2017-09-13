@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     BatchDeleteConnectionResult();
-    BatchDeleteConnectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteConnectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchDeleteConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchDeleteConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of names of the connection definitions that were successfully
@@ -91,6 +92,7 @@ namespace Model
      * deleted.</p>
      */
     inline BatchDeleteConnectionResult& AddSucceeded(const char* value) { m_succeeded.push_back(value); return *this; }
+
 
     /**
      * <p>A map of the names of connections that were not successfully deleted to error
@@ -159,7 +161,9 @@ namespace Model
     inline BatchDeleteConnectionResult& AddErrors(const char* key, const ErrorDetail& value) { m_errors.emplace(key, value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_succeeded;
+
     Aws::Map<Aws::String, ErrorDetail> m_errors;
   };
 

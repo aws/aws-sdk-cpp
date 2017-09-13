@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the topic you want to create.</p> <p>Constraints: Topic names
      * must be made up of only uppercase and lowercase ASCII letters, numbers,
@@ -91,6 +92,7 @@ namespace Model
     inline CreateTopicRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

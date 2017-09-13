@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListAttributesResult();
-    ListAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of attribute objects that meet the criteria of the request.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of attribute objects that meet the criteria of the request.</p>
      */
     inline ListAttributesResult& AddAttributes(Attribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -142,7 +144,9 @@ namespace Model
     inline ListAttributesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Attribute> m_attributes;
+
     Aws::String m_nextToken;
   };
 

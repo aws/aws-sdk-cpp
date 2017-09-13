@@ -30,12 +30,12 @@ RegisterEcsClusterResult::RegisterEcsClusterResult()
 {
 }
 
-RegisterEcsClusterResult::RegisterEcsClusterResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterEcsClusterResult::RegisterEcsClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterEcsClusterResult& RegisterEcsClusterResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterEcsClusterResult& RegisterEcsClusterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EcsClusterArn"))

@@ -30,12 +30,12 @@ UpdateEndpointResult::UpdateEndpointResult()
 {
 }
 
-UpdateEndpointResult::UpdateEndpointResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateEndpointResult::UpdateEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateEndpointResult& UpdateEndpointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateEndpointResult& UpdateEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MessageBody"))

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTrustedAdvisorCheckResultResult();
-    DescribeTrustedAdvisorCheckResultResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTrustedAdvisorCheckResultResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTrustedAdvisorCheckResultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTrustedAdvisorCheckResultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The detailed results of the Trusted Advisor check.</p>
@@ -74,6 +75,7 @@ namespace Model
     inline DescribeTrustedAdvisorCheckResultResult& WithResult(TrustedAdvisorCheckResult&& value) { SetResult(std::move(value)); return *this;}
 
   private:
+
     TrustedAdvisorCheckResult m_result;
   };
 

@@ -50,6 +50,7 @@ namespace Model
     PlacementStrategy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of placement strategy. The <code>random</code> placement strategy
      * randomly places tasks on available candidates. The <code>spread</code> placement
@@ -109,6 +110,7 @@ namespace Model
      * memory (but still enough to run the task).</p>
      */
     inline PlacementStrategy& WithType(PlacementStrategyType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The field to apply the placement strategy against. For the
@@ -188,8 +190,10 @@ namespace Model
     inline PlacementStrategy& WithField(const char* value) { SetField(value); return *this;}
 
   private:
+
     PlacementStrategyType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_field;
     bool m_fieldHasBeenSet;
   };

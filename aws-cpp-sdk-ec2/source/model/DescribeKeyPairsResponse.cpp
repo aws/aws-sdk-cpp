@@ -31,12 +31,12 @@ DescribeKeyPairsResponse::DescribeKeyPairsResponse()
 {
 }
 
-DescribeKeyPairsResponse::DescribeKeyPairsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeKeyPairsResponse::DescribeKeyPairsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeKeyPairsResponse& DescribeKeyPairsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeKeyPairsResponse& DescribeKeyPairsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

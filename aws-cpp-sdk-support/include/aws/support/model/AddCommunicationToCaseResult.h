@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     AddCommunicationToCaseResult();
-    AddCommunicationToCaseResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddCommunicationToCaseResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddCommunicationToCaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddCommunicationToCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
@@ -64,6 +65,7 @@ namespace Model
     inline AddCommunicationToCaseResult& WithResult(bool value) { SetResult(value); return *this;}
 
   private:
+
     bool m_result;
   };
 

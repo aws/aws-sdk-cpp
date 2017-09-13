@@ -30,12 +30,12 @@ GetNamedQueryResult::GetNamedQueryResult()
 {
 }
 
-GetNamedQueryResult::GetNamedQueryResult(const AmazonWebServiceResult<JsonValue>& result)
+GetNamedQueryResult::GetNamedQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetNamedQueryResult& GetNamedQueryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetNamedQueryResult& GetNamedQueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NamedQuery"))

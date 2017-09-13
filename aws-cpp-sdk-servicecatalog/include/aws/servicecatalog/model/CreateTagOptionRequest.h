@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The TagOption key.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The TagOption key.</p>
      */
     inline CreateTagOptionRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The TagOption value.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline CreateTagOptionRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

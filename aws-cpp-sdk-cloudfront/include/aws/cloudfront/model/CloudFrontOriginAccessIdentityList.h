@@ -55,6 +55,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>Use this when paginating results to indicate where to begin in your list of
      * origin access identities. The results include identities in the list that occur
@@ -118,6 +119,7 @@ namespace Model
      */
     inline CloudFrontOriginAccessIdentityList& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
@@ -167,6 +169,7 @@ namespace Model
      */
     inline CloudFrontOriginAccessIdentityList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of origin access identities you want in the response body.
      * </p>
@@ -184,6 +187,7 @@ namespace Model
      * </p>
      */
     inline CloudFrontOriginAccessIdentityList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+
 
     /**
      * <p>A flag that indicates whether more origin access identities remain to be
@@ -209,6 +213,7 @@ namespace Model
      */
     inline CloudFrontOriginAccessIdentityList& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
+
     /**
      * <p>The number of CloudFront origin access identities that were created by the
      * current AWS account. </p>
@@ -226,6 +231,7 @@ namespace Model
      * current AWS account. </p>
      */
     inline CloudFrontOriginAccessIdentityList& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A complex type that contains one
@@ -277,16 +283,22 @@ namespace Model
     inline CloudFrontOriginAccessIdentityList& AddItems(CloudFrontOriginAccessIdentitySummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
+
     bool m_isTruncated;
     bool m_isTruncatedHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<CloudFrontOriginAccessIdentitySummary> m_items;
     bool m_itemsHasBeenSet;
   };

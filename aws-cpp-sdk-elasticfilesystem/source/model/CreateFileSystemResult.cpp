@@ -34,7 +34,7 @@ CreateFileSystemResult::CreateFileSystemResult() :
 {
 }
 
-CreateFileSystemResult::CreateFileSystemResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateFileSystemResult::CreateFileSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_lifeCycleState(LifeCycleState::NOT_SET),
     m_numberOfMountTargets(0),
     m_performanceMode(PerformanceMode::NOT_SET),
@@ -43,7 +43,7 @@ CreateFileSystemResult::CreateFileSystemResult(const AmazonWebServiceResult<Json
   *this = result;
 }
 
-CreateFileSystemResult& CreateFileSystemResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateFileSystemResult& CreateFileSystemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OwnerId"))

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name that is associated with the parameter.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name that is associated with the parameter.</p>
      */
     inline ParameterDeclaration& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
+
 
     /**
      * <p>The default value of the parameter.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline ParameterDeclaration& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
+
     /**
      * <p>The type of parameter.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline ParameterDeclaration& WithParameterType(const char* value) { SetParameterType(value); return *this;}
 
+
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
      * logs and in the AWS Management Console.</p>
@@ -171,6 +175,7 @@ namespace Model
      * logs and in the AWS Management Console.</p>
      */
     inline ParameterDeclaration& WithNoEcho(bool value) { SetNoEcho(value); return *this;}
+
 
     /**
      * <p>The description that is associate with the parameter.</p>
@@ -207,6 +212,7 @@ namespace Model
      */
     inline ParameterDeclaration& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
      */
@@ -233,16 +239,22 @@ namespace Model
     inline ParameterDeclaration& WithParameterConstraints(ParameterConstraints&& value) { SetParameterConstraints(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_parameterKey;
     bool m_parameterKeyHasBeenSet;
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     Aws::String m_parameterType;
     bool m_parameterTypeHasBeenSet;
+
     bool m_noEcho;
     bool m_noEchoHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ParameterConstraints m_parameterConstraints;
     bool m_parameterConstraintsHasBeenSet;
   };

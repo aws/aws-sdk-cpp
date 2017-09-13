@@ -31,13 +31,13 @@ DescribeStateMachineResult::DescribeStateMachineResult() :
 {
 }
 
-DescribeStateMachineResult::DescribeStateMachineResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeStateMachineResult::DescribeStateMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(StateMachineStatus::NOT_SET)
 {
   *this = result;
 }
 
-DescribeStateMachineResult& DescribeStateMachineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeStateMachineResult& DescribeStateMachineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("stateMachineArn"))

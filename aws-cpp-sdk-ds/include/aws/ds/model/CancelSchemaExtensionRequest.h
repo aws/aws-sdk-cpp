@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory whose schema extension will be canceled.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The identifier of the directory whose schema extension will be canceled.</p>
      */
     inline CancelSchemaExtensionRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The identifier of the schema extension that will be canceled.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline CancelSchemaExtensionRequest& WithSchemaExtensionId(const char* value) { SetSchemaExtensionId(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_schemaExtensionId;
     bool m_schemaExtensionIdHasBeenSet;
   };

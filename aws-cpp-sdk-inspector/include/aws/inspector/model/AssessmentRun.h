@@ -55,6 +55,7 @@ namespace Model
     AssessmentRun& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the assessment run.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      */
     inline AssessmentRun& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The auto-generated name for the assessment run.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The auto-generated name for the assessment run.</p>
      */
     inline AssessmentRun& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ARN of the assessment template that is associated with the assessment
@@ -167,6 +170,7 @@ namespace Model
      */
     inline AssessmentRun& WithAssessmentTemplateArn(const char* value) { SetAssessmentTemplateArn(value); return *this;}
 
+
     /**
      * <p>The state of the assessment run.</p>
      */
@@ -192,6 +196,7 @@ namespace Model
      */
     inline AssessmentRun& WithState(AssessmentRunState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The duration of the assessment run.</p>
      */
@@ -206,6 +211,7 @@ namespace Model
      * <p>The duration of the assessment run.</p>
      */
     inline AssessmentRun& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
+
 
     /**
      * <p>The rules packages selected for the assessment run.</p>
@@ -247,6 +253,7 @@ namespace Model
      */
     inline AssessmentRun& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
 
+
     /**
      * <p>The user-defined attributes that are assigned to every generated finding.</p>
      */
@@ -282,6 +289,7 @@ namespace Model
      */
     inline AssessmentRun& AddUserAttributesForFindings(Attribute&& value) { m_userAttributesForFindingsHasBeenSet = true; m_userAttributesForFindings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time when <a>StartAssessmentRun</a> was called.</p>
      */
@@ -307,6 +315,7 @@ namespace Model
      */
     inline AssessmentRun& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The time when <a>StartAssessmentRun</a> was called.</p>
      */
@@ -331,6 +340,7 @@ namespace Model
      * <p>The time when <a>StartAssessmentRun</a> was called.</p>
      */
     inline AssessmentRun& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The assessment run completion time that corresponds to the rules packages
@@ -362,6 +372,7 @@ namespace Model
      */
     inline AssessmentRun& WithCompletedAt(Aws::Utils::DateTime&& value) { SetCompletedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The last time when the assessment run's state changed.</p>
      */
@@ -387,6 +398,7 @@ namespace Model
      */
     inline AssessmentRun& WithStateChangedAt(Aws::Utils::DateTime&& value) { SetStateChangedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>A Boolean value (true or false) that specifies whether the process of
      * collecting data from the agents is completed.</p>
@@ -404,6 +416,7 @@ namespace Model
      * collecting data from the agents is completed.</p>
      */
     inline AssessmentRun& WithDataCollected(bool value) { SetDataCollected(value); return *this;}
+
 
     /**
      * <p>A list of the assessment run state changes.</p>
@@ -439,6 +452,7 @@ namespace Model
      * <p>A list of the assessment run state changes.</p>
      */
     inline AssessmentRun& AddStateChanges(AssessmentRunStateChange&& value) { m_stateChangesHasBeenSet = true; m_stateChanges.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of notifications for the event subscriptions. A notification about a
@@ -482,6 +496,7 @@ namespace Model
      */
     inline AssessmentRun& AddNotifications(AssessmentRunNotification&& value) { m_notificationsHasBeenSet = true; m_notifications.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Provides a total count of generated findings per severity.</p>
      */
@@ -518,34 +533,49 @@ namespace Model
     inline AssessmentRun& AddFindingCounts(Severity&& key, int value) { m_findingCountsHasBeenSet = true; m_findingCounts.emplace(std::move(key), value); return *this; }
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_assessmentTemplateArn;
     bool m_assessmentTemplateArnHasBeenSet;
+
     AssessmentRunState m_state;
     bool m_stateHasBeenSet;
+
     int m_durationInSeconds;
     bool m_durationInSecondsHasBeenSet;
+
     Aws::Vector<Aws::String> m_rulesPackageArns;
     bool m_rulesPackageArnsHasBeenSet;
+
     Aws::Vector<Attribute> m_userAttributesForFindings;
     bool m_userAttributesForFindingsHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Utils::DateTime m_startedAt;
     bool m_startedAtHasBeenSet;
+
     Aws::Utils::DateTime m_completedAt;
     bool m_completedAtHasBeenSet;
+
     Aws::Utils::DateTime m_stateChangedAt;
     bool m_stateChangedAtHasBeenSet;
+
     bool m_dataCollected;
     bool m_dataCollectedHasBeenSet;
+
     Aws::Vector<AssessmentRunStateChange> m_stateChanges;
     bool m_stateChangesHasBeenSet;
+
     Aws::Vector<AssessmentRunNotification> m_notifications;
     bool m_notificationsHasBeenSet;
+
     Aws::Map<Severity, int> m_findingCounts;
     bool m_findingCountsHasBeenSet;
   };

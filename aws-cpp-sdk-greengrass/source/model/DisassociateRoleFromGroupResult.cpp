@@ -30,12 +30,12 @@ DisassociateRoleFromGroupResult::DisassociateRoleFromGroupResult()
 {
 }
 
-DisassociateRoleFromGroupResult::DisassociateRoleFromGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateRoleFromGroupResult::DisassociateRoleFromGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateRoleFromGroupResult& DisassociateRoleFromGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateRoleFromGroupResult& DisassociateRoleFromGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DisassociatedAt"))

@@ -46,6 +46,7 @@ namespace Model
     ExportTaskStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The status code of the export task.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The status code of the export task.</p>
      */
     inline ExportTaskStatus& WithCode(ExportTaskStatusCode&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The status message related to the status code.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline ExportTaskStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     ExportTaskStatusCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

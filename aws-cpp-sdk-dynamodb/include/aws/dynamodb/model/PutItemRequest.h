@@ -47,6 +47,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the table to contain the item.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the table to contain the item.</p>
      */
     inline PutItemRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
@@ -258,6 +260,7 @@ namespace Model
      */
     inline PutItemRequest& AddItem(const char* key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
 
+
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
      * more information, see <a
@@ -346,6 +349,7 @@ namespace Model
      */
     inline PutItemRequest& AddExpected(const char* key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, value); return *this; }
 
+
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
      * appeared before they were updated with the <code>PutItem</code> request. For
@@ -421,6 +425,7 @@ namespace Model
      */
     inline PutItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(std::move(value)); return *this;}
 
+
     
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
 
@@ -435,6 +440,7 @@ namespace Model
 
     
     inline PutItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>Determines whether item collection metrics are returned. If set to
@@ -476,6 +482,7 @@ namespace Model
      */
     inline PutItemRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { SetReturnItemCollectionMetrics(std::move(value)); return *this;}
 
+
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
      * more information, see <a
@@ -515,6 +522,7 @@ namespace Model
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline PutItemRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(std::move(value)); return *this;}
+
 
     /**
      * <p>A condition that must be satisfied in order for a conditional
@@ -613,6 +621,7 @@ namespace Model
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline PutItemRequest& WithConditionExpression(const char* value) { SetConditionExpression(value); return *this;}
+
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -938,6 +947,7 @@ namespace Model
      */
     inline PutItemRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
+
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
@@ -1126,24 +1136,34 @@ namespace Model
     inline PutItemRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_item;
     bool m_itemHasBeenSet;
+
     Aws::Map<Aws::String, ExpectedAttributeValue> m_expected;
     bool m_expectedHasBeenSet;
+
     ReturnValue m_returnValues;
     bool m_returnValuesHasBeenSet;
+
     ReturnConsumedCapacity m_returnConsumedCapacity;
     bool m_returnConsumedCapacityHasBeenSet;
+
     ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
     bool m_returnItemCollectionMetricsHasBeenSet;
+
     ConditionalOperator m_conditionalOperator;
     bool m_conditionalOperatorHasBeenSet;
+
     Aws::String m_conditionExpression;
     bool m_conditionExpressionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
     bool m_expressionAttributeNamesHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
     bool m_expressionAttributeValuesHasBeenSet;
   };

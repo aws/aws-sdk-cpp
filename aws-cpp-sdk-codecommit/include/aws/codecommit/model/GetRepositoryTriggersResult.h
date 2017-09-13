@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetRepositoryTriggersResult();
-    GetRepositoryTriggersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRepositoryTriggersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRepositoryTriggersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRepositoryTriggersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The system-generated unique ID for the trigger.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The system-generated unique ID for the trigger.</p>
      */
     inline GetRepositoryTriggersResult& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
+
 
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline GetRepositoryTriggersResult& AddTriggers(RepositoryTrigger&& value) { m_triggers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_configurationId;
+
     Aws::Vector<RepositoryTrigger> m_triggers;
   };
 

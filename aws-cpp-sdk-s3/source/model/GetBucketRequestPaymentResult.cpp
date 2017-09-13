@@ -30,13 +30,13 @@ GetBucketRequestPaymentResult::GetBucketRequestPaymentResult() :
 {
 }
 
-GetBucketRequestPaymentResult::GetBucketRequestPaymentResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetBucketRequestPaymentResult::GetBucketRequestPaymentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_payer(Payer::NOT_SET)
 {
   *this = result;
 }
 
-GetBucketRequestPaymentResult& GetBucketRequestPaymentResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketRequestPaymentResult& GetBucketRequestPaymentResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

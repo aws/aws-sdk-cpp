@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeRecordResult();
-    DescribeRecordResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRecordResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Detailed record information for the specified product. </p>
@@ -68,6 +69,7 @@ namespace Model
      * <p>Detailed record information for the specified product. </p>
      */
     inline DescribeRecordResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of outputs for the specified Product object created as the result of a
@@ -118,6 +120,7 @@ namespace Model
      */
     inline DescribeRecordResult& AddRecordOutputs(RecordOutput&& value) { m_recordOutputs.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
@@ -161,8 +164,11 @@ namespace Model
     inline DescribeRecordResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     RecordDetail m_recordDetail;
+
     Aws::Vector<RecordOutput> m_recordOutputs;
+
     Aws::String m_nextPageToken;
   };
 

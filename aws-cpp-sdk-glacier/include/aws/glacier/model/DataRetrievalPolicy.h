@@ -46,6 +46,7 @@ namespace Model
     DataRetrievalPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The policy rule. Although this is a list type, currently there must be only
      * one rule, which contains a Strategy field and optionally a BytesPerHour
@@ -96,6 +97,7 @@ namespace Model
     inline DataRetrievalPolicy& AddRules(DataRetrievalRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<DataRetrievalRule> m_rules;
     bool m_rulesHasBeenSet;
   };

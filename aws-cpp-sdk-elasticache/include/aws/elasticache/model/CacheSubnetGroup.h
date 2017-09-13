@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cache subnet group.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline CacheSubnetGroup& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>The description of the cache subnet group.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The description of the cache subnet group.</p>
      */
     inline CacheSubnetGroup& WithCacheSubnetGroupDescription(const char* value) { SetCacheSubnetGroupDescription(value); return *this;}
+
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
@@ -164,6 +167,7 @@ namespace Model
      */
     inline CacheSubnetGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>A list of subnets associated with the cache subnet group.</p>
      */
@@ -200,12 +204,16 @@ namespace Model
     inline CacheSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_cacheSubnetGroupName;
     bool m_cacheSubnetGroupNameHasBeenSet;
+
     Aws::String m_cacheSubnetGroupDescription;
     bool m_cacheSubnetGroupDescriptionHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Vector<Subnet> m_subnets;
     bool m_subnetsHasBeenSet;
   };

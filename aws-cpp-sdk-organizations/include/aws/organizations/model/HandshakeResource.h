@@ -49,6 +49,7 @@ namespace Model
     HandshakeResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The information that is passed to the other party in the handshake. The
      * format of the value string must match the requirements of the specified
@@ -97,6 +98,7 @@ namespace Model
      * type.</p>
      */
     inline HandshakeResource& WithValue(const char* value) { SetValue(value); return *this;}
+
 
     /**
      * <p>The type of information being passed, specifying how the value is to be
@@ -178,6 +180,7 @@ namespace Model
      */
     inline HandshakeResource& WithType(HandshakeResourceType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>When needed, contains an additional array of <code>HandshakeResource</code>
      * objects.</p>
@@ -221,10 +224,13 @@ namespace Model
     inline HandshakeResource& AddResources(HandshakeResource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     HandshakeResourceType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<HandshakeResource> m_resources;
     bool m_resourcesHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteProgressUpdateStreamResult();
-    DeleteProgressUpdateStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteProgressUpdateStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteProgressUpdateStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteProgressUpdateStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

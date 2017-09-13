@@ -31,12 +31,12 @@ GetRoleResult::GetRoleResult()
 {
 }
 
-GetRoleResult::GetRoleResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetRoleResult::GetRoleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetRoleResult& GetRoleResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetRoleResult& GetRoleResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

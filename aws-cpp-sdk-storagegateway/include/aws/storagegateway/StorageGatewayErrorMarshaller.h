@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_STORAGEGATEWAY_API StorageGatewayErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_STORAGEGATEWAY_API StorageGatewayErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace StorageGateway
+} // namespace Client
 } // namespace Aws

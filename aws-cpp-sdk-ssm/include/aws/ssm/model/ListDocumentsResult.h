@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListDocumentsResult();
-    ListDocumentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDocumentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDocumentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The names of the SSM documents.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The names of the SSM documents.</p>
      */
     inline ListDocumentsResult& AddDocumentIdentifiers(DocumentIdentifier&& value) { m_documentIdentifiers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline ListDocumentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DocumentIdentifier> m_documentIdentifiers;
+
     Aws::String m_nextToken;
   };
 

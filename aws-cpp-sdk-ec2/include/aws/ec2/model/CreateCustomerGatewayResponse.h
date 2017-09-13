@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateCustomerGatewayResponse();
-    CreateCustomerGatewayResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateCustomerGatewayResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateCustomerGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateCustomerGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the customer gateway.</p>
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateCustomerGatewayResponse& WithCustomerGateway(CustomerGateway&& value) { SetCustomerGateway(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,7 +90,9 @@ namespace Model
     inline CreateCustomerGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     CustomerGateway m_customerGateway;
+
     ResponseMetadata m_responseMetadata;
   };
 

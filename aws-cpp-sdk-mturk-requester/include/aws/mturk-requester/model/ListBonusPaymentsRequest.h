@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the HIT associated with the bonus payments to retrieve. If not
      * specified, all bonus payments for all assignments for the given HIT are
@@ -92,6 +93,7 @@ namespace Model
      */
     inline ListBonusPaymentsRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
 
+
     /**
      * <p>The ID of the assignment associated with the bonus payments to retrieve. If
      * specified, only bonus payments for the given assignment are returned. Either the
@@ -141,6 +143,7 @@ namespace Model
      */
     inline ListBonusPaymentsRequest& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
 
+
     /**
      * <p>Pagination token</p>
      */
@@ -176,6 +179,7 @@ namespace Model
      */
     inline ListBonusPaymentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -186,12 +190,16 @@ namespace Model
     inline ListBonusPaymentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_hITId;
     bool m_hITIdHasBeenSet;
+
     Aws::String m_assignmentId;
     bool m_assignmentIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

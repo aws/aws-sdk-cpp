@@ -45,6 +45,7 @@ namespace Model
     ResultAttribute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the inventory item type. Valid value: AWS:InstanceInformation.
      * Default Value: AWS:InstanceInformation.</p>
@@ -88,6 +89,7 @@ namespace Model
     inline ResultAttribute& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
   private:
+
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet;
   };

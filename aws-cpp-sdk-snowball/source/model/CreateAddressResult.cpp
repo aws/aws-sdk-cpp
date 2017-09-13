@@ -30,12 +30,12 @@ CreateAddressResult::CreateAddressResult()
 {
 }
 
-CreateAddressResult::CreateAddressResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateAddressResult::CreateAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateAddressResult& CreateAddressResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateAddressResult& CreateAddressResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AddressId"))

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteTableResult();
-    DeleteTableResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTableResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Represents the properties of a table.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DeleteTableResult& WithTableDescription(TableDescription&& value) { SetTableDescription(std::move(value)); return *this;}
 
   private:
+
     TableDescription m_tableDescription;
   };
 

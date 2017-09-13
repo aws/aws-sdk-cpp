@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     AddAttachmentsToSetResult();
-    AddAttachmentsToSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddAttachmentsToSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddAttachmentsToSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddAttachmentsToSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not
@@ -103,6 +104,7 @@ namespace Model
      */
     inline AddAttachmentsToSetResult& WithAttachmentSetId(const char* value) { SetAttachmentSetId(value); return *this;}
 
+
     /**
      * <p>The time and date when the attachment set expires.</p>
      */
@@ -139,7 +141,9 @@ namespace Model
     inline AddAttachmentsToSetResult& WithExpiryTime(const char* value) { SetExpiryTime(value); return *this;}
 
   private:
+
     Aws::String m_attachmentSetId;
+
     Aws::String m_expiryTime;
   };
 

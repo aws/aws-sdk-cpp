@@ -47,6 +47,7 @@ namespace Model
     ConfigurationRecorder& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the recorder. By default, AWS Config automatically assigns the
      * name "default" when creating the configuration recorder. You cannot change the
@@ -96,6 +97,7 @@ namespace Model
      */
     inline ConfigurationRecorder& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role used to describe the AWS resources
      * associated with the account.</p>
@@ -138,6 +140,7 @@ namespace Model
      */
     inline ConfigurationRecorder& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>Specifies the types of AWS resource for which AWS Config records
      * configuration changes.</p>
@@ -169,10 +172,13 @@ namespace Model
     inline ConfigurationRecorder& WithRecordingGroup(RecordingGroup&& value) { SetRecordingGroup(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     RecordingGroup m_recordingGroup;
     bool m_recordingGroupHasBeenSet;
   };

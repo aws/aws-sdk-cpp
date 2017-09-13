@@ -46,6 +46,7 @@ namespace Model
     AccessLevelFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the access level.</p> <p> <code>Account</code> allows results at
      * the account level. </p> <p> <code>Role</code> allows results based on the
@@ -85,6 +86,7 @@ namespace Model
      * limited to the specified user. </p>
      */
     inline AccessLevelFilter& WithKey(AccessLevelFilterKey&& value) { SetKey(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the user to which the access level applies. A value of
@@ -129,8 +131,10 @@ namespace Model
     inline AccessLevelFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     AccessLevelFilterKey m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

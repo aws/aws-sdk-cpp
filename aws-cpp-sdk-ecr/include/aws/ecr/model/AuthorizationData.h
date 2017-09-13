@@ -47,6 +47,7 @@ namespace Model
     AuthorizationData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A base64-encoded string that contains authorization data for the specified
      * Amazon ECR registry. When the string is decoded, it is presented in the format
@@ -103,6 +104,7 @@ namespace Model
      */
     inline AuthorizationData& WithAuthorizationToken(const char* value) { SetAuthorizationToken(value); return *this;}
 
+
     /**
      * <p>The Unix time in seconds and milliseconds when the authorization token
      * expires. Authorization tokens are valid for 12 hours.</p>
@@ -132,6 +134,7 @@ namespace Model
      * expires. Authorization tokens are valid for 12 hours.</p>
      */
     inline AuthorizationData& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The registry URL to use for this authorization token in a <code>docker
@@ -190,10 +193,13 @@ namespace Model
     inline AuthorizationData& WithProxyEndpoint(const char* value) { SetProxyEndpoint(value); return *this;}
 
   private:
+
     Aws::String m_authorizationToken;
     bool m_authorizationTokenHasBeenSet;
+
     Aws::Utils::DateTime m_expiresAt;
     bool m_expiresAtHasBeenSet;
+
     Aws::String m_proxyEndpoint;
     bool m_proxyEndpointHasBeenSet;
   };

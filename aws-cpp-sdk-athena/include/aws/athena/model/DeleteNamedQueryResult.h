@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteNamedQueryResult();
-    DeleteNamedQueryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteNamedQueryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteNamedQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteNamedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

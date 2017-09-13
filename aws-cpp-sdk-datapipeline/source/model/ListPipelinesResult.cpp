@@ -31,13 +31,13 @@ ListPipelinesResult::ListPipelinesResult() :
 {
 }
 
-ListPipelinesResult::ListPipelinesResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListPipelinesResult::ListPipelinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_hasMoreResults(false)
 {
   *this = result;
 }
 
-ListPipelinesResult& ListPipelinesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListPipelinesResult& ListPipelinesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("pipelineIdList"))

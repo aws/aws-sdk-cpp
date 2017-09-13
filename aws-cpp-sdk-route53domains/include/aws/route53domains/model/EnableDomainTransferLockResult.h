@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     EnableDomainTransferLockResult();
-    EnableDomainTransferLockResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableDomainTransferLockResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableDomainTransferLockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableDomainTransferLockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
@@ -90,6 +91,7 @@ namespace Model
     inline EnableDomainTransferLockResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
   private:
+
     Aws::String m_operationId;
   };
 

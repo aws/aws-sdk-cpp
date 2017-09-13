@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>A pagination token that fetches the next page of slot types. If the response
      * to this API call is truncated, Amazon Lex returns a pagination token in the
@@ -96,6 +97,7 @@ namespace Model
      */
     inline GetSlotTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of slot types to return in the response. The default is
      * 10.</p>
@@ -113,6 +115,7 @@ namespace Model
      * 10.</p>
      */
     inline GetSlotTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Substring to match in slot type names. A slot type will be returned if any
@@ -164,10 +167,13 @@ namespace Model
     inline GetSlotTypesRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet;
   };

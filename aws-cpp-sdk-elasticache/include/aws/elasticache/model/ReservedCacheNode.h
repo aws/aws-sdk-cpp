@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The unique identifier for the reservation.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline ReservedCacheNode& WithReservedCacheNodeId(const char* value) { SetReservedCacheNodeId(value); return *this;}
 
+
     /**
      * <p>The offering identifier.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The offering identifier.</p>
      */
     inline ReservedCacheNode& WithReservedCacheNodesOfferingId(const char* value) { SetReservedCacheNodesOfferingId(value); return *this;}
+
 
     /**
      * <p>The cache node type for the reserved cache nodes.</p> <p>Valid node types are
@@ -360,6 +363,7 @@ namespace Model
      */
     inline ReservedCacheNode& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
+
     /**
      * <p>The time the reservation started.</p>
      */
@@ -385,6 +389,7 @@ namespace Model
      */
     inline ReservedCacheNode& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
@@ -399,6 +404,7 @@ namespace Model
      * <p>The duration of the reservation in seconds.</p>
      */
     inline ReservedCacheNode& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The fixed price charged for this reserved cache node.</p>
@@ -415,6 +421,7 @@ namespace Model
      */
     inline ReservedCacheNode& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
 
+
     /**
      * <p>The hourly price charged for this reserved cache node.</p>
      */
@@ -430,6 +437,7 @@ namespace Model
      */
     inline ReservedCacheNode& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
 
+
     /**
      * <p>The number of cache nodes that have been reserved.</p>
      */
@@ -444,6 +452,7 @@ namespace Model
      * <p>The number of cache nodes that have been reserved.</p>
      */
     inline ReservedCacheNode& WithCacheNodeCount(int value) { SetCacheNodeCount(value); return *this;}
+
 
     /**
      * <p>The description of the reserved cache node.</p>
@@ -480,6 +489,7 @@ namespace Model
      */
     inline ReservedCacheNode& WithProductDescription(const char* value) { SetProductDescription(value); return *this;}
 
+
     /**
      * <p>The offering type of this reserved cache node.</p>
      */
@@ -515,6 +525,7 @@ namespace Model
      */
     inline ReservedCacheNode& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
 
+
     /**
      * <p>The state of the reserved cache node.</p>
      */
@@ -549,6 +560,7 @@ namespace Model
      * <p>The state of the reserved cache node.</p>
      */
     inline ReservedCacheNode& WithState(const char* value) { SetState(value); return *this;}
+
 
     /**
      * <p>The recurring price charged to run this reserved cache node.</p>
@@ -586,28 +598,40 @@ namespace Model
     inline ReservedCacheNode& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_reservedCacheNodeId;
     bool m_reservedCacheNodeIdHasBeenSet;
+
     Aws::String m_reservedCacheNodesOfferingId;
     bool m_reservedCacheNodesOfferingIdHasBeenSet;
+
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
+
     double m_usagePrice;
     bool m_usagePriceHasBeenSet;
+
     int m_cacheNodeCount;
     bool m_cacheNodeCountHasBeenSet;
+
     Aws::String m_productDescription;
     bool m_productDescriptionHasBeenSet;
+
     Aws::String m_offeringType;
     bool m_offeringTypeHasBeenSet;
+
     Aws::String m_state;
     bool m_stateHasBeenSet;
+
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
   };

@@ -32,7 +32,7 @@ ListMultipartUploadsResult::ListMultipartUploadsResult() :
 {
 }
 
-ListMultipartUploadsResult::ListMultipartUploadsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListMultipartUploadsResult::ListMultipartUploadsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_maxUploads(0),
     m_isTruncated(false),
     m_encodingType(EncodingType::NOT_SET)
@@ -40,7 +40,7 @@ ListMultipartUploadsResult::ListMultipartUploadsResult(const AmazonWebServiceRes
   *this = result;
 }
 
-ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

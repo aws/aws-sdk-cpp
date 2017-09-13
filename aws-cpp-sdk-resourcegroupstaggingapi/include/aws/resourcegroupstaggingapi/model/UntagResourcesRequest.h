@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
      * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
@@ -117,6 +118,7 @@ namespace Model
      */
     inline UntagResourcesRequest& AddResourceARNList(const char* value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
 
+
     /**
      * <p>A list of the tag keys that you want to remove from the specified
      * resources.</p>
@@ -166,8 +168,10 @@ namespace Model
     inline UntagResourcesRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_resourceARNList;
     bool m_resourceARNListHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

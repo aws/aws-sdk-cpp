@@ -31,12 +31,12 @@ GetTopicAttributesResult::GetTopicAttributesResult()
 {
 }
 
-GetTopicAttributesResult::GetTopicAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetTopicAttributesResult::GetTopicAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetTopicAttributesResult& GetTopicAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetTopicAttributesResult& GetTopicAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

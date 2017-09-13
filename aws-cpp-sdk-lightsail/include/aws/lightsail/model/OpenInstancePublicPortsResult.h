@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     OpenInstancePublicPortsResult();
-    OpenInstancePublicPortsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    OpenInstancePublicPortsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    OpenInstancePublicPortsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    OpenInstancePublicPortsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the request
@@ -72,6 +73,7 @@ namespace Model
     inline OpenInstancePublicPortsResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
+
     Operation m_operation;
   };
 

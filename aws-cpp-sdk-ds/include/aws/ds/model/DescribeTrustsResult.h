@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTrustsResult();
-    DescribeTrustsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTrustsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTrustsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTrustsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of Trust objects that were retrieved.</p> <p>It is possible that
@@ -111,6 +112,7 @@ namespace Model
      */
     inline DescribeTrustsResult& AddTrusts(Trust&& value) { m_trusts.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If not null, more results are available. Pass this value for the
      * <i>NextToken</i> parameter in a subsequent call to <a>DescribeTrusts</a> to
@@ -161,7 +163,9 @@ namespace Model
     inline DescribeTrustsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Trust> m_trusts;
+
     Aws::String m_nextToken;
   };
 

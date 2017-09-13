@@ -30,12 +30,12 @@ DescribeStorediSCSIVolumesResult::DescribeStorediSCSIVolumesResult()
 {
 }
 
-DescribeStorediSCSIVolumesResult::DescribeStorediSCSIVolumesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeStorediSCSIVolumesResult::DescribeStorediSCSIVolumesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeStorediSCSIVolumesResult& DescribeStorediSCSIVolumesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeStorediSCSIVolumesResult& DescribeStorediSCSIVolumesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StorediSCSIVolumes"))

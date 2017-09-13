@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
      * this value is not specified, then the operation assumes the user whose
@@ -108,6 +109,7 @@ namespace Model
      */
     inline DeleteServiceSpecificCredentialRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The unique identifier of the service-specific credential. You can get this
      * value by calling <a>ListServiceSpecificCredentials</a>.</p> <p>This parameter
@@ -172,8 +174,10 @@ namespace Model
     inline DeleteServiceSpecificCredentialRequest& WithServiceSpecificCredentialId(const char* value) { SetServiceSpecificCredentialId(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_serviceSpecificCredentialId;
     bool m_serviceSpecificCredentialIdHasBeenSet;
   };

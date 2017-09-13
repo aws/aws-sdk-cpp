@@ -45,6 +45,7 @@ namespace Model
     DataSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
      * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline DataSource& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>The data source's ARN.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The data source's ARN.</p>
      */
     inline DataSource& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The database name.</p>
@@ -158,10 +161,13 @@ namespace Model
     inline DataSource& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
   private:
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
   };

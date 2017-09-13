@@ -47,6 +47,7 @@ namespace Model
     ShrinkPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The desired timeout for decommissioning an instance. Overrides the default
      * YARN decommissioning timeout.</p>
@@ -64,6 +65,7 @@ namespace Model
      * YARN decommissioning timeout.</p>
      */
     inline ShrinkPolicy& WithDecommissionTimeout(int value) { SetDecommissionTimeout(value); return *this;}
+
 
     /**
      * <p>Custom policy for requesting termination protection or termination of
@@ -96,8 +98,10 @@ namespace Model
     inline ShrinkPolicy& WithInstanceResizePolicy(InstanceResizePolicy&& value) { SetInstanceResizePolicy(std::move(value)); return *this;}
 
   private:
+
     int m_decommissionTimeout;
     bool m_decommissionTimeoutHasBeenSet;
+
     InstanceResizePolicy m_instanceResizePolicy;
     bool m_instanceResizePolicyHasBeenSet;
   };

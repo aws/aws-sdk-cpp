@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DeleteListenerRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
 
   private:
+
     Aws::String m_listenerArn;
     bool m_listenerArnHasBeenSet;
   };

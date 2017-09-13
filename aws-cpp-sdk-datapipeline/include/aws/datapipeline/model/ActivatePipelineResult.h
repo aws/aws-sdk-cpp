@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     ActivatePipelineResult();
-    ActivatePipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ActivatePipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ActivatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ActivatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

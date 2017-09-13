@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
      * type for this RTMP distribution. Valid values include:</p> <ul> <li> <p>
@@ -105,6 +106,7 @@ namespace Model
      */
     inline Signer& WithAwsAccountNumber(const char* value) { SetAwsAccountNumber(value); return *this;}
 
+
     /**
      * <p>A complex type that lists the active CloudFront key pairs, if any, that are
      * associated with <code>AwsAccountNumber</code>.</p>
@@ -136,8 +138,10 @@ namespace Model
     inline Signer& WithKeyPairIds(KeyPairIds&& value) { SetKeyPairIds(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_awsAccountNumber;
     bool m_awsAccountNumberHasBeenSet;
+
     KeyPairIds m_keyPairIds;
     bool m_keyPairIdsHasBeenSet;
   };

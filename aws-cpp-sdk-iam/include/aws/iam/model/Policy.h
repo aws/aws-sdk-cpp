@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The friendly name (not ARN) identifying the policy.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      * <p>The friendly name (not ARN) identifying the policy.</p>
      */
     inline Policy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
@@ -146,6 +148,7 @@ namespace Model
      */
     inline Policy& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
+
     
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -166,6 +169,7 @@ namespace Model
 
     
     inline Policy& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
@@ -216,6 +220,7 @@ namespace Model
      */
     inline Policy& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The identifier for the version of the policy that is set as the default
      * version.</p>
@@ -258,6 +263,7 @@ namespace Model
      */
     inline Policy& WithDefaultVersionId(const char* value) { SetDefaultVersionId(value); return *this;}
 
+
     /**
      * <p>The number of entities (users, groups, and roles) that the policy is attached
      * to.</p>
@@ -276,6 +282,7 @@ namespace Model
      */
     inline Policy& WithAttachmentCount(int value) { SetAttachmentCount(value); return *this;}
 
+
     /**
      * <p>Specifies whether the policy can be attached to an IAM user, group, or
      * role.</p>
@@ -293,6 +300,7 @@ namespace Model
      * role.</p>
      */
     inline Policy& WithIsAttachable(bool value) { SetIsAttachable(value); return *this;}
+
 
     /**
      * <p>A friendly description of the policy.</p> <p>This element is included in the
@@ -343,6 +351,7 @@ namespace Model
      */
     inline Policy& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy was created.</p>
@@ -372,6 +381,7 @@ namespace Model
      * date-time format</a>, when the policy was created.</p>
      */
     inline Policy& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -419,24 +429,34 @@ namespace Model
     inline Policy& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyId;
     bool m_policyIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_defaultVersionId;
     bool m_defaultVersionIdHasBeenSet;
+
     int m_attachmentCount;
     bool m_attachmentCountHasBeenSet;
+
     bool m_isAttachable;
     bool m_isAttachableHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
   };

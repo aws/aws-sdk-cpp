@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetChangeTokenStatusResult();
-    GetChangeTokenStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetChangeTokenStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetChangeTokenStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetChangeTokenStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the change token.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetChangeTokenStatusResult& WithChangeTokenStatus(ChangeTokenStatus&& value) { SetChangeTokenStatus(std::move(value)); return *this;}
 
   private:
+
     ChangeTokenStatus m_changeTokenStatus;
   };
 

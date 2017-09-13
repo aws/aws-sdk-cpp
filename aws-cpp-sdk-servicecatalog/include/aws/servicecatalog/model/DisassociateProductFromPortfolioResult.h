@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DisassociateProductFromPortfolioResult();
-    DisassociateProductFromPortfolioResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateProductFromPortfolioResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateProductFromPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateProductFromPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

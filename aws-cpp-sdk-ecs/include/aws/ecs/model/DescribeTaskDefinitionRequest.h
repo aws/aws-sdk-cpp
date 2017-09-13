@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>family</code> for the latest <code>ACTIVE</code> revision,
      * <code>family</code> and <code>revision</code> (<code>family:revision</code>) for
@@ -93,6 +94,7 @@ namespace Model
     inline DescribeTaskDefinitionRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
   private:
+
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;
   };

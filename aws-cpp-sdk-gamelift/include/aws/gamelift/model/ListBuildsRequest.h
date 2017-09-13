@@ -40,70 +40,72 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
      * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
-     * <li> <p> <b>INITIALIZED</b> – A new build has been defined, but no files have
+     * <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have
      * been uploaded. You cannot create fleets for builds that are in this status. When
      * a build is successfully created, the build status is set to this value. </p>
-     * </li> <li> <p> <b>READY</b> – The game build has been successfully uploaded. You
-     * can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b> – The
-     * game build upload failed. You cannot create new fleets for this build. </p>
-     * </li> </ul>
+     * </li> <li> <p> <b>READY</b> -- The game build has been successfully uploaded.
+     * You can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b>
+     * -- The game build upload failed. You cannot create new fleets for this build.
+     * </p> </li> </ul>
      */
     inline const BuildStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
      * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
-     * <li> <p> <b>INITIALIZED</b> – A new build has been defined, but no files have
+     * <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have
      * been uploaded. You cannot create fleets for builds that are in this status. When
      * a build is successfully created, the build status is set to this value. </p>
-     * </li> <li> <p> <b>READY</b> – The game build has been successfully uploaded. You
-     * can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b> – The
-     * game build upload failed. You cannot create new fleets for this build. </p>
-     * </li> </ul>
+     * </li> <li> <p> <b>READY</b> -- The game build has been successfully uploaded.
+     * You can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b>
+     * -- The game build upload failed. You cannot create new fleets for this build.
+     * </p> </li> </ul>
      */
     inline void SetStatus(const BuildStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
      * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
-     * <li> <p> <b>INITIALIZED</b> – A new build has been defined, but no files have
+     * <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have
      * been uploaded. You cannot create fleets for builds that are in this status. When
      * a build is successfully created, the build status is set to this value. </p>
-     * </li> <li> <p> <b>READY</b> – The game build has been successfully uploaded. You
-     * can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b> – The
-     * game build upload failed. You cannot create new fleets for this build. </p>
-     * </li> </ul>
+     * </li> <li> <p> <b>READY</b> -- The game build has been successfully uploaded.
+     * You can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b>
+     * -- The game build upload failed. You cannot create new fleets for this build.
+     * </p> </li> </ul>
      */
     inline void SetStatus(BuildStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
      * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
-     * <li> <p> <b>INITIALIZED</b> – A new build has been defined, but no files have
+     * <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have
      * been uploaded. You cannot create fleets for builds that are in this status. When
      * a build is successfully created, the build status is set to this value. </p>
-     * </li> <li> <p> <b>READY</b> – The game build has been successfully uploaded. You
-     * can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b> – The
-     * game build upload failed. You cannot create new fleets for this build. </p>
-     * </li> </ul>
+     * </li> <li> <p> <b>READY</b> -- The game build has been successfully uploaded.
+     * You can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b>
+     * -- The game build upload failed. You cannot create new fleets for this build.
+     * </p> </li> </ul>
      */
     inline ListBuildsRequest& WithStatus(const BuildStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
      * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
-     * <li> <p> <b>INITIALIZED</b> – A new build has been defined, but no files have
+     * <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have
      * been uploaded. You cannot create fleets for builds that are in this status. When
      * a build is successfully created, the build status is set to this value. </p>
-     * </li> <li> <p> <b>READY</b> – The game build has been successfully uploaded. You
-     * can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b> – The
-     * game build upload failed. You cannot create new fleets for this build. </p>
-     * </li> </ul>
+     * </li> <li> <p> <b>READY</b> -- The game build has been successfully uploaded.
+     * You can now create new fleets for this build.</p> </li> <li> <p> <b>FAILED</b>
+     * -- The game build upload failed. You cannot create new fleets for this build.
+     * </p> </li> </ul>
      */
     inline ListBuildsRequest& WithStatus(BuildStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Maximum number of results to return. Use this parameter with
@@ -122,6 +124,7 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline ListBuildsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -173,10 +176,13 @@ namespace Model
     inline ListBuildsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     BuildStatus m_status;
     bool m_statusHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

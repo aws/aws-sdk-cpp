@@ -30,12 +30,12 @@ UpdateJobQueueResult::UpdateJobQueueResult()
 {
 }
 
-UpdateJobQueueResult::UpdateJobQueueResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateJobQueueResult::UpdateJobQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateJobQueueResult& UpdateJobQueueResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateJobQueueResult& UpdateJobQueueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("jobQueueName"))

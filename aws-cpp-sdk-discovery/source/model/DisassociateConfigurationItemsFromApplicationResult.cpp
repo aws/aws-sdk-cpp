@@ -30,12 +30,12 @@ DisassociateConfigurationItemsFromApplicationResult::DisassociateConfigurationIt
 {
 }
 
-DisassociateConfigurationItemsFromApplicationResult::DisassociateConfigurationItemsFromApplicationResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateConfigurationItemsFromApplicationResult::DisassociateConfigurationItemsFromApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateConfigurationItemsFromApplicationResult& DisassociateConfigurationItemsFromApplicationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateConfigurationItemsFromApplicationResult& DisassociateConfigurationItemsFromApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

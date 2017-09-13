@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Assignment to be retrieved.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetAssignmentRequest& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
 
   private:
+
     Aws::String m_assignmentId;
     bool m_assignmentIdHasBeenSet;
   };

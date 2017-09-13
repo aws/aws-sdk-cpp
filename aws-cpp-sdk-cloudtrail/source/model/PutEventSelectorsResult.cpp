@@ -30,12 +30,12 @@ PutEventSelectorsResult::PutEventSelectorsResult()
 {
 }
 
-PutEventSelectorsResult::PutEventSelectorsResult(const AmazonWebServiceResult<JsonValue>& result)
+PutEventSelectorsResult::PutEventSelectorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutEventSelectorsResult& PutEventSelectorsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutEventSelectorsResult& PutEventSelectorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TrailARN"))

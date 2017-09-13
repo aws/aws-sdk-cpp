@@ -48,6 +48,7 @@ namespace Model
     BlueGreenDeploymentConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Information about whether to terminate instances in the original fleet during
      * a blue/green deployment.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline BlueGreenDeploymentConfiguration& WithTerminateBlueInstancesOnDeploymentSuccess(BlueInstanceTerminationOption&& value) { SetTerminateBlueInstancesOnDeploymentSuccess(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the action to take when newly provisioned instances are
      * ready to receive traffic in a blue/green deployment.</p>
@@ -107,6 +109,7 @@ namespace Model
      * ready to receive traffic in a blue/green deployment.</p>
      */
     inline BlueGreenDeploymentConfiguration& WithDeploymentReadyOption(DeploymentReadyOption&& value) { SetDeploymentReadyOption(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about how instances are provisioned for a replacement environment
@@ -139,10 +142,13 @@ namespace Model
     inline BlueGreenDeploymentConfiguration& WithGreenFleetProvisioningOption(GreenFleetProvisioningOption&& value) { SetGreenFleetProvisioningOption(std::move(value)); return *this;}
 
   private:
+
     BlueInstanceTerminationOption m_terminateBlueInstancesOnDeploymentSuccess;
     bool m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet;
+
     DeploymentReadyOption m_deploymentReadyOption;
     bool m_deploymentReadyOptionHasBeenSet;
+
     GreenFleetProvisioningOption m_greenFleetProvisioningOption;
     bool m_greenFleetProvisioningOptionHasBeenSet;
   };

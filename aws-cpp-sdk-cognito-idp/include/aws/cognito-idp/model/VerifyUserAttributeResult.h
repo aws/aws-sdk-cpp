@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     VerifyUserAttributeResult();
-    VerifyUserAttributeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    VerifyUserAttributeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    VerifyUserAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    VerifyUserAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -46,6 +46,7 @@ namespace Model
     KMSEncryptionConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the encryption key. Must belong to the same region as the
      * destination Amazon S3 bucket.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline KMSEncryptionConfig& WithAWSKMSKeyARN(const char* value) { SetAWSKMSKeyARN(value); return *this;}
 
   private:
+
     Aws::String m_aWSKMSKeyARN;
     bool m_aWSKMSKeyARNHasBeenSet;
   };

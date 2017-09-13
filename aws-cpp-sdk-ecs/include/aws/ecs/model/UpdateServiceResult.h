@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateServiceResult();
-    UpdateServiceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateServiceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The full description of your service following the update call.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateServiceResult& WithService(Service&& value) { SetService(std::move(value)); return *this;}
 
   private:
+
     Service m_service;
   };
 

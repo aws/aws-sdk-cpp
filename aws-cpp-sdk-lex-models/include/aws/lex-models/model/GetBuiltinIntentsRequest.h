@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>A list of locales that the intent supports.</p>
      */
@@ -65,6 +66,7 @@ namespace Model
      * <p>A list of locales that the intent supports.</p>
      */
     inline GetBuiltinIntentsRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+
 
     /**
      * <p>Substring to match in built-in intent signatures. An intent will be returned
@@ -129,6 +131,7 @@ namespace Model
      */
     inline GetBuiltinIntentsRequest& WithSignatureContains(const char* value) { SetSignatureContains(value); return *this;}
 
+
     /**
      * <p>A pagination token that fetches the next page of intents. If this API call is
      * truncated, Amazon Lex returns a pagination token in the response. To fetch the
@@ -178,6 +181,7 @@ namespace Model
      */
     inline GetBuiltinIntentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of intents to return in the response. The default is
      * 10.</p>
@@ -197,12 +201,16 @@ namespace Model
     inline GetBuiltinIntentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Locale m_locale;
     bool m_localeHasBeenSet;
+
     Aws::String m_signatureContains;
     bool m_signatureContainsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

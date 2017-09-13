@@ -30,12 +30,12 @@ AddUploadBufferResult::AddUploadBufferResult()
 {
 }
 
-AddUploadBufferResult::AddUploadBufferResult(const AmazonWebServiceResult<JsonValue>& result)
+AddUploadBufferResult::AddUploadBufferResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddUploadBufferResult& AddUploadBufferResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddUploadBufferResult& AddUploadBufferResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

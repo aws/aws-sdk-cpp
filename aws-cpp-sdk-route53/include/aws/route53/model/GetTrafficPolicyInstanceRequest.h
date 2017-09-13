@@ -38,6 +38,7 @@ namespace Model
     GetTrafficPolicyInstanceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the traffic policy instance that you want to get information
      * about.</p>
@@ -81,6 +82,7 @@ namespace Model
     inline GetTrafficPolicyInstanceRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

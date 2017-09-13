@@ -45,6 +45,7 @@ namespace Model
     ConnectivityInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Endpoint for the GGC. Can be an IP address or DNS.
      */
@@ -79,6 +80,7 @@ namespace Model
      * Endpoint for the GGC. Can be an IP address or DNS.
      */
     inline ConnectivityInfo& WithHostAddress(const char* value) { SetHostAddress(value); return *this;}
+
 
     /**
      * Element Id for this entry in the list.
@@ -115,6 +117,7 @@ namespace Model
      */
     inline ConnectivityInfo& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * Metadata for this endpoint.
      */
@@ -150,6 +153,7 @@ namespace Model
      */
     inline ConnectivityInfo& WithMetadata(const char* value) { SetMetadata(value); return *this;}
 
+
     /**
      * Port of the GGC. Usually 8883.
      */
@@ -166,12 +170,16 @@ namespace Model
     inline ConnectivityInfo& WithPortNumber(int value) { SetPortNumber(value); return *this;}
 
   private:
+
     Aws::String m_hostAddress;
     bool m_hostAddressHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_metadata;
     bool m_metadataHasBeenSet;
+
     int m_portNumber;
     bool m_portNumberHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline AssociateProductWithPortfolioRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The product identifier.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline AssociateProductWithPortfolioRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 
+
     /**
      * <p>The portfolio identifier.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The portfolio identifier.</p>
      */
     inline AssociateProductWithPortfolioRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
+
 
     /**
      * <p>The identifier of the source portfolio to use with this association.</p>
@@ -191,12 +195,16 @@ namespace Model
     inline AssociateProductWithPortfolioRequest& WithSourcePortfolioId(const char* value) { SetSourcePortfolioId(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     Aws::String m_portfolioId;
     bool m_portfolioIdHasBeenSet;
+
     Aws::String m_sourcePortfolioId;
     bool m_sourcePortfolioIdHasBeenSet;
   };

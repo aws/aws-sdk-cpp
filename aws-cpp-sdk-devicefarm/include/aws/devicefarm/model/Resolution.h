@@ -44,6 +44,7 @@ namespace Model
     Resolution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The screen resolution's width, expressed in pixels.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>The screen resolution's width, expressed in pixels.</p>
      */
     inline Resolution& WithWidth(int value) { SetWidth(value); return *this;}
+
 
     /**
      * <p>The screen resolution's height, expressed in pixels.</p>
@@ -75,8 +77,10 @@ namespace Model
     inline Resolution& WithHeight(int value) { SetHeight(value); return *this;}
 
   private:
+
     int m_width;
     bool m_widthHasBeenSet;
+
     int m_height;
     bool m_heightHasBeenSet;
   };

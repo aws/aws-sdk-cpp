@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateSubscriptionDefinitionResult();
-    UpdateSubscriptionDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSubscriptionDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateSubscriptionDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateSubscriptionDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

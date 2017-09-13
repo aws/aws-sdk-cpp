@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeExportTasksResult();
-    DescribeExportTasksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeExportTasksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeExportTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeExportTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Contains one or more sets of export request details. When the status of a
@@ -91,6 +92,7 @@ namespace Model
      * bucket where you can view the data in a CSV file.</p>
      */
     inline DescribeExportTasksResult& AddExportsInfo(ExportInfo&& value) { m_exportsInfo.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -156,7 +158,9 @@ namespace Model
     inline DescribeExportTasksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ExportInfo> m_exportsInfo;
+
     Aws::String m_nextToken;
   };
 

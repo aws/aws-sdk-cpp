@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A description for the snapshot.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>A description for the snapshot.</p>
      */
     inline SnapshotDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The block device mapping for the snapshot.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline SnapshotDetail& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
+
     /**
      * <p>The size of the disk in the snapshot, in GiB.</p>
      */
@@ -134,6 +137,7 @@ namespace Model
      * <p>The size of the disk in the snapshot, in GiB.</p>
      */
     inline SnapshotDetail& WithDiskImageSize(double value) { SetDiskImageSize(value); return *this;}
+
 
     /**
      * <p>The format of the disk image from which the snapshot is created.</p>
@@ -170,6 +174,7 @@ namespace Model
      */
     inline SnapshotDetail& WithFormat(const char* value) { SetFormat(value); return *this;}
 
+
     /**
      * <p>The percentage of progress for the task.</p>
      */
@@ -204,6 +209,7 @@ namespace Model
      * <p>The percentage of progress for the task.</p>
      */
     inline SnapshotDetail& WithProgress(const char* value) { SetProgress(value); return *this;}
+
 
     /**
      * <p>The snapshot ID of the disk being imported.</p>
@@ -240,6 +246,7 @@ namespace Model
      */
     inline SnapshotDetail& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>A brief status of the snapshot creation.</p>
      */
@@ -274,6 +281,7 @@ namespace Model
      * <p>A brief status of the snapshot creation.</p>
      */
     inline SnapshotDetail& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>A detailed status message for the snapshot creation.</p>
@@ -310,6 +318,7 @@ namespace Model
      */
     inline SnapshotDetail& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     /**
      * <p>The URL used to access the disk image.</p>
      */
@@ -345,6 +354,7 @@ namespace Model
      */
     inline SnapshotDetail& WithUrl(const char* value) { SetUrl(value); return *this;}
 
+
     /**
      * <p>The S3 bucket for the disk image.</p>
      */
@@ -371,24 +381,34 @@ namespace Model
     inline SnapshotDetail& WithUserBucket(UserBucketDetails&& value) { SetUserBucket(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet;
+
     double m_diskImageSize;
     bool m_diskImageSizeHasBeenSet;
+
     Aws::String m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_progress;
     bool m_progressHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
+
     UserBucketDetails m_userBucket;
     bool m_userBucketHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AttachTypedLinkResult();
-    AttachTypedLinkResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachTypedLinkResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachTypedLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachTypedLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Returns a typed link specifier as output.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline AttachTypedLinkResult& WithTypedLinkSpecifier(TypedLinkSpecifier&& value) { SetTypedLinkSpecifier(std::move(value)); return *this;}
 
   private:
+
     TypedLinkSpecifier m_typedLinkSpecifier;
   };
 

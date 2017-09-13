@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeAgentVersionsResult();
-    DescribeAgentVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAgentVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAgentVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAgentVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The agent versions for the specified stack or configuration manager. Note
@@ -98,6 +99,7 @@ namespace Model
     inline DescribeAgentVersionsResult& AddAgentVersions(AgentVersion&& value) { m_agentVersions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<AgentVersion> m_agentVersions;
   };
 

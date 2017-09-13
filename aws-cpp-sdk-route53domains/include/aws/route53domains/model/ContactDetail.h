@@ -49,6 +49,7 @@ namespace Model
     ContactDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>First name of contact.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ContactDetail& WithFirstName(const char* value) { SetFirstName(value); return *this;}
 
+
     /**
      * <p>Last name of contact.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>Last name of contact.</p>
      */
     inline ContactDetail& WithLastName(const char* value) { SetLastName(value); return *this;}
+
 
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
@@ -158,6 +161,7 @@ namespace Model
      * contact.</p>
      */
     inline ContactDetail& WithContactType(ContactType&& value) { SetContactType(std::move(value)); return *this;}
+
 
     /**
      * <p>Name of the organization for contact types other than
@@ -201,6 +205,7 @@ namespace Model
      */
     inline ContactDetail& WithOrganizationName(const char* value) { SetOrganizationName(value); return *this;}
 
+
     /**
      * <p>First line of the contact's address.</p>
      */
@@ -235,6 +240,7 @@ namespace Model
      * <p>First line of the contact's address.</p>
      */
     inline ContactDetail& WithAddressLine1(const char* value) { SetAddressLine1(value); return *this;}
+
 
     /**
      * <p>Second line of contact's address, if any.</p>
@@ -271,6 +277,7 @@ namespace Model
      */
     inline ContactDetail& WithAddressLine2(const char* value) { SetAddressLine2(value); return *this;}
 
+
     /**
      * <p>The city of the contact's address.</p>
      */
@@ -305,6 +312,7 @@ namespace Model
      * <p>The city of the contact's address.</p>
      */
     inline ContactDetail& WithCity(const char* value) { SetCity(value); return *this;}
+
 
     /**
      * <p>The state or province of the contact's city.</p>
@@ -341,6 +349,7 @@ namespace Model
      */
     inline ContactDetail& WithState(const char* value) { SetState(value); return *this;}
 
+
     /**
      * <p>Code for the country of the contact's address.</p>
      */
@@ -365,6 +374,7 @@ namespace Model
      * <p>Code for the country of the contact's address.</p>
      */
     inline ContactDetail& WithCountryCode(CountryCode&& value) { SetCountryCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The zip or postal code of the contact's address.</p>
@@ -400,6 +410,7 @@ namespace Model
      * <p>The zip or postal code of the contact's address.</p>
      */
     inline ContactDetail& WithZipCode(const char* value) { SetZipCode(value); return *this;}
+
 
     /**
      * <p>The phone number of the contact.</p> <p>Constraints: Phone number must be
@@ -457,6 +468,7 @@ namespace Model
      */
     inline ContactDetail& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
 
+
     /**
      * <p>Email address of the contact.</p>
      */
@@ -491,6 +503,7 @@ namespace Model
      * <p>Email address of the contact.</p>
      */
     inline ContactDetail& WithEmail(const char* value) { SetEmail(value); return *this;}
+
 
     /**
      * <p>Fax number of the contact.</p> <p>Constraints: Phone number must be specified
@@ -541,6 +554,7 @@ namespace Model
      */
     inline ContactDetail& WithFax(const char* value) { SetFax(value); return *this;}
 
+
     /**
      * <p>A list of name-value pairs for parameters required by certain top-level
      * domains.</p>
@@ -584,32 +598,46 @@ namespace Model
     inline ContactDetail& AddExtraParams(ExtraParam&& value) { m_extraParamsHasBeenSet = true; m_extraParams.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_firstName;
     bool m_firstNameHasBeenSet;
+
     Aws::String m_lastName;
     bool m_lastNameHasBeenSet;
+
     ContactType m_contactType;
     bool m_contactTypeHasBeenSet;
+
     Aws::String m_organizationName;
     bool m_organizationNameHasBeenSet;
+
     Aws::String m_addressLine1;
     bool m_addressLine1HasBeenSet;
+
     Aws::String m_addressLine2;
     bool m_addressLine2HasBeenSet;
+
     Aws::String m_city;
     bool m_cityHasBeenSet;
+
     Aws::String m_state;
     bool m_stateHasBeenSet;
+
     CountryCode m_countryCode;
     bool m_countryCodeHasBeenSet;
+
     Aws::String m_zipCode;
     bool m_zipCodeHasBeenSet;
+
     Aws::String m_phoneNumber;
     bool m_phoneNumberHasBeenSet;
+
     Aws::String m_email;
     bool m_emailHasBeenSet;
+
     Aws::String m_fax;
     bool m_faxHasBeenSet;
+
     Aws::Vector<ExtraParam> m_extraParams;
     bool m_extraParamsHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     BatchRemoveFacetFromObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The facet to remove from the object.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The facet to remove from the object.</p>
      */
     inline BatchRemoveFacetFromObject& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
+
 
     /**
      * <p>A reference to the object whose facet will be removed.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline BatchRemoveFacetFromObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
+
     SchemaFacet m_schemaFacet;
     bool m_schemaFacetHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
   };

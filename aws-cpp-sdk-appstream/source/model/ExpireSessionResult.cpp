@@ -30,12 +30,12 @@ ExpireSessionResult::ExpireSessionResult()
 {
 }
 
-ExpireSessionResult::ExpireSessionResult(const AmazonWebServiceResult<JsonValue>& result)
+ExpireSessionResult::ExpireSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ExpireSessionResult& ExpireSessionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ExpireSessionResult& ExpireSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

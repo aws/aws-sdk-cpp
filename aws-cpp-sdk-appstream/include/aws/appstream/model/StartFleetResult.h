@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     StartFleetResult();
-    StartFleetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartFleetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

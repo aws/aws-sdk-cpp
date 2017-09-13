@@ -30,12 +30,12 @@ CreateActivationResult::CreateActivationResult()
 {
 }
 
-CreateActivationResult::CreateActivationResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateActivationResult::CreateActivationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateActivationResult& CreateActivationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateActivationResult& CreateActivationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ActivationId"))

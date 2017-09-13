@@ -31,12 +31,12 @@ DeleteExpressionResult::DeleteExpressionResult()
 {
 }
 
-DeleteExpressionResult::DeleteExpressionResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteExpressionResult::DeleteExpressionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteExpressionResult& DeleteExpressionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteExpressionResult& DeleteExpressionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

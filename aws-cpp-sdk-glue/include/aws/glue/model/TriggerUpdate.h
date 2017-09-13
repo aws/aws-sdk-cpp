@@ -49,6 +49,7 @@ namespace Model
     TriggerUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the trigger.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the trigger.</p>
      */
     inline TriggerUpdate& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description of this trigger.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline TriggerUpdate& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A cron expression specifying the schedule.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>A cron expression specifying the schedule.</p>
      */
     inline TriggerUpdate& WithSchedule(const char* value) { SetSchedule(value); return *this;}
+
 
     /**
      * <p>The actions initiated by this trigger.</p>
@@ -189,6 +193,7 @@ namespace Model
      */
     inline TriggerUpdate& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The predicate of this trigger, which defines when it will fire.</p>
      */
@@ -215,14 +220,19 @@ namespace Model
     inline TriggerUpdate& WithPredicate(Predicate&& value) { SetPredicate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_schedule;
     bool m_scheduleHasBeenSet;
+
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet;
+
     Predicate m_predicate;
     bool m_predicateHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DetachFromIndexResult();
-    DetachFromIndexResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetachFromIndexResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetachFromIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetachFromIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the object that was detached from the
@@ -84,6 +85,7 @@ namespace Model
     inline DetachFromIndexResult& WithDetachedObjectIdentifier(const char* value) { SetDetachedObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_detachedObjectIdentifier;
   };
 

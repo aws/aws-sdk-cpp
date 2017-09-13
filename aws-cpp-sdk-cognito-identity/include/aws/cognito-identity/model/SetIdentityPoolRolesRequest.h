@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline SetIdentityPoolRolesRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+
 
     /**
      * <p>The map of roles associated with this pool. For a given role, the key will be
@@ -160,6 +162,7 @@ namespace Model
      * ARN.</p>
      */
     inline SetIdentityPoolRolesRequest& AddRoles(const char* key, const char* value) { m_rolesHasBeenSet = true; m_roles.emplace(key, value); return *this; }
+
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a
@@ -261,10 +264,13 @@ namespace Model
     inline SetIdentityPoolRolesRequest& AddRoleMappings(const char* key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_roles;
     bool m_rolesHasBeenSet;
+
     Aws::Map<Aws::String, RoleMapping> m_roleMappings;
     bool m_roleMappingsHasBeenSet;
   };

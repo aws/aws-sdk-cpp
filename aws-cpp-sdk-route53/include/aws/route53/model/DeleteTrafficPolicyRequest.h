@@ -38,6 +38,7 @@ namespace Model
     DeleteTrafficPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the traffic policy that you want to delete.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline DeleteTrafficPolicyRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The version number of the traffic policy that you want to delete.</p>
      */
@@ -89,8 +91,10 @@ namespace Model
     inline DeleteTrafficPolicyRequest& WithVersion(int value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
   };

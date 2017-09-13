@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get.
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -86,6 +87,7 @@ namespace Model
     inline GetWebACLRequest& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
   private:
+
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
   };

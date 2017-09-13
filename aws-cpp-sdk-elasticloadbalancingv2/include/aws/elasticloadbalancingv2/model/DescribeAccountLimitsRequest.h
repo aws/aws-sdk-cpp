@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The marker for the next set of results. (You received this marker from a
      * previous call.)</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline DescribeAccountLimitsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return with this call.</p>
      */
@@ -96,8 +98,10 @@ namespace Model
     inline DescribeAccountLimitsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
   };

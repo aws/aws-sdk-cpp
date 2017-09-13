@@ -31,12 +31,12 @@ DescribeAccountAttributesResult::DescribeAccountAttributesResult()
 {
 }
 
-DescribeAccountAttributesResult::DescribeAccountAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAccountAttributesResult::DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

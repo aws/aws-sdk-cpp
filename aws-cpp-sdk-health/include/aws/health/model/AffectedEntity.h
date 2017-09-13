@@ -49,6 +49,7 @@ namespace Model
     AffectedEntity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the entity. Format:
      * <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i>
@@ -112,6 +113,7 @@ namespace Model
      */
     inline AffectedEntity& WithEntityArn(const char* value) { SetEntityArn(value); return *this;}
 
+
     /**
      * <p>The unique identifier for the event. Format:
      * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i>
@@ -168,6 +170,7 @@ namespace Model
      */
     inline AffectedEntity& WithEventArn(const char* value) { SetEventArn(value); return *this;}
 
+
     /**
      * <p>The ID of the affected entity.</p>
      */
@@ -202,6 +205,7 @@ namespace Model
      * <p>The ID of the affected entity.</p>
      */
     inline AffectedEntity& WithEntityValue(const char* value) { SetEntityValue(value); return *this;}
+
 
     /**
      * <p>The 12-digit AWS account number that contains the affected entity.</p>
@@ -238,6 +242,7 @@ namespace Model
      */
     inline AffectedEntity& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
+
     /**
      * <p>The most recent time that the entity was updated.</p>
      */
@@ -262,6 +267,7 @@ namespace Model
      * <p>The most recent time that the entity was updated.</p>
      */
     inline AffectedEntity& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The most recent status of the entity affected by the event. The possible
@@ -297,6 +303,7 @@ namespace Model
      * <code>UNKNOWN</code>.</p>
      */
     inline AffectedEntity& WithStatusCode(EntityStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
@@ -359,18 +366,25 @@ namespace Model
     inline AffectedEntity& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_entityArn;
     bool m_entityArnHasBeenSet;
+
     Aws::String m_eventArn;
     bool m_eventArnHasBeenSet;
+
     Aws::String m_entityValue;
     bool m_entityValueHasBeenSet;
+
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
     EntityStatusCode m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
   };

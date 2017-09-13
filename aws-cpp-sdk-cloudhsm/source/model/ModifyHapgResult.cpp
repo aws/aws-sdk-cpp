@@ -30,12 +30,12 @@ ModifyHapgResult::ModifyHapgResult()
 {
 }
 
-ModifyHapgResult::ModifyHapgResult(const AmazonWebServiceResult<JsonValue>& result)
+ModifyHapgResult::ModifyHapgResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ModifyHapgResult& ModifyHapgResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ModifyHapgResult& ModifyHapgResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HapgArn"))

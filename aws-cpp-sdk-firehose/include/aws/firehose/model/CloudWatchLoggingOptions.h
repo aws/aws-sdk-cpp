@@ -46,6 +46,7 @@ namespace Model
     CloudWatchLoggingOptions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Enables or disables CloudWatch logging.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>Enables or disables CloudWatch logging.</p>
      */
     inline CloudWatchLoggingOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The CloudWatch group name for logging. This value is required if CloudWatch
@@ -102,6 +104,7 @@ namespace Model
      * logging is enabled.</p>
      */
     inline CloudWatchLoggingOptions& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>The CloudWatch log stream name for logging. This value is required if
@@ -146,10 +149,13 @@ namespace Model
     inline CloudWatchLoggingOptions& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
   };

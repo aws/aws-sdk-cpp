@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateReusableDelegationSetResult();
-    CreateReusableDelegationSetResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateReusableDelegationSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateReusableDelegationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateReusableDelegationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains name server information.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>A complex type that contains name server information.</p>
      */
     inline CreateReusableDelegationSetResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(std::move(value)); return *this;}
+
 
     /**
      * <p>The unique URL representing the new reusable delegation set.</p>
@@ -103,7 +105,9 @@ namespace Model
     inline CreateReusableDelegationSetResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:
+
     DelegationSet m_delegationSet;
+
     Aws::String m_location;
   };
 

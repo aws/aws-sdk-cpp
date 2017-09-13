@@ -74,8 +74,9 @@ namespace Model
   {
   public:
     GetAccountResult();
-    GetAccountResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAccountResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
@@ -112,6 +113,7 @@ namespace Model
      */
     inline GetAccountResult& WithCloudwatchRoleArn(const char* value) { SetCloudwatchRoleArn(value); return *this;}
 
+
     /**
      * <p>Specifies the API request limits configured for the current
      * <a>Account</a>.</p>
@@ -141,6 +143,7 @@ namespace Model
      * <a>Account</a>.</p>
      */
     inline GetAccountResult& WithThrottleSettings(ThrottleSettings&& value) { SetThrottleSettings(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of features supported for the account. When usage plans are enabled,
@@ -190,6 +193,7 @@ namespace Model
      */
     inline GetAccountResult& AddFeatures(const char* value) { m_features.push_back(value); return *this; }
 
+
     /**
      * <p>The version of the API keys used for the account.</p>
      */
@@ -226,9 +230,13 @@ namespace Model
     inline GetAccountResult& WithApiKeyVersion(const char* value) { SetApiKeyVersion(value); return *this;}
 
   private:
+
     Aws::String m_cloudwatchRoleArn;
+
     ThrottleSettings m_throttleSettings;
+
     Aws::Vector<Aws::String> m_features;
+
     Aws::String m_apiKeyVersion;
   };
 

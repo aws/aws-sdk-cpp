@@ -44,6 +44,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -65,6 +66,7 @@ namespace Model
     
     inline Object& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
@@ -79,6 +81,7 @@ namespace Model
 
     
     inline Object& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetETag() const{ return m_eTag; }
@@ -101,6 +104,7 @@ namespace Model
     
     inline Object& WithETag(const char* value) { SetETag(value); return *this;}
 
+
     
     inline long long GetSize() const{ return m_size; }
 
@@ -109,6 +113,7 @@ namespace Model
 
     
     inline Object& WithSize(long long value) { SetSize(value); return *this;}
+
 
     /**
      * The class of storage used to store the object.
@@ -135,6 +140,7 @@ namespace Model
      */
     inline Object& WithStorageClass(ObjectStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
+
     
     inline const Owner& GetOwner() const{ return m_owner; }
 
@@ -151,16 +157,22 @@ namespace Model
     inline Object& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
+
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
+
     ObjectStorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
+
     Owner m_owner;
     bool m_ownerHasBeenSet;
   };

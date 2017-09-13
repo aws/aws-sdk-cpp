@@ -46,6 +46,7 @@ namespace Model
     LogStream& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the log stream.</p>
      */
@@ -81,45 +82,48 @@ namespace Model
      */
     inline LogStream& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
+
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
-     * since Jan 1, 1970 00:00:00 UTC.</p>
+     * after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
-     * since Jan 1, 1970 00:00:00 UTC.</p>
+     * after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
-     * since Jan 1, 1970 00:00:00 UTC.</p>
+     * after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline LogStream& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
+
     /**
-     * <p>The time of the first event, expressed as the number of milliseconds since
+     * <p>The time of the first event, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetFirstEventTimestamp() const{ return m_firstEventTimestamp; }
 
     /**
-     * <p>The time of the first event, expressed as the number of milliseconds since
+     * <p>The time of the first event, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetFirstEventTimestamp(long long value) { m_firstEventTimestampHasBeenSet = true; m_firstEventTimestamp = value; }
 
     /**
-     * <p>The time of the first event, expressed as the number of milliseconds since
+     * <p>The time of the first event, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline LogStream& WithFirstEventTimestamp(long long value) { SetFirstEventTimestamp(value); return *this;}
 
+
     /**
      * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
-     * This number is expressed as the number of milliseconds since Jan 1, 1970
+     * This number is expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
      * typically updates in less than an hour from ingestion, but may take longer in
      * some rare situations.</p>
@@ -128,7 +132,7 @@ namespace Model
 
     /**
      * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
-     * This number is expressed as the number of milliseconds since Jan 1, 1970
+     * This number is expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
      * typically updates in less than an hour from ingestion, but may take longer in
      * some rare situations.</p>
@@ -137,30 +141,32 @@ namespace Model
 
     /**
      * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
-     * This number is expressed as the number of milliseconds since Jan 1, 1970
+     * This number is expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
      * typically updates in less than an hour from ingestion, but may take longer in
      * some rare situations.</p>
      */
     inline LogStream& WithLastEventTimestamp(long long value) { SetLastEventTimestamp(value); return *this;}
 
+
     /**
-     * <p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970
+     * <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC.</p>
      */
     inline long long GetLastIngestionTime() const{ return m_lastIngestionTime; }
 
     /**
-     * <p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970
+     * <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC.</p>
      */
     inline void SetLastIngestionTime(long long value) { m_lastIngestionTimeHasBeenSet = true; m_lastIngestionTime = value; }
 
     /**
-     * <p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970
+     * <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC.</p>
      */
     inline LogStream& WithLastIngestionTime(long long value) { SetLastIngestionTime(value); return *this;}
+
 
     /**
      * <p>The sequence token.</p>
@@ -197,6 +203,7 @@ namespace Model
      */
     inline LogStream& WithUploadSequenceToken(const char* value) { SetUploadSequenceToken(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the log stream.</p>
      */
@@ -232,6 +239,7 @@ namespace Model
      */
     inline LogStream& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The number of bytes stored.</p>
      */
@@ -248,20 +256,28 @@ namespace Model
     inline LogStream& WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
 
   private:
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
+
     long long m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     long long m_firstEventTimestamp;
     bool m_firstEventTimestampHasBeenSet;
+
     long long m_lastEventTimestamp;
     bool m_lastEventTimestampHasBeenSet;
+
     long long m_lastIngestionTime;
     bool m_lastIngestionTimeHasBeenSet;
+
     Aws::String m_uploadSequenceToken;
     bool m_uploadSequenceTokenHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     long long m_storedBytes;
     bool m_storedBytesHasBeenSet;
   };

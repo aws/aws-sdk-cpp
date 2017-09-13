@@ -31,12 +31,12 @@ ListDomainNamesResult::ListDomainNamesResult()
 {
 }
 
-ListDomainNamesResult::ListDomainNamesResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListDomainNamesResult::ListDomainNamesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListDomainNamesResult& ListDomainNamesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListDomainNamesResult& ListDomainNamesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

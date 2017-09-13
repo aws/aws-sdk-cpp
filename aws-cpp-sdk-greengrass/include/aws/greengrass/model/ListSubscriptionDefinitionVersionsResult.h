@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListSubscriptionDefinitionVersionsResult();
-    ListSubscriptionDefinitionVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSubscriptionDefinitionVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSubscriptionDefinitionVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSubscriptionDefinitionVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * The token for the next set of results, or ''null'' if there are no additional
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListSubscriptionDefinitionVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * Versions
      */
@@ -121,7 +123,9 @@ namespace Model
     inline ListSubscriptionDefinitionVersionsResult& AddVersions(VersionInformation&& value) { m_versions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<VersionInformation> m_versions;
   };
 

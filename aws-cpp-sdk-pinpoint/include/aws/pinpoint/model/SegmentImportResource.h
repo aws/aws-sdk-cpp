@@ -45,6 +45,7 @@ namespace Model
     SegmentImportResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Channel type counts
      */
@@ -84,6 +85,7 @@ namespace Model
      * Channel type counts
      */
     inline SegmentImportResource& AddChannelCounts(const char* key, int value) { m_channelCountsHasBeenSet = true; m_channelCounts.emplace(key, value); return *this; }
+
 
     /**
      * A unique, custom ID assigned to the IAM role that restricts who can assume the
@@ -127,6 +129,7 @@ namespace Model
      */
     inline SegmentImportResource& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
+
     /**
      * The format of the endpoint files that were imported to create this
      * segment.
@@ -161,6 +164,7 @@ Valid values: CSV, JSON
 Valid values: CSV, JSON
      */
     inline SegmentImportResource& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
+
 
     /**
      * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
@@ -204,6 +208,7 @@ Valid values: CSV, JSON
      */
     inline SegmentImportResource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * A URL that points to the Amazon S3 location from which the endpoints for this
      * segment were imported.
@@ -246,6 +251,7 @@ Valid values: CSV, JSON
      */
     inline SegmentImportResource& WithS3Url(const char* value) { SetS3Url(value); return *this;}
 
+
     /**
      * The number of endpoints that were successfully imported to create this segment.
      */
@@ -262,16 +268,22 @@ Valid values: CSV, JSON
     inline SegmentImportResource& WithSize(int value) { SetSize(value); return *this;}
 
   private:
+
     Aws::Map<Aws::String, int> m_channelCounts;
     bool m_channelCountsHasBeenSet;
+
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
+
     Format m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_s3Url;
     bool m_s3UrlHasBeenSet;
+
     int m_size;
     bool m_sizeHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     EncryptResult();
-    EncryptResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EncryptResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EncryptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EncryptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The encrypted plaintext. If you are using the CLI, the value is Base64
@@ -71,6 +72,7 @@ namespace Model
      * encoded. Otherwise, it is not encoded.</p>
      */
     inline EncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the key used during encryption.</p>
@@ -108,7 +110,9 @@ namespace Model
     inline EncryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_ciphertextBlob;
+
     Aws::String m_keyId;
   };
 

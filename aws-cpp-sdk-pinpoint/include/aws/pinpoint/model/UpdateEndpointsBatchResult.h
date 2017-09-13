@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateEndpointsBatchResult();
-    UpdateEndpointsBatchResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEndpointsBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateEndpointsBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateEndpointsBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const MessageBody& GetMessageBody() const{ return m_messageBody; }
@@ -57,6 +58,7 @@ namespace Model
     inline UpdateEndpointsBatchResult& WithMessageBody(MessageBody&& value) { SetMessageBody(std::move(value)); return *this;}
 
   private:
+
     MessageBody m_messageBody;
   };
 

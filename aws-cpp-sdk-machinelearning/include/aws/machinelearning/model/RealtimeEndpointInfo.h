@@ -48,6 +48,7 @@ namespace Model
     RealtimeEndpointInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The maximum processing rate for the real-time endpoint for
      * <code>MLModel</code>, measured in incoming requests per second.</p>
@@ -65,6 +66,7 @@ namespace Model
      * <code>MLModel</code>, measured in incoming requests per second.</p>
      */
     inline RealtimeEndpointInfo& WithPeakRequestsPerSecond(int value) { SetPeakRequestsPerSecond(value); return *this;}
+
 
     /**
      * <p>The time that the request to create the real-time endpoint for the
@@ -95,6 +97,7 @@ namespace Model
      * <code>MLModel</code> was received. The time is expressed in epoch time.</p>
      */
     inline RealtimeEndpointInfo& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
@@ -144,6 +147,7 @@ namespace Model
      * until the real-time endpoint is ready before using this URI.</p> </note>
      */
     inline RealtimeEndpointInfo& WithEndpointUrl(const char* value) { SetEndpointUrl(value); return *this;}
+
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
@@ -196,12 +200,16 @@ namespace Model
     inline RealtimeEndpointInfo& WithEndpointStatus(RealtimeEndpointStatus&& value) { SetEndpointStatus(std::move(value)); return *this;}
 
   private:
+
     int m_peakRequestsPerSecond;
     bool m_peakRequestsPerSecondHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::String m_endpointUrl;
     bool m_endpointUrlHasBeenSet;
+
     RealtimeEndpointStatus m_endpointStatus;
     bool m_endpointStatusHasBeenSet;
   };

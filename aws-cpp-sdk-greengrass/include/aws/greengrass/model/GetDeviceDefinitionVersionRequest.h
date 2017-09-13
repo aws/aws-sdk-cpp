@@ -34,6 +34,7 @@ namespace Model
     GetDeviceDefinitionVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * device definition Id
      */
@@ -68,6 +69,7 @@ namespace Model
      * device definition Id
      */
     inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionId(const char* value) { SetDeviceDefinitionId(value); return *this;}
+
 
     /**
      * device definition version Id
@@ -105,8 +107,10 @@ namespace Model
     inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionVersionId(const char* value) { SetDeviceDefinitionVersionId(value); return *this;}
 
   private:
+
     Aws::String m_deviceDefinitionId;
     bool m_deviceDefinitionIdHasBeenSet;
+
     Aws::String m_deviceDefinitionVersionId;
     bool m_deviceDefinitionVersionIdHasBeenSet;
   };

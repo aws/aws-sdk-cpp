@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the catalog in which the partion is to be created. Currently, this
      * should be the AWS account ID.</p>
@@ -79,6 +80,7 @@ namespace Model
      * should be the AWS account ID.</p>
      */
     inline BatchCreatePartitionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+
 
     /**
      * <p>The name of the metadata database in which the partition is to be
@@ -122,6 +124,7 @@ namespace Model
      */
     inline BatchCreatePartitionRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>The name of the metadata table in which the partition is to be created.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The name of the metadata table in which the partition is to be created.</p>
      */
     inline BatchCreatePartitionRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>A list of <code>PartitionInput</code> structures that define the partitions
@@ -200,12 +204,16 @@ namespace Model
     inline BatchCreatePartitionRequest& AddPartitionInputList(PartitionInput&& value) { m_partitionInputListHasBeenSet = true; m_partitionInputList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::Vector<PartitionInput> m_partitionInputList;
     bool m_partitionInputListHasBeenSet;
   };

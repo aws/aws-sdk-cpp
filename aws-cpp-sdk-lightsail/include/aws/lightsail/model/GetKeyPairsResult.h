@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetKeyPairsResult();
-    GetKeyPairsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetKeyPairsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetKeyPairsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetKeyPairsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the key pairs.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the key pairs.</p>
      */
     inline GetKeyPairsResult& AddKeyPairs(KeyPair&& value) { m_keyPairs.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token used for advancing to the next page of results from your get key
@@ -121,7 +123,9 @@ namespace Model
     inline GetKeyPairsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<KeyPair> m_keyPairs;
+
     Aws::String m_nextPageToken;
   };
 

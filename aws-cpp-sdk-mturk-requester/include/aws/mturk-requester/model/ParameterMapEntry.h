@@ -47,6 +47,7 @@ namespace Model
     ParameterMapEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The QuestionID from the HIT that is used to identify which question requires
      * Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review
@@ -95,6 +96,7 @@ namespace Model
      * Policy. </p>
      */
     inline ParameterMapEntry& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p> The list of answers to the question specified in the MapEntry Key element.
@@ -153,8 +155,10 @@ namespace Model
     inline ParameterMapEntry& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

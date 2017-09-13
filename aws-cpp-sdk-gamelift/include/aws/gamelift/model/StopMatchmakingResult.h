@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     StopMatchmakingResult();
-    StopMatchmakingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopMatchmakingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopMatchmakingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopMatchmakingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

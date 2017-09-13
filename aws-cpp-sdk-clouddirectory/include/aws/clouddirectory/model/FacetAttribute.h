@@ -49,6 +49,7 @@ namespace Model
     FacetAttribute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the facet attribute.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the facet attribute.</p>
      */
     inline FacetAttribute& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A facet attribute consists of either a definition or a reference. This
@@ -124,6 +126,7 @@ namespace Model
      */
     inline FacetAttribute& WithAttributeDefinition(FacetAttributeDefinition&& value) { SetAttributeDefinition(std::move(value)); return *this;}
 
+
     /**
      * <p>An attribute reference that is associated with the attribute. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
@@ -159,6 +162,7 @@ namespace Model
      */
     inline FacetAttribute& WithAttributeReference(FacetAttributeReference&& value) { SetAttributeReference(std::move(value)); return *this;}
 
+
     /**
      * <p>The required behavior of the <code>FacetAttribute</code>.</p>
      */
@@ -185,12 +189,16 @@ namespace Model
     inline FacetAttribute& WithRequiredBehavior(RequiredAttributeBehavior&& value) { SetRequiredBehavior(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     FacetAttributeDefinition m_attributeDefinition;
     bool m_attributeDefinitionHasBeenSet;
+
     FacetAttributeReference m_attributeReference;
     bool m_attributeReferenceHasBeenSet;
+
     RequiredAttributeBehavior m_requiredBehavior;
     bool m_requiredBehaviorHasBeenSet;
   };

@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     RegisterEventTopicResult();
-    RegisterEventTopicResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterEventTopicResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterEventTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterEventTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

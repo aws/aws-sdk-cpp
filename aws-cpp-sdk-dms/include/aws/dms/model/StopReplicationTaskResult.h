@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     StopReplicationTaskResult();
-    StopReplicationTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopReplicationTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopReplicationTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopReplicationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The replication task stopped.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline StopReplicationTaskResult& WithReplicationTask(ReplicationTask&& value) { SetReplicationTask(std::move(value)); return *this;}
 
   private:
+
     ReplicationTask m_replicationTask;
   };
 

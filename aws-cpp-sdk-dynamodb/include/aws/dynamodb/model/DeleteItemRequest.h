@@ -47,6 +47,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the table from which to delete the item.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the table from which to delete the item.</p>
      */
     inline DeleteItemRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
@@ -181,6 +183,7 @@ namespace Model
      */
     inline DeleteItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
 
+
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
      * more information, see <a
@@ -269,6 +272,7 @@ namespace Model
      */
     inline DeleteItemRequest& AddExpected(const char* key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, value); return *this; }
 
+
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
      * more information, see <a
@@ -308,6 +312,7 @@ namespace Model
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(std::move(value)); return *this;}
+
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
@@ -374,6 +379,7 @@ namespace Model
      */
     inline DeleteItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(std::move(value)); return *this;}
 
+
     
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
 
@@ -388,6 +394,7 @@ namespace Model
 
     
     inline DeleteItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>Determines whether item collection metrics are returned. If set to
@@ -428,6 +435,7 @@ namespace Model
      * set to <code>NONE</code> (the default), no statistics are returned.</p>
      */
     inline DeleteItemRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { SetReturnItemCollectionMetrics(std::move(value)); return *this;}
+
 
     /**
      * <p>A condition that must be satisfied in order for a conditional
@@ -526,6 +534,7 @@ namespace Model
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithConditionExpression(const char* value) { SetConditionExpression(value); return *this;}
+
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -851,6 +860,7 @@ namespace Model
      */
     inline DeleteItemRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
+
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
@@ -1039,24 +1049,34 @@ namespace Model
     inline DeleteItemRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_key;
     bool m_keyHasBeenSet;
+
     Aws::Map<Aws::String, ExpectedAttributeValue> m_expected;
     bool m_expectedHasBeenSet;
+
     ConditionalOperator m_conditionalOperator;
     bool m_conditionalOperatorHasBeenSet;
+
     ReturnValue m_returnValues;
     bool m_returnValuesHasBeenSet;
+
     ReturnConsumedCapacity m_returnConsumedCapacity;
     bool m_returnConsumedCapacityHasBeenSet;
+
     ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
     bool m_returnItemCollectionMetricsHasBeenSet;
+
     Aws::String m_conditionExpression;
     bool m_conditionExpressionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
     bool m_expressionAttributeNamesHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
     bool m_expressionAttributeValuesHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove
      * the client ID from. You can get a list of OIDC provider ARNs by using the
@@ -115,6 +116,7 @@ namespace Model
      */
     inline RemoveClientIDFromOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
 
+
     /**
      * <p>The client ID (also known as audience) to remove from the IAM OIDC provider
      * resource. For more information about client IDs, see
@@ -165,8 +167,10 @@ namespace Model
     inline RemoveClientIDFromOpenIDConnectProviderRequest& WithClientID(const char* value) { SetClientID(value); return *this;}
 
   private:
+
     Aws::String m_openIDConnectProviderArn;
     bool m_openIDConnectProviderArnHasBeenSet;
+
     Aws::String m_clientID;
     bool m_clientIDHasBeenSet;
   };

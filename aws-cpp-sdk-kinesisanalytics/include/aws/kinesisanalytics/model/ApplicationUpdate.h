@@ -51,6 +51,7 @@ namespace Model
     ApplicationUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Describes application input configuration updates.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>Describes application input configuration updates.</p>
      */
     inline ApplicationUpdate& AddInputUpdates(InputUpdate&& value) { m_inputUpdatesHasBeenSet = true; m_inputUpdates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Describes application code updates.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline ApplicationUpdate& WithApplicationCodeUpdate(const char* value) { SetApplicationCodeUpdate(value); return *this;}
 
+
     /**
      * <p>Describes application output configuration updates.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      */
     inline ApplicationUpdate& AddOutputUpdates(OutputUpdate&& value) { m_outputUpdatesHasBeenSet = true; m_outputUpdates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Describes application reference data source updates.</p>
      */
@@ -190,6 +194,7 @@ namespace Model
      * <p>Describes application reference data source updates.</p>
      */
     inline ApplicationUpdate& AddReferenceDataSourceUpdates(ReferenceDataSourceUpdate&& value) { m_referenceDataSourceUpdatesHasBeenSet = true; m_referenceDataSourceUpdates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Describes application CloudWatch logging option updates.</p>
@@ -227,14 +232,19 @@ namespace Model
     inline ApplicationUpdate& AddCloudWatchLoggingOptionUpdates(CloudWatchLoggingOptionUpdate&& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<InputUpdate> m_inputUpdates;
     bool m_inputUpdatesHasBeenSet;
+
     Aws::String m_applicationCodeUpdate;
     bool m_applicationCodeUpdateHasBeenSet;
+
     Aws::Vector<OutputUpdate> m_outputUpdates;
     bool m_outputUpdatesHasBeenSet;
+
     Aws::Vector<ReferenceDataSourceUpdate> m_referenceDataSourceUpdates;
     bool m_referenceDataSourceUpdatesHasBeenSet;
+
     Aws::Vector<CloudWatchLoggingOptionUpdate> m_cloudWatchLoggingOptionUpdates;
     bool m_cloudWatchLoggingOptionUpdatesHasBeenSet;
   };

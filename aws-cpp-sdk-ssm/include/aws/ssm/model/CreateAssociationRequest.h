@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the Systems Manager document.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the Systems Manager document.</p>
      */
     inline CreateAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The document version you want to associate with the target(s). Can be a
@@ -117,6 +119,7 @@ namespace Model
      */
     inline CreateAssociationRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline CreateAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The parameters for the documents runtime configuration. </p>
@@ -207,6 +211,7 @@ namespace Model
      */
     inline CreateAssociationRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The targets (either instances or tags) for the association.</p>
      */
@@ -241,6 +246,7 @@ namespace Model
      * <p>The targets (either instances or tags) for the association.</p>
      */
     inline CreateAssociationRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A cron expression when the association will be applied to the target(s).</p>
@@ -277,6 +283,7 @@ namespace Model
      */
     inline CreateAssociationRequest& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
+
     /**
      * <p>An Amazon S3 bucket where you want to store the output details of the
      * request.</p>
@@ -306,6 +313,7 @@ namespace Model
      * request.</p>
      */
     inline CreateAssociationRequest& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+
 
     /**
      * <p>Specify a descriptive name for the association.</p>
@@ -343,20 +351,28 @@ namespace Model
     inline CreateAssociationRequest& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+
     InstanceAssociationOutputLocation m_outputLocation;
     bool m_outputLocationHasBeenSet;
+
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
   };

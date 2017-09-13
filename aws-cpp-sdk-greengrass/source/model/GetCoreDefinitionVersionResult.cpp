@@ -30,12 +30,12 @@ GetCoreDefinitionVersionResult::GetCoreDefinitionVersionResult()
 {
 }
 
-GetCoreDefinitionVersionResult::GetCoreDefinitionVersionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCoreDefinitionVersionResult::GetCoreDefinitionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCoreDefinitionVersionResult& GetCoreDefinitionVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCoreDefinitionVersionResult& GetCoreDefinitionVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Arn"))

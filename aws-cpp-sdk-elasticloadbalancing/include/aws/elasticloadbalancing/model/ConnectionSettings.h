@@ -47,6 +47,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The time, in seconds, that the connection is allowed to be idle (no data has
      * been sent over the connection) before it is closed by the load balancer.</p>
@@ -66,6 +67,7 @@ namespace Model
     inline ConnectionSettings& WithIdleTimeout(int value) { SetIdleTimeout(value); return *this;}
 
   private:
+
     int m_idleTimeout;
     bool m_idleTimeoutHasBeenSet;
   };

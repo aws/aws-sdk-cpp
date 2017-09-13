@@ -52,6 +52,7 @@ namespace Model
     Artwork& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the file to be used as album art. To determine which Amazon S3
      * bucket contains the specified file, Elastic Transcoder checks the pipeline
@@ -122,6 +123,7 @@ namespace Model
      */
     inline Artwork& WithInputKey(const char* value) { SetInputKey(value); return *this;}
 
+
     /**
      * <p>The maximum width of the output album art in pixels. If you specify
      * <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you
@@ -178,6 +180,7 @@ namespace Model
      */
     inline Artwork& WithMaxWidth(const char* value) { SetMaxWidth(value); return *this;}
 
+
     /**
      * <p>The maximum height of the output album art in pixels. If you specify
      * <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you
@@ -233,6 +236,7 @@ namespace Model
      * inclusive.</p>
      */
     inline Artwork& WithMaxHeight(const char* value) { SetMaxHeight(value); return *this;}
+
 
     /**
      * <p>Specify one of the following values to control scaling of the output album
@@ -437,6 +441,7 @@ namespace Model
      */
     inline Artwork& WithSizingPolicy(const char* value) { SetSizingPolicy(value); return *this;}
 
+
     /**
      * <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
      * Transcoder may add white bars to the top and bottom and/or left and right sides
@@ -500,6 +505,7 @@ namespace Model
      */
     inline Artwork& WithPaddingPolicy(const char* value) { SetPaddingPolicy(value); return *this;}
 
+
     /**
      * <p>The format of album art, if any. Valid formats are <code>.jpg</code> and
      * <code>.png</code>.</p>
@@ -542,6 +548,7 @@ namespace Model
      */
     inline Artwork& WithAlbumArtFormat(const char* value) { SetAlbumArtFormat(value); return *this;}
 
+
     /**
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your artwork.</p>
@@ -573,18 +580,25 @@ namespace Model
     inline Artwork& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_inputKey;
     bool m_inputKeyHasBeenSet;
+
     Aws::String m_maxWidth;
     bool m_maxWidthHasBeenSet;
+
     Aws::String m_maxHeight;
     bool m_maxHeightHasBeenSet;
+
     Aws::String m_sizingPolicy;
     bool m_sizingPolicyHasBeenSet;
+
     Aws::String m_paddingPolicy;
     bool m_paddingPolicyHasBeenSet;
+
     Aws::String m_albumArtFormat;
     bool m_albumArtFormatHasBeenSet;
+
     Encryption m_encryption;
     bool m_encryptionHasBeenSet;
   };

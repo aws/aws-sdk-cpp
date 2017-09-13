@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     RenewOfferingResult();
-    RenewOfferingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RenewOfferingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RenewOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RenewOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Represents the status of the offering transaction for the renewal.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline RenewOfferingResult& WithOfferingTransaction(OfferingTransaction&& value) { SetOfferingTransaction(std::move(value)); return *this;}
 
   private:
+
     OfferingTransaction m_offeringTransaction;
   };
 

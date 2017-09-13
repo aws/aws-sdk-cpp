@@ -31,13 +31,13 @@ DescribeRuleResult::DescribeRuleResult() :
 {
 }
 
-DescribeRuleResult::DescribeRuleResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeRuleResult::DescribeRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_state(RuleState::NOT_SET)
 {
   *this = result;
 }
 
-DescribeRuleResult& DescribeRuleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRuleResult& DescribeRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Name"))

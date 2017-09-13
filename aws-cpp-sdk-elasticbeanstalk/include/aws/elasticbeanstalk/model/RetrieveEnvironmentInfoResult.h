@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     RetrieveEnvironmentInfoResult();
-    RetrieveEnvironmentInfoResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RetrieveEnvironmentInfoResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RetrieveEnvironmentInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RetrieveEnvironmentInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline RetrieveEnvironmentInfoResult& AddEnvironmentInfo(EnvironmentInfoDescription&& value) { m_environmentInfo.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline RetrieveEnvironmentInfoResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<EnvironmentInfoDescription> m_environmentInfo;
+
     ResponseMetadata m_responseMetadata;
   };
 

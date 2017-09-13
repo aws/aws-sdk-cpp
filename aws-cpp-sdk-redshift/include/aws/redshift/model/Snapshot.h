@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The snapshot identifier that is provided in the request.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The snapshot identifier that is provided in the request.</p>
      */
     inline Snapshot& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The identifier of the cluster for which the snapshot was taken.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline Snapshot& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a
      * copy of the cluster data as of this exact time.</p>
@@ -151,6 +154,7 @@ namespace Model
      * copy of the cluster data as of this exact time.</p>
      */
     inline Snapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The snapshot status. The value of the status depends on the API operation
@@ -222,6 +226,7 @@ namespace Model
      */
     inline Snapshot& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The port that the cluster is listening on.</p>
      */
@@ -236,6 +241,7 @@ namespace Model
      * <p>The port that the cluster is listening on.</p>
      */
     inline Snapshot& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The Availability Zone in which the cluster was created.</p>
@@ -272,6 +278,7 @@ namespace Model
      */
     inline Snapshot& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The time (UTC) when the cluster was originally created.</p>
      */
@@ -296,6 +303,7 @@ namespace Model
      * <p>The time (UTC) when the cluster was originally created.</p>
      */
     inline Snapshot& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The master user name for the cluster.</p>
@@ -331,6 +339,7 @@ namespace Model
      * <p>The master user name for the cluster.</p>
      */
     inline Snapshot& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
+
 
     /**
      * <p>The version ID of the Amazon Redshift engine that is running on the
@@ -374,6 +383,7 @@ namespace Model
      */
     inline Snapshot& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
 
+
     /**
      * <p>The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and
      * <a>CopyClusterSnapshot</a> will be of type "manual". </p>
@@ -416,6 +426,7 @@ namespace Model
      */
     inline Snapshot& WithSnapshotType(const char* value) { SetSnapshotType(value); return *this;}
 
+
     /**
      * <p>The node type of the nodes in the cluster.</p>
      */
@@ -451,6 +462,7 @@ namespace Model
      */
     inline Snapshot& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
+
     /**
      * <p>The number of nodes in the cluster.</p>
      */
@@ -465,6 +477,7 @@ namespace Model
      * <p>The number of nodes in the cluster.</p>
      */
     inline Snapshot& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
+
 
     /**
      * <p>The name of the database that was created when the cluster was created.</p>
@@ -500,6 +513,7 @@ namespace Model
      * <p>The name of the database that was created when the cluster was created.</p>
      */
     inline Snapshot& WithDBName(const char* value) { SetDBName(value); return *this;}
+
 
     /**
      * <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC.
@@ -543,6 +557,7 @@ namespace Model
      */
     inline Snapshot& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
      */
@@ -557,6 +572,7 @@ namespace Model
      * <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
      */
     inline Snapshot& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
@@ -600,6 +616,7 @@ namespace Model
      */
     inline Snapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>A boolean that indicates whether the snapshot data is encrypted using the HSM
      * keys of the source cluster. <code>true</code> indicates that the data is
@@ -620,6 +637,7 @@ namespace Model
      * encrypted using HSM keys.</p>
      */
     inline Snapshot& WithEncryptedWithHSM(bool value) { SetEncryptedWithHSM(value); return *this;}
+
 
     /**
      * <p>A list of the AWS customer accounts authorized to restore the snapshot.
@@ -670,6 +688,7 @@ namespace Model
      */
     inline Snapshot& AddAccountsWithRestoreAccess(AccountWithRestoreAccess&& value) { m_accountsWithRestoreAccessHasBeenSet = true; m_accountsWithRestoreAccess.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>For manual snapshots, the AWS customer account used to create or copy the
      * snapshot. For automatic snapshots, the owner of the cluster. The owner can
@@ -719,6 +738,7 @@ namespace Model
      */
     inline Snapshot& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
+
     /**
      * <p>The size of the complete set of backup data that would be used to restore the
      * cluster.</p>
@@ -737,6 +757,7 @@ namespace Model
      */
     inline Snapshot& WithTotalBackupSizeInMegaBytes(double value) { SetTotalBackupSizeInMegaBytes(value); return *this;}
 
+
     /**
      * <p>The size of the incremental backup.</p>
      */
@@ -751,6 +772,7 @@ namespace Model
      * <p>The size of the incremental backup.</p>
      */
     inline Snapshot& WithActualIncrementalBackupSizeInMegaBytes(double value) { SetActualIncrementalBackupSizeInMegaBytes(value); return *this;}
+
 
     /**
      * <p>The number of megabytes that have been transferred to the snapshot
@@ -770,6 +792,7 @@ namespace Model
      */
     inline Snapshot& WithBackupProgressInMegaBytes(double value) { SetBackupProgressInMegaBytes(value); return *this;}
 
+
     /**
      * <p>The number of megabytes per second being transferred to the snapshot backup.
      * Returns <code>0</code> for a completed backup. </p>
@@ -787,6 +810,7 @@ namespace Model
      * Returns <code>0</code> for a completed backup. </p>
      */
     inline Snapshot& WithCurrentBackupRateInMegaBytesPerSecond(double value) { SetCurrentBackupRateInMegaBytesPerSecond(value); return *this;}
+
 
     /**
      * <p>The estimate of the time remaining before the snapshot backup will complete.
@@ -806,6 +830,7 @@ namespace Model
      */
     inline Snapshot& WithEstimatedSecondsToCompletion(long long value) { SetEstimatedSecondsToCompletion(value); return *this;}
 
+
     /**
      * <p>The amount of time an in-progress snapshot backup has been running, or the
      * amount of time it took a completed backup to finish.</p>
@@ -823,6 +848,7 @@ namespace Model
      * amount of time it took a completed backup to finish.</p>
      */
     inline Snapshot& WithElapsedTimeInSeconds(long long value) { SetElapsedTimeInSeconds(value); return *this;}
+
 
     /**
      * <p>The source region from which the snapshot was copied.</p>
@@ -859,6 +885,7 @@ namespace Model
      */
     inline Snapshot& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
 
+
     /**
      * <p>The list of tags for the cluster snapshot.</p>
      */
@@ -893,6 +920,7 @@ namespace Model
      * <p>The list of tags for the cluster snapshot.</p>
      */
     inline Snapshot& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The list of node types that this cluster snapshot is able to restore
@@ -942,6 +970,7 @@ namespace Model
      */
     inline Snapshot& AddRestorableNodeTypes(const char* value) { m_restorableNodeTypesHasBeenSet = true; m_restorableNodeTypes.push_back(value); return *this; }
 
+
     /**
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
@@ -976,62 +1005,91 @@ namespace Model
     inline Snapshot& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
 
   private:
+
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::Utils::DateTime m_snapshotCreateTime;
     bool m_snapshotCreateTimeHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
+
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;
+
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
+
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     bool m_encryptedWithHSM;
     bool m_encryptedWithHSMHasBeenSet;
+
     Aws::Vector<AccountWithRestoreAccess> m_accountsWithRestoreAccess;
     bool m_accountsWithRestoreAccessHasBeenSet;
+
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet;
+
     double m_totalBackupSizeInMegaBytes;
     bool m_totalBackupSizeInMegaBytesHasBeenSet;
+
     double m_actualIncrementalBackupSizeInMegaBytes;
     bool m_actualIncrementalBackupSizeInMegaBytesHasBeenSet;
+
     double m_backupProgressInMegaBytes;
     bool m_backupProgressInMegaBytesHasBeenSet;
+
     double m_currentBackupRateInMegaBytesPerSecond;
     bool m_currentBackupRateInMegaBytesPerSecondHasBeenSet;
+
     long long m_estimatedSecondsToCompletion;
     bool m_estimatedSecondsToCompletionHasBeenSet;
+
     long long m_elapsedTimeInSeconds;
     bool m_elapsedTimeInSecondsHasBeenSet;
+
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Vector<Aws::String> m_restorableNodeTypes;
     bool m_restorableNodeTypesHasBeenSet;
+
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet;
   };

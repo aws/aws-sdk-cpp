@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository in which to test the triggers.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name of the repository in which to test the triggers.</p>
      */
     inline TestRepositoryTriggersRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The list of triggers to test.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline TestRepositoryTriggersRequest& AddTriggers(RepositoryTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::Vector<RepositoryTrigger> m_triggers;
     bool m_triggersHasBeenSet;
   };

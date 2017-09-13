@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeCommentsResult();
-    DescribeCommentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCommentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCommentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCommentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of comments for the specified document version.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of comments for the specified document version.</p>
      */
     inline DescribeCommentsResult& AddComments(Comment&& value) { m_comments.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker for the next set of results. This marker was received from a
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeCommentsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Comment> m_comments;
+
     Aws::String m_marker;
   };
 

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A filter used to scope the tags to return.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>A filter used to scope the tags to return.</p>
      */
     inline DescribeTagsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -120,6 +122,7 @@ namespace Model
      */
     inline DescribeTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return with this call. The default value is 50
      * and the maximum value is 100.</p>
@@ -139,10 +142,13 @@ namespace Model
     inline DescribeTagsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
   };

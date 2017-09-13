@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DeleteDatasetResult();
-    DeleteDatasetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDatasetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * A collection of data for an identity pool. An identity pool can have multiple
@@ -92,6 +93,7 @@ namespace Model
     inline DeleteDatasetResult& WithDataset(Dataset&& value) { SetDataset(std::move(value)); return *this;}
 
   private:
+
     Dataset m_dataset;
   };
 

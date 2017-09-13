@@ -51,6 +51,7 @@ namespace Model
     DeliveryStreamDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the delivery stream.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of the delivery stream.</p>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline DeliveryStreamDescription& WithDeliveryStreamARN(const char* value) { SetDeliveryStreamARN(value); return *this;}
 
+
     /**
      * <p>The status of the delivery stream.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>The status of the delivery stream.</p>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamStatus(DeliveryStreamStatus&& value) { SetDeliveryStreamStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The delivery stream type. This can be one of the following values:</p> <ul>
@@ -185,6 +189,7 @@ namespace Model
      * delivery stream uses a Kinesis stream as a source.</p> </li> </ul>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamType(DeliveryStreamType&& value) { SetDeliveryStreamType(std::move(value)); return *this;}
+
 
     /**
      * <p>Each time the destination is updated for a delivery stream, the version ID is
@@ -242,6 +247,7 @@ namespace Model
      */
     inline DeliveryStreamDescription& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * <p>The date and time that the delivery stream was created.</p>
      */
@@ -267,6 +273,7 @@ namespace Model
      */
     inline DeliveryStreamDescription& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time that the delivery stream was last updated.</p>
      */
@@ -291,6 +298,7 @@ namespace Model
      * <p>The date and time that the delivery stream was last updated.</p>
      */
     inline DeliveryStreamDescription& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>If the <code>DeliveryStreamType</code> parameter is
@@ -327,6 +335,7 @@ namespace Model
      */
     inline DeliveryStreamDescription& WithSource(SourceDescription&& value) { SetSource(std::move(value)); return *this;}
 
+
     /**
      * <p>The destinations.</p>
      */
@@ -362,6 +371,7 @@ namespace Model
      */
     inline DeliveryStreamDescription& AddDestinations(DestinationDescription&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether there are more destinations available to list.</p>
      */
@@ -378,24 +388,34 @@ namespace Model
     inline DeliveryStreamDescription& WithHasMoreDestinations(bool value) { SetHasMoreDestinations(value); return *this;}
 
   private:
+
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
+
     Aws::String m_deliveryStreamARN;
     bool m_deliveryStreamARNHasBeenSet;
+
     DeliveryStreamStatus m_deliveryStreamStatus;
     bool m_deliveryStreamStatusHasBeenSet;
+
     DeliveryStreamType m_deliveryStreamType;
     bool m_deliveryStreamTypeHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     Aws::Utils::DateTime m_createTimestamp;
     bool m_createTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdateTimestamp;
     bool m_lastUpdateTimestampHasBeenSet;
+
     SourceDescription m_source;
     bool m_sourceHasBeenSet;
+
     Aws::Vector<DestinationDescription> m_destinations;
     bool m_destinationsHasBeenSet;
+
     bool m_hasMoreDestinations;
     bool m_hasMoreDestinationsHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     Parent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) of the parent entity.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string
@@ -131,6 +132,7 @@ namespace Model
      */
     inline Parent& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The type of the parent entity.</p>
      */
@@ -157,8 +159,10 @@ namespace Model
     inline Parent& WithType(ParentType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     ParentType m_type;
     bool m_typeHasBeenSet;
   };

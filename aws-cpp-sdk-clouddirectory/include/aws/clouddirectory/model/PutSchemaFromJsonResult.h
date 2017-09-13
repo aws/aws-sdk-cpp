@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PutSchemaFromJsonResult();
-    PutSchemaFromJsonResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutSchemaFromJsonResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutSchemaFromJsonResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutSchemaFromJsonResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the schema to update.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline PutSchemaFromJsonResult& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
+
     Aws::String m_arn;
   };
 

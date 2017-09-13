@@ -30,12 +30,12 @@ DeleteDataSourceResult::DeleteDataSourceResult()
 {
 }
 
-DeleteDataSourceResult::DeleteDataSourceResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDataSourceResult::DeleteDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteDataSourceResult& DeleteDataSourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDataSourceResult& DeleteDataSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DataSourceId"))

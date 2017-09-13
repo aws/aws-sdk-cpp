@@ -49,6 +49,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -301,6 +303,7 @@ namespace Model
      */
     inline DescribeReservedInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Include Reserved Instance Marketplace offerings in the response.</p>
      */
@@ -315,6 +318,7 @@ namespace Model
      * <p>Include Reserved Instance Marketplace offerings in the response.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithIncludeMarketplace(bool value) { SetIncludeMarketplace(value); return *this;}
+
 
     /**
      * <p>The instance type that the reservation will cover (for example,
@@ -356,6 +360,7 @@ namespace Model
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
      * <p>Default: 94608000 (3 years)</p>
@@ -373,6 +378,7 @@ namespace Model
      * <p>Default: 94608000 (3 years)</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithMaxDuration(long long value) { SetMaxDuration(value); return *this;}
+
 
     /**
      * <p>The maximum number of instances to filter when searching for offerings.</p>
@@ -392,6 +398,7 @@ namespace Model
      */
     inline DescribeReservedInstancesOfferingsRequest& WithMaxInstanceCount(int value) { SetMaxInstanceCount(value); return *this;}
 
+
     /**
      * <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
      * <p>Default: 2592000 (1 month)</p>
@@ -409,6 +416,7 @@ namespace Model
      * <p>Default: 2592000 (1 month)</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithMinDuration(long long value) { SetMinDuration(value); return *this;}
+
 
     /**
      * <p>The offering class of the Reserved Instance. Can be <code>standard</code> or
@@ -440,6 +448,7 @@ namespace Model
      */
     inline DescribeReservedInstancesOfferingsRequest& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
 
+
     /**
      * <p>The Reserved Instance product platform description. Instances that include
      * <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
@@ -469,6 +478,7 @@ namespace Model
      * <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more Reserved Instances offering IDs.</p>
@@ -510,6 +520,7 @@ namespace Model
      */
     inline DescribeReservedInstancesOfferingsRequest& AddReservedInstancesOfferingIds(const char* value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -533,6 +544,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
@@ -584,6 +596,7 @@ namespace Model
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results of the initial request can be seen by sending another request
@@ -607,6 +620,7 @@ namespace Model
      * <p>Default: 100</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -642,6 +656,7 @@ namespace Model
      * <p>The token to retrieve the next page of results.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>The Reserved Instance offering type. If you are using tools that predate the
@@ -679,34 +694,49 @@ namespace Model
     inline DescribeReservedInstancesOfferingsRequest& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     bool m_includeMarketplace;
     bool m_includeMarketplaceHasBeenSet;
+
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     long long m_maxDuration;
     bool m_maxDurationHasBeenSet;
+
     int m_maxInstanceCount;
     bool m_maxInstanceCountHasBeenSet;
+
     long long m_minDuration;
     bool m_minDurationHasBeenSet;
+
     OfferingClassType m_offeringClass;
     bool m_offeringClassHasBeenSet;
+
     RIProductDescription m_productDescription;
     bool m_productDescriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_reservedInstancesOfferingIds;
     bool m_reservedInstancesOfferingIdsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Tenancy m_instanceTenancy;
     bool m_instanceTenancyHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     OfferingTypeValues m_offeringType;
     bool m_offeringTypeHasBeenSet;
   };

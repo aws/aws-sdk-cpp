@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     GetUsagePlanKeysResult();
-    GetUsagePlanKeysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUsagePlanKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUsagePlanKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUsagePlanKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetPosition() const{ return m_position; }
@@ -72,6 +73,7 @@ namespace Model
 
     
     inline GetUsagePlanKeysResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+
 
     /**
      * <p>The current page of elements from this collection.</p>
@@ -109,7 +111,9 @@ namespace Model
     inline GetUsagePlanKeysResult& AddItems(UsagePlanKey&& value) { m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_position;
+
     Aws::Vector<UsagePlanKey> m_items;
   };
 

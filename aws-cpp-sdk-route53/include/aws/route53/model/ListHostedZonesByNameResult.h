@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListHostedZonesByNameResult();
-    ListHostedZonesByNameResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListHostedZonesByNameResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListHostedZonesByNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListHostedZonesByNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline ListHostedZonesByNameResult& AddHostedZones(HostedZone&& value) { m_hostedZones.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>For the second and subsequent calls to <code>ListHostedZonesByName</code>,
@@ -140,6 +142,7 @@ namespace Model
      */
     inline ListHostedZonesByNameResult& WithDNSName(const char* value) { SetDNSName(value); return *this;}
 
+
     /**
      * <p>The ID that Amazon Route 53 assigned to the hosted zone when you created
      * it.</p>
@@ -182,6 +185,7 @@ namespace Model
      */
     inline ListHostedZonesByNameResult& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
+
     /**
      * <p>A flag that indicates whether there are more hosted zones to be listed. If
      * the response was truncated, you can get the next group of <code>maxitems</code>
@@ -211,6 +215,7 @@ namespace Model
      * parameters.</p>
      */
     inline ListHostedZonesByNameResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is
@@ -289,6 +294,7 @@ namespace Model
      */
     inline ListHostedZonesByNameResult& WithNextDNSName(const char* value) { SetNextDNSName(value); return *this;}
 
+
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
      * <code>NextHostedZoneId</code> identifies the first hosted zone in the next group
@@ -366,6 +372,7 @@ namespace Model
      */
     inline ListHostedZonesByNameResult& WithNextHostedZoneId(const char* value) { SetNextHostedZoneId(value); return *this;}
 
+
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
      * call to <code>ListHostedZonesByName</code> that produced the current
@@ -416,12 +423,19 @@ namespace Model
     inline ListHostedZonesByNameResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Vector<HostedZone> m_hostedZones;
+
     Aws::String m_dNSName;
+
     Aws::String m_hostedZoneId;
+
     bool m_isTruncated;
+
     Aws::String m_nextDNSName;
+
     Aws::String m_nextHostedZoneId;
+
     Aws::String m_maxItems;
   };
 

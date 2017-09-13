@@ -31,12 +31,12 @@ DescribeReservedCacheNodesResult::DescribeReservedCacheNodesResult()
 {
 }
 
-DescribeReservedCacheNodesResult::DescribeReservedCacheNodesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeReservedCacheNodesResult::DescribeReservedCacheNodesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeReservedCacheNodesResult& DescribeReservedCacheNodesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeReservedCacheNodesResult& DescribeReservedCacheNodesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

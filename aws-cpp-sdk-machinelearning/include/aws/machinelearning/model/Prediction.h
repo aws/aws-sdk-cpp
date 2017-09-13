@@ -56,6 +56,7 @@ namespace Model
     Prediction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The prediction label for either a <code>BINARY</code> or
      * <code>MULTICLASS</code> <code>MLModel</code>.</p>
@@ -98,6 +99,7 @@ namespace Model
      */
     inline Prediction& WithPredictedLabel(const char* value) { SetPredictedLabel(value); return *this;}
 
+
     /**
      * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      */
@@ -112,6 +114,7 @@ namespace Model
      * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      */
     inline Prediction& WithPredictedValue(double value) { SetPredictedValue(value); return *this;}
+
 
     
     inline const Aws::Map<Aws::String, double>& GetPredictedScores() const{ return m_predictedScores; }
@@ -136,6 +139,7 @@ namespace Model
 
     
     inline Prediction& AddPredictedScores(const char* key, double value) { m_predictedScoresHasBeenSet = true; m_predictedScores.emplace(key, value); return *this; }
+
 
     
     inline const Aws::Map<DetailsAttributes, Aws::String>& GetDetails() const{ return m_details; }
@@ -171,12 +175,16 @@ namespace Model
     inline Prediction& AddDetails(const DetailsAttributes& key, const char* value) { m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_predictedLabel;
     bool m_predictedLabelHasBeenSet;
+
     double m_predictedValue;
     bool m_predictedValueHasBeenSet;
+
     Aws::Map<Aws::String, double> m_predictedScores;
     bool m_predictedScoresHasBeenSet;
+
     Aws::Map<DetailsAttributes, Aws::String> m_details;
     bool m_detailsHasBeenSet;
   };

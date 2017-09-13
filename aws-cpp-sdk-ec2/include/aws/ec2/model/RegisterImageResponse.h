@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RegisterImageResponse();
-    RegisterImageResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RegisterImageResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RegisterImageResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RegisterImageResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the newly registered AMI.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline RegisterImageResponse& WithImageId(const char* value) { SetImageId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline RegisterImageResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_imageId;
+
     ResponseMetadata m_responseMetadata;
   };
 

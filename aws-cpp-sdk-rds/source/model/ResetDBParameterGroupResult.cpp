@@ -31,12 +31,12 @@ ResetDBParameterGroupResult::ResetDBParameterGroupResult()
 {
 }
 
-ResetDBParameterGroupResult::ResetDBParameterGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+ResetDBParameterGroupResult::ResetDBParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ResetDBParameterGroupResult& ResetDBParameterGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ResetDBParameterGroupResult& ResetDBParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

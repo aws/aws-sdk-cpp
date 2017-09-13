@@ -30,12 +30,12 @@ UpdateBandwidthRateLimitResult::UpdateBandwidthRateLimitResult()
 {
 }
 
-UpdateBandwidthRateLimitResult::UpdateBandwidthRateLimitResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateBandwidthRateLimitResult::UpdateBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateBandwidthRateLimitResult& UpdateBandwidthRateLimitResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateBandwidthRateLimitResult& UpdateBandwidthRateLimitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

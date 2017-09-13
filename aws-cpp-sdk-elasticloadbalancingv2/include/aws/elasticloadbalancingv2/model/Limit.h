@@ -49,10 +49,13 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
+     * <p>listeners-per-network-load-balancer</p> </li> <li>
+     * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
      * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
      */
@@ -62,6 +65,8 @@ namespace Model
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
+     * <p>listeners-per-network-load-balancer</p> </li> <li>
+     * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
      * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
      */
@@ -71,6 +76,8 @@ namespace Model
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
+     * <p>listeners-per-network-load-balancer</p> </li> <li>
+     * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
      * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
      */
@@ -80,6 +87,8 @@ namespace Model
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
+     * <p>listeners-per-network-load-balancer</p> </li> <li>
+     * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
      * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
      */
@@ -89,6 +98,8 @@ namespace Model
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
+     * <p>listeners-per-network-load-balancer</p> </li> <li>
+     * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
      * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
      */
@@ -98,6 +109,8 @@ namespace Model
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
+     * <p>listeners-per-network-load-balancer</p> </li> <li>
+     * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
      * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
      */
@@ -107,10 +120,13 @@ namespace Model
      * <p>The name of the limit. The possible values are:</p> <ul> <li>
      * <p>application-load-balancers</p> </li> <li>
      * <p>listeners-per-application-load-balancer</p> </li> <li>
+     * <p>listeners-per-network-load-balancer</p> </li> <li>
+     * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
      * <li> <p>targets-per-application-load-balancer</p> </li> </ul>
      */
     inline Limit& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The maximum value of the limit.</p>
@@ -148,8 +164,10 @@ namespace Model
     inline Limit& WithMax(const char* value) { SetMax(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_max;
     bool m_maxHasBeenSet;
   };

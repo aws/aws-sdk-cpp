@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
      * are requesting information.</p>
@@ -81,6 +82,7 @@ namespace Model
      * are requesting information.</p>
      */
     inline ListRemoteAccessSessionsRequest& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -125,8 +127,10 @@ namespace Model
     inline ListRemoteAccessSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

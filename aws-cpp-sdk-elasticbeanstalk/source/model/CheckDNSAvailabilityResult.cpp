@@ -32,13 +32,13 @@ CheckDNSAvailabilityResult::CheckDNSAvailabilityResult() :
 {
 }
 
-CheckDNSAvailabilityResult::CheckDNSAvailabilityResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+CheckDNSAvailabilityResult::CheckDNSAvailabilityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_available(false)
 {
   *this = result;
 }
 
-CheckDNSAvailabilityResult& CheckDNSAvailabilityResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CheckDNSAvailabilityResult& CheckDNSAvailabilityResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

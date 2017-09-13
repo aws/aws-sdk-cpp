@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The type of resource of which you want to remove a tag.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
      * <p>The type of resource of which you want to remove a tag.</p>
      */
     inline RemoveTagsFromResourceRequest& WithResourceType(ResourceTypeForTagging&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The resource ID for which you want to remove tags.</p>
@@ -97,6 +99,7 @@ namespace Model
      * <p>The resource ID for which you want to remove tags.</p>
      */
     inline RemoveTagsFromResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Tag keys that you want to remove from the specified resource.</p>
@@ -139,10 +142,13 @@ namespace Model
     inline RemoveTagsFromResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     ResourceTypeForTagging m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

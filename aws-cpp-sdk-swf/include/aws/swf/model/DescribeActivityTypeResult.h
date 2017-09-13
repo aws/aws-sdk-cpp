@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeActivityTypeResult();
-    DescribeActivityTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeActivityTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeActivityTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeActivityTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>General information about the activity type.</p> <p>The status of activity
@@ -107,6 +108,7 @@ namespace Model
      */
     inline DescribeActivityTypeResult& WithTypeInfo(ActivityTypeInfo&& value) { SetTypeInfo(std::move(value)); return *this;}
 
+
     /**
      * <p>The configuration settings registered with the activity type.</p>
      */
@@ -133,7 +135,9 @@ namespace Model
     inline DescribeActivityTypeResult& WithConfiguration(ActivityTypeConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
   private:
+
     ActivityTypeInfo m_typeInfo;
+
     ActivityTypeConfiguration m_configuration;
   };
 

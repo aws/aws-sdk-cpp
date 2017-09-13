@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -69,6 +70,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeScheduledInstanceAvailabilityRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -147,6 +149,7 @@ namespace Model
      */
     inline DescribeScheduledInstanceAvailabilityRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time period for the first schedule to start.</p>
      */
@@ -172,6 +175,7 @@ namespace Model
      */
     inline DescribeScheduledInstanceAvailabilityRequest& WithFirstSlotStartTimeRange(SlotDateTimeRangeRequest&& value) { SetFirstSlotStartTimeRange(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of results to return in a single call. This value can be
      * between 5 and 300. The default value is 300. To retrieve the remaining results,
@@ -193,6 +197,7 @@ namespace Model
      */
     inline DescribeScheduledInstanceAvailabilityRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
     /**
      * <p>The maximum available duration, in hours. This value must be greater than
      * <code>MinSlotDurationInHours</code> and less than 1,720.</p>
@@ -210,6 +215,7 @@ namespace Model
      * <code>MinSlotDurationInHours</code> and less than 1,720.</p>
      */
     inline DescribeScheduledInstanceAvailabilityRequest& WithMaxSlotDurationInHours(int value) { SetMaxSlotDurationInHours(value); return *this;}
+
 
     /**
      * <p>The minimum available duration, in hours. The minimum required duration is
@@ -234,6 +240,7 @@ namespace Model
      * hours.</p>
      */
     inline DescribeScheduledInstanceAvailabilityRequest& WithMinSlotDurationInHours(int value) { SetMinSlotDurationInHours(value); return *this;}
+
 
     /**
      * <p>The token for the next set of results.</p>
@@ -270,6 +277,7 @@ namespace Model
      */
     inline DescribeScheduledInstanceAvailabilityRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The schedule recurrence.</p>
      */
@@ -296,20 +304,28 @@ namespace Model
     inline DescribeScheduledInstanceAvailabilityRequest& WithRecurrence(ScheduledInstanceRecurrenceRequest&& value) { SetRecurrence(std::move(value)); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     SlotDateTimeRangeRequest m_firstSlotStartTimeRange;
     bool m_firstSlotStartTimeRangeHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     int m_maxSlotDurationInHours;
     bool m_maxSlotDurationInHoursHasBeenSet;
+
     int m_minSlotDurationInHours;
     bool m_minSlotDurationInHoursHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     ScheduledInstanceRecurrenceRequest m_recurrence;
     bool m_recurrenceHasBeenSet;
   };

@@ -31,13 +31,13 @@ UploadLayerPartResult::UploadLayerPartResult() :
 {
 }
 
-UploadLayerPartResult::UploadLayerPartResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UploadLayerPartResult::UploadLayerPartResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_lastByteReceived(0)
 {
   *this = result;
 }
 
-UploadLayerPartResult& UploadLayerPartResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UploadLayerPartResult& UploadLayerPartResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("registryId"))

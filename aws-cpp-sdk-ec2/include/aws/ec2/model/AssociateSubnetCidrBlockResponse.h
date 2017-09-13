@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     AssociateSubnetCidrBlockResponse();
-    AssociateSubnetCidrBlockResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssociateSubnetCidrBlockResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssociateSubnetCidrBlockResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssociateSubnetCidrBlockResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the IPv6 CIDR block association.</p>
@@ -67,6 +68,7 @@ namespace Model
      * <p>Information about the IPv6 CIDR block association.</p>
      */
     inline AssociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the subnet.</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline AssociateSubnetCidrBlockResponse& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -119,8 +122,11 @@ namespace Model
     inline AssociateSubnetCidrBlockResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     SubnetIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
+
     Aws::String m_subnetId;
+
     ResponseMetadata m_responseMetadata;
   };
 

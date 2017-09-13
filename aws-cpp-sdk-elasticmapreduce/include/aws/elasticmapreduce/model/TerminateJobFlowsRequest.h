@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of job flows to be shutdown.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline TerminateJobFlowsRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_jobFlowIds;
     bool m_jobFlowIdsHasBeenSet;
   };

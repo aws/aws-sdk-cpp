@@ -48,6 +48,7 @@ namespace Model
     AssessmentTemplateFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>For a record to match a filter, an explicit value or a string that contains a
      * wildcard that is specified for this data type property must match the value of
@@ -104,6 +105,7 @@ namespace Model
      */
     inline AssessmentTemplateFilter& WithNamePattern(const char* value) { SetNamePattern(value); return *this;}
 
+
     /**
      * <p>For a record to match a filter, the value specified for this data type
      * property must inclusively match any value between the specified minimum and
@@ -143,6 +145,7 @@ namespace Model
      * <a>AssessmentTemplate</a> data type.</p>
      */
     inline AssessmentTemplateFilter& WithDurationRange(DurationRange&& value) { SetDurationRange(std::move(value)); return *this;}
+
 
     /**
      * <p>For a record to match a filter, the values that are specified for this data
@@ -201,10 +204,13 @@ namespace Model
     inline AssessmentTemplateFilter& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
 
   private:
+
     Aws::String m_namePattern;
     bool m_namePatternHasBeenSet;
+
     DurationRange m_durationRange;
     bool m_durationRangeHasBeenSet;
+
     Aws::Vector<Aws::String> m_rulesPackageArns;
     bool m_rulesPackageArnsHasBeenSet;
   };

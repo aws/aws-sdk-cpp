@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateRateBasedRuleResult();
-    CreateRateBasedRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRateBasedRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateRateBasedRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateRateBasedRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <a>RateBasedRule</a> that is returned in the
@@ -71,6 +72,7 @@ namespace Model
      * <code>CreateRateBasedRule</code> response.</p>
      */
     inline CreateRateBasedRuleResult& WithRule(RateBasedRule&& value) { SetRule(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -129,7 +131,9 @@ namespace Model
     inline CreateRateBasedRuleResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     RateBasedRule m_rule;
+
     Aws::String m_changeToken;
   };
 

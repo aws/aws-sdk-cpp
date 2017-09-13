@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     DescribeRulesPackagesResult();
-    DescribeRulesPackagesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRulesPackagesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRulesPackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRulesPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the rules package.</p>
@@ -79,6 +80,7 @@ namespace Model
      * <p>Information about the rules package.</p>
      */
     inline DescribeRulesPackagesResult& AddRulesPackages(RulesPackage&& value) { m_rulesPackages.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Rules package details that cannot be described. An error code is provided for
@@ -147,7 +149,9 @@ namespace Model
     inline DescribeRulesPackagesResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
 
   private:
+
     Aws::Vector<RulesPackage> m_rulesPackages;
+
     Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
   };
 

@@ -44,6 +44,7 @@ namespace Model
     ExecutionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of minutes a test run will execute before it times out.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>The number of minutes a test run will execute before it times out.</p>
      */
     inline ExecutionConfiguration& WithJobTimeoutMinutes(int value) { SetJobTimeoutMinutes(value); return *this;}
+
 
     /**
      * <p>True if account cleanup is enabled at the beginning of the test; otherwise,
@@ -76,6 +78,7 @@ namespace Model
      * false.</p>
      */
     inline ExecutionConfiguration& WithAccountsCleanup(bool value) { SetAccountsCleanup(value); return *this;}
+
 
     /**
      * <p>True if app package cleanup is enabled at the beginning of the test;
@@ -96,10 +99,13 @@ namespace Model
     inline ExecutionConfiguration& WithAppPackagesCleanup(bool value) { SetAppPackagesCleanup(value); return *this;}
 
   private:
+
     int m_jobTimeoutMinutes;
     bool m_jobTimeoutMinutesHasBeenSet;
+
     bool m_accountsCleanup;
     bool m_accountsCleanupHasBeenSet;
+
     bool m_appPackagesCleanup;
     bool m_appPackagesCleanupHasBeenSet;
   };

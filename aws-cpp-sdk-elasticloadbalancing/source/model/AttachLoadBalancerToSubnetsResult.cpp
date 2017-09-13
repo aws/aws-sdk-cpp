@@ -31,12 +31,12 @@ AttachLoadBalancerToSubnetsResult::AttachLoadBalancerToSubnetsResult()
 {
 }
 
-AttachLoadBalancerToSubnetsResult::AttachLoadBalancerToSubnetsResult(const AmazonWebServiceResult<XmlDocument>& result)
+AttachLoadBalancerToSubnetsResult::AttachLoadBalancerToSubnetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AttachLoadBalancerToSubnetsResult& AttachLoadBalancerToSubnetsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AttachLoadBalancerToSubnetsResult& AttachLoadBalancerToSubnetsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

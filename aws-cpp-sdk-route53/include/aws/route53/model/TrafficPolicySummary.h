@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
      * it.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline TrafficPolicySummary& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name that you specified for the traffic policy when you created it.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      */
     inline TrafficPolicySummary& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
      * you use a traffic policy to create a traffic policy instance.</p>
@@ -156,6 +159,7 @@ namespace Model
      */
     inline TrafficPolicySummary& WithType(RRType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The version number of the latest version of the traffic policy.</p>
      */
@@ -170,6 +174,7 @@ namespace Model
      * <p>The version number of the latest version of the traffic policy.</p>
      */
     inline TrafficPolicySummary& WithLatestVersion(int value) { SetLatestVersion(value); return *this;}
+
 
     /**
      * <p>The number of traffic policies that are associated with the current AWS
@@ -190,14 +195,19 @@ namespace Model
     inline TrafficPolicySummary& WithTrafficPolicyCount(int value) { SetTrafficPolicyCount(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     RRType m_type;
     bool m_typeHasBeenSet;
+
     int m_latestVersion;
     bool m_latestVersionHasBeenSet;
+
     int m_trafficPolicyCount;
     bool m_trafficPolicyCountHasBeenSet;
   };

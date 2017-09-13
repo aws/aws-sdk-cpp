@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateDatabaseResult();
-    CreateDatabaseResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDatabaseResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDatabaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDatabaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

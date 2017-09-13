@@ -30,12 +30,12 @@ StartGatewayResult::StartGatewayResult()
 {
 }
 
-StartGatewayResult::StartGatewayResult(const AmazonWebServiceResult<JsonValue>& result)
+StartGatewayResult::StartGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartGatewayResult& StartGatewayResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartGatewayResult& StartGatewayResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

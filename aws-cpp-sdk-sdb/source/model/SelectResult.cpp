@@ -31,12 +31,12 @@ SelectResult::SelectResult()
 {
 }
 
-SelectResult::SelectResult(const AmazonWebServiceResult<XmlDocument>& result)
+SelectResult::SelectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SelectResult& SelectResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SelectResult& SelectResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

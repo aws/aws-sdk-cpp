@@ -31,12 +31,12 @@ RestoreDBClusterFromS3Result::RestoreDBClusterFromS3Result()
 {
 }
 
-RestoreDBClusterFromS3Result::RestoreDBClusterFromS3Result(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreDBClusterFromS3Result::RestoreDBClusterFromS3Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RestoreDBClusterFromS3Result& RestoreDBClusterFromS3Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreDBClusterFromS3Result& RestoreDBClusterFromS3Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

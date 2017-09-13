@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The action that AWS CloudFormation takes on the resource, such as
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ResourceChange& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
+
     /**
      * <p>The resource's logical ID, which is defined in the stack's template.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The resource's logical ID, which is defined in the stack's template.</p>
      */
     inline ResourceChange& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
+
 
     /**
      * <p>The resource's physical ID (resource name). Resources that you are adding
@@ -167,6 +170,7 @@ namespace Model
      */
     inline ResourceChange& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
 
+
     /**
      * <p>The type of AWS CloudFormation resource, such as
      * <code>AWS::S3::Bucket</code>.</p>
@@ -208,6 +212,7 @@ namespace Model
      * <code>AWS::S3::Bucket</code>.</p>
      */
     inline ResourceChange& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
 
     /**
      * <p>For the <code>Modify</code> action, indicates whether AWS CloudFormation will
@@ -299,6 +304,7 @@ namespace Model
      */
     inline ResourceChange& WithReplacement(Replacement&& value) { SetReplacement(std::move(value)); return *this;}
 
+
     /**
      * <p>For the <code>Modify</code> action, indicates which resource attribute is
      * triggering this update, such as a change in the resource attribute's
@@ -347,6 +353,7 @@ namespace Model
      * <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
      */
     inline ResourceChange& AddScope(ResourceAttribute&& value) { m_scopeHasBeenSet = true; m_scope.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>For the <code>Modify</code> action, a list of
@@ -398,18 +405,25 @@ namespace Model
     inline ResourceChange& AddDetails(ResourceChangeDetail&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 
   private:
+
     ChangeAction m_action;
     bool m_actionHasBeenSet;
+
     Aws::String m_logicalResourceId;
     bool m_logicalResourceIdHasBeenSet;
+
     Aws::String m_physicalResourceId;
     bool m_physicalResourceIdHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Replacement m_replacement;
     bool m_replacementHasBeenSet;
+
     Aws::Vector<ResourceAttribute> m_scope;
     bool m_scopeHasBeenSet;
+
     Aws::Vector<ResourceChangeDetail> m_details;
     bool m_detailsHasBeenSet;
   };

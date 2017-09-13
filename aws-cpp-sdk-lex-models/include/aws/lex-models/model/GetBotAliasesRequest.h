@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The name of the bot.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the bot.</p>
      */
     inline GetBotAliasesRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+
 
     /**
      * <p>A pagination token for fetching the next page of aliases. If the response to
@@ -131,6 +133,7 @@ namespace Model
      */
     inline GetBotAliasesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of aliases to return in the response. The default is 50. .
      * </p>
@@ -148,6 +151,7 @@ namespace Model
      * </p>
      */
     inline GetBotAliasesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Substring to match in bot alias names. An alias will be returned if any part
@@ -199,12 +203,16 @@ namespace Model
     inline GetBotAliasesRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
 
   private:
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes
      * messages.</p> <p>Queue URLs are case-sensitive.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline PurgeQueueRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
   };

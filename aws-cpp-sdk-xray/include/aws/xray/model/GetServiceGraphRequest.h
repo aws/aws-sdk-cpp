@@ -35,6 +35,7 @@ namespace Model
     GetServiceGraphRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The start of the time frame for which to generate a graph.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      */
     inline GetServiceGraphRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The end of the time frame for which to generate a graph.</p>
      */
@@ -84,6 +86,7 @@ namespace Model
      * <p>The end of the time frame for which to generate a graph.</p>
      */
     inline GetServiceGraphRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -121,10 +124,13 @@ namespace Model
     inline GetServiceGraphRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

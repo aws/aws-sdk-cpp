@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The new affinity setting for the instance.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The new affinity setting for the instance.</p>
      */
     inline ModifyInstancePlacementRequest& WithAffinity(Affinity&& value) { SetAffinity(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
@@ -104,6 +106,7 @@ namespace Model
      */
     inline ModifyInstancePlacementRequest& WithHostId(const char* value) { SetHostId(value); return *this;}
 
+
     /**
      * <p>The ID of the instance that you are modifying.</p>
      */
@@ -139,6 +142,7 @@ namespace Model
      */
     inline ModifyInstancePlacementRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The tenancy of the instance that you are modifying.</p>
      */
@@ -165,12 +169,16 @@ namespace Model
     inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
   private:
+
     Affinity m_affinity;
     bool m_affinityHasBeenSet;
+
     Aws::String m_hostId;
     bool m_hostIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     HostTenancy m_tenancy;
     bool m_tenancyHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DescribeAgentVersionsRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The configuration manager.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline DescribeAgentVersionsRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     StackConfigurationManager m_configurationManager;
     bool m_configurationManagerHasBeenSet;
   };

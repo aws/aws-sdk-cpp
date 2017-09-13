@@ -30,12 +30,12 @@ DeleteRateBasedRuleResult::DeleteRateBasedRuleResult()
 {
 }
 
-DeleteRateBasedRuleResult::DeleteRateBasedRuleResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRateBasedRuleResult::DeleteRateBasedRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteRateBasedRuleResult& DeleteRateBasedRuleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRateBasedRuleResult& DeleteRateBasedRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

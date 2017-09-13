@@ -47,6 +47,7 @@ namespace Model
     TopicRulePayload& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
      * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
@@ -96,6 +97,7 @@ namespace Model
      */
     inline TopicRulePayload& WithSql(const char* value) { SetSql(value); return *this;}
 
+
     /**
      * <p>The description of the rule.</p>
      */
@@ -130,6 +132,7 @@ namespace Model
      * <p>The description of the rule.</p>
      */
     inline TopicRulePayload& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The actions associated with the rule.</p>
@@ -166,6 +169,7 @@ namespace Model
      */
     inline TopicRulePayload& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies whether the rule is disabled.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      * <p>Specifies whether the rule is disabled.</p>
      */
     inline TopicRulePayload& WithRuleDisabled(bool value) { SetRuleDisabled(value); return *this;}
+
 
     /**
      * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
@@ -217,14 +222,19 @@ namespace Model
     inline TopicRulePayload& WithAwsIotSqlVersion(const char* value) { SetAwsIotSqlVersion(value); return *this;}
 
   private:
+
     Aws::String m_sql;
     bool m_sqlHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet;
+
     bool m_ruleDisabled;
     bool m_ruleDisabledHasBeenSet;
+
     Aws::String m_awsIotSqlVersion;
     bool m_awsIotSqlVersionHasBeenSet;
   };

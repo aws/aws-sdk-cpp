@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetCrawlerMetricsResult();
-    GetCrawlerMetricsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCrawlerMetricsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCrawlerMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCrawlerMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of metrics for the specified crawler.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of metrics for the specified crawler.</p>
      */
     inline GetCrawlerMetricsResult& AddCrawlerMetricsList(CrawlerMetrics&& value) { m_crawlerMetricsList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, if the returned list does not contain the last metric
@@ -121,7 +123,9 @@ namespace Model
     inline GetCrawlerMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<CrawlerMetrics> m_crawlerMetricsList;
+
     Aws::String m_nextToken;
   };
 

@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the VPC.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline DisableVpcClassicLinkDnsSupportRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

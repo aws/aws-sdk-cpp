@@ -55,13 +55,13 @@ enum class DynamoDBStreamsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EXPIRED_ITERATOR= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXPIRED_ITERATOR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   LIMIT_EXCEEDED,
   TRIMMED_DATA_ACCESS
 };
 namespace DynamoDBStreamsErrorMapper
 {
-  AWS_DYNAMODBSTREAMS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_DYNAMODBSTREAMS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace DynamoDBStreams

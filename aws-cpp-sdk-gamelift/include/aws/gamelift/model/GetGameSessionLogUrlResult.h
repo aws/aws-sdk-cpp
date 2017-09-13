@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetGameSessionLogUrlResult();
-    GetGameSessionLogUrlResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGameSessionLogUrlResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGameSessionLogUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGameSessionLogUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Location of the requested game session logs, available for download.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline GetGameSessionLogUrlResult& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
   private:
+
     Aws::String m_preSignedUrl;
   };
 

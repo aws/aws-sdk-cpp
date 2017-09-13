@@ -30,12 +30,12 @@ DeregisterEventTopicResult::DeregisterEventTopicResult()
 {
 }
 
-DeregisterEventTopicResult::DeregisterEventTopicResult(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterEventTopicResult::DeregisterEventTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeregisterEventTopicResult& DeregisterEventTopicResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterEventTopicResult& DeregisterEventTopicResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DeleteAttributesResult();
-    DeleteAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of attribute objects that were successfully deleted from your
@@ -85,6 +86,7 @@ namespace Model
     inline DeleteAttributesResult& AddAttributes(Attribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Attribute> m_attributes;
   };
 

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetComplianceSummaryByConfigRuleResult();
-    GetComplianceSummaryByConfigRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetComplianceSummaryByConfigRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetComplianceSummaryByConfigRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetComplianceSummaryByConfigRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of AWS Config rules that are compliant and the number that are
@@ -77,6 +78,7 @@ namespace Model
     inline GetComplianceSummaryByConfigRuleResult& WithComplianceSummary(ComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}
 
   private:
+
     ComplianceSummary m_complianceSummary;
   };
 

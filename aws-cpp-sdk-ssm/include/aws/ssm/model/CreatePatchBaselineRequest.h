@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Defines the operating system the patch baseline applies to. Supported
      * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
@@ -76,6 +77,7 @@ namespace Model
      * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
      */
     inline CreatePatchBaselineRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the patch baseline.</p>
@@ -112,6 +114,7 @@ namespace Model
      */
     inline CreatePatchBaselineRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A set of global filters used to exclude patches from the baseline.</p>
      */
@@ -137,6 +140,7 @@ namespace Model
      */
     inline CreatePatchBaselineRequest& WithGlobalFilters(PatchFilterGroup&& value) { SetGlobalFilters(std::move(value)); return *this;}
 
+
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
      */
@@ -161,6 +165,7 @@ namespace Model
      * <p>A set of rules used to include patches in the baseline.</p>
      */
     inline CreatePatchBaselineRequest& WithApprovalRules(PatchRuleGroup&& value) { SetApprovalRules(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
@@ -201,6 +206,7 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p>
      */
     inline CreatePatchBaselineRequest& AddApprovedPatches(const char* value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(value); return *this; }
+
 
     /**
      * <p>Defines the compliance level for approved patches. This means that if an
@@ -247,6 +253,7 @@ namespace Model
      */
     inline CreatePatchBaselineRequest& WithApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { SetApprovedPatchesComplianceLevel(std::move(value)); return *this;}
 
+
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
      */
@@ -287,6 +294,7 @@ namespace Model
      */
     inline CreatePatchBaselineRequest& AddRejectedPatches(const char* value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(value); return *this; }
 
+
     /**
      * <p>A description of the patch baseline.</p>
      */
@@ -321,6 +329,7 @@ namespace Model
      * <p>A description of the patch baseline.</p>
      */
     inline CreatePatchBaselineRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>User-provided idempotency token.</p>
@@ -358,22 +367,31 @@ namespace Model
     inline CreatePatchBaselineRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
+
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     PatchFilterGroup m_globalFilters;
     bool m_globalFiltersHasBeenSet;
+
     PatchRuleGroup m_approvalRules;
     bool m_approvalRulesHasBeenSet;
+
     Aws::Vector<Aws::String> m_approvedPatches;
     bool m_approvedPatchesHasBeenSet;
+
     PatchComplianceLevel m_approvedPatchesComplianceLevel;
     bool m_approvedPatchesComplianceLevelHasBeenSet;
+
     Aws::Vector<Aws::String> m_rejectedPatches;
     bool m_rejectedPatchesHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
   };

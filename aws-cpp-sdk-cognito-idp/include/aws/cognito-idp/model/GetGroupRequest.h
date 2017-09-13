@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the group.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the group.</p>
      */
     inline GetGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline GetGroupRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
   };

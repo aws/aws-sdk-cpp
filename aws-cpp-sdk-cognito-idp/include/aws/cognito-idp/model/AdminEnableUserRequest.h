@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool where you want to enable the user.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The user pool ID for the user pool where you want to enable the user.</p>
      */
     inline AdminEnableUserRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The user name of the user you wish to enable.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline AdminEnableUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
   };

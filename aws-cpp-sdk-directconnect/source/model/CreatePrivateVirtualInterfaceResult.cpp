@@ -34,7 +34,7 @@ CreatePrivateVirtualInterfaceResult::CreatePrivateVirtualInterfaceResult() :
 {
 }
 
-CreatePrivateVirtualInterfaceResult::CreatePrivateVirtualInterfaceResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreatePrivateVirtualInterfaceResult::CreatePrivateVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_vlan(0),
     m_asn(0),
     m_addressFamily(AddressFamily::NOT_SET),
@@ -43,7 +43,7 @@ CreatePrivateVirtualInterfaceResult::CreatePrivateVirtualInterfaceResult(const A
   *this = result;
 }
 
-CreatePrivateVirtualInterfaceResult& CreatePrivateVirtualInterfaceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreatePrivateVirtualInterfaceResult& CreatePrivateVirtualInterfaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ownerAccount"))

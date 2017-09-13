@@ -18,6 +18,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/OnFailure.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
@@ -46,6 +47,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
      * region in which you are creating the stack.</p> <note> <p>A stack name can
@@ -108,6 +110,7 @@ namespace Model
      * </note>
      */
     inline CreateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
@@ -178,6 +181,7 @@ namespace Model
      * parameter, but not both.</p>
      */
     inline CreateStackRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
@@ -256,6 +260,7 @@ namespace Model
      */
     inline CreateStackRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
+
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the stack. For more information, see the <a
@@ -312,6 +317,7 @@ namespace Model
      */
     inline CreateStackRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Set to <code>true</code> to disable rollback of the stack if stack creation
      * failed. You can specify either <code>DisableRollback</code> or
@@ -333,6 +339,38 @@ namespace Model
      */
     inline CreateStackRequest& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
 
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::move(value); }
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline CreateStackRequest& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
+     * and updating operations, and for the specified monitoring period afterwards.</p>
+     */
+    inline CreateStackRequest& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
+
+
     /**
      * <p>The amount of time that can pass before the stack status becomes
      * CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
@@ -353,6 +391,7 @@ namespace Model
      * <code>false</code>, the stack will be rolled back.</p>
      */
     inline CreateStackRequest& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
+
 
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
@@ -409,6 +448,7 @@ namespace Model
      * Line Interface (CLI).</p>
      */
     inline CreateStackRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
+
 
     /**
      * <p>A list of values that you must specify before AWS CloudFormation can create
@@ -641,6 +681,7 @@ namespace Model
      */
     inline CreateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The template resource types that you have permissions to work with for this
      * create stack action, such as <code>AWS::EC2::Instance</code>,
@@ -793,6 +834,7 @@ namespace Model
      */
     inline CreateStackRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
      * role that AWS CloudFormation assumes to create the stack. AWS CloudFormation
@@ -891,6 +933,7 @@ namespace Model
      */
     inline CreateStackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>Determines what action will be taken if stack creation fails. This must be
      * one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify either
@@ -930,6 +973,7 @@ namespace Model
      * <p>Default: <code>ROLLBACK</code> </p>
      */
     inline CreateStackRequest& WithOnFailure(OnFailure&& value) { SetOnFailure(std::move(value)); return *this;}
+
 
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
@@ -994,6 +1038,7 @@ namespace Model
      */
     inline CreateStackRequest& WithStackPolicyBody(const char* value) { SetStackPolicyBody(value); return *this;}
 
+
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
      * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
@@ -1050,6 +1095,7 @@ namespace Model
      */
     inline CreateStackRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}
 
+
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
      * propagates these tags to the resources created in the stack. A maximum number of
@@ -1098,6 +1144,7 @@ namespace Model
      * 50 tags can be specified.</p>
      */
     inline CreateStackRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A unique identifier for this <code>CreateStack</code> request. Specify this
@@ -1240,34 +1287,52 @@ namespace Model
     inline CreateStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_templateBody;
     bool m_templateBodyHasBeenSet;
+
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
+
     bool m_disableRollback;
     bool m_disableRollbackHasBeenSet;
+
+    RollbackConfiguration m_rollbackConfiguration;
+    bool m_rollbackConfigurationHasBeenSet;
+
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
+
     Aws::Vector<Aws::String> m_notificationARNs;
     bool m_notificationARNsHasBeenSet;
+
     Aws::Vector<Capability> m_capabilities;
     bool m_capabilitiesHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceTypes;
     bool m_resourceTypesHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     OnFailure m_onFailure;
     bool m_onFailureHasBeenSet;
+
     Aws::String m_stackPolicyBody;
     bool m_stackPolicyBodyHasBeenSet;
+
     Aws::String m_stackPolicyURL;
     bool m_stackPolicyURLHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
   };

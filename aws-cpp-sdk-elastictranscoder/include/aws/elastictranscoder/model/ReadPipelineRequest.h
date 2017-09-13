@@ -37,6 +37,7 @@ namespace Model
     ReadPipelineRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the pipeline to read.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline ReadPipelineRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

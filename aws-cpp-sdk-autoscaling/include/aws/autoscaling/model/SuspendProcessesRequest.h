@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
     inline SuspendProcessesRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>One or more of the following processes. If you omit this parameter, all
@@ -167,8 +169,10 @@ namespace Model
     inline SuspendProcessesRequest& AddScalingProcesses(const char* value) { m_scalingProcessesHasBeenSet = true; m_scalingProcesses.push_back(value); return *this; }
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_scalingProcesses;
     bool m_scalingProcessesHasBeenSet;
   };

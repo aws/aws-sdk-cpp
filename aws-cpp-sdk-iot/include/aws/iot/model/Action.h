@@ -57,6 +57,7 @@ namespace Model
     Action& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Write to a DynamoDB table.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>Write to a DynamoDB table.</p>
      */
     inline Action& WithDynamoDB(DynamoDBAction&& value) { SetDynamoDB(std::move(value)); return *this;}
+
 
     /**
      * <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It
@@ -117,6 +119,7 @@ namespace Model
      */
     inline Action& WithDynamoDBv2(DynamoDBv2Action&& value) { SetDynamoDBv2(std::move(value)); return *this;}
 
+
     /**
      * <p>Invoke a Lambda function.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>Invoke a Lambda function.</p>
      */
     inline Action& WithLambda(LambdaAction&& value) { SetLambda(std::move(value)); return *this;}
+
 
     /**
      * <p>Publish to an Amazon SNS topic.</p>
@@ -167,6 +171,7 @@ namespace Model
      */
     inline Action& WithSns(SnsAction&& value) { SetSns(std::move(value)); return *this;}
 
+
     /**
      * <p>Publish to an Amazon SQS queue.</p>
      */
@@ -191,6 +196,7 @@ namespace Model
      * <p>Publish to an Amazon SQS queue.</p>
      */
     inline Action& WithSqs(SqsAction&& value) { SetSqs(std::move(value)); return *this;}
+
 
     /**
      * <p>Write data to an Amazon Kinesis stream.</p>
@@ -217,6 +223,7 @@ namespace Model
      */
     inline Action& WithKinesis(KinesisAction&& value) { SetKinesis(std::move(value)); return *this;}
 
+
     /**
      * <p>Publish to another MQTT topic.</p>
      */
@@ -241,6 +248,7 @@ namespace Model
      * <p>Publish to another MQTT topic.</p>
      */
     inline Action& WithRepublish(RepublishAction&& value) { SetRepublish(std::move(value)); return *this;}
+
 
     /**
      * <p>Write to an Amazon S3 bucket.</p>
@@ -267,6 +275,7 @@ namespace Model
      */
     inline Action& WithS3(S3Action&& value) { SetS3(std::move(value)); return *this;}
 
+
     /**
      * <p>Write to an Amazon Kinesis Firehose stream.</p>
      */
@@ -291,6 +300,7 @@ namespace Model
      * <p>Write to an Amazon Kinesis Firehose stream.</p>
      */
     inline Action& WithFirehose(FirehoseAction&& value) { SetFirehose(std::move(value)); return *this;}
+
 
     /**
      * <p>Capture a CloudWatch metric.</p>
@@ -317,6 +327,7 @@ namespace Model
      */
     inline Action& WithCloudwatchMetric(CloudwatchMetricAction&& value) { SetCloudwatchMetric(std::move(value)); return *this;}
 
+
     /**
      * <p>Change the state of a CloudWatch alarm.</p>
      */
@@ -342,6 +353,7 @@ namespace Model
      */
     inline Action& WithCloudwatchAlarm(CloudwatchAlarmAction&& value) { SetCloudwatchAlarm(std::move(value)); return *this;}
 
+
     /**
      * <p>Write data to an Amazon Elasticsearch Service domain.</p>
      */
@@ -366,6 +378,7 @@ namespace Model
      * <p>Write data to an Amazon Elasticsearch Service domain.</p>
      */
     inline Action& WithElasticsearch(ElasticsearchAction&& value) { SetElasticsearch(std::move(value)); return *this;}
+
 
     /**
      * <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
@@ -393,30 +406,43 @@ namespace Model
     inline Action& WithSalesforce(SalesforceAction&& value) { SetSalesforce(std::move(value)); return *this;}
 
   private:
+
     DynamoDBAction m_dynamoDB;
     bool m_dynamoDBHasBeenSet;
+
     DynamoDBv2Action m_dynamoDBv2;
     bool m_dynamoDBv2HasBeenSet;
+
     LambdaAction m_lambda;
     bool m_lambdaHasBeenSet;
+
     SnsAction m_sns;
     bool m_snsHasBeenSet;
+
     SqsAction m_sqs;
     bool m_sqsHasBeenSet;
+
     KinesisAction m_kinesis;
     bool m_kinesisHasBeenSet;
+
     RepublishAction m_republish;
     bool m_republishHasBeenSet;
+
     S3Action m_s3;
     bool m_s3HasBeenSet;
+
     FirehoseAction m_firehose;
     bool m_firehoseHasBeenSet;
+
     CloudwatchMetricAction m_cloudwatchMetric;
     bool m_cloudwatchMetricHasBeenSet;
+
     CloudwatchAlarmAction m_cloudwatchAlarm;
     bool m_cloudwatchAlarmHasBeenSet;
+
     ElasticsearchAction m_elasticsearch;
     bool m_elasticsearchHasBeenSet;
+
     SalesforceAction m_salesforce;
     bool m_salesforceHasBeenSet;
   };

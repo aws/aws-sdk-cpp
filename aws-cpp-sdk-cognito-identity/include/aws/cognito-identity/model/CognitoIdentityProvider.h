@@ -46,6 +46,7 @@ namespace Model
     CognitoIdentityProvider& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline CognitoIdentityProvider& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
     /**
      * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      */
     inline CognitoIdentityProvider& WithClientId(const char* value) { SetClientId(value); return *this;}
 
+
     /**
      * <p>TRUE if server-side token validation is enabled for the identity provider’s
      * token.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline CognitoIdentityProvider& WithServerSideTokenCheck(bool value) { SetServerSideTokenCheck(value); return *this;}
 
   private:
+
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     bool m_serverSideTokenCheck;
     bool m_serverSideTokenCheckHasBeenSet;
   };

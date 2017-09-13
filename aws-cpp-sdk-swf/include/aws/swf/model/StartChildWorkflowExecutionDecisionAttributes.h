@@ -71,6 +71,7 @@ namespace Model
     StartChildWorkflowExecutionDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The type of the workflow execution to be started.</p>
      */
@@ -95,6 +96,7 @@ namespace Model
      * <p> The type of the workflow execution to be started.</p>
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+
 
     /**
      * <p> The <code>workflowId</code> of the workflow execution.</p> <p>The specified
@@ -166,6 +168,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
+
     /**
      * <p>The data attached to the event that can be used by the decider in subsequent
      * workflow tasks. This data isn't sent to the child workflow execution.</p>
@@ -208,6 +211,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
+
     /**
      * <p>The input to be provided to the workflow execution.</p>
      */
@@ -242,6 +246,7 @@ namespace Model
      * <p>The input to be provided to the workflow execution.</p>
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>The total duration for this workflow execution. This overrides the
@@ -334,6 +339,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithExecutionStartToCloseTimeout(const char* value) { SetExecutionStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>The name of the task list to be used for decision tasks of the child workflow
      * execution.</p> <note> <p>A task list for this workflow execution must be
@@ -398,6 +404,7 @@ namespace Model
      * must not contain the literal string <code>arn</code>.</p>
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p> A task priority that, if set, specifies the priority for a decision task of
@@ -482,6 +489,7 @@ namespace Model
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
+
 
     /**
      * <p>Specifies the maximum duration of decision tasks for this workflow execution.
@@ -580,6 +588,7 @@ namespace Model
      * returned.</p> </note>
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithTaskStartToCloseTimeout(const char* value) { SetTaskStartToCloseTimeout(value); return *this;}
+
 
     /**
      * <p> If set, specifies the policy to use for the child workflow executions if the
@@ -681,6 +690,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>The list of tags to associate with the child workflow execution. A maximum of
      * 5 tags can be specified. You can list workflow executions with a specific tag by
@@ -745,6 +755,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionDecisionAttributes& AddTagList(const char* value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
 
+
     /**
      * <p>The IAM role attached to the child workflow execution.</p>
      */
@@ -781,26 +792,37 @@ namespace Model
     inline StartChildWorkflowExecutionDecisionAttributes& WithLambdaRole(const char* value) { SetLambdaRole(value); return *this;}
 
   private:
+
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet;
+
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_executionStartToCloseTimeout;
     bool m_executionStartToCloseTimeoutHasBeenSet;
+
     TaskList m_taskList;
     bool m_taskListHasBeenSet;
+
     Aws::String m_taskPriority;
     bool m_taskPriorityHasBeenSet;
+
     Aws::String m_taskStartToCloseTimeout;
     bool m_taskStartToCloseTimeoutHasBeenSet;
+
     ChildPolicy m_childPolicy;
     bool m_childPolicyHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagList;
     bool m_tagListHasBeenSet;
+
     Aws::String m_lambdaRole;
     bool m_lambdaRoleHasBeenSet;
   };

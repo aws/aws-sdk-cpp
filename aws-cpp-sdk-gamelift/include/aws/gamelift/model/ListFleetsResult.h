@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListFleetsResult();
-    ListFleetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFleetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFleetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFleetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
@@ -112,6 +113,7 @@ namespace Model
      */
     inline ListFleetsResult& AddFleetIds(const char* value) { m_fleetIds.push_back(value); return *this; }
 
+
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
@@ -162,7 +164,9 @@ namespace Model
     inline ListFleetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_fleetIds;
+
     Aws::String m_nextToken;
   };
 

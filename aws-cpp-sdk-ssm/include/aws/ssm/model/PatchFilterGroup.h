@@ -47,6 +47,7 @@ namespace Model
     PatchFilterGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The set of patch filters that make up the group.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
     inline PatchFilterGroup& AddPatchFilters(PatchFilter&& value) { m_patchFiltersHasBeenSet = true; m_patchFilters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<PatchFilter> m_patchFilters;
     bool m_patchFiltersHasBeenSet;
   };

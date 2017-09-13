@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that you want to renew.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline RenewDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The number of years that you want to renew the domain for. The maximum number
      * of years depends on the top-level domain. For the range of valid values for your
@@ -105,6 +107,7 @@ namespace Model
      */
     inline RenewDomainRequest& WithDurationInYears(int value) { SetDurationInYears(value); return *this;}
 
+
     /**
      * <p>The year when the registration for the domain is set to expire. This value
      * must match the current expiration date for the domain.</p>
@@ -124,10 +127,13 @@ namespace Model
     inline RenewDomainRequest& WithCurrentExpiryYear(int value) { SetCurrentExpiryYear(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     int m_durationInYears;
     bool m_durationInYearsHasBeenSet;
+
     int m_currentExpiryYear;
     bool m_currentExpiryYearHasBeenSet;
   };

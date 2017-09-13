@@ -50,6 +50,7 @@ namespace Model
     MetricDimension& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The dimension name.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The dimension name.</p>
      */
     inline MetricDimension& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The dimension value.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline MetricDimension& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetBotsResult();
-    GetBotsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBotsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>botMetadata</code> objects, with one entry for each bot.
@@ -84,6 +85,7 @@ namespace Model
      * </p>
      */
     inline GetBotsResult& AddBots(BotMetadata&& value) { m_bots.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the response is truncated, it includes a pagination token that you can
@@ -128,7 +130,9 @@ namespace Model
     inline GetBotsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<BotMetadata> m_bots;
+
     Aws::String m_nextToken;
   };
 

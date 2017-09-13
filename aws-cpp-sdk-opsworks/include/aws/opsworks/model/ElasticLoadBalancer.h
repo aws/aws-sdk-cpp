@@ -46,6 +46,7 @@ namespace Model
     ElasticLoadBalancer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Elastic Load Balancing instance's name.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The Elastic Load Balancing instance's name.</p>
      */
     inline ElasticLoadBalancer& WithElasticLoadBalancerName(const char* value) { SetElasticLoadBalancerName(value); return *this;}
+
 
     /**
      * <p>The instance's AWS region.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline ElasticLoadBalancer& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
     /**
      * <p>The instance's public DNS name.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>The instance's public DNS name.</p>
      */
     inline ElasticLoadBalancer& WithDnsName(const char* value) { SetDnsName(value); return *this;}
+
 
     /**
      * <p>The ID of the stack that the instance is associated with.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline ElasticLoadBalancer& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The ID of the layer that the instance is attached to.</p>
      */
@@ -221,6 +226,7 @@ namespace Model
      */
     inline ElasticLoadBalancer& WithLayerId(const char* value) { SetLayerId(value); return *this;}
 
+
     /**
      * <p>The VPC ID.</p>
      */
@@ -255,6 +261,7 @@ namespace Model
      * <p>The VPC ID.</p>
      */
     inline ElasticLoadBalancer& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>A list of Availability Zones.</p>
@@ -296,6 +303,7 @@ namespace Model
      */
     inline ElasticLoadBalancer& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
+
     /**
      * <p>A list of subnet IDs, if the stack is running in a VPC.</p>
      */
@@ -335,6 +343,7 @@ namespace Model
      * <p>A list of subnet IDs, if the stack is running in a VPC.</p>
      */
     inline ElasticLoadBalancer& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+
 
     /**
      * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
@@ -385,22 +394,31 @@ namespace Model
     inline ElasticLoadBalancer& AddEc2InstanceIds(const char* value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_elasticLoadBalancerName;
     bool m_elasticLoadBalancerNameHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_dnsName;
     bool m_dnsNameHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_layerId;
     bool m_layerIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_ec2InstanceIds;
     bool m_ec2InstanceIdsHasBeenSet;
   };

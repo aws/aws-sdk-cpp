@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The access token returned by the server response to get the user attribute
      * verification code.</p>
@@ -81,6 +82,7 @@ namespace Model
      * verification code.</p>
      */
     inline GetUserAttributeVerificationCodeRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+
 
     /**
      * <p>The attribute name returned by the server response to get the user attribute
@@ -125,8 +127,10 @@ namespace Model
     inline GetUserAttributeVerificationCodeRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
   private:
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
   };

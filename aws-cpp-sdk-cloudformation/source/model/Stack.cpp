@@ -38,6 +38,7 @@ Stack::Stack() :
     m_parametersHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
+    m_rollbackConfigurationHasBeenSet(false),
     m_stackStatus(StackStatus::NOT_SET),
     m_stackStatusHasBeenSet(false),
     m_stackStatusReasonHasBeenSet(false),
@@ -61,6 +62,7 @@ Stack::Stack(const XmlNode& xmlNode) :
     m_parametersHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
+    m_rollbackConfigurationHasBeenSet(false),
     m_stackStatus(StackStatus::NOT_SET),
     m_stackStatusHasBeenSet(false),
     m_stackStatusReasonHasBeenSet(false),
@@ -130,6 +132,12 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     {
       m_lastUpdatedTime = DateTime(StringUtils::Trim(lastUpdatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastUpdatedTimeHasBeenSet = true;
+    }
+    XmlNode rollbackConfigurationNode = resultNode.FirstChild("RollbackConfiguration");
+    if(!rollbackConfigurationNode.IsNull())
+    {
+      m_rollbackConfiguration = rollbackConfigurationNode;
+      m_rollbackConfigurationHasBeenSet = true;
     }
     XmlNode stackStatusNode = resultNode.FirstChild("StackStatus");
     if(!stackStatusNode.IsNull())
@@ -257,6 +265,13 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_rollbackConfigurationHasBeenSet)
+  {
+      Aws::StringStream rollbackConfigurationLocationAndMemberSs;
+      rollbackConfigurationLocationAndMemberSs << location << index << locationValue << ".RollbackConfiguration";
+      m_rollbackConfiguration.OutputToStream(oStream, rollbackConfigurationLocationAndMemberSs.str().c_str());
+  }
+
   if(m_stackStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".StackStatus=" << StackStatusMapper::GetNameForStackStatus(m_stackStatus) << "&";
@@ -359,6 +374,12 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_lastUpdatedTimeHasBeenSet)
   {
       oStream << location << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_rollbackConfigurationHasBeenSet)
+  {
+      Aws::String rollbackConfigurationLocationAndMember(location);
+      rollbackConfigurationLocationAndMember += ".RollbackConfiguration";
+      m_rollbackConfiguration.OutputToStream(oStream, rollbackConfigurationLocationAndMember.c_str());
   }
   if(m_stackStatusHasBeenSet)
   {

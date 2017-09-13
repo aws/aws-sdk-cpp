@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateRuntimeConfigurationResult();
-    UpdateRuntimeConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRuntimeConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateRuntimeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateRuntimeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The run-time configuration currently in force. If the update was successful,
@@ -78,6 +79,7 @@ namespace Model
     inline UpdateRuntimeConfigurationResult& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 
   private:
+
     RuntimeConfiguration m_runtimeConfiguration;
   };
 

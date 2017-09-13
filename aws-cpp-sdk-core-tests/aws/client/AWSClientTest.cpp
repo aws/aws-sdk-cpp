@@ -116,7 +116,7 @@ public:
         m_countedRetryStrategy->ResetAttemptedRetriesCount();
         const URI uri("domain.com/something");
         const auto method = HttpMethod::HTTP_GET;
-        HttpResponseOutcome httpOutcome(AWSClient::AttemptExhaustively(uri, request, method));
+        HttpResponseOutcome httpOutcome(AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
         return httpOutcome;
     }
 

@@ -29,12 +29,12 @@ GetBucketTaggingResult::GetBucketTaggingResult()
 {
 }
 
-GetBucketTaggingResult::GetBucketTaggingResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketTaggingResult::GetBucketTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetBucketTaggingResult& GetBucketTaggingResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketTaggingResult& GetBucketTaggingResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

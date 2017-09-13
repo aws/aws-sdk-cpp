@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListIdentityPoliciesResult();
-    ListIdentityPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListIdentityPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListIdentityPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListIdentityPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of names of policies that apply to the specified identity.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ListIdentityPoliciesResult& AddPolicyNames(const char* value) { m_policyNames.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline ListIdentityPoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_policyNames;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetUserResult();
-    GetUserResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The user name of the user you wish to retrieve from the get user request.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>The user name of the user you wish to retrieve from the get user request.</p>
      */
     inline GetUserResult& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
@@ -134,6 +136,7 @@ namespace Model
      */
     inline GetUserResult& AddUserAttributes(AttributeType&& value) { m_userAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
      */
@@ -170,8 +173,11 @@ namespace Model
     inline GetUserResult& AddMFAOptions(MFAOptionType&& value) { m_mFAOptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_username;
+
     Aws::Vector<AttributeType> m_userAttributes;
+
     Aws::Vector<MFAOptionType> m_mFAOptions;
   };
 

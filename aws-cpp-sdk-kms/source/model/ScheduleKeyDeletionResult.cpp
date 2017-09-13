@@ -30,12 +30,12 @@ ScheduleKeyDeletionResult::ScheduleKeyDeletionResult()
 {
 }
 
-ScheduleKeyDeletionResult::ScheduleKeyDeletionResult(const AmazonWebServiceResult<JsonValue>& result)
+ScheduleKeyDeletionResult::ScheduleKeyDeletionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ScheduleKeyDeletionResult& ScheduleKeyDeletionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ScheduleKeyDeletionResult& ScheduleKeyDeletionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("KeyId"))

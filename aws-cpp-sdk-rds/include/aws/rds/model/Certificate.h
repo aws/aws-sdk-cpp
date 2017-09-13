@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The unique key that identifies a certificate.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The unique key that identifies a certificate.</p>
      */
     inline Certificate& WithCertificateIdentifier(const char* value) { SetCertificateIdentifier(value); return *this;}
+
 
     /**
      * <p>The type of the certificate.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Certificate& WithCertificateType(const char* value) { SetCertificateType(value); return *this;}
 
+
     /**
      * <p>The thumbprint of the certificate.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline Certificate& WithThumbprint(const char* value) { SetThumbprint(value); return *this;}
 
+
     /**
      * <p>The starting date from which the certificate is valid.</p>
      */
@@ -179,6 +183,7 @@ namespace Model
      */
     inline Certificate& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(std::move(value)); return *this;}
 
+
     /**
      * <p>The final date that the certificate continues to be valid.</p>
      */
@@ -203,6 +208,7 @@ namespace Model
      * <p>The final date that the certificate continues to be valid.</p>
      */
     inline Certificate& WithValidTill(Aws::Utils::DateTime&& value) { SetValidTill(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the certificate.</p>
@@ -240,16 +246,22 @@ namespace Model
     inline Certificate& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
   private:
+
     Aws::String m_certificateIdentifier;
     bool m_certificateIdentifierHasBeenSet;
+
     Aws::String m_certificateType;
     bool m_certificateTypeHasBeenSet;
+
     Aws::String m_thumbprint;
     bool m_thumbprintHasBeenSet;
+
     Aws::Utils::DateTime m_validFrom;
     bool m_validFromHasBeenSet;
+
     Aws::Utils::DateTime m_validTill;
     bool m_validTillHasBeenSet;
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
   };

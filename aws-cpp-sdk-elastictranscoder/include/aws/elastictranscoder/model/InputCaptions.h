@@ -47,6 +47,7 @@ namespace Model
     InputCaptions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A policy that determines how Elastic Transcoder handles the existence of
      * multiple captions.</p> <ul> <li> <p> <b>MergeOverride:</b> Elastic Transcoder
@@ -173,6 +174,7 @@ namespace Model
      */
     inline InputCaptions& WithMergePolicy(const char* value) { SetMergePolicy(value); return *this;}
 
+
     /**
      * <p>Source files for the input sidecar captions used during the transcoding
      * process. To omit all sidecar captions, leave <code>CaptionSources</code>
@@ -223,8 +225,10 @@ namespace Model
     inline InputCaptions& AddCaptionSources(CaptionSource&& value) { m_captionSourcesHasBeenSet = true; m_captionSources.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_mergePolicy;
     bool m_mergePolicyHasBeenSet;
+
     Aws::Vector<CaptionSource> m_captionSources;
     bool m_captionSourcesHasBeenSet;
   };

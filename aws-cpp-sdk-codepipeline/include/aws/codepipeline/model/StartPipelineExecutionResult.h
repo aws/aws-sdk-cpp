@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     StartPipelineExecutionResult();
-    StartPipelineExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartPipelineExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartPipelineExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartPipelineExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique system-generated ID of the pipeline execution that was
@@ -90,6 +91,7 @@ namespace Model
     inline StartPipelineExecutionResult& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
 
   private:
+
     Aws::String m_pipelineExecutionId;
   };
 

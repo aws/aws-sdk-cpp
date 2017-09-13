@@ -31,12 +31,12 @@ DefineExpressionResult::DefineExpressionResult()
 {
 }
 
-DefineExpressionResult::DefineExpressionResult(const AmazonWebServiceResult<XmlDocument>& result)
+DefineExpressionResult::DefineExpressionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DefineExpressionResult& DefineExpressionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DefineExpressionResult& DefineExpressionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

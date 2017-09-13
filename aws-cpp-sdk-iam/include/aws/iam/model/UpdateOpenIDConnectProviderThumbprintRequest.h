@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for
      * which you want to update the thumbprint. You can get a list of OIDC provider
@@ -116,6 +117,7 @@ namespace Model
      */
     inline UpdateOpenIDConnectProviderThumbprintRequest& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
 
+
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
      * OpenID Connect provider. For more information, see
@@ -173,8 +175,10 @@ namespace Model
     inline UpdateOpenIDConnectProviderThumbprintRequest& AddThumbprintList(const char* value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
 
   private:
+
     Aws::String m_openIDConnectProviderArn;
     bool m_openIDConnectProviderArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_thumbprintList;
     bool m_thumbprintListHasBeenSet;
   };

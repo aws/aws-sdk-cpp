@@ -45,6 +45,7 @@ namespace Model
     StepTimeline& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The date and time when the cluster step was created.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      */
     inline StepTimeline& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time when the cluster step execution started.</p>
      */
@@ -94,6 +96,7 @@ namespace Model
      * <p>The date and time when the cluster step execution started.</p>
      */
     inline StepTimeline& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time when the cluster step execution completed or failed.</p>
@@ -121,10 +124,13 @@ namespace Model
     inline StepTimeline& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_startDateTime;
     bool m_startDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endDateTime;
     bool m_endDateTimeHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteXssMatchSetResult();
-    DeleteXssMatchSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteXssMatchSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteXssMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteXssMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -104,6 +105,7 @@ namespace Model
     inline DeleteXssMatchSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_changeToken;
   };
 

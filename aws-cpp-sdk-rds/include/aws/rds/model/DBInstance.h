@@ -64,6 +64,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Contains a user-supplied database identifier. This identifier is the unique
      * key that identifies a DB instance.</p>
@@ -105,6 +106,7 @@ namespace Model
      * key that identifies a DB instance.</p>
      */
     inline DBInstance& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+
 
     /**
      * <p>Contains the name of the compute and memory capacity class of the DB
@@ -148,6 +150,7 @@ namespace Model
      */
     inline DBInstance& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
+
     /**
      * <p>Provides the name of the database engine to be used for this DB instance.</p>
      */
@@ -182,6 +185,7 @@ namespace Model
      * <p>Provides the name of the database engine to be used for this DB instance.</p>
      */
     inline DBInstance& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>Specifies the current state of this database.</p>
@@ -218,6 +222,7 @@ namespace Model
      */
     inline DBInstance& WithDBInstanceStatus(const char* value) { SetDBInstanceStatus(value); return *this;}
 
+
     /**
      * <p>Contains the master username for the DB instance.</p>
      */
@@ -252,6 +257,7 @@ namespace Model
      * <p>Contains the master username for the DB instance.</p>
      */
     inline DBInstance& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
+
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
@@ -351,6 +357,7 @@ namespace Model
      */
     inline DBInstance& WithDBName(const char* value) { SetDBName(value); return *this;}
 
+
     /**
      * <p>Specifies the connection endpoint.</p>
      */
@@ -376,6 +383,7 @@ namespace Model
      */
     inline DBInstance& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the allocated storage size specified in gigabytes.</p>
      */
@@ -390,6 +398,7 @@ namespace Model
      * <p>Specifies the allocated storage size specified in gigabytes.</p>
      */
     inline DBInstance& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
 
     /**
      * <p>Provides the date and time the DB instance was created.</p>
@@ -415,6 +424,7 @@ namespace Model
      * <p>Provides the date and time the DB instance was created.</p>
      */
     inline DBInstance& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p> Specifies the daily time range during which automated backups are created if
@@ -465,6 +475,7 @@ namespace Model
      */
     inline DBInstance& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
+
     /**
      * <p>Specifies the number of days for which automatic DB snapshots are
      * retained.</p>
@@ -482,6 +493,7 @@ namespace Model
      * retained.</p>
      */
     inline DBInstance& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
+
 
     /**
      * <p> Provides List of DB security group elements containing only
@@ -532,6 +544,7 @@ namespace Model
      */
     inline DBInstance& AddDBSecurityGroups(DBSecurityGroupMembership&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Provides a list of VPC security group elements that the DB instance belongs
      * to.</p>
@@ -574,6 +587,7 @@ namespace Model
      */
     inline DBInstance& AddVpcSecurityGroups(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Provides the list of DB parameter groups applied to this DB instance.</p>
      */
@@ -608,6 +622,7 @@ namespace Model
      * <p>Provides the list of DB parameter groups applied to this DB instance.</p>
      */
     inline DBInstance& AddDBParameterGroups(DBParameterGroupStatus&& value) { m_dBParameterGroupsHasBeenSet = true; m_dBParameterGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Specifies the name of the Availability Zone the DB instance is located
@@ -651,6 +666,7 @@ namespace Model
      */
     inline DBInstance& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>Specifies information on the subnet group associated with the DB instance,
      * including the name, description, and subnets in the subnet group.</p>
@@ -680,6 +696,7 @@ namespace Model
      * including the name, description, and subnets in the subnet group.</p>
      */
     inline DBInstance& WithDBSubnetGroup(DBSubnetGroup&& value) { SetDBSubnetGroup(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the weekly time range during which system maintenance can occur, in
@@ -723,6 +740,7 @@ namespace Model
      */
     inline DBInstance& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>Specifies that changes to the DB instance are pending. This element is only
      * included when changes are pending. Specific changes are identified by
@@ -758,6 +776,7 @@ namespace Model
      */
     inline DBInstance& WithPendingModifiedValues(PendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p>
@@ -788,6 +807,7 @@ namespace Model
      */
     inline DBInstance& WithLatestRestorableTime(Aws::Utils::DateTime&& value) { SetLatestRestorableTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
      */
@@ -802,6 +822,7 @@ namespace Model
      * <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
      */
     inline DBInstance& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>Indicates the database engine version.</p>
@@ -838,6 +859,7 @@ namespace Model
      */
     inline DBInstance& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>Indicates that minor version patches are applied automatically.</p>
      */
@@ -852,6 +874,7 @@ namespace Model
      * <p>Indicates that minor version patches are applied automatically.</p>
      */
     inline DBInstance& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>Contains the identifier of the source DB instance if this DB instance is a
@@ -894,6 +917,7 @@ namespace Model
      * Read Replica.</p>
      */
     inline DBInstance& WithReadReplicaSourceDBInstanceIdentifier(const char* value) { SetReadReplicaSourceDBInstanceIdentifier(value); return *this;}
+
 
     /**
      * <p>Contains one or more identifiers of the Read Replicas associated with this DB
@@ -943,6 +967,7 @@ namespace Model
      */
     inline DBInstance& AddReadReplicaDBInstanceIdentifiers(const char* value) { m_readReplicaDBInstanceIdentifiersHasBeenSet = true; m_readReplicaDBInstanceIdentifiers.push_back(value); return *this; }
 
+
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
      * of this DB instance.</p>
@@ -991,6 +1016,7 @@ namespace Model
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const char* value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
+
     /**
      * <p>License model information for this DB instance.</p>
      */
@@ -1026,6 +1052,7 @@ namespace Model
      */
     inline DBInstance& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
+
     /**
      * <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
      */
@@ -1040,6 +1067,7 @@ namespace Model
      * <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
      */
     inline DBInstance& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p>Provides the list of option group memberships for this DB instance.</p>
@@ -1075,6 +1103,7 @@ namespace Model
      * <p>Provides the list of option group memberships for this DB instance.</p>
      */
     inline DBInstance& AddOptionGroupMemberships(OptionGroupMembership&& value) { m_optionGroupMembershipsHasBeenSet = true; m_optionGroupMemberships.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If present, specifies the name of the character set that this instance is
@@ -1118,6 +1147,7 @@ namespace Model
      */
     inline DBInstance& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
 
+
     /**
      * <p>If present, specifies the name of the secondary Availability Zone for a DB
      * instance with multi-AZ support.</p>
@@ -1159,6 +1189,7 @@ namespace Model
      * instance with multi-AZ support.</p>
      */
     inline DBInstance& WithSecondaryAvailabilityZone(const char* value) { SetSecondaryAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>Specifies the accessibility options for the DB instance. A value of true
@@ -1208,6 +1239,7 @@ namespace Model
      */
     inline DBInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
+
     /**
      * <p>The status of a Read Replica. If the instance is not a Read Replica, this
      * will be blank.</p>
@@ -1250,6 +1282,7 @@ namespace Model
      */
     inline DBInstance& AddStatusInfos(DBInstanceStatusInfo&& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies the storage type associated with DB instance.</p>
      */
@@ -1284,6 +1317,7 @@ namespace Model
      * <p>Specifies the storage type associated with DB instance.</p>
      */
     inline DBInstance& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
 
     /**
      * <p>The ARN from the key store with which the instance is associated for TDE
@@ -1327,6 +1361,7 @@ namespace Model
      */
     inline DBInstance& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
 
+
     /**
      * <p>Specifies the port that the DB instance listens on. If the DB instance is
      * part of a DB cluster, this can be a different port than the DB cluster port.</p>
@@ -1344,6 +1379,7 @@ namespace Model
      * part of a DB cluster, this can be a different port than the DB cluster port.</p>
      */
     inline DBInstance& WithDbInstancePort(int value) { SetDbInstancePort(value); return *this;}
+
 
     /**
      * <p>If the DB instance is a member of a DB cluster, contains the name of the DB
@@ -1387,6 +1423,7 @@ namespace Model
      */
     inline DBInstance& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>Specifies whether the DB instance is encrypted.</p>
      */
@@ -1401,6 +1438,7 @@ namespace Model
      * <p>Specifies whether the DB instance is encrypted.</p>
      */
     inline DBInstance& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
+
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the KMS key identifier for the
@@ -1443,6 +1481,7 @@ namespace Model
      * encrypted DB instance. </p>
      */
     inline DBInstance& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
 
     /**
      * <p>The region-unique, immutable identifier for the DB instance. This identifier
@@ -1493,6 +1532,7 @@ namespace Model
      */
     inline DBInstance& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
 
+
     /**
      * <p>The identifier of the CA certificate for this DB instance.</p>
      */
@@ -1527,6 +1567,7 @@ namespace Model
      * <p>The identifier of the CA certificate for this DB instance.</p>
      */
     inline DBInstance& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+
 
     /**
      * <p>The Active Directory Domain membership records associated with the DB
@@ -1570,6 +1611,7 @@ namespace Model
      */
     inline DBInstance& AddDomainMemberships(DomainMembership&& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies whether tags are copied from the DB instance to snapshots of the DB
      * instance.</p>
@@ -1588,6 +1630,7 @@ namespace Model
      */
     inline DBInstance& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
+
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
      * collected for the DB instance.</p>
@@ -1605,6 +1648,7 @@ namespace Model
      * collected for the DB instance.</p>
      */
     inline DBInstance& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that
@@ -1648,6 +1692,7 @@ namespace Model
      */
     inline DBInstance& WithEnhancedMonitoringResourceArn(const char* value) { SetEnhancedMonitoringResourceArn(value); return *this;}
 
+
     /**
      * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
      * to CloudWatch Logs.</p>
@@ -1690,6 +1735,7 @@ namespace Model
      */
     inline DBInstance& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
+
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
@@ -1716,6 +1762,7 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a>. </p>
      */
     inline DBInstance& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
@@ -1751,6 +1798,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
      */
     inline DBInstance& WithDBInstanceArn(const char* value) { SetDBInstanceArn(value); return *this;}
+
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
@@ -1801,6 +1849,7 @@ namespace Model
      */
     inline DBInstance& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
+
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
      * database accounts is enabled; otherwise false.</p> <p>IAM database
@@ -1835,102 +1884,151 @@ namespace Model
     inline DBInstance& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_dBInstanceStatus;
     bool m_dBInstanceStatusHasBeenSet;
+
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;
+
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
+
     Endpoint m_endpoint;
     bool m_endpointHasBeenSet;
+
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+
     Aws::Utils::DateTime m_instanceCreateTime;
     bool m_instanceCreateTimeHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
+
     int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
+
     Aws::Vector<DBSecurityGroupMembership> m_dBSecurityGroups;
     bool m_dBSecurityGroupsHasBeenSet;
+
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
     bool m_vpcSecurityGroupsHasBeenSet;
+
     Aws::Vector<DBParameterGroupStatus> m_dBParameterGroups;
     bool m_dBParameterGroupsHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     DBSubnetGroup m_dBSubnetGroup;
     bool m_dBSubnetGroupHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     PendingModifiedValues m_pendingModifiedValues;
     bool m_pendingModifiedValuesHasBeenSet;
+
     Aws::Utils::DateTime m_latestRestorableTime;
     bool m_latestRestorableTimeHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     Aws::String m_readReplicaSourceDBInstanceIdentifier;
     bool m_readReplicaSourceDBInstanceIdentifierHasBeenSet;
+
     Aws::Vector<Aws::String> m_readReplicaDBInstanceIdentifiers;
     bool m_readReplicaDBInstanceIdentifiersHasBeenSet;
+
     Aws::Vector<Aws::String> m_readReplicaDBClusterIdentifiers;
     bool m_readReplicaDBClusterIdentifiersHasBeenSet;
+
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::Vector<OptionGroupMembership> m_optionGroupMemberships;
     bool m_optionGroupMembershipsHasBeenSet;
+
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
+
     Aws::String m_secondaryAvailabilityZone;
     bool m_secondaryAvailabilityZoneHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     Aws::Vector<DBInstanceStatusInfo> m_statusInfos;
     bool m_statusInfosHasBeenSet;
+
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
+
     Aws::String m_tdeCredentialArn;
     bool m_tdeCredentialArnHasBeenSet;
+
     int m_dbInstancePort;
     bool m_dbInstancePortHasBeenSet;
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     bool m_storageEncrypted;
     bool m_storageEncryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_dbiResourceId;
     bool m_dbiResourceIdHasBeenSet;
+
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet;
+
     Aws::Vector<DomainMembership> m_domainMemberships;
     bool m_domainMembershipsHasBeenSet;
+
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
+
     int m_monitoringInterval;
     bool m_monitoringIntervalHasBeenSet;
+
     Aws::String m_enhancedMonitoringResourceArn;
     bool m_enhancedMonitoringResourceArnHasBeenSet;
+
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;
+
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;
+
     Aws::String m_dBInstanceArn;
     bool m_dBInstanceArnHasBeenSet;
+
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet;
+
     bool m_iAMDatabaseAuthenticationEnabled;
     bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
   };

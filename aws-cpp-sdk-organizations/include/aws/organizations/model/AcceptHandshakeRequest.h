@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the handshake that you want to accept.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake
@@ -93,6 +94,7 @@ namespace Model
     inline AcceptHandshakeRequest& WithHandshakeId(const char* value) { SetHandshakeId(value); return *this;}
 
   private:
+
     Aws::String m_handshakeId;
     bool m_handshakeIdHasBeenSet;
   };

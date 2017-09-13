@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The attribute of the volume. This parameter is required.</p>
      */
@@ -67,6 +68,7 @@ namespace Model
      * <p>The attribute of the volume. This parameter is required.</p>
      */
     inline DescribeVolumeAttributeRequest& WithAttribute(VolumeAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the volume.</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline DescribeVolumeAttributeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -128,10 +131,13 @@ namespace Model
     inline DescribeVolumeAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     VolumeAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The name you give to the Qualification type. The type name is used to
      * represent the Qualification to Workers, and to find the type using a
@@ -93,6 +94,7 @@ namespace Model
      */
     inline CreateQualificationTypeRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>One or more words or phrases that describe the Qualification type, separated
      * by commas. The keywords of a type make the type easier to find during a
@@ -141,6 +143,7 @@ namespace Model
      * search.</p>
      */
     inline CreateQualificationTypeRequest& WithKeywords(const char* value) { SetKeywords(value); return *this;}
+
 
     /**
      * <p>A long description for the Qualification type. On the Amazon Mechanical Turk
@@ -191,6 +194,7 @@ namespace Model
      */
     inline CreateQualificationTypeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The initial status of the Qualification type.</p> <p>Constraints: Valid
      * values are: Active | Inactive</p>
@@ -220,6 +224,7 @@ namespace Model
      * values are: Active | Inactive</p>
      */
     inline CreateQualificationTypeRequest& WithQualificationTypeStatus(QualificationTypeStatus&& value) { SetQualificationTypeStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The number of seconds that a Worker must wait after requesting a
@@ -259,6 +264,7 @@ namespace Model
      * disabled.</p>
      */
     inline CreateQualificationTypeRequest& WithRetryDelayInSeconds(long long value) { SetRetryDelayInSeconds(value); return *this;}
+
 
     /**
      * <p> The questions for the Qualification test a Worker must answer correctly to
@@ -337,6 +343,7 @@ namespace Model
      */
     inline CreateQualificationTypeRequest& WithTest(const char* value) { SetTest(value); return *this;}
 
+
     /**
      * <p>The answers to the Qualification test specified in the Test parameter, in the
      * form of an AnswerKey data structure.</p> <p>Constraints: Must not be longer than
@@ -393,6 +400,7 @@ namespace Model
      */
     inline CreateQualificationTypeRequest& WithAnswerKey(const char* value) { SetAnswerKey(value); return *this;}
 
+
     /**
      * <p>The number of seconds the Worker has to complete the Qualification test,
      * starting from the time the Worker requests the Qualification.</p>
@@ -410,6 +418,7 @@ namespace Model
      * starting from the time the Worker requests the Qualification.</p>
      */
     inline CreateQualificationTypeRequest& WithTestDurationInSeconds(long long value) { SetTestDurationInSeconds(value); return *this;}
+
 
     /**
      * <p>Specifies whether requests for the Qualification type are granted
@@ -435,6 +444,7 @@ namespace Model
      */
     inline CreateQualificationTypeRequest& WithAutoGranted(bool value) { SetAutoGranted(value); return *this;}
 
+
     /**
      * <p>The Qualification value to use for automatically granted Qualifications. This
      * parameter is used only if the AutoGranted parameter is true.</p>
@@ -454,24 +464,34 @@ namespace Model
     inline CreateQualificationTypeRequest& WithAutoGrantedValue(int value) { SetAutoGrantedValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_keywords;
     bool m_keywordsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     QualificationTypeStatus m_qualificationTypeStatus;
     bool m_qualificationTypeStatusHasBeenSet;
+
     long long m_retryDelayInSeconds;
     bool m_retryDelayInSecondsHasBeenSet;
+
     Aws::String m_test;
     bool m_testHasBeenSet;
+
     Aws::String m_answerKey;
     bool m_answerKeyHasBeenSet;
+
     long long m_testDurationInSeconds;
     bool m_testDurationInSecondsHasBeenSet;
+
     bool m_autoGranted;
     bool m_autoGrantedHasBeenSet;
+
     int m_autoGrantedValue;
     bool m_autoGrantedValueHasBeenSet;
   };

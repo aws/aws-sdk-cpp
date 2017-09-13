@@ -31,12 +31,12 @@ DescribeRouteTablesResponse::DescribeRouteTablesResponse()
 {
 }
 
-DescribeRouteTablesResponse::DescribeRouteTablesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeRouteTablesResponse::DescribeRouteTablesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeRouteTablesResponse& DescribeRouteTablesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeRouteTablesResponse& DescribeRouteTablesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

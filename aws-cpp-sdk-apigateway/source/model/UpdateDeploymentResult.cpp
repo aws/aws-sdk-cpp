@@ -30,12 +30,12 @@ UpdateDeploymentResult::UpdateDeploymentResult()
 {
 }
 
-UpdateDeploymentResult::UpdateDeploymentResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDeploymentResult::UpdateDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateDeploymentResult& UpdateDeploymentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDeploymentResult& UpdateDeploymentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

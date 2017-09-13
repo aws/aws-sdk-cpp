@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the environment of the requested data.</p> <p>If no such
      * environment is found, <code>RequestEnvironmentInfo</code> returns an
@@ -105,6 +106,7 @@ namespace Model
      * Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
      */
     inline RequestEnvironmentInfoRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The name of the environment of the requested data.</p> <p>If no such
@@ -169,6 +171,7 @@ namespace Model
      */
     inline RequestEnvironmentInfoRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The type of information to request.</p>
      */
@@ -195,10 +198,13 @@ namespace Model
     inline RequestEnvironmentInfoRequest& WithInfoType(EnvironmentInfoType&& value) { SetInfoType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     EnvironmentInfoType m_infoType;
     bool m_infoTypeHasBeenSet;
   };

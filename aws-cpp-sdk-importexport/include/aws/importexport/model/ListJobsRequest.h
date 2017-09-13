@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline int GetMaxJobs() const{ return m_maxJobs; }
 
@@ -49,6 +50,7 @@ namespace Model
 
     
     inline ListJobsRequest& WithMaxJobs(int value) { SetMaxJobs(value); return *this;}
+
 
     
     inline const Aws::String& GetMarker() const{ return m_marker; }
@@ -70,6 +72,7 @@ namespace Model
 
     
     inline ListJobsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     
     inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
@@ -93,10 +96,13 @@ namespace Model
     inline ListJobsRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}
 
   private:
+
     int m_maxJobs;
     bool m_maxJobsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_aPIVersion;
     bool m_aPIVersionHasBeenSet;
   };

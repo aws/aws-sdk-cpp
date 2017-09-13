@@ -45,6 +45,7 @@ namespace Model
     Record& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A globally unique identifier for the event that was recorded in this stream
      * record.</p>
@@ -86,6 +87,7 @@ namespace Model
      * record.</p>
      */
     inline Record& WithEventID(const char* value) { SetEventID(value); return *this;}
+
 
     /**
      * <p>The type of data modification that was performed on the DynamoDB table:</p>
@@ -132,6 +134,7 @@ namespace Model
      */
     inline Record& WithEventName(OperationType&& value) { SetEventName(std::move(value)); return *this;}
 
+
     /**
      * <p>The version number of the stream record format. Currently, this is
      * <i>1.0</i>.</p>
@@ -173,6 +176,7 @@ namespace Model
      * <i>1.0</i>.</p>
      */
     inline Record& WithEventVersion(const char* value) { SetEventVersion(value); return *this;}
+
 
     /**
      * <p>The AWS service from which the stream record originated. For DynamoDB
@@ -216,6 +220,7 @@ namespace Model
      */
     inline Record& WithEventSource(const char* value) { SetEventSource(value); return *this;}
 
+
     /**
      * <p>The region in which the <i>GetRecords</i> request was received.</p>
      */
@@ -251,6 +256,7 @@ namespace Model
      */
     inline Record& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 
+
     /**
      * <p>The main body of the stream record, containing all of the DynamoDB-specific
      * fields.</p>
@@ -282,16 +288,22 @@ namespace Model
     inline Record& WithDynamodb(StreamRecord&& value) { SetDynamodb(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_eventID;
     bool m_eventIDHasBeenSet;
+
     OperationType m_eventName;
     bool m_eventNameHasBeenSet;
+
     Aws::String m_eventVersion;
     bool m_eventVersionHasBeenSet;
+
     Aws::String m_eventSource;
     bool m_eventSourceHasBeenSet;
+
     Aws::String m_awsRegion;
     bool m_awsRegionHasBeenSet;
+
     StreamRecord m_dynamodb;
     bool m_dynamodbHasBeenSet;
   };

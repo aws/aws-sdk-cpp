@@ -30,12 +30,12 @@ ListAttacksResult::ListAttacksResult()
 {
 }
 
-ListAttacksResult::ListAttacksResult(const AmazonWebServiceResult<JsonValue>& result)
+ListAttacksResult::ListAttacksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListAttacksResult& ListAttacksResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListAttacksResult& ListAttacksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AttackSummaries"))

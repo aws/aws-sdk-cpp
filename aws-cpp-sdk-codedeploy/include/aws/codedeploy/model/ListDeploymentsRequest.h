@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListDeploymentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The name of an existing deployment group for the specified application.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The name of an existing deployment group for the specified application.</p>
      */
     inline ListDeploymentsRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
+
 
     /**
      * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
@@ -197,6 +200,7 @@ namespace Model
      */
     inline ListDeploymentsRequest& AddIncludeOnlyStatuses(DeploymentStatus&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A time range (start and end) for returning a subset of the list of
      * deployments.</p>
@@ -226,6 +230,7 @@ namespace Model
      * deployments.</p>
      */
     inline ListDeploymentsRequest& WithCreateTimeRange(TimeRange&& value) { SetCreateTimeRange(std::move(value)); return *this;}
+
 
     /**
      * <p>An identifier returned from the previous list deployments call. It can be
@@ -270,14 +275,19 @@ namespace Model
     inline ListDeploymentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_deploymentGroupName;
     bool m_deploymentGroupNameHasBeenSet;
+
     Aws::Vector<DeploymentStatus> m_includeOnlyStatuses;
     bool m_includeOnlyStatusesHasBeenSet;
+
     TimeRange m_createTimeRange;
     bool m_createTimeRangeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     AvailabilityZone& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the availability zone.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline AvailabilityZone& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

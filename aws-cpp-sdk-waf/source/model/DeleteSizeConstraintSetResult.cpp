@@ -30,12 +30,12 @@ DeleteSizeConstraintSetResult::DeleteSizeConstraintSetResult()
 {
 }
 
-DeleteSizeConstraintSetResult::DeleteSizeConstraintSetResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSizeConstraintSetResult::DeleteSizeConstraintSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSizeConstraintSetResult& DeleteSizeConstraintSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSizeConstraintSetResult& DeleteSizeConstraintSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

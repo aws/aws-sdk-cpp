@@ -54,6 +54,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The number of HTTP methods for which you want CloudFront to cache responses.
      * Valid values are <code>2</code> (for caching responses to <code>GET</code> and
@@ -77,6 +78,7 @@ namespace Model
      * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
      */
     inline CachedMethods& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A complex type that contains the HTTP methods that you want CloudFront to
@@ -121,8 +123,10 @@ namespace Model
     inline CachedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<Method> m_items;
     bool m_itemsHasBeenSet;
   };

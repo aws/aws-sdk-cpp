@@ -30,12 +30,12 @@ CreateClusterResult::CreateClusterResult()
 {
 }
 
-CreateClusterResult::CreateClusterResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateClusterResult::CreateClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateClusterResult& CreateClusterResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateClusterResult& CreateClusterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("cluster"))

@@ -31,12 +31,12 @@ ExitStandbyResult::ExitStandbyResult()
 {
 }
 
-ExitStandbyResult::ExitStandbyResult(const AmazonWebServiceResult<XmlDocument>& result)
+ExitStandbyResult::ExitStandbyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ExitStandbyResult& ExitStandbyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ExitStandbyResult& ExitStandbyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

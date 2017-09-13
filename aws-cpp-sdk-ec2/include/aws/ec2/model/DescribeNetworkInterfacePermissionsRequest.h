@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more network interface permission IDs.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>One or more network interface permission IDs.</p>
      */
     inline DescribeNetworkInterfacePermissionsRequest& AddNetworkInterfacePermissionIds(const char* value) { m_networkInterfacePermissionIdsHasBeenSet = true; m_networkInterfacePermissionIds.push_back(value); return *this; }
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
@@ -182,6 +184,7 @@ namespace Model
      */
     inline DescribeNetworkInterfacePermissionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token to request the next page of results.</p>
      */
@@ -217,6 +220,7 @@ namespace Model
      */
     inline DescribeNetworkInterfacePermissionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned <code>NextToken</code>
@@ -242,12 +246,16 @@ namespace Model
     inline DescribeNetworkInterfacePermissionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_networkInterfacePermissionIds;
     bool m_networkInterfacePermissionIdsHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

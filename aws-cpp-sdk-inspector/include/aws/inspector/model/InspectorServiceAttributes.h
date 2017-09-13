@@ -46,6 +46,7 @@ namespace Model
     InspectorServiceAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The schema version of this data type.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The schema version of this data type.</p>
      */
     inline InspectorServiceAttributes& WithSchemaVersion(int value) { SetSchemaVersion(value); return *this;}
+
 
     /**
      * <p>The ARN of the assessment run during which the finding is generated.</p>
@@ -95,6 +97,7 @@ namespace Model
      * <p>The ARN of the assessment run during which the finding is generated.</p>
      */
     inline InspectorServiceAttributes& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
+
 
     /**
      * <p>The ARN of the rules package that is used to generate the finding.</p>
@@ -132,10 +135,13 @@ namespace Model
     inline InspectorServiceAttributes& WithRulesPackageArn(const char* value) { SetRulesPackageArn(value); return *this;}
 
   private:
+
     int m_schemaVersion;
     bool m_schemaVersionHasBeenSet;
+
     Aws::String m_assessmentRunArn;
     bool m_assessmentRunArnHasBeenSet;
+
     Aws::String m_rulesPackageArn;
     bool m_rulesPackageArnHasBeenSet;
   };

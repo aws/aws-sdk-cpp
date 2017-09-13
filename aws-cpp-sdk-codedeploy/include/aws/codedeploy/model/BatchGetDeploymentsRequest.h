@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of deployment IDs, separated by spaces.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline BatchGetDeploymentsRequest& AddDeploymentIds(const char* value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_deploymentIds;
     bool m_deploymentIdsHasBeenSet;
   };

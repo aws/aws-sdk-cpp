@@ -47,6 +47,7 @@ namespace Model
     ComplianceSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of AWS Config rules or AWS resources that are compliant, up to a
      * maximum of 25 for rules and 100 for resources.</p>
@@ -76,6 +77,7 @@ namespace Model
      * maximum of 25 for rules and 100 for resources.</p>
      */
     inline ComplianceSummary& WithCompliantResourceCount(ComplianceContributorCount&& value) { SetCompliantResourceCount(std::move(value)); return *this;}
+
 
     /**
      * <p>The number of AWS Config rules or AWS resources that are noncompliant, up to
@@ -107,6 +109,7 @@ namespace Model
      */
     inline ComplianceSummary& WithNonCompliantResourceCount(ComplianceContributorCount&& value) { SetNonCompliantResourceCount(std::move(value)); return *this;}
 
+
     /**
      * <p>The time that AWS Config created the compliance summary.</p>
      */
@@ -133,10 +136,13 @@ namespace Model
     inline ComplianceSummary& WithComplianceSummaryTimestamp(Aws::Utils::DateTime&& value) { SetComplianceSummaryTimestamp(std::move(value)); return *this;}
 
   private:
+
     ComplianceContributorCount m_compliantResourceCount;
     bool m_compliantResourceCountHasBeenSet;
+
     ComplianceContributorCount m_nonCompliantResourceCount;
     bool m_nonCompliantResourceCountHasBeenSet;
+
     Aws::Utils::DateTime m_complianceSummaryTimestamp;
     bool m_complianceSummaryTimestampHasBeenSet;
   };

@@ -31,12 +31,12 @@ UpdateApplicationResult::UpdateApplicationResult()
 {
 }
 
-UpdateApplicationResult::UpdateApplicationResult(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateApplicationResult::UpdateApplicationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateApplicationResult& UpdateApplicationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateApplicationResult& UpdateApplicationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

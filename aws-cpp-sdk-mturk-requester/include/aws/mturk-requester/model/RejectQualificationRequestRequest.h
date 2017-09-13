@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The ID of the Qualification request, as returned by the
      * <code>ListQualificationRequests</code> operation. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <code>ListQualificationRequests</code> operation. </p>
      */
     inline RejectQualificationRequestRequest& WithQualificationRequestId(const char* value) { SetQualificationRequestId(value); return *this;}
+
 
     /**
      * <p>A text message explaining why the request was rejected, to be shown to the
@@ -121,8 +123,10 @@ namespace Model
     inline RejectQualificationRequestRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_qualificationRequestId;
     bool m_qualificationRequestIdHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

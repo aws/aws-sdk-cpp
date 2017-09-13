@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeInstancesResult();
-    DescribeInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Instance</code> objects that describe the instances.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Instance> m_instances;
   };
 

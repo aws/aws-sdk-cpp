@@ -30,12 +30,12 @@ EnableDirectoryResult::EnableDirectoryResult()
 {
 }
 
-EnableDirectoryResult::EnableDirectoryResult(const AmazonWebServiceResult<JsonValue>& result)
+EnableDirectoryResult::EnableDirectoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-EnableDirectoryResult& EnableDirectoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+EnableDirectoryResult& EnableDirectoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DirectoryArn"))

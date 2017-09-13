@@ -46,6 +46,7 @@ namespace Model
     Tape& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
      */
     inline Tape& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+
 
     /**
      * <p>The barcode that identifies a specific virtual tape.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline Tape& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
 
+
     /**
      * <p>The date the virtual tape was created.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      */
     inline Tape& WithTapeCreatedDate(Aws::Utils::DateTime&& value) { SetTapeCreatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The size, in bytes, of the virtual tape capacity.</p>
      */
@@ -155,6 +159,7 @@ namespace Model
      * <p>The size, in bytes, of the virtual tape capacity.</p>
      */
     inline Tape& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
+
 
     /**
      * <p>The current state of the virtual tape.</p>
@@ -190,6 +195,7 @@ namespace Model
      * <p>The current state of the virtual tape.</p>
      */
     inline Tape& WithTapeStatus(const char* value) { SetTapeStatus(value); return *this;}
+
 
     /**
      * <p>The virtual tape library (VTL) device that the virtual tape is associated
@@ -233,6 +239,7 @@ namespace Model
      */
     inline Tape& WithVTLDevice(const char* value) { SetVTLDevice(value); return *this;}
 
+
     /**
      * <p>For archiving virtual tapes, indicates how much data remains to be uploaded
      * before archiving is complete.</p> <p>Range: 0 (not started) to 100
@@ -254,6 +261,7 @@ namespace Model
      */
     inline Tape& WithProgress(double value) { SetProgress(value); return *this;}
 
+
     /**
      * <p>The size, in bytes, of data written to the virtual tape.</p> <note> <p>This
      * value is not available for tapes created prior to May 13, 2015.</p> </note>
@@ -273,20 +281,28 @@ namespace Model
     inline Tape& WithTapeUsedInBytes(long long value) { SetTapeUsedInBytes(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
+
     Aws::String m_tapeBarcode;
     bool m_tapeBarcodeHasBeenSet;
+
     Aws::Utils::DateTime m_tapeCreatedDate;
     bool m_tapeCreatedDateHasBeenSet;
+
     long long m_tapeSizeInBytes;
     bool m_tapeSizeInBytesHasBeenSet;
+
     Aws::String m_tapeStatus;
     bool m_tapeStatusHasBeenSet;
+
     Aws::String m_vTLDevice;
     bool m_vTLDeviceHasBeenSet;
+
     double m_progress;
     bool m_progressHasBeenSet;
+
     long long m_tapeUsedInBytes;
     bool m_tapeUsedInBytesHasBeenSet;
   };

@@ -30,12 +30,12 @@ IncreaseReplicationFactorResult::IncreaseReplicationFactorResult()
 {
 }
 
-IncreaseReplicationFactorResult::IncreaseReplicationFactorResult(const AmazonWebServiceResult<JsonValue>& result)
+IncreaseReplicationFactorResult::IncreaseReplicationFactorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-IncreaseReplicationFactorResult& IncreaseReplicationFactorResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+IncreaseReplicationFactorResult& IncreaseReplicationFactorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Cluster"))

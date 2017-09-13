@@ -49,6 +49,7 @@ namespace Model
     ElasticsearchDomainStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the specified Elasticsearch domain.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The unique identifier for the specified Elasticsearch domain.</p>
      */
     inline ElasticsearchDomainStatus& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+
 
     /**
      * <p>The name of an Elasticsearch domain. Domain names are unique across the
@@ -140,6 +142,7 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
@@ -196,6 +199,7 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithARN(const char* value) { SetARN(value); return *this;}
 
+
     /**
      * <p>The domain creation status. <code>True</code> if the creation of an
      * Elasticsearch domain is complete. <code>False</code> if domain creation is still
@@ -216,6 +220,7 @@ namespace Model
      * in progress.</p>
      */
     inline ElasticsearchDomainStatus& WithCreated(bool value) { SetCreated(value); return *this;}
+
 
     /**
      * <p>The domain deletion status. <code>True</code> if a delete request has been
@@ -240,6 +245,7 @@ namespace Model
      * complete, the status of the domain is no longer returned.</p>
      */
     inline ElasticsearchDomainStatus& WithDeleted(bool value) { SetDeleted(value); return *this;}
+
 
     /**
      * <p>The Elasticsearch domain endpoint that you use to submit index and search
@@ -283,6 +289,7 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
+
     /**
      * <p>The status of the Elasticsearch domain configuration. <code>True</code> if
      * Amazon Elasticsearch Service is processing configuration changes.
@@ -304,6 +311,7 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithProcessing(bool value) { SetProcessing(value); return *this;}
 
+
     
     inline const Aws::String& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
 
@@ -324,6 +332,7 @@ namespace Model
 
     
     inline ElasticsearchDomainStatus& WithElasticsearchVersion(const char* value) { SetElasticsearchVersion(value); return *this;}
+
 
     /**
      * <p>The type and number of instances in the domain cluster.</p>
@@ -349,6 +358,7 @@ namespace Model
      * <p>The type and number of instances in the domain cluster.</p>
      */
     inline ElasticsearchDomainStatus& WithElasticsearchClusterConfig(ElasticsearchClusterConfig&& value) { SetElasticsearchClusterConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>EBSOptions</code> for the specified domain. See <a
@@ -385,6 +395,7 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithEBSOptions(EBSOptions&& value) { SetEBSOptions(std::move(value)); return *this;}
 
+
     /**
      * <p> IAM access policy as a JSON-formatted string.</p>
      */
@@ -420,6 +431,7 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
 
+
     /**
      * <p>Specifies the status of the <code>SnapshotOptions</code></p>
      */
@@ -444,6 +456,7 @@ namespace Model
      * <p>Specifies the status of the <code>SnapshotOptions</code></p>
      */
     inline ElasticsearchDomainStatus& WithSnapshotOptions(SnapshotOptions&& value) { SetSnapshotOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the status of the <code>AdvancedOptions</code></p>
@@ -506,30 +519,43 @@ namespace Model
     inline ElasticsearchDomainStatus& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
     bool m_created;
     bool m_createdHasBeenSet;
+
     bool m_deleted;
     bool m_deletedHasBeenSet;
+
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+
     bool m_processing;
     bool m_processingHasBeenSet;
+
     Aws::String m_elasticsearchVersion;
     bool m_elasticsearchVersionHasBeenSet;
+
     ElasticsearchClusterConfig m_elasticsearchClusterConfig;
     bool m_elasticsearchClusterConfigHasBeenSet;
+
     EBSOptions m_eBSOptions;
     bool m_eBSOptionsHasBeenSet;
+
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet;
+
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
   };

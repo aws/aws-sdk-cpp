@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     IncreaseReplicationFactorResult();
-    IncreaseReplicationFactorResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    IncreaseReplicationFactorResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    IncreaseReplicationFactorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    IncreaseReplicationFactorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A description of the DAX cluster. with its new replication factor.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline IncreaseReplicationFactorResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 
   private:
+
     Cluster m_cluster;
   };
 

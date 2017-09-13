@@ -41,6 +41,7 @@ namespace Model
     StateMachineListItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
      */
     inline StateMachineListItem& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
+
 
     /**
      * <p>The name of the state machine.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline StateMachineListItem& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The date the state machine was created.</p>
      */
@@ -137,10 +140,13 @@ namespace Model
     inline StateMachineListItem& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stateMachineArn;
     bool m_stateMachineArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

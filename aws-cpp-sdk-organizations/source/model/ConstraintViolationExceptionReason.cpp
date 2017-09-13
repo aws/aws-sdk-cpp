@@ -44,6 +44,7 @@ namespace Aws
         static const int MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED_HASH = HashingUtils::HashString("MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
         static const int ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED");
         static const int MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE_HASH = HashingUtils::HashString("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE");
+        static const int MASTER_ACCOUNT_MISSING_CONTACT_INFO_HASH = HashingUtils::HashString("MASTER_ACCOUNT_MISSING_CONTACT_INFO");
 
 
         ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(const Aws::String& name)
@@ -105,6 +106,10 @@ namespace Aws
           {
             return ConstraintViolationExceptionReason::MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE;
           }
+          else if (hashCode == MASTER_ACCOUNT_MISSING_CONTACT_INFO_HASH)
+          {
+            return ConstraintViolationExceptionReason::MASTER_ACCOUNT_MISSING_CONTACT_INFO;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -147,6 +152,8 @@ namespace Aws
             return "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED";
           case ConstraintViolationExceptionReason::MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE:
             return "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE";
+          case ConstraintViolationExceptionReason::MASTER_ACCOUNT_MISSING_CONTACT_INFO:
+            return "MASTER_ACCOUNT_MISSING_CONTACT_INFO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

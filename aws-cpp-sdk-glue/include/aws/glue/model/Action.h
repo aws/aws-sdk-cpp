@@ -41,6 +41,7 @@ namespace Model
     Action& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline Action& WithJobName(const char* value) { SetJobName(value); return *this;}
+
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
@@ -99,8 +101,10 @@ namespace Model
     inline Action& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_arguments;
     bool m_argumentsHasBeenSet;
   };

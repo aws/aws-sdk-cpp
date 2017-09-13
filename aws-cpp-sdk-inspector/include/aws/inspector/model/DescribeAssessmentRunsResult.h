@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     DescribeAssessmentRunsResult();
-    DescribeAssessmentRunsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAssessmentRunsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAssessmentRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAssessmentRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the assessment run.</p>
@@ -79,6 +80,7 @@ namespace Model
      * <p>Information about the assessment run.</p>
      */
     inline DescribeAssessmentRunsResult& AddAssessmentRuns(AssessmentRun&& value) { m_assessmentRuns.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Assessment run details that cannot be described. An error code is provided
@@ -147,7 +149,9 @@ namespace Model
     inline DescribeAssessmentRunsResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
 
   private:
+
     Aws::Vector<AssessmentRun> m_assessmentRuns;
+
     Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
   };
 

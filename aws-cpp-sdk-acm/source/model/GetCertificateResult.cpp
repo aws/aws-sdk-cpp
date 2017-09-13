@@ -30,12 +30,12 @@ GetCertificateResult::GetCertificateResult()
 {
 }
 
-GetCertificateResult::GetCertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCertificateResult::GetCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCertificateResult& GetCertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCertificateResult& GetCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Certificate"))

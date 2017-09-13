@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The names of the on-premises instances about which to get information.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline BatchGetOnPremisesInstancesRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_instanceNames;
     bool m_instanceNamesHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeAutoScalingGroupsResult();
-    DescribeAutoScalingGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAutoScalingGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAutoScalingGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAutoScalingGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The groups.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>The groups.</p>
      */
     inline DescribeAutoScalingGroupsResult& AddAutoScalingGroups(AutoScalingGroup&& value) { m_autoScalingGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeAutoScalingGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeAutoScalingGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -45,6 +45,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Upload ID that identifies the multipart upload.
      */
@@ -79,6 +80,7 @@ namespace Model
      * Upload ID that identifies the multipart upload.
      */
     inline MultipartUpload& WithUploadId(const char* value) { SetUploadId(value); return *this;}
+
 
     /**
      * Key of the object for which the multipart upload was initiated.
@@ -115,6 +117,7 @@ namespace Model
      */
     inline MultipartUpload& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * Date and time at which the multipart upload was initiated.
      */
@@ -139,6 +142,7 @@ namespace Model
      * Date and time at which the multipart upload was initiated.
      */
     inline MultipartUpload& WithInitiated(Aws::Utils::DateTime&& value) { SetInitiated(std::move(value)); return *this;}
+
 
     /**
      * The class of storage used to store the object.
@@ -165,6 +169,7 @@ namespace Model
      */
     inline MultipartUpload& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
+
     
     inline const Owner& GetOwner() const{ return m_owner; }
 
@@ -179,6 +184,7 @@ namespace Model
 
     
     inline MultipartUpload& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+
 
     /**
      * Identifies who initiated the multipart upload.
@@ -206,16 +212,22 @@ namespace Model
     inline MultipartUpload& WithInitiator(Initiator&& value) { SetInitiator(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Utils::DateTime m_initiated;
     bool m_initiatedHasBeenSet;
+
     StorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
+
     Owner m_owner;
     bool m_ownerHasBeenSet;
+
     Initiator m_initiator;
     bool m_initiatorHasBeenSet;
   };

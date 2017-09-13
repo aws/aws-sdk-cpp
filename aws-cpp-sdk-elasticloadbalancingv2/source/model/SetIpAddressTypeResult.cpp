@@ -32,13 +32,13 @@ SetIpAddressTypeResult::SetIpAddressTypeResult() :
 {
 }
 
-SetIpAddressTypeResult::SetIpAddressTypeResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+SetIpAddressTypeResult::SetIpAddressTypeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_ipAddressType(IpAddressType::NOT_SET)
 {
   *this = result;
 }
 
-SetIpAddressTypeResult& SetIpAddressTypeResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SetIpAddressTypeResult& SetIpAddressTypeResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

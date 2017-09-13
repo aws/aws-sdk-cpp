@@ -47,6 +47,7 @@ namespace Model
     ChildWorkflowExecutionTerminatedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The child workflow execution that was terminated.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ChildWorkflowExecutionTerminatedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of the child workflow execution.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>The type of the child workflow execution.</p>
      */
     inline ChildWorkflowExecutionTerminatedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
@@ -124,6 +127,7 @@ namespace Model
      */
     inline ChildWorkflowExecutionTerminatedEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when
      * this child workflow execution was started. This information can be useful for
@@ -149,12 +153,16 @@ namespace Model
     inline ChildWorkflowExecutionTerminatedEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
   private:
+
     WorkflowExecution m_workflowExecution;
     bool m_workflowExecutionHasBeenSet;
+
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet;
+
     long long m_initiatedEventId;
     bool m_initiatedEventIdHasBeenSet;
+
     long long m_startedEventId;
     bool m_startedEventIdHasBeenSet;
   };

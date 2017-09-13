@@ -46,6 +46,7 @@ namespace Model
     SubscriptionFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the subscription filter.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the subscription filter.</p>
      */
     inline SubscriptionFilter& WithFilterName(const char* value) { SetFilterName(value); return *this;}
+
 
     /**
      * <p>The name of the log group.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline SubscriptionFilter& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
+
     
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
 
@@ -136,6 +139,7 @@ namespace Model
 
     
     inline SubscriptionFilter& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
@@ -172,6 +176,7 @@ namespace Model
      */
     inline SubscriptionFilter& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 
+
     /**
      * <p/>
      */
@@ -207,6 +212,7 @@ namespace Model
      */
     inline SubscriptionFilter& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The method used to distribute log data to the destination, when the
      * destination is an Amazon Kinesis stream.</p>
@@ -237,37 +243,45 @@ namespace Model
      */
     inline SubscriptionFilter& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 
+
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline SubscriptionFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
   private:
+
     Aws::String m_filterName;
     bool m_filterNameHasBeenSet;
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_filterPattern;
     bool m_filterPatternHasBeenSet;
+
     Aws::String m_destinationArn;
     bool m_destinationArnHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Distribution m_distribution;
     bool m_distributionHasBeenSet;
+
     long long m_creationTime;
     bool m_creationTimeHasBeenSet;
   };

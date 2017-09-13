@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListProjectsResult();
-    ListProjectsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProjectsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of projects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of projects.</p>
      */
     inline ListProjectsResult& AddProjects(ProjectSummary&& value) { m_projects.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The continuation token to use when requesting the next set of results, if
@@ -121,7 +123,9 @@ namespace Model
     inline ListProjectsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ProjectSummary> m_projects;
+
     Aws::String m_nextToken;
   };
 

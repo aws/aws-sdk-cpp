@@ -45,6 +45,7 @@ namespace Model
     BranchInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the branch.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of the branch.</p>
      */
     inline BranchInfo& WithBranchName(const char* value) { SetBranchName(value); return *this;}
+
 
     /**
      * <p>The ID of the last commit made to the branch.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline BranchInfo& WithCommitId(const char* value) { SetCommitId(value); return *this;}
 
   private:
+
     Aws::String m_branchName;
     bool m_branchNameHasBeenSet;
+
     Aws::String m_commitId;
     bool m_commitIdHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     InstanceNetworking& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The amount of data in GB allocated for monthly data transfers.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The amount of data in GB allocated for monthly data transfers.</p>
      */
     inline InstanceNetworking& WithMonthlyTransfer(MonthlyTransfer&& value) { SetMonthlyTransfer(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of key-value pairs containing information about the ports on the
@@ -116,8 +118,10 @@ namespace Model
     inline InstanceNetworking& AddPorts(InstancePortInfo&& value) { m_portsHasBeenSet = true; m_ports.push_back(std::move(value)); return *this; }
 
   private:
+
     MonthlyTransfer m_monthlyTransfer;
     bool m_monthlyTransferHasBeenSet;
+
     Aws::Vector<InstancePortInfo> m_ports;
     bool m_portsHasBeenSet;
   };

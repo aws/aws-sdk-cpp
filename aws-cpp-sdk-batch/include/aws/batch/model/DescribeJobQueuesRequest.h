@@ -35,6 +35,7 @@ namespace Model
     DescribeJobQueuesRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN)
      * entries.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeJobQueuesRequest& AddJobQueues(const char* value) { m_jobQueuesHasBeenSet = true; m_jobQueues.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of results returned by <code>DescribeJobQueues</code> in
      * paginated output. When this parameter is used, <code>DescribeJobQueues</code>
@@ -118,6 +120,7 @@ namespace Model
      * up to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline DescribeJobQueuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -204,10 +207,13 @@ namespace Model
     inline DescribeJobQueuesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_jobQueues;
     bool m_jobQueuesHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

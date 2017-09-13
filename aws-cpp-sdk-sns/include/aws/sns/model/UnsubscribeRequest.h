@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the subscription to be deleted.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline UnsubscribeRequest& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionArn;
     bool m_subscriptionArnHasBeenSet;
   };

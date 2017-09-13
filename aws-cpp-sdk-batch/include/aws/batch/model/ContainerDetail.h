@@ -51,6 +51,7 @@ namespace Model
     ContainerDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The image used to start the container.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline ContainerDetail& WithImage(const char* value) { SetImage(value); return *this;}
 
+
     /**
      * <p>The number of VCPUs allocated for the job. </p>
      */
@@ -101,6 +103,7 @@ namespace Model
      */
     inline ContainerDetail& WithVcpus(int value) { SetVcpus(value); return *this;}
 
+
     /**
      * <p>The number of MiB of memory reserved for the job.</p>
      */
@@ -115,6 +118,7 @@ namespace Model
      * <p>The number of MiB of memory reserved for the job.</p>
      */
     inline ContainerDetail& WithMemory(int value) { SetMemory(value); return *this;}
+
 
     /**
      * <p>The command that is passed to the container. </p>
@@ -156,6 +160,7 @@ namespace Model
      */
     inline ContainerDetail& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
+
     /**
      * <p>The Amazon Resource Name (ARN) associated with the job upon execution. </p>
      */
@@ -190,6 +195,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) associated with the job upon execution. </p>
      */
     inline ContainerDetail& WithJobRoleArn(const char* value) { SetJobRoleArn(value); return *this;}
+
 
     /**
      * <p>A list of volumes associated with the job.</p>
@@ -226,6 +232,7 @@ namespace Model
      */
     inline ContainerDetail& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The environment variables to pass to a container.</p>
      */
@@ -260,6 +267,7 @@ namespace Model
      * <p>The environment variables to pass to a container.</p>
      */
     inline ContainerDetail& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The mount points for data volumes in your container.</p>
@@ -296,6 +304,7 @@ namespace Model
      */
     inline ContainerDetail& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>When this parameter is true, the container is given read-only access to its
      * root file system.</p>
@@ -313,6 +322,7 @@ namespace Model
      * root file system.</p>
      */
     inline ContainerDetail& WithReadonlyRootFilesystem(bool value) { SetReadonlyRootFilesystem(value); return *this;}
+
 
     /**
      * <p>A list of <code>ulimit</code> values to set in the container.</p>
@@ -349,6 +359,7 @@ namespace Model
      */
     inline ContainerDetail& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>When this parameter is true, the container is given elevated privileges on
      * the host container instance (similar to the <code>root</code> user).</p>
@@ -366,6 +377,7 @@ namespace Model
      * the host container instance (similar to the <code>root</code> user).</p>
      */
     inline ContainerDetail& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
+
 
     /**
      * <p>The user name to use inside the container.</p>
@@ -402,6 +414,7 @@ namespace Model
      */
     inline ContainerDetail& WithUser(const char* value) { SetUser(value); return *this;}
 
+
     /**
      * <p>The exit code to return upon completion.</p>
      */
@@ -416,6 +429,7 @@ namespace Model
      * <p>The exit code to return upon completion.</p>
      */
     inline ContainerDetail& WithExitCode(int value) { SetExitCode(value); return *this;}
+
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
@@ -459,6 +473,7 @@ namespace Model
      */
     inline ContainerDetail& WithReason(const char* value) { SetReason(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance on which the
      * container is running.</p>
@@ -500,6 +515,7 @@ namespace Model
      * container is running.</p>
      */
     inline ContainerDetail& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
@@ -543,6 +559,7 @@ namespace Model
      */
     inline ContainerDetail& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
+
     
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
 
@@ -565,38 +582,55 @@ namespace Model
     inline ContainerDetail& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
   private:
+
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
     int m_vcpus;
     bool m_vcpusHasBeenSet;
+
     int m_memory;
     bool m_memoryHasBeenSet;
+
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet;
+
     Aws::String m_jobRoleArn;
     bool m_jobRoleArnHasBeenSet;
+
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet;
+
     Aws::Vector<KeyValuePair> m_environment;
     bool m_environmentHasBeenSet;
+
     Aws::Vector<MountPoint> m_mountPoints;
     bool m_mountPointsHasBeenSet;
+
     bool m_readonlyRootFilesystem;
     bool m_readonlyRootFilesystemHasBeenSet;
+
     Aws::Vector<Ulimit> m_ulimits;
     bool m_ulimitsHasBeenSet;
+
     bool m_privileged;
     bool m_privilegedHasBeenSet;
+
     Aws::String m_user;
     bool m_userHasBeenSet;
+
     int m_exitCode;
     bool m_exitCodeHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::String m_containerInstanceArn;
     bool m_containerInstanceArnHasBeenSet;
+
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
   };

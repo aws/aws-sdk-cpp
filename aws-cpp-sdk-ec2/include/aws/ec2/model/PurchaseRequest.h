@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The number of instances.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>The number of instances.</p>
      */
     inline PurchaseRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>The purchase token.</p>
@@ -100,8 +102,10 @@ namespace Model
     inline PurchaseRequest& WithPurchaseToken(const char* value) { SetPurchaseToken(value); return *this;}
 
   private:
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     Aws::String m_purchaseToken;
     bool m_purchaseTokenHasBeenSet;
   };

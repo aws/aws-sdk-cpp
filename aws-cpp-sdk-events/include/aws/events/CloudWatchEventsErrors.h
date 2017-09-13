@@ -55,7 +55,7 @@ enum class CloudWatchEventsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL,
   INVALID_EVENT_PATTERN,
   LIMIT_EXCEEDED,
@@ -63,7 +63,7 @@ enum class CloudWatchEventsErrors
 };
 namespace CloudWatchEventsErrorMapper
 {
-  AWS_CLOUDWATCHEVENTS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CLOUDWATCHEVENTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CloudWatchEvents

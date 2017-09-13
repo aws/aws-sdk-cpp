@@ -47,6 +47,7 @@ namespace Model
     Artifact& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The artifact's name.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The artifact's name.</p>
      */
     inline Artifact& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The artifact's revision ID. Depending on the type of object, this could be a
@@ -124,6 +126,7 @@ namespace Model
      */
     inline Artifact& WithRevision(const char* value) { SetRevision(value); return *this;}
 
+
     /**
      * <p>The location of an artifact.</p>
      */
@@ -150,10 +153,13 @@ namespace Model
     inline Artifact& WithLocation(ArtifactLocation&& value) { SetLocation(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_revision;
     bool m_revisionHasBeenSet;
+
     ArtifactLocation m_location;
     bool m_locationHasBeenSet;
   };

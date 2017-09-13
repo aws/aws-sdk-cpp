@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeAppsResult();
-    DescribeAppsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAppsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAppsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAppsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>App</code> objects that describe the specified apps. </p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeAppsResult& AddApps(App&& value) { m_apps.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<App> m_apps;
   };
 

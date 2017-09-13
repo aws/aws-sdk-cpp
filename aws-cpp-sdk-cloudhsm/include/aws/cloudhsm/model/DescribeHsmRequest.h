@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
      * parameter must be specified.</p>
@@ -81,6 +82,7 @@ namespace Model
      * parameter must be specified.</p>
      */
     inline DescribeHsmRequest& WithHsmArn(const char* value) { SetHsmArn(value); return *this;}
+
 
     /**
      * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
@@ -125,8 +127,10 @@ namespace Model
     inline DescribeHsmRequest& WithHsmSerialNumber(const char* value) { SetHsmSerialNumber(value); return *this;}
 
   private:
+
     Aws::String m_hsmArn;
     bool m_hsmArnHasBeenSet;
+
     Aws::String m_hsmSerialNumber;
     bool m_hsmSerialNumberHasBeenSet;
   };

@@ -32,13 +32,13 @@ ModifySpotFleetRequestResponse::ModifySpotFleetRequestResponse() :
 {
 }
 
-ModifySpotFleetRequestResponse::ModifySpotFleetRequestResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+ModifySpotFleetRequestResponse::ModifySpotFleetRequestResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-ModifySpotFleetRequestResponse& ModifySpotFleetRequestResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifySpotFleetRequestResponse& ModifySpotFleetRequestResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

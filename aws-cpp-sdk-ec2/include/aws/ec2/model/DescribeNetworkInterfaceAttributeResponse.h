@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     DescribeNetworkInterfaceAttributeResponse();
-    DescribeNetworkInterfaceAttributeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeNetworkInterfaceAttributeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeNetworkInterfaceAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeNetworkInterfaceAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The attachment (if any) of the network interface.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeNetworkInterfaceAttributeResponse& WithAttachment(NetworkInterfaceAttachment&& value) { SetAttachment(std::move(value)); return *this;}
 
+
     /**
      * <p>The description of the network interface.</p>
      */
@@ -102,6 +104,7 @@ namespace Model
      * <p>The description of the network interface.</p>
      */
     inline DescribeNetworkInterfaceAttributeResponse& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>The security groups associated with the network interface.</p>
@@ -138,6 +141,7 @@ namespace Model
      */
     inline DescribeNetworkInterfaceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the network interface.</p>
      */
@@ -173,6 +177,7 @@ namespace Model
      */
     inline DescribeNetworkInterfaceAttributeResponse& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
     /**
      * <p>Indicates whether source/destination checking is enabled.</p>
      */
@@ -198,6 +203,7 @@ namespace Model
      */
     inline DescribeNetworkInterfaceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -214,11 +220,17 @@ namespace Model
     inline DescribeNetworkInterfaceAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     NetworkInterfaceAttachment m_attachment;
+
     AttributeValue m_description;
+
     Aws::Vector<GroupIdentifier> m_groups;
+
     Aws::String m_networkInterfaceId;
+
     AttributeBooleanValue m_sourceDestCheck;
+
     ResponseMetadata m_responseMetadata;
   };
 

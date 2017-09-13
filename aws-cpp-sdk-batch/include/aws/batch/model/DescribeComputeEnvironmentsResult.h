@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeComputeEnvironmentsResult();
-    DescribeComputeEnvironmentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeComputeEnvironmentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeComputeEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeComputeEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of compute environments.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of compute environments.</p>
      */
     inline DescribeComputeEnvironmentsResult& AddComputeEnvironments(ComputeEnvironmentDetail&& value) { m_computeEnvironments.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -142,7 +144,9 @@ namespace Model
     inline DescribeComputeEnvironmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ComputeEnvironmentDetail> m_computeEnvironments;
+
     Aws::String m_nextToken;
   };
 

@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Whether the node is a leader node or a compute node.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ClusterNode& WithNodeRole(const char* value) { SetNodeRole(value); return *this;}
 
+
     /**
      * <p>The private IP address of a node within a cluster.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The private IP address of a node within a cluster.</p>
      */
     inline ClusterNode& WithPrivateIPAddress(const char* value) { SetPrivateIPAddress(value); return *this;}
+
 
     /**
      * <p>The public IP address of a node within a cluster.</p>
@@ -154,10 +157,13 @@ namespace Model
     inline ClusterNode& WithPublicIPAddress(const char* value) { SetPublicIPAddress(value); return *this;}
 
   private:
+
     Aws::String m_nodeRole;
     bool m_nodeRoleHasBeenSet;
+
     Aws::String m_privateIPAddress;
     bool m_privateIPAddressHasBeenSet;
+
     Aws::String m_publicIPAddress;
     bool m_publicIPAddressHasBeenSet;
   };

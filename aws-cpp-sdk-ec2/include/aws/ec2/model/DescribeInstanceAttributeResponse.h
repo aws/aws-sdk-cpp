@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     DescribeInstanceAttributeResponse();
-    DescribeInstanceAttributeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeInstanceAttributeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeInstanceAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeInstanceAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The security groups associated with the instance.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The block device mapping of the instance.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance through
      * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
@@ -153,6 +156,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether enhanced networking with ENA is enabled.</p>
      */
@@ -178,6 +182,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether the instance is optimized for EBS I/O.</p>
      */
@@ -202,6 +207,7 @@ namespace Model
      * <p>Indicates whether the instance is optimized for EBS I/O.</p>
      */
     inline DescribeInstanceAttributeResponse& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -238,6 +244,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
@@ -268,6 +275,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
 
+
     /**
      * <p>The instance type.</p>
      */
@@ -293,6 +301,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& WithInstanceType(AttributeValue&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The kernel ID.</p>
      */
@@ -317,6 +326,7 @@ namespace Model
      * <p>The kernel ID.</p>
      */
     inline DescribeInstanceAttributeResponse& WithKernelId(AttributeValue&& value) { SetKernelId(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of product codes.</p>
@@ -353,6 +363,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The RAM disk ID.</p>
      */
@@ -377,6 +388,7 @@ namespace Model
      * <p>The RAM disk ID.</p>
      */
     inline DescribeInstanceAttributeResponse& WithRamdiskId(AttributeValue&& value) { SetRamdiskId(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the root device (for example, <code>/dev/sda1</code> or
@@ -407,6 +419,7 @@ namespace Model
      * <code>/dev/xvda</code>).</p>
      */
     inline DescribeInstanceAttributeResponse& WithRootDeviceName(AttributeValue&& value) { SetRootDeviceName(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
@@ -448,6 +461,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
      * interface is enabled.</p>
@@ -478,6 +492,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
 
+
     /**
      * <p>The user data.</p>
      */
@@ -503,6 +518,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& WithUserData(AttributeValue&& value) { SetUserData(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -519,21 +535,37 @@ namespace Model
     inline DescribeInstanceAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<GroupIdentifier> m_groups;
+
     Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
+
     AttributeBooleanValue m_disableApiTermination;
+
     AttributeBooleanValue m_enaSupport;
+
     AttributeBooleanValue m_ebsOptimized;
+
     Aws::String m_instanceId;
+
     AttributeValue m_instanceInitiatedShutdownBehavior;
+
     AttributeValue m_instanceType;
+
     AttributeValue m_kernelId;
+
     Aws::Vector<ProductCode> m_productCodes;
+
     AttributeValue m_ramdiskId;
+
     AttributeValue m_rootDeviceName;
+
     AttributeBooleanValue m_sourceDestCheck;
+
     AttributeValue m_sriovNetSupport;
+
     AttributeValue m_userData;
+
     ResponseMetadata m_responseMetadata;
   };
 

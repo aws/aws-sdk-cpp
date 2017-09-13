@@ -30,12 +30,12 @@ GetDomainNameResult::GetDomainNameResult()
 {
 }
 
-GetDomainNameResult::GetDomainNameResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDomainNameResult::GetDomainNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDomainNameResult& GetDomainNameResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDomainNameResult& GetDomainNameResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("domainName"))

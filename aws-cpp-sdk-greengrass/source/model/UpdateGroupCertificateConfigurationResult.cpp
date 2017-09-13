@@ -30,12 +30,12 @@ UpdateGroupCertificateConfigurationResult::UpdateGroupCertificateConfigurationRe
 {
 }
 
-UpdateGroupCertificateConfigurationResult::UpdateGroupCertificateConfigurationResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateGroupCertificateConfigurationResult::UpdateGroupCertificateConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateGroupCertificateConfigurationResult& UpdateGroupCertificateConfigurationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateGroupCertificateConfigurationResult& UpdateGroupCertificateConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CertificateAuthorityExpiryInMilliseconds"))

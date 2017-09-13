@@ -52,6 +52,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to
      * perform health checks on. If you don't specify a value for
@@ -283,6 +284,7 @@ namespace Model
      */
     inline HealthCheckConfig& WithIPAddress(const char* value) { SetIPAddress(value); return *this;}
 
+
     /**
      * <p>The port on the endpoint on which you want Amazon Route 53 to perform health
      * checks. Specify a value for <code>Port</code> only when you specify a value for
@@ -303,6 +305,7 @@ namespace Model
      * <code>IPAddress</code>.</p>
      */
     inline HealthCheckConfig& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The type of health check that you want to create, which indicates how Amazon
@@ -499,6 +502,7 @@ namespace Model
      */
     inline HealthCheckConfig& WithType(HealthCheckType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The path, if any, that you want Amazon Route 53 to request when performing
      * health checks. The path can be any value for which your endpoint will return an
@@ -554,6 +558,7 @@ namespace Model
      * file /docs/route53-health-check.html. </p>
      */
     inline HealthCheckConfig& WithResourcePath(const char* value) { SetResourcePath(value); return *this;}
+
 
     /**
      * <p>Amazon Route 53 behavior depends on whether you specify a value for
@@ -933,6 +938,7 @@ namespace Model
      */
     inline HealthCheckConfig& WithFullyQualifiedDomainName(const char* value) { SetFullyQualifiedDomainName(value); return *this;}
 
+
     /**
      * <p>If the value of Type is <code>HTTP_STR_MATCH</code> or
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to search
@@ -1003,6 +1009,7 @@ namespace Model
      */
     inline HealthCheckConfig& WithSearchString(const char* value) { SetSearchString(value); return *this;}
 
+
     /**
      * <p>The number of seconds between the time that Amazon Route 53 gets a response
      * from your endpoint and the time that it sends the next health check request.
@@ -1032,6 +1039,7 @@ namespace Model
      * <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
      */
     inline HealthCheckConfig& WithRequestInterval(int value) { SetRequestInterval(value); return *this;}
+
 
     /**
      * <p>The number of consecutive health checks that an endpoint must pass or fail
@@ -1066,6 +1074,7 @@ namespace Model
      */
     inline HealthCheckConfig& WithFailureThreshold(int value) { SetFailureThreshold(value); return *this;}
 
+
     /**
      * <p>Specify whether you want Amazon Route 53 to measure the latency between
      * health checkers in multiple AWS regions and your endpoint, and to display
@@ -1093,6 +1102,7 @@ namespace Model
      */
     inline HealthCheckConfig& WithMeasureLatency(bool value) { SetMeasureLatency(value); return *this;}
 
+
     /**
      * <p>Specify whether you want Amazon Route 53 to invert the status of a health
      * check, for example, to consider a health check unhealthy when it otherwise would
@@ -1113,6 +1123,7 @@ namespace Model
      * be considered healthy.</p>
      */
     inline HealthCheckConfig& WithInverted(bool value) { SetInverted(value); return *this;}
+
 
     /**
      * <p>The number of child health checks that are associated with a
@@ -1158,6 +1169,7 @@ namespace Model
      * always considers this health check to be healthy.</p> </li> </ul>
      */
     inline HealthCheckConfig& WithHealthThreshold(int value) { SetHealthThreshold(value); return *this;}
+
 
     /**
      * <p>(CALCULATED Health Checks Only) A complex type that contains one
@@ -1214,6 +1226,7 @@ namespace Model
      * associate with a <code>CALCULATED</code> health check.</p>
      */
     inline HealthCheckConfig& AddChildHealthChecks(const char* value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks.push_back(value); return *this; }
+
 
     /**
      * <p>Specify whether you want Amazon Route 53 to send the value of
@@ -1286,6 +1299,7 @@ namespace Model
      * <code>client_hello</code> message.</p>
      */
     inline HealthCheckConfig& WithEnableSNI(bool value) { SetEnableSNI(value); return *this;}
+
 
     /**
      * <p>A complex type that contains one <code>Region</code> element for each region
@@ -1378,6 +1392,7 @@ namespace Model
      */
     inline HealthCheckConfig& AddRegions(HealthCheckRegion&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A complex type that identifies the CloudWatch alarm that you want Amazon
      * Route 53 health checkers to use to determine whether this health check is
@@ -1412,6 +1427,7 @@ namespace Model
      * healthy.</p>
      */
     inline HealthCheckConfig& WithAlarmIdentifier(AlarmIdentifier&& value) { SetAlarmIdentifier(std::move(value)); return *this;}
+
 
     /**
      * <p>When CloudWatch has insufficient data about the metric to determine the alarm
@@ -1479,36 +1495,52 @@ namespace Model
     inline HealthCheckConfig& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_iPAddress;
     bool m_iPAddressHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     HealthCheckType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_resourcePath;
     bool m_resourcePathHasBeenSet;
+
     Aws::String m_fullyQualifiedDomainName;
     bool m_fullyQualifiedDomainNameHasBeenSet;
+
     Aws::String m_searchString;
     bool m_searchStringHasBeenSet;
+
     int m_requestInterval;
     bool m_requestIntervalHasBeenSet;
+
     int m_failureThreshold;
     bool m_failureThresholdHasBeenSet;
+
     bool m_measureLatency;
     bool m_measureLatencyHasBeenSet;
+
     bool m_inverted;
     bool m_invertedHasBeenSet;
+
     int m_healthThreshold;
     bool m_healthThresholdHasBeenSet;
+
     Aws::Vector<Aws::String> m_childHealthChecks;
     bool m_childHealthChecksHasBeenSet;
+
     bool m_enableSNI;
     bool m_enableSNIHasBeenSet;
+
     Aws::Vector<HealthCheckRegion> m_regions;
     bool m_regionsHasBeenSet;
+
     AlarmIdentifier m_alarmIdentifier;
     bool m_alarmIdentifierHasBeenSet;
+
     InsufficientDataHealthStatus m_insufficientDataHealthStatus;
     bool m_insufficientDataHealthStatusHasBeenSet;
   };

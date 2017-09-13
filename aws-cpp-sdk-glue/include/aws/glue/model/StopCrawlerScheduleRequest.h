@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the crawler whose schedule state to set.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline StopCrawlerScheduleRequest& WithCrawlerName(const char* value) { SetCrawlerName(value); return *this;}
 
   private:
+
     Aws::String m_crawlerName;
     bool m_crawlerNameHasBeenSet;
   };

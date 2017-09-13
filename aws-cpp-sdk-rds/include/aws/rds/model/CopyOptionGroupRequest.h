@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a
@@ -148,6 +149,7 @@ namespace Model
      */
     inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(const char* value) { SetSourceOptionGroupIdentifier(value); return *this;}
 
+
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
@@ -211,6 +213,7 @@ namespace Model
      */
     inline CopyOptionGroupRequest& WithTargetOptionGroupIdentifier(const char* value) { SetTargetOptionGroupIdentifier(value); return *this;}
 
+
     /**
      * <p>The description for the copied option group.</p>
      */
@@ -246,6 +249,7 @@ namespace Model
      */
     inline CopyOptionGroupRequest& WithTargetOptionGroupDescription(const char* value) { SetTargetOptionGroupDescription(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -268,12 +272,16 @@ namespace Model
     inline CopyOptionGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_sourceOptionGroupIdentifier;
     bool m_sourceOptionGroupIdentifierHasBeenSet;
+
     Aws::String m_targetOptionGroupIdentifier;
     bool m_targetOptionGroupIdentifierHasBeenSet;
+
     Aws::String m_targetOptionGroupDescription;
     bool m_targetOptionGroupDescriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

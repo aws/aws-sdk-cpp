@@ -57,6 +57,7 @@ namespace Model
     WebACL& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
      * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
@@ -120,6 +121,7 @@ namespace Model
      */
     inline WebACL& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
+
     /**
      * <p>A friendly name or description of the <code>WebACL</code>. You can't change
      * the name of a <code>WebACL</code> after you create it.</p>
@@ -161,6 +163,7 @@ namespace Model
      * the name of a <code>WebACL</code> after you create it.</p>
      */
     inline WebACL& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
@@ -218,6 +221,7 @@ namespace Model
      */
     inline WebACL& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
+
     /**
      * <p>The action to perform if none of the <code>Rules</code> contained in the
      * <code>WebACL</code> match. The action is specified by the <a>WafAction</a>
@@ -252,6 +256,7 @@ namespace Model
      * object.</p>
      */
     inline WebACL& WithDefaultAction(WafAction&& value) { SetDefaultAction(std::move(value)); return *this;}
+
 
     /**
      * <p>An array that contains the action for each <code>Rule</code> in a
@@ -303,14 +308,19 @@ namespace Model
     inline WebACL& AddRules(ActivatedRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     WafAction m_defaultAction;
     bool m_defaultActionHasBeenSet;
+
     Aws::Vector<ActivatedRule> m_rules;
     bool m_rulesHasBeenSet;
   };

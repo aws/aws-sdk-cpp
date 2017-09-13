@@ -31,12 +31,12 @@ SetInstanceProtectionResult::SetInstanceProtectionResult()
 {
 }
 
-SetInstanceProtectionResult::SetInstanceProtectionResult(const AmazonWebServiceResult<XmlDocument>& result)
+SetInstanceProtectionResult::SetInstanceProtectionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SetInstanceProtectionResult& SetInstanceProtectionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SetInstanceProtectionResult& SetInstanceProtectionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

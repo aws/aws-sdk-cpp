@@ -30,12 +30,12 @@ ListResourceDataSyncResult::ListResourceDataSyncResult()
 {
 }
 
-ListResourceDataSyncResult::ListResourceDataSyncResult(const AmazonWebServiceResult<JsonValue>& result)
+ListResourceDataSyncResult::ListResourceDataSyncResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListResourceDataSyncResult& ListResourceDataSyncResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListResourceDataSyncResult& ListResourceDataSyncResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ResourceDataSyncItems"))

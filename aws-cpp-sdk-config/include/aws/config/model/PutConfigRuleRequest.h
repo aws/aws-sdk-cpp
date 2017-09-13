@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The rule that you want to add to your account.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
     inline PutConfigRuleRequest& WithConfigRule(ConfigRule&& value) { SetConfigRule(std::move(value)); return *this;}
 
   private:
+
     ConfigRule m_configRule;
     bool m_configRuleHasBeenSet;
   };

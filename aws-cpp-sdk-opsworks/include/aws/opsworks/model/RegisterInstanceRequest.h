@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the stack that the instance is to be registered with.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The ID of the stack that the instance is to be registered with.</p>
      */
     inline RegisterInstanceRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The instance's hostname.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline RegisterInstanceRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
 
+
     /**
      * <p>The instance's public IP address.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      */
     inline RegisterInstanceRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+
     /**
      * <p>The instance's private IP address.</p>
      */
@@ -176,6 +180,7 @@ namespace Model
      * <p>The instance's private IP address.</p>
      */
     inline RegisterInstanceRequest& WithPrivateIp(const char* value) { SetPrivateIp(value); return *this;}
+
 
     /**
      * <p>The instances public RSA key. This key is used to encrypt communication
@@ -219,6 +224,7 @@ namespace Model
      */
     inline RegisterInstanceRequest& WithRsaPublicKey(const char* value) { SetRsaPublicKey(value); return *this;}
 
+
     /**
      * <p>The instances public RSA key fingerprint.</p>
      */
@@ -254,6 +260,7 @@ namespace Model
      */
     inline RegisterInstanceRequest& WithRsaPublicKeyFingerprint(const char* value) { SetRsaPublicKeyFingerprint(value); return *this;}
 
+
     /**
      * <p>An InstanceIdentity object that contains the instance's identity.</p>
      */
@@ -280,18 +287,25 @@ namespace Model
     inline RegisterInstanceRequest& WithInstanceIdentity(InstanceIdentity&& value) { SetInstanceIdentity(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
+
     Aws::String m_privateIp;
     bool m_privateIpHasBeenSet;
+
     Aws::String m_rsaPublicKey;
     bool m_rsaPublicKeyHasBeenSet;
+
     Aws::String m_rsaPublicKeyFingerprint;
     bool m_rsaPublicKeyFingerprintHasBeenSet;
+
     InstanceIdentity m_instanceIdentity;
     bool m_instanceIdentityHasBeenSet;
   };

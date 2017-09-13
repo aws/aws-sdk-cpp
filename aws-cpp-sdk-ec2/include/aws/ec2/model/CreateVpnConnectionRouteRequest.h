@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The CIDR block associated with the local subnet of the customer network.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The CIDR block associated with the local subnet of the customer network.</p>
      */
     inline CreateVpnConnectionRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+
 
     /**
      * <p>The ID of the VPN connection.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline CreateVpnConnectionRouteRequest& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
 
   private:
+
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
+
     Aws::String m_vpnConnectionId;
     bool m_vpnConnectionIdHasBeenSet;
   };

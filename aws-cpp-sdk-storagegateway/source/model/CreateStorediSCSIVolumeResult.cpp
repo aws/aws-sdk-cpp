@@ -31,13 +31,13 @@ CreateStorediSCSIVolumeResult::CreateStorediSCSIVolumeResult() :
 {
 }
 
-CreateStorediSCSIVolumeResult::CreateStorediSCSIVolumeResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateStorediSCSIVolumeResult::CreateStorediSCSIVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_volumeSizeInBytes(0)
 {
   *this = result;
 }
 
-CreateStorediSCSIVolumeResult& CreateStorediSCSIVolumeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateStorediSCSIVolumeResult& CreateStorediSCSIVolumeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("VolumeARN"))

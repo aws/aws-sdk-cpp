@@ -31,12 +31,14 @@ namespace Model
 {
 
 IpRange::IpRange() : 
-    m_cidrIpHasBeenSet(false)
+    m_cidrIpHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
 IpRange::IpRange(const XmlNode& xmlNode) : 
-    m_cidrIpHasBeenSet(false)
+    m_cidrIpHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +55,12 @@ IpRange& IpRange::operator =(const XmlNode& xmlNode)
       m_cidrIp = StringUtils::Trim(cidrIpNode.GetText().c_str());
       m_cidrIpHasBeenSet = true;
     }
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -65,6 +73,11 @@ void IpRange::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".CidrIp=" << StringUtils::URLEncode(m_cidrIp.c_str()) << "&";
   }
 
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
 }
 
 void IpRange::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -72,6 +85,10 @@ void IpRange::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_cidrIpHasBeenSet)
   {
       oStream << location << ".CidrIp=" << StringUtils::URLEncode(m_cidrIp.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
 

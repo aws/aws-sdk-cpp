@@ -50,6 +50,7 @@ namespace Model
     FindingFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>For a record to match a filter, one of the values that is specified for this
      * data type property must be the exact match of the value of the <b>agentId</b>
@@ -105,6 +106,7 @@ namespace Model
      * property of the <a>Finding</a> data type.</p>
      */
     inline FindingFilter& AddAgentIds(const char* value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
+
 
     /**
      * <p>For a record to match a filter, one of the values that is specified for this
@@ -162,6 +164,7 @@ namespace Model
      */
     inline FindingFilter& AddAutoScalingGroups(const char* value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
+
     /**
      * <p>For a record to match a filter, one of the values that is specified for this
      * data type property must be the exact match of the value of the <b>ruleName</b>
@@ -218,6 +221,7 @@ namespace Model
      */
     inline FindingFilter& AddRuleNames(const char* value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(value); return *this; }
 
+
     /**
      * <p>For a record to match a filter, one of the values that is specified for this
      * data type property must be the exact match of the value of the <b>severity</b>
@@ -266,6 +270,7 @@ namespace Model
      * property of the <a>Finding</a> data type.</p>
      */
     inline FindingFilter& AddSeverities(Severity&& value) { m_severitiesHasBeenSet = true; m_severities.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>For a record to match a filter, one of the values that is specified for this
@@ -323,6 +328,7 @@ namespace Model
      */
     inline FindingFilter& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
 
+
     /**
      * <p>For a record to match a filter, the list of values that are specified for
      * this data type property must be contained in the list of values of the
@@ -371,6 +377,7 @@ namespace Model
      * <b>attributes</b> property of the <a>Finding</a> data type.</p>
      */
     inline FindingFilter& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>For a record to match a filter, the value that is specified for this data
@@ -421,6 +428,7 @@ namespace Model
      */
     inline FindingFilter& AddUserAttributes(Attribute&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time range during which the finding is generated.</p>
      */
@@ -447,20 +455,28 @@ namespace Model
     inline FindingFilter& WithCreationTimeRange(TimestampRange&& value) { SetCreationTimeRange(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_agentIds;
     bool m_agentIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_autoScalingGroups;
     bool m_autoScalingGroupsHasBeenSet;
+
     Aws::Vector<Aws::String> m_ruleNames;
     bool m_ruleNamesHasBeenSet;
+
     Aws::Vector<Severity> m_severities;
     bool m_severitiesHasBeenSet;
+
     Aws::Vector<Aws::String> m_rulesPackageArns;
     bool m_rulesPackageArnsHasBeenSet;
+
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::Vector<Attribute> m_userAttributes;
     bool m_userAttributesHasBeenSet;
+
     TimestampRange m_creationTimeRange;
     bool m_creationTimeRangeHasBeenSet;
   };

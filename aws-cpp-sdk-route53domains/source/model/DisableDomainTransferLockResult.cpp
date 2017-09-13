@@ -30,12 +30,12 @@ DisableDomainTransferLockResult::DisableDomainTransferLockResult()
 {
 }
 
-DisableDomainTransferLockResult::DisableDomainTransferLockResult(const AmazonWebServiceResult<JsonValue>& result)
+DisableDomainTransferLockResult::DisableDomainTransferLockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisableDomainTransferLockResult& DisableDomainTransferLockResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisableDomainTransferLockResult& DisableDomainTransferLockResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OperationId"))

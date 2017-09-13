@@ -50,6 +50,7 @@ namespace Model
     ProjectEnvironment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of build environment to use for related builds.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The type of build environment to use for related builds.</p>
      */
     inline ProjectEnvironment& WithType(EnvironmentType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
@@ -109,6 +111,7 @@ namespace Model
      * <p>The ID of the Docker image to use for this build project.</p>
      */
     inline ProjectEnvironment& WithImage(const char* value) { SetImage(value); return *this;}
+
 
     /**
      * <p>Information about the compute resources the build project will use. Available
@@ -160,6 +163,7 @@ namespace Model
      */
     inline ProjectEnvironment& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
+
     /**
      * <p>A set of environment variables to make available to builds for this build
      * project.</p>
@@ -202,6 +206,7 @@ namespace Model
      */
     inline ProjectEnvironment& AddEnvironmentVariables(EnvironmentVariable&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If set to true, enables running the Docker daemon inside a Docker container;
      * otherwise, false or not specified (the default). This value must be set to true
@@ -215,8 +220,8 @@ namespace Model
      * specified build environment image is provided by AWS CodeBuild with Docker
      * support.)</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .;
-     * sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo
+     * .; sleep 1; done"</code> </p>
      */
     inline bool GetPrivilegedMode() const{ return m_privilegedMode; }
 
@@ -233,8 +238,8 @@ namespace Model
      * specified build environment image is provided by AWS CodeBuild with Docker
      * support.)</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .;
-     * sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo
+     * .; sleep 1; done"</code> </p>
      */
     inline void SetPrivilegedMode(bool value) { m_privilegedModeHasBeenSet = true; m_privilegedMode = value; }
 
@@ -251,20 +256,25 @@ namespace Model
      * specified build environment image is provided by AWS CodeBuild with Docker
      * support.)</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .;
-     * sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo
+     * .; sleep 1; done"</code> </p>
      */
     inline ProjectEnvironment& WithPrivilegedMode(bool value) { SetPrivilegedMode(value); return *this;}
 
   private:
+
     EnvironmentType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
     ComputeType m_computeType;
     bool m_computeTypeHasBeenSet;
+
     Aws::Vector<EnvironmentVariable> m_environmentVariables;
     bool m_environmentVariablesHasBeenSet;
+
     bool m_privilegedMode;
     bool m_privilegedModeHasBeenSet;
   };

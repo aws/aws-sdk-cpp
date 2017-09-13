@@ -52,8 +52,9 @@ namespace Model
   {
   public:
     CreateEnvironmentResult();
-    CreateEnvironmentResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateEnvironmentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The name of this environment.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The ID of this environment.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The ID of this environment.</p>
      */
     inline CreateEnvironmentResult& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The name of the application associated with this environment.</p>
@@ -160,6 +163,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The application version deployed in this environment.</p>
      */
@@ -194,6 +198,7 @@ namespace Model
      * <p>The application version deployed in this environment.</p>
      */
     inline CreateEnvironmentResult& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+
 
     /**
      * <p> The name of the <code>SolutionStack</code> deployed with this environment.
@@ -237,6 +242,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
+
     /**
      * <p>The ARN of the platform.</p>
      */
@@ -271,6 +277,7 @@ namespace Model
      * <p>The ARN of the platform.</p>
      */
     inline CreateEnvironmentResult& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
 
     /**
      * <p>The name of the configuration template used to originally launch this
@@ -314,6 +321,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
+
     /**
      * <p>Describes this environment.</p>
      */
@@ -348,6 +356,7 @@ namespace Model
      * <p>Describes this environment.</p>
      */
     inline CreateEnvironmentResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
@@ -391,6 +400,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithEndpointURL(const char* value) { SetEndpointURL(value); return *this;}
 
+
     /**
      * <p>The URL to the CNAME for this environment.</p>
      */
@@ -426,6 +436,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithCNAME(const char* value) { SetCNAME(value); return *this;}
 
+
     /**
      * <p>The creation date for this environment.</p>
      */
@@ -451,6 +462,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
 
+
     /**
      * <p>The last modified date for this environment.</p>
      */
@@ -475,6 +487,7 @@ namespace Model
      * <p>The last modified date for this environment.</p>
      */
     inline CreateEnvironmentResult& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
+
 
     /**
      * <p>The current operational status of the environment:</p> <ul> <li> <p>
@@ -536,6 +549,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithStatus(EnvironmentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates if there is an in-progress environment configuration update or
      * application version deployment that you can cancel.</p> <p> <code>true:</code>
@@ -559,6 +573,7 @@ namespace Model
      * updates currently in progress. </p>
      */
     inline CreateEnvironmentResult& WithAbortableOperationInProgress(bool value) { SetAbortableOperationInProgress(value); return *this;}
+
 
     /**
      * <p>Describes the health status of the environment. AWS Elastic Beanstalk
@@ -640,6 +655,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithHealth(EnvironmentHealth&& value) { SetHealth(std::move(value)); return *this;}
 
+
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
@@ -680,6 +696,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithHealthStatus(EnvironmentHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The description of the AWS resources used by this environment.</p>
      */
@@ -705,6 +722,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithResources(EnvironmentResourcesDescription&& value) { SetResources(std::move(value)); return *this;}
 
+
     /**
      * <p>Describes the current tier of this environment.</p>
      */
@@ -729,6 +747,7 @@ namespace Model
      * <p>Describes the current tier of this environment.</p>
      */
     inline CreateEnvironmentResult& WithTier(EnvironmentTier&& value) { SetTier(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of links to other environments in the same group.</p>
@@ -764,6 +783,7 @@ namespace Model
      * <p>A list of links to other environments in the same group.</p>
      */
     inline CreateEnvironmentResult& AddEnvironmentLinks(EnvironmentLink&& value) { m_environmentLinks.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The environment's Amazon Resource Name (ARN), which can be used in other API
@@ -807,6 +827,7 @@ namespace Model
      */
     inline CreateEnvironmentResult& WithEnvironmentArn(const char* value) { SetEnvironmentArn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -823,26 +844,47 @@ namespace Model
     inline CreateEnvironmentResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_environmentName;
+
     Aws::String m_environmentId;
+
     Aws::String m_applicationName;
+
     Aws::String m_versionLabel;
+
     Aws::String m_solutionStackName;
+
     Aws::String m_platformArn;
+
     Aws::String m_templateName;
+
     Aws::String m_description;
+
     Aws::String m_endpointURL;
+
     Aws::String m_cNAME;
+
     Aws::Utils::DateTime m_dateCreated;
+
     Aws::Utils::DateTime m_dateUpdated;
+
     EnvironmentStatus m_status;
+
     bool m_abortableOperationInProgress;
+
     EnvironmentHealth m_health;
+
     EnvironmentHealthStatus m_healthStatus;
+
     EnvironmentResourcesDescription m_resources;
+
     EnvironmentTier m_tier;
+
     Aws::Vector<EnvironmentLink> m_environmentLinks;
+
     Aws::String m_environmentArn;
+
     ResponseMetadata m_responseMetadata;
   };
 

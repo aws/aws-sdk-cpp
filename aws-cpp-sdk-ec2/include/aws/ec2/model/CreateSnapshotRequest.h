@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A description for the snapshot.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>A description for the snapshot.</p>
      */
     inline CreateSnapshotRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The ID of the EBS volume.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline CreateSnapshotRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -136,10 +139,13 @@ namespace Model
     inline CreateSnapshotRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

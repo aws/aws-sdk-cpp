@@ -30,12 +30,12 @@ CreateCommentResult::CreateCommentResult()
 {
 }
 
-CreateCommentResult::CreateCommentResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateCommentResult::CreateCommentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateCommentResult& CreateCommentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateCommentResult& CreateCommentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Comment"))

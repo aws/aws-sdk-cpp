@@ -46,6 +46,7 @@ namespace Model
     BatchAttachTypedLinkResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Returns a typed link specifier as output.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline BatchAttachTypedLinkResponse& WithTypedLinkSpecifier(TypedLinkSpecifier&& value) { SetTypedLinkSpecifier(std::move(value)); return *this;}
 
   private:
+
     TypedLinkSpecifier m_typedLinkSpecifier;
     bool m_typedLinkSpecifierHasBeenSet;
   };

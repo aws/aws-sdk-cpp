@@ -32,13 +32,13 @@ CreateRouteResponse::CreateRouteResponse() :
 {
 }
 
-CreateRouteResponse::CreateRouteResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+CreateRouteResponse::CreateRouteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-CreateRouteResponse& CreateRouteResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateRouteResponse& CreateRouteResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

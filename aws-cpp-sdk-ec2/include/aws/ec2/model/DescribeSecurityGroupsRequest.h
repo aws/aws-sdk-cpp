@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
@@ -268,6 +269,7 @@ namespace Model
      */
     inline DescribeSecurityGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more security group IDs. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
@@ -315,6 +317,7 @@ namespace Model
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+
 
     /**
      * <p>[EC2-Classic and default VPC only] One or more security group names. You can
@@ -380,6 +383,7 @@ namespace Model
      */
     inline DescribeSecurityGroupsRequest& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -405,12 +409,16 @@ namespace Model
     inline DescribeSecurityGroupsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_groupIds;
     bool m_groupIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_groupNames;
     bool m_groupNamesHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

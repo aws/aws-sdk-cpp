@@ -30,12 +30,12 @@ CreateProjectResult::CreateProjectResult()
 {
 }
 
-CreateProjectResult::CreateProjectResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateProjectResult::CreateProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateProjectResult& CreateProjectResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateProjectResult& CreateProjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

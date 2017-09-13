@@ -38,6 +38,7 @@ namespace Model
     GetHealthCheckRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier that Amazon Route 53 assigned to the health check when you
      * created it. When you add or update a resource record set, you use this value to
@@ -95,6 +96,7 @@ namespace Model
     inline GetHealthCheckRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
 
   private:
+
     Aws::String m_healthCheckId;
     bool m_healthCheckIdHasBeenSet;
   };

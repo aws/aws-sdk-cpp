@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing Read
@@ -111,6 +112,7 @@ namespace Model
      */
     inline PromoteReadReplicaRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>The number of days to retain automated backups. Setting this parameter to a
      * positive number enables backups. Setting this parameter to 0 disables automated
@@ -134,6 +136,7 @@ namespace Model
      * from 0 to 8</p> </li> </ul>
      */
     inline PromoteReadReplicaRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
+
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -241,10 +244,13 @@ namespace Model
     inline PromoteReadReplicaRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
   };

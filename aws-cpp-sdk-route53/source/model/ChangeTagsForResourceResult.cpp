@@ -29,12 +29,12 @@ ChangeTagsForResourceResult::ChangeTagsForResourceResult()
 {
 }
 
-ChangeTagsForResourceResult::ChangeTagsForResourceResult(const AmazonWebServiceResult<XmlDocument>& result)
+ChangeTagsForResourceResult::ChangeTagsForResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ChangeTagsForResourceResult& ChangeTagsForResourceResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ChangeTagsForResourceResult& ChangeTagsForResourceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

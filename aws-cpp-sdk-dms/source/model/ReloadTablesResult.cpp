@@ -30,12 +30,12 @@ ReloadTablesResult::ReloadTablesResult()
 {
 }
 
-ReloadTablesResult::ReloadTablesResult(const AmazonWebServiceResult<JsonValue>& result)
+ReloadTablesResult::ReloadTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ReloadTablesResult& ReloadTablesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ReloadTablesResult& ReloadTablesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ReplicationTaskArn"))

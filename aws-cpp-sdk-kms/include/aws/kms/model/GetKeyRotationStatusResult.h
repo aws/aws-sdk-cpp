@@ -36,8 +36,9 @@ namespace Model
   {
   public:
     GetKeyRotationStatusResult();
-    GetKeyRotationStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetKeyRotationStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetKeyRotationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A Boolean value that specifies whether key rotation is enabled.</p>
@@ -55,6 +56,7 @@ namespace Model
     inline GetKeyRotationStatusResult& WithKeyRotationEnabled(bool value) { SetKeyRotationEnabled(value); return *this;}
 
   private:
+
     bool m_keyRotationEnabled;
   };
 

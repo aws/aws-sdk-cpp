@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListResourcesForWebACLResult();
-    ListResourcesForWebACLResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourcesForWebACLResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourcesForWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourcesForWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of ARNs (Amazon Resource Names) of the resources associated with the
@@ -99,6 +100,7 @@ namespace Model
     inline ListResourcesForWebACLResult& AddResourceArns(const char* value) { m_resourceArns.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_resourceArns;
   };
 

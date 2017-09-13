@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A continuation token, if this is a continuation call.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>A continuation token, if this is a continuation call.</p>
      */
     inline GetTriggersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>The name of the job for which to retrieve triggers.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline GetTriggersRequest& WithDependentJobName(const char* value) { SetDependentJobName(value); return *this;}
 
+
     /**
      * <p>The maximum size of the response.</p>
      */
@@ -122,10 +125,13 @@ namespace Model
     inline GetTriggersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::String m_dependentJobName;
     bool m_dependentJobNameHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

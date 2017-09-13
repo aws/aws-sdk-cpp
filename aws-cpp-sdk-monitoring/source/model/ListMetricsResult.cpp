@@ -31,12 +31,12 @@ ListMetricsResult::ListMetricsResult()
 {
 }
 
-ListMetricsResult::ListMetricsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListMetricsResult::ListMetricsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListMetricsResult& ListMetricsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListMetricsResult& ListMetricsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

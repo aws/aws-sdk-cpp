@@ -51,6 +51,7 @@ namespace Model
     DataSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID that is assigned to the <code>DataSource</code> during creation.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The ID that is assigned to the <code>DataSource</code> during creation.</p>
      */
     inline DataSource& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+
 
     /**
      * <p>The location and name of the data in Amazon Simple Storage Service (Amazon
@@ -128,6 +130,7 @@ namespace Model
      */
     inline DataSource& WithDataLocationS3(const char* value) { SetDataLocationS3(value); return *this;}
 
+
     /**
      * <p>A JSON string that represents the splitting and rearrangement requirement
      * used when this <code>DataSource</code> was created.</p>
@@ -169,6 +172,7 @@ namespace Model
      * used when this <code>DataSource</code> was created.</p>
      */
     inline DataSource& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
+
 
     /**
      * <p>The AWS user account from which the <code>DataSource</code> was created. The
@@ -219,6 +223,7 @@ namespace Model
      */
     inline DataSource& WithCreatedByIamUser(const char* value) { SetCreatedByIamUser(value); return *this;}
 
+
     /**
      * <p>The time that the <code>DataSource</code> was created. The time is expressed
      * in epoch time.</p>
@@ -248,6 +253,7 @@ namespace Model
      * in epoch time.</p>
      */
     inline DataSource& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
@@ -279,6 +285,7 @@ namespace Model
      */
     inline DataSource& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The total number of observations contained in the data files that the
      * <code>DataSource</code> references.</p>
@@ -297,6 +304,7 @@ namespace Model
      */
     inline DataSource& WithDataSizeInBytes(long long value) { SetDataSizeInBytes(value); return *this;}
 
+
     /**
      * <p>The number of data files referenced by the <code>DataSource</code>.</p>
      */
@@ -311,6 +319,7 @@ namespace Model
      * <p>The number of data files referenced by the <code>DataSource</code>.</p>
      */
     inline DataSource& WithNumberOfFiles(long long value) { SetNumberOfFiles(value); return *this;}
+
 
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>.</p>
@@ -346,6 +355,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>DataSource</code>.</p>
      */
     inline DataSource& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
@@ -402,6 +412,7 @@ namespace Model
      */
     inline DataSource& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>A description of the most recent details about creating the
      * <code>DataSource</code>.</p>
@@ -444,6 +455,7 @@ namespace Model
      */
     inline DataSource& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     
     inline const RedshiftMetadata& GetRedshiftMetadata() const{ return m_redshiftMetadata; }
 
@@ -459,6 +471,7 @@ namespace Model
     
     inline DataSource& WithRedshiftMetadata(RedshiftMetadata&& value) { SetRedshiftMetadata(std::move(value)); return *this;}
 
+
     
     inline const RDSMetadata& GetRDSMetadata() const{ return m_rDSMetadata; }
 
@@ -473,6 +486,7 @@ namespace Model
 
     
     inline DataSource& WithRDSMetadata(RDSMetadata&& value) { SetRDSMetadata(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
@@ -495,6 +509,7 @@ namespace Model
     
     inline DataSource& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p> The parameter is <code>true</code> if statistics need to be generated from
      * the observation data. </p>
@@ -513,6 +528,7 @@ namespace Model
      */
     inline DataSource& WithComputeStatistics(bool value) { SetComputeStatistics(value); return *this;}
 
+
     
     inline long long GetComputeTime() const{ return m_computeTime; }
 
@@ -521,6 +537,7 @@ namespace Model
 
     
     inline DataSource& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
@@ -536,6 +553,7 @@ namespace Model
 
     
     inline DataSource& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
@@ -553,40 +571,58 @@ namespace Model
     inline DataSource& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet;
+
     Aws::String m_dataLocationS3;
     bool m_dataLocationS3HasBeenSet;
+
     Aws::String m_dataRearrangement;
     bool m_dataRearrangementHasBeenSet;
+
     Aws::String m_createdByIamUser;
     bool m_createdByIamUserHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
+
     long long m_dataSizeInBytes;
     bool m_dataSizeInBytesHasBeenSet;
+
     long long m_numberOfFiles;
     bool m_numberOfFilesHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     EntityStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     RedshiftMetadata m_redshiftMetadata;
     bool m_redshiftMetadataHasBeenSet;
+
     RDSMetadata m_rDSMetadata;
     bool m_rDSMetadataHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     bool m_computeStatistics;
     bool m_computeStatisticsHasBeenSet;
+
     long long m_computeTime;
     bool m_computeTimeHasBeenSet;
+
     Aws::Utils::DateTime m_finishedAt;
     bool m_finishedAtHasBeenSet;
+
     Aws::Utils::DateTime m_startedAt;
     bool m_startedAtHasBeenSet;
   };

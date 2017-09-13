@@ -21,7 +21,7 @@
 
 # By default:
 #   The cmake files will all be in <prefix>/lib/cmake dir
-#   The hearders will all be in <prefix>/include dir
+#   The headers will all be in <prefix>/include dir
 
 #   The libraries will all be in <prefix>/lib/<platform_prefix> dir
 #   The binaries will all be in <prefix>/bin/<platform_prefix> dir
@@ -31,10 +31,9 @@
 # Platfrom_prefix is determined on compile time nbu option SIMPLE_INSTALL
 # such as "<linux/intel64>"
 
-unset(AWSSDK_FOUND CACHE)
-
-# set default platform prefix to "", but it could be inherited from platfromDeps if any
-unset(AWSSDK_PLATFORM_PREFIX CACHE)
+if(AWSSDK_FOUND)
+    return()
+endif()
 
 include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
@@ -129,7 +128,7 @@ endwhile()
 
 set(AWSSDK_PLATFORM_PREFIX "${TEMP_PLATFORM_PREFIX}")
 
-set(AWSSDK_FOUND "1")
+set(AWSSDK_FOUND TRUE)
 set(AWSSDK_INCLUDE_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}")
 set(AWSSDK_CMAKE_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/cmake")
 set(AWSSDK_LIB_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_LIBDIR}/${AWSSDK_PLATFORM_PREFIX}")

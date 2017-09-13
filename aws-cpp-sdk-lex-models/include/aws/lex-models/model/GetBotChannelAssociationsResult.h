@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetBotChannelAssociationsResult();
-    GetBotChannelAssociationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBotChannelAssociationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotChannelAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotChannelAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of objects, one for each association, that provides information
@@ -84,6 +85,7 @@ namespace Model
      * about the Amazon Lex bot and its association with the channel. </p>
      */
     inline GetBotChannelAssociationsResult& AddBotChannelAssociations(BotChannelAssociation&& value) { m_botChannelAssociations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token that fetches the next page of associations. If the
@@ -142,7 +144,9 @@ namespace Model
     inline GetBotChannelAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<BotChannelAssociation> m_botChannelAssociations;
+
     Aws::String m_nextToken;
   };
 

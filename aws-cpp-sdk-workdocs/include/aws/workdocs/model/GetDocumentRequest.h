@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline GetDocumentRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the document.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline GetDocumentRequest& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
 
+
     /**
      * <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
      */
@@ -135,10 +138,13 @@ namespace Model
     inline GetDocumentRequest& WithIncludeCustomMetadata(bool value) { SetIncludeCustomMetadata(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_documentId;
     bool m_documentIdHasBeenSet;
+
     bool m_includeCustomMetadata;
     bool m_includeCustomMetadataHasBeenSet;
   };

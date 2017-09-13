@@ -53,6 +53,7 @@ namespace Model
     ConsumedCapacity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the table that was affected by the operation.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ConsumedCapacity& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>The total number of capacity units consumed by the operation.</p>
      */
@@ -102,6 +104,7 @@ namespace Model
      * <p>The total number of capacity units consumed by the operation.</p>
      */
     inline ConsumedCapacity& WithCapacityUnits(double value) { SetCapacityUnits(value); return *this;}
+
 
     /**
      * <p>The amount of throughput consumed on the table affected by the operation.</p>
@@ -127,6 +130,7 @@ namespace Model
      * <p>The amount of throughput consumed on the table affected by the operation.</p>
      */
     inline ConsumedCapacity& WithTable(Capacity&& value) { SetTable(std::move(value)); return *this;}
+
 
     /**
      * <p>The amount of throughput consumed on each local index affected by the
@@ -193,6 +197,7 @@ namespace Model
      * operation.</p>
      */
     inline ConsumedCapacity& AddLocalSecondaryIndexes(const char* key, const Capacity& value) { m_localSecondaryIndexesHasBeenSet = true; m_localSecondaryIndexes.emplace(key, value); return *this; }
+
 
     /**
      * <p>The amount of throughput consumed on each global index affected by the
@@ -261,14 +266,19 @@ namespace Model
     inline ConsumedCapacity& AddGlobalSecondaryIndexes(const char* key, const Capacity& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     double m_capacityUnits;
     bool m_capacityUnitsHasBeenSet;
+
     Capacity m_table;
     bool m_tableHasBeenSet;
+
     Aws::Map<Aws::String, Capacity> m_localSecondaryIndexes;
     bool m_localSecondaryIndexesHasBeenSet;
+
     Aws::Map<Aws::String, Capacity> m_globalSecondaryIndexes;
     bool m_globalSecondaryIndexesHasBeenSet;
   };

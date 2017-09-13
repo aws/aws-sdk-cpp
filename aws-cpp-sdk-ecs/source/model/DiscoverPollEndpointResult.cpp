@@ -30,12 +30,12 @@ DiscoverPollEndpointResult::DiscoverPollEndpointResult()
 {
 }
 
-DiscoverPollEndpointResult::DiscoverPollEndpointResult(const AmazonWebServiceResult<JsonValue>& result)
+DiscoverPollEndpointResult::DiscoverPollEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DiscoverPollEndpointResult& DiscoverPollEndpointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DiscoverPollEndpointResult& DiscoverPollEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("endpoint"))

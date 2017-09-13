@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListFileSharesResult();
-    ListFileSharesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFileSharesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFileSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFileSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If the request includes <code>Marker</code>, the response returns that value
@@ -89,6 +90,7 @@ namespace Model
      * in this field. </p>
      */
     inline ListFileSharesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>If a value is present, there are more file shares to return. In a subsequent
@@ -139,6 +141,7 @@ namespace Model
      */
     inline ListFileSharesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>An array of information about the file gateway's file shares. </p>
      */
@@ -175,8 +178,11 @@ namespace Model
     inline ListFileSharesResult& AddFileShareInfoList(FileShareInfo&& value) { m_fileShareInfoList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_marker;
+
     Aws::String m_nextMarker;
+
     Aws::Vector<FileShareInfo> m_fileShareInfoList;
   };
 

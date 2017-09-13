@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The status of the EC2 security group.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline EC2SecurityGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The name of the EC2 Security Group.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The name of the EC2 Security Group.</p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
+
 
     /**
      * <p>The AWS ID of the owner of the EC2 security group specified in the
@@ -162,6 +165,7 @@ namespace Model
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
+
     /**
      * <p>The list of tags for the EC2 security group.</p>
      */
@@ -198,12 +202,16 @@ namespace Model
     inline EC2SecurityGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_eC2SecurityGroupName;
     bool m_eC2SecurityGroupNameHasBeenSet;
+
     Aws::String m_eC2SecurityGroupOwnerId;
     bool m_eC2SecurityGroupOwnerIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

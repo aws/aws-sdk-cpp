@@ -41,6 +41,7 @@ namespace Model
     UpdateGatewayResponseRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline UpdateGatewayResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p><p>The response type of the associated <a>GatewayResponse</a>. Valid values
@@ -126,6 +128,7 @@ namespace Model
      */
     inline UpdateGatewayResponseRequest& WithResponseType(GatewayResponseType&& value) { SetResponseType(std::move(value)); return *this;}
 
+
     /**
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
@@ -169,10 +172,13 @@ namespace Model
     inline UpdateGatewayResponseRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     GatewayResponseType m_responseType;
     bool m_responseTypeHasBeenSet;
+
     Aws::Vector<PatchOperation> m_patchOperations;
     bool m_patchOperationsHasBeenSet;
   };

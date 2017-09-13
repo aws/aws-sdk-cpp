@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a matchmaking ticket. To request all existing tickets,
      * leave this parameter empty.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline DescribeMatchmakingRequest& AddTicketIds(const char* value) { m_ticketIdsHasBeenSet = true; m_ticketIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_ticketIds;
     bool m_ticketIdsHasBeenSet;
   };

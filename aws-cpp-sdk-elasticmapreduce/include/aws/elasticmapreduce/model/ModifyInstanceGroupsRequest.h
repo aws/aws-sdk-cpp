@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the cluster to which the instance group belongs.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ID of the cluster to which the instance group belongs.</p>
      */
     inline ModifyInstanceGroupsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
 
     /**
      * <p>Instance groups to change.</p>
@@ -112,8 +114,10 @@ namespace Model
     inline ModifyInstanceGroupsRequest& AddInstanceGroups(InstanceGroupModifyConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::Vector<InstanceGroupModifyConfig> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet;
   };

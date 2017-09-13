@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A filter to view information about your activations.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline DescribeActivationsRequest& AddFilters(DescribeActivationsFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -93,6 +95,7 @@ namespace Model
      * results.</p>
      */
     inline DescribeActivationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A token to start the list. Use this token to get the next set of results.
@@ -137,10 +140,13 @@ namespace Model
     inline DescribeActivationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DescribeActivationsFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

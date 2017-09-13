@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GenerateDataKeyWithoutPlaintextResult();
-    GenerateDataKeyWithoutPlaintextResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateDataKeyWithoutPlaintextResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GenerateDataKeyWithoutPlaintextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GenerateDataKeyWithoutPlaintextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The encrypted data encryption key.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>The encrypted data encryption key.</p>
      */
     inline GenerateDataKeyWithoutPlaintextResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the CMK under which the data encryption key was generated
@@ -110,7 +112,9 @@ namespace Model
     inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_ciphertextBlob;
+
     Aws::String m_keyId;
   };
 

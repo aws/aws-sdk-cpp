@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The AWS service to which this role is attached. You use a string similar to a
      * URL but without the http:// in front. For example:
@@ -87,6 +88,7 @@ namespace Model
      */
     inline CreateServiceLinkedRoleRequest& WithAWSServiceName(const char* value) { SetAWSServiceName(value); return *this;}
 
+
     /**
      * <p>The description of the role.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The description of the role.</p>
      */
     inline CreateServiceLinkedRoleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A string that you provide, which is combined with the service name to form
@@ -186,10 +189,13 @@ namespace Model
     inline CreateServiceLinkedRoleRequest& WithCustomSuffix(const char* value) { SetCustomSuffix(value); return *this;}
 
   private:
+
     Aws::String m_aWSServiceName;
     bool m_aWSServiceNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_customSuffix;
     bool m_customSuffixHasBeenSet;
   };

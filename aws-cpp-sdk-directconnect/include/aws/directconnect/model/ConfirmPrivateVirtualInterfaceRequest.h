@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
 
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
+
 
     /**
      * <p>ID of the virtual private gateway that will be attached to the virtual
@@ -125,8 +127,10 @@ namespace Model
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
 
   private:
+
     Aws::String m_virtualInterfaceId;
     bool m_virtualInterfaceIdHasBeenSet;
+
     Aws::String m_virtualGatewayId;
     bool m_virtualGatewayIdHasBeenSet;
   };

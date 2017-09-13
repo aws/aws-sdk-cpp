@@ -48,6 +48,7 @@ namespace Model
     BatchGetObjectInformationResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The facets attached to the specified object.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The facets attached to the specified object.</p>
      */
     inline BatchGetObjectInformationResponse& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline BatchGetObjectInformationResponse& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::Vector<SchemaFacet> m_schemaFacets;
     bool m_schemaFacetsHasBeenSet;
+
     Aws::String m_objectIdentifier;
     bool m_objectIdentifierHasBeenSet;
   };

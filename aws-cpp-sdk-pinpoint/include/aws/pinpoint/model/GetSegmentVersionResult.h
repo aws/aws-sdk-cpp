@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetSegmentVersionResult();
-    GetSegmentVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSegmentVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSegmentVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSegmentVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const SegmentResponse& GetSegmentResponse() const{ return m_segmentResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline GetSegmentVersionResult& WithSegmentResponse(SegmentResponse&& value) { SetSegmentResponse(std::move(value)); return *this;}
 
   private:
+
     SegmentResponse m_segmentResponse;
   };
 

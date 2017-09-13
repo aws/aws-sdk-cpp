@@ -30,12 +30,12 @@ DescribeEventAggregatesResult::DescribeEventAggregatesResult()
 {
 }
 
-DescribeEventAggregatesResult::DescribeEventAggregatesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEventAggregatesResult::DescribeEventAggregatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeEventAggregatesResult& DescribeEventAggregatesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEventAggregatesResult& DescribeEventAggregatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("eventAggregates"))

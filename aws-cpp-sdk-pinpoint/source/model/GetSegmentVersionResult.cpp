@@ -30,12 +30,12 @@ GetSegmentVersionResult::GetSegmentVersionResult()
 {
 }
 
-GetSegmentVersionResult::GetSegmentVersionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetSegmentVersionResult::GetSegmentVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetSegmentVersionResult& GetSegmentVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSegmentVersionResult& GetSegmentVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SegmentResponse"))

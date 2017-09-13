@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListClustersResult();
-    ListClustersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of full Amazon Resource Name (ARN) entries for each cluster
@@ -89,6 +90,7 @@ namespace Model
      * associated with your account.</p>
      */
     inline ListClustersResult& AddClusterArns(const char* value) { m_clusterArns.push_back(value); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -154,7 +156,9 @@ namespace Model
     inline ListClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_clusterArns;
+
     Aws::String m_nextToken;
   };
 

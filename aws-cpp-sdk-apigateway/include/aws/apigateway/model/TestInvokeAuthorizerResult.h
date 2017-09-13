@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     TestInvokeAuthorizerResult();
-    TestInvokeAuthorizerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestInvokeAuthorizerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestInvokeAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The HTTP status code that the client would have received. Value is 0 if the
@@ -66,6 +67,7 @@ namespace Model
      * authorizer succeeded.</p>
      */
     inline TestInvokeAuthorizerResult& WithClientStatus(int value) { SetClientStatus(value); return *this;}
+
 
     /**
      * <p>The Amazon API Gateway execution log for the test authorizer request.</p>
@@ -102,6 +104,7 @@ namespace Model
      */
     inline TestInvokeAuthorizerResult& WithLog(const char* value) { SetLog(value); return *this;}
 
+
     /**
      * <p>The execution latency of the test authorizer request.</p>
      */
@@ -116,6 +119,7 @@ namespace Model
      * <p>The execution latency of the test authorizer request.</p>
      */
     inline TestInvokeAuthorizerResult& WithLatency(long long value) { SetLatency(value); return *this;}
+
 
     /**
      * <p>The principal identity returned by the <a>Authorizer</a></p>
@@ -152,6 +156,7 @@ namespace Model
      */
     inline TestInvokeAuthorizerResult& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
+
     /**
      * <p>The JSON policy document returned by the <a>Authorizer</a></p>
      */
@@ -187,6 +192,7 @@ namespace Model
      */
     inline TestInvokeAuthorizerResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
+
     
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAuthorization() const{ return m_authorization; }
 
@@ -219,6 +225,7 @@ namespace Model
 
     
     inline TestInvokeAuthorizerResult& AddAuthorization(const char* key, const Aws::Vector<Aws::String>& value) { m_authorization.emplace(key, value); return *this; }
+
 
     /**
      * <p>The <a
@@ -317,12 +324,19 @@ namespace Model
     inline TestInvokeAuthorizerResult& AddClaims(const char* key, const char* value) { m_claims.emplace(key, value); return *this; }
 
   private:
+
     int m_clientStatus;
+
     Aws::String m_log;
+
     long long m_latency;
+
     Aws::String m_principalId;
+
     Aws::String m_policy;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_authorization;
+
     Aws::Map<Aws::String, Aws::String> m_claims;
   };
 

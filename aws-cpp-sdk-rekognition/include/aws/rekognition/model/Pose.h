@@ -44,6 +44,7 @@ namespace Model
     Pose& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Value representing the face rotation on the roll axis.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      */
     inline Pose& WithRoll(double value) { SetRoll(value); return *this;}
 
+
     /**
      * <p>Value representing the face rotation on the yaw axis.</p>
      */
@@ -73,6 +75,7 @@ namespace Model
      * <p>Value representing the face rotation on the yaw axis.</p>
      */
     inline Pose& WithYaw(double value) { SetYaw(value); return *this;}
+
 
     /**
      * <p>Value representing the face rotation on the pitch axis.</p>
@@ -90,10 +93,13 @@ namespace Model
     inline Pose& WithPitch(double value) { SetPitch(value); return *this;}
 
   private:
+
     double m_roll;
     bool m_rollHasBeenSet;
+
     double m_yaw;
     bool m_yawHasBeenSet;
+
     double m_pitch;
     bool m_pitchHasBeenSet;
   };

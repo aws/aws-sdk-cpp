@@ -31,12 +31,12 @@ DescribeDBSubnetGroupsResult::DescribeDBSubnetGroupsResult()
 {
 }
 
-DescribeDBSubnetGroupsResult::DescribeDBSubnetGroupsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBSubnetGroupsResult::DescribeDBSubnetGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeDBSubnetGroupsResult& DescribeDBSubnetGroupsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBSubnetGroupsResult& DescribeDBSubnetGroupsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

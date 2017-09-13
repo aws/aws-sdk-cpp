@@ -31,12 +31,12 @@ ModifyReplicationGroupResult::ModifyReplicationGroupResult()
 {
 }
 
-ModifyReplicationGroupResult::ModifyReplicationGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyReplicationGroupResult::ModifyReplicationGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyReplicationGroupResult& ModifyReplicationGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyReplicationGroupResult& ModifyReplicationGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

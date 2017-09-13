@@ -40,6 +40,7 @@ namespace Model
     LambdaFunctionScheduledEventDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>
      */
     inline LambdaFunctionScheduledEventDetails& WithResource(const char* value) { SetResource(value); return *this;}
+
 
     /**
      * <p>The JSON data input to the lambda function.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline LambdaFunctionScheduledEventDetails& WithInput(const char* value) { SetInput(value); return *this;}
 
+
     /**
      * <p>The maximum allowed duration of the lambda function.</p>
      */
@@ -126,10 +129,13 @@ namespace Model
     inline LambdaFunctionScheduledEventDetails& WithTimeoutInSeconds(long long value) { SetTimeoutInSeconds(value); return *this;}
 
   private:
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     long long m_timeoutInSeconds;
     bool m_timeoutInSecondsHasBeenSet;
   };

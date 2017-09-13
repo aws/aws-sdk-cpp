@@ -31,12 +31,12 @@ AllocateHostsResponse::AllocateHostsResponse()
 {
 }
 
-AllocateHostsResponse::AllocateHostsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+AllocateHostsResponse::AllocateHostsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AllocateHostsResponse& AllocateHostsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AllocateHostsResponse& AllocateHostsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

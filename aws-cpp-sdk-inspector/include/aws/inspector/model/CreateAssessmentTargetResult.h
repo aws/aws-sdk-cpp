@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateAssessmentTargetResult();
-    CreateAssessmentTargetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAssessmentTargetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAssessmentTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAssessmentTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN that specifies the assessment target that is created.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateAssessmentTargetResult& WithAssessmentTargetArn(const char* value) { SetAssessmentTargetArn(value); return *this;}
 
   private:
+
     Aws::String m_assessmentTargetArn;
   };
 

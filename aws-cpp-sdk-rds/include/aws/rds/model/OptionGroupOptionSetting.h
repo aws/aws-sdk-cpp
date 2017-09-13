@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the option group option.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The name of the option group option.</p>
      */
     inline OptionGroupOptionSetting& WithSettingName(const char* value) { SetSettingName(value); return *this;}
+
 
     /**
      * <p>The description of the option group option.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline OptionGroupOptionSetting& WithSettingDescription(const char* value) { SetSettingDescription(value); return *this;}
 
+
     /**
      * <p>The default value for the option group option.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The default value for the option group option.</p>
      */
     inline OptionGroupOptionSetting& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
 
     /**
      * <p>The DB engine specific parameter type for the option group option.</p>
@@ -190,6 +194,7 @@ namespace Model
      */
     inline OptionGroupOptionSetting& WithApplyType(const char* value) { SetApplyType(value); return *this;}
 
+
     /**
      * <p>Indicates the acceptable values for the option group option.</p>
      */
@@ -225,6 +230,7 @@ namespace Model
      */
     inline OptionGroupOptionSetting& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
 
+
     /**
      * <p>Boolean value where true indicates that this option group option can be
      * changed from the default value.</p>
@@ -244,16 +250,22 @@ namespace Model
     inline OptionGroupOptionSetting& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
 
   private:
+
     Aws::String m_settingName;
     bool m_settingNameHasBeenSet;
+
     Aws::String m_settingDescription;
     bool m_settingDescriptionHasBeenSet;
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     Aws::String m_applyType;
     bool m_applyTypeHasBeenSet;
+
     Aws::String m_allowedValues;
     bool m_allowedValuesHasBeenSet;
+
     bool m_isModifiable;
     bool m_isModifiableHasBeenSet;
   };

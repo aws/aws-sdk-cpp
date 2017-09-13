@@ -47,6 +47,7 @@ namespace Model
     ObjectAttributeUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key of the attribute being updated.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The key of the attribute being updated.</p>
      */
     inline ObjectAttributeUpdate& WithObjectAttributeKey(AttributeKey&& value) { SetObjectAttributeKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The action to perform as part of the attribute update.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline ObjectAttributeUpdate& WithObjectAttributeAction(ObjectAttributeAction&& value) { SetObjectAttributeAction(std::move(value)); return *this;}
 
   private:
+
     AttributeKey m_objectAttributeKey;
     bool m_objectAttributeKeyHasBeenSet;
+
     ObjectAttributeAction m_objectAttributeAction;
     bool m_objectAttributeActionHasBeenSet;
   };

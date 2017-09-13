@@ -31,13 +31,13 @@ DescribeApplicationStateResult::DescribeApplicationStateResult() :
 {
 }
 
-DescribeApplicationStateResult::DescribeApplicationStateResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeApplicationStateResult::DescribeApplicationStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_applicationStatus(ApplicationStatus::NOT_SET)
 {
   *this = result;
 }
 
-DescribeApplicationStateResult& DescribeApplicationStateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeApplicationStateResult& DescribeApplicationStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ApplicationStatus"))

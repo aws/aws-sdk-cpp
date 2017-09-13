@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the patch baseline to deregister the patch group from.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the patch baseline to deregister the patch group from.</p>
      */
     inline DeregisterPatchBaselineForPatchGroupRequest& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
+
 
     /**
      * <p>The name of the patch group that should be deregistered from the patch
@@ -114,8 +116,10 @@ namespace Model
     inline DeregisterPatchBaselineForPatchGroupRequest& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
 
   private:
+
     Aws::String m_baselineId;
     bool m_baselineIdHasBeenSet;
+
     Aws::String m_patchGroup;
     bool m_patchGroupHasBeenSet;
   };

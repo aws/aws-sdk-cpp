@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     CreateUsagePlanKeyResult();
-    CreateUsagePlanKeyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateUsagePlanKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUsagePlanKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUsagePlanKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Id of a usage plan key.</p>
@@ -85,6 +86,7 @@ namespace Model
      * <p>The Id of a usage plan key.</p>
      */
     inline CreateUsagePlanKeyResult& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The type of a usage plan key. Currently, the valid key type is
@@ -128,6 +130,7 @@ namespace Model
      */
     inline CreateUsagePlanKeyResult& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>The value of a usage plan key.</p>
      */
@@ -162,6 +165,7 @@ namespace Model
      * <p>The value of a usage plan key.</p>
      */
     inline CreateUsagePlanKeyResult& WithValue(const char* value) { SetValue(value); return *this;}
+
 
     /**
      * <p>The name of a usage plan key.</p>
@@ -199,9 +203,13 @@ namespace Model
     inline CreateUsagePlanKeyResult& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_type;
+
     Aws::String m_value;
+
     Aws::String m_name;
   };
 

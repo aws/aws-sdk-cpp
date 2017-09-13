@@ -30,12 +30,12 @@ RegisterDeviceResult::RegisterDeviceResult()
 {
 }
 
-RegisterDeviceResult::RegisterDeviceResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterDeviceResult::RegisterDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterDeviceResult& RegisterDeviceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterDeviceResult& RegisterDeviceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DeviceId"))

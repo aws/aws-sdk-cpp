@@ -50,6 +50,7 @@ namespace Model
     WorkflowExecutionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The maximum duration allowed for decision tasks for this workflow
      * execution.</p> <p>The duration is specified in seconds, an integer greater than
@@ -106,6 +107,7 @@ namespace Model
      */
     inline WorkflowExecutionConfiguration& WithTaskStartToCloseTimeout(const char* value) { SetTaskStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>The total duration for this workflow execution.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
@@ -155,6 +157,7 @@ namespace Model
      */
     inline WorkflowExecutionConfiguration& WithExecutionStartToCloseTimeout(const char* value) { SetExecutionStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>The task list used for the decision tasks generated for this workflow
      * execution.</p>
@@ -184,6 +187,7 @@ namespace Model
      * execution.</p>
      */
     inline WorkflowExecutionConfiguration& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p>The priority assigned to decision tasks for this workflow execution. Valid
@@ -262,6 +266,7 @@ namespace Model
      */
     inline WorkflowExecutionConfiguration& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
 
+
     /**
      * <p>The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the <a>TerminateWorkflowExecution</a> action
@@ -332,6 +337,7 @@ namespace Model
      */
     inline WorkflowExecutionConfiguration& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>The IAM role attached to the child workflow execution.</p>
      */
@@ -368,16 +374,22 @@ namespace Model
     inline WorkflowExecutionConfiguration& WithLambdaRole(const char* value) { SetLambdaRole(value); return *this;}
 
   private:
+
     Aws::String m_taskStartToCloseTimeout;
     bool m_taskStartToCloseTimeoutHasBeenSet;
+
     Aws::String m_executionStartToCloseTimeout;
     bool m_executionStartToCloseTimeoutHasBeenSet;
+
     TaskList m_taskList;
     bool m_taskListHasBeenSet;
+
     Aws::String m_taskPriority;
     bool m_taskPriorityHasBeenSet;
+
     ChildPolicy m_childPolicy;
     bool m_childPolicyHasBeenSet;
+
     Aws::String m_lambdaRole;
     bool m_lambdaRoleHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     Event& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A name signifying an event that occurred in your app. This is used for
      * grouping and aggregating like events together for reporting purposes.</p>
@@ -87,6 +88,7 @@ namespace Model
      * grouping and aggregating like events together for reporting purposes.</p>
      */
     inline Event& WithEventType(const char* value) { SetEventType(value); return *this;}
+
 
     /**
      * <p>The time the event occurred in ISO 8601 standard date time format. For
@@ -130,6 +132,7 @@ namespace Model
      */
     inline Event& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
 
+
     /**
      * <p>The session the event occured within. </p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The session the event occured within. </p>
      */
     inline Event& WithSession(Session&& value) { SetSession(std::move(value)); return *this;}
+
 
     /**
      * <p>The version of the event.</p>
@@ -189,6 +193,7 @@ namespace Model
      * <p>The version of the event.</p>
      */
     inline Event& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>A collection of key-value pairs that give additional context to the event.
@@ -274,6 +279,7 @@ namespace Model
      */
     inline Event& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>A collection of key-value pairs that gives additional, measurable context to
      * the event. The key-value pairs are specified by the developer.</p> <p>This
@@ -331,16 +337,22 @@ namespace Model
     inline Event& AddMetrics(const char* key, double value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_eventType;
     bool m_eventTypeHasBeenSet;
+
     Aws::String m_timestamp;
     bool m_timestampHasBeenSet;
+
     Session m_session;
     bool m_sessionHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::Map<Aws::String, double> m_metrics;
     bool m_metricsHasBeenSet;
   };

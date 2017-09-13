@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     DescribeConfigurationSetResult();
-    DescribeConfigurationSetResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeConfigurationSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeConfigurationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeConfigurationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The configuration set object associated with the specified configuration
@@ -82,6 +83,7 @@ namespace Model
      * set.</p>
      */
     inline DescribeConfigurationSetResult& WithConfigurationSet(ConfigurationSet&& value) { SetConfigurationSet(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of event destinations associated with the configuration set. </p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline DescribeConfigurationSetResult& AddEventDestinations(EventDestination&& value) { m_eventDestinations.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -134,8 +137,11 @@ namespace Model
     inline DescribeConfigurationSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ConfigurationSet m_configurationSet;
+
     Aws::Vector<EventDestination> m_eventDestinations;
+
     ResponseMetadata m_responseMetadata;
   };
 

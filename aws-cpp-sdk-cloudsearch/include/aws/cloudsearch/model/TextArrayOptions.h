@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
@@ -85,6 +86,7 @@ namespace Model
      * A value to use for the field if the field isn't specified for a document.
      */
     inline TextArrayOptions& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
 
     /**
      * <p>A list of source fields to map to the field. </p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline TextArrayOptions& WithSourceFields(const char* value) { SetSourceFields(value); return *this;}
 
+
     /**
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
@@ -136,6 +139,7 @@ namespace Model
      */
     inline TextArrayOptions& WithReturnEnabled(bool value) { SetReturnEnabled(value); return *this;}
 
+
     /**
      * <p>Whether highlights can be returned for the field.</p>
      */
@@ -150,6 +154,7 @@ namespace Model
      * <p>Whether highlights can be returned for the field.</p>
      */
     inline TextArrayOptions& WithHighlightEnabled(bool value) { SetHighlightEnabled(value); return *this;}
+
 
     /**
      * <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
@@ -187,14 +192,19 @@ namespace Model
     inline TextArrayOptions& WithAnalysisScheme(const char* value) { SetAnalysisScheme(value); return *this;}
 
   private:
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     Aws::String m_sourceFields;
     bool m_sourceFieldsHasBeenSet;
+
     bool m_returnEnabled;
     bool m_returnEnabledHasBeenSet;
+
     bool m_highlightEnabled;
     bool m_highlightEnabledHasBeenSet;
+
     Aws::String m_analysisScheme;
     bool m_analysisSchemeHasBeenSet;
   };

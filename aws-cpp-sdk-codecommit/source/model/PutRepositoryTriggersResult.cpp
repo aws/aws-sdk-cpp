@@ -30,12 +30,12 @@ PutRepositoryTriggersResult::PutRepositoryTriggersResult()
 {
 }
 
-PutRepositoryTriggersResult::PutRepositoryTriggersResult(const AmazonWebServiceResult<JsonValue>& result)
+PutRepositoryTriggersResult::PutRepositoryTriggersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutRepositoryTriggersResult& PutRepositoryTriggersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutRepositoryTriggersResult& PutRepositoryTriggersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("configurationId"))

@@ -47,6 +47,7 @@ namespace Model
     ElasticsearchClusterConfigStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Specifies the cluster configuration for the specified Elasticsearch
      * domain.</p>
@@ -76,6 +77,7 @@ namespace Model
      * domain.</p>
      */
     inline ElasticsearchClusterConfigStatus& WithOptions(ElasticsearchClusterConfig&& value) { SetOptions(std::move(value)); return *this;}
+
 
     /**
      * <p> Specifies the status of the configuration for the specified Elasticsearch
@@ -108,8 +110,10 @@ namespace Model
     inline ElasticsearchClusterConfigStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     ElasticsearchClusterConfig m_options;
     bool m_optionsHasBeenSet;
+
     OptionStatus m_status;
     bool m_statusHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     SecurityGroupMembership& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique ID for this security group.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The unique ID for this security group.</p>
      */
     inline SecurityGroupMembership& WithSecurityGroupIdentifier(const char* value) { SetSecurityGroupIdentifier(value); return *this;}
+
 
     /**
      * <p>The status of this security group.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline SecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_securityGroupIdentifier;
     bool m_securityGroupIdentifierHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

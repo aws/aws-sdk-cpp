@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user whose access key pair you want to delete.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -101,6 +102,7 @@ namespace Model
      */
     inline DeleteAccessKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The access key ID for the access key ID and secret access key you want to
      * delete.</p> <p>This parameter allows (per its <a
@@ -158,8 +160,10 @@ namespace Model
     inline DeleteAccessKeyRequest& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
   };

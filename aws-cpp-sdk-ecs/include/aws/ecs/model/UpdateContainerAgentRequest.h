@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that your
      * container instance is running on. If you do not specify a cluster, the default
@@ -84,6 +85,7 @@ namespace Model
      * cluster is assumed.</p>
      */
     inline UpdateContainerAgentRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The container instance ID or full Amazon Resource Name (ARN) entries for the
@@ -135,8 +137,10 @@ namespace Model
     inline UpdateContainerAgentRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_containerInstance;
     bool m_containerInstanceHasBeenSet;
   };

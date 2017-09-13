@@ -30,12 +30,12 @@ AddTagsToResourceResult::AddTagsToResourceResult()
 {
 }
 
-AddTagsToResourceResult::AddTagsToResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+AddTagsToResourceResult::AddTagsToResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddTagsToResourceResult& AddTagsToResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddTagsToResourceResult& AddTagsToResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ResourceARN"))

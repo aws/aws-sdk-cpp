@@ -31,13 +31,13 @@ ValidateMatchmakingRuleSetResult::ValidateMatchmakingRuleSetResult() :
 {
 }
 
-ValidateMatchmakingRuleSetResult::ValidateMatchmakingRuleSetResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ValidateMatchmakingRuleSetResult::ValidateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_valid(false)
 {
   *this = result;
 }
 
-ValidateMatchmakingRuleSetResult& ValidateMatchmakingRuleSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ValidateMatchmakingRuleSetResult& ValidateMatchmakingRuleSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Valid"))

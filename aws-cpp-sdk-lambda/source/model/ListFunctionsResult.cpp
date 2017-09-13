@@ -30,12 +30,12 @@ ListFunctionsResult::ListFunctionsResult()
 {
 }
 
-ListFunctionsResult::ListFunctionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListFunctionsResult::ListFunctionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListFunctionsResult& ListFunctionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListFunctionsResult& ListFunctionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextMarker"))

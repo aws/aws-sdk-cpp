@@ -46,6 +46,7 @@ namespace Model
     RulesConfigurationType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
      * <p>Rules are evaluated in order. The first one to match specifies the role.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline RulesConfigurationType& AddRules(MappingRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<MappingRule> m_rules;
     bool m_rulesHasBeenSet;
   };

@@ -31,13 +31,13 @@ ListServerNeighborsResult::ListServerNeighborsResult() :
 {
 }
 
-ListServerNeighborsResult::ListServerNeighborsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListServerNeighborsResult::ListServerNeighborsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_knownDependencyCount(0)
 {
   *this = result;
 }
 
-ListServerNeighborsResult& ListServerNeighborsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListServerNeighborsResult& ListServerNeighborsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("neighbors"))

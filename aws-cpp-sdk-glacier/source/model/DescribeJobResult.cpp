@@ -35,7 +35,7 @@ DescribeJobResult::DescribeJobResult() :
 {
 }
 
-DescribeJobResult::DescribeJobResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeJobResult::DescribeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_action(ActionCode::NOT_SET),
     m_completed(false),
     m_statusCode(StatusCode::NOT_SET),
@@ -45,7 +45,7 @@ DescribeJobResult::DescribeJobResult(const AmazonWebServiceResult<JsonValue>& re
   *this = result;
 }
 
-DescribeJobResult& DescribeJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeJobResult& DescribeJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("JobId"))

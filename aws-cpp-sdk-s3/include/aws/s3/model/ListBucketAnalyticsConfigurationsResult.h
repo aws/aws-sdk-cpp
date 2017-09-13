@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListBucketAnalyticsConfigurationsResult();
-    ListBucketAnalyticsConfigurationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListBucketAnalyticsConfigurationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListBucketAnalyticsConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListBucketAnalyticsConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * Indicates whether the returned list of analytics configurations is complete. A
@@ -63,6 +64,7 @@ namespace Model
      * NextContinuationToken will be provided for a subsequent request.
      */
     inline ListBucketAnalyticsConfigurationsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * The ContinuationToken that represents where this request began.
@@ -98,6 +100,7 @@ namespace Model
      * The ContinuationToken that represents where this request began.
      */
     inline ListBucketAnalyticsConfigurationsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+
 
     /**
      * NextContinuationToken is sent when isTruncated is true, which indicates that
@@ -148,6 +151,7 @@ namespace Model
      */
     inline ListBucketAnalyticsConfigurationsResult& WithNextContinuationToken(const char* value) { SetNextContinuationToken(value); return *this;}
 
+
     /**
      * The list of analytics configurations for a bucket.
      */
@@ -184,9 +188,13 @@ namespace Model
     inline ListBucketAnalyticsConfigurationsResult& AddAnalyticsConfigurationList(AnalyticsConfiguration&& value) { m_analyticsConfigurationList.push_back(std::move(value)); return *this; }
 
   private:
+
     bool m_isTruncated;
+
     Aws::String m_continuationToken;
+
     Aws::String m_nextContinuationToken;
+
     Aws::Vector<AnalyticsConfiguration> m_analyticsConfigurationList;
   };
 

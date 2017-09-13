@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the new queue. The following limits apply to this name:</p> <ul>
      * <li> <p>A queue name can have up to 80 characters.</p> </li> <li> <p>Valid
@@ -112,6 +113,7 @@ namespace Model
      * case-sensitive.</p>
      */
     inline CreateQueueRequest& WithQueueName(const char* value) { SetQueueName(value); return *this;}
+
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
@@ -1181,8 +1183,10 @@ namespace Model
     inline CreateQueueRequest& AddAttributes(const QueueAttributeName& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_queueName;
     bool m_queueNameHasBeenSet;
+
     Aws::Map<QueueAttributeName, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
   };

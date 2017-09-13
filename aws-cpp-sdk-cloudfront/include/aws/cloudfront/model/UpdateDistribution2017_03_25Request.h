@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The distribution's configuration information.</p>
      */
@@ -64,6 +65,7 @@ namespace Model
      * <p>The distribution's configuration information.</p>
      */
     inline UpdateDistribution2017_03_25Request& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The distribution's id.</p>
@@ -99,6 +101,7 @@ namespace Model
      * <p>The distribution's id.</p>
      */
     inline UpdateDistribution2017_03_25Request& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving
@@ -143,10 +146,13 @@ namespace Model
     inline UpdateDistribution2017_03_25Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
 
   private:
+
     DistributionConfig m_distributionConfig;
     bool m_distributionConfigHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
   };

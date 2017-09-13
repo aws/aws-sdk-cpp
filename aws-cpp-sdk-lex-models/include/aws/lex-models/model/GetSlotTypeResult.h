@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lex-models/model/SlotValueSelectionStrategy.h>
 #include <aws/lex-models/model/EnumerationValue.h>
 #include <utility>
 
@@ -41,8 +42,9 @@ namespace Model
   {
   public:
     GetSlotTypeResult();
-    GetSlotTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSlotTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSlotTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSlotTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the slot type.</p>
@@ -79,6 +81,7 @@ namespace Model
      */
     inline GetSlotTypeResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the slot type.</p>
      */
@@ -113,6 +116,7 @@ namespace Model
      * <p>A description of the slot type.</p>
      */
     inline GetSlotTypeResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
@@ -156,6 +160,7 @@ namespace Model
      */
     inline GetSlotTypeResult& AddEnumerationValues(EnumerationValue&& value) { m_enumerationValues.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The date that the slot type was updated. When you create a resource, the
      * creation date and last update date are the same.</p>
@@ -186,6 +191,7 @@ namespace Model
      */
     inline GetSlotTypeResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date that the slot type was created.</p>
      */
@@ -210,6 +216,7 @@ namespace Model
      * <p>The date that the slot type was created.</p>
      */
     inline GetSlotTypeResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The version of the slot type.</p>
@@ -246,6 +253,7 @@ namespace Model
      */
     inline GetSlotTypeResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
      */
@@ -281,14 +289,54 @@ namespace Model
      */
     inline GetSlotTypeResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
+
+    /**
+     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
+     * more information, see <a>PutSlotType</a>.</p>
+     */
+    inline const SlotValueSelectionStrategy& GetValueSelectionStrategy() const{ return m_valueSelectionStrategy; }
+
+    /**
+     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
+     * more information, see <a>PutSlotType</a>.</p>
+     */
+    inline void SetValueSelectionStrategy(const SlotValueSelectionStrategy& value) { m_valueSelectionStrategy = value; }
+
+    /**
+     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
+     * more information, see <a>PutSlotType</a>.</p>
+     */
+    inline void SetValueSelectionStrategy(SlotValueSelectionStrategy&& value) { m_valueSelectionStrategy = std::move(value); }
+
+    /**
+     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
+     * more information, see <a>PutSlotType</a>.</p>
+     */
+    inline GetSlotTypeResult& WithValueSelectionStrategy(const SlotValueSelectionStrategy& value) { SetValueSelectionStrategy(value); return *this;}
+
+    /**
+     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
+     * more information, see <a>PutSlotType</a>.</p>
+     */
+    inline GetSlotTypeResult& WithValueSelectionStrategy(SlotValueSelectionStrategy&& value) { SetValueSelectionStrategy(std::move(value)); return *this;}
+
   private:
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::Vector<EnumerationValue> m_enumerationValues;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::String m_version;
+
     Aws::String m_checksum;
+
+    SlotValueSelectionStrategy m_valueSelectionStrategy;
   };
 
 } // namespace Model

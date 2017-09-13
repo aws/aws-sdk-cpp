@@ -30,12 +30,12 @@ DeleteTagsForDomainResult::DeleteTagsForDomainResult()
 {
 }
 
-DeleteTagsForDomainResult::DeleteTagsForDomainResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTagsForDomainResult::DeleteTagsForDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteTagsForDomainResult& DeleteTagsForDomainResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTagsForDomainResult& DeleteTagsForDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

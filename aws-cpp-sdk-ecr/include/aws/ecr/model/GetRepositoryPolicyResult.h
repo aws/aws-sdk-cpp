@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetRepositoryPolicyResult();
-    GetRepositoryPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRepositoryPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRepositoryPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRepositoryPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The registry ID associated with the request.</p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetRepositoryPolicyResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The repository name associated with the request.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The repository name associated with the request.</p>
      */
     inline GetRepositoryPolicyResult& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The JSON repository policy text associated with the repository.</p>
@@ -147,8 +150,11 @@ namespace Model
     inline GetRepositoryPolicyResult& WithPolicyText(const char* value) { SetPolicyText(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
+
     Aws::String m_repositoryName;
+
     Aws::String m_policyText;
   };
 

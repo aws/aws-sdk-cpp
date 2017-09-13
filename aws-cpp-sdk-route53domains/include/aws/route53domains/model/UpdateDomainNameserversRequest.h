@@ -47,6 +47,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that you want to change name servers for.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline UpdateDomainNameserversRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The authorization key for .fi domains</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The authorization key for .fi domains</p>
      */
     inline UpdateDomainNameserversRequest& WithFIAuthKey(const char* value) { SetFIAuthKey(value); return *this;}
+
 
     /**
      * <p>A list of new name servers for the domain.</p>
@@ -153,10 +156,13 @@ namespace Model
     inline UpdateDomainNameserversRequest& AddNameservers(Nameserver&& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_fIAuthKey;
     bool m_fIAuthKeyHasBeenSet;
+
     Aws::Vector<Nameserver> m_nameservers;
     bool m_nameserversHasBeenSet;
   };

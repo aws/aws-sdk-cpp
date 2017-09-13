@@ -31,12 +31,12 @@ DefineAnalysisSchemeResult::DefineAnalysisSchemeResult()
 {
 }
 
-DefineAnalysisSchemeResult::DefineAnalysisSchemeResult(const AmazonWebServiceResult<XmlDocument>& result)
+DefineAnalysisSchemeResult::DefineAnalysisSchemeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DefineAnalysisSchemeResult& DefineAnalysisSchemeResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DefineAnalysisSchemeResult& DefineAnalysisSchemeResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

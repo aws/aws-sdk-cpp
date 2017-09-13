@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The specific cluster version to return.</p> <p>Example: <code>1.0</code> </p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The specific cluster version to return.</p> <p>Example: <code>1.0</code> </p>
      */
     inline DescribeClusterVersionsRequest& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
+
 
     /**
      * <p>The name of a specific cluster parameter group family to return details
@@ -132,6 +134,7 @@ namespace Model
      */
     inline DescribeClusterVersionsRequest& WithClusterParameterGroupFamily(const char* value) { SetClusterParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
@@ -161,6 +164,7 @@ namespace Model
      * maximum 100.</p>
      */
     inline DescribeClusterVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -233,12 +237,16 @@ namespace Model
     inline DescribeClusterVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
     Aws::String m_clusterParameterGroupFamily;
     bool m_clusterParameterGroupFamilyHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

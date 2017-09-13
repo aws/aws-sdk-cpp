@@ -42,8 +42,9 @@ namespace Model
     SynthesizeSpeechResult& operator=(const SynthesizeSpeechResult&) = delete;
 
 
-    SynthesizeSpeechResult(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
-    SynthesizeSpeechResult& operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
+    SynthesizeSpeechResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    SynthesizeSpeechResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+
 
 
     /**
@@ -56,6 +57,7 @@ namespace Model
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_audioStream = Aws::Utils::Stream::ResponseStream(body); }
     
+
     /**
      * <p> Specifies the type audio stream. This should reflect the
      * <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you
@@ -161,6 +163,7 @@ namespace Model
      */
     inline SynthesizeSpeechResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
     /**
      * <p>Number of characters synthesized.</p>
      */
@@ -177,8 +180,11 @@ namespace Model
     inline SynthesizeSpeechResult& WithRequestCharacters(int value) { SetRequestCharacters(value); return *this;}
 
   private:
-    Utils::Stream::ResponseStream m_audioStream;
+
+  Aws::Utils::Stream::ResponseStream m_audioStream;
+
     Aws::String m_contentType;
+
     int m_requestCharacters;
   };
 

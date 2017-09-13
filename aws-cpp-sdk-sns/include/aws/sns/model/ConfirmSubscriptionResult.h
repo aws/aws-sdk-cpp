@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ConfirmSubscriptionResult();
-    ConfirmSubscriptionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ConfirmSubscriptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ConfirmSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ConfirmSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ARN of the created subscription.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ConfirmSubscriptionResult& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline ConfirmSubscriptionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_subscriptionArn;
+
     ResponseMetadata m_responseMetadata;
   };
 

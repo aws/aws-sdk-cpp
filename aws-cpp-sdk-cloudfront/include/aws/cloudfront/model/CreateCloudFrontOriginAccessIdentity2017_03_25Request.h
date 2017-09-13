@@ -38,6 +38,7 @@ namespace Model
     CreateCloudFrontOriginAccessIdentity2017_03_25Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The current configuration information for the identity.</p>
      */
@@ -64,6 +65,7 @@ namespace Model
     inline CreateCloudFrontOriginAccessIdentity2017_03_25Request& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(std::move(value)); return *this;}
 
   private:
+
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
     bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet;
   };

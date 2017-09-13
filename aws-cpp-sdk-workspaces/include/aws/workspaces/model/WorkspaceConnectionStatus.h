@@ -47,6 +47,7 @@ namespace Model
     WorkspaceConnectionStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the WorkSpace.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline WorkspaceConnectionStatus& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
+
     /**
      * <p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in
      * a Stopped state.</p>
@@ -112,6 +114,7 @@ namespace Model
      */
     inline WorkspaceConnectionStatus& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 
+
     /**
      * <p>The timestamp of the connection state check.</p>
      */
@@ -136,6 +139,7 @@ namespace Model
      * <p>The timestamp of the connection state check.</p>
      */
     inline WorkspaceConnectionStatus& WithConnectionStateCheckTimestamp(Aws::Utils::DateTime&& value) { SetConnectionStateCheckTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The timestamp of the last known user connection.</p>
@@ -163,12 +167,16 @@ namespace Model
     inline WorkspaceConnectionStatus& WithLastKnownUserConnectionTimestamp(Aws::Utils::DateTime&& value) { SetLastKnownUserConnectionTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet;
+
     ConnectionState m_connectionState;
     bool m_connectionStateHasBeenSet;
+
     Aws::Utils::DateTime m_connectionStateCheckTimestamp;
     bool m_connectionStateCheckTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_lastKnownUserConnectionTimestamp;
     bool m_lastKnownUserConnectionTimestampHasBeenSet;
   };

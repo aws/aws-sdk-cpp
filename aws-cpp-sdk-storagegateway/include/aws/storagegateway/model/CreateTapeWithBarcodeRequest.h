@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tape with. Use the <a>ListGateways</a> operation to return
@@ -88,6 +89,7 @@ namespace Model
      */
     inline CreateTapeWithBarcodeRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     /**
      * <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
      * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
@@ -105,6 +107,7 @@ namespace Model
      * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
      */
     inline CreateTapeWithBarcodeRequest& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
+
 
     /**
      * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
@@ -156,10 +159,13 @@ namespace Model
     inline CreateTapeWithBarcodeRequest& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     long long m_tapeSizeInBytes;
     bool m_tapeSizeInBytesHasBeenSet;
+
     Aws::String m_tapeBarcode;
     bool m_tapeBarcodeHasBeenSet;
   };

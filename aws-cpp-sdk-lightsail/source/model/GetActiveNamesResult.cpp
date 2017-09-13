@@ -30,12 +30,12 @@ GetActiveNamesResult::GetActiveNamesResult()
 {
 }
 
-GetActiveNamesResult::GetActiveNamesResult(const AmazonWebServiceResult<JsonValue>& result)
+GetActiveNamesResult::GetActiveNamesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetActiveNamesResult& GetActiveNamesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetActiveNamesResult& GetActiveNamesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("activeNames"))

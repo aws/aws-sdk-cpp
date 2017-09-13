@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DeleteRealtimeEndpointResult();
-    DeleteRealtimeEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRealtimeEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteRealtimeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteRealtimeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
@@ -99,6 +100,7 @@ namespace Model
      */
     inline DeleteRealtimeEndpointResult& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
+
     /**
      * <p>The endpoint information of the <code>MLModel</code> </p>
      */
@@ -125,7 +127,9 @@ namespace Model
     inline DeleteRealtimeEndpointResult& WithRealtimeEndpointInfo(RealtimeEndpointInfo&& value) { SetRealtimeEndpointInfo(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
+
     RealtimeEndpointInfo m_realtimeEndpointInfo;
   };
 

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>One or more filters to limit the items returned in the response.</p> <p>Use
      * the <code>clusterIds</code> filter to return only the specified clusters.
@@ -159,6 +160,7 @@ namespace Model
      */
     inline DescribeClustersRequest& AddFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The <code>NextToken</code> value that you received in the previous response.
      * Use this value to get more clusters.</p>
@@ -201,6 +203,7 @@ namespace Model
      */
     inline DescribeClustersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of clusters to return in the response. When there are more
      * clusters than the number you specify, the response contains a
@@ -223,10 +226,13 @@ namespace Model
     inline DescribeClustersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

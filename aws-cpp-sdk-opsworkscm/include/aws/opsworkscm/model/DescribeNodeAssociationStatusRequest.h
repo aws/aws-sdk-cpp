@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetNodeAssociationStatusToken() const{ return m_nodeAssociationStatusToken; }
 
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline DescribeNodeAssociationStatusRequest& WithNodeAssociationStatusToken(const char* value) { SetNodeAssociationStatusToken(value); return *this;}
+
 
     /**
      * <p>The name of the server from which to disassociate the node. </p>
@@ -93,8 +95,10 @@ namespace Model
     inline DescribeNodeAssociationStatusRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
   private:
+
     Aws::String m_nodeAssociationStatusToken;
     bool m_nodeAssociationStatusTokenHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
   };

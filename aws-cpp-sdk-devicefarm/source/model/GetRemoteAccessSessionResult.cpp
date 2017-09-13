@@ -30,12 +30,12 @@ GetRemoteAccessSessionResult::GetRemoteAccessSessionResult()
 {
 }
 
-GetRemoteAccessSessionResult::GetRemoteAccessSessionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetRemoteAccessSessionResult::GetRemoteAccessSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetRemoteAccessSessionResult& GetRemoteAccessSessionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetRemoteAccessSessionResult& GetRemoteAccessSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("remoteAccessSession"))

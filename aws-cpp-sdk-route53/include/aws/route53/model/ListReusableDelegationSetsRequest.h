@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response was
      * <code>true</code>, you have more reusable delegation sets. To get another group,
@@ -128,6 +129,7 @@ namespace Model
      */
     inline ListReusableDelegationSetsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The number of reusable delegation sets that you want Amazon Route 53 to
      * return in the response to this request. If you specify a value greater than 100,
@@ -178,8 +180,10 @@ namespace Model
     inline ListReusableDelegationSetsRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

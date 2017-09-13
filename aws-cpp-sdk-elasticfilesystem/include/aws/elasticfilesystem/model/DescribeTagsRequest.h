@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>(Optional) Maximum number of file system tags to return in the response. It
      * must be an integer with a value greater than zero.</p>
@@ -60,6 +61,7 @@ namespace Model
      * must be an integer with a value greater than zero.</p>
      */
     inline DescribeTagsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous
@@ -110,6 +112,7 @@ namespace Model
      */
     inline DescribeTagsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>ID of the file system whose tag set you want to retrieve.</p>
      */
@@ -146,10 +149,13 @@ namespace Model
     inline DescribeTagsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
   private:
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet;
   };

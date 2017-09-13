@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListResourcesResult();
-    ListResourcesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of resources associated with the project. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>An array of resources associated with the project. </p>
      */
     inline ListResourcesResult& AddResources(Resource&& value) { m_resources.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The continuation token to use when requesting the next set of results, if
@@ -121,7 +123,9 @@ namespace Model
     inline ListResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Resource> m_resources;
+
     Aws::String m_nextToken;
   };
 

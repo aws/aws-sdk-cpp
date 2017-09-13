@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the DB security group to add authorization to.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline AuthorizeDBSecurityGroupIngressRequest& WithDBSecurityGroupName(const char* value) { SetDBSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>The IP range to authorize.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The IP range to authorize.</p>
      */
     inline AuthorizeDBSecurityGroupIngressRequest& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}
+
 
     /**
      * <p> Name of the EC2 security group to authorize. For VPC DB security groups,
@@ -174,6 +177,7 @@ namespace Model
      */
     inline AuthorizeDBSecurityGroupIngressRequest& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
 
+
     /**
      * <p> Id of the EC2 security group to authorize. For VPC DB security groups,
      * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
@@ -236,6 +240,7 @@ namespace Model
      * provided. </p>
      */
     inline AuthorizeDBSecurityGroupIngressRequest& WithEC2SecurityGroupId(const char* value) { SetEC2SecurityGroupId(value); return *this;}
+
 
     /**
      * <p> AWS account number of the owner of the EC2 security group specified in the
@@ -308,14 +313,19 @@ namespace Model
     inline AuthorizeDBSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
   private:
+
     Aws::String m_dBSecurityGroupName;
     bool m_dBSecurityGroupNameHasBeenSet;
+
     Aws::String m_cIDRIP;
     bool m_cIDRIPHasBeenSet;
+
     Aws::String m_eC2SecurityGroupName;
     bool m_eC2SecurityGroupNameHasBeenSet;
+
     Aws::String m_eC2SecurityGroupId;
     bool m_eC2SecurityGroupIdHasBeenSet;
+
     Aws::String m_eC2SecurityGroupOwnerId;
     bool m_eC2SecurityGroupOwnerIdHasBeenSet;
   };

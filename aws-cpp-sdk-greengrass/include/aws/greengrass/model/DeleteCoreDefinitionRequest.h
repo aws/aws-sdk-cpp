@@ -34,6 +34,7 @@ namespace Model
     DeleteCoreDefinitionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * core definition Id
      */
@@ -70,6 +71,7 @@ namespace Model
     inline DeleteCoreDefinitionRequest& WithCoreDefinitionId(const char* value) { SetCoreDefinitionId(value); return *this;}
 
   private:
+
     Aws::String m_coreDefinitionId;
     bool m_coreDefinitionIdHasBeenSet;
   };

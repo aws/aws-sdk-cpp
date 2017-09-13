@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateStackResult();
-    CreateStackResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateStackResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The stack ID, which is an opaque string that you use to identify the stack
@@ -90,6 +91,7 @@ namespace Model
     inline CreateStackResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
   };
 

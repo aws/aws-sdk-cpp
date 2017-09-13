@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline UntagLogGroupRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>The tag keys. The corresponding tags are removed from the log group.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline UntagLogGroupRequest& AddTags(const char* value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateRateBasedRuleResult();
-    UpdateRateBasedRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRateBasedRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateRateBasedRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateRateBasedRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -98,6 +99,7 @@ namespace Model
     inline UpdateRateBasedRuleResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_changeToken;
   };
 

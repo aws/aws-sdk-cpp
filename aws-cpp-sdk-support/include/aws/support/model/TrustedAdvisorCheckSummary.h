@@ -48,6 +48,7 @@ namespace Model
     TrustedAdvisorCheckSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline TrustedAdvisorCheckSummary& WithCheckId(const char* value) { SetCheckId(value); return *this;}
 
+
     /**
      * <p>The time of the last refresh of the check.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The time of the last refresh of the check.</p>
      */
     inline TrustedAdvisorCheckSummary& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
+
 
     /**
      * <p>The alert status of the check: "ok" (green), "warning" (yellow), "error"
@@ -160,6 +163,7 @@ namespace Model
      */
     inline TrustedAdvisorCheckSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
      */
@@ -175,6 +179,7 @@ namespace Model
      */
     inline TrustedAdvisorCheckSummary& WithHasFlaggedResources(bool value) { SetHasFlaggedResources(value); return *this;}
 
+
     
     inline const TrustedAdvisorResourcesSummary& GetResourcesSummary() const{ return m_resourcesSummary; }
 
@@ -189,6 +194,7 @@ namespace Model
 
     
     inline TrustedAdvisorCheckSummary& WithResourcesSummary(TrustedAdvisorResourcesSummary&& value) { SetResourcesSummary(std::move(value)); return *this;}
+
 
     /**
      * <p>Summary information that relates to the category of the check. Cost
@@ -221,16 +227,22 @@ namespace Model
     inline TrustedAdvisorCheckSummary& WithCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary&& value) { SetCategorySpecificSummary(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_checkId;
     bool m_checkIdHasBeenSet;
+
     Aws::String m_timestamp;
     bool m_timestampHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     bool m_hasFlaggedResources;
     bool m_hasFlaggedResourcesHasBeenSet;
+
     TrustedAdvisorResourcesSummary m_resourcesSummary;
     bool m_resourcesSummaryHasBeenSet;
+
     TrustedAdvisorCategorySpecificSummary m_categorySpecificSummary;
     bool m_categorySpecificSummaryHasBeenSet;
   };

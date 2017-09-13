@@ -44,6 +44,7 @@ public class Shape {
     private boolean computeContentMd5;
     private boolean supportsPresigning;
     private boolean signBody;
+    private String signerName;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());
@@ -98,7 +99,7 @@ public class Shape {
 
     public boolean hasStreamMembers() {
       return members.values().parallelStream()
-              .anyMatch(member -> member.isStreaming()) || (payload != null && members.get(payload) != null && !members.get(payload).getShape().isStructure());
+              .anyMatch(member -> member.isStreaming()) || (payload != null && members.get(payload) != null && !members.get(payload).getShape().isStructure() && !members.get(payload).getShape().isList());
     }
 
     public boolean hasPayloadMembers() {

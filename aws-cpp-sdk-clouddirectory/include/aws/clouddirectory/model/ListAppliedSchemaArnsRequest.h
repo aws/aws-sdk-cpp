@@ -34,6 +34,7 @@ namespace Model
     ListAppliedSchemaArnsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ARN of the directory you are listing.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The ARN of the directory you are listing.</p>
      */
     inline ListAppliedSchemaArnsRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -104,6 +106,7 @@ namespace Model
      */
     inline ListAppliedSchemaArnsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -120,10 +123,13 @@ namespace Model
     inline ListAppliedSchemaArnsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

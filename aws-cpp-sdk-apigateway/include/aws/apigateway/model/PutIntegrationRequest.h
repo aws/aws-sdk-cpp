@@ -41,6 +41,7 @@ namespace Model
     PutIntegrationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline PutIntegrationRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>Specifies a put integration request's resource ID.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline PutIntegrationRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>Specifies a put integration request's HTTP method.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      */
     inline PutIntegrationRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
+
     /**
      * <p>Specifies a put integration input's type.</p>
      */
@@ -170,6 +174,7 @@ namespace Model
      * <p>Specifies a put integration input's type.</p>
      */
     inline PutIntegrationRequest& WithType(IntegrationType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies a put integration HTTP method. When the integration type is HTTP or
@@ -212,6 +217,7 @@ namespace Model
      * AWS, this field is required.</p>
      */
     inline PutIntegrationRequest& WithIntegrationHttpMethod(const char* value) { SetIntegrationHttpMethod(value); return *this;}
+
 
     /**
      * <p>Specifies the integration's Uniform Resource Identifier (URI). For HTTP
@@ -325,6 +331,7 @@ namespace Model
      */
     inline PutIntegrationRequest& WithUri(const char* value) { SetUri(value); return *this;}
 
+
     /**
      * <p>Specifies whether credentials are required for a put integration.</p>
      */
@@ -359,6 +366,7 @@ namespace Model
      * <p>Specifies whether credentials are required for a put integration.</p>
      */
     inline PutIntegrationRequest& WithCredentials(const char* value) { SetCredentials(value); return *this;}
+
 
     /**
      * <p>A key-value map specifying request parameters that are passed from the method
@@ -504,6 +512,7 @@ namespace Model
      */
     inline PutIntegrationRequest& AddRequestParameters(const char* key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
      * payload based on the value of the Content-Type header sent by the client. The
@@ -599,6 +608,7 @@ namespace Model
      * value.</p>
      */
     inline PutIntegrationRequest& AddRequestTemplates(const char* key, const char* value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(key, value); return *this; }
+
 
     /**
      * <p>Specifies the pass-through behavior for incoming requests based on the
@@ -719,6 +729,7 @@ namespace Model
      */
     inline PutIntegrationRequest& WithPassthroughBehavior(const char* value) { SetPassthroughBehavior(value); return *this;}
 
+
     /**
      * <p>Specifies a put integration input's cache namespace.</p>
      */
@@ -753,6 +764,7 @@ namespace Model
      * <p>Specifies a put integration input's cache namespace.</p>
      */
     inline PutIntegrationRequest& WithCacheNamespace(const char* value) { SetCacheNamespace(value); return *this;}
+
 
     /**
      * <p>Specifies a put integration input's cache key parameters.</p>
@@ -793,6 +805,7 @@ namespace Model
      * <p>Specifies a put integration input's cache key parameters.</p>
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(const char* value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
+
 
     /**
      * <p>Specifies how to handle request payload content type conversions. Supported
@@ -865,30 +878,43 @@ namespace Model
     inline PutIntegrationRequest& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+
     IntegrationType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_integrationHttpMethod;
     bool m_integrationHttpMethodHasBeenSet;
+
     Aws::String m_uri;
     bool m_uriHasBeenSet;
+
     Aws::String m_credentials;
     bool m_credentialsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_requestParameters;
     bool m_requestParametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_requestTemplates;
     bool m_requestTemplatesHasBeenSet;
+
     Aws::String m_passthroughBehavior;
     bool m_passthroughBehaviorHasBeenSet;
+
     Aws::String m_cacheNamespace;
     bool m_cacheNamespaceHasBeenSet;
+
     Aws::Vector<Aws::String> m_cacheKeyParameters;
     bool m_cacheKeyParametersHasBeenSet;
+
     ContentHandlingStrategy m_contentHandling;
     bool m_contentHandlingHasBeenSet;
   };

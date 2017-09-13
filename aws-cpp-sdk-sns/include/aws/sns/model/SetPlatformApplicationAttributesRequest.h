@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
      */
     inline SetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
+
 
     /**
      * <p>A map of the platform application attributes. Attributes in this map include
@@ -403,8 +405,10 @@ namespace Model
     inline SetPlatformApplicationAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_platformApplicationArn;
     bool m_platformApplicationArnHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
   };

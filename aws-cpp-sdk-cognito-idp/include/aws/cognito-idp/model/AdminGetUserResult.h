@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     AdminGetUserResult();
-    AdminGetUserResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminGetUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminGetUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminGetUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The user name of the user about whom you are receiving information.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline AdminGetUserResult& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      */
     inline AdminGetUserResult& AddUserAttributes(AttributeType&& value) { m_userAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The date the user was created.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      * <p>The date the user was created.</p>
      */
     inline AdminGetUserResult& WithUserCreateDate(Aws::Utils::DateTime&& value) { SetUserCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the user was last modified.</p>
@@ -172,6 +176,7 @@ namespace Model
      */
     inline AdminGetUserResult& WithUserLastModifiedDate(Aws::Utils::DateTime&& value) { SetUserLastModifiedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates that the status is enabled.</p>
      */
@@ -186,6 +191,7 @@ namespace Model
      * <p>Indicates that the status is enabled.</p>
      */
     inline AdminGetUserResult& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
@@ -232,6 +238,7 @@ namespace Model
      */
     inline AdminGetUserResult& WithUserStatus(UserStatusType&& value) { SetUserStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
      */
@@ -268,12 +275,19 @@ namespace Model
     inline AdminGetUserResult& AddMFAOptions(MFAOptionType&& value) { m_mFAOptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_username;
+
     Aws::Vector<AttributeType> m_userAttributes;
+
     Aws::Utils::DateTime m_userCreateDate;
+
     Aws::Utils::DateTime m_userLastModifiedDate;
+
     bool m_enabled;
+
     UserStatusType m_userStatus;
+
     Aws::Vector<MFAOptionType> m_mFAOptions;
   };
 

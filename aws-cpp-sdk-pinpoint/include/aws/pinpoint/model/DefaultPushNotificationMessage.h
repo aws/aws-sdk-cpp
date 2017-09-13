@@ -46,6 +46,7 @@ namespace Model
     DefaultPushNotificationMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The action that occurs if the user taps a push notification delivered by the
      * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
@@ -101,6 +102,7 @@ namespace Model
      */
     inline DefaultPushNotificationMessage& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
 
+
     /**
      * The message body of the notification, the email body or the text message.
      */
@@ -135,6 +137,7 @@ namespace Model
      * The message body of the notification, the email body or the text message.
      */
     inline DefaultPushNotificationMessage& WithBody(const char* value) { SetBody(value); return *this;}
+
 
     /**
      * The data payload used for a silent push. This payload is added to the
@@ -208,6 +211,7 @@ namespace Model
      */
     inline DefaultPushNotificationMessage& AddData(const char* key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
 
+
     /**
      * Indicates if the message should display on the users device. Silent pushes can
      * be used for Remote Configuration and Phone Home use cases.
@@ -225,6 +229,7 @@ namespace Model
      * be used for Remote Configuration and Phone Home use cases.
      */
     inline DefaultPushNotificationMessage& WithSilentPush(bool value) { SetSilentPush(value); return *this;}
+
 
     /**
      * Default message substitutions. Can be overridden by individual address
@@ -292,6 +297,7 @@ namespace Model
      */
     inline DefaultPushNotificationMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
+
     /**
      * The message title that displays above the message on the user's device.
      */
@@ -326,6 +332,7 @@ namespace Model
      * The message title that displays above the message on the user's device.
      */
     inline DefaultPushNotificationMessage& WithTitle(const char* value) { SetTitle(value); return *this;}
+
 
     /**
      * The URL to open in the user's mobile browser. Used if the value for Action is
@@ -370,18 +377,25 @@ namespace Model
     inline DefaultPushNotificationMessage& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
     Action m_action;
     bool m_actionHasBeenSet;
+
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_data;
     bool m_dataHasBeenSet;
+
     bool m_silentPush;
     bool m_silentPushHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
     bool m_substitutionsHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
   };

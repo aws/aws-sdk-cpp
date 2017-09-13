@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
      * <code>172.16.0.0/24</code>).</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline CreateNetworkAclEntryRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -111,6 +113,7 @@ namespace Model
      */
     inline CreateNetworkAclEntryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
     /**
      * <p>Indicates whether this is an egress rule (rule is applied to traffic leaving
      * the subnet).</p>
@@ -128,6 +131,7 @@ namespace Model
      * the subnet).</p>
      */
     inline CreateNetworkAclEntryRequest& WithEgress(bool value) { SetEgress(value); return *this;}
+
 
     /**
      * <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the
@@ -158,6 +162,7 @@ namespace Model
      * ICMP protocol, or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
      */
     inline CreateNetworkAclEntryRequest& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The IPv6 network range to allow or deny, in CIDR notation (for example
@@ -201,6 +206,7 @@ namespace Model
      */
     inline CreateNetworkAclEntryRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
+
     /**
      * <p>The ID of the network ACL.</p>
      */
@@ -236,6 +242,7 @@ namespace Model
      */
     inline CreateNetworkAclEntryRequest& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
 
+
     /**
      * <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
      */
@@ -260,6 +267,7 @@ namespace Model
      * <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
      */
     inline CreateNetworkAclEntryRequest& WithPortRange(PortRange&& value) { SetPortRange(std::move(value)); return *this;}
+
 
     /**
      * <p>The protocol. A value of <code>-1</code> or <code>all</code> means all
@@ -345,6 +353,7 @@ namespace Model
      */
     inline CreateNetworkAclEntryRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
+
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
      */
@@ -370,6 +379,7 @@ namespace Model
      */
     inline CreateNetworkAclEntryRequest& WithRuleAction(RuleAction&& value) { SetRuleAction(std::move(value)); return *this;}
 
+
     /**
      * <p>The rule number for the entry (for example, 100). ACL entries are processed
      * in ascending order by rule number.</p> <p>Constraints: Positive integer from 1
@@ -392,24 +402,34 @@ namespace Model
     inline CreateNetworkAclEntryRequest& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
 
   private:
+
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     bool m_egress;
     bool m_egressHasBeenSet;
+
     IcmpTypeCode m_icmpTypeCode;
     bool m_icmpTypeCodeHasBeenSet;
+
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
+
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet;
+
     PortRange m_portRange;
     bool m_portRangeHasBeenSet;
+
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
+
     RuleAction m_ruleAction;
     bool m_ruleActionHasBeenSet;
+
     int m_ruleNumber;
     bool m_ruleNumberHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateDataSourceFromS3Result::CreateDataSourceFromS3Result()
 {
 }
 
-CreateDataSourceFromS3Result::CreateDataSourceFromS3Result(const AmazonWebServiceResult<JsonValue>& result)
+CreateDataSourceFromS3Result::CreateDataSourceFromS3Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateDataSourceFromS3Result& CreateDataSourceFromS3Result::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateDataSourceFromS3Result& CreateDataSourceFromS3Result::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DataSourceId"))

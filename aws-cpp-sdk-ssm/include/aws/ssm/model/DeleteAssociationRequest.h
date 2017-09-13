@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the Systems Manager document.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline DeleteAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline DeleteAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The association ID that you want to delete.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline DeleteAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
   };

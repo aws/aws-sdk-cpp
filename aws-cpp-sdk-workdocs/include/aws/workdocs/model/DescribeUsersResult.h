@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeUsersResult();
-    DescribeUsersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeUsersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The users.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeUsersResult& AddUsers(User&& value) { m_users.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The total number of users included in the results.</p>
      */
@@ -92,6 +94,7 @@ namespace Model
      * <p>The total number of users included in the results.</p>
      */
     inline DescribeUsersResult& WithTotalNumberOfUsers(long long value) { SetTotalNumberOfUsers(value); return *this;}
+
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -136,8 +139,11 @@ namespace Model
     inline DescribeUsersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<User> m_users;
+
     long long m_totalNumberOfUsers;
+
     Aws::String m_marker;
   };
 

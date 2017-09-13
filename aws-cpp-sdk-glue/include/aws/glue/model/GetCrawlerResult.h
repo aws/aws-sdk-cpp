@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetCrawlerResult();
-    GetCrawlerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCrawlerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCrawlerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCrawlerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The metadata for the specified <code>Crawler</code>.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetCrawlerResult& WithCrawler(Crawler&& value) { SetCrawler(std::move(value)); return *this;}
 
   private:
+
     Crawler m_crawler;
   };
 

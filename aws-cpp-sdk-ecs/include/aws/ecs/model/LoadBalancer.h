@@ -46,6 +46,7 @@ namespace Model
     LoadBalancer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group associated with a service.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline LoadBalancer& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 
+
     /**
      * <p>The name of a Classic load balancer.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The name of a Classic load balancer.</p>
      */
     inline LoadBalancer& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+
 
     /**
      * <p>The name of the container (as it appears in a container definition) to
@@ -165,6 +168,7 @@ namespace Model
      */
     inline LoadBalancer& WithContainerName(const char* value) { SetContainerName(value); return *this;}
 
+
     /**
      * <p>The port on the container to associate with the load balancer. This port must
      * correspond to a <code>containerPort</code> in the service's task definition.
@@ -190,12 +194,16 @@ namespace Model
     inline LoadBalancer& WithContainerPort(int value) { SetContainerPort(value); return *this;}
 
   private:
+
     Aws::String m_targetGroupArn;
     bool m_targetGroupArnHasBeenSet;
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     Aws::String m_containerName;
     bool m_containerNameHasBeenSet;
+
     int m_containerPort;
     bool m_containerPortHasBeenSet;
   };

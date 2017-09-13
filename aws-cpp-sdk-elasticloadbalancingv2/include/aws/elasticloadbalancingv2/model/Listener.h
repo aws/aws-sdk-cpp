@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
     inline Listener& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline Listener& WithLoadBalancerArn(const char* value) { SetLoadBalancerArn(value); return *this;}
 
+
     /**
      * <p>The port on which the load balancer is listening.</p>
      */
@@ -136,6 +139,7 @@ namespace Model
      * <p>The port on which the load balancer is listening.</p>
      */
     inline Listener& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The protocol for connections from clients to the load balancer.</p>
@@ -161,6 +165,7 @@ namespace Model
      * <p>The protocol for connections from clients to the load balancer.</p>
      */
     inline Listener& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
+
 
     /**
      * <p>The SSL server certificate. You must provide a certificate if the protocol is
@@ -204,6 +209,7 @@ namespace Model
      */
     inline Listener& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The security policy that defines which ciphers and protocols are supported.
      * The default is the current predefined security policy.</p>
@@ -246,6 +252,7 @@ namespace Model
      */
     inline Listener& WithSslPolicy(const char* value) { SetSslPolicy(value); return *this;}
 
+
     /**
      * <p>The default actions for the listener.</p>
      */
@@ -282,18 +289,25 @@ namespace Model
     inline Listener& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_listenerArn;
     bool m_listenerArnHasBeenSet;
+
     Aws::String m_loadBalancerArn;
     bool m_loadBalancerArnHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     ProtocolEnum m_protocol;
     bool m_protocolHasBeenSet;
+
     Aws::Vector<Certificate> m_certificates;
     bool m_certificatesHasBeenSet;
+
     Aws::String m_sslPolicy;
     bool m_sslPolicyHasBeenSet;
+
     Aws::Vector<Action> m_defaultActions;
     bool m_defaultActionsHasBeenSet;
   };

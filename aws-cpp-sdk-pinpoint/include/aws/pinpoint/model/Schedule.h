@@ -45,6 +45,7 @@ namespace Model
     Schedule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The scheduled time that the campaign ends in ISO 8601 format.
      */
@@ -79,6 +80,7 @@ namespace Model
      * The scheduled time that the campaign ends in ISO 8601 format.
      */
     inline Schedule& WithEndTime(const char* value) { SetEndTime(value); return *this;}
+
 
     /**
      * How often the campaign delivers messages.
@@ -120,6 +122,7 @@ Valid values: ONCE, HOURLY, DAILY,
      */
     inline Schedule& WithFrequency(Frequency&& value) { SetFrequency(std::move(value)); return *this;}
 
+
     /**
      * Indicates whether the campaign schedule takes effect according to each user's
      * local time.
@@ -137,6 +140,7 @@ Valid values: ONCE, HOURLY, DAILY,
      * local time.
      */
     inline Schedule& WithIsLocalTime(bool value) { SetIsLocalTime(value); return *this;}
+
 
     /**
      * The time during which the campaign sends no messages.
@@ -162,6 +166,7 @@ Valid values: ONCE, HOURLY, DAILY,
      * The time during which the campaign sends no messages.
      */
     inline Schedule& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
+
 
     /**
      * The scheduled time that the campaign begins in ISO 8601 format.
@@ -197,6 +202,7 @@ Valid values: ONCE, HOURLY, DAILY,
      * The scheduled time that the campaign begins in ISO 8601 format.
      */
     inline Schedule& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+
 
     /**
      * The starting UTC offset for the schedule if the value for isLocalTime is
@@ -479,16 +485,22 @@ UTC-11
     inline Schedule& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
   private:
+
     Aws::String m_endTime;
     bool m_endTimeHasBeenSet;
+
     Frequency m_frequency;
     bool m_frequencyHasBeenSet;
+
     bool m_isLocalTime;
     bool m_isLocalTimeHasBeenSet;
+
     QuietTime m_quietTime;
     bool m_quietTimeHasBeenSet;
+
     Aws::String m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet;
   };

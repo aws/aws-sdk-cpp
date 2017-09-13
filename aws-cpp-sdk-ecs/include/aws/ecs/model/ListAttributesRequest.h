@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to list
      * attributes. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline ListAttributesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
+
     /**
      * <p>The type of the target with which to list attributes.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>The type of the target with which to list attributes.</p>
      */
     inline ListAttributesRequest& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the attribute with which to filter the results. </p>
@@ -138,6 +141,7 @@ namespace Model
      * <p>The name of the attribute with which to filter the results. </p>
      */
     inline ListAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+
 
     /**
      * <p>The value of the attribute with which to filter results. You must also
@@ -180,6 +184,7 @@ namespace Model
      * specify an attribute name to use this parameter.</p>
      */
     inline ListAttributesRequest& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -265,6 +270,7 @@ namespace Model
      */
     inline ListAttributesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of cluster results returned by <code>ListAttributes</code>
      * in paginated output. When this parameter is used, <code>ListAttributes</code>
@@ -302,16 +308,22 @@ namespace Model
     inline ListAttributesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     TargetType m_targetType;
     bool m_targetTypeHasBeenSet;
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     Aws::String m_attributeValue;
     bool m_attributeValueHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

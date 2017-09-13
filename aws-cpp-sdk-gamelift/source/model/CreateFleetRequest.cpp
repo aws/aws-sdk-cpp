@@ -36,7 +36,9 @@ CreateFleetRequest::CreateFleetRequest() :
     m_newGameSessionProtectionPolicyHasBeenSet(false),
     m_runtimeConfigurationHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false),
-    m_metricGroupsHasBeenSet(false)
+    m_metricGroupsHasBeenSet(false),
+    m_peerVpcAwsAccountIdHasBeenSet(false),
+    m_peerVpcIdHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,18 @@ Aws::String CreateFleetRequest::SerializePayload() const
      metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
    }
    payload.WithArray("MetricGroups", std::move(metricGroupsJsonList));
+
+  }
+
+  if(m_peerVpcAwsAccountIdHasBeenSet)
+  {
+   payload.WithString("PeerVpcAwsAccountId", m_peerVpcAwsAccountId);
+
+  }
+
+  if(m_peerVpcIdHasBeenSet)
+  {
+   payload.WithString("PeerVpcId", m_peerVpcId);
 
   }
 

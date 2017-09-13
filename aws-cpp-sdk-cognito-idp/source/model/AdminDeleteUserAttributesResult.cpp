@@ -30,12 +30,12 @@ AdminDeleteUserAttributesResult::AdminDeleteUserAttributesResult()
 {
 }
 
-AdminDeleteUserAttributesResult::AdminDeleteUserAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+AdminDeleteUserAttributesResult::AdminDeleteUserAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AdminDeleteUserAttributesResult& AdminDeleteUserAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminDeleteUserAttributesResult& AdminDeleteUserAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListObjectAttributesResult();
-    ListObjectAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListObjectAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListObjectAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListObjectAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Attributes map that is associated with the object. <code>AttributeArn</code>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListObjectAttributesResult& AddAttributes(AttributeKeyAndValue&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -121,7 +123,9 @@ namespace Model
     inline ListObjectAttributesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<AttributeKeyAndValue> m_attributes;
+
     Aws::String m_nextToken;
   };
 

@@ -46,6 +46,7 @@ namespace Model
     PipelineSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the pipeline.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline PipelineSummary& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The version number of the pipeline.</p>
      */
@@ -95,6 +97,7 @@ namespace Model
      * <p>The version number of the pipeline.</p>
      */
     inline PipelineSummary& WithVersion(int value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
@@ -120,6 +123,7 @@ namespace Model
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
     inline PipelineSummary& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time of the last update to the pipeline, in timestamp
@@ -152,12 +156,16 @@ namespace Model
     inline PipelineSummary& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
+
     Aws::Utils::DateTime m_updated;
     bool m_updatedHasBeenSet;
   };

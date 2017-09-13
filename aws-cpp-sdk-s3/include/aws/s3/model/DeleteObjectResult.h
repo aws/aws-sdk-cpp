@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DeleteObjectResult();
-    DeleteObjectResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * Specifies whether the versioned object that was permanently deleted was (true)
@@ -59,6 +60,7 @@ namespace Model
      * or was not (false) a delete marker.
      */
     inline DeleteObjectResult& WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
+
 
     /**
      * Returns the version ID of the delete marker created as a result of the DELETE
@@ -102,6 +104,7 @@ namespace Model
      */
     inline DeleteObjectResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -118,8 +121,11 @@ namespace Model
     inline DeleteObjectResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
+
     bool m_deleteMarker;
+
     Aws::String m_versionId;
+
     RequestCharged m_requestCharged;
   };
 

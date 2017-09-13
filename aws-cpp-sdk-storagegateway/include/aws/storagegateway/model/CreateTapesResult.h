@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateTapesResult();
-    CreateTapesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTapesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTapesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual
@@ -96,6 +97,7 @@ namespace Model
     inline CreateTapesResult& AddTapeARNs(const char* value) { m_tapeARNs.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_tapeARNs;
   };
 

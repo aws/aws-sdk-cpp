@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain in which the activity type is registered.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the domain in which the activity type is registered.</p>
      */
     inline DescribeActivityTypeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>The activity type to get information about. Activity types are identified by
@@ -108,8 +110,10 @@ namespace Model
     inline DescribeActivityTypeRequest& WithActivityType(ActivityType&& value) { SetActivityType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     ActivityType m_activityType;
     bool m_activityTypeHasBeenSet;
   };

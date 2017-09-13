@@ -31,12 +31,12 @@ UpdateAvailabilityOptionsResult::UpdateAvailabilityOptionsResult()
 {
 }
 
-UpdateAvailabilityOptionsResult::UpdateAvailabilityOptionsResult(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateAvailabilityOptionsResult::UpdateAvailabilityOptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateAvailabilityOptionsResult& UpdateAvailabilityOptionsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateAvailabilityOptionsResult& UpdateAvailabilityOptionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

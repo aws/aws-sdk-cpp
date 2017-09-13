@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline UpdatePortfolioRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The identifier of the portfolio for the update request.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The identifier of the portfolio for the update request.</p>
      */
     inline UpdatePortfolioRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name to use for display purposes.</p>
@@ -157,6 +160,7 @@ namespace Model
      */
     inline UpdatePortfolioRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
     /**
      * <p>The updated text description of the portfolio.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      * <p>The updated text description of the portfolio.</p>
      */
     inline UpdatePortfolioRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The updated name of the portfolio provider.</p>
@@ -227,6 +232,7 @@ namespace Model
      */
     inline UpdatePortfolioRequest& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
     /**
      * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
      */
@@ -261,6 +267,7 @@ namespace Model
      * <p>Tags to add to the existing list of tags associated with the portfolio.</p>
      */
     inline UpdatePortfolioRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Tags to remove from the existing list of tags associated with the
@@ -311,18 +318,25 @@ namespace Model
     inline UpdatePortfolioRequest& AddRemoveTags(const char* value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(value); return *this; }
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
     Aws::Vector<Tag> m_addTags;
     bool m_addTagsHasBeenSet;
+
     Aws::Vector<Aws::String> m_removeTags;
     bool m_removeTagsHasBeenSet;
   };

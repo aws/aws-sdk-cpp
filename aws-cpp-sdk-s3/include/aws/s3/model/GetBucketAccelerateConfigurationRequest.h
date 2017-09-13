@@ -34,6 +34,7 @@ namespace Model
     GetBucketAccelerateConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * Name of the bucket for which the accelerate configuration is retrieved.
      */
@@ -70,6 +71,7 @@ namespace Model
     inline GetBucketAccelerateConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
   };

@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     PutReportDefinitionResult();
-    PutReportDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutReportDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN that specifies the finding that you want to describe.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeFindingsRequest& AddFindingArns(const char* value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
 
+
     /**
      * <p>The locale into which you want to translate a finding description,
      * recommendation, and the short description that identifies the finding.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline DescribeFindingsRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_findingArns;
     bool m_findingArnsHasBeenSet;
+
     Locale m_locale;
     bool m_localeHasBeenSet;
   };

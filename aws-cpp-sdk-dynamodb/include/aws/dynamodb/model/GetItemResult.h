@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetItemResult();
-    GetItemResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetItemResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
@@ -116,6 +117,7 @@ namespace Model
      */
     inline GetItemResult& AddItem(const char* key, const AttributeValue& value) { m_item.emplace(key, value); return *this; }
 
+
     /**
      * <p>The capacity units consumed by the <code>GetItem</code> operation. The data
      * returned includes the total provisioned throughput consumed, along with
@@ -177,7 +179,9 @@ namespace Model
     inline GetItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, AttributeValue> m_item;
+
     ConsumedCapacity m_consumedCapacity;
   };
 

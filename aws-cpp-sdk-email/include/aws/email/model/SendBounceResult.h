@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     SendBounceResult();
-    SendBounceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SendBounceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SendBounceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SendBounceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The message ID of the bounce message.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline SendBounceResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline SendBounceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_messageId;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     CreateAssociationBatchResult();
-    CreateAssociationBatchResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAssociationBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAssociationBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAssociationBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the associations that succeeded.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about the associations that succeeded.</p>
      */
     inline CreateAssociationBatchResult& AddSuccessful(AssociationDescription&& value) { m_successful.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Information about the associations that failed.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline CreateAssociationBatchResult& AddFailed(FailedCreateAssociation&& value) { m_failed.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<AssociationDescription> m_successful;
+
     Aws::Vector<FailedCreateAssociation> m_failed;
   };
 

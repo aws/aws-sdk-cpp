@@ -1,17 +1,19 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 #set($endpointPrefix = $metadata.endpointPrefix)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Endpoint.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
 \#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws;
-using namespace Aws::${metadata.namespace};
+using namespace ${rootNamespace}::${serviceNamespace};
 
-namespace Aws
+namespace ${rootNamespace}
 {
-namespace ${metadata.namespace}
+namespace ${serviceNamespace}
 {
 namespace ${metadata.classNamePrefix}Endpoint
 {
@@ -57,6 +59,6 @@ namespace ${metadata.classNamePrefix}Endpoint
   }
 
 } // namespace ${metadata.classNamePrefix}Endpoint
-} // namespace ${metadata.namespace}
-} // namespace Aws
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}
 

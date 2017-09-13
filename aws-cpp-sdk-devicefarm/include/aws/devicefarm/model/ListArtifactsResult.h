@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListArtifactsResult();
-    ListArtifactsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListArtifactsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListArtifactsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListArtifactsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the artifacts.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the artifacts.</p>
      */
     inline ListArtifactsResult& AddArtifacts(Artifact&& value) { m_artifacts.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -134,7 +136,9 @@ namespace Model
     inline ListArtifactsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Artifact> m_artifacts;
+
     Aws::String m_nextToken;
   };
 

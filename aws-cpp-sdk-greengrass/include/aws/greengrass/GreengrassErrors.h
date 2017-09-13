@@ -55,12 +55,12 @@ enum class GreengrassErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER_ERROR
 };
 namespace GreengrassErrorMapper
 {
-  AWS_GREENGRASS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_GREENGRASS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Greengrass

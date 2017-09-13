@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The state. The following are the possible values:</p> <ul> <li> <p>
      * <code>pending</code> - AFI bitstream generation is in progress.</p> </li> <li>
@@ -100,6 +101,7 @@ namespace Model
      */
     inline FpgaImageState& WithCode(FpgaImageStateCode&& value) { SetCode(std::move(value)); return *this;}
 
+
     /**
      * <p>If the state is <code>failed</code>, this is the error message.</p>
      */
@@ -136,8 +138,10 @@ namespace Model
     inline FpgaImageState& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     FpgaImageStateCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the Amazon Kinesis Analytics application to delete.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline DeleteApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p> You can use the <code>DescribeApplication</code> operation to get this
      * value. </p>
@@ -106,8 +108,10 @@ namespace Model
     inline DeleteApplicationRequest& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::Utils::DateTime m_createTimestamp;
     bool m_createTimestampHasBeenSet;
   };

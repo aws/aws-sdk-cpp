@@ -48,6 +48,7 @@ namespace Model
     AwsCredentials& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline AwsCredentials& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
+
     /**
      * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
      */
     inline AwsCredentials& WithSecretAccessKey(const char* value) { SetSecretAccessKey(value); return *this;}
+
 
     /**
      * <p>Token used to associate a specific build ID with the files uploaded using
@@ -161,10 +164,13 @@ namespace Model
     inline AwsCredentials& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
 
   private:
+
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
+
     Aws::String m_secretAccessKey;
     bool m_secretAccessKeyHasBeenSet;
+
     Aws::String m_sessionToken;
     bool m_sessionTokenHasBeenSet;
   };

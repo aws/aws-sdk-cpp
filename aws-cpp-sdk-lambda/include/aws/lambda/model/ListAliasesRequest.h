@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Lambda function name for which the alias is created. Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
@@ -88,6 +89,7 @@ namespace Model
      * limited to 64 characters in length.</p>
      */
     inline ListAliasesRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+
 
     /**
      * <p>If you specify this optional parameter, the API returns only the aliases that
@@ -138,6 +140,7 @@ namespace Model
      */
     inline ListAliasesRequest& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
 
+
     /**
      * <p>Optional string. An opaque pagination token returned from a previous
      * <code>ListAliases</code> operation. If present, indicates where to continue the
@@ -187,6 +190,7 @@ namespace Model
      */
     inline ListAliasesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Optional integer. Specifies the maximum number of aliases to return in
      * response. This parameter value must be greater than 0.</p>
@@ -206,12 +210,16 @@ namespace Model
     inline ListAliasesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_functionVersion;
     bool m_functionVersionHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

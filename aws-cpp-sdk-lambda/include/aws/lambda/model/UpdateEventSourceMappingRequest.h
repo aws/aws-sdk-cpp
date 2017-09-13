@@ -37,6 +37,7 @@ namespace Model
     UpdateEventSourceMappingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The event source mapping identifier.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The event source mapping identifier.</p>
      */
     inline UpdateEventSourceMappingRequest& WithUUID(const char* value) { SetUUID(value); return *this;}
+
 
     /**
      * <p>The Lambda function to which you want the stream records sent.</p> <p> You
@@ -198,6 +200,7 @@ namespace Model
      */
     inline UpdateEventSourceMappingRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>Specifies whether AWS Lambda should actively poll the stream or not. If
      * disabled, AWS Lambda will not poll the stream.</p>
@@ -215,6 +218,7 @@ namespace Model
      * disabled, AWS Lambda will not poll the stream.</p>
      */
     inline UpdateEventSourceMappingRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The maximum number of stream records that can be sent to your Lambda function
@@ -235,12 +239,16 @@ namespace Model
     inline UpdateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
   private:
+
     Aws::String m_uUID;
     bool m_uUIDHasBeenSet;
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     int m_batchSize;
     bool m_batchSizeHasBeenSet;
   };

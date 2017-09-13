@@ -46,6 +46,7 @@ namespace Model
     LambdaFunctionCompletedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
      * when this Lambda task was scheduled. To help diagnose issues, use this
@@ -67,6 +68,7 @@ namespace Model
      */
     inline LambdaFunctionCompletedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this
      * activity task started. To help diagnose issues, use this information to trace
@@ -87,6 +89,7 @@ namespace Model
      * back the chain of events leading up to this event.</p>
      */
     inline LambdaFunctionCompletedEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
+
 
     /**
      * <p>The results of the Lambda task.</p>
@@ -124,10 +127,13 @@ namespace Model
     inline LambdaFunctionCompletedEventAttributes& WithResult(const char* value) { SetResult(value); return *this;}
 
   private:
+
     long long m_scheduledEventId;
     bool m_scheduledEventIdHasBeenSet;
+
     long long m_startedEventId;
     bool m_startedEventIdHasBeenSet;
+
     Aws::String m_result;
     bool m_resultHasBeenSet;
   };

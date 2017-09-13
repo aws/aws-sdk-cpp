@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A predefined metric. You can specify either a predefined metric or a
      * customized metric.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline TargetTrackingConfiguration& WithPredefinedMetricSpecification(PredefinedMetricSpecification&& value) { SetPredefinedMetricSpecification(std::move(value)); return *this;}
 
+
     /**
      * <p>A customized metric.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      */
     inline TargetTrackingConfiguration& WithCustomizedMetricSpecification(CustomizedMetricSpecification&& value) { SetCustomizedMetricSpecification(std::move(value)); return *this;}
 
+
     /**
      * <p>The target value for the metric.</p>
      */
@@ -119,6 +122,7 @@ namespace Model
      * <p>The target value for the metric.</p>
      */
     inline TargetTrackingConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
+
 
     /**
      * <p>If the parameter is true, then scale-in will be disabled for the target
@@ -142,12 +146,16 @@ namespace Model
     inline TargetTrackingConfiguration& WithDisableScaleIn(bool value) { SetDisableScaleIn(value); return *this;}
 
   private:
+
     PredefinedMetricSpecification m_predefinedMetricSpecification;
     bool m_predefinedMetricSpecificationHasBeenSet;
+
     CustomizedMetricSpecification m_customizedMetricSpecification;
     bool m_customizedMetricSpecificationHasBeenSet;
+
     double m_targetValue;
     bool m_targetValueHasBeenSet;
+
     bool m_disableScaleIn;
     bool m_disableScaleInHasBeenSet;
   };

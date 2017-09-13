@@ -30,12 +30,12 @@ ViewBillingResult::ViewBillingResult()
 {
 }
 
-ViewBillingResult::ViewBillingResult(const AmazonWebServiceResult<JsonValue>& result)
+ViewBillingResult::ViewBillingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ViewBillingResult& ViewBillingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ViewBillingResult& ViewBillingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextPageMarker"))

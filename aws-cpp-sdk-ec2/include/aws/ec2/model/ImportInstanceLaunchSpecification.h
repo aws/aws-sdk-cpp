@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Reserved.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ImportInstanceLaunchSpecification& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
 
+
     /**
      * <p>The architecture of the instance.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>The architecture of the instance.</p>
      */
     inline ImportInstanceLaunchSpecification& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more security group IDs.</p>
@@ -155,6 +158,7 @@ namespace Model
      */
     inline ImportInstanceLaunchSpecification& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
+
     /**
      * <p>One or more security group names.</p>
      */
@@ -195,6 +199,7 @@ namespace Model
      */
     inline ImportInstanceLaunchSpecification& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
+
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
@@ -224,6 +229,7 @@ namespace Model
      * from the instance (using the operating system command for system shutdown).</p>
      */
     inline ImportInstanceLaunchSpecification& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
+
 
     /**
      * <p>The instance type. For more information about the instance types that you can
@@ -265,6 +271,7 @@ namespace Model
      */
     inline ImportInstanceLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether monitoring is enabled.</p>
      */
@@ -279,6 +286,7 @@ namespace Model
      * <p>Indicates whether monitoring is enabled.</p>
      */
     inline ImportInstanceLaunchSpecification& WithMonitoring(bool value) { SetMonitoring(value); return *this;}
+
 
     /**
      * <p>The placement information for the instance.</p>
@@ -304,6 +312,7 @@ namespace Model
      * <p>The placement information for the instance.</p>
      */
     inline ImportInstanceLaunchSpecification& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+
 
     /**
      * <p>[EC2-VPC] An available IP address from the IP address range of the
@@ -347,6 +356,7 @@ namespace Model
      */
     inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
+
     /**
      * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
      */
@@ -381,6 +391,7 @@ namespace Model
      * <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
      */
     inline ImportInstanceLaunchSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The user data to make available to the instance. If you are using an AWS SDK
@@ -418,26 +429,37 @@ namespace Model
     inline ImportInstanceLaunchSpecification& WithUserData(UserData&& value) { SetUserData(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
+
     ArchitectureValues m_architecture;
     bool m_architectureHasBeenSet;
+
     Aws::Vector<Aws::String> m_groupIds;
     bool m_groupIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_groupNames;
     bool m_groupNamesHasBeenSet;
+
     ShutdownBehavior m_instanceInitiatedShutdownBehavior;
     bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     bool m_monitoring;
     bool m_monitoringHasBeenSet;
+
     Placement m_placement;
     bool m_placementHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     UserData m_userData;
     bool m_userDataHasBeenSet;
   };

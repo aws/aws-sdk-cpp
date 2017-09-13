@@ -47,6 +47,7 @@ namespace Model
     CloudWatchLoggingOption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>ARN of the CloudWatch log to receive application messages.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>ARN of the CloudWatch log to receive application messages.</p>
      */
     inline CloudWatchLoggingOption& WithLogStreamARN(const char* value) { SetLogStreamARN(value); return *this;}
+
 
     /**
      * <p>IAM ARN of the role to use to send application messages. Note: To write
@@ -132,8 +134,10 @@ namespace Model
     inline CloudWatchLoggingOption& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
   private:
+
     Aws::String m_logStreamARN;
     bool m_logStreamARNHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
   };

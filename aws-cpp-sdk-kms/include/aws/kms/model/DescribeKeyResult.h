@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeKeyResult();
-    DescribeKeyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Metadata associated with the key.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeKeyResult& WithKeyMetadata(KeyMetadata&& value) { SetKeyMetadata(std::move(value)); return *this;}
 
   private:
+
     KeyMetadata m_keyMetadata;
   };
 

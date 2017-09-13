@@ -50,6 +50,7 @@ namespace Model
     DestinationDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the destination.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DestinationDescription& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
 
+
     /**
      * <p>[Deprecated] The destination in Amazon S3.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>[Deprecated] The destination in Amazon S3.</p>
      */
     inline DestinationDescription& WithS3DestinationDescription(S3DestinationDescription&& value) { SetS3DestinationDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>The destination in Amazon S3.</p>
@@ -135,6 +138,7 @@ namespace Model
      */
     inline DestinationDescription& WithExtendedS3DestinationDescription(ExtendedS3DestinationDescription&& value) { SetExtendedS3DestinationDescription(std::move(value)); return *this;}
 
+
     /**
      * <p>The destination in Amazon Redshift.</p>
      */
@@ -159,6 +163,7 @@ namespace Model
      * <p>The destination in Amazon Redshift.</p>
      */
     inline DestinationDescription& WithRedshiftDestinationDescription(RedshiftDestinationDescription&& value) { SetRedshiftDestinationDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>The destination in Amazon ES.</p>
@@ -186,14 +191,19 @@ namespace Model
     inline DestinationDescription& WithElasticsearchDestinationDescription(ElasticsearchDestinationDescription&& value) { SetElasticsearchDestinationDescription(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_destinationId;
     bool m_destinationIdHasBeenSet;
+
     S3DestinationDescription m_s3DestinationDescription;
     bool m_s3DestinationDescriptionHasBeenSet;
+
     ExtendedS3DestinationDescription m_extendedS3DestinationDescription;
     bool m_extendedS3DestinationDescriptionHasBeenSet;
+
     RedshiftDestinationDescription m_redshiftDestinationDescription;
     bool m_redshiftDestinationDescriptionHasBeenSet;
+
     ElasticsearchDestinationDescription m_elasticsearchDestinationDescription;
     bool m_elasticsearchDestinationDescriptionHasBeenSet;
   };

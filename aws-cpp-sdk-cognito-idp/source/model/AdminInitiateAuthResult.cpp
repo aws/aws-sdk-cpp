@@ -31,13 +31,13 @@ AdminInitiateAuthResult::AdminInitiateAuthResult() :
 {
 }
 
-AdminInitiateAuthResult::AdminInitiateAuthResult(const AmazonWebServiceResult<JsonValue>& result) : 
+AdminInitiateAuthResult::AdminInitiateAuthResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_challengeName(ChallengeNameType::NOT_SET)
 {
   *this = result;
 }
 
-AdminInitiateAuthResult& AdminInitiateAuthResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminInitiateAuthResult& AdminInitiateAuthResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChallengeName"))

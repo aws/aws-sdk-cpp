@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateAssessmentTemplateResult();
-    CreateAssessmentTemplateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAssessmentTemplateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAssessmentTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAssessmentTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN that specifies the assessment template that is created.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateAssessmentTemplateResult& WithAssessmentTemplateArn(const char* value) { SetAssessmentTemplateArn(value); return *this;}
 
   private:
+
     Aws::String m_assessmentTemplateArn;
   };
 

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListThingPrincipalsResult();
-    ListThingPrincipalsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListThingPrincipalsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListThingPrincipalsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListThingPrincipalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The principals associated with the thing.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline ListThingPrincipalsResult& AddPrincipals(const char* value) { m_principals.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_principals;
   };
 

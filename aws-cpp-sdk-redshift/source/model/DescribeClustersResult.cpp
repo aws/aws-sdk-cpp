@@ -31,12 +31,12 @@ DescribeClustersResult::DescribeClustersResult()
 {
 }
 
-DescribeClustersResult::DescribeClustersResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeClustersResult::DescribeClustersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeClustersResult& DescribeClustersResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

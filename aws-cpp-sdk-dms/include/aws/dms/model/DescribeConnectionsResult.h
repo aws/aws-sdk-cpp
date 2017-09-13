@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeConnectionsResult();
-    DescribeConnectionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConnectionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -97,6 +98,7 @@ namespace Model
      */
     inline DescribeConnectionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A description of the connections.</p>
      */
@@ -133,7 +135,9 @@ namespace Model
     inline DescribeConnectionsResult& AddConnections(Connection&& value) { m_connections.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<Connection> m_connections;
   };
 

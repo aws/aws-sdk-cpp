@@ -31,12 +31,12 @@ UploadArchiveResult::UploadArchiveResult()
 {
 }
 
-UploadArchiveResult::UploadArchiveResult(const AmazonWebServiceResult<JsonValue>& result)
+UploadArchiveResult::UploadArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UploadArchiveResult& UploadArchiveResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UploadArchiveResult& UploadArchiveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

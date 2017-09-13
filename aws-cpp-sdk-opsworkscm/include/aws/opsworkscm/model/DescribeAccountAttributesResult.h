@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeAccountAttributesResult();
-    DescribeAccountAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAccountAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> The attributes that are currently set for the account. </p>
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeAccountAttributesResult& AddAttributes(AccountAttribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<AccountAttribute> m_attributes;
   };
 

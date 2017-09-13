@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListRunsResult();
-    ListRunsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRunsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the runs.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>Information about the runs.</p>
      */
     inline ListRunsResult& AddRuns(Run&& value) { m_runs.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -133,7 +135,9 @@ namespace Model
     inline ListRunsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Run> m_runs;
+
     Aws::String m_nextToken;
   };
 

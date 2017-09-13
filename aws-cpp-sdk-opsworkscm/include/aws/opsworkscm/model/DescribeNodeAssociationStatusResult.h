@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeNodeAssociationStatusResult();
-    DescribeNodeAssociationStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeNodeAssociationStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeNodeAssociationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeNodeAssociationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the association or disassociation request. </p> <p
@@ -92,6 +93,7 @@ namespace Model
     inline DescribeNodeAssociationStatusResult& WithNodeAssociationStatus(NodeAssociationStatus&& value) { SetNodeAssociationStatus(std::move(value)); return *this;}
 
   private:
+
     NodeAssociationStatus m_nodeAssociationStatus;
   };
 

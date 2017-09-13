@@ -46,6 +46,7 @@ namespace Model
     TimeSpan& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The place in the input file where you want a clip to start. The format can be
      * either HH:mm:ss.SSS (maximum value: 23:59:59.999; SSS is thousandths of a
@@ -101,6 +102,7 @@ namespace Model
      * Elastic Transcoder starts at the beginning of the input file.</p>
      */
     inline TimeSpan& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+
 
     /**
      * <p>The duration of the clip. The format can be either HH:mm:ss.SSS (maximum
@@ -173,8 +175,10 @@ namespace Model
     inline TimeSpan& WithDuration(const char* value) { SetDuration(value); return *this;}
 
   private:
+
     Aws::String m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::String m_duration;
     bool m_durationHasBeenSet;
   };

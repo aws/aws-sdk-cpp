@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ResolveCustomerResult();
-    ResolveCustomerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResolveCustomerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResolveCustomerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResolveCustomerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The CustomerIdentifier is used to identify an individual customer in your
@@ -95,6 +96,7 @@ namespace Model
      * UsageRecord.</p>
      */
     inline ResolveCustomerResult& WithCustomerIdentifier(const char* value) { SetCustomerIdentifier(value); return *this;}
+
 
     /**
      * <p>The product code is returned to confirm that the buyer is registering for
@@ -146,7 +148,9 @@ namespace Model
     inline ResolveCustomerResult& WithProductCode(const char* value) { SetProductCode(value); return *this;}
 
   private:
+
     Aws::String m_customerIdentifier;
+
     Aws::String m_productCode;
   };
 

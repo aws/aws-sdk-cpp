@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier of the Active Directory Domain.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The identifier of the Active Directory Domain.</p>
      */
     inline DomainMembership& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>The status of the DB instance's Active Directory Domain membership, such as
@@ -126,6 +128,7 @@ namespace Model
      */
     inline DomainMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The fully qualified domain name of the Active Directory Domain.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      * <p>The fully qualified domain name of the Active Directory Domain.</p>
      */
     inline DomainMembership& WithFQDN(const char* value) { SetFQDN(value); return *this;}
+
 
     /**
      * <p>The name of the IAM role to be used when making API calls to the Directory
@@ -204,12 +208,16 @@ namespace Model
     inline DomainMembership& WithIAMRoleName(const char* value) { SetIAMRoleName(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_fQDN;
     bool m_fQDNHasBeenSet;
+
     Aws::String m_iAMRoleName;
     bool m_iAMRoleNameHasBeenSet;
   };

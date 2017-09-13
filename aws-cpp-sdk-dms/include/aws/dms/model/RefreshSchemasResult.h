@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     RefreshSchemasResult();
-    RefreshSchemasResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RefreshSchemasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RefreshSchemasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RefreshSchemasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the refreshed schema.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline RefreshSchemasResult& WithRefreshSchemasStatus(RefreshSchemasStatus&& value) { SetRefreshSchemasStatus(std::move(value)); return *this;}
 
   private:
+
     RefreshSchemasStatus m_refreshSchemasStatus;
   };
 

@@ -47,6 +47,7 @@ namespace Model
     CodeDeliveryDetailsType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The destination for the code delivery details.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CodeDeliveryDetailsType& WithDestination(const char* value) { SetDestination(value); return *this;}
 
+
     /**
      * <p>The delivery medium (email message or phone number).</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The delivery medium (email message or phone number).</p>
      */
     inline CodeDeliveryDetailsType& WithDeliveryMedium(DeliveryMediumType&& value) { SetDeliveryMedium(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the attribute in the code delivery details type.</p>
@@ -143,10 +146,13 @@ namespace Model
     inline CodeDeliveryDetailsType& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
   private:
+
     Aws::String m_destination;
     bool m_destinationHasBeenSet;
+
     DeliveryMediumType m_deliveryMedium;
     bool m_deliveryMediumHasBeenSet;
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetInventoryResult();
-    GetInventoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInventoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInventoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInventoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of inventory entities such as a collection of instance inventory.
@@ -84,6 +85,7 @@ namespace Model
      * </p>
      */
     inline GetInventoryResult& AddEntities(InventoryResultEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -128,7 +130,9 @@ namespace Model
     inline GetInventoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<InventoryResultEntity> m_entities;
+
     Aws::String m_nextToken;
   };
 

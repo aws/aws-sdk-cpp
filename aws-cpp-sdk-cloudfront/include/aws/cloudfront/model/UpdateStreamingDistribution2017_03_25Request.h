@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The streaming distribution's configuration information.</p>
      */
@@ -64,6 +65,7 @@ namespace Model
      * <p>The streaming distribution's configuration information.</p>
      */
     inline UpdateStreamingDistribution2017_03_25Request& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The streaming distribution's id.</p>
@@ -99,6 +101,7 @@ namespace Model
      * <p>The streaming distribution's id.</p>
      */
     inline UpdateStreamingDistribution2017_03_25Request& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving
@@ -150,10 +153,13 @@ namespace Model
     inline UpdateStreamingDistribution2017_03_25Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
 
   private:
+
     StreamingDistributionConfig m_streamingDistributionConfig;
     bool m_streamingDistributionConfigHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
   };

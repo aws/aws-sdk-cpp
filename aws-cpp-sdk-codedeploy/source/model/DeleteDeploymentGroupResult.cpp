@@ -30,12 +30,12 @@ DeleteDeploymentGroupResult::DeleteDeploymentGroupResult()
 {
 }
 
-DeleteDeploymentGroupResult::DeleteDeploymentGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDeploymentGroupResult::DeleteDeploymentGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteDeploymentGroupResult& DeleteDeploymentGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDeploymentGroupResult& DeleteDeploymentGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("hooksNotCleanedUp"))

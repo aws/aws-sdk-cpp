@@ -31,12 +31,12 @@ PromoteReadReplicaDBClusterResult::PromoteReadReplicaDBClusterResult()
 {
 }
 
-PromoteReadReplicaDBClusterResult::PromoteReadReplicaDBClusterResult(const AmazonWebServiceResult<XmlDocument>& result)
+PromoteReadReplicaDBClusterResult::PromoteReadReplicaDBClusterResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-PromoteReadReplicaDBClusterResult& PromoteReadReplicaDBClusterResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PromoteReadReplicaDBClusterResult& PromoteReadReplicaDBClusterResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

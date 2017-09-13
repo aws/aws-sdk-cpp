@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
@@ -91,6 +92,7 @@ namespace Model
      * </p>
      */
     inline InvalidationBatch& WithPaths(Paths&& value) { SetPaths(std::move(value)); return *this;}
+
 
     /**
      * <p>A value that you specify to uniquely identify an invalidation request.
@@ -226,8 +228,10 @@ namespace Model
     inline InvalidationBatch& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
   private:
+
     Paths m_paths;
     bool m_pathsHasBeenSet;
+
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
   };

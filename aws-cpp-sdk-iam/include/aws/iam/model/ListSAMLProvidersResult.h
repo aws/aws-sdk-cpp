@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListSAMLProvidersResult();
-    ListSAMLProvidersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListSAMLProvidersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListSAMLProvidersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListSAMLProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The list of SAML provider resource objects defined in IAM for this AWS
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ListSAMLProvidersResult& AddSAMLProviderList(SAMLProviderListEntry&& value) { m_sAMLProviderList.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -107,7 +109,9 @@ namespace Model
     inline ListSAMLProvidersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<SAMLProviderListEntry> m_sAMLProviderList;
+
     ResponseMetadata m_responseMetadata;
   };
 

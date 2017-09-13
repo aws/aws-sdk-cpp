@@ -45,6 +45,7 @@ namespace Model
     UserProfile& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user's IAM ARN.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The user's IAM ARN.</p>
      */
     inline UserProfile& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
+
 
     /**
      * <p>The user's name.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline UserProfile& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The user's SSH user name.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The user's SSH user name.</p>
      */
     inline UserProfile& WithSshUsername(const char* value) { SetSshUsername(value); return *this;}
+
 
     /**
      * <p>The user's SSH public key.</p>
@@ -185,6 +189,7 @@ namespace Model
      */
     inline UserProfile& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
 
+
     /**
      * <p>Whether users can specify their own SSH public key through the My Settings
      * page. For more information, see <a
@@ -210,14 +215,19 @@ namespace Model
     inline UserProfile& WithAllowSelfManagement(bool value) { SetAllowSelfManagement(value); return *this;}
 
   private:
+
     Aws::String m_iamUserArn;
     bool m_iamUserArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_sshUsername;
     bool m_sshUsernameHasBeenSet;
+
     Aws::String m_sshPublicKey;
     bool m_sshPublicKeyHasBeenSet;
+
     bool m_allowSelfManagement;
     bool m_allowSelfManagementHasBeenSet;
   };

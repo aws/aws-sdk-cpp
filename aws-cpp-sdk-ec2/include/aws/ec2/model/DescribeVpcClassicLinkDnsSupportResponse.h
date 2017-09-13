@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeVpcClassicLinkDnsSupportResponse();
-    DescribeVpcClassicLinkDnsSupportResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVpcClassicLinkDnsSupportResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpcClassicLinkDnsSupportResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The token to use when requesting the next set of items.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeVpcClassicLinkDnsSupportResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Information about the ClassicLink DNS support status of the VPCs.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline DescribeVpcClassicLinkDnsSupportResponse& AddVpcs(ClassicLinkDnsSupport&& value) { m_vpcs.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -136,8 +139,11 @@ namespace Model
     inline DescribeVpcClassicLinkDnsSupportResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<ClassicLinkDnsSupport> m_vpcs;
+
     ResponseMetadata m_responseMetadata;
   };
 

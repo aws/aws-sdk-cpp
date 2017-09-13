@@ -47,6 +47,7 @@ namespace Model
     JobFlowExecutionStatusDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The state of the job flow.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The state of the job flow.</p>
      */
     inline JobFlowExecutionStatusDetail& WithState(JobFlowExecutionState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The creation date and time of the job flow.</p>
@@ -97,6 +99,7 @@ namespace Model
      */
     inline JobFlowExecutionStatusDetail& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The start date and time of the job flow.</p>
      */
@@ -121,6 +124,7 @@ namespace Model
      * <p>The start date and time of the job flow.</p>
      */
     inline JobFlowExecutionStatusDetail& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time when the job flow was ready to start running bootstrap
@@ -152,6 +156,7 @@ namespace Model
      */
     inline JobFlowExecutionStatusDetail& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The completion date and time of the job flow.</p>
      */
@@ -176,6 +181,7 @@ namespace Model
      * <p>The completion date and time of the job flow.</p>
      */
     inline JobFlowExecutionStatusDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Description of the job flow last changed state.</p>
@@ -213,16 +219,22 @@ namespace Model
     inline JobFlowExecutionStatusDetail& WithLastStateChangeReason(const char* value) { SetLastStateChangeReason(value); return *this;}
 
   private:
+
     JobFlowExecutionState m_state;
     bool m_stateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_startDateTime;
     bool m_startDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_readyDateTime;
     bool m_readyDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endDateTime;
     bool m_endDateTimeHasBeenSet;
+
     Aws::String m_lastStateChangeReason;
     bool m_lastStateChangeReasonHasBeenSet;
   };

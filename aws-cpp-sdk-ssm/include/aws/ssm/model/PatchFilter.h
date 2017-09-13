@@ -47,6 +47,7 @@ namespace Model
     PatchFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)</p>
      */
     inline PatchFilter& WithKey(PatchFilterKey&& value) { SetKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The value for the filter key.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline PatchFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     PatchFilterKey m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

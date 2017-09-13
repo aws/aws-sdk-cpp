@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a matchmaking ticket. Use this identifier to track the
      * matchmaking ticket status and retrieve match results.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline StartMatchmakingRequest& WithTicketId(const char* value) { SetTicketId(value); return *this;}
 
+
     /**
      * <p>Name of the matchmaking configuration to use for this request. Matchmaking
      * configurations must exist in the same region as this request.</p>
@@ -124,6 +126,7 @@ namespace Model
      * configurations must exist in the same region as this request.</p>
      */
     inline StartMatchmakingRequest& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
+
 
     /**
      * <p>Information on each player to be matched. This information must include a
@@ -182,10 +185,13 @@ namespace Model
     inline StartMatchmakingRequest& AddPlayers(Player&& value) { m_playersHasBeenSet = true; m_players.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_ticketId;
     bool m_ticketIdHasBeenSet;
+
     Aws::String m_configurationName;
     bool m_configurationNameHasBeenSet;
+
     Aws::Vector<Player> m_players;
     bool m_playersHasBeenSet;
   };

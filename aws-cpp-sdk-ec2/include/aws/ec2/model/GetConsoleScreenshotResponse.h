@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetConsoleScreenshotResponse();
-    GetConsoleScreenshotResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetConsoleScreenshotResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetConsoleScreenshotResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetConsoleScreenshotResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The data that comprises the image.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline GetConsoleScreenshotResponse& WithImageData(const char* value) { SetImageData(value); return *this;}
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      */
     inline GetConsoleScreenshotResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -133,8 +136,11 @@ namespace Model
     inline GetConsoleScreenshotResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_imageData;
+
     Aws::String m_instanceId;
+
     ResponseMetadata m_responseMetadata;
   };
 

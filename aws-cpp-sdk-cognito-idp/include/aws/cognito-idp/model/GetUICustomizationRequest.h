@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The user pool ID for the user pool.</p>
      */
     inline GetUICustomizationRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The client ID for the client app.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline GetUICustomizationRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
   };

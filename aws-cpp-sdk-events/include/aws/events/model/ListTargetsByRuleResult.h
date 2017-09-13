@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListTargetsByRuleResult();
-    ListTargetsByRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTargetsByRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTargetsByRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTargetsByRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The targets assigned to the rule.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The targets assigned to the rule.</p>
      */
     inline ListTargetsByRuleResult& AddTargets(Target&& value) { m_targets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Indicates whether there are additional results to retrieve. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline ListTargetsByRuleResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Target> m_targets;
+
     Aws::String m_nextToken;
   };
 

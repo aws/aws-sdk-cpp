@@ -55,7 +55,7 @@ enum class SnowballErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLUSTER_LIMIT_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLUSTER_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_ADDRESS,
   INVALID_INPUT_COMBINATION,
   INVALID_JOB_STATE,
@@ -66,7 +66,7 @@ enum class SnowballErrors
 };
 namespace SnowballErrorMapper
 {
-  AWS_SNOWBALL_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_SNOWBALL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Snowball

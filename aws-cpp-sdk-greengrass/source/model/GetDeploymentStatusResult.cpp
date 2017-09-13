@@ -30,12 +30,12 @@ GetDeploymentStatusResult::GetDeploymentStatusResult()
 {
 }
 
-GetDeploymentStatusResult::GetDeploymentStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDeploymentStatusResult::GetDeploymentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDeploymentStatusResult& GetDeploymentStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDeploymentStatusResult& GetDeploymentStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DeploymentStatus"))

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the services to list. If you do not specify a cluster, the default cluster is
@@ -84,6 +85,7 @@ namespace Model
      * assumed.</p>
      */
     inline ListServicesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -169,6 +171,7 @@ namespace Model
      */
     inline ListServicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of container instance results returned by
      * <code>ListServices</code> in paginated output. When this parameter is used,
@@ -209,10 +212,13 @@ namespace Model
     inline ListServicesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

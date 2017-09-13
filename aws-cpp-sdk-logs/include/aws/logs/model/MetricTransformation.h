@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Indicates how to transform ingested log events into metric data in a
+   * <p>Indicates how to transform ingested log events in to metric data in a
    * CloudWatch metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MetricTransformation">AWS
    * API Reference</a></p>
@@ -45,6 +45,7 @@ namespace Model
     MetricTransformation(const Aws::Utils::Json::JsonValue& jsonValue);
     MetricTransformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
 
     /**
      * <p>The name of the CloudWatch metric.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline MetricTransformation& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
+
     /**
      * <p>The namespace of the CloudWatch metric.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The namespace of the CloudWatch metric.</p>
      */
     inline MetricTransformation& WithMetricNamespace(const char* value) { SetMetricNamespace(value); return *this;}
+
 
     /**
      * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
@@ -158,6 +161,7 @@ namespace Model
      */
     inline MetricTransformation& WithMetricValue(const char* value) { SetMetricValue(value); return *this;}
 
+
     /**
      * <p>(Optional) The value to emit when a filter pattern does not match a log
      * event. This value can be null.</p>
@@ -177,12 +181,16 @@ namespace Model
     inline MetricTransformation& WithDefaultValue(double value) { SetDefaultValue(value); return *this;}
 
   private:
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::String m_metricNamespace;
     bool m_metricNamespaceHasBeenSet;
+
     Aws::String m_metricValue;
     bool m_metricValueHasBeenSet;
+
     double m_defaultValue;
     bool m_defaultValueHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     GCMMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The action that occurs if the user taps a push notification delivered by the
      * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
@@ -101,6 +102,7 @@ namespace Model
      */
     inline GCMMessage& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
 
+
     /**
      * The message body of the notification, the email body or the text message.
      */
@@ -135,6 +137,7 @@ namespace Model
      * The message body of the notification, the email body or the text message.
      */
     inline GCMMessage& WithBody(const char* value) { SetBody(value); return *this;}
+
 
     /**
      * This parameter identifies a group of messages (e.g., with collapse_key: "Updates
@@ -191,6 +194,7 @@ namespace Model
      * messages when the device comes back online or becomes active.
      */
     inline GCMMessage& WithCollapseKey(const char* value) { SetCollapseKey(value); return *this;}
+
 
     /**
      * The data payload used for a silent push. This payload is added to the
@@ -264,6 +268,7 @@ namespace Model
      */
     inline GCMMessage& AddData(const char* key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
 
+
     /**
      * The icon image name of the asset saved in your application.
      */
@@ -298,6 +303,7 @@ namespace Model
      * The icon image name of the asset saved in your application.
      */
     inline GCMMessage& WithIconReference(const char* value) { SetIconReference(value); return *this;}
+
 
     /**
      * The URL that points to an image used as the large icon to the notification
@@ -341,6 +347,7 @@ namespace Model
      */
     inline GCMMessage& WithImageIconUrl(const char* value) { SetImageIconUrl(value); return *this;}
 
+
     /**
      * The URL that points to an image used in the push notification.
      */
@@ -375,6 +382,7 @@ namespace Model
      * The URL that points to an image used in the push notification.
      */
     inline GCMMessage& WithImageUrl(const char* value) { SetImageUrl(value); return *this;}
+
 
     /**
      * The Raw JSON formatted string to be used as the payload. This value overrides
@@ -418,6 +426,7 @@ namespace Model
      */
     inline GCMMessage& WithRawContent(const char* value) { SetRawContent(value); return *this;}
 
+
     /**
      * This parameter specifies the package name of the application where the
      * registration tokens must match in order to receive the message.
@@ -460,6 +469,7 @@ namespace Model
      */
     inline GCMMessage& WithRestrictedPackageName(const char* value) { SetRestrictedPackageName(value); return *this;}
 
+
     /**
      * Indicates if the message should display on the users device. Silent pushes can
      * be used for Remote Configuration and Phone Home use cases.
@@ -477,6 +487,7 @@ namespace Model
      * be used for Remote Configuration and Phone Home use cases.
      */
     inline GCMMessage& WithSilentPush(bool value) { SetSilentPush(value); return *this;}
+
 
     /**
      * The URL that points to an image used as the small icon for the notification
@@ -527,6 +538,7 @@ namespace Model
      */
     inline GCMMessage& WithSmallImageIconUrl(const char* value) { SetSmallImageIconUrl(value); return *this;}
 
+
     /**
      * Indicates a sound to play when the device receives the notification. Supports
      * default, or the filename of a sound resource bundled in the app. Android sound
@@ -575,6 +587,7 @@ namespace Model
      * files must reside in /res/raw/
      */
     inline GCMMessage& WithSound(const char* value) { SetSound(value); return *this;}
+
 
     /**
      * Default message substitutions. Can be overridden by individual address
@@ -642,6 +655,7 @@ namespace Model
      */
     inline GCMMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
+
     /**
      * The message title that displays above the message on the user's device.
      */
@@ -676,6 +690,7 @@ namespace Model
      * The message title that displays above the message on the user's device.
      */
     inline GCMMessage& WithTitle(const char* value) { SetTitle(value); return *this;}
+
 
     /**
      * The URL to open in the user's mobile browser. Used if the value for Action is
@@ -720,34 +735,49 @@ namespace Model
     inline GCMMessage& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
     Action m_action;
     bool m_actionHasBeenSet;
+
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+
     Aws::String m_collapseKey;
     bool m_collapseKeyHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_data;
     bool m_dataHasBeenSet;
+
     Aws::String m_iconReference;
     bool m_iconReferenceHasBeenSet;
+
     Aws::String m_imageIconUrl;
     bool m_imageIconUrlHasBeenSet;
+
     Aws::String m_imageUrl;
     bool m_imageUrlHasBeenSet;
+
     Aws::String m_rawContent;
     bool m_rawContentHasBeenSet;
+
     Aws::String m_restrictedPackageName;
     bool m_restrictedPackageNameHasBeenSet;
+
     bool m_silentPush;
     bool m_silentPushHasBeenSet;
+
     Aws::String m_smallImageIconUrl;
     bool m_smallImageIconUrlHasBeenSet;
+
     Aws::String m_sound;
     bool m_soundHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
     bool m_substitutionsHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
   };

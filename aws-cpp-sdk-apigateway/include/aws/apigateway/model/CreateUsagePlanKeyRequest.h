@@ -38,6 +38,7 @@ namespace Model
     CreateUsagePlanKeyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
      * containing the to-be-created <a>UsagePlanKey</a> resource representing a plan
@@ -87,6 +88,7 @@ namespace Model
      */
     inline CreateUsagePlanKeyRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
+
     /**
      * <p>The identifier of a <a>UsagePlanKey</a> resource for a plan customer.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The identifier of a <a>UsagePlanKey</a> resource for a plan customer.</p>
      */
     inline CreateUsagePlanKeyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+
 
     /**
      * <p>The type of a <a>UsagePlanKey</a> resource for a plan customer.</p>
@@ -158,10 +161,13 @@ namespace Model
     inline CreateUsagePlanKeyRequest& WithKeyType(const char* value) { SetKeyType(value); return *this;}
 
   private:
+
     Aws::String m_usagePlanId;
     bool m_usagePlanIdHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_keyType;
     bool m_keyTypeHasBeenSet;
   };

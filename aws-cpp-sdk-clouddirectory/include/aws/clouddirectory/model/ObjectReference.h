@@ -45,6 +45,7 @@ namespace Model
     ObjectReference& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A path selector supports easy selection of an object by the parent/child
      * links leading to it from the directory root. Use the link names from each
@@ -172,6 +173,7 @@ namespace Model
     inline ObjectReference& WithSelector(const char* value) { SetSelector(value); return *this;}
 
   private:
+
     Aws::String m_selector;
     bool m_selectorHasBeenSet;
   };

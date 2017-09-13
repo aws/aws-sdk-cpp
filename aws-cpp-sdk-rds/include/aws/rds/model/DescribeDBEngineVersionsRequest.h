@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The database engine to return.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The database engine to return.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
@@ -116,6 +118,7 @@ namespace Model
      * </p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p>The name of a specific DB parameter group family to return details for.</p>
@@ -173,6 +176,7 @@ namespace Model
      */
     inline DescribeDBEngineVersionsRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>Not currently supported.</p>
      */
@@ -208,6 +212,7 @@ namespace Model
      */
     inline DescribeDBEngineVersionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
@@ -231,6 +236,7 @@ namespace Model
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -281,6 +287,7 @@ namespace Model
      */
     inline DescribeDBEngineVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Indicates that only the default version of the specified engine or engine and
      * major version combination is returned.</p>
@@ -298,6 +305,7 @@ namespace Model
      * major version combination is returned.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithDefaultOnly(bool value) { SetDefaultOnly(value); return *this;}
+
 
     /**
      * <p>If this parameter is specified and the requested engine supports the
@@ -323,6 +331,7 @@ namespace Model
      */
     inline DescribeDBEngineVersionsRequest& WithListSupportedCharacterSets(bool value) { SetListSupportedCharacterSets(value); return *this;}
 
+
     /**
      * <p>If this parameter is specified and the requested engine supports the
      * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response
@@ -345,22 +354,31 @@ namespace Model
     inline DescribeDBEngineVersionsRequest& WithListSupportedTimezones(bool value) { SetListSupportedTimezones(value); return *this;}
 
   private:
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_dBParameterGroupFamily;
     bool m_dBParameterGroupFamilyHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     bool m_defaultOnly;
     bool m_defaultOnlyHasBeenSet;
+
     bool m_listSupportedCharacterSets;
     bool m_listSupportedCharacterSetsHasBeenSet;
+
     bool m_listSupportedTimezones;
     bool m_listSupportedTimezonesHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeEntityAggregatesResult::DescribeEntityAggregatesResult()
 {
 }
 
-DescribeEntityAggregatesResult::DescribeEntityAggregatesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEntityAggregatesResult::DescribeEntityAggregatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeEntityAggregatesResult& DescribeEntityAggregatesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEntityAggregatesResult& DescribeEntityAggregatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("entityAggregates"))

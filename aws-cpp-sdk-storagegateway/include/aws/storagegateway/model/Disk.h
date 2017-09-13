@@ -40,6 +40,7 @@ namespace Model
     Disk& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetDiskId() const{ return m_diskId; }
 
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline Disk& WithDiskId(const char* value) { SetDiskId(value); return *this;}
+
 
     
     inline const Aws::String& GetDiskPath() const{ return m_diskPath; }
@@ -82,6 +84,7 @@ namespace Model
     
     inline Disk& WithDiskPath(const char* value) { SetDiskPath(value); return *this;}
 
+
     
     inline const Aws::String& GetDiskNode() const{ return m_diskNode; }
 
@@ -102,6 +105,7 @@ namespace Model
 
     
     inline Disk& WithDiskNode(const char* value) { SetDiskNode(value); return *this;}
+
 
     
     inline const Aws::String& GetDiskStatus() const{ return m_diskStatus; }
@@ -124,6 +128,7 @@ namespace Model
     
     inline Disk& WithDiskStatus(const char* value) { SetDiskStatus(value); return *this;}
 
+
     
     inline long long GetDiskSizeInBytes() const{ return m_diskSizeInBytes; }
 
@@ -132,6 +137,7 @@ namespace Model
 
     
     inline Disk& WithDiskSizeInBytes(long long value) { SetDiskSizeInBytes(value); return *this;}
+
 
     
     inline const Aws::String& GetDiskAllocationType() const{ return m_diskAllocationType; }
@@ -153,6 +159,7 @@ namespace Model
 
     
     inline Disk& WithDiskAllocationType(const char* value) { SetDiskAllocationType(value); return *this;}
+
 
     
     inline const Aws::String& GetDiskAllocationResource() const{ return m_diskAllocationResource; }
@@ -176,18 +183,25 @@ namespace Model
     inline Disk& WithDiskAllocationResource(const char* value) { SetDiskAllocationResource(value); return *this;}
 
   private:
+
     Aws::String m_diskId;
     bool m_diskIdHasBeenSet;
+
     Aws::String m_diskPath;
     bool m_diskPathHasBeenSet;
+
     Aws::String m_diskNode;
     bool m_diskNodeHasBeenSet;
+
     Aws::String m_diskStatus;
     bool m_diskStatusHasBeenSet;
+
     long long m_diskSizeInBytes;
     bool m_diskSizeInBytesHasBeenSet;
+
     Aws::String m_diskAllocationType;
     bool m_diskAllocationTypeHasBeenSet;
+
     Aws::String m_diskAllocationResource;
     bool m_diskAllocationResourceHasBeenSet;
   };

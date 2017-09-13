@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListAssessmentTemplatesResult();
-    ListAssessmentTemplatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssessmentTemplatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssessmentTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssessmentTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of ARNs that specifies the assessment templates returned by the
@@ -89,6 +90,7 @@ namespace Model
      * action.</p>
      */
     inline ListAssessmentTemplatesResult& AddAssessmentTemplateArns(const char* value) { m_assessmentTemplateArns.push_back(value); return *this; }
+
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this
@@ -147,7 +149,9 @@ namespace Model
     inline ListAssessmentTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_assessmentTemplateArns;
+
     Aws::String m_nextToken;
   };
 

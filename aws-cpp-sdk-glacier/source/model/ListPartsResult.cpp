@@ -31,13 +31,13 @@ ListPartsResult::ListPartsResult() :
 {
 }
 
-ListPartsResult::ListPartsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListPartsResult::ListPartsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_partSizeInBytes(0)
 {
   *this = result;
 }
 
-ListPartsResult& ListPartsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListPartsResult& ListPartsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MultipartUploadId"))

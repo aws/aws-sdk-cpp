@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline SetPermissionRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline SetPermissionRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 
+
     /**
      * <p>The user is allowed to use SSH to communicate with the instance.</p>
      */
@@ -121,6 +124,7 @@ namespace Model
      */
     inline SetPermissionRequest& WithAllowSsh(bool value) { SetAllowSsh(value); return *this;}
 
+
     /**
      * <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
      */
@@ -135,6 +139,7 @@ namespace Model
      * <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
      */
     inline SetPermissionRequest& WithAllowSudo(bool value) { SetAllowSudo(value); return *this;}
+
 
     /**
      * <p>The user's permission level, which must be set to one of the following
@@ -221,14 +226,19 @@ namespace Model
     inline SetPermissionRequest& WithLevel(const char* value) { SetLevel(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_iamUserArn;
     bool m_iamUserArnHasBeenSet;
+
     bool m_allowSsh;
     bool m_allowSshHasBeenSet;
+
     bool m_allowSudo;
     bool m_allowSudoHasBeenSet;
+
     Aws::String m_level;
     bool m_levelHasBeenSet;
   };

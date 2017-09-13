@@ -54,6 +54,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
      * requests to when a request matches the path pattern either for a cache behavior
@@ -103,6 +104,7 @@ namespace Model
      */
     inline DefaultCacheBehavior& WithTargetOriginId(const char* value) { SetTargetOriginId(value); return *this;}
 
+
     /**
      * <p>A complex type that specifies how CloudFront handles query strings and
      * cookies.</p>
@@ -132,6 +134,7 @@ namespace Model
      * cookies.</p>
      */
     inline DefaultCacheBehavior& WithForwardedValues(ForwardedValues&& value) { SetForwardedValues(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that specifies the AWS accounts, if any, that you want to
@@ -227,6 +230,7 @@ namespace Model
      * of the trusted signers that you want to include in the updated distribution.</p>
      */
     inline DefaultCacheBehavior& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
+
 
     /**
      * <p>The protocol that viewers can use to access the files in the origin specified
@@ -358,6 +362,7 @@ namespace Model
      */
     inline DefaultCacheBehavior& WithViewerProtocolPolicy(ViewerProtocolPolicy&& value) { SetViewerProtocolPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>The minimum amount of time that you want objects to stay in CloudFront caches
      * before CloudFront forwards another request to your origin to determine whether
@@ -400,6 +405,7 @@ namespace Model
      */
     inline DefaultCacheBehavior& WithMinTTL(long long value) { SetMinTTL(value); return *this;}
 
+
     
     inline const AllowedMethods& GetAllowedMethods() const{ return m_allowedMethods; }
 
@@ -414,6 +420,7 @@ namespace Model
 
     
     inline DefaultCacheBehavior& WithAllowedMethods(AllowedMethods&& value) { SetAllowedMethods(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether you want to distribute media files in the Microsoft Smooth
@@ -444,6 +451,7 @@ namespace Model
      * value of <code>PathPattern</code>. </p>
      */
     inline DefaultCacheBehavior& WithSmoothStreaming(bool value) { SetSmoothStreaming(value); return *this;}
+
 
     /**
      * <p>The default amount of time that you want objects to stay in CloudFront caches
@@ -484,6 +492,7 @@ namespace Model
      */
     inline DefaultCacheBehavior& WithDefaultTTL(long long value) { SetDefaultTTL(value); return *this;}
 
+
     
     inline long long GetMaxTTL() const{ return m_maxTTL; }
 
@@ -492,6 +501,7 @@ namespace Model
 
     
     inline DefaultCacheBehavior& WithMaxTTL(long long value) { SetMaxTTL(value); return *this;}
+
 
     /**
      * <p>Whether you want CloudFront to automatically compress certain files for this
@@ -519,6 +529,7 @@ namespace Model
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DefaultCacheBehavior& WithCompress(bool value) { SetCompress(value); return *this;}
+
 
     /**
      * <p>A complex type that contains zero or more Lambda function associations for a
@@ -551,26 +562,37 @@ namespace Model
     inline DefaultCacheBehavior& WithLambdaFunctionAssociations(LambdaFunctionAssociations&& value) { SetLambdaFunctionAssociations(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_targetOriginId;
     bool m_targetOriginIdHasBeenSet;
+
     ForwardedValues m_forwardedValues;
     bool m_forwardedValuesHasBeenSet;
+
     TrustedSigners m_trustedSigners;
     bool m_trustedSignersHasBeenSet;
+
     ViewerProtocolPolicy m_viewerProtocolPolicy;
     bool m_viewerProtocolPolicyHasBeenSet;
+
     long long m_minTTL;
     bool m_minTTLHasBeenSet;
+
     AllowedMethods m_allowedMethods;
     bool m_allowedMethodsHasBeenSet;
+
     bool m_smoothStreaming;
     bool m_smoothStreamingHasBeenSet;
+
     long long m_defaultTTL;
     bool m_defaultTTLHasBeenSet;
+
     long long m_maxTTL;
     bool m_maxTTLHasBeenSet;
+
     bool m_compress;
     bool m_compressHasBeenSet;
+
     LambdaFunctionAssociations m_lambdaFunctionAssociations;
     bool m_lambdaFunctionAssociationsHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the new <code>Crawler</code>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>Name of the new <code>Crawler</code>.</p>
      */
     inline CreateCrawlerRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The AWS ARN of the IAM role used by the new <code>Crawler</code> to access
@@ -116,6 +118,7 @@ namespace Model
      */
     inline CreateCrawlerRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
+
     /**
      * <p>The Glue <code>Database</code> where results will be stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
@@ -158,6 +161,7 @@ namespace Model
      */
     inline CreateCrawlerRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>A description of the new <code>Crawler</code>.</p>
      */
@@ -193,6 +197,7 @@ namespace Model
      */
     inline CreateCrawlerRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A list of collection of targets to crawl.</p>
      */
@@ -217,6 +222,7 @@ namespace Model
      * <p>A list of collection of targets to crawl.</p>
      */
     inline CreateCrawlerRequest& WithTargets(CrawlerTargets&& value) { SetTargets(std::move(value)); return *this;}
+
 
     /**
      * <p>A cron expression that can be used as a Cloudwatch event (see <a
@@ -273,6 +279,7 @@ namespace Model
      * specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline CreateCrawlerRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
+
 
     /**
      * <p>A list of custom <code>Classifier</code> names that the user has registered.
@@ -338,6 +345,7 @@ namespace Model
      */
     inline CreateCrawlerRequest& AddClassifiers(const char* value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
 
+
     /**
      * <p>The table prefix used for catalog tables created.</p>
      */
@@ -373,6 +381,7 @@ namespace Model
      */
     inline CreateCrawlerRequest& WithTablePrefix(const char* value) { SetTablePrefix(value); return *this;}
 
+
     /**
      * <p>Policy for the crawler's update and deletion behavior.</p>
      */
@@ -399,22 +408,31 @@ namespace Model
     inline CreateCrawlerRequest& WithSchemaChangePolicy(SchemaChangePolicy&& value) { SetSchemaChangePolicy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     CrawlerTargets m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_schedule;
     bool m_scheduleHasBeenSet;
+
     Aws::Vector<Aws::String> m_classifiers;
     bool m_classifiersHasBeenSet;
+
     Aws::String m_tablePrefix;
     bool m_tablePrefixHasBeenSet;
+
     SchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet;
   };

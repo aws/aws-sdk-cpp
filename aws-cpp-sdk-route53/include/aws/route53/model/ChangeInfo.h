@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The ID of the request.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ChangeInfo& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The current state of the request. <code>PENDING</code> indicates that this
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
@@ -113,6 +115,7 @@ namespace Model
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
      */
     inline ChangeInfo& WithStatus(ChangeStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time that the change request was submitted in <a
@@ -158,6 +161,7 @@ namespace Model
      * UTC.</p>
      */
     inline ChangeInfo& WithSubmittedAt(Aws::Utils::DateTime&& value) { SetSubmittedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that describes change information about changes made to your
@@ -209,12 +213,16 @@ namespace Model
     inline ChangeInfo& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     ChangeStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_submittedAt;
     bool m_submittedAtHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
   };

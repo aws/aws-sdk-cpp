@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The file format used when exporting data to Amazon S3.
      */
@@ -66,6 +67,7 @@ namespace Model
      * The file format used when exporting data to Amazon S3.
      */
     inline AnalyticsS3BucketDestination& WithFormat(AnalyticsS3ExportFileFormat&& value) { SetFormat(std::move(value)); return *this;}
+
 
     /**
      * The account ID that owns the destination bucket. If no account ID is provided,
@@ -109,6 +111,7 @@ namespace Model
      */
     inline AnalyticsS3BucketDestination& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
 
+
     /**
      * The Amazon resource name (ARN) of the bucket to which data is exported.
      */
@@ -143,6 +146,7 @@ namespace Model
      * The Amazon resource name (ARN) of the bucket to which data is exported.
      */
     inline AnalyticsS3BucketDestination& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * The prefix to use when exporting data. The exported data begins with this
@@ -187,12 +191,16 @@ namespace Model
     inline AnalyticsS3BucketDestination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
   private:
+
     AnalyticsS3ExportFileFormat m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_bucketAccountId;
     bool m_bucketAccountIdHasBeenSet;
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeOrderableClusterOptionsResult();
-    DescribeOrderableClusterOptionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeOrderableClusterOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeOrderableClusterOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeOrderableClusterOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>An <code>OrderableClusterOption</code> structure containing information about
@@ -91,6 +92,7 @@ namespace Model
      * orderable options for the cluster.</p>
      */
     inline DescribeOrderableClusterOptionsResult& AddOrderableClusterOptions(OrderableClusterOption&& value) { m_orderableClusterOptions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -162,6 +164,7 @@ namespace Model
      */
     inline DescribeOrderableClusterOptionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -178,8 +181,11 @@ namespace Model
     inline DescribeOrderableClusterOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<OrderableClusterOption> m_orderableClusterOptions;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

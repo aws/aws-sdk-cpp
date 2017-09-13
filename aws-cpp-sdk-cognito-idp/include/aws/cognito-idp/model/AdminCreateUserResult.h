@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     AdminCreateUserResult();
-    AdminCreateUserResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminCreateUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminCreateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminCreateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The newly created user.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline AdminCreateUserResult& WithUser(UserType&& value) { SetUser(std::move(value)); return *this;}
 
   private:
+
     UserType m_user;
   };
 

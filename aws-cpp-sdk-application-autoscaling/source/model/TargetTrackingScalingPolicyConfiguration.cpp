@@ -36,7 +36,9 @@ TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfigurati
     m_scaleOutCooldown(0),
     m_scaleOutCooldownHasBeenSet(false),
     m_scaleInCooldown(0),
-    m_scaleInCooldownHasBeenSet(false)
+    m_scaleInCooldownHasBeenSet(false),
+    m_disableScaleIn(false),
+    m_disableScaleInHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfigurati
     m_scaleOutCooldown(0),
     m_scaleOutCooldownHasBeenSet(false),
     m_scaleInCooldown(0),
-    m_scaleInCooldownHasBeenSet(false)
+    m_scaleInCooldownHasBeenSet(false),
+    m_disableScaleIn(false),
+    m_disableScaleInHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +94,13 @@ TargetTrackingScalingPolicyConfiguration& TargetTrackingScalingPolicyConfigurati
     m_scaleInCooldownHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DisableScaleIn"))
+  {
+    m_disableScaleIn = jsonValue.GetBool("DisableScaleIn");
+
+    m_disableScaleInHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +135,12 @@ JsonValue TargetTrackingScalingPolicyConfiguration::Jsonize() const
   if(m_scaleInCooldownHasBeenSet)
   {
    payload.WithInteger("ScaleInCooldown", m_scaleInCooldown);
+
+  }
+
+  if(m_disableScaleInHasBeenSet)
+  {
+   payload.WithBool("DisableScaleIn", m_disableScaleIn);
 
   }
 

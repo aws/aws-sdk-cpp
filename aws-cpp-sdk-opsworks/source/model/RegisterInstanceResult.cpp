@@ -30,12 +30,12 @@ RegisterInstanceResult::RegisterInstanceResult()
 {
 }
 
-RegisterInstanceResult::RegisterInstanceResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterInstanceResult::RegisterInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterInstanceResult& RegisterInstanceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterInstanceResult& RegisterInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("InstanceId"))

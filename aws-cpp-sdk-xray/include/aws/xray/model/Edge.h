@@ -49,6 +49,7 @@ namespace Model
     Edge& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifier of the edge. Unique within a service map.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>Identifier of the edge. Unique within a service map.</p>
      */
     inline Edge& WithReferenceId(int value) { SetReferenceId(value); return *this;}
+
 
     /**
      * <p>The start time of the first segment on the edge.</p>
@@ -89,6 +91,7 @@ namespace Model
      */
     inline Edge& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The end time of the last segment on the edge.</p>
      */
@@ -114,6 +117,7 @@ namespace Model
      */
     inline Edge& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Response statistics for segments on the edge.</p>
      */
@@ -138,6 +142,7 @@ namespace Model
      * <p>Response statistics for segments on the edge.</p>
      */
     inline Edge& WithSummaryStatistics(EdgeStatistics&& value) { SetSummaryStatistics(std::move(value)); return *this;}
+
 
     /**
      * <p>A histogram that maps the spread of client response times on an edge.</p>
@@ -173,6 +178,7 @@ namespace Model
      * <p>A histogram that maps the spread of client response times on an edge.</p>
      */
     inline Edge& AddResponseTimeHistogram(HistogramEntry&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Aliases for the edge.</p>
@@ -210,16 +216,22 @@ namespace Model
     inline Edge& AddAliases(Alias&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_referenceId;
     bool m_referenceIdHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     EdgeStatistics m_summaryStatistics;
     bool m_summaryStatisticsHasBeenSet;
+
     Aws::Vector<HistogramEntry> m_responseTimeHistogram;
     bool m_responseTimeHistogramHasBeenSet;
+
     Aws::Vector<Alias> m_aliases;
     bool m_aliasesHasBeenSet;
   };

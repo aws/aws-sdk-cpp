@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to update.
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
@@ -87,6 +88,7 @@ namespace Model
      */
     inline UpdateIPSetRequest& WithIPSetId(const char* value) { SetIPSetId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline UpdateIPSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+
 
     /**
      * <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or
@@ -186,10 +189,13 @@ namespace Model
     inline UpdateIPSetRequest& AddUpdates(IPSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_iPSetId;
     bool m_iPSetIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
+
     Aws::Vector<IPSetUpdate> m_updates;
     bool m_updatesHasBeenSet;
   };

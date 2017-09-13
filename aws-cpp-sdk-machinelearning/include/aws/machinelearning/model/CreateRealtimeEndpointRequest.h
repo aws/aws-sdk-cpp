@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline CreateRealtimeEndpointRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
      */
     inline DelegationSet& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The value that you specified for <code>CallerReference</code> when you
@@ -125,6 +127,7 @@ namespace Model
      * created the reusable delegation set.</p>
      */
     inline DelegationSet& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+
 
     /**
      * <p>A complex type that contains a list of the authoritative name servers for a
@@ -175,10 +178,13 @@ namespace Model
     inline DelegationSet& AddNameServers(const char* value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
+
     Aws::Vector<Aws::String> m_nameServers;
     bool m_nameServersHasBeenSet;
   };

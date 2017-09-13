@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeEventCategoriesResult();
-    DescribeEventCategoriesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventCategoriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventCategoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventCategoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of event categories.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DescribeEventCategoriesResult& AddEventCategoryGroupList(EventCategoryGroup&& value) { m_eventCategoryGroupList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<EventCategoryGroup> m_eventCategoryGroupList;
   };
 

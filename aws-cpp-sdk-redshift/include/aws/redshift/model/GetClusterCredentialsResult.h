@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetClusterCredentialsResult();
-    GetClusterCredentialsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetClusterCredentialsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetClusterCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetClusterCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A database user name that is authorized to log on to the database
@@ -119,6 +120,7 @@ namespace Model
      */
     inline GetClusterCredentialsResult& WithDbUser(const char* value) { SetDbUser(value); return *this;}
 
+
     /**
      * <p>A temporary password that authorizes the user name returned by
      * <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
@@ -161,6 +163,7 @@ namespace Model
      */
     inline GetClusterCredentialsResult& WithDbPassword(const char* value) { SetDbPassword(value); return *this;}
 
+
     /**
      * <p>The date and time <code>DbPassword</code> expires.</p>
      */
@@ -186,6 +189,7 @@ namespace Model
      */
     inline GetClusterCredentialsResult& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -202,9 +206,13 @@ namespace Model
     inline GetClusterCredentialsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_dbUser;
+
     Aws::String m_dbPassword;
+
     Aws::Utils::DateTime m_expiration;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GenerateRandomResult();
-    GenerateRandomResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateRandomResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GenerateRandomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GenerateRandomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The random byte string.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GenerateRandomResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_plaintext;
   };
 

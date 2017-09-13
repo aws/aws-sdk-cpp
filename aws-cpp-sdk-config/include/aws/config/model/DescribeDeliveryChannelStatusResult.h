@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeDeliveryChannelStatusResult();
-    DescribeDeliveryChannelStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDeliveryChannelStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDeliveryChannelStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDeliveryChannelStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list that contains the status of a specified delivery channel.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeDeliveryChannelStatusResult& AddDeliveryChannelsStatus(DeliveryChannelStatus&& value) { m_deliveryChannelsStatus.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<DeliveryChannelStatus> m_deliveryChannelsStatus;
   };
 

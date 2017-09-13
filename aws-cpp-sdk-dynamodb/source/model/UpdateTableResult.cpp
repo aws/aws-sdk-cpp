@@ -30,12 +30,12 @@ UpdateTableResult::UpdateTableResult()
 {
 }
 
-UpdateTableResult::UpdateTableResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateTableResult::UpdateTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateTableResult& UpdateTableResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateTableResult& UpdateTableResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TableDescription"))

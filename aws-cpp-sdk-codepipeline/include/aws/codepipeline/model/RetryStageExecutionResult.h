@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RetryStageExecutionResult();
-    RetryStageExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetryStageExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RetryStageExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RetryStageExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the current workflow execution in the failed stage.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline RetryStageExecutionResult& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
 
   private:
+
     Aws::String m_pipelineExecutionId;
   };
 

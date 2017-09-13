@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateDistributionWithTags2017_03_25Result();
-    CreateDistributionWithTags2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDistributionWithTags2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDistributionWithTags2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDistributionWithTags2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The distribution's information. </p>
@@ -72,6 +73,7 @@ namespace Model
      * <p>The distribution's information. </p>
      */
     inline CreateDistributionWithTags2017_03_25Result& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
+
 
     /**
      * <p>The fully qualified URI of the new distribution resource just created. For
@@ -129,6 +131,7 @@ namespace Model
      */
     inline CreateDistributionWithTags2017_03_25Result& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     /**
      * <p>The current version of the distribution created.</p>
      */
@@ -165,8 +168,11 @@ namespace Model
     inline CreateDistributionWithTags2017_03_25Result& WithETag(const char* value) { SetETag(value); return *this;}
 
   private:
+
     Distribution m_distribution;
+
     Aws::String m_location;
+
     Aws::String m_eTag;
   };
 

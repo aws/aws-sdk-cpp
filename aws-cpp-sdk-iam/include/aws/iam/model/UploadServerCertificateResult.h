@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     UploadServerCertificateResult();
-    UploadServerCertificateResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UploadServerCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UploadServerCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UploadServerCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The meta information of the uploaded server certificate without its
@@ -78,6 +79,7 @@ namespace Model
      */
     inline UploadServerCertificateResult& WithServerCertificateMetadata(ServerCertificateMetadata&& value) { SetServerCertificateMetadata(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline UploadServerCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ServerCertificateMetadata m_serverCertificateMetadata;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specify a max count rule to restrict the number of application versions that
      * are retained for an application.</p>
@@ -83,6 +84,7 @@ namespace Model
      * are retained for an application.</p>
      */
     inline ApplicationVersionLifecycleConfig& WithMaxCountRule(MaxCountRule&& value) { SetMaxCountRule(std::move(value)); return *this;}
+
 
     /**
      * <p>Specify a max age rule to restrict the length of time that application
@@ -115,8 +117,10 @@ namespace Model
     inline ApplicationVersionLifecycleConfig& WithMaxAgeRule(MaxAgeRule&& value) { SetMaxAgeRule(std::move(value)); return *this;}
 
   private:
+
     MaxCountRule m_maxCountRule;
     bool m_maxCountRuleHasBeenSet;
+
     MaxAgeRule m_maxAgeRule;
     bool m_maxAgeRuleHasBeenSet;
   };

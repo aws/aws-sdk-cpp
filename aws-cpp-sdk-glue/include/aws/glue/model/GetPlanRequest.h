@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The list of mappings from a source table to target tables.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline GetPlanRequest& AddMapping(MappingEntry&& value) { m_mappingHasBeenSet = true; m_mapping.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The source table.</p>
      */
@@ -98,6 +100,7 @@ namespace Model
      * <p>The source table.</p>
      */
     inline GetPlanRequest& WithSource(CatalogEntry&& value) { SetSource(std::move(value)); return *this;}
+
 
     /**
      * <p>The target tables.</p>
@@ -134,6 +137,7 @@ namespace Model
      */
     inline GetPlanRequest& AddSinks(CatalogEntry&& value) { m_sinksHasBeenSet = true; m_sinks.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Parameters for the mapping.</p>
      */
@@ -160,12 +164,16 @@ namespace Model
     inline GetPlanRequest& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<MappingEntry> m_mapping;
     bool m_mappingHasBeenSet;
+
     CatalogEntry m_source;
     bool m_sourceHasBeenSet;
+
     Aws::Vector<CatalogEntry> m_sinks;
     bool m_sinksHasBeenSet;
+
     Location m_location;
     bool m_locationHasBeenSet;
   };

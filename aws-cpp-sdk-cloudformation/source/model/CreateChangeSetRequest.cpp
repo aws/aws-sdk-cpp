@@ -30,6 +30,7 @@ CreateChangeSetRequest::CreateChangeSetRequest() :
     m_capabilitiesHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
     m_roleARNHasBeenSet(false),
+    m_rollbackConfigurationHasBeenSet(false),
     m_notificationARNsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_changeSetNameHasBeenSet(false),
@@ -99,6 +100,11 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
   if(m_roleARNHasBeenSet)
   {
     ss << "RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
+  }
+
+  if(m_rollbackConfigurationHasBeenSet)
+  {
+    m_rollbackConfiguration.OutputToStream(ss, "RollbackConfiguration");
   }
 
   if(m_notificationARNsHasBeenSet)

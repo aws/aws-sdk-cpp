@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The AWS customer account associated with the RDS event notification
      * subscription.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline EventSubscription& WithCustomerAwsId(const char* value) { SetCustomerAwsId(value); return *this;}
 
+
     /**
      * <p>The RDS event notification subscription Id.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      */
     inline EventSubscription& WithCustSubscriptionId(const char* value) { SetCustSubscriptionId(value); return *this;}
 
+
     /**
      * <p>The topic ARN of the RDS event notification subscription.</p>
      */
@@ -161,6 +164,7 @@ namespace Model
      * <p>The topic ARN of the RDS event notification subscription.</p>
      */
     inline EventSubscription& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+
 
     /**
      * <p>The status of the RDS event notification subscription.</p>
@@ -232,6 +236,7 @@ namespace Model
      */
     inline EventSubscription& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The time the RDS event notification subscription was created.</p>
      */
@@ -267,6 +272,7 @@ namespace Model
      */
     inline EventSubscription& WithSubscriptionCreationTime(const char* value) { SetSubscriptionCreationTime(value); return *this;}
 
+
     /**
      * <p>The source type for the RDS event notification subscription.</p>
      */
@@ -301,6 +307,7 @@ namespace Model
      * <p>The source type for the RDS event notification subscription.</p>
      */
     inline EventSubscription& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+
 
     /**
      * <p>A list of source IDs for the RDS event notification subscription.</p>
@@ -342,6 +349,7 @@ namespace Model
      */
     inline EventSubscription& AddSourceIdsList(const char* value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList.push_back(value); return *this; }
 
+
     /**
      * <p>A list of event categories for the RDS event notification subscription.</p>
      */
@@ -382,6 +390,7 @@ namespace Model
      */
     inline EventSubscription& AddEventCategoriesList(const char* value) { m_eventCategoriesListHasBeenSet = true; m_eventCategoriesList.push_back(value); return *this; }
 
+
     /**
      * <p>A Boolean value indicating if the subscription is enabled. True indicates the
      * subscription is enabled.</p>
@@ -399,6 +408,7 @@ namespace Model
      * subscription is enabled.</p>
      */
     inline EventSubscription& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the event subscription.</p>
@@ -436,24 +446,34 @@ namespace Model
     inline EventSubscription& WithEventSubscriptionArn(const char* value) { SetEventSubscriptionArn(value); return *this;}
 
   private:
+
     Aws::String m_customerAwsId;
     bool m_customerAwsIdHasBeenSet;
+
     Aws::String m_custSubscriptionId;
     bool m_custSubscriptionIdHasBeenSet;
+
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_subscriptionCreationTime;
     bool m_subscriptionCreationTimeHasBeenSet;
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_sourceIdsList;
     bool m_sourceIdsListHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategoriesList;
     bool m_eventCategoriesListHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_eventSubscriptionArn;
     bool m_eventSubscriptionArnHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     Stream& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline Stream& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
 
+
     /**
      * <p>The DynamoDB table with which the stream is associated.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The DynamoDB table with which the stream is associated.</p>
      */
     inline Stream& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
@@ -184,10 +187,13 @@ namespace Model
     inline Stream& WithStreamLabel(const char* value) { SetStreamLabel(value); return *this;}
 
   private:
+
     Aws::String m_streamArn;
     bool m_streamArnHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::String m_streamLabel;
     bool m_streamLabelHasBeenSet;
   };

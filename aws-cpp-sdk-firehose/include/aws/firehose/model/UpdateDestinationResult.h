@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateDestinationResult();
-    UpdateDestinationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDestinationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

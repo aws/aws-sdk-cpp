@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DeleteParametersResult();
-    DeleteParametersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The names of the deleted parameters.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The names of the deleted parameters.</p>
      */
     inline DeleteParametersResult& AddDeletedParameters(const char* value) { m_deletedParameters.push_back(value); return *this; }
+
 
     /**
      * <p>The names of parameters that weren't deleted because the parameters are not
@@ -131,7 +133,9 @@ namespace Model
     inline DeleteParametersResult& AddInvalidParameters(const char* value) { m_invalidParameters.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_deletedParameters;
+
     Aws::Vector<Aws::String> m_invalidParameters;
   };
 

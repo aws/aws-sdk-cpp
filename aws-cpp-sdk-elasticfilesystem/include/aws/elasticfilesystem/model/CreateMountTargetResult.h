@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateMountTargetResult();
-    CreateMountTargetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMountTargetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateMountTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateMountTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>AWS account ID that owns the resource.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CreateMountTargetResult& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
     /**
      * <p>System-assigned mount target ID.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>System-assigned mount target ID.</p>
      */
     inline CreateMountTargetResult& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
+
 
     /**
      * <p>ID of the file system for which the mount target is intended.</p>
@@ -152,6 +155,7 @@ namespace Model
      */
     inline CreateMountTargetResult& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
+
     /**
      * <p>ID of the mount target's subnet.</p>
      */
@@ -187,6 +191,7 @@ namespace Model
      */
     inline CreateMountTargetResult& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
     /**
      * <p>Lifecycle state of the mount target.</p>
      */
@@ -211,6 +216,7 @@ namespace Model
      * <p>Lifecycle state of the mount target.</p>
      */
     inline CreateMountTargetResult& WithLifeCycleState(LifeCycleState&& value) { SetLifeCycleState(std::move(value)); return *this;}
+
 
     /**
      * <p>Address at which the file system may be mounted via the mount target.</p>
@@ -246,6 +252,7 @@ namespace Model
      * <p>Address at which the file system may be mounted via the mount target.</p>
      */
     inline CreateMountTargetResult& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
 
     /**
      * <p>ID of the network interface that Amazon EFS created when it created the mount
@@ -290,12 +297,19 @@ namespace Model
     inline CreateMountTargetResult& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
   private:
+
     Aws::String m_ownerId;
+
     Aws::String m_mountTargetId;
+
     Aws::String m_fileSystemId;
+
     Aws::String m_subnetId;
+
     LifeCycleState m_lifeCycleState;
+
     Aws::String m_ipAddress;
+
     Aws::String m_networkInterfaceId;
   };
 

@@ -45,6 +45,7 @@ namespace Model
     TagOptionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The TagOptionDetail key.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The TagOptionDetail key.</p>
      */
     inline TagOptionDetail& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The TagOptionDetail value.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline TagOptionDetail& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>The TagOptionDetail active state.</p>
      */
@@ -129,6 +132,7 @@ namespace Model
      * <p>The TagOptionDetail active state.</p>
      */
     inline TagOptionDetail& WithActive(bool value) { SetActive(value); return *this;}
+
 
     /**
      * <p>The TagOptionDetail identifier.</p>
@@ -166,12 +170,16 @@ namespace Model
     inline TagOptionDetail& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     bool m_active;
     bool m_activeHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

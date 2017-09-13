@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateRepositoryResult();
-    CreateRepositoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRepositoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the newly created repository.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline CreateRepositoryResult& WithRepositoryMetadata(RepositoryMetadata&& value) { SetRepositoryMetadata(std::move(value)); return *this;}
 
   private:
+
     RepositoryMetadata m_repositoryMetadata;
   };
 

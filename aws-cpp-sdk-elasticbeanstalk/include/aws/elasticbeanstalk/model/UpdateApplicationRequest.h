@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application to update. If no such application is found,
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline UpdateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>A new description for the application.</p> <p>Default: If not specified, AWS
      * Elastic Beanstalk does not update the description.</p>
@@ -133,8 +135,10 @@ namespace Model
     inline UpdateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeletePortfolioShareResult();
-    DeletePortfolioShareResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePortfolioShareResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeletePortfolioShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeletePortfolioShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

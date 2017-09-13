@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The type of virtualization used to create the custom AMI.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The type of virtualization used to create the custom AMI.</p>
      */
     inline CustomAmi& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
+
 
     /**
      * <p>THe ID of the image used to create the custom AMI.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline CustomAmi& WithImageId(const char* value) { SetImageId(value); return *this;}
 
   private:
+
     Aws::String m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
   };

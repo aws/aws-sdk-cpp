@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The reason for canceling the task.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline CancelImportTaskRequest& WithCancelReason(const char* value) { SetCancelReason(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -99,6 +101,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CancelImportTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of the import image or import snapshot task to be canceled.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline CancelImportTaskRequest& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 
   private:
+
     Aws::String m_cancelReason;
     bool m_cancelReasonHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_importTaskId;
     bool m_importTaskIdHasBeenSet;
   };

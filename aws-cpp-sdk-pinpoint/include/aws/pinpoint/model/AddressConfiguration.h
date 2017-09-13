@@ -46,6 +46,7 @@ namespace Model
     AddressConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Body override. If specified will override default body.
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline AddressConfiguration& WithBodyOverride(const char* value) { SetBodyOverride(value); return *this;}
 
+
     /**
      * The channel type.
 
@@ -115,6 +117,7 @@ Valid values: GCM | APNS | SMS | EMAIL
 Valid values: GCM | APNS | SMS | EMAIL
      */
     inline AddressConfiguration& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
+
 
     /**
      * A map of custom attributes to attributes to be attached to the message for this
@@ -200,6 +203,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      */
     inline AddressConfiguration& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
 
+
     /**
      * The Raw JSON formatted string to be used as the payload. This value overrides
      * the message.
@@ -241,6 +245,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      * the message.
      */
     inline AddressConfiguration& WithRawContent(const char* value) { SetRawContent(value); return *this;}
+
 
     /**
      * A map of substitution values for the message to be merged with the
@@ -319,6 +324,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      */
     inline AddressConfiguration& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
+
     /**
      * Title override. If specified will override default title if applicable.
      */
@@ -355,16 +361,22 @@ Valid values: GCM | APNS | SMS | EMAIL
     inline AddressConfiguration& WithTitleOverride(const char* value) { SetTitleOverride(value); return *this;}
 
   private:
+
     Aws::String m_bodyOverride;
     bool m_bodyOverrideHasBeenSet;
+
     ChannelType m_channelType;
     bool m_channelTypeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_context;
     bool m_contextHasBeenSet;
+
     Aws::String m_rawContent;
     bool m_rawContentHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
     bool m_substitutionsHasBeenSet;
+
     Aws::String m_titleOverride;
     bool m_titleOverrideHasBeenSet;
   };

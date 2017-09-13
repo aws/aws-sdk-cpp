@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListTargetsForPolicyResult();
-    ListTargetsForPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTargetsForPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTargetsForPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTargetsForPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of structures, each of which contains details about one of the
@@ -84,6 +85,7 @@ namespace Model
      * entities to which the specified policy is attached.</p>
      */
     inline ListTargetsForPolicyResult& AddTargets(PolicyTargetSummary&& value) { m_targets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -149,7 +151,9 @@ namespace Model
     inline ListTargetsForPolicyResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PolicyTargetSummary> m_targets;
+
     Aws::String m_nextToken;
   };
 

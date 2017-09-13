@@ -30,12 +30,12 @@ GetMappingResult::GetMappingResult()
 {
 }
 
-GetMappingResult::GetMappingResult(const AmazonWebServiceResult<JsonValue>& result)
+GetMappingResult::GetMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetMappingResult& GetMappingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetMappingResult& GetMappingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Mapping"))

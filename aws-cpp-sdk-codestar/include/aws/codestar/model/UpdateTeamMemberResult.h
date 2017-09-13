@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateTeamMemberResult();
-    UpdateTeamMemberResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTeamMemberResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTeamMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTeamMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose team membership attributes
@@ -83,6 +84,7 @@ namespace Model
      */
     inline UpdateTeamMemberResult& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 
+
     /**
      * <p>The project role granted to the user.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline UpdateTeamMemberResult& WithProjectRole(const char* value) { SetProjectRole(value); return *this;}
 
+
     /**
      * <p>Whether a team member is allowed to remotely access project resources using
      * the SSH public key associated with the user's profile.</p>
@@ -137,8 +140,11 @@ namespace Model
     inline UpdateTeamMemberResult& WithRemoteAccessAllowed(bool value) { SetRemoteAccessAllowed(value); return *this;}
 
   private:
+
     Aws::String m_userArn;
+
     Aws::String m_projectRole;
+
     bool m_remoteAccessAllowed;
   };
 

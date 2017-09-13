@@ -52,6 +52,7 @@ namespace Model
     ClientCertificate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the client certificate.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline ClientCertificate& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
 
+
     /**
      * <p>The description of the client certificate.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The description of the client certificate.</p>
      */
     inline ClientCertificate& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The PEM-encoded public key of the client certificate, which can be used to
@@ -164,6 +167,7 @@ namespace Model
      */
     inline ClientCertificate& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
 
+
     /**
      * <p>The timestamp when the client certificate was created.</p>
      */
@@ -188,6 +192,7 @@ namespace Model
      * <p>The timestamp when the client certificate was created.</p>
      */
     inline ClientCertificate& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The timestamp when the client certificate will expire.</p>
@@ -215,14 +220,19 @@ namespace Model
     inline ClientCertificate& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clientCertificateId;
     bool m_clientCertificateIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_pemEncodedCertificate;
     bool m_pemEncodedCertificateHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     Aws::Utils::DateTime m_expirationDate;
     bool m_expirationDateHasBeenSet;
   };

@@ -55,7 +55,7 @@ enum class SupportErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ATTACHMENT_ID_NOT_FOUND= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ATTACHMENT_ID_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ATTACHMENT_LIMIT_EXCEEDED,
   ATTACHMENT_SET_EXPIRED,
   ATTACHMENT_SET_ID_NOT_FOUND,
@@ -66,7 +66,7 @@ enum class SupportErrors
 };
 namespace SupportErrorMapper
 {
-  AWS_SUPPORT_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_SUPPORT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Support

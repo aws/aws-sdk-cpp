@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that contains the task list.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CountPendingDecisionTasksRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>The name of the task list.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline CountPendingDecisionTasksRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     TaskList m_taskList;
     bool m_taskListHasBeenSet;
   };

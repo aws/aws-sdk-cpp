@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the field. The possible values are <code>host-header</code> and
      * <code>path-pattern</code>.</p>
@@ -90,6 +91,7 @@ namespace Model
      * <code>path-pattern</code>.</p>
      */
     inline RuleCondition& WithField(const char* value) { SetField(value); return *this;}
+
 
     /**
      * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
@@ -236,8 +238,10 @@ namespace Model
     inline RuleCondition& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_field;
     bool m_fieldHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

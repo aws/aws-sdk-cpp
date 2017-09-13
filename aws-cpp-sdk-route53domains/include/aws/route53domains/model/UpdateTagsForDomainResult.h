@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateTagsForDomainResult();
-    UpdateTagsForDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTagsForDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTagsForDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTagsForDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

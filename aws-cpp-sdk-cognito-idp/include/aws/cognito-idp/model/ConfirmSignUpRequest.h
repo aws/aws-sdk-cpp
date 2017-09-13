@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the app client associated with the user pool.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ID of the app client associated with the user pool.</p>
      */
     inline ConfirmSignUpRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ConfirmSignUpRequest& WithSecretHash(const char* value) { SetSecretHash(value); return *this;}
 
+
     /**
      * <p>The user name of the user whose registration you wish to confirm.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The user name of the user whose registration you wish to confirm.</p>
      */
     inline ConfirmSignUpRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>The confirmation code sent by a user's request to confirm registration.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline ConfirmSignUpRequest& WithConfirmationCode(const char* value) { SetConfirmationCode(value); return *this;}
 
+
     /**
      * <p>Boolean to be specified to force user confirmation irrespective of existing
      * alias. By default set to <code>False</code>. If this parameter is set to
@@ -221,14 +226,19 @@ namespace Model
     inline ConfirmSignUpRequest& WithForceAliasCreation(bool value) { SetForceAliasCreation(value); return *this;}
 
   private:
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     Aws::String m_secretHash;
     bool m_secretHashHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_confirmationCode;
     bool m_confirmationCodeHasBeenSet;
+
     bool m_forceAliasCreation;
     bool m_forceAliasCreationHasBeenSet;
   };

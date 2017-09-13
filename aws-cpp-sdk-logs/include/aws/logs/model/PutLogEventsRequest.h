@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline PutLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the log stream.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline PutLogEventsRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
+
     /**
      * <p>The log events.</p>
      */
@@ -143,48 +146,88 @@ namespace Model
      */
     inline PutLogEventsRequest& AddLogEvents(InputLogEvent&& value) { m_logEventsHasBeenSet = true; m_logEvents.push_back(std::move(value)); return *this; }
 
+
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token obtained from the response of the previous
+     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
+     * require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
+     * narrow time period using the same value for <code>sequenceToken</code>, both
+     * calls may be successful, or one may be rejected.</p>
      */
     inline const Aws::String& GetSequenceToken() const{ return m_sequenceToken; }
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token obtained from the response of the previous
+     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
+     * require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
+     * narrow time period using the same value for <code>sequenceToken</code>, both
+     * calls may be successful, or one may be rejected.</p>
      */
     inline void SetSequenceToken(const Aws::String& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = value; }
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token obtained from the response of the previous
+     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
+     * require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
+     * narrow time period using the same value for <code>sequenceToken</code>, both
+     * calls may be successful, or one may be rejected.</p>
      */
     inline void SetSequenceToken(Aws::String&& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = std::move(value); }
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token obtained from the response of the previous
+     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
+     * require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
+     * narrow time period using the same value for <code>sequenceToken</code>, both
+     * calls may be successful, or one may be rejected.</p>
      */
     inline void SetSequenceToken(const char* value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken.assign(value); }
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token obtained from the response of the previous
+     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
+     * require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
+     * narrow time period using the same value for <code>sequenceToken</code>, both
+     * calls may be successful, or one may be rejected.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(const Aws::String& value) { SetSequenceToken(value); return *this;}
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token obtained from the response of the previous
+     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
+     * require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
+     * narrow time period using the same value for <code>sequenceToken</code>, both
+     * calls may be successful, or one may be rejected.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(Aws::String&& value) { SetSequenceToken(std::move(value)); return *this;}
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token obtained from the response of the previous
+     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
+     * require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
+     * narrow time period using the same value for <code>sequenceToken</code>, both
+     * calls may be successful, or one may be rejected.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(const char* value) { SetSequenceToken(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
+
     Aws::Vector<InputLogEvent> m_logEvents;
     bool m_logEventsHasBeenSet;
+
     Aws::String m_sequenceToken;
     bool m_sequenceTokenHasBeenSet;
   };

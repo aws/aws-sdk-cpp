@@ -59,6 +59,7 @@ namespace Model
     CancelWorkflowExecutionDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Details of the cancellation.</p>
      */
@@ -95,6 +96,7 @@ namespace Model
     inline CancelWorkflowExecutionDecisionAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 
   private:
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
   };

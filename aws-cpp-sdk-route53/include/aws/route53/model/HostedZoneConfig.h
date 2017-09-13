@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>Any comments that you want to include about the hosted zone.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline HostedZoneConfig& WithComment(const char* value) { SetComment(value); return *this;}
 
+
     /**
      * <p>A value that indicates whether this is a private hosted zone.</p>
      */
@@ -99,8 +101,10 @@ namespace Model
     inline HostedZoneConfig& WithPrivateZone(bool value) { SetPrivateZone(value); return *this;}
 
   private:
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     bool m_privateZone;
     bool m_privateZoneHasBeenSet;
   };

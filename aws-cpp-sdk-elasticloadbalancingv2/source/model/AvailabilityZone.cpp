@@ -32,13 +32,15 @@ namespace Model
 
 AvailabilityZone::AvailabilityZone() : 
     m_zoneNameHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_loadBalancerAddressesHasBeenSet(false)
 {
 }
 
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
     m_zoneNameHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_loadBalancerAddressesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,6 +63,18 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
       m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
       m_subnetIdHasBeenSet = true;
     }
+    XmlNode loadBalancerAddressesNode = resultNode.FirstChild("LoadBalancerAddresses");
+    if(!loadBalancerAddressesNode.IsNull())
+    {
+      XmlNode loadBalancerAddressesMember = loadBalancerAddressesNode.FirstChild("member");
+      while(!loadBalancerAddressesMember.IsNull())
+      {
+        m_loadBalancerAddresses.push_back(loadBalancerAddressesMember);
+        loadBalancerAddressesMember = loadBalancerAddressesMember.NextNode("member");
+      }
+
+      m_loadBalancerAddressesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -78,6 +92,17 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
+  if(m_loadBalancerAddressesHasBeenSet)
+  {
+      unsigned loadBalancerAddressesIdx = 1;
+      for(auto& item : m_loadBalancerAddresses)
+      {
+        Aws::StringStream loadBalancerAddressesSs;
+        loadBalancerAddressesSs << location << index << locationValue << ".LoadBalancerAddresses.member." << loadBalancerAddressesIdx++;
+        item.OutputToStream(oStream, loadBalancerAddressesSs.str().c_str());
+      }
+  }
+
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -89,6 +114,16 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+  if(m_loadBalancerAddressesHasBeenSet)
+  {
+      unsigned loadBalancerAddressesIdx = 1;
+      for(auto& item : m_loadBalancerAddresses)
+      {
+        Aws::StringStream loadBalancerAddressesSs;
+        loadBalancerAddressesSs << location <<  ".LoadBalancerAddresses.member." << loadBalancerAddressesIdx++;
+        item.OutputToStream(oStream, loadBalancerAddressesSs.str().c_str());
+      }
   }
 }
 

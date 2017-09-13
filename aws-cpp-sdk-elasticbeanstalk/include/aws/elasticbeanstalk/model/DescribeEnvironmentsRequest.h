@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those that are associated with this application.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeEnvironmentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those that are associated with this application version.</p>
@@ -126,6 +128,7 @@ namespace Model
      * include only those that are associated with this application version.</p>
      */
     inline DescribeEnvironmentsRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
@@ -175,6 +178,7 @@ namespace Model
      */
     inline DescribeEnvironmentsRequest& AddEnvironmentIds(const char* value) { m_environmentIdsHasBeenSet = true; m_environmentIds.push_back(value); return *this; }
 
+
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those that have the specified names.</p>
@@ -223,6 +227,7 @@ namespace Model
      */
     inline DescribeEnvironmentsRequest& AddEnvironmentNames(const char* value) { m_environmentNamesHasBeenSet = true; m_environmentNames.push_back(value); return *this; }
 
+
     /**
      * <p>Indicates whether to include deleted environments:</p> <p> <code>true</code>:
      * Environments that have been deleted after <code>IncludedDeletedBackTo</code> are
@@ -243,6 +248,7 @@ namespace Model
      * displayed.</p> <p> <code>false</code>: Do not include deleted environments.</p>
      */
     inline DescribeEnvironmentsRequest& WithIncludeDeleted(bool value) { SetIncludeDeleted(value); return *this;}
+
 
     /**
      * <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>,
@@ -274,6 +280,7 @@ namespace Model
      */
     inline DescribeEnvironmentsRequest& WithIncludedDeletedBackTo(Aws::Utils::DateTime&& value) { SetIncludedDeletedBackTo(std::move(value)); return *this;}
 
+
     /**
      * <p>For a paginated request. Specify a maximum number of environments to include
      * in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
@@ -294,6 +301,7 @@ namespace Model
      * available environments are retrieved in a single response.</p>
      */
     inline DescribeEnvironmentsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>For a paginated request. Specify a token from a previous response page to
@@ -352,20 +360,28 @@ namespace Model
     inline DescribeEnvironmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     Aws::Vector<Aws::String> m_environmentIds;
     bool m_environmentIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_environmentNames;
     bool m_environmentNamesHasBeenSet;
+
     bool m_includeDeleted;
     bool m_includeDeletedHasBeenSet;
+
     Aws::Utils::DateTime m_includedDeletedBackTo;
     bool m_includedDeletedBackToHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

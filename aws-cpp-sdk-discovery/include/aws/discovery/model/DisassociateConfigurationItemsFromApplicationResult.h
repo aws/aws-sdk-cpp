@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DisassociateConfigurationItemsFromApplicationResult();
-    DisassociateConfigurationItemsFromApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateConfigurationItemsFromApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateConfigurationItemsFromApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateConfigurationItemsFromApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

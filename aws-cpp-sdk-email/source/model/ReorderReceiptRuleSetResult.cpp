@@ -31,12 +31,12 @@ ReorderReceiptRuleSetResult::ReorderReceiptRuleSetResult()
 {
 }
 
-ReorderReceiptRuleSetResult::ReorderReceiptRuleSetResult(const AmazonWebServiceResult<XmlDocument>& result)
+ReorderReceiptRuleSetResult::ReorderReceiptRuleSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ReorderReceiptRuleSetResult& ReorderReceiptRuleSetResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ReorderReceiptRuleSetResult& ReorderReceiptRuleSetResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

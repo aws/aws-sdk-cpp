@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Data Catalog where the function to be updated is located. If
      * none is supplied, the AWS account ID is used by default.</p>
@@ -78,6 +79,7 @@ namespace Model
      * none is supplied, the AWS account ID is used by default.</p>
      */
     inline UpdateUserDefinedFunctionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+
 
     /**
      * <p>The name of the catalog database where the function to be updated is
@@ -121,6 +123,7 @@ namespace Model
      */
     inline UpdateUserDefinedFunctionRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>The name of the function.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      */
     inline UpdateUserDefinedFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>A <code>FunctionInput</code> object that re-defines the function in the Data
      * Catalog.</p>
@@ -187,12 +191,16 @@ namespace Model
     inline UpdateUserDefinedFunctionRequest& WithFunctionInput(UserDefinedFunctionInput&& value) { SetFunctionInput(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     UserDefinedFunctionInput m_functionInput;
     bool m_functionInputHasBeenSet;
   };

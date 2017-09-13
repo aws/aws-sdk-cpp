@@ -46,6 +46,7 @@ namespace Model
     TracingConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Can be either PassThrough or Active. If PassThrough, Lambda will only trace
      * the request from an upstream service if it contains a tracing header with
@@ -92,6 +93,7 @@ namespace Model
     inline TracingConfig& WithMode(TracingMode&& value) { SetMode(std::move(value)); return *this;}
 
   private:
+
     TracingMode m_mode;
     bool m_modeHasBeenSet;
   };

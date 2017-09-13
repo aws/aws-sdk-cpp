@@ -30,12 +30,12 @@ CreateTapeWithBarcodeResult::CreateTapeWithBarcodeResult()
 {
 }
 
-CreateTapeWithBarcodeResult::CreateTapeWithBarcodeResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateTapeWithBarcodeResult::CreateTapeWithBarcodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateTapeWithBarcodeResult& CreateTapeWithBarcodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateTapeWithBarcodeResult& CreateTapeWithBarcodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TapeARN"))

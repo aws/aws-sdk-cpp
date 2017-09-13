@@ -30,12 +30,12 @@ UpdateEmailChannelResult::UpdateEmailChannelResult()
 {
 }
 
-UpdateEmailChannelResult::UpdateEmailChannelResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateEmailChannelResult::UpdateEmailChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateEmailChannelResult& UpdateEmailChannelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateEmailChannelResult& UpdateEmailChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EmailChannelResponse"))

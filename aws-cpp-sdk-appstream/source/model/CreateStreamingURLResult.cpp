@@ -30,12 +30,12 @@ CreateStreamingURLResult::CreateStreamingURLResult()
 {
 }
 
-CreateStreamingURLResult::CreateStreamingURLResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateStreamingURLResult::CreateStreamingURLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateStreamingURLResult& CreateStreamingURLResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateStreamingURLResult& CreateStreamingURLResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StreamingURL"))

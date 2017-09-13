@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the instance profile to delete.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -95,6 +96,7 @@ namespace Model
     inline DeleteInstanceProfileRequest& WithInstanceProfileName(const char* value) { SetInstanceProfileName(value); return *this;}
 
   private:
+
     Aws::String m_instanceProfileName;
     bool m_instanceProfileNameHasBeenSet;
   };

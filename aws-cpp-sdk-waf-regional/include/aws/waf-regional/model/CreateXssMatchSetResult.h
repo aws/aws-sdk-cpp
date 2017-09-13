@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateXssMatchSetResult();
-    CreateXssMatchSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateXssMatchSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateXssMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateXssMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An <a>XssMatchSet</a>.</p>
@@ -72,6 +73,7 @@ namespace Model
      * <p>An <a>XssMatchSet</a>.</p>
      */
     inline CreateXssMatchSetResult& WithXssMatchSet(XssMatchSet&& value) { SetXssMatchSet(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -130,7 +132,9 @@ namespace Model
     inline CreateXssMatchSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     XssMatchSet m_xssMatchSet;
+
     Aws::String m_changeToken;
   };
 

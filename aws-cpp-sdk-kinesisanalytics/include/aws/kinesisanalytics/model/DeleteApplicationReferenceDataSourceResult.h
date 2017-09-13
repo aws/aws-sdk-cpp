@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteApplicationReferenceDataSourceResult();
-    DeleteApplicationReferenceDataSourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteApplicationReferenceDataSourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteApplicationReferenceDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteApplicationReferenceDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

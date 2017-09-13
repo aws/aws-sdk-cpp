@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The type of the AWS resource for which you want compliance information.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetComplianceDetailsByResourceRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>The ID of the AWS resource for which you want compliance information.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The ID of the AWS resource for which you want compliance information.</p>
      */
     inline GetComplianceDetailsByResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
@@ -160,6 +163,7 @@ namespace Model
      */
     inline GetComplianceDetailsByResourceRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
@@ -203,12 +207,16 @@ namespace Model
     inline GetComplianceDetailsByResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<ComplianceType> m_complianceTypes;
     bool m_complianceTypesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

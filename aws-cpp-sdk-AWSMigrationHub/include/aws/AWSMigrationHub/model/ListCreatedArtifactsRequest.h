@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline ListCreatedArtifactsRequest& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
 
+
     /**
      * <p>Unique identifier that references the migration task.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>Unique identifier that references the migration task.</p>
      */
     inline ListCreatedArtifactsRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
+
 
     /**
      * <p>If a <code>NextToken</code> was returned by a previous call, there are more
@@ -155,6 +158,7 @@ namespace Model
      */
     inline ListCreatedArtifactsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Maximum number of results to be returned per page.</p>
      */
@@ -171,12 +175,16 @@ namespace Model
     inline ListCreatedArtifactsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_progressUpdateStream;
     bool m_progressUpdateStreamHasBeenSet;
+
     Aws::String m_migrationTaskName;
     bool m_migrationTaskNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

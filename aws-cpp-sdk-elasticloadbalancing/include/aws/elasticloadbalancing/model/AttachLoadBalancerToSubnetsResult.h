@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     AttachLoadBalancerToSubnetsResult();
-    AttachLoadBalancerToSubnetsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AttachLoadBalancerToSubnetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AttachLoadBalancerToSubnetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AttachLoadBalancerToSubnetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The IDs of the subnets attached to the load balancer.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline AttachLoadBalancerToSubnetsResult& AddSubnets(const char* value) { m_subnets.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline AttachLoadBalancerToSubnetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_subnets;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -48,6 +48,7 @@ namespace Model
     MongoDbSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user name you use to access the MongoDB source endpoint. </p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The user name you use to access the MongoDB source endpoint. </p>
      */
     inline MongoDbSettings& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p> The password for the user account you use to access the MongoDB source
@@ -125,6 +127,7 @@ namespace Model
      */
     inline MongoDbSettings& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p> The name of the server on the MongoDB source endpoint. </p>
      */
@@ -160,6 +163,7 @@ namespace Model
      */
     inline MongoDbSettings& WithServerName(const char* value) { SetServerName(value); return *this;}
 
+
     /**
      * <p> The port value for the MongoDB source endpoint. </p>
      */
@@ -174,6 +178,7 @@ namespace Model
      * <p> The port value for the MongoDB source endpoint. </p>
      */
     inline MongoDbSettings& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p> The database name on the MongoDB source endpoint. </p>
@@ -210,6 +215,7 @@ namespace Model
      */
     inline MongoDbSettings& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p> The authentication type you use to access the MongoDB source endpoint.</p>
      * <p>Valid values: NO, PASSWORD </p> <p>When NO is selected, user name and
@@ -244,6 +250,7 @@ namespace Model
      * password parameters are not used and can be empty. </p>
      */
     inline MongoDbSettings& WithAuthType(AuthTypeValue&& value) { SetAuthType(std::move(value)); return *this;}
+
 
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
@@ -285,6 +292,7 @@ namespace Model
      */
     inline MongoDbSettings& WithAuthMechanism(AuthMechanismValue&& value) { SetAuthMechanism(std::move(value)); return *this;}
 
+
     /**
      * <p> Specifies either document or table mode. </p> <p>Valid values: NONE, ONE</p>
      * <p>Default value is NONE. Specify NONE to use document mode. Specify ONE to use
@@ -319,6 +327,7 @@ namespace Model
      * table mode.</p>
      */
     inline MongoDbSettings& WithNestingLevel(NestingLevelValue&& value) { SetNestingLevel(std::move(value)); return *this;}
+
 
     /**
      * <p> Specifies the document ID. Use this attribute when <code>NestingLevel</code>
@@ -361,6 +370,7 @@ namespace Model
      * is set to NONE. </p> <p>Default value is false. </p>
      */
     inline MongoDbSettings& WithExtractDocId(const char* value) { SetExtractDocId(value); return *this;}
+
 
     /**
      * <p> Indicates the number of documents to preview to determine the document
@@ -411,6 +421,7 @@ namespace Model
      */
     inline MongoDbSettings& WithDocsToInvestigate(const char* value) { SetDocsToInvestigate(value); return *this;}
 
+
     /**
      * <p> The MongoDB database name. This attribute is not used when
      * <code>authType=NO</code>. </p> <p>The default is admin.</p>
@@ -454,26 +465,37 @@ namespace Model
     inline MongoDbSettings& WithAuthSource(const char* value) { SetAuthSource(value); return *this;}
 
   private:
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     AuthTypeValue m_authType;
     bool m_authTypeHasBeenSet;
+
     AuthMechanismValue m_authMechanism;
     bool m_authMechanismHasBeenSet;
+
     NestingLevelValue m_nestingLevel;
     bool m_nestingLevelHasBeenSet;
+
     Aws::String m_extractDocId;
     bool m_extractDocIdHasBeenSet;
+
     Aws::String m_docsToInvestigate;
     bool m_docsToInvestigateHasBeenSet;
+
     Aws::String m_authSource;
     bool m_authSourceHasBeenSet;
   };

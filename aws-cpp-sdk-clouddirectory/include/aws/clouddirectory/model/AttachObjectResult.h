@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AttachObjectResult();
-    AttachObjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The attached <code>ObjectIdentifier</code>, which is the child
@@ -84,6 +85,7 @@ namespace Model
     inline AttachObjectResult& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_attachedObjectIdentifier;
   };
 

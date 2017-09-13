@@ -47,6 +47,7 @@ namespace Model
     ScriptBootstrapActionConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Location of the script to run during a bootstrap action. Can be either a
      * location in Amazon S3 or on a local file system.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ScriptBootstrapActionConfig& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>A list of command line arguments to pass to the bootstrap action script.</p>
      */
@@ -130,8 +132,10 @@ namespace Model
     inline ScriptBootstrapActionConfig& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::Vector<Aws::String> m_args;
     bool m_argsHasBeenSet;
   };

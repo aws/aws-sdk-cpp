@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the exported output value. AWS CloudFormation returns the stack
      * names that are importing this value. </p>
@@ -79,6 +80,7 @@ namespace Model
      * names that are importing this value. </p>
      */
     inline ListImportsRequest& WithExportName(const char* value) { SetExportName(value); return *this;}
+
 
     /**
      * <p>A string (provided by the <a>ListImports</a> response output) that identifies
@@ -130,8 +132,10 @@ namespace Model
     inline ListImportsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_exportName;
     bool m_exportNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

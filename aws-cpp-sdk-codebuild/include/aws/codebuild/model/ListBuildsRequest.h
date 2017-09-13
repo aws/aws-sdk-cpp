@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
      * <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p>
@@ -76,6 +77,7 @@ namespace Model
      * by build ID.</p> </li> </ul>
      */
     inline ListBuildsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
+
 
     /**
      * <p>During a previous call, if there are more than 100 items in the list, only
@@ -148,8 +150,10 @@ namespace Model
     inline ListBuildsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     SortOrderType m_sortOrder;
     bool m_sortOrderHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

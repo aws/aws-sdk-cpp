@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeResourcePermissionsResult();
-    DescribeResourcePermissionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeResourcePermissionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeResourcePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeResourcePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The principals.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The principals.</p>
      */
     inline DescribeResourcePermissionsResult& AddPrincipals(Principal&& value) { m_principals.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeResourcePermissionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Principal> m_principals;
+
     Aws::String m_marker;
   };
 

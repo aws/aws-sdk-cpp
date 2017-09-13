@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const Aws::Vector<Aws::String>& GetJobIds() const{ return m_jobIds; }
 
@@ -63,6 +64,7 @@ namespace Model
     
     inline GetShippingLabelRequest& AddJobIds(const char* value) { m_jobIdsHasBeenSet = true; m_jobIds.push_back(value); return *this; }
 
+
     
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -83,6 +85,7 @@ namespace Model
 
     
     inline GetShippingLabelRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     
     inline const Aws::String& GetCompany() const{ return m_company; }
@@ -105,6 +108,7 @@ namespace Model
     
     inline GetShippingLabelRequest& WithCompany(const char* value) { SetCompany(value); return *this;}
 
+
     
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
 
@@ -125,6 +129,7 @@ namespace Model
 
     
     inline GetShippingLabelRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+
 
     
     inline const Aws::String& GetCountry() const{ return m_country; }
@@ -147,6 +152,7 @@ namespace Model
     
     inline GetShippingLabelRequest& WithCountry(const char* value) { SetCountry(value); return *this;}
 
+
     
     inline const Aws::String& GetStateOrProvince() const{ return m_stateOrProvince; }
 
@@ -167,6 +173,7 @@ namespace Model
 
     
     inline GetShippingLabelRequest& WithStateOrProvince(const char* value) { SetStateOrProvince(value); return *this;}
+
 
     
     inline const Aws::String& GetCity() const{ return m_city; }
@@ -189,6 +196,7 @@ namespace Model
     
     inline GetShippingLabelRequest& WithCity(const char* value) { SetCity(value); return *this;}
 
+
     
     inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
 
@@ -209,6 +217,7 @@ namespace Model
 
     
     inline GetShippingLabelRequest& WithPostalCode(const char* value) { SetPostalCode(value); return *this;}
+
 
     
     inline const Aws::String& GetStreet1() const{ return m_street1; }
@@ -231,6 +240,7 @@ namespace Model
     
     inline GetShippingLabelRequest& WithStreet1(const char* value) { SetStreet1(value); return *this;}
 
+
     
     inline const Aws::String& GetStreet2() const{ return m_street2; }
 
@@ -252,6 +262,7 @@ namespace Model
     
     inline GetShippingLabelRequest& WithStreet2(const char* value) { SetStreet2(value); return *this;}
 
+
     
     inline const Aws::String& GetStreet3() const{ return m_street3; }
 
@@ -272,6 +283,7 @@ namespace Model
 
     
     inline GetShippingLabelRequest& WithStreet3(const char* value) { SetStreet3(value); return *this;}
+
 
     
     inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
@@ -295,28 +307,40 @@ namespace Model
     inline GetShippingLabelRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_jobIds;
     bool m_jobIdsHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_company;
     bool m_companyHasBeenSet;
+
     Aws::String m_phoneNumber;
     bool m_phoneNumberHasBeenSet;
+
     Aws::String m_country;
     bool m_countryHasBeenSet;
+
     Aws::String m_stateOrProvince;
     bool m_stateOrProvinceHasBeenSet;
+
     Aws::String m_city;
     bool m_cityHasBeenSet;
+
     Aws::String m_postalCode;
     bool m_postalCodeHasBeenSet;
+
     Aws::String m_street1;
     bool m_street1HasBeenSet;
+
     Aws::String m_street2;
     bool m_street2HasBeenSet;
+
     Aws::String m_street3;
     bool m_street3HasBeenSet;
+
     Aws::String m_aPIVersion;
     bool m_aPIVersionHasBeenSet;
   };

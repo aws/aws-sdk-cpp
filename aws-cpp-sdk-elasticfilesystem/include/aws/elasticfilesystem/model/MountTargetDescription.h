@@ -46,6 +46,7 @@ namespace Model
     MountTargetDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>AWS account ID that owns the resource.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>AWS account ID that owns the resource.</p>
      */
     inline MountTargetDescription& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
 
     /**
      * <p>System-assigned mount target ID.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline MountTargetDescription& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
 
+
     /**
      * <p>ID of the file system for which the mount target is intended.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>ID of the file system for which the mount target is intended.</p>
      */
     inline MountTargetDescription& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+
 
     /**
      * <p>ID of the mount target's subnet.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline MountTargetDescription& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
     /**
      * <p>Lifecycle state of the mount target.</p>
      */
@@ -210,6 +215,7 @@ namespace Model
      * <p>Lifecycle state of the mount target.</p>
      */
     inline MountTargetDescription& WithLifeCycleState(LifeCycleState&& value) { SetLifeCycleState(std::move(value)); return *this;}
+
 
     /**
      * <p>Address at which the file system may be mounted via the mount target.</p>
@@ -245,6 +251,7 @@ namespace Model
      * <p>Address at which the file system may be mounted via the mount target.</p>
      */
     inline MountTargetDescription& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
 
     /**
      * <p>ID of the network interface that Amazon EFS created when it created the mount
@@ -289,18 +296,25 @@ namespace Model
     inline MountTargetDescription& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
   private:
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     Aws::String m_mountTargetId;
     bool m_mountTargetIdHasBeenSet;
+
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     LifeCycleState m_lifeCycleState;
     bool m_lifeCycleStateHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
   };

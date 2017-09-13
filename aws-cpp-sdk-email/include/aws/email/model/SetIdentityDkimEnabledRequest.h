@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identity for which DKIM signing should be enabled or disabled.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline SetIdentityDkimEnabledRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
+
     /**
      * <p>Sets whether DKIM signing is enabled for an identity. Set to
      * <code>true</code> to enable DKIM signing for this identity; <code>false</code>
@@ -101,8 +103,10 @@ namespace Model
     inline SetIdentityDkimEnabledRequest& WithDkimEnabled(bool value) { SetDkimEnabled(value); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     bool m_dkimEnabled;
     bool m_dkimEnabledHasBeenSet;
   };

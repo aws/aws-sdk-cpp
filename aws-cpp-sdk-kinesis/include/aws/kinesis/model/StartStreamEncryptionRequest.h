@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream for which to start encrypting records.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the stream for which to start encrypting records.</p>
      */
     inline StartStreamEncryptionRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>The encryption type to use. This parameter can be one of the following
@@ -116,6 +118,7 @@ namespace Model
      * a customer-managed KMS key.</p> </li> </ul>
      */
     inline StartStreamEncryptionRequest& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+
 
     /**
      * <p>The GUID for the customer-managed KMS key to use for encryption. You can also
@@ -167,10 +170,13 @@ namespace Model
     inline StartStreamEncryptionRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     EncryptionType m_encryptionType;
     bool m_encryptionTypeHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the pipeline.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ID of the pipeline.</p>
      */
     inline QueryObjectsRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+
 
     /**
      * <p>The query that defines the objects to be returned. The <code>Query</code>
@@ -114,6 +116,7 @@ namespace Model
      * to components, instances, and attempts.</p>
      */
     inline QueryObjectsRequest& WithQuery(Query&& value) { SetQuery(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether the query applies to components or instances. The possible
@@ -163,6 +166,7 @@ namespace Model
      * <code>ATTEMPT</code>.</p>
      */
     inline QueryObjectsRequest& WithSphere(const char* value) { SetSphere(value); return *this;}
+
 
     /**
      * <p>The starting point for the results to be returned. For the first call, this
@@ -220,6 +224,7 @@ namespace Model
      */
     inline QueryObjectsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of object names that <code>QueryObjects</code> will return
      * in a single call. The default value is 100. </p>
@@ -239,14 +244,19 @@ namespace Model
     inline QueryObjectsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Query m_query;
     bool m_queryHasBeenSet;
+
     Aws::String m_sphere;
     bool m_sphereHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

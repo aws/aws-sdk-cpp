@@ -31,12 +31,12 @@ DescribeScheduledInstancesResponse::DescribeScheduledInstancesResponse()
 {
 }
 
-DescribeScheduledInstancesResponse::DescribeScheduledInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeScheduledInstancesResponse::DescribeScheduledInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeScheduledInstancesResponse& DescribeScheduledInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeScheduledInstancesResponse& DescribeScheduledInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> A text query against all of the searchable attributes of Qualification
      * types. </p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListQualificationTypesRequest& WithQuery(const char* value) { SetQuery(value); return *this;}
 
+
     /**
      * <p>Specifies that only Qualification types that a user can request through the
      * Amazon Mechanical Turk web site, such as by taking a Qualification test, are
@@ -108,6 +110,7 @@ namespace Model
      */
     inline ListQualificationTypesRequest& WithMustBeRequestable(bool value) { SetMustBeRequestable(value); return *this;}
 
+
     /**
      * <p> Specifies that only Qualification types that the Requester created are
      * returned. If false, the operation returns all Qualification types. </p>
@@ -125,6 +128,7 @@ namespace Model
      * returned. If false, the operation returns all Qualification types. </p>
      */
     inline ListQualificationTypesRequest& WithMustBeOwnedByCaller(bool value) { SetMustBeOwnedByCaller(value); return *this;}
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -147,6 +151,7 @@ namespace Model
     
     inline ListQualificationTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> The maximum number of results to return in a single call. </p>
      */
@@ -163,14 +168,19 @@ namespace Model
     inline ListQualificationTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_query;
     bool m_queryHasBeenSet;
+
     bool m_mustBeRequestable;
     bool m_mustBeRequestableHasBeenSet;
+
     bool m_mustBeOwnedByCaller;
     bool m_mustBeOwnedByCallerHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

@@ -32,13 +32,13 @@ ListGroupPoliciesResult::ListGroupPoliciesResult() :
 {
 }
 
-ListGroupPoliciesResult::ListGroupPoliciesResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListGroupPoliciesResult::ListGroupPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListGroupPoliciesResult& ListGroupPoliciesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListGroupPoliciesResult& ListGroupPoliciesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

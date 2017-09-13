@@ -47,6 +47,7 @@ namespace Model
     StackSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline StackSummary& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The stack name.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline StackSummary& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The stack's ARN.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline StackSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The number of layers.</p>
      */
@@ -167,6 +171,7 @@ namespace Model
      */
     inline StackSummary& WithLayersCount(int value) { SetLayersCount(value); return *this;}
 
+
     /**
      * <p>The number of apps.</p>
      */
@@ -181,6 +186,7 @@ namespace Model
      * <p>The number of apps.</p>
      */
     inline StackSummary& WithAppsCount(int value) { SetAppsCount(value); return *this;}
+
 
     /**
      * <p>An <code>InstancesCount</code> object with the number of instances in each
@@ -213,16 +219,22 @@ namespace Model
     inline StackSummary& WithInstancesCount(InstancesCount&& value) { SetInstancesCount(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     int m_layersCount;
     bool m_layersCountHasBeenSet;
+
     int m_appsCount;
     bool m_appsCountHasBeenSet;
+
     InstancesCount m_instancesCount;
     bool m_instancesCountHasBeenSet;
   };

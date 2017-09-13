@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ARN of the IAM role under which Amazon SES publishes email sending events
      * to the Amazon Kinesis Firehose stream.</p>
@@ -95,6 +96,7 @@ namespace Model
      * to the Amazon Kinesis Firehose stream.</p>
      */
     inline KinesisFirehoseDestination& WithIAMRoleARN(const char* value) { SetIAMRoleARN(value); return *this;}
+
 
     /**
      * <p>The ARN of the Amazon Kinesis Firehose stream to which to publish email
@@ -139,8 +141,10 @@ namespace Model
     inline KinesisFirehoseDestination& WithDeliveryStreamARN(const char* value) { SetDeliveryStreamARN(value); return *this;}
 
   private:
+
     Aws::String m_iAMRoleARN;
     bool m_iAMRoleARNHasBeenSet;
+
     Aws::String m_deliveryStreamARN;
     bool m_deliveryStreamARNHasBeenSet;
   };

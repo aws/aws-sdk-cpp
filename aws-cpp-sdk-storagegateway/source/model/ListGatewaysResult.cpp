@@ -30,12 +30,12 @@ ListGatewaysResult::ListGatewaysResult()
 {
 }
 
-ListGatewaysResult::ListGatewaysResult(const AmazonWebServiceResult<JsonValue>& result)
+ListGatewaysResult::ListGatewaysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListGatewaysResult& ListGatewaysResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListGatewaysResult& ListGatewaysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Gateways"))

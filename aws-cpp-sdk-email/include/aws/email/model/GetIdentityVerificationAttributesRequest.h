@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A list of identities.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
     inline GetIdentityVerificationAttributesRequest& AddIdentities(const char* value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_identities;
     bool m_identitiesHasBeenSet;
   };

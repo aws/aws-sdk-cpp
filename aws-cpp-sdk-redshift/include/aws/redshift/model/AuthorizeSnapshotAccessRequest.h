@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the snapshot the account is authorized to restore.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The identifier of the snapshot the account is authorized to restore.</p>
      */
     inline AuthorizeSnapshotAccessRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
@@ -124,6 +126,7 @@ namespace Model
      * that specifies anything other than * for the cluster name.</p>
      */
     inline AuthorizeSnapshotAccessRequest& WithSnapshotClusterIdentifier(const char* value) { SetSnapshotClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The identifier of the AWS customer account authorized to restore the
@@ -175,10 +178,13 @@ namespace Model
     inline AuthorizeSnapshotAccessRequest& WithAccountWithRestoreAccess(const char* value) { SetAccountWithRestoreAccess(value); return *this;}
 
   private:
+
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
     Aws::String m_snapshotClusterIdentifier;
     bool m_snapshotClusterIdentifierHasBeenSet;
+
     Aws::String m_accountWithRestoreAccess;
     bool m_accountWithRestoreAccessHasBeenSet;
   };

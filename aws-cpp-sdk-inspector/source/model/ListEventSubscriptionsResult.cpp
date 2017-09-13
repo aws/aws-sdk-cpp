@@ -30,12 +30,12 @@ ListEventSubscriptionsResult::ListEventSubscriptionsResult()
 {
 }
 
-ListEventSubscriptionsResult::ListEventSubscriptionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListEventSubscriptionsResult::ListEventSubscriptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListEventSubscriptionsResult& ListEventSubscriptionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListEventSubscriptionsResult& ListEventSubscriptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("subscriptions"))

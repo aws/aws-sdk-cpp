@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListJobsByPipelineResult();
-    ListJobsByPipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListJobsByPipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListJobsByPipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListJobsByPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
      */
     inline ListJobsByPipelineResult& AddJobs(Job&& value) { m_jobs.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> A value that you use to access the second and subsequent pages of results,
@@ -141,7 +143,9 @@ namespace Model
     inline ListJobsByPipelineResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Job> m_jobs;
+
     Aws::String m_nextPageToken;
   };
 

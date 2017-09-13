@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the stack set.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline StackSetSummary& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
+
     /**
      * <p>The ID of the stack set.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ID of the stack set.</p>
      */
     inline StackSetSummary& WithStackSetId(const char* value) { SetStackSetId(value); return *this;}
+
 
     /**
      * <p>A description of the stack set that you specify when the stack set is created
@@ -162,6 +165,7 @@ namespace Model
      */
     inline StackSetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The status of the stack set.</p>
      */
@@ -188,12 +192,16 @@ namespace Model
     inline StackSetSummary& WithStatus(StackSetStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
     Aws::String m_stackSetId;
     bool m_stackSetIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     StackSetStatus m_status;
     bool m_statusHasBeenSet;
   };

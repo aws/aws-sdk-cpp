@@ -30,12 +30,12 @@ GetTagKeysResult::GetTagKeysResult()
 {
 }
 
-GetTagKeysResult::GetTagKeysResult(const AmazonWebServiceResult<JsonValue>& result)
+GetTagKeysResult::GetTagKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetTagKeysResult& GetTagKeysResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetTagKeysResult& GetTagKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PaginationToken"))

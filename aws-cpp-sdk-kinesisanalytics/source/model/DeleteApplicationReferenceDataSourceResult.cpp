@@ -30,12 +30,12 @@ DeleteApplicationReferenceDataSourceResult::DeleteApplicationReferenceDataSource
 {
 }
 
-DeleteApplicationReferenceDataSourceResult::DeleteApplicationReferenceDataSourceResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteApplicationReferenceDataSourceResult::DeleteApplicationReferenceDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteApplicationReferenceDataSourceResult& DeleteApplicationReferenceDataSourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteApplicationReferenceDataSourceResult& DeleteApplicationReferenceDataSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

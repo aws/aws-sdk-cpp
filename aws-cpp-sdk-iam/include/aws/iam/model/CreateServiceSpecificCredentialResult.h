@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateServiceSpecificCredentialResult();
-    CreateServiceSpecificCredentialResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateServiceSpecificCredentialResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateServiceSpecificCredentialResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateServiceSpecificCredentialResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure that contains information about the newly created
@@ -87,6 +88,7 @@ namespace Model
      */
     inline CreateServiceSpecificCredentialResult& WithServiceSpecificCredential(ServiceSpecificCredential&& value) { SetServiceSpecificCredential(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -103,7 +105,9 @@ namespace Model
     inline CreateServiceSpecificCredentialResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ServiceSpecificCredential m_serviceSpecificCredential;
+
     ResponseMetadata m_responseMetadata;
   };
 

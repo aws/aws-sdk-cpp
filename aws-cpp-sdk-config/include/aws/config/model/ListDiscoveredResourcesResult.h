@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListDiscoveredResourcesResult();
-    ListDiscoveredResourcesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDiscoveredResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDiscoveredResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDiscoveredResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The details that identify a resource that is discovered by AWS Config,
@@ -97,6 +98,7 @@ namespace Model
      */
     inline ListDiscoveredResourcesResult& AddResourceIdentifiers(ResourceIdentifier&& value) { m_resourceIdentifiers.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
@@ -140,7 +142,9 @@ namespace Model
     inline ListDiscoveredResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ResourceIdentifier> m_resourceIdentifiers;
+
     Aws::String m_nextToken;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the managed instance where you want to update the role.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the managed instance where you want to update the role.</p>
      */
     inline UpdateManagedInstanceRoleRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The IAM role you want to assign or change.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline UpdateManagedInstanceRoleRequest& WithIamRole(const char* value) { SetIamRole(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_iamRole;
     bool m_iamRoleHasBeenSet;
   };

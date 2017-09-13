@@ -30,12 +30,12 @@ CreateAliasResult::CreateAliasResult()
 {
 }
 
-CreateAliasResult::CreateAliasResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateAliasResult::CreateAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateAliasResult& CreateAliasResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateAliasResult& CreateAliasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AliasArn"))

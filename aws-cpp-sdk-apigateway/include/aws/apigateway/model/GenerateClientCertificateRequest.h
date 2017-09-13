@@ -38,6 +38,7 @@ namespace Model
     GenerateClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The description of the <a>ClientCertificate</a>.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline GenerateClientCertificateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

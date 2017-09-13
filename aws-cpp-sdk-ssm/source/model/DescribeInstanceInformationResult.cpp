@@ -30,12 +30,12 @@ DescribeInstanceInformationResult::DescribeInstanceInformationResult()
 {
 }
 
-DescribeInstanceInformationResult::DescribeInstanceInformationResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeInstanceInformationResult::DescribeInstanceInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeInstanceInformationResult& DescribeInstanceInformationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeInstanceInformationResult& DescribeInstanceInformationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("InstanceInformationList"))

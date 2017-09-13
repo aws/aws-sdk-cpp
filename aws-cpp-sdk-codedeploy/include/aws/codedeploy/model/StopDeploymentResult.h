@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     StopDeploymentResult();
-    StopDeploymentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
@@ -82,6 +83,7 @@ namespace Model
      * successful.</p> </li> </ul>
      */
     inline StopDeploymentResult& WithStatus(StopStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>An accompanying status message.</p>
@@ -119,7 +121,9 @@ namespace Model
     inline StopDeploymentResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
   private:
+
     StopStatus m_status;
+
     Aws::String m_statusMessage;
   };
 

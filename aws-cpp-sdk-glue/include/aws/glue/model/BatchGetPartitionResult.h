@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     BatchGetPartitionResult();
-    BatchGetPartitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetPartitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetPartitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetPartitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of the requested partitions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of the requested partitions.</p>
      */
     inline BatchGetPartitionResult& AddPartitions(Partition&& value) { m_partitions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of the partition values in the request for which partions were not
@@ -121,7 +123,9 @@ namespace Model
     inline BatchGetPartitionResult& AddUnprocessedKeys(PartitionValueList&& value) { m_unprocessedKeys.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Partition> m_partitions;
+
     Aws::Vector<PartitionValueList> m_unprocessedKeys;
   };
 

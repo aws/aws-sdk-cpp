@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ViewBillingResult();
-    ViewBillingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ViewBillingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ViewBillingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ViewBillingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If there are more billing records than you specified for
@@ -98,6 +99,7 @@ namespace Model
      */
     inline ViewBillingResult& WithNextPageMarker(const char* value) { SetNextPageMarker(value); return *this;}
 
+
     /**
      * <p>A summary of billing records.</p>
      */
@@ -134,7 +136,9 @@ namespace Model
     inline ViewBillingResult& AddBillingRecords(BillingRecord&& value) { m_billingRecords.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextPageMarker;
+
     Aws::Vector<BillingRecord> m_billingRecords;
   };
 

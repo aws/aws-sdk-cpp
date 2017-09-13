@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -61,6 +62,7 @@ namespace Model
     
     inline GetObjectTaggingRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -81,6 +83,7 @@ namespace Model
 
     
     inline GetObjectTaggingRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
@@ -104,10 +107,13 @@ namespace Model
     inline GetObjectTaggingRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
   };

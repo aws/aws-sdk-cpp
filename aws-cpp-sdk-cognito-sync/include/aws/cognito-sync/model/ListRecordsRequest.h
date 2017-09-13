@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
@@ -84,6 +85,7 @@ namespace Model
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
     inline ListRecordsRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -127,6 +129,7 @@ namespace Model
      */
     inline ListRecordsRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
+
     /**
      * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_'
      * (underscore), '-' (dash), and '.' (dot).
@@ -169,6 +172,7 @@ namespace Model
      */
     inline ListRecordsRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
 
+
     /**
      * The last server sync count for this record.
      */
@@ -183,6 +187,7 @@ namespace Model
      * The last server sync count for this record.
      */
     inline ListRecordsRequest& WithLastSyncCount(long long value) { SetLastSyncCount(value); return *this;}
+
 
     /**
      * A pagination token for obtaining the next page of results.
@@ -219,6 +224,7 @@ namespace Model
      */
     inline ListRecordsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * The maximum number of results to be returned.
      */
@@ -233,6 +239,7 @@ namespace Model
      * The maximum number of results to be returned.
      */
     inline ListRecordsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * A token containing a session ID, identity ID, and expiration.
@@ -270,18 +277,25 @@ namespace Model
     inline ListRecordsRequest& WithSyncSessionToken(const char* value) { SetSyncSessionToken(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::String m_datasetName;
     bool m_datasetNameHasBeenSet;
+
     long long m_lastSyncCount;
     bool m_lastSyncCountHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_syncSessionToken;
     bool m_syncSessionTokenHasBeenSet;
   };

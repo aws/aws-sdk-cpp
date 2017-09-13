@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateAccessKeyResult();
-    CreateAccessKeyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateAccessKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateAccessKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateAccessKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure with details about the access key.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateAccessKeyResult& WithAccessKey(AccessKey&& value) { SetAccessKey(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline CreateAccessKeyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     AccessKey m_accessKey;
+
     ResponseMetadata m_responseMetadata;
   };
 

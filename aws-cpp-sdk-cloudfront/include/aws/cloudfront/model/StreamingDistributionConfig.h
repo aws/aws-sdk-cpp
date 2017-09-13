@@ -52,6 +52,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>A unique number that ensures that the request can't be replayed. If the
      * <code>CallerReference</code> is new (no matter the content of the
@@ -164,6 +165,7 @@ namespace Model
      */
     inline StreamingDistributionConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
+
     /**
      * <p>A complex type that contains information about the Amazon S3 bucket from
      * which you want CloudFront to get your media files for distribution. </p>
@@ -194,6 +196,7 @@ namespace Model
      */
     inline StreamingDistributionConfig& WithS3Origin(S3Origin&& value) { SetS3Origin(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
      * names), if any, for this streaming distribution. </p>
@@ -223,6 +226,7 @@ namespace Model
      * names), if any, for this streaming distribution. </p>
      */
     inline StreamingDistributionConfig& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
+
 
     /**
      * <p>Any comments you want to include about the streaming distribution. </p>
@@ -259,6 +263,7 @@ namespace Model
      */
     inline StreamingDistributionConfig& WithComment(const char* value) { SetComment(value); return *this;}
 
+
     /**
      * <p>A complex type that controls whether access logs are written for the
      * streaming distribution. </p>
@@ -288,6 +293,7 @@ namespace Model
      * streaming distribution. </p>
      */
     inline StreamingDistributionConfig& WithLogging(StreamingLoggingConfig&& value) { SetLogging(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that specifies any AWS accounts that you want to permit to
@@ -344,6 +350,7 @@ namespace Model
      */
     inline StreamingDistributionConfig& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that contains information about price class for this streaming
      * distribution. </p>
@@ -374,6 +381,7 @@ namespace Model
      */
     inline StreamingDistributionConfig& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether the streaming distribution is enabled to accept user requests for
      * content.</p>
@@ -393,20 +401,28 @@ namespace Model
     inline StreamingDistributionConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
+
     S3Origin m_s3Origin;
     bool m_s3OriginHasBeenSet;
+
     Aliases m_aliases;
     bool m_aliasesHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     StreamingLoggingConfig m_logging;
     bool m_loggingHasBeenSet;
+
     TrustedSigners m_trustedSigners;
     bool m_trustedSignersHasBeenSet;
+
     PriceClass m_priceClass;
     bool m_priceClassHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

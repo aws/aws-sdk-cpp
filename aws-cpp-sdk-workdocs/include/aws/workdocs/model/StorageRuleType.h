@@ -45,6 +45,7 @@ namespace Model
     StorageRuleType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The amount of storage allocated, in bytes.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      * <p>The amount of storage allocated, in bytes.</p>
      */
     inline StorageRuleType& WithStorageAllocatedInBytes(long long value) { SetStorageAllocatedInBytes(value); return *this;}
+
 
     /**
      * <p>The type of storage.</p>
@@ -86,8 +88,10 @@ namespace Model
     inline StorageRuleType& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
 
   private:
+
     long long m_storageAllocatedInBytes;
     bool m_storageAllocatedInBytesHasBeenSet;
+
     StorageType m_storageType;
     bool m_storageTypeHasBeenSet;
   };

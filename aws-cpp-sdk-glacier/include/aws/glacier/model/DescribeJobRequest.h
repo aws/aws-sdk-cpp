@@ -38,6 +38,7 @@ namespace Model
     DescribeJobRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -101,6 +102,7 @@ namespace Model
      */
     inline DescribeJobRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -135,6 +137,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline DescribeJobRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>The ID of the job to describe.</p>
@@ -172,10 +175,13 @@ namespace Model
     inline DescribeJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
   };

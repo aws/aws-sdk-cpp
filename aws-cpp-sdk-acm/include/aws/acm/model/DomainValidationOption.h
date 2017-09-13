@@ -47,6 +47,7 @@ namespace Model
     DomainValidationOption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate request.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>A fully qualified domain name (FQDN) in the certificate request.</p>
      */
     inline DomainValidationOption& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>The domain name that you want ACM to use to send you validation emails. This
@@ -181,8 +183,10 @@ namespace Model
     inline DomainValidationOption& WithValidationDomain(const char* value) { SetValidationDomain(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_validationDomain;
     bool m_validationDomainHasBeenSet;
   };

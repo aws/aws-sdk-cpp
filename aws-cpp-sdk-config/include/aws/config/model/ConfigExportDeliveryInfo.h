@@ -49,6 +49,7 @@ namespace Model
     ConfigExportDeliveryInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Status of the last attempted delivery.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>Status of the last attempted delivery.</p>
      */
     inline ConfigExportDeliveryInfo& WithLastStatus(DeliveryStatus&& value) { SetLastStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The error code from the last attempted delivery.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline ConfigExportDeliveryInfo& WithLastErrorCode(const char* value) { SetLastErrorCode(value); return *this;}
 
+
     /**
      * <p>The error message from the last attempted delivery.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      */
     inline ConfigExportDeliveryInfo& WithLastErrorMessage(const char* value) { SetLastErrorMessage(value); return *this;}
 
+
     /**
      * <p>The time of the last attempted delivery.</p>
      */
@@ -169,6 +173,7 @@ namespace Model
      */
     inline ConfigExportDeliveryInfo& WithLastAttemptTime(Aws::Utils::DateTime&& value) { SetLastAttemptTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time of the last successful delivery.</p>
      */
@@ -193,6 +198,7 @@ namespace Model
      * <p>The time of the last successful delivery.</p>
      */
     inline ConfigExportDeliveryInfo& WithLastSuccessfulTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time that the next delivery occurs.</p>
@@ -220,16 +226,22 @@ namespace Model
     inline ConfigExportDeliveryInfo& WithNextDeliveryTime(Aws::Utils::DateTime&& value) { SetNextDeliveryTime(std::move(value)); return *this;}
 
   private:
+
     DeliveryStatus m_lastStatus;
     bool m_lastStatusHasBeenSet;
+
     Aws::String m_lastErrorCode;
     bool m_lastErrorCodeHasBeenSet;
+
     Aws::String m_lastErrorMessage;
     bool m_lastErrorMessageHasBeenSet;
+
     Aws::Utils::DateTime m_lastAttemptTime;
     bool m_lastAttemptTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastSuccessfulTime;
     bool m_lastSuccessfulTimeHasBeenSet;
+
     Aws::Utils::DateTime m_nextDeliveryTime;
     bool m_nextDeliveryTimeHasBeenSet;
   };

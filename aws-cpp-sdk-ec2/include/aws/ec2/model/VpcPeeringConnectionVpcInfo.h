@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpcPeeringConnectionOptionsDescription.h>
 #include <aws/ec2/model/Ipv6CidrBlock.h>
+#include <aws/ec2/model/CidrBlock.h>
 #include <utility>
 
 namespace Aws
@@ -50,6 +51,7 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
 
     /**
      * <p>The IPv4 CIDR block for the VPC.</p>
@@ -86,6 +88,7 @@ namespace Model
      */
     inline VpcPeeringConnectionVpcInfo& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
+
     /**
      * <p>The IPv6 CIDR block for the VPC.</p>
      */
@@ -120,6 +123,43 @@ namespace Model
      * <p>The IPv6 CIDR block for the VPC.</p>
      */
     inline VpcPeeringConnectionVpcInfo& AddIpv6CidrBlockSet(Ipv6CidrBlock&& value) { m_ipv6CidrBlockSetHasBeenSet = true; m_ipv6CidrBlockSet.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline const Aws::Vector<CidrBlock>& GetCidrBlockSet() const{ return m_cidrBlockSet; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline void SetCidrBlockSet(const Aws::Vector<CidrBlock>& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet = value; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline void SetCidrBlockSet(Aws::Vector<CidrBlock>&& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet = std::move(value); }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& WithCidrBlockSet(const Aws::Vector<CidrBlock>& value) { SetCidrBlockSet(value); return *this;}
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& WithCidrBlockSet(Aws::Vector<CidrBlock>&& value) { SetCidrBlockSet(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& AddCidrBlockSet(const CidrBlock& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& AddCidrBlockSet(CidrBlock&& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The AWS account ID of the VPC owner.</p>
@@ -156,6 +196,7 @@ namespace Model
      */
     inline VpcPeeringConnectionVpcInfo& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
     /**
      * <p>Information about the VPC peering connection options for the accepter or
      * requester VPC.</p>
@@ -185,6 +226,7 @@ namespace Model
      * requester VPC.</p>
      */
     inline VpcPeeringConnectionVpcInfo& WithPeeringOptions(VpcPeeringConnectionOptionsDescription&& value) { SetPeeringOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -222,14 +264,22 @@ namespace Model
     inline VpcPeeringConnectionVpcInfo& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
+
     Aws::Vector<Ipv6CidrBlock> m_ipv6CidrBlockSet;
     bool m_ipv6CidrBlockSetHasBeenSet;
+
+    Aws::Vector<CidrBlock> m_cidrBlockSet;
+    bool m_cidrBlockSetHasBeenSet;
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     VpcPeeringConnectionOptionsDescription m_peeringOptions;
     bool m_peeringOptionsHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

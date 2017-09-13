@@ -32,13 +32,13 @@ ListAccountAliasesResult::ListAccountAliasesResult() :
 {
 }
 
-ListAccountAliasesResult::ListAccountAliasesResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListAccountAliasesResult::ListAccountAliasesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListAccountAliasesResult& ListAccountAliasesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListAccountAliasesResult& ListAccountAliasesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

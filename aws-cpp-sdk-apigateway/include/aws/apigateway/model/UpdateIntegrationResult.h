@@ -52,8 +52,9 @@ namespace Model
   {
   public:
     UpdateIntegrationResult();
-    UpdateIntegrationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateIntegrationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Specifies the integration's type. The valid value is <code>HTTP</code> for
@@ -105,6 +106,7 @@ namespace Model
      */
     inline UpdateIntegrationResult& WithType(IntegrationType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the integration's HTTP method type.</p>
      */
@@ -139,6 +141,7 @@ namespace Model
      * <p>Specifies the integration's HTTP method type.</p>
      */
     inline UpdateIntegrationResult& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
+
 
     /**
      * <p>Specifies the integration's Uniform Resource Identifier (URI). For HTTP
@@ -252,6 +255,7 @@ namespace Model
      */
     inline UpdateIntegrationResult& WithUri(const char* value) { SetUri(value); return *this;}
 
+
     /**
      * <p>Specifies the credentials required for the integration, if any. For AWS
      * integrations, three options are available. To specify an IAM Role for Amazon API
@@ -321,6 +325,7 @@ namespace Model
      * supported AWS services, specify null.</p>
      */
     inline UpdateIntegrationResult& WithCredentials(const char* value) { SetCredentials(value); return *this;}
+
 
     /**
      * <p>A key-value map specifying request parameters that are passed from the method
@@ -466,6 +471,7 @@ namespace Model
      */
     inline UpdateIntegrationResult& AddRequestParameters(const char* key, const char* value) { m_requestParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
      * payload based on the value of the Content-Type header sent by the client. The
@@ -561,6 +567,7 @@ namespace Model
      * value.</p>
      */
     inline UpdateIntegrationResult& AddRequestTemplates(const char* key, const char* value) { m_requestTemplates.emplace(key, value); return *this; }
+
 
     /**
      * <div> <p> Specifies how the method request body of an unmapped content type will
@@ -730,6 +737,7 @@ namespace Model
      */
     inline UpdateIntegrationResult& WithPassthroughBehavior(const char* value) { SetPassthroughBehavior(value); return *this;}
 
+
     /**
      * <p>Specifies how to handle request payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
@@ -800,6 +808,7 @@ namespace Model
      */
     inline UpdateIntegrationResult& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the integration's cache namespace.</p>
      */
@@ -834,6 +843,7 @@ namespace Model
      * <p>Specifies the integration's cache namespace.</p>
      */
     inline UpdateIntegrationResult& WithCacheNamespace(const char* value) { SetCacheNamespace(value); return *this;}
+
 
     /**
      * <p>Specifies the integration's cache key parameters.</p>
@@ -874,6 +884,7 @@ namespace Model
      * <p>Specifies the integration's cache key parameters.</p>
      */
     inline UpdateIntegrationResult& AddCacheKeyParameters(const char* value) { m_cacheKeyParameters.push_back(value); return *this; }
+
 
     /**
      * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
@@ -1184,16 +1195,27 @@ namespace Model
     inline UpdateIntegrationResult& AddIntegrationResponses(const char* key, const IntegrationResponse& value) { m_integrationResponses.emplace(key, value); return *this; }
 
   private:
+
     IntegrationType m_type;
+
     Aws::String m_httpMethod;
+
     Aws::String m_uri;
+
     Aws::String m_credentials;
+
     Aws::Map<Aws::String, Aws::String> m_requestParameters;
+
     Aws::Map<Aws::String, Aws::String> m_requestTemplates;
+
     Aws::String m_passthroughBehavior;
+
     ContentHandlingStrategy m_contentHandling;
+
     Aws::String m_cacheNamespace;
+
     Aws::Vector<Aws::String> m_cacheKeyParameters;
+
     Aws::Map<Aws::String, IntegrationResponse> m_integrationResponses;
   };
 

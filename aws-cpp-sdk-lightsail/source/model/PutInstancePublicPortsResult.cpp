@@ -30,12 +30,12 @@ PutInstancePublicPortsResult::PutInstancePublicPortsResult()
 {
 }
 
-PutInstancePublicPortsResult::PutInstancePublicPortsResult(const AmazonWebServiceResult<JsonValue>& result)
+PutInstancePublicPortsResult::PutInstancePublicPortsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutInstancePublicPortsResult& PutInstancePublicPortsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutInstancePublicPortsResult& PutInstancePublicPortsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operation"))

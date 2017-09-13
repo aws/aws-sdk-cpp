@@ -32,13 +32,13 @@ ListAccessKeysResult::ListAccessKeysResult() :
 {
 }
 
-ListAccessKeysResult::ListAccessKeysResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListAccessKeysResult::ListAccessKeysResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListAccessKeysResult& ListAccessKeysResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListAccessKeysResult& ListAccessKeysResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

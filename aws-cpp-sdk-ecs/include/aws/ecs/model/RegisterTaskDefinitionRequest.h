@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
@@ -103,6 +104,7 @@ namespace Model
      * allowed.</p>
      */
     inline RegisterTaskDefinitionRequest& WithFamily(const char* value) { SetFamily(value); return *this;}
+
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
@@ -173,6 +175,7 @@ namespace Model
      * Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
+
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
@@ -264,6 +267,7 @@ namespace Model
      */
     inline RegisterTaskDefinitionRequest& WithNetworkMode(NetworkMode&& value) { SetNetworkMode(std::move(value)); return *this;}
 
+
     /**
      * <p>A list of container definitions in JSON format that describe the different
      * containers that make up your task.</p>
@@ -306,6 +310,7 @@ namespace Model
      */
     inline RegisterTaskDefinitionRequest& AddContainerDefinitions(ContainerDefinition&& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of volume definitions in JSON format that containers in your task may
      * use.</p>
@@ -347,6 +352,7 @@ namespace Model
      * use.</p>
      */
     inline RegisterTaskDefinitionRequest& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
@@ -398,16 +404,22 @@ namespace Model
     inline RegisterTaskDefinitionRequest& AddPlacementConstraints(TaskDefinitionPlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_family;
     bool m_familyHasBeenSet;
+
     Aws::String m_taskRoleArn;
     bool m_taskRoleArnHasBeenSet;
+
     NetworkMode m_networkMode;
     bool m_networkModeHasBeenSet;
+
     Aws::Vector<ContainerDefinition> m_containerDefinitions;
     bool m_containerDefinitionsHasBeenSet;
+
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet;
+
     Aws::Vector<TaskDefinitionPlacementConstraint> m_placementConstraints;
     bool m_placementConstraintsHasBeenSet;
   };

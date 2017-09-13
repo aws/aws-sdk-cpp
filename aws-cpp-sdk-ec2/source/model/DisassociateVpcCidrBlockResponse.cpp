@@ -31,12 +31,12 @@ DisassociateVpcCidrBlockResponse::DisassociateVpcCidrBlockResponse()
 {
 }
 
-DisassociateVpcCidrBlockResponse::DisassociateVpcCidrBlockResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DisassociateVpcCidrBlockResponse::DisassociateVpcCidrBlockResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DisassociateVpcCidrBlockResponse& DisassociateVpcCidrBlockResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DisassociateVpcCidrBlockResponse& DisassociateVpcCidrBlockResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
@@ -52,6 +52,11 @@ DisassociateVpcCidrBlockResponse& DisassociateVpcCidrBlockResponse::operator =(c
     if(!ipv6CidrBlockAssociationNode.IsNull())
     {
       m_ipv6CidrBlockAssociation = ipv6CidrBlockAssociationNode;
+    }
+    XmlNode cidrBlockAssociationNode = resultNode.FirstChild("cidrBlockAssociation");
+    if(!cidrBlockAssociationNode.IsNull())
+    {
+      m_cidrBlockAssociation = cidrBlockAssociationNode;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())

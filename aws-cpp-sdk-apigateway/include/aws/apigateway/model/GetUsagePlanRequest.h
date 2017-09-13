@@ -38,6 +38,7 @@ namespace Model
     GetUsagePlanRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline GetUsagePlanRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
   private:
+
     Aws::String m_usagePlanId;
     bool m_usagePlanIdHasBeenSet;
   };

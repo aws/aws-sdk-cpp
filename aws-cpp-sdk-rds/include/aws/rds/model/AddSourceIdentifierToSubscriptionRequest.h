@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the RDS event notification subscription you want to add a source
      * identifier to.</p>
@@ -82,6 +83,7 @@ namespace Model
      * identifier to.</p>
      */
     inline AddSourceIdentifierToSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+
 
     /**
      * <p>The identifier of the event source to be added. An identifier must begin with
@@ -182,8 +184,10 @@ namespace Model
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet;
+
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
   };

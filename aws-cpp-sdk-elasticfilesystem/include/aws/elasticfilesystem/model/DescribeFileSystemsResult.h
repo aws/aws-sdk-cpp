@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeFileSystemsResult();
-    DescribeFileSystemsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFileSystemsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFileSystemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFileSystemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Present if provided by caller in the request (String).</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeFileSystemsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Array of file system descriptions.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>Array of file system descriptions.</p>
      */
     inline DescribeFileSystemsResult& AddFileSystems(FileSystemDescription&& value) { m_fileSystems.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Present if there are more file systems than returned in the response
@@ -163,8 +166,11 @@ namespace Model
     inline DescribeFileSystemsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<FileSystemDescription> m_fileSystems;
+
     Aws::String m_nextMarker;
   };
 

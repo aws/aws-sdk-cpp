@@ -47,6 +47,7 @@ namespace Model
     RecordFormat& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of record format.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline RecordFormat& WithRecordFormatType(RecordFormatType&& value) { SetRecordFormatType(std::move(value)); return *this;}
 
+
     
     inline const MappingParameters& GetMappingParameters() const{ return m_mappingParameters; }
 
@@ -88,8 +90,10 @@ namespace Model
     inline RecordFormat& WithMappingParameters(MappingParameters&& value) { SetMappingParameters(std::move(value)); return *this;}
 
   private:
+
     RecordFormatType m_recordFormatType;
     bool m_recordFormatTypeHasBeenSet;
+
     MappingParameters m_mappingParameters;
     bool m_mappingParametersHasBeenSet;
   };

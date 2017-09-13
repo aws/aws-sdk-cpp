@@ -30,12 +30,12 @@ DescribeTrustedAdvisorCheckResultResult::DescribeTrustedAdvisorCheckResultResult
 {
 }
 
-DescribeTrustedAdvisorCheckResultResult::DescribeTrustedAdvisorCheckResultResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTrustedAdvisorCheckResultResult::DescribeTrustedAdvisorCheckResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeTrustedAdvisorCheckResultResult& DescribeTrustedAdvisorCheckResultResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTrustedAdvisorCheckResultResult& DescribeTrustedAdvisorCheckResultResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("result"))

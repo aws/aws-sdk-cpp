@@ -30,12 +30,12 @@ DescribeCommunicationsResult::DescribeCommunicationsResult()
 {
 }
 
-DescribeCommunicationsResult::DescribeCommunicationsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCommunicationsResult::DescribeCommunicationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeCommunicationsResult& DescribeCommunicationsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCommunicationsResult& DescribeCommunicationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("communications"))

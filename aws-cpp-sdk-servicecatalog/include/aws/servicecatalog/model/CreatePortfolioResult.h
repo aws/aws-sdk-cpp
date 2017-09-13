@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     CreatePortfolioResult();
-    CreatePortfolioResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePortfolioResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resulting detailed portfolio information.</p>
@@ -67,6 +68,7 @@ namespace Model
      * <p>The resulting detailed portfolio information.</p>
      */
     inline CreatePortfolioResult& WithPortfolioDetail(PortfolioDetail&& value) { SetPortfolioDetail(std::move(value)); return *this;}
+
 
     /**
      * <p>Tags successfully associated with the new portfolio.</p>
@@ -104,7 +106,9 @@ namespace Model
     inline CreatePortfolioResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     PortfolioDetail m_portfolioDetail;
+
     Aws::Vector<Tag> m_tags;
   };
 

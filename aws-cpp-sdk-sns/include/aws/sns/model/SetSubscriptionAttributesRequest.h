@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the subscription to modify.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ARN of the subscription to modify.</p>
      */
     inline SetSubscriptionAttributesRequest& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
+
 
     /**
      * <p>The name of the attribute you want to set. Only a subset of the subscriptions
@@ -125,6 +127,7 @@ namespace Model
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
+
     /**
      * <p>The new value for the attribute in JSON format.</p>
      */
@@ -161,10 +164,13 @@ namespace Model
     inline SetSubscriptionAttributesRequest& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionArn;
     bool m_subscriptionArnHasBeenSet;
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     Aws::String m_attributeValue;
     bool m_attributeValueHasBeenSet;
   };

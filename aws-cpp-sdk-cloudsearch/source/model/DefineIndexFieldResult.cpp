@@ -31,12 +31,12 @@ DefineIndexFieldResult::DefineIndexFieldResult()
 {
 }
 
-DefineIndexFieldResult::DefineIndexFieldResult(const AmazonWebServiceResult<XmlDocument>& result)
+DefineIndexFieldResult::DefineIndexFieldResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DefineIndexFieldResult& DefineIndexFieldResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DefineIndexFieldResult& DefineIndexFieldResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

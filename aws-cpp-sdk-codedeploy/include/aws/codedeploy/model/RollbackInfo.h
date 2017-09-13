@@ -45,6 +45,7 @@ namespace Model
     RollbackInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the deployment rollback.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID of the deployment rollback.</p>
      */
     inline RollbackInfo& WithRollbackDeploymentId(const char* value) { SetRollbackDeploymentId(value); return *this;}
+
 
     /**
      * <p>The deployment ID of the deployment that was underway and triggered a
@@ -121,6 +123,7 @@ namespace Model
      * rollback deployment because it failed or was stopped.</p>
      */
     inline RollbackInfo& WithRollbackTriggeringDeploymentId(const char* value) { SetRollbackTriggeringDeploymentId(value); return *this;}
+
 
     /**
      * <p>Information describing the status of a deployment rollback; for example,
@@ -172,10 +175,13 @@ namespace Model
     inline RollbackInfo& WithRollbackMessage(const char* value) { SetRollbackMessage(value); return *this;}
 
   private:
+
     Aws::String m_rollbackDeploymentId;
     bool m_rollbackDeploymentIdHasBeenSet;
+
     Aws::String m_rollbackTriggeringDeploymentId;
     bool m_rollbackTriggeringDeploymentIdHasBeenSet;
+
     Aws::String m_rollbackMessage;
     bool m_rollbackMessageHasBeenSet;
   };

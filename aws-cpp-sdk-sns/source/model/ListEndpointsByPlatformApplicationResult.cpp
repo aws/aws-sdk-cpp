@@ -31,12 +31,12 @@ ListEndpointsByPlatformApplicationResult::ListEndpointsByPlatformApplicationResu
 {
 }
 
-ListEndpointsByPlatformApplicationResult::ListEndpointsByPlatformApplicationResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListEndpointsByPlatformApplicationResult::ListEndpointsByPlatformApplicationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListEndpointsByPlatformApplicationResult& ListEndpointsByPlatformApplicationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListEndpointsByPlatformApplicationResult& ListEndpointsByPlatformApplicationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

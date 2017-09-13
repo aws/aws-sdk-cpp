@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetResourceConfigHistoryResult();
-    GetResourceConfigHistoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourceConfigHistoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetResourceConfigHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetResourceConfigHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list that contains the configuration history of one or more resources.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list that contains the configuration history of one or more resources.</p>
      */
     inline GetResourceConfigHistoryResult& AddConfigurationItems(ConfigurationItem&& value) { m_configurationItems.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -127,7 +129,9 @@ namespace Model
     inline GetResourceConfigHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ConfigurationItem> m_configurationItems;
+
     Aws::String m_nextToken;
   };
 

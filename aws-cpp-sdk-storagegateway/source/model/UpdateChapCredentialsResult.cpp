@@ -30,12 +30,12 @@ UpdateChapCredentialsResult::UpdateChapCredentialsResult()
 {
 }
 
-UpdateChapCredentialsResult::UpdateChapCredentialsResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateChapCredentialsResult::UpdateChapCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateChapCredentialsResult& UpdateChapCredentialsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateChapCredentialsResult& UpdateChapCredentialsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TargetARN"))

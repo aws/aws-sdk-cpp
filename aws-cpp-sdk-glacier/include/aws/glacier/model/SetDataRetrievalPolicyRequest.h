@@ -38,6 +38,7 @@ namespace Model
     SetDataRetrievalPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
      * the AWS account ID associated with the credentials used to sign the request. You
@@ -108,6 +109,7 @@ namespace Model
      */
     inline SetDataRetrievalPolicyRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The data retrieval policy in JSON format.</p>
      */
@@ -134,8 +136,10 @@ namespace Model
     inline SetDataRetrievalPolicyRequest& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     DataRetrievalPolicy m_policy;
     bool m_policyHasBeenSet;
   };

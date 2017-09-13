@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool where you want to update the user pool
      * client.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline UpdateUserPoolClientRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ID of the client associated with the user pool.</p>
      */
     inline UpdateUserPoolClientRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+
 
     /**
      * <p>The client name from the update user pool client request.</p>
@@ -155,6 +158,7 @@ namespace Model
      */
     inline UpdateUserPoolClientRequest& WithClientName(const char* value) { SetClientName(value); return *this;}
 
+
     /**
      * <p>The time limit, in days, after which the refresh token is no longer valid and
      * cannot be used.</p>
@@ -172,6 +176,7 @@ namespace Model
      * cannot be used.</p>
      */
     inline UpdateUserPoolClientRequest& WithRefreshTokenValidity(int value) { SetRefreshTokenValidity(value); return *this;}
+
 
     /**
      * <p>The read-only attributes of the user pool.</p>
@@ -213,6 +218,7 @@ namespace Model
      */
     inline UpdateUserPoolClientRequest& AddReadAttributes(const char* value) { m_readAttributesHasBeenSet = true; m_readAttributes.push_back(value); return *this; }
 
+
     /**
      * <p>The writeable attributes of the user pool.</p>
      */
@@ -253,6 +259,7 @@ namespace Model
      */
     inline UpdateUserPoolClientRequest& AddWriteAttributes(const char* value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
 
+
     /**
      * <p>Explicit authentication flows.</p>
      */
@@ -287,6 +294,7 @@ namespace Model
      * <p>Explicit authentication flows.</p>
      */
     inline UpdateUserPoolClientRequest& AddExplicitAuthFlows(ExplicitAuthFlowsType&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
@@ -336,6 +344,7 @@ namespace Model
      */
     inline UpdateUserPoolClientRequest& AddSupportedIdentityProviders(const char* value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
 
+
     /**
      * <p>A list of allowed callback URLs for the identity providers.</p>
      */
@@ -375,6 +384,7 @@ namespace Model
      * <p>A list of allowed callback URLs for the identity providers.</p>
      */
     inline UpdateUserPoolClientRequest& AddCallbackURLs(const char* value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.push_back(value); return *this; }
+
 
     /**
      * <p>A list of allowed logout URLs for the identity providers.</p>
@@ -416,6 +426,7 @@ namespace Model
      */
     inline UpdateUserPoolClientRequest& AddLogoutURLs(const char* value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.push_back(value); return *this; }
 
+
     /**
      * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
      */
@@ -450,6 +461,7 @@ namespace Model
      * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
      */
     inline UpdateUserPoolClientRequest& WithDefaultRedirectURI(const char* value) { SetDefaultRedirectURI(value); return *this;}
+
 
     /**
      * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
@@ -514,6 +526,7 @@ namespace Model
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthFlows(OAuthFlowType&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
      * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
@@ -570,6 +583,7 @@ namespace Model
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthScopes(const char* value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(value); return *this; }
 
+
     /**
      * <p>Set to TRUE if the client is allowed to follow the OAuth protocol when
      * interacting with Cognito user pools.</p>
@@ -589,32 +603,46 @@ namespace Model
     inline UpdateUserPoolClientRequest& WithAllowedOAuthFlowsUserPoolClient(bool value) { SetAllowedOAuthFlowsUserPoolClient(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     Aws::String m_clientName;
     bool m_clientNameHasBeenSet;
+
     int m_refreshTokenValidity;
     bool m_refreshTokenValidityHasBeenSet;
+
     Aws::Vector<Aws::String> m_readAttributes;
     bool m_readAttributesHasBeenSet;
+
     Aws::Vector<Aws::String> m_writeAttributes;
     bool m_writeAttributesHasBeenSet;
+
     Aws::Vector<ExplicitAuthFlowsType> m_explicitAuthFlows;
     bool m_explicitAuthFlowsHasBeenSet;
+
     Aws::Vector<Aws::String> m_supportedIdentityProviders;
     bool m_supportedIdentityProvidersHasBeenSet;
+
     Aws::Vector<Aws::String> m_callbackURLs;
     bool m_callbackURLsHasBeenSet;
+
     Aws::Vector<Aws::String> m_logoutURLs;
     bool m_logoutURLsHasBeenSet;
+
     Aws::String m_defaultRedirectURI;
     bool m_defaultRedirectURIHasBeenSet;
+
     Aws::Vector<OAuthFlowType> m_allowedOAuthFlows;
     bool m_allowedOAuthFlowsHasBeenSet;
+
     Aws::Vector<Aws::String> m_allowedOAuthScopes;
     bool m_allowedOAuthScopesHasBeenSet;
+
     bool m_allowedOAuthFlowsUserPoolClient;
     bool m_allowedOAuthFlowsUserPoolClientHasBeenSet;
   };

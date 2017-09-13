@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
      * create a an endpoint.</p>
@@ -83,6 +84,7 @@ namespace Model
      * create a an endpoint.</p>
      */
     inline CreatePlatformEndpointRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
+
 
     /**
      * <p>Unique identifier created by the notification service for an app on a device.
@@ -147,6 +149,7 @@ namespace Model
      */
     inline CreatePlatformEndpointRequest& WithToken(const char* value) { SetToken(value); return *this;}
 
+
     /**
      * <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use
      * this data. The data must be in UTF-8 format and less than 2KB.</p>
@@ -188,6 +191,7 @@ namespace Model
      * this data. The data must be in UTF-8 format and less than 2KB.</p>
      */
     inline CreatePlatformEndpointRequest& WithCustomUserData(const char* value) { SetCustomUserData(value); return *this;}
+
 
     /**
      * <p>For a list of attributes, see <a
@@ -262,12 +266,16 @@ namespace Model
     inline CreatePlatformEndpointRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_platformApplicationArn;
     bool m_platformApplicationArnHasBeenSet;
+
     Aws::String m_token;
     bool m_tokenHasBeenSet;
+
     Aws::String m_customUserData;
     bool m_customUserDataHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
   };

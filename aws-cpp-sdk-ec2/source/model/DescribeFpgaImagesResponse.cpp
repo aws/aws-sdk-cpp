@@ -31,12 +31,12 @@ DescribeFpgaImagesResponse::DescribeFpgaImagesResponse()
 {
 }
 
-DescribeFpgaImagesResponse::DescribeFpgaImagesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeFpgaImagesResponse::DescribeFpgaImagesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeFpgaImagesResponse& DescribeFpgaImagesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeFpgaImagesResponse& DescribeFpgaImagesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline UpdateMaintenanceStartTimeRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     /**
      * <p>The hour component of the maintenance start time represented as <i>hh</i>,
@@ -85,6 +87,7 @@ namespace Model
      */
     inline UpdateMaintenanceStartTimeRequest& WithHourOfDay(int value) { SetHourOfDay(value); return *this;}
 
+
     /**
      * <p>The minute component of the maintenance start time represented as <i>mm</i>,
      * where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time
@@ -106,6 +109,7 @@ namespace Model
      */
     inline UpdateMaintenanceStartTimeRequest& WithMinuteOfHour(int value) { SetMinuteOfHour(value); return *this;}
 
+
     /**
      * <p>The maintenance start time day of the week represented as an ordinal number
      * from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
@@ -125,12 +129,16 @@ namespace Model
     inline UpdateMaintenanceStartTimeRequest& WithDayOfWeek(int value) { SetDayOfWeek(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     int m_hourOfDay;
     bool m_hourOfDayHasBeenSet;
+
     int m_minuteOfHour;
     bool m_minuteOfHourHasBeenSet;
+
     int m_dayOfWeek;
     bool m_dayOfWeekHasBeenSet;
   };

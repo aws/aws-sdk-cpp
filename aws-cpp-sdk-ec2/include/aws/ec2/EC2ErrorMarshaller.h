@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_EC2_API EC2ErrorMarshaller : public Client::XmlErrorMarshaller
+class AWS_EC2_API EC2ErrorMarshaller : public Aws::Client::XmlErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace EC2
+} // namespace Client
 } // namespace Aws

@@ -48,6 +48,7 @@ namespace Model
     InstanceAssociationStatusInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The association ID.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The association ID.</p>
      */
     inline InstanceAssociationStatusInfo& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
 
     /**
      * <p>The name of the association.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline InstanceAssociationStatusInfo& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The association document verions.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The association document verions.</p>
      */
     inline InstanceAssociationStatusInfo& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
 
     /**
      * <p>The version of the association applied to the instance.</p>
@@ -188,6 +192,7 @@ namespace Model
      */
     inline InstanceAssociationStatusInfo& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
 
+
     /**
      * <p>The instance ID where the association was created.</p>
      */
@@ -223,6 +228,7 @@ namespace Model
      */
     inline InstanceAssociationStatusInfo& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The date the instance association executed. </p>
      */
@@ -247,6 +253,7 @@ namespace Model
      * <p>The date the instance association executed. </p>
      */
     inline InstanceAssociationStatusInfo& WithExecutionDate(Aws::Utils::DateTime&& value) { SetExecutionDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Status information about the instance association.</p>
@@ -283,6 +290,7 @@ namespace Model
      */
     inline InstanceAssociationStatusInfo& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>Detailed status information about the instance association.</p>
      */
@@ -317,6 +325,7 @@ namespace Model
      * <p>Detailed status information about the instance association.</p>
      */
     inline InstanceAssociationStatusInfo& WithDetailedStatus(const char* value) { SetDetailedStatus(value); return *this;}
+
 
     /**
      * <p>Summary information about association execution.</p>
@@ -353,6 +362,7 @@ namespace Model
      */
     inline InstanceAssociationStatusInfo& WithExecutionSummary(const char* value) { SetExecutionSummary(value); return *this;}
 
+
     /**
      * <p>An error code returned by the request to create the association.</p>
      */
@@ -388,6 +398,7 @@ namespace Model
      */
     inline InstanceAssociationStatusInfo& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
+
     /**
      * <p>A URL for an Amazon S3 bucket where you want to store the results of this
      * request.</p>
@@ -417,6 +428,7 @@ namespace Model
      * request.</p>
      */
     inline InstanceAssociationStatusInfo& WithOutputUrl(InstanceAssociationOutputUrl&& value) { SetOutputUrl(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the association applied to the instance.</p>
@@ -454,28 +466,40 @@ namespace Model
     inline InstanceAssociationStatusInfo& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::String m_associationVersion;
     bool m_associationVersionHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::Utils::DateTime m_executionDate;
     bool m_executionDateHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_detailedStatus;
     bool m_detailedStatusHasBeenSet;
+
     Aws::String m_executionSummary;
     bool m_executionSummaryHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     InstanceAssociationOutputUrl m_outputUrl;
     bool m_outputUrlHasBeenSet;
+
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
   };

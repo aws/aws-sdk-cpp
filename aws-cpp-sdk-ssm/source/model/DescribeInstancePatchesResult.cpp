@@ -30,12 +30,12 @@ DescribeInstancePatchesResult::DescribeInstancePatchesResult()
 {
 }
 
-DescribeInstancePatchesResult::DescribeInstancePatchesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeInstancePatchesResult::DescribeInstancePatchesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeInstancePatchesResult& DescribeInstancePatchesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeInstancePatchesResult& DescribeInstancePatchesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Patches"))

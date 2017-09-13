@@ -57,8 +57,9 @@ namespace Model
   {
   public:
     GetDeploymentResult();
-    GetDeploymentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier for the deployment resource.</p>
@@ -95,6 +96,7 @@ namespace Model
      */
     inline GetDeploymentResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The description for the deployment resource.</p>
      */
@@ -130,6 +132,7 @@ namespace Model
      */
     inline GetDeploymentResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The date and time that the deployment resource was created.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The date and time that the deployment resource was created.</p>
      */
     inline GetDeploymentResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
@@ -222,9 +226,13 @@ namespace Model
     inline GetDeploymentResult& AddApiSummary(const char* key, const Aws::Map<Aws::String, MethodSnapshot>& value) { m_apiSummary.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_description;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::Map<Aws::String, Aws::Map<Aws::String, MethodSnapshot>> m_apiSummary;
   };
 

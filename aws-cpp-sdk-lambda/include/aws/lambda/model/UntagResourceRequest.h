@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ARN (Amazon Resource Name) of the function.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) of the function.</p>
      */
     inline UntagResourceRequest& WithResource(const char* value) { SetResource(value); return *this;}
+
 
     /**
      * <p>The list of tag keys to be deleted from the function.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

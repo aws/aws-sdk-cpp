@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain containing the workflow execution to cancel.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline RequestCancelWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>The workflowId of the workflow execution to cancel.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The workflowId of the workflow execution to cancel.</p>
      */
     inline RequestCancelWorkflowExecutionRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+
 
     /**
      * <p>The runId of the workflow execution to cancel.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline RequestCancelWorkflowExecutionRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet;
+
     Aws::String m_runId;
     bool m_runIdHasBeenSet;
   };

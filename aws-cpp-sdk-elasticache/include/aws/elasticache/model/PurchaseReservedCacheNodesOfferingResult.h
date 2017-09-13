@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PurchaseReservedCacheNodesOfferingResult();
-    PurchaseReservedCacheNodesOfferingResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PurchaseReservedCacheNodesOfferingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PurchaseReservedCacheNodesOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PurchaseReservedCacheNodesOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ReservedCacheNode& GetReservedCacheNode() const{ return m_reservedCacheNode; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline PurchaseReservedCacheNodesOfferingResult& WithReservedCacheNode(ReservedCacheNode&& value) { SetReservedCacheNode(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline PurchaseReservedCacheNodesOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ReservedCacheNode m_reservedCacheNode;
+
     ResponseMetadata m_responseMetadata;
   };
 

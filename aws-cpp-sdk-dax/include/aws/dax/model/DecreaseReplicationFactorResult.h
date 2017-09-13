@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DecreaseReplicationFactorResult();
-    DecreaseReplicationFactorResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DecreaseReplicationFactorResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DecreaseReplicationFactorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DecreaseReplicationFactorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A description of the DAX cluster, after you have decreased its replication
@@ -72,6 +73,7 @@ namespace Model
     inline DecreaseReplicationFactorResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 
   private:
+
     Cluster m_cluster;
   };
 

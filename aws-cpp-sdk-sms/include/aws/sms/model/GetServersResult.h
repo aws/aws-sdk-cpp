@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     GetServersResult();
-    GetServersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetServersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
@@ -60,6 +61,7 @@ namespace Model
     
     inline GetServersResult& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
 
+
     
     inline const ServerCatalogStatus& GetServerCatalogStatus() const{ return m_serverCatalogStatus; }
 
@@ -74,6 +76,7 @@ namespace Model
 
     
     inline GetServersResult& WithServerCatalogStatus(ServerCatalogStatus&& value) { SetServerCatalogStatus(std::move(value)); return *this;}
+
 
     
     inline const Aws::Vector<Server>& GetServerList() const{ return m_serverList; }
@@ -95,6 +98,7 @@ namespace Model
 
     
     inline GetServersResult& AddServerList(Server&& value) { m_serverList.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -118,9 +122,13 @@ namespace Model
     inline GetServersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_lastModifiedOn;
+
     ServerCatalogStatus m_serverCatalogStatus;
+
     Aws::Vector<Server> m_serverList;
+
     Aws::String m_nextToken;
   };
 

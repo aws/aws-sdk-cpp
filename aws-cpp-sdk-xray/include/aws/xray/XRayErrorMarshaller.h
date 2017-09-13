@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_XRAY_API XRayErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_XRAY_API XRayErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace XRay
+} // namespace Client
 } // namespace Aws

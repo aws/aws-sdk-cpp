@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Function name whose versions to list. You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
@@ -127,6 +128,7 @@ namespace Model
      */
     inline ListVersionsByFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p> Optional string. An opaque pagination token returned from a previous
      * <code>ListVersionsByFunction</code> operation. If present, indicates where to
@@ -176,6 +178,7 @@ namespace Model
      */
     inline ListVersionsByFunctionRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Optional integer. Specifies the maximum number of AWS Lambda function
      * versions to return in response. This parameter value must be greater than 0.</p>
@@ -195,10 +198,13 @@ namespace Model
     inline ListVersionsByFunctionRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

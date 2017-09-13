@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes.</p>
@@ -82,6 +83,7 @@ namespace Model
      * operation to return a list of gateway volumes.</p>
      */
     inline CreateSnapshotRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+
 
     /**
      * <p>Textual description of the snapshot that appears in the Amazon EC2 console,
@@ -133,8 +135,10 @@ namespace Model
     inline CreateSnapshotRequest& WithSnapshotDescription(const char* value) { SetSnapshotDescription(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
     bool m_volumeARNHasBeenSet;
+
     Aws::String m_snapshotDescription;
     bool m_snapshotDescriptionHasBeenSet;
   };

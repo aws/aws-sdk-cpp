@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The records associated with the request.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The records associated with the request.</p>
      */
     inline PutRecordsRequest& AddRecords(PutRecordsRequestEntry&& value) { m_recordsHasBeenSet = true; m_records.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The stream name associated with the request.</p>
@@ -112,8 +114,10 @@ namespace Model
     inline PutRecordsRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
   private:
+
     Aws::Vector<PutRecordsRequestEntry> m_records;
     bool m_recordsHasBeenSet;
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
   };

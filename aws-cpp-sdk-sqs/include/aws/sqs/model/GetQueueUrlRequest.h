@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
@@ -90,6 +91,7 @@ namespace Model
      */
     inline GetQueueUrlRequest& WithQueueName(const char* value) { SetQueueName(value); return *this;}
 
+
     /**
      * <p>The AWS account ID of the account that created the queue.</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline GetQueueUrlRequest& WithQueueOwnerAWSAccountId(const char* value) { SetQueueOwnerAWSAccountId(value); return *this;}
 
   private:
+
     Aws::String m_queueName;
     bool m_queueNameHasBeenSet;
+
     Aws::String m_queueOwnerAWSAccountId;
     bool m_queueOwnerAWSAccountIdHasBeenSet;
   };

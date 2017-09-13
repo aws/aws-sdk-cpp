@@ -30,12 +30,12 @@ DeletePatchBaselineResult::DeletePatchBaselineResult()
 {
 }
 
-DeletePatchBaselineResult::DeletePatchBaselineResult(const AmazonWebServiceResult<JsonValue>& result)
+DeletePatchBaselineResult::DeletePatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeletePatchBaselineResult& DeletePatchBaselineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeletePatchBaselineResult& DeletePatchBaselineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BaselineId"))

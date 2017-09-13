@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeregisterManagedInstanceResult();
-    DeregisterManagedInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterManagedInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterManagedInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterManagedInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

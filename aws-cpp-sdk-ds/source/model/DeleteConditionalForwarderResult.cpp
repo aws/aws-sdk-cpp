@@ -30,12 +30,12 @@ DeleteConditionalForwarderResult::DeleteConditionalForwarderResult()
 {
 }
 
-DeleteConditionalForwarderResult::DeleteConditionalForwarderResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteConditionalForwarderResult::DeleteConditionalForwarderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteConditionalForwarderResult& DeleteConditionalForwarderResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteConditionalForwarderResult& DeleteConditionalForwarderResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

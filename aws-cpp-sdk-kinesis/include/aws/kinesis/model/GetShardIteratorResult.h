@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetShardIteratorResult();
-    GetShardIteratorResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetShardIteratorResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetShardIteratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetShardIteratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The position in the shard from which to start reading data records
@@ -97,6 +98,7 @@ namespace Model
     inline GetShardIteratorResult& WithShardIterator(const char* value) { SetShardIterator(value); return *this;}
 
   private:
+
     Aws::String m_shardIterator;
   };
 

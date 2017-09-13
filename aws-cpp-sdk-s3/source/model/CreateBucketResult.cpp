@@ -30,12 +30,12 @@ CreateBucketResult::CreateBucketResult()
 {
 }
 
-CreateBucketResult::CreateBucketResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateBucketResult::CreateBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateBucketResult& CreateBucketResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateBucketResult& CreateBucketResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

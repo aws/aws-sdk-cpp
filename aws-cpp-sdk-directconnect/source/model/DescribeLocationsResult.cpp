@@ -30,12 +30,12 @@ DescribeLocationsResult::DescribeLocationsResult()
 {
 }
 
-DescribeLocationsResult::DescribeLocationsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLocationsResult::DescribeLocationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeLocationsResult& DescribeLocationsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLocationsResult& DescribeLocationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("locations"))

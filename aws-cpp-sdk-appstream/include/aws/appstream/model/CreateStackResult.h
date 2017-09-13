@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateStackResult();
-    CreateStackResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateStackResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The details for the created stack.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateStackResult& WithStack(Stack&& value) { SetStack(std::move(value)); return *this;}
 
   private:
+
     Stack m_stack;
   };
 

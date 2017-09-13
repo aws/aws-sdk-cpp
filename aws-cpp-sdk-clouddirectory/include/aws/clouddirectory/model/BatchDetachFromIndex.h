@@ -47,6 +47,7 @@ namespace Model
     BatchDetachFromIndex& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A reference to the index object.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>A reference to the index object.</p>
      */
     inline BatchDetachFromIndex& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
+
 
     /**
      * <p>A reference to the object being detached from the index.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline BatchDetachFromIndex& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
 
   private:
+
     ObjectReference m_indexReference;
     bool m_indexReferenceHasBeenSet;
+
     ObjectReference m_targetReference;
     bool m_targetReferenceHasBeenSet;
   };

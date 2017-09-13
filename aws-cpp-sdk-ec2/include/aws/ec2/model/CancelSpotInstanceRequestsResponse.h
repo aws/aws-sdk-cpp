@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     CancelSpotInstanceRequestsResponse();
-    CancelSpotInstanceRequestsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CancelSpotInstanceRequestsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CancelSpotInstanceRequestsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CancelSpotInstanceRequestsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>One or more Spot instance requests.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline CancelSpotInstanceRequestsResponse& AddCancelledSpotInstanceRequests(CancelledSpotInstanceRequest&& value) { m_cancelledSpotInstanceRequests.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline CancelSpotInstanceRequestsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<CancelledSpotInstanceRequest> m_cancelledSpotInstanceRequests;
+
     ResponseMetadata m_responseMetadata;
   };
 

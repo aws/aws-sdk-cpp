@@ -58,6 +58,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Amazon SNS supports the following logical data types: String, Number, and
      * Binary. For more information, see <a
@@ -114,6 +115,7 @@ namespace Model
      */
     inline MessageAttributeValue& WithDataType(const char* value) { SetDataType(value); return *this;}
 
+
     /**
      * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
      * <a
@@ -163,6 +165,7 @@ namespace Model
      */
     inline MessageAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
+
     /**
      * <p>Binary type attributes can store any binary data, for example, compressed
      * data, encrypted data, or images.</p>
@@ -194,10 +197,13 @@ namespace Model
     inline MessageAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_dataType;
     bool m_dataTypeHasBeenSet;
+
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet;
+
     Aws::Utils::ByteBuffer m_binaryValue;
     bool m_binaryValueHasBeenSet;
   };

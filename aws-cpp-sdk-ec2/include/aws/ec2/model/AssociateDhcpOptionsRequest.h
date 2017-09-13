@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP
      * options with the VPC.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline AssociateDhcpOptionsRequest& WithDhcpOptionsId(const char* value) { SetDhcpOptionsId(value); return *this;}
 
+
     /**
      * <p>The ID of the VPC.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline AssociateDhcpOptionsRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -144,10 +147,13 @@ namespace Model
     inline AssociateDhcpOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_dhcpOptionsId;
     bool m_dhcpOptionsIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

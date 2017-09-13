@@ -31,12 +31,12 @@ DescribeVpcClassicLinkResponse::DescribeVpcClassicLinkResponse()
 {
 }
 
-DescribeVpcClassicLinkResponse::DescribeVpcClassicLinkResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeVpcClassicLinkResponse::DescribeVpcClassicLinkResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeVpcClassicLinkResponse& DescribeVpcClassicLinkResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeVpcClassicLinkResponse& DescribeVpcClassicLinkResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

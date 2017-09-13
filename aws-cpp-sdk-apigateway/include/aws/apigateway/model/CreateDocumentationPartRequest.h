@@ -39,6 +39,7 @@ namespace Model
     CreateDocumentationPartRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline CreateDocumentationPartRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>[Required] The location of the targeted API entity of the to-be-created
      * documentation part.</p>
@@ -103,6 +105,7 @@ namespace Model
      * documentation part.</p>
      */
     inline CreateDocumentationPartRequest& WithLocation(DocumentationPartLocation&& value) { SetLocation(std::move(value)); return *this;}
+
 
     /**
      * <p>[Required] The new documentation content map of the targeted API entity.
@@ -154,10 +157,13 @@ namespace Model
     inline CreateDocumentationPartRequest& WithProperties(const char* value) { SetProperties(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     DocumentationPartLocation m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_properties;
     bool m_propertiesHasBeenSet;
   };

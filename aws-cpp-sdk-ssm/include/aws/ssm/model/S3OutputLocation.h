@@ -46,6 +46,7 @@ namespace Model
     S3OutputLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
      * Instead, Systems Manager automatically determines the Amazon S3 bucket
@@ -95,6 +96,7 @@ namespace Model
      */
     inline S3OutputLocation& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon S3 bucket.</p>
      */
@@ -129,6 +131,7 @@ namespace Model
      * <p>The name of the Amazon S3 bucket.</p>
      */
     inline S3OutputLocation& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
+
 
     /**
      * <p>The Amazon S3 bucket subfolder.</p>
@@ -166,10 +169,13 @@ namespace Model
     inline S3OutputLocation& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 
   private:
+
     Aws::String m_outputS3Region;
     bool m_outputS3RegionHasBeenSet;
+
     Aws::String m_outputS3BucketName;
     bool m_outputS3BucketNameHasBeenSet;
+
     Aws::String m_outputS3KeyPrefix;
     bool m_outputS3KeyPrefixHasBeenSet;
   };

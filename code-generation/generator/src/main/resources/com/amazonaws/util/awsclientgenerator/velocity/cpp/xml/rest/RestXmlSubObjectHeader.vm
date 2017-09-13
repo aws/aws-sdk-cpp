@@ -2,6 +2,8 @@
 
 #pragma once
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 #foreach($header in $typeInfo.headerIncludes)
 \#include $header
@@ -16,7 +18,12 @@ namespace Xml
   class XmlNode;
 } // namespace Xml
 } // namespace Utils
-namespace $metadata.namespace
+#if ($rootNamespace != "Aws")
+} // namespace Aws
+namespace ${rootNamespace}
+{
+#end
+namespace ${serviceNamespace}
 {
 namespace Model
 {
@@ -42,5 +49,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace $metadata.namespace
-} // namespace Aws
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

@@ -47,6 +47,7 @@ namespace Model
     AlarmConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Indicates whether the alarm configuration is enabled.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>Indicates whether the alarm configuration is enabled.</p>
      */
     inline AlarmConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>Indicates whether a deployment should continue if information about the
@@ -91,6 +93,7 @@ namespace Model
      * retrieved from Amazon CloudWatch.</p> </li> </ul>
      */
     inline AlarmConfiguration& WithIgnorePollAlarmFailure(bool value) { SetIgnorePollAlarmFailure(value); return *this;}
+
 
     /**
      * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
@@ -135,10 +138,13 @@ namespace Model
     inline AlarmConfiguration& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     bool m_ignorePollAlarmFailure;
     bool m_ignorePollAlarmFailureHasBeenSet;
+
     Aws::Vector<Alarm> m_alarms;
     bool m_alarmsHasBeenSet;
   };

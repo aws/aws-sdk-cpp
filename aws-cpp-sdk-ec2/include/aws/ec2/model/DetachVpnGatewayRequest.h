@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the VPC.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline DetachVpnGatewayRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>The ID of the virtual private gateway.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline DetachVpnGatewayRequest& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -136,10 +139,13 @@ namespace Model
     inline DetachVpnGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

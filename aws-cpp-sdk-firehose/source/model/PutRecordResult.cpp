@@ -30,12 +30,12 @@ PutRecordResult::PutRecordResult()
 {
 }
 
-PutRecordResult::PutRecordResult(const AmazonWebServiceResult<JsonValue>& result)
+PutRecordResult::PutRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutRecordResult& PutRecordResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutRecordResult& PutRecordResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RecordId"))

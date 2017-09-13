@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListLaunchPathsResult();
-    ListLaunchPathsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLaunchPathsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListLaunchPathsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListLaunchPathsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of launch path information summaries for the specified
@@ -84,6 +85,7 @@ namespace Model
      * <code>PageToken</code>.</p>
      */
     inline ListLaunchPathsResult& AddLaunchPathSummaries(LaunchPathSummary&& value) { m_launchPathSummaries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -128,7 +130,9 @@ namespace Model
     inline ListLaunchPathsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<LaunchPathSummary> m_launchPathSummaries;
+
     Aws::String m_nextPageToken;
   };
 

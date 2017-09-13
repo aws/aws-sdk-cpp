@@ -31,12 +31,12 @@ ListDashboardsResult::ListDashboardsResult()
 {
 }
 
-ListDashboardsResult::ListDashboardsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListDashboardsResult::ListDashboardsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListDashboardsResult& ListDashboardsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListDashboardsResult& ListDashboardsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -47,6 +47,7 @@ namespace Model
     CaptionSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the sidecar caption file that you want Elastic Transcoder to
      * include in the output file.</p>
@@ -88,6 +89,7 @@ namespace Model
      * include in the output file.</p>
      */
     inline CaptionSource& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>A string that specifies the language of the caption. If you specified
@@ -159,6 +161,7 @@ namespace Model
      */
     inline CaptionSource& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
+
     /**
      * <p>For clip generation or captions that do not start at the same time as the
      * associated video file, the <code>TimeOffset</code> tells Elastic Transcoder how
@@ -215,6 +218,7 @@ namespace Model
      */
     inline CaptionSource& WithTimeOffset(const char* value) { SetTimeOffset(value); return *this;}
 
+
     /**
      * <p>The label of the caption shown in the player when choosing a language. We
      * recommend that you put the caption language name here, in the language of the
@@ -264,6 +268,7 @@ namespace Model
      */
     inline CaptionSource& WithLabel(const char* value) { SetLabel(value); return *this;}
 
+
     /**
      * <p>The encryption settings, if any, that Elastic Transcoder needs to decyrpt
      * your caption sources, or that you want Elastic Transcoder to apply to your
@@ -300,14 +305,19 @@ namespace Model
     inline CaptionSource& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_language;
     bool m_languageHasBeenSet;
+
     Aws::String m_timeOffset;
     bool m_timeOffsetHasBeenSet;
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
+
     Encryption m_encryption;
     bool m_encryptionHasBeenSet;
   };

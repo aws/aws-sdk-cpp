@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the option group to be deleted.</p> <note> <p>You cannot delete
      * default option groups.</p> </note>
@@ -84,6 +85,7 @@ namespace Model
     inline DeleteOptionGroupRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
   private:
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
   };

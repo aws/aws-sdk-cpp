@@ -32,6 +32,7 @@ namespace Aws
 
         static const int active_HASH = HashingUtils::HashString("active");
         static const int provisioning_HASH = HashingUtils::HashString("provisioning");
+        static const int active_impaired_HASH = HashingUtils::HashString("active_impaired");
         static const int failed_HASH = HashingUtils::HashString("failed");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == provisioning_HASH)
           {
             return LoadBalancerStateEnum::provisioning;
+          }
+          else if (hashCode == active_impaired_HASH)
+          {
+            return LoadBalancerStateEnum::active_impaired;
           }
           else if (hashCode == failed_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return "active";
           case LoadBalancerStateEnum::provisioning:
             return "provisioning";
+          case LoadBalancerStateEnum::active_impaired:
+            return "active_impaired";
           case LoadBalancerStateEnum::failed:
             return "failed";
           default:

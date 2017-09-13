@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     UpdateMaintenanceWindowTargetResult();
-    UpdateMaintenanceWindowTargetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMaintenanceWindowTargetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateMaintenanceWindowTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateMaintenanceWindowTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Maintenance Window ID specified in the update request.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTargetResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
+
     /**
      * <p>The target ID specified in the update request.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The target ID specified in the update request.</p>
      */
     inline UpdateMaintenanceWindowTargetResult& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
+
 
     /**
      * <p>The updated targets.</p>
@@ -148,6 +151,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTargetResult& AddTargets(Target&& value) { m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The updated owner.</p>
      */
@@ -183,6 +187,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTargetResult& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
+
     /**
      * <p>The updated name.</p>
      */
@@ -217,6 +222,7 @@ namespace Model
      * <p>The updated name.</p>
      */
     inline UpdateMaintenanceWindowTargetResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The updated description.</p>
@@ -254,11 +260,17 @@ namespace Model
     inline UpdateMaintenanceWindowTargetResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
+
     Aws::String m_windowTargetId;
+
     Aws::Vector<Target> m_targets;
+
     Aws::String m_ownerInformation;
+
     Aws::String m_name;
+
     Aws::String m_description;
   };
 

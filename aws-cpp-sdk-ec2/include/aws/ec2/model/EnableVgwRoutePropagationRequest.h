@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The ID of the virtual private gateway.</p>
      */
     inline EnableVgwRoutePropagationRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+
 
     /**
      * <p>The ID of the route table.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline EnableVgwRoutePropagationRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
 
   private:
+
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet;
+
     Aws::String m_routeTableId;
     bool m_routeTableIdHasBeenSet;
   };

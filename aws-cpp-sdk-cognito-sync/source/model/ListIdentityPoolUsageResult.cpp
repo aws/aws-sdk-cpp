@@ -32,14 +32,14 @@ ListIdentityPoolUsageResult::ListIdentityPoolUsageResult() :
 {
 }
 
-ListIdentityPoolUsageResult::ListIdentityPoolUsageResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListIdentityPoolUsageResult::ListIdentityPoolUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_maxResults(0),
     m_count(0)
 {
   *this = result;
 }
 
-ListIdentityPoolUsageResult& ListIdentityPoolUsageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListIdentityPoolUsageResult& ListIdentityPoolUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityPoolUsages"))

@@ -30,12 +30,12 @@ AdminListGroupsForUserResult::AdminListGroupsForUserResult()
 {
 }
 
-AdminListGroupsForUserResult::AdminListGroupsForUserResult(const AmazonWebServiceResult<JsonValue>& result)
+AdminListGroupsForUserResult::AdminListGroupsForUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AdminListGroupsForUserResult& AdminListGroupsForUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminListGroupsForUserResult& AdminListGroupsForUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Groups"))

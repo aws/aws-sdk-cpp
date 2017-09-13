@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The maximum number of items to return for this request. The request returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -63,6 +64,7 @@ namespace Model
      * results.</p>
      */
     inline DescribeVpcClassicLinkDnsSupportRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -106,6 +108,7 @@ namespace Model
      */
     inline DescribeVpcClassicLinkDnsSupportRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>One or more VPC IDs.</p>
      */
@@ -147,10 +150,13 @@ namespace Model
     inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
 
   private:
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcIds;
     bool m_vpcIdsHasBeenSet;
   };

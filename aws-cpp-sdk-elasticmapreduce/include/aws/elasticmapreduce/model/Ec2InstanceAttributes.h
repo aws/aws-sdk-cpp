@@ -48,6 +48,7 @@ namespace Model
     Ec2InstanceAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the
      * master node as a user named "hadoop".</p>
@@ -89,6 +90,7 @@ namespace Model
      * master node as a user named "hadoop".</p>
      */
     inline Ec2InstanceAttributes& WithEc2KeyName(const char* value) { SetEc2KeyName(value); return *this;}
+
 
     /**
      * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
@@ -159,6 +161,7 @@ namespace Model
      * instance type for nodes of a cluster launched in a VPC.</p>
      */
     inline Ec2InstanceAttributes& WithEc2SubnetId(const char* value) { SetEc2SubnetId(value); return *this;}
+
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
@@ -280,6 +283,7 @@ namespace Model
      */
     inline Ec2InstanceAttributes& AddRequestedEc2SubnetIds(const char* value) { m_requestedEc2SubnetIdsHasBeenSet = true; m_requestedEc2SubnetIds.push_back(value); return *this; }
 
+
     /**
      * <p>The Availability Zone in which the cluster will run. </p>
      */
@@ -314,6 +318,7 @@ namespace Model
      * <p>The Availability Zone in which the cluster will run. </p>
      */
     inline Ec2InstanceAttributes& WithEc2AvailabilityZone(const char* value) { SetEc2AvailabilityZone(value); return *this;}
+
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies one
@@ -419,6 +424,7 @@ namespace Model
      */
     inline Ec2InstanceAttributes& AddRequestedEc2AvailabilityZones(const char* value) { m_requestedEc2AvailabilityZonesHasBeenSet = true; m_requestedEc2AvailabilityZones.push_back(value); return *this; }
 
+
     /**
      * <p>The IAM role that was specified when the cluster was launched. The EC2
      * instances of the cluster assume this role.</p>
@@ -461,6 +467,7 @@ namespace Model
      */
     inline Ec2InstanceAttributes& WithIamInstanceProfile(const char* value) { SetIamInstanceProfile(value); return *this;}
 
+
     /**
      * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
@@ -496,6 +503,7 @@ namespace Model
      */
     inline Ec2InstanceAttributes& WithEmrManagedMasterSecurityGroup(const char* value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
+
     /**
      * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
@@ -530,6 +538,7 @@ namespace Model
      * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
     inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(const char* value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
+
 
     /**
      * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
@@ -573,6 +582,7 @@ namespace Model
      */
     inline Ec2InstanceAttributes& WithServiceAccessSecurityGroup(const char* value) { SetServiceAccessSecurityGroup(value); return *this;}
 
+
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
      */
@@ -612,6 +622,7 @@ namespace Model
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
      */
     inline Ec2InstanceAttributes& AddAdditionalMasterSecurityGroups(const char* value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(value); return *this; }
+
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
@@ -654,26 +665,37 @@ namespace Model
     inline Ec2InstanceAttributes& AddAdditionalSlaveSecurityGroups(const char* value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
 
   private:
+
     Aws::String m_ec2KeyName;
     bool m_ec2KeyNameHasBeenSet;
+
     Aws::String m_ec2SubnetId;
     bool m_ec2SubnetIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_requestedEc2SubnetIds;
     bool m_requestedEc2SubnetIdsHasBeenSet;
+
     Aws::String m_ec2AvailabilityZone;
     bool m_ec2AvailabilityZoneHasBeenSet;
+
     Aws::Vector<Aws::String> m_requestedEc2AvailabilityZones;
     bool m_requestedEc2AvailabilityZonesHasBeenSet;
+
     Aws::String m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
+
     Aws::String m_emrManagedMasterSecurityGroup;
     bool m_emrManagedMasterSecurityGroupHasBeenSet;
+
     Aws::String m_emrManagedSlaveSecurityGroup;
     bool m_emrManagedSlaveSecurityGroupHasBeenSet;
+
     Aws::String m_serviceAccessSecurityGroup;
     bool m_serviceAccessSecurityGroupHasBeenSet;
+
     Aws::Vector<Aws::String> m_additionalMasterSecurityGroups;
     bool m_additionalMasterSecurityGroupsHasBeenSet;
+
     Aws::Vector<Aws::String> m_additionalSlaveSecurityGroups;
     bool m_additionalSlaveSecurityGroupsHasBeenSet;
   };

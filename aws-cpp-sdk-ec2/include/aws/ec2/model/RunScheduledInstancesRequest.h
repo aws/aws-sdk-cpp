@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Unique, case-sensitive identifier that ensures the idempotency of the
      * request. For more information, see <a
@@ -100,6 +101,7 @@ namespace Model
      */
     inline RunScheduledInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -124,6 +126,7 @@ namespace Model
      */
     inline RunScheduledInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
     /**
      * <p>The number of instances.</p> <p>Default: 1</p>
      */
@@ -138,6 +141,7 @@ namespace Model
      * <p>The number of instances.</p> <p>Default: 1</p>
      */
     inline RunScheduledInstancesRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>The launch specification. You must match the instance type, Availability
@@ -168,6 +172,7 @@ namespace Model
      * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline RunScheduledInstancesRequest& WithLaunchSpecification(ScheduledInstancesLaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
+
 
     /**
      * <p>The Scheduled Instance ID.</p>
@@ -205,14 +210,19 @@ namespace Model
     inline RunScheduledInstancesRequest& WithScheduledInstanceId(const char* value) { SetScheduledInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     ScheduledInstancesLaunchSpecification m_launchSpecification;
     bool m_launchSpecificationHasBeenSet;
+
     Aws::String m_scheduledInstanceId;
     bool m_scheduledInstanceIdHasBeenSet;
   };

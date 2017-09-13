@@ -53,6 +53,7 @@ namespace Model
     Service& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the service. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the region of the service,
@@ -123,6 +124,7 @@ namespace Model
      */
     inline Service& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
 
+
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
@@ -179,6 +181,7 @@ namespace Model
      */
     inline Service& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
      */
@@ -213,6 +216,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
      */
     inline Service& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
@@ -263,6 +267,7 @@ namespace Model
      */
     inline Service& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The status of the service. The valid values are <code>ACTIVE</code>,
      * <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
@@ -305,6 +310,7 @@ namespace Model
      */
     inline Service& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The desired number of instantiations of the task definition to keep running
      * on the service. This value is specified when the service is created with
@@ -326,6 +332,7 @@ namespace Model
      */
     inline Service& WithDesiredCount(int value) { SetDesiredCount(value); return *this;}
 
+
     /**
      * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
      * state.</p>
@@ -344,6 +351,7 @@ namespace Model
      */
     inline Service& WithRunningCount(int value) { SetRunningCount(value); return *this;}
 
+
     /**
      * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
      * state.</p>
@@ -361,6 +369,7 @@ namespace Model
      * state.</p>
      */
     inline Service& WithPendingCount(int value) { SetPendingCount(value); return *this;}
+
 
     /**
      * <p>The task definition to use for tasks in the service. This value is specified
@@ -411,6 +420,7 @@ namespace Model
      */
     inline Service& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
+
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
      * deployment and the ordering of stopping and starting tasks.</p>
@@ -440,6 +450,7 @@ namespace Model
      * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline Service& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The current state of deployments for the service.</p>
@@ -475,6 +486,7 @@ namespace Model
      * <p>The current state of deployments for the service.</p>
      */
     inline Service& AddDeployments(Deployment&& value) { m_deploymentsHasBeenSet = true; m_deployments.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
@@ -525,6 +537,7 @@ namespace Model
      */
     inline Service& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The event stream for your service. A maximum of 100 of the latest events are
      * displayed.</p>
@@ -567,6 +580,7 @@ namespace Model
      */
     inline Service& AddEvents(ServiceEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The Unix timestamp for when the service was created.</p>
      */
@@ -591,6 +605,7 @@ namespace Model
      * <p>The Unix timestamp for when the service was created.</p>
      */
     inline Service& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The placement constraints for the tasks in the service.</p>
@@ -626,6 +641,7 @@ namespace Model
      * <p>The placement constraints for the tasks in the service.</p>
      */
     inline Service& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The placement strategy that determines how tasks for the service are
@@ -670,36 +686,52 @@ namespace Model
     inline Service& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_serviceArn;
     bool m_serviceArnHasBeenSet;
+
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;
+
     Aws::String m_clusterArn;
     bool m_clusterArnHasBeenSet;
+
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     int m_desiredCount;
     bool m_desiredCountHasBeenSet;
+
     int m_runningCount;
     bool m_runningCountHasBeenSet;
+
     int m_pendingCount;
     bool m_pendingCountHasBeenSet;
+
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;
+
     DeploymentConfiguration m_deploymentConfiguration;
     bool m_deploymentConfigurationHasBeenSet;
+
     Aws::Vector<Deployment> m_deployments;
     bool m_deploymentsHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::Vector<ServiceEvent> m_events;
     bool m_eventsHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Vector<PlacementConstraint> m_placementConstraints;
     bool m_placementConstraintsHasBeenSet;
+
     Aws::Vector<PlacementStrategy> m_placementStrategy;
     bool m_placementStrategyHasBeenSet;
   };

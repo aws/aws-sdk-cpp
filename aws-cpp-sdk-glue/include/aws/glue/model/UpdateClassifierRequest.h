@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A <code>GrokClassifier</code> object with updated fields.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
     inline UpdateClassifierRequest& WithGrokClassifier(UpdateGrokClassifierRequest&& value) { SetGrokClassifier(std::move(value)); return *this;}
 
   private:
+
     UpdateGrokClassifierRequest m_grokClassifier;
     bool m_grokClassifierHasBeenSet;
   };

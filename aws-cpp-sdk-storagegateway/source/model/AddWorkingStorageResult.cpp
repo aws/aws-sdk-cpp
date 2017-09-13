@@ -30,12 +30,12 @@ AddWorkingStorageResult::AddWorkingStorageResult()
 {
 }
 
-AddWorkingStorageResult::AddWorkingStorageResult(const AmazonWebServiceResult<JsonValue>& result)
+AddWorkingStorageResult::AddWorkingStorageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddWorkingStorageResult& AddWorkingStorageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddWorkingStorageResult& AddWorkingStorageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

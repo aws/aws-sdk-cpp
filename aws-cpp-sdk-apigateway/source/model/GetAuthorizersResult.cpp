@@ -30,12 +30,12 @@ GetAuthorizersResult::GetAuthorizersResult()
 {
 }
 
-GetAuthorizersResult::GetAuthorizersResult(const AmazonWebServiceResult<JsonValue>& result)
+GetAuthorizersResult::GetAuthorizersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetAuthorizersResult& GetAuthorizersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetAuthorizersResult& GetAuthorizersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("position"))

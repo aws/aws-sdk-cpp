@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListDatasetsResult();
-    ListDatasetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDatasetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDatasetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDatasetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * A set of datasets.
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ListDatasetsResult& AddDatasets(Dataset&& value) { m_datasets.push_back(std::move(value)); return *this; }
 
+
     /**
      * Number of datasets returned.
      */
@@ -97,6 +99,7 @@ namespace Model
      * Number of datasets returned.
      */
     inline ListDatasetsResult& WithCount(int value) { SetCount(value); return *this;}
+
 
     /**
      * A pagination token for obtaining the next page of results.
@@ -134,8 +137,11 @@ namespace Model
     inline ListDatasetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Dataset> m_datasets;
+
     int m_count;
+
     Aws::String m_nextToken;
   };
 

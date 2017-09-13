@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     ImportServerCatalogResult();
-    ImportServerCatalogResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportServerCatalogResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportServerCatalogResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportServerCatalogResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

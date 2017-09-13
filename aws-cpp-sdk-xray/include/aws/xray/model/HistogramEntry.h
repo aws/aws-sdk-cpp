@@ -45,6 +45,7 @@ namespace Model
     HistogramEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The value of the entry.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      * <p>The value of the entry.</p>
      */
     inline HistogramEntry& WithValue(double value) { SetValue(value); return *this;}
+
 
     /**
      * <p>The prevalence of the entry.</p>
@@ -76,8 +78,10 @@ namespace Model
     inline HistogramEntry& WithCount(int value) { SetCount(value); return *this;}
 
   private:
+
     double m_value;
     bool m_valueHasBeenSet;
+
     int m_count;
     bool m_countHasBeenSet;
   };

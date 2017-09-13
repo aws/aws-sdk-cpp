@@ -49,6 +49,7 @@ namespace Model
     FollowUpPrompt& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Prompts for information from the user. </p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>Prompts for information from the user. </p>
      */
     inline FollowUpPrompt& WithPrompt(Prompt&& value) { SetPrompt(std::move(value)); return *this;}
+
 
     /**
      * <p>If the user answers "no" to the question defined in the <code>prompt</code>
@@ -110,8 +112,10 @@ namespace Model
     inline FollowUpPrompt& WithRejectionStatement(Statement&& value) { SetRejectionStatement(std::move(value)); return *this;}
 
   private:
+
     Prompt m_prompt;
     bool m_promptHasBeenSet;
+
     Statement m_rejectionStatement;
     bool m_rejectionStatementHasBeenSet;
   };

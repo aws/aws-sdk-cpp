@@ -29,12 +29,12 @@ DisassociateVPCFromHostedZoneResult::DisassociateVPCFromHostedZoneResult()
 {
 }
 
-DisassociateVPCFromHostedZoneResult::DisassociateVPCFromHostedZoneResult(const AmazonWebServiceResult<XmlDocument>& result)
+DisassociateVPCFromHostedZoneResult::DisassociateVPCFromHostedZoneResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DisassociateVPCFromHostedZoneResult& DisassociateVPCFromHostedZoneResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DisassociateVPCFromHostedZoneResult& DisassociateVPCFromHostedZoneResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

@@ -30,12 +30,12 @@ StopRunResult::StopRunResult()
 {
 }
 
-StopRunResult::StopRunResult(const AmazonWebServiceResult<JsonValue>& result)
+StopRunResult::StopRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopRunResult& StopRunResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopRunResult& StopRunResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("run"))

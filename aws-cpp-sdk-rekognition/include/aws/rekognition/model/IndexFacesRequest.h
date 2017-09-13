@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline IndexFacesRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
 
+
     /**
      * <p>The input image as bytes or an S3 object.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The input image as bytes or an S3 object.</p>
      */
     inline IndexFacesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+
 
     /**
      * <p>ID you want to assign to all the faces detected in the image.</p>
@@ -140,6 +143,7 @@ namespace Model
      * <p>ID you want to assign to all the faces detected in the image.</p>
      */
     inline IndexFacesRequest& WithExternalImageId(const char* value) { SetExternalImageId(value); return *this;}
+
 
     /**
      * <p>An array of facial attributes that you want to be returned. This can be the
@@ -240,12 +244,16 @@ namespace Model
     inline IndexFacesRequest& AddDetectionAttributes(Attribute&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_collectionId;
     bool m_collectionIdHasBeenSet;
+
     Image m_image;
     bool m_imageHasBeenSet;
+
     Aws::String m_externalImageId;
     bool m_externalImageIdHasBeenSet;
+
     Aws::Vector<Attribute> m_detectionAttributes;
     bool m_detectionAttributesHasBeenSet;
   };

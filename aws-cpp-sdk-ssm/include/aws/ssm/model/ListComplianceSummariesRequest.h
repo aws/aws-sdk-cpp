@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>One or more compliance or inventory filters. Use a filter to return a more
      * specific list of results.</p>
@@ -79,6 +80,7 @@ namespace Model
      * specific list of results.</p>
      */
     inline ListComplianceSummariesRequest& AddFilters(ComplianceStringFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token to start the list. Use this token to get the next set of results.
@@ -122,6 +124,7 @@ namespace Model
      */
     inline ListComplianceSummariesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return for this call. Currently, you can
      * specify null or 50. The call also returns a token that you can specify in a
@@ -144,10 +147,13 @@ namespace Model
     inline ListComplianceSummariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::Vector<ComplianceStringFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     S3OutputUrl& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A URL for an Amazon S3 bucket where you want to store the results of this
      * request.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline S3OutputUrl& WithOutputUrl(const char* value) { SetOutputUrl(value); return *this;}
 
   private:
+
     Aws::String m_outputUrl;
     bool m_outputUrlHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdatePortfolioResult::UpdatePortfolioResult()
 {
 }
 
-UpdatePortfolioResult::UpdatePortfolioResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdatePortfolioResult::UpdatePortfolioResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdatePortfolioResult& UpdatePortfolioResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdatePortfolioResult& UpdatePortfolioResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PortfolioDetail"))

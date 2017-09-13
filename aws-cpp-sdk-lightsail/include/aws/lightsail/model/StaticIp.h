@@ -48,6 +48,7 @@ namespace Model
     StaticIp& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).</p>
      */
     inline StaticIp& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
@@ -124,6 +126,7 @@ namespace Model
      * <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
     inline StaticIp& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -174,6 +177,7 @@ namespace Model
      */
     inline StaticIp& WithSupportCode(const char* value) { SetSupportCode(value); return *this;}
 
+
     /**
      * <p>The timestamp when the static IP was created (e.g.,
      * <code>1479735304.222</code>).</p>
@@ -204,6 +208,7 @@ namespace Model
      */
     inline StaticIp& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The region and Availability Zone where the static IP was created.</p>
      */
@@ -229,6 +234,7 @@ namespace Model
      */
     inline StaticIp& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
+
     /**
      * <p>The resource type (usually <code>StaticIp</code>).</p>
      */
@@ -253,6 +259,7 @@ namespace Model
      * <p>The resource type (usually <code>StaticIp</code>).</p>
      */
     inline StaticIp& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The static IP address.</p>
@@ -288,6 +295,7 @@ namespace Model
      * <p>The static IP address.</p>
      */
     inline StaticIp& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
 
     /**
      * <p>The instance where the static IP is attached (e.g.,
@@ -331,6 +339,7 @@ namespace Model
      */
     inline StaticIp& WithAttachedTo(const char* value) { SetAttachedTo(value); return *this;}
 
+
     /**
      * <p>A Boolean value indicating whether the static IP is attached.</p>
      */
@@ -347,22 +356,31 @@ namespace Model
     inline StaticIp& WithIsAttached(bool value) { SetIsAttached(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_supportCode;
     bool m_supportCodeHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     ResourceLocation m_location;
     bool m_locationHasBeenSet;
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     Aws::String m_attachedTo;
     bool m_attachedToHasBeenSet;
+
     bool m_isAttached;
     bool m_isAttachedHasBeenSet;
   };

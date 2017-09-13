@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteWorkerBlockResult();
-    DeleteWorkerBlockResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteWorkerBlockResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteWorkerBlockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteWorkerBlockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

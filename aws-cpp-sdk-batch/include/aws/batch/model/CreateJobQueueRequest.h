@@ -37,6 +37,7 @@ namespace Model
     CreateJobQueueRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the job queue.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateJobQueueRequest& WithJobQueueName(const char* value) { SetJobQueueName(value); return *this;}
 
+
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
      * it is able to accept jobs.</p>
@@ -102,6 +104,7 @@ namespace Model
      */
     inline CreateJobQueueRequest& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The priority of the job queue. Job queues with a higher priority (or a lower
      * integer value for the <code>priority</code> parameter) are evaluated first when
@@ -131,6 +134,7 @@ namespace Model
      * <code>10</code>.</p>
      */
     inline CreateJobQueueRequest& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order
@@ -196,12 +200,16 @@ namespace Model
     inline CreateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_jobQueueName;
     bool m_jobQueueNameHasBeenSet;
+
     JQState m_state;
     bool m_stateHasBeenSet;
+
     int m_priority;
     bool m_priorityHasBeenSet;
+
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
     bool m_computeEnvironmentOrderHasBeenSet;
   };

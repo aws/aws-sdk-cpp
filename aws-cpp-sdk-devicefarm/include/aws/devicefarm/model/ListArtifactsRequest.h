@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Run, Job, Suite, or Test ARN.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline ListArtifactsRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li> <p>FILE:
      * The artifacts are files.</p> </li> <li> <p>LOG: The artifacts are logs.</p>
@@ -110,6 +112,7 @@ namespace Model
      * </li> <li> <p>SCREENSHOT: The artifacts are screenshots.</p> </li> </ul>
      */
     inline ListArtifactsRequest& WithType(ArtifactCategory&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -154,10 +157,13 @@ namespace Model
     inline ListArtifactsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     ArtifactCategory m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

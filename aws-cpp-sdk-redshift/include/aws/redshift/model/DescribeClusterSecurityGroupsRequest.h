@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of a cluster security group for which you are requesting details.
      * You can specify either the <b>Marker</b> parameter or a
@@ -98,6 +99,7 @@ namespace Model
      */
     inline DescribeClusterSecurityGroupsRequest& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
@@ -127,6 +129,7 @@ namespace Model
      * maximum 100.</p>
      */
     inline DescribeClusterSecurityGroupsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -212,6 +215,7 @@ namespace Model
      */
     inline DescribeClusterSecurityGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A tag key or keys for which you want to return all matching cluster security
      * groups that are associated with the specified key or keys. For example, suppose
@@ -291,6 +295,7 @@ namespace Model
      * groups that have either or both of these tag keys associated with them.</p>
      */
     inline DescribeClusterSecurityGroupsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+
 
     /**
      * <p>A tag value or values for which you want to return all matching cluster
@@ -373,14 +378,19 @@ namespace Model
     inline DescribeClusterSecurityGroupsRequest& AddTagValues(const char* value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clusterSecurityGroupName;
     bool m_clusterSecurityGroupNameHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagValues;
     bool m_tagValuesHasBeenSet;
   };

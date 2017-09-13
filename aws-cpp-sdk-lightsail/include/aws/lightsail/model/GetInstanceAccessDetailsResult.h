@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetInstanceAccessDetailsResult();
-    GetInstanceAccessDetailsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstanceAccessDetailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceAccessDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceAccessDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about a get instance
@@ -72,6 +73,7 @@ namespace Model
     inline GetInstanceAccessDetailsResult& WithAccessDetails(InstanceAccessDetails&& value) { SetAccessDetails(std::move(value)); return *this;}
 
   private:
+
     InstanceAccessDetails m_accessDetails;
   };
 

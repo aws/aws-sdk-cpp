@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteVolumeResult();
-    DeleteVolumeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteVolumeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
@@ -90,6 +91,7 @@ namespace Model
     inline DeleteVolumeResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
   };
 

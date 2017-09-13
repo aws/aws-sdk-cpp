@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AddFacetToObjectResult();
-    AddFacetToObjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddFacetToObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddFacetToObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddFacetToObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

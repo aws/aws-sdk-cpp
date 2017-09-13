@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteGameSessionQueueResult();
-    DeleteGameSessionQueueResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteGameSessionQueueResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteGameSessionQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteGameSessionQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

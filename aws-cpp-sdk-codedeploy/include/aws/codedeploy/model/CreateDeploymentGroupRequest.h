@@ -51,6 +51,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
@@ -93,6 +94,7 @@ namespace Model
      */
     inline CreateDeploymentGroupRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The name of a new deployment group for the specified application.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      * <p>The name of a new deployment group for the specified application.</p>
      */
     inline CreateDeploymentGroupRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
+
 
     /**
      * <p>If specified, the deployment configuration name can be either one of the
@@ -226,6 +229,7 @@ namespace Model
      */
     inline CreateDeploymentGroupRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
+
     /**
      * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
      * instances with any of the specified tags. Cannot be used in the same call as
@@ -274,6 +278,7 @@ namespace Model
      * ec2TagSet.</p>
      */
     inline CreateDeploymentGroupRequest& AddEc2TagFilters(EC2TagFilter&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The on-premises instance tags on which to filter. The deployment group will
@@ -324,6 +329,7 @@ namespace Model
      */
     inline CreateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(TagFilter&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of associated Auto Scaling groups.</p>
      */
@@ -363,6 +369,7 @@ namespace Model
      * <p>A list of associated Auto Scaling groups.</p>
      */
     inline CreateDeploymentGroupRequest& AddAutoScalingGroups(const char* value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
+
 
     /**
      * <p>A service role ARN that allows AWS CodeDeploy to act on the user's behalf
@@ -405,6 +412,7 @@ namespace Model
      * when interacting with AWS services.</p>
      */
     inline CreateDeploymentGroupRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+
 
     /**
      * <p>Information about triggers to create when the deployment group is created.
@@ -462,6 +470,7 @@ namespace Model
      */
     inline CreateDeploymentGroupRequest& AddTriggerConfigurations(TriggerConfig&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Information to add about Amazon CloudWatch alarms when the deployment group
      * is created.</p>
@@ -491,6 +500,7 @@ namespace Model
      * is created.</p>
      */
     inline CreateDeploymentGroupRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>Configuration information for an automatic rollback that is added when a
@@ -522,6 +532,7 @@ namespace Model
      */
     inline CreateDeploymentGroupRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the type of deployment, in-place or blue/green, that you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
@@ -552,6 +563,7 @@ namespace Model
      */
     inline CreateDeploymentGroupRequest& WithDeploymentStyle(DeploymentStyle&& value) { SetDeploymentStyle(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about blue/green deployment options for a deployment group.</p>
      */
@@ -577,6 +589,7 @@ namespace Model
      */
     inline CreateDeploymentGroupRequest& WithBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { SetBlueGreenDeploymentConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the load balancer used in a deployment.</p>
      */
@@ -601,6 +614,7 @@ namespace Model
      * <p>Information about the load balancer used in a deployment.</p>
      */
     inline CreateDeploymentGroupRequest& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about groups of tags applied to EC2 instances. The deployment
@@ -636,6 +650,7 @@ namespace Model
      * be used in the same call as ec2TagFilters.</p>
      */
     inline CreateDeploymentGroupRequest& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
@@ -673,34 +688,49 @@ namespace Model
     inline CreateDeploymentGroupRequest& WithOnPremisesTagSet(OnPremisesTagSet&& value) { SetOnPremisesTagSet(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_deploymentGroupName;
     bool m_deploymentGroupNameHasBeenSet;
+
     Aws::String m_deploymentConfigName;
     bool m_deploymentConfigNameHasBeenSet;
+
     Aws::Vector<EC2TagFilter> m_ec2TagFilters;
     bool m_ec2TagFiltersHasBeenSet;
+
     Aws::Vector<TagFilter> m_onPremisesInstanceTagFilters;
     bool m_onPremisesInstanceTagFiltersHasBeenSet;
+
     Aws::Vector<Aws::String> m_autoScalingGroups;
     bool m_autoScalingGroupsHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     Aws::Vector<TriggerConfig> m_triggerConfigurations;
     bool m_triggerConfigurationsHasBeenSet;
+
     AlarmConfiguration m_alarmConfiguration;
     bool m_alarmConfigurationHasBeenSet;
+
     AutoRollbackConfiguration m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet;
+
     DeploymentStyle m_deploymentStyle;
     bool m_deploymentStyleHasBeenSet;
+
     BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
     bool m_blueGreenDeploymentConfigurationHasBeenSet;
+
     LoadBalancerInfo m_loadBalancerInfo;
     bool m_loadBalancerInfoHasBeenSet;
+
     EC2TagSet m_ec2TagSet;
     bool m_ec2TagSetHasBeenSet;
+
     OnPremisesTagSet m_onPremisesTagSet;
     bool m_onPremisesTagSetHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the subnet group to be modified.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline ModifyClusterSubnetGroupRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>A text description of the subnet group to be modified.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>A text description of the subnet group to be modified.</p>
      */
     inline ModifyClusterSubnetGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
@@ -161,10 +164,13 @@ namespace Model
     inline ModifyClusterSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clusterSubnetGroupName;
     bool m_clusterSubnetGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
   };

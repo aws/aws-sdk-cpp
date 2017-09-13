@@ -47,6 +47,7 @@ namespace Model
     SnsAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the SNS topic.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline SnsAction& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
+
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The ARN of the IAM role that grants access.</p>
      */
     inline SnsAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>The message format of the message to publish. Optional. Accepted values are
@@ -173,10 +176,13 @@ namespace Model
     inline SnsAction& WithMessageFormat(MessageFormat&& value) { SetMessageFormat(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     MessageFormat m_messageFormat;
     bool m_messageFormatHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeletePartitionResult();
-    DeletePartitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePartitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeletePartitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeletePartitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

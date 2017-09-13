@@ -48,6 +48,7 @@ namespace Model
     RedshiftDataSpec& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code>
      * for an Amazon Redshift <code>DataSource</code>.</p>
@@ -77,6 +78,7 @@ namespace Model
      * for an Amazon Redshift <code>DataSource</code>.</p>
      */
     inline RedshiftDataSpec& WithDatabaseInformation(RedshiftDatabase&& value) { SetDatabaseInformation(std::move(value)); return *this;}
+
 
     /**
      * <p>Describes the SQL Query to execute on an Amazon Redshift database for an
@@ -120,6 +122,7 @@ namespace Model
      */
     inline RedshiftDataSpec& WithSelectSqlQuery(const char* value) { SetSelectSqlQuery(value); return *this;}
 
+
     /**
      * <p>Describes AWS Identity and Access Management (IAM) credentials that are used
      * connect to the Amazon Redshift database.</p>
@@ -149,6 +152,7 @@ namespace Model
      * connect to the Amazon Redshift database.</p>
      */
     inline RedshiftDataSpec& WithDatabaseCredentials(RedshiftDatabaseCredentials&& value) { SetDatabaseCredentials(std::move(value)); return *this;}
+
 
     /**
      * <p>Describes an Amazon S3 location to store the result set of the
@@ -191,6 +195,7 @@ namespace Model
      * <code>SelectSqlQuery</code> query.</p>
      */
     inline RedshiftDataSpec& WithS3StagingLocation(const char* value) { SetS3StagingLocation(value); return *this;}
+
 
     /**
      * <p>A JSON string that represents the splitting and rearrangement processing to
@@ -633,6 +638,7 @@ namespace Model
      */
     inline RedshiftDataSpec& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
 
+
     /**
      * <p>A JSON string that represents the schema for an Amazon Redshift
      * <code>DataSource</code>. The <code>DataSchema</code> defines the structure of
@@ -787,6 +793,7 @@ namespace Model
      */
     inline RedshiftDataSpec& WithDataSchema(const char* value) { SetDataSchema(value); return *this;}
 
+
     /**
      * <p>Describes the schema location for an Amazon Redshift
      * <code>DataSource</code>.</p>
@@ -830,18 +837,25 @@ namespace Model
     inline RedshiftDataSpec& WithDataSchemaUri(const char* value) { SetDataSchemaUri(value); return *this;}
 
   private:
+
     RedshiftDatabase m_databaseInformation;
     bool m_databaseInformationHasBeenSet;
+
     Aws::String m_selectSqlQuery;
     bool m_selectSqlQueryHasBeenSet;
+
     RedshiftDatabaseCredentials m_databaseCredentials;
     bool m_databaseCredentialsHasBeenSet;
+
     Aws::String m_s3StagingLocation;
     bool m_s3StagingLocationHasBeenSet;
+
     Aws::String m_dataRearrangement;
     bool m_dataRearrangementHasBeenSet;
+
     Aws::String m_dataSchema;
     bool m_dataSchemaHasBeenSet;
+
     Aws::String m_dataSchemaUri;
     bool m_dataSchemaUriHasBeenSet;
   };

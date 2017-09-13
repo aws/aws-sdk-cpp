@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     SendAutomationSignalResult();
-    SendAutomationSignalResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendAutomationSignalResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendAutomationSignalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendAutomationSignalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

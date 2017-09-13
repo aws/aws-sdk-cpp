@@ -46,6 +46,7 @@ namespace Model
     BatchAttachToIndexResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
      * index.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline BatchAttachToIndexResponse& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_attachedObjectIdentifier;
     bool m_attachedObjectIdentifierHasBeenSet;
   };

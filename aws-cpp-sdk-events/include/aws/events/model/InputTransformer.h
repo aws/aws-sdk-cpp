@@ -48,6 +48,7 @@ namespace Model
     InputTransformer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Map of JSON paths to be extracted from the event. These are key-value pairs,
      * where each value is a JSON path. You must use JSON dot notation, not bracket
@@ -132,6 +133,7 @@ namespace Model
      */
     inline InputTransformer& AddInputPathsMap(const char* key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
 
+
     /**
      * <p>Input template where you can use the values of the keys from
      * <code>InputPathsMap</code> to customize the data sent to the target.</p>
@@ -175,8 +177,10 @@ namespace Model
     inline InputTransformer& WithInputTemplate(const char* value) { SetInputTemplate(value); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_inputPathsMap;
     bool m_inputPathsMapHasBeenSet;
+
     Aws::String m_inputTemplate;
     bool m_inputTemplateHasBeenSet;
   };

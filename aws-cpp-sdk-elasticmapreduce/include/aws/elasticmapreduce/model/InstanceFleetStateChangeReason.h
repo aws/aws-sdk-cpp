@@ -48,6 +48,7 @@ namespace Model
     InstanceFleetStateChangeReason& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A code corresponding to the reason the state change occurred.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>A code corresponding to the reason the state change occurred.</p>
      */
     inline InstanceFleetStateChangeReason& WithCode(InstanceFleetStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>An explanatory message.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline InstanceFleetStateChangeReason& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     InstanceFleetStateChangeReasonCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

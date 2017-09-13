@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     GetMLModelResult();
-    GetMLModelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMLModelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetMLModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetMLModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The MLModel ID<?oxy_insert_start author="annbech"
@@ -101,6 +102,7 @@ namespace Model
      */
     inline GetMLModelResult& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
+
     /**
      * <p>The ID of the training <code>DataSource</code>.</p>
      */
@@ -135,6 +137,7 @@ namespace Model
      * <p>The ID of the training <code>DataSource</code>.</p>
      */
     inline GetMLModelResult& WithTrainingDataSourceId(const char* value) { SetTrainingDataSourceId(value); return *this;}
+
 
     /**
      * <p>The AWS user account from which the <code>MLModel</code> was created. The
@@ -185,6 +188,7 @@ namespace Model
      */
     inline GetMLModelResult& WithCreatedByIamUser(const char* value) { SetCreatedByIamUser(value); return *this;}
 
+
     /**
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
@@ -215,6 +219,7 @@ namespace Model
      */
     inline GetMLModelResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
@@ -244,6 +249,7 @@ namespace Model
      * expressed in epoch time.</p>
      */
     inline GetMLModelResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -279,6 +285,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
     inline GetMLModelResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The current status of the <code>MLModel</code>. This element can have one of
@@ -340,6 +347,7 @@ namespace Model
      */
     inline GetMLModelResult& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
 
@@ -348,6 +356,7 @@ namespace Model
 
     
     inline GetMLModelResult& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
+
 
     /**
      * <p>The current endpoint of the <code>MLModel</code></p>
@@ -373,6 +382,7 @@ namespace Model
      * <p>The current endpoint of the <code>MLModel</code></p>
      */
     inline GetMLModelResult& WithEndpointInfo(RealtimeEndpointInfo&& value) { SetEndpointInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -782,6 +792,7 @@ namespace Model
      */
     inline GetMLModelResult& AddTrainingParameters(const char* key, const char* value) { m_trainingParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
@@ -823,6 +834,7 @@ namespace Model
      * (Amazon S3).</p>
      */
     inline GetMLModelResult& WithInputDataLocationS3(const char* value) { SetInputDataLocationS3(value); return *this;}
+
 
     /**
      * <p>Identifies the <code>MLModel</code> category. The following are the available
@@ -874,6 +886,7 @@ namespace Model
      */
     inline GetMLModelResult& WithMLModelType(MLModelType&& value) { SetMLModelType(std::move(value)); return *this;}
 
+
     /**
      * <p>The scoring threshold is used in binary classification
      * <code>MLModel</code><?oxy_insert_start author="laurama"
@@ -907,6 +920,7 @@ namespace Model
      */
     inline GetMLModelResult& WithScoreThreshold(double value) { SetScoreThreshold(value); return *this;}
 
+
     /**
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
      * is expressed in epoch time.</p>
@@ -936,6 +950,7 @@ namespace Model
      * is expressed in epoch time.</p>
      */
     inline GetMLModelResult& WithScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { SetScoreThresholdLastUpdatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>A link to the file that contains logs of the <code>CreateMLModel</code>
@@ -979,6 +994,7 @@ namespace Model
      */
     inline GetMLModelResult& WithLogUri(const char* value) { SetLogUri(value); return *this;}
 
+
     /**
      * <p>A description of the most recent details about accessing the
      * <code>MLModel</code>.</p>
@@ -1021,6 +1037,7 @@ namespace Model
      */
     inline GetMLModelResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
      * processing the <code>MLModel</code>, normalized and scaled on computation
@@ -1044,6 +1061,7 @@ namespace Model
      * <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
      */
     inline GetMLModelResult& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
 
     /**
      * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
@@ -1085,6 +1103,7 @@ namespace Model
      */
     inline GetMLModelResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
      * as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the
@@ -1119,6 +1138,7 @@ namespace Model
      * <code>MLModel</code> is in the <code>PENDING</code> state.</p>
      */
     inline GetMLModelResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The recipe to use when training the <code>MLModel</code>. The
@@ -1183,6 +1203,7 @@ namespace Model
      */
     inline GetMLModelResult& WithRecipe(const char* value) { SetRecipe(value); return *this;}
 
+
     /**
      * <p>The schema used by all of the data files referenced by the
      * <code>DataSource</code>.</p> <note><title>Note</title> <p>This parameter is
@@ -1233,26 +1254,47 @@ namespace Model
     inline GetMLModelResult& WithSchema(const char* value) { SetSchema(value); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
+
     Aws::String m_trainingDataSourceId;
+
     Aws::String m_createdByIamUser;
+
     Aws::Utils::DateTime m_createdAt;
+
     Aws::Utils::DateTime m_lastUpdatedAt;
+
     Aws::String m_name;
+
     EntityStatus m_status;
+
     long long m_sizeInBytes;
+
     RealtimeEndpointInfo m_endpointInfo;
+
     Aws::Map<Aws::String, Aws::String> m_trainingParameters;
+
     Aws::String m_inputDataLocationS3;
+
     MLModelType m_mLModelType;
+
     double m_scoreThreshold;
+
     Aws::Utils::DateTime m_scoreThresholdLastUpdatedAt;
+
     Aws::String m_logUri;
+
     Aws::String m_message;
+
     long long m_computeTime;
+
     Aws::Utils::DateTime m_finishedAt;
+
     Aws::Utils::DateTime m_startedAt;
+
     Aws::String m_recipe;
+
     Aws::String m_schema;
   };
 

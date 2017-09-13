@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListQualificationTypesResult();
-    ListQualificationTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListQualificationTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListQualificationTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListQualificationTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> The number of Qualification types on this page in the filtered results list,
@@ -60,6 +61,7 @@ namespace Model
      * equivalent to the number of types this operation returns. </p>
      */
     inline ListQualificationTypesResult& WithNumResults(int value) { SetNumResults(value); return *this;}
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -81,6 +83,7 @@ namespace Model
 
     
     inline ListQualificationTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p> The list of QualificationType elements returned by the query. </p>
@@ -118,8 +121,11 @@ namespace Model
     inline ListQualificationTypesResult& AddQualificationTypes(QualificationType&& value) { m_qualificationTypes.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_numResults;
+
     Aws::String m_nextToken;
+
     Aws::Vector<QualificationType> m_qualificationTypes;
   };
 

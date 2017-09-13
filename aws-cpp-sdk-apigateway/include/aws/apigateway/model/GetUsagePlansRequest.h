@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The current pagination position in the paged result set.</p>
      */
     inline GetUsagePlansRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
+
 
     /**
      * <p>The identifier of the API key associated with the usage plans.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline GetUsagePlansRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>The maximum number of returned results per page.</p>
      */
@@ -130,10 +133,13 @@ namespace Model
     inline GetUsagePlansRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_position;
     bool m_positionHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

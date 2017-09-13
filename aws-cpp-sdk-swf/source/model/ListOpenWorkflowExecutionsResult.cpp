@@ -30,12 +30,12 @@ ListOpenWorkflowExecutionsResult::ListOpenWorkflowExecutionsResult()
 {
 }
 
-ListOpenWorkflowExecutionsResult::ListOpenWorkflowExecutionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListOpenWorkflowExecutionsResult::ListOpenWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListOpenWorkflowExecutionsResult& ListOpenWorkflowExecutionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListOpenWorkflowExecutionsResult& ListOpenWorkflowExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("executionInfos"))

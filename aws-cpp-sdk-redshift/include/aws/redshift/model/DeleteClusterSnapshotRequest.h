@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The unique identifier of the manual snapshot to be deleted.</p>
      * <p>Constraints: Must be the name of an existing snapshot that is in the
@@ -89,6 +90,7 @@ namespace Model
      * <code>available</code> state.</p>
      */
     inline DeleteClusterSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The unique identifier of the cluster the snapshot was created from. This
@@ -147,8 +149,10 @@ namespace Model
     inline DeleteClusterSnapshotRequest& WithSnapshotClusterIdentifier(const char* value) { SetSnapshotClusterIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
     Aws::String m_snapshotClusterIdentifier;
     bool m_snapshotClusterIdentifierHasBeenSet;
   };

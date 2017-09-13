@@ -39,6 +39,7 @@ namespace Model
     CreateHealthCheckRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A unique string that identifies the request and that allows you to retry a
      * failed <code>CreateHealthCheck</code> request without the risk of creating two
@@ -186,6 +187,7 @@ namespace Model
      */
     inline CreateHealthCheckRequest& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
+
     /**
      * <p>A complex type that contains the response to a <code>CreateHealthCheck</code>
      * request. </p>
@@ -217,8 +219,10 @@ namespace Model
     inline CreateHealthCheckRequest& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
+
     HealthCheckConfig m_healthCheckConfig;
     bool m_healthCheckConfigHasBeenSet;
   };

@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The unique identifier for the table restore request.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline TableRestoreStatus& WithTableRestoreRequestId(const char* value) { SetTableRestoreRequestId(value); return *this;}
 
+
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
@@ -120,6 +122,7 @@ namespace Model
      * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
      */
     inline TableRestoreStatus& WithStatus(TableRestoreStatusType&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the status of the table restore request. Status values
@@ -170,6 +173,7 @@ namespace Model
      */
     inline TableRestoreStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The time that the table restore request was made, in Universal Coordinated
      * Time (UTC).</p>
@@ -200,6 +204,7 @@ namespace Model
      */
     inline TableRestoreStatus& WithRequestTime(Aws::Utils::DateTime&& value) { SetRequestTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
      */
@@ -215,6 +220,7 @@ namespace Model
      */
     inline TableRestoreStatus& WithProgressInMegaBytes(long long value) { SetProgressInMegaBytes(value); return *this;}
 
+
     /**
      * <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
      */
@@ -229,6 +235,7 @@ namespace Model
      * <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
      */
     inline TableRestoreStatus& WithTotalDataInMegaBytes(long long value) { SetTotalDataInMegaBytes(value); return *this;}
+
 
     /**
      * <p>The identifier of the Amazon Redshift cluster that the table is being
@@ -272,6 +279,7 @@ namespace Model
      */
     inline TableRestoreStatus& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The identifier of the snapshot that the table is being restored from.</p>
      */
@@ -306,6 +314,7 @@ namespace Model
      * <p>The identifier of the snapshot that the table is being restored from.</p>
      */
     inline TableRestoreStatus& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The name of the source database that contains the table being restored.</p>
@@ -342,6 +351,7 @@ namespace Model
      */
     inline TableRestoreStatus& WithSourceDatabaseName(const char* value) { SetSourceDatabaseName(value); return *this;}
 
+
     /**
      * <p>The name of the source schema that contains the table being restored.</p>
      */
@@ -376,6 +386,7 @@ namespace Model
      * <p>The name of the source schema that contains the table being restored.</p>
      */
     inline TableRestoreStatus& WithSourceSchemaName(const char* value) { SetSourceSchemaName(value); return *this;}
+
 
     /**
      * <p>The name of the source table being restored.</p>
@@ -412,6 +423,7 @@ namespace Model
      */
     inline TableRestoreStatus& WithSourceTableName(const char* value) { SetSourceTableName(value); return *this;}
 
+
     /**
      * <p>The name of the database to restore the table to.</p>
      */
@@ -447,6 +459,7 @@ namespace Model
      */
     inline TableRestoreStatus& WithTargetDatabaseName(const char* value) { SetTargetDatabaseName(value); return *this;}
 
+
     /**
      * <p>The name of the schema to restore the table to.</p>
      */
@@ -481,6 +494,7 @@ namespace Model
      * <p>The name of the schema to restore the table to.</p>
      */
     inline TableRestoreStatus& WithTargetSchemaName(const char* value) { SetTargetSchemaName(value); return *this;}
+
 
     /**
      * <p>The name of the table to create as a result of the table restore request.</p>
@@ -518,32 +532,46 @@ namespace Model
     inline TableRestoreStatus& WithNewTableName(const char* value) { SetNewTableName(value); return *this;}
 
   private:
+
     Aws::String m_tableRestoreRequestId;
     bool m_tableRestoreRequestIdHasBeenSet;
+
     TableRestoreStatusType m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::Utils::DateTime m_requestTime;
     bool m_requestTimeHasBeenSet;
+
     long long m_progressInMegaBytes;
     bool m_progressInMegaBytesHasBeenSet;
+
     long long m_totalDataInMegaBytes;
     bool m_totalDataInMegaBytesHasBeenSet;
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
     Aws::String m_sourceDatabaseName;
     bool m_sourceDatabaseNameHasBeenSet;
+
     Aws::String m_sourceSchemaName;
     bool m_sourceSchemaNameHasBeenSet;
+
     Aws::String m_sourceTableName;
     bool m_sourceTableNameHasBeenSet;
+
     Aws::String m_targetDatabaseName;
     bool m_targetDatabaseNameHasBeenSet;
+
     Aws::String m_targetSchemaName;
     bool m_targetSchemaNameHasBeenSet;
+
     Aws::String m_newTableName;
     bool m_newTableNameHasBeenSet;
   };

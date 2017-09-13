@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the role to assume.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the role to assume.</p>
      */
     inline AssumeRoleRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>An identifier for the assumed role session.</p> <p>Use the role session name
@@ -177,6 +179,7 @@ namespace Model
      * characters: =,.@-</p>
      */
     inline AssumeRoleRequest& WithRoleSessionName(const char* value) { SetRoleSessionName(value); return *this;}
+
 
     /**
      * <p>An IAM policy in JSON format.</p> <p>This parameter is optional. If you pass
@@ -346,6 +349,7 @@ namespace Model
      */
     inline AssumeRoleRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
+
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
@@ -390,6 +394,7 @@ namespace Model
      * the <i>IAM User Guide</i>.</p> </note>
      */
     inline AssumeRoleRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
+
 
     /**
      * <p>A unique identifier that is used by third parties when assuming roles in
@@ -510,6 +515,7 @@ namespace Model
      */
     inline AssumeRoleRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
+
     /**
      * <p>The identification number of the MFA device that is associated with the user
      * who is making the <code>AssumeRole</code> call. Specify this value if the trust
@@ -601,6 +607,7 @@ namespace Model
      */
     inline AssumeRoleRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
+
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being
      * assumed requires MFA (that is, if the policy includes a condition that tests for
@@ -672,18 +679,25 @@ namespace Model
     inline AssumeRoleRequest& WithTokenCode(const char* value) { SetTokenCode(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_roleSessionName;
     bool m_roleSessionNameHasBeenSet;
+
     Aws::String m_policy;
     bool m_policyHasBeenSet;
+
     int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
+
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
+
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
+
     Aws::String m_tokenCode;
     bool m_tokenCodeHasBeenSet;
   };

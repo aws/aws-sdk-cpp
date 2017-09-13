@@ -46,6 +46,7 @@ namespace Model
     RuleSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
      * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
@@ -123,6 +124,7 @@ namespace Model
      */
     inline RuleSummary& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
+
     /**
      * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
      * of a <code>Rule</code> after you create it.</p>
@@ -166,8 +168,10 @@ namespace Model
     inline RuleSummary& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

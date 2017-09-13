@@ -34,6 +34,7 @@ namespace Model
     DeleteLoggerDefinitionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * logger definition Id
      */
@@ -70,6 +71,7 @@ namespace Model
     inline DeleteLoggerDefinitionRequest& WithLoggerDefinitionId(const char* value) { SetLoggerDefinitionId(value); return *this;}
 
   private:
+
     Aws::String m_loggerDefinitionId;
     bool m_loggerDefinitionIdHasBeenSet;
   };

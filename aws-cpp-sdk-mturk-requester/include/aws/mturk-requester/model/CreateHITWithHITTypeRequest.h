@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The HIT type ID you want to create this HIT with.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline CreateHITWithHITTypeRequest& WithHITTypeId(const char* value) { SetHITTypeId(value); return *this;}
 
+
     /**
      * <p> The number of times the HIT can be accepted and completed before the HIT
      * becomes unavailable. </p>
@@ -91,6 +93,7 @@ namespace Model
      * becomes unavailable. </p>
      */
     inline CreateHITWithHITTypeRequest& WithMaxAssignments(int value) { SetMaxAssignments(value); return *this;}
+
 
     /**
      * <p> An amount of time, in seconds, after which the HIT is no longer available
@@ -115,6 +118,7 @@ namespace Model
      * been accepted. </p>
      */
     inline CreateHITWithHITTypeRequest& WithLifetimeInSeconds(long long value) { SetLifetimeInSeconds(value); return *this;}
+
 
     /**
      * <p> The data the person completing the HIT uses to produce the results. </p> <p>
@@ -178,6 +182,7 @@ namespace Model
      * <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
      */
     inline CreateHITWithHITTypeRequest& WithQuestion(const char* value) { SetQuestion(value); return *this;}
+
 
     /**
      * <p> An arbitrary data field. The RequesterAnnotation parameter lets your
@@ -262,6 +267,7 @@ namespace Model
      * grouped. </p>
      */
     inline CreateHITWithHITTypeRequest& WithRequesterAnnotation(const char* value) { SetRequesterAnnotation(value); return *this;}
+
 
     /**
      * <p> A unique identifier for this request which allows you to retry the call on
@@ -361,6 +367,7 @@ namespace Model
      */
     inline CreateHITWithHITTypeRequest& WithUniqueRequestToken(const char* value) { SetUniqueRequestToken(value); return *this;}
 
+
     /**
      * <p> The Assignment-level Review Policy applies to the assignments under the HIT.
      * You can specify for Mechanical Turk to take various actions based on the policy.
@@ -396,6 +403,7 @@ namespace Model
      */
     inline CreateHITWithHITTypeRequest& WithAssignmentReviewPolicy(ReviewPolicy&& value) { SetAssignmentReviewPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p> The HIT-level Review Policy applies to the HIT. You can specify for
      * Mechanical Turk to take various actions based on the policy. </p>
@@ -425,6 +433,7 @@ namespace Model
      * Mechanical Turk to take various actions based on the policy. </p>
      */
     inline CreateHITWithHITTypeRequest& WithHITReviewPolicy(ReviewPolicy&& value) { SetHITReviewPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder
@@ -482,6 +491,7 @@ namespace Model
      */
     inline CreateHITWithHITTypeRequest& WithHITLayoutId(const char* value) { SetHITLayoutId(value); return *this;}
 
+
     /**
      * <p> If the HITLayoutId is provided, any placeholder values must be filled in
      * with values using the HITLayoutParameter structure. For more information, see
@@ -532,24 +542,34 @@ namespace Model
     inline CreateHITWithHITTypeRequest& AddHITLayoutParameters(HITLayoutParameter&& value) { m_hITLayoutParametersHasBeenSet = true; m_hITLayoutParameters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_hITTypeId;
     bool m_hITTypeIdHasBeenSet;
+
     int m_maxAssignments;
     bool m_maxAssignmentsHasBeenSet;
+
     long long m_lifetimeInSeconds;
     bool m_lifetimeInSecondsHasBeenSet;
+
     Aws::String m_question;
     bool m_questionHasBeenSet;
+
     Aws::String m_requesterAnnotation;
     bool m_requesterAnnotationHasBeenSet;
+
     Aws::String m_uniqueRequestToken;
     bool m_uniqueRequestTokenHasBeenSet;
+
     ReviewPolicy m_assignmentReviewPolicy;
     bool m_assignmentReviewPolicyHasBeenSet;
+
     ReviewPolicy m_hITReviewPolicy;
     bool m_hITReviewPolicyHasBeenSet;
+
     Aws::String m_hITLayoutId;
     bool m_hITLayoutIdHasBeenSet;
+
     Aws::Vector<HITLayoutParameter> m_hITLayoutParameters;
     bool m_hITLayoutParametersHasBeenSet;
   };

@@ -61,6 +61,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ARN of the Amazon SNS topic to notify when the message is saved to the
      * Amazon S3 bucket. An example of an Amazon SNS topic ARN is
@@ -131,6 +132,7 @@ namespace Model
      */
     inline S3Action& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon S3 bucket to which to save the received email.</p>
      */
@@ -165,6 +167,7 @@ namespace Model
      * <p>The name of the Amazon S3 bucket to which to save the received email.</p>
      */
     inline S3Action& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+
 
     /**
      * <p>The key prefix of the Amazon S3 bucket. The key prefix is similar to a
@@ -214,6 +217,7 @@ namespace Model
      * in a bucket.</p>
      */
     inline S3Action& WithObjectKeyPrefix(const char* value) { SetObjectKeyPrefix(value); return *this;}
+
 
     /**
      * <p>The customer master key that Amazon SES should use to encrypt your emails
@@ -447,12 +451,16 @@ namespace Model
     inline S3Action& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet;
+
     Aws::String m_objectKeyPrefix;
     bool m_objectKeyPrefixHasBeenSet;
+
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet;
   };

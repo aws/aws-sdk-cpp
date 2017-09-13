@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the Automation document to use for this execution.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline StartAutomationExecutionRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
+
     /**
      * <p>The version of the Automation document to use for this execution.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The version of the Automation document to use for this execution.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
@@ -174,13 +177,62 @@ namespace Model
      */
     inline StartAutomationExecutionRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>User-provided idempotency token. The token must be unique, is case
+     * insensitive, enforces the UUID format, and can't be reused.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>User-provided idempotency token. The token must be unique, is case
+     * insensitive, enforces the UUID format, and can't be reused.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>User-provided idempotency token. The token must be unique, is case
+     * insensitive, enforces the UUID format, and can't be reused.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>User-provided idempotency token. The token must be unique, is case
+     * insensitive, enforces the UUID format, and can't be reused.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>User-provided idempotency token. The token must be unique, is case
+     * insensitive, enforces the UUID format, and can't be reused.</p>
+     */
+    inline StartAutomationExecutionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>User-provided idempotency token. The token must be unique, is case
+     * insensitive, enforces the UUID format, and can't be reused.</p>
+     */
+    inline StartAutomationExecutionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>User-provided idempotency token. The token must be unique, is case
+     * insensitive, enforces the UUID format, and can't be reused.</p>
+     */
+    inline StartAutomationExecutionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
   private:
+
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
   };
 
 } // namespace Model

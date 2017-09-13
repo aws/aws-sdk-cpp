@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     ListPlatformVersionsResult();
-    ListPlatformVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListPlatformVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListPlatformVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListPlatformVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Detailed information about the platforms.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <p>Detailed information about the platforms.</p>
      */
     inline ListPlatformVersionsResult& AddPlatformSummaryList(PlatformSummary&& value) { m_platformSummaryList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The starting index into the remaining list of platforms. if this value is not
@@ -128,6 +130,7 @@ namespace Model
      */
     inline ListPlatformVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -144,8 +147,11 @@ namespace Model
     inline ListPlatformVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<PlatformSummary> m_platformSummaryList;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

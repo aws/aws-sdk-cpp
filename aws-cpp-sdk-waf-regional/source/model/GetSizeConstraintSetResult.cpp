@@ -30,12 +30,12 @@ GetSizeConstraintSetResult::GetSizeConstraintSetResult()
 {
 }
 
-GetSizeConstraintSetResult::GetSizeConstraintSetResult(const AmazonWebServiceResult<JsonValue>& result)
+GetSizeConstraintSetResult::GetSizeConstraintSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetSizeConstraintSetResult& GetSizeConstraintSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSizeConstraintSetResult& GetSizeConstraintSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SizeConstraintSet"))

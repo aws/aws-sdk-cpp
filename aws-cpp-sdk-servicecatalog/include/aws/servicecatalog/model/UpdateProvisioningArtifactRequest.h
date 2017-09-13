@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline UpdateProvisioningArtifactRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The product identifier.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The product identifier.</p>
      */
     inline UpdateProvisioningArtifactRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
+
 
     /**
      * <p>The identifier of the provisioning artifact for the update request. This is
@@ -162,6 +165,7 @@ namespace Model
      */
     inline UpdateProvisioningArtifactRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
+
     /**
      * <p>The updated name of the provisioning artifact.</p>
      */
@@ -196,6 +200,7 @@ namespace Model
      * <p>The updated name of the provisioning artifact.</p>
      */
     inline UpdateProvisioningArtifactRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The updated text description of the provisioning artifact.</p>
@@ -233,14 +238,19 @@ namespace Model
     inline UpdateProvisioningArtifactRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     Aws::String m_provisioningArtifactId;
     bool m_provisioningArtifactIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

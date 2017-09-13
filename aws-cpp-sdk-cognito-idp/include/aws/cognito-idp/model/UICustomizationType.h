@@ -47,6 +47,7 @@ namespace Model
     UICustomizationType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user pool ID for the user pool.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The user pool ID for the user pool.</p>
      */
     inline UICustomizationType& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The client ID for the client app.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline UICustomizationType& WithClientId(const char* value) { SetClientId(value); return *this;}
 
+
     /**
      * <p>The logo image for the UI customization.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The logo image for the UI customization.</p>
      */
     inline UICustomizationType& WithImageUrl(const char* value) { SetImageUrl(value); return *this;}
+
 
     /**
      * <p>The CSS values in the UI customization.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline UICustomizationType& WithCSS(const char* value) { SetCSS(value); return *this;}
 
+
     /**
      * <p>The CSS version number.</p>
      */
@@ -222,6 +227,7 @@ namespace Model
      */
     inline UICustomizationType& WithCSSVersion(const char* value) { SetCSSVersion(value); return *this;}
 
+
     /**
      * <p>The last-modified date for the UI customization.</p>
      */
@@ -246,6 +252,7 @@ namespace Model
      * <p>The last-modified date for the UI customization.</p>
      */
     inline UICustomizationType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The creation date for the UI customization.</p>
@@ -273,18 +280,25 @@ namespace Model
     inline UICustomizationType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     Aws::String m_imageUrl;
     bool m_imageUrlHasBeenSet;
+
     Aws::String m_cSS;
     bool m_cSSHasBeenSet;
+
     Aws::String m_cSSVersion;
     bool m_cSSVersionHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

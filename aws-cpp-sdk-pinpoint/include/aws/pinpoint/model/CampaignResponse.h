@@ -49,6 +49,7 @@ namespace Model
     CampaignResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Treatments that are defined in addition to the default treatment.
      */
@@ -83,6 +84,7 @@ namespace Model
      * Treatments that are defined in addition to the default treatment.
      */
     inline CampaignResponse& AddAdditionalTreatments(TreatmentResource&& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments.push_back(std::move(value)); return *this; }
+
 
     /**
      * The ID of the application to which the campaign applies.
@@ -119,6 +121,7 @@ namespace Model
      */
     inline CampaignResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     /**
      * The date the campaign was created in ISO 8601 format.
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline CampaignResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
+
     /**
      * The status of the campaign's default treatment. Only present for A/B test
      * campaigns.
@@ -183,6 +187,7 @@ namespace Model
      * campaigns.
      */
     inline CampaignResponse& WithDefaultState(CampaignState&& value) { SetDefaultState(std::move(value)); return *this;}
+
 
     /**
      * A description of the campaign.
@@ -219,6 +224,7 @@ namespace Model
      */
     inline CampaignResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * The allocated percentage of end users who will not receive messages from this
      * campaign.
@@ -236,6 +242,7 @@ namespace Model
      * campaign.
      */
     inline CampaignResponse& WithHoldoutPercent(int value) { SetHoldoutPercent(value); return *this;}
+
 
     /**
      * The unique campaign ID.
@@ -272,6 +279,7 @@ namespace Model
      */
     inline CampaignResponse& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * Indicates whether the campaign is paused. A paused campaign does not send
      * messages unless you resume it by setting IsPaused to false.
@@ -289,6 +297,7 @@ namespace Model
      * messages unless you resume it by setting IsPaused to false.
      */
     inline CampaignResponse& WithIsPaused(bool value) { SetIsPaused(value); return *this;}
+
 
     /**
      * The date the campaign was last updated in ISO 8601 format.	
@@ -325,6 +334,7 @@ namespace Model
      */
     inline CampaignResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
+
     /**
      * The campaign limits settings.
      */
@@ -350,6 +360,7 @@ namespace Model
      */
     inline CampaignResponse& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
 
+
     /**
      * The message configuration settings.
      */
@@ -374,6 +385,7 @@ namespace Model
      * The message configuration settings.
      */
     inline CampaignResponse& WithMessageConfiguration(MessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
+
 
     /**
      * The custom name of the campaign.
@@ -410,6 +422,7 @@ namespace Model
      */
     inline CampaignResponse& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * The campaign schedule.
      */
@@ -434,6 +447,7 @@ namespace Model
      * The campaign schedule.
      */
     inline CampaignResponse& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
+
 
     /**
      * The ID of the segment to which the campaign sends messages.
@@ -470,6 +484,7 @@ namespace Model
      */
     inline CampaignResponse& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
 
+
     /**
      * The version of the segment to which the campaign sends messages.
      */
@@ -484,6 +499,7 @@ namespace Model
      * The version of the segment to which the campaign sends messages.
      */
     inline CampaignResponse& WithSegmentVersion(int value) { SetSegmentVersion(value); return *this;}
+
 
     /**
      * The campaign status.
@@ -525,6 +541,7 @@ An A/B test campaign will have a status of COMPLETED only
      */
     inline CampaignResponse& WithState(CampaignState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * A custom description for the treatment.
      */
@@ -559,6 +576,7 @@ An A/B test campaign will have a status of COMPLETED only
      * A custom description for the treatment.
      */
     inline CampaignResponse& WithTreatmentDescription(const char* value) { SetTreatmentDescription(value); return *this;}
+
 
     /**
      * The custom name of a variation of the campaign used for A/B testing.
@@ -595,6 +613,7 @@ An A/B test campaign will have a status of COMPLETED only
      */
     inline CampaignResponse& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
 
+
     /**
      * The campaign version number.
      */
@@ -611,42 +630,61 @@ An A/B test campaign will have a status of COMPLETED only
     inline CampaignResponse& WithVersion(int value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::Vector<TreatmentResource> m_additionalTreatments;
     bool m_additionalTreatmentsHasBeenSet;
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+
     CampaignState m_defaultState;
     bool m_defaultStateHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     int m_holdoutPercent;
     bool m_holdoutPercentHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     bool m_isPaused;
     bool m_isPausedHasBeenSet;
+
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     CampaignLimits m_limits;
     bool m_limitsHasBeenSet;
+
     MessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Schedule m_schedule;
     bool m_scheduleHasBeenSet;
+
     Aws::String m_segmentId;
     bool m_segmentIdHasBeenSet;
+
     int m_segmentVersion;
     bool m_segmentVersionHasBeenSet;
+
     CampaignState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_treatmentDescription;
     bool m_treatmentDescriptionHasBeenSet;
+
     Aws::String m_treatmentName;
     bool m_treatmentNameHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
   };

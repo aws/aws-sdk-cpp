@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeInternetGatewaysResponse();
-    DescribeInternetGatewaysResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeInternetGatewaysResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeInternetGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeInternetGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more Internet gateways.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeInternetGatewaysResponse& AddInternetGateways(InternetGateway&& value) { m_internetGateways.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeInternetGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<InternetGateway> m_internetGateways;
+
     ResponseMetadata m_responseMetadata;
   };
 

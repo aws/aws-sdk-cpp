@@ -31,12 +31,12 @@ DescribeDBClusterSnapshotAttributesResult::DescribeDBClusterSnapshotAttributesRe
 {
 }
 
-DescribeDBClusterSnapshotAttributesResult::DescribeDBClusterSnapshotAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBClusterSnapshotAttributesResult::DescribeDBClusterSnapshotAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeDBClusterSnapshotAttributesResult& DescribeDBClusterSnapshotAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBClusterSnapshotAttributesResult& DescribeDBClusterSnapshotAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

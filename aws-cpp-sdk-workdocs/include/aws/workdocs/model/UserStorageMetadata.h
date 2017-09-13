@@ -45,6 +45,7 @@ namespace Model
     UserStorageMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The amount of storage utilized, in bytes.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      * <p>The amount of storage utilized, in bytes.</p>
      */
     inline UserStorageMetadata& WithStorageUtilizedInBytes(long long value) { SetStorageUtilizedInBytes(value); return *this;}
+
 
     /**
      * <p>The storage for a user.</p>
@@ -86,8 +88,10 @@ namespace Model
     inline UserStorageMetadata& WithStorageRule(StorageRuleType&& value) { SetStorageRule(std::move(value)); return *this;}
 
   private:
+
     long long m_storageUtilizedInBytes;
     bool m_storageUtilizedInBytesHasBeenSet;
+
     StorageRuleType m_storageRule;
     bool m_storageRuleHasBeenSet;
   };

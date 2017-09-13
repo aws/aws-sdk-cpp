@@ -50,6 +50,7 @@ namespace Model
     JobInput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The name of the file to transcode. Elsewhere in the body of the JSON block
      * is the the ID of the pipeline to use for processing the job. The
@@ -126,6 +127,7 @@ namespace Model
      * error.</p>
      */
     inline JobInput& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The frame rate of the input file. If you want Elastic Transcoder to
@@ -211,6 +213,7 @@ namespace Model
      */
     inline JobInput& WithFrameRate(const char* value) { SetFrameRate(value); return *this;}
 
+
     /**
      * <p>This value must be <code>auto</code>, which causes Elastic Transcoder to
      * automatically detect the resolution of the input file.</p>
@@ -252,6 +255,7 @@ namespace Model
      * automatically detect the resolution of the input file.</p>
      */
     inline JobInput& WithResolution(const char* value) { SetResolution(value); return *this;}
+
 
     /**
      * <p> The aspect ratio of the input file. If you want Elastic Transcoder to
@@ -330,6 +334,7 @@ namespace Model
      */
     inline JobInput& WithAspectRatio(const char* value) { SetAspectRatio(value); return *this;}
 
+
     /**
      * <p>Whether the input file is interlaced. If you want Elastic Transcoder to
      * automatically detect whether the input file is interlaced, specify
@@ -399,6 +404,7 @@ namespace Model
      * disables automatic detection of interlacing.</p>
      */
     inline JobInput& WithInterlaced(const char* value) { SetInterlaced(value); return *this;}
+
 
     /**
      * <p>The container type for the input file. If you want Elastic Transcoder to
@@ -491,6 +497,7 @@ namespace Model
      */
     inline JobInput& WithContainer(const char* value) { SetContainer(value); return *this;}
 
+
     /**
      * <p>The encryption settings, if any, that are used for decrypting your input
      * files. If your input file is encrypted, you must specify the mode that Elastic
@@ -526,6 +533,7 @@ namespace Model
      */
     inline JobInput& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
+
     /**
      * <p>Settings for clipping an input. Each input can have different clip
      * settings.</p>
@@ -555,6 +563,7 @@ namespace Model
      * settings.</p>
      */
     inline JobInput& WithTimeSpan(TimeSpan&& value) { SetTimeSpan(std::move(value)); return *this;}
+
 
     /**
      * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
@@ -731,6 +740,7 @@ namespace Model
      */
     inline JobInput& WithInputCaptions(InputCaptions&& value) { SetInputCaptions(std::move(value)); return *this;}
 
+
     /**
      * <p>The detected properties of the input file.</p>
      */
@@ -757,24 +767,34 @@ namespace Model
     inline JobInput& WithDetectedProperties(DetectedProperties&& value) { SetDetectedProperties(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_frameRate;
     bool m_frameRateHasBeenSet;
+
     Aws::String m_resolution;
     bool m_resolutionHasBeenSet;
+
     Aws::String m_aspectRatio;
     bool m_aspectRatioHasBeenSet;
+
     Aws::String m_interlaced;
     bool m_interlacedHasBeenSet;
+
     Aws::String m_container;
     bool m_containerHasBeenSet;
+
     Encryption m_encryption;
     bool m_encryptionHasBeenSet;
+
     TimeSpan m_timeSpan;
     bool m_timeSpanHasBeenSet;
+
     InputCaptions m_inputCaptions;
     bool m_inputCaptionsHasBeenSet;
+
     DetectedProperties m_detectedProperties;
     bool m_detectedPropertiesHasBeenSet;
   };

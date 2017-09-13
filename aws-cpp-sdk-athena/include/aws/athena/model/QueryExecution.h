@@ -50,6 +50,7 @@ namespace Model
     QueryExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for each query execution.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The unique identifier for each query execution.</p>
      */
     inline QueryExecution& WithQueryExecutionId(const char* value) { SetQueryExecutionId(value); return *this;}
+
 
     /**
      * <p>The SQL query statements which the query execution ran.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline QueryExecution& WithQuery(const char* value) { SetQuery(value); return *this;}
 
+
     /**
      * <p>The location in Amazon S3 where query results were stored and the encryption
      * option, if any, used for query results.</p>
@@ -150,6 +153,7 @@ namespace Model
      */
     inline QueryExecution& WithResultConfiguration(ResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The database in which the query execution occurred.</p>
      */
@@ -174,6 +178,7 @@ namespace Model
      * <p>The database in which the query execution occurred.</p>
      */
     inline QueryExecution& WithQueryExecutionContext(QueryExecutionContext&& value) { SetQueryExecutionContext(std::move(value)); return *this;}
+
 
     /**
      * <p>The completion date, current state, submission time, and state change reason
@@ -204,6 +209,7 @@ namespace Model
      * (if applicable) for the query execution.</p>
      */
     inline QueryExecution& WithStatus(QueryExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The amount of data scanned during the query execution and the amount of time
@@ -236,16 +242,22 @@ namespace Model
     inline QueryExecution& WithStatistics(QueryExecutionStatistics&& value) { SetStatistics(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_queryExecutionId;
     bool m_queryExecutionIdHasBeenSet;
+
     Aws::String m_query;
     bool m_queryHasBeenSet;
+
     ResultConfiguration m_resultConfiguration;
     bool m_resultConfigurationHasBeenSet;
+
     QueryExecutionContext m_queryExecutionContext;
     bool m_queryExecutionContextHasBeenSet;
+
     QueryExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     QueryExecutionStatistics m_statistics;
     bool m_statisticsHasBeenSet;
   };

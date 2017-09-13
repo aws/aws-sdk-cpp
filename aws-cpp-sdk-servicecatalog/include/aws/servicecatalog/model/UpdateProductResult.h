@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     UpdateProductResult();
-    UpdateProductResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateProductResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resulting detailed product view information.</p>
@@ -67,6 +68,7 @@ namespace Model
      * <p>The resulting detailed product view information.</p>
      */
     inline UpdateProductResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
+
 
     /**
      * <p>Tags associated with the product.</p>
@@ -104,7 +106,9 @@ namespace Model
     inline UpdateProductResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     ProductViewDetail m_productViewDetail;
+
     Aws::Vector<Tag> m_tags;
   };
 

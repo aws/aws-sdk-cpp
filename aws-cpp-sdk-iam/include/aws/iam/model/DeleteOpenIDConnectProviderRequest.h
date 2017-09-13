@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource
      * object to delete. You can get a list of OpenID Connect provider resource ARNs by
@@ -88,6 +89,7 @@ namespace Model
     inline DeleteOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
 
   private:
+
     Aws::String m_openIDConnectProviderArn;
     bool m_openIDConnectProviderArnHasBeenSet;
   };

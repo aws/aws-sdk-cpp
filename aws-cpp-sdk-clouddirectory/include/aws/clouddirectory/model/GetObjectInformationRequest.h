@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the directory being retrieved.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline GetObjectInformationRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>A reference to the object.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      * <p>A reference to the object.</p>
      */
     inline GetObjectInformationRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The consistency level at which to retrieve the object information.</p>
@@ -124,10 +127,13 @@ namespace Model
     inline GetObjectInformationRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     ConsistencyLevel m_consistencyLevel;
     bool m_consistencyLevelHasBeenSet;
   };

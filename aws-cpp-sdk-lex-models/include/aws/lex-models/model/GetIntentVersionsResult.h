@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetIntentVersionsResult();
-    GetIntentVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetIntentVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetIntentVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetIntentVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>IntentMetadata</code> objects, one for each numbered
@@ -84,6 +85,7 @@ namespace Model
      * version of the intent plus one for the <code>$LATEST</code> version.</p>
      */
     inline GetIntentVersionsResult& AddIntents(IntentMetadata&& value) { m_intents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token for fetching the next page of intent versions. If the
@@ -142,7 +144,9 @@ namespace Model
     inline GetIntentVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<IntentMetadata> m_intents;
+
     Aws::String m_nextToken;
   };
 

@@ -93,19 +93,19 @@ namespace Model
         class RemoveTargetsRequest;
         class TestEventPatternRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DeleteRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DeleteRuleOutcome;
         typedef Aws::Utils::Outcome<DescribeEventBusResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DescribeEventBusOutcome;
         typedef Aws::Utils::Outcome<DescribeRuleResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DescribeRuleOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DisableRuleOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> EnableRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DisableRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> EnableRuleOutcome;
         typedef Aws::Utils::Outcome<ListRuleNamesByTargetResult, Aws::Client::AWSError<CloudWatchEventsErrors>> ListRuleNamesByTargetOutcome;
         typedef Aws::Utils::Outcome<ListRulesResult, Aws::Client::AWSError<CloudWatchEventsErrors>> ListRulesOutcome;
         typedef Aws::Utils::Outcome<ListTargetsByRuleResult, Aws::Client::AWSError<CloudWatchEventsErrors>> ListTargetsByRuleOutcome;
         typedef Aws::Utils::Outcome<PutEventsResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutEventsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutPermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutPermissionOutcome;
         typedef Aws::Utils::Outcome<PutRuleResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutRuleOutcome;
         typedef Aws::Utils::Outcome<PutTargetsResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutTargetsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> RemovePermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> RemovePermissionOutcome;
         typedef Aws::Utils::Outcome<RemoveTargetsResult, Aws::Client::AWSError<CloudWatchEventsErrors>> RemoveTargetsOutcome;
         typedef Aws::Utils::Outcome<TestEventPatternResult, Aws::Client::AWSError<CloudWatchEventsErrors>> TestEventPatternOutcome;
 
@@ -169,22 +169,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudWatchEventsClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudWatchEventsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudWatchEventsClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudWatchEventsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CloudWatchEventsClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudWatchEventsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudWatchEventsClient();
+
 
         /**
          * <p>Deletes the specified rule.</p> <p>You must remove all targets from a rule
@@ -878,7 +879,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

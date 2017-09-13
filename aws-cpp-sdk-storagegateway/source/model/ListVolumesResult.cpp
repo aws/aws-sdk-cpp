@@ -30,12 +30,12 @@ ListVolumesResult::ListVolumesResult()
 {
 }
 
-ListVolumesResult::ListVolumesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListVolumesResult::ListVolumesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListVolumesResult& ListVolumesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListVolumesResult& ListVolumesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

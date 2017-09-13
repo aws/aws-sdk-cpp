@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The currency of the offering.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline HostOffering& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
+
     /**
      * <p>The duration of the offering (in seconds).</p>
      */
@@ -90,6 +92,7 @@ namespace Model
      * <p>The duration of the offering (in seconds).</p>
      */
     inline HostOffering& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The hourly price of the offering.</p>
@@ -126,6 +129,7 @@ namespace Model
      */
     inline HostOffering& WithHourlyPrice(const char* value) { SetHourlyPrice(value); return *this;}
 
+
     /**
      * <p>The instance family of the offering.</p>
      */
@@ -160,6 +164,7 @@ namespace Model
      * <p>The instance family of the offering.</p>
      */
     inline HostOffering& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
+
 
     /**
      * <p>The ID of the offering.</p>
@@ -196,6 +201,7 @@ namespace Model
      */
     inline HostOffering& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 
+
     /**
      * <p>The available payment option.</p>
      */
@@ -220,6 +226,7 @@ namespace Model
      * <p>The available payment option.</p>
      */
     inline HostOffering& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
+
 
     /**
      * <p>The upfront price of the offering. Does not apply to No Upfront
@@ -264,18 +271,25 @@ namespace Model
     inline HostOffering& WithUpfrontPrice(const char* value) { SetUpfrontPrice(value); return *this;}
 
   private:
+
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     Aws::String m_hourlyPrice;
     bool m_hourlyPriceHasBeenSet;
+
     Aws::String m_instanceFamily;
     bool m_instanceFamilyHasBeenSet;
+
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet;
+
     PaymentOption m_paymentOption;
     bool m_paymentOptionHasBeenSet;
+
     Aws::String m_upfrontPrice;
     bool m_upfrontPriceHasBeenSet;
   };

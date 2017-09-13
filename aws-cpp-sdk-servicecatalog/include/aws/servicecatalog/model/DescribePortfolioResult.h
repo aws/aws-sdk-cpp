@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribePortfolioResult();
-    DescribePortfolioResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePortfolioResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Detailed portfolio information.</p>
@@ -68,6 +69,7 @@ namespace Model
      * <p>Detailed portfolio information.</p>
      */
     inline DescribePortfolioResult& WithPortfolioDetail(PortfolioDetail&& value) { SetPortfolioDetail(std::move(value)); return *this;}
+
 
     /**
      * <p>Tags associated with the portfolio.</p>
@@ -103,6 +105,7 @@ namespace Model
      * <p>Tags associated with the portfolio.</p>
      */
     inline DescribePortfolioResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>TagOptions associated with the portfolio.</p>
@@ -140,8 +143,11 @@ namespace Model
     inline DescribePortfolioResult& AddTagOptions(TagOptionDetail&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
 
   private:
+
     PortfolioDetail m_portfolioDetail;
+
     Aws::Vector<Tag> m_tags;
+
     Aws::Vector<TagOptionDetail> m_tagOptions;
   };
 

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The first table name that this operation will evaluate. Use the value that
      * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ListTablesRequest& WithExclusiveStartTableName(const char* value) { SetExclusiveStartTableName(value); return *this;}
 
+
     /**
      * <p>A maximum number of table names to return. If this parameter is not
      * specified, the limit is 100.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline ListTablesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_exclusiveStartTableName;
     bool m_exclusiveStartTableNameHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

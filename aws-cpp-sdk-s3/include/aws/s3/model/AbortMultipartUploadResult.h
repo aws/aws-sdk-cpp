@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AbortMultipartUploadResult();
-    AbortMultipartUploadResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AbortMultipartUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AbortMultipartUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AbortMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
@@ -57,6 +58,7 @@ namespace Model
     inline AbortMultipartUploadResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
+
     RequestCharged m_requestCharged;
   };
 

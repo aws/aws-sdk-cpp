@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The length of the byte string.</p>
      */
@@ -50,6 +51,7 @@ namespace Model
     inline GenerateRandomRequest& WithNumberOfBytes(int value) { SetNumberOfBytes(value); return *this;}
 
   private:
+
     int m_numberOfBytes;
     bool m_numberOfBytesHasBeenSet;
   };

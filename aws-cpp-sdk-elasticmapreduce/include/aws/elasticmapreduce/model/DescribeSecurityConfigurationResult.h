@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeSecurityConfigurationResult();
-    DescribeSecurityConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSecurityConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSecurityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSecurityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the security configuration.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DescribeSecurityConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The security configuration details in JSON format.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline DescribeSecurityConfigurationResult& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
+
     /**
      * <p>The date and time the security configuration was created</p>
      */
@@ -138,8 +141,11 @@ namespace Model
     inline DescribeSecurityConfigurationResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_securityConfiguration;
+
     Aws::Utils::DateTime m_creationDateTime;
   };
 

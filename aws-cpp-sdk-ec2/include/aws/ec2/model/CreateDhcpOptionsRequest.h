@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A DHCP configuration option.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CreateDhcpOptionsRequest& AddDhcpConfigurations(NewDhcpConfiguration&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -102,8 +104,10 @@ namespace Model
     inline CreateDhcpOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<NewDhcpConfiguration> m_dhcpConfigurations;
     bool m_dhcpConfigurationsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

@@ -53,6 +53,7 @@ namespace Model
     Layer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -73,6 +74,7 @@ namespace Model
 
     
     inline Layer& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The layer stack ID.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline Layer& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The layer ID.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      */
     inline Layer& WithLayerId(const char* value) { SetLayerId(value); return *this;}
 
+
     /**
      * <p>The layer type.</p>
      */
@@ -168,6 +172,7 @@ namespace Model
      * <p>The layer type.</p>
      */
     inline Layer& WithType(LayerType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The layer name.</p>
@@ -204,6 +209,7 @@ namespace Model
      */
     inline Layer& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The layer short name.</p>
      */
@@ -238,6 +244,7 @@ namespace Model
      * <p>The layer short name.</p>
      */
     inline Layer& WithShortname(const char* value) { SetShortname(value); return *this;}
+
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
@@ -338,6 +345,7 @@ namespace Model
      */
     inline Layer& AddAttributes(const LayerAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
      */
@@ -362,6 +370,7 @@ namespace Model
      * <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
      */
     inline Layer& WithCloudWatchLogsConfiguration(CloudWatchLogsConfiguration&& value) { SetCloudWatchLogsConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The ARN of the default IAM profile to be used for the layer's EC2 instances.
@@ -419,6 +428,7 @@ namespace Model
      */
     inline Layer& WithCustomInstanceProfileArn(const char* value) { SetCustomInstanceProfileArn(value); return *this;}
 
+
     /**
      * <p>A JSON formatted string containing the layer's custom stack configuration and
      * deployment attributes.</p>
@@ -461,6 +471,7 @@ namespace Model
      */
     inline Layer& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
+
     /**
      * <p>An array containing the layer's custom security group IDs.</p>
      */
@@ -501,6 +512,7 @@ namespace Model
      */
     inline Layer& AddCustomSecurityGroupIds(const char* value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>An array containing the layer's security group names.</p>
      */
@@ -540,6 +552,7 @@ namespace Model
      * <p>An array containing the layer's security group names.</p>
      */
     inline Layer& AddDefaultSecurityGroupNames(const char* value) { m_defaultSecurityGroupNamesHasBeenSet = true; m_defaultSecurityGroupNames.push_back(value); return *this; }
+
 
     /**
      * <p>An array of <code>Package</code> objects that describe the layer's
@@ -589,6 +602,7 @@ namespace Model
      */
     inline Layer& AddPackages(const char* value) { m_packagesHasBeenSet = true; m_packages.push_back(value); return *this; }
 
+
     /**
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
      * EBS volumes.</p>
@@ -631,6 +645,7 @@ namespace Model
      */
     inline Layer& AddVolumeConfigurations(VolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Whether auto healing is disabled for the layer.</p>
      */
@@ -645,6 +660,7 @@ namespace Model
      * <p>Whether auto healing is disabled for the layer.</p>
      */
     inline Layer& WithEnableAutoHealing(bool value) { SetEnableAutoHealing(value); return *this;}
+
 
     /**
      * <p>Whether to automatically assign an <a
@@ -673,6 +689,7 @@ namespace Model
      */
     inline Layer& WithAutoAssignElasticIps(bool value) { SetAutoAssignElasticIps(value); return *this;}
 
+
     /**
      * <p>For stacks that are running in a VPC, whether to automatically assign a
      * public IP address to the layer's instances. For more information, see <a
@@ -697,6 +714,7 @@ namespace Model
      */
     inline Layer& WithAutoAssignPublicIps(bool value) { SetAutoAssignPublicIps(value); return *this;}
 
+
     
     inline const Recipes& GetDefaultRecipes() const{ return m_defaultRecipes; }
 
@@ -711,6 +729,7 @@ namespace Model
 
     
     inline Layer& WithDefaultRecipes(Recipes&& value) { SetDefaultRecipes(std::move(value)); return *this;}
+
 
     /**
      * <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom
@@ -741,6 +760,7 @@ namespace Model
      * recipes.</p>
      */
     inline Layer& WithCustomRecipes(Recipes&& value) { SetCustomRecipes(std::move(value)); return *this;}
+
 
     /**
      * <p>Date when the layer was created.</p>
@@ -776,6 +796,7 @@ namespace Model
      * <p>Date when the layer was created.</p>
      */
     inline Layer& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
 
     /**
      * <p>Whether to install operating system and package updates when the instance
@@ -813,6 +834,7 @@ namespace Model
      */
     inline Layer& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 
+
     /**
      * <p>Whether the layer uses Amazon EBS-optimized instances.</p>
      */
@@ -827,6 +849,7 @@ namespace Model
      * <p>Whether the layer uses Amazon EBS-optimized instances.</p>
      */
     inline Layer& WithUseEbsOptimizedInstances(bool value) { SetUseEbsOptimizedInstances(value); return *this;}
+
 
     /**
      * <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown
@@ -859,50 +882,73 @@ namespace Model
     inline Layer& WithLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { SetLifecycleEventConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_layerId;
     bool m_layerIdHasBeenSet;
+
     LayerType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_shortname;
     bool m_shortnameHasBeenSet;
+
     Aws::Map<LayerAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     CloudWatchLogsConfiguration m_cloudWatchLogsConfiguration;
     bool m_cloudWatchLogsConfigurationHasBeenSet;
+
     Aws::String m_customInstanceProfileArn;
     bool m_customInstanceProfileArnHasBeenSet;
+
     Aws::String m_customJson;
     bool m_customJsonHasBeenSet;
+
     Aws::Vector<Aws::String> m_customSecurityGroupIds;
     bool m_customSecurityGroupIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_defaultSecurityGroupNames;
     bool m_defaultSecurityGroupNamesHasBeenSet;
+
     Aws::Vector<Aws::String> m_packages;
     bool m_packagesHasBeenSet;
+
     Aws::Vector<VolumeConfiguration> m_volumeConfigurations;
     bool m_volumeConfigurationsHasBeenSet;
+
     bool m_enableAutoHealing;
     bool m_enableAutoHealingHasBeenSet;
+
     bool m_autoAssignElasticIps;
     bool m_autoAssignElasticIpsHasBeenSet;
+
     bool m_autoAssignPublicIps;
     bool m_autoAssignPublicIpsHasBeenSet;
+
     Recipes m_defaultRecipes;
     bool m_defaultRecipesHasBeenSet;
+
     Recipes m_customRecipes;
     bool m_customRecipesHasBeenSet;
+
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;
+
     bool m_installUpdatesOnBoot;
     bool m_installUpdatesOnBootHasBeenSet;
+
     bool m_useEbsOptimizedInstances;
     bool m_useEbsOptimizedInstancesHasBeenSet;
+
     LifecycleEventConfiguration m_lifecycleEventConfiguration;
     bool m_lifecycleEventConfigurationHasBeenSet;
   };

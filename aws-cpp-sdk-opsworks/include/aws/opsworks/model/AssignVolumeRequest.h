@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The volume ID.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The volume ID.</p>
      */
     inline AssignVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
 
     /**
      * <p>The instance ID.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline AssignVolumeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

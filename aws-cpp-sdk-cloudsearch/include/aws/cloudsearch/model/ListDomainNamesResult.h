@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListDomainNamesResult();
-    ListDomainNamesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListDomainNamesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListDomainNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListDomainNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The names of the search domains owned by an account.</p>
@@ -109,6 +110,7 @@ namespace Model
      */
     inline ListDomainNamesResult& AddDomainNames(const char* key, const char* value) { m_domainNames.emplace(key, value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -125,7 +127,9 @@ namespace Model
     inline ListDomainNamesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_domainNames;
+
     ResponseMetadata m_responseMetadata;
   };
 

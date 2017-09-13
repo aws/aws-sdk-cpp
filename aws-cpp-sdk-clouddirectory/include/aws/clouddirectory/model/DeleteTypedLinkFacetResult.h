@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteTypedLinkFacetResult();
-    DeleteTypedLinkFacetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTypedLinkFacetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTypedLinkFacetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTypedLinkFacetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

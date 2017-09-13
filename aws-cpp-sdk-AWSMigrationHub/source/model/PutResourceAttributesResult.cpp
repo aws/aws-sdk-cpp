@@ -30,12 +30,12 @@ PutResourceAttributesResult::PutResourceAttributesResult()
 {
 }
 
-PutResourceAttributesResult::PutResourceAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+PutResourceAttributesResult::PutResourceAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutResourceAttributesResult& PutResourceAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutResourceAttributesResult& PutResourceAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

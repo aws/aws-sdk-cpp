@@ -31,12 +31,12 @@ ContinueUpdateRollbackResult::ContinueUpdateRollbackResult()
 {
 }
 
-ContinueUpdateRollbackResult::ContinueUpdateRollbackResult(const AmazonWebServiceResult<XmlDocument>& result)
+ContinueUpdateRollbackResult::ContinueUpdateRollbackResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ContinueUpdateRollbackResult& ContinueUpdateRollbackResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ContinueUpdateRollbackResult& ContinueUpdateRollbackResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

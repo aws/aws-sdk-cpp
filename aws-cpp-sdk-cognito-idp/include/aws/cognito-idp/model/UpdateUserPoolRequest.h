@@ -50,6 +50,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool you want to update.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline UpdateUserPoolRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>A container with the policies you wish to update in a user pool.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>A container with the policies you wish to update in a user pool.</p>
      */
     inline UpdateUserPoolRequest& WithPolicies(UserPoolPolicyType&& value) { SetPolicies(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS Lambda configuration information from the request to update the user
@@ -139,6 +142,7 @@ namespace Model
      * pool.</p>
      */
     inline UpdateUserPoolRequest& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The attributes that are automatically verified when the Amazon Cognito
@@ -182,6 +186,7 @@ namespace Model
      */
     inline UpdateUserPoolRequest& AddAutoVerifiedAttributes(VerifiedAttributeType&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A container with information about the SMS verification message.</p>
      */
@@ -216,6 +221,7 @@ namespace Model
      * <p>A container with information about the SMS verification message.</p>
      */
     inline UpdateUserPoolRequest& WithSmsVerificationMessage(const char* value) { SetSmsVerificationMessage(value); return *this;}
+
 
     /**
      * <p>The contents of the email verification message.</p>
@@ -252,6 +258,7 @@ namespace Model
      */
     inline UpdateUserPoolRequest& WithEmailVerificationMessage(const char* value) { SetEmailVerificationMessage(value); return *this;}
 
+
     /**
      * <p>The subject of the email verification message.</p>
      */
@@ -287,6 +294,7 @@ namespace Model
      */
     inline UpdateUserPoolRequest& WithEmailVerificationSubject(const char* value) { SetEmailVerificationSubject(value); return *this;}
 
+
     /**
      * <p>The template for verification messages.</p>
      */
@@ -311,6 +319,7 @@ namespace Model
      * <p>The template for verification messages.</p>
      */
     inline UpdateUserPoolRequest& WithVerificationMessageTemplate(VerificationMessageTemplateType&& value) { SetVerificationMessageTemplate(std::move(value)); return *this;}
+
 
     /**
      * <p>The contents of the SMS authentication message.</p>
@@ -346,6 +355,7 @@ namespace Model
      * <p>The contents of the SMS authentication message.</p>
      */
     inline UpdateUserPoolRequest& WithSmsAuthenticationMessage(const char* value) { SetSmsAuthenticationMessage(value); return *this;}
+
 
     /**
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
@@ -397,6 +407,7 @@ namespace Model
      */
     inline UpdateUserPoolRequest& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Device configuration.</p>
      */
@@ -421,6 +432,7 @@ namespace Model
      * <p>Device configuration.</p>
      */
     inline UpdateUserPoolRequest& WithDeviceConfiguration(DeviceConfigurationType&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>Email configuration.</p>
@@ -447,6 +459,7 @@ namespace Model
      */
     inline UpdateUserPoolRequest& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>SMS configuration.</p>
      */
@@ -471,6 +484,7 @@ namespace Model
      * <p>SMS configuration.</p>
      */
     inline UpdateUserPoolRequest& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
@@ -556,6 +570,7 @@ namespace Model
      */
     inline UpdateUserPoolRequest& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
+
     /**
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
@@ -582,34 +597,49 @@ namespace Model
     inline UpdateUserPoolRequest& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     UserPoolPolicyType m_policies;
     bool m_policiesHasBeenSet;
+
     LambdaConfigType m_lambdaConfig;
     bool m_lambdaConfigHasBeenSet;
+
     Aws::Vector<VerifiedAttributeType> m_autoVerifiedAttributes;
     bool m_autoVerifiedAttributesHasBeenSet;
+
     Aws::String m_smsVerificationMessage;
     bool m_smsVerificationMessageHasBeenSet;
+
     Aws::String m_emailVerificationMessage;
     bool m_emailVerificationMessageHasBeenSet;
+
     Aws::String m_emailVerificationSubject;
     bool m_emailVerificationSubjectHasBeenSet;
+
     VerificationMessageTemplateType m_verificationMessageTemplate;
     bool m_verificationMessageTemplateHasBeenSet;
+
     Aws::String m_smsAuthenticationMessage;
     bool m_smsAuthenticationMessageHasBeenSet;
+
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet;
+
     DeviceConfigurationType m_deviceConfiguration;
     bool m_deviceConfigurationHasBeenSet;
+
     EmailConfigurationType m_emailConfiguration;
     bool m_emailConfigurationHasBeenSet;
+
     SmsConfigurationType m_smsConfiguration;
     bool m_smsConfigurationHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_userPoolTags;
     bool m_userPoolTagsHasBeenSet;
+
     AdminCreateUserConfigType m_adminCreateUserConfig;
     bool m_adminCreateUserConfigHasBeenSet;
   };

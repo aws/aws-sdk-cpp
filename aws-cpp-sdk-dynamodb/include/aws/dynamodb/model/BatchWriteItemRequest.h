@@ -45,6 +45,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
@@ -331,6 +332,7 @@ namespace Model
      */
     inline BatchWriteItemRequest& AddRequestItems(const char* key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
 
+
     
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
 
@@ -345,6 +347,7 @@ namespace Model
 
     
     inline BatchWriteItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>Determines whether item collection metrics are returned. If set to
@@ -387,10 +390,13 @@ namespace Model
     inline BatchWriteItemRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { SetReturnItemCollectionMetrics(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::Vector<WriteRequest>> m_requestItems;
     bool m_requestItemsHasBeenSet;
+
     ReturnConsumedCapacity m_returnConsumedCapacity;
     bool m_returnConsumedCapacityHasBeenSet;
+
     ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
     bool m_returnItemCollectionMetricsHasBeenSet;
   };

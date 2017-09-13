@@ -50,6 +50,7 @@ namespace Model
     ServerProcess& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Location of the server executable in a game build. All game builds are
      * installed on instances at the root : for Windows instances <code>C:\game</code>,
@@ -134,6 +135,7 @@ namespace Model
      */
     inline ServerProcess& WithLaunchPath(const char* value) { SetLaunchPath(value); return *this;}
 
+
     /**
      * <p>Optional list of parameters to pass to the server executable on launch.</p>
      */
@@ -169,6 +171,7 @@ namespace Model
      */
     inline ServerProcess& WithParameters(const char* value) { SetParameters(value); return *this;}
 
+
     /**
      * <p>Number of server processes using this configuration to run concurrently on an
      * instance.</p>
@@ -188,10 +191,13 @@ namespace Model
     inline ServerProcess& WithConcurrentExecutions(int value) { SetConcurrentExecutions(value); return *this;}
 
   private:
+
     Aws::String m_launchPath;
     bool m_launchPathHasBeenSet;
+
     Aws::String m_parameters;
     bool m_parametersHasBeenSet;
+
     int m_concurrentExecutions;
     bool m_concurrentExecutionsHasBeenSet;
   };

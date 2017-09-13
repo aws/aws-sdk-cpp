@@ -44,6 +44,7 @@ namespace Model
     ComputeResourceUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The minimum number of EC2 vCPUs that an environment should maintain.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      */
     inline ComputeResourceUpdate& WithMinvCpus(int value) { SetMinvCpus(value); return *this;}
 
+
     /**
      * <p>The maximum number of EC2 vCPUs that an environment can reach.</p>
      */
@@ -73,6 +75,7 @@ namespace Model
      * <p>The maximum number of EC2 vCPUs that an environment can reach.</p>
      */
     inline ComputeResourceUpdate& WithMaxvCpus(int value) { SetMaxvCpus(value); return *this;}
+
 
     /**
      * <p>The desired number of EC2 vCPUS in the compute environment.</p>
@@ -90,10 +93,13 @@ namespace Model
     inline ComputeResourceUpdate& WithDesiredvCpus(int value) { SetDesiredvCpus(value); return *this;}
 
   private:
+
     int m_minvCpus;
     bool m_minvCpusHasBeenSet;
+
     int m_maxvCpus;
     bool m_maxvCpusHasBeenSet;
+
     int m_desiredvCpus;
     bool m_desiredvCpusHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StartAutomationExecutionResult();
-    StartAutomationExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartAutomationExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartAutomationExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartAutomationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique ID of a newly scheduled automation execution.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline StartAutomationExecutionResult& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
 
   private:
+
     Aws::String m_automationExecutionId;
   };
 

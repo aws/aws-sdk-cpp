@@ -47,6 +47,7 @@ namespace Model
     TargetTrackingScalingPolicyConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108
      * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
@@ -64,6 +65,7 @@ namespace Model
      * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
+
 
     /**
      * <p>A predefined metric.</p>
@@ -90,6 +92,7 @@ namespace Model
      */
     inline TargetTrackingScalingPolicyConfiguration& WithPredefinedMetricSpecification(PredefinedMetricSpecification&& value) { SetPredefinedMetricSpecification(std::move(value)); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -114,6 +117,7 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithCustomizedMetricSpecification(CustomizedMetricSpecification&& value) { SetCustomizedMetricSpecification(std::move(value)); return *this;}
+
 
     /**
      * <p>The amount of time, in seconds, after a scale out activity completes before
@@ -145,6 +149,7 @@ namespace Model
      */
     inline TargetTrackingScalingPolicyConfiguration& WithScaleOutCooldown(int value) { SetScaleOutCooldown(value); return *this;}
 
+
     /**
      * <p>The amount of time, in seconds, after a scale in activity completes before
      * another scale in activity can start.</p> <p>The cooldown period is used to block
@@ -175,17 +180,53 @@ namespace Model
      */
     inline TargetTrackingScalingPolicyConfiguration& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether scale in by the target tracking policy is disabled. If the
+     * value is <code>true</code>, scale in is disabled and the target tracking policy
+     * won't remove capacity from the scalable resource. Otherwise, scale in is enabled
+     * and the target tracking policy can remove capacity from the scalable resource.
+     * The default value is <code>false</code>.</p>
+     */
+    inline bool GetDisableScaleIn() const{ return m_disableScaleIn; }
+
+    /**
+     * <p>Indicates whether scale in by the target tracking policy is disabled. If the
+     * value is <code>true</code>, scale in is disabled and the target tracking policy
+     * won't remove capacity from the scalable resource. Otherwise, scale in is enabled
+     * and the target tracking policy can remove capacity from the scalable resource.
+     * The default value is <code>false</code>.</p>
+     */
+    inline void SetDisableScaleIn(bool value) { m_disableScaleInHasBeenSet = true; m_disableScaleIn = value; }
+
+    /**
+     * <p>Indicates whether scale in by the target tracking policy is disabled. If the
+     * value is <code>true</code>, scale in is disabled and the target tracking policy
+     * won't remove capacity from the scalable resource. Otherwise, scale in is enabled
+     * and the target tracking policy can remove capacity from the scalable resource.
+     * The default value is <code>false</code>.</p>
+     */
+    inline TargetTrackingScalingPolicyConfiguration& WithDisableScaleIn(bool value) { SetDisableScaleIn(value); return *this;}
+
   private:
+
     double m_targetValue;
     bool m_targetValueHasBeenSet;
+
     PredefinedMetricSpecification m_predefinedMetricSpecification;
     bool m_predefinedMetricSpecificationHasBeenSet;
+
     CustomizedMetricSpecification m_customizedMetricSpecification;
     bool m_customizedMetricSpecificationHasBeenSet;
+
     int m_scaleOutCooldown;
     bool m_scaleOutCooldownHasBeenSet;
+
     int m_scaleInCooldown;
     bool m_scaleInCooldownHasBeenSet;
+
+    bool m_disableScaleIn;
+    bool m_disableScaleInHasBeenSet;
   };
 
 } // namespace Model

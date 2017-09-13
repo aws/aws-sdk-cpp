@@ -37,6 +37,7 @@ namespace Model
 
     bool SignBody() const override { return false; }
 
+
     /**
      * <p>Name of the Amazon Lex bot.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline PostContentRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
 
+
     /**
      * <p>Alias of the Amazon Lex bot.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>Alias of the Amazon Lex bot.</p>
      */
     inline PostContentRequest& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
+
 
     /**
      * <p>ID of the client application user. Typically, each of your application users
@@ -204,6 +207,7 @@ namespace Model
      * ID, or some globally unique identifier. </p> </li> </ul>
      */
     inline PostContentRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+
 
     /**
      * <p>You pass this value in the <code>x-amz-lex-session-attributes</code> HTTP
@@ -478,6 +482,7 @@ namespace Model
      */
     inline PostContentRequest& WithSessionAttributes(const char* value) { SetSessionAttributes(value); return *this;}
 
+
     /**
      * <p> You pass this value as the <code>Accept</code> HTTP header. </p> <p> The
      * message Amazon Lex returns in the response can be either text or speech based on
@@ -598,16 +603,22 @@ namespace Model
     inline PostContentRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
 
   private:
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::String m_botAlias;
     bool m_botAliasHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     Aws::String m_sessionAttributes;
     bool m_sessionAttributesHasBeenSet;
+
     Aws::String m_accept;
     bool m_acceptHasBeenSet;
+
   };
 
 } // namespace Model

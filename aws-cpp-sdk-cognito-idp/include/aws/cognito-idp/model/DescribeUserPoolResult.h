@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeUserPoolResult();
-    DescribeUserPoolResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeUserPoolResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUserPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUserPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The container of metadata returned by the server to describe the pool.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeUserPoolResult& WithUserPool(UserPoolType&& value) { SetUserPool(std::move(value)); return *this;}
 
   private:
+
     UserPoolType m_userPool;
   };
 

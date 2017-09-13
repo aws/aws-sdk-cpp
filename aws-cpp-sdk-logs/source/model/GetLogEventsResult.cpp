@@ -30,12 +30,12 @@ GetLogEventsResult::GetLogEventsResult()
 {
 }
 
-GetLogEventsResult::GetLogEventsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetLogEventsResult::GetLogEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetLogEventsResult& GetLogEventsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetLogEventsResult& GetLogEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("events"))

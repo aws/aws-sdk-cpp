@@ -39,6 +39,7 @@ namespace Model
     SubmitJobRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
      * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
@@ -80,6 +81,7 @@ namespace Model
      * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
      */
     inline SubmitJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+
 
     /**
      * <p>The job queue into which the job will be submitted. You can specify either
@@ -123,6 +125,7 @@ namespace Model
      */
     inline SubmitJobRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
+
     /**
      * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
      * of 100 jobs. </p>
@@ -164,6 +167,7 @@ namespace Model
      * of 100 jobs. </p>
      */
     inline SubmitJobRequest& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The job definition used by this job. This value can be either a
@@ -213,6 +217,7 @@ namespace Model
      * definition.</p>
      */
     inline SubmitJobRequest& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
+
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
@@ -310,6 +315,7 @@ namespace Model
      */
     inline SubmitJobRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
@@ -365,6 +371,7 @@ namespace Model
      */
     inline SubmitJobRequest& WithContainerOverrides(ContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}
 
+
     /**
      * <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a>
      * operation. When a retry strategy is specified here, it overrides the retry
@@ -401,18 +408,25 @@ namespace Model
     inline SubmitJobRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     Aws::String m_jobQueue;
     bool m_jobQueueHasBeenSet;
+
     Aws::Vector<JobDependency> m_dependsOn;
     bool m_dependsOnHasBeenSet;
+
     Aws::String m_jobDefinition;
     bool m_jobDefinitionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
     ContainerOverrides m_containerOverrides;
     bool m_containerOverridesHasBeenSet;
+
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet;
   };

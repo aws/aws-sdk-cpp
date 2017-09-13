@@ -40,6 +40,7 @@ namespace Model
     CreateAuthorizerRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline CreateAuthorizerRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>[Required] The name of the authorizer.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline CreateAuthorizerRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>[Required] The type of the authorizer.</p>
      */
@@ -134,6 +137,7 @@ namespace Model
      * <p>[Required] The type of the authorizer.</p>
      */
     inline CreateAuthorizerRequest& WithType(AuthorizerType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
@@ -174,6 +178,7 @@ namespace Model
      * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
      */
     inline CreateAuthorizerRequest& AddProviderARNs(const char* value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
+
 
     /**
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
@@ -217,6 +222,7 @@ namespace Model
      */
     inline CreateAuthorizerRequest& WithAuthType(const char* value) { SetAuthType(value); return *this;}
 
+
     /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI).</p>
      */
@@ -251,6 +257,7 @@ namespace Model
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI).</p>
      */
     inline CreateAuthorizerRequest& WithAuthorizerUri(const char* value) { SetAuthorizerUri(value); return *this;}
+
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any.</p>
@@ -287,6 +294,7 @@ namespace Model
      */
     inline CreateAuthorizerRequest& WithAuthorizerCredentials(const char* value) { SetAuthorizerCredentials(value); return *this;}
 
+
     /**
      * <p>[Required] The source of the identity in an incoming request.</p>
      */
@@ -321,6 +329,7 @@ namespace Model
      * <p>[Required] The source of the identity in an incoming request.</p>
      */
     inline CreateAuthorizerRequest& WithIdentitySource(const char* value) { SetIdentitySource(value); return *this;}
+
 
     /**
      * <p>A validation expression for the incoming identity.</p>
@@ -357,6 +366,7 @@ namespace Model
      */
     inline CreateAuthorizerRequest& WithIdentityValidationExpression(const char* value) { SetIdentityValidationExpression(value); return *this;}
 
+
     /**
      * <p>The TTL of cached authorizer results.</p>
      */
@@ -373,24 +383,34 @@ namespace Model
     inline CreateAuthorizerRequest& WithAuthorizerResultTtlInSeconds(int value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     AuthorizerType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<Aws::String> m_providerARNs;
     bool m_providerARNsHasBeenSet;
+
     Aws::String m_authType;
     bool m_authTypeHasBeenSet;
+
     Aws::String m_authorizerUri;
     bool m_authorizerUriHasBeenSet;
+
     Aws::String m_authorizerCredentials;
     bool m_authorizerCredentialsHasBeenSet;
+
     Aws::String m_identitySource;
     bool m_identitySourceHasBeenSet;
+
     Aws::String m_identityValidationExpression;
     bool m_identityValidationExpressionHasBeenSet;
+
     int m_authorizerResultTtlInSeconds;
     bool m_authorizerResultTtlInSecondsHasBeenSet;
   };

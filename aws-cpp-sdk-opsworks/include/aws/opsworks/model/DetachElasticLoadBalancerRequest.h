@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Elastic Load Balancing instance's name.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The Elastic Load Balancing instance's name.</p>
      */
     inline DetachElasticLoadBalancerRequest& WithElasticLoadBalancerName(const char* value) { SetElasticLoadBalancerName(value); return *this;}
+
 
     /**
      * <p>The ID of the layer that the Elastic Load Balancing instance is attached
@@ -114,8 +116,10 @@ namespace Model
     inline DetachElasticLoadBalancerRequest& WithLayerId(const char* value) { SetLayerId(value); return *this;}
 
   private:
+
     Aws::String m_elasticLoadBalancerName;
     bool m_elasticLoadBalancerNameHasBeenSet;
+
     Aws::String m_layerId;
     bool m_layerIdHasBeenSet;
   };

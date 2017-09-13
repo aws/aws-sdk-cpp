@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     UpdateMLModelResult();
-    UpdateMLModelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMLModelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateMLModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateMLModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation. This value
@@ -98,6 +99,7 @@ namespace Model
     inline UpdateMLModelResult& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
   };
 

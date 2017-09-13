@@ -51,6 +51,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetId() const{ return m_id; }
 
@@ -71,6 +72,7 @@ namespace Model
 
     
     inline QueueConfiguration& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Amazon SQS queue ARN to which Amazon S3 will publish a message when it detects
@@ -114,6 +116,7 @@ namespace Model
      */
     inline QueueConfiguration& WithQueueArn(const char* value) { SetQueueArn(value); return *this;}
 
+
     
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
@@ -135,6 +138,7 @@ namespace Model
     
     inline QueueConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
+
     
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
 
@@ -151,12 +155,16 @@ namespace Model
     inline QueueConfiguration& WithFilter(NotificationConfigurationFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_queueArn;
     bool m_queueArnHasBeenSet;
+
     Aws::Vector<Event> m_events;
     bool m_eventsHasBeenSet;
+
     NotificationConfigurationFilter m_filter;
     bool m_filterHasBeenSet;
   };

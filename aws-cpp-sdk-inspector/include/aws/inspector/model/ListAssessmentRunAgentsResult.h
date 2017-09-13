@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListAssessmentRunAgentsResult();
-    ListAssessmentRunAgentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssessmentRunAgentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssessmentRunAgentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssessmentRunAgentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of ARNs that specifies the agents returned by the action.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of ARNs that specifies the agents returned by the action.</p>
      */
     inline ListAssessmentRunAgentsResult& AddAssessmentRunAgents(AssessmentRunAgent&& value) { m_assessmentRunAgents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this
@@ -135,7 +137,9 @@ namespace Model
     inline ListAssessmentRunAgentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<AssessmentRunAgent> m_assessmentRunAgents;
+
     Aws::String m_nextToken;
   };
 

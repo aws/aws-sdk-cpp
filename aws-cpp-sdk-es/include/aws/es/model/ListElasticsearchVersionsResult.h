@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListElasticsearchVersionsResult();
-    ListElasticsearchVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListElasticsearchVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListElasticsearchVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListElasticsearchVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Vector<Aws::String>& GetElasticsearchVersions() const{ return m_elasticsearchVersions; }
@@ -73,6 +74,7 @@ namespace Model
     
     inline ListElasticsearchVersionsResult& AddElasticsearchVersions(const char* value) { m_elasticsearchVersions.push_back(value); return *this; }
 
+
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -95,7 +97,9 @@ namespace Model
     inline ListElasticsearchVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_elasticsearchVersions;
+
     Aws::String m_nextToken;
   };
 

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     CreatePipelineResult();
-    CreatePipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A section of the response body that provides information about the pipeline
@@ -78,6 +79,7 @@ namespace Model
      * that is created.</p>
      */
     inline CreatePipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
+
 
     /**
      * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
@@ -136,7 +138,9 @@ namespace Model
     inline CreatePipelineResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
 
   private:
+
     Pipeline m_pipeline;
+
     Aws::Vector<Warning> m_warnings;
   };
 

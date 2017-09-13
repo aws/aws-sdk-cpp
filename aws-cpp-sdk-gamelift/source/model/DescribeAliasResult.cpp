@@ -30,12 +30,12 @@ DescribeAliasResult::DescribeAliasResult()
 {
 }
 
-DescribeAliasResult::DescribeAliasResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAliasResult::DescribeAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeAliasResult& DescribeAliasResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAliasResult& DescribeAliasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Alias"))

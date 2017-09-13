@@ -30,12 +30,12 @@ CreateBGPPeerResult::CreateBGPPeerResult()
 {
 }
 
-CreateBGPPeerResult::CreateBGPPeerResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateBGPPeerResult::CreateBGPPeerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateBGPPeerResult& CreateBGPPeerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateBGPPeerResult& CreateBGPPeerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("virtualInterface"))

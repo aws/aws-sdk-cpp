@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The AWS account ID of the cache security group owner.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The AWS account ID of the cache security group owner.</p>
      */
     inline CacheSecurityGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
 
     /**
      * <p>The name of the cache security group.</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline CacheSecurityGroup& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>The description of the cache security group.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      * <p>The description of the cache security group.</p>
      */
     inline CacheSecurityGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of Amazon EC2 security groups that are associated with this cache
@@ -202,12 +206,16 @@ namespace Model
     inline CacheSecurityGroup& AddEC2SecurityGroups(EC2SecurityGroup&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     Aws::String m_cacheSecurityGroupName;
     bool m_cacheSecurityGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<EC2SecurityGroup> m_eC2SecurityGroups;
     bool m_eC2SecurityGroupsHasBeenSet;
   };

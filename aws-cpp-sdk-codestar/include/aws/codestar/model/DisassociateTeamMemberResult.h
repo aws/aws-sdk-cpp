@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DisassociateTeamMemberResult();
-    DisassociateTeamMemberResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateTeamMemberResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateTeamMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateTeamMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

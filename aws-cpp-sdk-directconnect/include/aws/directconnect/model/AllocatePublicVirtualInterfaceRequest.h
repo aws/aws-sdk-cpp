@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The connection ID on which the public virtual interface is provisioned.</p>
      * <p>Default: None</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>Default: None</p>
      */
     inline AllocatePublicVirtualInterfaceRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+
 
     /**
      * <p>The AWS account that will own the new public virtual interface.</p>
@@ -125,6 +127,7 @@ namespace Model
      */
     inline AllocatePublicVirtualInterfaceRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
+
     /**
      * <p>Detailed information for the public virtual interface to be provisioned.</p>
      * <p>Default: None</p>
@@ -156,10 +159,13 @@ namespace Model
     inline AllocatePublicVirtualInterfaceRequest& WithNewPublicVirtualInterfaceAllocation(NewPublicVirtualInterfaceAllocation&& value) { SetNewPublicVirtualInterfaceAllocation(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
+
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet;
+
     NewPublicVirtualInterfaceAllocation m_newPublicVirtualInterfaceAllocation;
     bool m_newPublicVirtualInterfaceAllocationHasBeenSet;
   };

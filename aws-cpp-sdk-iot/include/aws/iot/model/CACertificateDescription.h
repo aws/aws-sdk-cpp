@@ -48,6 +48,7 @@ namespace Model
     CACertificateDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The CA certificate ARN.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The CA certificate ARN.</p>
      */
     inline CACertificateDescription& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
 
     /**
      * <p>The CA certificate ID.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline CACertificateDescription& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p>The status of a CA certificate.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The status of a CA certificate.</p>
      */
     inline CACertificateDescription& WithStatus(CACertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The CA certificate data, in PEM format.</p>
@@ -178,6 +182,7 @@ namespace Model
      */
     inline CACertificateDescription& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
 
+
     /**
      * <p>The owner of the CA certificate.</p>
      */
@@ -213,6 +218,7 @@ namespace Model
      */
     inline CACertificateDescription& WithOwnedBy(const char* value) { SetOwnedBy(value); return *this;}
 
+
     /**
      * <p>The date the CA certificate was created.</p>
      */
@@ -237,6 +243,7 @@ namespace Model
      * <p>The date the CA certificate was created.</p>
      */
     inline CACertificateDescription& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Whether the CA certificate configured for auto registration of device
@@ -269,18 +276,25 @@ namespace Model
     inline CACertificateDescription& WithAutoRegistrationStatus(AutoRegistrationStatus&& value) { SetAutoRegistrationStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     CACertificateStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_certificatePem;
     bool m_certificatePemHasBeenSet;
+
     Aws::String m_ownedBy;
     bool m_ownedByHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     AutoRegistrationStatus m_autoRegistrationStatus;
     bool m_autoRegistrationStatusHasBeenSet;
   };

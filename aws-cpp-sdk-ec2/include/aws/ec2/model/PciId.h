@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the device.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the device.</p>
      */
     inline PciId& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+
 
     /**
      * <p>The ID of the vendor.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline PciId& WithVendorId(const char* value) { SetVendorId(value); return *this;}
 
+
     /**
      * <p>The ID of the subsystem.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>The ID of the subsystem.</p>
      */
     inline PciId& WithSubsystemId(const char* value) { SetSubsystemId(value); return *this;}
+
 
     /**
      * <p>The ID of the vendor for the subsystem.</p>
@@ -190,12 +194,16 @@ namespace Model
     inline PciId& WithSubsystemVendorId(const char* value) { SetSubsystemVendorId(value); return *this;}
 
   private:
+
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet;
+
     Aws::String m_vendorId;
     bool m_vendorIdHasBeenSet;
+
     Aws::String m_subsystemId;
     bool m_subsystemIdHasBeenSet;
+
     Aws::String m_subsystemVendorId;
     bool m_subsystemVendorIdHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A message describing the error or warning.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>A message describing the error or warning.</p>
      */
     inline ValidationMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>An indication of the severity of this message:</p> <ul> <li> <p>
@@ -125,6 +127,7 @@ namespace Model
      */
     inline ValidationMessage& WithSeverity(ValidationSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 
+
     /**
      * <p>The namespace to which the option belongs.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      * <p>The namespace to which the option belongs.</p>
      */
     inline ValidationMessage& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+
 
     /**
      * <p>The name of the option.</p>
@@ -196,12 +200,16 @@ namespace Model
     inline ValidationMessage& WithOptionName(const char* value) { SetOptionName(value); return *this;}
 
   private:
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     ValidationSeverity m_severity;
     bool m_severityHasBeenSet;
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Aws::String m_optionName;
     bool m_optionNameHasBeenSet;
   };

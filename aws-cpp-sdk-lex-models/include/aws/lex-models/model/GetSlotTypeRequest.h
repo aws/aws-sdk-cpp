@@ -34,6 +34,7 @@ namespace Model
     GetSlotTypeRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the slot type. The name is case sensitive. </p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The name of the slot type. The name is case sensitive. </p>
      */
     inline GetSlotTypeRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The version of the slot type. </p>
@@ -105,8 +107,10 @@ namespace Model
     inline GetSlotTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

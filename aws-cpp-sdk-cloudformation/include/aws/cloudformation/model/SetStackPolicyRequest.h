@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or unique stack ID that you want to associate a policy with.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name or unique stack ID that you want to associate a policy with.</p>
      */
     inline SetStackPolicyRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
@@ -139,6 +141,7 @@ namespace Model
      */
     inline SetStackPolicyRequest& WithStackPolicyBody(const char* value) { SetStackPolicyBody(value); return *this;}
 
+
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
      * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
@@ -196,10 +199,13 @@ namespace Model
     inline SetStackPolicyRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_stackPolicyBody;
     bool m_stackPolicyBodyHasBeenSet;
+
     Aws::String m_stackPolicyURL;
     bool m_stackPolicyURLHasBeenSet;
   };

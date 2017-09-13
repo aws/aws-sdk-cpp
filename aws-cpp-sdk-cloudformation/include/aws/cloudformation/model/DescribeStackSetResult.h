@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeStackSetResult();
-    DescribeStackSetResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeStackSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStackSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStackSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The specified stack set.</p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline DescribeStackSetResult& WithStackSet(StackSet&& value) { SetStackSet(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -83,7 +85,9 @@ namespace Model
     inline DescribeStackSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     StackSet m_stackSet;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     UpdateNFSFileShareResult();
-    UpdateNFSFileShareResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateNFSFileShareResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateNFSFileShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateNFSFileShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the updated file share. </p>
@@ -82,6 +83,7 @@ namespace Model
     inline UpdateNFSFileShareResult& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 
   private:
+
     Aws::String m_fileShareARN;
   };
 

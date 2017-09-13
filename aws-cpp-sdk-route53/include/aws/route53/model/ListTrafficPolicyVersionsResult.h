@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListTrafficPolicyVersionsResult();
-    ListTrafficPolicyVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListTrafficPolicyVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTrafficPolicyVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTrafficPolicyVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list that contains one <code>TrafficPolicy</code> element for each traffic
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ListTrafficPolicyVersionsResult& AddTrafficPolicies(TrafficPolicy&& value) { m_trafficPolicies.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A flag that indicates whether there are more traffic policies to be listed.
      * If the response was truncated, you can get the next group of traffic policies by
@@ -114,6 +116,7 @@ namespace Model
      * the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListTrafficPolicyVersionsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
@@ -192,6 +195,7 @@ namespace Model
      */
     inline ListTrafficPolicyVersionsResult& WithTrafficPolicyVersionMarker(const char* value) { SetTrafficPolicyVersionMarker(value); return *this;}
 
+
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
      * <code>ListTrafficPolicyVersions</code> request that produced the current
@@ -242,9 +246,13 @@ namespace Model
     inline ListTrafficPolicyVersionsResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Vector<TrafficPolicy> m_trafficPolicies;
+
     bool m_isTruncated;
+
     Aws::String m_trafficPolicyVersionMarker;
+
     Aws::String m_maxItems;
   };
 

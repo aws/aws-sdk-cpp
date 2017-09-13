@@ -32,14 +32,14 @@ TestInvokeAuthorizerResult::TestInvokeAuthorizerResult() :
 {
 }
 
-TestInvokeAuthorizerResult::TestInvokeAuthorizerResult(const AmazonWebServiceResult<JsonValue>& result) : 
+TestInvokeAuthorizerResult::TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_clientStatus(0),
     m_latency(0)
 {
   *this = result;
 }
 
-TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("clientStatus"))

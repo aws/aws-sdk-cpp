@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A string (provided by the <a>ListExports</a> response output) that identifies
      * the next page of exported output values that you asked to retrieve.</p>
@@ -81,6 +82,7 @@ namespace Model
     inline ListExportsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

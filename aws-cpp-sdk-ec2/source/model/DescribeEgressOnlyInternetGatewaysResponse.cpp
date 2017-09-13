@@ -31,12 +31,12 @@ DescribeEgressOnlyInternetGatewaysResponse::DescribeEgressOnlyInternetGatewaysRe
 {
 }
 
-DescribeEgressOnlyInternetGatewaysResponse::DescribeEgressOnlyInternetGatewaysResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeEgressOnlyInternetGatewaysResponse::DescribeEgressOnlyInternetGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeEgressOnlyInternetGatewaysResponse& DescribeEgressOnlyInternetGatewaysResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeEgressOnlyInternetGatewaysResponse& DescribeEgressOnlyInternetGatewaysResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

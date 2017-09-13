@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListGeoLocationsResult();
-    ListGeoLocationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListGeoLocationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListGeoLocationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListGeoLocationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains one <code>GeoLocationDetails</code> element for
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ListGeoLocationsResult& AddGeoLocationDetailsList(GeoLocationDetails&& value) { m_geoLocationDetailsList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A value that indicates whether more locations remain to be listed after the
      * last location in this response. If so, the value of <code>IsTruncated</code> is
@@ -123,6 +125,7 @@ namespace Model
      * applicable.</p>
      */
     inline ListGeoLocationsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up
@@ -180,6 +183,7 @@ namespace Model
      */
     inline ListGeoLocationsResult& WithNextContinentCode(const char* value) { SetNextContinentCode(value); return *this;}
 
+
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up
      * request to display more locations. Enter the value of
@@ -235,6 +239,7 @@ namespace Model
      * another <code>ListGeoLocations</code> request.</p>
      */
     inline ListGeoLocationsResult& WithNextCountryCode(const char* value) { SetNextCountryCode(value); return *this;}
+
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up
@@ -292,6 +297,7 @@ namespace Model
      */
     inline ListGeoLocationsResult& WithNextSubdivisionCode(const char* value) { SetNextSubdivisionCode(value); return *this;}
 
+
     /**
      * <p>The value that you specified for <code>MaxItems</code> in the request.</p>
      */
@@ -328,11 +334,17 @@ namespace Model
     inline ListGeoLocationsResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Vector<GeoLocationDetails> m_geoLocationDetailsList;
+
     bool m_isTruncated;
+
     Aws::String m_nextContinentCode;
+
     Aws::String m_nextCountryCode;
+
     Aws::String m_nextSubdivisionCode;
+
     Aws::String m_maxItems;
   };
 

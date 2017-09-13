@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateDevEndpointResult();
-    UpdateDevEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDevEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDevEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDevEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

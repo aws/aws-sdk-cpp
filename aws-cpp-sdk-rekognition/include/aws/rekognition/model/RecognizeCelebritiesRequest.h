@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The input image to use for celebrity recognition.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
     inline RecognizeCelebritiesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
   private:
+
     Image m_image;
     bool m_imageHasBeenSet;
   };

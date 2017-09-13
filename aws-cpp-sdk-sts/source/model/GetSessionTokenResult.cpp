@@ -31,12 +31,12 @@ GetSessionTokenResult::GetSessionTokenResult()
 {
 }
 
-GetSessionTokenResult::GetSessionTokenResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetSessionTokenResult::GetSessionTokenResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetSessionTokenResult& GetSessionTokenResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetSessionTokenResult& GetSessionTokenResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

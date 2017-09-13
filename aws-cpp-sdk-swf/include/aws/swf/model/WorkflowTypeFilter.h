@@ -47,6 +47,7 @@ namespace Model
     WorkflowTypeFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Name of the workflow type.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p> Name of the workflow type.</p>
      */
     inline WorkflowTypeFilter& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Version of the workflow type.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline WorkflowTypeFilter& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

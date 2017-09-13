@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetApplicationResult();
-    GetApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the application.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline GetApplicationResult& WithApplication(ApplicationInfo&& value) { SetApplication(std::move(value)); return *this;}
 
   private:
+
     ApplicationInfo m_application;
   };
 

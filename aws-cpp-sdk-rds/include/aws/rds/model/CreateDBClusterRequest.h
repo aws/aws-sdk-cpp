@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
      * created in. For information on regions and Availability Zones, see <a
@@ -107,6 +108,7 @@ namespace Model
      */
     inline CreateDBClusterRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
+
     /**
      * <p>The number of days for which automated backups are retained. You must specify
      * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
@@ -127,6 +129,7 @@ namespace Model
      * <p>Must be a value from 1 to 35</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
+
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
@@ -169,6 +172,7 @@ namespace Model
      * specified CharacterSet.</p>
      */
     inline CreateDBClusterRequest& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
+
 
     /**
      * <p>The name for your database of up to 64 alpha-numeric characters. If you do
@@ -218,6 +222,7 @@ namespace Model
      * are creating.</p>
      */
     inline CreateDBClusterRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+
 
     /**
      * <p>The DB cluster identifier. This parameter is stored as a lowercase
@@ -282,6 +287,7 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
+
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
@@ -345,6 +351,7 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
+
     /**
      * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
      */
@@ -384,6 +391,7 @@ namespace Model
      * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
      */
     inline CreateDBClusterRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
@@ -434,6 +442,7 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values: <code>aurora</code> </p>
@@ -475,6 +484,7 @@ namespace Model
      * Values: <code>aurora</code> </p>
      */
     inline CreateDBClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
@@ -518,6 +528,7 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>The port number on which the instances in the DB cluster accept
      * connections.</p> <p> Default: <code>3306</code> </p>
@@ -535,6 +546,7 @@ namespace Model
      * connections.</p> <p> Default: <code>3306</code> </p>
      */
     inline CreateDBClusterRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
@@ -592,6 +604,7 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
+
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
@@ -640,6 +653,7 @@ namespace Model
      * contain from 8 to 41 characters.</p>
      */
     inline CreateDBClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
@@ -696,6 +710,7 @@ namespace Model
      * associated with a DB cluster.</p>
      */
     inline CreateDBClusterRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+
 
     /**
      * <p>The daily time range during which automated backups are created if automated
@@ -802,6 +817,7 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
+
     /**
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
@@ -893,6 +909,7 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
      * this DB cluster is created as a Read Replica.</p>
@@ -935,6 +952,7 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithReplicationSourceIdentifier(const char* value) { SetReplicationSourceIdentifier(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -956,6 +974,7 @@ namespace Model
     
     inline CreateDBClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies whether the DB cluster is encrypted.</p>
      */
@@ -970,6 +989,7 @@ namespace Model
      * <p>Specifies whether the DB cluster is encrypted.</p>
      */
     inline CreateDBClusterRequest& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
+
 
     /**
      * <p>The KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
@@ -1089,6 +1109,7 @@ namespace Model
      * Region.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
 
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
@@ -1307,6 +1328,7 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
+
     /**
      * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts, and otherwise false.</p>
@@ -1329,48 +1351,70 @@ namespace Model
     inline CreateDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
+
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;
+
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_replicationSourceIdentifier;
     bool m_replicationSourceIdentifierHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     bool m_storageEncrypted;
     bool m_storageEncryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_preSignedUrl;
     bool m_preSignedUrlHasBeenSet;
+
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };

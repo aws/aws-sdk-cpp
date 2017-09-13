@@ -47,6 +47,7 @@ namespace Model
     UtteranceData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The text that was entered by the user or the text representation of an audio
      * clip.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline UtteranceData& WithUtteranceString(const char* value) { SetUtteranceString(value); return *this;}
 
+
     /**
      * <p>The number of times that the utterance was processed.</p>
      */
@@ -104,6 +106,7 @@ namespace Model
      */
     inline UtteranceData& WithCount(int value) { SetCount(value); return *this;}
 
+
     /**
      * <p>The total number of individuals that used the utterance.</p>
      */
@@ -118,6 +121,7 @@ namespace Model
      * <p>The total number of individuals that used the utterance.</p>
      */
     inline UtteranceData& WithDistinctUsers(int value) { SetDistinctUsers(value); return *this;}
+
 
     /**
      * <p>The date that the utterance was first recorded.</p>
@@ -143,6 +147,7 @@ namespace Model
      * <p>The date that the utterance was first recorded.</p>
      */
     inline UtteranceData& WithFirstUtteredDate(Aws::Utils::DateTime&& value) { SetFirstUtteredDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date that the utterance was last recorded.</p>
@@ -170,14 +175,19 @@ namespace Model
     inline UtteranceData& WithLastUtteredDate(Aws::Utils::DateTime&& value) { SetLastUtteredDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_utteranceString;
     bool m_utteranceStringHasBeenSet;
+
     int m_count;
     bool m_countHasBeenSet;
+
     int m_distinctUsers;
     bool m_distinctUsersHasBeenSet;
+
     Aws::Utils::DateTime m_firstUtteredDate;
     bool m_firstUtteredDateHasBeenSet;
+
     Aws::Utils::DateTime m_lastUtteredDate;
     bool m_lastUtteredDateHasBeenSet;
   };

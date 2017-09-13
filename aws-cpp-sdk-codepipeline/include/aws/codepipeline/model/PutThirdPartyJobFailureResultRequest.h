@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the job that failed. This is the same ID returned from
      * PollForThirdPartyJobs.</p>
@@ -82,6 +83,7 @@ namespace Model
      * PollForThirdPartyJobs.</p>
      */
     inline PutThirdPartyJobFailureResultRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>The clientToken portion of the clientId and clientToken pair used to verify
@@ -125,6 +127,7 @@ namespace Model
      */
     inline PutThirdPartyJobFailureResultRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>Represents information about failure details.</p>
      */
@@ -151,10 +154,13 @@ namespace Model
     inline PutThirdPartyJobFailureResultRequest& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     FailureDetails m_failureDetails;
     bool m_failureDetailsHasBeenSet;
   };

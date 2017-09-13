@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A collection of keys and an array of possible values,
      * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
@@ -87,6 +88,7 @@ namespace Model
     inline CreateResourceGroupRequest& AddResourceGroupTags(ResourceGroupTag&& value) { m_resourceGroupTagsHasBeenSet = true; m_resourceGroupTags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ResourceGroupTag> m_resourceGroupTags;
     bool m_resourceGroupTagsHasBeenSet;
   };

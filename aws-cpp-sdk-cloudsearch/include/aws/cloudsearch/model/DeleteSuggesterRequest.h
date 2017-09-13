@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline DeleteSuggesterRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>Specifies the name of the suggester you want to delete.</p>
@@ -100,8 +102,10 @@ namespace Model
     inline DeleteSuggesterRequest& WithSuggesterName(const char* value) { SetSuggesterName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_suggesterName;
     bool m_suggesterNameHasBeenSet;
   };

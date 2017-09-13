@@ -47,6 +47,7 @@ namespace Model
     TransitionState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Whether the transition between stages is enabled (true) or disabled
      * (false).</p>
@@ -64,6 +65,7 @@ namespace Model
      * (false).</p>
      */
     inline TransitionState& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The ID of the user who last changed the transition state.</p>
@@ -100,6 +102,7 @@ namespace Model
      */
     inline TransitionState& WithLastChangedBy(const char* value) { SetLastChangedBy(value); return *this;}
 
+
     /**
      * <p>The timestamp when the transition state was last changed.</p>
      */
@@ -124,6 +127,7 @@ namespace Model
      * <p>The timestamp when the transition state was last changed.</p>
      */
     inline TransitionState& WithLastChangedAt(Aws::Utils::DateTime&& value) { SetLastChangedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The user-specified reason why the transition between two stages of a pipeline
@@ -168,12 +172,16 @@ namespace Model
     inline TransitionState& WithDisabledReason(const char* value) { SetDisabledReason(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_lastChangedBy;
     bool m_lastChangedByHasBeenSet;
+
     Aws::Utils::DateTime m_lastChangedAt;
     bool m_lastChangedAtHasBeenSet;
+
     Aws::String m_disabledReason;
     bool m_disabledReasonHasBeenSet;
   };

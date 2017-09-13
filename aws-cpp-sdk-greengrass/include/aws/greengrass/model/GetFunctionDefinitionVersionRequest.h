@@ -34,6 +34,7 @@ namespace Model
     GetFunctionDefinitionVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * the unique Id of the lambda definition
      */
@@ -68,6 +69,7 @@ namespace Model
      * the unique Id of the lambda definition
      */
     inline GetFunctionDefinitionVersionRequest& WithFunctionDefinitionId(const char* value) { SetFunctionDefinitionId(value); return *this;}
+
 
     /**
      * Function definition version Id
@@ -105,8 +107,10 @@ namespace Model
     inline GetFunctionDefinitionVersionRequest& WithFunctionDefinitionVersionId(const char* value) { SetFunctionDefinitionVersionId(value); return *this;}
 
   private:
+
     Aws::String m_functionDefinitionId;
     bool m_functionDefinitionIdHasBeenSet;
+
     Aws::String m_functionDefinitionVersionId;
     bool m_functionDefinitionVersionIdHasBeenSet;
   };

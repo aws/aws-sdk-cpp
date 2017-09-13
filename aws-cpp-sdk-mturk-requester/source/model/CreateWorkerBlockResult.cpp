@@ -30,12 +30,12 @@ CreateWorkerBlockResult::CreateWorkerBlockResult()
 {
 }
 
-CreateWorkerBlockResult::CreateWorkerBlockResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateWorkerBlockResult::CreateWorkerBlockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateWorkerBlockResult& CreateWorkerBlockResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateWorkerBlockResult& CreateWorkerBlockResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

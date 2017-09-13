@@ -48,6 +48,7 @@ namespace Model
     InstanceInformationFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the filter. </p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the filter. </p>
      */
     inline InstanceInformationFilter& WithKey(InstanceInformationFilterKey&& value) { SetKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The filter values.</p>
@@ -114,8 +116,10 @@ namespace Model
     inline InstanceInformationFilter& AddValueSet(const char* value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(value); return *this; }
 
   private:
+
     InstanceInformationFilterKey m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_valueSet;
     bool m_valueSetHasBeenSet;
   };

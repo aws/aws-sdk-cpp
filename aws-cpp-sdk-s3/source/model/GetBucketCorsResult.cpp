@@ -29,12 +29,12 @@ GetBucketCorsResult::GetBucketCorsResult()
 {
 }
 
-GetBucketCorsResult::GetBucketCorsResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketCorsResult::GetBucketCorsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetBucketCorsResult& GetBucketCorsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketCorsResult& GetBucketCorsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

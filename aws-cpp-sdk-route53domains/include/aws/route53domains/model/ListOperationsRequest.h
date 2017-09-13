@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>For an initial request for a list of operations, omit this element. If the
      * number of operations that are not yet complete is greater than the value that
@@ -110,6 +111,7 @@ namespace Model
      */
     inline ListOperationsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Number of domains to be returned.</p> <p>Default: 20</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline ListOperationsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

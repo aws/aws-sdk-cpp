@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetRoleResult();
-    GetRoleResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetRoleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure containing details about the IAM role.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline GetRoleResult& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline GetRoleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Role m_role;
+
     ResponseMetadata m_responseMetadata;
   };
 

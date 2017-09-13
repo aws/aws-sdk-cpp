@@ -30,12 +30,12 @@ GetRegionsResult::GetRegionsResult()
 {
 }
 
-GetRegionsResult::GetRegionsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetRegionsResult::GetRegionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetRegionsResult& GetRegionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetRegionsResult& GetRegionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("regions"))

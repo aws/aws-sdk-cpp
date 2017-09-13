@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeDirectoryConfigsResult();
-    DescribeDirectoryConfigsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDirectoryConfigsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDirectoryConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDirectoryConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of directory configurations.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of directory configurations.</p>
      */
     inline DescribeDirectoryConfigsResult& AddDirectoryConfigs(DirectoryConfig&& value) { m_directoryConfigs.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If not null, more results are available. To retrieve the next set of items,
@@ -128,7 +130,9 @@ namespace Model
     inline DescribeDirectoryConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DirectoryConfig> m_directoryConfigs;
+
     Aws::String m_nextToken;
   };
 

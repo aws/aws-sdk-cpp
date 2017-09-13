@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     SetIdentityMailFromDomainResult();
-    SetIdentityMailFromDomainResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetIdentityMailFromDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetIdentityMailFromDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetIdentityMailFromDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -63,6 +64,7 @@ namespace Model
     inline SetIdentityMailFromDomainResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ResponseMetadata m_responseMetadata;
   };
 

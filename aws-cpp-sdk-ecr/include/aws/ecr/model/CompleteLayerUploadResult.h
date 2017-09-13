@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CompleteLayerUploadResult();
-    CompleteLayerUploadResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CompleteLayerUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CompleteLayerUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CompleteLayerUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The registry ID associated with the request.</p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline CompleteLayerUploadResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The repository name associated with the request.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      */
     inline CompleteLayerUploadResult& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>The upload ID associated with the layer.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>The upload ID associated with the layer.</p>
      */
     inline CompleteLayerUploadResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
+
 
     /**
      * <p>The <code>sha256</code> digest of the image layer.</p>
@@ -182,9 +186,13 @@ namespace Model
     inline CompleteLayerUploadResult& WithLayerDigest(const char* value) { SetLayerDigest(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
+
     Aws::String m_repositoryName;
+
     Aws::String m_uploadId;
+
     Aws::String m_layerDigest;
   };
 

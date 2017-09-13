@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     ChangeMessageVisibilityBatchResult();
-    ChangeMessageVisibilityBatchResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ChangeMessageVisibilityBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ChangeMessageVisibilityBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ChangeMessageVisibilityBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code>
@@ -94,6 +95,7 @@ namespace Model
      */
     inline ChangeMessageVisibilityBatchResult& AddSuccessful(ChangeMessageVisibilityBatchResultEntry&& value) { m_successful.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items.</p>
      */
@@ -129,6 +131,7 @@ namespace Model
      */
     inline ChangeMessageVisibilityBatchResult& AddFailed(BatchResultErrorEntry&& value) { m_failed.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -145,8 +148,11 @@ namespace Model
     inline ChangeMessageVisibilityBatchResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ChangeMessageVisibilityBatchResultEntry> m_successful;
+
     Aws::Vector<BatchResultErrorEntry> m_failed;
+
     ResponseMetadata m_responseMetadata;
   };
 

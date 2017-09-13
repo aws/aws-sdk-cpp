@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateKeysAndCertificateResult();
-    CreateKeysAndCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateKeysAndCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateKeysAndCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateKeysAndCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the certificate.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The ARN of the certificate.</p>
      */
     inline CreateKeysAndCertificateResult& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
 
     /**
      * <p>The ID of the certificate. AWS IoT issues a default subject name for the
@@ -125,6 +127,7 @@ namespace Model
      */
     inline CreateKeysAndCertificateResult& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p>The certificate data, in PEM format.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      */
     inline CreateKeysAndCertificateResult& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
 
+
     /**
      * <p>The generated key pair.</p>
      */
@@ -186,9 +190,13 @@ namespace Model
     inline CreateKeysAndCertificateResult& WithKeyPair(KeyPair&& value) { SetKeyPair(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
+
     Aws::String m_certificateId;
+
     Aws::String m_certificatePem;
+
     KeyPair m_keyPair;
   };
 

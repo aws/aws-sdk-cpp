@@ -32,6 +32,7 @@
 #include <aws/route53/model/ChangeTagsForResourceRequest.h>
 #include <aws/route53/model/CreateHealthCheckRequest.h>
 #include <aws/route53/model/CreateHostedZoneRequest.h>
+#include <aws/route53/model/CreateQueryLoggingConfigRequest.h>
 #include <aws/route53/model/CreateReusableDelegationSetRequest.h>
 #include <aws/route53/model/CreateTrafficPolicyRequest.h>
 #include <aws/route53/model/CreateTrafficPolicyInstanceRequest.h>
@@ -39,6 +40,7 @@
 #include <aws/route53/model/CreateVPCAssociationAuthorizationRequest.h>
 #include <aws/route53/model/DeleteHealthCheckRequest.h>
 #include <aws/route53/model/DeleteHostedZoneRequest.h>
+#include <aws/route53/model/DeleteQueryLoggingConfigRequest.h>
 #include <aws/route53/model/DeleteReusableDelegationSetRequest.h>
 #include <aws/route53/model/DeleteTrafficPolicyRequest.h>
 #include <aws/route53/model/DeleteTrafficPolicyInstanceRequest.h>
@@ -53,6 +55,7 @@
 #include <aws/route53/model/GetHealthCheckStatusRequest.h>
 #include <aws/route53/model/GetHostedZoneRequest.h>
 #include <aws/route53/model/GetHostedZoneCountRequest.h>
+#include <aws/route53/model/GetQueryLoggingConfigRequest.h>
 #include <aws/route53/model/GetReusableDelegationSetRequest.h>
 #include <aws/route53/model/GetTrafficPolicyRequest.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceRequest.h>
@@ -61,6 +64,7 @@
 #include <aws/route53/model/ListHealthChecksRequest.h>
 #include <aws/route53/model/ListHostedZonesRequest.h>
 #include <aws/route53/model/ListHostedZonesByNameRequest.h>
+#include <aws/route53/model/ListQueryLoggingConfigsRequest.h>
 #include <aws/route53/model/ListResourceRecordSetsRequest.h>
 #include <aws/route53/model/ListReusableDelegationSetsRequest.h>
 #include <aws/route53/model/ListTagsForResourceRequest.h>
@@ -324,6 +328,41 @@ void Route53Client::CreateHostedZoneAsyncHelper(const CreateHostedZoneRequest& r
   handler(this, request, CreateHostedZone(request), context);
 }
 
+CreateQueryLoggingConfigOutcome Route53Client::CreateQueryLoggingConfig(const CreateQueryLoggingConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2013-04-01/queryloggingconfig";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateQueryLoggingConfigOutcome(CreateQueryLoggingConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateQueryLoggingConfigOutcome(outcome.GetError());
+  }
+}
+
+CreateQueryLoggingConfigOutcomeCallable Route53Client::CreateQueryLoggingConfigCallable(const CreateQueryLoggingConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateQueryLoggingConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateQueryLoggingConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::CreateQueryLoggingConfigAsync(const CreateQueryLoggingConfigRequest& request, const CreateQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateQueryLoggingConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::CreateQueryLoggingConfigAsyncHelper(const CreateQueryLoggingConfigRequest& request, const CreateQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateQueryLoggingConfig(request), context);
+}
+
 CreateReusableDelegationSetOutcome Route53Client::CreateReusableDelegationSet(const CreateReusableDelegationSetRequest& request) const
 {
   Aws::StringStream ss;
@@ -572,6 +611,42 @@ void Route53Client::DeleteHostedZoneAsync(const DeleteHostedZoneRequest& request
 void Route53Client::DeleteHostedZoneAsyncHelper(const DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteHostedZone(request), context);
+}
+
+DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const DeleteQueryLoggingConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2013-04-01/queryloggingconfig/";
+  ss << request.GetId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteQueryLoggingConfigOutcome(DeleteQueryLoggingConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteQueryLoggingConfigOutcome(outcome.GetError());
+  }
+}
+
+DeleteQueryLoggingConfigOutcomeCallable Route53Client::DeleteQueryLoggingConfigCallable(const DeleteQueryLoggingConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteQueryLoggingConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteQueryLoggingConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::DeleteQueryLoggingConfigAsync(const DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueryLoggingConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::DeleteQueryLoggingConfigAsyncHelper(const DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteQueryLoggingConfig(request), context);
 }
 
 DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(const DeleteReusableDelegationSetRequest& request) const
@@ -1080,6 +1155,42 @@ void Route53Client::GetHostedZoneCountAsyncHelper(const GetHostedZoneCountReques
   handler(this, request, GetHostedZoneCount(request), context);
 }
 
+GetQueryLoggingConfigOutcome Route53Client::GetQueryLoggingConfig(const GetQueryLoggingConfigRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2013-04-01/queryloggingconfig/";
+  ss << request.GetId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetQueryLoggingConfigOutcome(GetQueryLoggingConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetQueryLoggingConfigOutcome(outcome.GetError());
+  }
+}
+
+GetQueryLoggingConfigOutcomeCallable Route53Client::GetQueryLoggingConfigCallable(const GetQueryLoggingConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetQueryLoggingConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQueryLoggingConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::GetQueryLoggingConfigAsync(const GetQueryLoggingConfigRequest& request, const GetQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetQueryLoggingConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::GetQueryLoggingConfigAsyncHelper(const GetQueryLoggingConfigRequest& request, const GetQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetQueryLoggingConfig(request), context);
+}
+
 GetReusableDelegationSetOutcome Route53Client::GetReusableDelegationSet(const GetReusableDelegationSetRequest& request) const
 {
   Aws::StringStream ss;
@@ -1363,6 +1474,41 @@ void Route53Client::ListHostedZonesByNameAsync(const ListHostedZonesByNameReques
 void Route53Client::ListHostedZonesByNameAsyncHelper(const ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListHostedZonesByName(request), context);
+}
+
+ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const ListQueryLoggingConfigsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2013-04-01/queryloggingconfig";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListQueryLoggingConfigsOutcome(ListQueryLoggingConfigsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListQueryLoggingConfigsOutcome(outcome.GetError());
+  }
+}
+
+ListQueryLoggingConfigsOutcomeCallable Route53Client::ListQueryLoggingConfigsCallable(const ListQueryLoggingConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListQueryLoggingConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListQueryLoggingConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::ListQueryLoggingConfigsAsync(const ListQueryLoggingConfigsRequest& request, const ListQueryLoggingConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListQueryLoggingConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::ListQueryLoggingConfigsAsyncHelper(const ListQueryLoggingConfigsRequest& request, const ListQueryLoggingConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListQueryLoggingConfigs(request), context);
 }
 
 ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListResourceRecordSetsRequest& request) const

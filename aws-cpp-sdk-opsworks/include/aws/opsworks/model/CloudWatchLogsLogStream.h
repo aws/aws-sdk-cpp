@@ -51,6 +51,7 @@ namespace Model
     CloudWatchLogsLogStream& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the destination log group. A log group is created automatically if
      * it doesn't already exist. Log group names can be between 1 and 512 characters
@@ -106,6 +107,7 @@ namespace Model
      * '/' (forward slash), and '.' (period).</p>
      */
     inline CloudWatchLogsLogStream& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>Specifies how the time stamp is extracted from logs. For more information,
@@ -163,6 +165,7 @@ namespace Model
      */
     inline CloudWatchLogsLogStream& WithDatetimeFormat(const char* value) { SetDatetimeFormat(value); return *this;}
 
+
     /**
      * <p>Specifies the time zone of log event time stamps.</p>
      */
@@ -187,6 +190,7 @@ namespace Model
      * <p>Specifies the time zone of log event time stamps.</p>
      */
     inline CloudWatchLogsLogStream& WithTimeZone(CloudWatchLogsTimeZone&& value) { SetTimeZone(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies log files that you want to push to CloudWatch Logs.</p> <p>
@@ -293,6 +297,7 @@ namespace Model
      */
     inline CloudWatchLogsLogStream& WithFile(const char* value) { SetFile(value); return *this;}
 
+
     /**
      * <p>Specifies the range of lines for identifying a file. The valid values are one
      * number, or two dash-delimited numbers, such as '1', '2-5'. The default value is
@@ -356,6 +361,7 @@ namespace Model
      */
     inline CloudWatchLogsLogStream& WithFileFingerprintLines(const char* value) { SetFileFingerprintLines(value); return *this;}
 
+
     /**
      * <p>Specifies the pattern for identifying the start of a log message.</p>
      */
@@ -390,6 +396,7 @@ namespace Model
      * <p>Specifies the pattern for identifying the start of a log message.</p>
      */
     inline CloudWatchLogsLogStream& WithMultiLineStartPattern(const char* value) { SetMultiLineStartPattern(value); return *this;}
+
 
     /**
      * <p>Specifies where to start to read data (start_of_file or end_of_file). The
@@ -426,6 +433,7 @@ namespace Model
      */
     inline CloudWatchLogsLogStream& WithInitialPosition(CloudWatchLogsInitialPosition&& value) { SetInitialPosition(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the encoding of the log file so that the file can be read
      * correctly. The default is <code>utf_8</code>. Encodings supported by Python
@@ -461,6 +469,7 @@ namespace Model
      */
     inline CloudWatchLogsLogStream& WithEncoding(CloudWatchLogsEncoding&& value) { SetEncoding(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the time duration for the batching of log events. The minimum value
      * is 5000ms and default value is 5000ms.</p>
@@ -479,6 +488,7 @@ namespace Model
      */
     inline CloudWatchLogsLogStream& WithBufferDuration(int value) { SetBufferDuration(value); return *this;}
 
+
     /**
      * <p>Specifies the max number of log events in a batch, up to 10000. The default
      * value is 1000.</p>
@@ -496,6 +506,7 @@ namespace Model
      * value is 1000.</p>
      */
     inline CloudWatchLogsLogStream& WithBatchCount(int value) { SetBatchCount(value); return *this;}
+
 
     /**
      * <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576
@@ -519,26 +530,37 @@ namespace Model
     inline CloudWatchLogsLogStream& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_datetimeFormat;
     bool m_datetimeFormatHasBeenSet;
+
     CloudWatchLogsTimeZone m_timeZone;
     bool m_timeZoneHasBeenSet;
+
     Aws::String m_file;
     bool m_fileHasBeenSet;
+
     Aws::String m_fileFingerprintLines;
     bool m_fileFingerprintLinesHasBeenSet;
+
     Aws::String m_multiLineStartPattern;
     bool m_multiLineStartPatternHasBeenSet;
+
     CloudWatchLogsInitialPosition m_initialPosition;
     bool m_initialPositionHasBeenSet;
+
     CloudWatchLogsEncoding m_encoding;
     bool m_encodingHasBeenSet;
+
     int m_bufferDuration;
     bool m_bufferDurationHasBeenSet;
+
     int m_batchCount;
     bool m_batchCountHasBeenSet;
+
     int m_batchSize;
     bool m_batchSizeHasBeenSet;
   };

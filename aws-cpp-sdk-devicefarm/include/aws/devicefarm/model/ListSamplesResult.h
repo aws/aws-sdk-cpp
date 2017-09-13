@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListSamplesResult();
-    ListSamplesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSamplesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSamplesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSamplesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the samples.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the samples.</p>
      */
     inline ListSamplesResult& AddSamples(Sample&& value) { m_samples.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -134,7 +136,9 @@ namespace Model
     inline ListSamplesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Sample> m_samples;
+
     Aws::String m_nextToken;
   };
 

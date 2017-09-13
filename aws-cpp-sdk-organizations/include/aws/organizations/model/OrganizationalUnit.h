@@ -48,6 +48,7 @@ namespace Model
     OrganizationalUnit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
@@ -110,6 +111,7 @@ namespace Model
      * and from 8 to 32 additional lower-case letters or digits.</p>
      */
     inline OrganizationalUnit& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
@@ -174,6 +176,7 @@ namespace Model
      */
     inline OrganizationalUnit& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The friendly name of this OU.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
@@ -231,10 +234,13 @@ namespace Model
     inline OrganizationalUnit& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

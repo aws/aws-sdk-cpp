@@ -55,6 +55,7 @@ namespace Model
     ContainerDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of a container. If you are linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
@@ -152,6 +153,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
      */
     inline ContainerDefinition& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
@@ -328,6 +330,7 @@ namespace Model
      */
     inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
 
+
     /**
      * <p>The number of <code>cpu</code> units reserved for the container. A container
      * instance has 1,024 <code>cpu</code> units for every CPU core. This parameter
@@ -448,6 +451,7 @@ namespace Model
      */
     inline ContainerDefinition& WithCpu(int value) { SetCpu(value); return *this;}
 
+
     /**
      * <p>The hard limit (in MiB) of memory to present to the container. If your
      * container attempts to exceed the memory specified here, the container is killed.
@@ -507,6 +511,7 @@ namespace Model
      * specify fewer than 4 MiB of memory for your containers. </p>
      */
     inline ContainerDefinition& WithMemory(int value) { SetMemory(value); return *this;}
+
 
     /**
      * <p>The soft limit (in MiB) of memory to reserve for the container. When system
@@ -591,6 +596,7 @@ namespace Model
      * the container to consume more memory resources when needed.</p>
      */
     inline ContainerDefinition& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
+
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
@@ -768,6 +774,7 @@ namespace Model
      */
     inline ContainerDefinition& AddLinks(const char* value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
 
+
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic. This
@@ -908,6 +915,7 @@ namespace Model
      */
     inline ContainerDefinition& AddPortMappings(PortMapping&& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If the <code>essential</code> parameter of a container is marked as
      * <code>true</code>, and that container fails or stops for any reason, all other
@@ -955,6 +963,7 @@ namespace Model
      * Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline ContainerDefinition& WithEssential(bool value) { SetEssential(value); return *this;}
+
 
     /**
      * <important> <p>Early versions of the Amazon ECS container agent do not properly
@@ -1092,6 +1101,7 @@ namespace Model
      */
     inline ContainerDefinition& AddEntryPoint(const char* value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(value); return *this; }
 
+
     /**
      * <p>The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
@@ -1196,6 +1206,7 @@ namespace Model
      */
     inline ContainerDefinition& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
+
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a
@@ -1287,6 +1298,7 @@ namespace Model
      */
     inline ContainerDefinition& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
      * <code>Volumes</code> in the <a
@@ -1363,6 +1375,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
     inline ContainerDefinition& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
@@ -1441,6 +1454,7 @@ namespace Model
      */
     inline ContainerDefinition& AddVolumesFrom(VolumeFrom&& value) { m_volumesFromHasBeenSet = true; m_volumesFrom.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a
@@ -1517,6 +1531,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
     inline ContainerDefinition& WithHostname(const char* value) { SetHostname(value); return *this;}
+
 
     /**
      * <p>The user name to use inside the container. This parameter maps to
@@ -1595,6 +1610,7 @@ namespace Model
      */
     inline ContainerDefinition& WithUser(const char* value) { SetUser(value); return *this;}
 
+
     /**
      * <p>The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a
@@ -1672,6 +1688,7 @@ namespace Model
      */
     inline ContainerDefinition& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
 
+
     /**
      * <p>When this parameter is true, networking is disabled within the container.
      * This parameter maps to <code>NetworkDisabled</code> in the <a
@@ -1701,6 +1718,7 @@ namespace Model
      * Remote API</a>.</p>
      */
     inline ContainerDefinition& WithDisableNetworking(bool value) { SetDisableNetworking(value); return *this;}
+
 
     /**
      * <p>When this parameter is true, the container is given elevated privileges on
@@ -1738,6 +1756,7 @@ namespace Model
      */
     inline ContainerDefinition& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
 
+
     /**
      * <p>When this parameter is true, the container is given read-only access to its
      * root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a
@@ -1770,6 +1789,7 @@ namespace Model
      * run</code>.</p>
      */
     inline ContainerDefinition& WithReadonlyRootFilesystem(bool value) { SetReadonlyRootFilesystem(value); return *this;}
+
 
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
@@ -1859,6 +1879,7 @@ namespace Model
      */
     inline ContainerDefinition& AddDnsServers(const char* value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
 
+
     /**
      * <p>A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a
@@ -1947,6 +1968,7 @@ namespace Model
      */
     inline ContainerDefinition& AddDnsSearchDomains(const char* value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(value); return *this; }
 
+
     /**
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
@@ -2030,6 +2052,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
     inline ContainerDefinition& AddExtraHosts(HostEntry&& value) { m_extraHostsHasBeenSet = true; m_extraHosts.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
@@ -2190,6 +2213,7 @@ namespace Model
      * Developer Guide</i>.</p> </note>
      */
     inline ContainerDefinition& AddDockerSecurityOptions(const char* value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(value); return *this; }
+
 
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
@@ -2371,6 +2395,7 @@ namespace Model
      */
     inline ContainerDefinition& AddDockerLabels(const char* key, const char* value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(key, value); return *this; }
 
+
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
      * to <code>Ulimits</code> in the <a
@@ -2482,6 +2507,7 @@ namespace Model
      * version | grep "Server API version"</code> </p>
      */
     inline ContainerDefinition& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The log configuration specification for the container. This parameter maps to
@@ -2659,56 +2685,82 @@ namespace Model
     inline ContainerDefinition& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
     int m_cpu;
     bool m_cpuHasBeenSet;
+
     int m_memory;
     bool m_memoryHasBeenSet;
+
     int m_memoryReservation;
     bool m_memoryReservationHasBeenSet;
+
     Aws::Vector<Aws::String> m_links;
     bool m_linksHasBeenSet;
+
     Aws::Vector<PortMapping> m_portMappings;
     bool m_portMappingsHasBeenSet;
+
     bool m_essential;
     bool m_essentialHasBeenSet;
+
     Aws::Vector<Aws::String> m_entryPoint;
     bool m_entryPointHasBeenSet;
+
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet;
+
     Aws::Vector<KeyValuePair> m_environment;
     bool m_environmentHasBeenSet;
+
     Aws::Vector<MountPoint> m_mountPoints;
     bool m_mountPointsHasBeenSet;
+
     Aws::Vector<VolumeFrom> m_volumesFrom;
     bool m_volumesFromHasBeenSet;
+
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
     Aws::String m_user;
     bool m_userHasBeenSet;
+
     Aws::String m_workingDirectory;
     bool m_workingDirectoryHasBeenSet;
+
     bool m_disableNetworking;
     bool m_disableNetworkingHasBeenSet;
+
     bool m_privileged;
     bool m_privilegedHasBeenSet;
+
     bool m_readonlyRootFilesystem;
     bool m_readonlyRootFilesystemHasBeenSet;
+
     Aws::Vector<Aws::String> m_dnsServers;
     bool m_dnsServersHasBeenSet;
+
     Aws::Vector<Aws::String> m_dnsSearchDomains;
     bool m_dnsSearchDomainsHasBeenSet;
+
     Aws::Vector<HostEntry> m_extraHosts;
     bool m_extraHostsHasBeenSet;
+
     Aws::Vector<Aws::String> m_dockerSecurityOptions;
     bool m_dockerSecurityOptionsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_dockerLabels;
     bool m_dockerLabelsHasBeenSet;
+
     Aws::Vector<Ulimit> m_ulimits;
     bool m_ulimitsHasBeenSet;
+
     LogConfiguration m_logConfiguration;
     bool m_logConfigurationHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The specific group that is to be added or removed from a volume's list of
      * create volume permissions.</p>
@@ -79,6 +80,7 @@ namespace Model
      * create volume permissions.</p>
      */
     inline CreateVolumePermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
+
 
     /**
      * <p>The specific AWS account ID that is to be added or removed from a volume's
@@ -123,8 +125,10 @@ namespace Model
     inline CreateVolumePermission& WithUserId(const char* value) { SetUserId(value); return *this;}
 
   private:
+
     PermissionGroup m_group;
     bool m_groupHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
   };

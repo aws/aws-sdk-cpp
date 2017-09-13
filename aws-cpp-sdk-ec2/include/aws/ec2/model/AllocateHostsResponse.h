@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     AllocateHostsResponse();
-    AllocateHostsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AllocateHostsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AllocateHostsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AllocateHostsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
@@ -96,6 +97,7 @@ namespace Model
      */
     inline AllocateHostsResponse& AddHostIds(const char* value) { m_hostIds.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -112,7 +114,9 @@ namespace Model
     inline AllocateHostsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_hostIds;
+
     ResponseMetadata m_responseMetadata;
   };
 

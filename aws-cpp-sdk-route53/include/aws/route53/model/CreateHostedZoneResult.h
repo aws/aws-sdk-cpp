@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     CreateHostedZoneResult();
-    CreateHostedZoneResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateHostedZoneResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline CreateHostedZoneResult& WithHostedZone(HostedZone&& value) { SetHostedZone(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that contains information about the
@@ -106,6 +108,7 @@ namespace Model
      */
     inline CreateHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
@@ -130,6 +133,7 @@ namespace Model
      * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline CreateHostedZoneResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that contains information about an Amazon VPC that you
@@ -160,6 +164,7 @@ namespace Model
      * associated with this hosted zone.</p>
      */
     inline CreateHostedZoneResult& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
+
 
     /**
      * <p>The unique URL representing the new hosted zone.</p>
@@ -197,10 +202,15 @@ namespace Model
     inline CreateHostedZoneResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:
+
     HostedZone m_hostedZone;
+
     ChangeInfo m_changeInfo;
+
     DelegationSet m_delegationSet;
+
     VPC m_vPC;
+
     Aws::String m_location;
   };
 

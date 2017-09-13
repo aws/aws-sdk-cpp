@@ -39,6 +39,7 @@ namespace Model
     ChangeResourceRecordSetsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
      * want to change.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ChangeResourceRecordSetsRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
+
     /**
      * <p>A complex type that contains an optional comment and the <code>Changes</code>
      * element.</p>
@@ -112,8 +114,10 @@ namespace Model
     inline ChangeResourceRecordSetsRequest& WithChangeBatch(ChangeBatch&& value) { SetChangeBatch(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     ChangeBatch m_changeBatch;
     bool m_changeBatchHasBeenSet;
   };

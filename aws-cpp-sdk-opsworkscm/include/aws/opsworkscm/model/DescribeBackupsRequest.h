@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Describes a single backup. </p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline DescribeBackupsRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 
+
     /**
      * <p>Returns backups for the server with the specified ServerName. </p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>Returns backups for the server with the specified ServerName. </p>
      */
     inline DescribeBackupsRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
+
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It
@@ -197,6 +200,7 @@ namespace Model
      */
     inline DescribeBackupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>To receive a paginated response, use this parameter to specify the maximum
      * number of results to be returned with a single call. If the number of available
@@ -225,12 +229,16 @@ namespace Model
     inline DescribeBackupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

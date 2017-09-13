@@ -57,6 +57,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values,
      * see <a
@@ -113,6 +114,7 @@ namespace Model
      */
     inline MessageAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
+
     /**
      * <p>Binary type attributes can store any binary data, such as compressed data,
      * encrypted data, or images.</p>
@@ -142,6 +144,7 @@ namespace Model
      * encrypted data, or images.</p>
      */
     inline MessageAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(std::move(value)); return *this;}
+
 
     /**
      * <p>Not implemented. Reserved for future use.</p>
@@ -183,6 +186,7 @@ namespace Model
      */
     inline MessageAttributeValue& AddStringListValues(const char* value) { m_stringListValuesHasBeenSet = true; m_stringListValues.push_back(value); return *this; }
 
+
     /**
      * <p>Not implemented. Reserved for future use.</p>
      */
@@ -217,6 +221,7 @@ namespace Model
      * <p>Not implemented. Reserved for future use.</p>
      */
     inline MessageAttributeValue& AddBinaryListValues(Aws::Utils::ByteBuffer&& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Amazon SQS supports the following logical data types: <code>String</code>,
@@ -296,14 +301,19 @@ namespace Model
     inline MessageAttributeValue& WithDataType(const char* value) { SetDataType(value); return *this;}
 
   private:
+
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet;
+
     Aws::Utils::ByteBuffer m_binaryValue;
     bool m_binaryValueHasBeenSet;
+
     Aws::Vector<Aws::String> m_stringListValues;
     bool m_stringListValuesHasBeenSet;
+
     Aws::Vector<Aws::Utils::ByteBuffer> m_binaryListValues;
     bool m_binaryListValuesHasBeenSet;
+
     Aws::String m_dataType;
     bool m_dataTypeHasBeenSet;
   };

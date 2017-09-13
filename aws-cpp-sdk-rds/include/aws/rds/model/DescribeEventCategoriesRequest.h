@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The type of source that will be generating the events.</p> <p>Valid values:
      * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeEventCategoriesRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 
+
     /**
      * <p>This parameter is not currently supported.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline DescribeEventCategoriesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
   };

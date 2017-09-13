@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListDeploymentConfigsResult();
-    ListDeploymentConfigsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeploymentConfigsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeploymentConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeploymentConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of deployment configurations, including built-in configurations such
@@ -95,6 +96,7 @@ namespace Model
      * as CodeDeployDefault.OneAtATime.</p>
      */
     inline ListDeploymentConfigsResult& AddDeploymentConfigsList(const char* value) { m_deploymentConfigsList.push_back(value); return *this; }
+
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -146,7 +148,9 @@ namespace Model
     inline ListDeploymentConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_deploymentConfigsList;
+
     Aws::String m_nextToken;
   };
 

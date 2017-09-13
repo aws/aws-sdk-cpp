@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that your
      * service is running on. If you do not specify a cluster, the default cluster is
@@ -86,6 +87,7 @@ namespace Model
      */
     inline UpdateServiceRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
+
     /**
      * <p>The name of the service to update.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      */
     inline UpdateServiceRequest& WithService(const char* value) { SetService(value); return *this;}
 
+
     /**
      * <p>The number of instantiations of the task to place and keep running in your
      * service.</p>
@@ -138,6 +141,7 @@ namespace Model
      * service.</p>
      */
     inline UpdateServiceRequest& WithDesiredCount(int value) { SetDesiredCount(value); return *this;}
+
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
@@ -216,6 +220,7 @@ namespace Model
      */
     inline UpdateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
+
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
      * deployment and the ordering of stopping and starting tasks.</p>
@@ -247,14 +252,19 @@ namespace Model
     inline UpdateServiceRequest& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_service;
     bool m_serviceHasBeenSet;
+
     int m_desiredCount;
     bool m_desiredCountHasBeenSet;
+
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;
+
     DeploymentConfiguration m_deploymentConfiguration;
     bool m_deploymentConfigurationHasBeenSet;
   };

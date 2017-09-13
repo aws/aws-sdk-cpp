@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RegisterEcsClusterResult();
-    RegisterEcsClusterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterEcsClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterEcsClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterEcsClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The cluster's ARN.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline RegisterEcsClusterResult& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
 
   private:
+
     Aws::String m_ecsClusterArn;
   };
 

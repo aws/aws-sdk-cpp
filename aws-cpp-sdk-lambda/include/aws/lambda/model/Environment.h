@@ -47,6 +47,7 @@ namespace Model
     Environment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key-value pairs that represent your environment's configuration
      * settings.</p>
@@ -120,6 +121,7 @@ namespace Model
     inline Environment& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_variables;
     bool m_variablesHasBeenSet;
   };

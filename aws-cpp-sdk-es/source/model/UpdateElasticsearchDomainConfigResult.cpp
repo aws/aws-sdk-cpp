@@ -30,12 +30,12 @@ UpdateElasticsearchDomainConfigResult::UpdateElasticsearchDomainConfigResult()
 {
 }
 
-UpdateElasticsearchDomainConfigResult::UpdateElasticsearchDomainConfigResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateElasticsearchDomainConfigResult::UpdateElasticsearchDomainConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateElasticsearchDomainConfigResult& UpdateElasticsearchDomainConfigResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateElasticsearchDomainConfigResult& UpdateElasticsearchDomainConfigResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DomainConfig"))

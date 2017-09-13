@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The comma-separated list that specifies the resource types that you want the
      * AWS Config to return. For example, (<code>"AWS::EC2::Instance"</code>,
@@ -141,6 +142,7 @@ namespace Model
      */
     inline GetDiscoveredResourceCountsRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of <a>ResourceCount</a> objects returned on each page. The
      * default is 100. You cannot specify a limit greater than 100. If you specify 0,
@@ -161,6 +163,7 @@ namespace Model
      * AWS Config uses the default.</p>
      */
     inline GetDiscoveredResourceCountsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
@@ -205,10 +208,13 @@ namespace Model
     inline GetDiscoveredResourceCountsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_resourceTypes;
     bool m_resourceTypesHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

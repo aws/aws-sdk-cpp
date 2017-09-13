@@ -31,12 +31,12 @@ StopStackSetOperationResult::StopStackSetOperationResult()
 {
 }
 
-StopStackSetOperationResult::StopStackSetOperationResult(const AmazonWebServiceResult<XmlDocument>& result)
+StopStackSetOperationResult::StopStackSetOperationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-StopStackSetOperationResult& StopStackSetOperationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+StopStackSetOperationResult& StopStackSetOperationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

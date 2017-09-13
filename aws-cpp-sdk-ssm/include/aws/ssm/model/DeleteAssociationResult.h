@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteAssociationResult();
-    DeleteAssociationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAssociationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

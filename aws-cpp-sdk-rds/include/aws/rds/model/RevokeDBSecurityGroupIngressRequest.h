@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the DB security group to revoke ingress from.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the DB security group to revoke ingress from.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithDBSecurityGroupName(const char* value) { SetDBSecurityGroupName(value); return *this;}
+
 
     /**
      * <p> The IP range to revoke access from. Must be a valid CIDR range. If
@@ -132,6 +134,7 @@ namespace Model
      */
     inline RevokeDBSecurityGroupIngressRequest& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}
 
+
     /**
      * <p> The name of the EC2 security group to revoke access from. For VPC DB
      * security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
@@ -188,6 +191,7 @@ namespace Model
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
 
+
     /**
      * <p> The id of the EC2 security group to revoke access from. For VPC DB security
      * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
@@ -243,6 +247,7 @@ namespace Model
      * <code>EC2SecurityGroupId</code> must be provided. </p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupId(const char* value) { SetEC2SecurityGroupId(value); return *this;}
+
 
     /**
      * <p> The AWS Account Number of the owner of the EC2 security group specified in
@@ -315,14 +320,19 @@ namespace Model
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
   private:
+
     Aws::String m_dBSecurityGroupName;
     bool m_dBSecurityGroupNameHasBeenSet;
+
     Aws::String m_cIDRIP;
     bool m_cIDRIPHasBeenSet;
+
     Aws::String m_eC2SecurityGroupName;
     bool m_eC2SecurityGroupNameHasBeenSet;
+
     Aws::String m_eC2SecurityGroupId;
     bool m_eC2SecurityGroupIdHasBeenSet;
+
     Aws::String m_eC2SecurityGroupOwnerId;
     bool m_eC2SecurityGroupOwnerIdHasBeenSet;
   };

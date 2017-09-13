@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The maximum number of results to include in the response. If more results
      * exist than the specified <code>MaxResults</code> value, a token is included in
@@ -59,6 +60,7 @@ namespace Model
      * for <code>MaxResults</code> must be between 20 and 100.</p>
      */
     inline DescribeDefaultParametersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>An optional token returned from a prior request. Use this token for
@@ -117,8 +119,10 @@ namespace Model
     inline DescribeDefaultParametersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

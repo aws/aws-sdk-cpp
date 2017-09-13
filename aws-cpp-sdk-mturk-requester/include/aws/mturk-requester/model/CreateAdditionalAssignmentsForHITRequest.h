@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the HIT to extend.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline CreateAdditionalAssignmentsForHITRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
 
+
     /**
      * <p>The number of additional assignments to request for this HIT.</p>
      */
@@ -85,6 +87,7 @@ namespace Model
      * <p>The number of additional assignments to request for this HIT.</p>
      */
     inline CreateAdditionalAssignmentsForHITRequest& WithNumberOfAdditionalAssignments(int value) { SetNumberOfAdditionalAssignments(value); return *this;}
+
 
     /**
      * <p> A unique identifier for this request, which allows you to retry the call on
@@ -157,10 +160,13 @@ namespace Model
     inline CreateAdditionalAssignmentsForHITRequest& WithUniqueRequestToken(const char* value) { SetUniqueRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_hITId;
     bool m_hITIdHasBeenSet;
+
     int m_numberOfAdditionalAssignments;
     bool m_numberOfAdditionalAssignmentsHasBeenSet;
+
     Aws::String m_uniqueRequestToken;
     bool m_uniqueRequestTokenHasBeenSet;
   };

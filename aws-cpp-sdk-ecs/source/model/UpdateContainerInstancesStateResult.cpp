@@ -30,12 +30,12 @@ UpdateContainerInstancesStateResult::UpdateContainerInstancesStateResult()
 {
 }
 
-UpdateContainerInstancesStateResult::UpdateContainerInstancesStateResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateContainerInstancesStateResult::UpdateContainerInstancesStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateContainerInstancesStateResult& UpdateContainerInstancesStateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateContainerInstancesStateResult& UpdateContainerInstancesStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("containerInstances"))

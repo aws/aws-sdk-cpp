@@ -32,13 +32,13 @@ GetReservedInstancesExchangeQuoteResponse::GetReservedInstancesExchangeQuoteResp
 {
 }
 
-GetReservedInstancesExchangeQuoteResponse::GetReservedInstancesExchangeQuoteResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetReservedInstancesExchangeQuoteResponse::GetReservedInstancesExchangeQuoteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isValidExchange(false)
 {
   *this = result;
 }
 
-GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

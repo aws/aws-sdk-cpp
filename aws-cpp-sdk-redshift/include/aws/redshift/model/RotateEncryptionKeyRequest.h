@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The unique identifier of the cluster that you want to rotate the encryption
      * keys for.</p> <p>Constraints: Must be the name of valid cluster that has
@@ -91,6 +92,7 @@ namespace Model
     inline RotateEncryptionKeyRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
   };

@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The email address to be verified.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
     inline VerifyEmailIdentityRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 
   private:
+
     Aws::String m_emailAddress;
     bool m_emailAddressHasBeenSet;
   };

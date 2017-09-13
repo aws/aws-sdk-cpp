@@ -55,7 +55,7 @@ enum class ElasticsearchServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BASE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BASE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DISABLED_OPERATION,
   INTERNAL,
   INVALID_TYPE,
@@ -64,7 +64,7 @@ enum class ElasticsearchServiceErrors
 };
 namespace ElasticsearchServiceErrorMapper
 {
-  AWS_ELASTICSEARCHSERVICE_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ELASTICSEARCHSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ElasticsearchService

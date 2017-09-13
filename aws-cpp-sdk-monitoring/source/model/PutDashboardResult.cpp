@@ -31,12 +31,12 @@ PutDashboardResult::PutDashboardResult()
 {
 }
 
-PutDashboardResult::PutDashboardResult(const AmazonWebServiceResult<XmlDocument>& result)
+PutDashboardResult::PutDashboardResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-PutDashboardResult& PutDashboardResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PutDashboardResult& PutDashboardResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

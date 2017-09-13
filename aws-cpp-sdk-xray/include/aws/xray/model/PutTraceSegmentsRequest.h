@@ -35,6 +35,7 @@ namespace Model
     PutTraceSegmentsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A string containing a JSON document defining one or more segments or
      * subsegments.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline PutTraceSegmentsRequest& AddTraceSegmentDocuments(const char* value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_traceSegmentDocuments;
     bool m_traceSegmentDocumentsHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The fully qualified domain name for the directory, such as
      * <code>corp.example.com</code>. This name will resolve inside your VPC only. It
@@ -88,6 +89,7 @@ namespace Model
      * does not need to be publicly resolvable.</p>
      */
     inline CreateMicrosoftADRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The NetBIOS name for your domain. A short identifier for your domain, such as
@@ -145,6 +147,7 @@ namespace Model
      */
     inline CreateMicrosoftADRequest& WithShortName(const char* value) { SetShortName(value); return *this;}
 
+
     /**
      * <p>The password for the default administrative user named
      * <code>Admin</code>.</p>
@@ -186,6 +189,7 @@ namespace Model
      * <code>Admin</code>.</p>
      */
     inline CreateMicrosoftADRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
+
 
     /**
      * <p>A textual description for the directory. This label will appear on the AWS
@@ -229,6 +233,7 @@ namespace Model
      */
     inline CreateMicrosoftADRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Contains VPC information for the <a>CreateDirectory</a> or
      * <a>CreateMicrosoftAD</a> operation.</p>
@@ -260,14 +265,19 @@ namespace Model
     inline CreateMicrosoftADRequest& WithVpcSettings(DirectoryVpcSettings&& value) { SetVpcSettings(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_shortName;
     bool m_shortNameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     DirectoryVpcSettings m_vpcSettings;
     bool m_vpcSettingsHasBeenSet;
   };

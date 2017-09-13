@@ -51,7 +51,11 @@ Run::Run() :
     m_billingMethod(BillingMethod::NOT_SET),
     m_billingMethodHasBeenSet(false),
     m_deviceMinutesHasBeenSet(false),
-    m_networkProfileHasBeenSet(false)
+    m_networkProfileHasBeenSet(false),
+    m_parsingResultUrlHasBeenSet(false),
+    m_resultCode(ExecutionResultCode::NOT_SET),
+    m_resultCodeHasBeenSet(false),
+    m_customerArtifactPathsHasBeenSet(false)
 {
 }
 
@@ -78,7 +82,11 @@ Run::Run(const JsonValue& jsonValue) :
     m_billingMethod(BillingMethod::NOT_SET),
     m_billingMethodHasBeenSet(false),
     m_deviceMinutesHasBeenSet(false),
-    m_networkProfileHasBeenSet(false)
+    m_networkProfileHasBeenSet(false),
+    m_parsingResultUrlHasBeenSet(false),
+    m_resultCode(ExecutionResultCode::NOT_SET),
+    m_resultCodeHasBeenSet(false),
+    m_customerArtifactPathsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -197,6 +205,27 @@ Run& Run::operator =(const JsonValue& jsonValue)
     m_networkProfileHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("parsingResultUrl"))
+  {
+    m_parsingResultUrl = jsonValue.GetString("parsingResultUrl");
+
+    m_parsingResultUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resultCode"))
+  {
+    m_resultCode = ExecutionResultCodeMapper::GetExecutionResultCodeForName(jsonValue.GetString("resultCode"));
+
+    m_resultCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customerArtifactPaths"))
+  {
+    m_customerArtifactPaths = jsonValue.GetObject("customerArtifactPaths");
+
+    m_customerArtifactPathsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -289,6 +318,23 @@ JsonValue Run::Jsonize() const
   if(m_networkProfileHasBeenSet)
   {
    payload.WithObject("networkProfile", m_networkProfile.Jsonize());
+
+  }
+
+  if(m_parsingResultUrlHasBeenSet)
+  {
+   payload.WithString("parsingResultUrl", m_parsingResultUrl);
+
+  }
+
+  if(m_resultCodeHasBeenSet)
+  {
+   payload.WithString("resultCode", ExecutionResultCodeMapper::GetNameForExecutionResultCode(m_resultCode));
+  }
+
+  if(m_customerArtifactPathsHasBeenSet)
+  {
+   payload.WithObject("customerArtifactPaths", m_customerArtifactPaths.Jsonize());
 
   }
 

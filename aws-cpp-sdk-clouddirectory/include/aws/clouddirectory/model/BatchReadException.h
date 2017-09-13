@@ -47,6 +47,7 @@ namespace Model
     BatchReadException& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A type of exception, such as <code>InvalidArnException</code>.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>A type of exception, such as <code>InvalidArnException</code>.</p>
      */
     inline BatchReadException& WithType(BatchReadExceptionType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>An exception message that is associated with the failure.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline BatchReadException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     BatchReadExceptionType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

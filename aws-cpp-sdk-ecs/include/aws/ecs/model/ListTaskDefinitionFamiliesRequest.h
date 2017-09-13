@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>familyPrefix</code> is a string that is used to filter the results
      * of <code>ListTaskDefinitionFamilies</code>. If you specify a
@@ -92,6 +93,7 @@ namespace Model
      * <code>familyPrefix</code> string are returned.</p>
      */
     inline ListTaskDefinitionFamiliesRequest& WithFamilyPrefix(const char* value) { SetFamilyPrefix(value); return *this;}
+
 
     /**
      * <p>The task definition family status with which to filter the
@@ -157,6 +159,7 @@ namespace Model
      * value constant in each subsequent request.</p>
      */
     inline ListTaskDefinitionFamiliesRequest& WithStatus(TaskDefinitionFamilyStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -242,6 +245,7 @@ namespace Model
      */
     inline ListTaskDefinitionFamiliesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of task definition family results returned by
      * <code>ListTaskDefinitionFamilies</code> in paginated output. When this parameter
@@ -282,12 +286,16 @@ namespace Model
     inline ListTaskDefinitionFamiliesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_familyPrefix;
     bool m_familyPrefixHasBeenSet;
+
     TaskDefinitionFamilyStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

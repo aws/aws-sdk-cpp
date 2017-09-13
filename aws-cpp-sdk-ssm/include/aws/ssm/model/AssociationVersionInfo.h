@@ -50,6 +50,7 @@ namespace Model
     AssociationVersionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID created by the system when the association was created.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The ID created by the system when the association was created.</p>
      */
     inline AssociationVersionInfo& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
 
     /**
      * <p>The association version.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline AssociationVersionInfo& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
 
+
     /**
      * <p>The date the association version was created.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The date the association version was created.</p>
      */
     inline AssociationVersionInfo& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The name specified when the association was created.</p>
@@ -179,6 +183,7 @@ namespace Model
      * <p>The name specified when the association was created.</p>
      */
     inline AssociationVersionInfo& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The version of an SSM document used when the association version was
@@ -221,6 +226,7 @@ namespace Model
      * created.</p>
      */
     inline AssociationVersionInfo& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
 
     /**
      * <p>Parameters specified when the association version was created.</p>
@@ -277,6 +283,7 @@ namespace Model
      */
     inline AssociationVersionInfo& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The targets specified for the association when the association version was
      * created. </p>
@@ -318,6 +325,7 @@ namespace Model
      * created. </p>
      */
     inline AssociationVersionInfo& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The cron or rate schedule specified for the association when the association
@@ -361,6 +369,7 @@ namespace Model
      */
     inline AssociationVersionInfo& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
+
     /**
      * <p>The location in Amazon S3 specified for the association when the association
      * version was created.</p>
@@ -390,6 +399,7 @@ namespace Model
      * version was created.</p>
      */
     inline AssociationVersionInfo& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+
 
     /**
      * <p>The name specified for the association version when the association version
@@ -434,24 +444,34 @@ namespace Model
     inline AssociationVersionInfo& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     Aws::String m_associationVersion;
     bool m_associationVersionHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+
     InstanceAssociationOutputLocation m_outputLocation;
     bool m_outputLocationHasBeenSet;
+
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
   };

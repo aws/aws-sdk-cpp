@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Contains the bucket name, file format, bucket owner (optional), and prefix
      * (optional) where inventory results are published.
@@ -72,6 +73,7 @@ namespace Model
     inline InventoryDestination& WithS3BucketDestination(InventoryS3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
 
   private:
+
     InventoryS3BucketDestination m_s3BucketDestination;
     bool m_s3BucketDestinationHasBeenSet;
   };

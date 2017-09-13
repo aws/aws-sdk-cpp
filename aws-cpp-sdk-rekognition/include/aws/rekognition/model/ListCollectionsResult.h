@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListCollectionsResult();
-    ListCollectionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCollectionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCollectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCollectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of collection IDs.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>An array of collection IDs.</p>
      */
     inline ListCollectionsResult& AddCollectionIds(const char* value) { m_collectionIds.push_back(value); return *this; }
+
 
     /**
      * <p>If the result is truncated, the response provides a <code>NextToken</code>
@@ -132,7 +134,9 @@ namespace Model
     inline ListCollectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_collectionIds;
+
     Aws::String m_nextToken;
   };
 

@@ -47,6 +47,7 @@ namespace Model
     NotifyWorkersFailureStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Encoded value for the failure type. </p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p> Encoded value for the failure type. </p>
      */
     inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureCode(NotifyWorkersFailureCode&& value) { SetNotifyWorkersFailureCode(std::move(value)); return *this;}
+
 
     /**
      * <p> A message detailing the reason the Worker could not be notified. </p>
@@ -106,6 +108,7 @@ namespace Model
      * <p> A message detailing the reason the Worker could not be notified. </p>
      */
     inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureMessage(const char* value) { SetNotifyWorkersFailureMessage(value); return *this;}
+
 
     /**
      * <p> The ID of the Worker.</p>
@@ -143,10 +146,13 @@ namespace Model
     inline NotifyWorkersFailureStatus& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
 
   private:
+
     NotifyWorkersFailureCode m_notifyWorkersFailureCode;
     bool m_notifyWorkersFailureCodeHasBeenSet;
+
     Aws::String m_notifyWorkersFailureMessage;
     bool m_notifyWorkersFailureMessageHasBeenSet;
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
   };

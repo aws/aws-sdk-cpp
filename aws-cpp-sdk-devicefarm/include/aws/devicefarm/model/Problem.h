@@ -48,6 +48,7 @@ namespace Model
     Problem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Information about the associated run.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>Information about the associated run.</p>
      */
     inline Problem& WithRun(ProblemDetail&& value) { SetRun(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the associated job.</p>
@@ -98,6 +100,7 @@ namespace Model
      */
     inline Problem& WithJob(ProblemDetail&& value) { SetJob(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the associated suite.</p>
      */
@@ -122,6 +125,7 @@ namespace Model
      * <p>Information about the associated suite.</p>
      */
     inline Problem& WithSuite(ProblemDetail&& value) { SetSuite(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the associated test.</p>
@@ -148,6 +152,7 @@ namespace Model
      */
     inline Problem& WithTest(ProblemDetail&& value) { SetTest(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the associated device.</p>
      */
@@ -172,6 +177,7 @@ namespace Model
      * <p>Information about the associated device.</p>
      */
     inline Problem& WithDevice(Device&& value) { SetDevice(std::move(value)); return *this;}
+
 
     /**
      * <p>The problem's result.</p> <p>Allowed values include:</p> <ul> <li>
@@ -223,6 +229,7 @@ namespace Model
      */
     inline Problem& WithResult(ExecutionResult&& value) { SetResult(std::move(value)); return *this;}
 
+
     /**
      * <p>A message about the problem's result.</p>
      */
@@ -259,18 +266,25 @@ namespace Model
     inline Problem& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     ProblemDetail m_run;
     bool m_runHasBeenSet;
+
     ProblemDetail m_job;
     bool m_jobHasBeenSet;
+
     ProblemDetail m_suite;
     bool m_suiteHasBeenSet;
+
     ProblemDetail m_test;
     bool m_testHasBeenSet;
+
     Device m_device;
     bool m_deviceHasBeenSet;
+
     ExecutionResult m_result;
     bool m_resultHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

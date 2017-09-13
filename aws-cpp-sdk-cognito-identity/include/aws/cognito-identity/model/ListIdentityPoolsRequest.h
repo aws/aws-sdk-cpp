@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The maximum number of identities to return.</p>
      */
@@ -53,6 +54,7 @@ namespace Model
      * <p>The maximum number of identities to return.</p>
      */
     inline ListIdentityPoolsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A pagination token.</p>
@@ -90,8 +92,10 @@ namespace Model
     inline ListIdentityPoolsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

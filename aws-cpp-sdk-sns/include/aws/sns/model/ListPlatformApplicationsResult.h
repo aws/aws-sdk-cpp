@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListPlatformApplicationsResult();
-    ListPlatformApplicationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListPlatformApplicationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListPlatformApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListPlatformApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Platform applications returned when calling ListPlatformApplications
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ListPlatformApplicationsResult& AddPlatformApplications(PlatformApplication&& value) { m_platformApplications.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>NextToken string is returned when calling ListPlatformApplications action if
      * additional records are available after the first page results.</p>
@@ -133,6 +135,7 @@ namespace Model
      */
     inline ListPlatformApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -149,8 +152,11 @@ namespace Model
     inline ListPlatformApplicationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<PlatformApplication> m_platformApplications;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

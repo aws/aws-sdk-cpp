@@ -31,12 +31,12 @@ RotateEncryptionKeyResult::RotateEncryptionKeyResult()
 {
 }
 
-RotateEncryptionKeyResult::RotateEncryptionKeyResult(const AmazonWebServiceResult<XmlDocument>& result)
+RotateEncryptionKeyResult::RotateEncryptionKeyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RotateEncryptionKeyResult& RotateEncryptionKeyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RotateEncryptionKeyResult& RotateEncryptionKeyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

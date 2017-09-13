@@ -47,6 +47,7 @@ namespace Model
     ServerEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The time when the event occurred. </p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The time when the event occurred. </p>
      */
     inline ServerEvent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the server on or for which the event occurred. </p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline ServerEvent& WithServerName(const char* value) { SetServerName(value); return *this;}
 
+
     /**
      * <p>A human-readable informational or status message.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>A human-readable informational or status message.</p>
      */
     inline ServerEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>The Amazon S3 URL of the event's log file.</p>
@@ -178,12 +182,16 @@ namespace Model
     inline ServerEvent& WithLogUrl(const char* value) { SetLogUrl(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_logUrl;
     bool m_logUrlHasBeenSet;
   };

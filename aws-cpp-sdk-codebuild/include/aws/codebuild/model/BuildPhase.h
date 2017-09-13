@@ -49,6 +49,7 @@ namespace Model
     BuildPhase& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the build phase. Valid values include:</p> <ul> <li> <p>
      * <code>BUILD</code>: Core build activities typically occur in this build
@@ -139,6 +140,7 @@ namespace Model
      */
     inline BuildPhase& WithPhaseType(BuildPhaseType&& value) { SetPhaseType(std::move(value)); return *this;}
 
+
     /**
      * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
      * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
@@ -194,6 +196,7 @@ namespace Model
      */
     inline BuildPhase& WithPhaseStatus(StatusType&& value) { SetPhaseStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>When the build phase started, expressed in Unix time format.</p>
      */
@@ -218,6 +221,7 @@ namespace Model
      * <p>When the build phase started, expressed in Unix time format.</p>
      */
     inline BuildPhase& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>When the build phase ended, expressed in Unix time format.</p>
@@ -244,6 +248,7 @@ namespace Model
      */
     inline BuildPhase& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>How long, in seconds, between the starting and ending times of the build's
      * phase.</p>
@@ -261,6 +266,7 @@ namespace Model
      * phase.</p>
      */
     inline BuildPhase& WithDurationInSeconds(long long value) { SetDurationInSeconds(value); return *this;}
+
 
     /**
      * <p>Additional information about a build phase, especially to help troubleshoot a
@@ -305,16 +311,22 @@ namespace Model
     inline BuildPhase& AddContexts(PhaseContext&& value) { m_contextsHasBeenSet = true; m_contexts.push_back(std::move(value)); return *this; }
 
   private:
+
     BuildPhaseType m_phaseType;
     bool m_phaseTypeHasBeenSet;
+
     StatusType m_phaseStatus;
     bool m_phaseStatusHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     long long m_durationInSeconds;
     bool m_durationInSecondsHasBeenSet;
+
     Aws::Vector<PhaseContext> m_contexts;
     bool m_contextsHasBeenSet;
   };

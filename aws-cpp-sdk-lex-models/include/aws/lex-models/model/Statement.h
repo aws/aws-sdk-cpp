@@ -48,6 +48,7 @@ namespace Model
     Statement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A collection of message objects.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>A collection of message objects.</p>
      */
     inline Statement& AddMessages(Message&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> At runtime, if the client is using the <a
@@ -147,8 +149,10 @@ namespace Model
     inline Statement& WithResponseCard(const char* value) { SetResponseCard(value); return *this;}
 
   private:
+
     Aws::Vector<Message> m_messages;
     bool m_messagesHasBeenSet;
+
     Aws::String m_responseCard;
     bool m_responseCardHasBeenSet;
   };

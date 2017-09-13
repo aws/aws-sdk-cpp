@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name for the replication subnet group. This value is stored as a
      * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
@@ -97,6 +98,7 @@ namespace Model
      */
     inline CreateReplicationSubnetGroupRequest& WithReplicationSubnetGroupIdentifier(const char* value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
 
+
     /**
      * <p>The description for the subnet group.</p>
      */
@@ -131,6 +133,7 @@ namespace Model
      * <p>The description for the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithReplicationSubnetGroupDescription(const char* value) { SetReplicationSubnetGroupDescription(value); return *this;}
+
 
     /**
      * <p>The EC2 subnet IDs for the subnet group.</p>
@@ -172,6 +175,7 @@ namespace Model
      */
     inline CreateReplicationSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     /**
      * <p>The tag to be assigned to the subnet group.</p>
      */
@@ -208,12 +212,16 @@ namespace Model
     inline CreateReplicationSubnetGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_replicationSubnetGroupIdentifier;
     bool m_replicationSubnetGroupIdentifierHasBeenSet;
+
     Aws::String m_replicationSubnetGroupDescription;
     bool m_replicationSubnetGroupDescriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeAgentsResult();
-    DescribeAgentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAgentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAgentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAgentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
@@ -105,6 +106,7 @@ namespace Model
      * and the version number of each agent/Connector.</p>
      */
     inline DescribeAgentsResult& AddAgentsInfo(AgentInfo&& value) { m_agentsInfo.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token to retrieve the next set of results. For example, if you specified 100
@@ -170,7 +172,9 @@ namespace Model
     inline DescribeAgentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<AgentInfo> m_agentsInfo;
+
     Aws::String m_nextToken;
   };
 

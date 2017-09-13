@@ -46,6 +46,7 @@ namespace Model
     UserInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the user who made the specified commit.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline UserInfo& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The email address associated with the user who made the commit, if any.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The email address associated with the user who made the commit, if any.</p>
      */
     inline UserInfo& WithEmail(const char* value) { SetEmail(value); return *this;}
+
 
     /**
      * <p>The date when the specified commit was pushed to the repository.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline UserInfo& WithDate(const char* value) { SetDate(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_email;
     bool m_emailHasBeenSet;
+
     Aws::String m_date;
     bool m_dateHasBeenSet;
   };

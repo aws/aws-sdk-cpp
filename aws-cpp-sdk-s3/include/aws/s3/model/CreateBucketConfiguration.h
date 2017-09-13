@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Specifies the region where the bucket will be created. If you don't specify a
      * region, the bucket will be created in US Standard.
@@ -72,6 +73,7 @@ namespace Model
     inline CreateBucketConfiguration& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(std::move(value)); return *this;}
 
   private:
+
     BucketLocationConstraint m_locationConstraint;
     bool m_locationConstraintHasBeenSet;
   };

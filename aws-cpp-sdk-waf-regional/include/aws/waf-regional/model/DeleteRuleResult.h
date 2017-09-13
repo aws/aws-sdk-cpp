@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteRuleResult();
-    DeleteRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -91,6 +92,7 @@ namespace Model
     inline DeleteRuleResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_changeToken;
   };
 

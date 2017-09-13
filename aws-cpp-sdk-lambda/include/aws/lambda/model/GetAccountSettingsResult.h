@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetAccountSettingsResult();
-    GetAccountSettingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAccountSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAccountSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const AccountLimit& GetAccountLimit() const{ return m_accountLimit; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline GetAccountSettingsResult& WithAccountLimit(AccountLimit&& value) { SetAccountLimit(std::move(value)); return *this;}
+
 
     
     inline const AccountUsage& GetAccountUsage() const{ return m_accountUsage; }
@@ -73,7 +75,9 @@ namespace Model
     inline GetAccountSettingsResult& WithAccountUsage(AccountUsage&& value) { SetAccountUsage(std::move(value)); return *this;}
 
   private:
+
     AccountLimit m_accountLimit;
+
     AccountUsage m_accountUsage;
   };
 

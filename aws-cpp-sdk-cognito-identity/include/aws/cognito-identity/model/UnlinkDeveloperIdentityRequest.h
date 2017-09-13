@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline UnlinkDeveloperIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline UnlinkDeveloperIdentityRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * <p>The "domain" by which Cognito will refer to your users.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The "domain" by which Cognito will refer to your users.</p>
      */
     inline UnlinkDeveloperIdentityRequest& WithDeveloperProviderName(const char* value) { SetDeveloperProviderName(value); return *this;}
+
 
     /**
      * <p>A unique ID used by your backend authentication process to identify a
@@ -188,12 +192,16 @@ namespace Model
     inline UnlinkDeveloperIdentityRequest& WithDeveloperUserIdentifier(const char* value) { SetDeveloperUserIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::String m_developerProviderName;
     bool m_developerProviderNameHasBeenSet;
+
     Aws::String m_developerUserIdentifier;
     bool m_developerUserIdentifierHasBeenSet;
   };

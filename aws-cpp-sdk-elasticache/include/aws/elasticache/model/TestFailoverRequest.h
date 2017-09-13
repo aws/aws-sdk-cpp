@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the replication group (console: cluster) whose automatic failover
      * is being tested by this operation.</p>
@@ -79,6 +80,7 @@ namespace Model
      * is being tested by this operation.</p>
      */
     inline TestFailoverRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+
 
     /**
      * <p>The name of the node group (called shard in the console) in this replication
@@ -130,8 +132,10 @@ namespace Model
     inline TestFailoverRequest& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
 
   private:
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
     Aws::String m_nodeGroupId;
     bool m_nodeGroupIdHasBeenSet;
   };

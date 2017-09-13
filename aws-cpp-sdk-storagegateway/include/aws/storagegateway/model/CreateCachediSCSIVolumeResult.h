@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateCachediSCSIVolumeResult();
-    CreateCachediSCSIVolumeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCachediSCSIVolumeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCachediSCSIVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCachediSCSIVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline CreateCachediSCSIVolumeResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+
 
     
     inline const Aws::String& GetTargetARN() const{ return m_targetARN; }
@@ -84,7 +86,9 @@ namespace Model
     inline CreateCachediSCSIVolumeResult& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
+
     Aws::String m_targetARN;
   };
 

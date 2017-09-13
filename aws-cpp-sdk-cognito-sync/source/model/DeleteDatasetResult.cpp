@@ -30,12 +30,12 @@ DeleteDatasetResult::DeleteDatasetResult()
 {
 }
 
-DeleteDatasetResult::DeleteDatasetResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDatasetResult::DeleteDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteDatasetResult& DeleteDatasetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDatasetResult& DeleteDatasetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Dataset"))

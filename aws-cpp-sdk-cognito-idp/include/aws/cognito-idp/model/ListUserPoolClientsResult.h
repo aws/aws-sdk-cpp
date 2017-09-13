@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListUserPoolClientsResult();
-    ListUserPoolClientsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUserPoolClientsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUserPoolClientsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUserPoolClientsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The user pool clients in the response that lists user pool clients.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The user pool clients in the response that lists user pool clients.</p>
      */
     inline ListUserPoolClientsResult& AddUserPoolClients(UserPoolClientDescription&& value) { m_userPoolClients.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -127,7 +129,9 @@ namespace Model
     inline ListUserPoolClientsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<UserPoolClientDescription> m_userPoolClients;
+
     Aws::String m_nextToken;
   };
 

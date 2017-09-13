@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the environment to retrieve AWS resource usage data.</p> <p>
      * Condition: You must specify either this or an EnvironmentName, or both. If you
@@ -97,6 +98,7 @@ namespace Model
      * <code>MissingRequiredParameter</code> error. </p>
      */
     inline DescribeEnvironmentResourcesRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The name of the environment to retrieve AWS resource usage data.</p> <p>
@@ -155,8 +157,10 @@ namespace Model
     inline DescribeEnvironmentResourcesRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
   private:
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
   };

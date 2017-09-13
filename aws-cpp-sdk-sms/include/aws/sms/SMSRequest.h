@@ -23,7 +23,7 @@ namespace Aws
 {
 namespace SMS
 {
-  class AWS_SMS_API SMSRequest : public AmazonSerializableWebServiceRequest
+  class AWS_SMS_API SMSRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~SMSRequest () {}
@@ -37,7 +37,7 @@ namespace SMS
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_JSON_CONTENT_TYPE_1_1 ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_1 ));
       }
 
       return headers;

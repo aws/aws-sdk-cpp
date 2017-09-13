@@ -46,6 +46,7 @@ namespace Model
     InstancePortState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The first port in the range.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      */
     inline InstancePortState& WithFromPort(int value) { SetFromPort(value); return *this;}
 
+
     /**
      * <p>The last port in the range.</p>
      */
@@ -75,6 +77,7 @@ namespace Model
      * <p>The last port in the range.</p>
      */
     inline InstancePortState& WithToPort(int value) { SetToPort(value); return *this;}
+
 
     /**
      * <p>The protocol being used. Can be one of the following.</p> <ul> <li> <p>
@@ -171,6 +174,7 @@ namespace Model
      */
     inline InstancePortState& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies whether the instance port is <code>open</code> or
      * <code>closed</code>.</p>
@@ -202,12 +206,16 @@ namespace Model
     inline InstancePortState& WithState(PortState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     int m_fromPort;
     bool m_fromPortHasBeenSet;
+
     int m_toPort;
     bool m_toPortHasBeenSet;
+
     NetworkProtocol m_protocol;
     bool m_protocolHasBeenSet;
+
     PortState m_state;
     bool m_stateHasBeenSet;
   };

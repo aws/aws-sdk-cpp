@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetRegistrationCodeResult();
-    GetRegistrationCodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRegistrationCodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRegistrationCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRegistrationCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The CA certificate registration code.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline GetRegistrationCodeResult& WithRegistrationCode(const char* value) { SetRegistrationCode(value); return *this;}
 
   private:
+
     Aws::String m_registrationCode;
   };
 

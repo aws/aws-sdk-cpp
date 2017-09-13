@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::Vector<Aws::String>& GetVolumeARNs() const{ return m_volumeARNs; }
 
@@ -62,6 +63,7 @@ namespace Model
     inline DescribeCachediSCSIVolumesRequest& AddVolumeARNs(const char* value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_volumeARNs;
     bool m_volumeARNsHasBeenSet;
   };

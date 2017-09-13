@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the ProgressUpdateStream. </p>
      */
     inline AssociateCreatedArtifactRequest& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
+
 
     /**
      * <p>Unique identifier that references the migration task.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline AssociateCreatedArtifactRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 
+
     /**
      * <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance,
      * RDS instance, etc.) </p>
@@ -137,6 +140,7 @@ namespace Model
      */
     inline AssociateCreatedArtifactRequest& WithCreatedArtifact(CreatedArtifact&& value) { SetCreatedArtifact(std::move(value)); return *this;}
 
+
     /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
@@ -156,12 +160,16 @@ namespace Model
     inline AssociateCreatedArtifactRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_progressUpdateStream;
     bool m_progressUpdateStreamHasBeenSet;
+
     Aws::String m_migrationTaskName;
     bool m_migrationTaskNameHasBeenSet;
+
     CreatedArtifact m_createdArtifact;
     bool m_createdArtifactHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

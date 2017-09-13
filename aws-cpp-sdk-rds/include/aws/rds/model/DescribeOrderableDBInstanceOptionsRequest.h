@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name of the engine to retrieve DB instance options for.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The engine version filter value. Specify this parameter to show only the
@@ -120,6 +122,7 @@ namespace Model
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>The DB instance class filter value. Specify this parameter to show only the
      * available offerings matching the specified DB instance class.</p>
@@ -161,6 +164,7 @@ namespace Model
      * available offerings matching the specified DB instance class.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
+
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
@@ -204,6 +208,7 @@ namespace Model
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
+
     /**
      * <p>The VPC filter value. Specify this parameter to show only the available VPC
      * or non-VPC offerings.</p>
@@ -221,6 +226,7 @@ namespace Model
      * or non-VPC offerings.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithVpc(bool value) { SetVpc(value); return *this;}
+
 
     /**
      * <p>This parameter is not currently supported.</p>
@@ -257,6 +263,7 @@ namespace Model
      */
     inline DescribeOrderableDBInstanceOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -280,6 +287,7 @@ namespace Model
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -338,20 +346,28 @@ namespace Model
     inline DescribeOrderableDBInstanceOptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
     bool m_vpc;
     bool m_vpcHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Indicates whether to allow an IP address that is already assigned to another
      * network interface or instance to be reassigned to the specified network
@@ -63,6 +64,7 @@ namespace Model
      * interface.</p>
      */
     inline AssignPrivateIpAddressesRequest& WithAllowReassignment(bool value) { SetAllowReassignment(value); return *this;}
+
 
     /**
      * <p>The ID of the network interface.</p>
@@ -98,6 +100,7 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline AssignPrivateIpAddressesRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
 
     /**
      * <p>One or more IP addresses to be assigned as a secondary private IP address to
@@ -163,6 +166,7 @@ namespace Model
      */
     inline AssignPrivateIpAddressesRequest& AddPrivateIpAddresses(const char* value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
+
     /**
      * <p>The number of secondary IP addresses to assign to the network interface. You
      * can't specify this parameter when also specifying private IP addresses.</p>
@@ -182,12 +186,16 @@ namespace Model
     inline AssignPrivateIpAddressesRequest& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 
   private:
+
     bool m_allowReassignment;
     bool m_allowReassignmentHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
+
     int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet;
   };

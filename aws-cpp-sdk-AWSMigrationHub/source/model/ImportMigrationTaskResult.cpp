@@ -30,12 +30,12 @@ ImportMigrationTaskResult::ImportMigrationTaskResult()
 {
 }
 
-ImportMigrationTaskResult::ImportMigrationTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+ImportMigrationTaskResult::ImportMigrationTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ImportMigrationTaskResult& ImportMigrationTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ImportMigrationTaskResult& ImportMigrationTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     AttachStaticIpResult();
-    AttachStaticIpResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachStaticIpResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachStaticIpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachStaticIpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about your API
@@ -85,6 +86,7 @@ namespace Model
     inline AttachStaticIpResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Operation> m_operations;
   };
 

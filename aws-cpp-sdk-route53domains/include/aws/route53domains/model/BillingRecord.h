@@ -47,6 +47,7 @@ namespace Model
     BillingRecord& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the domain that the billing record applies to. If the domain name
      * contains characters other than a-z, 0-9, and - (hyphen), such as an
@@ -117,6 +118,7 @@ namespace Model
      */
     inline BillingRecord& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The operation that you were charged for.</p>
      */
@@ -141,6 +143,7 @@ namespace Model
      * <p>The operation that you were charged for.</p>
      */
     inline BillingRecord& WithOperation(OperationType&& value) { SetOperation(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
@@ -177,6 +180,7 @@ namespace Model
      */
     inline BillingRecord& WithInvoiceId(const char* value) { SetInvoiceId(value); return *this;}
 
+
     /**
      * <p>The date that the operation was billed, in Unix format.</p>
      */
@@ -202,6 +206,7 @@ namespace Model
      */
     inline BillingRecord& WithBillDate(Aws::Utils::DateTime&& value) { SetBillDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The price that you were charged for the operation, in US dollars.</p>
      * <p>Example value: 12.0</p>
@@ -221,14 +226,19 @@ namespace Model
     inline BillingRecord& WithPrice(double value) { SetPrice(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     OperationType m_operation;
     bool m_operationHasBeenSet;
+
     Aws::String m_invoiceId;
     bool m_invoiceIdHasBeenSet;
+
     Aws::Utils::DateTime m_billDate;
     bool m_billDateHasBeenSet;
+
     double m_price;
     bool m_priceHasBeenSet;
   };

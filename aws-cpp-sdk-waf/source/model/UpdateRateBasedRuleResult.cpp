@@ -30,12 +30,12 @@ UpdateRateBasedRuleResult::UpdateRateBasedRuleResult()
 {
 }
 
-UpdateRateBasedRuleResult::UpdateRateBasedRuleResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRateBasedRuleResult::UpdateRateBasedRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateRateBasedRuleResult& UpdateRateBasedRuleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRateBasedRuleResult& UpdateRateBasedRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

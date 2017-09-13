@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the high-availability partition group to modify.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ModifyHapgRequest& WithHapgArn(const char* value) { SetHapgArn(value); return *this;}
 
+
     /**
      * <p>The new label for the high-availability partition group.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The new label for the high-availability partition group.</p>
      */
     inline ModifyHapgRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
+
 
     /**
      * <p>The list of partition serial numbers to make members of the high-availability
@@ -156,10 +159,13 @@ namespace Model
     inline ModifyHapgRequest& AddPartitionSerialList(const char* value) { m_partitionSerialListHasBeenSet = true; m_partitionSerialList.push_back(value); return *this; }
 
   private:
+
     Aws::String m_hapgArn;
     bool m_hapgArnHasBeenSet;
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
+
     Aws::Vector<Aws::String> m_partitionSerialList;
     bool m_partitionSerialListHasBeenSet;
   };

@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     active,
     provisioning,
+    active_impaired,
     failed
   };
 

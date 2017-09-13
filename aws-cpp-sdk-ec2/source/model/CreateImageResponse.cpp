@@ -31,12 +31,12 @@ CreateImageResponse::CreateImageResponse()
 {
 }
 
-CreateImageResponse::CreateImageResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateImageResponse::CreateImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateImageResponse& CreateImageResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateImageResponse& CreateImageResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

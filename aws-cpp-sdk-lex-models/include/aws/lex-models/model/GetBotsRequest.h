@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>A pagination token that fetches the next page of bots. If the response to
      * this call is truncated, Amazon Lex returns a pagination token in the response.
@@ -96,6 +97,7 @@ namespace Model
      */
     inline GetBotsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of bots to return in the response that the request will
      * return. The default is 10.</p>
@@ -113,6 +115,7 @@ namespace Model
      * return. The default is 10.</p>
      */
     inline GetBotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Substring to match in bot names. A bot will be returned if any part of its
@@ -164,10 +167,13 @@ namespace Model
     inline GetBotsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet;
   };

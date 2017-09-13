@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetRepositoryResult();
-    GetRepositoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRepositoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the repository.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline GetRepositoryResult& WithRepositoryMetadata(RepositoryMetadata&& value) { SetRepositoryMetadata(std::move(value)); return *this;}
 
   private:
+
     RepositoryMetadata m_repositoryMetadata;
   };
 

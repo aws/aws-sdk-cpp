@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeHostsResponse();
-    DescribeHostsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeHostsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeHostsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeHostsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the Dedicated Hosts.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the Dedicated Hosts.</p>
      */
     inline DescribeHostsResponse& AddHosts(Host&& value) { m_hosts.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -126,6 +128,7 @@ namespace Model
      */
     inline DescribeHostsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline DescribeHostsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Host> m_hosts;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

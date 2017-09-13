@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeElasticsearchDomainConfigResult();
-    DescribeElasticsearchDomainConfigResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeElasticsearchDomainConfigResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticsearchDomainConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticsearchDomainConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The configuration information of the domain requested in the
@@ -79,6 +80,7 @@ namespace Model
     inline DescribeElasticsearchDomainConfigResult& WithDomainConfig(ElasticsearchDomainConfig&& value) { SetDomainConfig(std::move(value)); return *this;}
 
   private:
+
     ElasticsearchDomainConfig m_domainConfig;
   };
 

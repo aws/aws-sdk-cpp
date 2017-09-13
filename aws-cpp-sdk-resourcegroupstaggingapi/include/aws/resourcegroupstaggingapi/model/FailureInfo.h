@@ -47,6 +47,7 @@ namespace Model
     FailureInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The HTTP status code of the common error.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>The HTTP status code of the common error.</p>
      */
     inline FailureInfo& WithStatusCode(int value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>The code of the common error. Valid values include
@@ -102,6 +104,7 @@ namespace Model
      */
     inline FailureInfo& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
+
     /**
      * <p>The message of the common error.</p>
      */
@@ -138,10 +141,13 @@ namespace Model
     inline FailureInfo& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     int m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     ErrorCode m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

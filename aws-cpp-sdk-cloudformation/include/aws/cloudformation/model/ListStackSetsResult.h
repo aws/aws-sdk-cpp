@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     ListStackSetsResult();
-    ListStackSetsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListStackSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListStackSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListStackSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of <code>StackSetSummary</code> structures that contain information
@@ -85,6 +86,7 @@ namespace Model
      * about the user's stack sets.</p>
      */
     inline ListStackSetsResult& AddSummaries(StackSetSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the request doesn't return all of the remaining results,
@@ -149,6 +151,7 @@ namespace Model
      */
     inline ListStackSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -165,8 +168,11 @@ namespace Model
     inline ListStackSetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<StackSetSummary> m_summaries;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -34,6 +34,7 @@ namespace Model
     GetSubscriptionDefinitionVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * subscription definition Id
      */
@@ -68,6 +69,7 @@ namespace Model
      * subscription definition Id
      */
     inline GetSubscriptionDefinitionVersionRequest& WithSubscriptionDefinitionId(const char* value) { SetSubscriptionDefinitionId(value); return *this;}
+
 
     /**
      * subscription definition version Id
@@ -105,8 +107,10 @@ namespace Model
     inline GetSubscriptionDefinitionVersionRequest& WithSubscriptionDefinitionVersionId(const char* value) { SetSubscriptionDefinitionVersionId(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionDefinitionId;
     bool m_subscriptionDefinitionIdHasBeenSet;
+
     Aws::String m_subscriptionDefinitionVersionId;
     bool m_subscriptionDefinitionVersionIdHasBeenSet;
   };

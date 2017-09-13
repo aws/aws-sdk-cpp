@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the development
      * schema. For more information, see <a>arns</a>.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline PublishSchemaRequest& WithDevelopmentSchemaArn(const char* value) { SetDevelopmentSchemaArn(value); return *this;}
 
+
     /**
      * <p>The version under which the schema will be published.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The version under which the schema will be published.</p>
      */
     inline PublishSchemaRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The new name under which the schema will be published. If this is not
@@ -156,10 +159,13 @@ namespace Model
     inline PublishSchemaRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_developmentSchemaArn;
     bool m_developmentSchemaArnHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

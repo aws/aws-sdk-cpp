@@ -47,6 +47,7 @@ namespace Model
     WorkflowExecutionTimedOutEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of timeout that caused this event.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The type of timeout that caused this event.</p>
      */
     inline WorkflowExecutionTimedOutEventAttributes& WithTimeoutType(WorkflowExecutionTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
+
 
     /**
      * <p>The policy used for the child workflow executions of this workflow
@@ -138,8 +140,10 @@ namespace Model
     inline WorkflowExecutionTimedOutEventAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
   private:
+
     WorkflowExecutionTimeoutType m_timeoutType;
     bool m_timeoutTypeHasBeenSet;
+
     ChildPolicy m_childPolicy;
     bool m_childPolicyHasBeenSet;
   };

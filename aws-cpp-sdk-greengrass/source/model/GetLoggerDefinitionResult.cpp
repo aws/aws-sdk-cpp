@@ -30,12 +30,12 @@ GetLoggerDefinitionResult::GetLoggerDefinitionResult()
 {
 }
 
-GetLoggerDefinitionResult::GetLoggerDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetLoggerDefinitionResult::GetLoggerDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetLoggerDefinitionResult& GetLoggerDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetLoggerDefinitionResult& GetLoggerDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Arn"))

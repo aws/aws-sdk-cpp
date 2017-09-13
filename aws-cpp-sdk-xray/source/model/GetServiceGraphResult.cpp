@@ -30,12 +30,12 @@ GetServiceGraphResult::GetServiceGraphResult()
 {
 }
 
-GetServiceGraphResult::GetServiceGraphResult(const AmazonWebServiceResult<JsonValue>& result)
+GetServiceGraphResult::GetServiceGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetServiceGraphResult& GetServiceGraphResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetServiceGraphResult& GetServiceGraphResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StartTime"))

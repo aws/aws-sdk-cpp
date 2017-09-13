@@ -30,12 +30,12 @@ CreateHsmResult::CreateHsmResult()
 {
 }
 
-CreateHsmResult::CreateHsmResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateHsmResult::CreateHsmResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateHsmResult& CreateHsmResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateHsmResult& CreateHsmResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HsmArn"))

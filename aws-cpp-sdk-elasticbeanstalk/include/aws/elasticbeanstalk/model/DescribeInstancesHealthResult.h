@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     DescribeInstancesHealthResult();
-    DescribeInstancesHealthResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeInstancesHealthResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeInstancesHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeInstancesHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Detailed health information about each instance.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeInstancesHealthResult& AddInstanceHealthList(SingleInstanceHealth&& value) { m_instanceHealthList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The date and time that the health information was retrieved.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The date and time that the health information was retrieved.</p>
      */
     inline DescribeInstancesHealthResult& WithRefreshedAt(Aws::Utils::DateTime&& value) { SetRefreshedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>Pagination token for the next page of results, if available.</p>
@@ -146,6 +149,7 @@ namespace Model
      */
     inline DescribeInstancesHealthResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -162,9 +166,13 @@ namespace Model
     inline DescribeInstancesHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<SingleInstanceHealth> m_instanceHealthList;
+
     Aws::Utils::DateTime m_refreshedAt;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

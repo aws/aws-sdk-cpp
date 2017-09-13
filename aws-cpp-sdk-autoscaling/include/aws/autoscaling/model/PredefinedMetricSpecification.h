@@ -58,6 +58,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The metric type.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The metric type.</p>
      */
     inline PredefinedMetricSpecification& WithPredefinedMetricType(MetricType&& value) { SetPredefinedMetricType(std::move(value)); return *this;}
+
 
     /**
      * <p>Identifies the resource associated with the metric type. For predefined
@@ -203,8 +205,10 @@ namespace Model
     inline PredefinedMetricSpecification& WithResourceLabel(const char* value) { SetResourceLabel(value); return *this;}
 
   private:
+
     MetricType m_predefinedMetricType;
     bool m_predefinedMetricTypeHasBeenSet;
+
     Aws::String m_resourceLabel;
     bool m_resourceLabelHasBeenSet;
   };

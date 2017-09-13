@@ -31,13 +31,13 @@ DescribeNodeAssociationStatusResult::DescribeNodeAssociationStatusResult() :
 {
 }
 
-DescribeNodeAssociationStatusResult::DescribeNodeAssociationStatusResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeNodeAssociationStatusResult::DescribeNodeAssociationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_nodeAssociationStatus(NodeAssociationStatus::NOT_SET)
 {
   *this = result;
 }
 
-DescribeNodeAssociationStatusResult& DescribeNodeAssociationStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeNodeAssociationStatusResult& DescribeNodeAssociationStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NodeAssociationStatus"))

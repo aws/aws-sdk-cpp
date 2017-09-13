@@ -48,6 +48,7 @@ namespace Model
     Event& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The identifier of the event source. An identifier must begin with a letter
      * and must contain only ASCII letters, digits, and hyphens; it cannot end with a
@@ -104,6 +105,7 @@ namespace Model
      */
     inline Event& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
+
     /**
      * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | endpoint | migration-task</p>
@@ -133,6 +135,7 @@ namespace Model
      * replication-instance | endpoint | migration-task</p>
      */
     inline Event& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The event message.</p>
@@ -168,6 +171,7 @@ namespace Model
      * <p>The event message.</p>
      */
     inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>The event categories available for the specified source type.</p>
@@ -209,6 +213,7 @@ namespace Model
      */
     inline Event& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
+
     /**
      * <p>The date of the event.</p>
      */
@@ -235,14 +240,19 @@ namespace Model
     inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
+
     SourceType m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet;
+
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
   };

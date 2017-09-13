@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Descriptive label that is associated with a build. Build names do not need to
      * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CreateBuildRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Version that is associated with this build. Version strings do not need to be
      * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
@@ -124,6 +126,7 @@ namespace Model
      * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline CreateBuildRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
@@ -180,6 +183,7 @@ namespace Model
      */
     inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
+
     /**
      * <p>Operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
@@ -221,12 +225,16 @@ namespace Model
     inline CreateBuildRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     S3Location m_storageLocation;
     bool m_storageLocationHasBeenSet;
+
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
   };

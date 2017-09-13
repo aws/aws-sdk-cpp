@@ -30,12 +30,12 @@ UpdateDeploymentGroupResult::UpdateDeploymentGroupResult()
 {
 }
 
-UpdateDeploymentGroupResult::UpdateDeploymentGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDeploymentGroupResult::UpdateDeploymentGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateDeploymentGroupResult& UpdateDeploymentGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDeploymentGroupResult& UpdateDeploymentGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("hooksNotCleanedUp"))

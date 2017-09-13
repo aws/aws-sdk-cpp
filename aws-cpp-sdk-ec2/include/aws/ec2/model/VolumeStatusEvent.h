@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A description of the event.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>A description of the event.</p>
      */
     inline VolumeStatusEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The ID of this event.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline VolumeStatusEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
 
+
     /**
      * <p>The type of this event.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline VolumeStatusEvent& WithEventType(const char* value) { SetEventType(value); return *this;}
 
+
     /**
      * <p>The latest end time of the event.</p>
      */
@@ -178,6 +182,7 @@ namespace Model
      * <p>The latest end time of the event.</p>
      */
     inline VolumeStatusEvent& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(std::move(value)); return *this;}
+
 
     /**
      * <p>The earliest start time of the event.</p>
@@ -205,14 +210,19 @@ namespace Model
     inline VolumeStatusEvent& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;
+
     Aws::String m_eventType;
     bool m_eventTypeHasBeenSet;
+
     Aws::Utils::DateTime m_notAfter;
     bool m_notAfterHasBeenSet;
+
     Aws::Utils::DateTime m_notBefore;
     bool m_notBeforeHasBeenSet;
   };

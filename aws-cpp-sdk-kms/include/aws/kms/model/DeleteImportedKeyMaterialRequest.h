@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the CMK whose key material to delete. The CMK's
      * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>A valid identifier is
@@ -114,6 +115,7 @@ namespace Model
     inline DeleteImportedKeyMaterialRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
   };

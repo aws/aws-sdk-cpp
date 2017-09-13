@@ -30,12 +30,12 @@ GetUtterancesViewResult::GetUtterancesViewResult()
 {
 }
 
-GetUtterancesViewResult::GetUtterancesViewResult(const AmazonWebServiceResult<JsonValue>& result)
+GetUtterancesViewResult::GetUtterancesViewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetUtterancesViewResult& GetUtterancesViewResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetUtterancesViewResult& GetUtterancesViewResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("botName"))

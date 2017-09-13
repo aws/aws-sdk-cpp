@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
      * WorkMail action is called. An example of an Amazon SNS topic ARN is
@@ -123,6 +124,7 @@ namespace Model
      * Developer Guide</a>.</p>
      */
     inline WorkmailAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+
 
     /**
      * <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail
@@ -195,8 +197,10 @@ namespace Model
     inline WorkmailAction& WithOrganizationArn(const char* value) { SetOrganizationArn(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_organizationArn;
     bool m_organizationArnHasBeenSet;
   };

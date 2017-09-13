@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ApplyPendingMaintenanceActionResult();
-    ApplyPendingMaintenanceActionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ApplyPendingMaintenanceActionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ApplyPendingMaintenanceActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ApplyPendingMaintenanceActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ResourcePendingMaintenanceActions& GetResourcePendingMaintenanceActions() const{ return m_resourcePendingMaintenanceActions; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline ApplyPendingMaintenanceActionResult& WithResourcePendingMaintenanceActions(ResourcePendingMaintenanceActions&& value) { SetResourcePendingMaintenanceActions(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline ApplyPendingMaintenanceActionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ResourcePendingMaintenanceActions m_resourcePendingMaintenanceActions;
+
     ResponseMetadata m_responseMetadata;
   };
 

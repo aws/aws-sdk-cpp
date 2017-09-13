@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARNs that specify the findings that you want to remove attributes
      * from.</p>
@@ -84,6 +85,7 @@ namespace Model
      * from.</p>
      */
     inline RemoveAttributesFromFindingsRequest& AddFindingArns(const char* value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
+
 
     /**
      * <p>The array of attribute keys that you want to remove from specified
@@ -134,8 +136,10 @@ namespace Model
     inline RemoveAttributesFromFindingsRequest& AddAttributeKeys(const char* value) { m_attributeKeysHasBeenSet = true; m_attributeKeys.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_findingArns;
     bool m_findingArnsHasBeenSet;
+
     Aws::Vector<Aws::String> m_attributeKeys;
     bool m_attributeKeysHasBeenSet;
   };

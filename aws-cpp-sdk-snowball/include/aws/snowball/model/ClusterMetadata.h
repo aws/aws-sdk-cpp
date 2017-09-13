@@ -52,6 +52,7 @@ namespace Model
     ClusterMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The automatically generated ID for a cluster.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline ClusterMetadata& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The optional description of the cluster.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The optional description of the cluster.</p>
      */
     inline ClusterMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this
@@ -178,6 +181,7 @@ namespace Model
      */
     inline ClusterMetadata& WithKmsKeyARN(const char* value) { SetKmsKeyARN(value); return *this;}
 
+
     /**
      * <p>The role ARN associated with this cluster. This ARN was created using the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
@@ -227,6 +231,7 @@ namespace Model
      */
     inline ClusterMetadata& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>The current status of the cluster.</p>
      */
@@ -251,6 +256,7 @@ namespace Model
      * <p>The current status of the cluster.</p>
      */
     inline ClusterMetadata& WithClusterState(ClusterState&& value) { SetClusterState(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of job for this cluster. Currently, the only job type supported for
@@ -282,6 +288,7 @@ namespace Model
      */
     inline ClusterMetadata& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of AWS Snowball appliance to use for this cluster. Currently, the
      * only supported appliance type for cluster jobs is <code>EDGE</code>.</p>
@@ -312,6 +319,7 @@ namespace Model
      */
     inline ClusterMetadata& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
+
     /**
      * <p>The creation date for this cluster.</p>
      */
@@ -336,6 +344,7 @@ namespace Model
      * <p>The creation date for this cluster.</p>
      */
     inline ClusterMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The arrays of <a>JobResource</a> objects that can include updated
@@ -366,6 +375,7 @@ namespace Model
      * <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
      */
     inline ClusterMetadata& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
+
 
     /**
      * <p>The automatically generated ID for a specific address.</p>
@@ -401,6 +411,7 @@ namespace Model
      * <p>The automatically generated ID for a specific address.</p>
      */
     inline ClusterMetadata& WithAddressId(const char* value) { SetAddressId(value); return *this;}
+
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
@@ -482,6 +493,7 @@ namespace Model
      */
     inline ClusterMetadata& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
+
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for
      * this cluster.</p>
@@ -511,6 +523,7 @@ namespace Model
      * this cluster.</p>
      */
     inline ClusterMetadata& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the address that you want a cluster shipped to, after it will be
@@ -555,30 +568,43 @@ namespace Model
     inline ClusterMetadata& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_kmsKeyARN;
     bool m_kmsKeyARNHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     ClusterState m_clusterState;
     bool m_clusterStateHasBeenSet;
+
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
+
     SnowballType m_snowballType;
     bool m_snowballTypeHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;
+
     ShippingOption m_shippingOption;
     bool m_shippingOptionHasBeenSet;
+
     Notification m_notification;
     bool m_notificationHasBeenSet;
+
     Aws::String m_forwardingAddressId;
     bool m_forwardingAddressIdHasBeenSet;
   };

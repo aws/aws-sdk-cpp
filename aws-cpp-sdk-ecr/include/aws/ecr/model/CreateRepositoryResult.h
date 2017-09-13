@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateRepositoryResult();
-    CreateRepositoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRepositoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The repository that was created.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateRepositoryResult& WithRepository(Repository&& value) { SetRepository(std::move(value)); return *this;}
 
   private:
+
     Repository m_repository;
   };
 

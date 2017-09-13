@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline SetDesiredCapacityRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
+
     /**
      * <p>The number of EC2 instances that should be running in the Auto Scaling
      * group.</p>
@@ -93,6 +95,7 @@ namespace Model
      * group.</p>
      */
     inline SetDesiredCapacityRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
+
 
     /**
      * <p>By default, <code>SetDesiredCapacity</code> overrides any cooldown period
@@ -122,10 +125,13 @@ namespace Model
     inline SetDesiredCapacityRequest& WithHonorCooldown(bool value) { SetHonorCooldown(value); return *this;}
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     int m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
+
     bool m_honorCooldown;
     bool m_honorCooldownHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     SlotTypeMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the slot type.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the slot type.</p>
      */
     inline SlotTypeMetadata& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description of the slot type.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline SlotTypeMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The date that the slot type was updated. When you create a resource, the
      * creation date and last updated date are the same. </p>
@@ -146,6 +149,7 @@ namespace Model
      */
     inline SlotTypeMetadata& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date that the slot type was created.</p>
      */
@@ -170,6 +174,7 @@ namespace Model
      * <p>The date that the slot type was created.</p>
      */
     inline SlotTypeMetadata& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The version of the slot type.</p>
@@ -207,14 +212,19 @@ namespace Model
     inline SlotTypeMetadata& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
     bool m_lastUpdatedDateHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

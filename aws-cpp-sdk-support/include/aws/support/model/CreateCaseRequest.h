@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The title of the AWS Support case.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The title of the AWS Support case.</p>
      */
     inline CreateCaseRequest& WithSubject(const char* value) { SetSubject(value); return *this;}
+
 
     /**
      * <p>The code for the AWS service returned by the call to
@@ -116,6 +118,7 @@ namespace Model
      * <a>DescribeServices</a>.</p>
      */
     inline CreateCaseRequest& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+
 
     /**
      * <p>The code for the severity level returned by the call to
@@ -180,6 +183,7 @@ namespace Model
      */
     inline CreateCaseRequest& WithSeverityCode(const char* value) { SetSeverityCode(value); return *this;}
 
+
     /**
      * <p>The category of problem for the AWS Support case.</p>
      */
@@ -214,6 +218,7 @@ namespace Model
      * <p>The category of problem for the AWS Support case.</p>
      */
     inline CreateCaseRequest& WithCategoryCode(const char* value) { SetCategoryCode(value); return *this;}
+
 
     /**
      * <p>The communication body text when you create an AWS Support case by calling
@@ -257,6 +262,7 @@ namespace Model
      */
     inline CreateCaseRequest& WithCommunicationBody(const char* value) { SetCommunicationBody(value); return *this;}
 
+
     /**
      * <p>A list of email addresses that AWS Support copies on case correspondence.</p>
      */
@@ -296,6 +302,7 @@ namespace Model
      * <p>A list of email addresses that AWS Support copies on case correspondence.</p>
      */
     inline CreateCaseRequest& AddCcEmailAddresses(const char* value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses.push_back(value); return *this; }
+
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -346,6 +353,7 @@ namespace Model
      */
     inline CreateCaseRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
+
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
      * "technical." If you do not indicate a value, the default is "technical."</p>
@@ -387,6 +395,7 @@ namespace Model
      * "technical." If you do not indicate a value, the default is "technical."</p>
      */
     inline CreateCaseRequest& WithIssueType(const char* value) { SetIssueType(value); return *this;}
+
 
     /**
      * <p>The ID of a set of one or more attachments for the case. Create the set by
@@ -431,22 +440,31 @@ namespace Model
     inline CreateCaseRequest& WithAttachmentSetId(const char* value) { SetAttachmentSetId(value); return *this;}
 
   private:
+
     Aws::String m_subject;
     bool m_subjectHasBeenSet;
+
     Aws::String m_serviceCode;
     bool m_serviceCodeHasBeenSet;
+
     Aws::String m_severityCode;
     bool m_severityCodeHasBeenSet;
+
     Aws::String m_categoryCode;
     bool m_categoryCodeHasBeenSet;
+
     Aws::String m_communicationBody;
     bool m_communicationBodyHasBeenSet;
+
     Aws::Vector<Aws::String> m_ccEmailAddresses;
     bool m_ccEmailAddressesHasBeenSet;
+
     Aws::String m_language;
     bool m_languageHasBeenSet;
+
     Aws::String m_issueType;
     bool m_issueTypeHasBeenSet;
+
     Aws::String m_attachmentSetId;
     bool m_attachmentSetIdHasBeenSet;
   };

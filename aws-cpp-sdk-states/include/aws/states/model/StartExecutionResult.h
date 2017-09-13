@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     StartExecutionResult();
-    StartExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline StartExecutionResult& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
 
+
     /**
      * <p>The date the execution was started.</p>
      */
@@ -103,7 +105,9 @@ namespace Model
     inline StartExecutionResult& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_executionArn;
+
     Aws::Utils::DateTime m_startDate;
   };
 

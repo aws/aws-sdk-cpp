@@ -38,7 +38,7 @@ namespace Model
    * source code to be built.</p> <p>This information is for the AWS CodeBuild
    * console's use only. Your code should not get or set this information directly
    * (unless the build project's source <code>type</code> value is
-   * <code>GITHUB</code>).</p><p><h3>See Also:</h3>   <a
+   * <code>BITBUCKET</code> or <code>GITHUB</code>).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceAuth">AWS
    * API Reference</a></p>
    */
@@ -49,6 +49,7 @@ namespace Model
     SourceAuth(const Aws::Utils::Json::JsonValue& jsonValue);
     SourceAuth& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
 
     /**
      * <p>The authorization type to use. The only valid value is <code>OAUTH</code>,
@@ -79,6 +80,7 @@ namespace Model
      * which represents the OAuth authorization type.</p>
      */
     inline SourceAuth& WithType(SourceAuthType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The resource value that applies to the specified authorization type.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline SourceAuth& WithResource(const char* value) { SetResource(value); return *this;}
 
   private:
+
     SourceAuthType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
   };

@@ -30,12 +30,12 @@ BatchMeterUsageResult::BatchMeterUsageResult()
 {
 }
 
-BatchMeterUsageResult::BatchMeterUsageResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchMeterUsageResult::BatchMeterUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchMeterUsageResult& BatchMeterUsageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchMeterUsageResult& BatchMeterUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Results"))

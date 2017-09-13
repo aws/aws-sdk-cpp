@@ -30,12 +30,12 @@ DeleteParameterGroupResult::DeleteParameterGroupResult()
 {
 }
 
-DeleteParameterGroupResult::DeleteParameterGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteParameterGroupResult::DeleteParameterGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteParameterGroupResult& DeleteParameterGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteParameterGroupResult& DeleteParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DeletionMessage"))

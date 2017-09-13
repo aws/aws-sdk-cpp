@@ -46,6 +46,7 @@ namespace Model
     FailureDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The reason for the step failure. In the case where the service cannot
      * successfully determine the root cause of the failure, it returns "Unknown Error"
@@ -94,6 +95,7 @@ namespace Model
      * as a reason.</p>
      */
     inline FailureDetails& WithReason(const char* value) { SetReason(value); return *this;}
+
 
     /**
      * <p>The descriptive message including the error the EMR service has identified as
@@ -144,6 +146,7 @@ namespace Model
      */
     inline FailureDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The path to the log file where the step failure root cause was originally
      * recorded.</p>
@@ -187,10 +190,13 @@ namespace Model
     inline FailureDetails& WithLogFile(const char* value) { SetLogFile(value); return *this;}
 
   private:
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_logFile;
     bool m_logFileHasBeenSet;
   };

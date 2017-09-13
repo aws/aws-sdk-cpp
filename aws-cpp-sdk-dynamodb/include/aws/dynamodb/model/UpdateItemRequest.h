@@ -48,6 +48,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the table containing the item to update.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the table containing the item to update.</p>
      */
     inline UpdateItemRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
@@ -182,6 +184,7 @@ namespace Model
      */
     inline UpdateItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
 
+
     /**
      * <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For
      * more information, see <a
@@ -269,6 +272,7 @@ namespace Model
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddAttributeUpdates(const char* key, const AttributeValueUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.emplace(key, value); return *this; }
+
 
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
@@ -358,6 +362,7 @@ namespace Model
      */
     inline UpdateItemRequest& AddExpected(const char* key, const ExpectedAttributeValue& value) { m_expectedHasBeenSet = true; m_expected.emplace(key, value); return *this; }
 
+
     /**
      * <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For
      * more information, see <a
@@ -397,6 +402,7 @@ namespace Model
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(std::move(value)); return *this;}
+
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
@@ -498,6 +504,7 @@ namespace Model
      */
     inline UpdateItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(std::move(value)); return *this;}
 
+
     
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
 
@@ -512,6 +519,7 @@ namespace Model
 
     
     inline UpdateItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>Determines whether item collection metrics are returned. If set to
@@ -552,6 +560,7 @@ namespace Model
      * set to <code>NONE</code> (the default), no statistics are returned.</p>
      */
     inline UpdateItemRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { SetReturnItemCollectionMetrics(std::move(value)); return *this;}
+
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
@@ -980,6 +989,7 @@ namespace Model
      */
     inline UpdateItemRequest& WithUpdateExpression(const char* value) { SetUpdateExpression(value); return *this;}
 
+
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
      * succeed.</p> <p>An expression can contain any of the following:</p> <ul> <li>
@@ -1077,6 +1087,7 @@ namespace Model
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& WithConditionExpression(const char* value) { SetConditionExpression(value); return *this;}
+
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
@@ -1402,6 +1413,7 @@ namespace Model
      */
     inline UpdateItemRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
+
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
@@ -1590,28 +1602,40 @@ namespace Model
     inline UpdateItemRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_key;
     bool m_keyHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValueUpdate> m_attributeUpdates;
     bool m_attributeUpdatesHasBeenSet;
+
     Aws::Map<Aws::String, ExpectedAttributeValue> m_expected;
     bool m_expectedHasBeenSet;
+
     ConditionalOperator m_conditionalOperator;
     bool m_conditionalOperatorHasBeenSet;
+
     ReturnValue m_returnValues;
     bool m_returnValuesHasBeenSet;
+
     ReturnConsumedCapacity m_returnConsumedCapacity;
     bool m_returnConsumedCapacityHasBeenSet;
+
     ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
     bool m_returnItemCollectionMetricsHasBeenSet;
+
     Aws::String m_updateExpression;
     bool m_updateExpressionHasBeenSet;
+
     Aws::String m_conditionExpression;
     bool m_conditionExpressionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
     bool m_expressionAttributeNamesHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
     bool m_expressionAttributeValuesHasBeenSet;
   };

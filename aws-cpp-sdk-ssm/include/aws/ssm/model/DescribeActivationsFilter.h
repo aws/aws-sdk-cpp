@@ -47,6 +47,7 @@ namespace Model
     DescribeActivationsFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the filter.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the filter.</p>
      */
     inline DescribeActivationsFilter& WithFilterKey(DescribeActivationsFilterKeys&& value) { SetFilterKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The filter values.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline DescribeActivationsFilter& AddFilterValues(const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.push_back(value); return *this; }
 
   private:
+
     DescribeActivationsFilterKeys m_filterKey;
     bool m_filterKeyHasBeenSet;
+
     Aws::Vector<Aws::String> m_filterValues;
     bool m_filterValuesHasBeenSet;
   };

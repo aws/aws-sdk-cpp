@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p> A complex type that contains <code>Tag</code> key elements.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
     inline TagKeys& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;
   };

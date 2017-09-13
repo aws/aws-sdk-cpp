@@ -195,6 +195,8 @@
 #include <aws/ec2/model/TerminateInstancesResponse.h>
 #include <aws/ec2/model/UnassignIpv6AddressesResponse.h>
 #include <aws/ec2/model/UnmonitorInstancesResponse.h>
+#include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressResponse.h>
+#include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressResponse.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -475,30 +477,32 @@ namespace Model
         class UnassignIpv6AddressesRequest;
         class UnassignPrivateIpAddressesRequest;
         class UnmonitorInstancesRequest;
+        class UpdateSecurityGroupRuleDescriptionsEgressRequest;
+        class UpdateSecurityGroupRuleDescriptionsIngressRequest;
 
         typedef Aws::Utils::Outcome<AcceptReservedInstancesExchangeQuoteResponse, Aws::Client::AWSError<EC2Errors>> AcceptReservedInstancesExchangeQuoteOutcome;
         typedef Aws::Utils::Outcome<AcceptVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> AcceptVpcPeeringConnectionOutcome;
         typedef Aws::Utils::Outcome<AllocateAddressResponse, Aws::Client::AWSError<EC2Errors>> AllocateAddressOutcome;
         typedef Aws::Utils::Outcome<AllocateHostsResponse, Aws::Client::AWSError<EC2Errors>> AllocateHostsOutcome;
         typedef Aws::Utils::Outcome<AssignIpv6AddressesResponse, Aws::Client::AWSError<EC2Errors>> AssignIpv6AddressesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> AssignPrivateIpAddressesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> AssignPrivateIpAddressesOutcome;
         typedef Aws::Utils::Outcome<AssociateAddressResponse, Aws::Client::AWSError<EC2Errors>> AssociateAddressOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> AssociateDhcpOptionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> AssociateDhcpOptionsOutcome;
         typedef Aws::Utils::Outcome<AssociateIamInstanceProfileResponse, Aws::Client::AWSError<EC2Errors>> AssociateIamInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<AssociateRouteTableResponse, Aws::Client::AWSError<EC2Errors>> AssociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<AssociateSubnetCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> AssociateSubnetCidrBlockOutcome;
         typedef Aws::Utils::Outcome<AssociateVpcCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> AssociateVpcCidrBlockOutcome;
         typedef Aws::Utils::Outcome<AttachClassicLinkVpcResponse, Aws::Client::AWSError<EC2Errors>> AttachClassicLinkVpcOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> AttachInternetGatewayOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> AttachInternetGatewayOutcome;
         typedef Aws::Utils::Outcome<AttachNetworkInterfaceResponse, Aws::Client::AWSError<EC2Errors>> AttachNetworkInterfaceOutcome;
         typedef Aws::Utils::Outcome<AttachVolumeResponse, Aws::Client::AWSError<EC2Errors>> AttachVolumeOutcome;
         typedef Aws::Utils::Outcome<AttachVpnGatewayResponse, Aws::Client::AWSError<EC2Errors>> AttachVpnGatewayOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> AuthorizeSecurityGroupEgressOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> AuthorizeSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> AuthorizeSecurityGroupEgressOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> AuthorizeSecurityGroupIngressOutcome;
         typedef Aws::Utils::Outcome<BundleInstanceResponse, Aws::Client::AWSError<EC2Errors>> BundleInstanceOutcome;
         typedef Aws::Utils::Outcome<CancelBundleTaskResponse, Aws::Client::AWSError<EC2Errors>> CancelBundleTaskOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> CancelConversionTaskOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> CancelExportTaskOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CancelConversionTaskOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CancelExportTaskOutcome;
         typedef Aws::Utils::Outcome<CancelImportTaskResponse, Aws::Client::AWSError<EC2Errors>> CancelImportTaskOutcome;
         typedef Aws::Utils::Outcome<CancelReservedInstancesListingResponse, Aws::Client::AWSError<EC2Errors>> CancelReservedInstancesListingOutcome;
         typedef Aws::Utils::Outcome<CancelSpotFleetRequestsResponse, Aws::Client::AWSError<EC2Errors>> CancelSpotFleetRequestsOutcome;
@@ -518,10 +522,10 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateKeyPairResponse, Aws::Client::AWSError<EC2Errors>> CreateKeyPairOutcome;
         typedef Aws::Utils::Outcome<CreateNatGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateNatGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkAclResponse, Aws::Client::AWSError<EC2Errors>> CreateNetworkAclOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> CreateNetworkAclEntryOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CreateNetworkAclEntryOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkInterfaceResponse, Aws::Client::AWSError<EC2Errors>> CreateNetworkInterfaceOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkInterfacePermissionResponse, Aws::Client::AWSError<EC2Errors>> CreateNetworkInterfacePermissionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> CreatePlacementGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CreatePlacementGroupOutcome;
         typedef Aws::Utils::Outcome<CreateReservedInstancesListingResponse, Aws::Client::AWSError<EC2Errors>> CreateReservedInstancesListingOutcome;
         typedef Aws::Utils::Outcome<CreateRouteResponse, Aws::Client::AWSError<EC2Errors>> CreateRouteOutcome;
         typedef Aws::Utils::Outcome<CreateRouteTableResponse, Aws::Client::AWSError<EC2Errors>> CreateRouteTableOutcome;
@@ -529,41 +533,41 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateSnapshotResponse, Aws::Client::AWSError<EC2Errors>> CreateSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateSpotDatafeedSubscriptionResponse, Aws::Client::AWSError<EC2Errors>> CreateSpotDatafeedSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateSubnetResponse, Aws::Client::AWSError<EC2Errors>> CreateSubnetOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> CreateTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CreateTagsOutcome;
         typedef Aws::Utils::Outcome<CreateVolumeResponse, Aws::Client::AWSError<EC2Errors>> CreateVolumeOutcome;
         typedef Aws::Utils::Outcome<CreateVpcResponse, Aws::Client::AWSError<EC2Errors>> CreateVpcOutcome;
         typedef Aws::Utils::Outcome<CreateVpcEndpointResponse, Aws::Client::AWSError<EC2Errors>> CreateVpcEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> CreateVpcPeeringConnectionOutcome;
         typedef Aws::Utils::Outcome<CreateVpnConnectionResponse, Aws::Client::AWSError<EC2Errors>> CreateVpnConnectionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> CreateVpnConnectionRouteOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CreateVpnConnectionRouteOutcome;
         typedef Aws::Utils::Outcome<CreateVpnGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateVpnGatewayOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteCustomerGatewayOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteDhcpOptionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteCustomerGatewayOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteDhcpOptionsOutcome;
         typedef Aws::Utils::Outcome<DeleteEgressOnlyInternetGatewayResponse, Aws::Client::AWSError<EC2Errors>> DeleteEgressOnlyInternetGatewayOutcome;
         typedef Aws::Utils::Outcome<DeleteFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> DeleteFlowLogsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteInternetGatewayOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteKeyPairOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteInternetGatewayOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteKeyPairOutcome;
         typedef Aws::Utils::Outcome<DeleteNatGatewayResponse, Aws::Client::AWSError<EC2Errors>> DeleteNatGatewayOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkAclOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkAclEntryOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkInterfaceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkAclOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkAclEntryOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkInterfaceOutcome;
         typedef Aws::Utils::Outcome<DeleteNetworkInterfacePermissionResponse, Aws::Client::AWSError<EC2Errors>> DeleteNetworkInterfacePermissionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeletePlacementGroupOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteRouteOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteRouteTableOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteSecurityGroupOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteSnapshotOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteSpotDatafeedSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteSubnetOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteTagsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVolumeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpcOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeletePlacementGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteRouteOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteRouteTableOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteSnapshotOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteSpotDatafeedSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteSubnetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVolumeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpcOutcome;
         typedef Aws::Utils::Outcome<DeleteVpcEndpointsResponse, Aws::Client::AWSError<EC2Errors>> DeleteVpcEndpointsOutcome;
         typedef Aws::Utils::Outcome<DeleteVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> DeleteVpcPeeringConnectionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnConnectionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnConnectionRouteOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnGatewayOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeregisterImageOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnConnectionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnConnectionRouteOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnGatewayOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeregisterImageOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAttributesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAccountAttributesOutcome;
         typedef Aws::Utils::Outcome<DescribeAddressesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAddressesOutcome;
         typedef Aws::Utils::Outcome<DescribeAvailabilityZonesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAvailabilityZonesOutcome;
@@ -635,20 +639,20 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeVpnConnectionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeVpnConnectionsOutcome;
         typedef Aws::Utils::Outcome<DescribeVpnGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeVpnGatewaysOutcome;
         typedef Aws::Utils::Outcome<DetachClassicLinkVpcResponse, Aws::Client::AWSError<EC2Errors>> DetachClassicLinkVpcOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DetachInternetGatewayOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DetachNetworkInterfaceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DetachInternetGatewayOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DetachNetworkInterfaceOutcome;
         typedef Aws::Utils::Outcome<DetachVolumeResponse, Aws::Client::AWSError<EC2Errors>> DetachVolumeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DetachVpnGatewayOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DisableVgwRoutePropagationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DetachVpnGatewayOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DisableVgwRoutePropagationOutcome;
         typedef Aws::Utils::Outcome<DisableVpcClassicLinkResponse, Aws::Client::AWSError<EC2Errors>> DisableVpcClassicLinkOutcome;
         typedef Aws::Utils::Outcome<DisableVpcClassicLinkDnsSupportResponse, Aws::Client::AWSError<EC2Errors>> DisableVpcClassicLinkDnsSupportOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DisassociateAddressOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DisassociateAddressOutcome;
         typedef Aws::Utils::Outcome<DisassociateIamInstanceProfileResponse, Aws::Client::AWSError<EC2Errors>> DisassociateIamInstanceProfileOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DisassociateRouteTableOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DisassociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateSubnetCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateSubnetCidrBlockOutcome;
         typedef Aws::Utils::Outcome<DisassociateVpcCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateVpcCidrBlockOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> EnableVgwRoutePropagationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> EnableVolumeIOOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> EnableVgwRoutePropagationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> EnableVolumeIOOutcome;
         typedef Aws::Utils::Outcome<EnableVpcClassicLinkResponse, Aws::Client::AWSError<EC2Errors>> EnableVpcClassicLinkOutcome;
         typedef Aws::Utils::Outcome<EnableVpcClassicLinkDnsSupportResponse, Aws::Client::AWSError<EC2Errors>> EnableVpcClassicLinkDnsSupportOutcome;
         typedef Aws::Utils::Outcome<GetConsoleOutputResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleOutputOutcome;
@@ -662,19 +666,19 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportSnapshotResponse, Aws::Client::AWSError<EC2Errors>> ImportSnapshotOutcome;
         typedef Aws::Utils::Outcome<ImportVolumeResponse, Aws::Client::AWSError<EC2Errors>> ImportVolumeOutcome;
         typedef Aws::Utils::Outcome<ModifyHostsResponse, Aws::Client::AWSError<EC2Errors>> ModifyHostsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyIdFormatOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyIdentityIdFormatOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyImageAttributeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyInstanceAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyIdFormatOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyIdentityIdFormatOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyImageAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyInstanceAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstancePlacementOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyNetworkInterfaceAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyNetworkInterfaceAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyReservedInstancesResponse, Aws::Client::AWSError<EC2Errors>> ModifyReservedInstancesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifySnapshotAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifySnapshotAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifySpotFleetRequestResponse, Aws::Client::AWSError<EC2Errors>> ModifySpotFleetRequestOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifySubnetAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifySubnetAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyVolumeResponse, Aws::Client::AWSError<EC2Errors>> ModifyVolumeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyVolumeAttributeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyVpcAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyVolumeAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyVpcAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcEndpointResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpcEndpointOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcPeeringConnectionOptionsResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpcPeeringConnectionOptionsOutcome;
         typedef Aws::Utils::Outcome<MonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> MonitorInstancesOutcome;
@@ -682,34 +686,36 @@ namespace Model
         typedef Aws::Utils::Outcome<PurchaseHostReservationResponse, Aws::Client::AWSError<EC2Errors>> PurchaseHostReservationOutcome;
         typedef Aws::Utils::Outcome<PurchaseReservedInstancesOfferingResponse, Aws::Client::AWSError<EC2Errors>> PurchaseReservedInstancesOfferingOutcome;
         typedef Aws::Utils::Outcome<PurchaseScheduledInstancesResponse, Aws::Client::AWSError<EC2Errors>> PurchaseScheduledInstancesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> RebootInstancesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> RebootInstancesOutcome;
         typedef Aws::Utils::Outcome<RegisterImageResponse, Aws::Client::AWSError<EC2Errors>> RegisterImageOutcome;
         typedef Aws::Utils::Outcome<RejectVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> RejectVpcPeeringConnectionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ReleaseAddressOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ReleaseAddressOutcome;
         typedef Aws::Utils::Outcome<ReleaseHostsResponse, Aws::Client::AWSError<EC2Errors>> ReleaseHostsOutcome;
         typedef Aws::Utils::Outcome<ReplaceIamInstanceProfileAssociationResponse, Aws::Client::AWSError<EC2Errors>> ReplaceIamInstanceProfileAssociationOutcome;
         typedef Aws::Utils::Outcome<ReplaceNetworkAclAssociationResponse, Aws::Client::AWSError<EC2Errors>> ReplaceNetworkAclAssociationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ReplaceNetworkAclEntryOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ReplaceRouteOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ReplaceNetworkAclEntryOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ReplaceRouteOutcome;
         typedef Aws::Utils::Outcome<ReplaceRouteTableAssociationResponse, Aws::Client::AWSError<EC2Errors>> ReplaceRouteTableAssociationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ReportInstanceStatusOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ReportInstanceStatusOutcome;
         typedef Aws::Utils::Outcome<RequestSpotFleetResponse, Aws::Client::AWSError<EC2Errors>> RequestSpotFleetOutcome;
         typedef Aws::Utils::Outcome<RequestSpotInstancesResponse, Aws::Client::AWSError<EC2Errors>> RequestSpotInstancesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ResetImageAttributeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ResetInstanceAttributeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ResetNetworkInterfaceAttributeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ResetSnapshotAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ResetImageAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ResetInstanceAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ResetNetworkInterfaceAttributeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ResetSnapshotAttributeOutcome;
         typedef Aws::Utils::Outcome<RestoreAddressToClassicResponse, Aws::Client::AWSError<EC2Errors>> RestoreAddressToClassicOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> RevokeSecurityGroupEgressOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> RevokeSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> RevokeSecurityGroupEgressOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> RevokeSecurityGroupIngressOutcome;
         typedef Aws::Utils::Outcome<RunInstancesResponse, Aws::Client::AWSError<EC2Errors>> RunInstancesOutcome;
         typedef Aws::Utils::Outcome<RunScheduledInstancesResponse, Aws::Client::AWSError<EC2Errors>> RunScheduledInstancesOutcome;
         typedef Aws::Utils::Outcome<StartInstancesResponse, Aws::Client::AWSError<EC2Errors>> StartInstancesOutcome;
         typedef Aws::Utils::Outcome<StopInstancesResponse, Aws::Client::AWSError<EC2Errors>> StopInstancesOutcome;
         typedef Aws::Utils::Outcome<TerminateInstancesResponse, Aws::Client::AWSError<EC2Errors>> TerminateInstancesOutcome;
         typedef Aws::Utils::Outcome<UnassignIpv6AddressesResponse, Aws::Client::AWSError<EC2Errors>> UnassignIpv6AddressesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> UnassignPrivateIpAddressesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> UnassignPrivateIpAddressesOutcome;
         typedef Aws::Utils::Outcome<UnmonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> UnmonitorInstancesOutcome;
+        typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsEgressResponse, Aws::Client::AWSError<EC2Errors>> UpdateSecurityGroupRuleDescriptionsEgressOutcome;
+        typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsIngressResponse, Aws::Client::AWSError<EC2Errors>> UpdateSecurityGroupRuleDescriptionsIngressOutcome;
 
         typedef std::future<AcceptReservedInstancesExchangeQuoteOutcome> AcceptReservedInstancesExchangeQuoteOutcomeCallable;
         typedef std::future<AcceptVpcPeeringConnectionOutcome> AcceptVpcPeeringConnectionOutcomeCallable;
@@ -945,6 +951,8 @@ namespace Model
         typedef std::future<UnassignIpv6AddressesOutcome> UnassignIpv6AddressesOutcomeCallable;
         typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddressesOutcomeCallable;
         typedef std::future<UnmonitorInstancesOutcome> UnmonitorInstancesOutcomeCallable;
+        typedef std::future<UpdateSecurityGroupRuleDescriptionsEgressOutcome> UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable;
+        typedef std::future<UpdateSecurityGroupRuleDescriptionsIngressOutcome> UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable;
 } // namespace Model
 
   class EC2Client;
@@ -1183,6 +1191,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::UnassignIpv6AddressesRequest&, const Model::UnassignIpv6AddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignIpv6AddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnassignPrivateIpAddressesRequest&, const Model::UnassignPrivateIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignPrivateIpAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnmonitorInstancesRequest&, const Model::UnmonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnmonitorInstancesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest&, const Model::UpdateSecurityGroupRuleDescriptionsEgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest&, const Model::UpdateSecurityGroupRuleDescriptionsIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute
@@ -1199,22 +1209,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EC2Client(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        EC2Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EC2Client(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        EC2Client(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        EC2Client(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        EC2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~EC2Client();
+
 
         /**
          * <p>Accepts the Convertible Reserved Instance exchange quote described in the
@@ -1729,18 +1740,26 @@ namespace Model
         virtual void AssociateSubnetCidrBlockAsync(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a CIDR block with your VPC. You can only associate a single
-         * Amazon-provided IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed
-         * at /56.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4
+         * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
+         * CIDR block size is fixed at /56.</p> <p>For more information about associating
+         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateVpcCidrBlockOutcome AssociateVpcCidrBlock(const Model::AssociateVpcCidrBlockRequest& request) const;
 
         /**
-         * <p>Associates a CIDR block with your VPC. You can only associate a single
-         * Amazon-provided IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed
-         * at /56.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4
+         * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
+         * CIDR block size is fixed at /56.</p> <p>For more information about associating
+         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
          *
@@ -1749,9 +1768,13 @@ namespace Model
         virtual Model::AssociateVpcCidrBlockOutcomeCallable AssociateVpcCidrBlockCallable(const Model::AssociateVpcCidrBlockRequest& request) const;
 
         /**
-         * <p>Associates a CIDR block with your VPC. You can only associate a single
-         * Amazon-provided IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed
-         * at /56.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4
+         * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
+         * CIDR block size is fixed at /56.</p> <p>For more information about associating
+         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
          *
@@ -2015,9 +2038,9 @@ namespace Model
          * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
          * must also specify the destination port or port range. For the ICMP protocol, you
          * must also specify the ICMP type and code. You can use -1 for the type or code to
-         * mean all types or all codes.</p> <p>Rule changes are propagated to affected
-         * instances as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * mean all types or all codes. You can optionally specify a description for the
+         * rule.</p> <p>Rule changes are propagated to affected instances as quickly as
+         * possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
          * API Reference</a></p>
          */
@@ -2037,9 +2060,9 @@ namespace Model
          * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
          * must also specify the destination port or port range. For the ICMP protocol, you
          * must also specify the ICMP type and code. You can use -1 for the type or code to
-         * mean all types or all codes.</p> <p>Rule changes are propagated to affected
-         * instances as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * mean all types or all codes. You can optionally specify a description for the
+         * rule.</p> <p>Rule changes are propagated to affected instances as quickly as
+         * possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -2061,9 +2084,9 @@ namespace Model
          * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
          * must also specify the destination port or port range. For the ICMP protocol, you
          * must also specify the ICMP type and code. You can use -1 for the type or code to
-         * mean all types or all codes.</p> <p>Rule changes are propagated to affected
-         * instances as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * mean all types or all codes. You can optionally specify a description for the
+         * rule.</p> <p>Rule changes are propagated to affected instances as quickly as
+         * possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -2086,7 +2109,8 @@ namespace Model
          * a peer VPC in a VPC peering connection. For more information about VPC security
          * group limits, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
-         * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
+         * group rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
@@ -2107,7 +2131,8 @@ namespace Model
          * a peer VPC in a VPC peering connection. For more information about VPC security
          * group limits, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
-         * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
+         * group rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -2130,7 +2155,8 @@ namespace Model
          * a peer VPC in a VPC peering connection. For more information about VPC security
          * group limits, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
-         * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
+         * group rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -3877,24 +3903,23 @@ namespace Model
 
         /**
          * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
-         * provide the VPC ID and the CIDR block you want for the subnet. After you create
-         * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be
-         * the same as the VPC's IPv4 CIDR block (assuming you want only a single subnet in
-         * the VPC), or a subset of the VPC's IPv4 CIDR block. If you create more than one
-         * subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4
-         * subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
-         * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
-         * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
-         * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
-         * first four and the last IPv4 address in each subnet's CIDR block. They're not
-         * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
-         * they're set up in a star topology with a logical router in the middle.</p> <p>If
-         * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
-         * doesn't change if you stop and restart the instance (unlike a similar instance
-         * launched outside a VPC, which gets a new IP address when restarted). It's
-         * therefore possible to have a subnet with no running instances (they're all
-         * stopped), but no remaining IP addresses available.</p> <p>For more information
-         * about subnets, see <a
+         * provide the VPC ID and the IPv4 CIDR block you want for the subnet. After you
+         * create a subnet, you can't change its CIDR block. The size of the subnet's IPv4
+         * CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
+         * IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR
+         * blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
+         * a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
+         * IPv4 addresses).</p> <p>If you've associated an IPv6 CIDR block with your VPC,
+         * you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
+         * </p> <important> <p>AWS reserves both the first four and the last IPv4 address
+         * in each subnet's CIDR block. They're not available for use.</p> </important>
+         * <p>If you add more than one subnet to a VPC, they're set up in a star topology
+         * with a logical router in the middle.</p> <p>If you launch an instance in a VPC
+         * using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
+         * restart the instance (unlike a similar instance launched outside a VPC, which
+         * gets a new IP address when restarted). It's therefore possible to have a subnet
+         * with no running instances (they're all stopped), but no remaining IP addresses
+         * available.</p> <p>For more information about subnets, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3905,24 +3930,23 @@ namespace Model
 
         /**
          * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
-         * provide the VPC ID and the CIDR block you want for the subnet. After you create
-         * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be
-         * the same as the VPC's IPv4 CIDR block (assuming you want only a single subnet in
-         * the VPC), or a subset of the VPC's IPv4 CIDR block. If you create more than one
-         * subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4
-         * subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
-         * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
-         * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
-         * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
-         * first four and the last IPv4 address in each subnet's CIDR block. They're not
-         * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
-         * they're set up in a star topology with a logical router in the middle.</p> <p>If
-         * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
-         * doesn't change if you stop and restart the instance (unlike a similar instance
-         * launched outside a VPC, which gets a new IP address when restarted). It's
-         * therefore possible to have a subnet with no running instances (they're all
-         * stopped), but no remaining IP addresses available.</p> <p>For more information
-         * about subnets, see <a
+         * provide the VPC ID and the IPv4 CIDR block you want for the subnet. After you
+         * create a subnet, you can't change its CIDR block. The size of the subnet's IPv4
+         * CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
+         * IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR
+         * blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
+         * a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
+         * IPv4 addresses).</p> <p>If you've associated an IPv6 CIDR block with your VPC,
+         * you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
+         * </p> <important> <p>AWS reserves both the first four and the last IPv4 address
+         * in each subnet's CIDR block. They're not available for use.</p> </important>
+         * <p>If you add more than one subnet to a VPC, they're set up in a star topology
+         * with a logical router in the middle.</p> <p>If you launch an instance in a VPC
+         * using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
+         * restart the instance (unlike a similar instance launched outside a VPC, which
+         * gets a new IP address when restarted). It's therefore possible to have a subnet
+         * with no running instances (they're all stopped), but no remaining IP addresses
+         * available.</p> <p>For more information about subnets, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3935,24 +3959,23 @@ namespace Model
 
         /**
          * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
-         * provide the VPC ID and the CIDR block you want for the subnet. After you create
-         * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be
-         * the same as the VPC's IPv4 CIDR block (assuming you want only a single subnet in
-         * the VPC), or a subset of the VPC's IPv4 CIDR block. If you create more than one
-         * subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4
-         * subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
-         * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
-         * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
-         * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
-         * first four and the last IPv4 address in each subnet's CIDR block. They're not
-         * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
-         * they're set up in a star topology with a logical router in the middle.</p> <p>If
-         * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
-         * doesn't change if you stop and restart the instance (unlike a similar instance
-         * launched outside a VPC, which gets a new IP address when restarted). It's
-         * therefore possible to have a subnet with no running instances (they're all
-         * stopped), but no remaining IP addresses available.</p> <p>For more information
-         * about subnets, see <a
+         * provide the VPC ID and the IPv4 CIDR block you want for the subnet. After you
+         * create a subnet, you can't change its CIDR block. The size of the subnet's IPv4
+         * CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
+         * IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR
+         * blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
+         * a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
+         * IPv4 addresses).</p> <p>If you've associated an IPv6 CIDR block with your VPC,
+         * you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
+         * </p> <important> <p>AWS reserves both the first four and the last IPv4 address
+         * in each subnet's CIDR block. They're not available for use.</p> </important>
+         * <p>If you add more than one subnet to a VPC, they're set up in a star topology
+         * with a logical router in the middle.</p> <p>If you launch an instance in a VPC
+         * using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
+         * restart the instance (unlike a similar instance launched outside a VPC, which
+         * gets a new IP address when restarted). It's therefore possible to have a subnet
+         * with no running instances (they're all stopped), but no remaining IP addresses
+         * available.</p> <p>For more information about subnets, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4989,9 +5012,9 @@ namespace Model
         virtual void DeleteSubnetAsync(const Model::DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified set of tags from the specified set of resources. This
-         * call is designed to follow a <code>DescribeTags</code> request.</p> <p>For more
-         * information about tags, see <a
+         * <p>Deletes the specified set of tags from the specified set of resources.</p>
+         * <p>To list the current tags, use <a>DescribeTags</a>. For more information about
+         * tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5001,9 +5024,9 @@ namespace Model
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * <p>Deletes the specified set of tags from the specified set of resources. This
-         * call is designed to follow a <code>DescribeTags</code> request.</p> <p>For more
-         * information about tags, see <a
+         * <p>Deletes the specified set of tags from the specified set of resources.</p>
+         * <p>To list the current tags, use <a>DescribeTags</a>. For more information about
+         * tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5015,9 +5038,9 @@ namespace Model
         virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * <p>Deletes the specified set of tags from the specified set of resources. This
-         * call is designed to follow a <code>DescribeTags</code> request.</p> <p>For more
-         * information about tags, see <a
+         * <p>Deletes the specified set of tags from the specified set of resources.</p>
+         * <p>To list the current tags, use <a>DescribeTags</a>. For more information about
+         * tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -8680,20 +8703,24 @@ namespace Model
         virtual void DisassociateSubnetCidrBlockAsync(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a CIDR block from a VPC. Currently, you can disassociate an
-         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
-         * are associated with the CIDR block before you can disassociate it.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you
+         * must specify its association ID. You can get the association ID by using
+         * <a>DescribeVpcs</a>. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p> <p>You
+         * cannot disassociate the CIDR block with which you originally created the VPC
+         * (the primary CIDR block).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateVpcCidrBlockOutcome DisassociateVpcCidrBlock(const Model::DisassociateVpcCidrBlockRequest& request) const;
 
         /**
-         * <p>Disassociates a CIDR block from a VPC. Currently, you can disassociate an
-         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
-         * are associated with the CIDR block before you can disassociate it.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you
+         * must specify its association ID. You can get the association ID by using
+         * <a>DescribeVpcs</a>. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p> <p>You
+         * cannot disassociate the CIDR block with which you originally created the VPC
+         * (the primary CIDR block).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">AWS
          * API Reference</a></p>
          *
@@ -8702,10 +8729,12 @@ namespace Model
         virtual Model::DisassociateVpcCidrBlockOutcomeCallable DisassociateVpcCidrBlockCallable(const Model::DisassociateVpcCidrBlockRequest& request) const;
 
         /**
-         * <p>Disassociates a CIDR block from a VPC. Currently, you can disassociate an
-         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
-         * are associated with the CIDR block before you can disassociate it.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you
+         * must specify its association ID. You can get the association ID by using
+         * <a>DescribeVpcs</a>. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p> <p>You
+         * cannot disassociate the CIDR block with which you originally created the VPC
+         * (the primary CIDR block).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">AWS
          * API Reference</a></p>
          *
@@ -11195,15 +11224,16 @@ namespace Model
 
         /**
          * <p>[EC2-VPC only] Removes one or more egress rules from a security group for
-         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic.
-         * The values that you specify in the revoke request (for example, ports) must
-         * match the existing rule's values for the rule to be revoked.</p> <p>Each rule
-         * consists of the protocol and the IPv4 or IPv6 CIDR range or source security
-         * group. For the TCP and UDP protocols, you must also specify the destination port
-         * or range of ports. For the ICMP protocol, you must also specify the ICMP type
-         * and code.</p> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p><p><h3>See
-         * Also:</h3>   <a
+         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
+         * remove a rule, the values that you specify (for example, ports) must match the
+         * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
+         * the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
+         * protocols, you must also specify the destination port or range of ports. For the
+         * ICMP protocol, you must also specify the ICMP type and code. If the security
+         * group rule has a description, you do not have to specify the description to
+         * revoke the rule.</p> <p>Rule changes are propagated to instances within the
+         * security group as quickly as possible. However, a small delay might
+         * occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          */
@@ -11211,15 +11241,16 @@ namespace Model
 
         /**
          * <p>[EC2-VPC only] Removes one or more egress rules from a security group for
-         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic.
-         * The values that you specify in the revoke request (for example, ports) must
-         * match the existing rule's values for the rule to be revoked.</p> <p>Each rule
-         * consists of the protocol and the IPv4 or IPv6 CIDR range or source security
-         * group. For the TCP and UDP protocols, you must also specify the destination port
-         * or range of ports. For the ICMP protocol, you must also specify the ICMP type
-         * and code.</p> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p><p><h3>See
-         * Also:</h3>   <a
+         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
+         * remove a rule, the values that you specify (for example, ports) must match the
+         * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
+         * the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
+         * protocols, you must also specify the destination port or range of ports. For the
+         * ICMP protocol, you must also specify the ICMP type and code. If the security
+         * group rule has a description, you do not have to specify the description to
+         * revoke the rule.</p> <p>Rule changes are propagated to instances within the
+         * security group as quickly as possible. However, a small delay might
+         * occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -11229,15 +11260,16 @@ namespace Model
 
         /**
          * <p>[EC2-VPC only] Removes one or more egress rules from a security group for
-         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic.
-         * The values that you specify in the revoke request (for example, ports) must
-         * match the existing rule's values for the rule to be revoked.</p> <p>Each rule
-         * consists of the protocol and the IPv4 or IPv6 CIDR range or source security
-         * group. For the TCP and UDP protocols, you must also specify the destination port
-         * or range of ports. For the ICMP protocol, you must also specify the ICMP type
-         * and code.</p> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p><p><h3>See
-         * Also:</h3>   <a
+         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
+         * remove a rule, the values that you specify (for example, ports) must match the
+         * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
+         * the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
+         * protocols, you must also specify the destination port or range of ports. For the
+         * ICMP protocol, you must also specify the ICMP type and code. If the security
+         * group rule has a description, you do not have to specify the description to
+         * revoke the rule.</p> <p>Rule changes are propagated to instances within the
+         * security group as quickly as possible. However, a small delay might
+         * occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -11246,34 +11278,36 @@ namespace Model
         virtual void RevokeSecurityGroupEgressAsync(const Model::RevokeSecurityGroupEgressRequest& request, const RevokeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more ingress rules from a security group. The values that you
-         * specify in the revoke request (for example, ports) must match the existing
-         * rule's values for the rule to be removed.</p> <note> <p>[EC2-Classic security
-         * groups only] If the values you specify do not match the existing rule's values,
-         * no error is returned. Use <a>DescribeSecurityGroups</a> to verify that the rule
-         * has been removed.</p> </note> <p>Each rule consists of the protocol and the CIDR
-         * range or source security group. For the TCP and UDP protocols, you must also
-         * specify the destination port or range of ports. For the ICMP protocol, you must
-         * also specify the ICMP type and code.</p> <p>Rule changes are propagated to
-         * instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more ingress rules from a security group. To remove a rule,
+         * the values that you specify (for example, ports) must match the existing rule's
+         * values exactly.</p> <note> <p>[EC2-Classic security groups only] If the values
+         * you specify do not match the existing rule's values, no error is returned. Use
+         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
+         * </note> <p>Each rule consists of the protocol and the CIDR range or source
+         * security group. For the TCP and UDP protocols, you must also specify the
+         * destination port or range of ports. For the ICMP protocol, you must also specify
+         * the ICMP type and code. If the security group rule has a description, you do not
+         * have to specify the description to revoke the rule.</p> <p>Rule changes are
+         * propagated to instances within the security group as quickly as possible.
+         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
         virtual Model::RevokeSecurityGroupIngressOutcome RevokeSecurityGroupIngress(const Model::RevokeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Removes one or more ingress rules from a security group. The values that you
-         * specify in the revoke request (for example, ports) must match the existing
-         * rule's values for the rule to be removed.</p> <note> <p>[EC2-Classic security
-         * groups only] If the values you specify do not match the existing rule's values,
-         * no error is returned. Use <a>DescribeSecurityGroups</a> to verify that the rule
-         * has been removed.</p> </note> <p>Each rule consists of the protocol and the CIDR
-         * range or source security group. For the TCP and UDP protocols, you must also
-         * specify the destination port or range of ports. For the ICMP protocol, you must
-         * also specify the ICMP type and code.</p> <p>Rule changes are propagated to
-         * instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more ingress rules from a security group. To remove a rule,
+         * the values that you specify (for example, ports) must match the existing rule's
+         * values exactly.</p> <note> <p>[EC2-Classic security groups only] If the values
+         * you specify do not match the existing rule's values, no error is returned. Use
+         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
+         * </note> <p>Each rule consists of the protocol and the CIDR range or source
+         * security group. For the TCP and UDP protocols, you must also specify the
+         * destination port or range of ports. For the ICMP protocol, you must also specify
+         * the ICMP type and code. If the security group rule has a description, you do not
+         * have to specify the description to revoke the rule.</p> <p>Rule changes are
+         * propagated to instances within the security group as quickly as possible.
+         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -11282,17 +11316,18 @@ namespace Model
         virtual Model::RevokeSecurityGroupIngressOutcomeCallable RevokeSecurityGroupIngressCallable(const Model::RevokeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Removes one or more ingress rules from a security group. The values that you
-         * specify in the revoke request (for example, ports) must match the existing
-         * rule's values for the rule to be removed.</p> <note> <p>[EC2-Classic security
-         * groups only] If the values you specify do not match the existing rule's values,
-         * no error is returned. Use <a>DescribeSecurityGroups</a> to verify that the rule
-         * has been removed.</p> </note> <p>Each rule consists of the protocol and the CIDR
-         * range or source security group. For the TCP and UDP protocols, you must also
-         * specify the destination port or range of ports. For the ICMP protocol, you must
-         * also specify the ICMP type and code.</p> <p>Rule changes are propagated to
-         * instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more ingress rules from a security group. To remove a rule,
+         * the values that you specify (for example, ports) must match the existing rule's
+         * values exactly.</p> <note> <p>[EC2-Classic security groups only] If the values
+         * you specify do not match the existing rule's values, no error is returned. Use
+         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
+         * </note> <p>Each rule consists of the protocol and the CIDR range or source
+         * security group. For the TCP and UDP protocols, you must also specify the
+         * destination port or range of ports. For the ICMP protocol, you must also specify
+         * the ICMP type and code. If the security group rule has a description, you do not
+         * have to specify the description to revoke the rule.</p> <p>Rule changes are
+         * propagated to instances within the security group as quickly as possible.
+         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -11839,9 +11874,86 @@ namespace Model
          */
         virtual void UnmonitorInstancesAsync(const Model::UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>[EC2-VPC only] Updates the description of an egress (outbound) security group
+         * rule. You can replace an existing description, or add a description to a rule
+         * that did not have one previously.</p> <p>You specify the description as part of
+         * the IP permissions structure. You can remove a description for a security group
+         * rule by omitting the description parameter in the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSecurityGroupRuleDescriptionsEgressOutcome UpdateSecurityGroupRuleDescriptionsEgress(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request) const;
+
+        /**
+         * <p>[EC2-VPC only] Updates the description of an egress (outbound) security group
+         * rule. You can replace an existing description, or add a description to a rule
+         * that did not have one previously.</p> <p>You specify the description as part of
+         * the IP permissions structure. You can remove a description for a security group
+         * rule by omitting the description parameter in the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable UpdateSecurityGroupRuleDescriptionsEgressCallable(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request) const;
+
+        /**
+         * <p>[EC2-VPC only] Updates the description of an egress (outbound) security group
+         * rule. You can replace an existing description, or add a description to a rule
+         * that did not have one previously.</p> <p>You specify the description as part of
+         * the IP permissions structure. You can remove a description for a security group
+         * rule by omitting the description parameter in the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSecurityGroupRuleDescriptionsEgressAsync(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request, const UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the description of an ingress (inbound) security group rule. You can
+         * replace an existing description, or add a description to a rule that did not
+         * have one previously.</p> <p>You specify the description as part of the IP
+         * permissions structure. You can remove a description for a security group rule by
+         * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSecurityGroupRuleDescriptionsIngressOutcome UpdateSecurityGroupRuleDescriptionsIngress(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request) const;
+
+        /**
+         * <p>Updates the description of an ingress (inbound) security group rule. You can
+         * replace an existing description, or add a description to a rule that did not
+         * have one previously.</p> <p>You specify the description as part of the IP
+         * permissions structure. You can remove a description for a security group rule by
+         * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable UpdateSecurityGroupRuleDescriptionsIngressCallable(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request) const;
+
+        /**
+         * <p>Updates the description of an ingress (inbound) security group rule. You can
+         * replace an existing description, or add a description to a rule that did not
+         * have one previously.</p> <p>You specify the description as part of the IP
+         * permissions structure. You can remove a description for a security group rule by
+         * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSecurityGroupRuleDescriptionsIngressAsync(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
   private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AcceptReservedInstancesExchangeQuoteAsyncHelper(const Model::AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -12078,9 +12190,11 @@ namespace Model
         void UnassignIpv6AddressesAsyncHelper(const Model::UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnassignPrivateIpAddressesAsyncHelper(const Model::UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnmonitorInstancesAsyncHelper(const Model::UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSecurityGroupRuleDescriptionsEgressAsyncHelper(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request, const UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSecurityGroupRuleDescriptionsIngressAsyncHelper(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace EC2

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateIPSetResult();
-    CreateIPSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateIPSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateIPSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateIPSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <a>IPSet</a> returned in the <code>CreateIPSet</code> response.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>The <a>IPSet</a> returned in the <code>CreateIPSet</code> response.</p>
      */
     inline CreateIPSetResult& WithIPSet(IPSet&& value) { SetIPSet(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -124,7 +126,9 @@ namespace Model
     inline CreateIPSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     IPSet m_iPSet;
+
     Aws::String m_changeToken;
   };
 

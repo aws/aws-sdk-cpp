@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeRuntimeConfigurationResult();
-    DescribeRuntimeConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRuntimeConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRuntimeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRuntimeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Instructions describing how server processes should be launched and
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeRuntimeConfigurationResult& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 
   private:
+
     RuntimeConfiguration m_runtimeConfiguration;
   };
 

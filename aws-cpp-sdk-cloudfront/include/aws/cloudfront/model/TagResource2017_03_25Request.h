@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p> An ARN of a CloudFront resource.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline TagResource2017_03_25Request& WithResource(const char* value) { SetResource(value); return *this;}
 
+
     /**
      * <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
@@ -106,8 +108,10 @@ namespace Model
     inline TagResource2017_03_25Request& WithTags(Tags&& value) { SetTags(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
+
     Tags m_tags;
     bool m_tagsHasBeenSet;
   };

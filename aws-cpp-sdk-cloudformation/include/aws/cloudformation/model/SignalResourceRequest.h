@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The stack name or unique stack ID that includes the resource that you want to
      * signal.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline SignalResourceRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>The logical ID of the resource that you want to signal. The logical ID is the
      * name of the resource that given in the template.</p>
@@ -125,6 +127,7 @@ namespace Model
      * name of the resource that given in the template.</p>
      */
     inline SignalResourceRequest& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
+
 
     /**
      * <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto
@@ -182,6 +185,7 @@ namespace Model
      */
     inline SignalResourceRequest& WithUniqueId(const char* value) { SetUniqueId(value); return *this;}
 
+
     /**
      * <p>The status of the signal, which is either success or failure. A failure
      * signal causes AWS CloudFormation to immediately fail the stack creation or
@@ -218,12 +222,16 @@ namespace Model
     inline SignalResourceRequest& WithStatus(ResourceSignalStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_logicalResourceId;
     bool m_logicalResourceIdHasBeenSet;
+
     Aws::String m_uniqueId;
     bool m_uniqueIdHasBeenSet;
+
     ResourceSignalStatus m_status;
     bool m_statusHasBeenSet;
   };

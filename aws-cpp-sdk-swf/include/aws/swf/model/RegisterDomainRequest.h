@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the domain to register. The name must be unique in the region that
      * the domain is registered in.</p> <p>The specified string must not start or end
@@ -106,6 +107,7 @@ namespace Model
      */
     inline RegisterDomainRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A text description of the domain.</p>
      */
@@ -140,6 +142,7 @@ namespace Model
      * <p>A text description of the domain.</p>
      */
     inline RegisterDomainRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The duration (in days) that records and histories of workflow executions on
@@ -240,10 +243,13 @@ namespace Model
     inline RegisterDomainRequest& WithWorkflowExecutionRetentionPeriodInDays(const char* value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_workflowExecutionRetentionPeriodInDays;
     bool m_workflowExecutionRetentionPeriodInDaysHasBeenSet;
   };

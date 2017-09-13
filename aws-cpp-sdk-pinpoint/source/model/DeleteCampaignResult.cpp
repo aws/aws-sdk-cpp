@@ -30,12 +30,12 @@ DeleteCampaignResult::DeleteCampaignResult()
 {
 }
 
-DeleteCampaignResult::DeleteCampaignResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCampaignResult::DeleteCampaignResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteCampaignResult& DeleteCampaignResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCampaignResult& DeleteCampaignResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CampaignResponse"))

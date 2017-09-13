@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>ID of the collection to search.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline SearchFacesByImageRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
 
+
     /**
      * <p>The input image as bytes or an S3 object.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      */
     inline SearchFacesByImageRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
+
     /**
      * <p>Maximum number of faces to return. The operation returns the maximum number
      * of faces with the highest confidence in the match.</p>
@@ -114,6 +117,7 @@ namespace Model
      * of faces with the highest confidence in the match.</p>
      */
     inline SearchFacesByImageRequest& WithMaxFaces(int value) { SetMaxFaces(value); return *this;}
+
 
     /**
      * <p>(Optional) Specifies the minimum confidence in the face match to return. For
@@ -137,12 +141,16 @@ namespace Model
     inline SearchFacesByImageRequest& WithFaceMatchThreshold(double value) { SetFaceMatchThreshold(value); return *this;}
 
   private:
+
     Aws::String m_collectionId;
     bool m_collectionIdHasBeenSet;
+
     Image m_image;
     bool m_imageHasBeenSet;
+
     int m_maxFaces;
     bool m_maxFacesHasBeenSet;
+
     double m_faceMatchThreshold;
     bool m_faceMatchThresholdHasBeenSet;
   };

@@ -59,6 +59,7 @@ namespace Model
     RecordMarkerDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The name of the marker.</p>
      */
@@ -93,6 +94,7 @@ namespace Model
      * <p> The name of the marker.</p>
      */
     inline RecordMarkerDecisionAttributes& WithMarkerName(const char* value) { SetMarkerName(value); return *this;}
+
 
     /**
      * <p> The details of the marker.</p>
@@ -130,8 +132,10 @@ namespace Model
     inline RecordMarkerDecisionAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 
   private:
+
     Aws::String m_markerName;
     bool m_markerNameHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
   };

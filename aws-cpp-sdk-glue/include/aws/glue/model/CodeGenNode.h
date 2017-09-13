@@ -47,6 +47,7 @@ namespace Model
     CodeGenNode& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A node identifier that is unique within the node's graph.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>A node identifier that is unique within the node's graph.</p>
      */
     inline CodeGenNode& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The type of node this is.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline CodeGenNode& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
+
     /**
      * <p>Properties of the node, in the form of name-value pairs.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline CodeGenNode& AddArgs(CodeGenNodeArg&& value) { m_argsHasBeenSet = true; m_args.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The line number of the node.</p>
      */
@@ -168,12 +172,16 @@ namespace Model
     inline CodeGenNode& WithLineNumber(int value) { SetLineNumber(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     Aws::Vector<CodeGenNodeArg> m_args;
     bool m_argsHasBeenSet;
+
     int m_lineNumber;
     bool m_lineNumberHasBeenSet;
   };

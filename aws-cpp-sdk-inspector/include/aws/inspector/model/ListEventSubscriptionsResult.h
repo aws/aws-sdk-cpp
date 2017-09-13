@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListEventSubscriptionsResult();
-    ListEventSubscriptionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEventSubscriptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListEventSubscriptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListEventSubscriptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Details of the returned event subscriptions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Details of the returned event subscriptions.</p>
      */
     inline ListEventSubscriptionsResult& AddSubscriptions(Subscription&& value) { m_subscriptions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this
@@ -135,7 +137,9 @@ namespace Model
     inline ListEventSubscriptionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Subscription> m_subscriptions;
+
     Aws::String m_nextToken;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
      */
     inline ListFacetNamesRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline ListFacetNamesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -122,10 +125,13 @@ namespace Model
     inline ListFacetNamesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

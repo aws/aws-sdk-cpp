@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetCSVHeaderResult();
-    GetCSVHeaderResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCSVHeaderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCSVHeaderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCSVHeaderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The user pool ID for the user pool that the users are to be imported
@@ -91,6 +92,7 @@ namespace Model
      */
     inline GetCSVHeaderResult& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The header information for the .csv file for the user import job.</p>
      */
@@ -132,7 +134,9 @@ namespace Model
     inline GetCSVHeaderResult& AddCSVHeader(const char* value) { m_cSVHeader.push_back(value); return *this; }
 
   private:
+
     Aws::String m_userPoolId;
+
     Aws::Vector<Aws::String> m_cSVHeader;
   };
 

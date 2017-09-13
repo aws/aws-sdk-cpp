@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeFleetAttributesResult();
-    DescribeFleetAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFleetAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFleetAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFleetAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of objects containing attribute metadata for each requested fleet
@@ -90,6 +91,7 @@ namespace Model
      * ID.</p>
      */
     inline DescribeFleetAttributesResult& AddFleetAttributes(FleetAttributes&& value) { m_fleetAttributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -141,7 +143,9 @@ namespace Model
     inline DescribeFleetAttributesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<FleetAttributes> m_fleetAttributes;
+
     Aws::String m_nextToken;
   };
 

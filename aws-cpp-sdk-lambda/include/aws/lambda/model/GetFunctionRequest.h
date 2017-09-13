@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The Lambda function name.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
@@ -127,6 +128,7 @@ namespace Model
      */
     inline GetFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>Using this optional parameter to specify a function version or an alias name.
      * If you specify function version, the API uses qualified function ARN for the
@@ -205,8 +207,10 @@ namespace Model
     inline GetFunctionRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet;
   };

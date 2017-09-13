@@ -41,6 +41,7 @@ namespace Model
     PartitionValueList& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
@@ -66,6 +67,7 @@ namespace Model
     inline PartitionValueList& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

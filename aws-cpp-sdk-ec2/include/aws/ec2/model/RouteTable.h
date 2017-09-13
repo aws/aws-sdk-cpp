@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The associations between the route table and one or more subnets.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The associations between the route table and one or more subnets.</p>
      */
     inline RouteTable& AddAssociations(RouteTableAssociation&& value) { m_associationsHasBeenSet = true; m_associations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Any virtual private gateway (VGW) propagating routes.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline RouteTable& AddPropagatingVgws(PropagatingVgw&& value) { m_propagatingVgwsHasBeenSet = true; m_propagatingVgws.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the route table.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The ID of the route table.</p>
      */
     inline RouteTable& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+
 
     /**
      * <p>The routes in the route table.</p>
@@ -193,6 +197,7 @@ namespace Model
      */
     inline RouteTable& AddRoutes(Route&& value) { m_routesHasBeenSet = true; m_routes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Any tags assigned to the route table.</p>
      */
@@ -227,6 +232,7 @@ namespace Model
      * <p>Any tags assigned to the route table.</p>
      */
     inline RouteTable& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -264,16 +270,22 @@ namespace Model
     inline RouteTable& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::Vector<RouteTableAssociation> m_associations;
     bool m_associationsHasBeenSet;
+
     Aws::Vector<PropagatingVgw> m_propagatingVgws;
     bool m_propagatingVgwsHasBeenSet;
+
     Aws::String m_routeTableId;
     bool m_routeTableIdHasBeenSet;
+
     Aws::Vector<Route> m_routes;
     bool m_routesHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

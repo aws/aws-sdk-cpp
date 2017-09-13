@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeInterconnectsResult();
-    DescribeInterconnectsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInterconnectsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInterconnectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInterconnectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of interconnects.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DescribeInterconnectsResult& AddInterconnects(Interconnect&& value) { m_interconnects.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Interconnect> m_interconnects;
   };
 

@@ -31,12 +31,12 @@ CreateFlowLogsResponse::CreateFlowLogsResponse()
 {
 }
 
-CreateFlowLogsResponse::CreateFlowLogsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateFlowLogsResponse::CreateFlowLogsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

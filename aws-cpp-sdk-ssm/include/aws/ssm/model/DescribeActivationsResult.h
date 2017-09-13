@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeActivationsResult();
-    DescribeActivationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeActivationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeActivationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeActivationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of activations for your AWS account.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of activations for your AWS account.</p>
      */
     inline DescribeActivationsResult& AddActivationList(Activation&& value) { m_activationList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token for the next set of items to return. Use this token to get the next
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeActivationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Activation> m_activationList;
+
     Aws::String m_nextToken;
   };
 

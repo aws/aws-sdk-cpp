@@ -45,6 +45,7 @@ namespace Model
     ResourceServerScopeType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the scope.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of the scope.</p>
      */
     inline ResourceServerScopeType& WithScopeName(const char* value) { SetScopeName(value); return *this;}
+
 
     /**
      * <p>A description of the scope.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline ResourceServerScopeType& WithScopeDescription(const char* value) { SetScopeDescription(value); return *this;}
 
   private:
+
     Aws::String m_scopeName;
     bool m_scopeNameHasBeenSet;
+
     Aws::String m_scopeDescription;
     bool m_scopeDescriptionHasBeenSet;
   };

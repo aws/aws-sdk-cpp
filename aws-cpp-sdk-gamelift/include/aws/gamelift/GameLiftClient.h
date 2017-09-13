@@ -31,8 +31,12 @@
 #include <aws/gamelift/model/CreateMatchmakingRuleSetResult.h>
 #include <aws/gamelift/model/CreatePlayerSessionResult.h>
 #include <aws/gamelift/model/CreatePlayerSessionsResult.h>
+#include <aws/gamelift/model/CreateVpcPeeringAuthorizationResult.h>
+#include <aws/gamelift/model/CreateVpcPeeringConnectionResult.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueResult.h>
 #include <aws/gamelift/model/DeleteMatchmakingConfigurationResult.h>
+#include <aws/gamelift/model/DeleteVpcPeeringAuthorizationResult.h>
+#include <aws/gamelift/model/DeleteVpcPeeringConnectionResult.h>
 #include <aws/gamelift/model/DescribeAliasResult.h>
 #include <aws/gamelift/model/DescribeBuildResult.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsResult.h>
@@ -52,6 +56,8 @@
 #include <aws/gamelift/model/DescribePlayerSessionsResult.h>
 #include <aws/gamelift/model/DescribeRuntimeConfigurationResult.h>
 #include <aws/gamelift/model/DescribeScalingPoliciesResult.h>
+#include <aws/gamelift/model/DescribeVpcPeeringAuthorizationsResult.h>
+#include <aws/gamelift/model/DescribeVpcPeeringConnectionsResult.h>
 #include <aws/gamelift/model/GetGameSessionLogUrlResult.h>
 #include <aws/gamelift/model/GetInstanceAccessResult.h>
 #include <aws/gamelift/model/ListAliasesResult.h>
@@ -131,12 +137,16 @@ namespace Model
         class CreateMatchmakingRuleSetRequest;
         class CreatePlayerSessionRequest;
         class CreatePlayerSessionsRequest;
+        class CreateVpcPeeringAuthorizationRequest;
+        class CreateVpcPeeringConnectionRequest;
         class DeleteAliasRequest;
         class DeleteBuildRequest;
         class DeleteFleetRequest;
         class DeleteGameSessionQueueRequest;
         class DeleteMatchmakingConfigurationRequest;
         class DeleteScalingPolicyRequest;
+        class DeleteVpcPeeringAuthorizationRequest;
+        class DeleteVpcPeeringConnectionRequest;
         class DescribeAliasRequest;
         class DescribeBuildRequest;
         class DescribeEC2InstanceLimitsRequest;
@@ -156,6 +166,8 @@ namespace Model
         class DescribePlayerSessionsRequest;
         class DescribeRuntimeConfigurationRequest;
         class DescribeScalingPoliciesRequest;
+        class DescribeVpcPeeringAuthorizationsRequest;
+        class DescribeVpcPeeringConnectionsRequest;
         class GetGameSessionLogUrlRequest;
         class GetInstanceAccessRequest;
         class ListAliasesRequest;
@@ -190,12 +202,16 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateMatchmakingRuleSetResult, Aws::Client::AWSError<GameLiftErrors>> CreateMatchmakingRuleSetOutcome;
         typedef Aws::Utils::Outcome<CreatePlayerSessionResult, Aws::Client::AWSError<GameLiftErrors>> CreatePlayerSessionOutcome;
         typedef Aws::Utils::Outcome<CreatePlayerSessionsResult, Aws::Client::AWSError<GameLiftErrors>> CreatePlayerSessionsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteAliasOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteBuildOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteFleetOutcome;
+        typedef Aws::Utils::Outcome<CreateVpcPeeringAuthorizationResult, Aws::Client::AWSError<GameLiftErrors>> CreateVpcPeeringAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<CreateVpcPeeringConnectionResult, Aws::Client::AWSError<GameLiftErrors>> CreateVpcPeeringConnectionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteAliasOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteBuildOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteFleetOutcome;
         typedef Aws::Utils::Outcome<DeleteGameSessionQueueResult, Aws::Client::AWSError<GameLiftErrors>> DeleteGameSessionQueueOutcome;
         typedef Aws::Utils::Outcome<DeleteMatchmakingConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> DeleteMatchmakingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteScalingPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteScalingPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteVpcPeeringAuthorizationResult, Aws::Client::AWSError<GameLiftErrors>> DeleteVpcPeeringAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<DeleteVpcPeeringConnectionResult, Aws::Client::AWSError<GameLiftErrors>> DeleteVpcPeeringConnectionOutcome;
         typedef Aws::Utils::Outcome<DescribeAliasResult, Aws::Client::AWSError<GameLiftErrors>> DescribeAliasOutcome;
         typedef Aws::Utils::Outcome<DescribeBuildResult, Aws::Client::AWSError<GameLiftErrors>> DescribeBuildOutcome;
         typedef Aws::Utils::Outcome<DescribeEC2InstanceLimitsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeEC2InstanceLimitsOutcome;
@@ -215,6 +231,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribePlayerSessionsResult, Aws::Client::AWSError<GameLiftErrors>> DescribePlayerSessionsOutcome;
         typedef Aws::Utils::Outcome<DescribeRuntimeConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> DescribeRuntimeConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeScalingPoliciesResult, Aws::Client::AWSError<GameLiftErrors>> DescribeScalingPoliciesOutcome;
+        typedef Aws::Utils::Outcome<DescribeVpcPeeringAuthorizationsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeVpcPeeringAuthorizationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeVpcPeeringConnectionsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeVpcPeeringConnectionsOutcome;
         typedef Aws::Utils::Outcome<GetGameSessionLogUrlResult, Aws::Client::AWSError<GameLiftErrors>> GetGameSessionLogUrlOutcome;
         typedef Aws::Utils::Outcome<GetInstanceAccessResult, Aws::Client::AWSError<GameLiftErrors>> GetInstanceAccessOutcome;
         typedef Aws::Utils::Outcome<ListAliasesResult, Aws::Client::AWSError<GameLiftErrors>> ListAliasesOutcome;
@@ -249,12 +267,16 @@ namespace Model
         typedef std::future<CreateMatchmakingRuleSetOutcome> CreateMatchmakingRuleSetOutcomeCallable;
         typedef std::future<CreatePlayerSessionOutcome> CreatePlayerSessionOutcomeCallable;
         typedef std::future<CreatePlayerSessionsOutcome> CreatePlayerSessionsOutcomeCallable;
+        typedef std::future<CreateVpcPeeringAuthorizationOutcome> CreateVpcPeeringAuthorizationOutcomeCallable;
+        typedef std::future<CreateVpcPeeringConnectionOutcome> CreateVpcPeeringConnectionOutcomeCallable;
         typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
         typedef std::future<DeleteBuildOutcome> DeleteBuildOutcomeCallable;
         typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
         typedef std::future<DeleteGameSessionQueueOutcome> DeleteGameSessionQueueOutcomeCallable;
         typedef std::future<DeleteMatchmakingConfigurationOutcome> DeleteMatchmakingConfigurationOutcomeCallable;
         typedef std::future<DeleteScalingPolicyOutcome> DeleteScalingPolicyOutcomeCallable;
+        typedef std::future<DeleteVpcPeeringAuthorizationOutcome> DeleteVpcPeeringAuthorizationOutcomeCallable;
+        typedef std::future<DeleteVpcPeeringConnectionOutcome> DeleteVpcPeeringConnectionOutcomeCallable;
         typedef std::future<DescribeAliasOutcome> DescribeAliasOutcomeCallable;
         typedef std::future<DescribeBuildOutcome> DescribeBuildOutcomeCallable;
         typedef std::future<DescribeEC2InstanceLimitsOutcome> DescribeEC2InstanceLimitsOutcomeCallable;
@@ -274,6 +296,8 @@ namespace Model
         typedef std::future<DescribePlayerSessionsOutcome> DescribePlayerSessionsOutcomeCallable;
         typedef std::future<DescribeRuntimeConfigurationOutcome> DescribeRuntimeConfigurationOutcomeCallable;
         typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
+        typedef std::future<DescribeVpcPeeringAuthorizationsOutcome> DescribeVpcPeeringAuthorizationsOutcomeCallable;
+        typedef std::future<DescribeVpcPeeringConnectionsOutcome> DescribeVpcPeeringConnectionsOutcomeCallable;
         typedef std::future<GetGameSessionLogUrlOutcome> GetGameSessionLogUrlOutcomeCallable;
         typedef std::future<GetInstanceAccessOutcome> GetInstanceAccessOutcomeCallable;
         typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
@@ -311,12 +335,16 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::CreateMatchmakingRuleSetRequest&, const Model::CreateMatchmakingRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMatchmakingRuleSetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreatePlayerSessionRequest&, const Model::CreatePlayerSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlayerSessionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreatePlayerSessionsRequest&, const Model::CreatePlayerSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlayerSessionsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::CreateVpcPeeringAuthorizationRequest&, const Model::CreateVpcPeeringAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpcPeeringAuthorizationResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::CreateVpcPeeringConnectionRequest&, const Model::CreateVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpcPeeringConnectionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteBuildRequest&, const Model::DeleteBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBuildResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteFleetRequest&, const Model::DeleteFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteGameSessionQueueRequest&, const Model::DeleteGameSessionQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGameSessionQueueResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteMatchmakingConfigurationRequest&, const Model::DeleteMatchmakingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMatchmakingConfigurationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteScalingPolicyRequest&, const Model::DeleteScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScalingPolicyResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DeleteVpcPeeringAuthorizationRequest&, const Model::DeleteVpcPeeringAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcPeeringAuthorizationResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DeleteVpcPeeringConnectionRequest&, const Model::DeleteVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcPeeringConnectionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeAliasRequest&, const Model::DescribeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeBuildRequest&, const Model::DescribeBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBuildResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeEC2InstanceLimitsRequest&, const Model::DescribeEC2InstanceLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEC2InstanceLimitsResponseReceivedHandler;
@@ -336,6 +364,8 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::DescribePlayerSessionsRequest&, const Model::DescribePlayerSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlayerSessionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeRuntimeConfigurationRequest&, const Model::DescribeRuntimeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuntimeConfigurationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeScalingPoliciesRequest&, const Model::DescribeScalingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPoliciesResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeVpcPeeringAuthorizationsRequest&, const Model::DescribeVpcPeeringAuthorizationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcPeeringAuthorizationsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeVpcPeeringConnectionsRequest&, const Model::DescribeVpcPeeringConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcPeeringConnectionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::GetGameSessionLogUrlRequest&, const Model::GetGameSessionLogUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGameSessionLogUrlResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::GetInstanceAccessRequest&, const Model::GetInstanceAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceAccessResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
@@ -368,10 +398,10 @@ namespace Model
    * capacity to meet player demand, (3) host game sessions and manage player access,
    * and (4) track in-depth metrics on player usage and server performance.</p>
    * <p>The Amazon GameLift service API includes two important function sets:</p>
-   * <ul> <li> <p> <b>Manage game sessions and player access</b> – Retrieve
+   * <ul> <li> <p> <b>Manage game sessions and player access</b> -- Retrieve
    * information on available game sessions; create new game sessions; send player
    * requests to join a game session.</p> </li> <li> <p> <b>Configure and manage game
-   * server resources</b> – Manage builds, fleets, queues, and aliases; set
+   * server resources</b> -- Manage builds, fleets, queues, and aliases; set
    * autoscaling policies; retrieve logs and metrics.</p> </li> </ul> <p>This
    * reference guide describes the low-level service API for Amazon GameLift. You can
    * use the API functionality with these tools: </p> <ul> <li> <p>The Amazon Web
@@ -395,56 +425,56 @@ namespace Model
    * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing
    * an Integration</a>.</p> </li> </ul> <p> <b>MORE RESOURCES</b> </p> <ul> <li> <p>
    * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-   * GameLift Developer Guide</a> – Learn more about Amazon GameLift features and how
-   * to use them. </p> </li> <li> <p> <a
+   * GameLift Developer Guide</a> -- Learn more about Amazon GameLift features and
+   * how to use them. </p> </li> <li> <p> <a
    * href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon
-   * GameLift Tutorials</a> – Get started fast with walkthroughs and sample
+   * GameLift Tutorials</a> -- Get started fast with walkthroughs and sample
    * projects.</p> </li> <li> <p> <a
-   * href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> – Stay up to date
+   * href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to date
    * with new features and techniques.</p> </li> <li> <p> <a
    * href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev
-   * Forums</a> – Connect with the GameDev community.</p> </li> <li> <p> <a
+   * Forums</a> -- Connect with the GameDev community.</p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon
-   * GameLift Document History</a> – See changes to the Amazon GameLift service,
+   * GameLift Document History</a> -- See changes to the Amazon GameLift service,
    * SDKs, and documentation, as well as links to release notes. </p> </li> </ul> <p>
    * <b>API SUMMARY</b> </p> <p>This list offers a functional overview of the Amazon
    * GameLift service API.</p> <p> <b>Managing Games and Players</b> </p> <p>Use
    * these actions to start new game sessions, find existing game sessions, track
    * game session status and other information, and enable player access to game
    * sessions.</p> <ul> <li> <p> <b>Discover existing game sessions</b> </p> <ul>
-   * <li> <p> <a>SearchGameSessions</a> – Retrieve all available game sessions or
+   * <li> <p> <a>SearchGameSessions</a> -- Retrieve all available game sessions or
    * search for game sessions that match a set of criteria. </p> </li> </ul> </li>
    * <li> <p> <b>Start new game sessions</b> </p> <ul> <li> <p>Start new games with
    * Queues to find the best available hosting resources across multiple regions,
    * minimize player latency, and balance game session activity for efficiency and
-   * cost effectiveness. </p> <ul> <li> <p> <a>StartGameSessionPlacement</a> –
+   * cost effectiveness. </p> <ul> <li> <p> <a>StartGameSessionPlacement</a> --
    * Request a new game session placement and add one or more players to it.</p>
-   * </li> <li> <p> <a>DescribeGameSessionPlacement</a> – Get details on a placement
-   * request, including status.</p> </li> <li> <p> <a>StopGameSessionPlacement</a> –
+   * </li> <li> <p> <a>DescribeGameSessionPlacement</a> -- Get details on a placement
+   * request, including status.</p> </li> <li> <p> <a>StopGameSessionPlacement</a> --
    * Cancel a placement request. </p> </li> </ul> </li> <li> <p>
-   * <a>CreateGameSession</a> – Start a new game session on a specific fleet.
+   * <a>CreateGameSession</a> -- Start a new game session on a specific fleet.
    * <i>Available in Amazon GameLift Local.</i> </p> </li> </ul> </li> <li> <p>
    * <b>Start new game sessions with FlexMatch matchmaking</b> </p> <ul> <li> <p>
-   * <a>StartMatchmaking</a> – Request matchmaking for one players or a group who
-   * want to play together. </p> </li> <li> <p> <a>DescribeMatchmaking</a> – Get
+   * <a>StartMatchmaking</a> -- Request matchmaking for one players or a group who
+   * want to play together. </p> </li> <li> <p> <a>DescribeMatchmaking</a> -- Get
    * details on a matchmaking request, including status.</p> </li> <li> <p>
-   * <a>AcceptMatch</a> – Register that a player accepts a proposed match, for
+   * <a>AcceptMatch</a> -- Register that a player accepts a proposed match, for
    * matches that require player acceptance. </p> </li> <li> <p>
-   * <a>StopMatchmaking</a> – Cancel a matchmaking request. </p> </li> </ul> </li>
+   * <a>StopMatchmaking</a> -- Cancel a matchmaking request. </p> </li> </ul> </li>
    * <li> <p> <b>Manage game session data</b> </p> <ul> <li> <p>
-   * <a>DescribeGameSessions</a> – Retrieve metadata for one or more game sessions,
+   * <a>DescribeGameSessions</a> -- Retrieve metadata for one or more game sessions,
    * including length of time active and current player count. <i>Available in Amazon
-   * GameLift Local.</i> </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> –
+   * GameLift Local.</i> </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> --
    * Retrieve metadata and the game session protection setting for one or more game
-   * sessions.</p> </li> <li> <p> <a>UpdateGameSession</a> – Change game session
+   * sessions.</p> </li> <li> <p> <a>UpdateGameSession</a> -- Change game session
    * settings, such as maximum player count and join policy.</p> </li> <li> <p>
-   * <a>GetGameSessionLogUrl</a> – Get the location of saved logs for a game
+   * <a>GetGameSessionLogUrl</a> -- Get the location of saved logs for a game
    * session.</p> </li> </ul> </li> <li> <p> <b>Manage player sessions</b> </p> <ul>
-   * <li> <p> <a>CreatePlayerSession</a> – Send a request for a player to join a game
-   * session. <i>Available in Amazon GameLift Local.</i> </p> </li> <li> <p>
-   * <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game
-   * session. <i>Available in Amazon GameLift Local.</i> </p> </li> <li> <p>
-   * <a>DescribePlayerSessions</a> – Get details on player activity, including
+   * <li> <p> <a>CreatePlayerSession</a> -- Send a request for a player to join a
+   * game session. <i>Available in Amazon GameLift Local.</i> </p> </li> <li> <p>
+   * <a>CreatePlayerSessions</a> -- Send a request for multiple players to join a
+   * game session. <i>Available in Amazon GameLift Local.</i> </p> </li> <li> <p>
+   * <a>DescribePlayerSessions</a> -- Get details on player activity, including
    * status, playing time, and player data. <i>Available in Amazon GameLift
    * Local.</i> </p> </li> </ul> </li> </ul> <p> <b>Setting Up and Managing Game
    * Servers</b> </p> <p>When setting up Amazon GameLift resources for your game, you
@@ -454,77 +484,89 @@ namespace Model
    * actions to configure and manage a fleet of resources to run your game servers,
    * scale capacity to meet player demand, access performance and utilization
    * metrics, and more.</p> <ul> <li> <p> <b>Manage game builds</b> </p> <ul> <li>
-   * <p> <a>CreateBuild</a> – Create a new build using files stored in an Amazon S3
+   * <p> <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3
    * bucket. (Update uploading permissions with <a>RequestUploadCredentials</a>.) To
    * create a build and upload files from a local path, use the AWS CLI command
-   * <code>upload-build</code>.</p> </li> <li> <p> <a>ListBuilds</a> – Get a list of
+   * <code>upload-build</code>.</p> </li> <li> <p> <a>ListBuilds</a> -- Get a list of
    * all builds uploaded to a Amazon GameLift region.</p> </li> <li> <p>
-   * <a>DescribeBuild</a> – Retrieve information associated with a build.</p> </li>
-   * <li> <p> <a>UpdateBuild</a> – Change build metadata, including build name and
-   * version.</p> </li> <li> <p> <a>DeleteBuild</a> – Remove a build from Amazon
+   * <a>DescribeBuild</a> -- Retrieve information associated with a build.</p> </li>
+   * <li> <p> <a>UpdateBuild</a> -- Change build metadata, including build name and
+   * version.</p> </li> <li> <p> <a>DeleteBuild</a> -- Remove a build from Amazon
    * GameLift.</p> </li> </ul> </li> <li> <p> <b>Manage fleets</b> </p> <ul> <li> <p>
-   * <a>CreateFleet</a> – Configure and activate a new fleet to run a build's game
-   * servers.</p> </li> <li> <p> <a>ListFleets</a> – Get a list of all fleet IDs in a
-   * Amazon GameLift region (all statuses).</p> </li> <li> <p> <a>DeleteFleet</a> –
-   * Terminate a fleet that is no longer running game servers or hosting players.</p>
-   * </li> <li> <p>View / update fleet configurations.</p> <ul> <li> <p>
-   * <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> – View or change a
-   * fleet's metadata and settings for game session protection and resource creation
-   * limits.</p> </li> <li> <p> <a>DescribeFleetPortSettings</a> /
-   * <a>UpdateFleetPortSettings</a> – View or change the inbound permissions (IP
+   * <a>CreateFleet</a> -- Configure and activate a new fleet to run a build's game
+   * servers.</p> </li> <li> <p> <a>ListFleets</a> -- Get a list of all fleet IDs in
+   * a Amazon GameLift region (all statuses).</p> </li> <li> <p> <a>DeleteFleet</a>
+   * -- Terminate a fleet that is no longer running game servers or hosting
+   * players.</p> </li> <li> <p>View / update fleet configurations.</p> <ul> <li> <p>
+   * <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> -- View or change
+   * a fleet's metadata and settings for game session protection and resource
+   * creation limits.</p> </li> <li> <p> <a>DescribeFleetPortSettings</a> /
+   * <a>UpdateFleetPortSettings</a> -- View or change the inbound permissions (IP
    * address and port setting ranges) allowed for a fleet.</p> </li> <li> <p>
-   * <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> – View
+   * <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> -- View
    * or change what server processes (and how many) to run on each instance in a
    * fleet.</p> </li> </ul> </li> </ul> </li> <li> <p> <b>Control fleet capacity</b>
-   * </p> <ul> <li> <p> <a>DescribeEC2InstanceLimits</a> – Retrieve maximum number of
-   * instances allowed for the current AWS account and the current usage level.</p>
-   * </li> <li> <p> <a>DescribeFleetCapacity</a> / <a>UpdateFleetCapacity</a> –
-   * Retrieve the capacity settings and the current number of instances in a fleet;
-   * adjust fleet capacity settings to scale up or down.</p> </li> <li> <p>Autoscale
-   * – Manage autoscaling rules and apply them to a fleet.</p> <ul> <li> <p>
-   * <a>PutScalingPolicy</a> – Create a new autoscaling policy, or update an existing
-   * one.</p> </li> <li> <p> <a>DescribeScalingPolicies</a> – Retrieve an existing
-   * autoscaling policy.</p> </li> <li> <p> <a>DeleteScalingPolicy</a> – Delete an
-   * autoscaling policy and stop it from affecting a fleet's capacity.</p> </li>
-   * </ul> </li> </ul> </li> <li> <p> <b>Access fleet activity statistics</b> </p>
-   * <ul> <li> <p> <a>DescribeFleetUtilization</a> – Get current data on the number
-   * of server processes, game sessions, and players currently active on a fleet.</p>
-   * </li> <li> <p> <a>DescribeFleetEvents</a> – Get a fleet's logged events for a
-   * specified time span.</p> </li> <li> <p> <a>DescribeGameSessions</a> – Retrieve
+   * </p> <ul> <li> <p> <a>DescribeEC2InstanceLimits</a> -- Retrieve maximum number
+   * of instances allowed for the current AWS account and the current usage
+   * level.</p> </li> <li> <p> <a>DescribeFleetCapacity</a> /
+   * <a>UpdateFleetCapacity</a> -- Retrieve the capacity settings and the current
+   * number of instances in a fleet; adjust fleet capacity settings to scale up or
+   * down.</p> </li> <li> <p>Autoscale -- Manage autoscaling rules and apply them to
+   * a fleet.</p> <ul> <li> <p> <a>PutScalingPolicy</a> -- Create a new autoscaling
+   * policy, or update an existing one.</p> </li> <li> <p>
+   * <a>DescribeScalingPolicies</a> -- Retrieve an existing autoscaling policy.</p>
+   * </li> <li> <p> <a>DeleteScalingPolicy</a> -- Delete an autoscaling policy and
+   * stop it from affecting a fleet's capacity.</p> </li> </ul> </li> </ul> </li>
+   * <li> <p> <b>Manage VPC peering connections for fleets</b> </p> <ul> <li> <p>
+   * <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of
+   * your VPCs.</p> </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> --
+   * Retrieve valid peering connection authorizations. </p> </li> <li> <p>
+   * <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection
+   * authorization.</p> </li> <li> <p> <a>CreateVpcPeeringConnection</a> -- Establish
+   * a peering connection between the VPC for a Amazon GameLift fleet and one of your
+   * VPCs.</p> </li> <li> <p> <a>DescribeVpcPeeringConnections</a> -- Retrieve
+   * information on active or pending VPC peering connections with a Amazon GameLift
+   * fleet.</p> </li> <li> <p> <a>DeleteVpcPeeringConnection</a> -- Delete a VPC
+   * peering connection with a Amazon GameLift fleet.</p> </li> </ul> </li> <li> <p>
+   * <b>Access fleet activity statistics</b> </p> <ul> <li> <p>
+   * <a>DescribeFleetUtilization</a> -- Get current data on the number of server
+   * processes, game sessions, and players currently active on a fleet.</p> </li>
+   * <li> <p> <a>DescribeFleetEvents</a> -- Get a fleet's logged events for a
+   * specified time span.</p> </li> <li> <p> <a>DescribeGameSessions</a> -- Retrieve
    * metadata associated with one or more game sessions, including length of time
    * active and current player count.</p> </li> </ul> </li> <li> <p> <b>Remotely
-   * access an instance</b> </p> <ul> <li> <p> <a>DescribeInstances</a> – Get
+   * access an instance</b> </p> <ul> <li> <p> <a>DescribeInstances</a> -- Get
    * information on each instance in a fleet, including instance ID, IP address, and
-   * status.</p> </li> <li> <p> <a>GetInstanceAccess</a> – Request access credentials
-   * needed to remotely connect to a specified instance in a fleet.</p> </li> </ul>
-   * </li> <li> <p> <b>Manage fleet aliases</b> </p> <ul> <li> <p> <a>CreateAlias</a>
-   * – Define a new alias and optionally assign it to a fleet.</p> </li> <li> <p>
-   * <a>ListAliases</a> – Get all fleet aliases defined in a Amazon GameLift
-   * region.</p> </li> <li> <p> <a>DescribeAlias</a> – Retrieve information on an
-   * existing alias.</p> </li> <li> <p> <a>UpdateAlias</a> – Change settings for a
-   * alias, such as redirecting it from one fleet to another.</p> </li> <li> <p>
-   * <a>DeleteAlias</a> – Remove an alias from the region.</p> </li> <li> <p>
-   * <a>ResolveAlias</a> – Get the fleet ID that a specified alias points to.</p>
-   * </li> </ul> </li> <li> <p> <b>Manage game session queues</b> </p> <ul> <li> <p>
-   * <a>CreateGameSessionQueue</a> – Create a queue for processing requests for new
-   * game sessions. </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> – Retrieve
-   * game session queues defined in a Amazon GameLift region.</p> </li> <li> <p>
-   * <a>UpdateGameSessionQueue</a> – Change the configuration of a game session
-   * queue.</p> </li> <li> <p> <a>DeleteGameSessionQueue</a> – Remove a game session
-   * queue from the region.</p> </li> </ul> </li> <li> <p> <b>Manage FlexMatch
-   * resources</b> </p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> – Create
-   * a matchmaking configuration with instructions for building a player group and
-   * placing in a new game session. </p> </li> <li> <p>
-   * <a>DescribeMatchmakingConfigurations</a> – Retrieve matchmaking configurations
-   * defined a Amazon GameLift region.</p> </li> <li> <p>
-   * <a>UpdateMatchmakingConfiguration</a> – Change settings for matchmaking
-   * configuration. queue.</p> </li> <li> <p> <a>DeleteMatchmakingConfiguration</a> –
-   * Remove a matchmaking configuration from the region.</p> </li> <li> <p>
-   * <a>CreateMatchmakingRuleSet</a> – Create a set of rules to use when searching
-   * for player matches. </p> </li> <li> <p> <a>DescribeMatchmakingRuleSets</a> –
-   * Retrieve matchmaking rule sets defined in a Amazon GameLift region.</p> </li>
-   * <li> <p> <a>ValidateMatchmakingRuleSet</a> – Verify syntax for a set of
-   * matchmaking rules. </p> </li> </ul> </li> </ul>
+   * status.</p> </li> <li> <p> <a>GetInstanceAccess</a> -- Request access
+   * credentials needed to remotely connect to a specified instance in a fleet.</p>
+   * </li> </ul> </li> <li> <p> <b>Manage fleet aliases</b> </p> <ul> <li> <p>
+   * <a>CreateAlias</a> -- Define a new alias and optionally assign it to a
+   * fleet.</p> </li> <li> <p> <a>ListAliases</a> -- Get all fleet aliases defined in
+   * a Amazon GameLift region.</p> </li> <li> <p> <a>DescribeAlias</a> -- Retrieve
+   * information on an existing alias.</p> </li> <li> <p> <a>UpdateAlias</a> --
+   * Change settings for a alias, such as redirecting it from one fleet to
+   * another.</p> </li> <li> <p> <a>DeleteAlias</a> -- Remove an alias from the
+   * region.</p> </li> <li> <p> <a>ResolveAlias</a> -- Get the fleet ID that a
+   * specified alias points to.</p> </li> </ul> </li> <li> <p> <b>Manage game session
+   * queues</b> </p> <ul> <li> <p> <a>CreateGameSessionQueue</a> -- Create a queue
+   * for processing requests for new game sessions. </p> </li> <li> <p>
+   * <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a
+   * Amazon GameLift region.</p> </li> <li> <p> <a>UpdateGameSessionQueue</a> --
+   * Change the configuration of a game session queue.</p> </li> <li> <p>
+   * <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the
+   * region.</p> </li> </ul> </li> <li> <p> <b>Manage FlexMatch resources</b> </p>
+   * <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking
+   * configuration with instructions for building a player group and placing in a new
+   * game session. </p> </li> <li> <p> <a>DescribeMatchmakingConfigurations</a> --
+   * Retrieve matchmaking configurations defined a Amazon GameLift region.</p> </li>
+   * <li> <p> <a>UpdateMatchmakingConfiguration</a> -- Change settings for
+   * matchmaking configuration. queue.</p> </li> <li> <p>
+   * <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from
+   * the region.</p> </li> <li> <p> <a>CreateMatchmakingRuleSet</a> -- Create a set
+   * of rules to use when searching for player matches. </p> </li> <li> <p>
+   * <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in
+   * a Amazon GameLift region.</p> </li> <li> <p> <a>ValidateMatchmakingRuleSet</a>
+   * -- Verify syntax for a set of matchmaking rules. </p> </li> </ul> </li> </ul>
    */
   class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient
   {
@@ -535,22 +577,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        GameLiftClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        GameLiftClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        GameLiftClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        GameLiftClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        GameLiftClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        GameLiftClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~GameLiftClient();
+
 
         /**
          * <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A
@@ -827,7 +870,10 @@ namespace Model
          * limit</p> </li> </ul> <p>If you use Amazon CloudWatch for metrics, you can add
          * the new fleet to a metric group. This allows you to view aggregated metrics for
          * a set of fleets. Once you specify a metric group, the new fleet's metrics are
-         * included in the metric group's data.</p> <p>If the CreateFleet call is
+         * included in the metric group's data.</p> <p>You have the option of creating a
+         * VPC peering connection with the new fleet. For more information, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * Peering with Amazon GameLift Fleets</a>.</p> <p>If the CreateFleet call is
          * successful, Amazon GameLift performs the following tasks:</p> <ul> <li>
          * <p>Creates a fleet record and sets the status to <code>NEW</code> (followed by
          * other statuses as the fleet is activated).</p> </li> <li> <p>Sets the fleet's
@@ -880,7 +926,10 @@ namespace Model
          * limit</p> </li> </ul> <p>If you use Amazon CloudWatch for metrics, you can add
          * the new fleet to a metric group. This allows you to view aggregated metrics for
          * a set of fleets. Once you specify a metric group, the new fleet's metrics are
-         * included in the metric group's data.</p> <p>If the CreateFleet call is
+         * included in the metric group's data.</p> <p>You have the option of creating a
+         * VPC peering connection with the new fleet. For more information, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * Peering with Amazon GameLift Fleets</a>.</p> <p>If the CreateFleet call is
          * successful, Amazon GameLift performs the following tasks:</p> <ul> <li>
          * <p>Creates a fleet record and sets the status to <code>NEW</code> (followed by
          * other statuses as the fleet is activated).</p> </li> <li> <p>Sets the fleet's
@@ -935,7 +984,10 @@ namespace Model
          * limit</p> </li> </ul> <p>If you use Amazon CloudWatch for metrics, you can add
          * the new fleet to a metric group. This allows you to view aggregated metrics for
          * a set of fleets. Once you specify a metric group, the new fleet's metrics are
-         * included in the metric group's data.</p> <p>If the CreateFleet call is
+         * included in the metric group's data.</p> <p>You have the option of creating a
+         * VPC peering connection with the new fleet. For more information, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * Peering with Amazon GameLift Fleets</a>.</p> <p>If the CreateFleet call is
          * successful, Amazon GameLift performs the following tasks:</p> <ul> <li>
          * <p>Creates a fleet record and sets the status to <code>NEW</code> (followed by
          * other statuses as the fleet is activated).</p> </li> <li> <p>Sets the fleet's
@@ -1565,6 +1617,224 @@ namespace Model
         virtual void CreatePlayerSessionsAsync(const Model::CreatePlayerSessionsRequest& request, const CreatePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Requests authorization to create or delete a peer connection between the VPC
+         * for your Amazon GameLift fleet and a virtual private cloud (VPC) in your AWS
+         * account. VPC peering enables the game servers on your fleet to communicate
+         * directly with other AWS resources. Once you've received authorization, call
+         * <a>CreateVpcPeeringConnection</a> to establish the peering connection. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * Peering with Amazon GameLift Fleets</a>.</p> <p>You can peer with VPCs that are
+         * owned by any AWS account you have access to, including the account that you use
+         * to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in
+         * different regions.</p> <p>To request authorization to create a connection, call
+         * this operation from the AWS account with the VPC that you want to peer to your
+         * Amazon GameLift fleet. For example, to enable your game servers to retrieve data
+         * from a DynamoDB table, use the account that manages that DynamoDB resource.
+         * Identify the following values: (1) The ID of the VPC that you want to peer with,
+         * and (2) the ID of the AWS account that you use to manage Amazon GameLift. If
+         * successful, VPC peering is authorized for the specified VPC. </p> <p>To request
+         * authorization to delete a connection, call this operation from the AWS account
+         * with the VPC that is peered with your Amazon GameLift fleet. Identify the
+         * following values: (1) VPC ID that you want to delete the peering connection for,
+         * and (2) ID of the AWS account that you use to manage Amazon GameLift. </p>
+         * <p>The authorization remains valid for 24 hours unless it is canceled by a call
+         * to <a>DeleteVpcPeeringAuthorization</a>. You must create or delete the peering
+         * connection while the authorization is valid. </p> <p>VPC peering connection
+         * operations include:</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p>
+         * </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcPeeringAuthorizationOutcome CreateVpcPeeringAuthorization(const Model::CreateVpcPeeringAuthorizationRequest& request) const;
+
+        /**
+         * <p>Requests authorization to create or delete a peer connection between the VPC
+         * for your Amazon GameLift fleet and a virtual private cloud (VPC) in your AWS
+         * account. VPC peering enables the game servers on your fleet to communicate
+         * directly with other AWS resources. Once you've received authorization, call
+         * <a>CreateVpcPeeringConnection</a> to establish the peering connection. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * Peering with Amazon GameLift Fleets</a>.</p> <p>You can peer with VPCs that are
+         * owned by any AWS account you have access to, including the account that you use
+         * to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in
+         * different regions.</p> <p>To request authorization to create a connection, call
+         * this operation from the AWS account with the VPC that you want to peer to your
+         * Amazon GameLift fleet. For example, to enable your game servers to retrieve data
+         * from a DynamoDB table, use the account that manages that DynamoDB resource.
+         * Identify the following values: (1) The ID of the VPC that you want to peer with,
+         * and (2) the ID of the AWS account that you use to manage Amazon GameLift. If
+         * successful, VPC peering is authorized for the specified VPC. </p> <p>To request
+         * authorization to delete a connection, call this operation from the AWS account
+         * with the VPC that is peered with your Amazon GameLift fleet. Identify the
+         * following values: (1) VPC ID that you want to delete the peering connection for,
+         * and (2) ID of the AWS account that you use to manage Amazon GameLift. </p>
+         * <p>The authorization remains valid for 24 hours unless it is canceled by a call
+         * to <a>DeleteVpcPeeringAuthorization</a>. You must create or delete the peering
+         * connection while the authorization is valid. </p> <p>VPC peering connection
+         * operations include:</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p>
+         * </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVpcPeeringAuthorizationOutcomeCallable CreateVpcPeeringAuthorizationCallable(const Model::CreateVpcPeeringAuthorizationRequest& request) const;
+
+        /**
+         * <p>Requests authorization to create or delete a peer connection between the VPC
+         * for your Amazon GameLift fleet and a virtual private cloud (VPC) in your AWS
+         * account. VPC peering enables the game servers on your fleet to communicate
+         * directly with other AWS resources. Once you've received authorization, call
+         * <a>CreateVpcPeeringConnection</a> to establish the peering connection. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * Peering with Amazon GameLift Fleets</a>.</p> <p>You can peer with VPCs that are
+         * owned by any AWS account you have access to, including the account that you use
+         * to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in
+         * different regions.</p> <p>To request authorization to create a connection, call
+         * this operation from the AWS account with the VPC that you want to peer to your
+         * Amazon GameLift fleet. For example, to enable your game servers to retrieve data
+         * from a DynamoDB table, use the account that manages that DynamoDB resource.
+         * Identify the following values: (1) The ID of the VPC that you want to peer with,
+         * and (2) the ID of the AWS account that you use to manage Amazon GameLift. If
+         * successful, VPC peering is authorized for the specified VPC. </p> <p>To request
+         * authorization to delete a connection, call this operation from the AWS account
+         * with the VPC that is peered with your Amazon GameLift fleet. Identify the
+         * following values: (1) VPC ID that you want to delete the peering connection for,
+         * and (2) ID of the AWS account that you use to manage Amazon GameLift. </p>
+         * <p>The authorization remains valid for 24 hours unless it is canceled by a call
+         * to <a>DeleteVpcPeeringAuthorization</a>. You must create or delete the peering
+         * connection while the authorization is valid. </p> <p>VPC peering connection
+         * operations include:</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p>
+         * </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVpcPeeringAuthorizationAsync(const Model::CreateVpcPeeringAuthorizationRequest& request, const CreateVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Establishes a VPC peering connection between a virtual private cloud (VPC) in
+         * an AWS account with the VPC for your Amazon GameLift fleet. VPC peering enables
+         * the game servers on your fleet to communicate directly with other AWS resources.
+         * You can peer with VPCs in any AWS account that you have access to, including the
+         * account that you use to manage your Amazon GameLift fleets. You cannot peer with
+         * VPCs that are in different regions. For more information, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * Peering with Amazon GameLift Fleets</a>.</p> <p>Before calling this operation to
+         * establish the peering connection, you first need to call
+         * <a>CreateVpcPeeringAuthorization</a> and identify the VPC you want to peer with.
+         * Once the authorization for the specified VPC is issued, you have 24 hours to
+         * establish the connection. These two operations handle all tasks necessary to
+         * peer the two VPCs, including acceptance, updating routing tables, etc. </p>
+         * <p>To establish the connection, call this operation from the AWS account that is
+         * used to manage the Amazon GameLift fleets. Identify the following values: (1)
+         * The ID of the fleet you want to be enable a VPC peering connection for; (2) The
+         * AWS account with the VPC that you want to peer with; and (3) The ID of the VPC
+         * you want to peer with. This operation is asynchronous. If successful, a
+         * <a>VpcPeeringConnection</a> request is created. You can use continuous polling
+         * to track the request's status using <a>DescribeVpcPeeringConnections</a>, or by
+         * monitoring fleet events for success or failure using <a>DescribeFleetEvents</a>.
+         * </p> <p>VPC peering connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcPeeringConnectionOutcome CreateVpcPeeringConnection(const Model::CreateVpcPeeringConnectionRequest& request) const;
+
+        /**
+         * <p>Establishes a VPC peering connection between a virtual private cloud (VPC) in
+         * an AWS account with the VPC for your Amazon GameLift fleet. VPC peering enables
+         * the game servers on your fleet to communicate directly with other AWS resources.
+         * You can peer with VPCs in any AWS account that you have access to, including the
+         * account that you use to manage your Amazon GameLift fleets. You cannot peer with
+         * VPCs that are in different regions. For more information, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * Peering with Amazon GameLift Fleets</a>.</p> <p>Before calling this operation to
+         * establish the peering connection, you first need to call
+         * <a>CreateVpcPeeringAuthorization</a> and identify the VPC you want to peer with.
+         * Once the authorization for the specified VPC is issued, you have 24 hours to
+         * establish the connection. These two operations handle all tasks necessary to
+         * peer the two VPCs, including acceptance, updating routing tables, etc. </p>
+         * <p>To establish the connection, call this operation from the AWS account that is
+         * used to manage the Amazon GameLift fleets. Identify the following values: (1)
+         * The ID of the fleet you want to be enable a VPC peering connection for; (2) The
+         * AWS account with the VPC that you want to peer with; and (3) The ID of the VPC
+         * you want to peer with. This operation is asynchronous. If successful, a
+         * <a>VpcPeeringConnection</a> request is created. You can use continuous polling
+         * to track the request's status using <a>DescribeVpcPeeringConnections</a>, or by
+         * monitoring fleet events for success or failure using <a>DescribeFleetEvents</a>.
+         * </p> <p>VPC peering connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVpcPeeringConnectionOutcomeCallable CreateVpcPeeringConnectionCallable(const Model::CreateVpcPeeringConnectionRequest& request) const;
+
+        /**
+         * <p>Establishes a VPC peering connection between a virtual private cloud (VPC) in
+         * an AWS account with the VPC for your Amazon GameLift fleet. VPC peering enables
+         * the game servers on your fleet to communicate directly with other AWS resources.
+         * You can peer with VPCs in any AWS account that you have access to, including the
+         * account that you use to manage your Amazon GameLift fleets. You cannot peer with
+         * VPCs that are in different regions. For more information, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * Peering with Amazon GameLift Fleets</a>.</p> <p>Before calling this operation to
+         * establish the peering connection, you first need to call
+         * <a>CreateVpcPeeringAuthorization</a> and identify the VPC you want to peer with.
+         * Once the authorization for the specified VPC is issued, you have 24 hours to
+         * establish the connection. These two operations handle all tasks necessary to
+         * peer the two VPCs, including acceptance, updating routing tables, etc. </p>
+         * <p>To establish the connection, call this operation from the AWS account that is
+         * used to manage the Amazon GameLift fleets. Identify the following values: (1)
+         * The ID of the fleet you want to be enable a VPC peering connection for; (2) The
+         * AWS account with the VPC that you want to peer with; and (3) The ID of the VPC
+         * you want to peer with. This operation is asynchronous. If successful, a
+         * <a>VpcPeeringConnection</a> request is created. You can use continuous polling
+         * to track the request's status using <a>DescribeVpcPeeringConnections</a>, or by
+         * monitoring fleet events for success or failure using <a>DescribeFleetEvents</a>.
+         * </p> <p>VPC peering connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVpcPeeringConnectionAsync(const Model::CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an alias. This action removes all record of the alias. Game clients
          * attempting to access a server process using the deleted alias receive an error.
          * To delete an alias, specify the alias ID to be deleted.</p> <p>Alias-related
@@ -1917,6 +2187,125 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteScalingPolicyAsync(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Cancels a pending VPC peering authorization for the specified VPC. If the
+         * authorization has already been used to create a peering connection, call
+         * <a>DeleteVpcPeeringConnection</a> to remove the connection. </p> <p>VPC peering
+         * connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcPeeringAuthorizationOutcome DeleteVpcPeeringAuthorization(const Model::DeleteVpcPeeringAuthorizationRequest& request) const;
+
+        /**
+         * <p>Cancels a pending VPC peering authorization for the specified VPC. If the
+         * authorization has already been used to create a peering connection, call
+         * <a>DeleteVpcPeeringConnection</a> to remove the connection. </p> <p>VPC peering
+         * connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVpcPeeringAuthorizationOutcomeCallable DeleteVpcPeeringAuthorizationCallable(const Model::DeleteVpcPeeringAuthorizationRequest& request) const;
+
+        /**
+         * <p>Cancels a pending VPC peering authorization for the specified VPC. If the
+         * authorization has already been used to create a peering connection, call
+         * <a>DeleteVpcPeeringConnection</a> to remove the connection. </p> <p>VPC peering
+         * connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVpcPeeringAuthorizationAsync(const Model::DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a VPC peering connection. To delete the connection, you must have a
+         * valid authorization for the VPC peering connection that you want to delete. You
+         * can check for an authorization by calling
+         * <a>DescribeVpcPeeringAuthorizations</a> or request a new one using
+         * <a>CreateVpcPeeringAuthorization</a>. </p> <p>Once a valid authorization exists,
+         * call this operation from the AWS account that is used to manage the Amazon
+         * GameLift fleets. Identify the connection to delete by the connection ID and
+         * fleet ID. If successful, the connection is removed. </p> <p>VPC peering
+         * connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcPeeringConnectionOutcome DeleteVpcPeeringConnection(const Model::DeleteVpcPeeringConnectionRequest& request) const;
+
+        /**
+         * <p>Removes a VPC peering connection. To delete the connection, you must have a
+         * valid authorization for the VPC peering connection that you want to delete. You
+         * can check for an authorization by calling
+         * <a>DescribeVpcPeeringAuthorizations</a> or request a new one using
+         * <a>CreateVpcPeeringAuthorization</a>. </p> <p>Once a valid authorization exists,
+         * call this operation from the AWS account that is used to manage the Amazon
+         * GameLift fleets. Identify the connection to delete by the connection ID and
+         * fleet ID. If successful, the connection is removed. </p> <p>VPC peering
+         * connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVpcPeeringConnectionOutcomeCallable DeleteVpcPeeringConnectionCallable(const Model::DeleteVpcPeeringConnectionRequest& request) const;
+
+        /**
+         * <p>Removes a VPC peering connection. To delete the connection, you must have a
+         * valid authorization for the VPC peering connection that you want to delete. You
+         * can check for an authorization by calling
+         * <a>DescribeVpcPeeringAuthorizations</a> or request a new one using
+         * <a>CreateVpcPeeringAuthorization</a>. </p> <p>Once a valid authorization exists,
+         * call this operation from the AWS account that is used to manage the Amazon
+         * GameLift fleets. Identify the connection to delete by the connection ID and
+         * fleet ID. If successful, the connection is removed. </p> <p>VPC peering
+         * connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVpcPeeringConnectionAsync(const Model::DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves properties for an alias. This operation returns all alias metadata
@@ -3312,6 +3701,122 @@ namespace Model
         virtual void DescribeScalingPoliciesAsync(const Model::DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves valid VPC peering authorizations that are pending for the AWS
+         * account. This operation returns all VPC peering authorizations and requests for
+         * peering. This includes those initiated and received by this account. </p> <p>VPC
+         * peering connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcPeeringAuthorizationsOutcome DescribeVpcPeeringAuthorizations(const Model::DescribeVpcPeeringAuthorizationsRequest& request) const;
+
+        /**
+         * <p>Retrieves valid VPC peering authorizations that are pending for the AWS
+         * account. This operation returns all VPC peering authorizations and requests for
+         * peering. This includes those initiated and received by this account. </p> <p>VPC
+         * peering connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeVpcPeeringAuthorizationsOutcomeCallable DescribeVpcPeeringAuthorizationsCallable(const Model::DescribeVpcPeeringAuthorizationsRequest& request) const;
+
+        /**
+         * <p>Retrieves valid VPC peering authorizations that are pending for the AWS
+         * account. This operation returns all VPC peering authorizations and requests for
+         * peering. This includes those initiated and received by this account. </p> <p>VPC
+         * peering connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeVpcPeeringAuthorizationsAsync(const Model::DescribeVpcPeeringAuthorizationsRequest& request, const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information on VPC peering connections. Use this operation to get
+         * peering information for all fleets or for one specific fleet ID. </p> <p>To
+         * retrieve connection information, call this operation from the AWS account that
+         * is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the
+         * parameter empty to retrieve all connection records. If successful, the retrieved
+         * information includes both active and pending connections. Active connections
+         * identify the IpV4 CIDR block that the VPC uses to connect. </p> <p>VPC peering
+         * connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcPeeringConnectionsOutcome DescribeVpcPeeringConnections(const Model::DescribeVpcPeeringConnectionsRequest& request) const;
+
+        /**
+         * <p>Retrieves information on VPC peering connections. Use this operation to get
+         * peering information for all fleets or for one specific fleet ID. </p> <p>To
+         * retrieve connection information, call this operation from the AWS account that
+         * is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the
+         * parameter empty to retrieve all connection records. If successful, the retrieved
+         * information includes both active and pending connections. Active connections
+         * identify the IpV4 CIDR block that the VPC uses to connect. </p> <p>VPC peering
+         * connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeVpcPeeringConnectionsOutcomeCallable DescribeVpcPeeringConnectionsCallable(const Model::DescribeVpcPeeringConnectionsRequest& request) const;
+
+        /**
+         * <p>Retrieves information on VPC peering connections. Use this operation to get
+         * peering information for all fleets or for one specific fleet ID. </p> <p>To
+         * retrieve connection information, call this operation from the AWS account that
+         * is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the
+         * parameter empty to retrieve all connection records. If successful, the retrieved
+         * information includes both active and pending connections. Active connections
+         * identify the IpV4 CIDR block that the VPC uses to connect. </p> <p>VPC peering
+         * connection operations include:</p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeVpcPeeringConnectionsAsync(const Model::DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the location of stored game session logs for a specified game
          * session. When a game session is terminated, Amazon GameLift automatically stores
          * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
@@ -4121,9 +4626,9 @@ namespace Model
          * matched. You must also include a set of player attributes relevant for the
          * matchmaking configuration. If successful, a matchmaking ticket is returned with
          * status set to <code>QUEUED</code>. Track the status of the ticket to respond as
-         * needed and acquire game session connection information for sucessfully completed
-         * matches.</p> <p> <b>Tracking ticket status</b> -- A couple of options are
-         * available for tracking the status of matchmaking requests: </p> <ul> <li>
+         * needed and acquire game session connection information for successfully
+         * completed matches.</p> <p> <b>Tracking ticket status</b> -- A couple of options
+         * are available for tracking the status of matchmaking requests: </p> <ul> <li>
          * <p>Polling -- Call <code>DescribeMatchmaking</code>. This operation returns the
          * full ticket object, including current status and (for completed tickets) game
          * session connection info. We recommend polling no more than once every 10
@@ -4180,9 +4685,9 @@ namespace Model
          * matched. You must also include a set of player attributes relevant for the
          * matchmaking configuration. If successful, a matchmaking ticket is returned with
          * status set to <code>QUEUED</code>. Track the status of the ticket to respond as
-         * needed and acquire game session connection information for sucessfully completed
-         * matches.</p> <p> <b>Tracking ticket status</b> -- A couple of options are
-         * available for tracking the status of matchmaking requests: </p> <ul> <li>
+         * needed and acquire game session connection information for successfully
+         * completed matches.</p> <p> <b>Tracking ticket status</b> -- A couple of options
+         * are available for tracking the status of matchmaking requests: </p> <ul> <li>
          * <p>Polling -- Call <code>DescribeMatchmaking</code>. This operation returns the
          * full ticket object, including current status and (for completed tickets) game
          * session connection info. We recommend polling no more than once every 10
@@ -4241,9 +4746,9 @@ namespace Model
          * matched. You must also include a set of player attributes relevant for the
          * matchmaking configuration. If successful, a matchmaking ticket is returned with
          * status set to <code>QUEUED</code>. Track the status of the ticket to respond as
-         * needed and acquire game session connection information for sucessfully completed
-         * matches.</p> <p> <b>Tracking ticket status</b> -- A couple of options are
-         * available for tracking the status of matchmaking requests: </p> <ul> <li>
+         * needed and acquire game session connection information for successfully
+         * completed matches.</p> <p> <b>Tracking ticket status</b> -- A couple of options
+         * are available for tracking the status of matchmaking requests: </p> <ul> <li>
          * <p>Polling -- Call <code>DescribeMatchmaking</code>. This operation returns the
          * full ticket object, including current status and (for completed tickets) game
          * session connection info. We recommend polling no more than once every 10
@@ -5097,7 +5602,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AcceptMatchAsyncHelper(const Model::AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5110,12 +5615,16 @@ namespace Model
         void CreateMatchmakingRuleSetAsyncHelper(const Model::CreateMatchmakingRuleSetRequest& request, const CreateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePlayerSessionAsyncHelper(const Model::CreatePlayerSessionRequest& request, const CreatePlayerSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePlayerSessionsAsyncHelper(const Model::CreatePlayerSessionsRequest& request, const CreatePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateVpcPeeringAuthorizationAsyncHelper(const Model::CreateVpcPeeringAuthorizationRequest& request, const CreateVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateVpcPeeringConnectionAsyncHelper(const Model::CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAliasAsyncHelper(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBuildAsyncHelper(const Model::DeleteBuildRequest& request, const DeleteBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFleetAsyncHelper(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGameSessionQueueAsyncHelper(const Model::DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMatchmakingConfigurationAsyncHelper(const Model::DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteScalingPolicyAsyncHelper(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVpcPeeringAuthorizationAsyncHelper(const Model::DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVpcPeeringConnectionAsyncHelper(const Model::DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAliasAsyncHelper(const Model::DescribeAliasRequest& request, const DescribeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBuildAsyncHelper(const Model::DescribeBuildRequest& request, const DescribeBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEC2InstanceLimitsAsyncHelper(const Model::DescribeEC2InstanceLimitsRequest& request, const DescribeEC2InstanceLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5135,6 +5644,8 @@ namespace Model
         void DescribePlayerSessionsAsyncHelper(const Model::DescribePlayerSessionsRequest& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRuntimeConfigurationAsyncHelper(const Model::DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScalingPoliciesAsyncHelper(const Model::DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeVpcPeeringAuthorizationsAsyncHelper(const Model::DescribeVpcPeeringAuthorizationsRequest& request, const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeVpcPeeringConnectionsAsyncHelper(const Model::DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGameSessionLogUrlAsyncHelper(const Model::GetGameSessionLogUrlRequest& request, const GetGameSessionLogUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInstanceAccessAsyncHelper(const Model::GetInstanceAccessRequest& request, const GetInstanceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAliasesAsyncHelper(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier to assign to the new game session placement. This value is
      * developer-defined. The value must be unique across all regions and cannot be
@@ -99,6 +100,7 @@ namespace Model
      */
     inline StartGameSessionPlacementRequest& WithPlacementId(const char* value) { SetPlacementId(value); return *this;}
 
+
     /**
      * <p>Name of the queue to use to place the new game session.</p>
      */
@@ -133,6 +135,7 @@ namespace Model
      * <p>Name of the queue to use to place the new game session.</p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionQueueName(const char* value) { SetGameSessionQueueName(value); return *this;}
+
 
     /**
      * <p>Set of developer-defined properties for a game session, formatted as a set of
@@ -204,6 +207,7 @@ namespace Model
      */
     inline StartGameSessionPlacementRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session.</p>
@@ -221,6 +225,7 @@ namespace Model
      * session.</p>
      */
     inline StartGameSessionPlacementRequest& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -263,6 +268,7 @@ namespace Model
      * not need to be unique.</p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionName(const char* value) { SetGameSessionName(value); return *this;}
+
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
@@ -320,6 +326,7 @@ namespace Model
      */
     inline StartGameSessionPlacementRequest& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Set of information on each player to create a player session for.</p>
      */
@@ -354,6 +361,7 @@ namespace Model
      * <p>Set of information on each player to create a player session for.</p>
      */
     inline StartGameSessionPlacementRequest& AddDesiredPlayerSessions(DesiredPlayerSession&& value) { m_desiredPlayerSessionsHasBeenSet = true; m_desiredPlayerSessions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Set of developer-defined game session properties, formatted as a single
@@ -419,20 +427,28 @@ namespace Model
     inline StartGameSessionPlacementRequest& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
   private:
+
     Aws::String m_placementId;
     bool m_placementIdHasBeenSet;
+
     Aws::String m_gameSessionQueueName;
     bool m_gameSessionQueueNameHasBeenSet;
+
     Aws::Vector<GameProperty> m_gameProperties;
     bool m_gamePropertiesHasBeenSet;
+
     int m_maximumPlayerSessionCount;
     bool m_maximumPlayerSessionCountHasBeenSet;
+
     Aws::String m_gameSessionName;
     bool m_gameSessionNameHasBeenSet;
+
     Aws::Vector<PlayerLatency> m_playerLatencies;
     bool m_playerLatenciesHasBeenSet;
+
     Aws::Vector<DesiredPlayerSession> m_desiredPlayerSessions;
     bool m_desiredPlayerSessionsHasBeenSet;
+
     Aws::String m_gameSessionData;
     bool m_gameSessionDataHasBeenSet;
   };

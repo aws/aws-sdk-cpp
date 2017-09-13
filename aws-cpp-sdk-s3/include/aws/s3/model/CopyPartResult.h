@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Entity tag of the object.
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CopyPartResult& WithETag(const char* value) { SetETag(value); return *this;}
 
+
     /**
      * Date and time at which the object was uploaded.
      */
@@ -103,8 +105,10 @@ namespace Model
     inline CopyPartResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
+
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
   };

@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     DescribeCacheParametersResult();
-    DescribeCacheParametersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCacheParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeCacheParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeCacheParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeCacheParametersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of <a>Parameter</a> instances.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>A list of <a>Parameter</a> instances.</p>
      */
     inline DescribeCacheParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of parameters specific to a particular cache node type. Each element
@@ -163,6 +166,7 @@ namespace Model
      */
     inline DescribeCacheParametersResult& AddCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParameter&& value) { m_cacheNodeTypeSpecificParameters.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -179,9 +183,13 @@ namespace Model
     inline DescribeCacheParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<Parameter> m_parameters;
+
     Aws::Vector<CacheNodeTypeSpecificParameter> m_cacheNodeTypeSpecificParameters;
+
     ResponseMetadata m_responseMetadata;
   };
 

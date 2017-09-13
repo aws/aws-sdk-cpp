@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListWorkflowTypesResult();
-    ListWorkflowTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWorkflowTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListWorkflowTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListWorkflowTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of workflow type information.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The list of workflow type information.</p>
      */
     inline ListWorkflowTypesResult& AddTypeInfos(WorkflowTypeInfo&& value) { m_typeInfos.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -148,7 +150,9 @@ namespace Model
     inline ListWorkflowTypesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<WorkflowTypeInfo> m_typeInfos;
+
     Aws::String m_nextPageToken;
   };
 

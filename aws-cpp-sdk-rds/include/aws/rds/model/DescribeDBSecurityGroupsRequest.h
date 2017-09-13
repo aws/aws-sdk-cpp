@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the DB security group to return details for.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name of the DB security group to return details for.</p>
      */
     inline DescribeDBSecurityGroupsRequest& WithDBSecurityGroupName(const char* value) { SetDBSecurityGroupName(value); return *this;}
+
 
     /**
      * <p>This parameter is not currently supported.</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline DescribeDBSecurityGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -136,6 +139,7 @@ namespace Model
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBSecurityGroupsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -194,12 +198,16 @@ namespace Model
     inline DescribeDBSecurityGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_dBSecurityGroupName;
     bool m_dBSecurityGroupNameHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

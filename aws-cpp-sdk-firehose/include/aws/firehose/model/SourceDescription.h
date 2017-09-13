@@ -46,6 +46,7 @@ namespace Model
     SourceDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis
      * stream.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline SourceDescription& WithKinesisStreamSourceDescription(KinesisStreamSourceDescription&& value) { SetKinesisStreamSourceDescription(std::move(value)); return *this;}
 
   private:
+
     KinesisStreamSourceDescription m_kinesisStreamSourceDescription;
     bool m_kinesisStreamSourceDescriptionHasBeenSet;
   };

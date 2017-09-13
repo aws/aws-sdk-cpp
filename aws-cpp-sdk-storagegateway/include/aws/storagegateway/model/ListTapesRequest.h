@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::Vector<Aws::String>& GetTapeARNs() const{ return m_tapeARNs; }
 
@@ -66,6 +67,7 @@ namespace Model
 
     
     inline ListTapesRequest& AddTapeARNs(const char* value) { m_tapeARNsHasBeenSet = true; m_tapeARNs.push_back(value); return *this; }
+
 
     /**
      * <p>A string that indicates the position at which to begin the returned list of
@@ -109,6 +111,7 @@ namespace Model
      */
     inline ListTapesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>An optional number limit for the tapes in the list returned by this call.</p>
      */
@@ -125,10 +128,13 @@ namespace Model
     inline ListTapesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_tapeARNs;
     bool m_tapeARNsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     NotifyWorkersResult();
-    NotifyWorkersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    NotifyWorkersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    NotifyWorkersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    NotifyWorkersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> When MTurk sends notifications to the list of Workers, it returns back any
@@ -85,6 +86,7 @@ namespace Model
     inline NotifyWorkersResult& AddNotifyWorkersFailureStatuses(NotifyWorkersFailureStatus&& value) { m_notifyWorkersFailureStatuses.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<NotifyWorkersFailureStatus> m_notifyWorkersFailureStatuses;
   };
 

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     CompleteMultipartUploadResult();
-    CompleteMultipartUploadResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CompleteMultipartUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CompleteMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::String& GetLocation() const{ return m_location; }
@@ -64,6 +65,7 @@ namespace Model
     
     inline CompleteMultipartUploadResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -85,6 +87,7 @@ namespace Model
     
     inline CompleteMultipartUploadResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -105,6 +108,7 @@ namespace Model
 
     
     inline CompleteMultipartUploadResult& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * If the object expiration is configured, this will contain the expiration date
@@ -148,6 +152,7 @@ namespace Model
      */
     inline CompleteMultipartUploadResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
+
     /**
      * Entity tag of the object.
      */
@@ -183,6 +188,7 @@ namespace Model
      */
     inline CompleteMultipartUploadResult& WithETag(const char* value) { SetETag(value); return *this;}
 
+
     /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
      * AES256, aws:kms).
@@ -212,6 +218,7 @@ namespace Model
      * AES256, aws:kms).
      */
     inline CompleteMultipartUploadResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
+
 
     /**
      * Version of the object.
@@ -247,6 +254,7 @@ namespace Model
      * Version of the object.
      */
     inline CompleteMultipartUploadResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+
 
     /**
      * If present, specifies the ID of the AWS Key Management Service (KMS) master
@@ -290,6 +298,7 @@ namespace Model
      */
     inline CompleteMultipartUploadResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -306,14 +315,23 @@ namespace Model
     inline CompleteMultipartUploadResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_location;
+
     Aws::String m_bucket;
+
     Aws::String m_key;
+
     Aws::String m_expiration;
+
     Aws::String m_eTag;
+
     ServerSideEncryption m_serverSideEncryption;
+
     Aws::String m_versionId;
+
     Aws::String m_sSEKMSKeyId;
+
     RequestCharged m_requestCharged;
   };
 

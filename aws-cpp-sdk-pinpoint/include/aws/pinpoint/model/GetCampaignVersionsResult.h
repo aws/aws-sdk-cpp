@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetCampaignVersionsResult();
-    GetCampaignVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCampaignVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCampaignVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCampaignVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const CampaignsResponse& GetCampaignsResponse() const{ return m_campaignsResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline GetCampaignVersionsResult& WithCampaignsResponse(CampaignsResponse&& value) { SetCampaignsResponse(std::move(value)); return *this;}
 
   private:
+
     CampaignsResponse m_campaignsResponse;
   };
 

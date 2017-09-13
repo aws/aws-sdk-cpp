@@ -50,6 +50,7 @@ namespace Model
     AssessmentRunFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>For a record to match a filter, an explicit value or a string containing a
      * wildcard that is specified for this data type property must match the value of
@@ -98,6 +99,7 @@ namespace Model
      * the <b>assessmentRunName</b> property of the <a>AssessmentRun</a> data type.</p>
      */
     inline AssessmentRunFilter& WithNamePattern(const char* value) { SetNamePattern(value); return *this;}
+
 
     /**
      * <p>For a record to match a filter, one of the values specified for this data
@@ -148,6 +150,7 @@ namespace Model
      */
     inline AssessmentRunFilter& AddStates(AssessmentRunState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>For a record to match a filter, the value that is specified for this data
      * type property must inclusively match any value between the specified minimum and
@@ -187,6 +190,7 @@ namespace Model
      * <a>AssessmentRun</a> data type.</p>
      */
     inline AssessmentRunFilter& WithDurationRange(DurationRange&& value) { SetDurationRange(std::move(value)); return *this;}
+
 
     /**
      * <p>For a record to match a filter, the value that is specified for this data
@@ -244,6 +248,7 @@ namespace Model
      */
     inline AssessmentRunFilter& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
 
+
     /**
      * <p>For a record to match a filter, the value that is specified for this data
      * type property must inclusively match any value between the specified minimum and
@@ -283,6 +288,7 @@ namespace Model
      * type.</p>
      */
     inline AssessmentRunFilter& WithStartTimeRange(TimestampRange&& value) { SetStartTimeRange(std::move(value)); return *this;}
+
 
     /**
      * <p>For a record to match a filter, the value that is specified for this data
@@ -324,6 +330,7 @@ namespace Model
      */
     inline AssessmentRunFilter& WithCompletionTimeRange(TimestampRange&& value) { SetCompletionTimeRange(std::move(value)); return *this;}
 
+
     /**
      * <p>For a record to match a filter, the value that is specified for this data
      * type property must match the <b>stateChangedAt</b> property of the
@@ -360,18 +367,25 @@ namespace Model
     inline AssessmentRunFilter& WithStateChangeTimeRange(TimestampRange&& value) { SetStateChangeTimeRange(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_namePattern;
     bool m_namePatternHasBeenSet;
+
     Aws::Vector<AssessmentRunState> m_states;
     bool m_statesHasBeenSet;
+
     DurationRange m_durationRange;
     bool m_durationRangeHasBeenSet;
+
     Aws::Vector<Aws::String> m_rulesPackageArns;
     bool m_rulesPackageArnsHasBeenSet;
+
     TimestampRange m_startTimeRange;
     bool m_startTimeRangeHasBeenSet;
+
     TimestampRange m_completionTimeRange;
     bool m_completionTimeRangeHasBeenSet;
+
     TimestampRange m_stateChangeTimeRange;
     bool m_stateChangeTimeRangeHasBeenSet;
   };

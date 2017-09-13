@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or the unique stack ID that is associated with the stack.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name or the unique stack ID that is associated with the stack.</p>
      */
     inline CancelUpdateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify
@@ -141,8 +143,10 @@ namespace Model
     inline CancelUpdateStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
   };

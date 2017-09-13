@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListWorkerBlocksResult();
-    ListWorkerBlocksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWorkerBlocksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListWorkerBlocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListWorkerBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -64,6 +65,7 @@ namespace Model
     
     inline ListWorkerBlocksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> The number of assignments on the page in the filtered results list,
      * equivalent to the number of assignments returned by this call.</p>
@@ -81,6 +83,7 @@ namespace Model
      * equivalent to the number of assignments returned by this call.</p>
      */
     inline ListWorkerBlocksResult& WithNumResults(int value) { SetNumResults(value); return *this;}
+
 
     /**
      * <p> The list of WorkerBlocks, containing the collection of Worker IDs and
@@ -125,8 +128,11 @@ namespace Model
     inline ListWorkerBlocksResult& AddWorkerBlocks(WorkerBlock&& value) { m_workerBlocks.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     int m_numResults;
+
     Aws::Vector<WorkerBlock> m_workerBlocks;
   };
 

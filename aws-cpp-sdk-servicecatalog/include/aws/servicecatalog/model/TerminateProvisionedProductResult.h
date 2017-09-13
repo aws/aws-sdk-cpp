@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     TerminateProvisionedProductResult();
-    TerminateProvisionedProductResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TerminateProvisionedProductResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TerminateProvisionedProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TerminateProvisionedProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The detailed result of the <a>TerminateProvisionedProduct</a> request,
@@ -82,6 +83,7 @@ namespace Model
     inline TerminateProvisionedProductResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(std::move(value)); return *this;}
 
   private:
+
     RecordDetail m_recordDetail;
   };
 

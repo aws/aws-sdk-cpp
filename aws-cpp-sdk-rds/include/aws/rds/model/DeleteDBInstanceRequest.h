@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The DB instance identifier for the DB instance to be deleted. This parameter
      * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
@@ -104,6 +105,7 @@ namespace Model
      */
     inline DeleteDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p> Determines whether a final DB snapshot is created before the DB instance is
      * deleted. If <code>true</code> is specified, no DBSnapshot is created. If
@@ -142,6 +144,7 @@ namespace Model
      * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
      */
     inline DeleteDBInstanceRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
+
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
@@ -221,10 +224,13 @@ namespace Model
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(const char* value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     bool m_skipFinalSnapshot;
     bool m_skipFinalSnapshotHasBeenSet;
+
     Aws::String m_finalDBSnapshotIdentifier;
     bool m_finalDBSnapshotIdentifierHasBeenSet;
   };

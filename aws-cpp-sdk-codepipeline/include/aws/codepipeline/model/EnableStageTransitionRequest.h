@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the pipeline in which you want to enable the flow of artifacts
      * from one stage to another.</p>
@@ -82,6 +83,7 @@ namespace Model
      * from one stage to another.</p>
      */
     inline EnableStageTransitionRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+
 
     /**
      * <p>The name of the stage where you want to enable the transition of artifacts,
@@ -132,6 +134,7 @@ namespace Model
      */
     inline EnableStageTransitionRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
+
     /**
      * <p>Specifies whether artifacts will be allowed to enter the stage and be
      * processed by the actions in that stage (inbound) or whether already-processed
@@ -168,10 +171,13 @@ namespace Model
     inline EnableStageTransitionRequest& WithTransitionType(StageTransitionType&& value) { SetTransitionType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     StageTransitionType m_transitionType;
     bool m_transitionTypeHasBeenSet;
   };

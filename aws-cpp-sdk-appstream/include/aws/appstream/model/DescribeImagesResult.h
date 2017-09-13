@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeImagesResult();
-    DescribeImagesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeImagesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of images.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeImagesResult& AddImages(Image&& value) { m_images.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Image> m_images;
   };
 

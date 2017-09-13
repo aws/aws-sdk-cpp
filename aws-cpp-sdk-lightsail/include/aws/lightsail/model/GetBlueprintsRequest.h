@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A Boolean value indicating whether to include inactive results in your
      * request.</p>
@@ -53,6 +54,7 @@ namespace Model
      * request.</p>
      */
     inline GetBlueprintsRequest& WithIncludeInactive(bool value) { SetIncludeInactive(value); return *this;}
+
 
     /**
      * <p>A token used for advancing to the next page of results from your get
@@ -97,8 +99,10 @@ namespace Model
     inline GetBlueprintsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     bool m_includeInactive;
     bool m_includeInactiveHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

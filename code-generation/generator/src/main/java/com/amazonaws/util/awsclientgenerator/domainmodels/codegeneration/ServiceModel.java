@@ -28,6 +28,7 @@ public class ServiceModel {
     String runtimeMajorVersion;
     String runtimeMajorVersionUpperBound;
     String runtimeMinorVersion;
+    String namespace;
     Metadata metadata;
     String documentation;
     Map<String, Shape> shapes;

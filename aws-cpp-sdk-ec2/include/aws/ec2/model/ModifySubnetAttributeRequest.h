@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces created in the
      * specified subnet should be assigned an IPv6 address. This includes a network
@@ -98,6 +99,7 @@ namespace Model
      */
     inline ModifySubnetAttributeRequest& WithAssignIpv6AddressOnCreation(AttributeBooleanValue&& value) { SetAssignIpv6AddressOnCreation(std::move(value)); return *this;}
 
+
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces created in the
      * specified subnet should be assigned a public IPv4 address. This includes a
@@ -138,6 +140,7 @@ namespace Model
      */
     inline ModifySubnetAttributeRequest& WithMapPublicIpOnLaunch(AttributeBooleanValue&& value) { SetMapPublicIpOnLaunch(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the subnet.</p>
      */
@@ -174,10 +177,13 @@ namespace Model
     inline ModifySubnetAttributeRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
+
     AttributeBooleanValue m_assignIpv6AddressOnCreation;
     bool m_assignIpv6AddressOnCreationHasBeenSet;
+
     AttributeBooleanValue m_mapPublicIpOnLaunch;
     bool m_mapPublicIpOnLaunchHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
   };

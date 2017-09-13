@@ -30,12 +30,12 @@ StartMatchmakingResult::StartMatchmakingResult()
 {
 }
 
-StartMatchmakingResult::StartMatchmakingResult(const AmazonWebServiceResult<JsonValue>& result)
+StartMatchmakingResult::StartMatchmakingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartMatchmakingResult& StartMatchmakingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartMatchmakingResult& StartMatchmakingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MatchmakingTicket"))

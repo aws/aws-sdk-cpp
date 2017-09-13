@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -64,6 +65,7 @@ namespace Model
 
     
     inline ListObjectsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * A delimiter is a character you use to group keys.
@@ -100,6 +102,7 @@ namespace Model
      */
     inline ListObjectsRequest& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
+
     
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
@@ -114,6 +117,7 @@ namespace Model
 
     
     inline ListObjectsRequest& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
+
 
     /**
      * Specifies the key to start with when listing objects in a bucket.
@@ -150,6 +154,7 @@ namespace Model
      */
     inline ListObjectsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.
@@ -167,6 +172,7 @@ namespace Model
      * contain fewer keys but will never contain more.
      */
     inline ListObjectsRequest& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
+
 
     /**
      * Limits the response to keys that begin with the specified prefix.
@@ -202,6 +208,7 @@ namespace Model
      * Limits the response to keys that begin with the specified prefix.
      */
     inline ListObjectsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+
 
     /**
      * Confirms that the requester knows that she or he will be charged for the list
@@ -239,18 +246,25 @@ namespace Model
     inline ListObjectsRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_delimiter;
     bool m_delimiterHasBeenSet;
+
     EncodingType m_encodingType;
     bool m_encodingTypeHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxKeys;
     bool m_maxKeysHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

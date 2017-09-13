@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteEmailChannelResult();
-    DeleteEmailChannelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEmailChannelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteEmailChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteEmailChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const EmailChannelResponse& GetEmailChannelResponse() const{ return m_emailChannelResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline DeleteEmailChannelResult& WithEmailChannelResponse(EmailChannelResponse&& value) { SetEmailChannelResponse(std::move(value)); return *this;}
 
   private:
+
     EmailChannelResponse m_emailChannelResponse;
   };
 

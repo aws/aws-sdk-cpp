@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeDomainResult();
-    DescribeDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The basic information about a domain, such as its name, status, and
@@ -76,6 +77,7 @@ namespace Model
      * description.</p>
      */
     inline DescribeDomainResult& WithDomainInfo(DomainInfo&& value) { SetDomainInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>The domain configuration. Currently, this includes only the domain's
@@ -108,7 +110,9 @@ namespace Model
     inline DescribeDomainResult& WithConfiguration(DomainConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
   private:
+
     DomainInfo m_domainInfo;
+
     DomainConfiguration m_configuration;
   };
 

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A JSON-formatted list of service codes available for AWS services.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>A JSON-formatted list of service codes available for AWS services.</p>
      */
     inline DescribeServicesRequest& AddServiceCodeList(const char* value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList.push_back(value); return *this; }
+
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -130,8 +132,10 @@ namespace Model
     inline DescribeServicesRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_serviceCodeList;
     bool m_serviceCodeListHasBeenSet;
+
     Aws::String m_language;
     bool m_languageHasBeenSet;
   };

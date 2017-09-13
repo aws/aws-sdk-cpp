@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DisassociateServiceRoleFromAccountResult();
-    DisassociateServiceRoleFromAccountResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateServiceRoleFromAccountResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateServiceRoleFromAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateServiceRoleFromAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Time when the service role was disassociated from the account.
@@ -77,6 +78,7 @@ namespace Model
     inline DisassociateServiceRoleFromAccountResult& WithDisassociatedAt(const char* value) { SetDisassociatedAt(value); return *this;}
 
   private:
+
     Aws::String m_disassociatedAt;
   };
 

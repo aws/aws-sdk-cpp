@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListSecurityConfigurationsResult();
-    ListSecurityConfigurationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSecurityConfigurationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSecurityConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSecurityConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The creation date and time, and name, of each security configuration.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The creation date and time, and name, of each security configuration.</p>
      */
     inline ListSecurityConfigurationsResult& AddSecurityConfigurations(SecurityConfigurationSummary&& value) { m_securityConfigurations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token that indicates the next set of results to retrieve.
@@ -128,7 +130,9 @@ namespace Model
     inline ListSecurityConfigurationsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<SecurityConfigurationSummary> m_securityConfigurations;
+
     Aws::String m_marker;
   };
 

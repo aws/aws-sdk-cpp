@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The association ID for the CIDR block.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DisassociateSubnetCidrBlockRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
   };

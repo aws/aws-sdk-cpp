@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the ARN of the trail from which tags should be removed. The format
      * of a trail ARN is:</p> <p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline RemoveTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>Specifies a list of tags to be removed.</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline RemoveTagsRequest& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<Tag> m_tagsList;
     bool m_tagsListHasBeenSet;
   };

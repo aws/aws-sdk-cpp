@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the pipeline that contains the action. </p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the pipeline that contains the action. </p>
      */
     inline PutApprovalResultRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+
 
     /**
      * <p>The name of the stage that contains the action.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline PutApprovalResultRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
+
     /**
      * <p>The name of the action for which approval is requested.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      */
     inline PutApprovalResultRequest& WithActionName(const char* value) { SetActionName(value); return *this;}
 
+
     /**
      * <p>Represents information about the result of the approval request.</p>
      */
@@ -170,6 +174,7 @@ namespace Model
      * <p>Represents information about the result of the approval request.</p>
      */
     inline PutApprovalResultRequest& WithResult(ApprovalResult&& value) { SetResult(std::move(value)); return *this;}
+
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
@@ -228,14 +233,19 @@ namespace Model
     inline PutApprovalResultRequest& WithToken(const char* value) { SetToken(value); return *this;}
 
   private:
+
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     Aws::String m_actionName;
     bool m_actionNameHasBeenSet;
+
     ApprovalResult m_result;
     bool m_resultHasBeenSet;
+
     Aws::String m_token;
     bool m_tokenHasBeenSet;
   };

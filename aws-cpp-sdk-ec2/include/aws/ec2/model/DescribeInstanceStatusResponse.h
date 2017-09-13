@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeInstanceStatusResponse();
-    DescribeInstanceStatusResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeInstanceStatusResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeInstanceStatusResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeInstanceStatusResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>One or more instance status descriptions.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>One or more instance status descriptions.</p>
      */
     inline DescribeInstanceStatusResponse& AddInstanceStatuses(InstanceStatus&& value) { m_instanceStatuses.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -126,6 +128,7 @@ namespace Model
      */
     inline DescribeInstanceStatusResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline DescribeInstanceStatusResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<InstanceStatus> m_instanceStatuses;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

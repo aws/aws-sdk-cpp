@@ -45,6 +45,7 @@ namespace Model
     BuildArtifacts& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Information about the location of the build artifacts.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>Information about the location of the build artifacts.</p>
      */
     inline BuildArtifacts& WithLocation(const char* value) { SetLocation(value); return *this;}
+
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
@@ -135,6 +137,7 @@ namespace Model
      * value is set to <code>ZIP</code>.</p> </note>
      */
     inline BuildArtifacts& WithSha256sum(const char* value) { SetSha256sum(value); return *this;}
+
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
@@ -193,10 +196,13 @@ namespace Model
     inline BuildArtifacts& WithMd5sum(const char* value) { SetMd5sum(value); return *this;}
 
   private:
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_sha256sum;
     bool m_sha256sumHasBeenSet;
+
     Aws::String m_md5sum;
     bool m_md5sumHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the queue.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the queue.</p>
      */
     inline Queue& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The URL of the queue.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline Queue& WithURL(const char* value) { SetURL(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_uRL;
     bool m_uRLHasBeenSet;
   };

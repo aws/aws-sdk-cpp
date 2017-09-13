@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeSnapshotCopyGrantsResult();
-    DescribeSnapshotCopyGrantsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSnapshotCopyGrantsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSnapshotCopyGrantsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSnapshotCopyGrantsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -133,6 +134,7 @@ namespace Model
      */
     inline DescribeSnapshotCopyGrantsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
      */
@@ -168,6 +170,7 @@ namespace Model
      */
     inline DescribeSnapshotCopyGrantsResult& AddSnapshotCopyGrants(SnapshotCopyGrant&& value) { m_snapshotCopyGrants.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -184,8 +187,11 @@ namespace Model
     inline DescribeSnapshotCopyGrantsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<SnapshotCopyGrant> m_snapshotCopyGrants;
+
     ResponseMetadata m_responseMetadata;
   };
 

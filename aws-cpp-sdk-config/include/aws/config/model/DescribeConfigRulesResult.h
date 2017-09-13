@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeConfigRulesResult();
-    DescribeConfigRulesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConfigRulesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConfigRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConfigRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The details about your AWS Config rules.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The details about your AWS Config rules.</p>
      */
     inline DescribeConfigRulesResult& AddConfigRules(ConfigRule&& value) { m_configRules.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -126,7 +128,9 @@ namespace Model
     inline DescribeConfigRulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ConfigRule> m_configRules;
+
     Aws::String m_nextToken;
   };
 

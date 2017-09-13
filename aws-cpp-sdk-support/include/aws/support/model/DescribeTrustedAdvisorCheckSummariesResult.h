@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeTrustedAdvisorCheckSummariesResult();
-    DescribeTrustedAdvisorCheckSummariesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTrustedAdvisorCheckSummariesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTrustedAdvisorCheckSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTrustedAdvisorCheckSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The summary information for the requested Trusted Advisor checks.</p>
@@ -85,6 +86,7 @@ namespace Model
     inline DescribeTrustedAdvisorCheckSummariesResult& AddSummaries(TrustedAdvisorCheckSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<TrustedAdvisorCheckSummary> m_summaries;
   };
 

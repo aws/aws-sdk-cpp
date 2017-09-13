@@ -48,6 +48,7 @@ namespace Model
     LifecycleEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
      * AfterInstall, ApplicationStart, or ValidateService.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline LifecycleEvent& WithLifecycleEventName(const char* value) { SetLifecycleEventName(value); return *this;}
 
+
     /**
      * <p>Diagnostic information about the deployment lifecycle event.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>Diagnostic information about the deployment lifecycle event.</p>
      */
     inline LifecycleEvent& WithDiagnostics(Diagnostics&& value) { SetDiagnostics(std::move(value)); return *this;}
+
 
     /**
      * <p>A timestamp indicating when the deployment lifecycle event started.</p>
@@ -140,6 +143,7 @@ namespace Model
      */
     inline LifecycleEvent& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
      */
@@ -164,6 +168,7 @@ namespace Model
      * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
      */
     inline LifecycleEvent& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The
@@ -221,14 +226,19 @@ namespace Model
     inline LifecycleEvent& WithStatus(LifecycleEventStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_lifecycleEventName;
     bool m_lifecycleEventNameHasBeenSet;
+
     Diagnostics m_diagnostics;
     bool m_diagnosticsHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     LifecycleEventStatus m_status;
     bool m_statusHasBeenSet;
   };

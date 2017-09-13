@@ -30,12 +30,12 @@ GetKinesisStreamResult::GetKinesisStreamResult()
 {
 }
 
-GetKinesisStreamResult::GetKinesisStreamResult(const AmazonWebServiceResult<JsonValue>& result)
+GetKinesisStreamResult::GetKinesisStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetKinesisStreamResult& GetKinesisStreamResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetKinesisStreamResult& GetKinesisStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("KinesisStreamARN"))

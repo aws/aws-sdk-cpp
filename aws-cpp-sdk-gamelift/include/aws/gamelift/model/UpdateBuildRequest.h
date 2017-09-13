@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a build to update.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>Unique identifier for a build to update.</p>
      */
     inline UpdateBuildRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with a build. Build names do not need to
@@ -115,6 +117,7 @@ namespace Model
      * be unique. </p>
      */
     inline UpdateBuildRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Version that is associated with this build. Version strings do not need to be
@@ -159,10 +162,13 @@ namespace Model
     inline UpdateBuildRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_buildId;
     bool m_buildIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

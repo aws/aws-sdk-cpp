@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
      * "Domain". If this parameter is omitted, then all identities will be listed.</p>
@@ -73,6 +74,7 @@ namespace Model
      * "Domain". If this parameter is omitted, then all identities will be listed.</p>
      */
     inline ListIdentitiesRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+
 
     /**
      * <p>The token to use for pagination.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline ListIdentitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of identities per page. Possible values are 1-1000
      * inclusive.</p>
@@ -128,10 +131,13 @@ namespace Model
     inline ListIdentitiesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     IdentityType m_identityType;
     bool m_identityTypeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

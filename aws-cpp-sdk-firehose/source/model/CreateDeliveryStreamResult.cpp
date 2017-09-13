@@ -30,12 +30,12 @@ CreateDeliveryStreamResult::CreateDeliveryStreamResult()
 {
 }
 
-CreateDeliveryStreamResult::CreateDeliveryStreamResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateDeliveryStreamResult::CreateDeliveryStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateDeliveryStreamResult& CreateDeliveryStreamResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateDeliveryStreamResult& CreateDeliveryStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DeliveryStreamARN"))

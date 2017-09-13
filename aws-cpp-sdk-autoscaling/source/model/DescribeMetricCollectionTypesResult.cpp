@@ -31,12 +31,12 @@ DescribeMetricCollectionTypesResult::DescribeMetricCollectionTypesResult()
 {
 }
 
-DescribeMetricCollectionTypesResult::DescribeMetricCollectionTypesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeMetricCollectionTypesResult::DescribeMetricCollectionTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeMetricCollectionTypesResult& DescribeMetricCollectionTypesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeMetricCollectionTypesResult& DescribeMetricCollectionTypesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Configuration ID of an application to be deleted.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline DeleteApplicationsRequest& AddConfigurationIds(const char* value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_configurationIds;
     bool m_configurationIdsHasBeenSet;
   };

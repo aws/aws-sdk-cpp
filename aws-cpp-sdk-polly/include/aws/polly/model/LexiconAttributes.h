@@ -50,6 +50,7 @@ namespace Model
     LexiconAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and
      * <code>x-sampa</code>.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline LexiconAttributes& WithAlphabet(const char* value) { SetAlphabet(value); return *this;}
 
+
     /**
      * <p>Language code that the lexicon applies to. A lexicon with a language code
      * such as "en" would be applied to all English languages (en-GB, en-US, en-AUS,
@@ -127,6 +129,7 @@ namespace Model
      */
     inline LexiconAttributes& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
+
     /**
      * <p>Date lexicon was last modified (a timestamp value).</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>Date lexicon was last modified (a timestamp value).</p>
      */
     inline LexiconAttributes& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+
 
     /**
      * <p>Amazon Resource Name (ARN) of the lexicon.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline LexiconAttributes& WithLexiconArn(const char* value) { SetLexiconArn(value); return *this;}
 
+
     /**
      * <p>Number of lexemes in the lexicon.</p>
      */
@@ -201,6 +206,7 @@ namespace Model
      * <p>Number of lexemes in the lexicon.</p>
      */
     inline LexiconAttributes& WithLexemesCount(int value) { SetLexemesCount(value); return *this;}
+
 
     /**
      * <p>Total size of the lexicon, in characters.</p>
@@ -218,16 +224,22 @@ namespace Model
     inline LexiconAttributes& WithSize(int value) { SetSize(value); return *this;}
 
   private:
+
     Aws::String m_alphabet;
     bool m_alphabetHasBeenSet;
+
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;
+
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
+
     Aws::String m_lexiconArn;
     bool m_lexiconArnHasBeenSet;
+
     int m_lexemesCount;
     bool m_lexemesCountHasBeenSet;
+
     int m_size;
     bool m_sizeHasBeenSet;
   };

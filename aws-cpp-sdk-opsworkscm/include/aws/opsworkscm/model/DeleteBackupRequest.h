@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the backup to delete. Run the DescribeBackups command to get a list
      * of backup IDs. Backup IDs are in the format
@@ -86,6 +87,7 @@ namespace Model
     inline DeleteBackupRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 
   private:
+
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet;
   };

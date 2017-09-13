@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CODEDEPLOY_API CodeDeployErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_CODEDEPLOY_API CodeDeployErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace CodeDeploy
+} // namespace Client
 } // namespace Aws

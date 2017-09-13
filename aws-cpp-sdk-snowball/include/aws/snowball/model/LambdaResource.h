@@ -47,6 +47,7 @@ namespace Model
     LambdaResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
@@ -88,6 +89,7 @@ namespace Model
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
     inline LambdaResource& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
+
 
     /**
      * <p>The array of ARNs for <a>S3Resource</a> objects to trigger the
@@ -132,8 +134,10 @@ namespace Model
     inline LambdaResource& AddEventTriggers(EventTriggerDefinition&& value) { m_eventTriggersHasBeenSet = true; m_eventTriggers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_lambdaArn;
     bool m_lambdaArnHasBeenSet;
+
     Aws::Vector<EventTriggerDefinition> m_eventTriggers;
     bool m_eventTriggersHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetClassifierResult();
-    GetClassifierResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetClassifierResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetClassifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetClassifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The requested <code>Classifier</code>.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetClassifierResult& WithClassifier(Classifier&& value) { SetClassifier(std::move(value)); return *this;}
 
   private:
+
     Classifier m_classifier;
   };
 

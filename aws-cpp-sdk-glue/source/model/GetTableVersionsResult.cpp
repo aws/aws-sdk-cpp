@@ -30,12 +30,12 @@ GetTableVersionsResult::GetTableVersionsResult()
 {
 }
 
-GetTableVersionsResult::GetTableVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetTableVersionsResult::GetTableVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetTableVersionsResult& GetTableVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetTableVersionsResult& GetTableVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TableVersions"))

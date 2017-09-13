@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
      * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
@@ -162,6 +163,7 @@ namespace Model
      */
     inline DescribeAddressesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
      * your Elastic IP addresses.</p>
@@ -209,6 +211,7 @@ namespace Model
      * your Elastic IP addresses.</p>
      */
     inline DescribeAddressesRequest& AddPublicIps(const char* value) { m_publicIpsHasBeenSet = true; m_publicIps.push_back(value); return *this; }
+
 
     /**
      * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
@@ -258,6 +261,7 @@ namespace Model
      */
     inline DescribeAddressesRequest& AddAllocationIds(const char* value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -283,12 +287,16 @@ namespace Model
     inline DescribeAddressesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_publicIps;
     bool m_publicIpsHasBeenSet;
+
     Aws::Vector<Aws::String> m_allocationIds;
     bool m_allocationIdsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

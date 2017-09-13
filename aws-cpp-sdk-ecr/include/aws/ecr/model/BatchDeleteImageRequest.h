@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the image to
      * delete. If you do not specify a registry, the default registry is assumed.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline BatchDeleteImageRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The repository that contains the image to delete.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The repository that contains the image to delete.</p>
      */
     inline BatchDeleteImageRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>A list of image ID references that correspond to images to delete. The format
@@ -170,10 +173,13 @@ namespace Model
     inline BatchDeleteImageRequest& AddImageIds(ImageIdentifier&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::Vector<ImageIdentifier> m_imageIds;
     bool m_imageIdsHasBeenSet;
   };

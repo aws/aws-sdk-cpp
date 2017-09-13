@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetSuggesterName() const{ return m_suggesterName; }
 
@@ -73,6 +74,7 @@ namespace Model
     
     inline Suggester& WithSuggesterName(const char* value) { SetSuggesterName(value); return *this;}
 
+
     
     inline const DocumentSuggesterOptions& GetDocumentSuggesterOptions() const{ return m_documentSuggesterOptions; }
 
@@ -89,8 +91,10 @@ namespace Model
     inline Suggester& WithDocumentSuggesterOptions(DocumentSuggesterOptions&& value) { SetDocumentSuggesterOptions(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_suggesterName;
     bool m_suggesterNameHasBeenSet;
+
     DocumentSuggesterOptions m_documentSuggesterOptions;
     bool m_documentSuggesterOptionsHasBeenSet;
   };

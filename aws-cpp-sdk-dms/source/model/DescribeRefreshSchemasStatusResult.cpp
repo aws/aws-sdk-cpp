@@ -30,12 +30,12 @@ DescribeRefreshSchemasStatusResult::DescribeRefreshSchemasStatusResult()
 {
 }
 
-DescribeRefreshSchemasStatusResult::DescribeRefreshSchemasStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRefreshSchemasStatusResult::DescribeRefreshSchemasStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeRefreshSchemasStatusResult& DescribeRefreshSchemasStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRefreshSchemasStatusResult& DescribeRefreshSchemasStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RefreshSchemasStatus"))

@@ -49,6 +49,57 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline UserIdGroupPair& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline UserIdGroupPair& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline UserIdGroupPair& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
     /**
      * <p>The ID of the security group.</p>
      */
@@ -83,6 +134,7 @@ namespace Model
      * <p>The ID of the security group.</p>
      */
     inline UserIdGroupPair& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
 
     /**
      * <p>The name of the security group. In a request, use this parameter for a
@@ -133,6 +185,7 @@ namespace Model
      */
     inline UserIdGroupPair& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>The status of a VPC peering connection, if applicable.</p>
      */
@@ -167,6 +220,7 @@ namespace Model
      * <p>The status of a VPC peering connection, if applicable.</p>
      */
     inline UserIdGroupPair& WithPeeringStatus(const char* value) { SetPeeringStatus(value); return *this;}
+
 
     /**
      * <p>The ID of an AWS account. For a referenced security group in another VPC, the
@@ -224,6 +278,7 @@ namespace Model
      */
     inline UserIdGroupPair& WithUserId(const char* value) { SetUserId(value); return *this;}
 
+
     /**
      * <p>The ID of the VPC for the referenced security group, if applicable.</p>
      */
@@ -258,6 +313,7 @@ namespace Model
      * <p>The ID of the VPC for the referenced security group, if applicable.</p>
      */
     inline UserIdGroupPair& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC peering connection, if applicable.</p>
@@ -295,16 +351,25 @@ namespace Model
     inline UserIdGroupPair& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
   private:
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_peeringStatus;
     bool m_peeringStatusHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
   };

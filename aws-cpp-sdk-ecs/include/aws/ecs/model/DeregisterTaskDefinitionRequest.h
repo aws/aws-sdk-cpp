@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
@@ -86,6 +87,7 @@ namespace Model
     inline DeregisterTaskDefinitionRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
   private:
+
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;
   };

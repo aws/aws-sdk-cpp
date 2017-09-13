@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribePendingMaintenanceActionsResult();
-    DescribePendingMaintenanceActionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribePendingMaintenanceActionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribePendingMaintenanceActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribePendingMaintenanceActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of the pending maintenance actions for the resource.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>A list of the pending maintenance actions for the resource.</p>
      */
     inline DescribePendingMaintenanceActionsResult& AddPendingMaintenanceActions(ResourcePendingMaintenanceActions&& value) { m_pendingMaintenanceActions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -141,6 +143,7 @@ namespace Model
      */
     inline DescribePendingMaintenanceActionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -157,8 +160,11 @@ namespace Model
     inline DescribePendingMaintenanceActionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ResourcePendingMaintenanceActions> m_pendingMaintenanceActions;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

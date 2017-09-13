@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The type of job for this cluster. Currently, the only job type supported for
      * clusters is <code>LOCAL_USE</code>.</p>
@@ -70,6 +71,7 @@ namespace Model
      * clusters is <code>LOCAL_USE</code>.</p>
      */
     inline CreateClusterRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
 
     /**
      * <p>The resources associated with the cluster job. These resources include Amazon
@@ -105,6 +107,7 @@ namespace Model
      * </p>
      */
     inline CreateClusterRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
+
 
     /**
      * <p>An optional description of this specific cluster, for example
@@ -148,6 +151,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
      */
@@ -182,6 +186,7 @@ namespace Model
      * <p>The ID for the address that you want the cluster shipped to.&gt;</p>
      */
     inline CreateClusterRequest& WithAddressId(const char* value) { SetAddressId(value); return *this;}
+
 
     /**
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
@@ -239,6 +244,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithKmsKeyARN(const char* value) { SetKmsKeyARN(value); return *this;}
 
+
     /**
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
      * <code>RoleArn</code> values are created by using the <a
@@ -295,6 +301,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>The type of AWS Snowball appliance to use for this cluster. Currently, the
      * only supported appliance type for cluster jobs is <code>EDGE</code>.</p>
@@ -324,6 +331,7 @@ namespace Model
      * only supported appliance type for cluster jobs is <code>EDGE</code>.</p>
      */
     inline CreateClusterRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
+
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
@@ -405,6 +413,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
+
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for
      * this cluster.</p>
@@ -434,6 +443,7 @@ namespace Model
      * this cluster.</p>
      */
     inline CreateClusterRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
+
 
     /**
      * <p>The forwarding address ID for a cluster. This field is not supported in most
@@ -478,24 +488,34 @@ namespace Model
     inline CreateClusterRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
   private:
+
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
+
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;
+
     Aws::String m_kmsKeyARN;
     bool m_kmsKeyARNHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     SnowballType m_snowballType;
     bool m_snowballTypeHasBeenSet;
+
     ShippingOption m_shippingOption;
     bool m_shippingOptionHasBeenSet;
+
     Notification m_notification;
     bool m_notificationHasBeenSet;
+
     Aws::String m_forwardingAddressId;
     bool m_forwardingAddressIdHasBeenSet;
   };

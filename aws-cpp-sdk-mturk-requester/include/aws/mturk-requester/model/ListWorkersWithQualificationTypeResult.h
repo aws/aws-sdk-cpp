@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListWorkersWithQualificationTypeResult();
-    ListWorkersWithQualificationTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWorkersWithQualificationTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListWorkersWithQualificationTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListWorkersWithQualificationTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -64,6 +65,7 @@ namespace Model
     
     inline ListWorkersWithQualificationTypeResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> The number of Qualifications on this page in the filtered results list,
      * equivalent to the number of Qualifications being returned by this call.</p>
@@ -81,6 +83,7 @@ namespace Model
      * equivalent to the number of Qualifications being returned by this call.</p>
      */
     inline ListWorkersWithQualificationTypeResult& WithNumResults(int value) { SetNumResults(value); return *this;}
+
 
     /**
      * <p> The list of Qualification elements returned by this call. </p>
@@ -118,8 +121,11 @@ namespace Model
     inline ListWorkersWithQualificationTypeResult& AddQualifications(Qualification&& value) { m_qualifications.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     int m_numResults;
+
     Aws::Vector<Qualification> m_qualifications;
   };
 

@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of strings where each string represents the Amazon Resource Name
      * (ARN) of a stored volume. All of the specified stored volumes must from the same
@@ -98,6 +99,7 @@ namespace Model
     inline DescribeStorediSCSIVolumesRequest& AddVolumeARNs(const char* value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_volumeARNs;
     bool m_volumeARNsHasBeenSet;
   };

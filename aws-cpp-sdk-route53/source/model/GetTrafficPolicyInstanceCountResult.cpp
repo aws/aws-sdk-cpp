@@ -30,13 +30,13 @@ GetTrafficPolicyInstanceCountResult::GetTrafficPolicyInstanceCountResult() :
 {
 }
 
-GetTrafficPolicyInstanceCountResult::GetTrafficPolicyInstanceCountResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetTrafficPolicyInstanceCountResult::GetTrafficPolicyInstanceCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_trafficPolicyInstanceCount(0)
 {
   *this = result;
 }
 
-GetTrafficPolicyInstanceCountResult& GetTrafficPolicyInstanceCountResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetTrafficPolicyInstanceCountResult& GetTrafficPolicyInstanceCountResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

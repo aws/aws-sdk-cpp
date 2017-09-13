@@ -46,6 +46,7 @@ namespace Model
     Patch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
      * ID).</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline Patch& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The date the patch was released.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The date the patch was released.</p>
      */
     inline Patch& WithReleaseDate(Aws::Utils::DateTime&& value) { SetReleaseDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The title of the patch.</p>
@@ -148,6 +151,7 @@ namespace Model
      */
     inline Patch& WithTitle(const char* value) { SetTitle(value); return *this;}
 
+
     /**
      * <p>The description of the patch.</p>
      */
@@ -182,6 +186,7 @@ namespace Model
      * <p>The description of the patch.</p>
      */
     inline Patch& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The URL where more information can be obtained about the patch.</p>
@@ -218,6 +223,7 @@ namespace Model
      */
     inline Patch& WithContentUrl(const char* value) { SetContentUrl(value); return *this;}
 
+
     /**
      * <p>The name of the vendor providing the patch.</p>
      */
@@ -253,6 +259,7 @@ namespace Model
      */
     inline Patch& WithVendor(const char* value) { SetVendor(value); return *this;}
 
+
     /**
      * <p>The product family the patch is applicable for (for example, Windows).</p>
      */
@@ -287,6 +294,7 @@ namespace Model
      * <p>The product family the patch is applicable for (for example, Windows).</p>
      */
     inline Patch& WithProductFamily(const char* value) { SetProductFamily(value); return *this;}
+
 
     /**
      * <p>The specific product the patch is applicable for (for example,
@@ -330,6 +338,7 @@ namespace Model
      */
     inline Patch& WithProduct(const char* value) { SetProduct(value); return *this;}
 
+
     /**
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
      * CriticalUpdates).</p>
@@ -372,6 +381,7 @@ namespace Model
      */
     inline Patch& WithClassification(const char* value) { SetClassification(value); return *this;}
 
+
     /**
      * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
      */
@@ -406,6 +416,7 @@ namespace Model
      * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
      */
     inline Patch& WithMsrcSeverity(const char* value) { SetMsrcSeverity(value); return *this;}
+
 
     /**
      * <p>The Microsoft Knowledge Base ID of the patch.</p>
@@ -442,6 +453,7 @@ namespace Model
      */
     inline Patch& WithKbNumber(const char* value) { SetKbNumber(value); return *this;}
 
+
     /**
      * <p>The ID of the MSRC bulletin the patch is related to.</p>
      */
@@ -476,6 +488,7 @@ namespace Model
      * <p>The ID of the MSRC bulletin the patch is related to.</p>
      */
     inline Patch& WithMsrcNumber(const char* value) { SetMsrcNumber(value); return *this;}
+
 
     /**
      * <p>The language of the patch if it's language-specific.</p>
@@ -513,30 +526,43 @@ namespace Model
     inline Patch& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Utils::DateTime m_releaseDate;
     bool m_releaseDateHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_contentUrl;
     bool m_contentUrlHasBeenSet;
+
     Aws::String m_vendor;
     bool m_vendorHasBeenSet;
+
     Aws::String m_productFamily;
     bool m_productFamilyHasBeenSet;
+
     Aws::String m_product;
     bool m_productHasBeenSet;
+
     Aws::String m_classification;
     bool m_classificationHasBeenSet;
+
     Aws::String m_msrcSeverity;
     bool m_msrcSeverityHasBeenSet;
+
     Aws::String m_kbNumber;
     bool m_kbNumberHasBeenSet;
+
     Aws::String m_msrcNumber;
     bool m_msrcNumberHasBeenSet;
+
     Aws::String m_language;
     bool m_languageHasBeenSet;
   };

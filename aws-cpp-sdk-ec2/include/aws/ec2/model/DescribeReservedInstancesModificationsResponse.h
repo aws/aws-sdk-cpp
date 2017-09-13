@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeReservedInstancesModificationsResponse();
-    DescribeReservedInstancesModificationsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReservedInstancesModificationsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeReservedInstancesModificationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeReservedInstancesModificationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeReservedInstancesModificationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The Reserved Instance modification information.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeReservedInstancesModificationsResponse& AddReservedInstancesModifications(ReservedInstancesModification&& value) { m_reservedInstancesModifications.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeReservedInstancesModificationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<ReservedInstancesModification> m_reservedInstancesModifications;
+
     ResponseMetadata m_responseMetadata;
   };
 

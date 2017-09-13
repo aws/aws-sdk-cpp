@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the security group to which the ingress rule is added.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the security group to which the ingress rule is added.</p>
      */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
+
 
     /**
      * <p>The IP range to be added the Amazon Redshift security group.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}
 
+
     /**
      * <p>The EC2 security group to be added the Amazon Redshift security group.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>The EC2 security group to be added the Amazon Redshift security group.</p>
      */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
+
 
     /**
      * <p>The AWS account number of the owner of the security group specified by the
@@ -196,12 +200,16 @@ namespace Model
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
   private:
+
     Aws::String m_clusterSecurityGroupName;
     bool m_clusterSecurityGroupNameHasBeenSet;
+
     Aws::String m_cIDRIP;
     bool m_cIDRIPHasBeenSet;
+
     Aws::String m_eC2SecurityGroupName;
     bool m_eC2SecurityGroupNameHasBeenSet;
+
     Aws::String m_eC2SecurityGroupOwnerId;
     bool m_eC2SecurityGroupOwnerIdHasBeenSet;
   };

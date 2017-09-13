@@ -30,12 +30,12 @@ DeleteXssMatchSetResult::DeleteXssMatchSetResult()
 {
 }
 
-DeleteXssMatchSetResult::DeleteXssMatchSetResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteXssMatchSetResult::DeleteXssMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteXssMatchSetResult& DeleteXssMatchSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteXssMatchSetResult& DeleteXssMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

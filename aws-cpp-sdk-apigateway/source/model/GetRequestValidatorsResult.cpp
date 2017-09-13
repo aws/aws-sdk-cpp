@@ -30,12 +30,12 @@ GetRequestValidatorsResult::GetRequestValidatorsResult()
 {
 }
 
-GetRequestValidatorsResult::GetRequestValidatorsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetRequestValidatorsResult::GetRequestValidatorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetRequestValidatorsResult& GetRequestValidatorsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetRequestValidatorsResult& GetRequestValidatorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("position"))

@@ -48,6 +48,7 @@ namespace Model
     Subscription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the assessment template that is used during the event for which
      * the SNS notification is sent.</p>
@@ -89,6 +90,7 @@ namespace Model
      * the SNS notification is sent.</p>
      */
     inline Subscription& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the
@@ -132,6 +134,7 @@ namespace Model
      */
     inline Subscription& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
+
     /**
      * <p>The list of existing event subscriptions.</p>
      */
@@ -168,10 +171,13 @@ namespace Model
     inline Subscription& AddEventSubscriptions(EventSubscription&& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::Vector<EventSubscription> m_eventSubscriptions;
     bool m_eventSubscriptionsHasBeenSet;
   };

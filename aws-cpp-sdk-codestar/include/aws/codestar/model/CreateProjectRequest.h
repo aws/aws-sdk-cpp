@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline CreateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Reserved for future use.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline CreateProjectRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -140,6 +143,7 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline CreateProjectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Reserved for future use.</p>
@@ -177,12 +181,16 @@ namespace Model
     inline CreateProjectRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
   };

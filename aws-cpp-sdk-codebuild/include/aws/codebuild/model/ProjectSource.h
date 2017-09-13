@@ -48,60 +48,72 @@ namespace Model
     ProjectSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of repository that contains the source code to be built. Valid
-     * values include:</p> <ul> <li> <p> <code>CODECOMMIT</code>: The source code is in
-     * an AWS CodeCommit repository.</p> </li> <li> <p> <code>CODEPIPELINE</code>: The
-     * source code settings are specified in the source action of a pipeline in AWS
-     * CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>: The source code is in a
-     * GitHub repository.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * values include:</p> <ul> <li> <p> <code>BITBUCKET</code>: The source code is in
+     * a Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code>: The source
+     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * <code>CODEPIPELINE</code>: The source code settings are specified in the source
+     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
+     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
+     * <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline const SourceType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of repository that contains the source code to be built. Valid
-     * values include:</p> <ul> <li> <p> <code>CODECOMMIT</code>: The source code is in
-     * an AWS CodeCommit repository.</p> </li> <li> <p> <code>CODEPIPELINE</code>: The
-     * source code settings are specified in the source action of a pipeline in AWS
-     * CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>: The source code is in a
-     * GitHub repository.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * values include:</p> <ul> <li> <p> <code>BITBUCKET</code>: The source code is in
+     * a Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code>: The source
+     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * <code>CODEPIPELINE</code>: The source code settings are specified in the source
+     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
+     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
+     * <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline void SetType(const SourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of repository that contains the source code to be built. Valid
-     * values include:</p> <ul> <li> <p> <code>CODECOMMIT</code>: The source code is in
-     * an AWS CodeCommit repository.</p> </li> <li> <p> <code>CODEPIPELINE</code>: The
-     * source code settings are specified in the source action of a pipeline in AWS
-     * CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>: The source code is in a
-     * GitHub repository.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * values include:</p> <ul> <li> <p> <code>BITBUCKET</code>: The source code is in
+     * a Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code>: The source
+     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * <code>CODEPIPELINE</code>: The source code settings are specified in the source
+     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
+     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
+     * <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of repository that contains the source code to be built. Valid
-     * values include:</p> <ul> <li> <p> <code>CODECOMMIT</code>: The source code is in
-     * an AWS CodeCommit repository.</p> </li> <li> <p> <code>CODEPIPELINE</code>: The
-     * source code settings are specified in the source action of a pipeline in AWS
-     * CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>: The source code is in a
-     * GitHub repository.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * values include:</p> <ul> <li> <p> <code>BITBUCKET</code>: The source code is in
+     * a Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code>: The source
+     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * <code>CODEPIPELINE</code>: The source code settings are specified in the source
+     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
+     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
+     * <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(const SourceType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of repository that contains the source code to be built. Valid
-     * values include:</p> <ul> <li> <p> <code>CODECOMMIT</code>: The source code is in
-     * an AWS CodeCommit repository.</p> </li> <li> <p> <code>CODEPIPELINE</code>: The
-     * source code settings are specified in the source action of a pipeline in AWS
-     * CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>: The source code is in a
-     * GitHub repository.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * values include:</p> <ul> <li> <p> <code>BITBUCKET</code>: The source code is in
+     * a Bitbucket repository.</p> </li> <li> <p> <code>CODECOMMIT</code>: The source
+     * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
+     * <code>CODEPIPELINE</code>: The source code settings are specified in the source
+     * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
+     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
+     * <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the location of the source code to be built. Valid values
@@ -128,7 +140,17 @@ namespace Model
      * you do not need to finish creating the build project, and you may then leave the
      * AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection,
      * in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
+     * <code>type</code> value to <code>OAUTH</code>.</p> </li> <li> <p>For source code
+     * in a Bitbucket repository, the HTTPS clone URL to the repository that contains
+     * the source and the build spec. Also, you must connect your AWS account to your
+     * Bitbucket account. To do this, use the AWS CodeBuild console to begin creating a
+     * build project. When you use the console to connect (or reconnect) with
+     * Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page that
+     * displays, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use
+     * this connection, in the <code>source</code> object, set the <code>auth</code>
+     * object's <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -157,7 +179,17 @@ namespace Model
      * you do not need to finish creating the build project, and you may then leave the
      * AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection,
      * in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
+     * <code>type</code> value to <code>OAUTH</code>.</p> </li> <li> <p>For source code
+     * in a Bitbucket repository, the HTTPS clone URL to the repository that contains
+     * the source and the build spec. Also, you must connect your AWS account to your
+     * Bitbucket account. To do this, use the AWS CodeBuild console to begin creating a
+     * build project. When you use the console to connect (or reconnect) with
+     * Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page that
+     * displays, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use
+     * this connection, in the <code>source</code> object, set the <code>auth</code>
+     * object's <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
@@ -186,7 +218,17 @@ namespace Model
      * you do not need to finish creating the build project, and you may then leave the
      * AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection,
      * in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
+     * <code>type</code> value to <code>OAUTH</code>.</p> </li> <li> <p>For source code
+     * in a Bitbucket repository, the HTTPS clone URL to the repository that contains
+     * the source and the build spec. Also, you must connect your AWS account to your
+     * Bitbucket account. To do this, use the AWS CodeBuild console to begin creating a
+     * build project. When you use the console to connect (or reconnect) with
+     * Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page that
+     * displays, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use
+     * this connection, in the <code>source</code> object, set the <code>auth</code>
+     * object's <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
@@ -215,7 +257,17 @@ namespace Model
      * you do not need to finish creating the build project, and you may then leave the
      * AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection,
      * in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
+     * <code>type</code> value to <code>OAUTH</code>.</p> </li> <li> <p>For source code
+     * in a Bitbucket repository, the HTTPS clone URL to the repository that contains
+     * the source and the build spec. Also, you must connect your AWS account to your
+     * Bitbucket account. To do this, use the AWS CodeBuild console to begin creating a
+     * build project. When you use the console to connect (or reconnect) with
+     * Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page that
+     * displays, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use
+     * this connection, in the <code>source</code> object, set the <code>auth</code>
+     * object's <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
@@ -244,7 +296,17 @@ namespace Model
      * you do not need to finish creating the build project, and you may then leave the
      * AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection,
      * in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
+     * <code>type</code> value to <code>OAUTH</code>.</p> </li> <li> <p>For source code
+     * in a Bitbucket repository, the HTTPS clone URL to the repository that contains
+     * the source and the build spec. Also, you must connect your AWS account to your
+     * Bitbucket account. To do this, use the AWS CodeBuild console to begin creating a
+     * build project. When you use the console to connect (or reconnect) with
+     * Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page that
+     * displays, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use
+     * this connection, in the <code>source</code> object, set the <code>auth</code>
+     * object's <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
      */
     inline ProjectSource& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
@@ -273,7 +335,17 @@ namespace Model
      * you do not need to finish creating the build project, and you may then leave the
      * AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection,
      * in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
+     * <code>type</code> value to <code>OAUTH</code>.</p> </li> <li> <p>For source code
+     * in a Bitbucket repository, the HTTPS clone URL to the repository that contains
+     * the source and the build spec. Also, you must connect your AWS account to your
+     * Bitbucket account. To do this, use the AWS CodeBuild console to begin creating a
+     * build project. When you use the console to connect (or reconnect) with
+     * Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page that
+     * displays, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use
+     * this connection, in the <code>source</code> object, set the <code>auth</code>
+     * object's <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
      */
     inline ProjectSource& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -302,9 +374,20 @@ namespace Model
      * you do not need to finish creating the build project, and you may then leave the
      * AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection,
      * in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
+     * <code>type</code> value to <code>OAUTH</code>.</p> </li> <li> <p>For source code
+     * in a Bitbucket repository, the HTTPS clone URL to the repository that contains
+     * the source and the build spec. Also, you must connect your AWS account to your
+     * Bitbucket account. To do this, use the AWS CodeBuild console to begin creating a
+     * build project. When you use the console to connect (or reconnect) with
+     * Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page that
+     * displays, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use
+     * this connection, in the <code>source</code> object, set the <code>auth</code>
+     * object's <code>type</code> value to <code>OAUTH</code>.</p> </li> </ul>
      */
     inline ProjectSource& WithLocation(const char* value) { SetLocation(value); return *this;}
+
 
     /**
      * <p>The build spec declaration to use for the builds in this build project.</p>
@@ -355,12 +438,13 @@ namespace Model
      */
     inline ProjectSource& WithBuildspec(const char* value) { SetBuildspec(value); return *this;}
 
+
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
      * console's use only. Your code should not get or set this information directly
      * (unless the build project's source <code>type</code> value is
-     * <code>GITHUB</code>).</p>
+     * <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
      */
     inline const SourceAuth& GetAuth() const{ return m_auth; }
 
@@ -369,7 +453,7 @@ namespace Model
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
      * console's use only. Your code should not get or set this information directly
      * (unless the build project's source <code>type</code> value is
-     * <code>GITHUB</code>).</p>
+     * <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
      */
     inline void SetAuth(const SourceAuth& value) { m_authHasBeenSet = true; m_auth = value; }
 
@@ -378,7 +462,7 @@ namespace Model
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
      * console's use only. Your code should not get or set this information directly
      * (unless the build project's source <code>type</code> value is
-     * <code>GITHUB</code>).</p>
+     * <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
      */
     inline void SetAuth(SourceAuth&& value) { m_authHasBeenSet = true; m_auth = std::move(value); }
 
@@ -387,7 +471,7 @@ namespace Model
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
      * console's use only. Your code should not get or set this information directly
      * (unless the build project's source <code>type</code> value is
-     * <code>GITHUB</code>).</p>
+     * <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
      */
     inline ProjectSource& WithAuth(const SourceAuth& value) { SetAuth(value); return *this;}
 
@@ -396,17 +480,21 @@ namespace Model
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
      * console's use only. Your code should not get or set this information directly
      * (unless the build project's source <code>type</code> value is
-     * <code>GITHUB</code>).</p>
+     * <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
      */
     inline ProjectSource& WithAuth(SourceAuth&& value) { SetAuth(std::move(value)); return *this;}
 
   private:
+
     SourceType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_buildspec;
     bool m_buildspecHasBeenSet;
+
     SourceAuth m_auth;
     bool m_authHasBeenSet;
   };

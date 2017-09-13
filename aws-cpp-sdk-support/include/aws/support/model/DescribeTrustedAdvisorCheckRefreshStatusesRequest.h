@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
      * Specifying the check ID of a check that is automatically refreshed causes an
@@ -97,6 +98,7 @@ namespace Model
     inline DescribeTrustedAdvisorCheckRefreshStatusesRequest& AddCheckIds(const char* value) { m_checkIdsHasBeenSet = true; m_checkIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_checkIds;
     bool m_checkIdsHasBeenSet;
   };

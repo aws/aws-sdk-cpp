@@ -30,12 +30,12 @@ UpdateRuleResult::UpdateRuleResult()
 {
 }
 
-UpdateRuleResult::UpdateRuleResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRuleResult::UpdateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateRuleResult& UpdateRuleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRuleResult& UpdateRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

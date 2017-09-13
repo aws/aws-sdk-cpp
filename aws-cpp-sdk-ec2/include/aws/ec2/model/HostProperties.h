@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The number of cores on the Dedicated Host.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
      * <p>The number of cores on the Dedicated Host.</p>
      */
     inline HostProperties& WithCores(int value) { SetCores(value); return *this;}
+
 
     /**
      * <p>The instance type size that the Dedicated Host supports (for example,
@@ -105,6 +107,7 @@ namespace Model
      */
     inline HostProperties& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The number of sockets on the Dedicated Host.</p>
      */
@@ -119,6 +122,7 @@ namespace Model
      * <p>The number of sockets on the Dedicated Host.</p>
      */
     inline HostProperties& WithSockets(int value) { SetSockets(value); return *this;}
+
 
     /**
      * <p>The number of vCPUs on the Dedicated Host.</p>
@@ -136,12 +140,16 @@ namespace Model
     inline HostProperties& WithTotalVCpus(int value) { SetTotalVCpus(value); return *this;}
 
   private:
+
     int m_cores;
     bool m_coresHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_sockets;
     bool m_socketsHasBeenSet;
+
     int m_totalVCpus;
     bool m_totalVCpusHasBeenSet;
   };

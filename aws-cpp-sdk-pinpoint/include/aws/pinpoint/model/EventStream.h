@@ -43,6 +43,7 @@ namespace Model
     EventStream& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The ID of the application from which events should be published.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The ID of the application from which events should be published.
      */
     inline EventStream& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     /**
      * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
@@ -148,6 +150,7 @@ namespace Model
      */
     inline EventStream& WithDestinationStreamArn(const char* value) { SetDestinationStreamArn(value); return *this;}
 
+
     /**
      * The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish
      * to the stream.
@@ -190,6 +193,7 @@ namespace Model
      */
     inline EventStream& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
+
     /**
      * The date the event stream was last updated in ISO 8601 format.
      */
@@ -225,6 +229,7 @@ namespace Model
      */
     inline EventStream& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
+
     /**
      * The IAM user who last modified the event stream.
      */
@@ -259,6 +264,7 @@ namespace Model
      * The IAM user who last modified the event stream.
      */
     inline EventStream& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
+
 
     /**
      * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
@@ -303,16 +309,22 @@ namespace Model
     inline EventStream& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_destinationStreamArn;
     bool m_destinationStreamArnHasBeenSet;
+
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
+
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::String m_lastUpdatedBy;
     bool m_lastUpdatedByHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

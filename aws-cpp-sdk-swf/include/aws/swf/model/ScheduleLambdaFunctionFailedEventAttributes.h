@@ -47,6 +47,7 @@ namespace Model
     ScheduleLambdaFunctionFailedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that
      * failed. </p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ScheduleLambdaFunctionFailedEventAttributes& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name of the Lambda function.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>The name of the Lambda function.</p>
      */
     inline ScheduleLambdaFunctionFailedEventAttributes& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The cause of the failure. To help diagnose issues, use this information to
@@ -184,6 +187,7 @@ namespace Model
      */
     inline ScheduleLambdaFunctionFailedEventAttributes& WithCause(ScheduleLambdaFunctionFailedCause&& value) { SetCause(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the
      * decision that resulted in scheduling this Lambda task. To help diagnose issues,
@@ -209,12 +213,16 @@ namespace Model
     inline ScheduleLambdaFunctionFailedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ScheduleLambdaFunctionFailedCause m_cause;
     bool m_causeHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
   };

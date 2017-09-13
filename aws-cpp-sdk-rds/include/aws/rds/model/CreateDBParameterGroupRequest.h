@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character must be a
@@ -106,6 +107,7 @@ namespace Model
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The DB parameter group family name. A DB parameter group can be associated
      * with one and only one DB parameter group family, and can be applied only to a DB
@@ -162,6 +164,7 @@ namespace Model
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>The description for the DB parameter group.</p>
      */
@@ -197,6 +200,7 @@ namespace Model
      */
     inline CreateDBParameterGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -219,12 +223,16 @@ namespace Model
     inline CreateDBParameterGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
+
     Aws::String m_dBParameterGroupFamily;
     bool m_dBParameterGroupFamilyHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

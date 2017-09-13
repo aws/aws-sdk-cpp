@@ -44,6 +44,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
@@ -65,6 +66,7 @@ namespace Model
     
     inline ObjectVersion& WithETag(const char* value) { SetETag(value); return *this;}
 
+
     /**
      * Size in bytes of the object.
      */
@@ -79,6 +81,7 @@ namespace Model
      * Size in bytes of the object.
      */
     inline ObjectVersion& WithSize(long long value) { SetSize(value); return *this;}
+
 
     /**
      * The class of storage used to store the object.
@@ -104,6 +107,7 @@ namespace Model
      * The class of storage used to store the object.
      */
     inline ObjectVersion& WithStorageClass(ObjectVersionStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+
 
     /**
      * The object key.
@@ -140,6 +144,7 @@ namespace Model
      */
     inline ObjectVersion& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * Version ID of an object.
      */
@@ -175,6 +180,7 @@ namespace Model
      */
     inline ObjectVersion& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * Specifies whether the object is (true) or is not (false) the latest version of
      * an object.
@@ -192,6 +198,7 @@ namespace Model
      * an object.
      */
     inline ObjectVersion& WithIsLatest(bool value) { SetIsLatest(value); return *this;}
+
 
     /**
      * Date and time the object was last modified.
@@ -218,6 +225,7 @@ namespace Model
      */
     inline ObjectVersion& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
+
     
     inline const Owner& GetOwner() const{ return m_owner; }
 
@@ -234,20 +242,28 @@ namespace Model
     inline ObjectVersion& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
+
     ObjectVersionStorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     bool m_isLatest;
     bool m_isLatestHasBeenSet;
+
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
+
     Owner m_owner;
     bool m_ownerHasBeenSet;
   };

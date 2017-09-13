@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline SearchProductsAsAdminRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The portfolio identifier.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      * <p>The portfolio identifier.</p>
      */
     inline SearchProductsAsAdminRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
+
 
     /**
      * <p>The list of filters with which to limit search results. If no search filters
@@ -189,6 +192,7 @@ namespace Model
      */
     inline SearchProductsAsAdminRequest& AddFilters(ProductViewFilterBy&& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), std::move(value)); return *this; }
 
+
     /**
      * <p>The sort field specifier. If no value is specified, results are not
      * sorted.</p>
@@ -219,6 +223,7 @@ namespace Model
      */
     inline SearchProductsAsAdminRequest& WithSortBy(ProductViewSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
+
     /**
      * <p>The sort order specifier. If no value is specified, results are not
      * sorted.</p>
@@ -248,6 +253,7 @@ namespace Model
      * sorted.</p>
      */
     inline SearchProductsAsAdminRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first
@@ -291,6 +297,7 @@ namespace Model
      */
     inline SearchProductsAsAdminRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return in the results. If more results exist
      * than fit in the specified <code>PageSize</code>, the value of
@@ -311,6 +318,7 @@ namespace Model
      * <code>NextPageToken</code> in the response is non-null.</p>
      */
     inline SearchProductsAsAdminRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
 
     /**
      * <p>Access level of the source of the product.</p>
@@ -338,20 +346,28 @@ namespace Model
     inline SearchProductsAsAdminRequest& WithProductSource(ProductSource&& value) { SetProductSource(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_portfolioId;
     bool m_portfolioIdHasBeenSet;
+
     Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>> m_filters;
     bool m_filtersHasBeenSet;
+
     ProductViewSortBy m_sortBy;
     bool m_sortByHasBeenSet;
+
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     ProductSource m_productSource;
     bool m_productSourceHasBeenSet;
   };

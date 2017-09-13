@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateUserPoolDomainResult();
-    CreateUserPoolDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateUserPoolDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUserPoolDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUserPoolDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

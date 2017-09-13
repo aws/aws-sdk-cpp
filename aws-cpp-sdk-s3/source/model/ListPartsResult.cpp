@@ -36,7 +36,7 @@ ListPartsResult::ListPartsResult() :
 {
 }
 
-ListPartsResult::ListPartsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListPartsResult::ListPartsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_partNumberMarker(0),
     m_nextPartNumberMarker(0),
     m_maxParts(0),
@@ -47,7 +47,7 @@ ListPartsResult::ListPartsResult(const AmazonWebServiceResult<XmlDocument>& resu
   *this = result;
 }
 
-ListPartsResult& ListPartsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListPartsResult& ListPartsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

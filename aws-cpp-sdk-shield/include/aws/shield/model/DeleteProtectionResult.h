@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteProtectionResult();
-    DeleteProtectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteProtectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

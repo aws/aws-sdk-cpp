@@ -83,15 +83,15 @@ namespace Model
         class PutAttributesRequest;
         class SelectRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> BatchDeleteAttributesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> BatchPutAttributesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> DeleteAttributesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> DeleteDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> BatchDeleteAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> BatchPutAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> CreateDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> DeleteAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> DeleteDomainOutcome;
         typedef Aws::Utils::Outcome<DomainMetadataResult, Aws::Client::AWSError<SimpleDBErrors>> DomainMetadataOutcome;
         typedef Aws::Utils::Outcome<GetAttributesResult, Aws::Client::AWSError<SimpleDBErrors>> GetAttributesOutcome;
         typedef Aws::Utils::Outcome<ListDomainsResult, Aws::Client::AWSError<SimpleDBErrors>> ListDomainsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SimpleDBErrors>> PutAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> PutAttributesOutcome;
         typedef Aws::Utils::Outcome<SelectResult, Aws::Client::AWSError<SimpleDBErrors>> SelectOutcome;
 
         typedef std::future<BatchDeleteAttributesOutcome> BatchDeleteAttributesOutcomeCallable;
@@ -144,27 +144,28 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SimpleDBClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SimpleDBClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SimpleDBClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SimpleDBClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        SimpleDBClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SimpleDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SimpleDBClient();
+
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
 
         /**
@@ -752,7 +753,7 @@ namespace Model
 
 
   private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void BatchDeleteAttributesAsyncHelper(const Model::BatchDeleteAttributesRequest& request, const BatchDeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -767,7 +768,7 @@ namespace Model
         void SelectAsyncHelper(const Model::SelectRequest& request, const SelectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace SimpleDB

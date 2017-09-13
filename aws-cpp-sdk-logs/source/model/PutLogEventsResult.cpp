@@ -30,12 +30,12 @@ PutLogEventsResult::PutLogEventsResult()
 {
 }
 
-PutLogEventsResult::PutLogEventsResult(const AmazonWebServiceResult<JsonValue>& result)
+PutLogEventsResult::PutLogEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutLogEventsResult& PutLogEventsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutLogEventsResult& PutLogEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("nextSequenceToken"))

@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
@@ -92,6 +93,7 @@ namespace Model
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
     inline ProvisionedBandwidth& WithProvisionTime(Aws::Utils::DateTime&& value) { SetProvisionTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -149,6 +151,7 @@ namespace Model
      */
     inline ProvisionedBandwidth& WithProvisioned(const char* value) { SetProvisioned(value); return *this;}
 
+
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
@@ -188,6 +191,7 @@ namespace Model
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
     inline ProvisionedBandwidth& WithRequestTime(Aws::Utils::DateTime&& value) { SetRequestTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -244,6 +248,7 @@ namespace Model
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
     inline ProvisionedBandwidth& WithRequested(const char* value) { SetRequested(value); return *this;}
+
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -302,14 +307,19 @@ namespace Model
     inline ProvisionedBandwidth& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_provisionTime;
     bool m_provisionTimeHasBeenSet;
+
     Aws::String m_provisioned;
     bool m_provisionedHasBeenSet;
+
     Aws::Utils::DateTime m_requestTime;
     bool m_requestTimeHasBeenSet;
+
     Aws::String m_requested;
     bool m_requestedHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

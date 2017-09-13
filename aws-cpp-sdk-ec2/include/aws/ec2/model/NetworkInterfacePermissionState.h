@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The state of the permission.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The state of the permission.</p>
      */
     inline NetworkInterfacePermissionState& WithState(NetworkInterfacePermissionStateCode&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>A status message, if applicable.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline NetworkInterfacePermissionState& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
   private:
+
     NetworkInterfacePermissionStateCode m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     ErrorDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Detailed Error Code
      */
@@ -79,6 +80,7 @@ namespace Model
      * Detailed Error Code
      */
     inline ErrorDetail& WithDetailedErrorCode(const char* value) { SetDetailedErrorCode(value); return *this;}
+
 
     /**
      * Detailed Error Message
@@ -116,8 +118,10 @@ namespace Model
     inline ErrorDetail& WithDetailedErrorMessage(const char* value) { SetDetailedErrorMessage(value); return *this;}
 
   private:
+
     Aws::String m_detailedErrorCode;
     bool m_detailedErrorCodeHasBeenSet;
+
     Aws::String m_detailedErrorMessage;
     bool m_detailedErrorMessageHasBeenSet;
   };

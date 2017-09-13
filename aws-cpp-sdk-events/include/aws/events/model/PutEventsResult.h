@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PutEventsResult();
-    PutEventsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of failed entries.</p>
@@ -56,6 +57,7 @@ namespace Model
      * <p>The number of failed entries.</p>
      */
     inline PutEventsResult& WithFailedEntryCount(int value) { SetFailedEntryCount(value); return *this;}
+
 
     /**
      * <p>The successfully and unsuccessfully ingested events results. If the ingestion
@@ -107,7 +109,9 @@ namespace Model
     inline PutEventsResult& AddEntries(PutEventsResultEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_failedEntryCount;
+
     Aws::Vector<PutEventsResultEntry> m_entries;
   };
 

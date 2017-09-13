@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateSegmentResult();
-    CreateSegmentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSegmentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSegmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSegmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const SegmentResponse& GetSegmentResponse() const{ return m_segmentResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline CreateSegmentResult& WithSegmentResponse(SegmentResponse&& value) { SetSegmentResponse(std::move(value)); return *this;}
 
   private:
+
     SegmentResponse m_segmentResponse;
   };
 

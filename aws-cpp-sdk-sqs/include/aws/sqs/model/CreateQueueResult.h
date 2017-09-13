@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateQueueResult();
-    CreateQueueResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateQueueResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The URL of the created Amazon SQS queue.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CreateQueueResult& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline CreateQueueResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_queueUrl;
+
     ResponseMetadata m_responseMetadata;
   };
 

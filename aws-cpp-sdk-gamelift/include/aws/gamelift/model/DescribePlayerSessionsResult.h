@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribePlayerSessionsResult();
-    DescribePlayerSessionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePlayerSessionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePlayerSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePlayerSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of objects containing properties for each player session that
@@ -90,6 +91,7 @@ namespace Model
      * matches the request.</p>
      */
     inline DescribePlayerSessionsResult& AddPlayerSessions(PlayerSession&& value) { m_playerSessions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -141,7 +143,9 @@ namespace Model
     inline DescribePlayerSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PlayerSession> m_playerSessions;
+
     Aws::String m_nextToken;
   };
 

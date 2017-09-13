@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
      * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
@@ -162,6 +163,7 @@ namespace Model
      */
     inline CopyDBClusterSnapshotRequest& WithSourceDBClusterSnapshotIdentifier(const char* value) { SetSourceDBClusterSnapshotIdentifier(value); return *this;}
 
+
     /**
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
@@ -231,6 +233,7 @@ namespace Model
      * <code>my-cluster-snapshot2</code> </p>
      */
     inline CopyDBClusterSnapshotRequest& WithTargetDBClusterSnapshotIdentifier(const char* value) { SetTargetDBClusterSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
@@ -378,6 +381,7 @@ namespace Model
      * AWS Region.</p>
      */
     inline CopyDBClusterSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
 
     /**
      * <p>The URL that contains a Signature Version 4 signed request for the
@@ -603,6 +607,7 @@ namespace Model
      */
     inline CopyDBClusterSnapshotRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
+
     /**
      * <p>True to copy all tags from the source DB cluster snapshot to the target DB
      * cluster snapshot; otherwise false. The default is false.</p>
@@ -620,6 +625,7 @@ namespace Model
      * cluster snapshot; otherwise false. The default is false.</p>
      */
     inline CopyDBClusterSnapshotRequest& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
+
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -643,16 +649,22 @@ namespace Model
     inline CopyDBClusterSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_sourceDBClusterSnapshotIdentifier;
     bool m_sourceDBClusterSnapshotIdentifierHasBeenSet;
+
     Aws::String m_targetDBClusterSnapshotIdentifier;
     bool m_targetDBClusterSnapshotIdentifierHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_preSignedUrl;
     bool m_preSignedUrlHasBeenSet;
+
     bool m_copyTags;
     bool m_copyTagsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

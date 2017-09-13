@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
@@ -125,6 +127,7 @@ namespace Model
      * snapshot, set this value to <code>restore</code>.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
@@ -213,6 +216,7 @@ namespace Model
      * available to all AWS accounts.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToAdd(const char* value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
+
 
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
@@ -311,12 +315,16 @@ namespace Model
     inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToRemove(const char* value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(value); return *this; }
 
   private:
+
     Aws::String m_dBClusterSnapshotIdentifier;
     bool m_dBClusterSnapshotIdentifierHasBeenSet;
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_valuesToAdd;
     bool m_valuesToAddHasBeenSet;
+
     Aws::Vector<Aws::String> m_valuesToRemove;
     bool m_valuesToRemoveHasBeenSet;
   };

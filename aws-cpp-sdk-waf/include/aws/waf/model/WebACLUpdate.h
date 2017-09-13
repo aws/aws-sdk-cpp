@@ -47,6 +47,7 @@ namespace Model
     WebACLUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies whether to insert a <code>Rule</code> into or delete a
      * <code>Rule</code> from a <code>WebACL</code>.</p>
@@ -76,6 +77,7 @@ namespace Model
      * <code>Rule</code> from a <code>WebACL</code>.</p>
      */
     inline WebACLUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request
@@ -123,8 +125,10 @@ namespace Model
     inline WebACLUpdate& WithActivatedRule(ActivatedRule&& value) { SetActivatedRule(std::move(value)); return *this;}
 
   private:
+
     ChangeAction m_action;
     bool m_actionHasBeenSet;
+
     ActivatedRule m_activatedRule;
     bool m_activatedRuleHasBeenSet;
   };

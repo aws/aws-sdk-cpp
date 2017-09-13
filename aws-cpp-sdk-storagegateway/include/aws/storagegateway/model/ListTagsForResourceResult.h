@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListTagsForResourceResult();
-    ListTagsForResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>he Amazon Resource Name (ARN) of the resource for which you want to list
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ListTagsForResourceResult& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 
+
     /**
      * <p>An opaque string that indicates the position at which to stop returning the
      * list of tags.</p>
@@ -132,6 +134,7 @@ namespace Model
      */
     inline ListTagsForResourceResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>An array that contains the tags for the specified resource.</p>
      */
@@ -168,8 +171,11 @@ namespace Model
     inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceARN;
+
     Aws::String m_marker;
+
     Aws::Vector<Tag> m_tags;
   };
 

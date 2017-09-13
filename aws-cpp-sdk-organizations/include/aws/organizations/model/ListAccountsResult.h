@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListAccountsResult();
-    ListAccountsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAccountsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of objects in the organization.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of objects in the organization.</p>
      */
     inline ListAccountsResult& AddAccounts(Account&& value) { m_accounts.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -142,7 +144,9 @@ namespace Model
     inline ListAccountsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Account> m_accounts;
+
     Aws::String m_nextToken;
   };
 

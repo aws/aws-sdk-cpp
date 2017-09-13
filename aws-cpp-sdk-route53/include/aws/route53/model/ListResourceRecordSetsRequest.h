@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
      * want to list.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline ListResourceRecordSetsRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
+
     /**
      * <p>The first name in the lexicographic ordering of resource record sets that you
      * want to list.</p>
@@ -128,6 +130,7 @@ namespace Model
      * want to list.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordName(const char* value) { SetStartRecordName(value); return *this;}
+
 
     /**
      * <p>The type of resource record set to begin the record listing from.</p>
@@ -229,6 +232,7 @@ namespace Model
      */
     inline ListResourceRecordSetsRequest& WithStartRecordType(RRType&& value) { SetStartRecordType(std::move(value)); return *this;}
 
+
     /**
      * <p> <i>Weighted resource record sets only:</i> If results were truncated for a
      * given DNS name and type, specify the value of <code>NextRecordIdentifier</code>
@@ -284,6 +288,7 @@ namespace Model
      * current DNS name and type.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordIdentifier(const char* value) { SetStartRecordIdentifier(value); return *this;}
+
 
     /**
      * <p>(Optional) The maximum number of resource records sets to include in the
@@ -363,14 +368,19 @@ namespace Model
     inline ListResourceRecordSetsRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     Aws::String m_startRecordName;
     bool m_startRecordNameHasBeenSet;
+
     RRType m_startRecordType;
     bool m_startRecordTypeHasBeenSet;
+
     Aws::String m_startRecordIdentifier;
     bool m_startRecordIdentifierHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

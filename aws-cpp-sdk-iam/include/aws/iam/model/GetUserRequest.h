@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user to get information about.</p> <p>This parameter is
      * optional. If it is not included, it defaults to the user making the request.
@@ -109,6 +110,7 @@ namespace Model
     inline GetUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
   };

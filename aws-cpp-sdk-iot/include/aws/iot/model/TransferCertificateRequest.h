@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ID of the certificate.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline TransferCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p>The AWS account.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The AWS account.</p>
      */
     inline TransferCertificateRequest& WithTargetAwsAccount(const char* value) { SetTargetAwsAccount(value); return *this;}
+
 
     /**
      * <p>The transfer message.</p>
@@ -150,10 +153,13 @@ namespace Model
     inline TransferCertificateRequest& WithTransferMessage(const char* value) { SetTransferMessage(value); return *this;}
 
   private:
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     Aws::String m_targetAwsAccount;
     bool m_targetAwsAccountHasBeenSet;
+
     Aws::String m_transferMessage;
     bool m_transferMessageHasBeenSet;
   };

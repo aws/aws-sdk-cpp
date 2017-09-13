@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
@@ -105,6 +106,7 @@ namespace Model
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1-snapshot1</code> </p>
      */
     inline CreateDBClusterSnapshotRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The identifier of the DB cluster to create a snapshot for. This parameter is
@@ -169,6 +171,7 @@ namespace Model
      */
     inline CreateDBClusterSnapshotRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The tags to be assigned to the DB cluster snapshot.</p>
      */
@@ -205,10 +208,13 @@ namespace Model
     inline CreateDBClusterSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_dBClusterSnapshotIdentifier;
     bool m_dBClusterSnapshotIdentifierHasBeenSet;
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -51,6 +51,7 @@ namespace Model
     Attribute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the attribute. Up to 128 letters (uppercase and lowercase),
      * numbers, hyphens, underscores, and periods are allowed.</p>
@@ -92,6 +93,7 @@ namespace Model
      * numbers, hyphens, underscores, and periods are allowed.</p>
      */
     inline Attribute& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The value of the attribute. Up to 128 letters (uppercase and lowercase),
@@ -142,6 +144,7 @@ namespace Model
      */
     inline Attribute& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>The type of the target with which to attach the attribute. This parameter is
      * required if you use the short form ID for a resource instead of the full Amazon
@@ -176,6 +179,7 @@ namespace Model
      * Resource Name (ARN).</p>
      */
     inline Attribute& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the target. You can specify the short form ID for a resource or the
@@ -220,12 +224,16 @@ namespace Model
     inline Attribute& WithTargetId(const char* value) { SetTargetId(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     TargetType m_targetType;
     bool m_targetTypeHasBeenSet;
+
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet;
   };

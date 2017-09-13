@@ -30,12 +30,12 @@ UpdateDomainContactResult::UpdateDomainContactResult()
 {
 }
 
-UpdateDomainContactResult::UpdateDomainContactResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDomainContactResult::UpdateDomainContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateDomainContactResult& UpdateDomainContactResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDomainContactResult& UpdateDomainContactResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OperationId"))

@@ -47,6 +47,7 @@ namespace Model
     RecordOutput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The output key.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline RecordOutput& WithOutputKey(const char* value) { SetOutputKey(value); return *this;}
 
+
     /**
      * <p>The output value.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The output value.</p>
      */
     inline RecordOutput& WithOutputValue(const char* value) { SetOutputValue(value); return *this;}
+
 
     /**
      * <p>The text description of the output.</p>
@@ -153,10 +156,13 @@ namespace Model
     inline RecordOutput& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_outputKey;
     bool m_outputKeyHasBeenSet;
+
     Aws::String m_outputValue;
     bool m_outputValueHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies the instance identifier for this member of the DB cluster.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DBClusterMember& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>Value that is <code>true</code> if the cluster member is the primary instance
      * for the DB cluster and <code>false</code> otherwise.</p>
@@ -101,6 +103,7 @@ namespace Model
      * for the DB cluster and <code>false</code> otherwise.</p>
      */
     inline DBClusterMember& WithIsClusterWriter(bool value) { SetIsClusterWriter(value); return *this;}
+
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the
@@ -144,6 +147,7 @@ namespace Model
      */
     inline DBClusterMember& WithDBClusterParameterGroupStatus(const char* value) { SetDBClusterParameterGroupStatus(value); return *this;}
 
+
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
@@ -172,12 +176,16 @@ namespace Model
     inline DBClusterMember& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     bool m_isClusterWriter;
     bool m_isClusterWriterHasBeenSet;
+
     Aws::String m_dBClusterParameterGroupStatus;
     bool m_dBClusterParameterGroupStatusHasBeenSet;
+
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;
   };

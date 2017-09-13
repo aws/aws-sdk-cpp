@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribePolicyResult();
-    DescribePolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains details about the specified policy.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribePolicyResult& WithPolicy(Policy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
+
     Policy m_policy;
   };
 

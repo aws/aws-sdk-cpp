@@ -46,6 +46,7 @@ namespace Model
     StringAttributeConstraintsType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The minimum length of an attribute value of the string type.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The minimum length of an attribute value of the string type.</p>
      */
     inline StringAttributeConstraintsType& WithMinLength(const char* value) { SetMinLength(value); return *this;}
+
 
     /**
      * <p>The maximum length of an attribute value of the string type.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline StringAttributeConstraintsType& WithMaxLength(const char* value) { SetMaxLength(value); return *this;}
 
   private:
+
     Aws::String m_minLength;
     bool m_minLengthHasBeenSet;
+
     Aws::String m_maxLength;
     bool m_maxLengthHasBeenSet;
   };

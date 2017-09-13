@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateApplicationSettingsResult();
-    UpdateApplicationSettingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateApplicationSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateApplicationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateApplicationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const ApplicationSettingsResource& GetApplicationSettingsResource() const{ return m_applicationSettingsResource; }
@@ -57,6 +58,7 @@ namespace Model
     inline UpdateApplicationSettingsResult& WithApplicationSettingsResource(ApplicationSettingsResource&& value) { SetApplicationSettingsResource(std::move(value)); return *this;}
 
   private:
+
     ApplicationSettingsResource m_applicationSettingsResource;
   };
 

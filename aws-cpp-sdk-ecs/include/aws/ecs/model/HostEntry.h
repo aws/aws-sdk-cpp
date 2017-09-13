@@ -47,6 +47,7 @@ namespace Model
     HostEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
      */
     inline HostEntry& WithHostname(const char* value) { SetHostname(value); return *this;}
+
 
     /**
      * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline HostEntry& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
   private:
+
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
   };

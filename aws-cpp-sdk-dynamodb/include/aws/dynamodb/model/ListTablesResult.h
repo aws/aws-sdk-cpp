@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListTablesResult();
-    ListTablesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTablesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTablesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The names of the tables associated with the current account at the current
@@ -120,6 +121,7 @@ namespace Model
      */
     inline ListTablesResult& AddTableNames(const char* value) { m_tableNames.push_back(value); return *this; }
 
+
     /**
      * <p>The name of the last table in the current page of results. Use this value as
      * the <code>ExclusiveStartTableName</code> in a new request to obtain the next
@@ -184,7 +186,9 @@ namespace Model
     inline ListTablesResult& WithLastEvaluatedTableName(const char* value) { SetLastEvaluatedTableName(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_tableNames;
+
     Aws::String m_lastEvaluatedTableName;
   };
 

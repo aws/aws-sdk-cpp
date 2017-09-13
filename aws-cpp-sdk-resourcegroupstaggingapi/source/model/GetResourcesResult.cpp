@@ -30,12 +30,12 @@ GetResourcesResult::GetResourcesResult()
 {
 }
 
-GetResourcesResult::GetResourcesResult(const AmazonWebServiceResult<JsonValue>& result)
+GetResourcesResult::GetResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetResourcesResult& GetResourcesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetResourcesResult& GetResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PaginationToken"))

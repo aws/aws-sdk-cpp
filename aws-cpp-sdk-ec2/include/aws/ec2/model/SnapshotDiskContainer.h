@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The description of the disk image being imported.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The description of the disk image being imported.</p>
      */
     inline SnapshotDiskContainer& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
@@ -127,6 +129,7 @@ namespace Model
      */
     inline SnapshotDiskContainer& WithFormat(const char* value) { SetFormat(value); return *this;}
 
+
     /**
      * <p>The URL to the Amazon S3-based disk image being imported. It can either be a
      * https URL (https://..) or an Amazon S3 URL (s3://..).</p>
@@ -169,6 +172,7 @@ namespace Model
      */
     inline SnapshotDiskContainer& WithUrl(const char* value) { SetUrl(value); return *this;}
 
+
     /**
      * <p>The S3 bucket for the disk image.</p>
      */
@@ -195,12 +199,16 @@ namespace Model
     inline SnapshotDiskContainer& WithUserBucket(UserBucket&& value) { SetUserBucket(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
+
     UserBucket m_userBucket;
     bool m_userBucketHasBeenSet;
   };

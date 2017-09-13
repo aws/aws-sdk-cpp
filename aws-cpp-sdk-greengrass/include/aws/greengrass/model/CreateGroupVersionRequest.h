@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The client token used to request idempotent operations.
      */
@@ -70,6 +71,7 @@ namespace Model
      * The client token used to request idempotent operations.
      */
     inline CreateGroupVersionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
+
 
     /**
      * Core definition version arn for this group.
@@ -106,6 +108,7 @@ namespace Model
      */
     inline CreateGroupVersionRequest& WithCoreDefinitionVersionArn(const char* value) { SetCoreDefinitionVersionArn(value); return *this;}
 
+
     /**
      * Device definition version arn for this group.
      */
@@ -140,6 +143,7 @@ namespace Model
      * Device definition version arn for this group.
      */
     inline CreateGroupVersionRequest& WithDeviceDefinitionVersionArn(const char* value) { SetDeviceDefinitionVersionArn(value); return *this;}
+
 
     /**
      * Function definition version arn for this group.
@@ -176,6 +180,7 @@ namespace Model
      */
     inline CreateGroupVersionRequest& WithFunctionDefinitionVersionArn(const char* value) { SetFunctionDefinitionVersionArn(value); return *this;}
 
+
     /**
      * The unique Id of the AWS Greengrass Group
      */
@@ -211,6 +216,7 @@ namespace Model
      */
     inline CreateGroupVersionRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
+
     /**
      * Logger definitionv ersion arn for this group.
      */
@@ -245,6 +251,7 @@ namespace Model
      * Logger definitionv ersion arn for this group.
      */
     inline CreateGroupVersionRequest& WithLoggerDefinitionVersionArn(const char* value) { SetLoggerDefinitionVersionArn(value); return *this;}
+
 
     /**
      * Subscription definition version arn for this group.
@@ -282,18 +289,25 @@ namespace Model
     inline CreateGroupVersionRequest& WithSubscriptionDefinitionVersionArn(const char* value) { SetSubscriptionDefinitionVersionArn(value); return *this;}
 
   private:
+
     Aws::String m_amznClientToken;
     bool m_amznClientTokenHasBeenSet;
+
     Aws::String m_coreDefinitionVersionArn;
     bool m_coreDefinitionVersionArnHasBeenSet;
+
     Aws::String m_deviceDefinitionVersionArn;
     bool m_deviceDefinitionVersionArnHasBeenSet;
+
     Aws::String m_functionDefinitionVersionArn;
     bool m_functionDefinitionVersionArnHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_loggerDefinitionVersionArn;
     bool m_loggerDefinitionVersionArnHasBeenSet;
+
     Aws::String m_subscriptionDefinitionVersionArn;
     bool m_subscriptionDefinitionVersionArnHasBeenSet;
   };

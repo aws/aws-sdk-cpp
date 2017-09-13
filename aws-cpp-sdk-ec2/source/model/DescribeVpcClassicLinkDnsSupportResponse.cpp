@@ -31,12 +31,12 @@ DescribeVpcClassicLinkDnsSupportResponse::DescribeVpcClassicLinkDnsSupportRespon
 {
 }
 
-DescribeVpcClassicLinkDnsSupportResponse::DescribeVpcClassicLinkDnsSupportResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeVpcClassicLinkDnsSupportResponse::DescribeVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeVpcClassicLinkDnsSupportResponse& DescribeVpcClassicLinkDnsSupportResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeVpcClassicLinkDnsSupportResponse& DescribeVpcClassicLinkDnsSupportResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

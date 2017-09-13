@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline SetLoadBalancerPoliciesOfListenerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
+
     /**
      * <p>The external port of the load balancer.</p>
      */
@@ -92,6 +94,7 @@ namespace Model
      * <p>The external port of the load balancer.</p>
      */
     inline SetLoadBalancerPoliciesOfListenerRequest& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
+
 
     /**
      * <p>The names of the policies. This list must include all policies to be enabled.
@@ -150,10 +153,13 @@ namespace Model
     inline SetLoadBalancerPoliciesOfListenerRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     int m_loadBalancerPort;
     bool m_loadBalancerPortHasBeenSet;
+
     Aws::Vector<Aws::String> m_policyNames;
     bool m_policyNamesHasBeenSet;
   };

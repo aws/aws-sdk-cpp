@@ -53,6 +53,7 @@ namespace Model
     MLModel& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID assigned to the <code>MLModel</code> at creation.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The ID assigned to the <code>MLModel</code> at creation.</p>
      */
     inline MLModel& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+
 
     /**
      * <p>The ID of the training <code>DataSource</code>. The
@@ -137,6 +139,7 @@ namespace Model
      */
     inline MLModel& WithTrainingDataSourceId(const char* value) { SetTrainingDataSourceId(value); return *this;}
 
+
     /**
      * <p>The AWS user account from which the <code>MLModel</code> was created. The
      * account type can be either an AWS root account or an AWS Identity and Access
@@ -186,6 +189,7 @@ namespace Model
      */
     inline MLModel& WithCreatedByIamUser(const char* value) { SetCreatedByIamUser(value); return *this;}
 
+
     /**
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
@@ -216,6 +220,7 @@ namespace Model
      */
     inline MLModel& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
@@ -245,6 +250,7 @@ namespace Model
      * expressed in epoch time.</p>
      */
     inline MLModel& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -280,6 +286,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
     inline MLModel& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The current status of an <code>MLModel</code>. This element can have one of
@@ -341,6 +348,7 @@ namespace Model
      */
     inline MLModel& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
 
@@ -349,6 +357,7 @@ namespace Model
 
     
     inline MLModel& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
+
 
     /**
      * <p>The current endpoint of the <code>MLModel</code>.</p>
@@ -374,6 +383,7 @@ namespace Model
      * <p>The current endpoint of the <code>MLModel</code>.</p>
      */
     inline MLModel& WithEndpointInfo(RealtimeEndpointInfo&& value) { SetEndpointInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -771,6 +781,7 @@ namespace Model
      */
     inline MLModel& AddTrainingParameters(const char* key, const char* value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
@@ -813,6 +824,7 @@ namespace Model
      */
     inline MLModel& WithInputDataLocationS3(const char* value) { SetInputDataLocationS3(value); return *this;}
 
+
     /**
      * <p>The algorithm used to train the <code>MLModel</code>. The following algorithm
      * is supported:</p> <ul> <li> <code>SGD</code> -- Stochastic gradient descent. The
@@ -852,6 +864,7 @@ namespace Model
      * </ul>
      */
     inline MLModel& WithAlgorithm(Algorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+
 
     /**
      * <p>Identifies the <code>MLModel</code> category. The following are the available
@@ -918,6 +931,7 @@ namespace Model
      */
     inline MLModel& WithMLModelType(MLModelType&& value) { SetMLModelType(std::move(value)); return *this;}
 
+
     
     inline double GetScoreThreshold() const{ return m_scoreThreshold; }
 
@@ -926,6 +940,7 @@ namespace Model
 
     
     inline MLModel& WithScoreThreshold(double value) { SetScoreThreshold(value); return *this;}
+
 
     /**
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
@@ -956,6 +971,7 @@ namespace Model
      * is expressed in epoch time.</p>
      */
     inline MLModel& WithScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { SetScoreThresholdLastUpdatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the most recent details about accessing the
@@ -999,6 +1015,7 @@ namespace Model
      */
     inline MLModel& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     
     inline long long GetComputeTime() const{ return m_computeTime; }
 
@@ -1007,6 +1024,7 @@ namespace Model
 
     
     inline MLModel& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
@@ -1022,6 +1040,7 @@ namespace Model
 
     
     inline MLModel& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
@@ -1039,42 +1058,61 @@ namespace Model
     inline MLModel& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
+
     Aws::String m_trainingDataSourceId;
     bool m_trainingDataSourceIdHasBeenSet;
+
     Aws::String m_createdByIamUser;
     bool m_createdByIamUserHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     EntityStatus m_status;
     bool m_statusHasBeenSet;
+
     long long m_sizeInBytes;
     bool m_sizeInBytesHasBeenSet;
+
     RealtimeEndpointInfo m_endpointInfo;
     bool m_endpointInfoHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_trainingParameters;
     bool m_trainingParametersHasBeenSet;
+
     Aws::String m_inputDataLocationS3;
     bool m_inputDataLocationS3HasBeenSet;
+
     Algorithm m_algorithm;
     bool m_algorithmHasBeenSet;
+
     MLModelType m_mLModelType;
     bool m_mLModelTypeHasBeenSet;
+
     double m_scoreThreshold;
     bool m_scoreThresholdHasBeenSet;
+
     Aws::Utils::DateTime m_scoreThresholdLastUpdatedAt;
     bool m_scoreThresholdLastUpdatedAtHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     long long m_computeTime;
     bool m_computeTimeHasBeenSet;
+
     Aws::Utils::DateTime m_finishedAt;
     bool m_finishedAtHasBeenSet;
+
     Aws::Utils::DateTime m_startedAt;
     bool m_startedAtHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
      * cache security group must not be associated with any cache clusters.</p> </note>
@@ -85,6 +86,7 @@ namespace Model
     inline DeleteCacheParameterGroupRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
 
   private:
+
     Aws::String m_cacheParameterGroupName;
     bool m_cacheParameterGroupNameHasBeenSet;
   };

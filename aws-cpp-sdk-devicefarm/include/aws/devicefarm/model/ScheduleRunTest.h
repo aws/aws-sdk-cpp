@@ -47,6 +47,7 @@ namespace Model
     ScheduleRunTest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li>
      * <p>BUILTIN_FUZZ: The built-in fuzz type.</p> </li> <li> <p>BUILTIN_EXPLORER: For
@@ -137,6 +138,7 @@ namespace Model
      */
     inline ScheduleRunTest& WithType(TestType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The ARN of the uploaded test that will be run.</p>
      */
@@ -172,6 +174,7 @@ namespace Model
      */
     inline ScheduleRunTest& WithTestPackageArn(const char* value) { SetTestPackageArn(value); return *this;}
 
+
     /**
      * <p>The test's filter.</p>
      */
@@ -206,6 +209,7 @@ namespace Model
      * <p>The test's filter.</p>
      */
     inline ScheduleRunTest& WithFilter(const char* value) { SetFilter(value); return *this;}
+
 
     /**
      * <p>The test's parameters, such as the following test framework parameters and
@@ -688,12 +692,16 @@ namespace Model
     inline ScheduleRunTest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
   private:
+
     TestType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_testPackageArn;
     bool m_testPackageArnHasBeenSet;
+
     Aws::String m_filter;
     bool m_filterHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
   };

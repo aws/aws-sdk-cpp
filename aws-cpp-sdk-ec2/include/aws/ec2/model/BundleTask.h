@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the bundle task.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline BundleTask& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
+
     /**
      * <p>If the task fails, a description of the error.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>If the task fails, a description of the error.</p>
      */
     inline BundleTask& WithBundleTaskError(BundleTaskError&& value) { SetBundleTaskError(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the instance associated with this bundle task.</p>
@@ -147,6 +150,7 @@ namespace Model
      */
     inline BundleTask& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The level of task completion, as a percent (for example, 20%).</p>
      */
@@ -182,6 +186,7 @@ namespace Model
      */
     inline BundleTask& WithProgress(const char* value) { SetProgress(value); return *this;}
 
+
     /**
      * <p>The time this task started.</p>
      */
@@ -206,6 +211,7 @@ namespace Model
      * <p>The time this task started.</p>
      */
     inline BundleTask& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The state of the task.</p>
@@ -232,6 +238,7 @@ namespace Model
      */
     inline BundleTask& WithState(BundleTaskState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The Amazon S3 storage locations.</p>
      */
@@ -256,6 +263,7 @@ namespace Model
      * <p>The Amazon S3 storage locations.</p>
      */
     inline BundleTask& WithStorage(Storage&& value) { SetStorage(std::move(value)); return *this;}
+
 
     /**
      * <p>The time of the most recent update for the task.</p>
@@ -283,20 +291,28 @@ namespace Model
     inline BundleTask& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
     BundleTaskError m_bundleTaskError;
     bool m_bundleTaskErrorHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_progress;
     bool m_progressHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     BundleTaskState m_state;
     bool m_stateHasBeenSet;
+
     Storage m_storage;
     bool m_storageHasBeenSet;
+
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet;
   };

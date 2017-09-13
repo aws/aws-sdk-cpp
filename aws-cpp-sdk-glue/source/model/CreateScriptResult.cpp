@@ -30,12 +30,12 @@ CreateScriptResult::CreateScriptResult()
 {
 }
 
-CreateScriptResult::CreateScriptResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateScriptResult::CreateScriptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateScriptResult& CreateScriptResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateScriptResult& CreateScriptResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PythonScript"))

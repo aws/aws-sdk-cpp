@@ -37,6 +37,7 @@ namespace Model
     DeleteApiKeyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be deleted.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline DeleteApiKeyRequest& WithApiKey(const char* value) { SetApiKey(value); return *this;}
 
   private:
+
     Aws::String m_apiKey;
     bool m_apiKeyHasBeenSet;
   };

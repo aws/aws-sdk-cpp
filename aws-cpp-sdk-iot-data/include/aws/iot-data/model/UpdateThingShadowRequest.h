@@ -36,6 +36,7 @@ namespace Model
   {
   public:
     UpdateThingShadowRequest();
+
     /**
      * <p>The name of the thing.</p>
      */
@@ -72,8 +73,10 @@ namespace Model
     inline UpdateThingShadowRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
   private:
+
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
+
   };
 
 } // namespace Model

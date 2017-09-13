@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     UpdateApplicationResourceLifecycleResult();
-    UpdateApplicationResourceLifecycleResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateApplicationResourceLifecycleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateApplicationResourceLifecycleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateApplicationResourceLifecycleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The name of the application.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline UpdateApplicationResourceLifecycleResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The lifecycle configuration.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      */
     inline UpdateApplicationResourceLifecycleResult& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -119,8 +122,11 @@ namespace Model
     inline UpdateApplicationResourceLifecycleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
+
     ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
+
     ResponseMetadata m_responseMetadata;
   };
 

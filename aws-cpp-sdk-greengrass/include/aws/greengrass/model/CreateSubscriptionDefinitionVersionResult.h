@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateSubscriptionDefinitionVersionResult();
-    CreateSubscriptionDefinitionVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSubscriptionDefinitionVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSubscriptionDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSubscriptionDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the version.
@@ -76,6 +77,7 @@ namespace Model
      */
     inline CreateSubscriptionDefinitionVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * Timestamp of when the version was created.
      */
@@ -111,6 +113,7 @@ namespace Model
      */
     inline CreateSubscriptionDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
+
     /**
      * Id of the resource container.
      */
@@ -145,6 +148,7 @@ namespace Model
      * Id of the resource container.
      */
     inline CreateSubscriptionDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Unique Id of a version.
@@ -182,9 +186,13 @@ namespace Model
     inline CreateSubscriptionDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_arn;
+
     Aws::String m_creationTimestamp;
+
     Aws::String m_id;
+
     Aws::String m_version;
   };
 

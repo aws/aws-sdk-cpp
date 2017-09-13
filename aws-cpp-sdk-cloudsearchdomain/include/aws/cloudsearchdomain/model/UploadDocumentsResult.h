@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     UploadDocumentsResult();
-    UploadDocumentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UploadDocumentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UploadDocumentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UploadDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of an <code>UploadDocumentsRequest</code>.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline UploadDocumentsResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The number of documents that were added to the search domain.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      */
     inline UploadDocumentsResult& WithAdds(long long value) { SetAdds(value); return *this;}
 
+
     /**
      * <p>The number of documents that were deleted from the search domain.</p>
      */
@@ -113,6 +116,7 @@ namespace Model
      * <p>The number of documents that were deleted from the search domain.</p>
      */
     inline UploadDocumentsResult& WithDeletes(long long value) { SetDeletes(value); return *this;}
+
 
     /**
      * <p>Any warnings returned by the document service about the documents being
@@ -157,9 +161,13 @@ namespace Model
     inline UploadDocumentsResult& AddWarnings(DocumentServiceWarning&& value) { m_warnings.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_status;
+
     long long m_adds;
+
     long long m_deletes;
+
     Aws::Vector<DocumentServiceWarning> m_warnings;
   };
 

@@ -48,6 +48,7 @@ namespace Model
     ImageDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The AWS account ID associated with the registry to which this image
      * belongs.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ImageDetail& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository to which this image belongs.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      */
     inline ImageDetail& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
     inline ImageDetail& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+
 
     /**
      * <p>The list of tags associated with this image.</p>
@@ -200,6 +204,7 @@ namespace Model
      */
     inline ImageDetail& AddImageTags(const char* value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
 
+
     /**
      * <p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning
      * with Docker version 1.9, the Docker client compresses image layers before
@@ -229,6 +234,7 @@ namespace Model
      * </note>
      */
     inline ImageDetail& WithImageSizeInBytes(long long value) { SetImageSizeInBytes(value); return *this;}
+
 
     /**
      * <p>The date and time, expressed in standard JavaScript date format, at which the
@@ -261,16 +267,22 @@ namespace Model
     inline ImageDetail& WithImagePushedAt(Aws::Utils::DateTime&& value) { SetImagePushedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_imageDigest;
     bool m_imageDigestHasBeenSet;
+
     Aws::Vector<Aws::String> m_imageTags;
     bool m_imageTagsHasBeenSet;
+
     long long m_imageSizeInBytes;
     bool m_imageSizeInBytesHasBeenSet;
+
     Aws::Utils::DateTime m_imagePushedAt;
     bool m_imagePushedAtHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     Encryption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The specific server-side encryption mode that you want Elastic Transcoder to
      * use when decrypting your input files or encrypting your output files. Elastic
@@ -217,6 +218,7 @@ namespace Model
      */
     inline Encryption& WithMode(const char* value) { SetMode(value); return *this;}
 
+
     /**
      * <p>The data encryption key that you want Elastic Transcoder to use to encrypt
      * your output file, or that was used to encrypt your input file. The key must be
@@ -287,6 +289,7 @@ namespace Model
      */
     inline Encryption& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The MD5 digest of the key that you used to encrypt your input file, or that
      * you want Elastic Transcoder to use to encrypt your output file. Elastic
@@ -349,6 +352,7 @@ namespace Model
      * 16 bytes long before being base64-encoded.</p>
      */
     inline Encryption& WithKeyMd5(const char* value) { SetKeyMd5(value); return *this;}
+
 
     /**
      * <p>The series of random bits created by a random bit generator, unique for every
@@ -414,12 +418,16 @@ namespace Model
     inline Encryption& WithInitializationVector(const char* value) { SetInitializationVector(value); return *this;}
 
   private:
+
     Aws::String m_mode;
     bool m_modeHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_keyMd5;
     bool m_keyMd5HasBeenSet;
+
     Aws::String m_initializationVector;
     bool m_initializationVectorHasBeenSet;
   };

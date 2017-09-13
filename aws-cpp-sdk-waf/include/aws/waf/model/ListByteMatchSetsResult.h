@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListByteMatchSetsResult();
-    ListByteMatchSetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListByteMatchSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListByteMatchSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListByteMatchSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If you have more <code>ByteMatchSet</code> objects than the number that you
@@ -113,6 +114,7 @@ namespace Model
      */
     inline ListByteMatchSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>An array of <a>ByteMatchSetSummary</a> objects.</p>
      */
@@ -149,7 +151,9 @@ namespace Model
     inline ListByteMatchSetsResult& AddByteMatchSets(ByteMatchSetSummary&& value) { m_byteMatchSets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<ByteMatchSetSummary> m_byteMatchSets;
   };
 

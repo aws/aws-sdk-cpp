@@ -119,15 +119,15 @@ namespace Model
         class SubscribeRequest;
         class UnsubscribeRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> AddPermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> AddPermissionOutcome;
         typedef Aws::Utils::Outcome<CheckIfPhoneNumberIsOptedOutResult, Aws::Client::AWSError<SNSErrors>> CheckIfPhoneNumberIsOptedOutOutcome;
         typedef Aws::Utils::Outcome<ConfirmSubscriptionResult, Aws::Client::AWSError<SNSErrors>> ConfirmSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreatePlatformApplicationResult, Aws::Client::AWSError<SNSErrors>> CreatePlatformApplicationOutcome;
         typedef Aws::Utils::Outcome<CreatePlatformEndpointResult, Aws::Client::AWSError<SNSErrors>> CreatePlatformEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateTopicResult, Aws::Client::AWSError<SNSErrors>> CreateTopicOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> DeleteEndpointOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> DeletePlatformApplicationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> DeleteTopicOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> DeleteEndpointOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> DeletePlatformApplicationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> DeleteTopicOutcome;
         typedef Aws::Utils::Outcome<GetEndpointAttributesResult, Aws::Client::AWSError<SNSErrors>> GetEndpointAttributesOutcome;
         typedef Aws::Utils::Outcome<GetPlatformApplicationAttributesResult, Aws::Client::AWSError<SNSErrors>> GetPlatformApplicationAttributesOutcome;
         typedef Aws::Utils::Outcome<GetSMSAttributesResult, Aws::Client::AWSError<SNSErrors>> GetSMSAttributesOutcome;
@@ -141,14 +141,14 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTopicsResult, Aws::Client::AWSError<SNSErrors>> ListTopicsOutcome;
         typedef Aws::Utils::Outcome<OptInPhoneNumberResult, Aws::Client::AWSError<SNSErrors>> OptInPhoneNumberOutcome;
         typedef Aws::Utils::Outcome<PublishResult, Aws::Client::AWSError<SNSErrors>> PublishOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> RemovePermissionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> SetEndpointAttributesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> SetPlatformApplicationAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> RemovePermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> SetEndpointAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> SetPlatformApplicationAttributesOutcome;
         typedef Aws::Utils::Outcome<SetSMSAttributesResult, Aws::Client::AWSError<SNSErrors>> SetSMSAttributesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> SetSubscriptionAttributesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> SetTopicAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> SetSubscriptionAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> SetTopicAttributesOutcome;
         typedef Aws::Utils::Outcome<SubscribeResult, Aws::Client::AWSError<SNSErrors>> SubscribeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> UnsubscribeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> UnsubscribeOutcome;
 
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
         typedef std::future<CheckIfPhoneNumberIsOptedOutOutcome> CheckIfPhoneNumberIsOptedOutOutcomeCallable;
@@ -240,27 +240,28 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SNSClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SNSClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SNSClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SNSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        SNSClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SNSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SNSClient();
+
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
 
         /**
@@ -1507,7 +1508,7 @@ namespace Model
 
 
   private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AddPermissionAsyncHelper(const Model::AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1542,7 +1543,7 @@ namespace Model
         void UnsubscribeAsyncHelper(const Model::UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace SNS

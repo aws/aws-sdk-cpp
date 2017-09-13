@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
@@ -100,6 +101,7 @@ namespace Model
      * Reference</i>.</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+
 
     /**
      * <p>The JSON policy document that you want to use as the content for this new
@@ -185,6 +187,7 @@ namespace Model
      */
     inline CreatePolicyVersionRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
+
     /**
      * <p>Specifies whether to set this version as the policy's default version.</p>
      * <p>When this parameter is <code>true</code>, the new policy version becomes the
@@ -219,10 +222,13 @@ namespace Model
     inline CreatePolicyVersionRequest& WithSetAsDefault(bool value) { SetSetAsDefault(value); return *this;}
 
   private:
+
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet;
+
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
+
     bool m_setAsDefault;
     bool m_setAsDefaultHasBeenSet;
   };

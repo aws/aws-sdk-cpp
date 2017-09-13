@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change
      * <code>Name</code> after you create the <code>IPSet</code>.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline CreateIPSetRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -114,8 +116,10 @@ namespace Model
     inline CreateIPSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateFleetCapacityResult();
-    UpdateFleetCapacityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFleetCapacityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateFleetCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateFleetCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Unique identifier for a fleet that was updated.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline UpdateFleetCapacityResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
   };
 

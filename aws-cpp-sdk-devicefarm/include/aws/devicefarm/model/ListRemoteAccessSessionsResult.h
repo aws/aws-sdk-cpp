@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     ListRemoteAccessSessionsResult();
-    ListRemoteAccessSessionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRemoteAccessSessionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRemoteAccessSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRemoteAccessSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A container representing the metadata from the service about each remote
@@ -91,6 +92,7 @@ namespace Model
      * access session you are requesting.</p>
      */
     inline ListRemoteAccessSessionsResult& AddRemoteAccessSessions(RemoteAccessSession&& value) { m_remoteAccessSessions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -135,7 +137,9 @@ namespace Model
     inline ListRemoteAccessSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<RemoteAccessSession> m_remoteAccessSessions;
+
     Aws::String m_nextToken;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID assigned to the <code>MLModel</code> at creation.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline GetMLModelRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the <code>GetMLModel</code> operation should return
      * <code>Recipe</code>.</p> <p>If true, <code>Recipe</code> is returned.</p> <p>If
@@ -93,8 +95,10 @@ namespace Model
     inline GetMLModelRequest& WithVerbose(bool value) { SetVerbose(value); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
+
     bool m_verbose;
     bool m_verboseHasBeenSet;
   };

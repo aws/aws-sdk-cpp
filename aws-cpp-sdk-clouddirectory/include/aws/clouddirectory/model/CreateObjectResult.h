@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateObjectResult();
-    CreateObjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier that is associated with the object.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateObjectResult& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_objectIdentifier;
   };
 

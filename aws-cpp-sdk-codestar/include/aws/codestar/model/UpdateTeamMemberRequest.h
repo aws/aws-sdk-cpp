@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the project.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the project.</p>
      */
     inline UpdateTeamMemberRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user for whom you want to change team
@@ -113,11 +115,12 @@ namespace Model
      */
     inline UpdateTeamMemberRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 
+
     /**
      * <p>The role assigned to the user in the project. Project roles have different
      * levels of access. For more information, see <a
      * href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.</p>
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
      */
     inline const Aws::String& GetProjectRole() const{ return m_projectRole; }
 
@@ -125,7 +128,7 @@ namespace Model
      * <p>The role assigned to the user in the project. Project roles have different
      * levels of access. For more information, see <a
      * href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.</p>
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
      */
     inline void SetProjectRole(const Aws::String& value) { m_projectRoleHasBeenSet = true; m_projectRole = value; }
 
@@ -133,7 +136,7 @@ namespace Model
      * <p>The role assigned to the user in the project. Project roles have different
      * levels of access. For more information, see <a
      * href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.</p>
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
      */
     inline void SetProjectRole(Aws::String&& value) { m_projectRoleHasBeenSet = true; m_projectRole = std::move(value); }
 
@@ -141,7 +144,7 @@ namespace Model
      * <p>The role assigned to the user in the project. Project roles have different
      * levels of access. For more information, see <a
      * href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.</p>
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
      */
     inline void SetProjectRole(const char* value) { m_projectRoleHasBeenSet = true; m_projectRole.assign(value); }
 
@@ -149,7 +152,7 @@ namespace Model
      * <p>The role assigned to the user in the project. Project roles have different
      * levels of access. For more information, see <a
      * href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.</p>
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
      */
     inline UpdateTeamMemberRequest& WithProjectRole(const Aws::String& value) { SetProjectRole(value); return *this;}
 
@@ -157,7 +160,7 @@ namespace Model
      * <p>The role assigned to the user in the project. Project roles have different
      * levels of access. For more information, see <a
      * href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.</p>
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
      */
     inline UpdateTeamMemberRequest& WithProjectRole(Aws::String&& value) { SetProjectRole(std::move(value)); return *this;}
 
@@ -165,9 +168,10 @@ namespace Model
      * <p>The role assigned to the user in the project. Project roles have different
      * levels of access. For more information, see <a
      * href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.</p>
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
      */
     inline UpdateTeamMemberRequest& WithProjectRole(const char* value) { SetProjectRole(value); return *this;}
+
 
     /**
      * <p>Whether a team member is allowed to remotely access project resources using
@@ -194,12 +198,16 @@ namespace Model
     inline UpdateTeamMemberRequest& WithRemoteAccessAllowed(bool value) { SetRemoteAccessAllowed(value); return *this;}
 
   private:
+
     Aws::String m_projectId;
     bool m_projectIdHasBeenSet;
+
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
+
     Aws::String m_projectRole;
     bool m_projectRoleHasBeenSet;
+
     bool m_remoteAccessAllowed;
     bool m_remoteAccessAllowedHasBeenSet;
   };

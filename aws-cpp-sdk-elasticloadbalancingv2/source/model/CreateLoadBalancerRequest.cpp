@@ -23,10 +23,13 @@ using namespace Aws::Utils;
 CreateLoadBalancerRequest::CreateLoadBalancerRequest() : 
     m_nameHasBeenSet(false),
     m_subnetsHasBeenSet(false),
+    m_subnetMappingsHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_scheme(LoadBalancerSchemeEnum::NOT_SET),
     m_schemeHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_type(LoadBalancerTypeEnum::NOT_SET),
+    m_typeHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
     m_ipAddressTypeHasBeenSet(false)
 {
@@ -49,6 +52,16 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
       ss << "Subnets.member." << subnetsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       subnetsCount++;
+    }
+  }
+
+  if(m_subnetMappingsHasBeenSet)
+  {
+    unsigned subnetMappingsCount = 1;
+    for(auto& item : m_subnetMappings)
+    {
+      item.OutputToStream(ss, "SubnetMappings.member.", subnetMappingsCount, "");
+      subnetMappingsCount++;
     }
   }
 
@@ -76,6 +89,11 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_typeHasBeenSet)
+  {
+    ss << "Type=" << LoadBalancerTypeEnumMapper::GetNameForLoadBalancerTypeEnum(m_type) << "&";
   }
 
   if(m_ipAddressTypeHasBeenSet)

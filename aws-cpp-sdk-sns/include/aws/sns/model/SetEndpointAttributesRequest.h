@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>EndpointArn used for SetEndpointAttributes action.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>EndpointArn used for SetEndpointAttributes action.</p>
      */
     inline SetEndpointAttributesRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+
 
     /**
      * <p>A map of the endpoint attributes. Attributes in this map include the
@@ -258,8 +260,10 @@ namespace Model
     inline SetEndpointAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
   };

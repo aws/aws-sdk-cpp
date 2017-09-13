@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A friendly name or description of the <a>WebACL</a>. You can't change
      * <code>Name</code> after you create the <code>WebACL</code>.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <code>Name</code> after you create the <code>WebACL</code>.</p>
      */
     inline CreateWebACLRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
@@ -135,6 +137,7 @@ namespace Model
      */
     inline CreateWebACLRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
+
     /**
      * <p>The action that you want AWS WAF to take when a request doesn't match the
      * criteria specified in any of the <code>Rule</code> objects that are associated
@@ -169,6 +172,7 @@ namespace Model
      * with the <code>WebACL</code>.</p>
      */
     inline CreateWebACLRequest& WithDefaultAction(WafAction&& value) { SetDefaultAction(std::move(value)); return *this;}
+
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -206,12 +210,16 @@ namespace Model
     inline CreateWebACLRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     WafAction m_defaultAction;
     bool m_defaultActionHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
   };

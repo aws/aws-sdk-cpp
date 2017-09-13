@@ -31,12 +31,12 @@ DetachInstancesResult::DetachInstancesResult()
 {
 }
 
-DetachInstancesResult::DetachInstancesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DetachInstancesResult::DetachInstancesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DetachInstancesResult& DetachInstancesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DetachInstancesResult& DetachInstancesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

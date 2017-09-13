@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The meta information of the server certificate, such as its name, path, ID,
      * and ARN.</p>
@@ -80,6 +81,7 @@ namespace Model
      * and ARN.</p>
      */
     inline ServerCertificate& WithServerCertificateMetadata(ServerCertificateMetadata&& value) { SetServerCertificateMetadata(std::move(value)); return *this;}
+
 
     /**
      * <p>The contents of the public key certificate.</p>
@@ -115,6 +117,7 @@ namespace Model
      * <p>The contents of the public key certificate.</p>
      */
     inline ServerCertificate& WithCertificateBody(const char* value) { SetCertificateBody(value); return *this;}
+
 
     /**
      * <p>The contents of the public key certificate chain.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline ServerCertificate& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 
   private:
+
     ServerCertificateMetadata m_serverCertificateMetadata;
     bool m_serverCertificateMetadataHasBeenSet;
+
     Aws::String m_certificateBody;
     bool m_certificateBodyHasBeenSet;
+
     Aws::String m_certificateChain;
     bool m_certificateChainHasBeenSet;
   };

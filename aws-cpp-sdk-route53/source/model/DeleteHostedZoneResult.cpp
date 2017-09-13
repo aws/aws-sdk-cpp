@@ -29,12 +29,12 @@ DeleteHostedZoneResult::DeleteHostedZoneResult()
 {
 }
 
-DeleteHostedZoneResult::DeleteHostedZoneResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteHostedZoneResult::DeleteHostedZoneResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteHostedZoneResult& DeleteHostedZoneResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteHostedZoneResult& DeleteHostedZoneResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

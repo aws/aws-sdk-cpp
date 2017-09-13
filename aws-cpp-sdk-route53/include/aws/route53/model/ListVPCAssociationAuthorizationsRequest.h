@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ID of the hosted zone for which you want a list of VPCs that can be
      * associated with the hosted zone.</p>
@@ -85,6 +86,7 @@ namespace Model
      * associated with the hosted zone.</p>
      */
     inline ListVPCAssociationAuthorizationsRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+
 
     /**
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
@@ -149,6 +151,7 @@ namespace Model
      */
     inline ListVPCAssociationAuthorizationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
      * you want Amazon Route 53 to return. If you don't specify a value for
@@ -199,10 +202,13 @@ namespace Model
     inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::String m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

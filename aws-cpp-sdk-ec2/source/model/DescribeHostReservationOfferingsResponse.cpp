@@ -31,12 +31,12 @@ DescribeHostReservationOfferingsResponse::DescribeHostReservationOfferingsRespon
 {
 }
 
-DescribeHostReservationOfferingsResponse::DescribeHostReservationOfferingsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeHostReservationOfferingsResponse::DescribeHostReservationOfferingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeHostReservationOfferingsResponse& DescribeHostReservationOfferingsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeHostReservationOfferingsResponse& DescribeHostReservationOfferingsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
@@ -56,11 +56,11 @@ DescribeHostReservationOfferingsResponse& DescribeHostReservationOfferingsRespon
     XmlNode offeringSetNode = resultNode.FirstChild("offeringSet");
     if(!offeringSetNode.IsNull())
     {
-      XmlNode offeringSetMember = offeringSetNode.FirstChild("member");
+      XmlNode offeringSetMember = offeringSetNode.FirstChild("item");
       while(!offeringSetMember.IsNull())
       {
         m_offeringSet.push_back(offeringSetMember);
-        offeringSetMember = offeringSetMember.NextNode("member");
+        offeringSetMember = offeringSetMember.NextNode("item");
       }
 
     }

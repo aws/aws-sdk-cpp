@@ -51,6 +51,7 @@ namespace Model
     Alias& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
     inline Alias& WithAliasId(const char* value) { SetAliasId(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -128,6 +130,7 @@ namespace Model
      */
     inline Alias& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
      */
@@ -162,6 +165,7 @@ namespace Model
      * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
      */
     inline Alias& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
+
 
     /**
      * <p>Human-readable description of an alias.</p>
@@ -198,6 +202,7 @@ namespace Model
      */
     inline Alias& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Alias configuration for the alias, including routing type and settings.</p>
      */
@@ -222,6 +227,7 @@ namespace Model
      * <p>Alias configuration for the alias, including routing type and settings.</p>
      */
     inline Alias& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(std::move(value)); return *this;}
+
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -252,6 +258,7 @@ namespace Model
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline Alias& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
@@ -289,18 +296,25 @@ namespace Model
     inline Alias& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_aliasId;
     bool m_aliasIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_aliasArn;
     bool m_aliasArnHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     RoutingStrategy m_routingStrategy;
     bool m_routingStrategyHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
   };

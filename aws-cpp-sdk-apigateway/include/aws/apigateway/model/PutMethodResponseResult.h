@@ -69,8 +69,9 @@ namespace Model
   {
   public:
     PutMethodResponseResult();
-    PutMethodResponseResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutMethodResponseResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutMethodResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutMethodResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The method response's status code.</p>
@@ -106,6 +107,7 @@ namespace Model
      * <p>The method response's status code.</p>
      */
     inline PutMethodResponseResult& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>A key-value map specifying required or optional response parameters that
@@ -259,6 +261,7 @@ namespace Model
      */
     inline PutMethodResponseResult& AddResponseParameters(const char* key, bool value) { m_responseParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content-type.
      * Response models are represented as a key/value map, with a content-type as the
@@ -344,8 +347,11 @@ namespace Model
     inline PutMethodResponseResult& AddResponseModels(const char* key, const char* value) { m_responseModels.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_statusCode;
+
     Aws::Map<Aws::String, bool> m_responseParameters;
+
     Aws::Map<Aws::String, Aws::String> m_responseModels;
   };
 

@@ -30,12 +30,12 @@ DeregisterContainerInstanceResult::DeregisterContainerInstanceResult()
 {
 }
 
-DeregisterContainerInstanceResult::DeregisterContainerInstanceResult(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterContainerInstanceResult::DeregisterContainerInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeregisterContainerInstanceResult& DeregisterContainerInstanceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterContainerInstanceResult& DeregisterContainerInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("containerInstance"))

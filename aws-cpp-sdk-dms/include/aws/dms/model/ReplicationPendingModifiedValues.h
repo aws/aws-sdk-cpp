@@ -45,6 +45,7 @@ namespace Model
     ReplicationPendingModifiedValues& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
@@ -94,6 +95,7 @@ namespace Model
      */
     inline ReplicationPendingModifiedValues& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
+
     /**
      * <p>The amount of storage (in gigabytes) that is allocated for the replication
      * instance.</p>
@@ -111,6 +113,7 @@ namespace Model
      * instance.</p>
      */
     inline ReplicationPendingModifiedValues& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
 
     /**
      * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
@@ -132,6 +135,7 @@ namespace Model
      * to <code>true</code>. </p>
      */
     inline ReplicationPendingModifiedValues& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>The engine version number of the replication instance.</p>
@@ -169,12 +173,16 @@ namespace Model
     inline ReplicationPendingModifiedValues& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
   private:
+
     Aws::String m_replicationInstanceClass;
     bool m_replicationInstanceClassHasBeenSet;
+
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
   };

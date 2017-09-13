@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Friendly name for the <code>Protection</code> you are creating.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Friendly name for the <code>Protection</code> you are creating.</p>
      */
     inline CreateProtectionRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline CreateProtectionRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
   };

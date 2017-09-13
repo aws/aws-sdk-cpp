@@ -46,6 +46,7 @@ namespace Model
     Query& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>List of selectors that define the query. An object must satisfy all of the
      * selectors to match the query.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline Query& AddSelectors(Selector&& value) { m_selectorsHasBeenSet = true; m_selectors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Selector> m_selectors;
     bool m_selectorsHasBeenSet;
   };

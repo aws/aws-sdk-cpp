@@ -48,6 +48,7 @@ namespace Model
     UpdateProvisioningParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
      * <a>DescribeProvisioningParameters</a>.</p>
@@ -89,6 +90,7 @@ namespace Model
      * <a>DescribeProvisioningParameters</a>.</p>
      */
     inline UpdateProvisioningParameter& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The value to use for updating the product provisioning. Any constraints on
@@ -139,6 +141,7 @@ namespace Model
      */
     inline UpdateProvisioningParameter& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>If true, uses the currently set value for <code>Key</code>, ignoring
      * <code>UpdateProvisioningParameter.Value</code>.</p>
@@ -158,10 +161,13 @@ namespace Model
     inline UpdateProvisioningParameter& WithUsePreviousValue(bool value) { SetUsePreviousValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     bool m_usePreviousValue;
     bool m_usePreviousValueHasBeenSet;
   };

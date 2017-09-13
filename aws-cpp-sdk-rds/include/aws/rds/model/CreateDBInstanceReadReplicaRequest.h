@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The DB instance identifier of the Read Replica. This identifier is the unique
      * key that identifies a DB instance. This parameter is stored as a lowercase
@@ -89,6 +90,7 @@ namespace Model
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>The identifier of the DB instance that will act as the source for the Read
      * Replica. Each DB instance can have up to five Read Replicas.</p>
@@ -96,12 +98,13 @@ namespace Model
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
      * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
      * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross region
+     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
+     * backups enabled, its backup retention period must be greater than 0.</p> </li>
+     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
+     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
+     * instance is in a different AWS Region than the Read Replica, specify a valid DB
+     * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -114,12 +117,13 @@ namespace Model
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
      * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
      * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross region
+     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
+     * backups enabled, its backup retention period must be greater than 0.</p> </li>
+     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
+     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
+     * instance is in a different AWS Region than the Read Replica, specify a valid DB
+     * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -132,12 +136,13 @@ namespace Model
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
      * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
      * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross region
+     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
+     * backups enabled, its backup retention period must be greater than 0.</p> </li>
+     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
+     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
+     * instance is in a different AWS Region than the Read Replica, specify a valid DB
+     * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -150,12 +155,13 @@ namespace Model
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
      * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
      * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross region
+     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
+     * backups enabled, its backup retention period must be greater than 0.</p> </li>
+     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
+     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
+     * instance is in a different AWS Region than the Read Replica, specify a valid DB
+     * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -168,12 +174,13 @@ namespace Model
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
      * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
      * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross region
+     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
+     * backups enabled, its backup retention period must be greater than 0.</p> </li>
+     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
+     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
+     * instance is in a different AWS Region than the Read Replica, specify a valid DB
+     * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -186,12 +193,13 @@ namespace Model
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
      * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
      * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross region
+     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
+     * backups enabled, its backup retention period must be greater than 0.</p> </li>
+     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
+     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
+     * instance is in a different AWS Region than the Read Replica, specify a valid DB
+     * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
@@ -204,16 +212,18 @@ namespace Model
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
      * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
      * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later.</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross region
+     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
+     * backups enabled, its backup retention period must be greater than 0.</p> </li>
+     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
+     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
+     * instance is in a different AWS Region than the Read Replica, specify a valid DB
+     * instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithSourceDBInstanceIdentifier(const char* value) { SetSourceDBInstanceIdentifier(value); return *this;}
+
 
     /**
      * <p>The compute and memory capacity of the Read Replica. Note that not all
@@ -299,6 +309,7 @@ namespace Model
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
+
     /**
      * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
      * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
@@ -348,6 +359,7 @@ namespace Model
      */
     inline CreateDBInstanceReadReplicaRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The port number that the DB instance uses for connections.</p> <p>Default:
      * Inherits from the source DB instance</p> <p>Valid Values:
@@ -368,6 +380,7 @@ namespace Model
      * <code>1150-65535</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>Indicates that minor engine upgrades will be applied automatically to the
@@ -390,6 +403,7 @@ namespace Model
      */
     inline CreateDBInstanceReadReplicaRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
+
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance.</p>
@@ -407,6 +421,7 @@ namespace Model
      * initially allocated for the DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p>The option group the DB instance will be associated with. If omitted, the
@@ -449,6 +464,7 @@ namespace Model
      * default option group for the engine specified will be used.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+
 
     /**
      * <p>Specifies the accessibility options for the DB instance. A value of true
@@ -498,6 +514,7 @@ namespace Model
      */
     inline CreateDBInstanceReadReplicaRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -518,6 +535,7 @@ namespace Model
 
     
     inline CreateDBInstanceReadReplicaRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Specifies a DB subnet group for the DB instance. The new DB instance will be
@@ -645,6 +663,7 @@ namespace Model
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>Specifies the storage type to be associated with the Read Replica.</p> <p>
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
@@ -708,6 +727,7 @@ namespace Model
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
+
     /**
      * <p>True to copy all tags from the Read Replica to snapshots of the Read Replica;
      * otherwise false. The default is false.</p>
@@ -725,6 +745,7 @@ namespace Model
      * otherwise false. The default is false.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -752,6 +773,7 @@ namespace Model
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
+
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
@@ -836,6 +858,7 @@ namespace Model
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
+
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
@@ -941,6 +964,7 @@ namespace Model
      * encryption keys from one AWS Region in another AWS Region. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
 
     /**
      * <p>The URL that contains a Signature Version 4 signed request for the
@@ -1229,6 +1253,7 @@ namespace Model
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
+
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
      * to database accounts; otherwise false.</p> <p>You can enable IAM database
@@ -1260,40 +1285,58 @@ namespace Model
     inline CreateDBInstanceReadReplicaRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     Aws::String m_sourceDBInstanceIdentifier;
     bool m_sourceDBInstanceIdentifierHasBeenSet;
+
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
+
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
+
     int m_monitoringInterval;
     bool m_monitoringIntervalHasBeenSet;
+
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_preSignedUrl;
     bool m_preSignedUrlHasBeenSet;
+
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };

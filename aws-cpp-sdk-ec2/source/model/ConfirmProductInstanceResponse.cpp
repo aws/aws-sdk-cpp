@@ -32,13 +32,13 @@ ConfirmProductInstanceResponse::ConfirmProductInstanceResponse() :
 {
 }
 
-ConfirmProductInstanceResponse::ConfirmProductInstanceResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+ConfirmProductInstanceResponse::ConfirmProductInstanceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-ConfirmProductInstanceResponse& ConfirmProductInstanceResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ConfirmProductInstanceResponse& ConfirmProductInstanceResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

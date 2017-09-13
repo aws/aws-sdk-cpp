@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListOfferingTransactionsResult();
-    ListOfferingTransactionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOfferingTransactionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOfferingTransactionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOfferingTransactionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The audit log of subscriptions you have purchased and modified through AWS
@@ -90,6 +91,7 @@ namespace Model
      * Device Farm.</p>
      */
     inline ListOfferingTransactionsResult& AddOfferingTransactions(OfferingTransaction&& value) { m_offeringTransactions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -134,7 +136,9 @@ namespace Model
     inline ListOfferingTransactionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<OfferingTransaction> m_offeringTransactions;
+
     Aws::String m_nextToken;
   };
 

@@ -51,8 +51,9 @@ namespace Model
   {
   public:
     CreateDataSourceFromRDSResult();
-    CreateDataSourceFromRDSResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDataSourceFromRDSResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDataSourceFromRDSResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDataSourceFromRDSResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-supplied ID that uniquely identifies the datasource. This value should
@@ -97,6 +98,7 @@ namespace Model
     inline CreateDataSourceFromRDSResult& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
   };
 

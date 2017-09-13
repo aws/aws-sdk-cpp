@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p> The name of the application. If no application is found with this name, and
      * <code>AutoCreateApplication</code> is <code>false</code>, returns an
@@ -92,6 +93,7 @@ namespace Model
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateApplicationVersionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
@@ -149,6 +151,7 @@ namespace Model
      */
     inline CreateApplicationVersionRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
+
     /**
      * <p>Describes this version.</p>
      */
@@ -184,6 +187,7 @@ namespace Model
      */
     inline CreateApplicationVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
      * code for the application version.</p>
@@ -213,6 +217,7 @@ namespace Model
      * code for the application version.</p>
      */
     inline CreateApplicationVersionRequest& WithSourceBuildInformation(SourceBuildInformation&& value) { SetSourceBuildInformation(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
@@ -269,6 +274,7 @@ namespace Model
      */
     inline CreateApplicationVersionRequest& WithSourceBundle(S3Location&& value) { SetSourceBundle(std::move(value)); return *this;}
 
+
     /**
      * <p>Settings for an AWS CodeBuild build.</p>
      */
@@ -294,6 +300,7 @@ namespace Model
      */
     inline CreateApplicationVersionRequest& WithBuildConfiguration(BuildConfiguration&& value) { SetBuildConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Set to <code>true</code> to create an application with the specified name if
      * it doesn't already exist.</p>
@@ -311,6 +318,7 @@ namespace Model
      * it doesn't already exist.</p>
      */
     inline CreateApplicationVersionRequest& WithAutoCreateApplication(bool value) { SetAutoCreateApplication(value); return *this;}
+
 
     /**
      * <p>Preprocesses and validates the environment manifest and configuration files
@@ -334,20 +342,28 @@ namespace Model
     inline CreateApplicationVersionRequest& WithProcess(bool value) { SetProcess(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     SourceBuildInformation m_sourceBuildInformation;
     bool m_sourceBuildInformationHasBeenSet;
+
     S3Location m_sourceBundle;
     bool m_sourceBundleHasBeenSet;
+
     BuildConfiguration m_buildConfiguration;
     bool m_buildConfigurationHasBeenSet;
+
     bool m_autoCreateApplication;
     bool m_autoCreateApplicationHasBeenSet;
+
     bool m_process;
     bool m_processHasBeenSet;
   };

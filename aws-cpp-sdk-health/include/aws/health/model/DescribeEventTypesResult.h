@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeEventTypesResult();
-    DescribeEventTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of event types that match the filter criteria. Event types have a
@@ -122,6 +123,7 @@ namespace Model
      */
     inline DescribeEventTypesResult& AddEventTypes(const char* value) { m_eventTypes.push_back(value); return *this; }
 
+
     /**
      * <p>If the results of a search are large, only a portion of the results are
      * returned, and a <code>nextToken</code> pagination token is returned in the
@@ -186,7 +188,9 @@ namespace Model
     inline DescribeEventTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_eventTypes;
+
     Aws::String m_nextToken;
   };
 

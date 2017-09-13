@@ -48,6 +48,7 @@ namespace Model
     DocumentIdentifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the SSM document.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the SSM document.</p>
      */
     inline DocumentIdentifier& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The AWS user account of the person who created the document.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline DocumentIdentifier& WithOwner(const char* value) { SetOwner(value); return *this;}
 
+
     /**
      * <p>The operating system platform. </p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The operating system platform. </p>
      */
     inline DocumentIdentifier& AddPlatformTypes(PlatformType&& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The document version.</p>
@@ -188,6 +192,7 @@ namespace Model
      */
     inline DocumentIdentifier& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
+
     /**
      * <p>The document type.</p>
      */
@@ -212,6 +217,7 @@ namespace Model
      * <p>The document type.</p>
      */
     inline DocumentIdentifier& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
+
 
     /**
      * <p>The schema version.</p>
@@ -249,16 +255,22 @@ namespace Model
     inline DocumentIdentifier& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::Vector<PlatformType> m_platformTypes;
     bool m_platformTypesHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     DocumentType m_documentType;
     bool m_documentTypeHasBeenSet;
+
     Aws::String m_schemaVersion;
     bool m_schemaVersionHasBeenSet;
   };

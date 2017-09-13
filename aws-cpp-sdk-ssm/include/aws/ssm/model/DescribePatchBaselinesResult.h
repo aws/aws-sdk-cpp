@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribePatchBaselinesResult();
-    DescribePatchBaselinesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePatchBaselinesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePatchBaselinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePatchBaselinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of PatchBaselineIdentity elements.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>An array of PatchBaselineIdentity elements.</p>
      */
     inline DescribePatchBaselinesResult& AddBaselineIdentities(PatchBaselineIdentity&& value) { m_baselineIdentities.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribePatchBaselinesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PatchBaselineIdentity> m_baselineIdentities;
+
     Aws::String m_nextToken;
   };
 

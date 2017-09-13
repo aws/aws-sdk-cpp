@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
      * or <code>xvdh</code>).</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline AttachVolumeRequest& WithDevice(const char* value) { SetDevice(value); return *this;}
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline AttachVolumeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The ID of the EBS volume. The volume and instance must be within the same
@@ -160,6 +163,7 @@ namespace Model
      */
     inline AttachVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -185,12 +189,16 @@ namespace Model
     inline AttachVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_device;
     bool m_deviceHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

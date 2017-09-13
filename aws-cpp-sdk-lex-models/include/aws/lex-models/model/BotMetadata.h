@@ -47,6 +47,7 @@ namespace Model
     BotMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the bot. </p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the bot. </p>
      */
     inline BotMetadata& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description of the bot.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline BotMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The status of the bot.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>The status of the bot.</p>
      */
     inline BotMetadata& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The date that the bot was updated. When you create a bot, the creation date
@@ -172,6 +176,7 @@ namespace Model
      */
     inline BotMetadata& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date that the bot was created.</p>
      */
@@ -196,6 +201,7 @@ namespace Model
      * <p>The date that the bot was created.</p>
      */
     inline BotMetadata& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The version of the bot. For a new bot, the version is always
@@ -240,16 +246,22 @@ namespace Model
     inline BotMetadata& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Status m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
     bool m_lastUpdatedDateHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

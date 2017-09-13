@@ -32,13 +32,13 @@ EnableLoggingResult::EnableLoggingResult() :
 {
 }
 
-EnableLoggingResult::EnableLoggingResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+EnableLoggingResult::EnableLoggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_loggingEnabled(false)
 {
   *this = result;
 }
 
-EnableLoggingResult& EnableLoggingResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+EnableLoggingResult& EnableLoggingResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

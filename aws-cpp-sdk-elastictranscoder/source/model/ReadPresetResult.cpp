@@ -30,12 +30,12 @@ ReadPresetResult::ReadPresetResult()
 {
 }
 
-ReadPresetResult::ReadPresetResult(const AmazonWebServiceResult<JsonValue>& result)
+ReadPresetResult::ReadPresetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ReadPresetResult& ReadPresetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ReadPresetResult& ReadPresetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Preset"))

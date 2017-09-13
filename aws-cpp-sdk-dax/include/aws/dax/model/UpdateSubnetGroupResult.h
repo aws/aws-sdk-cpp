@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateSubnetGroupResult();
-    UpdateSubnetGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSubnetGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The subnet group that has been modified.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateSubnetGroupResult& WithSubnetGroup(SubnetGroup&& value) { SetSubnetGroup(std::move(value)); return *this;}
 
   private:
+
     SubnetGroup m_subnetGroup;
   };
 

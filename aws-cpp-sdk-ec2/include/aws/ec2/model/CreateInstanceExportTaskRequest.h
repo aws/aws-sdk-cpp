@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A description for the conversion task or the resource being exported. The
      * maximum length is 255 bytes.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline CreateInstanceExportTaskRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The format and location for an instance export task.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The format and location for an instance export task.</p>
      */
     inline CreateInstanceExportTaskRequest& WithExportToS3Task(ExportToS3TaskSpecification&& value) { SetExportToS3Task(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -146,6 +149,7 @@ namespace Model
      */
     inline CreateInstanceExportTaskRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The target virtualization environment.</p>
      */
@@ -172,12 +176,16 @@ namespace Model
     inline CreateInstanceExportTaskRequest& WithTargetEnvironment(ExportEnvironment&& value) { SetTargetEnvironment(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ExportToS3TaskSpecification m_exportToS3Task;
     bool m_exportToS3TaskHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     ExportEnvironment m_targetEnvironment;
     bool m_targetEnvironmentHasBeenSet;
   };

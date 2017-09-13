@@ -46,6 +46,7 @@ namespace Model
     FirehoseAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline FirehoseAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The delivery stream name.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The delivery stream name.</p>
      */
     inline FirehoseAction& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
+
 
     /**
      * <p>A character separator that will be used to separate records written to the
@@ -166,10 +169,13 @@ namespace Model
     inline FirehoseAction& WithSeparator(const char* value) { SetSeparator(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
+
     Aws::String m_separator;
     bool m_separatorHasBeenSet;
   };

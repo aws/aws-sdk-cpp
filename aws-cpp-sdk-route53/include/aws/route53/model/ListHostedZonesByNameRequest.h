@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>(Optional) For your first request to <code>ListHostedZonesByName</code>,
      * include the <code>dnsname</code> parameter only if you want to specify the name
@@ -128,6 +129,7 @@ namespace Model
      * <code>NextDNSName</code> from the previous response.</p>
      */
     inline ListHostedZonesByNameRequest& WithDNSName(const char* value) { SetDNSName(value); return *this;}
+
 
     /**
      * <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do
@@ -220,6 +222,7 @@ namespace Model
      */
     inline ListHostedZonesByNameRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
+
     /**
      * <p>The maximum number of hosted zones to be included in the response body for
      * this request. If you have more than <code>maxitems</code> hosted zones, then the
@@ -284,10 +287,13 @@ namespace Model
     inline ListHostedZonesByNameRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_dNSName;
     bool m_dNSNameHasBeenSet;
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

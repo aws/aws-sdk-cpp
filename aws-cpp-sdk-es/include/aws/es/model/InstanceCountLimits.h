@@ -45,6 +45,7 @@ namespace Model
     InstanceCountLimits& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline int GetMinimumInstanceCount() const{ return m_minimumInstanceCount; }
 
@@ -53,6 +54,7 @@ namespace Model
 
     
     inline InstanceCountLimits& WithMinimumInstanceCount(int value) { SetMinimumInstanceCount(value); return *this;}
+
 
     
     inline int GetMaximumInstanceCount() const{ return m_maximumInstanceCount; }
@@ -64,8 +66,10 @@ namespace Model
     inline InstanceCountLimits& WithMaximumInstanceCount(int value) { SetMaximumInstanceCount(value); return *this;}
 
   private:
+
     int m_minimumInstanceCount;
     bool m_minimumInstanceCountHasBeenSet;
+
     int m_maximumInstanceCount;
     bool m_maximumInstanceCountHasBeenSet;
   };

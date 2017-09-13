@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character must be a
@@ -99,6 +100,7 @@ namespace Model
      */
     inline ResetDBParameterGroupRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
+
     /**
      * <p> Specifies whether (<code>true</code>) or not (<code>false</code>) to reset
      * all parameters in the DB parameter group to default values. </p> <p>Default:
@@ -119,6 +121,7 @@ namespace Model
      * <code>true</code> </p>
      */
     inline ResetDBParameterGroupRequest& WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
+
 
     /**
      * <p>To reset the entire DB parameter group, specify the
@@ -254,10 +257,13 @@ namespace Model
     inline ResetDBParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
+
     bool m_resetAllParameters;
     bool m_resetAllParametersHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
   };

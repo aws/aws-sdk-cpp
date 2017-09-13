@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateTrafficPolicyResult();
-    CreateTrafficPolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateTrafficPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateTrafficPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateTrafficPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains settings for the new traffic policy.</p>
@@ -72,6 +73,7 @@ namespace Model
      * <p>A complex type that contains settings for the new traffic policy.</p>
      */
     inline CreateTrafficPolicyResult& WithTrafficPolicy(TrafficPolicy&& value) { SetTrafficPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>A unique URL that represents a new traffic policy.</p>
@@ -109,7 +111,9 @@ namespace Model
     inline CreateTrafficPolicyResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:
+
     TrafficPolicy m_trafficPolicy;
+
     Aws::String m_location;
   };
 

@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * A suffix that is appended to a request that is for a directory on the website
      * endpoint (e.g. if the suffix is index.html and you make a request to
@@ -105,6 +106,7 @@ namespace Model
     inline IndexDocument& WithSuffix(const char* value) { SetSuffix(value); return *this;}
 
   private:
+
     Aws::String m_suffix;
     bool m_suffixHasBeenSet;
   };

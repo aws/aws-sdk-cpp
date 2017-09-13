@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline GetSegmentVersionsRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     /**
      * The number of entries you want on each page in the response.
@@ -96,6 +98,7 @@ namespace Model
      */
     inline GetSegmentVersionsRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
 
+
     
     inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
 
@@ -116,6 +119,7 @@ namespace Model
 
     
     inline GetSegmentVersionsRequest& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+
 
     /**
      * The NextToken string returned on a previous page that you use to get the next
@@ -160,12 +164,16 @@ namespace Model
     inline GetSegmentVersionsRequest& WithToken(const char* value) { SetToken(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     Aws::String m_segmentId;
     bool m_segmentIdHasBeenSet;
+
     Aws::String m_token;
     bool m_tokenHasBeenSet;
   };

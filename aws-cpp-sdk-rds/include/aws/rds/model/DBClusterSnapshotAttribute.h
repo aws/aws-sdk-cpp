@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the manual DB cluster snapshot attribute.</p> <p>The attribute
      * named <code>restore</code> refers to the list of AWS accounts that have
@@ -108,6 +109,7 @@ namespace Model
      * information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
      */
     inline DBClusterSnapshotAttribute& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+
 
     /**
      * <p>The value(s) for the manual DB cluster snapshot attribute.</p> <p>If the
@@ -190,8 +192,10 @@ namespace Model
     inline DBClusterSnapshotAttribute& AddAttributeValues(const char* value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
 
   private:
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_attributeValues;
     bool m_attributeValuesHasBeenSet;
   };

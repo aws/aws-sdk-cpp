@@ -30,12 +30,12 @@ AttachObjectResult::AttachObjectResult()
 {
 }
 
-AttachObjectResult::AttachObjectResult(const AmazonWebServiceResult<JsonValue>& result)
+AttachObjectResult::AttachObjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AttachObjectResult& AttachObjectResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AttachObjectResult& AttachObjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AttachedObjectIdentifier"))

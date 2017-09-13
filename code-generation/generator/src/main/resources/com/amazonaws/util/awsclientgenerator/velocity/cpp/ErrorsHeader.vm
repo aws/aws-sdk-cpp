@@ -1,14 +1,16 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 #pragma once
 
 \#include <aws/core/client/CoreErrors.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 
-namespace Aws
+namespace ${rootNamespace}
 {
-namespace ${metadata.namespace}
+namespace ${serviceNamespace}
 {
 #set($className = "${metadata.classNamePrefix}Errors")
 enum class $className
@@ -50,15 +52,15 @@ enum class $className
 #end
 #set($enum_counter = 1)
 #foreach($errorConstName in $errorConstNames)
-  $errorConstName#if($enum_counter == 1)= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1#end#if($enum_counter < $enum_size),${nl}#end
+  $errorConstName#if($enum_counter == 1)= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1#end#if($enum_counter < $enum_size),${nl}#end
 #set($enum_counter = $enum_counter + 1)
 #end
 
 };
 namespace ${metadata.classNamePrefix}ErrorMapper
 {
-  ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ${metadata.namespace}
-} // namespace Aws
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

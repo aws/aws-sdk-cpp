@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateCaseResult();
-    CreateCaseResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCaseResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
@@ -97,6 +98,7 @@ namespace Model
     inline CreateCaseResult& WithCaseId(const char* value) { SetCaseId(value); return *this;}
 
   private:
+
     Aws::String m_caseId;
   };
 

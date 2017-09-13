@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the pipeline.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The ID of the pipeline.</p>
      */
     inline ActivatePipelineRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+
 
     /**
      * <p>A list of parameter values to pass to the pipeline at activation.</p>
@@ -112,6 +114,7 @@ namespace Model
      */
     inline ActivatePipelineRequest& AddParameterValues(ParameterValue&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The date and time to resume the pipeline. By default, the pipeline resumes
      * from the last completed execution.</p>
@@ -143,10 +146,13 @@ namespace Model
     inline ActivatePipelineRequest& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Aws::Vector<ParameterValue> m_parameterValues;
     bool m_parameterValuesHasBeenSet;
+
     Aws::Utils::DateTime m_startTimestamp;
     bool m_startTimestampHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
      * For more information, see <a>arns</a>.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline BatchWriteRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>A list of operations that are part of the batch.</p>
      */
@@ -116,8 +118,10 @@ namespace Model
     inline BatchWriteRequest& AddOperations(BatchWriteOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     Aws::Vector<BatchWriteOperation> m_operations;
     bool m_operationsHasBeenSet;
   };

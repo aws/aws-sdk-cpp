@@ -52,6 +52,7 @@ namespace Model
     RedshiftDestinationUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the AWS credentials.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The ARN of the AWS credentials.</p>
      */
     inline RedshiftDestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
 
     /**
      * <p>The database connection string.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline RedshiftDestinationUpdate& WithClusterJDBCURL(const char* value) { SetClusterJDBCURL(value); return *this;}
 
+
     /**
      * <p>The <code>COPY</code> command.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      * <p>The <code>COPY</code> command.</p>
      */
     inline RedshiftDestinationUpdate& WithCopyCommand(CopyCommand&& value) { SetCopyCommand(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the user.</p>
@@ -182,6 +186,7 @@ namespace Model
      */
     inline RedshiftDestinationUpdate& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
     /**
      * <p>The user password.</p>
      */
@@ -217,6 +222,7 @@ namespace Model
      */
     inline RedshiftDestinationUpdate& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
      * Amazon Redshift. Default value is 3600 (60 minutes).</p>
@@ -246,6 +252,7 @@ namespace Model
      * Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline RedshiftDestinationUpdate& WithRetryOptions(RedshiftRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
@@ -292,6 +299,7 @@ namespace Model
      */
     inline RedshiftDestinationUpdate& WithS3Update(S3DestinationUpdate&& value) { SetS3Update(std::move(value)); return *this;}
 
+
     /**
      * <p>The data processing configuration.</p>
      */
@@ -316,6 +324,7 @@ namespace Model
      * <p>The data processing configuration.</p>
      */
     inline RedshiftDestinationUpdate& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon S3 backup mode.</p>
@@ -342,6 +351,7 @@ namespace Model
      */
     inline RedshiftDestinationUpdate& WithS3BackupMode(RedshiftS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
 
+
     /**
      * <p>The Amazon S3 destination for backup.</p>
      */
@@ -366,6 +376,7 @@ namespace Model
      * <p>The Amazon S3 destination for backup.</p>
      */
     inline RedshiftDestinationUpdate& WithS3BackupUpdate(S3DestinationUpdate&& value) { SetS3BackupUpdate(std::move(value)); return *this;}
+
 
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
@@ -393,26 +404,37 @@ namespace Model
     inline RedshiftDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::String m_clusterJDBCURL;
     bool m_clusterJDBCURLHasBeenSet;
+
     CopyCommand m_copyCommand;
     bool m_copyCommandHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     RedshiftRetryOptions m_retryOptions;
     bool m_retryOptionsHasBeenSet;
+
     S3DestinationUpdate m_s3Update;
     bool m_s3UpdateHasBeenSet;
+
     ProcessingConfiguration m_processingConfiguration;
     bool m_processingConfigurationHasBeenSet;
+
     RedshiftS3BackupMode m_s3BackupMode;
     bool m_s3BackupModeHasBeenSet;
+
     S3DestinationUpdate m_s3BackupUpdate;
     bool m_s3BackupUpdateHasBeenSet;
+
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
   };

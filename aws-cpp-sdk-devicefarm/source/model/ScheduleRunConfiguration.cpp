@@ -33,6 +33,7 @@ ScheduleRunConfiguration::ScheduleRunConfiguration() :
     m_networkProfileArnHasBeenSet(false),
     m_localeHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_customerArtifactPathsHasBeenSet(false),
     m_radiosHasBeenSet(false),
     m_auxiliaryAppsHasBeenSet(false),
     m_billingMethod(BillingMethod::NOT_SET),
@@ -45,6 +46,7 @@ ScheduleRunConfiguration::ScheduleRunConfiguration(const JsonValue& jsonValue) :
     m_networkProfileArnHasBeenSet(false),
     m_localeHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_customerArtifactPathsHasBeenSet(false),
     m_radiosHasBeenSet(false),
     m_auxiliaryAppsHasBeenSet(false),
     m_billingMethod(BillingMethod::NOT_SET),
@@ -81,6 +83,13 @@ ScheduleRunConfiguration& ScheduleRunConfiguration::operator =(const JsonValue& 
     m_location = jsonValue.GetObject("location");
 
     m_locationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customerArtifactPaths"))
+  {
+    m_customerArtifactPaths = jsonValue.GetObject("customerArtifactPaths");
+
+    m_customerArtifactPathsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("radios"))
@@ -135,6 +144,12 @@ JsonValue ScheduleRunConfiguration::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithObject("location", m_location.Jsonize());
+
+  }
+
+  if(m_customerArtifactPathsHasBeenSet)
+  {
+   payload.WithObject("customerArtifactPaths", m_customerArtifactPaths.Jsonize());
 
   }
 

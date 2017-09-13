@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
+
     /**
      * <p>The port that uses the specified SSL certificate.</p>
      */
@@ -91,6 +93,7 @@ namespace Model
      * <p>The port that uses the specified SSL certificate.</p>
      */
     inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
@@ -128,10 +131,13 @@ namespace Model
     inline SetLoadBalancerListenerSSLCertificateRequest& WithSSLCertificateId(const char* value) { SetSSLCertificateId(value); return *this;}
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     int m_loadBalancerPort;
     bool m_loadBalancerPortHasBeenSet;
+
     Aws::String m_sSLCertificateId;
     bool m_sSLCertificateIdHasBeenSet;
   };

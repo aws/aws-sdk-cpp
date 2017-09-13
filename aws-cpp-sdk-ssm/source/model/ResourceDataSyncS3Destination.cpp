@@ -33,7 +33,8 @@ ResourceDataSyncS3Destination::ResourceDataSyncS3Destination() :
     m_prefixHasBeenSet(false),
     m_syncFormat(ResourceDataSyncS3Format::NOT_SET),
     m_syncFormatHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_aWSKMSKeyARNHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ResourceDataSyncS3Destination::ResourceDataSyncS3Destination(const JsonValue& js
     m_prefixHasBeenSet(false),
     m_syncFormat(ResourceDataSyncS3Format::NOT_SET),
     m_syncFormatHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_aWSKMSKeyARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ ResourceDataSyncS3Destination& ResourceDataSyncS3Destination::operator =(const J
     m_regionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AWSKMSKeyARN"))
+  {
+    m_aWSKMSKeyARN = jsonValue.GetString("AWSKMSKeyARN");
+
+    m_aWSKMSKeyARNHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +113,12 @@ JsonValue ResourceDataSyncS3Destination::Jsonize() const
   if(m_regionHasBeenSet)
   {
    payload.WithString("Region", m_region);
+
+  }
+
+  if(m_aWSKMSKeyARNHasBeenSet)
+  {
+   payload.WithString("AWSKMSKeyARN", m_aWSKMSKeyARN);
 
   }
 

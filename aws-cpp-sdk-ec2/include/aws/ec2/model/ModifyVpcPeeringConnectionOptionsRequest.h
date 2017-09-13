@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The VPC peering connection options for the accepter VPC.</p>
      */
@@ -64,6 +65,7 @@ namespace Model
      */
     inline ModifyVpcPeeringConnectionOptionsRequest& WithAccepterPeeringConnectionOptions(PeeringConnectionOptionsRequest&& value) { SetAccepterPeeringConnectionOptions(std::move(value)); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the operation, without
      * actually making the request, and provides an error response. If you have the
@@ -87,6 +89,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ModifyVpcPeeringConnectionOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The VPC peering connection options for the requester VPC.</p>
@@ -112,6 +115,7 @@ namespace Model
      * <p>The VPC peering connection options for the requester VPC.</p>
      */
     inline ModifyVpcPeeringConnectionOptionsRequest& WithRequesterPeeringConnectionOptions(PeeringConnectionOptionsRequest&& value) { SetRequesterPeeringConnectionOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the VPC peering connection.</p>
@@ -149,12 +153,16 @@ namespace Model
     inline ModifyVpcPeeringConnectionOptionsRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
   private:
+
     PeeringConnectionOptionsRequest m_accepterPeeringConnectionOptions;
     bool m_accepterPeeringConnectionOptionsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     PeeringConnectionOptionsRequest m_requesterPeeringConnectionOptions;
     bool m_requesterPeeringConnectionOptionsHasBeenSet;
+
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
   };

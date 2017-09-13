@@ -55,7 +55,7 @@ enum class DeviceFarmErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ARGUMENT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ARGUMENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   IDEMPOTENCY,
   LIMIT_EXCEEDED,
   NOT_ELIGIBLE,
@@ -64,7 +64,7 @@ enum class DeviceFarmErrors
 };
 namespace DeviceFarmErrorMapper
 {
-  AWS_DEVICEFARM_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_DEVICEFARM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace DeviceFarm

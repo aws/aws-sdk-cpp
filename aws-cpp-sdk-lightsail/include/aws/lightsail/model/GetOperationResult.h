@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetOperationResult();
-    GetOperationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetOperationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -72,6 +73,7 @@ namespace Model
     inline GetOperationResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
+
     Operation m_operation;
   };
 

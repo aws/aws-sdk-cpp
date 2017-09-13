@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the schema to update.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ARN of the schema to update.</p>
      */
     inline PutSchemaFromJsonRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+
 
     /**
      * <p>The replacement JSON schema.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline PutSchemaFromJsonRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_document;
     bool m_documentHasBeenSet;
   };

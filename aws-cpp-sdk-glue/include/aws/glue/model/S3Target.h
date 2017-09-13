@@ -46,6 +46,7 @@ namespace Model
     S3Target& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The path to the S3 target.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The path to the S3 target.</p>
      */
     inline S3Target& WithPath(const char* value) { SetPath(value); return *this;}
+
 
     /**
      * <p>A list of S3 objects to exclude from the crawl.</p>
@@ -122,8 +124,10 @@ namespace Model
     inline S3Target& AddExclusions(const char* value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::Vector<Aws::String> m_exclusions;
     bool m_exclusionsHasBeenSet;
   };

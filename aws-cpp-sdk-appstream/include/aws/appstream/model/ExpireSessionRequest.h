@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier of the streaming session to be stopped.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline ExpireSessionRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 
   private:
+
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet;
   };

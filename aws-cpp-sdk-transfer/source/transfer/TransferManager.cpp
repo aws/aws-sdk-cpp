@@ -83,13 +83,13 @@ namespace Aws
         }
 
         std::shared_ptr<TransferHandle> TransferManager::UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType,
-            const Aws::Map<Aws::String, Aws::String>& metadata)
+                const Aws::Map<Aws::String, Aws::String>& metadata)
         {
             return this->DoUploadFile(fileName, bucketName, keyName, contentType, metadata);
         }
 
         std::shared_ptr<TransferHandle> TransferManager::UploadFile(const std::shared_ptr<Aws::IOStream>& fileStream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType,
-            const Aws::Map<Aws::String, Aws::String>& metadata)
+				const Aws::Map<Aws::String, Aws::String>& metadata)
         {
             return this->DoUploadFile(fileStream.get(), bucketName, keyName, contentType, metadata);
         }
@@ -111,9 +111,13 @@ namespace Aws
                                                                       const Aws::String& writeToFile, 
                                                                       const DownloadConfiguration& downloadConfig)
         {
-
+#ifdef _MSC_VER
+            auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, Aws::Utils::StringUtils::ToWString(writeToFile.c_str()).c_str(),
+                                                                     std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};
+#else
             auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, writeToFile.c_str(),
                                                                      std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};
+#endif
 
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, createFileFn);
             handle->ApplyDownloadConfiguration(downloadConfig);
@@ -124,7 +128,11 @@ namespace Aws
 
         std::shared_ptr<TransferHandle> TransferManager::RetryUpload(const Aws::String& fileName, const std::shared_ptr<TransferHandle>& retryHandle)
         {
+#ifdef _MSC_VER
+            auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, Aws::Utils::StringUtils::ToWString(fileName.c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
+#else
             auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, fileName.c_str(), std::ios_base::in | std::ios_base::binary);
+#endif
             return RetryUpload(fileStream, retryHandle);
         }
 
@@ -213,8 +221,13 @@ namespace Aws
 
         void TransferManager::DoMultiPartUpload(const std::shared_ptr<TransferHandle>& handle)
         {
+#ifdef _MSC_VER
+            Aws::FStream streamToPut(Aws::Utils::StringUtils::ToWString(handle->GetTargetFilePath().c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
+            DoMultiPartUpload(&streamToPut, handle);
+#else
             Aws::FStream streamToPut(handle->GetTargetFilePath().c_str(), std::ios_base::in | std::ios_base::binary);
             DoMultiPartUpload(&streamToPut, handle);
+#endif
         }
 
         void TransferManager::DoMultiPartUpload(Aws::IOStream* streamToPut, const std::shared_ptr<TransferHandle>& handle)
@@ -242,7 +255,7 @@ namespace Aws
 
                     for (uint64_t i = 0; i < partCount; ++i)
                     {
-                        uint64_t partSize = std::min(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
+                        uint64_t partSize = (std::min)(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
                         bool lastPart = (i == partCount - 1) ? true : false;
                         handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, static_cast<size_t>(partSize), lastPart));
                     }                    
@@ -329,13 +342,18 @@ namespace Aws
             {
                 handle->ChangePartToFailed(partsIter->second);
             }
-           
+
         }
 
         void TransferManager::DoSinglePartUpload(const std::shared_ptr<TransferHandle>& handle)
         {
+#ifdef _MSC_VER
+            Aws::FStream streamToPut(Aws::Utils::StringUtils::ToWString(handle->GetTargetFilePath().c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
+            DoSinglePartUpload(&streamToPut, handle);
+#else
             Aws::FStream streamToPut(handle->GetTargetFilePath().c_str(), std::ios_base::in | std::ios_base::binary);
             DoSinglePartUpload(&streamToPut, handle);
+#endif
         }
 
         void TransferManager::DoSinglePartUpload(Aws::IOStream* streamToPut, const std::shared_ptr<TransferHandle>& handle)
@@ -358,7 +376,7 @@ namespace Aws
 
             auto buffer = m_bufferManager.Acquire();
 
-            auto lengthToWrite = std::min(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize());
+            auto lengthToWrite = (std::min)(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize());
             streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
             auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
             auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
@@ -977,7 +995,11 @@ namespace Aws
                 const Aws::String& contentType, const Aws::Map<Aws::String, Aws::String>& metadata)
         {
             // destructor of FStream will close stream automatically (when out of scope), no need to call close explicitly
-            Aws::FStream fileStream(fileName.c_str(), std::ios_base::in | std::ios_base::binary);
+#ifdef _MSC_VER
+            Aws::FStream fileStream(Aws::Utils::StringUtils::ToWString(fileName.c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
+#else
+			Aws::FStream fileStream(fileName.c_str(), std::ios_base::in | std::ios_base::binary);
+#endif
             auto handle = CreateUploadFileHandle(&fileStream, bucketName, keyName, contentType, metadata, fileName);
             return SubmitUpload(handle);
         }

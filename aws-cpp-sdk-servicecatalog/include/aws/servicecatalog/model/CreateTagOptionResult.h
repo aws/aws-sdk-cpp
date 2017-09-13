@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateTagOptionResult();
-    CreateTagOptionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTagOptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTagOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTagOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resulting detailed TagOption information.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateTagOptionResult& WithTagOptionDetail(TagOptionDetail&& value) { SetTagOptionDetail(std::move(value)); return *this;}
 
   private:
+
     TagOptionDetail m_tagOptionDetail;
   };
 

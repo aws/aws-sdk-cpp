@@ -52,6 +52,7 @@ namespace Model
     ResourceCreationLimitPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Maximum number of game sessions that an individual can create during the
      * policy period. </p>
@@ -70,6 +71,7 @@ namespace Model
      */
     inline ResourceCreationLimitPolicy& WithNewGameSessionsPerCreator(int value) { SetNewGameSessionsPerCreator(value); return *this;}
 
+
     /**
      * <p>Time span used in evaluating the resource creation limit policy. </p>
      */
@@ -86,8 +88,10 @@ namespace Model
     inline ResourceCreationLimitPolicy& WithPolicyPeriodInMinutes(int value) { SetPolicyPeriodInMinutes(value); return *this;}
 
   private:
+
     int m_newGameSessionsPerCreator;
     bool m_newGameSessionsPerCreatorHasBeenSet;
+
     int m_policyPeriodInMinutes;
     bool m_policyPeriodInMinutesHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(const char* value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
 
+
     /**
      * <p>The next token of the request.</p>
      */
@@ -113,8 +115,10 @@ namespace Model
     inline DescribeWorkspacesConnectionStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_workspaceIds;
     bool m_workspaceIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

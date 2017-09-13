@@ -55,7 +55,7 @@ enum class OrganizationsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCOUNT_NOT_FOUND= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ALREADY_IN_ORGANIZATION,
   A_W_S_ORGANIZATIONS_NOT_IN_USE,
   CHILD_NOT_FOUND,
@@ -94,7 +94,7 @@ enum class OrganizationsErrors
 };
 namespace OrganizationsErrorMapper
 {
-  AWS_ORGANIZATIONS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ORGANIZATIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Organizations

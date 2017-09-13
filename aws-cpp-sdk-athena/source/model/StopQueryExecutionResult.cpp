@@ -30,12 +30,12 @@ StopQueryExecutionResult::StopQueryExecutionResult()
 {
 }
 
-StopQueryExecutionResult::StopQueryExecutionResult(const AmazonWebServiceResult<JsonValue>& result)
+StopQueryExecutionResult::StopQueryExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopQueryExecutionResult& StopQueryExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopQueryExecutionResult& StopQueryExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

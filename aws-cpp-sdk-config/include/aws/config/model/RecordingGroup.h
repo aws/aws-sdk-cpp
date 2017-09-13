@@ -70,6 +70,7 @@ namespace Model
     RecordingGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies whether AWS Config records configuration changes for every
      * supported type of regional resource.</p> <p>If you set this option to
@@ -99,6 +100,7 @@ namespace Model
      * <code>resourceTypes</code>.</p>
      */
     inline RecordingGroup& WithAllSupported(bool value) { SetAllSupported(value); return *this;}
+
 
     /**
      * <p>Specifies whether AWS Config includes all supported types of global resources
@@ -138,6 +140,7 @@ namespace Model
      * customizing AWS Config in only one region to record global resources.</p>
      */
     inline RecordingGroup& WithIncludeGlobalResourceTypes(bool value) { SetIncludeGlobalResourceTypes(value); return *this;}
+
 
     /**
      * <p>A comma-separated list that specifies the types of AWS resources for which
@@ -252,10 +255,13 @@ namespace Model
     inline RecordingGroup& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
   private:
+
     bool m_allSupported;
     bool m_allSupportedHasBeenSet;
+
     bool m_includeGlobalResourceTypes;
     bool m_includeGlobalResourceTypesHasBeenSet;
+
     Aws::Vector<ResourceType> m_resourceTypes;
     bool m_resourceTypesHasBeenSet;
   };

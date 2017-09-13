@@ -46,6 +46,7 @@ namespace Model
     BotAliasMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the bot alias.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the bot alias.</p>
      */
     inline BotAliasMetadata& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description of the bot alias.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline BotAliasMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The version of the Amazon Lex bot to which the alias points.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>The version of the Amazon Lex bot to which the alias points.</p>
      */
     inline BotAliasMetadata& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+
 
     /**
      * <p>The name of the bot to which the alias points.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline BotAliasMetadata& WithBotName(const char* value) { SetBotName(value); return *this;}
 
+
     /**
      * <p>The date that the bot alias was updated. When you create a resource, the
      * creation date and last updated date are the same.</p>
@@ -216,6 +221,7 @@ namespace Model
      */
     inline BotAliasMetadata& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date that the bot alias was created.</p>
      */
@@ -240,6 +246,7 @@ namespace Model
      * <p>The date that the bot alias was created.</p>
      */
     inline BotAliasMetadata& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Checksum of the bot alias.</p>
@@ -277,18 +284,25 @@ namespace Model
     inline BotAliasMetadata& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_botVersion;
     bool m_botVersionHasBeenSet;
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
     bool m_lastUpdatedDateHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
   };

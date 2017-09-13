@@ -31,12 +31,12 @@ AttachVpnGatewayResponse::AttachVpnGatewayResponse()
 {
 }
 
-AttachVpnGatewayResponse::AttachVpnGatewayResponse(const AmazonWebServiceResult<XmlDocument>& result)
+AttachVpnGatewayResponse::AttachVpnGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AttachVpnGatewayResponse& AttachVpnGatewayResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AttachVpnGatewayResponse& AttachVpnGatewayResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

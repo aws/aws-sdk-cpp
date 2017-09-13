@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListExecutionsResult();
-    ListExecutionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListExecutionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of matching executions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of matching executions.</p>
      */
     inline ListExecutionsResult& AddExecutions(ExecutionListItem&& value) { m_executions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To
@@ -142,7 +144,9 @@ namespace Model
     inline ListExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ExecutionListItem> m_executions;
+
     Aws::String m_nextToken;
   };
 

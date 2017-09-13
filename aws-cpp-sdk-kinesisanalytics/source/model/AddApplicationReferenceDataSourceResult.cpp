@@ -30,12 +30,12 @@ AddApplicationReferenceDataSourceResult::AddApplicationReferenceDataSourceResult
 {
 }
 
-AddApplicationReferenceDataSourceResult::AddApplicationReferenceDataSourceResult(const AmazonWebServiceResult<JsonValue>& result)
+AddApplicationReferenceDataSourceResult::AddApplicationReferenceDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddApplicationReferenceDataSourceResult& AddApplicationReferenceDataSourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddApplicationReferenceDataSourceResult& AddApplicationReferenceDataSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

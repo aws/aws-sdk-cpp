@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeEffectivePatchesForPatchBaselineResult();
-    DescribeEffectivePatchesForPatchBaselineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEffectivePatchesForPatchBaselineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEffectivePatchesForPatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEffectivePatchesForPatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of patches and patch status.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>An array of patches and patch status.</p>
      */
     inline DescribeEffectivePatchesForPatchBaselineResult& AddEffectivePatches(EffectivePatch&& value) { m_effectivePatches.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeEffectivePatchesForPatchBaselineResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<EffectivePatch> m_effectivePatches;
+
     Aws::String m_nextToken;
   };
 

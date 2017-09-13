@@ -46,6 +46,7 @@ namespace Model
     JSONMappingParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Path to the top-level parent that contains the records.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline JSONMappingParameters& WithRecordRowPath(const char* value) { SetRecordRowPath(value); return *this;}
 
   private:
+
     Aws::String m_recordRowPath;
     bool m_recordRowPathHasBeenSet;
   };

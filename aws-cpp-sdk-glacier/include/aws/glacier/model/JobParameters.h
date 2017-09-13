@@ -46,6 +46,7 @@ namespace Model
     JobParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>When initiating a job to retrieve a vault inventory, you can optionally add
      * this parameter to your request to specify the output format. If you are
@@ -102,6 +103,7 @@ namespace Model
      */
     inline JobParameters& WithFormat(const char* value) { SetFormat(value); return *this;}
 
+
     /**
      * <p>The job type. You can initiate a job to retrieve an archive or get an
      * inventory of a vault. Valid values are "archive-retrieval" and
@@ -150,6 +152,7 @@ namespace Model
      * "inventory-retrieval".</p>
      */
     inline JobParameters& WithType(const char* value) { SetType(value); return *this;}
+
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
@@ -200,6 +203,7 @@ namespace Model
      */
     inline JobParameters& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
 
+
     /**
      * <p>The optional description for the job. The description must be less than or
      * equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control
@@ -248,6 +252,7 @@ namespace Model
      * codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
      */
     inline JobParameters& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
@@ -304,6 +309,7 @@ namespace Model
      * exist.</p>
      */
     inline JobParameters& WithSNSTopic(const char* value) { SetSNSTopic(value); return *this;}
+
 
     /**
      * <p>The byte range to retrieve for an archive retrieval. in the form
@@ -389,6 +395,7 @@ namespace Model
      */
     inline JobParameters& WithRetrievalByteRange(const char* value) { SetRetrievalByteRange(value); return *this;}
 
+
     /**
      * <p>The retrieval option to use for the archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
@@ -438,6 +445,7 @@ namespace Model
      */
     inline JobParameters& WithTier(const char* value) { SetTier(value); return *this;}
 
+
     /**
      * <p>Input parameters used for range inventory retrieval.</p>
      */
@@ -464,20 +472,28 @@ namespace Model
     inline JobParameters& WithInventoryRetrievalParameters(InventoryRetrievalJobInput&& value) { SetInventoryRetrievalParameters(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_archiveId;
     bool m_archiveIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_sNSTopic;
     bool m_sNSTopicHasBeenSet;
+
     Aws::String m_retrievalByteRange;
     bool m_retrievalByteRangeHasBeenSet;
+
     Aws::String m_tier;
     bool m_tierHasBeenSet;
+
     InventoryRetrievalJobInput m_inventoryRetrievalParameters;
     bool m_inventoryRetrievalParametersHasBeenSet;
   };

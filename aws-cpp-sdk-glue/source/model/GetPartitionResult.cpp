@@ -30,12 +30,12 @@ GetPartitionResult::GetPartitionResult()
 {
 }
 
-GetPartitionResult::GetPartitionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetPartitionResult::GetPartitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetPartitionResult& GetPartitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetPartitionResult& GetPartitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Partition"))

@@ -47,6 +47,7 @@ namespace Model
     WorkerBlock& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p> The ID of the Worker who accepted the HIT.</p>
      */
     inline WorkerBlock& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+
 
     /**
      * <p> A message explaining the reason the Worker was blocked. </p>
@@ -118,8 +120,10 @@ namespace Model
     inline WorkerBlock& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

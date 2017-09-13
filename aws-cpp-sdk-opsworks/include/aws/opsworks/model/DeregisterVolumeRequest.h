@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks
      * assigned to the instance when you registered the volume with the stack, not the
@@ -86,6 +87,7 @@ namespace Model
     inline DeregisterVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
   private:
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
   };

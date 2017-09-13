@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Number (ARN) of the replication task to be started.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline StartReplicationTaskRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
 
+
     /**
      * <p>The type of replication task.</p>
      */
@@ -100,6 +102,7 @@ namespace Model
      * <p>The type of replication task.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { SetStartReplicationTaskType(std::move(value)); return *this;}
+
 
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
@@ -127,10 +130,13 @@ namespace Model
     inline StartReplicationTaskRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_replicationTaskArn;
     bool m_replicationTaskArnHasBeenSet;
+
     StartReplicationTaskTypeValue m_startReplicationTaskType;
     bool m_startReplicationTaskTypeHasBeenSet;
+
     Aws::Utils::DateTime m_cdcStartTime;
     bool m_cdcStartTimeHasBeenSet;
   };

@@ -30,12 +30,12 @@ GetAuthorizationTokenResult::GetAuthorizationTokenResult()
 {
 }
 
-GetAuthorizationTokenResult::GetAuthorizationTokenResult(const AmazonWebServiceResult<JsonValue>& result)
+GetAuthorizationTokenResult::GetAuthorizationTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetAuthorizationTokenResult& GetAuthorizationTokenResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetAuthorizationTokenResult& GetAuthorizationTokenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("authorizationData"))

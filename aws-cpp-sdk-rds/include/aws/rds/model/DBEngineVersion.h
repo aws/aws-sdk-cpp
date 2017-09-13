@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the database engine.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The name of the database engine.</p>
      */
     inline DBEngineVersion& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The version number of the database engine.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline DBEngineVersion& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>The name of the DB parameter group family for the database engine.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The name of the DB parameter group family for the database engine.</p>
      */
     inline DBEngineVersion& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
+
 
     /**
      * <p>The description of the database engine.</p>
@@ -193,6 +197,7 @@ namespace Model
      */
     inline DBEngineVersion& WithDBEngineDescription(const char* value) { SetDBEngineDescription(value); return *this;}
 
+
     /**
      * <p>The description of the database engine version.</p>
      */
@@ -228,6 +233,7 @@ namespace Model
      */
     inline DBEngineVersion& WithDBEngineVersionDescription(const char* value) { SetDBEngineVersionDescription(value); return *this;}
 
+
     /**
      * <p> The default character set for new instances of this engine version, if the
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API is not
@@ -262,6 +268,7 @@ namespace Model
      * specified. </p>
      */
     inline DBEngineVersion& WithDefaultCharacterSet(CharacterSet&& value) { SetDefaultCharacterSet(std::move(value)); return *this;}
+
 
     /**
      * <p> A list of the character sets supported by this engine for the
@@ -312,6 +319,7 @@ namespace Model
      */
     inline DBEngineVersion& AddSupportedCharacterSets(CharacterSet&& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of engine versions that this database engine version can be upgraded
      * to.</p>
@@ -353,6 +361,7 @@ namespace Model
      * to.</p>
      */
     inline DBEngineVersion& AddValidUpgradeTarget(UpgradeTarget&& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of the time zones supported by this engine for the
@@ -404,22 +413,31 @@ namespace Model
     inline DBEngineVersion& AddSupportedTimezones(Timezone&& value) { m_supportedTimezonesHasBeenSet = true; m_supportedTimezones.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_dBParameterGroupFamily;
     bool m_dBParameterGroupFamilyHasBeenSet;
+
     Aws::String m_dBEngineDescription;
     bool m_dBEngineDescriptionHasBeenSet;
+
     Aws::String m_dBEngineVersionDescription;
     bool m_dBEngineVersionDescriptionHasBeenSet;
+
     CharacterSet m_defaultCharacterSet;
     bool m_defaultCharacterSetHasBeenSet;
+
     Aws::Vector<CharacterSet> m_supportedCharacterSets;
     bool m_supportedCharacterSetsHasBeenSet;
+
     Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
     bool m_validUpgradeTargetHasBeenSet;
+
     Aws::Vector<Timezone> m_supportedTimezones;
     bool m_supportedTimezonesHasBeenSet;
   };

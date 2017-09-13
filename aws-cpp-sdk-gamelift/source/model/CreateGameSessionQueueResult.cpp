@@ -30,12 +30,12 @@ CreateGameSessionQueueResult::CreateGameSessionQueueResult()
 {
 }
 
-CreateGameSessionQueueResult::CreateGameSessionQueueResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateGameSessionQueueResult::CreateGameSessionQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateGameSessionQueueResult& CreateGameSessionQueueResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateGameSessionQueueResult& CreateGameSessionQueueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GameSessionQueue"))

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateStackSetResult();
-    CreateStackSetResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateStackSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateStackSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateStackSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the stack set that you're creating.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CreateStackSetResult& WithStackSetId(const char* value) { SetStackSetId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -93,7 +95,9 @@ namespace Model
     inline CreateStackSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackSetId;
+
     ResponseMetadata m_responseMetadata;
   };
 

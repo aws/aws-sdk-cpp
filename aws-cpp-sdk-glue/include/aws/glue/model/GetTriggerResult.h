@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetTriggerResult();
-    GetTriggerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTriggerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTriggerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTriggerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The requested trigger definition.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetTriggerResult& WithTrigger(Trigger&& value) { SetTrigger(std::move(value)); return *this;}
 
   private:
+
     Trigger m_trigger;
   };
 

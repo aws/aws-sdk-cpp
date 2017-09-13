@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name for the alarm. This name must be unique within the AWS account. The
      * maximum length is 255 characters.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline SetAlarmStateRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
 
+
     /**
      * <p>The value of the state.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The value of the state.</p>
      */
     inline SetAlarmStateRequest& WithStateValue(StateValue&& value) { SetStateValue(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason that this alarm is set to this specific state, in text format.</p>
@@ -140,6 +143,7 @@ namespace Model
      * <p>The reason that this alarm is set to this specific state, in text format.</p>
      */
     inline SetAlarmStateRequest& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+
 
     /**
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
@@ -177,12 +181,16 @@ namespace Model
     inline SetAlarmStateRequest& WithStateReasonData(const char* value) { SetStateReasonData(value); return *this;}
 
   private:
+
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
+
     StateValue m_stateValue;
     bool m_stateValueHasBeenSet;
+
     Aws::String m_stateReason;
     bool m_stateReasonHasBeenSet;
+
     Aws::String m_stateReasonData;
     bool m_stateReasonDataHasBeenSet;
   };

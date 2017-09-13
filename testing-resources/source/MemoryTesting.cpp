@@ -40,11 +40,11 @@ void* BaseTestMemorySystem::AllocateMemory(std::size_t blockSize, std::size_t al
     AWS_UNREFERENCED_PARAM(allocationTag);
 
     ++m_currentOutstandingAllocations;
-    m_maxOutstandingAllocations = std::max(m_maxOutstandingAllocations, m_currentOutstandingAllocations);
+    m_maxOutstandingAllocations = (std::max)(m_maxOutstandingAllocations, m_currentOutstandingAllocations);
     ++m_totalAllocations;
             
     m_currentBytesAllocated += blockSize;
-    m_maxBytesAllocated = std::max(m_maxBytesAllocated, m_currentBytesAllocated);
+    m_maxBytesAllocated = (std::max)(m_maxBytesAllocated, m_currentBytesAllocated);
     m_totalBytesAllocated += blockSize;
 
     char* rawMemory = reinterpret_cast<char*>(malloc(blockSize + sizeof(std::size_t)));

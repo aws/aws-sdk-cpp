@@ -46,6 +46,7 @@ namespace Model
     DescribeVaultOutput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the vault.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline DescribeVaultOutput& WithVaultARN(const char* value) { SetVaultARN(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline DescribeVaultOutput& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
@@ -165,6 +168,7 @@ namespace Model
      */
     inline DescribeVaultOutput& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
+
     /**
      * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
      * last vault inventory. This value should be a string in the ISO 8601 date format,
@@ -214,6 +218,7 @@ namespace Model
      */
     inline DescribeVaultOutput& WithLastInventoryDate(const char* value) { SetLastInventoryDate(value); return *this;}
 
+
     /**
      * <p>The number of archives in the vault as of the last inventory date. This field
      * will return <code>null</code> if an inventory has not yet run on the vault, for
@@ -234,6 +239,7 @@ namespace Model
      * example if you just created the vault.</p>
      */
     inline DescribeVaultOutput& WithNumberOfArchives(long long value) { SetNumberOfArchives(value); return *this;}
+
 
     /**
      * <p>Total size, in bytes, of the archives in the vault as of the last inventory
@@ -257,16 +263,22 @@ namespace Model
     inline DescribeVaultOutput& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
 
   private:
+
     Aws::String m_vaultARN;
     bool m_vaultARNHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::String m_lastInventoryDate;
     bool m_lastInventoryDateHasBeenSet;
+
     long long m_numberOfArchives;
     bool m_numberOfArchivesHasBeenSet;
+
     long long m_sizeInBytes;
     bool m_sizeInBytesHasBeenSet;
   };

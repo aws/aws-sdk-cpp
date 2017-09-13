@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     IndexFacesResult();
-    IndexFacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    IndexFacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    IndexFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    IndexFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of faces detected and added to the collection. For more information,
@@ -84,6 +85,7 @@ namespace Model
      * see <a>howitworks-index-faces</a>. </p>
      */
     inline IndexFacesResult& AddFaceRecords(FaceRecord&& value) { m_faceRecords.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The orientation of the input image (counterclockwise direction). If your
@@ -156,7 +158,9 @@ namespace Model
     inline IndexFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<FaceRecord> m_faceRecords;
+
     OrientationCorrection m_orientationCorrection;
   };
 

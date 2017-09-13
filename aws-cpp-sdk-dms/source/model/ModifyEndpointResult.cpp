@@ -30,12 +30,12 @@ ModifyEndpointResult::ModifyEndpointResult()
 {
 }
 
-ModifyEndpointResult::ModifyEndpointResult(const AmazonWebServiceResult<JsonValue>& result)
+ModifyEndpointResult::ModifyEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ModifyEndpointResult& ModifyEndpointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ModifyEndpointResult& ModifyEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Endpoint"))

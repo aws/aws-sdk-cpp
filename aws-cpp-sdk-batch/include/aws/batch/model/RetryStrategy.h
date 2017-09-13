@@ -43,6 +43,7 @@ namespace Model
     RetryStrategy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of times to move a job to the <code>RUNNABLE</code> status. You
      * may specify between 1 and 10 attempts. If <code>attempts</code> is greater than
@@ -68,6 +69,7 @@ namespace Model
     inline RetryStrategy& WithAttempts(int value) { SetAttempts(value); return *this;}
 
   private:
+
     int m_attempts;
     bool m_attemptsHasBeenSet;
   };

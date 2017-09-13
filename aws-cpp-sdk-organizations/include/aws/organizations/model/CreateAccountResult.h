@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateAccountResult();
-    CreateAccountResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAccountResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains details about the request to create an account.
@@ -92,6 +93,7 @@ namespace Model
     inline CreateAccountResult& WithCreateAccountStatus(CreateAccountStatus&& value) { SetCreateAccountStatus(std::move(value)); return *this;}
 
   private:
+
     CreateAccountStatus m_createAccountStatus;
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetGroupResult();
-    GetGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The group object for the group.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetGroupResult& WithGroup(GroupType&& value) { SetGroup(std::move(value)); return *this;}
 
   private:
+
     GroupType m_group;
   };
 

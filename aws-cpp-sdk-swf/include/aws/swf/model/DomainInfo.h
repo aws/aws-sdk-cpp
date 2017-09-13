@@ -46,6 +46,7 @@ namespace Model
     DomainInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the domain. This name is unique within the account.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the domain. This name is unique within the account.</p>
      */
     inline DomainInfo& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The status of the domain:</p> <ul> <li> <p> <code>REGISTERED</code> – The
@@ -131,6 +133,7 @@ namespace Model
      */
     inline DomainInfo& WithStatus(RegistrationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The description of the domain provided through <a>RegisterDomain</a>.</p>
      */
@@ -167,10 +170,13 @@ namespace Model
     inline DomainInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     RegistrationStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

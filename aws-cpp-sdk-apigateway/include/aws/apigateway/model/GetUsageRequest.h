@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The Id of the usage plan associated with the usage data.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline GetUsageRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
+
 
     /**
      * <p>The Id of the API key associated with the resultant usage data.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline GetUsageRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline GetUsageRequest& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+
 
     /**
      * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
@@ -184,6 +188,7 @@ namespace Model
      */
     inline GetUsageRequest& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 
+
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
@@ -219,6 +224,7 @@ namespace Model
      */
     inline GetUsageRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
+
     /**
      * <p>The maximum number of returned results per page.</p>
      */
@@ -235,16 +241,22 @@ namespace Model
     inline GetUsageRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_usagePlanId;
     bool m_usagePlanIdHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_startDate;
     bool m_startDateHasBeenSet;
+
     Aws::String m_endDate;
     bool m_endDateHasBeenSet;
+
     Aws::String m_position;
     bool m_positionHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

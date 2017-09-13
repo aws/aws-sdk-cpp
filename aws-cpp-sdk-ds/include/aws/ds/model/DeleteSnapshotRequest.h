@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory snapshot to be deleted.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DeleteSnapshotRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
   private:
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
   };

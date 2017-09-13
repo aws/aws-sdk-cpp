@@ -52,6 +52,7 @@ namespace Model
     TaskDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The full Amazon Resource Name (ARN) of the task definition.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the task definition.</p>
      */
     inline TaskDefinition& WithTaskDefinitionArn(const char* value) { SetTaskDefinitionArn(value); return *this;}
+
 
     /**
      * <p>A list of container definitions in JSON format that describe the different
@@ -157,6 +159,7 @@ namespace Model
      */
     inline TaskDefinition& AddContainerDefinitions(ContainerDefinition&& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The family of your task definition, used as the definition name.</p>
      */
@@ -191,6 +194,7 @@ namespace Model
      * <p>The family of your task definition, used as the definition name.</p>
      */
     inline TaskDefinition& WithFamily(const char* value) { SetFamily(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
@@ -240,6 +244,7 @@ namespace Model
      * specified in this role.</p>
      */
     inline TaskDefinition& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
+
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
@@ -311,6 +316,7 @@ namespace Model
      */
     inline TaskDefinition& WithNetworkMode(NetworkMode&& value) { SetNetworkMode(std::move(value)); return *this;}
 
+
     /**
      * <p>The revision of the task in a particular family. The revision is a version
      * number of a task definition in a family. When you register a task definition for
@@ -340,6 +346,7 @@ namespace Model
      * family).</p>
      */
     inline TaskDefinition& WithRevision(int value) { SetRevision(value); return *this;}
+
 
     /**
      * <p>The list of volumes in a task. For more information about volume definition
@@ -404,6 +411,7 @@ namespace Model
      */
     inline TaskDefinition& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The status of the task definition.</p>
      */
@@ -428,6 +436,7 @@ namespace Model
      * <p>The status of the task definition.</p>
      */
     inline TaskDefinition& WithStatus(TaskDefinitionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The container instance attributes required by your task.</p>
@@ -463,6 +472,7 @@ namespace Model
      * <p>The container instance attributes required by your task.</p>
      */
     inline TaskDefinition& AddRequiresAttributes(Attribute&& value) { m_requiresAttributesHasBeenSet = true; m_requiresAttributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An array of placement constraint objects to use for tasks. </p>
@@ -500,24 +510,34 @@ namespace Model
     inline TaskDefinition& AddPlacementConstraints(TaskDefinitionPlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_taskDefinitionArn;
     bool m_taskDefinitionArnHasBeenSet;
+
     Aws::Vector<ContainerDefinition> m_containerDefinitions;
     bool m_containerDefinitionsHasBeenSet;
+
     Aws::String m_family;
     bool m_familyHasBeenSet;
+
     Aws::String m_taskRoleArn;
     bool m_taskRoleArnHasBeenSet;
+
     NetworkMode m_networkMode;
     bool m_networkModeHasBeenSet;
+
     int m_revision;
     bool m_revisionHasBeenSet;
+
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet;
+
     TaskDefinitionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Vector<Attribute> m_requiresAttributes;
     bool m_requiresAttributesHasBeenSet;
+
     Aws::Vector<TaskDefinitionPlacementConstraint> m_placementConstraints;
     bool m_placementConstraintsHasBeenSet;
   };

@@ -100,8 +100,8 @@ SearchOutcome CloudSearchDomainClient::Search(const SearchRequest& request) cons
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2013-01-01/search?format=sdk&pretty=true";
- uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchOutcome(SearchResult(outcome.GetResult()));
@@ -135,8 +135,8 @@ SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) c
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2013-01-01/suggest?format=sdk&pretty=true";
- uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SuggestOutcome(SuggestResult(outcome.GetResult()));
@@ -170,8 +170,8 @@ UploadDocumentsOutcome CloudSearchDomainClient::UploadDocuments(const UploadDocu
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
   ss << "/2013-01-01/documents/batch?format=sdk";
- uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UploadDocumentsOutcome(UploadDocumentsResult(outcome.GetResult()));

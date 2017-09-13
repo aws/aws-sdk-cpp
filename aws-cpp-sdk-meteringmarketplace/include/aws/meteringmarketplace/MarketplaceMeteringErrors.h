@@ -55,7 +55,7 @@ enum class MarketplaceMeteringErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DUPLICATE_REQUEST= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DUPLICATE_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   EXPIRED_TOKEN,
   INTERNAL_SERVICE_ERROR,
   INVALID_CUSTOMER_IDENTIFIER,
@@ -67,7 +67,7 @@ enum class MarketplaceMeteringErrors
 };
 namespace MarketplaceMeteringErrorMapper
 {
-  AWS_MARKETPLACEMETERING_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_MARKETPLACEMETERING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace MarketplaceMetering

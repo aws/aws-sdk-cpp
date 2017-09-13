@@ -30,12 +30,12 @@ AcceptPortfolioShareResult::AcceptPortfolioShareResult()
 {
 }
 
-AcceptPortfolioShareResult::AcceptPortfolioShareResult(const AmazonWebServiceResult<JsonValue>& result)
+AcceptPortfolioShareResult::AcceptPortfolioShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AcceptPortfolioShareResult& AcceptPortfolioShareResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AcceptPortfolioShareResult& AcceptPortfolioShareResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

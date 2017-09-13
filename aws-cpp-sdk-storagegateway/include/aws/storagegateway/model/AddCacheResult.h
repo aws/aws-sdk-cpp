@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AddCacheResult();
-    AddCacheResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddCacheResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -63,6 +64,7 @@ namespace Model
     inline AddCacheResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
   };
 

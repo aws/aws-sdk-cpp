@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The status of the VPC peering connection.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The status of the VPC peering connection.</p>
      */
     inline VpcPeeringConnectionStateReason& WithCode(VpcPeeringConnectionStateReasonCode&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>A message that provides more information about the status, if applicable.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline VpcPeeringConnectionStateReason& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     VpcPeeringConnectionStateReasonCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     LocalSecondaryIndex& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the local secondary index. The name must be unique among all
      * other indexes on this table.</p>
@@ -90,6 +91,7 @@ namespace Model
      * other indexes on this table.</p>
      */
     inline LocalSecondaryIndex& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
 
     /**
      * <p>The complete key schema for the local secondary index, consisting of one or
@@ -189,6 +191,7 @@ namespace Model
      */
     inline LocalSecondaryIndex& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Represents attributes that are copied (projected) from the table into the
      * local secondary index. These are in addition to the primary key attributes and
@@ -225,10 +228,13 @@ namespace Model
     inline LocalSecondaryIndex& WithProjection(Projection&& value) { SetProjection(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
+
     Aws::Vector<KeySchemaElement> m_keySchema;
     bool m_keySchemaHasBeenSet;
+
     Projection m_projection;
     bool m_projectionHasBeenSet;
   };

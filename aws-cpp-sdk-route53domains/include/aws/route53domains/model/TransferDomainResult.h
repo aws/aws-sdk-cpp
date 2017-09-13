@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     TransferDomainResult();
-    TransferDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TransferDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TransferDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TransferDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
@@ -90,6 +91,7 @@ namespace Model
     inline TransferDomainResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
   private:
+
     Aws::String m_operationId;
   };
 

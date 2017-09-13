@@ -50,6 +50,7 @@ namespace Model
     Endpoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
@@ -99,6 +100,7 @@ namespace Model
      */
     inline Endpoint& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
 
+
     /**
      * <p>The type of endpoint.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>The type of endpoint.</p>
      */
     inline Endpoint& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
+
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
@@ -173,6 +176,7 @@ namespace Model
      */
     inline Endpoint& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
+
     /**
      * <p>The user name used to connect to the endpoint.</p>
      */
@@ -207,6 +211,7 @@ namespace Model
      * <p>The user name used to connect to the endpoint.</p>
      */
     inline Endpoint& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>The name of the server at the endpoint.</p>
@@ -243,6 +248,7 @@ namespace Model
      */
     inline Endpoint& WithServerName(const char* value) { SetServerName(value); return *this;}
 
+
     /**
      * <p>The port value used to access the endpoint.</p>
      */
@@ -257,6 +263,7 @@ namespace Model
      * <p>The port value used to access the endpoint.</p>
      */
     inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The name of the database at the endpoint.</p>
@@ -293,6 +300,7 @@ namespace Model
      */
     inline Endpoint& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>Additional connection attributes used to connect to the endpoint.</p>
      */
@@ -328,6 +336,7 @@ namespace Model
      */
     inline Endpoint& WithExtraConnectionAttributes(const char* value) { SetExtraConnectionAttributes(value); return *this;}
 
+
     /**
      * <p>The status of the endpoint.</p>
      */
@@ -362,6 +371,7 @@ namespace Model
      * <p>The status of the endpoint.</p>
      */
     inline Endpoint& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The KMS key identifier that will be used to encrypt the connection
@@ -426,6 +436,7 @@ namespace Model
      */
     inline Endpoint& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
@@ -468,6 +479,7 @@ namespace Model
      */
     inline Endpoint& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
      */
@@ -503,6 +515,7 @@ namespace Model
      */
     inline Endpoint& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
     /**
      * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
      * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
@@ -537,6 +550,7 @@ namespace Model
      * none.</p>
      */
     inline Endpoint& WithSslMode(DmsSslModeValue&& value) { SetSslMode(std::move(value)); return *this;}
+
 
     /**
      * <p> Value returned by a call to CreateEndpoint that can be used for
@@ -587,6 +601,7 @@ namespace Model
      */
     inline Endpoint& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
+
     /**
      * <p>The settings for the target DynamoDB database. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
@@ -617,6 +632,7 @@ namespace Model
      */
     inline Endpoint& WithDynamoDbSettings(DynamoDbSettings&& value) { SetDynamoDbSettings(std::move(value)); return *this;}
 
+
     /**
      * <p>The settings for the S3 target endpoint. For more information, see the
      * <code>S3Settings</code> structure.</p>
@@ -646,6 +662,7 @@ namespace Model
      * <code>S3Settings</code> structure.</p>
      */
     inline Endpoint& WithS3Settings(S3Settings&& value) { SetS3Settings(std::move(value)); return *this;}
+
 
     /**
      * <p>The settings for the MongoDB source endpoint. For more information, see the
@@ -678,38 +695,55 @@ namespace Model
     inline Endpoint& WithMongoDbSettings(MongoDbSettings&& value) { SetMongoDbSettings(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_endpointIdentifier;
     bool m_endpointIdentifierHasBeenSet;
+
     ReplicationEndpointTypeValue m_endpointType;
     bool m_endpointTypeHasBeenSet;
+
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_extraConnectionAttributes;
     bool m_extraConnectionAttributesHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet;
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     DmsSslModeValue m_sslMode;
     bool m_sslModeHasBeenSet;
+
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
+
     DynamoDbSettings m_dynamoDbSettings;
     bool m_dynamoDbSettingsHasBeenSet;
+
     S3Settings m_s3Settings;
     bool m_s3SettingsHasBeenSet;
+
     MongoDbSettings m_mongoDbSettings;
     bool m_mongoDbSettingsHasBeenSet;
   };

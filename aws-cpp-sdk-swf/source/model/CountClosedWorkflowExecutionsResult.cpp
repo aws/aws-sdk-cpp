@@ -32,14 +32,14 @@ CountClosedWorkflowExecutionsResult::CountClosedWorkflowExecutionsResult() :
 {
 }
 
-CountClosedWorkflowExecutionsResult::CountClosedWorkflowExecutionsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CountClosedWorkflowExecutionsResult::CountClosedWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_count(0),
     m_truncated(false)
 {
   *this = result;
 }
 
-CountClosedWorkflowExecutionsResult& CountClosedWorkflowExecutionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CountClosedWorkflowExecutionsResult& CountClosedWorkflowExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("count"))
