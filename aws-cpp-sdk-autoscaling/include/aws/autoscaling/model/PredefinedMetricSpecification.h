@@ -35,15 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Configures a predefined metric for a target tracking policy. The following
-   * predefined metrics are available:</p> <ul> <li> <p>
-   * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
-   * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
-   * number of bytes received on all network interfaces by the Auto Scaling group</p>
-   * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
-   * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
-   * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
-   * in an Application Load Balancer target group</p> </li> </ul><p><h3>See
+   * <p>Configures a predefined metric for a target tracking policy.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PredefinedMetricSpecification">AWS
    * API Reference</a></p>
@@ -86,13 +78,21 @@ namespace Model
 
 
     /**
-     * <p>Identifies the resource associated with the metric type. For predefined
+     * <p>Identifies the resource associated with the metric type. The following
+     * predefined metrics are available:</p> <ul> <li> <p>
+     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
+     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
+     * number of bytes received on all network interfaces by the Auto Scaling group</p>
+     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
+     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
+     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
+     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
      * metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code> and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
      * <code>ALBRequestCountPerTarget</code>, the parameter must be specified in the
-     * format
+     * format:
      * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
      * </code>, where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> is the final portion of the load balancer ARN, and
@@ -103,13 +103,21 @@ namespace Model
     inline const Aws::String& GetResourceLabel() const{ return m_resourceLabel; }
 
     /**
-     * <p>Identifies the resource associated with the metric type. For predefined
+     * <p>Identifies the resource associated with the metric type. The following
+     * predefined metrics are available:</p> <ul> <li> <p>
+     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
+     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
+     * number of bytes received on all network interfaces by the Auto Scaling group</p>
+     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
+     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
+     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
+     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
      * metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code> and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
      * <code>ALBRequestCountPerTarget</code>, the parameter must be specified in the
-     * format
+     * format:
      * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
      * </code>, where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> is the final portion of the load balancer ARN, and
@@ -120,13 +128,21 @@ namespace Model
     inline void SetResourceLabel(const Aws::String& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = value; }
 
     /**
-     * <p>Identifies the resource associated with the metric type. For predefined
+     * <p>Identifies the resource associated with the metric type. The following
+     * predefined metrics are available:</p> <ul> <li> <p>
+     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
+     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
+     * number of bytes received on all network interfaces by the Auto Scaling group</p>
+     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
+     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
+     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
+     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
      * metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code> and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
      * <code>ALBRequestCountPerTarget</code>, the parameter must be specified in the
-     * format
+     * format:
      * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
      * </code>, where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> is the final portion of the load balancer ARN, and
@@ -137,13 +153,21 @@ namespace Model
     inline void SetResourceLabel(Aws::String&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::move(value); }
 
     /**
-     * <p>Identifies the resource associated with the metric type. For predefined
+     * <p>Identifies the resource associated with the metric type. The following
+     * predefined metrics are available:</p> <ul> <li> <p>
+     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
+     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
+     * number of bytes received on all network interfaces by the Auto Scaling group</p>
+     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
+     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
+     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
+     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
      * metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code> and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
      * <code>ALBRequestCountPerTarget</code>, the parameter must be specified in the
-     * format
+     * format:
      * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
      * </code>, where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> is the final portion of the load balancer ARN, and
@@ -154,13 +178,21 @@ namespace Model
     inline void SetResourceLabel(const char* value) { m_resourceLabelHasBeenSet = true; m_resourceLabel.assign(value); }
 
     /**
-     * <p>Identifies the resource associated with the metric type. For predefined
+     * <p>Identifies the resource associated with the metric type. The following
+     * predefined metrics are available:</p> <ul> <li> <p>
+     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
+     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
+     * number of bytes received on all network interfaces by the Auto Scaling group</p>
+     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
+     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
+     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
+     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
      * metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code> and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
      * <code>ALBRequestCountPerTarget</code>, the parameter must be specified in the
-     * format
+     * format:
      * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
      * </code>, where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> is the final portion of the load balancer ARN, and
@@ -171,13 +203,21 @@ namespace Model
     inline PredefinedMetricSpecification& WithResourceLabel(const Aws::String& value) { SetResourceLabel(value); return *this;}
 
     /**
-     * <p>Identifies the resource associated with the metric type. For predefined
+     * <p>Identifies the resource associated with the metric type. The following
+     * predefined metrics are available:</p> <ul> <li> <p>
+     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
+     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
+     * number of bytes received on all network interfaces by the Auto Scaling group</p>
+     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
+     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
+     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
+     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
      * metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code> and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
      * <code>ALBRequestCountPerTarget</code>, the parameter must be specified in the
-     * format
+     * format:
      * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
      * </code>, where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> is the final portion of the load balancer ARN, and
@@ -188,13 +228,21 @@ namespace Model
     inline PredefinedMetricSpecification& WithResourceLabel(Aws::String&& value) { SetResourceLabel(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the resource associated with the metric type. For predefined
+     * <p>Identifies the resource associated with the metric type. The following
+     * predefined metrics are available:</p> <ul> <li> <p>
+     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
+     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
+     * number of bytes received on all network interfaces by the Auto Scaling group</p>
+     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
+     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
+     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
+     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
      * metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code> and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
      * <code>ALBRequestCountPerTarget</code>, the parameter must be specified in the
-     * format
+     * format:
      * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>
      * </code>, where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> is the final portion of the load balancer ARN, and

@@ -40,15 +40,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html">Auto
    * Scaling Lifecycle Hooks</a> in the <i>Auto Scaling User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHook">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHookSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API LifecycleHook
+  class AWS_AUTOSCALING_API LifecycleHookSpecification
   {
   public:
-    LifecycleHook();
-    LifecycleHook(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LifecycleHook& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    LifecycleHookSpecification();
+    LifecycleHookSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    LifecycleHookSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
@@ -77,53 +77,17 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
-    inline LifecycleHook& WithLifecycleHookName(const Aws::String& value) { SetLifecycleHookName(value); return *this;}
+    inline LifecycleHookSpecification& WithLifecycleHookName(const Aws::String& value) { SetLifecycleHookName(value); return *this;}
 
     /**
      * <p>The name of the lifecycle hook.</p>
      */
-    inline LifecycleHook& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(std::move(value)); return *this;}
+    inline LifecycleHookSpecification& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the lifecycle hook.</p>
      */
-    inline LifecycleHook& WithLifecycleHookName(const char* value) { SetLifecycleHookName(value); return *this;}
-
-
-    /**
-     * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
-     */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-
-    /**
-     * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
-     */
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-
-    /**
-     * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
-     */
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
-     */
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
-     */
-    inline LifecycleHook& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
-     */
-    inline LifecycleHook& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
-     */
-    inline LifecycleHook& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    inline LifecycleHookSpecification& WithLifecycleHookName(const char* value) { SetLifecycleHookName(value); return *this;}
 
 
     /**
@@ -154,112 +118,19 @@ namespace Model
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
      * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
      */
-    inline LifecycleHook& WithLifecycleTransition(const Aws::String& value) { SetLifecycleTransition(value); return *this;}
+    inline LifecycleHookSpecification& WithLifecycleTransition(const Aws::String& value) { SetLifecycleTransition(value); return *this;}
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
      * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
      */
-    inline LifecycleHook& WithLifecycleTransition(Aws::String&& value) { SetLifecycleTransition(std::move(value)); return *this;}
+    inline LifecycleHookSpecification& WithLifecycleTransition(Aws::String&& value) { SetLifecycleTransition(std::move(value)); return *this;}
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
      * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
      */
-    inline LifecycleHook& WithLifecycleTransition(const char* value) { SetLifecycleTransition(value); return *this;}
-
-
-    /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
-     */
-    inline const Aws::String& GetNotificationTargetARN() const{ return m_notificationTargetARN; }
-
-    /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
-     */
-    inline void SetNotificationTargetARN(const Aws::String& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = value; }
-
-    /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
-     */
-    inline void SetNotificationTargetARN(Aws::String&& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
-     */
-    inline void SetNotificationTargetARN(const char* value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN.assign(value); }
-
-    /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
-     */
-    inline LifecycleHook& WithNotificationTargetARN(const Aws::String& value) { SetNotificationTargetARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
-     */
-    inline LifecycleHook& WithNotificationTargetARN(Aws::String&& value) { SetNotificationTargetARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
-     */
-    inline LifecycleHook& WithNotificationTargetARN(const char* value) { SetNotificationTargetARN(value); return *this;}
-
-
-    /**
-     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
-     */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
-
-    /**
-     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
-     */
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-
-    /**
-     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
-     */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
-     */
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
-     */
-    inline LifecycleHook& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
-     */
-    inline LifecycleHook& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target.</p>
-     */
-    inline LifecycleHook& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    inline LifecycleHookSpecification& WithLifecycleTransition(const char* value) { SetLifecycleTransition(value); return *this;}
 
 
     /**
@@ -290,19 +161,19 @@ namespace Model
      * <p>Additional information that you want to include any time Auto Scaling sends a
      * message to the notification target.</p>
      */
-    inline LifecycleHook& WithNotificationMetadata(const Aws::String& value) { SetNotificationMetadata(value); return *this;}
+    inline LifecycleHookSpecification& WithNotificationMetadata(const Aws::String& value) { SetNotificationMetadata(value); return *this;}
 
     /**
      * <p>Additional information that you want to include any time Auto Scaling sends a
      * message to the notification target.</p>
      */
-    inline LifecycleHook& WithNotificationMetadata(Aws::String&& value) { SetNotificationMetadata(std::move(value)); return *this;}
+    inline LifecycleHookSpecification& WithNotificationMetadata(Aws::String&& value) { SetNotificationMetadata(std::move(value)); return *this;}
 
     /**
      * <p>Additional information that you want to include any time Auto Scaling sends a
      * message to the notification target.</p>
      */
-    inline LifecycleHook& WithNotificationMetadata(const char* value) { SetNotificationMetadata(value); return *this;}
+    inline LifecycleHookSpecification& WithNotificationMetadata(const char* value) { SetNotificationMetadata(value); return *this;}
 
 
     /**
@@ -327,32 +198,7 @@ namespace Model
      * You can prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
-    inline LifecycleHook& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
-
-
-    /**
-     * <p>The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
-     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
-     * is smaller.</p>
-     */
-    inline int GetGlobalTimeout() const{ return m_globalTimeout; }
-
-    /**
-     * <p>The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
-     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
-     * is smaller.</p>
-     */
-    inline void SetGlobalTimeout(int value) { m_globalTimeoutHasBeenSet = true; m_globalTimeout = value; }
-
-    /**
-     * <p>The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
-     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
-     * is smaller.</p>
-     */
-    inline LifecycleHook& WithGlobalTimeout(int value) { SetGlobalTimeout(value); return *this;}
+    inline LifecycleHookSpecification& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
 
 
     /**
@@ -393,7 +239,7 @@ namespace Model
      * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
      * <code>CONTINUE</code>.</p>
      */
-    inline LifecycleHook& WithDefaultResult(const Aws::String& value) { SetDefaultResult(value); return *this;}
+    inline LifecycleHookSpecification& WithDefaultResult(const Aws::String& value) { SetDefaultResult(value); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
@@ -401,7 +247,7 @@ namespace Model
      * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
      * <code>CONTINUE</code>.</p>
      */
-    inline LifecycleHook& WithDefaultResult(Aws::String&& value) { SetDefaultResult(std::move(value)); return *this;}
+    inline LifecycleHookSpecification& WithDefaultResult(Aws::String&& value) { SetDefaultResult(std::move(value)); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
@@ -409,24 +255,108 @@ namespace Model
      * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
      * <code>CONTINUE</code>.</p>
      */
-    inline LifecycleHook& WithDefaultResult(const char* value) { SetDefaultResult(value); return *this;}
+    inline LifecycleHookSpecification& WithDefaultResult(const char* value) { SetDefaultResult(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the target that Auto Scaling sends notifications to when an
+     * instance is in the transition state for the lifecycle hook. The notification
+     * target can be either an SQS queue or an SNS topic.</p>
+     */
+    inline const Aws::String& GetNotificationTargetARN() const{ return m_notificationTargetARN; }
+
+    /**
+     * <p>The ARN of the target that Auto Scaling sends notifications to when an
+     * instance is in the transition state for the lifecycle hook. The notification
+     * target can be either an SQS queue or an SNS topic.</p>
+     */
+    inline void SetNotificationTargetARN(const Aws::String& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = value; }
+
+    /**
+     * <p>The ARN of the target that Auto Scaling sends notifications to when an
+     * instance is in the transition state for the lifecycle hook. The notification
+     * target can be either an SQS queue or an SNS topic.</p>
+     */
+    inline void SetNotificationTargetARN(Aws::String&& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = std::move(value); }
+
+    /**
+     * <p>The ARN of the target that Auto Scaling sends notifications to when an
+     * instance is in the transition state for the lifecycle hook. The notification
+     * target can be either an SQS queue or an SNS topic.</p>
+     */
+    inline void SetNotificationTargetARN(const char* value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN.assign(value); }
+
+    /**
+     * <p>The ARN of the target that Auto Scaling sends notifications to when an
+     * instance is in the transition state for the lifecycle hook. The notification
+     * target can be either an SQS queue or an SNS topic.</p>
+     */
+    inline LifecycleHookSpecification& WithNotificationTargetARN(const Aws::String& value) { SetNotificationTargetARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the target that Auto Scaling sends notifications to when an
+     * instance is in the transition state for the lifecycle hook. The notification
+     * target can be either an SQS queue or an SNS topic.</p>
+     */
+    inline LifecycleHookSpecification& WithNotificationTargetARN(Aws::String&& value) { SetNotificationTargetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the target that Auto Scaling sends notifications to when an
+     * instance is in the transition state for the lifecycle hook. The notification
+     * target can be either an SQS queue or an SNS topic.</p>
+     */
+    inline LifecycleHookSpecification& WithNotificationTargetARN(const char* value) { SetNotificationTargetARN(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
+     * specified notification target.</p>
+     */
+    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
+     * specified notification target.</p>
+     */
+    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+
+    /**
+     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
+     * specified notification target.</p>
+     */
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
+
+    /**
+     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
+     * specified notification target.</p>
+     */
+    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
+
+    /**
+     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
+     * specified notification target.</p>
+     */
+    inline LifecycleHookSpecification& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
+     * specified notification target.</p>
+     */
+    inline LifecycleHookSpecification& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
+     * specified notification target.</p>
+     */
+    inline LifecycleHookSpecification& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
   private:
 
     Aws::String m_lifecycleHookName;
     bool m_lifecycleHookNameHasBeenSet;
 
-    Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
-
     Aws::String m_lifecycleTransition;
     bool m_lifecycleTransitionHasBeenSet;
-
-    Aws::String m_notificationTargetARN;
-    bool m_notificationTargetARNHasBeenSet;
-
-    Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
 
     Aws::String m_notificationMetadata;
     bool m_notificationMetadataHasBeenSet;
@@ -434,11 +364,14 @@ namespace Model
     int m_heartbeatTimeout;
     bool m_heartbeatTimeoutHasBeenSet;
 
-    int m_globalTimeout;
-    bool m_globalTimeoutHasBeenSet;
-
     Aws::String m_defaultResult;
     bool m_defaultResultHasBeenSet;
+
+    Aws::String m_notificationTargetARN;
+    bool m_notificationTargetARNHasBeenSet;
+
+    Aws::String m_roleARN;
+    bool m_roleARNHasBeenSet;
   };
 
 } // namespace Model

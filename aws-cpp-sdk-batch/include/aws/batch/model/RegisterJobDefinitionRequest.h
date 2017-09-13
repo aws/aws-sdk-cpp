@@ -40,37 +40,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the job definition to register. </p>
+     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline const Aws::String& GetJobDefinitionName() const{ return m_jobDefinitionName; }
 
     /**
-     * <p>The name of the job definition to register. </p>
+     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline void SetJobDefinitionName(const Aws::String& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
 
     /**
-     * <p>The name of the job definition to register. </p>
+     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::move(value); }
 
     /**
-     * <p>The name of the job definition to register. </p>
+     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline void SetJobDefinitionName(const char* value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName.assign(value); }
 
     /**
-     * <p>The name of the job definition to register. </p>
+     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline RegisterJobDefinitionRequest& WithJobDefinitionName(const Aws::String& value) { SetJobDefinitionName(value); return *this;}
 
     /**
-     * <p>The name of the job definition to register. </p>
+     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline RegisterJobDefinitionRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job definition to register. </p>
+     * <p>The name of the job definition to register. Up to 128 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline RegisterJobDefinitionRequest& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
 

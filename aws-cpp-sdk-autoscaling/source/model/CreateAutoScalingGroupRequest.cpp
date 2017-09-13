@@ -43,6 +43,7 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_terminationPoliciesHasBeenSet(false),
     m_newInstancesProtectedFromScaleIn(false),
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
+    m_lifecycleHookSpecificationListHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -153,6 +154,16 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
     ss << "NewInstancesProtectedFromScaleIn=" << std::boolalpha << m_newInstancesProtectedFromScaleIn << "&";
+  }
+
+  if(m_lifecycleHookSpecificationListHasBeenSet)
+  {
+    unsigned lifecycleHookSpecificationListCount = 1;
+    for(auto& item : m_lifecycleHookSpecificationList)
+    {
+      item.OutputToStream(ss, "LifecycleHookSpecificationList.member.", lifecycleHookSpecificationListCount, "");
+      lifecycleHookSpecificationListCount++;
+    }
   }
 
   if(m_tagsHasBeenSet)

@@ -30,9 +30,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for PutScalingPolicy.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicyType">AWS
-   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API PutScalingPolicyRequest : public AutoScalingRequest
   {
@@ -490,37 +487,32 @@ namespace Model
 
 
     /**
-     * <p>The configuration of a target tracking policy.</p> <p>This parameter is
-     * required if the policy type is <code>TargetTrackingScaling</code> and not
-     * supported otherwise.</p>
+     * <p>A target tracking policy.</p> <p>This parameter is required if the policy
+     * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
 
     /**
-     * <p>The configuration of a target tracking policy.</p> <p>This parameter is
-     * required if the policy type is <code>TargetTrackingScaling</code> and not
-     * supported otherwise.</p>
+     * <p>A target tracking policy.</p> <p>This parameter is required if the policy
+     * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
 
     /**
-     * <p>The configuration of a target tracking policy.</p> <p>This parameter is
-     * required if the policy type is <code>TargetTrackingScaling</code> and not
-     * supported otherwise.</p>
+     * <p>A target tracking policy.</p> <p>This parameter is required if the policy
+     * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration of a target tracking policy.</p> <p>This parameter is
-     * required if the policy type is <code>TargetTrackingScaling</code> and not
-     * supported otherwise.</p>
+     * <p>A target tracking policy.</p> <p>This parameter is required if the policy
+     * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration of a target tracking policy.</p> <p>This parameter is
-     * required if the policy type is <code>TargetTrackingScaling</code> and not
-     * supported otherwise.</p>
+     * <p>A target tracking policy.</p> <p>This parameter is required if the policy
+     * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
 

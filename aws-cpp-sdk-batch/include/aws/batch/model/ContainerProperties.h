@@ -236,7 +236,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares.</p>
+     * is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.</p>
      */
     inline int GetVcpus() const{ return m_vcpus; }
 
@@ -248,7 +248,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares.</p>
+     * is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.</p>
      */
     inline void SetVcpus(int value) { m_vcpusHasBeenSet = true; m_vcpus = value; }
 
@@ -260,7 +260,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares.</p>
+     * is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.</p>
      */
     inline ContainerProperties& WithVcpus(int value) { SetVcpus(value); return *this;}
 
@@ -273,7 +273,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job.</p>
      */
     inline int GetMemory() const{ return m_memory; }
 
@@ -285,7 +286,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job.</p>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
@@ -297,7 +299,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job.</p>
      */
     inline ContainerProperties& WithMemory(int value) { SetMemory(value); return *this;}
 

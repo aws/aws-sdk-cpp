@@ -27,9 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for PutLifecycleHook.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHookType">AWS
-   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API PutLifecycleHookRequest : public AutoScalingRequest
   {
@@ -364,26 +361,29 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs the default
+     * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
+     * out. The range is from 30 to 7200 seconds. The default is 3600 seconds (1
+     * hour).</p> <p>If the lifecycle hook times out, Auto Scaling performs the default
      * action. You can prevent the lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).</p>
+     * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
     inline int GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
 
     /**
-     * <p>The amount of time, in seconds, that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs the default
+     * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
+     * out. The range is from 30 to 7200 seconds. The default is 3600 seconds (1
+     * hour).</p> <p>If the lifecycle hook times out, Auto Scaling performs the default
      * action. You can prevent the lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).</p>
+     * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
     inline void SetHeartbeatTimeout(int value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
 
     /**
-     * <p>The amount of time, in seconds, that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs the default
+     * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
+     * out. The range is from 30 to 7200 seconds. The default is 3600 seconds (1
+     * hour).</p> <p>If the lifecycle hook times out, Auto Scaling performs the default
      * action. You can prevent the lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).</p>
+     * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
     inline PutLifecycleHookRequest& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
 

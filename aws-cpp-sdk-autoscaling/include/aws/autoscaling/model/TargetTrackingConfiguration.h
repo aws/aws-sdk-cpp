@@ -125,23 +125,29 @@ namespace Model
 
 
     /**
-     * <p>If the parameter is true, then scale-in will be disabled for the target
-     * tracking policy, i.e. the target tracking policy will not scale in the Auto
-     * Scaling group. The default value is false.</p>
+     * <p>Indicates whether scale in by the target tracking policy is disabled. If the
+     * value is <code>true</code>, scale in is disabled and the target tracking policy
+     * won't remove instances from the Auto Scaling group. Otherwise, scale in is
+     * enabled and the target tracking policy can remove instances from the Auto
+     * Scaling group. The default value is <code>false</code>.</p>
      */
     inline bool GetDisableScaleIn() const{ return m_disableScaleIn; }
 
     /**
-     * <p>If the parameter is true, then scale-in will be disabled for the target
-     * tracking policy, i.e. the target tracking policy will not scale in the Auto
-     * Scaling group. The default value is false.</p>
+     * <p>Indicates whether scale in by the target tracking policy is disabled. If the
+     * value is <code>true</code>, scale in is disabled and the target tracking policy
+     * won't remove instances from the Auto Scaling group. Otherwise, scale in is
+     * enabled and the target tracking policy can remove instances from the Auto
+     * Scaling group. The default value is <code>false</code>.</p>
      */
     inline void SetDisableScaleIn(bool value) { m_disableScaleInHasBeenSet = true; m_disableScaleIn = value; }
 
     /**
-     * <p>If the parameter is true, then scale-in will be disabled for the target
-     * tracking policy, i.e. the target tracking policy will not scale in the Auto
-     * Scaling group. The default value is false.</p>
+     * <p>Indicates whether scale in by the target tracking policy is disabled. If the
+     * value is <code>true</code>, scale in is disabled and the target tracking policy
+     * won't remove instances from the Auto Scaling group. Otherwise, scale in is
+     * enabled and the target tracking policy can remove instances from the Auto
+     * Scaling group. The default value is <code>false</code>.</p>
      */
     inline TargetTrackingConfiguration& WithDisableScaleIn(bool value) { SetDisableScaleIn(value); return *this;}
 

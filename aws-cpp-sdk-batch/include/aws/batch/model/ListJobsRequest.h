@@ -80,27 +80,32 @@ namespace Model
 
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue.</p>
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue.</p>
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue.</p>
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue.</p>
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline ListJobsRequest& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue.</p>
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline ListJobsRequest& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 

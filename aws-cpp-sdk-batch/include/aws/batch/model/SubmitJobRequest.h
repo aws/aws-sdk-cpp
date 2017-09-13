@@ -41,44 +41,51 @@ namespace Model
 
 
     /**
-     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
-     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
+     * <p>The name of the job. The first character must be alphanumeric, and up to 128
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed. </p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
-     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
+     * <p>The name of the job. The first character must be alphanumeric, and up to 128
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed. </p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
-     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
+     * <p>The name of the job. The first character must be alphanumeric, and up to 128
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed. </p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
-     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
+     * <p>The name of the job. The first character must be alphanumeric, and up to 128
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed. </p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
-     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
+     * <p>The name of the job. The first character must be alphanumeric, and up to 128
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed. </p>
      */
     inline SubmitJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
-     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
+     * <p>The name of the job. The first character must be alphanumeric, and up to 128
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed. </p>
      */
     inline SubmitJobRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
-     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
+     * <p>The name of the job. The first character must be alphanumeric, and up to 128
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed. </p>
      */
     inline SubmitJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
@@ -128,43 +135,43 @@ namespace Model
 
     /**
      * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 100 jobs. </p>
+     * of 20 jobs. </p>
      */
     inline const Aws::Vector<JobDependency>& GetDependsOn() const{ return m_dependsOn; }
 
     /**
      * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 100 jobs. </p>
+     * of 20 jobs. </p>
      */
     inline void SetDependsOn(const Aws::Vector<JobDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
 
     /**
      * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 100 jobs. </p>
+     * of 20 jobs. </p>
      */
     inline void SetDependsOn(Aws::Vector<JobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
 
     /**
      * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 100 jobs. </p>
+     * of 20 jobs. </p>
      */
     inline SubmitJobRequest& WithDependsOn(const Aws::Vector<JobDependency>& value) { SetDependsOn(value); return *this;}
 
     /**
      * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 100 jobs. </p>
+     * of 20 jobs. </p>
      */
     inline SubmitJobRequest& WithDependsOn(Aws::Vector<JobDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
 
     /**
      * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 100 jobs. </p>
+     * of 20 jobs. </p>
      */
     inline SubmitJobRequest& AddDependsOn(const JobDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
 
     /**
      * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 100 jobs. </p>
+     * of 20 jobs. </p>
      */
     inline SubmitJobRequest& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 

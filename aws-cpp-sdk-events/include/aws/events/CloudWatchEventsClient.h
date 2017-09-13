@@ -474,7 +474,8 @@ namespace Model
          * account must have a CloudWatch Events rule with your account's default event bus
          * as a target.</p> <p>To enable multiple AWS accounts to put events to your
          * default event bus, run <code>PutPermission</code> once for each of these
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * accounts.</p> <p>The permission policy on the default event bus cannot exceed
+         * 10KB in size.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">AWS
          * API Reference</a></p>
          */
@@ -488,7 +489,8 @@ namespace Model
          * account must have a CloudWatch Events rule with your account's default event bus
          * as a target.</p> <p>To enable multiple AWS accounts to put events to your
          * default event bus, run <code>PutPermission</code> once for each of these
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * accounts.</p> <p>The permission policy on the default event bus cannot exceed
+         * 10KB in size.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">AWS
          * API Reference</a></p>
          *
@@ -504,7 +506,8 @@ namespace Model
          * account must have a CloudWatch Events rule with your account's default event bus
          * as a target.</p> <p>To enable multiple AWS accounts to put events to your
          * default event bus, run <code>PutPermission</code> once for each of these
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * accounts.</p> <p>The permission policy on the default event bus cannot exceed
+         * 10KB in size.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">AWS
          * API Reference</a></p>
          *
@@ -584,28 +587,35 @@ namespace Model
          * <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p>
          * </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li>
          * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
-         * </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li>
-         * </ul> <p>Note that creating rules with built-in targets is supported only in the
-         * AWS Management Console.</p> <p>For some target types, <code>PutTargets</code>
-         * provides target-specific parameters. If the target is an Amazon Kinesis stream,
-         * you can optionally specify which shard the event goes to by using the
-         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
-         * instances with one rule, you can use the <code>RunCommandParameters</code>
-         * field.</p> <p>To be able to make API calls against the resources that you own,
-         * Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and
-         * Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
-         * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines,
-         * CloudWatch Events relies on IAM roles that you specify in the
-         * <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
-         * see <a
+         * </li> <li> <p>Pipelines in Amazon Code Pipeline</p> </li> <li> <p>Amazon
+         * Inspector assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li>
+         * <li> <p>Amazon SQS queues</p> </li> <li> <p>The default event bus of another AWS
+         * account</p> </li> </ul> <p>Note that creating rules with built-in targets is
+         * supported only in the AWS Management Console.</p> <p>For some target types,
+         * <code>PutTargets</code> provides target-specific parameters. If the target is an
+         * Amazon Kinesis stream, you can optionally specify which shard the event goes to
+         * by using the <code>KinesisParameters</code> argument. To invoke a command on
+         * multiple EC2 instances with one rule, you can use the
+         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
+         * against the resources that you own, Amazon CloudWatch Events needs the
+         * appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch
+         * Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
+         * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
+         * roles that you specify in the <code>RoleARN</code> argument in
+         * <code>PutTargets</code>. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
          * <p>If another AWS account is in the same region and has granted you permission
-         * (using <code>PutPermission</code>), you can set that account's event bus as a
-         * target of the rules in your account. To send the matched events to the other
-         * account, specify that account's event bus as the <code>Arn</code> when you run
-         * <code>PutTargets</code>. For more information about enabling cross-account
-         * events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and
+         * (using <code>PutPermission</code>), you can send events to that account by
+         * setting that account's event bus as a target of the rules in your account. To
+         * send the matched events to the other account, specify that account's event bus
+         * as the <code>Arn</code> when you run <code>PutTargets</code>. If your account
+         * sends events to another account, your account is charged for each sent event.
+         * Each event sent to antoher account is charged as a custom event. The account
+         * receiving the event is not charged. For more information on pricing, see <a
+         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+         * Pricing</a>.</p> <p>For more information about enabling cross-account events,
+         * see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and
          * <b>InputTransformer</b> are mutually exclusive and optional parameters of a
          * target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If
          * none of the following arguments are specified for a target, then the entire
@@ -641,28 +651,35 @@ namespace Model
          * <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p>
          * </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li>
          * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
-         * </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li>
-         * </ul> <p>Note that creating rules with built-in targets is supported only in the
-         * AWS Management Console.</p> <p>For some target types, <code>PutTargets</code>
-         * provides target-specific parameters. If the target is an Amazon Kinesis stream,
-         * you can optionally specify which shard the event goes to by using the
-         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
-         * instances with one rule, you can use the <code>RunCommandParameters</code>
-         * field.</p> <p>To be able to make API calls against the resources that you own,
-         * Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and
-         * Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
-         * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines,
-         * CloudWatch Events relies on IAM roles that you specify in the
-         * <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
-         * see <a
+         * </li> <li> <p>Pipelines in Amazon Code Pipeline</p> </li> <li> <p>Amazon
+         * Inspector assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li>
+         * <li> <p>Amazon SQS queues</p> </li> <li> <p>The default event bus of another AWS
+         * account</p> </li> </ul> <p>Note that creating rules with built-in targets is
+         * supported only in the AWS Management Console.</p> <p>For some target types,
+         * <code>PutTargets</code> provides target-specific parameters. If the target is an
+         * Amazon Kinesis stream, you can optionally specify which shard the event goes to
+         * by using the <code>KinesisParameters</code> argument. To invoke a command on
+         * multiple EC2 instances with one rule, you can use the
+         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
+         * against the resources that you own, Amazon CloudWatch Events needs the
+         * appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch
+         * Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
+         * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
+         * roles that you specify in the <code>RoleARN</code> argument in
+         * <code>PutTargets</code>. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
          * <p>If another AWS account is in the same region and has granted you permission
-         * (using <code>PutPermission</code>), you can set that account's event bus as a
-         * target of the rules in your account. To send the matched events to the other
-         * account, specify that account's event bus as the <code>Arn</code> when you run
-         * <code>PutTargets</code>. For more information about enabling cross-account
-         * events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and
+         * (using <code>PutPermission</code>), you can send events to that account by
+         * setting that account's event bus as a target of the rules in your account. To
+         * send the matched events to the other account, specify that account's event bus
+         * as the <code>Arn</code> when you run <code>PutTargets</code>. If your account
+         * sends events to another account, your account is charged for each sent event.
+         * Each event sent to antoher account is charged as a custom event. The account
+         * receiving the event is not charged. For more information on pricing, see <a
+         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+         * Pricing</a>.</p> <p>For more information about enabling cross-account events,
+         * see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and
          * <b>InputTransformer</b> are mutually exclusive and optional parameters of a
          * target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If
          * none of the following arguments are specified for a target, then the entire
@@ -700,28 +717,35 @@ namespace Model
          * <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p>
          * </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li>
          * <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
-         * </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li>
-         * </ul> <p>Note that creating rules with built-in targets is supported only in the
-         * AWS Management Console.</p> <p>For some target types, <code>PutTargets</code>
-         * provides target-specific parameters. If the target is an Amazon Kinesis stream,
-         * you can optionally specify which shard the event goes to by using the
-         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
-         * instances with one rule, you can use the <code>RunCommandParameters</code>
-         * field.</p> <p>To be able to make API calls against the resources that you own,
-         * Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and
-         * Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
-         * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines,
-         * CloudWatch Events relies on IAM roles that you specify in the
-         * <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
-         * see <a
+         * </li> <li> <p>Pipelines in Amazon Code Pipeline</p> </li> <li> <p>Amazon
+         * Inspector assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li>
+         * <li> <p>Amazon SQS queues</p> </li> <li> <p>The default event bus of another AWS
+         * account</p> </li> </ul> <p>Note that creating rules with built-in targets is
+         * supported only in the AWS Management Console.</p> <p>For some target types,
+         * <code>PutTargets</code> provides target-specific parameters. If the target is an
+         * Amazon Kinesis stream, you can optionally specify which shard the event goes to
+         * by using the <code>KinesisParameters</code> argument. To invoke a command on
+         * multiple EC2 instances with one rule, you can use the
+         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
+         * against the resources that you own, Amazon CloudWatch Events needs the
+         * appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch
+         * Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
+         * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
+         * roles that you specify in the <code>RoleARN</code> argument in
+         * <code>PutTargets</code>. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
          * <p>If another AWS account is in the same region and has granted you permission
-         * (using <code>PutPermission</code>), you can set that account's event bus as a
-         * target of the rules in your account. To send the matched events to the other
-         * account, specify that account's event bus as the <code>Arn</code> when you run
-         * <code>PutTargets</code>. For more information about enabling cross-account
-         * events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and
+         * (using <code>PutPermission</code>), you can send events to that account by
+         * setting that account's event bus as a target of the rules in your account. To
+         * send the matched events to the other account, specify that account's event bus
+         * as the <code>Arn</code> when you run <code>PutTargets</code>. If your account
+         * sends events to another account, your account is charged for each sent event.
+         * Each event sent to antoher account is charged as a custom event. The account
+         * receiving the event is not charged. For more information on pricing, see <a
+         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+         * Pricing</a>.</p> <p>For more information about enabling cross-account events,
+         * see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and
          * <b>InputTransformer</b> are mutually exclusive and optional parameters of a
          * target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If
          * none of the following arguments are specified for a target, then the entire
