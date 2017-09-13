@@ -19,10 +19,12 @@
 #include <aws/core/utils/memory/stl/AWSFunction.h>
 #include <aws/core/utils/memory/stl/AWSQueue.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/threading/Semaphore.h>
 #include <functional>
 #include <future>
 #include <mutex>
-#include <aws/core/utils/threading/Semaphore.h>
+#include <atomic>
 
 namespace Aws
 {
@@ -64,9 +66,19 @@ namespace Aws
             class AWS_CORE_API DefaultExecutor : public Executor
             {
             public:
-                DefaultExecutor() {}
+                DefaultExecutor() : m_state(ExecutorState::Free) {}
+                ~DefaultExecutor();
             protected:
+                enum class ExecutorState
+                {
+                    Free = 0,
+                    Locked,
+                    Shutdown
+                };
                 bool SubmitToThread(std::function<void()>&&) override;
+                void Detach(std::thread::id id);
+                std::atomic<ExecutorState> m_state;
+                Aws::UnorderedMap<std::thread::id, std::thread> m_threads;
             };
 
             enum class OverflowPolicy

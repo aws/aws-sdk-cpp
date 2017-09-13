@@ -23,9 +23,62 @@ using namespace Aws::Utils::Threading;
 
 bool DefaultExecutor::SubmitToThread(std::function<void()>&&  fx)
 {
-    std::thread t(fx);
-    t.detach();
-    return true;
+    auto main = [fx, this] { 
+        fx(); 
+        Detach(std::this_thread::get_id()); 
+    };
+
+    ExecutorState expected;
+    do
+    {
+        expected = ExecutorState::Free;
+        if(m_state.compare_exchange_strong(expected, ExecutorState::Locked))
+        {
+            std::thread t(main);
+            m_threads.emplace(t.get_id(), std::move(t));
+            m_state = ExecutorState::Free;
+            return true;
+        }
+    }
+    while(expected != ExecutorState::Shutdown);
+    return false;
+}
+
+void DefaultExecutor::Detach(std::thread::id id)
+{
+    ExecutorState expected;
+    do
+    {
+        expected = ExecutorState::Free;
+        if(m_state.compare_exchange_strong(expected, ExecutorState::Locked))
+        {
+            auto it = m_threads.find(id);
+            assert(it != m_threads.end());
+            it->second.detach();
+            m_threads.erase(it);
+            m_state = ExecutorState::Free;
+            return;
+        }
+    } 
+    while(expected != ExecutorState::Shutdown);
+}
+
+DefaultExecutor::~DefaultExecutor()
+{
+    auto expected = ExecutorState::Free;
+    while(!m_state.compare_exchange_strong(expected, ExecutorState::Shutdown))
+    {
+        //spin while currently detaching threads finish
+        assert(expected == ExecutorState::Locked);
+        expected = ExecutorState::Free; 
+    }
+
+    auto it = m_threads.begin();
+    while(!m_threads.empty())
+    {
+        it->second.join();
+        it = m_threads.erase(it);
+    }
 }
 
 PooledThreadExecutor::PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy) :

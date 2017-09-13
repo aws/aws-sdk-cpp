@@ -155,7 +155,7 @@ class TransferTests : public ::testing::Test
 {
 public:
 
-    static std::shared_ptr<S3Client> m_s3Client;
+    static Aws::UniquePtr<S3Client> m_s3Client;
 
 protected:
 
@@ -264,13 +264,7 @@ protected:
 
     static void SetUpTestCase()
     {
-        // Create a client
-        ClientConfiguration config;
-        config.scheme = Scheme::HTTP;
-        config.connectTimeoutMs = 3000;
-        config.requestTimeoutMs = 60000;
-
-        m_s3Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, config, false);       
+        m_s3Client = CreateS3Client();
 
         DeleteBucket(GetTestBucketName());
         
@@ -398,10 +392,54 @@ protected:
         m_s3Client = nullptr;
     } 
 
-
+    static Aws::UniquePtr<S3Client> CreateS3Client()
+    {
+        // Create a client
+        ClientConfiguration config;
+        config.scheme = Scheme::HTTP;
+        config.connectTimeoutMs = 3000;
+        config.requestTimeoutMs = 60000;
+        return Aws::MakeUnique<S3Client>(ALLOCATION_TAG, config, false);
+    }
 };
 
-std::shared_ptr<S3Client> TransferTests::m_s3Client(nullptr);
+Aws::UniquePtr<S3Client> TransferTests::m_s3Client(nullptr);
+
+
+TEST_F(TransferTests, TransferManager_KeepManagerAlive)
+{
+    Aws::String testFileName = MakeFilePath( TEST_FILE_NAME );
+
+    if (EmptyBucket(GetTestBucketName()))
+    {
+        WaitForBucketToEmpty(GetTestBucketName());
+    }
+
+    GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(GetTestBucketName());
+    getObjectRequest.SetKey(TEST_FILE_NAME);
+
+    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+    EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+    TransferManagerConfiguration transferManagerConfig;
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
+    std::shared_ptr<TransferHandle> requestPtr;
+    // scope transferManager to control it's lifetime
+    {
+        ScopedTestFile testFile(testFileName, MB5, testString);
+        TransferManager transferManager(transferManagerConfig);
+        requestPtr = transferManager.UploadFile(testFileName, GetTestBucketName(), TEST_FILE_NAME, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    }
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+
+    {
+        TransferManager transferManager(transferManagerConfig);
+        requestPtr = transferManager.DownloadFile(GetTestBucketName(), TEST_FILE_NAME, MakeDownloadFileName(TEST_FILE_KEY));
+    }
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+}
+
 
 TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 {
@@ -421,12 +459,11 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
-
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
+    TransferManager transferManager(transferManagerConfig);
 
     // Test with default behavior of using file name as key
-    auto requestPtr = transferManager->UploadFile(testFileName, GetTestBucketName(), TEST_FILE_KEY, 
+    auto requestPtr = transferManager.UploadFile(testFileName, GetTestBucketName(), TEST_FILE_KEY, 
                                                                         "text/plain", Aws::Map<Aws::String, Aws::String>());
     
     ASSERT_EQ(true, requestPtr->ShouldContinue());
@@ -451,7 +488,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 
     ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
-    VerifyUploadedFile(*transferManager,
+    VerifyUploadedFile(transferManager,
                        testFileName,
                        GetTestBucketName(),
                        TEST_FILE_KEY,
@@ -484,11 +521,11 @@ TEST_F(TransferTests, TransferManager_SmallTest)
 
 
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
     transferManagerConfig.maxParallelTransfers = 1;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
+    TransferManager transferManager(transferManagerConfig);
 
-    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(smallTestFileName, GetTestBucketName(), SMALL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(smallTestFileName, GetTestBucketName(), SMALL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
     ASSERT_EQ(true, requestPtr->ShouldContinue());
     ASSERT_EQ(TransferDirection::UPLOAD, requestPtr->GetTransferDirection());
@@ -516,7 +553,7 @@ TEST_F(TransferTests, TransferManager_SmallTest)
     ASSERT_TRUE(outcome.IsSuccess());
     ASSERT_STREQ(requestPtr->GetContentType().c_str(), outcome.GetResult().GetContentType().c_str());
 
-    VerifyUploadedFile(*transferManager,
+    VerifyUploadedFile(transferManager,
                        smallTestFileName,
                        GetTestBucketName(),
                        SMALL_FILE_KEY,
@@ -546,11 +583,11 @@ TEST_F(TransferTests, TransferManager_ContentTest)
     listMultipartRequest.SetBucket(GetTestBucketName());
 
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
+    TransferManager transferManager(transferManagerConfig);
 
     std::shared_ptr<TransferHandle> requestPtr = 
-            transferManager->UploadFile(contentTestFileName, GetTestBucketName(), CONTENT_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+            transferManager.UploadFile(contentTestFileName, GetTestBucketName(), CONTENT_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
     ASSERT_EQ(true, requestPtr->ShouldContinue());
     ASSERT_EQ(TransferDirection::UPLOAD, requestPtr->GetTransferDirection());
@@ -574,7 +611,7 @@ TEST_F(TransferTests, TransferManager_ContentTest)
 
     ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
-    VerifyUploadedFile(*transferManager,
+    VerifyUploadedFile(transferManager,
                        contentTestFileName,
                        GetTestBucketName(),
                        CONTENT_FILE_KEY,
@@ -632,11 +669,11 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
         };
 
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
     transferManagerConfig.transferInitiatedCallback = transferInitCallback;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
+    TransferManager transferManager(transferManagerConfig);
 
-    transferManager->UploadDirectory(uploadDir, GetTestBucketName(), "nestedTest", Aws::Map<Aws::String, Aws::String>());
+    transferManager.UploadDirectory(uploadDir, GetTestBucketName(), "nestedTest", Aws::Map<Aws::String, Aws::String>());
 
     {
         std::unique_lock<std::mutex> locker(semaphoreLock);
@@ -664,7 +701,7 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
 
         ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
-        VerifyUploadedFile(*transferManager,
+        VerifyUploadedFile(transferManager,
             handle->GetTargetFilePath(),
             GetTestBucketName(),
             handle->GetKey(),
@@ -673,7 +710,7 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
     }  
     
     auto downloadDir = Aws::FileSystem::Join(GetTestFilesDirectory(), "dirDownload");
-    transferManager->DownloadToDirectory(downloadDir, GetTestBucketName(), "nestedTest");
+    transferManager.DownloadToDirectory(downloadDir, GetTestBucketName(), "nestedTest");
 
     {
         std::unique_lock<std::mutex> locker(semaphoreLock);
@@ -717,11 +754,11 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
 
-    auto transferManager = TransferManager::Create(transferManagerConfig);
+    TransferManager transferManager(transferManagerConfig);
 
-    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(mediumTestFileName, GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(mediumTestFileName, GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
     ASSERT_EQ(true, requestPtr->ShouldContinue());
     ASSERT_EQ(TransferDirection::UPLOAD, requestPtr->GetTransferDirection());
@@ -732,7 +769,7 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     //just make sure we don't fail because a the put object failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
-        transferManager->RetryUpload(mediumTestFileName, requestPtr);
+        transferManager.RetryUpload(mediumTestFileName, requestPtr);
         requestPtr->WaitUntilFinished();
     }
 
@@ -757,7 +794,7 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     ASSERT_TRUE(outcome.IsSuccess());
     ASSERT_STREQ(requestPtr->GetContentType().c_str(), outcome.GetResult().GetContentType().c_str());
 
-    VerifyUploadedFile(*transferManager,
+    VerifyUploadedFile(transferManager,
                        mediumTestFileName,
                        GetTestBucketName(),
                        MEDIUM_FILE_KEY,
@@ -783,10 +820,10 @@ TEST_F(TransferTests, TransferManager_BigTest)
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
 
-    auto transferManager = TransferManager::Create(transferManagerConfig);
-    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(bigTestFileName, GetTestBucketName(), BIG_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    TransferManager transferManager(transferManagerConfig);
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(bigTestFileName, GetTestBucketName(), BIG_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
     ASSERT_EQ(true, requestPtr->ShouldContinue());
     ASSERT_EQ(TransferDirection::UPLOAD, requestPtr->GetTransferDirection());
@@ -797,7 +834,7 @@ TEST_F(TransferTests, TransferManager_BigTest)
     //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
-        transferManager->RetryUpload(bigTestFileName.c_str(), requestPtr);
+        transferManager.RetryUpload(bigTestFileName.c_str(), requestPtr);
         requestPtr->WaitUntilFinished();
     }
 
@@ -820,7 +857,7 @@ TEST_F(TransferTests, TransferManager_BigTest)
 
     ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
-    VerifyUploadedFile(*transferManager,
+    VerifyUploadedFile(transferManager,
                        bigTestFileName,
                        GetTestBucketName(),
                        BIG_FILE_KEY,
@@ -847,7 +884,7 @@ TEST_F(TransferTests, TransferManager_UnicodeFileNameTest)
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
 
     auto transferManager = TransferManager::Create(transferManagerConfig);
     std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(fileName, GetTestBucketName(), UNICODE_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
@@ -930,10 +967,10 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
             }
         };
 
-    transferManagerConfig.s3Client = m_s3Client;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
+    TransferManager transferManager(transferManagerConfig);
 
-    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(cancelTestFileName, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(cancelTestFileName, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
@@ -942,7 +979,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     //if this is the case, the request actually failed before we could cancel it and we need to try again.
     while (requestPtr->GetCompletedParts().size() < 15u)
     {        
-        requestPtr = transferManager->RetryUpload(cancelTestFileName, requestPtr); 
+        requestPtr = transferManager.RetryUpload(cancelTestFileName, requestPtr); 
         requestPtr->WaitUntilFinished();
     }
 
@@ -964,14 +1001,14 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     ASSERT_FALSE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
     retryInProgress = true;
-    requestPtr = transferManager->RetryUpload(cancelTestFileName, requestPtr);
+    requestPtr = transferManager.RetryUpload(cancelTestFileName, requestPtr);
     requestPtr->WaitUntilFinished();
 
     size_t retries = 0;
     //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
-        transferManager->RetryUpload(cancelTestFileName, requestPtr);
+        transferManager.RetryUpload(cancelTestFileName, requestPtr);
         requestPtr->WaitUntilFinished();
     }
 
@@ -993,7 +1030,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
 
     ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
-    VerifyUploadedFile(*transferManager,
+    VerifyUploadedFile(transferManager,
                        cancelTestFileName,
                        GetTestBucketName(),
                        CANCEL_FILE_KEY,
@@ -1039,9 +1076,9 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
         }
     };
 
-    transferManagerConfig.s3Client = m_s3Client;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
-    requestPtr = transferManager->UploadFile(cancelTestFileName, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
+    TransferManager transferManager(transferManagerConfig);
+    requestPtr = transferManager.UploadFile(cancelTestFileName, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
@@ -1051,7 +1088,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     //if this is the case, the request actually failed before we could cancel it and we need to try again.
     while (requestPtr->GetCompletedParts().size() < 15u)
     {
-        requestPtr = transferManager->RetryUpload(cancelTestFileName, requestPtr);
+        requestPtr = transferManager.RetryUpload(cancelTestFileName, requestPtr);
         requestPtr->WaitUntilFinished();
     }
 
@@ -1075,7 +1112,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
 
     retryInProgress = true;
     std::shared_ptr<TransferHandle> tempPtr = requestPtr;
-    requestPtr = transferManager->RetryUpload(cancelTestFileName, tempPtr);
+    requestPtr = transferManager.RetryUpload(cancelTestFileName, tempPtr);
     ASSERT_NE(requestPtr, tempPtr);
     requestPtr->WaitUntilFinished();
 
@@ -1083,7 +1120,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
-        transferManager->RetryUpload(cancelTestFileName, requestPtr);
+        transferManager.RetryUpload(cancelTestFileName, requestPtr);
         requestPtr->WaitUntilFinished();
     }
 
@@ -1099,7 +1136,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
 
-    VerifyUploadedFile(*transferManager,
+    VerifyUploadedFile(transferManager,
                        cancelTestFileName,
                        GetTestBucketName(),
                        CANCEL_FILE_KEY,
@@ -1125,10 +1162,10 @@ TEST_F(TransferTests, TransferManager_MultiPartContentTest)
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
+    TransferManager transferManager(transferManagerConfig);
     
-    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(multiPartContentFileName, GetTestBucketName(), MULTI_PART_CONTENT_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(multiPartContentFileName, GetTestBucketName(), MULTI_PART_CONTENT_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
     requestPtr->WaitUntilFinished();
 
@@ -1136,7 +1173,7 @@ TEST_F(TransferTests, TransferManager_MultiPartContentTest)
     //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
-        transferManager->RetryUpload(multiPartContentFileName, requestPtr);
+        transferManager.RetryUpload(multiPartContentFileName, requestPtr);
         requestPtr->WaitUntilFinished();
     }
 
@@ -1144,7 +1181,7 @@ TEST_F(TransferTests, TransferManager_MultiPartContentTest)
     ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // > 1 part
     ASSERT_TRUE(requestPtr->GetBytesTotalSize() == requestPtr->GetBytesTransferred());
 
-    VerifyUploadedFile(*transferManager,
+    VerifyUploadedFile(transferManager,
                        multiPartContentFileName,
                        GetTestBucketName(),
                        MULTI_PART_CONTENT_KEY,
@@ -1175,10 +1212,10 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
     metadata["key2"] = "val2";
 
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
+    TransferManager transferManager(transferManagerConfig);
 
-    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(testFileName, GetTestBucketName(), TEST_FILE_KEY, "text/plain", metadata);
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(testFileName, GetTestBucketName(), TEST_FILE_KEY, "text/plain", metadata);
 
     requestPtr->WaitUntilFinished();
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
@@ -1197,7 +1234,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
     ASSERT_EQ(metadata["key1"], headObjectMetadata["key1"]);
     ASSERT_EQ(metadata["key2"], headObjectMetadata["key2"]);
 
-    VerifyUploadedFile(*transferManager,
+    VerifyUploadedFile(transferManager,
                        testFileName,
                        GetTestBucketName(),
                        TEST_FILE_KEY,
@@ -1232,10 +1269,10 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     metadata["key2"] = "val2";
     
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
+    TransferManager transferManager(transferManagerConfig);
 
-    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(mediumTestFileName, GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", metadata);
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(mediumTestFileName, GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", metadata);
 
     requestPtr->WaitUntilFinished();
 
@@ -1243,7 +1280,7 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
-        transferManager->RetryUpload(mediumTestFileName, requestPtr);
+        transferManager.RetryUpload(mediumTestFileName, requestPtr);
         requestPtr->WaitUntilFinished();
     }
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
@@ -1262,7 +1299,7 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     ASSERT_EQ(metadata["key1"], headObjectMetadata["key1"]);
     ASSERT_EQ(metadata["key2"], headObjectMetadata["key2"]);
 
-    VerifyUploadedFile(*transferManager,
+    VerifyUploadedFile(transferManager,
                        mediumTestFileName,
                        GetTestBucketName(),
                        MEDIUM_FILE_KEY,
@@ -1273,10 +1310,10 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
 TEST_F(TransferTests, BadFileTest)
 {
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
+    TransferManager transferManager(transferManagerConfig);
 
-    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(MakeFilePath( NONSENSE_FILE_NAME ), GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(MakeFilePath( NONSENSE_FILE_NAME ), GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
     requestPtr->WaitUntilFinished();
 
     ASSERT_EQ(TransferStatus::FAILED, requestPtr->GetStatus());
@@ -1294,10 +1331,10 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
 
     {
         TransferManagerConfiguration uploadConfig;
-        uploadConfig.s3Client = m_s3Client;
-        auto transferManager = TransferManager::Create(uploadConfig);
+        uploadConfig.s3ClientFactory = TransferTests::CreateS3Client;
+        TransferManager transferManager(uploadConfig);
 
-        std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(cancelTestFileName, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+        std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(cancelTestFileName, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
         uint64_t fileSize = requestPtr->GetBytesTotalSize();
         ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
@@ -1312,7 +1349,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
         bool completionCheckDone = false;
 
         TransferManagerConfiguration downloadConfig;
-        downloadConfig.s3Client = m_s3Client;
+        downloadConfig.s3ClientFactory = TransferTests::CreateS3Client;
         downloadConfig.transferStatusUpdatedCallback = 
             [&](const TransferManager*, const TransferHandle& handle)
             {
@@ -1331,15 +1368,15 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
                 }
             };
 
-        auto transferManager = TransferManager::Create(downloadConfig);
-        std::shared_ptr<TransferHandle> requestPtr = transferManager->DownloadFile(GetTestBucketName(), CANCEL_FILE_KEY, MakeDownloadFileName(cancelTestFileName));
+        TransferManager transferManager(downloadConfig);
+        std::shared_ptr<TransferHandle> requestPtr = transferManager.DownloadFile(GetTestBucketName(), CANCEL_FILE_KEY, MakeDownloadFileName(cancelTestFileName));
 
         requestPtr->WaitUntilFinished();
 
         //if this is the case, the request actually failed before we could cancel it and we need to try again.
         while (requestPtr->GetCompletedParts().size() < 15u)
         {        
-            requestPtr = transferManager->RetryDownload(requestPtr); 
+            requestPtr = transferManager.RetryDownload(requestPtr); 
             requestPtr->WaitUntilFinished();
         }
 
@@ -1350,14 +1387,14 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
         ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
         retryInProgress = true;
-        requestPtr = transferManager->RetryDownload(requestPtr);
+        requestPtr = transferManager.RetryDownload(requestPtr);
         requestPtr->WaitUntilFinished();
 
         size_t retries = 0;
         //just make sure we don't fail because a download part failed. (e.g. network problems or interuptions)
         while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
         {
-            transferManager->RetryDownload(requestPtr);
+            transferManager.RetryDownload(requestPtr);
             requestPtr->WaitUntilFinished();
         }
 
@@ -1403,7 +1440,7 @@ TEST_F(TransferTests, TransferManager_MediumVersionedTest)
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
     TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
+    transferManagerConfig.s3ClientFactory = TransferTests::CreateS3Client;
 
     TransferManager transferManager(transferManagerConfig);
 
