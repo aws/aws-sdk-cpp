@@ -53,7 +53,7 @@ namespace Aws
              * returns the text contents. The resource URI = endpoint + resourcePath. 
              * (e.g:http://domain/path/to/res)
              */
-            Aws::String GetResource(const char* endpoint, const char* resourcePath) const;
+            virtual Aws::String GetResource(const char* endpoint, const char* resourcePath) const;
 
         protected:
             Aws::String m_logtag;
@@ -79,6 +79,14 @@ namespace Aws
             EC2MetadataClient(const EC2MetadataClient&& rhs) = delete;
 
             virtual ~EC2MetadataClient();
+
+            using AWSHttpResourceClient::GetResource;
+
+            /**
+            * Connects to the metadata service to read the specified resource and
+            * returns the text contents. The resource URI = m_endpoint + resourcePath.
+            */
+            virtual Aws::String GetResource(const char* resourcePath) const;
 
             /**
              * Connects to the Amazon EC2 Instance Metadata Service to retrieve the
