@@ -1297,7 +1297,7 @@ namespace Model
         virtual void DetachPolicyAsync(const Model::DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables an organizational control policy type in a root. A poicy of a
+         * <p>Disables an organizational control policy type in a root. A policy of a
          * certain type can be attached to entities in a root only if that type is enabled
          * in the root. After you perform this operation, you no longer can attach policies
          * of the specified type to that root or to any OU or account in that root. You can
@@ -1310,7 +1310,7 @@ namespace Model
         virtual Model::DisablePolicyTypeOutcome DisablePolicyType(const Model::DisablePolicyTypeRequest& request) const;
 
         /**
-         * <p>Disables an organizational control policy type in a root. A poicy of a
+         * <p>Disables an organizational control policy type in a root. A policy of a
          * certain type can be attached to entities in a root only if that type is enabled
          * in the root. After you perform this operation, you no longer can attach policies
          * of the specified type to that root or to any OU or account in that root. You can
@@ -1325,7 +1325,7 @@ namespace Model
         virtual Model::DisablePolicyTypeOutcomeCallable DisablePolicyTypeCallable(const Model::DisablePolicyTypeRequest& request) const;
 
         /**
-         * <p>Disables an organizational control policy type in a root. A poicy of a
+         * <p>Disables an organizational control policy type in a root. A policy of a
          * certain type can be attached to entities in a root only if that type is enabled
          * in the root. After you perform this operation, you no longer can attach policies
          * of the specified type to that root or to any OU or account in that root. You can

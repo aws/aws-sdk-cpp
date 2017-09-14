@@ -43,51 +43,51 @@ namespace Model
 
 
     /**
-     * <p>The language code to use for this operation. Supported language codes are as
-     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
-     * <p>If no code is specified, "en" is used as the default.</p>
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
 
     /**
-     * <p>The language code to use for this operation. Supported language codes are as
-     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
-     * <p>If no code is specified, "en" is used as the default.</p>
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
      */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>The language code to use for this operation. Supported language codes are as
-     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
-     * <p>If no code is specified, "en" is used as the default.</p>
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
      */
     inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
-     * <p>The language code to use for this operation. Supported language codes are as
-     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
-     * <p>If no code is specified, "en" is used as the default.</p>
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
      */
     inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
 
     /**
-     * <p>The language code to use for this operation. Supported language codes are as
-     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
-     * <p>If no code is specified, "en" is used as the default.</p>
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
      */
     inline CreateProductRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>The language code to use for this operation. Supported language codes are as
-     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
-     * <p>If no code is specified, "en" is used as the default.</p>
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
      */
     inline CreateProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The language code to use for this operation. Supported language codes are as
-     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
-     * <p>If no code is specified, "en" is used as the default.</p>
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
      */
     inline CreateProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
@@ -433,51 +433,51 @@ namespace Model
 
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>A token to disambiguate duplicate requests. You can use the same input in
+     * multiple requests, provided that you also specify a different idempotency token
+     * for each request.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>A token to disambiguate duplicate requests. You can use the same input in
+     * multiple requests, provided that you also specify a different idempotency token
+     * for each request.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>A token to disambiguate duplicate requests. You can use the same input in
+     * multiple requests, provided that you also specify a different idempotency token
+     * for each request.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>A token to disambiguate duplicate requests. You can use the same input in
+     * multiple requests, provided that you also specify a different idempotency token
+     * for each request.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>A token to disambiguate duplicate requests. You can use the same input in
+     * multiple requests, provided that you also specify a different idempotency token
+     * for each request.</p>
      */
     inline CreateProductRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>A token to disambiguate duplicate requests. You can use the same input in
+     * multiple requests, provided that you also specify a different idempotency token
+     * for each request.</p>
      */
     inline CreateProductRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>A token to disambiguate duplicate requests. You can use the same input in
+     * multiple requests, provided that you also specify a different idempotency token
+     * for each request.</p>
      */
     inline CreateProductRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

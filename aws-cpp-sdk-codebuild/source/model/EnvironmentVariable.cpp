@@ -30,13 +30,17 @@ namespace Model
 
 EnvironmentVariable::EnvironmentVariable() : 
     m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_type(EnvironmentVariableType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
 EnvironmentVariable::EnvironmentVariable(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_type(EnvironmentVariableType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +61,13 @@ EnvironmentVariable& EnvironmentVariable::operator =(const JsonValue& jsonValue)
     m_valueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = EnvironmentVariableTypeMapper::GetEnvironmentVariableTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +85,11 @@ JsonValue EnvironmentVariable::Jsonize() const
   {
    payload.WithString("value", m_value);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", EnvironmentVariableTypeMapper::GetNameForEnvironmentVariableType(m_type));
   }
 
   return payload;
