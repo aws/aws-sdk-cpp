@@ -265,7 +265,7 @@ namespace Aws
                     handle->SetError(createMultipartResponse.GetError());
                     handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
 
-                    TriggerErrorCallback(*handle, createMultipartResponse.GetError());
+                    TriggerErrorCallback(handle, createMultipartResponse.GetError());
                     return;
                 }
             }
@@ -286,7 +286,7 @@ namespace Aws
             PartStateMap queuedParts = handle->GetQueuedParts();
             auto partsIter = queuedParts.begin();
 
-            TriggerTransferStatusUpdatedCallback(*handle);
+            TriggerTransferStatusUpdatedCallback(handle);
 
             while (sentBytes < handle->GetBytesTotalSize() && handle->ShouldContinue() && partsIter != queuedParts.end())
             {
@@ -303,7 +303,7 @@ namespace Aws
                     PartPointer partPtr = partsIter->second;
                     Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
                     uploadPartRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
-                    uploadPartRequest.SetDataSentEventHandler([this, handle, partPtr](const Aws::Http::HttpRequest*, long long amount){ partPtr->OnDataTransferred(amount, handle); TriggerUploadProgressCallback(*handle); });
+                    uploadPartRequest.SetDataSentEventHandler([this, handle, partPtr](const Aws::Http::HttpRequest*, long long amount){ partPtr->OnDataTransferred(amount, handle); TriggerUploadProgressCallback(handle); });
                     uploadPartRequest.SetRequestRetryHandler([partPtr](const AmazonWebServiceRequest&){ partPtr->Reset(); });
                     uploadPartRequest.WithBucket(handle->GetBucketName())
                         .WithContentLength(static_cast<long long>(lengthToWrite))
@@ -372,7 +372,7 @@ namespace Aws
                 .WithMetadata(handle->GetMetadata());
 
             putObjectRequest.SetContentType(handle->GetContentType());
-            TriggerTransferStatusUpdatedCallback(*handle);
+            TriggerTransferStatusUpdatedCallback(handle);
 
             auto buffer = m_bufferManager.Acquire();
 
@@ -386,13 +386,13 @@ namespace Aws
             auto uploadProgressCallback = [this, partState, handle](const Aws::Http::HttpRequest*, long long progress)
             {
                 partState->OnDataTransferred(progress, handle);
-                TriggerUploadProgressCallback(*handle);
+                TriggerUploadProgressCallback(handle);
             };
 
             auto retryHandlerCallback = [this, partState, handle](const Aws::AmazonWebServiceRequest&)
             {
                 partState->Reset();
-                TriggerUploadProgressCallback(*handle);
+                TriggerUploadProgressCallback(handle);
             };
 
             putObjectRequest.SetDataSentEventHandler(uploadProgressCallback);
@@ -426,16 +426,16 @@ namespace Aws
             if (outcome.IsSuccess())
             {
                 transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
-                TriggerUploadProgressCallback(*transferContext->handle);
+                TriggerUploadProgressCallback(transferContext->handle);
             }
             else
             {
                 transferContext->handle->ChangePartToFailed(transferContext->partState);
                 transferContext->handle->SetError(outcome.GetError());
-                TriggerErrorCallback(*transferContext->handle, outcome.GetError());
+                TriggerErrorCallback(transferContext->handle, outcome.GetError());
             }
 
-            TriggerTransferStatusUpdatedCallback(*transferContext->handle);
+            TriggerTransferStatusUpdatedCallback(transferContext->handle);
 
             PartStateMap pendingParts, queuedParts, failedParts, completedParts;
             transferContext->handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
@@ -478,7 +478,7 @@ namespace Aws
                 }
             }
 
-            TriggerTransferStatusUpdatedCallback(*transferContext->handle);
+            TriggerTransferStatusUpdatedCallback(transferContext->handle);
         }
 
         void TransferManager::HandlePutObjectResponse(const Aws::S3::S3Client*, const Aws::S3::Model::PutObjectRequest& request,
@@ -502,10 +502,10 @@ namespace Aws
                 transferContext->handle->ChangePartToFailed(transferContext->partState);
                 transferContext->handle->SetError(outcome.GetError());
                 transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
-                TriggerErrorCallback(*transferContext->handle, outcome.GetError());
+                TriggerErrorCallback(transferContext->handle, outcome.GetError());
             }
 
-            TriggerTransferStatusUpdatedCallback(*transferContext->handle);
+            TriggerTransferStatusUpdatedCallback(transferContext->handle);
         }
 
         std::shared_ptr<TransferHandle> TransferManager::RetryDownload(const std::shared_ptr<TransferHandle>& retryHandle)
@@ -549,13 +549,13 @@ namespace Aws
             request.SetDataReceivedEventHandler([this, handle, partState](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
             {
                 partState->OnDataTransferred(progress, handle);
-                TriggerDownloadProgressCallback(*handle);
+                TriggerDownloadProgressCallback(handle);
             });
 
             request.SetRequestRetryHandler([this, handle, partState](const Aws::AmazonWebServiceRequest&)
             {
                 partState->Reset();
-                TriggerDownloadProgressCallback(*handle);
+                TriggerDownloadProgressCallback(handle);
             });
 
             auto getObjectOutcome = m_transferConfig.s3Client->GetObject(request);
@@ -572,10 +572,10 @@ namespace Aws
                 handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                 handle->SetError(getObjectOutcome.GetError());
 
-                TriggerErrorCallback(*handle, getObjectOutcome.GetError());
+                TriggerErrorCallback(handle, getObjectOutcome.GetError());
             }
 
-            TriggerTransferStatusUpdatedCallback(*handle);
+            TriggerTransferStatusUpdatedCallback(handle);
         }
 
         static Aws::String FormatRangeSpecifier(std::size_t rangeStart, std::size_t rangeEnd)
@@ -606,12 +606,12 @@ namespace Aws
                 {
                     handle->UpdateStatus(TransferStatus::FAILED);
                     handle->SetError(headObjectOutcome.GetError());
-                    TriggerErrorCallback(*handle, headObjectOutcome.GetError());
-                    TriggerTransferStatusUpdatedCallback(*handle);
+                    TriggerErrorCallback(handle, headObjectOutcome.GetError());
+                    TriggerTransferStatusUpdatedCallback(handle);
                     return false;
                 }
 
-                TriggerTransferStatusUpdatedCallback(*handle);
+                TriggerTransferStatusUpdatedCallback(handle);
 
                 std::size_t downloadSize = static_cast<size_t>(headObjectOutcome.GetResult().GetContentLength());
                 handle->SetBytesTotalSize(downloadSize);
@@ -699,13 +699,13 @@ namespace Aws
                     getObjectRangeRequest.SetDataReceivedEventHandler([this, partState, handle](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
                     {
                         partState->OnDataTransferred(progress, handle);
-                        TriggerDownloadProgressCallback(*handle);
+                        TriggerDownloadProgressCallback(handle);
                     });
 
                     getObjectRangeRequest.SetRequestRetryHandler([this, partState, handle](const Aws::AmazonWebServiceRequest&)
                     {
                         partState->Reset();
-                        TriggerDownloadProgressCallback(*handle);
+                        TriggerDownloadProgressCallback(handle);
                     });
 
                     auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
@@ -755,7 +755,7 @@ namespace Aws
             {
                 transferContext->handle->ChangePartToFailed(transferContext->partState);
                 transferContext->handle->SetError(outcome.GetError());
-                TriggerErrorCallback(*transferContext->handle, outcome.GetError());
+                TriggerErrorCallback(transferContext->handle, outcome.GetError());
             }
             else
             {
@@ -778,7 +778,7 @@ namespace Aws
                 transferContext->partState->SetDownloadBuffer(nullptr);
             }
 
-            TriggerTransferStatusUpdatedCallback(*transferContext->handle);
+            TriggerTransferStatusUpdatedCallback(transferContext->handle);
 
             PartStateMap pendingParts, queuedParts, failedParts, completedParts;
             transferContext->handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
@@ -795,7 +795,7 @@ namespace Aws
                 }
             }
 
-            TriggerTransferStatusUpdatedCallback(*transferContext->handle);
+            TriggerTransferStatusUpdatedCallback(transferContext->handle);
         }
 
         void TransferManager::WaitForCancellationAndAbortUpload(const std::shared_ptr<TransferHandle>& canceledHandle)
@@ -812,12 +812,12 @@ namespace Aws
                 if (abortOutcome.IsSuccess())
                 {
                     canceledHandle->UpdateStatus(TransferStatus::ABORTED);
-                    TriggerTransferStatusUpdatedCallback(*canceledHandle);
+                    TriggerTransferStatusUpdatedCallback(canceledHandle);
                 }
                 else
                 {
                     canceledHandle->SetError(abortOutcome.GetError());
-                    TriggerErrorCallback(*canceledHandle, abortOutcome.GetError());
+                    TriggerErrorCallback(canceledHandle, abortOutcome.GetError());
                 }
             }
         }
@@ -876,7 +876,7 @@ namespace Aws
                 if (m_transferConfig.errorCallback)
                 {
                     auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, request.GetBucket(), "");
-                    m_transferConfig.errorCallback(this, *handle, outcome.GetError());
+                    m_transferConfig.errorCallback(this, handle, outcome.GetError());
                 }
             }
         }
@@ -905,7 +905,7 @@ namespace Aws
             return handle.ShouldContinue() ? TransferStatus::FAILED : TransferStatus::CANCELED;
         }
 
-        void TransferManager::TriggerUploadProgressCallback(const TransferHandle& handle) const
+        void TransferManager::TriggerUploadProgressCallback(const std::shared_ptr<const TransferHandle>& handle) const
         {
             if (m_transferConfig.uploadProgressCallback)
             {
@@ -913,7 +913,7 @@ namespace Aws
             }
         }
 
-        void TransferManager::TriggerDownloadProgressCallback(const TransferHandle& handle) const
+        void TransferManager::TriggerDownloadProgressCallback(const std::shared_ptr<const TransferHandle>& handle) const
         {
             if (m_transferConfig.downloadProgressCallback)
             {
@@ -921,7 +921,7 @@ namespace Aws
             }
         }
 
-        void TransferManager::TriggerTransferStatusUpdatedCallback(const TransferHandle& handle) const
+        void TransferManager::TriggerTransferStatusUpdatedCallback(const std::shared_ptr<const TransferHandle>& handle) const
         {
             if (m_transferConfig.transferStatusUpdatedCallback)
             {
@@ -929,7 +929,7 @@ namespace Aws
             }
         }
 
-        void TransferManager::TriggerErrorCallback(const TransferHandle& handle, const Aws::Client::AWSError<Aws::S3::S3Errors>& error) const
+        void TransferManager::TriggerErrorCallback(const std::shared_ptr<const TransferHandle>& handle, const Aws::Client::AWSError<Aws::S3::S3Errors>& error) const
         {
             if (m_transferConfig.errorCallback)
             {

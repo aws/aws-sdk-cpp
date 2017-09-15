@@ -607,13 +607,13 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
     std::condition_variable directoryDownloadSignal;
     std::mutex semaphoreLock;
 
-    auto transferInitCallback = [&](const TransferManager*, const std::shared_ptr<TransferHandle>& handle) 
+    auto transferInitCallback = [&](const TransferManager*, const std::shared_ptr<const TransferHandle>& handle) 
         { 
             std::lock_guard<std::mutex> m(semaphoreLock);
 
             if(handle->GetTransferDirection() == TransferDirection::UPLOAD)
             {
-                directoryUploads.push_back(handle); 
+                directoryUploads.push_back(std::const_pointer_cast<TransferHandle>(handle)); 
 
                 if (directoryUploads.size() == 3)
                 {
@@ -622,7 +622,7 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
             }
             else
             {
-                directoryDownloads.push_back(handle);
+                directoryDownloads.push_back(std::const_pointer_cast<TransferHandle>(handle));
 
                 if (directoryDownloads.size() == 3)
                 {
@@ -910,22 +910,30 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     bool retryInProgress = false;
     bool completedPartsStayedCompletedDuringRetry = true;
     bool completionCheckDone = false;
+    const char uuid[] = "Bjarne Stroustrup!";
+    bool contextFound = false;
 
     TransferManagerConfiguration transferManagerConfig;
     transferManagerConfig.transferStatusUpdatedCallback = 
-        [&](const TransferManager*, const TransferHandle& handle)
+        [&](const TransferManager*, const std::shared_ptr<const TransferHandle>& handle)
         {
-            if (!retryInProgress && handle.GetCompletedParts().size() >= 15 &&  handle.GetStatus() != TransferStatus::CANCELED)
+            if(handle->GetContext())
             {
-                const_cast<TransferHandle&>(handle).Cancel();
+                ASSERT_STREQ(uuid, handle->GetContext()->GetUUID().c_str());
+                contextFound = true;
+            }
+
+            if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
+            {
+                std::const_pointer_cast<TransferHandle>(handle)->Cancel();
             }
             else if (retryInProgress)
             {
-                if (handle.GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
+                if (handle->GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
                 {
                     completionCheckDone = true;
                     //this should NEVER rise above 15 or we had some completed parts get retried too.
-                    completedPartsStayedCompletedDuringRetry = handle.GetPendingParts().size() <= 15; 
+                    completedPartsStayedCompletedDuringRetry = handle->GetPendingParts().size() <= 15;
                 }
             }
         };
@@ -934,6 +942,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
     std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(cancelTestFileName, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    requestPtr->SetContext(Aws::MakeShared<Aws::Client::AsyncCallerContext>(ALLOCATION_TAG, uuid));
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
@@ -951,6 +960,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
     ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size() && requestPtr->GetFailedParts().size() >= 13u); //some may have been in flight at cancelation time.
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
+    ASSERT_TRUE(contextFound);
 
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
@@ -1022,19 +1032,19 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
 
     TransferManagerConfiguration transferManagerConfig;
     transferManagerConfig.transferStatusUpdatedCallback =
-        [&](const TransferManager* manager, const TransferHandle& handle)
+        [&](const TransferManager* manager, const std::shared_ptr<const TransferHandle>& handle)
     {
-        if (!retryInProgress && handle.GetCompletedParts().size() >= 15 && handle.GetStatus() != TransferStatus::CANCELED)
+        if (!retryInProgress && handle->GetCompletedParts().size() >= 15 && handle->GetStatus() != TransferStatus::CANCELED)
         {
-            const_cast<TransferManager*>(manager)->AbortMultipartUpload(requestPtr);
+            const_cast<TransferManager*>(manager)->AbortMultipartUpload(std::const_pointer_cast<TransferHandle>(handle));
         }
         else if (retryInProgress)
         {
-            if (handle.GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
+            if (handle->GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
             {
                 completionCheckDone = true;
                 //this should NEVER rise above 15 or we had some completed parts get retried too.
-                completedPartsStayedCompletedDuringRetry = handle.GetPendingParts().size() <= 15 && handle.GetQueuedParts().size() <= 15;
+                completedPartsStayedCompletedDuringRetry = handle->GetPendingParts().size() <= 15 && handle->GetQueuedParts().size() <= 15;
             }
         }
     };
@@ -1314,19 +1324,19 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
         TransferManagerConfiguration downloadConfig;
         downloadConfig.s3Client = m_s3Client;
         downloadConfig.transferStatusUpdatedCallback = 
-            [&](const TransferManager*, const TransferHandle& handle)
+            [&](const TransferManager*, const std::shared_ptr<const TransferHandle>& handle)
             {
-                if (!retryInProgress && handle.GetCompletedParts().size() >= 15 &&  handle.GetStatus() != TransferStatus::CANCELED)
+                if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
                 {
-                    const_cast<TransferHandle&>(handle).Cancel();
+                    std::const_pointer_cast<TransferHandle>(handle)->Cancel();
                 }
                 else if (retryInProgress)
                 {
-                    if (handle.GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
+                    if (handle->GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
                     {
                         completionCheckDone = true;
                         //this should NEVER rise above 15 or we had some completed parts get retried too.
-                        completedPartsStayedCompletedDuringRetry = handle.GetPendingParts().size() <= 15; 
+                        completedPartsStayedCompletedDuringRetry = handle->GetPendingParts().size() <= 15;
                     }
                 }
             };

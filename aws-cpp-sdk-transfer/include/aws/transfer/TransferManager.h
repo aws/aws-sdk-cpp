@@ -33,11 +33,11 @@ namespace Aws
     {
         class TransferManager;
 
-        typedef std::function<void(const TransferManager*, const TransferHandle&)> UploadProgressCallback;
-        typedef std::function<void(const TransferManager*, const TransferHandle&)> DownloadProgressCallback;
-        typedef std::function<void(const TransferManager*, const TransferHandle&)> TransferStatusUpdatedCallback;
-        typedef std::function<void(const TransferManager*, const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>&)> ErrorCallback;
-        typedef std::function<void(const TransferManager*, const std::shared_ptr<TransferHandle>&)> TransferInitiatedCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<const TransferHandle>&)> UploadProgressCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<const TransferHandle>&)> DownloadProgressCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<const TransferHandle>&)> TransferStatusUpdatedCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<const TransferHandle>&, const Aws::Client::AWSError<Aws::S3::S3Errors>&)> ErrorCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<const TransferHandle>&)> TransferInitiatedCallback;
 
         const uint64_t MB5 = 5 * 1024 * 1024;
 
@@ -264,10 +264,10 @@ namespace Aws
             void HandleListObjectsResponse(const Aws::S3::S3Client*, const Aws::S3::Model::ListObjectsV2Request&, const Aws::S3::Model::ListObjectsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
 
             TransferStatus DetermineIfFailedOrCanceled(const TransferHandle&) const;
-            void TriggerUploadProgressCallback(const TransferHandle&) const;
-            void TriggerDownloadProgressCallback(const TransferHandle&) const;
-            void TriggerTransferStatusUpdatedCallback(const TransferHandle&) const;
-            void TriggerErrorCallback(const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>& error)const;
+            void TriggerUploadProgressCallback(const std::shared_ptr<const TransferHandle>&) const;
+            void TriggerDownloadProgressCallback(const std::shared_ptr<const TransferHandle>&) const;
+            void TriggerTransferStatusUpdatedCallback(const std::shared_ptr<const TransferHandle>&) const;
+            void TriggerErrorCallback(const std::shared_ptr<const TransferHandle>&, const Aws::Client::AWSError<Aws::S3::S3Errors>& error)const;
 
             static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 
