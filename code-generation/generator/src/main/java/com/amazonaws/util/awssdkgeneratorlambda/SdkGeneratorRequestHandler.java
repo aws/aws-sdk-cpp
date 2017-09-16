@@ -15,34 +15,32 @@
 
 package com.amazonaws.util.awssdkgeneratorlambda;
 
-import com.amazonaws.util.awssdkgeneratorlambda.SdkGeneratorInputWrapper;
-
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
+import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jServiceModel;
+
 public class SdkGeneratorRequestHandler implements RequestHandler<SdkGeneratorInput, SdkGeneratorOutput> {
 
-    private SdkGeneratorInputWrapper input;
-    private Context context;
-
-    // Entry point for the Lambda function
     public SdkGeneratorOutput handleRequest(SdkGeneratorInput input, Context context) {
 
         try {
-            this.input = new SdkGeneratorInputWrapper(input);
-            this.context = context;
+            SdkGeneratorInputWrapper inputWrapper = new SdkGeneratorInputWrapper(input);
 
+            // Setup a temporary workspace.
+            Workspace workspace = new Workspace();
+            // Load and deserialize the service model.
+            C2jServiceModel model = new ServiceModelLoader(inputWrapper, workspace).loadServiceModel();
 // These following steps will come with future PR.
-//            setup();
-//            String arbitraryJson = getArbitraryJson();
 //            File sdkZip = generateCode(arbitraryJson);
 //            uploadSdkArtifact(sdkZip);
 //            cleanup();
 
-            return new SdkGeneratorOutput(true ,null);
+            return new SdkGeneratorOutput(true, null);
         } catch (Exception e) {
             e.printStackTrace();
-            String errorMessage = String.format("%s exception encountered. Message: %s", e.getClass().getSimpleName(), e.getMessage());
+            String errorMessage = String.format("%s exception encountered. Message: %s",
+                    e.getClass().getSimpleName(), e.getMessage());
 
             return new SdkGeneratorOutput(false, errorMessage);
         }

@@ -26,7 +26,7 @@ import static com.amazonaws.util.awssdkgeneratorlambda.ParameterValidationUtils.
 import static com.amazonaws.util.awssdkgeneratorlambda.ParameterValidationUtils.validateApiGatewayRequiredParameters;
 
 @Getter
-public final class SdkGeneratorInputWrapper {
+public class SdkGeneratorInputWrapper {
 
     private final byte[] base64DecodedModelZip;
     private final String presignedUrl;
@@ -65,7 +65,7 @@ public final class SdkGeneratorInputWrapper {
     /**
      * Simple wrapper around the raw SDK parameters map to provide convenient access to the parameters we care about.
      */
-    private static final class SdkParametersWrapper {
+    private static class SdkParametersWrapper {
 
         private final Map<String, String> sdkParameters;
         private final String serviceName;

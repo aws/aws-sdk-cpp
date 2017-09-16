@@ -43,5 +43,5 @@ public class SdkGeneratorInput {
      * </ul></p>
      */
     private Map<String, String> sdkParameters;
-    
+
 }
