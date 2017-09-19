@@ -46,37 +46,37 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     * <p>The name of the receipt rule set that the receipt rule belongs to.</p>
      */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
 
     /**
-     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     * <p>The name of the receipt rule set that the receipt rule belongs to.</p>
      */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
-     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     * <p>The name of the receipt rule set that the receipt rule belongs to.</p>
      */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
 
     /**
-     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     * <p>The name of the receipt rule set that the receipt rule belongs to.</p>
      */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
     /**
-     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     * <p>The name of the receipt rule set that the receipt rule belongs to.</p>
      */
     inline DescribeReceiptRuleRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
 
     /**
-     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     * <p>The name of the receipt rule set that the receipt rule belongs to.</p>
      */
     inline DescribeReceiptRuleRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     * <p>The name of the receipt rule set that the receipt rule belongs to.</p>
      */
     inline DescribeReceiptRuleRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 

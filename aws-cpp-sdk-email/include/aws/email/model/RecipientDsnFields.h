@@ -58,7 +58,7 @@ namespace Model
 
 
     /**
-     * <p>The email address to which the message was ultimately delivered. This
+     * <p>The email address that the message was ultimately delivered to. This
      * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
      * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
      * in the <code>BouncedRecipientInfo</code> structure. Either
@@ -71,7 +71,7 @@ namespace Model
     inline const Aws::String& GetFinalRecipient() const{ return m_finalRecipient; }
 
     /**
-     * <p>The email address to which the message was ultimately delivered. This
+     * <p>The email address that the message was ultimately delivered to. This
      * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
      * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
      * in the <code>BouncedRecipientInfo</code> structure. Either
@@ -84,7 +84,7 @@ namespace Model
     inline void SetFinalRecipient(const Aws::String& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = value; }
 
     /**
-     * <p>The email address to which the message was ultimately delivered. This
+     * <p>The email address that the message was ultimately delivered to. This
      * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
      * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
      * in the <code>BouncedRecipientInfo</code> structure. Either
@@ -97,7 +97,7 @@ namespace Model
     inline void SetFinalRecipient(Aws::String&& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = std::move(value); }
 
     /**
-     * <p>The email address to which the message was ultimately delivered. This
+     * <p>The email address that the message was ultimately delivered to. This
      * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
      * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
      * in the <code>BouncedRecipientInfo</code> structure. Either
@@ -110,7 +110,7 @@ namespace Model
     inline void SetFinalRecipient(const char* value) { m_finalRecipientHasBeenSet = true; m_finalRecipient.assign(value); }
 
     /**
-     * <p>The email address to which the message was ultimately delivered. This
+     * <p>The email address that the message was ultimately delivered to. This
      * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
      * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
      * in the <code>BouncedRecipientInfo</code> structure. Either
@@ -123,7 +123,7 @@ namespace Model
     inline RecipientDsnFields& WithFinalRecipient(const Aws::String& value) { SetFinalRecipient(value); return *this;}
 
     /**
-     * <p>The email address to which the message was ultimately delivered. This
+     * <p>The email address that the message was ultimately delivered to. This
      * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
      * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
      * in the <code>BouncedRecipientInfo</code> structure. Either
@@ -136,7 +136,7 @@ namespace Model
     inline RecipientDsnFields& WithFinalRecipient(Aws::String&& value) { SetFinalRecipient(std::move(value)); return *this;}
 
     /**
-     * <p>The email address to which the message was ultimately delivered. This
+     * <p>The email address that the message was ultimately delivered to. This
      * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
      * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
      * in the <code>BouncedRecipientInfo</code> structure. Either

@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/FleetType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/InstanceInterruptionBehavior.h>
 #include <aws/ec2/model/SpotFleetLaunchSpecification.h>
 #include <utility>
 
@@ -522,6 +523,37 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithReplaceUnhealthyInstances(bool value) { SetReplaceUnhealthyInstances(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline const InstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline void SetInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline void SetInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = std::move(value); }
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline SpotFleetRequestConfigData& WithInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { SetInstanceInterruptionBehavior(value); return *this;}
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline SpotFleetRequestConfigData& WithInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
+
   private:
 
     AllocationStrategy m_allocationStrategy;
@@ -562,6 +594,9 @@ namespace Model
 
     bool m_replaceUnhealthyInstances;
     bool m_replaceUnhealthyInstancesHasBeenSet;
+
+    InstanceInterruptionBehavior m_instanceInterruptionBehavior;
+    bool m_instanceInterruptionBehaviorHasBeenSet;
   };
 
 } // namespace Model

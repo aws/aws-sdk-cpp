@@ -64,6 +64,11 @@ DescribeConfigurationSetResult& DescribeConfigurationSetResult::operator =(const
       }
 
     }
+    XmlNode trackingOptionsNode = resultNode.FirstChild("TrackingOptions");
+    if(!trackingOptionsNode.IsNull())
+    {
+      m_trackingOptions = trackingOptionsNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

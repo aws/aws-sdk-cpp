@@ -38,9 +38,9 @@ namespace Model
    * <p>When included in a receipt rule, this action terminates the evaluation of the
    * receipt rule set and, optionally, publishes a notification to Amazon Simple
    * Notification Service (Amazon SNS).</p> <p>For information about setting a stop
-   * action in a receipt rule, see the <a
+   * action in a receipt rule, see the <i> <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon
-   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/StopAction">AWS
    * API Reference</a></p>
    */
@@ -56,32 +56,27 @@ namespace Model
 
 
     /**
-     * <p>The scope to which the Stop action applies. That is, what is being
-     * stopped.</p>
+     * <p>The name of the RuleSet that is being stopped.</p>
      */
     inline const StopScope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>The scope to which the Stop action applies. That is, what is being
-     * stopped.</p>
+     * <p>The name of the RuleSet that is being stopped.</p>
      */
     inline void SetScope(const StopScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>The scope to which the Stop action applies. That is, what is being
-     * stopped.</p>
+     * <p>The name of the RuleSet that is being stopped.</p>
      */
     inline void SetScope(StopScope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>The scope to which the Stop action applies. That is, what is being
-     * stopped.</p>
+     * <p>The name of the RuleSet that is being stopped.</p>
      */
     inline StopAction& WithScope(const StopScope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>The scope to which the Stop action applies. That is, what is being
-     * stopped.</p>
+     * <p>The name of the RuleSet that is being stopped.</p>
      */
     inline StopAction& WithScope(StopScope&& value) { SetScope(std::move(value)); return *this;}
 

@@ -39,14 +39,15 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the event destination to which the specified email
-   * sending events are published.</p> <note> <p>When you create or update an event
-   * destination, you must provide one, and only one, destination. The destination
-   * can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple Notification
-   * Service (Amazon SNS).</p> </note> <p>Event destinations are associated with
-   * configuration sets, which enable you to publish email sending events to Amazon
-   * CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service
-   * (Amazon SNS). For information about using configuration sets, see the <a
+   * <p>Contains information about the event destination that the specified email
+   * sending events will be published to.</p> <note> <p>When you create or update an
+   * event destination, you must provide one, and only one, destination. The
+   * destination can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple
+   * Notification Service (Amazon SNS).</p> </note> <p>Event destinations are
+   * associated with configuration sets, which enable you to publish email sending
+   * events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
+   * Notification Service (Amazon SNS). For information about using configuration
+   * sets, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/EventDestination">AWS

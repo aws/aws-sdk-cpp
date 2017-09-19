@@ -17,6 +17,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/model/ConfigurationSet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/email/model/TrackingOptions.h>
 #include <aws/email/model/ResponseMetadata.h>
 #include <aws/email/model/EventDestination.h>
 #include <utility>
@@ -121,6 +122,37 @@ namespace Model
     inline DescribeConfigurationSetResult& AddEventDestinations(EventDestination&& value) { m_eventDestinations.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The name of the custom open and click tracking domain associated with the
+     * configuration set.</p>
+     */
+    inline const TrackingOptions& GetTrackingOptions() const{ return m_trackingOptions; }
+
+    /**
+     * <p>The name of the custom open and click tracking domain associated with the
+     * configuration set.</p>
+     */
+    inline void SetTrackingOptions(const TrackingOptions& value) { m_trackingOptions = value; }
+
+    /**
+     * <p>The name of the custom open and click tracking domain associated with the
+     * configuration set.</p>
+     */
+    inline void SetTrackingOptions(TrackingOptions&& value) { m_trackingOptions = std::move(value); }
+
+    /**
+     * <p>The name of the custom open and click tracking domain associated with the
+     * configuration set.</p>
+     */
+    inline DescribeConfigurationSetResult& WithTrackingOptions(const TrackingOptions& value) { SetTrackingOptions(value); return *this;}
+
+    /**
+     * <p>The name of the custom open and click tracking domain associated with the
+     * configuration set.</p>
+     */
+    inline DescribeConfigurationSetResult& WithTrackingOptions(TrackingOptions&& value) { SetTrackingOptions(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -141,6 +173,8 @@ namespace Model
     ConfigurationSet m_configurationSet;
 
     Aws::Vector<EventDestination> m_eventDestinations;
+
+    TrackingOptions m_trackingOptions;
 
     ResponseMetadata m_responseMetadata;
   };

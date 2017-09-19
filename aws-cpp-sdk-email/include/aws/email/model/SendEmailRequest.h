@@ -63,7 +63,7 @@ namespace Model
      * ASCII. If the text must contain any other characters, then you must use MIME
      * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word
      * syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
-     * For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
+     * For more information, see <a href="https://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>. </p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
@@ -82,7 +82,7 @@ namespace Model
      * ASCII. If the text must contain any other characters, then you must use MIME
      * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word
      * syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
-     * For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
+     * For more information, see <a href="https://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>. </p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
@@ -101,7 +101,7 @@ namespace Model
      * ASCII. If the text must contain any other characters, then you must use MIME
      * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word
      * syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
-     * For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
+     * For more information, see <a href="https://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>. </p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
@@ -120,7 +120,7 @@ namespace Model
      * ASCII. If the text must contain any other characters, then you must use MIME
      * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word
      * syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
-     * For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
+     * For more information, see <a href="https://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>. </p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
@@ -139,7 +139,7 @@ namespace Model
      * ASCII. If the text must contain any other characters, then you must use MIME
      * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word
      * syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
-     * For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
+     * For more information, see <a href="https://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>. </p>
      */
     inline SendEmailRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
@@ -158,7 +158,7 @@ namespace Model
      * ASCII. If the text must contain any other characters, then you must use MIME
      * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word
      * syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
-     * For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
+     * For more information, see <a href="https://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>. </p>
      */
     inline SendEmailRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
@@ -177,7 +177,7 @@ namespace Model
      * ASCII. If the text must contain any other characters, then you must use MIME
      * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word
      * syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
-     * For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
+     * For more information, see <a href="https://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>. </p>
      */
     inline SendEmailRequest& WithSource(const char* value) { SetSource(value); return *this;}
@@ -285,7 +285,7 @@ namespace Model
 
 
     /**
-     * <p>The email address to which bounces and complaints are to be forwarded when
+     * <p>The email address that bounces and complaints will be forwarded to when
      * feedback forwarding is enabled. If the message cannot be delivered to the
      * recipient, then an error message will be returned from the recipient's ISP; this
      * message will then be forwarded to the email address specified by the
@@ -296,7 +296,7 @@ namespace Model
     inline const Aws::String& GetReturnPath() const{ return m_returnPath; }
 
     /**
-     * <p>The email address to which bounces and complaints are to be forwarded when
+     * <p>The email address that bounces and complaints will be forwarded to when
      * feedback forwarding is enabled. If the message cannot be delivered to the
      * recipient, then an error message will be returned from the recipient's ISP; this
      * message will then be forwarded to the email address specified by the
@@ -307,7 +307,7 @@ namespace Model
     inline void SetReturnPath(const Aws::String& value) { m_returnPathHasBeenSet = true; m_returnPath = value; }
 
     /**
-     * <p>The email address to which bounces and complaints are to be forwarded when
+     * <p>The email address that bounces and complaints will be forwarded to when
      * feedback forwarding is enabled. If the message cannot be delivered to the
      * recipient, then an error message will be returned from the recipient's ISP; this
      * message will then be forwarded to the email address specified by the
@@ -318,7 +318,7 @@ namespace Model
     inline void SetReturnPath(Aws::String&& value) { m_returnPathHasBeenSet = true; m_returnPath = std::move(value); }
 
     /**
-     * <p>The email address to which bounces and complaints are to be forwarded when
+     * <p>The email address that bounces and complaints will be forwarded to when
      * feedback forwarding is enabled. If the message cannot be delivered to the
      * recipient, then an error message will be returned from the recipient's ISP; this
      * message will then be forwarded to the email address specified by the
@@ -329,7 +329,7 @@ namespace Model
     inline void SetReturnPath(const char* value) { m_returnPathHasBeenSet = true; m_returnPath.assign(value); }
 
     /**
-     * <p>The email address to which bounces and complaints are to be forwarded when
+     * <p>The email address that bounces and complaints will be forwarded to when
      * feedback forwarding is enabled. If the message cannot be delivered to the
      * recipient, then an error message will be returned from the recipient's ISP; this
      * message will then be forwarded to the email address specified by the
@@ -340,7 +340,7 @@ namespace Model
     inline SendEmailRequest& WithReturnPath(const Aws::String& value) { SetReturnPath(value); return *this;}
 
     /**
-     * <p>The email address to which bounces and complaints are to be forwarded when
+     * <p>The email address that bounces and complaints will be forwarded to when
      * feedback forwarding is enabled. If the message cannot be delivered to the
      * recipient, then an error message will be returned from the recipient's ISP; this
      * message will then be forwarded to the email address specified by the
@@ -351,7 +351,7 @@ namespace Model
     inline SendEmailRequest& WithReturnPath(Aws::String&& value) { SetReturnPath(std::move(value)); return *this;}
 
     /**
-     * <p>The email address to which bounces and complaints are to be forwarded when
+     * <p>The email address that bounces and complaints will be forwarded to when
      * feedback forwarding is enabled. If the message cannot be delivered to the
      * recipient, then an error message will be returned from the recipient's ISP; this
      * message will then be forwarded to the email address specified by the

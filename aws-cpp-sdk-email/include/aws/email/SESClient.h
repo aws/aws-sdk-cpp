@@ -25,11 +25,13 @@
 #include <aws/email/model/CloneReceiptRuleSetResult.h>
 #include <aws/email/model/CreateConfigurationSetResult.h>
 #include <aws/email/model/CreateConfigurationSetEventDestinationResult.h>
+#include <aws/email/model/CreateConfigurationSetTrackingOptionsResult.h>
 #include <aws/email/model/CreateReceiptFilterResult.h>
 #include <aws/email/model/CreateReceiptRuleResult.h>
 #include <aws/email/model/CreateReceiptRuleSetResult.h>
 #include <aws/email/model/DeleteConfigurationSetResult.h>
 #include <aws/email/model/DeleteConfigurationSetEventDestinationResult.h>
+#include <aws/email/model/DeleteConfigurationSetTrackingOptionsResult.h>
 #include <aws/email/model/DeleteIdentityResult.h>
 #include <aws/email/model/DeleteIdentityPolicyResult.h>
 #include <aws/email/model/DeleteReceiptFilterResult.h>
@@ -65,6 +67,7 @@
 #include <aws/email/model/SetIdentityNotificationTopicResult.h>
 #include <aws/email/model/SetReceiptRulePositionResult.h>
 #include <aws/email/model/UpdateConfigurationSetEventDestinationResult.h>
+#include <aws/email/model/UpdateConfigurationSetTrackingOptionsResult.h>
 #include <aws/email/model/UpdateReceiptRuleResult.h>
 #include <aws/email/model/VerifyDomainDkimResult.h>
 #include <aws/email/model/VerifyDomainIdentityResult.h>
@@ -118,11 +121,13 @@ namespace Model
         class CloneReceiptRuleSetRequest;
         class CreateConfigurationSetRequest;
         class CreateConfigurationSetEventDestinationRequest;
+        class CreateConfigurationSetTrackingOptionsRequest;
         class CreateReceiptFilterRequest;
         class CreateReceiptRuleRequest;
         class CreateReceiptRuleSetRequest;
         class DeleteConfigurationSetRequest;
         class DeleteConfigurationSetEventDestinationRequest;
+        class DeleteConfigurationSetTrackingOptionsRequest;
         class DeleteIdentityRequest;
         class DeleteIdentityPolicyRequest;
         class DeleteReceiptFilterRequest;
@@ -159,6 +164,7 @@ namespace Model
         class SetIdentityNotificationTopicRequest;
         class SetReceiptRulePositionRequest;
         class UpdateConfigurationSetEventDestinationRequest;
+        class UpdateConfigurationSetTrackingOptionsRequest;
         class UpdateReceiptRuleRequest;
         class VerifyDomainDkimRequest;
         class VerifyDomainIdentityRequest;
@@ -168,11 +174,13 @@ namespace Model
         typedef Aws::Utils::Outcome<CloneReceiptRuleSetResult, Aws::Client::AWSError<SESErrors>> CloneReceiptRuleSetOutcome;
         typedef Aws::Utils::Outcome<CreateConfigurationSetResult, Aws::Client::AWSError<SESErrors>> CreateConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<CreateConfigurationSetEventDestinationResult, Aws::Client::AWSError<SESErrors>> CreateConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigurationSetTrackingOptionsResult, Aws::Client::AWSError<SESErrors>> CreateConfigurationSetTrackingOptionsOutcome;
         typedef Aws::Utils::Outcome<CreateReceiptFilterResult, Aws::Client::AWSError<SESErrors>> CreateReceiptFilterOutcome;
         typedef Aws::Utils::Outcome<CreateReceiptRuleResult, Aws::Client::AWSError<SESErrors>> CreateReceiptRuleOutcome;
         typedef Aws::Utils::Outcome<CreateReceiptRuleSetResult, Aws::Client::AWSError<SESErrors>> CreateReceiptRuleSetOutcome;
         typedef Aws::Utils::Outcome<DeleteConfigurationSetResult, Aws::Client::AWSError<SESErrors>> DeleteConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<DeleteConfigurationSetEventDestinationResult, Aws::Client::AWSError<SESErrors>> DeleteConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<DeleteConfigurationSetTrackingOptionsResult, Aws::Client::AWSError<SESErrors>> DeleteConfigurationSetTrackingOptionsOutcome;
         typedef Aws::Utils::Outcome<DeleteIdentityResult, Aws::Client::AWSError<SESErrors>> DeleteIdentityOutcome;
         typedef Aws::Utils::Outcome<DeleteIdentityPolicyResult, Aws::Client::AWSError<SESErrors>> DeleteIdentityPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteReceiptFilterResult, Aws::Client::AWSError<SESErrors>> DeleteReceiptFilterOutcome;
@@ -209,6 +217,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SetIdentityNotificationTopicResult, Aws::Client::AWSError<SESErrors>> SetIdentityNotificationTopicOutcome;
         typedef Aws::Utils::Outcome<SetReceiptRulePositionResult, Aws::Client::AWSError<SESErrors>> SetReceiptRulePositionOutcome;
         typedef Aws::Utils::Outcome<UpdateConfigurationSetEventDestinationResult, Aws::Client::AWSError<SESErrors>> UpdateConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<UpdateConfigurationSetTrackingOptionsResult, Aws::Client::AWSError<SESErrors>> UpdateConfigurationSetTrackingOptionsOutcome;
         typedef Aws::Utils::Outcome<UpdateReceiptRuleResult, Aws::Client::AWSError<SESErrors>> UpdateReceiptRuleOutcome;
         typedef Aws::Utils::Outcome<VerifyDomainDkimResult, Aws::Client::AWSError<SESErrors>> VerifyDomainDkimOutcome;
         typedef Aws::Utils::Outcome<VerifyDomainIdentityResult, Aws::Client::AWSError<SESErrors>> VerifyDomainIdentityOutcome;
@@ -218,11 +227,13 @@ namespace Model
         typedef std::future<CloneReceiptRuleSetOutcome> CloneReceiptRuleSetOutcomeCallable;
         typedef std::future<CreateConfigurationSetOutcome> CreateConfigurationSetOutcomeCallable;
         typedef std::future<CreateConfigurationSetEventDestinationOutcome> CreateConfigurationSetEventDestinationOutcomeCallable;
+        typedef std::future<CreateConfigurationSetTrackingOptionsOutcome> CreateConfigurationSetTrackingOptionsOutcomeCallable;
         typedef std::future<CreateReceiptFilterOutcome> CreateReceiptFilterOutcomeCallable;
         typedef std::future<CreateReceiptRuleOutcome> CreateReceiptRuleOutcomeCallable;
         typedef std::future<CreateReceiptRuleSetOutcome> CreateReceiptRuleSetOutcomeCallable;
         typedef std::future<DeleteConfigurationSetOutcome> DeleteConfigurationSetOutcomeCallable;
         typedef std::future<DeleteConfigurationSetEventDestinationOutcome> DeleteConfigurationSetEventDestinationOutcomeCallable;
+        typedef std::future<DeleteConfigurationSetTrackingOptionsOutcome> DeleteConfigurationSetTrackingOptionsOutcomeCallable;
         typedef std::future<DeleteIdentityOutcome> DeleteIdentityOutcomeCallable;
         typedef std::future<DeleteIdentityPolicyOutcome> DeleteIdentityPolicyOutcomeCallable;
         typedef std::future<DeleteReceiptFilterOutcome> DeleteReceiptFilterOutcomeCallable;
@@ -259,6 +270,7 @@ namespace Model
         typedef std::future<SetIdentityNotificationTopicOutcome> SetIdentityNotificationTopicOutcomeCallable;
         typedef std::future<SetReceiptRulePositionOutcome> SetReceiptRulePositionOutcomeCallable;
         typedef std::future<UpdateConfigurationSetEventDestinationOutcome> UpdateConfigurationSetEventDestinationOutcomeCallable;
+        typedef std::future<UpdateConfigurationSetTrackingOptionsOutcome> UpdateConfigurationSetTrackingOptionsOutcomeCallable;
         typedef std::future<UpdateReceiptRuleOutcome> UpdateReceiptRuleOutcomeCallable;
         typedef std::future<VerifyDomainDkimOutcome> VerifyDomainDkimOutcomeCallable;
         typedef std::future<VerifyDomainIdentityOutcome> VerifyDomainIdentityOutcomeCallable;
@@ -271,11 +283,13 @@ namespace Model
     typedef std::function<void(const SESClient*, const Model::CloneReceiptRuleSetRequest&, const Model::CloneReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CloneReceiptRuleSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::CreateConfigurationSetRequest&, const Model::CreateConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::CreateConfigurationSetEventDestinationRequest&, const Model::CreateConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationSetEventDestinationResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::CreateConfigurationSetTrackingOptionsRequest&, const Model::CreateConfigurationSetTrackingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationSetTrackingOptionsResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::CreateReceiptFilterRequest&, const Model::CreateReceiptFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReceiptFilterResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::CreateReceiptRuleRequest&, const Model::CreateReceiptRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReceiptRuleResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::CreateReceiptRuleSetRequest&, const Model::CreateReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReceiptRuleSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DeleteConfigurationSetRequest&, const Model::DeleteConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DeleteConfigurationSetEventDestinationRequest&, const Model::DeleteConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetEventDestinationResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::DeleteConfigurationSetTrackingOptionsRequest&, const Model::DeleteConfigurationSetTrackingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetTrackingOptionsResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DeleteIdentityRequest&, const Model::DeleteIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIdentityResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DeleteIdentityPolicyRequest&, const Model::DeleteIdentityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIdentityPolicyResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DeleteReceiptFilterRequest&, const Model::DeleteReceiptFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReceiptFilterResponseReceivedHandler;
@@ -312,6 +326,7 @@ namespace Model
     typedef std::function<void(const SESClient*, const Model::SetIdentityNotificationTopicRequest&, const Model::SetIdentityNotificationTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityNotificationTopicResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetReceiptRulePositionRequest&, const Model::SetReceiptRulePositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetReceiptRulePositionResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::UpdateConfigurationSetEventDestinationRequest&, const Model::UpdateConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationSetEventDestinationResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::UpdateConfigurationSetTrackingOptionsRequest&, const Model::UpdateConfigurationSetTrackingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationSetTrackingOptionsResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::UpdateReceiptRuleRequest&, const Model::UpdateReceiptRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReceiptRuleResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::VerifyDomainDkimRequest&, const Model::VerifyDomainDkimOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyDomainDkimResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::VerifyDomainIdentityRequest&, const Model::VerifyDomainIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyDomainIdentityResponseReceivedHandler;
@@ -320,13 +335,16 @@ namespace Model
 
   /**
    * <fullname>Amazon Simple Email Service</fullname> <p> This is the API Reference
-   * for Amazon Simple Email Service (Amazon SES). This documentation is intended to
-   * be used in conjunction with the <a
+   * for <a href="https://aws.amazon.com/ses/">Amazon Simple Email Service</a>
+   * (Amazon SES). This documentation is intended to be used in conjunction with the
+   * <i> <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-   * SES Developer Guide</a>. </p> <note> <p> For a list of Amazon SES endpoints to
-   * use in service requests, see <a
+   * SES Developer Guide</a>.</i> </p> <note> <p> For a list of Amazon SES endpoints
+   * to use in service requests, see <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
-   * and Amazon SES</a> in the Amazon SES Developer Guide. </p> </note>
+   * and Amazon SES</a> in the <i> <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+   * SES Developer Guide</a>.</i> </p> </note>
    */
   class AWS_SES_API SESClient : public Aws::Client::AWSXMLClient
   {
@@ -365,10 +383,10 @@ namespace Model
          * <p>Creates a receipt rule set by cloning an existing one. All receipt rules and
          * configurations are copied to the new receipt rule set and are completely
          * independent of the source rule set.</p> <p>For information about setting up rule
-         * sets, see the <a
+         * sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">AWS
          * API Reference</a></p>
          */
@@ -378,10 +396,10 @@ namespace Model
          * <p>Creates a receipt rule set by cloning an existing one. All receipt rules and
          * configurations are copied to the new receipt rule set and are completely
          * independent of the source rule set.</p> <p>For information about setting up rule
-         * sets, see the <a
+         * sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -393,10 +411,10 @@ namespace Model
          * <p>Creates a receipt rule set by cloning an existing one. All receipt rules and
          * configurations are copied to the new receipt rule set and are completely
          * independent of the source rule set.</p> <p>For information about setting up rule
-         * sets, see the <a
+         * sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -406,10 +424,11 @@ namespace Model
 
         /**
          * <p>Creates a configuration set.</p> <p>Configuration sets enable you to publish
-         * email sending events. For information about using configuration sets, see the <a
+         * email sending events. For information about using configuration sets, see the
+         * <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">AWS
          * API Reference</a></p>
          */
@@ -417,10 +436,11 @@ namespace Model
 
         /**
          * <p>Creates a configuration set.</p> <p>Configuration sets enable you to publish
-         * email sending events. For information about using configuration sets, see the <a
+         * email sending events. For information about using configuration sets, see the
+         * <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">AWS
          * API Reference</a></p>
          *
@@ -430,10 +450,11 @@ namespace Model
 
         /**
          * <p>Creates a configuration set.</p> <p>Configuration sets enable you to publish
-         * email sending events. For information about using configuration sets, see the <a
+         * email sending events. For information about using configuration sets, see the
+         * <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">AWS
          * API Reference</a></p>
          *
@@ -448,10 +469,10 @@ namespace Model
          * Simple Notification Service (Amazon SNS).</p> </note> <p>An event destination is
          * the AWS service to which Amazon SES publishes the email sending events
          * associated with a configuration set. For information about using configuration
-         * sets, see the <a
+         * sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">AWS
          * API Reference</a></p>
          */
@@ -464,10 +485,10 @@ namespace Model
          * Simple Notification Service (Amazon SNS).</p> </note> <p>An event destination is
          * the AWS service to which Amazon SES publishes the email sending events
          * associated with a configuration set. For information about using configuration
-         * sets, see the <a
+         * sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">AWS
          * API Reference</a></p>
          *
@@ -482,10 +503,10 @@ namespace Model
          * Simple Notification Service (Amazon SNS).</p> </note> <p>An event destination is
          * the AWS service to which Amazon SES publishes the email sending events
          * associated with a configuration set. For information about using configuration
-         * sets, see the <a
+         * sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">AWS
          * API Reference</a></p>
          *
@@ -494,11 +515,63 @@ namespace Model
         virtual void CreateConfigurationSetEventDestinationAsync(const Model::CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an association between a configuration set and a custom domain for
+         * open and click event tracking. </p> <p>By default, images and links used for
+         * tracking open and click events are hosted on domains operated by Amazon SES. You
+         * can configure a subdomain of your own to handle these events by redirecting them
+         * to the Amazon SES-operated domain. For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+         * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetTrackingOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConfigurationSetTrackingOptionsOutcome CreateConfigurationSetTrackingOptions(const Model::CreateConfigurationSetTrackingOptionsRequest& request) const;
+
+        /**
+         * <p>Creates an association between a configuration set and a custom domain for
+         * open and click event tracking. </p> <p>By default, images and links used for
+         * tracking open and click events are hosted on domains operated by Amazon SES. You
+         * can configure a subdomain of your own to handle these events by redirecting them
+         * to the Amazon SES-operated domain. For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+         * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetTrackingOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateConfigurationSetTrackingOptionsOutcomeCallable CreateConfigurationSetTrackingOptionsCallable(const Model::CreateConfigurationSetTrackingOptionsRequest& request) const;
+
+        /**
+         * <p>Creates an association between a configuration set and a custom domain for
+         * open and click event tracking. </p> <p>By default, images and links used for
+         * tracking open and click events are hosted on domains operated by Amazon SES. You
+         * can configure a subdomain of your own to handle these events by redirecting them
+         * to the Amazon SES-operated domain. For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+         * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetTrackingOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateConfigurationSetTrackingOptionsAsync(const Model::CreateConfigurationSetTrackingOptionsRequest& request, const CreateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new IP address filter.</p> <p>For information about setting up IP
-         * address filters, see the <a
+         * address filters, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">AWS
          * API Reference</a></p>
          */
@@ -506,10 +579,10 @@ namespace Model
 
         /**
          * <p>Creates a new IP address filter.</p> <p>For information about setting up IP
-         * address filters, see the <a
+         * address filters, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">AWS
          * API Reference</a></p>
          *
@@ -519,10 +592,10 @@ namespace Model
 
         /**
          * <p>Creates a new IP address filter.</p> <p>For information about setting up IP
-         * address filters, see the <a
+         * address filters, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">AWS
          * API Reference</a></p>
          *
@@ -532,10 +605,10 @@ namespace Model
 
         /**
          * <p>Creates a receipt rule.</p> <p>For information about setting up receipt
-         * rules, see the <a
+         * rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">AWS
          * API Reference</a></p>
          */
@@ -543,10 +616,10 @@ namespace Model
 
         /**
          * <p>Creates a receipt rule.</p> <p>For information about setting up receipt
-         * rules, see the <a
+         * rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">AWS
          * API Reference</a></p>
          *
@@ -556,10 +629,10 @@ namespace Model
 
         /**
          * <p>Creates a receipt rule.</p> <p>For information about setting up receipt
-         * rules, see the <a
+         * rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">AWS
          * API Reference</a></p>
          *
@@ -569,10 +642,10 @@ namespace Model
 
         /**
          * <p>Creates an empty receipt rule set.</p> <p>For information about setting up
-         * receipt rule sets, see the <a
+         * receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">AWS
          * API Reference</a></p>
          */
@@ -580,10 +653,10 @@ namespace Model
 
         /**
          * <p>Creates an empty receipt rule set.</p> <p>For information about setting up
-         * receipt rule sets, see the <a
+         * receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -593,10 +666,10 @@ namespace Model
 
         /**
          * <p>Creates an empty receipt rule set.</p> <p>For information about setting up
-         * receipt rule sets, see the <a
+         * receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -605,22 +678,22 @@ namespace Model
         virtual void CreateReceiptRuleSetAsync(const Model::CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a configuration set.</p> <p>Configuration sets enable you to publish
-         * email sending events. For information about using configuration sets, see the <a
+         * <p>Deletes a configuration set. Configuration sets enable you to publish email
+         * sending events. For information about using configuration sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteConfigurationSetOutcome DeleteConfigurationSet(const Model::DeleteConfigurationSetRequest& request) const;
 
         /**
-         * <p>Deletes a configuration set.</p> <p>Configuration sets enable you to publish
-         * email sending events. For information about using configuration sets, see the <a
+         * <p>Deletes a configuration set. Configuration sets enable you to publish email
+         * sending events. For information about using configuration sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">AWS
          * API Reference</a></p>
          *
@@ -629,11 +702,11 @@ namespace Model
         virtual Model::DeleteConfigurationSetOutcomeCallable DeleteConfigurationSetCallable(const Model::DeleteConfigurationSetRequest& request) const;
 
         /**
-         * <p>Deletes a configuration set.</p> <p>Configuration sets enable you to publish
-         * email sending events. For information about using configuration sets, see the <a
+         * <p>Deletes a configuration set. Configuration sets enable you to publish email
+         * sending events. For information about using configuration sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">AWS
          * API Reference</a></p>
          *
@@ -642,24 +715,26 @@ namespace Model
         virtual void DeleteConfigurationSetAsync(const Model::DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a configuration set event destination.</p> <p>Configuration set event
+         * <p>Deletes a configuration set event destination. Configuration set event
          * destinations are associated with configuration sets, which enable you to publish
-         * email sending events. For information about using configuration sets, see the <a
+         * email sending events. For information about using configuration sets, see the
+         * <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteConfigurationSetEventDestinationOutcome DeleteConfigurationSetEventDestination(const Model::DeleteConfigurationSetEventDestinationRequest& request) const;
 
         /**
-         * <p>Deletes a configuration set event destination.</p> <p>Configuration set event
+         * <p>Deletes a configuration set event destination. Configuration set event
          * destinations are associated with configuration sets, which enable you to publish
-         * email sending events. For information about using configuration sets, see the <a
+         * email sending events. For information about using configuration sets, see the
+         * <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">AWS
          * API Reference</a></p>
          *
@@ -668,12 +743,13 @@ namespace Model
         virtual Model::DeleteConfigurationSetEventDestinationOutcomeCallable DeleteConfigurationSetEventDestinationCallable(const Model::DeleteConfigurationSetEventDestinationRequest& request) const;
 
         /**
-         * <p>Deletes a configuration set event destination.</p> <p>Configuration set event
+         * <p>Deletes a configuration set event destination. Configuration set event
          * destinations are associated with configuration sets, which enable you to publish
-         * email sending events. For information about using configuration sets, see the <a
+         * email sending events. For information about using configuration sets, see the
+         * <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">AWS
          * API Reference</a></p>
          *
@@ -682,9 +758,70 @@ namespace Model
         virtual void DeleteConfigurationSetEventDestinationAsync(const Model::DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an association between a configuration set and a custom domain for
+         * open and click event tracking.</p> <p>By default, images and links used for
+         * tracking open and click events are hosted on domains operated by Amazon SES. You
+         * can configure a subdomain of your own to handle these events by redirecting them
+         * to the Amazon SES-operated domain. For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+         * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+         * SES Developer Guide</a>.</i> </p> <note> <p>Deleting this kind of association
+         * will result in emails sent using the specified configuration set to capture open
+         * and click events using the standard, Amazon SES-operated domains.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetTrackingOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConfigurationSetTrackingOptionsOutcome DeleteConfigurationSetTrackingOptions(const Model::DeleteConfigurationSetTrackingOptionsRequest& request) const;
+
+        /**
+         * <p>Deletes an association between a configuration set and a custom domain for
+         * open and click event tracking.</p> <p>By default, images and links used for
+         * tracking open and click events are hosted on domains operated by Amazon SES. You
+         * can configure a subdomain of your own to handle these events by redirecting them
+         * to the Amazon SES-operated domain. For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+         * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+         * SES Developer Guide</a>.</i> </p> <note> <p>Deleting this kind of association
+         * will result in emails sent using the specified configuration set to capture open
+         * and click events using the standard, Amazon SES-operated domains.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetTrackingOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteConfigurationSetTrackingOptionsOutcomeCallable DeleteConfigurationSetTrackingOptionsCallable(const Model::DeleteConfigurationSetTrackingOptionsRequest& request) const;
+
+        /**
+         * <p>Deletes an association between a configuration set and a custom domain for
+         * open and click event tracking.</p> <p>By default, images and links used for
+         * tracking open and click events are hosted on domains operated by Amazon SES. You
+         * can configure a subdomain of your own to handle these events by redirecting them
+         * to the Amazon SES-operated domain. For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+         * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+         * SES Developer Guide</a>.</i> </p> <note> <p>Deleting this kind of association
+         * will result in emails sent using the specified configuration set to capture open
+         * and click events using the standard, Amazon SES-operated domains.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetTrackingOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteConfigurationSetTrackingOptionsAsync(const Model::DeleteConfigurationSetTrackingOptionsRequest& request, const DeleteConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified identity (an email address or a domain) from the list
-         * of verified identities.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * of verified identities.</p> <p>You can execute this operation no more than once
+         * per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">AWS
          * API Reference</a></p>
          */
@@ -692,8 +829,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified identity (an email address or a domain) from the list
-         * of verified identities.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * of verified identities.</p> <p>You can execute this operation no more than once
+         * per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">AWS
          * API Reference</a></p>
          *
@@ -703,8 +840,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified identity (an email address or a domain) from the list
-         * of verified identities.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * of verified identities.</p> <p>You can execute this operation no more than once
+         * per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">AWS
          * API Reference</a></p>
          *
@@ -719,10 +856,10 @@ namespace Model
          * owner only. If you have not verified the identity, this API will return an
          * error.</p> </note> <p>Sending authorization is a feature that enables an
          * identity owner to authorize other senders to use its identities. For information
-         * about using sending authorization, see the <a
+         * about using sending authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">AWS
          * API Reference</a></p>
          */
@@ -735,10 +872,10 @@ namespace Model
          * owner only. If you have not verified the identity, this API will return an
          * error.</p> </note> <p>Sending authorization is a feature that enables an
          * identity owner to authorize other senders to use its identities. For information
-         * about using sending authorization, see the <a
+         * about using sending authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">AWS
          * API Reference</a></p>
          *
@@ -753,10 +890,10 @@ namespace Model
          * owner only. If you have not verified the identity, this API will return an
          * error.</p> </note> <p>Sending authorization is a feature that enables an
          * identity owner to authorize other senders to use its identities. For information
-         * about using sending authorization, see the <a
+         * about using sending authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">AWS
          * API Reference</a></p>
          *
@@ -766,10 +903,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified IP address filter.</p> <p>For information about
-         * managing IP address filters, see the <a
+         * managing IP address filters, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">AWS
          * API Reference</a></p>
          */
@@ -777,10 +914,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified IP address filter.</p> <p>For information about
-         * managing IP address filters, see the <a
+         * managing IP address filters, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">AWS
          * API Reference</a></p>
          *
@@ -790,10 +927,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified IP address filter.</p> <p>For information about
-         * managing IP address filters, see the <a
+         * managing IP address filters, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">AWS
          * API Reference</a></p>
          *
@@ -803,10 +940,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified receipt rule.</p> <p>For information about managing
-         * receipt rules, see the <a
+         * receipt rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">AWS
          * API Reference</a></p>
          */
@@ -814,10 +951,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified receipt rule.</p> <p>For information about managing
-         * receipt rules, see the <a
+         * receipt rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">AWS
          * API Reference</a></p>
          *
@@ -827,10 +964,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified receipt rule.</p> <p>For information about managing
-         * receipt rules, see the <a
+         * receipt rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">AWS
          * API Reference</a></p>
          *
@@ -841,10 +978,10 @@ namespace Model
         /**
          * <p>Deletes the specified receipt rule set and all of the receipt rules it
          * contains.</p> <note> <p>The currently active rule set cannot be deleted.</p>
-         * </note> <p>For information about managing receipt rule sets, see the <a
+         * </note> <p>For information about managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">AWS
          * API Reference</a></p>
          */
@@ -853,10 +990,10 @@ namespace Model
         /**
          * <p>Deletes the specified receipt rule set and all of the receipt rules it
          * contains.</p> <note> <p>The currently active rule set cannot be deleted.</p>
-         * </note> <p>For information about managing receipt rule sets, see the <a
+         * </note> <p>For information about managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -867,10 +1004,10 @@ namespace Model
         /**
          * <p>Deletes the specified receipt rule set and all of the receipt rules it
          * contains.</p> <note> <p>The currently active rule set cannot be deleted.</p>
-         * </note> <p>For information about managing receipt rule sets, see the <a
+         * </note> <p>For information about managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -879,22 +1016,16 @@ namespace Model
         virtual void DeleteReceiptRuleSetAsync(const Model::DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified email address from the list of verified addresses.</p>
-         * <important> <p>The DeleteVerifiedEmailAddress action is deprecated as of the May
-         * 15, 2012 release of Domain Verification. The DeleteIdentity action is now
-         * preferred.</p> </important> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>Deprecated. Use the <code>DeleteIdentity</code> operation to delete email
+         * addresses and domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteVerifiedEmailAddressOutcome DeleteVerifiedEmailAddress(const Model::DeleteVerifiedEmailAddressRequest& request) const;
 
         /**
-         * <p>Deletes the specified email address from the list of verified addresses.</p>
-         * <important> <p>The DeleteVerifiedEmailAddress action is deprecated as of the May
-         * 15, 2012 release of Domain Verification. The DeleteIdentity action is now
-         * preferred.</p> </important> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>Deprecated. Use the <code>DeleteIdentity</code> operation to delete email
+         * addresses and domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">AWS
          * API Reference</a></p>
          *
@@ -903,11 +1034,8 @@ namespace Model
         virtual Model::DeleteVerifiedEmailAddressOutcomeCallable DeleteVerifiedEmailAddressCallable(const Model::DeleteVerifiedEmailAddressRequest& request) const;
 
         /**
-         * <p>Deletes the specified email address from the list of verified addresses.</p>
-         * <important> <p>The DeleteVerifiedEmailAddress action is deprecated as of the May
-         * 15, 2012 release of Domain Verification. The DeleteIdentity action is now
-         * preferred.</p> </important> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>Deprecated. Use the <code>DeleteIdentity</code> operation to delete email
+         * addresses and domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">AWS
          * API Reference</a></p>
          *
@@ -918,10 +1046,10 @@ namespace Model
         /**
          * <p>Returns the metadata and receipt rules for the receipt rule set that is
          * currently active.</p> <p>For information about setting up receipt rule sets, see
-         * the <a
+         * the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">AWS
          * API Reference</a></p>
          */
@@ -930,10 +1058,10 @@ namespace Model
         /**
          * <p>Returns the metadata and receipt rules for the receipt rule set that is
          * currently active.</p> <p>For information about setting up receipt rule sets, see
-         * the <a
+         * the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -944,10 +1072,10 @@ namespace Model
         /**
          * <p>Returns the metadata and receipt rules for the receipt rule set that is
          * currently active.</p> <p>For information about setting up receipt rule sets, see
-         * the <a
+         * the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -956,24 +1084,22 @@ namespace Model
         virtual void DescribeActiveReceiptRuleSetAsync(const Model::DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the details of the specified configuration set.</p> <p>Configuration
-         * sets enable you to publish email sending events. For information about using
-         * configuration sets, see the <a
+         * <p>Returns the details of the specified configuration set. For information about
+         * using configuration sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationSetOutcome DescribeConfigurationSet(const Model::DescribeConfigurationSetRequest& request) const;
 
         /**
-         * <p>Returns the details of the specified configuration set.</p> <p>Configuration
-         * sets enable you to publish email sending events. For information about using
-         * configuration sets, see the <a
+         * <p>Returns the details of the specified configuration set. For information about
+         * using configuration sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">AWS
          * API Reference</a></p>
          *
@@ -982,12 +1108,11 @@ namespace Model
         virtual Model::DescribeConfigurationSetOutcomeCallable DescribeConfigurationSetCallable(const Model::DescribeConfigurationSetRequest& request) const;
 
         /**
-         * <p>Returns the details of the specified configuration set.</p> <p>Configuration
-         * sets enable you to publish email sending events. For information about using
-         * configuration sets, see the <a
+         * <p>Returns the details of the specified configuration set. For information about
+         * using configuration sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">AWS
          * API Reference</a></p>
          *
@@ -997,10 +1122,10 @@ namespace Model
 
         /**
          * <p>Returns the details of the specified receipt rule.</p> <p>For information
-         * about setting up receipt rules, see the <a
+         * about setting up receipt rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">AWS
          * API Reference</a></p>
          */
@@ -1008,10 +1133,10 @@ namespace Model
 
         /**
          * <p>Returns the details of the specified receipt rule.</p> <p>For information
-         * about setting up receipt rules, see the <a
+         * about setting up receipt rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">AWS
          * API Reference</a></p>
          *
@@ -1021,10 +1146,10 @@ namespace Model
 
         /**
          * <p>Returns the details of the specified receipt rule.</p> <p>For information
-         * about setting up receipt rules, see the <a
+         * about setting up receipt rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">AWS
          * API Reference</a></p>
          *
@@ -1034,10 +1159,10 @@ namespace Model
 
         /**
          * <p>Returns the details of the specified receipt rule set.</p> <p>For information
-         * about managing receipt rule sets, see the <a
+         * about managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">AWS
          * API Reference</a></p>
          */
@@ -1045,10 +1170,10 @@ namespace Model
 
         /**
          * <p>Returns the details of the specified receipt rule set.</p> <p>For information
-         * about managing receipt rule sets, see the <a
+         * about managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -1058,10 +1183,10 @@ namespace Model
 
         /**
          * <p>Returns the details of the specified receipt rule set.</p> <p>For information
-         * about managing receipt rule sets, see the <a
+         * about managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -1071,20 +1196,21 @@ namespace Model
 
         /**
          * <p>Returns the current status of Easy DKIM signing for an entity. For domain
-         * name identities, this action also returns the DKIM tokens that are required for
-         * Easy DKIM signing, and whether Amazon SES has successfully verified that these
-         * tokens have been published.</p> <p>This action takes a list of identities as
-         * input and returns the following information for each:</p> <ul> <li> <p>Whether
-         * Easy DKIM signing is enabled or disabled.</p> </li> <li> <p>A set of DKIM tokens
-         * that represent the identity. If the identity is an email address, the tokens
-         * represent the domain of that address.</p> </li> <li> <p>Whether Amazon SES has
-         * successfully verified the DKIM tokens published in the domain's DNS. This
-         * information is only returned for domain name identities, not for email
-         * addresses.</p> </li> </ul> <p>This action is throttled at one request per second
-         * and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For
-         * more information about creating DNS records using DKIM tokens, go to the <a
+         * name identities, this operation also returns the DKIM tokens that are required
+         * for Easy DKIM signing, and whether Amazon SES has successfully verified that
+         * these tokens have been published.</p> <p>This operation takes a list of
+         * identities as input and returns the following information for each:</p> <ul>
+         * <li> <p>Whether Easy DKIM signing is enabled or disabled.</p> </li> <li> <p>A
+         * set of DKIM tokens that represent the identity. If the identity is an email
+         * address, the tokens represent the domain of that address.</p> </li> <li>
+         * <p>Whether Amazon SES has successfully verified the DKIM tokens published in the
+         * domain's DNS. This information is only returned for domain name identities, not
+         * for email addresses.</p> </li> </ul> <p>This operation is throttled at one
+         * request per second and can only get DKIM attributes for up to 100 identities at
+         * a time.</p> <p>For more information about creating DNS records using DKIM
+         * tokens, go to the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">AWS
          * API Reference</a></p>
          */
@@ -1092,20 +1218,21 @@ namespace Model
 
         /**
          * <p>Returns the current status of Easy DKIM signing for an entity. For domain
-         * name identities, this action also returns the DKIM tokens that are required for
-         * Easy DKIM signing, and whether Amazon SES has successfully verified that these
-         * tokens have been published.</p> <p>This action takes a list of identities as
-         * input and returns the following information for each:</p> <ul> <li> <p>Whether
-         * Easy DKIM signing is enabled or disabled.</p> </li> <li> <p>A set of DKIM tokens
-         * that represent the identity. If the identity is an email address, the tokens
-         * represent the domain of that address.</p> </li> <li> <p>Whether Amazon SES has
-         * successfully verified the DKIM tokens published in the domain's DNS. This
-         * information is only returned for domain name identities, not for email
-         * addresses.</p> </li> </ul> <p>This action is throttled at one request per second
-         * and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For
-         * more information about creating DNS records using DKIM tokens, go to the <a
+         * name identities, this operation also returns the DKIM tokens that are required
+         * for Easy DKIM signing, and whether Amazon SES has successfully verified that
+         * these tokens have been published.</p> <p>This operation takes a list of
+         * identities as input and returns the following information for each:</p> <ul>
+         * <li> <p>Whether Easy DKIM signing is enabled or disabled.</p> </li> <li> <p>A
+         * set of DKIM tokens that represent the identity. If the identity is an email
+         * address, the tokens represent the domain of that address.</p> </li> <li>
+         * <p>Whether Amazon SES has successfully verified the DKIM tokens published in the
+         * domain's DNS. This information is only returned for domain name identities, not
+         * for email addresses.</p> </li> </ul> <p>This operation is throttled at one
+         * request per second and can only get DKIM attributes for up to 100 identities at
+         * a time.</p> <p>For more information about creating DNS records using DKIM
+         * tokens, go to the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">AWS
          * API Reference</a></p>
          *
@@ -1115,20 +1242,21 @@ namespace Model
 
         /**
          * <p>Returns the current status of Easy DKIM signing for an entity. For domain
-         * name identities, this action also returns the DKIM tokens that are required for
-         * Easy DKIM signing, and whether Amazon SES has successfully verified that these
-         * tokens have been published.</p> <p>This action takes a list of identities as
-         * input and returns the following information for each:</p> <ul> <li> <p>Whether
-         * Easy DKIM signing is enabled or disabled.</p> </li> <li> <p>A set of DKIM tokens
-         * that represent the identity. If the identity is an email address, the tokens
-         * represent the domain of that address.</p> </li> <li> <p>Whether Amazon SES has
-         * successfully verified the DKIM tokens published in the domain's DNS. This
-         * information is only returned for domain name identities, not for email
-         * addresses.</p> </li> </ul> <p>This action is throttled at one request per second
-         * and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For
-         * more information about creating DNS records using DKIM tokens, go to the <a
+         * name identities, this operation also returns the DKIM tokens that are required
+         * for Easy DKIM signing, and whether Amazon SES has successfully verified that
+         * these tokens have been published.</p> <p>This operation takes a list of
+         * identities as input and returns the following information for each:</p> <ul>
+         * <li> <p>Whether Easy DKIM signing is enabled or disabled.</p> </li> <li> <p>A
+         * set of DKIM tokens that represent the identity. If the identity is an email
+         * address, the tokens represent the domain of that address.</p> </li> <li>
+         * <p>Whether Amazon SES has successfully verified the DKIM tokens published in the
+         * domain's DNS. This information is only returned for domain name identities, not
+         * for email addresses.</p> </li> </ul> <p>This operation is throttled at one
+         * request per second and can only get DKIM attributes for up to 100 identities at
+         * a time.</p> <p>For more information about creating DNS records using DKIM
+         * tokens, go to the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">AWS
          * API Reference</a></p>
          *
@@ -1138,7 +1266,7 @@ namespace Model
 
         /**
          * <p>Returns the custom MAIL FROM attributes for a list of identities (email
-         * addresses and/or domains).</p> <p>This action is throttled at one request per
+         * addresses : domains).</p> <p>This operation is throttled at one request per
          * second and can only get custom MAIL FROM attributes for up to 100 identities at
          * a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">AWS
@@ -1148,7 +1276,7 @@ namespace Model
 
         /**
          * <p>Returns the custom MAIL FROM attributes for a list of identities (email
-         * addresses and/or domains).</p> <p>This action is throttled at one request per
+         * addresses : domains).</p> <p>This operation is throttled at one request per
          * second and can only get custom MAIL FROM attributes for up to 100 identities at
          * a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">AWS
@@ -1160,7 +1288,7 @@ namespace Model
 
         /**
          * <p>Returns the custom MAIL FROM attributes for a list of identities (email
-         * addresses and/or domains).</p> <p>This action is throttled at one request per
+         * addresses : domains).</p> <p>This operation is throttled at one request per
          * second and can only get custom MAIL FROM attributes for up to 100 identities at
          * a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">AWS
@@ -1172,12 +1300,12 @@ namespace Model
 
         /**
          * <p>Given a list of verified identities (email addresses and/or domains), returns
-         * a structure describing identity notification attributes.</p> <p>This action is
-         * throttled at one request per second and can only get notification attributes for
-         * up to 100 identities at a time.</p> <p>For more information about using
-         * notifications with Amazon SES, see the <a
+         * a structure describing identity notification attributes.</p> <p>This operation
+         * is throttled at one request per second and can only get notification attributes
+         * for up to 100 identities at a time.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">AWS
          * API Reference</a></p>
          */
@@ -1185,12 +1313,12 @@ namespace Model
 
         /**
          * <p>Given a list of verified identities (email addresses and/or domains), returns
-         * a structure describing identity notification attributes.</p> <p>This action is
-         * throttled at one request per second and can only get notification attributes for
-         * up to 100 identities at a time.</p> <p>For more information about using
-         * notifications with Amazon SES, see the <a
+         * a structure describing identity notification attributes.</p> <p>This operation
+         * is throttled at one request per second and can only get notification attributes
+         * for up to 100 identities at a time.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">AWS
          * API Reference</a></p>
          *
@@ -1200,12 +1328,12 @@ namespace Model
 
         /**
          * <p>Given a list of verified identities (email addresses and/or domains), returns
-         * a structure describing identity notification attributes.</p> <p>This action is
-         * throttled at one request per second and can only get notification attributes for
-         * up to 100 identities at a time.</p> <p>For more information about using
-         * notifications with Amazon SES, see the <a
+         * a structure describing identity notification attributes.</p> <p>This operation
+         * is throttled at one request per second and can only get notification attributes
+         * for up to 100 identities at a time.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">AWS
          * API Reference</a></p>
          *
@@ -1221,10 +1349,10 @@ namespace Model
          * verified the identity, this API will return an error.</p> </note> <p>Sending
          * authorization is a feature that enables an identity owner to authorize other
          * senders to use its identities. For information about using sending
-         * authorization, see the <a
+         * authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">AWS
          * API Reference</a></p>
          */
@@ -1238,10 +1366,10 @@ namespace Model
          * verified the identity, this API will return an error.</p> </note> <p>Sending
          * authorization is a feature that enables an identity owner to authorize other
          * senders to use its identities. For information about using sending
-         * authorization, see the <a
+         * authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">AWS
          * API Reference</a></p>
          *
@@ -1257,10 +1385,10 @@ namespace Model
          * verified the identity, this API will return an error.</p> </note> <p>Sending
          * authorization is a feature that enables an identity owner to authorize other
          * senders to use its identities. For information about using sending
-         * authorization, see the <a
+         * authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">AWS
          * API Reference</a></p>
          *
@@ -1284,7 +1412,7 @@ namespace Model
          * changes to "Success". If Amazon SES is unable to detect the record within 72
          * hours, the domain's verification status changes to "Failed." In that case, if
          * you still want to verify the domain, you must restart the verification process
-         * from the beginning.</p> <p>This action is throttled at one request per second
+         * from the beginning.</p> <p>This operation is throttled at one request per second
          * and can only get verification attributes for up to 100 identities at a
          * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">AWS
@@ -1308,7 +1436,7 @@ namespace Model
          * changes to "Success". If Amazon SES is unable to detect the record within 72
          * hours, the domain's verification status changes to "Failed." In that case, if
          * you still want to verify the domain, you must restart the verification process
-         * from the beginning.</p> <p>This action is throttled at one request per second
+         * from the beginning.</p> <p>This operation is throttled at one request per second
          * and can only get verification attributes for up to 100 identities at a
          * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">AWS
@@ -1334,7 +1462,7 @@ namespace Model
          * changes to "Success". If Amazon SES is unable to detect the record within 72
          * hours, the domain's verification status changes to "Failed." In that case, if
          * you still want to verify the domain, you must restart the verification process
-         * from the beginning.</p> <p>This action is throttled at one request per second
+         * from the beginning.</p> <p>This operation is throttled at one request per second
          * and can only get verification attributes for up to 100 identities at a
          * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">AWS
@@ -1345,16 +1473,18 @@ namespace Model
         virtual void GetIdentityVerificationAttributesAsync(const Model::GetIdentityVerificationAttributesRequest& request, const GetIdentityVerificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the user's current sending limits.</p> <p>This action is throttled at
-         * one request per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the sending limits for the Amazon SES account. </p> <p>You can
+         * execute this operation no more than once per second.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSendQuotaOutcome GetSendQuota(const Model::GetSendQuotaRequest& request) const;
 
         /**
-         * <p>Returns the user's current sending limits.</p> <p>This action is throttled at
-         * one request per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the sending limits for the Amazon SES account. </p> <p>You can
+         * execute this operation no more than once per second.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">AWS
          * API Reference</a></p>
          *
@@ -1363,8 +1493,9 @@ namespace Model
         virtual Model::GetSendQuotaOutcomeCallable GetSendQuotaCallable(const Model::GetSendQuotaRequest& request) const;
 
         /**
-         * <p>Returns the user's current sending limits.</p> <p>This action is throttled at
-         * one request per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the sending limits for the Amazon SES account. </p> <p>You can
+         * execute this operation no more than once per second.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">AWS
          * API Reference</a></p>
          *
@@ -1373,20 +1504,22 @@ namespace Model
         virtual void GetSendQuotaAsync(const Model::GetSendQuotaRequest& request, const GetSendQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the user's sending statistics. The result is a list of data points,
-         * representing the last two weeks of sending activity.</p> <p>Each data point in
-         * the list contains statistics for a 15-minute interval.</p> <p>This action is
-         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides sending statistics for the Amazon SES account. The result is a list
+         * of data points, representing the last two weeks of sending activity. Each data
+         * point in the list contains statistics for a 15-minute period of time.</p> <p>You
+         * can execute this operation no more than once per second.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSendStatisticsOutcome GetSendStatistics(const Model::GetSendStatisticsRequest& request) const;
 
         /**
-         * <p>Returns the user's sending statistics. The result is a list of data points,
-         * representing the last two weeks of sending activity.</p> <p>Each data point in
-         * the list contains statistics for a 15-minute interval.</p> <p>This action is
-         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides sending statistics for the Amazon SES account. The result is a list
+         * of data points, representing the last two weeks of sending activity. Each data
+         * point in the list contains statistics for a 15-minute period of time.</p> <p>You
+         * can execute this operation no more than once per second.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">AWS
          * API Reference</a></p>
          *
@@ -1395,10 +1528,11 @@ namespace Model
         virtual Model::GetSendStatisticsOutcomeCallable GetSendStatisticsCallable(const Model::GetSendStatisticsRequest& request) const;
 
         /**
-         * <p>Returns the user's sending statistics. The result is a list of data points,
-         * representing the last two weeks of sending activity.</p> <p>Each data point in
-         * the list contains statistics for a 15-minute interval.</p> <p>This action is
-         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides sending statistics for the Amazon SES account. The result is a list
+         * of data points, representing the last two weeks of sending activity. Each data
+         * point in the list contains statistics for a 15-minute period of time.</p> <p>You
+         * can execute this operation no more than once per second.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">AWS
          * API Reference</a></p>
          *
@@ -1407,26 +1541,34 @@ namespace Model
         virtual void GetSendStatisticsAsync(const Model::GetSendStatisticsRequest& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the configuration sets associated with your AWS account.</p>
-         * <p>Configuration sets enable you to publish email sending events. For
-         * information about using configuration sets, see the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second and can return up to 50 configuration sets at a time.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides a list of the configuration sets associated with your Amazon SES
+         * account. For information about using configuration sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+         * Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer
+         * Guide</i>.</p> <p>You can execute this operation no more than once per second.
+         * This operation will return up to 50 configuration sets each time it is run. If
+         * your Amazon SES account has more than 50 configuration sets, this operation will
+         * also return a NextToken element. You can then execute the
+         * <code>ListConfigurationSets</code> operation again, passing the
+         * <code>NextToken</code> parameter and the value of the NextToken element to
+         * retrieve additional results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListConfigurationSetsOutcome ListConfigurationSets(const Model::ListConfigurationSetsRequest& request) const;
 
         /**
-         * <p>Lists the configuration sets associated with your AWS account.</p>
-         * <p>Configuration sets enable you to publish email sending events. For
-         * information about using configuration sets, see the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second and can return up to 50 configuration sets at a time.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides a list of the configuration sets associated with your Amazon SES
+         * account. For information about using configuration sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+         * Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer
+         * Guide</i>.</p> <p>You can execute this operation no more than once per second.
+         * This operation will return up to 50 configuration sets each time it is run. If
+         * your Amazon SES account has more than 50 configuration sets, this operation will
+         * also return a NextToken element. You can then execute the
+         * <code>ListConfigurationSets</code> operation again, passing the
+         * <code>NextToken</code> parameter and the value of the NextToken element to
+         * retrieve additional results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">AWS
          * API Reference</a></p>
          *
@@ -1435,13 +1577,17 @@ namespace Model
         virtual Model::ListConfigurationSetsOutcomeCallable ListConfigurationSetsCallable(const Model::ListConfigurationSetsRequest& request) const;
 
         /**
-         * <p>Lists the configuration sets associated with your AWS account.</p>
-         * <p>Configuration sets enable you to publish email sending events. For
-         * information about using configuration sets, see the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second and can return up to 50 configuration sets at a time.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides a list of the configuration sets associated with your Amazon SES
+         * account. For information about using configuration sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+         * Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer
+         * Guide</i>.</p> <p>You can execute this operation no more than once per second.
+         * This operation will return up to 50 configuration sets each time it is run. If
+         * your Amazon SES account has more than 50 configuration sets, this operation will
+         * also return a NextToken element. You can then execute the
+         * <code>ListConfigurationSets</code> operation again, passing the
+         * <code>NextToken</code> parameter and the value of the NextToken element to
+         * retrieve additional results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">AWS
          * API Reference</a></p>
          *
@@ -1451,8 +1597,8 @@ namespace Model
 
         /**
          * <p>Returns a list containing all of the identities (email addresses and domains)
-         * for your AWS account, regardless of verification status.</p> <p>This action is
-         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * for your AWS account, regardless of verification status.</p> <p>You can execute
+         * this operation no more than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">AWS
          * API Reference</a></p>
          */
@@ -1460,8 +1606,8 @@ namespace Model
 
         /**
          * <p>Returns a list containing all of the identities (email addresses and domains)
-         * for your AWS account, regardless of verification status.</p> <p>This action is
-         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * for your AWS account, regardless of verification status.</p> <p>You can execute
+         * this operation no more than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">AWS
          * API Reference</a></p>
          *
@@ -1471,8 +1617,8 @@ namespace Model
 
         /**
          * <p>Returns a list containing all of the identities (email addresses and domains)
-         * for your AWS account, regardless of verification status.</p> <p>This action is
-         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * for your AWS account, regardless of verification status.</p> <p>You can execute
+         * this operation no more than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">AWS
          * API Reference</a></p>
          *
@@ -1488,10 +1634,10 @@ namespace Model
          * owner only. If you have not verified the identity, this API will return an
          * error.</p> </note> <p>Sending authorization is a feature that enables an
          * identity owner to authorize other senders to use its identities. For information
-         * about using sending authorization, see the <a
+         * about using sending authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">AWS
          * API Reference</a></p>
          */
@@ -1505,10 +1651,10 @@ namespace Model
          * owner only. If you have not verified the identity, this API will return an
          * error.</p> </note> <p>Sending authorization is a feature that enables an
          * identity owner to authorize other senders to use its identities. For information
-         * about using sending authorization, see the <a
+         * about using sending authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">AWS
          * API Reference</a></p>
          *
@@ -1524,10 +1670,10 @@ namespace Model
          * owner only. If you have not verified the identity, this API will return an
          * error.</p> </note> <p>Sending authorization is a feature that enables an
          * identity owner to authorize other senders to use its identities. For information
-         * about using sending authorization, see the <a
+         * about using sending authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">AWS
          * API Reference</a></p>
          *
@@ -1537,10 +1683,10 @@ namespace Model
 
         /**
          * <p>Lists the IP address filters associated with your AWS account.</p> <p>For
-         * information about managing IP address filters, see the <a
+         * information about managing IP address filters, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">AWS
          * API Reference</a></p>
          */
@@ -1548,10 +1694,10 @@ namespace Model
 
         /**
          * <p>Lists the IP address filters associated with your AWS account.</p> <p>For
-         * information about managing IP address filters, see the <a
+         * information about managing IP address filters, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">AWS
          * API Reference</a></p>
          *
@@ -1561,10 +1707,10 @@ namespace Model
 
         /**
          * <p>Lists the IP address filters associated with your AWS account.</p> <p>For
-         * information about managing IP address filters, see the <a
+         * information about managing IP address filters, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">AWS
          * API Reference</a></p>
          *
@@ -1577,10 +1723,10 @@ namespace Model
          * additional receipt rule sets to be retrieved, you will receive a
          * <code>NextToken</code> that you can provide to the next call to
          * <code>ListReceiptRuleSets</code> to retrieve the additional entries.</p> <p>For
-         * information about managing receipt rule sets, see the <a
+         * information about managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">AWS
          * API Reference</a></p>
          */
@@ -1591,10 +1737,10 @@ namespace Model
          * additional receipt rule sets to be retrieved, you will receive a
          * <code>NextToken</code> that you can provide to the next call to
          * <code>ListReceiptRuleSets</code> to retrieve the additional entries.</p> <p>For
-         * information about managing receipt rule sets, see the <a
+         * information about managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">AWS
          * API Reference</a></p>
          *
@@ -1607,10 +1753,10 @@ namespace Model
          * additional receipt rule sets to be retrieved, you will receive a
          * <code>NextToken</code> that you can provide to the next call to
          * <code>ListReceiptRuleSets</code> to retrieve the additional entries.</p> <p>For
-         * information about managing receipt rule sets, see the <a
+         * information about managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">AWS
          * API Reference</a></p>
          *
@@ -1619,22 +1765,18 @@ namespace Model
         virtual void ListReceiptRuleSetsAsync(const Model::ListReceiptRuleSetsRequest& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list containing all of the email addresses that have been
-         * verified.</p> <important> <p>The ListVerifiedEmailAddresses action is deprecated
-         * as of the May 15, 2012 release of Domain Verification. The ListIdentities action
-         * is now preferred.</p> </important> <p>This action is throttled at one request
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Deprecated. Use the <code>ListIdentities</code> operation to list the email
+         * addresses and domains associated with your account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">AWS
          * API Reference</a></p>
          */
         virtual Model::ListVerifiedEmailAddressesOutcome ListVerifiedEmailAddresses(const Model::ListVerifiedEmailAddressesRequest& request) const;
 
         /**
-         * <p>Returns a list containing all of the email addresses that have been
-         * verified.</p> <important> <p>The ListVerifiedEmailAddresses action is deprecated
-         * as of the May 15, 2012 release of Domain Verification. The ListIdentities action
-         * is now preferred.</p> </important> <p>This action is throttled at one request
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Deprecated. Use the <code>ListIdentities</code> operation to list the email
+         * addresses and domains associated with your account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">AWS
          * API Reference</a></p>
          *
@@ -1643,11 +1785,9 @@ namespace Model
         virtual Model::ListVerifiedEmailAddressesOutcomeCallable ListVerifiedEmailAddressesCallable(const Model::ListVerifiedEmailAddressesRequest& request) const;
 
         /**
-         * <p>Returns a list containing all of the email addresses that have been
-         * verified.</p> <important> <p>The ListVerifiedEmailAddresses action is deprecated
-         * as of the May 15, 2012 release of Domain Verification. The ListIdentities action
-         * is now preferred.</p> </important> <p>This action is throttled at one request
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Deprecated. Use the <code>ListIdentities</code> operation to list the email
+         * addresses and domains associated with your account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">AWS
          * API Reference</a></p>
          *
@@ -1661,10 +1801,10 @@ namespace Model
          * only. If you have not verified the identity, this API will return an error.</p>
          * </note> <p>Sending authorization is a feature that enables an identity owner to
          * authorize other senders to use its identities. For information about using
-         * sending authorization, see the <a
+         * sending authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">AWS
          * API Reference</a></p>
          */
@@ -1676,10 +1816,10 @@ namespace Model
          * only. If you have not verified the identity, this API will return an error.</p>
          * </note> <p>Sending authorization is a feature that enables an identity owner to
          * authorize other senders to use its identities. For information about using
-         * sending authorization, see the <a
+         * sending authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">AWS
          * API Reference</a></p>
          *
@@ -1693,10 +1833,10 @@ namespace Model
          * only. If you have not verified the identity, this API will return an error.</p>
          * </note> <p>Sending authorization is a feature that enables an identity owner to
          * authorize other senders to use its identities. For information about using
-         * sending authorization, see the <a
+         * sending authorization, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">AWS
          * API Reference</a></p>
          *
@@ -1709,10 +1849,10 @@ namespace Model
          * the rules in the rule set must be represented in this request. That is, this API
          * will return an error if the reorder request doesn't explicitly position all of
          * the rules.</p> </note> <p>For information about managing receipt rule sets, see
-         * the <a
+         * the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">AWS
          * API Reference</a></p>
          */
@@ -1723,10 +1863,10 @@ namespace Model
          * the rules in the rule set must be represented in this request. That is, this API
          * will return an error if the reorder request doesn't explicitly position all of
          * the rules.</p> </note> <p>For information about managing receipt rule sets, see
-         * the <a
+         * the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -1739,10 +1879,10 @@ namespace Model
          * the rules in the rule set must be represented in this request. That is, this API
          * will return an error if the reorder request doesn't explicitly position all of
          * the rules.</p> </note> <p>For information about managing receipt rule sets, see
-         * the <a
+         * the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -1755,10 +1895,10 @@ namespace Model
          * through Amazon SES. You can only use this API on an email up to 24 hours after
          * you receive it.</p> <note> <p>You cannot use this API to send generic bounces
          * for mail that was not received by Amazon SES.</p> </note> <p>For information
-         * about receiving email through Amazon SES, see the <a
+         * about receiving email through Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">AWS
          * API Reference</a></p>
          */
@@ -1769,10 +1909,10 @@ namespace Model
          * through Amazon SES. You can only use this API on an email up to 24 hours after
          * you receive it.</p> <note> <p>You cannot use this API to send generic bounces
          * for mail that was not received by Amazon SES.</p> </note> <p>For information
-         * about receiving email through Amazon SES, see the <a
+         * about receiving email through Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">AWS
          * API Reference</a></p>
          *
@@ -1785,10 +1925,10 @@ namespace Model
          * through Amazon SES. You can only use this API on an email up to 24 hours after
          * you receive it.</p> <note> <p>You cannot use this API to send generic bounces
          * for mail that was not received by Amazon SES.</p> </note> <p>For information
-         * about receiving email through Amazon SES, see the <a
+         * about receiving email through Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">AWS
          * API Reference</a></p>
          *
@@ -1797,58 +1937,70 @@ namespace Model
         virtual void SendBounceAsync(const Model::SendBounceRequest& request, const SendBounceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Composes an email message based on input data, and then immediately queues
-         * the message for sending.</p> <p>There are several important points to know about
-         * <code>SendEmail</code>:</p> <ul> <li> <p>You can only send email from verified
-         * email addresses and domains; otherwise, you will get an "Email address not
-         * verified" error. If your account is still in the Amazon SES sandbox, you must
-         * also verify every recipient email address except for the recipients provided by
-         * the Amazon SES mailbox simulator. For more information, go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
-         * exceed 10 MB. This includes any attachments that are part of the message.</p>
-         * </li> <li> <p>You must provide at least one recipient email address. The
-         * recipient address can be a To: address, a CC: address, or a BCC: address. If any
-         * email address you provide is invalid, Amazon SES rejects the entire email.</p>
-         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
-         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
-         * 50. If you need to send an email message to a larger audience, you can divide
-         * your recipient list into groups of 50 or fewer, and then call Amazon SES
-         * repeatedly to send the message to each group.</p> </li> <li> <p>For every
-         * message that you send, the total number of recipients (To:, CC: and BCC:) is
-         * counted against your sending quota - the maximum number of emails you can send
-         * in a 24-hour period. For information about your sending quota, go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Composes an email message and immediately queues it for sending. In order to
+         * send email using the <code>SendEmail</code> operation, your message must meet
+         * the following requirements:</p> <ul> <li> <p>The message must be sent from a
+         * verified email address or domain. If you attempt to send email using a
+         * non-verified address or domain, the operation will result in an "Email address
+         * not verified" error. </p> </li> <li> <p>If your account is still in the Amazon
+         * SES sandbox, you may only send to verified addresses or domains, or to email
+         * addresses associated with the Amazon SES Mailbox Simulator. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+         * Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </li> <li> <p>The total size of the message, including attachments, must be
+         * smaller than 10 MB.</p> </li> <li> <p>The message must include at least one
+         * recipient email address. The recipient address can be a To: address, a CC:
+         * address, or a BCC: address. If a recipient email address is invalid (that is, it
+         * is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the
+         * entire message will be rejected, even if the message contains other recipients
+         * that are valid.</p> </li> <li> <p>The message may not include more than 50
+         * recipients, across the To:, CC: and BCC: fields. If you need to send an email
+         * message to a larger audience, you can divide your recipient list into groups of
+         * 50 or fewer, and then call the <code>SendEmail</code> operation several times to
+         * send the message to each group.</p> </li> </ul> <important> <p>For every message
+         * that you send, the total number of recipients (including each recipient in the
+         * To:, CC: and BCC: fields) is counted against the maximum number of emails you
+         * can send in a 24-hour period (your <i>sending quota</i>). For more information
+         * about sending quotas in Amazon SES, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+         * Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">AWS API
          * Reference</a></p>
          */
         virtual Model::SendEmailOutcome SendEmail(const Model::SendEmailRequest& request) const;
 
         /**
-         * <p>Composes an email message based on input data, and then immediately queues
-         * the message for sending.</p> <p>There are several important points to know about
-         * <code>SendEmail</code>:</p> <ul> <li> <p>You can only send email from verified
-         * email addresses and domains; otherwise, you will get an "Email address not
-         * verified" error. If your account is still in the Amazon SES sandbox, you must
-         * also verify every recipient email address except for the recipients provided by
-         * the Amazon SES mailbox simulator. For more information, go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
-         * exceed 10 MB. This includes any attachments that are part of the message.</p>
-         * </li> <li> <p>You must provide at least one recipient email address. The
-         * recipient address can be a To: address, a CC: address, or a BCC: address. If any
-         * email address you provide is invalid, Amazon SES rejects the entire email.</p>
-         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
-         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
-         * 50. If you need to send an email message to a larger audience, you can divide
-         * your recipient list into groups of 50 or fewer, and then call Amazon SES
-         * repeatedly to send the message to each group.</p> </li> <li> <p>For every
-         * message that you send, the total number of recipients (To:, CC: and BCC:) is
-         * counted against your sending quota - the maximum number of emails you can send
-         * in a 24-hour period. For information about your sending quota, go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Composes an email message and immediately queues it for sending. In order to
+         * send email using the <code>SendEmail</code> operation, your message must meet
+         * the following requirements:</p> <ul> <li> <p>The message must be sent from a
+         * verified email address or domain. If you attempt to send email using a
+         * non-verified address or domain, the operation will result in an "Email address
+         * not verified" error. </p> </li> <li> <p>If your account is still in the Amazon
+         * SES sandbox, you may only send to verified addresses or domains, or to email
+         * addresses associated with the Amazon SES Mailbox Simulator. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+         * Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </li> <li> <p>The total size of the message, including attachments, must be
+         * smaller than 10 MB.</p> </li> <li> <p>The message must include at least one
+         * recipient email address. The recipient address can be a To: address, a CC:
+         * address, or a BCC: address. If a recipient email address is invalid (that is, it
+         * is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the
+         * entire message will be rejected, even if the message contains other recipients
+         * that are valid.</p> </li> <li> <p>The message may not include more than 50
+         * recipients, across the To:, CC: and BCC: fields. If you need to send an email
+         * message to a larger audience, you can divide your recipient list into groups of
+         * 50 or fewer, and then call the <code>SendEmail</code> operation several times to
+         * send the message to each group.</p> </li> </ul> <important> <p>For every message
+         * that you send, the total number of recipients (including each recipient in the
+         * To:, CC: and BCC: fields) is counted against the maximum number of emails you
+         * can send in a 24-hour period (your <i>sending quota</i>). For more information
+         * about sending quotas in Amazon SES, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+         * Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">AWS API
          * Reference</a></p>
          *
@@ -1857,29 +2009,35 @@ namespace Model
         virtual Model::SendEmailOutcomeCallable SendEmailCallable(const Model::SendEmailRequest& request) const;
 
         /**
-         * <p>Composes an email message based on input data, and then immediately queues
-         * the message for sending.</p> <p>There are several important points to know about
-         * <code>SendEmail</code>:</p> <ul> <li> <p>You can only send email from verified
-         * email addresses and domains; otherwise, you will get an "Email address not
-         * verified" error. If your account is still in the Amazon SES sandbox, you must
-         * also verify every recipient email address except for the recipients provided by
-         * the Amazon SES mailbox simulator. For more information, go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
-         * exceed 10 MB. This includes any attachments that are part of the message.</p>
-         * </li> <li> <p>You must provide at least one recipient email address. The
-         * recipient address can be a To: address, a CC: address, or a BCC: address. If any
-         * email address you provide is invalid, Amazon SES rejects the entire email.</p>
-         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
-         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
-         * 50. If you need to send an email message to a larger audience, you can divide
-         * your recipient list into groups of 50 or fewer, and then call Amazon SES
-         * repeatedly to send the message to each group.</p> </li> <li> <p>For every
-         * message that you send, the total number of recipients (To:, CC: and BCC:) is
-         * counted against your sending quota - the maximum number of emails you can send
-         * in a 24-hour period. For information about your sending quota, go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Composes an email message and immediately queues it for sending. In order to
+         * send email using the <code>SendEmail</code> operation, your message must meet
+         * the following requirements:</p> <ul> <li> <p>The message must be sent from a
+         * verified email address or domain. If you attempt to send email using a
+         * non-verified address or domain, the operation will result in an "Email address
+         * not verified" error. </p> </li> <li> <p>If your account is still in the Amazon
+         * SES sandbox, you may only send to verified addresses or domains, or to email
+         * addresses associated with the Amazon SES Mailbox Simulator. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+         * Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </li> <li> <p>The total size of the message, including attachments, must be
+         * smaller than 10 MB.</p> </li> <li> <p>The message must include at least one
+         * recipient email address. The recipient address can be a To: address, a CC:
+         * address, or a BCC: address. If a recipient email address is invalid (that is, it
+         * is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the
+         * entire message will be rejected, even if the message contains other recipients
+         * that are valid.</p> </li> <li> <p>The message may not include more than 50
+         * recipients, across the To:, CC: and BCC: fields. If you need to send an email
+         * message to a larger audience, you can divide your recipient list into groups of
+         * 50 or fewer, and then call the <code>SendEmail</code> operation several times to
+         * send the message to each group.</p> </li> </ul> <important> <p>For every message
+         * that you send, the total number of recipients (including each recipient in the
+         * To:, CC: and BCC: fields) is counted against the maximum number of emails you
+         * can send in a 24-hour period (your <i>sending quota</i>). For more information
+         * about sending quotas in Amazon SES, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+         * Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">AWS API
          * Reference</a></p>
          *
@@ -1888,112 +2046,128 @@ namespace Model
         virtual void SendEmailAsync(const Model::SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends an email message, with header and content specified by the client. The
-         * <code>SendRawEmail</code> action is useful for sending multipart MIME emails.
-         * The raw text of the message must comply with Internet email standards;
-         * otherwise, the message cannot be sent. </p> <p>There are several important
-         * points to know about <code>SendRawEmail</code>:</p> <ul> <li> <p>You can only
-         * send email from verified email addresses and domains; otherwise, you will get an
-         * "Email address not verified" error. If your account is still in the Amazon SES
-         * sandbox, you must also verify every recipient email address except for the
-         * recipients provided by the Amazon SES mailbox simulator. For more information,
-         * go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
-         * exceed 10 MB. This includes any attachments that are part of the message.</p>
-         * </li> <li> <p>You must provide at least one recipient email address. The
-         * recipient address can be a To: address, a CC: address, or a BCC: address. If any
-         * email address you provide is invalid, Amazon SES rejects the entire email.</p>
-         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
-         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
-         * 50. If you need to send an email message to a larger audience, you can divide
-         * your recipient list into groups of 50 or fewer, and then call Amazon SES
-         * repeatedly to send the message to each group.</p> </li> <li> <p>The To:, CC:,
-         * and BCC: headers in the raw message can contain a group list. Note that each
-         * recipient in a group list counts towards the 50-recipient limit.</p> </li> <li>
-         * <p>Amazon SES overrides any Message-ID and Date headers you provide.</p> </li>
-         * <li> <p>For every message that you send, the total number of recipients (To:,
-         * CC: and BCC:) is counted against your sending quota - the maximum number of
-         * emails you can send in a 24-hour period. For information about your sending
-         * quota, go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</p> </li> <li> <p>If you are using sending
-         * authorization to send on behalf of another user, <code>SendRawEmail</code>
-         * enables you to specify the cross-account identity for the email's "Source,"
-         * "From," and "Return-Path" parameters in one of two ways: you can pass optional
-         * parameters <code>SourceArn</code>, <code>FromArn</code>, and/or
-         * <code>ReturnPathArn</code> to the API, or you can include the following
-         * X-headers in the header of your raw email:</p> <ul> <li> <p>
-         * <code>X-SES-SOURCE-ARN</code> </p> </li> <li> <p> <code>X-SES-FROM-ARN</code>
-         * </p> </li> <li> <p> <code>X-SES-RETURN-PATH-ARN</code> </p> </li> </ul>
-         * <important> <p>Do not include these X-headers in the DKIM signature, because
-         * they are removed by Amazon SES before sending the email.</p> </important> <p>For
-         * the most common sending authorization use case, we recommend that you specify
-         * the <code>SourceIdentityArn</code> and do not specify either the
-         * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same
-         * note applies to the corresponding X-headers.) If you only specify the
-         * <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address
-         * and the "Return Path" address to the identity specified in
+         * <p>Composes an email message and immediately queues it for sending. When calling
+         * this operation, you may specify the message headers as well as the content. The
+         * <code>SendRawEmail</code> operation is particularly useful for sending multipart
+         * MIME emails (such as those that contain both a plain-text and an HTML version).
+         * </p> <p>In order to send email using the <code>SendRawEmail</code> operation,
+         * your message must meet the following requirements:</p> <ul> <li> <p>The message
+         * must be sent from a verified email address or domain. If you attempt to send
+         * email using a non-verified address or domain, the operation will result in an
+         * "Email address not verified" error. </p> </li> <li> <p>If your account is still
+         * in the Amazon SES sandbox, you may only send to verified addresses or domains,
+         * or to email addresses associated with the Amazon SES Mailbox Simulator. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+         * Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </li> <li> <p>The total size of the message, including attachments, must be
+         * smaller than 10 MB.</p> </li> <li> <p>The message must include at least one
+         * recipient email address. The recipient address can be a To: address, a CC:
+         * address, or a BCC: address. If a recipient email address is invalid (that is, it
+         * is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the
+         * entire message will be rejected, even if the message contains other recipients
+         * that are valid.</p> </li> <li> <p>The message may not include more than 50
+         * recipients, across the To:, CC: and BCC: fields. If you need to send an email
+         * message to a larger audience, you can divide your recipient list into groups of
+         * 50 or fewer, and then call the <code>SendRawEmail</code> operation several times
+         * to send the message to each group.</p> </li> </ul> <important> <p>For every
+         * message that you send, the total number of recipients (including each recipient
+         * in the To:, CC: and BCC: fields) is counted against the maximum number of emails
+         * you can send in a 24-hour period (your <i>sending quota</i>). For more
+         * information about sending quotas in Amazon SES, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+         * Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </important> <p>Additionally, keep the following considerations in mind when
+         * using the <code>SendRawEmail</code> operation:</p> <ul> <li> <p>Although you can
+         * customize the message headers when using the <code>SendRawEmail</code>
+         * operation, Amazon SES will automatically apply its own <code>Message-ID</code>
+         * and <code>Date</code> headers; if you passed these headers when creating the
+         * message, they will be overwritten by the values that Amazon SES provides.</p>
+         * </li> <li> <p>If you are using sending authorization to send on behalf of
+         * another user, <code>SendRawEmail</code> enables you to specify the cross-account
+         * identity for the email's Source, From, and Return-Path parameters in one of two
+         * ways: you can pass optional parameters <code>SourceArn</code>,
+         * <code>FromArn</code>, and/or <code>ReturnPathArn</code> to the API, or you can
+         * include the following X-headers in the header of your raw email:</p> <ul> <li>
+         * <p> <code>X-SES-SOURCE-ARN</code> </p> </li> <li> <p>
+         * <code>X-SES-FROM-ARN</code> </p> </li> <li> <p>
+         * <code>X-SES-RETURN-PATH-ARN</code> </p> </li> </ul> <important> <p>Do not
+         * include these X-headers in the DKIM signature; Amazon SES will remove them
+         * before sending the email.</p> </important> <p>For most common sending
+         * authorization scenarios, we recommend that you specify the
+         * <code>SourceIdentityArn</code> parameter and not the
+         * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code> parameters.
+         * If you only specify the <code>SourceIdentityArn</code> parameter, Amazon SES
+         * will set the From and Return Path addresses to the identity specified in
          * <code>SourceIdentityArn</code>. For more information about sending
          * authorization, see the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using
+         * Sending Authorization with Amazon SES</a> in the <i>Amazon SES Developer
+         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">AWS
          * API Reference</a></p>
          */
         virtual Model::SendRawEmailOutcome SendRawEmail(const Model::SendRawEmailRequest& request) const;
 
         /**
-         * <p>Sends an email message, with header and content specified by the client. The
-         * <code>SendRawEmail</code> action is useful for sending multipart MIME emails.
-         * The raw text of the message must comply with Internet email standards;
-         * otherwise, the message cannot be sent. </p> <p>There are several important
-         * points to know about <code>SendRawEmail</code>:</p> <ul> <li> <p>You can only
-         * send email from verified email addresses and domains; otherwise, you will get an
-         * "Email address not verified" error. If your account is still in the Amazon SES
-         * sandbox, you must also verify every recipient email address except for the
-         * recipients provided by the Amazon SES mailbox simulator. For more information,
-         * go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
-         * exceed 10 MB. This includes any attachments that are part of the message.</p>
-         * </li> <li> <p>You must provide at least one recipient email address. The
-         * recipient address can be a To: address, a CC: address, or a BCC: address. If any
-         * email address you provide is invalid, Amazon SES rejects the entire email.</p>
-         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
-         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
-         * 50. If you need to send an email message to a larger audience, you can divide
-         * your recipient list into groups of 50 or fewer, and then call Amazon SES
-         * repeatedly to send the message to each group.</p> </li> <li> <p>The To:, CC:,
-         * and BCC: headers in the raw message can contain a group list. Note that each
-         * recipient in a group list counts towards the 50-recipient limit.</p> </li> <li>
-         * <p>Amazon SES overrides any Message-ID and Date headers you provide.</p> </li>
-         * <li> <p>For every message that you send, the total number of recipients (To:,
-         * CC: and BCC:) is counted against your sending quota - the maximum number of
-         * emails you can send in a 24-hour period. For information about your sending
-         * quota, go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</p> </li> <li> <p>If you are using sending
-         * authorization to send on behalf of another user, <code>SendRawEmail</code>
-         * enables you to specify the cross-account identity for the email's "Source,"
-         * "From," and "Return-Path" parameters in one of two ways: you can pass optional
-         * parameters <code>SourceArn</code>, <code>FromArn</code>, and/or
-         * <code>ReturnPathArn</code> to the API, or you can include the following
-         * X-headers in the header of your raw email:</p> <ul> <li> <p>
-         * <code>X-SES-SOURCE-ARN</code> </p> </li> <li> <p> <code>X-SES-FROM-ARN</code>
-         * </p> </li> <li> <p> <code>X-SES-RETURN-PATH-ARN</code> </p> </li> </ul>
-         * <important> <p>Do not include these X-headers in the DKIM signature, because
-         * they are removed by Amazon SES before sending the email.</p> </important> <p>For
-         * the most common sending authorization use case, we recommend that you specify
-         * the <code>SourceIdentityArn</code> and do not specify either the
-         * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same
-         * note applies to the corresponding X-headers.) If you only specify the
-         * <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address
-         * and the "Return Path" address to the identity specified in
+         * <p>Composes an email message and immediately queues it for sending. When calling
+         * this operation, you may specify the message headers as well as the content. The
+         * <code>SendRawEmail</code> operation is particularly useful for sending multipart
+         * MIME emails (such as those that contain both a plain-text and an HTML version).
+         * </p> <p>In order to send email using the <code>SendRawEmail</code> operation,
+         * your message must meet the following requirements:</p> <ul> <li> <p>The message
+         * must be sent from a verified email address or domain. If you attempt to send
+         * email using a non-verified address or domain, the operation will result in an
+         * "Email address not verified" error. </p> </li> <li> <p>If your account is still
+         * in the Amazon SES sandbox, you may only send to verified addresses or domains,
+         * or to email addresses associated with the Amazon SES Mailbox Simulator. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+         * Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </li> <li> <p>The total size of the message, including attachments, must be
+         * smaller than 10 MB.</p> </li> <li> <p>The message must include at least one
+         * recipient email address. The recipient address can be a To: address, a CC:
+         * address, or a BCC: address. If a recipient email address is invalid (that is, it
+         * is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the
+         * entire message will be rejected, even if the message contains other recipients
+         * that are valid.</p> </li> <li> <p>The message may not include more than 50
+         * recipients, across the To:, CC: and BCC: fields. If you need to send an email
+         * message to a larger audience, you can divide your recipient list into groups of
+         * 50 or fewer, and then call the <code>SendRawEmail</code> operation several times
+         * to send the message to each group.</p> </li> </ul> <important> <p>For every
+         * message that you send, the total number of recipients (including each recipient
+         * in the To:, CC: and BCC: fields) is counted against the maximum number of emails
+         * you can send in a 24-hour period (your <i>sending quota</i>). For more
+         * information about sending quotas in Amazon SES, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+         * Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </important> <p>Additionally, keep the following considerations in mind when
+         * using the <code>SendRawEmail</code> operation:</p> <ul> <li> <p>Although you can
+         * customize the message headers when using the <code>SendRawEmail</code>
+         * operation, Amazon SES will automatically apply its own <code>Message-ID</code>
+         * and <code>Date</code> headers; if you passed these headers when creating the
+         * message, they will be overwritten by the values that Amazon SES provides.</p>
+         * </li> <li> <p>If you are using sending authorization to send on behalf of
+         * another user, <code>SendRawEmail</code> enables you to specify the cross-account
+         * identity for the email's Source, From, and Return-Path parameters in one of two
+         * ways: you can pass optional parameters <code>SourceArn</code>,
+         * <code>FromArn</code>, and/or <code>ReturnPathArn</code> to the API, or you can
+         * include the following X-headers in the header of your raw email:</p> <ul> <li>
+         * <p> <code>X-SES-SOURCE-ARN</code> </p> </li> <li> <p>
+         * <code>X-SES-FROM-ARN</code> </p> </li> <li> <p>
+         * <code>X-SES-RETURN-PATH-ARN</code> </p> </li> </ul> <important> <p>Do not
+         * include these X-headers in the DKIM signature; Amazon SES will remove them
+         * before sending the email.</p> </important> <p>For most common sending
+         * authorization scenarios, we recommend that you specify the
+         * <code>SourceIdentityArn</code> parameter and not the
+         * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code> parameters.
+         * If you only specify the <code>SourceIdentityArn</code> parameter, Amazon SES
+         * will set the From and Return Path addresses to the identity specified in
          * <code>SourceIdentityArn</code>. For more information about sending
          * authorization, see the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using
+         * Sending Authorization with Amazon SES</a> in the <i>Amazon SES Developer
+         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">AWS
          * API Reference</a></p>
          *
@@ -2002,56 +2176,64 @@ namespace Model
         virtual Model::SendRawEmailOutcomeCallable SendRawEmailCallable(const Model::SendRawEmailRequest& request) const;
 
         /**
-         * <p>Sends an email message, with header and content specified by the client. The
-         * <code>SendRawEmail</code> action is useful for sending multipart MIME emails.
-         * The raw text of the message must comply with Internet email standards;
-         * otherwise, the message cannot be sent. </p> <p>There are several important
-         * points to know about <code>SendRawEmail</code>:</p> <ul> <li> <p>You can only
-         * send email from verified email addresses and domains; otherwise, you will get an
-         * "Email address not verified" error. If your account is still in the Amazon SES
-         * sandbox, you must also verify every recipient email address except for the
-         * recipients provided by the Amazon SES mailbox simulator. For more information,
-         * go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
-         * exceed 10 MB. This includes any attachments that are part of the message.</p>
-         * </li> <li> <p>You must provide at least one recipient email address. The
-         * recipient address can be a To: address, a CC: address, or a BCC: address. If any
-         * email address you provide is invalid, Amazon SES rejects the entire email.</p>
-         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
-         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
-         * 50. If you need to send an email message to a larger audience, you can divide
-         * your recipient list into groups of 50 or fewer, and then call Amazon SES
-         * repeatedly to send the message to each group.</p> </li> <li> <p>The To:, CC:,
-         * and BCC: headers in the raw message can contain a group list. Note that each
-         * recipient in a group list counts towards the 50-recipient limit.</p> </li> <li>
-         * <p>Amazon SES overrides any Message-ID and Date headers you provide.</p> </li>
-         * <li> <p>For every message that you send, the total number of recipients (To:,
-         * CC: and BCC:) is counted against your sending quota - the maximum number of
-         * emails you can send in a 24-hour period. For information about your sending
-         * quota, go to the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</p> </li> <li> <p>If you are using sending
-         * authorization to send on behalf of another user, <code>SendRawEmail</code>
-         * enables you to specify the cross-account identity for the email's "Source,"
-         * "From," and "Return-Path" parameters in one of two ways: you can pass optional
-         * parameters <code>SourceArn</code>, <code>FromArn</code>, and/or
-         * <code>ReturnPathArn</code> to the API, or you can include the following
-         * X-headers in the header of your raw email:</p> <ul> <li> <p>
-         * <code>X-SES-SOURCE-ARN</code> </p> </li> <li> <p> <code>X-SES-FROM-ARN</code>
-         * </p> </li> <li> <p> <code>X-SES-RETURN-PATH-ARN</code> </p> </li> </ul>
-         * <important> <p>Do not include these X-headers in the DKIM signature, because
-         * they are removed by Amazon SES before sending the email.</p> </important> <p>For
-         * the most common sending authorization use case, we recommend that you specify
-         * the <code>SourceIdentityArn</code> and do not specify either the
-         * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same
-         * note applies to the corresponding X-headers.) If you only specify the
-         * <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address
-         * and the "Return Path" address to the identity specified in
+         * <p>Composes an email message and immediately queues it for sending. When calling
+         * this operation, you may specify the message headers as well as the content. The
+         * <code>SendRawEmail</code> operation is particularly useful for sending multipart
+         * MIME emails (such as those that contain both a plain-text and an HTML version).
+         * </p> <p>In order to send email using the <code>SendRawEmail</code> operation,
+         * your message must meet the following requirements:</p> <ul> <li> <p>The message
+         * must be sent from a verified email address or domain. If you attempt to send
+         * email using a non-verified address or domain, the operation will result in an
+         * "Email address not verified" error. </p> </li> <li> <p>If your account is still
+         * in the Amazon SES sandbox, you may only send to verified addresses or domains,
+         * or to email addresses associated with the Amazon SES Mailbox Simulator. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+         * Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </li> <li> <p>The total size of the message, including attachments, must be
+         * smaller than 10 MB.</p> </li> <li> <p>The message must include at least one
+         * recipient email address. The recipient address can be a To: address, a CC:
+         * address, or a BCC: address. If a recipient email address is invalid (that is, it
+         * is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the
+         * entire message will be rejected, even if the message contains other recipients
+         * that are valid.</p> </li> <li> <p>The message may not include more than 50
+         * recipients, across the To:, CC: and BCC: fields. If you need to send an email
+         * message to a larger audience, you can divide your recipient list into groups of
+         * 50 or fewer, and then call the <code>SendRawEmail</code> operation several times
+         * to send the message to each group.</p> </li> </ul> <important> <p>For every
+         * message that you send, the total number of recipients (including each recipient
+         * in the To:, CC: and BCC: fields) is counted against the maximum number of emails
+         * you can send in a 24-hour period (your <i>sending quota</i>). For more
+         * information about sending quotas in Amazon SES, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing
+         * Your Amazon SES Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * </important> <p>Additionally, keep the following considerations in mind when
+         * using the <code>SendRawEmail</code> operation:</p> <ul> <li> <p>Although you can
+         * customize the message headers when using the <code>SendRawEmail</code>
+         * operation, Amazon SES will automatically apply its own <code>Message-ID</code>
+         * and <code>Date</code> headers; if you passed these headers when creating the
+         * message, they will be overwritten by the values that Amazon SES provides.</p>
+         * </li> <li> <p>If you are using sending authorization to send on behalf of
+         * another user, <code>SendRawEmail</code> enables you to specify the cross-account
+         * identity for the email's Source, From, and Return-Path parameters in one of two
+         * ways: you can pass optional parameters <code>SourceArn</code>,
+         * <code>FromArn</code>, and/or <code>ReturnPathArn</code> to the API, or you can
+         * include the following X-headers in the header of your raw email:</p> <ul> <li>
+         * <p> <code>X-SES-SOURCE-ARN</code> </p> </li> <li> <p>
+         * <code>X-SES-FROM-ARN</code> </p> </li> <li> <p>
+         * <code>X-SES-RETURN-PATH-ARN</code> </p> </li> </ul> <important> <p>Do not
+         * include these X-headers in the DKIM signature; Amazon SES will remove them
+         * before sending the email.</p> </important> <p>For most common sending
+         * authorization scenarios, we recommend that you specify the
+         * <code>SourceIdentityArn</code> parameter and not the
+         * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code> parameters.
+         * If you only specify the <code>SourceIdentityArn</code> parameter, Amazon SES
+         * will set the From and Return Path addresses to the identity specified in
          * <code>SourceIdentityArn</code>. For more information about sending
          * authorization, see the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using
+         * Sending Authorization with Amazon SES</a> in the <i>Amazon SES Developer
+         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">AWS
          * API Reference</a></p>
          *
@@ -2063,10 +2245,10 @@ namespace Model
          * <p>Sets the specified receipt rule set as the active receipt rule set.</p>
          * <note> <p>To disable your email-receiving through Amazon SES completely, you can
          * call this API with RuleSetName set to null.</p> </note> <p>For information about
-         * managing receipt rule sets, see the <a
+         * managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">AWS
          * API Reference</a></p>
          */
@@ -2076,10 +2258,10 @@ namespace Model
          * <p>Sets the specified receipt rule set as the active receipt rule set.</p>
          * <note> <p>To disable your email-receiving through Amazon SES completely, you can
          * call this API with RuleSetName set to null.</p> </note> <p>For information about
-         * managing receipt rule sets, see the <a
+         * managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -2091,10 +2273,10 @@ namespace Model
          * <p>Sets the specified receipt rule set as the active receipt rule set.</p>
          * <note> <p>To disable your email-receiving through Amazon SES completely, you can
          * call this API with RuleSetName set to null.</p> </note> <p>For information about
-         * managing receipt rule sets, see the <a
+         * managing receipt rule sets, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">AWS
          * API Reference</a></p>
          *
@@ -2104,19 +2286,19 @@ namespace Model
 
         /**
          * <p>Enables or disables Easy DKIM signing of email sent from an identity:</p>
-         * <ul> <li> <p>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+         * <ul> <li> <p>If Easy DKIM signing is enabled for a domain name identity (such as
          * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by
-         * addresses under that domain name (e.g., <code>user@example.com</code>).</p>
-         * </li> <li> <p>If Easy DKIM signing is enabled for an email address, then Amazon
-         * SES will DKIM-sign all email sent by that email address.</p> </li> </ul> <p>For
-         * email addresses (e.g., <code>user@example.com</code>), you can only enable Easy
-         * DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has
-         * been set up for Easy DKIM using the AWS Console or the
-         * <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one
-         * request per second.</p> <p>For more information about Easy DKIM signing, go to
-         * the <a
+         * addresses under that domain name (for example,
+         * <code>user@example.com</code>).</p> </li> <li> <p>If Easy DKIM signing is
+         * enabled for an email address, then Amazon SES will DKIM-sign all email sent by
+         * that email address.</p> </li> </ul> <p>For email addresses (for example,
+         * <code>user@example.com</code>), you can only enable Easy DKIM signing if the
+         * corresponding domain (in this case, <code>example.com</code>) has been set up
+         * for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code>
+         * operation.</p> <p>You can execute this operation no more than once per
+         * second.</p> <p>For more information about Easy DKIM signing, go to the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">AWS
          * API Reference</a></p>
          */
@@ -2124,19 +2306,19 @@ namespace Model
 
         /**
          * <p>Enables or disables Easy DKIM signing of email sent from an identity:</p>
-         * <ul> <li> <p>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+         * <ul> <li> <p>If Easy DKIM signing is enabled for a domain name identity (such as
          * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by
-         * addresses under that domain name (e.g., <code>user@example.com</code>).</p>
-         * </li> <li> <p>If Easy DKIM signing is enabled for an email address, then Amazon
-         * SES will DKIM-sign all email sent by that email address.</p> </li> </ul> <p>For
-         * email addresses (e.g., <code>user@example.com</code>), you can only enable Easy
-         * DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has
-         * been set up for Easy DKIM using the AWS Console or the
-         * <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one
-         * request per second.</p> <p>For more information about Easy DKIM signing, go to
-         * the <a
+         * addresses under that domain name (for example,
+         * <code>user@example.com</code>).</p> </li> <li> <p>If Easy DKIM signing is
+         * enabled for an email address, then Amazon SES will DKIM-sign all email sent by
+         * that email address.</p> </li> </ul> <p>For email addresses (for example,
+         * <code>user@example.com</code>), you can only enable Easy DKIM signing if the
+         * corresponding domain (in this case, <code>example.com</code>) has been set up
+         * for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code>
+         * operation.</p> <p>You can execute this operation no more than once per
+         * second.</p> <p>For more information about Easy DKIM signing, go to the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">AWS
          * API Reference</a></p>
          *
@@ -2146,19 +2328,19 @@ namespace Model
 
         /**
          * <p>Enables or disables Easy DKIM signing of email sent from an identity:</p>
-         * <ul> <li> <p>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+         * <ul> <li> <p>If Easy DKIM signing is enabled for a domain name identity (such as
          * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by
-         * addresses under that domain name (e.g., <code>user@example.com</code>).</p>
-         * </li> <li> <p>If Easy DKIM signing is enabled for an email address, then Amazon
-         * SES will DKIM-sign all email sent by that email address.</p> </li> </ul> <p>For
-         * email addresses (e.g., <code>user@example.com</code>), you can only enable Easy
-         * DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has
-         * been set up for Easy DKIM using the AWS Console or the
-         * <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one
-         * request per second.</p> <p>For more information about Easy DKIM signing, go to
-         * the <a
+         * addresses under that domain name (for example,
+         * <code>user@example.com</code>).</p> </li> <li> <p>If Easy DKIM signing is
+         * enabled for an email address, then Amazon SES will DKIM-sign all email sent by
+         * that email address.</p> </li> </ul> <p>For email addresses (for example,
+         * <code>user@example.com</code>), you can only enable Easy DKIM signing if the
+         * corresponding domain (in this case, <code>example.com</code>) has been set up
+         * for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code>
+         * operation.</p> <p>You can execute this operation no more than once per
+         * second.</p> <p>For more information about Easy DKIM signing, go to the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">AWS
          * API Reference</a></p>
          *
@@ -2172,11 +2354,11 @@ namespace Model
          * forwarding can only be disabled when Amazon Simple Notification Service (Amazon
          * SNS) topics are specified for both bounces and complaints.</p> <note>
          * <p>Feedback forwarding does not apply to delivery notifications. Delivery
-         * notifications are only available through Amazon SNS.</p> </note> <p>This action
-         * is throttled at one request per second.</p> <p>For more information about using
-         * notifications with Amazon SES, see the <a
+         * notifications are only available through Amazon SNS.</p> </note> <p>You can
+         * execute this operation no more than once per second.</p> <p>For more information
+         * about using notifications with Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">AWS
          * API Reference</a></p>
          */
@@ -2188,11 +2370,11 @@ namespace Model
          * forwarding can only be disabled when Amazon Simple Notification Service (Amazon
          * SNS) topics are specified for both bounces and complaints.</p> <note>
          * <p>Feedback forwarding does not apply to delivery notifications. Delivery
-         * notifications are only available through Amazon SNS.</p> </note> <p>This action
-         * is throttled at one request per second.</p> <p>For more information about using
-         * notifications with Amazon SES, see the <a
+         * notifications are only available through Amazon SNS.</p> </note> <p>You can
+         * execute this operation no more than once per second.</p> <p>For more information
+         * about using notifications with Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">AWS
          * API Reference</a></p>
          *
@@ -2206,11 +2388,11 @@ namespace Model
          * forwarding can only be disabled when Amazon Simple Notification Service (Amazon
          * SNS) topics are specified for both bounces and complaints.</p> <note>
          * <p>Feedback forwarding does not apply to delivery notifications. Delivery
-         * notifications are only available through Amazon SNS.</p> </note> <p>This action
-         * is throttled at one request per second.</p> <p>For more information about using
-         * notifications with Amazon SES, see the <a
+         * notifications are only available through Amazon SNS.</p> </note> <p>You can
+         * execute this operation no more than once per second.</p> <p>For more information
+         * about using notifications with Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">AWS
          * API Reference</a></p>
          *
@@ -2221,11 +2403,11 @@ namespace Model
         /**
          * <p>Given an identity (an email address or a domain), sets whether Amazon SES
          * includes the original email headers in the Amazon Simple Notification Service
-         * (Amazon SNS) notifications of a specified type.</p> <p>This action is throttled
-         * at one request per second.</p> <p>For more information about using notifications
-         * with Amazon SES, see the <a
+         * (Amazon SNS) notifications of a specified type.</p> <p>You can execute this
+         * operation no more than once per second.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">AWS
          * API Reference</a></p>
          */
@@ -2234,11 +2416,11 @@ namespace Model
         /**
          * <p>Given an identity (an email address or a domain), sets whether Amazon SES
          * includes the original email headers in the Amazon Simple Notification Service
-         * (Amazon SNS) notifications of a specified type.</p> <p>This action is throttled
-         * at one request per second.</p> <p>For more information about using notifications
-         * with Amazon SES, see the <a
+         * (Amazon SNS) notifications of a specified type.</p> <p>You can execute this
+         * operation no more than once per second.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">AWS
          * API Reference</a></p>
          *
@@ -2249,11 +2431,11 @@ namespace Model
         /**
          * <p>Given an identity (an email address or a domain), sets whether Amazon SES
          * includes the original email headers in the Amazon Simple Notification Service
-         * (Amazon SNS) notifications of a specified type.</p> <p>This action is throttled
-         * at one request per second.</p> <p>For more information about using notifications
-         * with Amazon SES, see the <a
+         * (Amazon SNS) notifications of a specified type.</p> <p>You can execute this
+         * operation no more than once per second.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">AWS
          * API Reference</a></p>
          *
@@ -2267,10 +2449,10 @@ namespace Model
          * specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's
          * DNS settings. If you want your emails to pass Sender Policy Framework (SPF)
          * checks, you must also add or update an SPF record. For more information, see the
-         * <a
+         * <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
-         * SES Developer Guide</a>.</p> </important> <p>This action is throttled at one
-         * request per second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> </important> <p>You can execute this operation
+         * no more than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">AWS
          * API Reference</a></p>
          */
@@ -2282,10 +2464,10 @@ namespace Model
          * specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's
          * DNS settings. If you want your emails to pass Sender Policy Framework (SPF)
          * checks, you must also add or update an SPF record. For more information, see the
-         * <a
+         * <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
-         * SES Developer Guide</a>.</p> </important> <p>This action is throttled at one
-         * request per second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> </important> <p>You can execute this operation
+         * no more than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">AWS
          * API Reference</a></p>
          *
@@ -2299,10 +2481,10 @@ namespace Model
          * specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's
          * DNS settings. If you want your emails to pass Sender Policy Framework (SPF)
          * checks, you must also add or update an SPF record. For more information, see the
-         * <a
+         * <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
-         * SES Developer Guide</a>.</p> </important> <p>This action is throttled at one
-         * request per second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> </important> <p>You can execute this operation
+         * no more than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">AWS
          * API Reference</a></p>
          *
@@ -2317,10 +2499,10 @@ namespace Model
          * the <code>Source</code>.</p> <note> <p>Unless feedback forwarding is enabled,
          * you must specify Amazon SNS topics for bounce and complaint notifications. For
          * more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.</p>
-         * </note> <p>This action is throttled at one request per second.</p> <p>For more
-         * information about feedback notification, see the <a
+         * </note> <p>You can execute this operation no more than once per second.</p>
+         * <p>For more information about feedback notification, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">AWS
          * API Reference</a></p>
          */
@@ -2333,10 +2515,10 @@ namespace Model
          * the <code>Source</code>.</p> <note> <p>Unless feedback forwarding is enabled,
          * you must specify Amazon SNS topics for bounce and complaint notifications. For
          * more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.</p>
-         * </note> <p>This action is throttled at one request per second.</p> <p>For more
-         * information about feedback notification, see the <a
+         * </note> <p>You can execute this operation no more than once per second.</p>
+         * <p>For more information about feedback notification, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">AWS
          * API Reference</a></p>
          *
@@ -2351,10 +2533,10 @@ namespace Model
          * the <code>Source</code>.</p> <note> <p>Unless feedback forwarding is enabled,
          * you must specify Amazon SNS topics for bounce and complaint notifications. For
          * more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.</p>
-         * </note> <p>This action is throttled at one request per second.</p> <p>For more
-         * information about feedback notification, see the <a
+         * </note> <p>You can execute this operation no more than once per second.</p>
+         * <p>For more information about feedback notification, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">AWS
          * API Reference</a></p>
          *
@@ -2364,10 +2546,10 @@ namespace Model
 
         /**
          * <p>Sets the position of the specified receipt rule in the receipt rule set.</p>
-         * <p>For information about managing receipt rules, see the <a
+         * <p>For information about managing receipt rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">AWS
          * API Reference</a></p>
          */
@@ -2375,10 +2557,10 @@ namespace Model
 
         /**
          * <p>Sets the position of the specified receipt rule in the receipt rule set.</p>
-         * <p>For information about managing receipt rules, see the <a
+         * <p>For information about managing receipt rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">AWS
          * API Reference</a></p>
          *
@@ -2388,10 +2570,10 @@ namespace Model
 
         /**
          * <p>Sets the position of the specified receipt rule in the receipt rule set.</p>
-         * <p>For information about managing receipt rules, see the <a
+         * <p>For information about managing receipt rules, see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">AWS
          * API Reference</a></p>
          *
@@ -2400,34 +2582,36 @@ namespace Model
         virtual void SetReceiptRulePositionAsync(const Model::SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the event destination of a configuration set.</p> <note> <p>When you
-         * create or update an event destination, you must provide one, and only one,
-         * destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose,
-         * or Amazon Simple Notification Service (Amazon SNS).</p> </note> <p>Event
-         * destinations are associated with configuration sets, which enable you to publish
-         * email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon
-         * Simple Notification Service (Amazon SNS). For information about using
-         * configuration sets, see the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the event destination of a configuration set. Event destinations are
+         * associated with configuration sets, which enable you to publish email sending
+         * events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
+         * Notification Service (Amazon SNS). For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+         * Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer
+         * Guide</i>.</p> <note> <p>When you create or update an event destination, you
+         * must provide one, and only one, destination. The destination can be Amazon
+         * CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service
+         * (Amazon SNS).</p> </note> <p>You can execute this operation no more than once
+         * per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateConfigurationSetEventDestinationOutcome UpdateConfigurationSetEventDestination(const Model::UpdateConfigurationSetEventDestinationRequest& request) const;
 
         /**
-         * <p>Updates the event destination of a configuration set.</p> <note> <p>When you
-         * create or update an event destination, you must provide one, and only one,
-         * destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose,
-         * or Amazon Simple Notification Service (Amazon SNS).</p> </note> <p>Event
-         * destinations are associated with configuration sets, which enable you to publish
-         * email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon
-         * Simple Notification Service (Amazon SNS). For information about using
-         * configuration sets, see the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the event destination of a configuration set. Event destinations are
+         * associated with configuration sets, which enable you to publish email sending
+         * events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
+         * Notification Service (Amazon SNS). For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+         * Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer
+         * Guide</i>.</p> <note> <p>When you create or update an event destination, you
+         * must provide one, and only one, destination. The destination can be Amazon
+         * CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service
+         * (Amazon SNS).</p> </note> <p>You can execute this operation no more than once
+         * per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">AWS
          * API Reference</a></p>
          *
@@ -2436,17 +2620,18 @@ namespace Model
         virtual Model::UpdateConfigurationSetEventDestinationOutcomeCallable UpdateConfigurationSetEventDestinationCallable(const Model::UpdateConfigurationSetEventDestinationRequest& request) const;
 
         /**
-         * <p>Updates the event destination of a configuration set.</p> <note> <p>When you
-         * create or update an event destination, you must provide one, and only one,
-         * destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose,
-         * or Amazon Simple Notification Service (Amazon SNS).</p> </note> <p>Event
-         * destinations are associated with configuration sets, which enable you to publish
-         * email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon
-         * Simple Notification Service (Amazon SNS). For information about using
-         * configuration sets, see the <a
-         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the event destination of a configuration set. Event destinations are
+         * associated with configuration sets, which enable you to publish email sending
+         * events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
+         * Notification Service (Amazon SNS). For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+         * Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer
+         * Guide</i>.</p> <note> <p>When you create or update an event destination, you
+         * must provide one, and only one, destination. The destination can be Amazon
+         * CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service
+         * (Amazon SNS).</p> </note> <p>You can execute this operation no more than once
+         * per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">AWS
          * API Reference</a></p>
          *
@@ -2455,11 +2640,63 @@ namespace Model
         virtual void UpdateConfigurationSetEventDestinationAsync(const Model::UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies an association between a configuration set and a custom domain for
+         * open and click event tracking. </p> <p>By default, images and links used for
+         * tracking open and click events are hosted on domains operated by Amazon SES. You
+         * can configure a subdomain of your own to handle these events by redirecting them
+         * to the Amazon SES-operated domain. For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+         * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetTrackingOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConfigurationSetTrackingOptionsOutcome UpdateConfigurationSetTrackingOptions(const Model::UpdateConfigurationSetTrackingOptionsRequest& request) const;
+
+        /**
+         * <p>Modifies an association between a configuration set and a custom domain for
+         * open and click event tracking. </p> <p>By default, images and links used for
+         * tracking open and click events are hosted on domains operated by Amazon SES. You
+         * can configure a subdomain of your own to handle these events by redirecting them
+         * to the Amazon SES-operated domain. For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+         * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetTrackingOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateConfigurationSetTrackingOptionsOutcomeCallable UpdateConfigurationSetTrackingOptionsCallable(const Model::UpdateConfigurationSetTrackingOptionsRequest& request) const;
+
+        /**
+         * <p>Modifies an association between a configuration set and a custom domain for
+         * open and click event tracking. </p> <p>By default, images and links used for
+         * tracking open and click events are hosted on domains operated by Amazon SES. You
+         * can configure a subdomain of your own to handle these events by redirecting them
+         * to the Amazon SES-operated domain. For information about using configuration
+         * sets, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+         * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetTrackingOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateConfigurationSetTrackingOptionsAsync(const Model::UpdateConfigurationSetTrackingOptionsRequest& request, const UpdateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a receipt rule.</p> <p>For information about managing receipt rules,
-         * see the <a
+         * see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">AWS
          * API Reference</a></p>
          */
@@ -2467,10 +2704,10 @@ namespace Model
 
         /**
          * <p>Updates a receipt rule.</p> <p>For information about managing receipt rules,
-         * see the <a
+         * see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">AWS
          * API Reference</a></p>
          *
@@ -2480,10 +2717,10 @@ namespace Model
 
         /**
          * <p>Updates a receipt rule.</p> <p>For information about managing receipt rules,
-         * see the <a
+         * see the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">AWS
          * API Reference</a></p>
          *
@@ -2498,12 +2735,12 @@ namespace Model
          * Amazon Web Services will eventually detect that you have updated your DNS
          * records; this detection process may take up to 72 hours. Upon successful
          * detection, Amazon SES will be able to DKIM-sign email originating from that
-         * domain.</p> <p>This action is throttled at one request per second.</p> <p>To
-         * enable or disable Easy DKIM signing for a domain, use the
-         * <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about
-         * creating DNS records using DKIM tokens, go to the <a
+         * domain.</p> <p>You can execute this operation no more than once per second.</p>
+         * <p>To enable or disable Easy DKIM signing for a domain, use the
+         * <code>SetIdentityDkimEnabled</code> operation.</p> <p>For more information about
+         * creating DNS records using DKIM tokens, go to the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">AWS
          * API Reference</a></p>
          */
@@ -2516,12 +2753,12 @@ namespace Model
          * Amazon Web Services will eventually detect that you have updated your DNS
          * records; this detection process may take up to 72 hours. Upon successful
          * detection, Amazon SES will be able to DKIM-sign email originating from that
-         * domain.</p> <p>This action is throttled at one request per second.</p> <p>To
-         * enable or disable Easy DKIM signing for a domain, use the
-         * <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about
-         * creating DNS records using DKIM tokens, go to the <a
+         * domain.</p> <p>You can execute this operation no more than once per second.</p>
+         * <p>To enable or disable Easy DKIM signing for a domain, use the
+         * <code>SetIdentityDkimEnabled</code> operation.</p> <p>For more information about
+         * creating DNS records using DKIM tokens, go to the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">AWS
          * API Reference</a></p>
          *
@@ -2536,12 +2773,12 @@ namespace Model
          * Amazon Web Services will eventually detect that you have updated your DNS
          * records; this detection process may take up to 72 hours. Upon successful
          * detection, Amazon SES will be able to DKIM-sign email originating from that
-         * domain.</p> <p>This action is throttled at one request per second.</p> <p>To
-         * enable or disable Easy DKIM signing for a domain, use the
-         * <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about
-         * creating DNS records using DKIM tokens, go to the <a
+         * domain.</p> <p>You can execute this operation no more than once per second.</p>
+         * <p>To enable or disable Easy DKIM signing for a domain, use the
+         * <code>SetIdentityDkimEnabled</code> operation.</p> <p>For more information about
+         * creating DNS records using DKIM tokens, go to the <i> <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">AWS
          * API Reference</a></p>
          *
@@ -2550,16 +2787,24 @@ namespace Model
         virtual void VerifyDomainDkimAsync(const Model::VerifyDomainDkimRequest& request, const VerifyDomainDkimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Verifies a domain.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a domain to the list of identities for your Amazon SES account and
+         * attempts to verify it. For more information about verifying domains, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+         * Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * <p>You can execute this operation no more than once per second.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">AWS
          * API Reference</a></p>
          */
         virtual Model::VerifyDomainIdentityOutcome VerifyDomainIdentity(const Model::VerifyDomainIdentityRequest& request) const;
 
         /**
-         * <p>Verifies a domain.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a domain to the list of identities for your Amazon SES account and
+         * attempts to verify it. For more information about verifying domains, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+         * Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * <p>You can execute this operation no more than once per second.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">AWS
          * API Reference</a></p>
          *
@@ -2568,8 +2813,12 @@ namespace Model
         virtual Model::VerifyDomainIdentityOutcomeCallable VerifyDomainIdentityCallable(const Model::VerifyDomainIdentityRequest& request) const;
 
         /**
-         * <p>Verifies a domain.</p> <p>This action is throttled at one request per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a domain to the list of identities for your Amazon SES account and
+         * attempts to verify it. For more information about verifying domains, see <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+         * Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.</p>
+         * <p>You can execute this operation no more than once per second.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">AWS
          * API Reference</a></p>
          *
@@ -2578,22 +2827,16 @@ namespace Model
         virtual void VerifyDomainIdentityAsync(const Model::VerifyDomainIdentityRequest& request, const VerifyDomainIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Verifies an email address. This action causes a confirmation email message to
-         * be sent to the specified address.</p> <important> <p>The VerifyEmailAddress
-         * action is deprecated as of the May 15, 2012 release of Domain Verification. The
-         * VerifyEmailIdentity action is now preferred.</p> </important> <p>This action is
-         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Deprecated. Use the <code>VerifyEmailIdentity</code> operation to verify a
+         * new email address.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">AWS
          * API Reference</a></p>
          */
         virtual Model::VerifyEmailAddressOutcome VerifyEmailAddress(const Model::VerifyEmailAddressRequest& request) const;
 
         /**
-         * <p>Verifies an email address. This action causes a confirmation email message to
-         * be sent to the specified address.</p> <important> <p>The VerifyEmailAddress
-         * action is deprecated as of the May 15, 2012 release of Domain Verification. The
-         * VerifyEmailIdentity action is now preferred.</p> </important> <p>This action is
-         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Deprecated. Use the <code>VerifyEmailIdentity</code> operation to verify a
+         * new email address.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">AWS
          * API Reference</a></p>
          *
@@ -2602,11 +2845,8 @@ namespace Model
         virtual Model::VerifyEmailAddressOutcomeCallable VerifyEmailAddressCallable(const Model::VerifyEmailAddressRequest& request) const;
 
         /**
-         * <p>Verifies an email address. This action causes a confirmation email message to
-         * be sent to the specified address.</p> <important> <p>The VerifyEmailAddress
-         * action is deprecated as of the May 15, 2012 release of Domain Verification. The
-         * VerifyEmailIdentity action is now preferred.</p> </important> <p>This action is
-         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Deprecated. Use the <code>VerifyEmailIdentity</code> operation to verify a
+         * new email address.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">AWS
          * API Reference</a></p>
          *
@@ -2615,18 +2855,20 @@ namespace Model
         virtual void VerifyEmailAddressAsync(const Model::VerifyEmailAddressRequest& request, const VerifyEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Verifies an email address. This action causes a confirmation email message to
-         * be sent to the specified address.</p> <p>This action is throttled at one request
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds an email address to the list of identities for your Amazon SES account
+         * and attempts to verify it. This operation causes a confirmation email message to
+         * be sent to the specified address.</p> <p>You can execute this operation no more
+         * than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">AWS
          * API Reference</a></p>
          */
         virtual Model::VerifyEmailIdentityOutcome VerifyEmailIdentity(const Model::VerifyEmailIdentityRequest& request) const;
 
         /**
-         * <p>Verifies an email address. This action causes a confirmation email message to
-         * be sent to the specified address.</p> <p>This action is throttled at one request
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds an email address to the list of identities for your Amazon SES account
+         * and attempts to verify it. This operation causes a confirmation email message to
+         * be sent to the specified address.</p> <p>You can execute this operation no more
+         * than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">AWS
          * API Reference</a></p>
          *
@@ -2635,9 +2877,10 @@ namespace Model
         virtual Model::VerifyEmailIdentityOutcomeCallable VerifyEmailIdentityCallable(const Model::VerifyEmailIdentityRequest& request) const;
 
         /**
-         * <p>Verifies an email address. This action causes a confirmation email message to
-         * be sent to the specified address.</p> <p>This action is throttled at one request
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds an email address to the list of identities for your Amazon SES account
+         * and attempts to verify it. This operation causes a confirmation email message to
+         * be sent to the specified address.</p> <p>You can execute this operation no more
+         * than once per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">AWS
          * API Reference</a></p>
          *
@@ -2653,11 +2896,13 @@ namespace Model
         void CloneReceiptRuleSetAsyncHelper(const Model::CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConfigurationSetAsyncHelper(const Model::CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConfigurationSetEventDestinationAsyncHelper(const Model::CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateConfigurationSetTrackingOptionsAsyncHelper(const Model::CreateConfigurationSetTrackingOptionsRequest& request, const CreateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReceiptFilterAsyncHelper(const Model::CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReceiptRuleAsyncHelper(const Model::CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReceiptRuleSetAsyncHelper(const Model::CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationSetAsyncHelper(const Model::DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationSetEventDestinationAsyncHelper(const Model::DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteConfigurationSetTrackingOptionsAsyncHelper(const Model::DeleteConfigurationSetTrackingOptionsRequest& request, const DeleteConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIdentityAsyncHelper(const Model::DeleteIdentityRequest& request, const DeleteIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIdentityPolicyAsyncHelper(const Model::DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReceiptFilterAsyncHelper(const Model::DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2694,6 +2939,7 @@ namespace Model
         void SetIdentityNotificationTopicAsyncHelper(const Model::SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetReceiptRulePositionAsyncHelper(const Model::SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConfigurationSetEventDestinationAsyncHelper(const Model::UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateConfigurationSetTrackingOptionsAsyncHelper(const Model::UpdateConfigurationSetTrackingOptionsRequest& request, const UpdateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateReceiptRuleAsyncHelper(const Model::UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifyDomainDkimAsyncHelper(const Model::VerifyDomainDkimRequest& request, const VerifyDomainDkimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifyDomainIdentityAsyncHelper(const Model::VerifyDomainIdentityRequest& request, const VerifyDomainIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

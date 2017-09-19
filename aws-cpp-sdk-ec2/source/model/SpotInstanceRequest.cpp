@@ -52,7 +52,9 @@ SpotInstanceRequest::SpotInstanceRequest() :
     m_type(SpotInstanceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_validFromHasBeenSet(false),
-    m_validUntilHasBeenSet(false)
+    m_validUntilHasBeenSet(false),
+    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
+    m_instanceInterruptionBehaviorHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ SpotInstanceRequest::SpotInstanceRequest(const XmlNode& xmlNode) :
     m_type(SpotInstanceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_validFromHasBeenSet(false),
-    m_validUntilHasBeenSet(false)
+    m_validUntilHasBeenSet(false),
+    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
+    m_instanceInterruptionBehaviorHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -203,6 +207,12 @@ SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
       m_validUntil = DateTime(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
     }
+    XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("instanceInterruptionBehavior");
+    if(!instanceInterruptionBehaviorNode.IsNull())
+    {
+      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(instanceInterruptionBehaviorNode.GetText().c_str()).c_str());
+      m_instanceInterruptionBehaviorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -312,6 +322,11 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_instanceInterruptionBehaviorHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+  }
+
 }
 
 void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -399,6 +414,10 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_validUntilHasBeenSet)
   {
       oStream << location << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_instanceInterruptionBehaviorHasBeenSet)
+  {
+      oStream << location << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
   }
 }
 

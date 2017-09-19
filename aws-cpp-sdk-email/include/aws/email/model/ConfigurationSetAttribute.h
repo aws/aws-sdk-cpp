@@ -26,7 +26,8 @@ namespace Model
   enum class ConfigurationSetAttribute
   {
     NOT_SET,
-    eventDestinations
+    eventDestinations,
+    trackingOptions
   };
 
 namespace ConfigurationSetAttributeMapper

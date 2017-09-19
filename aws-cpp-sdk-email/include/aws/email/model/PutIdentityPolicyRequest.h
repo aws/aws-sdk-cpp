@@ -47,7 +47,7 @@ namespace Model
   public:
 
     /**
-     * <p>The identity to which the policy will apply. You can specify an identity by
+     * <p>The identity that the policy will apply to. You can specify an identity by
      * using its name or by using its Amazon Resource Name (ARN). Examples:
      * <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
@@ -56,7 +56,7 @@ namespace Model
     inline const Aws::String& GetIdentity() const{ return m_identity; }
 
     /**
-     * <p>The identity to which the policy will apply. You can specify an identity by
+     * <p>The identity that the policy will apply to. You can specify an identity by
      * using its name or by using its Amazon Resource Name (ARN). Examples:
      * <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
@@ -65,7 +65,7 @@ namespace Model
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
-     * <p>The identity to which the policy will apply. You can specify an identity by
+     * <p>The identity that the policy will apply to. You can specify an identity by
      * using its name or by using its Amazon Resource Name (ARN). Examples:
      * <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
@@ -74,7 +74,7 @@ namespace Model
     inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
-     * <p>The identity to which the policy will apply. You can specify an identity by
+     * <p>The identity that the policy will apply to. You can specify an identity by
      * using its name or by using its Amazon Resource Name (ARN). Examples:
      * <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
@@ -83,7 +83,7 @@ namespace Model
     inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
 
     /**
-     * <p>The identity to which the policy will apply. You can specify an identity by
+     * <p>The identity that the policy will apply to. You can specify an identity by
      * using its name or by using its Amazon Resource Name (ARN). Examples:
      * <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
@@ -92,7 +92,7 @@ namespace Model
     inline PutIdentityPolicyRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
 
     /**
-     * <p>The identity to which the policy will apply. You can specify an identity by
+     * <p>The identity that the policy will apply to. You can specify an identity by
      * using its name or by using its Amazon Resource Name (ARN). Examples:
      * <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
@@ -101,7 +101,7 @@ namespace Model
     inline PutIdentityPolicyRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
 
     /**
-     * <p>The identity to which the policy will apply. You can specify an identity by
+     * <p>The identity that the policy will apply to. You can specify an identity by
      * using its name or by using its Amazon Resource Name (ARN). Examples:
      * <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
