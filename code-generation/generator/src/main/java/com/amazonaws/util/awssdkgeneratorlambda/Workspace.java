@@ -33,7 +33,7 @@ public class Workspace {
 
     public Workspace() throws InternalGenerationException {
         try {
-            workspaceDirectory = Files.createTempDirectory(Paths.get("/tmp"), "cpp-sdk-workspace-")
+            workspaceDirectory = Files.createTempDirectory("cpp-sdk-workspace-")
                     .toAbsolutePath().toFile();
         } catch (IOException e) {
             // Wrap it in an InternalGenerationException
