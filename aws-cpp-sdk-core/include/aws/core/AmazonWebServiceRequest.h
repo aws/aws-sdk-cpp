@@ -137,6 +137,8 @@ namespace Aws
          */
         inline virtual bool ShouldComputeContentMd5() const { return false; }
 
+        virtual const char* GetServiceRequestName() = 0;
+
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the 

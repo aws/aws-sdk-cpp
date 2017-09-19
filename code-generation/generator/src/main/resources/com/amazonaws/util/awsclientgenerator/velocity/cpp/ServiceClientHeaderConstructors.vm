@@ -28,3 +28,5 @@
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration()${signPayloads}${virtualAddressing});
 
         virtual ~${className}();
+
+        inline virtual const char* GetServiceClientName() override { return "${metadata.signingName}"; }

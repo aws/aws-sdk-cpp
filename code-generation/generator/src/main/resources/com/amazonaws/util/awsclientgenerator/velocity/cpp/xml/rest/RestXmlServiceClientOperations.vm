@@ -106,9 +106,9 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   ss << m_uri << "${operation.http.requestUri}";
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method});
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method}, "${operation.name}");
 #else
-  XmlOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method});
+  XmlOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method}, "${operation.name}");
 #end
   if(outcome.IsSuccess())
   {
