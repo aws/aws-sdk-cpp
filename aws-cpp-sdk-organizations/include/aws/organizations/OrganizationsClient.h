@@ -373,6 +373,8 @@ namespace Model
 
         virtual ~OrganizationsClient();
 
+        inline virtual const char* GetServiceClientName() override { return "organizations"; }
+
 
         /**
          * <p>Sends a response to the originator of a handshake agreeing to the action

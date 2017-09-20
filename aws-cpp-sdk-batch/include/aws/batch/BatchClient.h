@@ -197,6 +197,8 @@ namespace Model
 
         virtual ~BatchClient();
 
+        inline virtual const char* GetServiceClientName() override { return "batch"; }
+
 
         /**
          * <p>Cancels jobs in an AWS Batch job queue. Jobs that are in the

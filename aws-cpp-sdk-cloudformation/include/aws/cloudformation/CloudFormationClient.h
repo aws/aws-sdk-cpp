@@ -310,6 +310,8 @@ namespace Model
 
         virtual ~CloudFormationClient();
 
+        inline virtual const char* GetServiceClientName() override { return "cloudformation"; }
+
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.

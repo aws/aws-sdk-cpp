@@ -168,6 +168,8 @@ namespace Model
 
         virtual ~AthenaClient();
 
+        inline virtual const char* GetServiceClientName() override { return "athena"; }
+
 
         /**
          * <p>Returns the details of a single named query or a list of up to 50 queries,

@@ -186,6 +186,8 @@ namespace Model
 
         virtual ~CloudWatchEventsClient();
 
+        inline virtual const char* GetServiceClientName() override { return "events"; }
+
 
         /**
          * <p>Deletes the specified rule.</p> <p>You must remove all targets from a rule

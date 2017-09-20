@@ -231,6 +231,8 @@ namespace Model
 
         virtual ~EMRClient();
 
+        inline virtual const char* GetServiceClientName() override { return "elasticmapreduce"; }
+
 
         /**
          * <p>Adds an instance fleet to a running cluster.</p> <note> <p>The instance fleet

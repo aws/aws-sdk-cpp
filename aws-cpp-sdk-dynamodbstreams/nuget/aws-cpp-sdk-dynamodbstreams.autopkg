@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-DynamoDBStreams;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.1.20120810.57;
+        version : 1.1.20120810.58;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon DynamoDB Streams);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.1.57
+            AWSSDKCPP-Core/1.1.58
        }
     }
 

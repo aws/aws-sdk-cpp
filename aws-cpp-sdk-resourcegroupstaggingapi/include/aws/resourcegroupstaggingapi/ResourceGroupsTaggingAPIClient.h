@@ -160,6 +160,8 @@ namespace Model
 
         virtual ~ResourceGroupsTaggingAPIClient();
 
+        inline virtual const char* GetServiceClientName() override { return "tagging"; }
+
 
         /**
          * <p>Returns all the tagged resources that are associated with the specified tags

@@ -189,6 +189,8 @@ namespace Model
 
         virtual ~CloudTrailClient();
 
+        inline virtual const char* GetServiceClientName() override { return "cloudtrail"; }
+
 
         /**
          * <p>Adds one or more tags to a trail, up to a limit of 50. Tags must be unique

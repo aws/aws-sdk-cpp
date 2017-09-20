@@ -32,6 +32,13 @@ namespace Model
   {
   public:
     ModifyDBSnapshotRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() override { return "ModifyDBSnapshot"; }
+
     Aws::String SerializePayload() const override;
 
   protected:
@@ -110,6 +117,28 @@ namespace Model
      */
     inline ModifyDBSnapshotRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
+    
+    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+
+    
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
+
+    
+    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
+
+    
+    inline ModifyDBSnapshotRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
+
+    
+    inline ModifyDBSnapshotRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
+
+    
+    inline ModifyDBSnapshotRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+
   private:
 
     Aws::String m_dBSnapshotIdentifier;
@@ -117,6 +146,9 @@ namespace Model
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
+    Aws::String m_optionGroupName;
+    bool m_optionGroupNameHasBeenSet;
   };
 
 } // namespace Model

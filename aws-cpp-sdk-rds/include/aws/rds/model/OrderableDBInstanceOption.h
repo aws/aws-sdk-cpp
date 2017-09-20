@@ -386,6 +386,16 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithSupportsIAMDatabaseAuthentication(bool value) { SetSupportsIAMDatabaseAuthentication(value); return *this;}
 
+
+    
+    inline bool GetSupportsPerformanceInsights() const{ return m_supportsPerformanceInsights; }
+
+    
+    inline void SetSupportsPerformanceInsights(bool value) { m_supportsPerformanceInsightsHasBeenSet = true; m_supportsPerformanceInsights = value; }
+
+    
+    inline OrderableDBInstanceOption& WithSupportsPerformanceInsights(bool value) { SetSupportsPerformanceInsights(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -426,6 +436,9 @@ namespace Model
 
     bool m_supportsIAMDatabaseAuthentication;
     bool m_supportsIAMDatabaseAuthenticationHasBeenSet;
+
+    bool m_supportsPerformanceInsights;
+    bool m_supportsPerformanceInsightsHasBeenSet;
   };
 
 } // namespace Model

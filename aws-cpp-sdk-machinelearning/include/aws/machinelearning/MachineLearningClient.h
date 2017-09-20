@@ -242,6 +242,8 @@ namespace Model
 
         virtual ~MachineLearningClient();
 
+        inline virtual const char* GetServiceClientName() override { return "machinelearning"; }
+
 
         /**
          * <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of

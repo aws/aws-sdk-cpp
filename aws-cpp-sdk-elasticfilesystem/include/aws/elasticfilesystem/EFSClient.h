@@ -160,6 +160,8 @@ namespace Model
 
         virtual ~EFSClient();
 
+        inline virtual const char* GetServiceClientName() override { return "elasticfilesystem"; }
+
 
         /**
          * <p>Creates a new, empty file system. The operation requires a creation token in

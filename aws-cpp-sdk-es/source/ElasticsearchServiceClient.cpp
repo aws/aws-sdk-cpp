@@ -361,7 +361,7 @@ ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames() const
   Aws::StringStream ss;
   ss << m_uri << "/2015-01-01/domain";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
   if(outcome.IsSuccess())
   {
     return ListDomainNamesOutcome(ListDomainNamesResult(outcome.GetResult()));

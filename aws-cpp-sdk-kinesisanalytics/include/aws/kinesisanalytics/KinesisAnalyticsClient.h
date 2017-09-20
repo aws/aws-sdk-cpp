@@ -174,6 +174,8 @@ namespace Model
 
         virtual ~KinesisAnalyticsClient();
 
+        inline virtual const char* GetServiceClientName() override { return "kinesisanalytics"; }
+
 
         /**
          * <p>Adds a CloudWatch log stream to monitor application configuration errors. For

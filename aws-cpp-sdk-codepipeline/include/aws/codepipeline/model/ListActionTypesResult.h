@@ -37,7 +37,7 @@ namespace CodePipeline
 namespace Model
 {
   /**
-   * <p>Represents the output of a list action types action.</p><p><h3>See Also:</h3>
+   * <p>Represents the output of a ListActionTypes action.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypesOutput">AWS
    * API Reference</a></p>

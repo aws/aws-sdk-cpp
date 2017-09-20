@@ -297,6 +297,8 @@ namespace Model
 
         virtual ~MTurkClient();
 
+        inline virtual const char* GetServiceClientName() override { return "mturk-requester"; }
+
 
         /**
          * <p> The <code>AcceptQualificationRequest</code> operation approves a Worker's

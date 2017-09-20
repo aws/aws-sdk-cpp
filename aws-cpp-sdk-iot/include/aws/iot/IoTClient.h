@@ -380,6 +380,8 @@ namespace Model
 
         virtual ~IoTClient();
 
+        inline virtual const char* GetServiceClientName() override { return "execute-api"; }
+
 
         /**
          * <p>Accepts a pending certificate transfer. The default state of the certificate

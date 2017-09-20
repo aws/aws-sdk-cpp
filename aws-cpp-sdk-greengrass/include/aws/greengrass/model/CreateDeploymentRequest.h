@@ -33,6 +33,13 @@ namespace Model
   {
   public:
     CreateDeploymentRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() override { return "CreateDeployment"; }
+
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
@@ -111,27 +118,32 @@ namespace Model
 
 
     /**
-     * Type of deployment
+     * Type of deployment. When used in CreateDeployment, only NewDeployment and
+     * Redeployment are valid. 
      */
     inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * Type of deployment
+     * Type of deployment. When used in CreateDeployment, only NewDeployment and
+     * Redeployment are valid. 
      */
     inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * Type of deployment
+     * Type of deployment. When used in CreateDeployment, only NewDeployment and
+     * Redeployment are valid. 
      */
     inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * Type of deployment
+     * Type of deployment. When used in CreateDeployment, only NewDeployment and
+     * Redeployment are valid. 
      */
     inline CreateDeploymentRequest& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * Type of deployment
+     * Type of deployment. When used in CreateDeployment, only NewDeployment and
+     * Redeployment are valid. 
      */
     inline CreateDeploymentRequest& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 

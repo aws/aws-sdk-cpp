@@ -511,6 +511,8 @@ namespace Model
 
         virtual ~CognitoIdentityProviderClient();
 
+        inline virtual const char* GetServiceClientName() override { return "cognito-idp"; }
+
 
         /**
          * <p>Adds additional user attributes to the user pool schema.</p><p><h3>See

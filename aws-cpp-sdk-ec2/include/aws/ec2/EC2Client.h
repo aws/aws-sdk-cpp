@@ -1226,6 +1226,8 @@ namespace Model
 
         virtual ~EC2Client();
 
+        inline virtual const char* GetServiceClientName() override { return "ec2"; }
+
 
         /**
          * <p>Accepts the Convertible Reserved Instance exchange quote described in the

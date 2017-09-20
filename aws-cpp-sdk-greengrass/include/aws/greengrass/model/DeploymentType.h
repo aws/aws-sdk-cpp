@@ -27,7 +27,9 @@ namespace Model
   {
     NOT_SET,
     NewDeployment,
-    Redeployment
+    Redeployment,
+    ResetDeployment,
+    ForceResetDeployment
   };
 
 namespace DeploymentTypeMapper

@@ -200,6 +200,8 @@ namespace Model
 
         virtual ~KinesisClient();
 
+        inline virtual const char* GetServiceClientName() override { return "kinesis"; }
+
 
         /**
          * <p>Adds or updates tags for the specified Amazon Kinesis stream. Each stream can

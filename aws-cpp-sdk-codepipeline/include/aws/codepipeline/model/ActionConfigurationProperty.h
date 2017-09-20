@@ -145,7 +145,7 @@ namespace Model
 
 
     /**
-     * <p>Indicates that the proprety will be used in conjunction with PollForJobs.
+     * <p>Indicates that the property will be used in conjunction with PollForJobs.
      * When creating a custom action, an action can have up to one queryable property.
      * If it has one, that property must be both required and not secret.</p> <p>If you
      * create a pipeline with a custom action type, and that custom action contains a
@@ -157,7 +157,7 @@ namespace Model
     inline bool GetQueryable() const{ return m_queryable; }
 
     /**
-     * <p>Indicates that the proprety will be used in conjunction with PollForJobs.
+     * <p>Indicates that the property will be used in conjunction with PollForJobs.
      * When creating a custom action, an action can have up to one queryable property.
      * If it has one, that property must be both required and not secret.</p> <p>If you
      * create a pipeline with a custom action type, and that custom action contains a
@@ -169,7 +169,7 @@ namespace Model
     inline void SetQueryable(bool value) { m_queryableHasBeenSet = true; m_queryable = value; }
 
     /**
-     * <p>Indicates that the proprety will be used in conjunction with PollForJobs.
+     * <p>Indicates that the property will be used in conjunction with PollForJobs.
      * When creating a custom action, an action can have up to one queryable property.
      * If it has one, that property must be both required and not secret.</p> <p>If you
      * create a pipeline with a custom action type, and that custom action contains a

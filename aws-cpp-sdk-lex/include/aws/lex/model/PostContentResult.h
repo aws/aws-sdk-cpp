@@ -129,43 +129,106 @@ namespace Model
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p>
+     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
+     * list containing likely values for a slot. The value that it returns is
+     * determined by the <code>valueSelectionStrategy</code> selected when the slot
+     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
+     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
+     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
+     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
+     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * <code>valueSelectionStrategy</code>, the default is
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline const Aws::String& GetSlots() const{ return m_slots; }
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p>
+     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
+     * list containing likely values for a slot. The value that it returns is
+     * determined by the <code>valueSelectionStrategy</code> selected when the slot
+     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
+     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
+     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
+     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
+     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * <code>valueSelectionStrategy</code>, the default is
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline void SetSlots(const Aws::String& value) { m_slots = value; }
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p>
+     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
+     * list containing likely values for a slot. The value that it returns is
+     * determined by the <code>valueSelectionStrategy</code> selected when the slot
+     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
+     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
+     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
+     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
+     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * <code>valueSelectionStrategy</code>, the default is
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline void SetSlots(Aws::String&& value) { m_slots = std::move(value); }
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p>
+     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
+     * list containing likely values for a slot. The value that it returns is
+     * determined by the <code>valueSelectionStrategy</code> selected when the slot
+     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
+     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
+     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
+     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
+     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * <code>valueSelectionStrategy</code>, the default is
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline void SetSlots(const char* value) { m_slots.assign(value); }
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p>
+     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
+     * list containing likely values for a slot. The value that it returns is
+     * determined by the <code>valueSelectionStrategy</code> selected when the slot
+     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
+     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
+     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
+     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
+     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * <code>valueSelectionStrategy</code>, the default is
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline PostContentResult& WithSlots(const Aws::String& value) { SetSlots(value); return *this;}
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p>
+     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
+     * list containing likely values for a slot. The value that it returns is
+     * determined by the <code>valueSelectionStrategy</code> selected when the slot
+     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
+     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
+     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
+     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
+     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * <code>valueSelectionStrategy</code>, the default is
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline PostContentResult& WithSlots(Aws::String&& value) { SetSlots(std::move(value)); return *this;}
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p>
+     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
+     * list containing likely values for a slot. The value that it returns is
+     * determined by the <code>valueSelectionStrategy</code> selected when the slot
+     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
+     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
+     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
+     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
+     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * <code>valueSelectionStrategy</code>, the default is
+     * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline PostContentResult& WithSlots(const char* value) { SetSlots(value); return *this;}
 
@@ -330,26 +393,26 @@ namespace Model
      * <p>Identifies the current state of the user interaction. Amazon Lex returns one
      * of the following values as <code>dialogState</code>. The client can optionally
      * use this information to customize the user interface. </p> <ul> <li> <p>
-     * <code>ElicitIntent</code> – Amazon Lex wants to elicit the user's intent.
+     * <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.
      * Consider the following examples: </p> <p> For example, a user might utter an
      * intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent
      * from this utterance, it will return this dialog state. </p> </li> <li> <p>
-     * <code>ConfirmIntent</code> – Amazon Lex is expecting a "yes" or "no" response.
+     * <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response.
      * </p> <p>For example, Amazon Lex wants user confirmation before fulfilling an
      * intent. Instead of a simple "yes" or "no" response, a user might respond with
      * additional information. For example, "yes, but make it a thick crust pizza" or
      * "no, I want to order a drink." Amazon Lex can process such additional
      * information (in these examples, update the crust type slot or change the intent
-     * from OrderPizza to OrderDrink). </p> </li> <li> <p> <code>ElicitSlot</code> –
+     * from OrderPizza to OrderDrink). </p> </li> <li> <p> <code>ElicitSlot</code> -
      * Amazon Lex is expecting the value of a slot for the current intent. </p> <p> For
      * example, suppose that in the response Amazon Lex sends this message: "What size
      * pizza would you like?". A user might reply with the slot value (e.g., "medium").
      * The user might also provide additional information in the response (e.g.,
      * "medium thick crust pizza"). Amazon Lex can process such additional information
-     * appropriately. </p> </li> <li> <p> <code>Fulfilled</code> – Conveys that the
+     * appropriately. </p> </li> <li> <p> <code>Fulfilled</code> - Conveys that the
      * Lambda function has successfully fulfilled the intent. </p> </li> <li> <p>
-     * <code>ReadyForFulfillment</code> – Conveys that the client has to fullfill the
-     * request. </p> </li> <li> <p> <code>Failed</code> – Conveys that the conversation
+     * <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the
+     * request. </p> </li> <li> <p> <code>Failed</code> - Conveys that the conversation
      * with the user failed. </p> <p> This can happen for various reasons, including
      * that the user does not provide an appropriate response to prompts from the
      * service (you can configure how many times Amazon Lex can prompt a user for
@@ -362,26 +425,26 @@ namespace Model
      * <p>Identifies the current state of the user interaction. Amazon Lex returns one
      * of the following values as <code>dialogState</code>. The client can optionally
      * use this information to customize the user interface. </p> <ul> <li> <p>
-     * <code>ElicitIntent</code> – Amazon Lex wants to elicit the user's intent.
+     * <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.
      * Consider the following examples: </p> <p> For example, a user might utter an
      * intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent
      * from this utterance, it will return this dialog state. </p> </li> <li> <p>
-     * <code>ConfirmIntent</code> – Amazon Lex is expecting a "yes" or "no" response.
+     * <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response.
      * </p> <p>For example, Amazon Lex wants user confirmation before fulfilling an
      * intent. Instead of a simple "yes" or "no" response, a user might respond with
      * additional information. For example, "yes, but make it a thick crust pizza" or
      * "no, I want to order a drink." Amazon Lex can process such additional
      * information (in these examples, update the crust type slot or change the intent
-     * from OrderPizza to OrderDrink). </p> </li> <li> <p> <code>ElicitSlot</code> –
+     * from OrderPizza to OrderDrink). </p> </li> <li> <p> <code>ElicitSlot</code> -
      * Amazon Lex is expecting the value of a slot for the current intent. </p> <p> For
      * example, suppose that in the response Amazon Lex sends this message: "What size
      * pizza would you like?". A user might reply with the slot value (e.g., "medium").
      * The user might also provide additional information in the response (e.g.,
      * "medium thick crust pizza"). Amazon Lex can process such additional information
-     * appropriately. </p> </li> <li> <p> <code>Fulfilled</code> – Conveys that the
+     * appropriately. </p> </li> <li> <p> <code>Fulfilled</code> - Conveys that the
      * Lambda function has successfully fulfilled the intent. </p> </li> <li> <p>
-     * <code>ReadyForFulfillment</code> – Conveys that the client has to fullfill the
-     * request. </p> </li> <li> <p> <code>Failed</code> – Conveys that the conversation
+     * <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the
+     * request. </p> </li> <li> <p> <code>Failed</code> - Conveys that the conversation
      * with the user failed. </p> <p> This can happen for various reasons, including
      * that the user does not provide an appropriate response to prompts from the
      * service (you can configure how many times Amazon Lex can prompt a user for
@@ -394,26 +457,26 @@ namespace Model
      * <p>Identifies the current state of the user interaction. Amazon Lex returns one
      * of the following values as <code>dialogState</code>. The client can optionally
      * use this information to customize the user interface. </p> <ul> <li> <p>
-     * <code>ElicitIntent</code> – Amazon Lex wants to elicit the user's intent.
+     * <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.
      * Consider the following examples: </p> <p> For example, a user might utter an
      * intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent
      * from this utterance, it will return this dialog state. </p> </li> <li> <p>
-     * <code>ConfirmIntent</code> – Amazon Lex is expecting a "yes" or "no" response.
+     * <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response.
      * </p> <p>For example, Amazon Lex wants user confirmation before fulfilling an
      * intent. Instead of a simple "yes" or "no" response, a user might respond with
      * additional information. For example, "yes, but make it a thick crust pizza" or
      * "no, I want to order a drink." Amazon Lex can process such additional
      * information (in these examples, update the crust type slot or change the intent
-     * from OrderPizza to OrderDrink). </p> </li> <li> <p> <code>ElicitSlot</code> –
+     * from OrderPizza to OrderDrink). </p> </li> <li> <p> <code>ElicitSlot</code> -
      * Amazon Lex is expecting the value of a slot for the current intent. </p> <p> For
      * example, suppose that in the response Amazon Lex sends this message: "What size
      * pizza would you like?". A user might reply with the slot value (e.g., "medium").
      * The user might also provide additional information in the response (e.g.,
      * "medium thick crust pizza"). Amazon Lex can process such additional information
-     * appropriately. </p> </li> <li> <p> <code>Fulfilled</code> – Conveys that the
+     * appropriately. </p> </li> <li> <p> <code>Fulfilled</code> - Conveys that the
      * Lambda function has successfully fulfilled the intent. </p> </li> <li> <p>
-     * <code>ReadyForFulfillment</code> – Conveys that the client has to fullfill the
-     * request. </p> </li> <li> <p> <code>Failed</code> – Conveys that the conversation
+     * <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the
+     * request. </p> </li> <li> <p> <code>Failed</code> - Conveys that the conversation
      * with the user failed. </p> <p> This can happen for various reasons, including
      * that the user does not provide an appropriate response to prompts from the
      * service (you can configure how many times Amazon Lex can prompt a user for
@@ -426,26 +489,26 @@ namespace Model
      * <p>Identifies the current state of the user interaction. Amazon Lex returns one
      * of the following values as <code>dialogState</code>. The client can optionally
      * use this information to customize the user interface. </p> <ul> <li> <p>
-     * <code>ElicitIntent</code> – Amazon Lex wants to elicit the user's intent.
+     * <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.
      * Consider the following examples: </p> <p> For example, a user might utter an
      * intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent
      * from this utterance, it will return this dialog state. </p> </li> <li> <p>
-     * <code>ConfirmIntent</code> – Amazon Lex is expecting a "yes" or "no" response.
+     * <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response.
      * </p> <p>For example, Amazon Lex wants user confirmation before fulfilling an
      * intent. Instead of a simple "yes" or "no" response, a user might respond with
      * additional information. For example, "yes, but make it a thick crust pizza" or
      * "no, I want to order a drink." Amazon Lex can process such additional
      * information (in these examples, update the crust type slot or change the intent
-     * from OrderPizza to OrderDrink). </p> </li> <li> <p> <code>ElicitSlot</code> –
+     * from OrderPizza to OrderDrink). </p> </li> <li> <p> <code>ElicitSlot</code> -
      * Amazon Lex is expecting the value of a slot for the current intent. </p> <p> For
      * example, suppose that in the response Amazon Lex sends this message: "What size
      * pizza would you like?". A user might reply with the slot value (e.g., "medium").
      * The user might also provide additional information in the response (e.g.,
      * "medium thick crust pizza"). Amazon Lex can process such additional information
-     * appropriately. </p> </li> <li> <p> <code>Fulfilled</code> – Conveys that the
+     * appropriately. </p> </li> <li> <p> <code>Fulfilled</code> - Conveys that the
      * Lambda function has successfully fulfilled the intent. </p> </li> <li> <p>
-     * <code>ReadyForFulfillment</code> – Conveys that the client has to fullfill the
-     * request. </p> </li> <li> <p> <code>Failed</code> – Conveys that the conversation
+     * <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the
+     * request. </p> </li> <li> <p> <code>Failed</code> - Conveys that the conversation
      * with the user failed. </p> <p> This can happen for various reasons, including
      * that the user does not provide an appropriate response to prompts from the
      * service (you can configure how many times Amazon Lex can prompt a user for
@@ -458,26 +521,26 @@ namespace Model
      * <p>Identifies the current state of the user interaction. Amazon Lex returns one
      * of the following values as <code>dialogState</code>. The client can optionally
      * use this information to customize the user interface. </p> <ul> <li> <p>
-     * <code>ElicitIntent</code> – Amazon Lex wants to elicit the user's intent.
+     * <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.
      * Consider the following examples: </p> <p> For example, a user might utter an
      * intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent
      * from this utterance, it will return this dialog state. </p> </li> <li> <p>
-     * <code>ConfirmIntent</code> – Amazon Lex is expecting a "yes" or "no" response.
+     * <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response.
      * </p> <p>For example, Amazon Lex wants user confirmation before fulfilling an
      * intent. Instead of a simple "yes" or "no" response, a user might respond with
      * additional information. For example, "yes, but make it a thick crust pizza" or
      * "no, I want to order a drink." Amazon Lex can process such additional
      * information (in these examples, update the crust type slot or change the intent
-     * from OrderPizza to OrderDrink). </p> </li> <li> <p> <code>ElicitSlot</code> –
+     * from OrderPizza to OrderDrink). </p> </li> <li> <p> <code>ElicitSlot</code> -
      * Amazon Lex is expecting the value of a slot for the current intent. </p> <p> For
      * example, suppose that in the response Amazon Lex sends this message: "What size
      * pizza would you like?". A user might reply with the slot value (e.g., "medium").
      * The user might also provide additional information in the response (e.g.,
      * "medium thick crust pizza"). Amazon Lex can process such additional information
-     * appropriately. </p> </li> <li> <p> <code>Fulfilled</code> – Conveys that the
+     * appropriately. </p> </li> <li> <p> <code>Fulfilled</code> - Conveys that the
      * Lambda function has successfully fulfilled the intent. </p> </li> <li> <p>
-     * <code>ReadyForFulfillment</code> – Conveys that the client has to fullfill the
-     * request. </p> </li> <li> <p> <code>Failed</code> – Conveys that the conversation
+     * <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the
+     * request. </p> </li> <li> <p> <code>Failed</code> - Conveys that the conversation
      * with the user failed. </p> <p> This can happen for various reasons, including
      * that the user does not provide an appropriate response to prompts from the
      * service (you can configure how many times Amazon Lex can prompt a user for
@@ -531,37 +594,65 @@ namespace Model
 
 
     /**
-     * <p>Transcript of the voice input to the operation.</p>
+     * <p>The text used to process the request.</p> <p>If the input was an audio
+     * stream, the <code>inputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize
+     * intents and slot values. You can use this information to determine if Amazon Lex
+     * is correctly processing the audio that you send.</p>
      */
     inline const Aws::String& GetInputTranscript() const{ return m_inputTranscript; }
 
     /**
-     * <p>Transcript of the voice input to the operation.</p>
+     * <p>The text used to process the request.</p> <p>If the input was an audio
+     * stream, the <code>inputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize
+     * intents and slot values. You can use this information to determine if Amazon Lex
+     * is correctly processing the audio that you send.</p>
      */
     inline void SetInputTranscript(const Aws::String& value) { m_inputTranscript = value; }
 
     /**
-     * <p>Transcript of the voice input to the operation.</p>
+     * <p>The text used to process the request.</p> <p>If the input was an audio
+     * stream, the <code>inputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize
+     * intents and slot values. You can use this information to determine if Amazon Lex
+     * is correctly processing the audio that you send.</p>
      */
     inline void SetInputTranscript(Aws::String&& value) { m_inputTranscript = std::move(value); }
 
     /**
-     * <p>Transcript of the voice input to the operation.</p>
+     * <p>The text used to process the request.</p> <p>If the input was an audio
+     * stream, the <code>inputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize
+     * intents and slot values. You can use this information to determine if Amazon Lex
+     * is correctly processing the audio that you send.</p>
      */
     inline void SetInputTranscript(const char* value) { m_inputTranscript.assign(value); }
 
     /**
-     * <p>Transcript of the voice input to the operation.</p>
+     * <p>The text used to process the request.</p> <p>If the input was an audio
+     * stream, the <code>inputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize
+     * intents and slot values. You can use this information to determine if Amazon Lex
+     * is correctly processing the audio that you send.</p>
      */
     inline PostContentResult& WithInputTranscript(const Aws::String& value) { SetInputTranscript(value); return *this;}
 
     /**
-     * <p>Transcript of the voice input to the operation.</p>
+     * <p>The text used to process the request.</p> <p>If the input was an audio
+     * stream, the <code>inputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize
+     * intents and slot values. You can use this information to determine if Amazon Lex
+     * is correctly processing the audio that you send.</p>
      */
     inline PostContentResult& WithInputTranscript(Aws::String&& value) { SetInputTranscript(std::move(value)); return *this;}
 
     /**
-     * <p>Transcript of the voice input to the operation.</p>
+     * <p>The text used to process the request.</p> <p>If the input was an audio
+     * stream, the <code>inputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize
+     * intents and slot values. You can use this information to determine if Amazon Lex
+     * is correctly processing the audio that you send.</p>
      */
     inline PostContentResult& WithInputTranscript(const char* value) { SetInputTranscript(value); return *this;}
 

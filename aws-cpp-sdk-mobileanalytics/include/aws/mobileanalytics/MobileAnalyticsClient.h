@@ -108,6 +108,8 @@ namespace Model
 
         virtual ~MobileAnalyticsClient();
 
+        inline virtual const char* GetServiceClientName() override { return "mobileanalytics"; }
+
 
         /**
          * <p>The PutEvents operation records one or more events. You can have up to 1,500

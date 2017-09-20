@@ -238,6 +238,8 @@ namespace Model
 
         virtual ~CloudFrontClient();
 
+        inline virtual const char* GetServiceClientName() override { return "cloudfront"; }
+
 
         /**
          * <p>Creates a new origin access identity. If you're using Amazon S3 for your

@@ -157,6 +157,8 @@ namespace Model
 
         virtual ~HealthClient();
 
+        inline virtual const char* GetServiceClientName() override { return "health"; }
+
 
         /**
          * <p>Returns a list of entities that have been affected by the specified events,

@@ -379,6 +379,8 @@ namespace Model
 
         virtual ~ServiceCatalogClient();
 
+        inline virtual const char* GetServiceClientName() override { return "servicecatalog"; }
+
 
         /**
          * <p>Accepts an offer to share a portfolio.</p><p><h3>See Also:</h3>   <a

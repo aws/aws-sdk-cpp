@@ -334,6 +334,8 @@ namespace Model
 
         virtual ~PinpointClient();
 
+        inline virtual const char* GetServiceClientName() override { return "mobiletargeting"; }
+
 
         /**
          * Used to create an app.

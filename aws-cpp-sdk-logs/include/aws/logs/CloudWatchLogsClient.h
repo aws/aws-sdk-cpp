@@ -265,6 +265,8 @@ namespace Model
 
         virtual ~CloudWatchLogsClient();
 
+        inline virtual const char* GetServiceClientName() override { return "logs"; }
+
 
         /**
          * <p>Cancels the specified export task.</p> <p>The task must be in the

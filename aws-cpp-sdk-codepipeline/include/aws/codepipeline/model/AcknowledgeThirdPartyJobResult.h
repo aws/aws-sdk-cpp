@@ -35,7 +35,7 @@ namespace CodePipeline
 namespace Model
 {
   /**
-   * <p>Represents the output of an acknowledge third party job action.</p><p><h3>See
+   * <p>Represents the output of an AcknowledgeThirdPartyJob action.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJobOutput">AWS
    * API Reference</a></p>

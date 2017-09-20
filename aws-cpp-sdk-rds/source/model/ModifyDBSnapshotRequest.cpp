@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 
 ModifyDBSnapshotRequest::ModifyDBSnapshotRequest() : 
     m_dBSnapshotIdentifierHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_optionGroupNameHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,11 @@ Aws::String ModifyDBSnapshotRequest::SerializePayload() const
   if(m_engineVersionHasBeenSet)
   {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+
+  if(m_optionGroupNameHasBeenSet)
+  {
+    ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

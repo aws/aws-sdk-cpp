@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a list pipeline executions action.</p><p><h3>See
+   * <p>Represents the input of a ListPipelineExecutions action.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutionsInput">AWS
    * API Reference</a></p>
@@ -36,6 +36,13 @@ namespace Model
   {
   public:
     ListPipelineExecutionsRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() override { return "ListPipelineExecutions"; }
+
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
@@ -110,43 +117,43 @@ namespace Model
 
 
     /**
-     * <p>The token that was returned from the previous list pipeline executions call,
+     * <p>The token that was returned from the previous ListPipelineExecutions call,
      * which can be used to return the next set of pipeline executions in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token that was returned from the previous list pipeline executions call,
+     * <p>The token that was returned from the previous ListPipelineExecutions call,
      * which can be used to return the next set of pipeline executions in the list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token that was returned from the previous list pipeline executions call,
+     * <p>The token that was returned from the previous ListPipelineExecutions call,
      * which can be used to return the next set of pipeline executions in the list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token that was returned from the previous list pipeline executions call,
+     * <p>The token that was returned from the previous ListPipelineExecutions call,
      * which can be used to return the next set of pipeline executions in the list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token that was returned from the previous list pipeline executions call,
+     * <p>The token that was returned from the previous ListPipelineExecutions call,
      * which can be used to return the next set of pipeline executions in the list.</p>
      */
     inline ListPipelineExecutionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token that was returned from the previous list pipeline executions call,
+     * <p>The token that was returned from the previous ListPipelineExecutions call,
      * which can be used to return the next set of pipeline executions in the list.</p>
      */
     inline ListPipelineExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token that was returned from the previous list pipeline executions call,
+     * <p>The token that was returned from the previous ListPipelineExecutions call,
      * which can be used to return the next set of pipeline executions in the list.</p>
      */
     inline ListPipelineExecutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

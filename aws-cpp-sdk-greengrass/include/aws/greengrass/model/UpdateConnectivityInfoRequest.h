@@ -37,41 +37,48 @@ namespace Model
   {
   public:
     UpdateConnectivityInfoRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() override { return "UpdateConnectivityInfo"; }
+
     Aws::String SerializePayload() const override;
 
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline const Aws::Vector<ConnectivityInfo>& GetConnectivityInfo() const{ return m_connectivityInfo; }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline void SetConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = value; }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline void SetConnectivityInfo(Aws::Vector<ConnectivityInfo>&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = std::move(value); }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline UpdateConnectivityInfoRequest& WithConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { SetConnectivityInfo(value); return *this;}
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline UpdateConnectivityInfoRequest& WithConnectivityInfo(Aws::Vector<ConnectivityInfo>&& value) { SetConnectivityInfo(std::move(value)); return *this;}
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline UpdateConnectivityInfoRequest& AddConnectivityInfo(const ConnectivityInfo& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo.push_back(value); return *this; }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline UpdateConnectivityInfoRequest& AddConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo.push_back(std::move(value)); return *this; }
 

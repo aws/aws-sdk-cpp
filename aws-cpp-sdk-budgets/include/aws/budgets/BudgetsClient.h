@@ -167,6 +167,8 @@ namespace Model
 
         virtual ~BudgetsClient();
 
+        inline virtual const char* GetServiceClientName() override { return "budgets"; }
+
 
         /**
          * Create a new budget<p><h3>See Also:</h3>   <a

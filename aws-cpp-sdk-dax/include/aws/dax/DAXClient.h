@@ -212,6 +212,8 @@ namespace Model
 
         virtual ~DAXClient();
 
+        inline virtual const char* GetServiceClientName() override { return "dax"; }
+
 
         /**
          * <p>Creates a DAX cluster. All nodes in the cluster run the same DAX caching

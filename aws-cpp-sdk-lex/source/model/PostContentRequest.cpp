@@ -30,6 +30,7 @@ PostContentRequest::PostContentRequest() :
     m_botAliasHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_sessionAttributesHasBeenSet(false),
+    m_requestAttributesHasBeenSet(false),
     m_acceptHasBeenSet(false)
 {
 }
@@ -43,6 +44,13 @@ Aws::Http::HeaderValueCollection PostContentRequest::GetRequestSpecificHeaders()
   {
     ss << m_sessionAttributes;
     headers.insert(Aws::Http::HeaderValuePair("x-amz-lex-session-attributes", ss.str()));
+    ss.str("");
+  }
+
+  if(m_requestAttributesHasBeenSet)
+  {
+    ss << m_requestAttributes;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-lex-request-attributes", ss.str()));
     ss.str("");
   }
 

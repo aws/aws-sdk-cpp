@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/PipelineDeclaration.h>
+#include <aws/codepipeline/model/PipelineMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +36,7 @@ namespace CodePipeline
 namespace Model
 {
   /**
-   * <p>Represents the output of a get pipeline action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the output of a GetPipeline action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineOutput">AWS
    * API Reference</a></p>
    */
@@ -77,9 +78,42 @@ namespace Model
      */
     inline GetPipelineResult& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Represents the pipeline metadata information returned as part of the output
+     * of a GetPipeline action.</p>
+     */
+    inline const PipelineMetadata& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>Represents the pipeline metadata information returned as part of the output
+     * of a GetPipeline action.</p>
+     */
+    inline void SetMetadata(const PipelineMetadata& value) { m_metadata = value; }
+
+    /**
+     * <p>Represents the pipeline metadata information returned as part of the output
+     * of a GetPipeline action.</p>
+     */
+    inline void SetMetadata(PipelineMetadata&& value) { m_metadata = std::move(value); }
+
+    /**
+     * <p>Represents the pipeline metadata information returned as part of the output
+     * of a GetPipeline action.</p>
+     */
+    inline GetPipelineResult& WithMetadata(const PipelineMetadata& value) { SetMetadata(value); return *this;}
+
+    /**
+     * <p>Represents the pipeline metadata information returned as part of the output
+     * of a GetPipeline action.</p>
+     */
+    inline GetPipelineResult& WithMetadata(PipelineMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+
   private:
 
     PipelineDeclaration m_pipeline;
+
+    PipelineMetadata m_metadata;
   };
 
 } // namespace Model

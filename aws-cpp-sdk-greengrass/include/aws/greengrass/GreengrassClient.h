@@ -77,6 +77,7 @@
 #include <aws/greengrass/model/ListLoggerDefinitionsResult.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionVersionsResult.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionsResult.h>
+#include <aws/greengrass/model/ResetDeploymentsResult.h>
 #include <aws/greengrass/model/UpdateConnectivityInfoResult.h>
 #include <aws/greengrass/model/UpdateCoreDefinitionResult.h>
 #include <aws/greengrass/model/UpdateDeviceDefinitionResult.h>
@@ -186,6 +187,7 @@ namespace Model
         class ListLoggerDefinitionsRequest;
         class ListSubscriptionDefinitionVersionsRequest;
         class ListSubscriptionDefinitionsRequest;
+        class ResetDeploymentsRequest;
         class UpdateConnectivityInfoRequest;
         class UpdateCoreDefinitionRequest;
         class UpdateDeviceDefinitionRequest;
@@ -251,6 +253,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListLoggerDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListLoggerDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListSubscriptionDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListSubscriptionDefinitionVersionsOutcome;
         typedef Aws::Utils::Outcome<ListSubscriptionDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListSubscriptionDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ResetDeploymentsResult, Aws::Client::AWSError<GreengrassErrors>> ResetDeploymentsOutcome;
         typedef Aws::Utils::Outcome<UpdateConnectivityInfoResult, Aws::Client::AWSError<GreengrassErrors>> UpdateConnectivityInfoOutcome;
         typedef Aws::Utils::Outcome<UpdateCoreDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateCoreDefinitionOutcome;
         typedef Aws::Utils::Outcome<UpdateDeviceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateDeviceDefinitionOutcome;
@@ -316,6 +319,7 @@ namespace Model
         typedef std::future<ListLoggerDefinitionsOutcome> ListLoggerDefinitionsOutcomeCallable;
         typedef std::future<ListSubscriptionDefinitionVersionsOutcome> ListSubscriptionDefinitionVersionsOutcomeCallable;
         typedef std::future<ListSubscriptionDefinitionsOutcome> ListSubscriptionDefinitionsOutcomeCallable;
+        typedef std::future<ResetDeploymentsOutcome> ResetDeploymentsOutcomeCallable;
         typedef std::future<UpdateConnectivityInfoOutcome> UpdateConnectivityInfoOutcomeCallable;
         typedef std::future<UpdateCoreDefinitionOutcome> UpdateCoreDefinitionOutcomeCallable;
         typedef std::future<UpdateDeviceDefinitionOutcome> UpdateDeviceDefinitionOutcomeCallable;
@@ -384,6 +388,7 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::ListLoggerDefinitionsRequest&, const Model::ListLoggerDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLoggerDefinitionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListSubscriptionDefinitionVersionsRequest&, const Model::ListSubscriptionDefinitionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionDefinitionVersionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListSubscriptionDefinitionsRequest&, const Model::ListSubscriptionDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::ResetDeploymentsRequest&, const Model::ResetDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetDeploymentsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateConnectivityInfoRequest&, const Model::UpdateConnectivityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectivityInfoResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateCoreDefinitionRequest&, const Model::UpdateCoreDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCoreDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateDeviceDefinitionRequest&, const Model::UpdateDeviceDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceDefinitionResponseReceivedHandler;
@@ -426,6 +431,8 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~GreengrassClient();
+
+        inline virtual const char* GetServiceClientName() override { return "greengrass"; }
 
 
         /**
@@ -1964,6 +1971,31 @@ namespace Model
         virtual void ListSubscriptionDefinitionsAsync(const Model::ListSubscriptionDefinitionsRequest& request, const ListSubscriptionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Resets a group's deployments.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetDeploymentsOutcome ResetDeployments(const Model::ResetDeploymentsRequest& request) const;
+
+        /**
+         * Resets a group's deployments.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetDeploymentsOutcomeCallable ResetDeploymentsCallable(const Model::ResetDeploymentsRequest& request) const;
+
+        /**
+         * Resets a group's deployments.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetDeploymentsAsync(const Model::ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Updates the connectivity information for the core. Any devices that belong to
          * the group which has this core will receive this information in order to find the
          * location of the core and connect to it.<p><h3>See Also:</h3>   <a
@@ -2230,6 +2262,7 @@ namespace Model
         void ListLoggerDefinitionsAsyncHelper(const Model::ListLoggerDefinitionsRequest& request, const ListLoggerDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscriptionDefinitionVersionsAsyncHelper(const Model::ListSubscriptionDefinitionVersionsRequest& request, const ListSubscriptionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscriptionDefinitionsAsyncHelper(const Model::ListSubscriptionDefinitionsRequest& request, const ListSubscriptionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetDeploymentsAsyncHelper(const Model::ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConnectivityInfoAsyncHelper(const Model::UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCoreDefinitionAsyncHelper(const Model::UpdateCoreDefinitionRequest& request, const UpdateCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeviceDefinitionAsyncHelper(const Model::UpdateDeviceDefinitionRequest& request, const UpdateDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

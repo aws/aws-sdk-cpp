@@ -221,6 +221,8 @@ namespace Model
 
         virtual ~CodeStarClient();
 
+        inline virtual const char* GetServiceClientName() override { return "codestar"; }
+
 
         /**
          * <p>Adds an IAM user to the team for an AWS CodeStar project.</p><p><h3>See

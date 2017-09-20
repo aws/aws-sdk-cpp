@@ -42,6 +42,7 @@ namespace Aws
         static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("IMAGE_NOT_FOUND");
         static const int INVALID_SUBNET_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_SUBNET_CONFIGURATION");
         static const int SECURITY_GROUPS_NOT_FOUND_HASH = HashingUtils::HashString("SECURITY_GROUPS_NOT_FOUND");
+        static const int IGW_NOT_ATTACHED_HASH = HashingUtils::HashString("IGW_NOT_ATTACHED");
         static const int IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION");
         static const int DOMAIN_JOIN_ERROR_FILE_NOT_FOUND_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_FILE_NOT_FOUND");
         static const int DOMAIN_JOIN_ERROR_ACCESS_DENIED_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_ACCESS_DENIED");
@@ -107,6 +108,10 @@ namespace Aws
           else if (hashCode == SECURITY_GROUPS_NOT_FOUND_HASH)
           {
             return FleetErrorCode::SECURITY_GROUPS_NOT_FOUND;
+          }
+          else if (hashCode == IGW_NOT_ATTACHED_HASH)
+          {
+            return FleetErrorCode::IGW_NOT_ATTACHED;
           }
           else if (hashCode == IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION_HASH)
           {
@@ -198,6 +203,8 @@ namespace Aws
             return "INVALID_SUBNET_CONFIGURATION";
           case FleetErrorCode::SECURITY_GROUPS_NOT_FOUND:
             return "SECURITY_GROUPS_NOT_FOUND";
+          case FleetErrorCode::IGW_NOT_ATTACHED:
+            return "IGW_NOT_ATTACHED";
           case FleetErrorCode::IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION:
             return "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION";
           case FleetErrorCode::DOMAIN_JOIN_ERROR_FILE_NOT_FOUND:

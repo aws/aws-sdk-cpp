@@ -44,6 +44,12 @@ GetPipelineResult& GetPipelineResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+
+  }
+
 
 
   return *this;

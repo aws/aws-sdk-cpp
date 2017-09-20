@@ -219,6 +219,8 @@ namespace Model
 
         virtual ~CognitoIdentityClient();
 
+        inline virtual const char* GetServiceClientName() override { return "cognito-identity"; }
+
 
         /**
          * <p>Creates a new identity pool. The identity pool is a store of user identity

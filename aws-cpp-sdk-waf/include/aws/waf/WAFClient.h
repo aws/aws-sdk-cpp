@@ -330,6 +330,8 @@ namespace Model
 
         virtual ~WAFClient();
 
+        inline virtual const char* GetServiceClientName() override { return "waf"; }
+
 
         /**
          * <p>Creates a <code>ByteMatchSet</code>. You then use <a>UpdateByteMatchSet</a>

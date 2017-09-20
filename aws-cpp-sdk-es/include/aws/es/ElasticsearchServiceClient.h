@@ -172,6 +172,8 @@ namespace Model
 
         virtual ~ElasticsearchServiceClient();
 
+        inline virtual const char* GetServiceClientName() override { return "es"; }
+
 
         /**
          * <p>Attaches tags to an existing Elasticsearch domain. Tags are a set of

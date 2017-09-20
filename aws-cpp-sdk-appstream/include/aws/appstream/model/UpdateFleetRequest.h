@@ -37,6 +37,13 @@ namespace Model
   {
   public:
     UpdateFleetRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() override { return "UpdateFleet"; }
+
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
@@ -115,114 +122,135 @@ namespace Model
 
 
     /**
-     * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type. Available instance types are:</p> <ul> <li>
-     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
-     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
-     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
-     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
-     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
-     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
-     * <li> <p>stream.graphics-pro.4xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.8xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.16xlarge</p> </li> <li>
-     * <p>stream.graphics-desktop.2xlarge</p> </li> </ul>
+     * <p>The instance type to use when launching fleet instances. The following
+     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
+     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
+     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
+     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
+     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
+     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
+     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type. Available instance types are:</p> <ul> <li>
-     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
-     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
-     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
-     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
-     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
-     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
-     * <li> <p>stream.graphics-pro.4xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.8xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.16xlarge</p> </li> <li>
-     * <p>stream.graphics-desktop.2xlarge</p> </li> </ul>
+     * <p>The instance type to use when launching fleet instances. The following
+     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
+     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
+     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
+     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
+     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
+     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
+     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type. Available instance types are:</p> <ul> <li>
-     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
-     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
-     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
-     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
-     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
-     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
-     * <li> <p>stream.graphics-pro.4xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.8xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.16xlarge</p> </li> <li>
-     * <p>stream.graphics-desktop.2xlarge</p> </li> </ul>
+     * <p>The instance type to use when launching fleet instances. The following
+     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
+     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
+     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
+     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
+     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
+     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
+     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type. Available instance types are:</p> <ul> <li>
-     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
-     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
-     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
-     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
-     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
-     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
-     * <li> <p>stream.graphics-pro.4xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.8xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.16xlarge</p> </li> <li>
-     * <p>stream.graphics-desktop.2xlarge</p> </li> </ul>
+     * <p>The instance type to use when launching fleet instances. The following
+     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
+     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
+     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
+     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
+     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
+     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
+     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type. Available instance types are:</p> <ul> <li>
-     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
-     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
-     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
-     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
-     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
-     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
-     * <li> <p>stream.graphics-pro.4xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.8xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.16xlarge</p> </li> <li>
-     * <p>stream.graphics-desktop.2xlarge</p> </li> </ul>
+     * <p>The instance type to use when launching fleet instances. The following
+     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
+     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
+     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
+     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
+     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
+     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
+     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline UpdateFleetRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type. Available instance types are:</p> <ul> <li>
-     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
-     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
-     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
-     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
-     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
-     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
-     * <li> <p>stream.graphics-pro.4xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.8xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.16xlarge</p> </li> <li>
-     * <p>stream.graphics-desktop.2xlarge</p> </li> </ul>
+     * <p>The instance type to use when launching fleet instances. The following
+     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
+     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
+     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
+     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
+     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
+     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
+     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline UpdateFleetRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type of compute resources for the fleet. Fleet instances are
-     * launched from this instance type. Available instance types are:</p> <ul> <li>
-     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
-     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
-     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
-     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
-     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
-     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
-     * <li> <p>stream.graphics-pro.4xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.8xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.16xlarge</p> </li> <li>
-     * <p>stream.graphics-desktop.2xlarge</p> </li> </ul>
+     * <p>The instance type to use when launching fleet instances. The following
+     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
+     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
+     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
+     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
+     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
+     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
+     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline UpdateFleetRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 

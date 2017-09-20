@@ -35,6 +35,8 @@ Fleet::Fleet() :
     m_descriptionHasBeenSet(false),
     m_imageNameHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_fleetType(FleetType::NOT_SET),
+    m_fleetTypeHasBeenSet(false),
     m_computeCapacityStatusHasBeenSet(false),
     m_maxUserDurationInSeconds(0),
     m_maxUserDurationInSecondsHasBeenSet(false),
@@ -58,6 +60,8 @@ Fleet::Fleet(const JsonValue& jsonValue) :
     m_descriptionHasBeenSet(false),
     m_imageNameHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_fleetType(FleetType::NOT_SET),
+    m_fleetTypeHasBeenSet(false),
     m_computeCapacityStatusHasBeenSet(false),
     m_maxUserDurationInSeconds(0),
     m_maxUserDurationInSecondsHasBeenSet(false),
@@ -117,6 +121,13 @@ Fleet& Fleet::operator =(const JsonValue& jsonValue)
     m_instanceType = jsonValue.GetString("InstanceType");
 
     m_instanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FleetType"))
+  {
+    m_fleetType = FleetTypeMapper::GetFleetTypeForName(jsonValue.GetString("FleetType"));
+
+    m_fleetTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ComputeCapacityStatus"))
@@ -226,6 +237,11 @@ JsonValue Fleet::Jsonize() const
   {
    payload.WithString("InstanceType", m_instanceType);
 
+  }
+
+  if(m_fleetTypeHasBeenSet)
+  {
+   payload.WithString("FleetType", FleetTypeMapper::GetNameForFleetType(m_fleetType));
   }
 
   if(m_computeCapacityStatusHasBeenSet)

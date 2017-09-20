@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * Information of a group<p><h3>See Also:</h3>   <a
+   * Information on the group<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GroupInformation">AWS
    * API Reference</a></p>
    */

@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline const Aws::Vector<ConnectivityInfo>& GetConnectivityInfo() const{ return m_connectivityInfo; }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline void SetConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { m_connectivityInfo = value; }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline void SetConnectivityInfo(Aws::Vector<ConnectivityInfo>&& value) { m_connectivityInfo = std::move(value); }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline GetConnectivityInfoResult& WithConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { SetConnectivityInfo(value); return *this;}
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline GetConnectivityInfoResult& WithConnectivityInfo(Aws::Vector<ConnectivityInfo>&& value) { SetConnectivityInfo(std::move(value)); return *this;}
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline GetConnectivityInfoResult& AddConnectivityInfo(const ConnectivityInfo& value) { m_connectivityInfo.push_back(value); return *this; }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      */
     inline GetConnectivityInfoResult& AddConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfo.push_back(std::move(value)); return *this; }
 

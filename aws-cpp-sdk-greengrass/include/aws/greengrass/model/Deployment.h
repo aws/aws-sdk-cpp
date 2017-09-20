@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrass/model/DeploymentType.h>
 #include <utility>
 
 namespace Aws
@@ -155,6 +156,32 @@ namespace Model
 
 
     /**
+     * The type of deployment.
+     */
+    inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+
+    /**
+     * The type of deployment.
+     */
+    inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+
+    /**
+     * The type of deployment.
+     */
+    inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
+
+    /**
+     * The type of deployment.
+     */
+    inline Deployment& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
+
+    /**
+     * The type of deployment.
+     */
+    inline Deployment& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+
+
+    /**
      * Arn of the group for this deployment.
      */
     inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
@@ -199,6 +226,9 @@ namespace Model
 
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
+    DeploymentType m_deploymentType;
+    bool m_deploymentTypeHasBeenSet;
 
     Aws::String m_groupArn;
     bool m_groupArnHasBeenSet;

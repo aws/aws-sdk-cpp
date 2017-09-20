@@ -27,6 +27,7 @@ PostTextRequest::PostTextRequest() :
     m_botAliasHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_sessionAttributesHasBeenSet(false),
+    m_requestAttributesHasBeenSet(false),
     m_inputTextHasBeenSet(false)
 {
 }
@@ -43,6 +44,17 @@ Aws::String PostTextRequest::SerializePayload() const
      sessionAttributesJsonMap.WithString(sessionAttributesItem.first, sessionAttributesItem.second);
    }
    payload.WithObject("sessionAttributes", std::move(sessionAttributesJsonMap));
+
+  }
+
+  if(m_requestAttributesHasBeenSet)
+  {
+   JsonValue requestAttributesJsonMap;
+   for(auto& requestAttributesItem : m_requestAttributes)
+   {
+     requestAttributesJsonMap.WithString(requestAttributesItem.first, requestAttributesItem.second);
+   }
+   payload.WithObject("requestAttributes", std::move(requestAttributesJsonMap));
 
   }
 

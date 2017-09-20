@@ -37,6 +37,13 @@ namespace Model
   {
   public:
     CreateDBInstanceRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() override { return "CreateDBInstance"; }
+
     Aws::String SerializePayload() const override;
 
   protected:
@@ -1641,8 +1648,8 @@ namespace Model
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
      * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 |
-     * 9.6.2</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
+     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
+     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
      * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
      * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
      * 9.3.12</code> </p> </li> </ul>
@@ -1725,8 +1732,8 @@ namespace Model
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
      * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 |
-     * 9.6.2</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
+     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
+     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
      * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
      * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
      * 9.3.12</code> </p> </li> </ul>
@@ -1809,8 +1816,8 @@ namespace Model
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
      * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 |
-     * 9.6.2</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
+     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
+     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
      * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
      * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
      * 9.3.12</code> </p> </li> </ul>
@@ -1893,8 +1900,8 @@ namespace Model
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
      * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 |
-     * 9.6.2</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
+     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
+     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
      * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
      * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
      * 9.3.12</code> </p> </li> </ul>
@@ -1977,8 +1984,8 @@ namespace Model
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
      * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 |
-     * 9.6.2</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
+     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
+     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
      * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
      * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
      * 9.3.12</code> </p> </li> </ul>
@@ -2061,8 +2068,8 @@ namespace Model
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
      * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 |
-     * 9.6.2</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
+     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
+     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
      * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
      * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
      * 9.3.12</code> </p> </li> </ul>
@@ -2145,8 +2152,8 @@ namespace Model
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
      * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 |
-     * 9.6.2</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
+     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
+     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
      * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
      * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
      * 9.3.12</code> </p> </li> </ul>
@@ -3109,6 +3116,38 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
+
+    
+    inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
+
+    
+    inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
+
+    
+    inline CreateDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
+
+
+    
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+
+    
+    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
+
+    
+    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
+
+    
+    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
+
+    
+    inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
+    
+    inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
+
+    
+    inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -3227,6 +3266,12 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+
+    bool m_enablePerformanceInsights;
+    bool m_enablePerformanceInsightsHasBeenSet;
+
+    Aws::String m_performanceInsightsKMSKeyId;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet;
   };
 
 } // namespace Model

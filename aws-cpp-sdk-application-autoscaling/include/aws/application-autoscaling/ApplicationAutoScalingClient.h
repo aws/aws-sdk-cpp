@@ -166,6 +166,8 @@ namespace Model
 
         virtual ~ApplicationAutoScalingClient();
 
+        inline virtual const char* GetServiceClientName() override { return "application-autoscaling"; }
+
 
         /**
          * <p>Deletes the specified Application Auto Scaling scaling policy.</p>

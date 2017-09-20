@@ -276,6 +276,8 @@ namespace Model
 
         virtual ~DirectConnectClient();
 
+        inline virtual const char* GetServiceClientName() override { return "directconnect"; }
+
 
         /**
          * <p>Creates a hosted connection on an interconnect or a link aggregation group

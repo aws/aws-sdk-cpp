@@ -241,6 +241,8 @@ namespace Model
 
         virtual ~ApplicationDiscoveryServiceClient();
 
+        inline virtual const char* GetServiceClientName() override { return "discovery"; }
+
 
         /**
          * <p>Associates one or more configuration items with an application.</p><p><h3>See
