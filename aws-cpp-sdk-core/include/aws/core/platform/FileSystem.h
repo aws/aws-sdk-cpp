@@ -159,6 +159,11 @@ namespace FileSystem
          */
         Directory& Descend(const DirectoryEntry& directoryEntry);
 
+        /**
+         * Recursively search directories with path as root directory, return all normal(non directory and non symlink) files' paths.
+         */
+        static Aws::Vector<Aws::String> GetAllFilePathsInDirectory(const Aws::String& path);
+
     protected:
         DirectoryEntry m_directoryEntry;
 

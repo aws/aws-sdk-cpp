@@ -177,6 +177,22 @@ namespace Aws
             return *openDir;
         }
 
+        Aws::Vector<Aws::String> Directory::GetAllFilePathsInDirectory(const Aws::String& path)
+        {
+            Aws::FileSystem::DirectoryTree tree(path);
+            Aws::Vector<Aws::String> filesVector;
+            auto visitor = [&](const Aws::FileSystem::DirectoryTree*, const Aws::FileSystem::DirectoryEntry& entry) 
+            { 
+                if (entry.fileType == Aws::FileSystem::FileType::File)
+                {
+                    filesVector.push_back(entry.path);
+                }
+                return true;
+            };
+            tree.TraverseBreadthFirst(visitor);
+            return filesVector;
+        }
+
         DirectoryTree::DirectoryTree(const Aws::String& path)
         {
             m_dir = OpenDirectory(path);
