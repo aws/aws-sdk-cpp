@@ -489,6 +489,22 @@ namespace Model
      */
     inline FpgaImage& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether the AFI is public.</p>
+     */
+    inline bool GetPublic() const{ return m_public; }
+
+    /**
+     * <p>Indicates whether the AFI is public.</p>
+     */
+    inline void SetPublic(bool value) { m_publicHasBeenSet = true; m_public = value; }
+
+    /**
+     * <p>Indicates whether the AFI is public.</p>
+     */
+    inline FpgaImage& WithPublic(bool value) { SetPublic(value); return *this;}
+
   private:
 
     Aws::String m_fpgaImageId;
@@ -529,6 +545,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_public;
+    bool m_publicHasBeenSet;
   };
 
 } // namespace Model

@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateLogGroupRequest::CreateLogGroupRequest() : 
     m_logGroupNameHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -35,6 +36,12 @@ Aws::String CreateLogGroupRequest::SerializePayload() const
   if(m_logGroupNameHasBeenSet)
   {
    payload.WithString("logGroupName", m_logGroupName);
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
 
   }
 

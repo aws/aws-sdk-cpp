@@ -324,37 +324,42 @@ namespace Model
 
 
     /**
-     * <p>The method used to distribute log data to the destination, when the
-     * destination is an Amazon Kinesis stream. By default, log data is grouped by log
-     * stream. For a more even distribution, you can group log data randomly.</p>
+     * <p>The method used to distribute log data to the destination. By default log
+     * data is grouped by log stream, but the grouping can be set to random for a more
+     * even distribution. This property is only applicable when the destination is an
+     * Amazon Kinesis stream. </p>
      */
     inline const Distribution& GetDistribution() const{ return m_distribution; }
 
     /**
-     * <p>The method used to distribute log data to the destination, when the
-     * destination is an Amazon Kinesis stream. By default, log data is grouped by log
-     * stream. For a more even distribution, you can group log data randomly.</p>
+     * <p>The method used to distribute log data to the destination. By default log
+     * data is grouped by log stream, but the grouping can be set to random for a more
+     * even distribution. This property is only applicable when the destination is an
+     * Amazon Kinesis stream. </p>
      */
     inline void SetDistribution(const Distribution& value) { m_distributionHasBeenSet = true; m_distribution = value; }
 
     /**
-     * <p>The method used to distribute log data to the destination, when the
-     * destination is an Amazon Kinesis stream. By default, log data is grouped by log
-     * stream. For a more even distribution, you can group log data randomly.</p>
+     * <p>The method used to distribute log data to the destination. By default log
+     * data is grouped by log stream, but the grouping can be set to random for a more
+     * even distribution. This property is only applicable when the destination is an
+     * Amazon Kinesis stream. </p>
      */
     inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = std::move(value); }
 
     /**
-     * <p>The method used to distribute log data to the destination, when the
-     * destination is an Amazon Kinesis stream. By default, log data is grouped by log
-     * stream. For a more even distribution, you can group log data randomly.</p>
+     * <p>The method used to distribute log data to the destination. By default log
+     * data is grouped by log stream, but the grouping can be set to random for a more
+     * even distribution. This property is only applicable when the destination is an
+     * Amazon Kinesis stream. </p>
      */
     inline PutSubscriptionFilterRequest& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
 
     /**
-     * <p>The method used to distribute log data to the destination, when the
-     * destination is an Amazon Kinesis stream. By default, log data is grouped by log
-     * stream. For a more even distribution, you can group log data randomly.</p>
+     * <p>The method used to distribute log data to the destination. By default log
+     * data is grouped by log stream, but the grouping can be set to random for a more
+     * even distribution. This property is only applicable when the destination is an
+     * Amazon Kinesis stream. </p>
      */
     inline PutSubscriptionFilterRequest& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 

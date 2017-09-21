@@ -43,7 +43,9 @@ FpgaImage::FpgaImage() :
     m_ownerIdHasBeenSet(false),
     m_ownerAliasHasBeenSet(false),
     m_productCodesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_public(false),
+    m_publicHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ FpgaImage::FpgaImage(const XmlNode& xmlNode) :
     m_ownerIdHasBeenSet(false),
     m_ownerAliasHasBeenSet(false),
     m_productCodesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_public(false),
+    m_publicHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -161,6 +165,12 @@ FpgaImage& FpgaImage::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode publicNode = resultNode.FirstChild("public");
+    if(!publicNode.IsNull())
+    {
+      m_public = StringUtils::ConvertToBool(StringUtils::Trim(publicNode.GetText().c_str()).c_str());
+      m_publicHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -249,6 +259,11 @@ void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_publicHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Public=" << std::boolalpha << m_public << "&";
+  }
+
 }
 
 void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -320,6 +335,10 @@ void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location) cons
         tagsSs << location <<  ".Tags." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_publicHasBeenSet)
+  {
+      oStream << location << ".Public=" << std::boolalpha << m_public << "&";
   }
 }
 
