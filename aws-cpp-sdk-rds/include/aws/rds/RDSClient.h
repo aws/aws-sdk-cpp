@@ -3373,9 +3373,8 @@ namespace Aws
 
         /**
          * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. You can update the engine version to either a new major or
-         * minor engine version. </p> <p>Amazon RDS supports upgrading a MySQL DB snapshot
-         * from MySQL 5.1 to MySQL 5.5.</p><p><h3>See Also:</h3>   <a
+         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for MySQL
+         * and Oracle. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          */
@@ -3383,9 +3382,8 @@ namespace Aws
 
         /**
          * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. You can update the engine version to either a new major or
-         * minor engine version. </p> <p>Amazon RDS supports upgrading a MySQL DB snapshot
-         * from MySQL 5.1 to MySQL 5.5.</p><p><h3>See Also:</h3>   <a
+         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for MySQL
+         * and Oracle. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -3395,9 +3393,8 @@ namespace Aws
 
         /**
          * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. You can update the engine version to either a new major or
-         * minor engine version. </p> <p>Amazon RDS supports upgrading a MySQL DB snapshot
-         * from MySQL 5.1 to MySQL 5.5.</p><p><h3>See Also:</h3>   <a
+         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for MySQL
+         * and Oracle. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          *

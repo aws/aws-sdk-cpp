@@ -110,44 +110,44 @@ namespace Model
 
 
     /**
-     * <p>The tag key that is applied to only those AWS resources that you want you
-     * want to trigger an evaluation for the rule.</p>
+     * <p>The tag key that is applied to only those AWS resources that you want to
+     * trigger an evaluation for the rule.</p>
      */
     inline const Aws::String& GetTagKey() const{ return m_tagKey; }
 
     /**
-     * <p>The tag key that is applied to only those AWS resources that you want you
-     * want to trigger an evaluation for the rule.</p>
+     * <p>The tag key that is applied to only those AWS resources that you want to
+     * trigger an evaluation for the rule.</p>
      */
     inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
 
     /**
-     * <p>The tag key that is applied to only those AWS resources that you want you
-     * want to trigger an evaluation for the rule.</p>
+     * <p>The tag key that is applied to only those AWS resources that you want to
+     * trigger an evaluation for the rule.</p>
      */
     inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
 
     /**
-     * <p>The tag key that is applied to only those AWS resources that you want you
-     * want to trigger an evaluation for the rule.</p>
+     * <p>The tag key that is applied to only those AWS resources that you want to
+     * trigger an evaluation for the rule.</p>
      */
     inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
 
     /**
-     * <p>The tag key that is applied to only those AWS resources that you want you
-     * want to trigger an evaluation for the rule.</p>
+     * <p>The tag key that is applied to only those AWS resources that you want to
+     * trigger an evaluation for the rule.</p>
      */
     inline Scope& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
 
     /**
-     * <p>The tag key that is applied to only those AWS resources that you want you
-     * want to trigger an evaluation for the rule.</p>
+     * <p>The tag key that is applied to only those AWS resources that you want to
+     * trigger an evaluation for the rule.</p>
      */
     inline Scope& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
 
     /**
-     * <p>The tag key that is applied to only those AWS resources that you want you
-     * want to trigger an evaluation for the rule.</p>
+     * <p>The tag key that is applied to only those AWS resources that you want to
+     * trigger an evaluation for the rule.</p>
      */
     inline Scope& WithTagKey(const char* value) { SetTagKey(value); return *this;}
 

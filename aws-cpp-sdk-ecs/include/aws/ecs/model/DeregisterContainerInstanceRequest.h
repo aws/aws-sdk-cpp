@@ -181,7 +181,7 @@ namespace Model
      * container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p> <p>Any containers in orphaned service tasks that are registered with a
-     * Classic load balancer or an Application load balancer target group are
+     * Classic Load Balancer or an Application Load Balancer target group are
      * deregistered, and they will begin connection draining according to the settings
      * on the load balancer or target group.</p>
      */
@@ -196,7 +196,7 @@ namespace Model
      * container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p> <p>Any containers in orphaned service tasks that are registered with a
-     * Classic load balancer or an Application load balancer target group are
+     * Classic Load Balancer or an Application Load Balancer target group are
      * deregistered, and they will begin connection draining according to the settings
      * on the load balancer or target group.</p>
      */
@@ -211,7 +211,7 @@ namespace Model
      * container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p> <p>Any containers in orphaned service tasks that are registered with a
-     * Classic load balancer or an Application load balancer target group are
+     * Classic Load Balancer or an Application Load Balancer target group are
      * deregistered, and they will begin connection draining according to the settings
      * on the load balancer or target group.</p>
      */

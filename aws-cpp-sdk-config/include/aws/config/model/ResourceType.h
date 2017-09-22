@@ -61,7 +61,12 @@ namespace Model
     AWS_Redshift_ClusterSubnetGroup,
     AWS_Redshift_EventSubscription,
     AWS_CloudWatch_Alarm,
-    AWS_CloudFormation_Stack
+    AWS_CloudFormation_Stack,
+    AWS_DynamoDB_Table,
+    AWS_AutoScaling_AutoScalingGroup,
+    AWS_AutoScaling_LaunchConfiguration,
+    AWS_AutoScaling_ScalingPolicy,
+    AWS_AutoScaling_ScheduledAction
   };
 
 namespace ResourceTypeMapper

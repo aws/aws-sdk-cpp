@@ -218,17 +218,16 @@ namespace Model
      * service. Currently, you are limited to one load balancer or target group per
      * service. After you create a service, the load balancer name or target group ARN,
      * container name, and container port specified in the service definition are
-     * immutable.</p> <p>For Elastic Load Balancing Classic load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing Application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * immutable.</p> <p>For Classic Load Balancers, this object must contain the load
+     * balancer name, the container name (as it appears in a container definition), and
+     * the container port to access from the load balancer. When a task from this
+     * service is placed on a container instance, the container instance is registered
+     * with the load balancer specified here.</p> <p>For Application Load Balancers and
+     * Network Load Balancers, this object must contain the load balancer target group
+     * ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance and port combination
+     * is registered as a target in the target group specified here.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
 
@@ -237,17 +236,16 @@ namespace Model
      * service. Currently, you are limited to one load balancer or target group per
      * service. After you create a service, the load balancer name or target group ARN,
      * container name, and container port specified in the service definition are
-     * immutable.</p> <p>For Elastic Load Balancing Classic load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing Application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * immutable.</p> <p>For Classic Load Balancers, this object must contain the load
+     * balancer name, the container name (as it appears in a container definition), and
+     * the container port to access from the load balancer. When a task from this
+     * service is placed on a container instance, the container instance is registered
+     * with the load balancer specified here.</p> <p>For Application Load Balancers and
+     * Network Load Balancers, this object must contain the load balancer target group
+     * ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance and port combination
+     * is registered as a target in the target group specified here.</p>
      */
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
@@ -256,17 +254,16 @@ namespace Model
      * service. Currently, you are limited to one load balancer or target group per
      * service. After you create a service, the load balancer name or target group ARN,
      * container name, and container port specified in the service definition are
-     * immutable.</p> <p>For Elastic Load Balancing Classic load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing Application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * immutable.</p> <p>For Classic Load Balancers, this object must contain the load
+     * balancer name, the container name (as it appears in a container definition), and
+     * the container port to access from the load balancer. When a task from this
+     * service is placed on a container instance, the container instance is registered
+     * with the load balancer specified here.</p> <p>For Application Load Balancers and
+     * Network Load Balancers, this object must contain the load balancer target group
+     * ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance and port combination
+     * is registered as a target in the target group specified here.</p>
      */
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
 
@@ -275,17 +272,16 @@ namespace Model
      * service. Currently, you are limited to one load balancer or target group per
      * service. After you create a service, the load balancer name or target group ARN,
      * container name, and container port specified in the service definition are
-     * immutable.</p> <p>For Elastic Load Balancing Classic load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing Application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * immutable.</p> <p>For Classic Load Balancers, this object must contain the load
+     * balancer name, the container name (as it appears in a container definition), and
+     * the container port to access from the load balancer. When a task from this
+     * service is placed on a container instance, the container instance is registered
+     * with the load balancer specified here.</p> <p>For Application Load Balancers and
+     * Network Load Balancers, this object must contain the load balancer target group
+     * ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance and port combination
+     * is registered as a target in the target group specified here.</p>
      */
     inline CreateServiceRequest& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
 
@@ -294,17 +290,16 @@ namespace Model
      * service. Currently, you are limited to one load balancer or target group per
      * service. After you create a service, the load balancer name or target group ARN,
      * container name, and container port specified in the service definition are
-     * immutable.</p> <p>For Elastic Load Balancing Classic load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing Application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * immutable.</p> <p>For Classic Load Balancers, this object must contain the load
+     * balancer name, the container name (as it appears in a container definition), and
+     * the container port to access from the load balancer. When a task from this
+     * service is placed on a container instance, the container instance is registered
+     * with the load balancer specified here.</p> <p>For Application Load Balancers and
+     * Network Load Balancers, this object must contain the load balancer target group
+     * ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance and port combination
+     * is registered as a target in the target group specified here.</p>
      */
     inline CreateServiceRequest& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
 
@@ -313,17 +308,16 @@ namespace Model
      * service. Currently, you are limited to one load balancer or target group per
      * service. After you create a service, the load balancer name or target group ARN,
      * container name, and container port specified in the service definition are
-     * immutable.</p> <p>For Elastic Load Balancing Classic load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing Application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * immutable.</p> <p>For Classic Load Balancers, this object must contain the load
+     * balancer name, the container name (as it appears in a container definition), and
+     * the container port to access from the load balancer. When a task from this
+     * service is placed on a container instance, the container instance is registered
+     * with the load balancer specified here.</p> <p>For Application Load Balancers and
+     * Network Load Balancers, this object must contain the load balancer target group
+     * ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance and port combination
+     * is registered as a target in the target group specified here.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
@@ -332,17 +326,16 @@ namespace Model
      * service. Currently, you are limited to one load balancer or target group per
      * service. After you create a service, the load balancer name or target group ARN,
      * container name, and container port specified in the service definition are
-     * immutable.</p> <p>For Elastic Load Balancing Classic load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing Application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * immutable.</p> <p>For Classic Load Balancers, this object must contain the load
+     * balancer name, the container name (as it appears in a container definition), and
+     * the container port to access from the load balancer. When a task from this
+     * service is placed on a container instance, the container instance is registered
+     * with the load balancer specified here.</p> <p>For Application Load Balancers and
+     * Network Load Balancers, this object must contain the load balancer target group
+     * ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance and port combination
+     * is registered as a target in the target group specified here.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
 
