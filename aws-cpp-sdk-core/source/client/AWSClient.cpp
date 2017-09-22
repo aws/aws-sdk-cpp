@@ -213,14 +213,15 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
                 serverTime = DateTime(dateHeaderIter->second.c_str(), DateFormat::AutoDetect);
             }
 
+            const auto signingTimestamp = signer->GetSigningTimestamp();
             if (!serverTime.WasParseSuccessful() || serverTime == DateTime())
             {
                AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Date header was not found in the response, can't attempt to detect clock skew");
-               serverTime = signer->GetSigningTimestamp();
+               serverTime = signingTimestamp;
             }
 
             AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
-            auto diff = DateTime::Diff(serverTime, signer->GetSigningTimestamp());
+            auto diff = DateTime::Diff(serverTime, signingTimestamp);
             //only try again if clock skew was the cause of the error.
             if(diff >= TIME_DIFF_MAX || diff <= TIME_DIFF_MIN)
             {
