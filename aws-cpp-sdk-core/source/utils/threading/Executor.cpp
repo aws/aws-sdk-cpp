@@ -36,7 +36,8 @@ bool DefaultExecutor::SubmitToThread(std::function<void()>&&  fx)
         if(m_state.compare_exchange_strong(expected, State::Locked))
         {
             std::thread t(main);
-            m_threads.emplace(t.get_id(), std::move(t));
+            const auto id = t.get_id(); // copy the id before we std::move the thread
+            m_threads.emplace(id, std::move(t));
             m_state = State::Free;
             return true;
         }
