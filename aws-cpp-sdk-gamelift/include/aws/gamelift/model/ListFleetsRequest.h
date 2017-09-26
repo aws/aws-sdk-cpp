@@ -40,7 +40,7 @@ namespace Model
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() override { return "ListFleets"; }
+    inline virtual const char* GetServiceRequestName() const override { return "ListFleets"; }
 
     Aws::String SerializePayload() const override;
 

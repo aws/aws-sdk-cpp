@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-EFS;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.2.20150201.1;
+        version : 1.2.20150201.2;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Elastic File System);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.2.1
+            AWSSDKCPP-Core/1.2.2
        }
     }
 
