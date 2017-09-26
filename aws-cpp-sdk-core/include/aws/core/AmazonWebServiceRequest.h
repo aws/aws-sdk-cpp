@@ -137,7 +137,7 @@ namespace Aws
          */
         inline virtual bool ShouldComputeContentMd5() const { return false; }
 
-        virtual const char* GetServiceRequestName() = 0;
+        virtual const char* GetServiceRequestName() const = 0;
 
     protected:
         /**
