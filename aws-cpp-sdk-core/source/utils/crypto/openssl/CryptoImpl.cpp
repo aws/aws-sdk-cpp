@@ -47,7 +47,7 @@ namespace Aws
 #endif
 #define OPENSSL_VERSION_LESS_1_1 (OPENSSL_VERSION_NUMBER < 0x10100003L)
 
-#if OPENSSL_VERSION_LESS_1_1
+#if OPENSSL_VERSION_LESS_1_1 && !defined(OPENSSL_NO_DEPRECATED)
                 static const char* OPENSSL_INTERNALS_TAG = "OpenSSLCallbackState";
                 static std::mutex* locks(nullptr);
 #endif
@@ -59,7 +59,7 @@ namespace Aws
                     ERR_load_CRYPTO_strings();
                     OPENSSL_add_all_algorithms_noconf();
 
-#if OPENSSL_VERSION_LESS_1_1
+#if OPENSSL_VERSION_LESS_1_1 && !defined(OPENSSL_NO_DEPRECATED)
                     if (!CRYPTO_get_locking_callback())
                     {
                         locks = Aws::NewArray<std::mutex>(static_cast<size_t>(CRYPTO_num_locks()),
@@ -77,7 +77,7 @@ namespace Aws
 
                 void cleanup_static_state()
                 {
-#if OPENSSL_VERSION_LESS_1_1
+#if OPENSSL_VERSION_LESS_1_1 && !defined(OPENSSL_NO_DEPRECATED)
                     if (CRYPTO_get_locking_callback() == &locking_fn)
                     {
                         CRYPTO_set_locking_callback(nullptr);
@@ -93,7 +93,7 @@ namespace Aws
 #endif
                 }
 
-#if OPENSSL_VERSION_LESS_1_1
+#if OPENSSL_VERSION_LESS_1_1 && !defined(OPENSSL_NO_DEPRECATED)
                 void locking_fn(int mode, int n, const char*, int)
                 {
                     if (mode & CRYPTO_LOCK)
