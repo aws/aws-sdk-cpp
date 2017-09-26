@@ -303,6 +303,134 @@ namespace Model
      */
     inline StackSummary& WithStackStatusReason(const char* value) { SetStackStatusReason(value); return *this;}
 
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the direct parent of this stack. For the first level of nested stacks, the
+     * root stack is also the parent stack.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline const Aws::String& GetParentId() const{ return m_parentId; }
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the direct parent of this stack. For the first level of nested stacks, the
+     * root stack is also the parent stack.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the direct parent of this stack. For the first level of nested stacks, the
+     * root stack is also the parent stack.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the direct parent of this stack. For the first level of nested stacks, the
+     * root stack is also the parent stack.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline void SetParentId(const char* value) { m_parentIdHasBeenSet = true; m_parentId.assign(value); }
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the direct parent of this stack. For the first level of nested stacks, the
+     * root stack is also the parent stack.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline StackSummary& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the direct parent of this stack. For the first level of nested stacks, the
+     * root stack is also the parent stack.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline StackSummary& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the direct parent of this stack. For the first level of nested stacks, the
+     * root stack is also the parent stack.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline StackSummary& WithParentId(const char* value) { SetParentId(value); return *this;}
+
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline const Aws::String& GetRootId() const{ return m_rootId; }
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline void SetRootId(const Aws::String& value) { m_rootIdHasBeenSet = true; m_rootId = value; }
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline void SetRootId(Aws::String&& value) { m_rootIdHasBeenSet = true; m_rootId = std::move(value); }
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline void SetRootId(const char* value) { m_rootIdHasBeenSet = true; m_rootId.assign(value); }
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline StackSummary& WithRootId(const Aws::String& value) { SetRootId(value); return *this;}
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline StackSummary& WithRootId(Aws::String&& value) { SetRootId(std::move(value)); return *this;}
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline StackSummary& WithRootId(const char* value) { SetRootId(value); return *this;}
+
   private:
 
     Aws::String m_stackId;
@@ -328,6 +456,12 @@ namespace Model
 
     Aws::String m_stackStatusReason;
     bool m_stackStatusReasonHasBeenSet;
+
+    Aws::String m_parentId;
+    bool m_parentIdHasBeenSet;
+
+    Aws::String m_rootId;
+    bool m_rootIdHasBeenSet;
   };
 
 } // namespace Model

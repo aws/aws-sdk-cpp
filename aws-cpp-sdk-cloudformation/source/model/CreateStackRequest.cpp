@@ -39,7 +39,9 @@ CreateStackRequest::CreateStackRequest() :
     m_stackPolicyBodyHasBeenSet(false),
     m_stackPolicyURLHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_enableTerminationProtection(false),
+    m_enableTerminationProtectionHasBeenSet(false)
 {
 }
 
@@ -153,6 +155,11 @@ Aws::String CreateStackRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
+  }
+
+  if(m_enableTerminationProtectionHasBeenSet)
+  {
+    ss << "EnableTerminationProtection=" << std::boolalpha << m_enableTerminationProtection << "&";
   }
 
   ss << "Version=2010-05-15";

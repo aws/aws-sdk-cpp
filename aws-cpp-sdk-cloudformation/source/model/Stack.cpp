@@ -37,6 +37,7 @@ Stack::Stack() :
     m_descriptionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
+    m_deletionTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_rollbackConfigurationHasBeenSet(false),
     m_stackStatus(StackStatus::NOT_SET),
@@ -50,7 +51,11 @@ Stack::Stack() :
     m_capabilitiesHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_roleARNHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableTerminationProtection(false),
+    m_enableTerminationProtectionHasBeenSet(false),
+    m_parentIdHasBeenSet(false),
+    m_rootIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +66,7 @@ Stack::Stack(const XmlNode& xmlNode) :
     m_descriptionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
+    m_deletionTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_rollbackConfigurationHasBeenSet(false),
     m_stackStatus(StackStatus::NOT_SET),
@@ -74,7 +80,11 @@ Stack::Stack(const XmlNode& xmlNode) :
     m_capabilitiesHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_roleARNHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableTerminationProtection(false),
+    m_enableTerminationProtectionHasBeenSet(false),
+    m_parentIdHasBeenSet(false),
+    m_rootIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -126,6 +136,12 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     {
       m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+    }
+    XmlNode deletionTimeNode = resultNode.FirstChild("DeletionTime");
+    if(!deletionTimeNode.IsNull())
+    {
+      m_deletionTime = DateTime(StringUtils::Trim(deletionTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_deletionTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("LastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
@@ -217,6 +233,24 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode enableTerminationProtectionNode = resultNode.FirstChild("EnableTerminationProtection");
+    if(!enableTerminationProtectionNode.IsNull())
+    {
+      m_enableTerminationProtection = StringUtils::ConvertToBool(StringUtils::Trim(enableTerminationProtectionNode.GetText().c_str()).c_str());
+      m_enableTerminationProtectionHasBeenSet = true;
+    }
+    XmlNode parentIdNode = resultNode.FirstChild("ParentId");
+    if(!parentIdNode.IsNull())
+    {
+      m_parentId = StringUtils::Trim(parentIdNode.GetText().c_str());
+      m_parentIdHasBeenSet = true;
+    }
+    XmlNode rootIdNode = resultNode.FirstChild("RootId");
+    if(!rootIdNode.IsNull())
+    {
+      m_rootId = StringUtils::Trim(rootIdNode.GetText().c_str());
+      m_rootIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -258,6 +292,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   if(m_creationTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_deletionTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeletionTime=" << StringUtils::URLEncode(m_deletionTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_lastUpdatedTimeHasBeenSet)
@@ -337,6 +376,21 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       }
   }
 
+  if(m_enableTerminationProtectionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnableTerminationProtection=" << std::boolalpha << m_enableTerminationProtection << "&";
+  }
+
+  if(m_parentIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ParentId=" << StringUtils::URLEncode(m_parentId.c_str()) << "&";
+  }
+
+  if(m_rootIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RootId=" << StringUtils::URLEncode(m_rootId.c_str()) << "&";
+  }
+
 }
 
 void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -370,6 +424,10 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_creationTimeHasBeenSet)
   {
       oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_deletionTimeHasBeenSet)
+  {
+      oStream << location << ".DeletionTime=" << StringUtils::URLEncode(m_deletionTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_lastUpdatedTimeHasBeenSet)
   {
@@ -436,6 +494,18 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_enableTerminationProtectionHasBeenSet)
+  {
+      oStream << location << ".EnableTerminationProtection=" << std::boolalpha << m_enableTerminationProtection << "&";
+  }
+  if(m_parentIdHasBeenSet)
+  {
+      oStream << location << ".ParentId=" << StringUtils::URLEncode(m_parentId.c_str()) << "&";
+  }
+  if(m_rootIdHasBeenSet)
+  {
+      oStream << location << ".RootId=" << StringUtils::URLEncode(m_rootId.c_str()) << "&";
   }
 }
 
