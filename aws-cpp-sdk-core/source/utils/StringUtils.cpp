@@ -241,10 +241,10 @@ long long StringUtils::ConvertToInt64(const char* source)
         return 0;
     }
 
-#if defined(__ANDROID__) || defined(MIPSEL)
+#if defined(__ANDROID__)
     return atoll(source);
 #else
-    return std::atoll(source);
+    return atoll(source);
 #endif // __ANDROID__
 }
 
