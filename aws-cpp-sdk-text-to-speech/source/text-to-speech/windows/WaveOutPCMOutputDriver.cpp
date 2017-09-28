@@ -188,7 +188,7 @@ namespace Aws
                         CapabilityInfo capsInfo;
                         capsInfo.channels = MONO;
                         capsInfo.sampleRate = KHZ_22_5;
-                        capsInfo.sampleWidthBits = KHZ_16;
+                        capsInfo.sampleWidthBits = BIT_WIDTH_16;
 
                         devInfo.capabilities.push_back(capsInfo);
                     }
