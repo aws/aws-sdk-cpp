@@ -241,7 +241,7 @@ long long StringUtils::ConvertToInt64(const char* source)
         return 0;
     }
 
-#ifdef __ANDROID__
+#if defined(__ANDROID__) || defined(MIPSEL)
     return atoll(source);
 #else
     return std::atoll(source);
