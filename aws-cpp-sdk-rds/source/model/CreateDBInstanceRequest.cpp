@@ -71,7 +71,10 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_promotionTierHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_enableIAMDatabaseAuthentication(false),
-    m_enableIAMDatabaseAuthenticationHasBeenSet(false)
+    m_enableIAMDatabaseAuthenticationHasBeenSet(false),
+    m_enablePerformanceInsights(false),
+    m_enablePerformanceInsightsHasBeenSet(false),
+    m_performanceInsightsKMSKeyIdHasBeenSet(false)
 {
 }
 
@@ -289,6 +292,16 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_enableIAMDatabaseAuthenticationHasBeenSet)
   {
     ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
+  }
+
+  if(m_enablePerformanceInsightsHasBeenSet)
+  {
+    ss << "EnablePerformanceInsights=" << std::boolalpha << m_enablePerformanceInsights << "&";
+  }
+
+  if(m_performanceInsightsKMSKeyIdHasBeenSet)
+  {
+    ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

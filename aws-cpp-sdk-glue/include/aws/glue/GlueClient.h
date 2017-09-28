@@ -472,6 +472,8 @@ namespace Model
 
         virtual ~GlueClient();
 
+        inline virtual const char* GetServiceClientName() override { return "glue"; }
+
 
         /**
          * <p>Creates one or more partitions in a batch operation.</p><p><h3>See Also:</h3>

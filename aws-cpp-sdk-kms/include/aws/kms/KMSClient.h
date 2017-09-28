@@ -314,6 +314,8 @@ namespace Model
 
         virtual ~KMSClient();
 
+        inline virtual const char* GetServiceClientName() override { return "kms"; }
+
 
         /**
          * <p>Cancels the deletion of a customer master key (CMK). When this operation is

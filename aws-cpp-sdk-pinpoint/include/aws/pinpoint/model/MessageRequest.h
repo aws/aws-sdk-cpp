@@ -19,6 +19,7 @@
 #include <aws/pinpoint/model/DirectMessageConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/AddressConfiguration.h>
+#include <aws/pinpoint/model/EndpointSendConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +37,9 @@ namespace Model
 {
 
   /**
-   * Send message request.
+   * Send message request.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API MessageRequest
   {
@@ -112,6 +115,103 @@ namespace Model
      * number or push token) and the Address Configuration as the value.
      */
     inline MessageRequest& AddAddresses(const char* key, const AddressConfiguration& value) { m_addressesHasBeenSet = true; m_addresses.emplace(key, value); return *this; }
+
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCampaign() const{ return m_campaign; }
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline void SetCampaign(const Aws::Map<Aws::String, Aws::String>& value) { m_campaignHasBeenSet = true; m_campaign = value; }
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline void SetCampaign(Aws::Map<Aws::String, Aws::String>&& value) { m_campaignHasBeenSet = true; m_campaign = std::move(value); }
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline MessageRequest& WithCampaign(const Aws::Map<Aws::String, Aws::String>& value) { SetCampaign(value); return *this;}
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline MessageRequest& WithCampaign(Aws::Map<Aws::String, Aws::String>&& value) { SetCampaign(std::move(value)); return *this;}
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline MessageRequest& AddCampaign(const Aws::String& key, const Aws::String& value) { m_campaignHasBeenSet = true; m_campaign.emplace(key, value); return *this; }
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline MessageRequest& AddCampaign(Aws::String&& key, const Aws::String& value) { m_campaignHasBeenSet = true; m_campaign.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline MessageRequest& AddCampaign(const Aws::String& key, Aws::String&& value) { m_campaignHasBeenSet = true; m_campaign.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline MessageRequest& AddCampaign(Aws::String&& key, Aws::String&& value) { m_campaignHasBeenSet = true; m_campaign.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline MessageRequest& AddCampaign(const char* key, Aws::String&& value) { m_campaignHasBeenSet = true; m_campaign.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline MessageRequest& AddCampaign(Aws::String&& key, const char* value) { m_campaignHasBeenSet = true; m_campaign.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The JSON payload used for campaign attributes. This payload is added to the
+     * notifications' data->pinpoint->campaign' object in iOS and flattened to
+     * pinpoint.campaign.{AttributeName} keys in Android. Email will use the attribute
+     * campaign_id to save the templates.
+     */
+    inline MessageRequest& AddCampaign(const char* key, const char* value) { m_campaignHasBeenSet = true; m_campaign.emplace(key, value); return *this; }
 
 
     /**
@@ -200,6 +300,73 @@ namespace Model
 
 
     /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline const Aws::Map<Aws::String, EndpointSendConfiguration>& GetEndpoints() const{ return m_endpoints; }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline void SetEndpoints(const Aws::Map<Aws::String, EndpointSendConfiguration>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline void SetEndpoints(Aws::Map<Aws::String, EndpointSendConfiguration>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline MessageRequest& WithEndpoints(const Aws::Map<Aws::String, EndpointSendConfiguration>& value) { SetEndpoints(value); return *this;}
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline MessageRequest& WithEndpoints(Aws::Map<Aws::String, EndpointSendConfiguration>&& value) { SetEndpoints(std::move(value)); return *this;}
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline MessageRequest& AddEndpoints(const Aws::String& key, const EndpointSendConfiguration& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline MessageRequest& AddEndpoints(Aws::String&& key, const EndpointSendConfiguration& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), value); return *this; }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline MessageRequest& AddEndpoints(const Aws::String& key, EndpointSendConfiguration&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline MessageRequest& AddEndpoints(Aws::String&& key, EndpointSendConfiguration&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline MessageRequest& AddEndpoints(const char* key, EndpointSendConfiguration&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone
+     * number or push token) and the Address Configuration as the value.
+     */
+    inline MessageRequest& AddEndpoints(const char* key, const EndpointSendConfiguration& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
+
+
+    /**
      * Message configuration.
      */
     inline const DirectMessageConfiguration& GetMessageConfiguration() const{ return m_messageConfiguration; }
@@ -224,16 +391,61 @@ namespace Model
      */
     inline MessageRequest& WithMessageConfiguration(DirectMessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * Original request Id for which this message is delivered.
+     */
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    /**
+     * Original request Id for which this message is delivered.
+     */
+    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+
+    /**
+     * Original request Id for which this message is delivered.
+     */
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
+
+    /**
+     * Original request Id for which this message is delivered.
+     */
+    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
+
+    /**
+     * Original request Id for which this message is delivered.
+     */
+    inline MessageRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    /**
+     * Original request Id for which this message is delivered.
+     */
+    inline MessageRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    /**
+     * Original request Id for which this message is delivered.
+     */
+    inline MessageRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, AddressConfiguration> m_addresses;
     bool m_addressesHasBeenSet;
 
+    Aws::Map<Aws::String, Aws::String> m_campaign;
+    bool m_campaignHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_context;
     bool m_contextHasBeenSet;
 
+    Aws::Map<Aws::String, EndpointSendConfiguration> m_endpoints;
+    bool m_endpointsHasBeenSet;
+
     DirectMessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet;
   };
 
 } // namespace Model

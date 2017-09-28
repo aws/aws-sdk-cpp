@@ -35,6 +35,13 @@ namespace Model
   {
   public:
     CreateJobQueueRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "CreateJobQueue"; }
+
     Aws::String SerializePayload() const override;
 
 
@@ -106,32 +113,32 @@ namespace Model
 
 
     /**
-     * <p>The priority of the job queue. Job queues with a higher priority (or a lower
+     * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
-     * associated with same compute environment. Priority is determined in ascending
-     * order, for example, a job queue with a priority value of <code>1</code> is given
-     * scheduling preference over a job queue with a priority value of
-     * <code>10</code>.</p>
+     * associated with same compute environment. Priority is determined in descending
+     * order, for example, a job queue with a priority value of <code>10</code> is
+     * given scheduling preference over a job queue with a priority value of
+     * <code>1</code>.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority of the job queue. Job queues with a higher priority (or a lower
+     * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
-     * associated with same compute environment. Priority is determined in ascending
-     * order, for example, a job queue with a priority value of <code>1</code> is given
-     * scheduling preference over a job queue with a priority value of
-     * <code>10</code>.</p>
+     * associated with same compute environment. Priority is determined in descending
+     * order, for example, a job queue with a priority value of <code>10</code> is
+     * given scheduling preference over a job queue with a priority value of
+     * <code>1</code>.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority of the job queue. Job queues with a higher priority (or a lower
+     * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
-     * associated with same compute environment. Priority is determined in ascending
-     * order, for example, a job queue with a priority value of <code>1</code> is given
-     * scheduling preference over a job queue with a priority value of
-     * <code>10</code>.</p>
+     * associated with same compute environment. Priority is determined in descending
+     * order, for example, a job queue with a priority value of <code>10</code> is
+     * given scheduling preference over a job queue with a priority value of
+     * <code>1</code>.</p>
      */
     inline CreateJobQueueRequest& WithPriority(int value) { SetPriority(value); return *this;}
 

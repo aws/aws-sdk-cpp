@@ -46,6 +46,7 @@ ContainerDefinition::ContainerDefinition() :
     m_environmentHasBeenSet(false),
     m_mountPointsHasBeenSet(false),
     m_volumesFromHasBeenSet(false),
+    m_linuxParametersHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_userHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
@@ -83,6 +84,7 @@ ContainerDefinition::ContainerDefinition(const JsonValue& jsonValue) :
     m_environmentHasBeenSet(false),
     m_mountPointsHasBeenSet(false),
     m_volumesFromHasBeenSet(false),
+    m_linuxParametersHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_userHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
@@ -215,6 +217,13 @@ ContainerDefinition& ContainerDefinition::operator =(const JsonValue& jsonValue)
       m_volumesFrom.push_back(volumesFromJsonList[volumesFromIndex].AsObject());
     }
     m_volumesFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("linuxParameters"))
+  {
+    m_linuxParameters = jsonValue.GetObject("linuxParameters");
+
+    m_linuxParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hostname"))
@@ -443,6 +452,12 @@ JsonValue ContainerDefinition::Jsonize() const
      volumesFromJsonList[volumesFromIndex].AsObject(m_volumesFrom[volumesFromIndex].Jsonize());
    }
    payload.WithArray("volumesFrom", std::move(volumesFromJsonList));
+
+  }
+
+  if(m_linuxParametersHasBeenSet)
+  {
+   payload.WithObject("linuxParameters", m_linuxParameters.Jsonize());
 
   }
 

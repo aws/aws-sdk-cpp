@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * Campaign Limits are used to limit the number of messages that can be sent to a
-   * user.
+   * user.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignLimits">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API CampaignLimits
   {
@@ -60,6 +62,44 @@ namespace Model
 
 
     /**
+     * The maximum duration of a campaign from the scheduled start. Must be a minimum
+     * of 60 seconds.
+     */
+    inline int GetMaximumDuration() const{ return m_maximumDuration; }
+
+    /**
+     * The maximum duration of a campaign from the scheduled start. Must be a minimum
+     * of 60 seconds.
+     */
+    inline void SetMaximumDuration(int value) { m_maximumDurationHasBeenSet = true; m_maximumDuration = value; }
+
+    /**
+     * The maximum duration of a campaign from the scheduled start. Must be a minimum
+     * of 60 seconds.
+     */
+    inline CampaignLimits& WithMaximumDuration(int value) { SetMaximumDuration(value); return *this;}
+
+
+    /**
+     * The maximum number of messages per second that the campaign will send. This is a
+     * best effort maximum cap and can go as high as 20000 and as low as 50
+     */
+    inline int GetMessagesPerSecond() const{ return m_messagesPerSecond; }
+
+    /**
+     * The maximum number of messages per second that the campaign will send. This is a
+     * best effort maximum cap and can go as high as 20000 and as low as 50
+     */
+    inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
+
+    /**
+     * The maximum number of messages per second that the campaign will send. This is a
+     * best effort maximum cap and can go as high as 20000 and as low as 50
+     */
+    inline CampaignLimits& WithMessagesPerSecond(int value) { SetMessagesPerSecond(value); return *this;}
+
+
+    /**
      * The maximum total number of messages that the campaign can send.
      */
     inline int GetTotal() const{ return m_total; }
@@ -78,6 +118,12 @@ namespace Model
 
     int m_daily;
     bool m_dailyHasBeenSet;
+
+    int m_maximumDuration;
+    bool m_maximumDurationHasBeenSet;
+
+    int m_messagesPerSecond;
+    bool m_messagesPerSecondHasBeenSet;
 
     int m_total;
     bool m_totalHasBeenSet;

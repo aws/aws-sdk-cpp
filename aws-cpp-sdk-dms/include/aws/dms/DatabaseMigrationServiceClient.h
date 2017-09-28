@@ -311,6 +311,8 @@ namespace Model
 
         virtual ~DatabaseMigrationServiceClient();
 
+        inline virtual const char* GetServiceClientName() override { return "dms"; }
+
 
         /**
          * <p>Adds metadata tags to a DMS resource, including replication instance,

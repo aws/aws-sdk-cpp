@@ -42,6 +42,13 @@ namespace Model
   {
   public:
     CreateConfigurationSetEventDestinationRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "CreateConfigurationSetEventDestination"; }
+
     Aws::String SerializePayload() const override;
 
   protected:
@@ -50,75 +57,75 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the configuration set to which to apply the event
-     * destination.</p>
+     * <p>The name of the configuration set that the event destination should be
+     * associated with.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
 
     /**
-     * <p>The name of the configuration set to which to apply the event
-     * destination.</p>
+     * <p>The name of the configuration set that the event destination should be
+     * associated with.</p>
      */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
-     * <p>The name of the configuration set to which to apply the event
-     * destination.</p>
+     * <p>The name of the configuration set that the event destination should be
+     * associated with.</p>
      */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
-     * <p>The name of the configuration set to which to apply the event
-     * destination.</p>
+     * <p>The name of the configuration set that the event destination should be
+     * associated with.</p>
      */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
 
     /**
-     * <p>The name of the configuration set to which to apply the event
-     * destination.</p>
+     * <p>The name of the configuration set that the event destination should be
+     * associated with.</p>
      */
     inline CreateConfigurationSetEventDestinationRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
 
     /**
-     * <p>The name of the configuration set to which to apply the event
-     * destination.</p>
+     * <p>The name of the configuration set that the event destination should be
+     * associated with.</p>
      */
     inline CreateConfigurationSetEventDestinationRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the configuration set to which to apply the event
-     * destination.</p>
+     * <p>The name of the configuration set that the event destination should be
+     * associated with.</p>
      */
     inline CreateConfigurationSetEventDestinationRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
 
     /**
-     * <p>An object that describes the AWS service to which Amazon SES will publish the
-     * email sending events associated with the specified configuration set.</p>
+     * <p>An object that describes the AWS service that email sending event information
+     * will be published to.</p>
      */
     inline const EventDestination& GetEventDestination() const{ return m_eventDestination; }
 
     /**
-     * <p>An object that describes the AWS service to which Amazon SES will publish the
-     * email sending events associated with the specified configuration set.</p>
+     * <p>An object that describes the AWS service that email sending event information
+     * will be published to.</p>
      */
     inline void SetEventDestination(const EventDestination& value) { m_eventDestinationHasBeenSet = true; m_eventDestination = value; }
 
     /**
-     * <p>An object that describes the AWS service to which Amazon SES will publish the
-     * email sending events associated with the specified configuration set.</p>
+     * <p>An object that describes the AWS service that email sending event information
+     * will be published to.</p>
      */
     inline void SetEventDestination(EventDestination&& value) { m_eventDestinationHasBeenSet = true; m_eventDestination = std::move(value); }
 
     /**
-     * <p>An object that describes the AWS service to which Amazon SES will publish the
-     * email sending events associated with the specified configuration set.</p>
+     * <p>An object that describes the AWS service that email sending event information
+     * will be published to.</p>
      */
     inline CreateConfigurationSetEventDestinationRequest& WithEventDestination(const EventDestination& value) { SetEventDestination(value); return *this;}
 
     /**
-     * <p>An object that describes the AWS service to which Amazon SES will publish the
-     * email sending events associated with the specified configuration set.</p>
+     * <p>An object that describes the AWS service that email sending event information
+     * will be published to.</p>
      */
     inline CreateConfigurationSetEventDestinationRequest& WithEventDestination(EventDestination&& value) { SetEventDestination(std::move(value)); return *this;}
 

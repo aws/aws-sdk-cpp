@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * Shcedule that defines when a campaign is run.
+   * Shcedule that defines when a campaign is run.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Schedule">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API Schedule
   {

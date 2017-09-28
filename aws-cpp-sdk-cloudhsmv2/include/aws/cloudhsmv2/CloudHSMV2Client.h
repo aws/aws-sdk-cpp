@@ -155,6 +155,8 @@ namespace Model
 
         virtual ~CloudHSMV2Client();
 
+        inline virtual const char* GetServiceClientName() override { return "cloudhsm"; }
+
 
         /**
          * <p>Creates a new AWS CloudHSM cluster.</p><p><h3>See Also:</h3>   <a

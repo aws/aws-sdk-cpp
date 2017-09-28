@@ -33,11 +33,11 @@ namespace Aws
     {
         class TransferManager;
 
-        typedef std::function<void(const TransferManager*, const TransferHandle&)> UploadProgressCallback;
-        typedef std::function<void(const TransferManager*, const TransferHandle&)> DownloadProgressCallback;
-        typedef std::function<void(const TransferManager*, const TransferHandle&)> TransferStatusUpdatedCallback;
-        typedef std::function<void(const TransferManager*, const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>&)> ErrorCallback;
-        typedef std::function<void(const TransferManager*, const std::shared_ptr<TransferHandle>&)> TransferInitiatedCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<const TransferHandle>&)> UploadProgressCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<const TransferHandle>&)> DownloadProgressCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<const TransferHandle>&)> TransferStatusUpdatedCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<const TransferHandle>&, const Aws::Client::AWSError<Aws::S3::S3Errors>&)> ErrorCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<const TransferHandle>&)> TransferInitiatedCallback;
 
         const uint64_t MB5 = 5 * 1024 * 1024;
 
@@ -46,7 +46,7 @@ namespace Aws
          */
         struct TransferManagerConfiguration
         {
-            TransferManagerConfiguration() : s3Client(nullptr), transferExecutor(nullptr), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5), maxParallelTransfers(1)
+            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor) : s3Client(nullptr), transferExecutor(executor), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5), maxParallelTransfers(1)
             {
                 //let the programmer know if they've created two useless values here.
                 //you need at least bufferSize * maxParallelTransfers for the  max heap size.
@@ -63,9 +63,8 @@ namespace Aws
              * you are using for your client configuration. This executor will be used in a different context than the s3 client is used.
              * It is not a bug to use the same executor, but at least be aware that this is how the manager will be used.
              *
-             * If this is not set then it will be defaulted to ThreadPooledExecutor(maxParallelTransfers) inside when it is copied the TransferManager.
              */
-            std::shared_ptr<Aws::Utils::Threading::Executor> transferExecutor;
+            Aws::Utils::Threading::Executor* transferExecutor;
             /**
              * If you have special arguments you want passed to our put object calls, put them here. We will copy the template for each put object call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
@@ -264,10 +263,10 @@ namespace Aws
             void HandleListObjectsResponse(const Aws::S3::S3Client*, const Aws::S3::Model::ListObjectsV2Request&, const Aws::S3::Model::ListObjectsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
 
             TransferStatus DetermineIfFailedOrCanceled(const TransferHandle&) const;
-            void TriggerUploadProgressCallback(const TransferHandle&) const;
-            void TriggerDownloadProgressCallback(const TransferHandle&) const;
-            void TriggerTransferStatusUpdatedCallback(const TransferHandle&) const;
-            void TriggerErrorCallback(const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>& error)const;
+            void TriggerUploadProgressCallback(const std::shared_ptr<const TransferHandle>&) const;
+            void TriggerDownloadProgressCallback(const std::shared_ptr<const TransferHandle>&) const;
+            void TriggerTransferStatusUpdatedCallback(const std::shared_ptr<const TransferHandle>&) const;
+            void TriggerErrorCallback(const std::shared_ptr<const TransferHandle>&, const Aws::Client::AWSError<Aws::S3::S3Errors>& error)const;
 
             static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 

@@ -25,6 +25,7 @@
 #include <aws/ec2/model/SpotInstanceStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/SpotInstanceType.h>
+#include <aws/ec2/model/InstanceInterruptionBehavior.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -699,6 +700,37 @@ namespace Model
      */
     inline SpotInstanceRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline const InstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline void SetInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline void SetInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = std::move(value); }
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline SpotInstanceRequest& WithInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { SetInstanceInterruptionBehavior(value); return *this;}
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline SpotInstanceRequest& WithInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_actualBlockHourlyPrice;
@@ -754,6 +786,9 @@ namespace Model
 
     Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
+
+    InstanceInterruptionBehavior m_instanceInterruptionBehavior;
+    bool m_instanceInterruptionBehaviorHasBeenSet;
   };
 
 } // namespace Model

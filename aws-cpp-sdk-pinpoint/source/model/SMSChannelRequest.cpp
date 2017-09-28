@@ -31,14 +31,16 @@ namespace Model
 SMSChannelRequest::SMSChannelRequest() : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_senderIdHasBeenSet(false)
+    m_senderIdHasBeenSet(false),
+    m_shortCodeHasBeenSet(false)
 {
 }
 
 SMSChannelRequest::SMSChannelRequest(const JsonValue& jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_senderIdHasBeenSet(false)
+    m_senderIdHasBeenSet(false),
+    m_shortCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ SMSChannelRequest& SMSChannelRequest::operator =(const JsonValue& jsonValue)
     m_senderIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ShortCode"))
+  {
+    m_shortCode = jsonValue.GetString("ShortCode");
+
+    m_shortCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +84,12 @@ JsonValue SMSChannelRequest::Jsonize() const
   if(m_senderIdHasBeenSet)
   {
    payload.WithString("SenderId", m_senderId);
+
+  }
+
+  if(m_shortCodeHasBeenSet)
+  {
+   payload.WithString("ShortCode", m_shortCode);
 
   }
 

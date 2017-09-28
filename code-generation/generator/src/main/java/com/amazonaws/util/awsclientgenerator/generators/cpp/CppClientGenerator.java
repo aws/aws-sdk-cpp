@@ -19,6 +19,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Error;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.EnumModel;
@@ -112,6 +113,14 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         if (shape.isRequest()) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/RequestHeader.vm", StandardCharsets.UTF_8.name());
+            for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
+                String key = opEntry.getKey();
+                Operation op = opEntry.getValue();
+                if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName()) {
+                    context.put("operationName", key);
+                    break;
+                }
+            }
         }
         else if (shape.isEnum()) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelEnumHeader.vm", StandardCharsets.UTF_8.name());

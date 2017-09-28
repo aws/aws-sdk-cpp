@@ -354,6 +354,8 @@ namespace Model
 
         virtual ~LightsailClient();
 
+        inline virtual const char* GetServiceClientName() override { return "lightsail"; }
+
 
         /**
          * <p>Allocates a static IP address.</p><p><h3>See Also:</h3>   <a

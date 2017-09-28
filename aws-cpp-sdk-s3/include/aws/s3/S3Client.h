@@ -425,6 +425,8 @@ namespace Aws
 
         virtual ~S3Client();
 
+        inline virtual const char* GetServiceClientName() override { return "s3"; }
+
 
         /**
          * <p>Aborts a multipart upload.</p><p>To verify that all parts have been removed,

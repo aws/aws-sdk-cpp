@@ -32,6 +32,13 @@ namespace Model
   {
   public:
     DescribeMetricFiltersRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "DescribeMetricFilters"; }
+
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
@@ -171,39 +178,25 @@ namespace Model
     inline DescribeMetricFiltersRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
 
-    /**
-     * <p>The name of the CloudWatch metric.</p>
-     */
+    
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
-    /**
-     * <p>The name of the CloudWatch metric.</p>
-     */
+    
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
-    /**
-     * <p>The name of the CloudWatch metric.</p>
-     */
+    
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
-    /**
-     * <p>The name of the CloudWatch metric.</p>
-     */
+    
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
-    /**
-     * <p>The name of the CloudWatch metric.</p>
-     */
+    
     inline DescribeMetricFiltersRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
-    /**
-     * <p>The name of the CloudWatch metric.</p>
-     */
+    
     inline DescribeMetricFiltersRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
-    /**
-     * <p>The name of the CloudWatch metric.</p>
-     */
+    
     inline DescribeMetricFiltersRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
 

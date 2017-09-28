@@ -82,6 +82,7 @@ namespace CloudWatchLogs
 
 namespace Model
 {
+        class AssociateKmsKeyRequest;
         class CancelExportTaskRequest;
         class CreateExportTaskRequest;
         class CreateLogGroupRequest;
@@ -100,6 +101,7 @@ namespace Model
         class DescribeMetricFiltersRequest;
         class DescribeResourcePoliciesRequest;
         class DescribeSubscriptionFiltersRequest;
+        class DisassociateKmsKeyRequest;
         class FilterLogEventsRequest;
         class GetLogEventsRequest;
         class ListTagsLogGroupRequest;
@@ -114,6 +116,7 @@ namespace Model
         class TestMetricFilterRequest;
         class UntagLogGroupRequest;
 
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> AssociateKmsKeyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> CancelExportTaskOutcome;
         typedef Aws::Utils::Outcome<CreateExportTaskResult, Aws::Client::AWSError<CloudWatchLogsErrors>> CreateExportTaskOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> CreateLogGroupOutcome;
@@ -132,6 +135,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeMetricFiltersResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeMetricFiltersOutcome;
         typedef Aws::Utils::Outcome<DescribeResourcePoliciesResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeResourcePoliciesOutcome;
         typedef Aws::Utils::Outcome<DescribeSubscriptionFiltersResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeSubscriptionFiltersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DisassociateKmsKeyOutcome;
         typedef Aws::Utils::Outcome<FilterLogEventsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> FilterLogEventsOutcome;
         typedef Aws::Utils::Outcome<GetLogEventsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> GetLogEventsOutcome;
         typedef Aws::Utils::Outcome<ListTagsLogGroupResult, Aws::Client::AWSError<CloudWatchLogsErrors>> ListTagsLogGroupOutcome;
@@ -146,6 +150,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TestMetricFilterResult, Aws::Client::AWSError<CloudWatchLogsErrors>> TestMetricFilterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> UntagLogGroupOutcome;
 
+        typedef std::future<AssociateKmsKeyOutcome> AssociateKmsKeyOutcomeCallable;
         typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
         typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
         typedef std::future<CreateLogGroupOutcome> CreateLogGroupOutcomeCallable;
@@ -164,6 +169,7 @@ namespace Model
         typedef std::future<DescribeMetricFiltersOutcome> DescribeMetricFiltersOutcomeCallable;
         typedef std::future<DescribeResourcePoliciesOutcome> DescribeResourcePoliciesOutcomeCallable;
         typedef std::future<DescribeSubscriptionFiltersOutcome> DescribeSubscriptionFiltersOutcomeCallable;
+        typedef std::future<DisassociateKmsKeyOutcome> DisassociateKmsKeyOutcomeCallable;
         typedef std::future<FilterLogEventsOutcome> FilterLogEventsOutcomeCallable;
         typedef std::future<GetLogEventsOutcome> GetLogEventsOutcomeCallable;
         typedef std::future<ListTagsLogGroupOutcome> ListTagsLogGroupOutcomeCallable;
@@ -181,6 +187,7 @@ namespace Model
 
   class CloudWatchLogsClient;
 
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::AssociateKmsKeyRequest&, const Model::AssociateKmsKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateKmsKeyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::CancelExportTaskRequest&, const Model::CancelExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelExportTaskResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateExportTaskRequest&, const Model::CreateExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExportTaskResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateLogGroupRequest&, const Model::CreateLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogGroupResponseReceivedHandler;
@@ -199,6 +206,7 @@ namespace Model
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeMetricFiltersRequest&, const Model::DescribeMetricFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMetricFiltersResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeResourcePoliciesRequest&, const Model::DescribeResourcePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePoliciesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeSubscriptionFiltersRequest&, const Model::DescribeSubscriptionFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionFiltersResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::DisassociateKmsKeyRequest&, const Model::DisassociateKmsKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateKmsKeyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::FilterLogEventsRequest&, const Model::FilterLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FilterLogEventsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogEventsRequest&, const Model::GetLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogEventsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsLogGroupRequest&, const Model::ListTagsLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsLogGroupResponseReceivedHandler;
@@ -265,6 +273,63 @@ namespace Model
 
         virtual ~CloudWatchLogsClient();
 
+        inline virtual const char* GetServiceClientName() override { return "logs"; }
+
+
+        /**
+         * <p>Associates the specified AWS Key Management Service (AWS KMS) customer master
+         * key (CMK) with the specified log group.</p> <p>Associating an AWS KMS CMK with a
+         * log group overrides any existing associations between the log group and a CMK.
+         * After a CMK is associated with a log group, all newly ingested data for the log
+         * group is encrypted using the CMK. This association is stored as long as the data
+         * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
+         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p>
+         * <p>Note that it can take up to 5 minutes for this operation to take effect.</p>
+         * <p>If you attempt to associate a CMK with a log group but the CMK does not exist
+         * or the CMK is disabled, you will receive an
+         * <code>InvalidParameterException</code> error. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateKmsKeyOutcome AssociateKmsKey(const Model::AssociateKmsKeyRequest& request) const;
+
+        /**
+         * <p>Associates the specified AWS Key Management Service (AWS KMS) customer master
+         * key (CMK) with the specified log group.</p> <p>Associating an AWS KMS CMK with a
+         * log group overrides any existing associations between the log group and a CMK.
+         * After a CMK is associated with a log group, all newly ingested data for the log
+         * group is encrypted using the CMK. This association is stored as long as the data
+         * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
+         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p>
+         * <p>Note that it can take up to 5 minutes for this operation to take effect.</p>
+         * <p>If you attempt to associate a CMK with a log group but the CMK does not exist
+         * or the CMK is disabled, you will receive an
+         * <code>InvalidParameterException</code> error. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateKmsKeyOutcomeCallable AssociateKmsKeyCallable(const Model::AssociateKmsKeyRequest& request) const;
+
+        /**
+         * <p>Associates the specified AWS Key Management Service (AWS KMS) customer master
+         * key (CMK) with the specified log group.</p> <p>Associating an AWS KMS CMK with a
+         * log group overrides any existing associations between the log group and a CMK.
+         * After a CMK is associated with a log group, all newly ingested data for the log
+         * group is encrypted using the CMK. This association is stored as long as the data
+         * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
+         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p>
+         * <p>Note that it can take up to 5 minutes for this operation to take effect.</p>
+         * <p>If you attempt to associate a CMK with a log group but the CMK does not exist
+         * or the CMK is disabled, you will receive an
+         * <code>InvalidParameterException</code> error. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateKmsKeyAsync(const Model::AssociateKmsKeyRequest& request, const AssociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the specified export task.</p> <p>The task must be in the
@@ -359,7 +424,14 @@ namespace Model
          * an AWS account.</p> </li> <li> <p>Log group names can be between 1 and 512
          * characters long.</p> </li> <li> <p>Log group names consist of the following
          * characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash),
-         * and '.' (period).</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * and '.' (period).</p> </li> </ul> <p>If you associate a AWS Key Management
+         * Service (AWS KMS) customer master key (CMK) with the log group, ingested data is
+         * encrypted using the CMK. This association is stored as long as the data
+         * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
+         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <p>If
+         * you attempt to associate a CMK with the log group but the CMK does not exist or
+         * the CMK is disabled, you will receive an <code>InvalidParameterException</code>
+         * error. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">AWS
          * API Reference</a></p>
          */
@@ -372,7 +444,14 @@ namespace Model
          * an AWS account.</p> </li> <li> <p>Log group names can be between 1 and 512
          * characters long.</p> </li> <li> <p>Log group names consist of the following
          * characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash),
-         * and '.' (period).</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * and '.' (period).</p> </li> </ul> <p>If you associate a AWS Key Management
+         * Service (AWS KMS) customer master key (CMK) with the log group, ingested data is
+         * encrypted using the CMK. This association is stored as long as the data
+         * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
+         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <p>If
+         * you attempt to associate a CMK with the log group but the CMK does not exist or
+         * the CMK is disabled, you will receive an <code>InvalidParameterException</code>
+         * error. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">AWS
          * API Reference</a></p>
          *
@@ -387,7 +466,14 @@ namespace Model
          * an AWS account.</p> </li> <li> <p>Log group names can be between 1 and 512
          * characters long.</p> </li> <li> <p>Log group names consist of the following
          * characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash),
-         * and '.' (period).</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * and '.' (period).</p> </li> </ul> <p>If you associate a AWS Key Management
+         * Service (AWS KMS) customer master key (CMK) with the log group, ingested data is
+         * encrypted using the CMK. This association is stored as long as the data
+         * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
+         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <p>If
+         * you attempt to associate a CMK with the log group but the CMK does not exist or
+         * the CMK is disabled, you will receive an <code>InvalidParameterException</code>
+         * error. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">AWS
          * API Reference</a></p>
          *
@@ -763,7 +849,7 @@ namespace Model
 
         /**
          * <p>Lists the specified metric filters. You can list all the metric filters or
-         * filter the results by log name, prefix, metric name, and metric namespace. The
+         * filter the results by log name, prefix, metric name, or metric namespace. The
          * results are ASCII-sorted by filter name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">AWS
          * API Reference</a></p>
@@ -772,7 +858,7 @@ namespace Model
 
         /**
          * <p>Lists the specified metric filters. You can list all the metric filters or
-         * filter the results by log name, prefix, metric name, and metric namespace. The
+         * filter the results by log name, prefix, metric name, or metric namespace. The
          * results are ASCII-sorted by filter name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">AWS
          * API Reference</a></p>
@@ -783,7 +869,7 @@ namespace Model
 
         /**
          * <p>Lists the specified metric filters. You can list all the metric filters or
-         * filter the results by log name, prefix, metric name, and metric namespace. The
+         * filter the results by log name, prefix, metric name, or metric namespace. The
          * results are ASCII-sorted by filter name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">AWS
          * API Reference</a></p>
@@ -849,6 +935,49 @@ namespace Model
         virtual void DescribeSubscriptionFiltersAsync(const Model::DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates the associated AWS Key Management Service (AWS KMS) customer
+         * master key (CMK) from the specified log group.</p> <p>After the AWS KMS CMK is
+         * disassociated from the log group, AWS CloudWatch Logs stops encrypting newly
+         * ingested data for the log group. All previously ingested data remains encrypted,
+         * and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted
+         * data is requested.</p> <p>Note that it can take up to 5 minutes for this
+         * operation to take effect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateKmsKeyOutcome DisassociateKmsKey(const Model::DisassociateKmsKeyRequest& request) const;
+
+        /**
+         * <p>Disassociates the associated AWS Key Management Service (AWS KMS) customer
+         * master key (CMK) from the specified log group.</p> <p>After the AWS KMS CMK is
+         * disassociated from the log group, AWS CloudWatch Logs stops encrypting newly
+         * ingested data for the log group. All previously ingested data remains encrypted,
+         * and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted
+         * data is requested.</p> <p>Note that it can take up to 5 minutes for this
+         * operation to take effect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateKmsKeyOutcomeCallable DisassociateKmsKeyCallable(const Model::DisassociateKmsKeyRequest& request) const;
+
+        /**
+         * <p>Disassociates the associated AWS Key Management Service (AWS KMS) customer
+         * master key (CMK) from the specified log group.</p> <p>After the AWS KMS CMK is
+         * disassociated from the log group, AWS CloudWatch Logs stops encrypting newly
+         * ingested data for the log group. All previously ingested data remains encrypted,
+         * and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted
+         * data is requested.</p> <p>Note that it can take up to 5 minutes for this
+         * operation to take effect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateKmsKeyAsync(const Model::DisassociateKmsKeyRequest& request, const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists log events from the specified log group. You can list all the log
          * events or filter the results using a filter pattern, a time range, and the name
          * of the log stream.</p> <p>By default, this operation returns as many log events
@@ -894,7 +1023,7 @@ namespace Model
         /**
          * <p>Lists log events from the specified log stream. You can list all the log
          * events or filter using a time range.</p> <p>By default, this operation returns
-         * as many log events as can fit in a response size of 1 MB (up to 10,000 log
+         * as many log events as can fit in a response size of 1MB (up to 10,000 log
          * events). You can get additional log events by specifying one of the tokens in a
          * subsequent call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">AWS
@@ -905,7 +1034,7 @@ namespace Model
         /**
          * <p>Lists log events from the specified log stream. You can list all the log
          * events or filter using a time range.</p> <p>By default, this operation returns
-         * as many log events as can fit in a response size of 1 MB (up to 10,000 log
+         * as many log events as can fit in a response size of 1MB (up to 10,000 log
          * events). You can get additional log events by specifying one of the tokens in a
          * subsequent call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">AWS
@@ -918,7 +1047,7 @@ namespace Model
         /**
          * <p>Lists log events from the specified log stream. You can list all the log
          * events or filter using a time range.</p> <p>By default, this operation returns
-         * as many log events as can fit in a response size of 1 MB (up to 10,000 log
+         * as many log events as can fit in a response size of 1MB (up to 10,000 log
          * events). You can get additional log events by specifying one of the tokens in a
          * subsequent call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">AWS
@@ -929,18 +1058,14 @@ namespace Model
         virtual void GetLogEventsAsync(const Model::GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags for the specified log group.</p> <p>To add tags, use
-         * <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags for the specified log group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsLogGroupOutcome ListTagsLogGroup(const Model::ListTagsLogGroupRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified log group.</p> <p>To add tags, use
-         * <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags for the specified log group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">AWS
          * API Reference</a></p>
          *
@@ -949,9 +1074,7 @@ namespace Model
         virtual Model::ListTagsLogGroupOutcomeCallable ListTagsLogGroupCallable(const Model::ListTagsLogGroupRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified log group.</p> <p>To add tags, use
-         * <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags for the specified log group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">AWS
          * API Reference</a></p>
          *
@@ -1400,6 +1523,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AssociateKmsKeyAsyncHelper(const Model::AssociateKmsKeyRequest& request, const AssociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelExportTaskAsyncHelper(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateExportTaskAsyncHelper(const Model::CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLogGroupAsyncHelper(const Model::CreateLogGroupRequest& request, const CreateLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1418,6 +1542,7 @@ namespace Model
         void DescribeMetricFiltersAsyncHelper(const Model::DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResourcePoliciesAsyncHelper(const Model::DescribeResourcePoliciesRequest& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSubscriptionFiltersAsyncHelper(const Model::DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateKmsKeyAsyncHelper(const Model::DisassociateKmsKeyRequest& request, const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FilterLogEventsAsyncHelper(const Model::FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLogEventsAsyncHelper(const Model::GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsLogGroupAsyncHelper(const Model::ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

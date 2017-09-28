@@ -91,7 +91,10 @@ DBInstance::DBInstance() :
     m_dBInstanceArnHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_performanceInsightsEnabled(false),
+    m_performanceInsightsEnabledHasBeenSet(false),
+    m_performanceInsightsKMSKeyIdHasBeenSet(false)
 {
 }
 
@@ -156,7 +159,10 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_dBInstanceArnHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_performanceInsightsEnabled(false),
+    m_performanceInsightsEnabledHasBeenSet(false),
+    m_performanceInsightsKMSKeyIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -509,6 +515,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(iAMDatabaseAuthenticationEnabledNode.GetText().c_str()).c_str());
       m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
     }
+    XmlNode performanceInsightsEnabledNode = resultNode.FirstChild("PerformanceInsightsEnabled");
+    if(!performanceInsightsEnabledNode.IsNull())
+    {
+      m_performanceInsightsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(performanceInsightsEnabledNode.GetText().c_str()).c_str());
+      m_performanceInsightsEnabledHasBeenSet = true;
+    }
+    XmlNode performanceInsightsKMSKeyIdNode = resultNode.FirstChild("PerformanceInsightsKMSKeyId");
+    if(!performanceInsightsKMSKeyIdNode.IsNull())
+    {
+      m_performanceInsightsKMSKeyId = StringUtils::Trim(performanceInsightsKMSKeyIdNode.GetText().c_str());
+      m_performanceInsightsKMSKeyIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -811,6 +829,16 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 
+  if(m_performanceInsightsEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PerformanceInsightsEnabled=" << std::boolalpha << m_performanceInsightsEnabled << "&";
+  }
+
+  if(m_performanceInsightsKMSKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1060,6 +1088,14 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {
       oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+  if(m_performanceInsightsEnabledHasBeenSet)
+  {
+      oStream << location << ".PerformanceInsightsEnabled=" << std::boolalpha << m_performanceInsightsEnabled << "&";
+  }
+  if(m_performanceInsightsKMSKeyIdHasBeenSet)
+  {
+      oStream << location << ".PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
   }
 }
 

@@ -365,6 +365,8 @@ namespace Model
 
         virtual ~Route53Client();
 
+        inline virtual const char* GetServiceClientName() override { return "route53"; }
+
 
         /**
          * <p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>To

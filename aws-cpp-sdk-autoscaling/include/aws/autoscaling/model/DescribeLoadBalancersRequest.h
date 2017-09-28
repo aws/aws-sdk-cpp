@@ -27,15 +27,18 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeLoadBalancers.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancersRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API DescribeLoadBalancersRequest : public AutoScalingRequest
   {
   public:
     DescribeLoadBalancersRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "DescribeLoadBalancers"; }
+
     Aws::String SerializePayload() const override;
 
   protected:

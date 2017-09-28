@@ -56,6 +56,7 @@
 #include <aws/cloudformation/model/StopStackSetOperationResult.h>
 #include <aws/cloudformation/model/UpdateStackResult.h>
 #include <aws/cloudformation/model/UpdateStackSetResult.h>
+#include <aws/cloudformation/model/UpdateTerminationProtectionResult.h>
 #include <aws/cloudformation/model/ValidateTemplateResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -141,6 +142,7 @@ namespace Model
         class StopStackSetOperationRequest;
         class UpdateStackRequest;
         class UpdateStackSetRequest;
+        class UpdateTerminationProtectionRequest;
         class ValidateTemplateRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> CancelUpdateStackOutcome;
@@ -181,6 +183,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StopStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> StopStackSetOperationOutcome;
         typedef Aws::Utils::Outcome<UpdateStackResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackOutcome;
         typedef Aws::Utils::Outcome<UpdateStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackSetOutcome;
+        typedef Aws::Utils::Outcome<UpdateTerminationProtectionResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateTerminationProtectionOutcome;
         typedef Aws::Utils::Outcome<ValidateTemplateResult, Aws::Client::AWSError<CloudFormationErrors>> ValidateTemplateOutcome;
 
         typedef std::future<CancelUpdateStackOutcome> CancelUpdateStackOutcomeCallable;
@@ -221,6 +224,7 @@ namespace Model
         typedef std::future<StopStackSetOperationOutcome> StopStackSetOperationOutcomeCallable;
         typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
         typedef std::future<UpdateStackSetOutcome> UpdateStackSetOutcomeCallable;
+        typedef std::future<UpdateTerminationProtectionOutcome> UpdateTerminationProtectionOutcomeCallable;
         typedef std::future<ValidateTemplateOutcome> ValidateTemplateOutcomeCallable;
 } // namespace Model
 
@@ -264,6 +268,7 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::StopStackSetOperationRequest&, const Model::StopStackSetOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStackSetOperationResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackSetRequest&, const Model::UpdateStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackSetResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::UpdateTerminationProtectionRequest&, const Model::UpdateTerminationProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTerminationProtectionResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ValidateTemplateRequest&, const Model::ValidateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateTemplateResponseReceivedHandler;
 
   /**
@@ -309,6 +314,8 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudFormationClient();
+
+        inline virtual const char* GetServiceClientName() override { return "cloudformation"; }
 
 
        /**
@@ -1733,6 +1740,55 @@ namespace Model
         virtual void UpdateStackSetAsync(const Model::UpdateStackSetRequest& request, const UpdateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates termination protection for the specified stack. If a user attempts to
+         * delete a stack with termination protection enabled, the operation fails and the
+         * stack remains unchanged. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+         * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+         * <p> For <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+         * stacks</a>, termination protection is set on the root stack and cannot be
+         * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTerminationProtectionOutcome UpdateTerminationProtection(const Model::UpdateTerminationProtectionRequest& request) const;
+
+        /**
+         * <p>Updates termination protection for the specified stack. If a user attempts to
+         * delete a stack with termination protection enabled, the operation fails and the
+         * stack remains unchanged. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+         * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+         * <p> For <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+         * stacks</a>, termination protection is set on the root stack and cannot be
+         * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTerminationProtectionOutcomeCallable UpdateTerminationProtectionCallable(const Model::UpdateTerminationProtectionRequest& request) const;
+
+        /**
+         * <p>Updates termination protection for the specified stack. If a user attempts to
+         * delete a stack with termination protection enabled, the operation fails and the
+         * stack remains unchanged. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+         * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+         * <p> For <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+         * stacks</a>, termination protection is set on the root stack and cannot be
+         * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTerminationProtectionAsync(const Model::UpdateTerminationProtectionRequest& request, const UpdateTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Validates a specified template. AWS CloudFormation first checks if the
          * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
          * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
@@ -1809,6 +1865,7 @@ namespace Model
         void StopStackSetOperationAsyncHelper(const Model::StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackSetAsyncHelper(const Model::UpdateStackSetRequest& request, const UpdateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTerminationProtectionAsyncHelper(const Model::UpdateTerminationProtectionRequest& request, const UpdateTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ValidateTemplateAsyncHelper(const Model::ValidateTemplateRequest& request, const ValidateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;

@@ -213,6 +213,8 @@ namespace Model
 
         virtual ~DataPipelineClient();
 
+        inline virtual const char* GetServiceClientName() override { return "datapipeline"; }
+
 
         /**
          * <p>Validates the specified pipeline and starts processing pipeline tasks. If the

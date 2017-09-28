@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int TOKEN_HASH = HashingUtils::HashString("TOKEN");
+        static const int REQUEST_HASH = HashingUtils::HashString("REQUEST");
         static const int COGNITO_USER_POOLS_HASH = HashingUtils::HashString("COGNITO_USER_POOLS");
 
 
@@ -40,6 +41,10 @@ namespace Aws
           if (hashCode == TOKEN_HASH)
           {
             return AuthorizerType::TOKEN;
+          }
+          else if (hashCode == REQUEST_HASH)
+          {
+            return AuthorizerType::REQUEST;
           }
           else if (hashCode == COGNITO_USER_POOLS_HASH)
           {
@@ -61,6 +66,8 @@ namespace Aws
           {
           case AuthorizerType::TOKEN:
             return "TOKEN";
+          case AuthorizerType::REQUEST:
+            return "REQUEST";
           case AuthorizerType::COGNITO_USER_POOLS:
             return "COGNITO_USER_POOLS";
           default:

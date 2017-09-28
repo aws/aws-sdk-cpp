@@ -83,6 +83,7 @@
 #include <aws/greengrass/model/ListLoggerDefinitionsRequest.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionVersionsRequest.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionsRequest.h>
+#include <aws/greengrass/model/ResetDeploymentsRequest.h>
 #include <aws/greengrass/model/UpdateConnectivityInfoRequest.h>
 #include <aws/greengrass/model/UpdateCoreDefinitionRequest.h>
 #include <aws/greengrass/model/UpdateDeviceDefinitionRequest.h>
@@ -2193,6 +2194,43 @@ void GreengrassClient::ListSubscriptionDefinitionsAsync(const ListSubscriptionDe
 void GreengrassClient::ListSubscriptionDefinitionsAsyncHelper(const ListSubscriptionDefinitionsRequest& request, const ListSubscriptionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListSubscriptionDefinitions(request), context);
+}
+
+ResetDeploymentsOutcome GreengrassClient::ResetDeployments(const ResetDeploymentsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/groups/";
+  ss << request.GetGroupId();
+  ss << "/deployments/$reset";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ResetDeploymentsOutcome(ResetDeploymentsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ResetDeploymentsOutcome(outcome.GetError());
+  }
+}
+
+ResetDeploymentsOutcomeCallable GreengrassClient::ResetDeploymentsCallable(const ResetDeploymentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResetDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetDeployments(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::ResetDeploymentsAsync(const ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResetDeploymentsAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::ResetDeploymentsAsyncHelper(const ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetDeployments(request), context);
 }
 
 UpdateConnectivityInfoOutcome GreengrassClient::UpdateConnectivityInfo(const UpdateConnectivityInfoRequest& request) const

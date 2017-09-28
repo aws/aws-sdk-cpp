@@ -93,11 +93,16 @@ EC2MetadataClient::~EC2MetadataClient()
 
 }
 
+Aws::String EC2MetadataClient::GetResource(const char* resourcePath) const
+{
+    return GetResource(m_endpoint.c_str(), resourcePath);
+}
+
 Aws::String EC2MetadataClient::GetDefaultCredentials() const
 {
     AWS_LOGSTREAM_TRACE(m_logtag.c_str(), 
             "Getting default credentials for ec2 instance");
-    Aws::String credentialsString = GetResource(m_endpoint.c_str(), EC2_SECURITY_CREDENTIALS_RESOURCE);
+    Aws::String credentialsString = GetResource(EC2_SECURITY_CREDENTIALS_RESOURCE);
 
     if (credentialsString.empty()) return "";
     
@@ -119,13 +124,13 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
     ss << EC2_SECURITY_CREDENTIALS_RESOURCE << "/" << securityCredentials[0];
     AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), 
             "Calling EC2MetatadaService resource " << ss.str());
-    return GetResource(m_endpoint.c_str(), ss.str().c_str());
+    return GetResource(ss.str().c_str());
 }
 
 Aws::String EC2MetadataClient::GetCurrentRegion() const
 {
     AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Getting current region for ec2 instance");
-    Aws::String azString = GetResource(m_endpoint.c_str(), EC2_REGION_RESOURCE);
+    Aws::String azString = GetResource(EC2_REGION_RESOURCE);
 
     if (azString.empty())
     {

@@ -50,7 +50,9 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_validFromHasBeenSet(false),
     m_validUntilHasBeenSet(false),
     m_replaceUnhealthyInstances(false),
-    m_replaceUnhealthyInstancesHasBeenSet(false)
+    m_replaceUnhealthyInstancesHasBeenSet(false),
+    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
+    m_instanceInterruptionBehaviorHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_validFromHasBeenSet(false),
     m_validUntilHasBeenSet(false),
     m_replaceUnhealthyInstances(false),
-    m_replaceUnhealthyInstancesHasBeenSet(false)
+    m_replaceUnhealthyInstancesHasBeenSet(false),
+    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
+    m_instanceInterruptionBehaviorHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -169,6 +173,12 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
       m_replaceUnhealthyInstances = StringUtils::ConvertToBool(StringUtils::Trim(replaceUnhealthyInstancesNode.GetText().c_str()).c_str());
       m_replaceUnhealthyInstancesHasBeenSet = true;
     }
+    XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("instanceInterruptionBehavior");
+    if(!instanceInterruptionBehaviorNode.IsNull())
+    {
+      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(instanceInterruptionBehaviorNode.GetText().c_str()).c_str());
+      m_instanceInterruptionBehaviorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -247,6 +257,11 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".ReplaceUnhealthyInstances=" << std::boolalpha << m_replaceUnhealthyInstances << "&";
   }
 
+  if(m_instanceInterruptionBehaviorHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+  }
+
 }
 
 void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -308,6 +323,10 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   if(m_replaceUnhealthyInstancesHasBeenSet)
   {
       oStream << location << ".ReplaceUnhealthyInstances=" << std::boolalpha << m_replaceUnhealthyInstances << "&";
+  }
+  if(m_instanceInterruptionBehaviorHasBeenSet)
+  {
+      oStream << location << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
   }
 }
 

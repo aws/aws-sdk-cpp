@@ -31,6 +31,7 @@
 #include <aws/servicecatalog/model/AssociatePrincipalWithPortfolioRequest.h>
 #include <aws/servicecatalog/model/AssociateProductWithPortfolioRequest.h>
 #include <aws/servicecatalog/model/AssociateTagOptionWithResourceRequest.h>
+#include <aws/servicecatalog/model/CopyProductRequest.h>
 #include <aws/servicecatalog/model/CreateConstraintRequest.h>
 #include <aws/servicecatalog/model/CreatePortfolioRequest.h>
 #include <aws/servicecatalog/model/CreatePortfolioShareRequest.h>
@@ -43,6 +44,7 @@
 #include <aws/servicecatalog/model/DeleteProductRequest.h>
 #include <aws/servicecatalog/model/DeleteProvisioningArtifactRequest.h>
 #include <aws/servicecatalog/model/DescribeConstraintRequest.h>
+#include <aws/servicecatalog/model/DescribeCopyProductStatusRequest.h>
 #include <aws/servicecatalog/model/DescribePortfolioRequest.h>
 #include <aws/servicecatalog/model/DescribeProductRequest.h>
 #include <aws/servicecatalog/model/DescribeProductAsAdminRequest.h>
@@ -281,6 +283,41 @@ void ServiceCatalogClient::AssociateTagOptionWithResourceAsync(const AssociateTa
 void ServiceCatalogClient::AssociateTagOptionWithResourceAsyncHelper(const AssociateTagOptionWithResourceRequest& request, const AssociateTagOptionWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateTagOptionWithResource(request), context);
+}
+
+CopyProductOutcome ServiceCatalogClient::CopyProduct(const CopyProductRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CopyProductOutcome(CopyProductResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CopyProductOutcome(outcome.GetError());
+  }
+}
+
+CopyProductOutcomeCallable ServiceCatalogClient::CopyProductCallable(const CopyProductRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CopyProductOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyProduct(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::CopyProductAsync(const CopyProductRequest& request, const CopyProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CopyProductAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::CopyProductAsyncHelper(const CopyProductRequest& request, const CopyProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopyProduct(request), context);
 }
 
 CreateConstraintOutcome ServiceCatalogClient::CreateConstraint(const CreateConstraintRequest& request) const
@@ -701,6 +738,41 @@ void ServiceCatalogClient::DescribeConstraintAsync(const DescribeConstraintReque
 void ServiceCatalogClient::DescribeConstraintAsyncHelper(const DescribeConstraintRequest& request, const DescribeConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeConstraint(request), context);
+}
+
+DescribeCopyProductStatusOutcome ServiceCatalogClient::DescribeCopyProductStatus(const DescribeCopyProductStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeCopyProductStatusOutcome(DescribeCopyProductStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeCopyProductStatusOutcome(outcome.GetError());
+  }
+}
+
+DescribeCopyProductStatusOutcomeCallable ServiceCatalogClient::DescribeCopyProductStatusCallable(const DescribeCopyProductStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCopyProductStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCopyProductStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DescribeCopyProductStatusAsync(const DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCopyProductStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DescribeCopyProductStatusAsyncHelper(const DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCopyProductStatus(request), context);
 }
 
 DescribePortfolioOutcome ServiceCatalogClient::DescribePortfolio(const DescribePortfolioRequest& request) const

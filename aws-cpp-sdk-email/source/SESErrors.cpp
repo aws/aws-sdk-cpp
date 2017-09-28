@@ -33,18 +33,21 @@ static const int CANNOT_DELETE_HASH = HashingUtils::HashString("CannotDelete");
 static const int INVALID_CLOUD_WATCH_DESTINATION_HASH = HashingUtils::HashString("InvalidCloudWatchDestination");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExists");
 static const int CONFIGURATION_SET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ConfigurationSetDoesNotExist");
+static const int INVALID_TRACKING_OPTIONS_HASH = HashingUtils::HashString("InvalidTrackingOptions");
 static const int RULE_SET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleSetDoesNotExist");
 static const int INVALID_S3_CONFIGURATION_HASH = HashingUtils::HashString("InvalidS3Configuration");
 static const int INVALID_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("InvalidLambdaFunction");
 static const int EVENT_DESTINATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("EventDestinationDoesNotExist");
 static const int INVALID_CONFIGURATION_SET_HASH = HashingUtils::HashString("InvalidConfigurationSet");
 static const int INVALID_SNS_TOPIC_HASH = HashingUtils::HashString("InvalidSnsTopic");
+static const int TRACKING_OPTIONS_ALREADY_EXISTS_HASH = HashingUtils::HashString("TrackingOptionsAlreadyExistsException");
 static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
 static const int INVALID_S_N_S_DESTINATION_HASH = HashingUtils::HashString("InvalidSNSDestination");
 static const int MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH = HashingUtils::HashString("MailFromDomainNotVerifiedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
 static const int RULE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleDoesNotExist");
 static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicy");
+static const int TRACKING_OPTIONS_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TrackingOptionsDoesNotExistException");
 static const int CONFIGURATION_SET_ALREADY_EXISTS_HASH = HashingUtils::HashString("ConfigurationSetAlreadyExists");
 static const int EVENT_DESTINATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("EventDestinationAlreadyExists");
 
@@ -73,6 +76,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CONFIGURATION_SET_DOES_NOT_EXIST), false);
   }
+  else if (hashCode == INVALID_TRACKING_OPTIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_TRACKING_OPTIONS), false);
+  }
   else if (hashCode == RULE_SET_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::RULE_SET_DOES_NOT_EXIST), false);
@@ -97,6 +104,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_SNS_TOPIC), false);
   }
+  else if (hashCode == TRACKING_OPTIONS_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::TRACKING_OPTIONS_ALREADY_EXISTS), false);
+  }
   else if (hashCode == MESSAGE_REJECTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MESSAGE_REJECTED), false);
@@ -120,6 +131,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_POLICY), false);
+  }
+  else if (hashCode == TRACKING_OPTIONS_DOES_NOT_EXIST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::TRACKING_OPTIONS_DOES_NOT_EXIST), false);
   }
   else if (hashCode == CONFIGURATION_SET_ALREADY_EXISTS_HASH)
   {

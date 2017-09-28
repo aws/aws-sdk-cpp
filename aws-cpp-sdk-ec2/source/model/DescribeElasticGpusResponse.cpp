@@ -53,11 +53,11 @@ DescribeElasticGpusResponse& DescribeElasticGpusResponse::operator =(const Aws::
     XmlNode elasticGpuSetNode = resultNode.FirstChild("elasticGpuSet");
     if(!elasticGpuSetNode.IsNull())
     {
-      XmlNode elasticGpuSetMember = elasticGpuSetNode.FirstChild("member");
+      XmlNode elasticGpuSetMember = elasticGpuSetNode.FirstChild("item");
       while(!elasticGpuSetMember.IsNull())
       {
         m_elasticGpuSet.push_back(elasticGpuSetMember);
-        elasticGpuSetMember = elasticGpuSetMember.NextNode("member");
+        elasticGpuSetMember = elasticGpuSetMember.NextNode("item");
       }
 
     }

@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * Endpoint location data
+   * Endpoint location data<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointLocation">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API EndpointLocation
   {

@@ -178,6 +178,49 @@ namespace Model
      */
     inline LogGroup& WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * data.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * data.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * data.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * data.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * data.</p>
+     */
+    inline LogGroup& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * data.</p>
+     */
+    inline LogGroup& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * data.</p>
+     */
+    inline LogGroup& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_logGroupName;
@@ -197,6 +240,9 @@ namespace Model
 
     long long m_storedBytes;
     bool m_storedBytesHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

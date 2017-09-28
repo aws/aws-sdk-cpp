@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * APNS Message.
+   * APNS Message.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API APNSMessage
   {
@@ -285,6 +287,49 @@ namespace Model
 
 
     /**
+     * The data payload used for a silent push. This payload is added to the
+     * notifications' data.pinpoint.jsonBody' object
+     */
+    inline const Aws::String& GetJsonData() const{ return m_jsonData; }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the
+     * notifications' data.pinpoint.jsonBody' object
+     */
+    inline void SetJsonData(const Aws::String& value) { m_jsonDataHasBeenSet = true; m_jsonData = value; }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the
+     * notifications' data.pinpoint.jsonBody' object
+     */
+    inline void SetJsonData(Aws::String&& value) { m_jsonDataHasBeenSet = true; m_jsonData = std::move(value); }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the
+     * notifications' data.pinpoint.jsonBody' object
+     */
+    inline void SetJsonData(const char* value) { m_jsonDataHasBeenSet = true; m_jsonData.assign(value); }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the
+     * notifications' data.pinpoint.jsonBody' object
+     */
+    inline APNSMessage& WithJsonData(const Aws::String& value) { SetJsonData(value); return *this;}
+
+    /**
+     * The data payload used for a silent push. This payload is added to the
+     * notifications' data.pinpoint.jsonBody' object
+     */
+    inline APNSMessage& WithJsonData(Aws::String&& value) { SetJsonData(std::move(value)); return *this;}
+
+    /**
+     * The data payload used for a silent push. This payload is added to the
+     * notifications' data.pinpoint.jsonBody' object
+     */
+    inline APNSMessage& WithJsonData(const char* value) { SetJsonData(value); return *this;}
+
+
+    /**
      * The URL that points to a video used in the push notification.
      */
     inline const Aws::String& GetMediaUrl() const{ return m_mediaUrl; }
@@ -318,6 +363,42 @@ namespace Model
      * The URL that points to a video used in the push notification.
      */
     inline APNSMessage& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
+
+
+    /**
+     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     */
+    inline const Aws::String& GetPreferredAuthenticationMethod() const{ return m_preferredAuthenticationMethod; }
+
+    /**
+     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     */
+    inline void SetPreferredAuthenticationMethod(const Aws::String& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = value; }
+
+    /**
+     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     */
+    inline void SetPreferredAuthenticationMethod(Aws::String&& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = std::move(value); }
+
+    /**
+     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     */
+    inline void SetPreferredAuthenticationMethod(const char* value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod.assign(value); }
+
+    /**
+     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     */
+    inline APNSMessage& WithPreferredAuthenticationMethod(const Aws::String& value) { SetPreferredAuthenticationMethod(value); return *this;}
+
+    /**
+     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     */
+    inline APNSMessage& WithPreferredAuthenticationMethod(Aws::String&& value) { SetPreferredAuthenticationMethod(std::move(value)); return *this;}
+
+    /**
+     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     */
+    inline APNSMessage& WithPreferredAuthenticationMethod(const char* value) { SetPreferredAuthenticationMethod(value); return *this;}
 
 
     /**
@@ -651,8 +732,14 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_data;
     bool m_dataHasBeenSet;
 
+    Aws::String m_jsonData;
+    bool m_jsonDataHasBeenSet;
+
     Aws::String m_mediaUrl;
     bool m_mediaUrlHasBeenSet;
+
+    Aws::String m_preferredAuthenticationMethod;
+    bool m_preferredAuthenticationMethodHasBeenSet;
 
     Aws::String m_rawContent;
     bool m_rawContentHasBeenSet;

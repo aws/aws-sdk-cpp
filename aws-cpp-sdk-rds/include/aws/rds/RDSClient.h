@@ -575,6 +575,8 @@ namespace Aws
 
         virtual ~RDSClient();
 
+        inline virtual const char* GetServiceClientName() override { return "rds"; }
+
     
         /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
@@ -1770,14 +1772,14 @@ namespace Aws
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
          * <code>true</code>.</p> <p>If the specified DB instance is part of an Amazon
-         * Aurora DB cluster, you cannot delete the DB instance if the following are
-         * true:</p> <ul> <li> <p>The DB cluster is a Read Replica of another Amazon Aurora
-         * DB cluster.</p> </li> <li> <p>The DB instance is the only instance in the DB
-         * cluster.</p> </li> </ul> <p>To delete a DB instance in this case, first call the
-         * <a>PromoteReadReplicaDBCluster</a> API action to promote the DB cluster so it's
-         * no longer a Read Replica. After the promotion completes, then call the
-         * <code>DeleteDBInstance</code> API action to delete the final instance in the DB
-         * cluster.</p><p><h3>See Also:</h3>   <a
+         * Aurora DB cluster, you cannot delete the DB instance if both of the following
+         * conditions are true:</p> <ul> <li> <p>The DB cluster is a Read Replica of
+         * another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance is the only
+         * instance in the DB cluster.</p> </li> </ul> <p>To delete a DB instance in this
+         * case, first call the <a>PromoteReadReplicaDBCluster</a> API action to promote
+         * the DB cluster so it's no longer a Read Replica. After the promotion completes,
+         * then call the <code>DeleteDBInstance</code> API action to delete the final
+         * instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          */
@@ -1796,14 +1798,14 @@ namespace Aws
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
          * <code>true</code>.</p> <p>If the specified DB instance is part of an Amazon
-         * Aurora DB cluster, you cannot delete the DB instance if the following are
-         * true:</p> <ul> <li> <p>The DB cluster is a Read Replica of another Amazon Aurora
-         * DB cluster.</p> </li> <li> <p>The DB instance is the only instance in the DB
-         * cluster.</p> </li> </ul> <p>To delete a DB instance in this case, first call the
-         * <a>PromoteReadReplicaDBCluster</a> API action to promote the DB cluster so it's
-         * no longer a Read Replica. After the promotion completes, then call the
-         * <code>DeleteDBInstance</code> API action to delete the final instance in the DB
-         * cluster.</p><p><h3>See Also:</h3>   <a
+         * Aurora DB cluster, you cannot delete the DB instance if both of the following
+         * conditions are true:</p> <ul> <li> <p>The DB cluster is a Read Replica of
+         * another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance is the only
+         * instance in the DB cluster.</p> </li> </ul> <p>To delete a DB instance in this
+         * case, first call the <a>PromoteReadReplicaDBCluster</a> API action to promote
+         * the DB cluster so it's no longer a Read Replica. After the promotion completes,
+         * then call the <code>DeleteDBInstance</code> API action to delete the final
+         * instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          *
@@ -1824,14 +1826,14 @@ namespace Aws
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
          * <code>true</code>.</p> <p>If the specified DB instance is part of an Amazon
-         * Aurora DB cluster, you cannot delete the DB instance if the following are
-         * true:</p> <ul> <li> <p>The DB cluster is a Read Replica of another Amazon Aurora
-         * DB cluster.</p> </li> <li> <p>The DB instance is the only instance in the DB
-         * cluster.</p> </li> </ul> <p>To delete a DB instance in this case, first call the
-         * <a>PromoteReadReplicaDBCluster</a> API action to promote the DB cluster so it's
-         * no longer a Read Replica. After the promotion completes, then call the
-         * <code>DeleteDBInstance</code> API action to delete the final instance in the DB
-         * cluster.</p><p><h3>See Also:</h3>   <a
+         * Aurora DB cluster, you cannot delete the DB instance if both of the following
+         * conditions are true:</p> <ul> <li> <p>The DB cluster is a Read Replica of
+         * another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance is the only
+         * instance in the DB cluster.</p> </li> </ul> <p>To delete a DB instance in this
+         * case, first call the <a>PromoteReadReplicaDBCluster</a> API action to promote
+         * the DB cluster so it's no longer a Read Replica. After the promotion completes,
+         * then call the <code>DeleteDBInstance</code> API action to delete the final
+         * instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          *
@@ -3371,9 +3373,8 @@ namespace Aws
 
         /**
          * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. You can update the engine version to either a new major or
-         * minor engine version. </p> <p>Amazon RDS supports upgrading a MySQL DB snapshot
-         * from MySQL 5.1 to MySQL 5.5.</p><p><h3>See Also:</h3>   <a
+         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for MySQL
+         * and Oracle. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          */
@@ -3381,9 +3382,8 @@ namespace Aws
 
         /**
          * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. You can update the engine version to either a new major or
-         * minor engine version. </p> <p>Amazon RDS supports upgrading a MySQL DB snapshot
-         * from MySQL 5.1 to MySQL 5.5.</p><p><h3>See Also:</h3>   <a
+         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for MySQL
+         * and Oracle. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -3393,9 +3393,8 @@ namespace Aws
 
         /**
          * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. You can update the engine version to either a new major or
-         * minor engine version. </p> <p>Amazon RDS supports upgrading a MySQL DB snapshot
-         * from MySQL 5.1 to MySQL 5.5.</p><p><h3>See Also:</h3>   <a
+         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for MySQL
+         * and Oracle. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -3970,10 +3969,13 @@ namespace Aws
         virtual void RestoreDBClusterFromS3Async(const Model::RestoreDBClusterFromS3Request& request, const RestoreDBClusterFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is
-         * created from the source DB cluster restore point with the same configuration as
-         * the original source DB cluster, except that the new DB cluster is created with
-         * the default security group.</p> <p>For more information on Amazon Aurora, see <a
+         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If
+         * a DB snapshot is specified, the target DB cluster is created from the source DB
+         * snapshot with a default configuration and default security group.</p> <p>If a DB
+         * cluster snapshot is specified, the target DB cluster is created from the source
+         * DB cluster restore point with the same configuration as the original source DB
+         * cluster, except that the new DB cluster is created with the default security
+         * group.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -3983,10 +3985,13 @@ namespace Aws
         virtual Model::RestoreDBClusterFromSnapshotOutcome RestoreDBClusterFromSnapshot(const Model::RestoreDBClusterFromSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is
-         * created from the source DB cluster restore point with the same configuration as
-         * the original source DB cluster, except that the new DB cluster is created with
-         * the default security group.</p> <p>For more information on Amazon Aurora, see <a
+         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If
+         * a DB snapshot is specified, the target DB cluster is created from the source DB
+         * snapshot with a default configuration and default security group.</p> <p>If a DB
+         * cluster snapshot is specified, the target DB cluster is created from the source
+         * DB cluster restore point with the same configuration as the original source DB
+         * cluster, except that the new DB cluster is created with the default security
+         * group.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -3998,10 +4003,13 @@ namespace Aws
         virtual Model::RestoreDBClusterFromSnapshotOutcomeCallable RestoreDBClusterFromSnapshotCallable(const Model::RestoreDBClusterFromSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is
-         * created from the source DB cluster restore point with the same configuration as
-         * the original source DB cluster, except that the new DB cluster is created with
-         * the default security group.</p> <p>For more information on Amazon Aurora, see <a
+         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If
+         * a DB snapshot is specified, the target DB cluster is created from the source DB
+         * snapshot with a default configuration and default security group.</p> <p>If a DB
+         * cluster snapshot is specified, the target DB cluster is created from the source
+         * DB cluster restore point with the same configuration as the original source DB
+         * cluster, except that the new DB cluster is created with the default security
+         * group.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a

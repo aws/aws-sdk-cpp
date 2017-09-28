@@ -17,6 +17,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/LinuxParameters.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ecs/model/LogConfiguration.h>
 #include <aws/ecs/model/PortMapping.h>
@@ -158,8 +159,9 @@ namespace Model
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
+     * repositories are specified with either <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
+     * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -168,9 +170,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
+     * full <code>registry/repository:tag</code> or
+     * <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
+     * or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
      * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
      * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -183,8 +188,9 @@ namespace Model
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
+     * repositories are specified with either <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
+     * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -193,9 +199,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
+     * full <code>registry/repository:tag</code> or
+     * <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
+     * or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
      * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
      * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -208,8 +217,9 @@ namespace Model
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
+     * repositories are specified with either <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
+     * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -218,9 +228,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
+     * full <code>registry/repository:tag</code> or
+     * <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
+     * or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
      * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
      * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -233,8 +246,9 @@ namespace Model
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
+     * repositories are specified with either <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
+     * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -243,9 +257,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
+     * full <code>registry/repository:tag</code> or
+     * <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
+     * or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
      * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
      * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -258,8 +275,9 @@ namespace Model
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
+     * repositories are specified with either <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
+     * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -268,9 +286,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
+     * full <code>registry/repository:tag</code> or
+     * <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
+     * or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
      * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
      * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -283,8 +304,9 @@ namespace Model
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
+     * repositories are specified with either <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
+     * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -293,9 +315,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
+     * full <code>registry/repository:tag</code> or
+     * <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
+     * or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
      * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
      * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -308,8 +333,9 @@ namespace Model
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
+     * repositories are specified with either <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
+     * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -318,9 +344,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
-     * URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * <li> <p>Images in Amazon ECR repositories can be specified by either using the
+     * full <code>registry/repository:tag</code> or
+     * <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
+     * or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
      * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
      * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -1453,6 +1482,37 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
     inline ContainerDefinition& AddVolumesFrom(VolumeFrom&& value) { m_volumesFromHasBeenSet = true; m_volumesFrom.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * <a>KernelCapabilities</a>.</p>
+     */
+    inline const LinuxParameters& GetLinuxParameters() const{ return m_linuxParameters; }
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * <a>KernelCapabilities</a>.</p>
+     */
+    inline void SetLinuxParameters(const LinuxParameters& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = value; }
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * <a>KernelCapabilities</a>.</p>
+     */
+    inline void SetLinuxParameters(LinuxParameters&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::move(value); }
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * <a>KernelCapabilities</a>.</p>
+     */
+    inline ContainerDefinition& WithLinuxParameters(const LinuxParameters& value) { SetLinuxParameters(value); return *this;}
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * <a>KernelCapabilities</a>.</p>
+     */
+    inline ContainerDefinition& WithLinuxParameters(LinuxParameters&& value) { SetLinuxParameters(std::move(value)); return *this;}
 
 
     /**
@@ -2724,6 +2784,9 @@ namespace Model
 
     Aws::Vector<VolumeFrom> m_volumesFrom;
     bool m_volumesFromHasBeenSet;
+
+    LinuxParameters m_linuxParameters;
+    bool m_linuxParametersHasBeenSet;
 
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;

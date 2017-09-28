@@ -44,8 +44,8 @@ EndpointResponse::EndpointResponse() :
     m_metricsHasBeenSet(false),
     m_optOutHasBeenSet(false),
     m_requestIdHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_shardIdHasBeenSet(false)
+    m_shardIdHasBeenSet(false),
+    m_userHasBeenSet(false)
 {
 }
 
@@ -65,8 +65,8 @@ EndpointResponse::EndpointResponse(const JsonValue& jsonValue) :
     m_metricsHasBeenSet(false),
     m_optOutHasBeenSet(false),
     m_requestIdHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_shardIdHasBeenSet(false)
+    m_shardIdHasBeenSet(false),
+    m_userHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -184,18 +184,18 @@ EndpointResponse& EndpointResponse::operator =(const JsonValue& jsonValue)
     m_requestIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("User"))
-  {
-    m_user = jsonValue.GetObject("User");
-
-    m_userHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("ShardId"))
   {
     m_shardId = jsonValue.GetString("ShardId");
 
     m_shardIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("User"))
+  {
+    m_user = jsonValue.GetObject("User");
+
+    m_userHasBeenSet = true;
   }
 
   return *this;
@@ -303,15 +303,15 @@ JsonValue EndpointResponse::Jsonize() const
 
   }
 
-  if(m_userHasBeenSet)
-  {
-   payload.WithObject("User", m_user.Jsonize());
-
-  }
-
   if(m_shardIdHasBeenSet)
   {
    payload.WithString("ShardId", m_shardId);
+
+  }
+
+  if(m_userHasBeenSet)
+  {
+   payload.WithObject("User", m_user.Jsonize());
 
   }
 

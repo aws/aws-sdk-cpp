@@ -595,6 +595,8 @@ namespace Model
 
         virtual ~SSMClient();
 
+        inline virtual const char* GetServiceClientName() override { return "ssm"; }
+
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are

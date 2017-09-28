@@ -73,6 +73,7 @@ public:
     void SetHeaders(const HeaderValueCollection& value) { m_headers = value; }
     bool ShouldComputeContentMd5() const override { return m_shouldComputeMd5; }
     void SetComputeContentMd5(bool value) { m_shouldComputeMd5 = value; }
+    virtual const char* GetServiceRequestName() const override { return "AmazonWebServiceRequestMock"; }
 
 private:
     std::shared_ptr<Aws::IOStream> m_body;

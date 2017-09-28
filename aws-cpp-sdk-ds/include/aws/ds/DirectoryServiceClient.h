@@ -317,6 +317,8 @@ namespace Model
 
         virtual ~DirectoryServiceClient();
 
+        inline virtual const char* GetServiceClientName() override { return "ds"; }
+
 
         /**
          * <p>If the DNS server for your on-premises domain uses a publicly addressable IP

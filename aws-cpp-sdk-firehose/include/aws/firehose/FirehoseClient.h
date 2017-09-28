@@ -145,6 +145,8 @@ namespace Model
 
         virtual ~FirehoseClient();
 
+        inline virtual const char* GetServiceClientName() override { return "firehose"; }
+
 
         /**
          * <p>Creates a delivery stream.</p> <p>By default, you can create up to 20

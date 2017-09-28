@@ -32,6 +32,13 @@ namespace Model
   {
   public:
     DeregisterContainerInstanceRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "DeregisterContainerInstance"; }
+
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
@@ -174,7 +181,7 @@ namespace Model
      * container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p> <p>Any containers in orphaned service tasks that are registered with a
-     * Classic load balancer or an Application load balancer target group are
+     * Classic Load Balancer or an Application Load Balancer target group are
      * deregistered, and they will begin connection draining according to the settings
      * on the load balancer or target group.</p>
      */
@@ -189,7 +196,7 @@ namespace Model
      * container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p> <p>Any containers in orphaned service tasks that are registered with a
-     * Classic load balancer or an Application load balancer target group are
+     * Classic Load Balancer or an Application Load Balancer target group are
      * deregistered, and they will begin connection draining according to the settings
      * on the load balancer or target group.</p>
      */
@@ -204,7 +211,7 @@ namespace Model
      * container instance is part of an Amazon ECS service, then the service scheduler
      * starts another copy of that task, on a different container instance if possible.
      * </p> <p>Any containers in orphaned service tasks that are registered with a
-     * Classic load balancer or an Application load balancer target group are
+     * Classic Load Balancer or an Application Load Balancer target group are
      * deregistered, and they will begin connection draining according to the settings
      * on the load balancer or target group.</p>
      */

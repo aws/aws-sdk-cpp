@@ -239,6 +239,8 @@ namespace Model
 
         virtual ~LambdaClient();
 
+        inline virtual const char* GetServiceClientName() override { return "lambda"; }
+
 
         /**
          * <p>Adds a permission to the resource policy associated with the specified AWS

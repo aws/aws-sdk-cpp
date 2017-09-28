@@ -221,6 +221,8 @@ namespace Model
 
         virtual ~CodeCommitClient();
 
+        inline virtual const char* GetServiceClientName() override { return "codecommit"; }
+
 
         /**
          * <p>Returns information about one or more repositories.</p> <note> <p>The

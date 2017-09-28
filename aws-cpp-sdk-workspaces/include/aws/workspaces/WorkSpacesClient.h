@@ -173,6 +173,8 @@ namespace Model
 
         virtual ~WorkSpacesClient();
 
+        inline virtual const char* GetServiceClientName() override { return "workspaces"; }
+
 
         /**
          * <p>Creates tags for a WorkSpace.</p><p><h3>See Also:</h3>   <a

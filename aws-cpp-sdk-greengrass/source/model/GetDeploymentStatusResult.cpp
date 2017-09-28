@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeploymentStatusResult::GetDeploymentStatusResult()
+GetDeploymentStatusResult::GetDeploymentStatusResult() : 
+    m_deploymentType(DeploymentType::NOT_SET)
 {
 }
 
-GetDeploymentStatusResult::GetDeploymentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetDeploymentStatusResult::GetDeploymentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_deploymentType(DeploymentType::NOT_SET)
 {
   *this = result;
 }
@@ -42,6 +44,21 @@ GetDeploymentStatusResult& GetDeploymentStatusResult::operator =(const Aws::Amaz
   {
     m_deploymentStatus = jsonValue.GetString("DeploymentStatus");
 
+  }
+
+  if(jsonValue.ValueExists("DeploymentType"))
+  {
+    m_deploymentType = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
+
+  }
+
+  if(jsonValue.ValueExists("ErrorDetails"))
+  {
+    Array<JsonValue> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
+    for(unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex)
+    {
+      m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("ErrorMessage"))

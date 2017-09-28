@@ -137,32 +137,32 @@ namespace Model
 
 
     /**
-     * <p>Represents the context of an action within the stage of a pipeline to a job
-     * worker. </p>
+     * <p>Represents information about the Amazon S3 bucket where artifacts are stored
+     * for the pipeline. </p>
      */
     inline const ArtifactStore& GetArtifactStore() const{ return m_artifactStore; }
 
     /**
-     * <p>Represents the context of an action within the stage of a pipeline to a job
-     * worker. </p>
+     * <p>Represents information about the Amazon S3 bucket where artifacts are stored
+     * for the pipeline. </p>
      */
     inline void SetArtifactStore(const ArtifactStore& value) { m_artifactStoreHasBeenSet = true; m_artifactStore = value; }
 
     /**
-     * <p>Represents the context of an action within the stage of a pipeline to a job
-     * worker. </p>
+     * <p>Represents information about the Amazon S3 bucket where artifacts are stored
+     * for the pipeline. </p>
      */
     inline void SetArtifactStore(ArtifactStore&& value) { m_artifactStoreHasBeenSet = true; m_artifactStore = std::move(value); }
 
     /**
-     * <p>Represents the context of an action within the stage of a pipeline to a job
-     * worker. </p>
+     * <p>Represents information about the Amazon S3 bucket where artifacts are stored
+     * for the pipeline. </p>
      */
     inline PipelineDeclaration& WithArtifactStore(const ArtifactStore& value) { SetArtifactStore(value); return *this;}
 
     /**
-     * <p>Represents the context of an action within the stage of a pipeline to a job
-     * worker. </p>
+     * <p>Represents information about the Amazon S3 bucket where artifacts are stored
+     * for the pipeline. </p>
      */
     inline PipelineDeclaration& WithArtifactStore(ArtifactStore&& value) { SetArtifactStore(std::move(value)); return *this;}
 

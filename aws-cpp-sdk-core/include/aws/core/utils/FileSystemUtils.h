@@ -16,6 +16,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/platform/FileSystem.h>
 
 #include <fstream>
 
@@ -61,5 +62,19 @@ namespace Aws
             ~TempFile();
         };
 
+        class AWS_CORE_API PathUtils
+        {
+        public:
+
+            /**
+             * Get file name from it's full path, e.g get "file1" from "/path/to/file1.ext"; get "file2" from "/path/to/file2"
+             */
+            static Aws::String GetFileNameFromPathWithoutExt(const Aws::String& path);
+
+            /**
+             * Get file name from it's full path, e.g get "file1.ext" from "/path/to/file1.ext"; get "file2" from "/path/to/file2"
+             */
+            static Aws::String GetFileNameFromPathWithExt(const Aws::String& path);
+        };
     }
 }

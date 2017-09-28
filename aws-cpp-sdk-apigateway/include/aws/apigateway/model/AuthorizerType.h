@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     TOKEN,
+    REQUEST,
     COGNITO_USER_POOLS
   };
 

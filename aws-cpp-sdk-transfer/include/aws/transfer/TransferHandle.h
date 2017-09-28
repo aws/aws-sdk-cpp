@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/client/AWSError.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <aws/s3/S3Errors.h>
 #include <iostream>
 #include <atomic>
@@ -308,6 +309,16 @@ namespace Aws
             inline void AddMetadataEntry(const Aws::String& key, const Aws::String& value) { m_metadata[key] = value; }
 
             /**
+             * Arbitrary user context that can be accessed from the callbacks
+             */
+            inline void SetContext(const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { m_context = context; }
+
+            /**
+             * Returns arbitrary user context or nullptr if it's not set.
+             */
+            inline std::shared_ptr<const Aws::Client::AsyncCallerContext> GetContext() const { return m_context; }
+
+            /**
              * The current status of the operation
              */
             TransferStatus GetStatus() const;
@@ -366,6 +377,7 @@ namespace Aws
             TransferStatus m_status;
             Aws::Client::AWSError<Aws::S3::S3Errors> m_lastError;
             std::atomic<bool> m_cancel;
+            std::shared_ptr<const Aws::Client::AsyncCallerContext> m_context;
 
             CreateDownloadStreamCallback m_createDownloadStreamFn;
             Aws::IOStream* m_downloadStream;

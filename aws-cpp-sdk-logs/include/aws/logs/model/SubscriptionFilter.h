@@ -213,34 +213,19 @@ namespace Model
     inline SubscriptionFilter& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
-    /**
-     * <p>The method used to distribute log data to the destination, when the
-     * destination is an Amazon Kinesis stream.</p>
-     */
+    
     inline const Distribution& GetDistribution() const{ return m_distribution; }
 
-    /**
-     * <p>The method used to distribute log data to the destination, when the
-     * destination is an Amazon Kinesis stream.</p>
-     */
+    
     inline void SetDistribution(const Distribution& value) { m_distributionHasBeenSet = true; m_distribution = value; }
 
-    /**
-     * <p>The method used to distribute log data to the destination, when the
-     * destination is an Amazon Kinesis stream.</p>
-     */
+    
     inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = std::move(value); }
 
-    /**
-     * <p>The method used to distribute log data to the destination, when the
-     * destination is an Amazon Kinesis stream.</p>
-     */
+    
     inline SubscriptionFilter& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
 
-    /**
-     * <p>The method used to distribute log data to the destination, when the
-     * destination is an Amazon Kinesis stream.</p>
-     */
+    
     inline SubscriptionFilter& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 
 

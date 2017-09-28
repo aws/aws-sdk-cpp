@@ -153,6 +153,8 @@ namespace Model
 
         virtual ~ShieldClient();
 
+        inline virtual const char* GetServiceClientName() override { return "shield"; }
+
 
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be

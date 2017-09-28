@@ -29,14 +29,18 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeTags.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTagsType">AWS
-   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API DescribeTagsRequest : public AutoScalingRequest
   {
   public:
     DescribeTagsRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "DescribeTags"; }
+
     Aws::String SerializePayload() const override;
 
   protected:

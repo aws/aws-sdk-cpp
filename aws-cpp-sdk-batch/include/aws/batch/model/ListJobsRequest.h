@@ -33,6 +33,13 @@ namespace Model
   {
   public:
     ListJobsRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "ListJobs"; }
+
     Aws::String SerializePayload() const override;
 
 
@@ -80,27 +87,32 @@ namespace Model
 
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue.</p>
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue.</p>
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue.</p>
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue.</p>
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline ListJobsRequest& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * <p>The job status with which to filter jobs in the specified queue.</p>
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
     inline ListJobsRequest& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 

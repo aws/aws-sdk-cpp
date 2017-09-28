@@ -1003,7 +1003,7 @@ DescribeLocationsOutcome DirectConnectClient::DescribeLocations() const
   Aws::StringStream ss;
   ss << m_uri << "/";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
   if(outcome.IsSuccess())
   {
     return DescribeLocationsOutcome(DescribeLocationsResult(outcome.GetResult()));
@@ -1072,7 +1072,7 @@ DescribeVirtualGatewaysOutcome DirectConnectClient::DescribeVirtualGateways() co
   Aws::StringStream ss;
   ss << m_uri << "/";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
   if(outcome.IsSuccess())
   {
     return DescribeVirtualGatewaysOutcome(DescribeVirtualGatewaysResult(outcome.GetResult()));

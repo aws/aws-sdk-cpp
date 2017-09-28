@@ -32,6 +32,8 @@ Deployment::Deployment() :
     m_createdAtHasBeenSet(false),
     m_deploymentArnHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
+    m_deploymentType(DeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false),
     m_groupArnHasBeenSet(false)
 {
 }
@@ -40,6 +42,8 @@ Deployment::Deployment(const JsonValue& jsonValue) :
     m_createdAtHasBeenSet(false),
     m_deploymentArnHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
+    m_deploymentType(DeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false),
     m_groupArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -66,6 +70,13 @@ Deployment& Deployment::operator =(const JsonValue& jsonValue)
     m_deploymentId = jsonValue.GetString("DeploymentId");
 
     m_deploymentIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeploymentType"))
+  {
+    m_deploymentType = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
+
+    m_deploymentTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("GroupArn"))
@@ -98,6 +109,11 @@ JsonValue Deployment::Jsonize() const
   {
    payload.WithString("DeploymentId", m_deploymentId);
 
+  }
+
+  if(m_deploymentTypeHasBeenSet)
+  {
+   payload.WithString("DeploymentType", DeploymentTypeMapper::GetNameForDeploymentType(m_deploymentType));
   }
 
   if(m_groupArnHasBeenSet)

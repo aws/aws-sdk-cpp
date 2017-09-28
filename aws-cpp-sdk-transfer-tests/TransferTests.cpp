@@ -156,8 +156,14 @@ class TransferTests : public ::testing::Test
 public:
 
     static std::shared_ptr<S3Client> m_s3Client;
+    void SetUp()
+    {
+        m_executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+    }
 
 protected:
+
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
 
     static Aws::String GetTestBucketName()
     {
@@ -403,6 +409,41 @@ protected:
 
 std::shared_ptr<S3Client> TransferTests::m_s3Client(nullptr);
 
+TEST_F(TransferTests, TransferManager_ThreadExecutorJoinsAsyncOperations)
+{
+    Aws::String testFileName = MakeFilePath( TEST_FILE_NAME );
+
+    if (EmptyBucket(GetTestBucketName()))
+    {
+        WaitForBucketToEmpty(GetTestBucketName());
+    }
+
+    GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(GetTestBucketName());
+    getObjectRequest.SetKey(TEST_FILE_NAME);
+
+    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+    EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+    ScopedTestFile testFile(testFileName, MB5, testString);
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Client;
+    Aws::Utils::Threading::Semaphore ev(0, 1);
+    transferManagerConfig.downloadProgressCallback = [&ev](const TransferManager*, const std::shared_ptr<const TransferHandle>&){ ev.Release(); };
+
+    std::shared_ptr<TransferHandle> uploadHandle, downloadHandle;
+    {
+        auto transferManager = TransferManager::Create(transferManagerConfig);
+        uploadHandle = transferManager->UploadFile(testFileName, GetTestBucketName(), TEST_FILE_NAME, "text/plain", Aws::Map<Aws::String, Aws::String>());
+        uploadHandle->WaitUntilFinished();
+        downloadHandle = transferManager->DownloadFile(GetTestBucketName(), TEST_FILE_NAME, MakeDownloadFileName(TEST_FILE_NAME));
+    }
+    ev.WaitOne(); // ensures that the download has started; otherwise, downloadHandle's status will be NOT_STARTED
+    m_executor = nullptr; // this should join all worker threads.
+    ASSERT_EQ(TransferStatus::COMPLETED, uploadHandle->GetStatus());
+    ASSERT_EQ(TransferStatus::COMPLETED, downloadHandle->GetStatus());
+}
+
 TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 {
     Aws::String testFileName = MakeFilePath( TEST_FILE_NAME );
@@ -420,7 +461,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
     GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
@@ -483,7 +524,7 @@ TEST_F(TransferTests, TransferManager_SmallTest)
     AWS_LOGSTREAM_DEBUG( "TransferTests", "*******************************")
 
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
     transferManagerConfig.maxParallelTransfers = 1;
     auto transferManager = TransferManager::Create(transferManagerConfig);
@@ -545,7 +586,7 @@ TEST_F(TransferTests, TransferManager_ContentTest)
     ListMultipartUploadsRequest listMultipartRequest;
     listMultipartRequest.SetBucket(GetTestBucketName());
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
@@ -607,13 +648,13 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
     std::condition_variable directoryDownloadSignal;
     std::mutex semaphoreLock;
 
-    auto transferInitCallback = [&](const TransferManager*, const std::shared_ptr<TransferHandle>& handle) 
+    auto transferInitCallback = [&](const TransferManager*, const std::shared_ptr<const TransferHandle>& handle) 
         { 
             std::lock_guard<std::mutex> m(semaphoreLock);
 
             if(handle->GetTransferDirection() == TransferDirection::UPLOAD)
             {
-                directoryUploads.push_back(handle); 
+                directoryUploads.push_back(std::const_pointer_cast<TransferHandle>(handle)); 
 
                 if (directoryUploads.size() == 3)
                 {
@@ -622,7 +663,7 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
             }
             else
             {
-                directoryDownloads.push_back(handle);
+                directoryDownloads.push_back(std::const_pointer_cast<TransferHandle>(handle));
 
                 if (directoryDownloads.size() == 3)
                 {
@@ -631,7 +672,7 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
             }
         };
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
     transferManagerConfig.transferInitiatedCallback = transferInitCallback;
     auto transferManager = TransferManager::Create(transferManagerConfig);
@@ -716,7 +757,7 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
 
     auto transferManager = TransferManager::Create(transferManagerConfig);
@@ -782,7 +823,7 @@ TEST_F(TransferTests, TransferManager_BigTest)
     GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
 
     auto transferManager = TransferManager::Create(transferManagerConfig);
@@ -846,7 +887,7 @@ TEST_F(TransferTests, TransferManager_UnicodeFileNameTest)
     GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
 
     auto transferManager = TransferManager::Create(transferManagerConfig);
@@ -910,22 +951,30 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     bool retryInProgress = false;
     bool completedPartsStayedCompletedDuringRetry = true;
     bool completionCheckDone = false;
+    const char uuid[] = "Bjarne Stroustrup!";
+    bool contextFound = false;
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.transferStatusUpdatedCallback = 
-        [&](const TransferManager*, const TransferHandle& handle)
+        [&](const TransferManager*, const std::shared_ptr<const TransferHandle>& handle)
         {
-            if (!retryInProgress && handle.GetCompletedParts().size() >= 15 &&  handle.GetStatus() != TransferStatus::CANCELED)
+            if(handle->GetContext())
             {
-                const_cast<TransferHandle&>(handle).Cancel();
+                ASSERT_STREQ(uuid, handle->GetContext()->GetUUID().c_str());
+                contextFound = true;
+            }
+
+            if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
+            {
+                std::const_pointer_cast<TransferHandle>(handle)->Cancel();
             }
             else if (retryInProgress)
             {
-                if (handle.GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
+                if (handle->GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
                 {
                     completionCheckDone = true;
                     //this should NEVER rise above 15 or we had some completed parts get retried too.
-                    completedPartsStayedCompletedDuringRetry = handle.GetPendingParts().size() <= 15; 
+                    completedPartsStayedCompletedDuringRetry = handle->GetPendingParts().size() <= 15;
                 }
             }
         };
@@ -934,6 +983,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
     std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(cancelTestFileName, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+    requestPtr->SetContext(Aws::MakeShared<Aws::Client::AsyncCallerContext>(ALLOCATION_TAG, uuid));
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
@@ -951,6 +1001,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
     ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size() && requestPtr->GetFailedParts().size() >= 13u); //some may have been in flight at cancelation time.
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
+    ASSERT_TRUE(contextFound);
 
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
@@ -1020,21 +1071,21 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
 
     std::shared_ptr<TransferHandle> requestPtr(nullptr);
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.transferStatusUpdatedCallback =
-        [&](const TransferManager* manager, const TransferHandle& handle)
+        [&](const TransferManager* manager, const std::shared_ptr<const TransferHandle>& handle)
     {
-        if (!retryInProgress && handle.GetCompletedParts().size() >= 15 && handle.GetStatus() != TransferStatus::CANCELED)
+        if (!retryInProgress && handle->GetCompletedParts().size() >= 15 && handle->GetStatus() != TransferStatus::CANCELED)
         {
-            const_cast<TransferManager*>(manager)->AbortMultipartUpload(requestPtr);
+            const_cast<TransferManager*>(manager)->AbortMultipartUpload(std::const_pointer_cast<TransferHandle>(handle));
         }
         else if (retryInProgress)
         {
-            if (handle.GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
+            if (handle->GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
             {
                 completionCheckDone = true;
                 //this should NEVER rise above 15 or we had some completed parts get retried too.
-                completedPartsStayedCompletedDuringRetry = handle.GetPendingParts().size() <= 15 && handle.GetQueuedParts().size() <= 15;
+                completedPartsStayedCompletedDuringRetry = handle->GetPendingParts().size() <= 15 && handle->GetQueuedParts().size() <= 15;
             }
         }
     };
@@ -1124,7 +1175,7 @@ TEST_F(TransferTests, TransferManager_MultiPartContentTest)
     GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
     auto transferManager = TransferManager::Create(transferManagerConfig);
     
@@ -1174,7 +1225,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
     metadata["key1"] = "val1";
     metadata["key2"] = "val2";
 
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
@@ -1231,7 +1282,7 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     metadata["key1"] = "val1";
     metadata["key2"] = "val2";
     
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
@@ -1272,7 +1323,7 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
 
 TEST_F(TransferTests, BadFileTest)
 {
-    TransferManagerConfiguration transferManagerConfig;
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
@@ -1293,7 +1344,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
     }
 
     {
-        TransferManagerConfiguration uploadConfig;
+        TransferManagerConfiguration uploadConfig(m_executor.get());
         uploadConfig.s3Client = m_s3Client;
         auto transferManager = TransferManager::Create(uploadConfig);
 
@@ -1311,22 +1362,22 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
         bool completedPartsStayedCompletedDuringRetry = true;
         bool completionCheckDone = false;
 
-        TransferManagerConfiguration downloadConfig;
+        TransferManagerConfiguration downloadConfig(m_executor.get());
         downloadConfig.s3Client = m_s3Client;
         downloadConfig.transferStatusUpdatedCallback = 
-            [&](const TransferManager*, const TransferHandle& handle)
+            [&](const TransferManager*, const std::shared_ptr<const TransferHandle>& handle)
             {
-                if (!retryInProgress && handle.GetCompletedParts().size() >= 15 &&  handle.GetStatus() != TransferStatus::CANCELED)
+                if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
                 {
-                    const_cast<TransferHandle&>(handle).Cancel();
+                    std::const_pointer_cast<TransferHandle>(handle)->Cancel();
                 }
                 else if (retryInProgress)
                 {
-                    if (handle.GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
+                    if (handle->GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
                     {
                         completionCheckDone = true;
                         //this should NEVER rise above 15 or we had some completed parts get retried too.
-                        completedPartsStayedCompletedDuringRetry = handle.GetPendingParts().size() <= 15; 
+                        completedPartsStayedCompletedDuringRetry = handle->GetPendingParts().size() <= 15;
                     }
                 }
             };

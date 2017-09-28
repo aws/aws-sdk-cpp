@@ -210,6 +210,8 @@ namespace Model
 
         virtual ~SupportClient();
 
+        inline virtual const char* GetServiceClientName() override { return "support"; }
+
 
         /**
          * <p>Adds one or more attachments to an attachment set. If an

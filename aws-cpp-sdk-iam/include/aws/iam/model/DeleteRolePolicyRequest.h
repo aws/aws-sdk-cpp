@@ -32,6 +32,13 @@ namespace Model
   {
   public:
     DeleteRolePolicyRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "DeleteRolePolicy"; }
+
     Aws::String SerializePayload() const override;
 
   protected:
@@ -108,7 +115,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: =,.@-+</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
@@ -117,7 +124,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: =,.@-+</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
@@ -126,7 +133,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: =,.@-+</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
@@ -135,7 +142,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: =,.@-+</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
@@ -144,7 +151,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: =,.@-+</p>
      */
     inline DeleteRolePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
@@ -153,7 +160,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: =,.@-+</p>
      */
     inline DeleteRolePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
@@ -162,7 +169,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: =,.@-+</p>
      */
     inline DeleteRolePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 

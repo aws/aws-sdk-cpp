@@ -309,6 +309,8 @@ namespace Model
 
         virtual ~WorkDocsClient();
 
+        inline virtual const char* GetServiceClientName() override { return "workdocs"; }
+
 
         /**
          * <p>Aborts the upload of the specified document version that was previously

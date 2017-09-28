@@ -20,6 +20,7 @@
 #include <aws/ec2/model/RequestSpotLaunchSpecification.h>
 #include <aws/ec2/model/SpotInstanceType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/InstanceInterruptionBehavior.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +40,13 @@ namespace Model
   {
   public:
     RequestSpotInstancesRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "RequestSpotInstances"; }
+
     Aws::String SerializePayload() const override;
 
   protected:
@@ -563,6 +571,37 @@ namespace Model
      */
     inline RequestSpotInstancesRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline const InstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline void SetInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline void SetInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = std::move(value); }
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline RequestSpotInstancesRequest& WithInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { SetInstanceInterruptionBehavior(value); return *this;}
+
+    /**
+     * <p>Indicates whether a Spot instance stops or terminates when it is
+     * interrupted.</p>
+     */
+    inline RequestSpotInstancesRequest& WithInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_availabilityZoneGroup;
@@ -597,6 +636,9 @@ namespace Model
 
     Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
+
+    InstanceInterruptionBehavior m_instanceInterruptionBehavior;
+    bool m_instanceInterruptionBehaviorHasBeenSet;
   };
 
 } // namespace Model

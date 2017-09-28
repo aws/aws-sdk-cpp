@@ -65,6 +65,7 @@
 #include <aws/cloudformation/model/StopStackSetOperationRequest.h>
 #include <aws/cloudformation/model/UpdateStackRequest.h>
 #include <aws/cloudformation/model/UpdateStackSetRequest.h>
+#include <aws/cloudformation/model/UpdateTerminationProtectionRequest.h>
 #include <aws/cloudformation/model/ValidateTemplateRequest.h>
 
 using namespace Aws;
@@ -1470,6 +1471,41 @@ void CloudFormationClient::UpdateStackSetAsync(const UpdateStackSetRequest& requ
 void CloudFormationClient::UpdateStackSetAsyncHelper(const UpdateStackSetRequest& request, const UpdateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateStackSet(request), context);
+}
+
+UpdateTerminationProtectionOutcome CloudFormationClient::UpdateTerminationProtection(const UpdateTerminationProtectionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateTerminationProtectionOutcome(UpdateTerminationProtectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateTerminationProtectionOutcome(outcome.GetError());
+  }
+}
+
+UpdateTerminationProtectionOutcomeCallable CloudFormationClient::UpdateTerminationProtectionCallable(const UpdateTerminationProtectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTerminationProtectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTerminationProtection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::UpdateTerminationProtectionAsync(const UpdateTerminationProtectionRequest& request, const UpdateTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTerminationProtectionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::UpdateTerminationProtectionAsyncHelper(const UpdateTerminationProtectionRequest& request, const UpdateTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTerminationProtection(request), context);
 }
 
 ValidateTemplateOutcome CloudFormationClient::ValidateTemplate(const ValidateTemplateRequest& request) const

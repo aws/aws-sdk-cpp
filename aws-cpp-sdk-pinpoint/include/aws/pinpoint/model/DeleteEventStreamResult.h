@@ -34,9 +34,6 @@ namespace Pinpoint
 {
 namespace Model
 {
-  /**
-   * DeleteEventStream Response
-   */
   class AWS_PINPOINT_API DeleteEventStreamResult
   {
   public:

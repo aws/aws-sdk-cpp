@@ -158,6 +158,8 @@ namespace Model
 
         virtual ~SMSClient();
 
+        inline virtual const char* GetServiceClientName() override { return "sms"; }
+
 
         /**
          * The CreateReplicationJob API is used to create a ReplicationJob to replicate a

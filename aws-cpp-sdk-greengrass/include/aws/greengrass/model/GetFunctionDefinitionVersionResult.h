@@ -115,19 +115,29 @@ namespace Model
     inline GetFunctionDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
 
-    
+    /**
+     * Information on the definition.
+     */
     inline const FunctionDefinitionVersion& GetDefinition() const{ return m_definition; }
 
-    
+    /**
+     * Information on the definition.
+     */
     inline void SetDefinition(const FunctionDefinitionVersion& value) { m_definition = value; }
 
-    
+    /**
+     * Information on the definition.
+     */
     inline void SetDefinition(FunctionDefinitionVersion&& value) { m_definition = std::move(value); }
 
-    
+    /**
+     * Information on the definition.
+     */
     inline GetFunctionDefinitionVersionResult& WithDefinition(const FunctionDefinitionVersion& value) { SetDefinition(value); return *this;}
 
-    
+    /**
+     * Information on the definition.
+     */
     inline GetFunctionDefinitionVersionResult& WithDefinition(FunctionDefinitionVersion&& value) { SetDefinition(std::move(value)); return *this;}
 
 

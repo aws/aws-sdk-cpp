@@ -172,6 +172,8 @@ namespace Model
 
         virtual ~RekognitionClient();
 
+        inline virtual const char* GetServiceClientName() override { return "rekognition"; }
+
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each face detected in

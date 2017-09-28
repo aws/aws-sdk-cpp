@@ -31,7 +31,8 @@ namespace Model
     APNS_SANDBOX,
     ADM,
     SMS,
-    EMAIL
+    EMAIL,
+    BAIDU
   };
 
 namespace ChannelTypeMapper

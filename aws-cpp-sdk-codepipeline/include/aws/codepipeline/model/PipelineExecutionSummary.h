@@ -87,55 +87,55 @@ namespace Model
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
      * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While
-     * this pipeline execution was waiting for the next stage to be completed, a newer
-     * pipeline execution caught up and continued through the pipeline instead. </p>
-     * </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p>
-     * </li> </ul>
+     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
+     * While this pipeline execution was waiting for the next stage to be completed, a
+     * newer pipeline execution advanced and continued through the pipeline instead.
+     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
+     * successfully.</p> </li> </ul>
      */
     inline const PipelineExecutionStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
      * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While
-     * this pipeline execution was waiting for the next stage to be completed, a newer
-     * pipeline execution caught up and continued through the pipeline instead. </p>
-     * </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p>
-     * </li> </ul>
+     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
+     * While this pipeline execution was waiting for the next stage to be completed, a
+     * newer pipeline execution advanced and continued through the pipeline instead.
+     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
+     * successfully.</p> </li> </ul>
      */
     inline void SetStatus(const PipelineExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
      * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While
-     * this pipeline execution was waiting for the next stage to be completed, a newer
-     * pipeline execution caught up and continued through the pipeline instead. </p>
-     * </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p>
-     * </li> </ul>
+     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
+     * While this pipeline execution was waiting for the next stage to be completed, a
+     * newer pipeline execution advanced and continued through the pipeline instead.
+     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
+     * successfully.</p> </li> </ul>
      */
     inline void SetStatus(PipelineExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
      * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While
-     * this pipeline execution was waiting for the next stage to be completed, a newer
-     * pipeline execution caught up and continued through the pipeline instead. </p>
-     * </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p>
-     * </li> </ul>
+     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
+     * While this pipeline execution was waiting for the next stage to be completed, a
+     * newer pipeline execution advanced and continued through the pipeline instead.
+     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
+     * successfully.</p> </li> </ul>
      */
     inline PipelineExecutionSummary& WithStatus(const PipelineExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
      * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While
-     * this pipeline execution was waiting for the next stage to be completed, a newer
-     * pipeline execution caught up and continued through the pipeline instead. </p>
-     * </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p>
-     * </li> </ul>
+     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
+     * While this pipeline execution was waiting for the next stage to be completed, a
+     * newer pipeline execution advanced and continued through the pipeline instead.
+     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
+     * successfully.</p> </li> </ul>
      */
     inline PipelineExecutionSummary& WithStatus(PipelineExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

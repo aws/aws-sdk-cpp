@@ -325,19 +325,19 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before any
-     * further trigger-related scaling activities can start.</p>
+     * further dynamic scaling activities can start.</p>
      */
     inline int GetCooldown() const{ return m_cooldown; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before any
-     * further trigger-related scaling activities can start.</p>
+     * further dynamic scaling activities can start.</p>
      */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before any
-     * further trigger-related scaling activities can start.</p>
+     * further dynamic scaling activities can start.</p>
      */
     inline ScalingPolicy& WithCooldown(int value) { SetCooldown(value); return *this;}
 

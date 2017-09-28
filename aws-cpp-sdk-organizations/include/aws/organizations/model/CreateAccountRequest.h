@@ -33,6 +33,13 @@ namespace Model
   {
   public:
     CreateAccountRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "CreateAccount"; }
+
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
@@ -40,43 +47,64 @@ namespace Model
 
     /**
      * <p>The email address of the owner to assign to the new member account. This
-     * email address must not already be associated with another AWS account.</p>
+     * email address must not already be associated with another AWS account. You must
+     * use a valid email address to complete account creation. You cannot access the
+     * root user of the account or remove an account that was created with an invalid
+     * email address.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
 
     /**
      * <p>The email address of the owner to assign to the new member account. This
-     * email address must not already be associated with another AWS account.</p>
+     * email address must not already be associated with another AWS account. You must
+     * use a valid email address to complete account creation. You cannot access the
+     * root user of the account or remove an account that was created with an invalid
+     * email address.</p>
      */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
      * <p>The email address of the owner to assign to the new member account. This
-     * email address must not already be associated with another AWS account.</p>
+     * email address must not already be associated with another AWS account. You must
+     * use a valid email address to complete account creation. You cannot access the
+     * root user of the account or remove an account that was created with an invalid
+     * email address.</p>
      */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
     /**
      * <p>The email address of the owner to assign to the new member account. This
-     * email address must not already be associated with another AWS account.</p>
+     * email address must not already be associated with another AWS account. You must
+     * use a valid email address to complete account creation. You cannot access the
+     * root user of the account or remove an account that was created with an invalid
+     * email address.</p>
      */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
 
     /**
      * <p>The email address of the owner to assign to the new member account. This
-     * email address must not already be associated with another AWS account.</p>
+     * email address must not already be associated with another AWS account. You must
+     * use a valid email address to complete account creation. You cannot access the
+     * root user of the account or remove an account that was created with an invalid
+     * email address.</p>
      */
     inline CreateAccountRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     /**
      * <p>The email address of the owner to assign to the new member account. This
-     * email address must not already be associated with another AWS account.</p>
+     * email address must not already be associated with another AWS account. You must
+     * use a valid email address to complete account creation. You cannot access the
+     * root user of the account or remove an account that was created with an invalid
+     * email address.</p>
      */
     inline CreateAccountRequest& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
      * <p>The email address of the owner to assign to the new member account. This
-     * email address must not already be associated with another AWS account.</p>
+     * email address must not already be associated with another AWS account. You must
+     * use a valid email address to complete account creation. You cannot access the
+     * root user of the account or remove an account that was created with an invalid
+     * email address.</p>
      */
     inline CreateAccountRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
 

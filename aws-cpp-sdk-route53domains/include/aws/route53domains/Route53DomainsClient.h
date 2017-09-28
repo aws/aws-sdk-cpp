@@ -218,6 +218,8 @@ namespace Model
 
         virtual ~Route53DomainsClient();
 
+        inline virtual const char* GetServiceClientName() override { return "route53domains"; }
+
 
         /**
          * <p>This operation checks the availability of one domain name. Note that if the

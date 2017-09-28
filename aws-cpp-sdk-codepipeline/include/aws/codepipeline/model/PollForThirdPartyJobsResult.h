@@ -36,7 +36,7 @@ namespace CodePipeline
 namespace Model
 {
   /**
-   * <p>Represents the output of a poll for third party jobs action.</p><p><h3>See
+   * <p>Represents the output of a PollForThirdPartyJobs action.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobsOutput">AWS
    * API Reference</a></p>

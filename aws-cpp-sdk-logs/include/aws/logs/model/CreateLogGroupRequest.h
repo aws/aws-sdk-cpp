@@ -33,6 +33,13 @@ namespace Model
   {
   public:
     CreateLogGroupRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "CreateLogGroup"; }
+
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
@@ -72,6 +79,63 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline CreateLogGroupRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     */
+    inline CreateLogGroupRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     */
+    inline CreateLogGroupRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     */
+    inline CreateLogGroupRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
@@ -138,6 +202,9 @@ namespace Model
 
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

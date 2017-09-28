@@ -86,37 +86,44 @@ namespace Model
 
 
     /**
-     * <p>The password of the instance.</p>
+     * <p>The password of the instance. Returns an empty string if the password is not
+     * available.</p>
      */
     inline const Aws::String& GetPasswordData() const{ return m_passwordData; }
 
     /**
-     * <p>The password of the instance.</p>
+     * <p>The password of the instance. Returns an empty string if the password is not
+     * available.</p>
      */
     inline void SetPasswordData(const Aws::String& value) { m_passwordData = value; }
 
     /**
-     * <p>The password of the instance.</p>
+     * <p>The password of the instance. Returns an empty string if the password is not
+     * available.</p>
      */
     inline void SetPasswordData(Aws::String&& value) { m_passwordData = std::move(value); }
 
     /**
-     * <p>The password of the instance.</p>
+     * <p>The password of the instance. Returns an empty string if the password is not
+     * available.</p>
      */
     inline void SetPasswordData(const char* value) { m_passwordData.assign(value); }
 
     /**
-     * <p>The password of the instance.</p>
+     * <p>The password of the instance. Returns an empty string if the password is not
+     * available.</p>
      */
     inline GetPasswordDataResponse& WithPasswordData(const Aws::String& value) { SetPasswordData(value); return *this;}
 
     /**
-     * <p>The password of the instance.</p>
+     * <p>The password of the instance. Returns an empty string if the password is not
+     * available.</p>
      */
     inline GetPasswordDataResponse& WithPasswordData(Aws::String&& value) { SetPasswordData(std::move(value)); return *this;}
 
     /**
-     * <p>The password of the instance.</p>
+     * <p>The password of the instance. Returns an empty string if the password is not
+     * available.</p>
      */
     inline GetPasswordDataResponse& WithPasswordData(const char* value) { SetPasswordData(value); return *this;}
 

@@ -406,6 +406,8 @@ namespace Model
 
         virtual ~CloudDirectoryClient();
 
+        inline virtual const char* GetServiceClientName() override { return "clouddirectory"; }
+
 
         /**
          * <p>Adds a new <a>Facet</a> to an object.</p><p><h3>See Also:</h3>   <a

@@ -29,29 +29,53 @@ namespace Model
 {
 
 APNSChannelRequest::APNSChannelRequest() : 
+    m_bundleIdHasBeenSet(false),
     m_certificateHasBeenSet(false),
+    m_defaultAuthenticationMethodHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_privateKeyHasBeenSet(false)
+    m_privateKeyHasBeenSet(false),
+    m_teamIdHasBeenSet(false),
+    m_tokenKeyHasBeenSet(false),
+    m_tokenKeyIdHasBeenSet(false)
 {
 }
 
 APNSChannelRequest::APNSChannelRequest(const JsonValue& jsonValue) : 
+    m_bundleIdHasBeenSet(false),
     m_certificateHasBeenSet(false),
+    m_defaultAuthenticationMethodHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_privateKeyHasBeenSet(false)
+    m_privateKeyHasBeenSet(false),
+    m_teamIdHasBeenSet(false),
+    m_tokenKeyHasBeenSet(false),
+    m_tokenKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 APNSChannelRequest& APNSChannelRequest::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("BundleId"))
+  {
+    m_bundleId = jsonValue.GetString("BundleId");
+
+    m_bundleIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Certificate"))
   {
     m_certificate = jsonValue.GetString("Certificate");
 
     m_certificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DefaultAuthenticationMethod"))
+  {
+    m_defaultAuthenticationMethod = jsonValue.GetString("DefaultAuthenticationMethod");
+
+    m_defaultAuthenticationMethodHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Enabled"))
@@ -68,6 +92,27 @@ APNSChannelRequest& APNSChannelRequest::operator =(const JsonValue& jsonValue)
     m_privateKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TeamId"))
+  {
+    m_teamId = jsonValue.GetString("TeamId");
+
+    m_teamIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TokenKey"))
+  {
+    m_tokenKey = jsonValue.GetString("TokenKey");
+
+    m_tokenKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TokenKeyId"))
+  {
+    m_tokenKeyId = jsonValue.GetString("TokenKeyId");
+
+    m_tokenKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,9 +120,21 @@ JsonValue APNSChannelRequest::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_bundleIdHasBeenSet)
+  {
+   payload.WithString("BundleId", m_bundleId);
+
+  }
+
   if(m_certificateHasBeenSet)
   {
    payload.WithString("Certificate", m_certificate);
+
+  }
+
+  if(m_defaultAuthenticationMethodHasBeenSet)
+  {
+   payload.WithString("DefaultAuthenticationMethod", m_defaultAuthenticationMethod);
 
   }
 
@@ -90,6 +147,24 @@ JsonValue APNSChannelRequest::Jsonize() const
   if(m_privateKeyHasBeenSet)
   {
    payload.WithString("PrivateKey", m_privateKey);
+
+  }
+
+  if(m_teamIdHasBeenSet)
+  {
+   payload.WithString("TeamId", m_teamId);
+
+  }
+
+  if(m_tokenKeyHasBeenSet)
+  {
+   payload.WithString("TokenKey", m_tokenKey);
+
+  }
+
+  if(m_tokenKeyIdHasBeenSet)
+  {
+   payload.WithString("TokenKeyId", m_tokenKeyId);
 
   }
 

@@ -38,7 +38,8 @@ LogGroup::LogGroup() :
     m_metricFilterCountHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_storedBytes(0),
-    m_storedBytesHasBeenSet(false)
+    m_storedBytesHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ LogGroup::LogGroup(const JsonValue& jsonValue) :
     m_metricFilterCountHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_storedBytes(0),
-    m_storedBytesHasBeenSet(false)
+    m_storedBytesHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ LogGroup& LogGroup::operator =(const JsonValue& jsonValue)
     m_storedBytesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("kmsKeyId");
+
+    m_kmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -141,6 +150,12 @@ JsonValue LogGroup::Jsonize() const
   if(m_storedBytesHasBeenSet)
   {
    payload.WithInt64("storedBytes", m_storedBytes);
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
 
   }
 

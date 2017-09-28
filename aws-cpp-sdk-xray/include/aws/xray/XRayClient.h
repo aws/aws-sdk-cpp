@@ -133,6 +133,8 @@ namespace Model
 
         virtual ~XRayClient();
 
+        inline virtual const char* GetServiceClientName() override { return "xray"; }
+
 
         /**
          * <p>Retrieves a list of traces specified by ID. Each trace is a collection of

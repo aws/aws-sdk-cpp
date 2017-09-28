@@ -30,15 +30,21 @@ namespace Model
 
 MessageRequest::MessageRequest() : 
     m_addressesHasBeenSet(false),
+    m_campaignHasBeenSet(false),
     m_contextHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false)
+    m_endpointsHasBeenSet(false),
+    m_messageConfigurationHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
 MessageRequest::MessageRequest(const JsonValue& jsonValue) : 
     m_addressesHasBeenSet(false),
+    m_campaignHasBeenSet(false),
     m_contextHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false)
+    m_endpointsHasBeenSet(false),
+    m_messageConfigurationHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -55,6 +61,16 @@ MessageRequest& MessageRequest::operator =(const JsonValue& jsonValue)
     m_addressesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Campaign"))
+  {
+    Aws::Map<Aws::String, JsonValue> campaignJsonMap = jsonValue.GetObject("Campaign").GetAllObjects();
+    for(auto& campaignItem : campaignJsonMap)
+    {
+      m_campaign[campaignItem.first] = campaignItem.second.AsString();
+    }
+    m_campaignHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Context"))
   {
     Aws::Map<Aws::String, JsonValue> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
@@ -65,11 +81,28 @@ MessageRequest& MessageRequest::operator =(const JsonValue& jsonValue)
     m_contextHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Endpoints"))
+  {
+    Aws::Map<Aws::String, JsonValue> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
+    for(auto& endpointsItem : endpointsJsonMap)
+    {
+      m_endpoints[endpointsItem.first] = endpointsItem.second.AsObject();
+    }
+    m_endpointsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("MessageConfiguration"))
   {
     m_messageConfiguration = jsonValue.GetObject("MessageConfiguration");
 
     m_messageConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RequestId"))
+  {
+    m_requestId = jsonValue.GetString("RequestId");
+
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;
@@ -90,6 +123,17 @@ JsonValue MessageRequest::Jsonize() const
 
   }
 
+  if(m_campaignHasBeenSet)
+  {
+   JsonValue campaignJsonMap;
+   for(auto& campaignItem : m_campaign)
+   {
+     campaignJsonMap.WithString(campaignItem.first, campaignItem.second);
+   }
+   payload.WithObject("Campaign", std::move(campaignJsonMap));
+
+  }
+
   if(m_contextHasBeenSet)
   {
    JsonValue contextJsonMap;
@@ -101,9 +145,26 @@ JsonValue MessageRequest::Jsonize() const
 
   }
 
+  if(m_endpointsHasBeenSet)
+  {
+   JsonValue endpointsJsonMap;
+   for(auto& endpointsItem : m_endpoints)
+   {
+     endpointsJsonMap.WithObject(endpointsItem.first, endpointsItem.second.Jsonize());
+   }
+   payload.WithObject("Endpoints", std::move(endpointsJsonMap));
+
+  }
+
   if(m_messageConfigurationHasBeenSet)
   {
    payload.WithObject("MessageConfiguration", m_messageConfiguration.Jsonize());
+
+  }
+
+  if(m_requestIdHasBeenSet)
+  {
+   payload.WithString("RequestId", m_requestId);
 
   }
 

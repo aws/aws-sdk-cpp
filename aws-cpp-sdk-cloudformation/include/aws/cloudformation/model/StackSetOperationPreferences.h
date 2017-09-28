@@ -175,8 +175,11 @@ namespace Model
      * <p>The maximum number of accounts in which to perform this operation at one
      * time. This is dependent on the value of
      * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code> .</p> <p>Conditional: You
-     * must specify either <code>MaxConcurrentCount</code> or
+     * one more than the <code>FailureToleranceCount</code> .</p> <p>Note that this
+     * setting lets you specify the <i>maximum</i> for operations. For large
+     * deployments, under certain circumstances the actual number of accounts acted
+     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
+     * You must specify either <code>MaxConcurrentCount</code> or
      * <code>MaxConcurrentPercentage</code>, but not both.</p>
      */
     inline int GetMaxConcurrentCount() const{ return m_maxConcurrentCount; }
@@ -185,8 +188,11 @@ namespace Model
      * <p>The maximum number of accounts in which to perform this operation at one
      * time. This is dependent on the value of
      * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code> .</p> <p>Conditional: You
-     * must specify either <code>MaxConcurrentCount</code> or
+     * one more than the <code>FailureToleranceCount</code> .</p> <p>Note that this
+     * setting lets you specify the <i>maximum</i> for operations. For large
+     * deployments, under certain circumstances the actual number of accounts acted
+     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
+     * You must specify either <code>MaxConcurrentCount</code> or
      * <code>MaxConcurrentPercentage</code>, but not both.</p>
      */
     inline void SetMaxConcurrentCount(int value) { m_maxConcurrentCountHasBeenSet = true; m_maxConcurrentCount = value; }
@@ -195,8 +201,11 @@ namespace Model
      * <p>The maximum number of accounts in which to perform this operation at one
      * time. This is dependent on the value of
      * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most
-     * one more than the <code>FailureToleranceCount</code> .</p> <p>Conditional: You
-     * must specify either <code>MaxConcurrentCount</code> or
+     * one more than the <code>FailureToleranceCount</code> .</p> <p>Note that this
+     * setting lets you specify the <i>maximum</i> for operations. For large
+     * deployments, under certain circumstances the actual number of accounts acted
+     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
+     * You must specify either <code>MaxConcurrentCount</code> or
      * <code>MaxConcurrentPercentage</code>, but not both.</p>
      */
     inline StackSetOperationPreferences& WithMaxConcurrentCount(int value) { SetMaxConcurrentCount(value); return *this;}
@@ -207,9 +216,12 @@ namespace Model
      * time.</p> <p>When calculating the number of accounts based on the specified
      * percentage, AWS CloudFormation rounds down to the next whole number. This is
      * true except in cases where rounding down would result is zero. In this case,
-     * CloudFormation sets the number as one instead.</p> <p>Conditional: You must
-     * specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p>
+     * CloudFormation sets the number as one instead.</p> <p>Note that this setting
+     * lets you specify the <i>maximum</i> for operations. For large deployments, under
+     * certain circumstances the actual number of accounts acted upon concurrently may
+     * be lower due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p>
      */
     inline int GetMaxConcurrentPercentage() const{ return m_maxConcurrentPercentage; }
 
@@ -218,9 +230,12 @@ namespace Model
      * time.</p> <p>When calculating the number of accounts based on the specified
      * percentage, AWS CloudFormation rounds down to the next whole number. This is
      * true except in cases where rounding down would result is zero. In this case,
-     * CloudFormation sets the number as one instead.</p> <p>Conditional: You must
-     * specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p>
+     * CloudFormation sets the number as one instead.</p> <p>Note that this setting
+     * lets you specify the <i>maximum</i> for operations. For large deployments, under
+     * certain circumstances the actual number of accounts acted upon concurrently may
+     * be lower due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p>
      */
     inline void SetMaxConcurrentPercentage(int value) { m_maxConcurrentPercentageHasBeenSet = true; m_maxConcurrentPercentage = value; }
 
@@ -229,9 +244,12 @@ namespace Model
      * time.</p> <p>When calculating the number of accounts based on the specified
      * percentage, AWS CloudFormation rounds down to the next whole number. This is
      * true except in cases where rounding down would result is zero. In this case,
-     * CloudFormation sets the number as one instead.</p> <p>Conditional: You must
-     * specify either <code>MaxConcurrentCount</code> or
-     * <code>MaxConcurrentPercentage</code>, but not both.</p>
+     * CloudFormation sets the number as one instead.</p> <p>Note that this setting
+     * lets you specify the <i>maximum</i> for operations. For large deployments, under
+     * certain circumstances the actual number of accounts acted upon concurrently may
+     * be lower due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p>
      */
     inline StackSetOperationPreferences& WithMaxConcurrentPercentage(int value) { SetMaxConcurrentPercentage(value); return *this;}
 

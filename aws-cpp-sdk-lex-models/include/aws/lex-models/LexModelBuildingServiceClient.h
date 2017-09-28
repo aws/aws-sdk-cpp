@@ -267,6 +267,8 @@ namespace Model
 
         virtual ~LexModelBuildingServiceClient();
 
+        inline virtual const char* GetServiceClientName() override { return "lex"; }
+
 
         /**
          * <p>Creates a new version of the bot based on the <code>$LATEST</code> version.

@@ -594,6 +594,8 @@ namespace Model
 
         virtual ~GameLiftClient();
 
+        inline virtual const char* GetServiceClientName() override { return "gamelift"; }
+
 
         /**
          * <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A

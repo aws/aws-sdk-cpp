@@ -250,6 +250,8 @@ namespace Model
 
         virtual ~ConfigServiceClient();
 
+        inline virtual const char* GetServiceClientName() override { return "config"; }
+
 
         /**
          * <p>Deletes the specified AWS Config rule and all of its evaluation results.</p>

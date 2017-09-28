@@ -87,51 +87,37 @@ namespace Model
 
 
     /**
-     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
-     * will be empty if the policy type is anything other than
-     * <code>TargetTrackingScaling</code>.</p>
+     * <p>The CloudWatch alarms created for the target tracking policy.</p>
      */
     inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
 
     /**
-     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
-     * will be empty if the policy type is anything other than
-     * <code>TargetTrackingScaling</code>.</p>
+     * <p>The CloudWatch alarms created for the target tracking policy.</p>
      */
     inline void SetAlarms(const Aws::Vector<Alarm>& value) { m_alarms = value; }
 
     /**
-     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
-     * will be empty if the policy type is anything other than
-     * <code>TargetTrackingScaling</code>.</p>
+     * <p>The CloudWatch alarms created for the target tracking policy.</p>
      */
     inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarms = std::move(value); }
 
     /**
-     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
-     * will be empty if the policy type is anything other than
-     * <code>TargetTrackingScaling</code>.</p>
+     * <p>The CloudWatch alarms created for the target tracking policy.</p>
      */
     inline PutScalingPolicyResult& WithAlarms(const Aws::Vector<Alarm>& value) { SetAlarms(value); return *this;}
 
     /**
-     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
-     * will be empty if the policy type is anything other than
-     * <code>TargetTrackingScaling</code>.</p>
+     * <p>The CloudWatch alarms created for the target tracking policy.</p>
      */
     inline PutScalingPolicyResult& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(std::move(value)); return *this;}
 
     /**
-     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
-     * will be empty if the policy type is anything other than
-     * <code>TargetTrackingScaling</code>.</p>
+     * <p>The CloudWatch alarms created for the target tracking policy.</p>
      */
     inline PutScalingPolicyResult& AddAlarms(const Alarm& value) { m_alarms.push_back(value); return *this; }
 
     /**
-     * <p>The CloudWatch alarms created for the target tracking policy. This parameter
-     * will be empty if the policy type is anything other than
-     * <code>TargetTrackingScaling</code>.</p>
+     * <p>The CloudWatch alarms created for the target tracking policy.</p>
      */
     inline PutScalingPolicyResult& AddAlarms(Alarm&& value) { m_alarms.push_back(std::move(value)); return *this; }
 

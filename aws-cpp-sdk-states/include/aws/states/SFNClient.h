@@ -201,6 +201,8 @@ namespace Model
 
         virtual ~SFNClient();
 
+        inline virtual const char* GetServiceClientName() override { return "states"; }
+
 
         /**
          * <p>Creates an activity.</p><p><h3>See Also:</h3>   <a

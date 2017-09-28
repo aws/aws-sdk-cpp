@@ -267,6 +267,8 @@ namespace Model
 
         virtual ~ECSClient();
 
+        inline virtual const char* GetServiceClientName() override { return "ecs"; }
+
 
         /**
          * <p>Creates a new Amazon ECS cluster. By default, your account receives a

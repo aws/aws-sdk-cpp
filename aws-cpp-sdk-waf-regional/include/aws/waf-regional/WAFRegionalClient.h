@@ -352,6 +352,8 @@ namespace Model
 
         virtual ~WAFRegionalClient();
 
+        inline virtual const char* GetServiceClientName() override { return "waf-regional"; }
+
 
         /**
          * <p>Associates a web ACL with a resource.</p><p><h3>See Also:</h3>   <a

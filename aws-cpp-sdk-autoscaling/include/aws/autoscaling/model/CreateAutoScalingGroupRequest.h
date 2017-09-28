@@ -18,6 +18,7 @@
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/autoscaling/model/LifecycleHookSpecification.h>
 #include <aws/autoscaling/model/Tag.h>
 #include <utility>
 
@@ -29,15 +30,18 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateAutoScalingGroup.</p><p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroupType">AWS
-   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API CreateAutoScalingGroupRequest : public AutoScalingRequest
   {
   public:
     CreateAutoScalingGroupRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "CreateAutoScalingGroup"; }
+
     Aws::String SerializePayload() const override;
 
   protected:
@@ -258,21 +262,24 @@ namespace Model
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
-     * equal to the maximum size of the group.</p>
+     * equal to the maximum size of the group. If you do not specify a desired
+     * capacity, the default is the minimum size of the group.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
-     * equal to the maximum size of the group.</p>
+     * equal to the maximum size of the group. If you do not specify a desired
+     * capacity, the default is the minimum size of the group.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
-     * equal to the maximum size of the group.</p>
+     * equal to the maximum size of the group. If you do not specify a desired
+     * capacity, the default is the minimum size of the group.</p>
      */
     inline CreateAutoScalingGroupRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
@@ -802,6 +809,42 @@ namespace Model
 
 
     /**
+     * <p>One or more lifecycle hooks.</p>
+     */
+    inline const Aws::Vector<LifecycleHookSpecification>& GetLifecycleHookSpecificationList() const{ return m_lifecycleHookSpecificationList; }
+
+    /**
+     * <p>One or more lifecycle hooks.</p>
+     */
+    inline void SetLifecycleHookSpecificationList(const Aws::Vector<LifecycleHookSpecification>& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList = value; }
+
+    /**
+     * <p>One or more lifecycle hooks.</p>
+     */
+    inline void SetLifecycleHookSpecificationList(Aws::Vector<LifecycleHookSpecification>&& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList = std::move(value); }
+
+    /**
+     * <p>One or more lifecycle hooks.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithLifecycleHookSpecificationList(const Aws::Vector<LifecycleHookSpecification>& value) { SetLifecycleHookSpecificationList(value); return *this;}
+
+    /**
+     * <p>One or more lifecycle hooks.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithLifecycleHookSpecificationList(Aws::Vector<LifecycleHookSpecification>&& value) { SetLifecycleHookSpecificationList(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more lifecycle hooks.</p>
+     */
+    inline CreateAutoScalingGroupRequest& AddLifecycleHookSpecificationList(const LifecycleHookSpecification& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList.push_back(value); return *this; }
+
+    /**
+     * <p>One or more lifecycle hooks.</p>
+     */
+    inline CreateAutoScalingGroupRequest& AddLifecycleHookSpecificationList(LifecycleHookSpecification&& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>One or more tags.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging
      * Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.</p>
@@ -899,6 +942,9 @@ namespace Model
 
     bool m_newInstancesProtectedFromScaleIn;
     bool m_newInstancesProtectedFromScaleInHasBeenSet;
+
+    Aws::Vector<LifecycleHookSpecification> m_lifecycleHookSpecificationList;
+    bool m_lifecycleHookSpecificationListHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

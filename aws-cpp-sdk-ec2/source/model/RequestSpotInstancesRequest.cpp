@@ -35,7 +35,9 @@ RequestSpotInstancesRequest::RequestSpotInstancesRequest() :
     m_type(SpotInstanceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_validFromHasBeenSet(false),
-    m_validUntilHasBeenSet(false)
+    m_validUntilHasBeenSet(false),
+    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
+    m_instanceInterruptionBehaviorHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,11 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
   if(m_validUntilHasBeenSet)
   {
     ss << "ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_instanceInterruptionBehaviorHasBeenSet)
+  {
+    ss << "InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -342,44 +342,79 @@ namespace Model
 
 
     /**
-     * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
-     * environment.</p>
+     * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
+     * environment. You can specify the short name or full Amazon Resource Name (ARN)
+     * of an instance profile. For example, <code>ecsInstanceRole</code> or
+     * <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const Aws::String& GetInstanceRole() const{ return m_instanceRole; }
 
     /**
-     * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
-     * environment.</p>
+     * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
+     * environment. You can specify the short name or full Amazon Resource Name (ARN)
+     * of an instance profile. For example, <code>ecsInstanceRole</code> or
+     * <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetInstanceRole(const Aws::String& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
 
     /**
-     * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
-     * environment.</p>
+     * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
+     * environment. You can specify the short name or full Amazon Resource Name (ARN)
+     * of an instance profile. For example, <code>ecsInstanceRole</code> or
+     * <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetInstanceRole(Aws::String&& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = std::move(value); }
 
     /**
-     * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
-     * environment.</p>
+     * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
+     * environment. You can specify the short name or full Amazon Resource Name (ARN)
+     * of an instance profile. For example, <code>ecsInstanceRole</code> or
+     * <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetInstanceRole(const char* value) { m_instanceRoleHasBeenSet = true; m_instanceRole.assign(value); }
 
     /**
-     * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
-     * environment.</p>
+     * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
+     * environment. You can specify the short name or full Amazon Resource Name (ARN)
+     * of an instance profile. For example, <code>ecsInstanceRole</code> or
+     * <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ComputeResource& WithInstanceRole(const Aws::String& value) { SetInstanceRole(value); return *this;}
 
     /**
-     * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
-     * environment.</p>
+     * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
+     * environment. You can specify the short name or full Amazon Resource Name (ARN)
+     * of an instance profile. For example, <code>ecsInstanceRole</code> or
+     * <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ComputeResource& WithInstanceRole(Aws::String&& value) { SetInstanceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
-     * environment.</p>
+     * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
+     * environment. You can specify the short name or full Amazon Resource Name (ARN)
+     * of an instance profile. For example, <code>ecsInstanceRole</code> or
+     * <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline ComputeResource& WithInstanceRole(const char* value) { SetInstanceRole(value); return *this;}
 

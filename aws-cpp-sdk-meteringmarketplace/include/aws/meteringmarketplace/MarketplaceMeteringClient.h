@@ -130,6 +130,8 @@ namespace Model
 
         virtual ~MarketplaceMeteringClient();
 
+        inline virtual const char* GetServiceClientName() override { return "aws-marketplace"; }
+
 
         /**
          * <p>BatchMeterUsage is called from a SaaS application listed on the AWS

@@ -30,11 +30,13 @@
 #include <aws/email/model/CloneReceiptRuleSetRequest.h>
 #include <aws/email/model/CreateConfigurationSetRequest.h>
 #include <aws/email/model/CreateConfigurationSetEventDestinationRequest.h>
+#include <aws/email/model/CreateConfigurationSetTrackingOptionsRequest.h>
 #include <aws/email/model/CreateReceiptFilterRequest.h>
 #include <aws/email/model/CreateReceiptRuleRequest.h>
 #include <aws/email/model/CreateReceiptRuleSetRequest.h>
 #include <aws/email/model/DeleteConfigurationSetRequest.h>
 #include <aws/email/model/DeleteConfigurationSetEventDestinationRequest.h>
+#include <aws/email/model/DeleteConfigurationSetTrackingOptionsRequest.h>
 #include <aws/email/model/DeleteIdentityRequest.h>
 #include <aws/email/model/DeleteIdentityPolicyRequest.h>
 #include <aws/email/model/DeleteReceiptFilterRequest.h>
@@ -71,6 +73,7 @@
 #include <aws/email/model/SetIdentityNotificationTopicRequest.h>
 #include <aws/email/model/SetReceiptRulePositionRequest.h>
 #include <aws/email/model/UpdateConfigurationSetEventDestinationRequest.h>
+#include <aws/email/model/UpdateConfigurationSetTrackingOptionsRequest.h>
 #include <aws/email/model/UpdateReceiptRuleRequest.h>
 #include <aws/email/model/VerifyDomainDkimRequest.h>
 #include <aws/email/model/VerifyDomainIdentityRequest.h>
@@ -257,6 +260,41 @@ void SESClient::CreateConfigurationSetEventDestinationAsyncHelper(const CreateCo
   handler(this, request, CreateConfigurationSetEventDestination(request), context);
 }
 
+CreateConfigurationSetTrackingOptionsOutcome SESClient::CreateConfigurationSetTrackingOptions(const CreateConfigurationSetTrackingOptionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateConfigurationSetTrackingOptionsOutcome(CreateConfigurationSetTrackingOptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateConfigurationSetTrackingOptionsOutcome(outcome.GetError());
+  }
+}
+
+CreateConfigurationSetTrackingOptionsOutcomeCallable SESClient::CreateConfigurationSetTrackingOptionsCallable(const CreateConfigurationSetTrackingOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConfigurationSetTrackingOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConfigurationSetTrackingOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::CreateConfigurationSetTrackingOptionsAsync(const CreateConfigurationSetTrackingOptionsRequest& request, const CreateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetTrackingOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::CreateConfigurationSetTrackingOptionsAsyncHelper(const CreateConfigurationSetTrackingOptionsRequest& request, const CreateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConfigurationSetTrackingOptions(request), context);
+}
+
 CreateReceiptFilterOutcome SESClient::CreateReceiptFilter(const CreateReceiptFilterRequest& request) const
 {
   Aws::StringStream ss;
@@ -430,6 +468,41 @@ void SESClient::DeleteConfigurationSetEventDestinationAsync(const DeleteConfigur
 void SESClient::DeleteConfigurationSetEventDestinationAsyncHelper(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteConfigurationSetEventDestination(request), context);
+}
+
+DeleteConfigurationSetTrackingOptionsOutcome SESClient::DeleteConfigurationSetTrackingOptions(const DeleteConfigurationSetTrackingOptionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteConfigurationSetTrackingOptionsOutcome(DeleteConfigurationSetTrackingOptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteConfigurationSetTrackingOptionsOutcome(outcome.GetError());
+  }
+}
+
+DeleteConfigurationSetTrackingOptionsOutcomeCallable SESClient::DeleteConfigurationSetTrackingOptionsCallable(const DeleteConfigurationSetTrackingOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigurationSetTrackingOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConfigurationSetTrackingOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::DeleteConfigurationSetTrackingOptionsAsync(const DeleteConfigurationSetTrackingOptionsRequest& request, const DeleteConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetTrackingOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::DeleteConfigurationSetTrackingOptionsAsyncHelper(const DeleteConfigurationSetTrackingOptionsRequest& request, const DeleteConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConfigurationSetTrackingOptions(request), context);
 }
 
 DeleteIdentityOutcome SESClient::DeleteIdentity(const DeleteIdentityRequest& request) const
@@ -1690,6 +1763,41 @@ void SESClient::UpdateConfigurationSetEventDestinationAsync(const UpdateConfigur
 void SESClient::UpdateConfigurationSetEventDestinationAsyncHelper(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateConfigurationSetEventDestination(request), context);
+}
+
+UpdateConfigurationSetTrackingOptionsOutcome SESClient::UpdateConfigurationSetTrackingOptions(const UpdateConfigurationSetTrackingOptionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateConfigurationSetTrackingOptionsOutcome(UpdateConfigurationSetTrackingOptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateConfigurationSetTrackingOptionsOutcome(outcome.GetError());
+  }
+}
+
+UpdateConfigurationSetTrackingOptionsOutcomeCallable SESClient::UpdateConfigurationSetTrackingOptionsCallable(const UpdateConfigurationSetTrackingOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigurationSetTrackingOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConfigurationSetTrackingOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::UpdateConfigurationSetTrackingOptionsAsync(const UpdateConfigurationSetTrackingOptionsRequest& request, const UpdateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationSetTrackingOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::UpdateConfigurationSetTrackingOptionsAsyncHelper(const UpdateConfigurationSetTrackingOptionsRequest& request, const UpdateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConfigurationSetTrackingOptions(request), context);
 }
 
 UpdateReceiptRuleOutcome SESClient::UpdateReceiptRule(const UpdateReceiptRuleRequest& request) const

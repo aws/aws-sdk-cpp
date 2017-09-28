@@ -64,6 +64,7 @@
 #include <aws/iam/model/DeleteSAMLProviderRequest.h>
 #include <aws/iam/model/DeleteSSHPublicKeyRequest.h>
 #include <aws/iam/model/DeleteServerCertificateRequest.h>
+#include <aws/iam/model/DeleteServiceLinkedRoleRequest.h>
 #include <aws/iam/model/DeleteServiceSpecificCredentialRequest.h>
 #include <aws/iam/model/DeleteSigningCertificateRequest.h>
 #include <aws/iam/model/DeleteUserRequest.h>
@@ -93,6 +94,7 @@
 #include <aws/iam/model/GetSAMLProviderRequest.h>
 #include <aws/iam/model/GetSSHPublicKeyRequest.h>
 #include <aws/iam/model/GetServerCertificateRequest.h>
+#include <aws/iam/model/GetServiceLinkedRoleDeletionStatusRequest.h>
 #include <aws/iam/model/GetUserRequest.h>
 #include <aws/iam/model/GetUserPolicyRequest.h>
 #include <aws/iam/model/ListAccessKeysRequest.h>
@@ -1518,6 +1520,41 @@ void IAMClient::DeleteServerCertificateAsyncHelper(const DeleteServerCertificate
   handler(this, request, DeleteServerCertificate(request), context);
 }
 
+DeleteServiceLinkedRoleOutcome IAMClient::DeleteServiceLinkedRole(const DeleteServiceLinkedRoleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteServiceLinkedRoleOutcome(DeleteServiceLinkedRoleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteServiceLinkedRoleOutcome(outcome.GetError());
+  }
+}
+
+DeleteServiceLinkedRoleOutcomeCallable IAMClient::DeleteServiceLinkedRoleCallable(const DeleteServiceLinkedRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteServiceLinkedRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteServiceLinkedRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::DeleteServiceLinkedRoleAsync(const DeleteServiceLinkedRoleRequest& request, const DeleteServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceLinkedRoleAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::DeleteServiceLinkedRoleAsyncHelper(const DeleteServiceLinkedRoleRequest& request, const DeleteServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteServiceLinkedRole(request), context);
+}
+
 DeleteServiceSpecificCredentialOutcome IAMClient::DeleteServiceSpecificCredential(const DeleteServiceSpecificCredentialRequest& request) const
 {
   Aws::StringStream ss;
@@ -2531,6 +2568,41 @@ void IAMClient::GetServerCertificateAsync(const GetServerCertificateRequest& req
 void IAMClient::GetServerCertificateAsyncHelper(const GetServerCertificateRequest& request, const GetServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetServerCertificate(request), context);
+}
+
+GetServiceLinkedRoleDeletionStatusOutcome IAMClient::GetServiceLinkedRoleDeletionStatus(const GetServiceLinkedRoleDeletionStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetServiceLinkedRoleDeletionStatusOutcome(GetServiceLinkedRoleDeletionStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetServiceLinkedRoleDeletionStatusOutcome(outcome.GetError());
+  }
+}
+
+GetServiceLinkedRoleDeletionStatusOutcomeCallable IAMClient::GetServiceLinkedRoleDeletionStatusCallable(const GetServiceLinkedRoleDeletionStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetServiceLinkedRoleDeletionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServiceLinkedRoleDeletionStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::GetServiceLinkedRoleDeletionStatusAsync(const GetServiceLinkedRoleDeletionStatusRequest& request, const GetServiceLinkedRoleDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetServiceLinkedRoleDeletionStatusAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::GetServiceLinkedRoleDeletionStatusAsyncHelper(const GetServiceLinkedRoleDeletionStatusRequest& request, const GetServiceLinkedRoleDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetServiceLinkedRoleDeletionStatus(request), context);
 }
 
 GetUserOutcome IAMClient::GetUser(const GetUserRequest& request) const

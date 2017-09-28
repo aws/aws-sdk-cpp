@@ -207,6 +207,8 @@ namespace Model
 
         virtual ~OpsWorksCMClient();
 
+        inline virtual const char* GetServiceClientName() override { return "opsworks-cm"; }
+
 
         /**
          * <p> Associates a new node with the Chef server. This command is an alternative

@@ -213,14 +213,15 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
                 serverTime = DateTime(dateHeaderIter->second.c_str(), DateFormat::AutoDetect);
             }
 
+            const auto signingTimestamp = signer->GetSigningTimestamp();
             if (!serverTime.WasParseSuccessful() || serverTime == DateTime())
             {
                AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Date header was not found in the response, can't attempt to detect clock skew");
-               serverTime = signer->GetSigningTimestamp();
+               serverTime = signingTimestamp;
             }
 
             AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
-            auto diff = DateTime::Diff(serverTime, signer->GetSigningTimestamp());
+            auto diff = DateTime::Diff(serverTime, signingTimestamp);
             //only try again if clock skew was the cause of the error.
             if(diff >= TIME_DIFF_MAX || diff <= TIME_DIFF_MIN)
             {
@@ -255,11 +256,11 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     }
 }
 
-HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri, HttpMethod method, const char* signerName) const
+HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri, HttpMethod method, const char* signerName, const char* requestName) const
 {
     for (long retries = 0;; retries++)
     {
-        HttpResponseOutcome outcome = AttemptOneRequest(uri, method, signerName);
+        HttpResponseOutcome outcome = AttemptOneRequest(uri, method, signerName, requestName);
         if (outcome.IsSuccess() || !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
             return outcome;
@@ -310,8 +311,10 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
     return HttpResponseOutcome(httpResponse);
 }
 
-HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri, HttpMethod method, const char* signerName) const
+HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri, HttpMethod method, const char* signerName, const char* requestName) const
 {
+    AWS_UNREFERENCED_PARAM(requestName);
+
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     auto signer = GetSignerByName(signerName);
     if (!signer->SignRequest(*httpRequest))
@@ -344,6 +347,20 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     const char* signerName) const
 {
     HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, request, method, signerName);
+    if (httpResponseOutcome.IsSuccess())
+    {
+        return StreamOutcome(AmazonWebServiceResult<Stream::ResponseStream>(
+            httpResponseOutcome.GetResult()->SwapResponseStreamOwnership(),
+            httpResponseOutcome.GetResult()->GetHeaders(), httpResponseOutcome.GetResult()->GetResponseCode()));
+    }
+
+    return StreamOutcome(httpResponseOutcome.GetError());
+}
+
+StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri, Http::HttpMethod method, 
+        const char* signerName, const char* requestName) const
+{
+    HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, method, signerName, requestName);
     if (httpResponseOutcome.IsSuccess())
     {
         return StreamOutcome(AmazonWebServiceResult<Stream::ResponseStream>(
@@ -571,9 +588,10 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
 
 JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     Http::HttpMethod method,
-    const char* signerName) const
+    const char* signerName,
+    const char* requestName) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName));
+    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName));
     if (!httpOutcome.IsSuccess())
     {
         return JsonOutcome(httpOutcome.GetError());
@@ -683,9 +701,10 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
 
 XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     Http::HttpMethod method,
-    const char* signerName) const
+    const char* signerName,
+    const char* requestName) const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName));
+    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName));
     if (!httpOutcome.IsSuccess())
     {
         return XmlOutcome(httpOutcome.GetError());

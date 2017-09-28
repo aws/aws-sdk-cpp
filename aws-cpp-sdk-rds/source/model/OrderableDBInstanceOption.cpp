@@ -50,7 +50,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_supportsEnhancedMonitoring(false),
     m_supportsEnhancedMonitoringHasBeenSet(false),
     m_supportsIAMDatabaseAuthentication(false),
-    m_supportsIAMDatabaseAuthenticationHasBeenSet(false)
+    m_supportsIAMDatabaseAuthenticationHasBeenSet(false),
+    m_supportsPerformanceInsights(false),
+    m_supportsPerformanceInsightsHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_supportsEnhancedMonitoring(false),
     m_supportsEnhancedMonitoringHasBeenSet(false),
     m_supportsIAMDatabaseAuthentication(false),
-    m_supportsIAMDatabaseAuthenticationHasBeenSet(false)
+    m_supportsIAMDatabaseAuthenticationHasBeenSet(false),
+    m_supportsPerformanceInsights(false),
+    m_supportsPerformanceInsightsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -169,6 +173,12 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_supportsIAMDatabaseAuthentication = StringUtils::ConvertToBool(StringUtils::Trim(supportsIAMDatabaseAuthenticationNode.GetText().c_str()).c_str());
       m_supportsIAMDatabaseAuthenticationHasBeenSet = true;
     }
+    XmlNode supportsPerformanceInsightsNode = resultNode.FirstChild("SupportsPerformanceInsights");
+    if(!supportsPerformanceInsightsNode.IsNull())
+    {
+      m_supportsPerformanceInsights = StringUtils::ConvertToBool(StringUtils::Trim(supportsPerformanceInsightsNode.GetText().c_str()).c_str());
+      m_supportsPerformanceInsightsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -247,6 +257,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".SupportsIAMDatabaseAuthentication=" << std::boolalpha << m_supportsIAMDatabaseAuthentication << "&";
   }
 
+  if(m_supportsPerformanceInsightsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsPerformanceInsights=" << std::boolalpha << m_supportsPerformanceInsights << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -308,6 +323,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_supportsIAMDatabaseAuthenticationHasBeenSet)
   {
       oStream << location << ".SupportsIAMDatabaseAuthentication=" << std::boolalpha << m_supportsIAMDatabaseAuthentication << "&";
+  }
+  if(m_supportsPerformanceInsightsHasBeenSet)
+  {
+      oStream << location << ".SupportsPerformanceInsights=" << std::boolalpha << m_supportsPerformanceInsights << "&";
   }
 }
 

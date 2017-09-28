@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appstream/model/FleetType.h>
 #include <aws/appstream/model/ComputeCapacityStatus.h>
 #include <aws/appstream/model/FleetState.h>
 #include <aws/appstream/model/VpcConfig.h>
@@ -234,46 +235,55 @@ namespace Model
 
 
     /**
-     * <p>The instance type of compute resources for the fleet. The fleet instances are
-     * launched from this instance type. </p>
+     * <p>The instance type to use when launching fleet instances.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type of compute resources for the fleet. The fleet instances are
-     * launched from this instance type. </p>
+     * <p>The instance type to use when launching fleet instances.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type of compute resources for the fleet. The fleet instances are
-     * launched from this instance type. </p>
+     * <p>The instance type to use when launching fleet instances.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type of compute resources for the fleet. The fleet instances are
-     * launched from this instance type. </p>
+     * <p>The instance type to use when launching fleet instances.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type of compute resources for the fleet. The fleet instances are
-     * launched from this instance type. </p>
+     * <p>The instance type to use when launching fleet instances.</p>
      */
     inline Fleet& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type of compute resources for the fleet. The fleet instances are
-     * launched from this instance type. </p>
+     * <p>The instance type to use when launching fleet instances.</p>
      */
     inline Fleet& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type of compute resources for the fleet. The fleet instances are
-     * launched from this instance type. </p>
+     * <p>The instance type to use when launching fleet instances.</p>
      */
     inline Fleet& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+
+    
+    inline const FleetType& GetFleetType() const{ return m_fleetType; }
+
+    
+    inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
+
+    
+    inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
+
+    
+    inline Fleet& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
+
+    
+    inline Fleet& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
 
 
     /**
@@ -530,6 +540,9 @@ namespace Model
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
+    FleetType m_fleetType;
+    bool m_fleetTypeHasBeenSet;
 
     ComputeCapacityStatus m_computeCapacityStatus;
     bool m_computeCapacityStatusHasBeenSet;

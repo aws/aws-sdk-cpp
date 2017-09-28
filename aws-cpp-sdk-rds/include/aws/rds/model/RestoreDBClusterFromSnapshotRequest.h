@@ -37,6 +37,13 @@ namespace Model
   {
   public:
     RestoreDBClusterFromSnapshotRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "RestoreDBClusterFromSnapshot"; }
+
     Aws::String SerializePayload() const override;
 
   protected:
@@ -94,136 +101,150 @@ namespace Model
 
 
     /**
-     * <p>The name of the DB cluster to create from the DB cluster snapshot. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code>
-     * </p>
+     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
+     * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>The name of the DB cluster to create from the DB cluster snapshot. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code>
-     * </p>
+     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
+     * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>The name of the DB cluster to create from the DB cluster snapshot. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code>
-     * </p>
+     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
+     * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The name of the DB cluster to create from the DB cluster snapshot. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code>
-     * </p>
+     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
+     * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>The name of the DB cluster to create from the DB cluster snapshot. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code>
-     * </p>
+     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
+     * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The name of the DB cluster to create from the DB cluster snapshot. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code>
-     * </p>
+     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
+     * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB cluster to create from the DB cluster snapshot. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code>
-     * </p>
+     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
+     * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
 
     /**
-     * <p>The identifier for the DB cluster snapshot to restore from.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
+     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
+     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
 
     /**
-     * <p>The identifier for the DB cluster snapshot to restore from.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
+     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
+     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
-     * <p>The identifier for the DB cluster snapshot to restore from.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
+     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
+     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier for the DB cluster snapshot to restore from.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
+     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
+     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
     /**
-     * <p>The identifier for the DB cluster snapshot to restore from.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
+     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
+     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier for the DB cluster snapshot to restore from.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
+     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
+     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the DB cluster snapshot to restore from.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
+     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
+     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
 
@@ -544,113 +565,113 @@ namespace Model
 
     /**
      * <p>The KMS key identifier to use when restoring an encrypted DB cluster from a
-     * DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * DB snapshot or DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon
+     * Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to
+     * encrypt the new DB cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul> <li>
-     * <p>If the DB cluster snapshot is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</p> </li> <li> <p>If the DB cluster snapshot is not encrypted, then
-     * the restored DB cluster is encrypted using the specified encryption key.</p>
-     * </li> </ul>
+     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
+     * is encrypted, then the restored DB cluster is encrypted using the KMS key that
+     * was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If
+     * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The KMS key identifier to use when restoring an encrypted DB cluster from a
-     * DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * DB snapshot or DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon
+     * Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to
+     * encrypt the new DB cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul> <li>
-     * <p>If the DB cluster snapshot is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</p> </li> <li> <p>If the DB cluster snapshot is not encrypted, then
-     * the restored DB cluster is encrypted using the specified encryption key.</p>
-     * </li> </ul>
+     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
+     * is encrypted, then the restored DB cluster is encrypted using the KMS key that
+     * was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If
+     * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The KMS key identifier to use when restoring an encrypted DB cluster from a
-     * DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * DB snapshot or DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon
+     * Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to
+     * encrypt the new DB cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul> <li>
-     * <p>If the DB cluster snapshot is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</p> </li> <li> <p>If the DB cluster snapshot is not encrypted, then
-     * the restored DB cluster is encrypted using the specified encryption key.</p>
-     * </li> </ul>
+     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
+     * is encrypted, then the restored DB cluster is encrypted using the KMS key that
+     * was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If
+     * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The KMS key identifier to use when restoring an encrypted DB cluster from a
-     * DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * DB snapshot or DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon
+     * Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to
+     * encrypt the new DB cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul> <li>
-     * <p>If the DB cluster snapshot is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</p> </li> <li> <p>If the DB cluster snapshot is not encrypted, then
-     * the restored DB cluster is encrypted using the specified encryption key.</p>
-     * </li> </ul>
+     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
+     * is encrypted, then the restored DB cluster is encrypted using the KMS key that
+     * was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If
+     * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The KMS key identifier to use when restoring an encrypted DB cluster from a
-     * DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * DB snapshot or DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon
+     * Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to
+     * encrypt the new DB cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul> <li>
-     * <p>If the DB cluster snapshot is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</p> </li> <li> <p>If the DB cluster snapshot is not encrypted, then
-     * the restored DB cluster is encrypted using the specified encryption key.</p>
-     * </li> </ul>
+     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
+     * is encrypted, then the restored DB cluster is encrypted using the KMS key that
+     * was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If
+     * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The KMS key identifier to use when restoring an encrypted DB cluster from a
-     * DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * DB snapshot or DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon
+     * Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to
+     * encrypt the new DB cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul> <li>
-     * <p>If the DB cluster snapshot is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</p> </li> <li> <p>If the DB cluster snapshot is not encrypted, then
-     * the restored DB cluster is encrypted using the specified encryption key.</p>
-     * </li> </ul>
+     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
+     * is encrypted, then the restored DB cluster is encrypted using the KMS key that
+     * was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If
+     * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key identifier to use when restoring an encrypted DB cluster from a
-     * DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
-     * cluster, then you can use the KMS key alias instead of the ARN for the KMS
-     * encryption key.</p> <p>If you do not specify a value for the
+     * DB snapshot or DB cluster snapshot.</p> <p>The KMS key identifier is the Amazon
+     * Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to
+     * encrypt the new DB cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul> <li>
-     * <p>If the DB cluster snapshot is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the DB cluster
-     * snapshot.</p> </li> <li> <p>If the DB cluster snapshot is not encrypted, then
-     * the restored DB cluster is encrypted using the specified encryption key.</p>
-     * </li> </ul>
+     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
+     * is encrypted, then the restored DB cluster is encrypted using the KMS key that
+     * was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If
+     * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

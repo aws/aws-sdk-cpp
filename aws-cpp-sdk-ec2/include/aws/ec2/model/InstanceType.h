@@ -65,6 +65,7 @@ namespace Model
     r4_16xlarge,
     x1_16xlarge,
     x1_32xlarge,
+    x1e_32xlarge,
     i2_xlarge,
     i2_2xlarge,
     i2_4xlarge,

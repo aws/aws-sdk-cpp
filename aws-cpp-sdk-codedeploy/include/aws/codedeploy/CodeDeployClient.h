@@ -323,6 +323,8 @@ namespace Model
 
         virtual ~CodeDeployClient();
 
+        inline virtual const char* GetServiceClientName() override { return "codedeploy"; }
+
 
         /**
          * <p>Adds tags to on-premises instances.</p><p><h3>See Also:</h3>   <a

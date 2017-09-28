@@ -27,14 +27,18 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for SetDesiredCapacity.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacityType">AWS
-   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API SetDesiredCapacityRequest : public AutoScalingRequest
   {
   public:
     SetDesiredCapacityRequest();
+    
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "SetDesiredCapacity"; }
+
     Aws::String SerializePayload() const override;
 
   protected:

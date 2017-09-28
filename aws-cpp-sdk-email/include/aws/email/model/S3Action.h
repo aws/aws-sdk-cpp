@@ -134,37 +134,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon S3 bucket to which to save the received email.</p>
+     * <p>The name of the Amazon S3 bucket that incoming email will be saved to.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
 
     /**
-     * <p>The name of the Amazon S3 bucket to which to save the received email.</p>
+     * <p>The name of the Amazon S3 bucket that incoming email will be saved to.</p>
      */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
-     * <p>The name of the Amazon S3 bucket to which to save the received email.</p>
+     * <p>The name of the Amazon S3 bucket that incoming email will be saved to.</p>
      */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket to which to save the received email.</p>
+     * <p>The name of the Amazon S3 bucket that incoming email will be saved to.</p>
      */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket to which to save the received email.</p>
+     * <p>The name of the Amazon S3 bucket that incoming email will be saved to.</p>
      */
     inline S3Action& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket to which to save the received email.</p>
+     * <p>The name of the Amazon S3 bucket that incoming email will be saved to.</p>
      */
     inline S3Action& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket to which to save the received email.</p>
+     * <p>The name of the Amazon S3 bucket that incoming email will be saved to.</p>
      */
     inline S3Action& WithBucketName(const char* value) { SetBucketName(value); return *this;}
 
@@ -247,8 +247,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
@@ -280,8 +280,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
@@ -313,8 +313,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
@@ -346,8 +346,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
@@ -379,8 +379,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
@@ -412,8 +412,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
@@ -445,8 +445,8 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-     * S3 Developer Guide</a>.</p> </important>
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
+     * Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

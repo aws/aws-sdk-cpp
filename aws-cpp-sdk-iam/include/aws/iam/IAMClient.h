@@ -35,6 +35,7 @@
 #include <aws/iam/model/CreateServiceSpecificCredentialResult.h>
 #include <aws/iam/model/CreateUserResult.h>
 #include <aws/iam/model/CreateVirtualMFADeviceResult.h>
+#include <aws/iam/model/DeleteServiceLinkedRoleResult.h>
 #include <aws/iam/model/GenerateCredentialReportResult.h>
 #include <aws/iam/model/GetAccessKeyLastUsedResult.h>
 #include <aws/iam/model/GetAccountAuthorizationDetailsResult.h>
@@ -55,6 +56,7 @@
 #include <aws/iam/model/GetSAMLProviderResult.h>
 #include <aws/iam/model/GetSSHPublicKeyResult.h>
 #include <aws/iam/model/GetServerCertificateResult.h>
+#include <aws/iam/model/GetServiceLinkedRoleDeletionStatusResult.h>
 #include <aws/iam/model/GetUserResult.h>
 #include <aws/iam/model/GetUserPolicyResult.h>
 #include <aws/iam/model/ListAccessKeysResult.h>
@@ -173,6 +175,7 @@ namespace Model
         class DeleteSAMLProviderRequest;
         class DeleteSSHPublicKeyRequest;
         class DeleteServerCertificateRequest;
+        class DeleteServiceLinkedRoleRequest;
         class DeleteServiceSpecificCredentialRequest;
         class DeleteSigningCertificateRequest;
         class DeleteUserRequest;
@@ -202,6 +205,7 @@ namespace Model
         class GetSAMLProviderRequest;
         class GetSSHPublicKeyRequest;
         class GetServerCertificateRequest;
+        class GetServiceLinkedRoleDeletionStatusRequest;
         class GetUserRequest;
         class GetUserPolicyRequest;
         class ListAccessKeysRequest;
@@ -294,6 +298,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteSAMLProviderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteSSHPublicKeyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteServerCertificateOutcome;
+        typedef Aws::Utils::Outcome<DeleteServiceLinkedRoleResult, Aws::Client::AWSError<IAMErrors>> DeleteServiceLinkedRoleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteServiceSpecificCredentialOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteSigningCertificateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> DeleteUserOutcome;
@@ -323,6 +328,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSAMLProviderResult, Aws::Client::AWSError<IAMErrors>> GetSAMLProviderOutcome;
         typedef Aws::Utils::Outcome<GetSSHPublicKeyResult, Aws::Client::AWSError<IAMErrors>> GetSSHPublicKeyOutcome;
         typedef Aws::Utils::Outcome<GetServerCertificateResult, Aws::Client::AWSError<IAMErrors>> GetServerCertificateOutcome;
+        typedef Aws::Utils::Outcome<GetServiceLinkedRoleDeletionStatusResult, Aws::Client::AWSError<IAMErrors>> GetServiceLinkedRoleDeletionStatusOutcome;
         typedef Aws::Utils::Outcome<GetUserResult, Aws::Client::AWSError<IAMErrors>> GetUserOutcome;
         typedef Aws::Utils::Outcome<GetUserPolicyResult, Aws::Client::AWSError<IAMErrors>> GetUserPolicyOutcome;
         typedef Aws::Utils::Outcome<ListAccessKeysResult, Aws::Client::AWSError<IAMErrors>> ListAccessKeysOutcome;
@@ -415,6 +421,7 @@ namespace Model
         typedef std::future<DeleteSAMLProviderOutcome> DeleteSAMLProviderOutcomeCallable;
         typedef std::future<DeleteSSHPublicKeyOutcome> DeleteSSHPublicKeyOutcomeCallable;
         typedef std::future<DeleteServerCertificateOutcome> DeleteServerCertificateOutcomeCallable;
+        typedef std::future<DeleteServiceLinkedRoleOutcome> DeleteServiceLinkedRoleOutcomeCallable;
         typedef std::future<DeleteServiceSpecificCredentialOutcome> DeleteServiceSpecificCredentialOutcomeCallable;
         typedef std::future<DeleteSigningCertificateOutcome> DeleteSigningCertificateOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
@@ -444,6 +451,7 @@ namespace Model
         typedef std::future<GetSAMLProviderOutcome> GetSAMLProviderOutcomeCallable;
         typedef std::future<GetSSHPublicKeyOutcome> GetSSHPublicKeyOutcomeCallable;
         typedef std::future<GetServerCertificateOutcome> GetServerCertificateOutcomeCallable;
+        typedef std::future<GetServiceLinkedRoleDeletionStatusOutcome> GetServiceLinkedRoleDeletionStatusOutcomeCallable;
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
         typedef std::future<GetUserPolicyOutcome> GetUserPolicyOutcomeCallable;
         typedef std::future<ListAccessKeysOutcome> ListAccessKeysOutcomeCallable;
@@ -539,6 +547,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::DeleteSAMLProviderRequest&, const Model::DeleteSAMLProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSAMLProviderResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteSSHPublicKeyRequest&, const Model::DeleteSSHPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSSHPublicKeyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteServerCertificateRequest&, const Model::DeleteServerCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServerCertificateResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::DeleteServiceLinkedRoleRequest&, const Model::DeleteServiceLinkedRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceLinkedRoleResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteServiceSpecificCredentialRequest&, const Model::DeleteServiceSpecificCredentialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceSpecificCredentialResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteSigningCertificateRequest&, const Model::DeleteSigningCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSigningCertificateResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
@@ -568,6 +577,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::GetSAMLProviderRequest&, const Model::GetSAMLProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSAMLProviderResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::GetSSHPublicKeyRequest&, const Model::GetSSHPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSSHPublicKeyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::GetServerCertificateRequest&, const Model::GetServerCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServerCertificateResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::GetServiceLinkedRoleDeletionStatusRequest&, const Model::GetServiceLinkedRoleDeletionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceLinkedRoleDeletionStatusResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::GetUserPolicyRequest&, const Model::GetUserPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserPolicyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListAccessKeysRequest&, const Model::ListAccessKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessKeysResponseReceivedHandler;
@@ -696,6 +706,8 @@ namespace Model
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IAMClient();
+
+        inline virtual const char* GetServiceClientName() override { return "iam"; }
 
 
        /**
@@ -2422,6 +2434,88 @@ namespace Model
         virtual void DeleteServerCertificateAsync(const Model::DeleteServerCertificateRequest& request, const DeleteServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Submits a service-linked role deletion request and returns a
+         * <code>DeletionTaskId</code>, which you can use to check the status of the
+         * deletion. Before you call this operation, confirm that the role has no active
+         * sessions and that any resources used by the role in the linked service are
+         * deleted. If you call this operation more than once for the same service-linked
+         * role and an earlier deletion task is not complete, then the
+         * <code>DeletionTaskId</code> of the earlier request is returned.</p> <p>If you
+         * submit a deletion request for a service-linked role whose linked service is
+         * still accessing a resource, then the deletion task fails. If it fails, the
+         * <a>GetServiceLinkedRoleDeletionStatus</a> API operation returns the reason for
+         * the failure, including the resources that must be deleted. To delete the
+         * service-linked role, you must first remove those resources from the linked
+         * service and then submit the deletion request again. Resources are specific to
+         * the service that is linked to the role. For more information about removing
+         * resources from a service, see the <a href="http://docs.aws.amazon.com/">AWS
+         * documentation</a> for your service.</p> <p>For more information about
+         * service-linked roles, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Roles
+         * Terms and Concepts: AWS Service-Linked Role</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteServiceLinkedRoleOutcome DeleteServiceLinkedRole(const Model::DeleteServiceLinkedRoleRequest& request) const;
+
+        /**
+         * <p>Submits a service-linked role deletion request and returns a
+         * <code>DeletionTaskId</code>, which you can use to check the status of the
+         * deletion. Before you call this operation, confirm that the role has no active
+         * sessions and that any resources used by the role in the linked service are
+         * deleted. If you call this operation more than once for the same service-linked
+         * role and an earlier deletion task is not complete, then the
+         * <code>DeletionTaskId</code> of the earlier request is returned.</p> <p>If you
+         * submit a deletion request for a service-linked role whose linked service is
+         * still accessing a resource, then the deletion task fails. If it fails, the
+         * <a>GetServiceLinkedRoleDeletionStatus</a> API operation returns the reason for
+         * the failure, including the resources that must be deleted. To delete the
+         * service-linked role, you must first remove those resources from the linked
+         * service and then submit the deletion request again. Resources are specific to
+         * the service that is linked to the role. For more information about removing
+         * resources from a service, see the <a href="http://docs.aws.amazon.com/">AWS
+         * documentation</a> for your service.</p> <p>For more information about
+         * service-linked roles, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Roles
+         * Terms and Concepts: AWS Service-Linked Role</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteServiceLinkedRoleOutcomeCallable DeleteServiceLinkedRoleCallable(const Model::DeleteServiceLinkedRoleRequest& request) const;
+
+        /**
+         * <p>Submits a service-linked role deletion request and returns a
+         * <code>DeletionTaskId</code>, which you can use to check the status of the
+         * deletion. Before you call this operation, confirm that the role has no active
+         * sessions and that any resources used by the role in the linked service are
+         * deleted. If you call this operation more than once for the same service-linked
+         * role and an earlier deletion task is not complete, then the
+         * <code>DeletionTaskId</code> of the earlier request is returned.</p> <p>If you
+         * submit a deletion request for a service-linked role whose linked service is
+         * still accessing a resource, then the deletion task fails. If it fails, the
+         * <a>GetServiceLinkedRoleDeletionStatus</a> API operation returns the reason for
+         * the failure, including the resources that must be deleted. To delete the
+         * service-linked role, you must first remove those resources from the linked
+         * service and then submit the deletion request again. Resources are specific to
+         * the service that is linked to the role. For more information about removing
+         * resources from a service, see the <a href="http://docs.aws.amazon.com/">AWS
+         * documentation</a> for your service.</p> <p>For more information about
+         * service-linked roles, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Roles
+         * Terms and Concepts: AWS Service-Linked Role</a> in the <i>IAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteServiceLinkedRoleAsync(const Model::DeleteServiceLinkedRoleRequest& request, const DeleteServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified service-specific credential.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">AWS
@@ -3676,6 +3770,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetServerCertificateAsync(const Model::GetServerCertificateRequest& request, const GetServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the status of your service-linked role deletion. After you use the
+         * <a>DeleteServiceLinkedRole</a> API operation to submit a service-linked role for
+         * deletion, you can use the <code>DeletionTaskId</code> parameter in
+         * <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the
+         * deletion. If the deletion fails, this operation returns the reason that it
+         * failed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetServiceLinkedRoleDeletionStatusOutcome GetServiceLinkedRoleDeletionStatus(const Model::GetServiceLinkedRoleDeletionStatusRequest& request) const;
+
+        /**
+         * <p>Retrieves the status of your service-linked role deletion. After you use the
+         * <a>DeleteServiceLinkedRole</a> API operation to submit a service-linked role for
+         * deletion, you can use the <code>DeletionTaskId</code> parameter in
+         * <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the
+         * deletion. If the deletion fails, this operation returns the reason that it
+         * failed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetServiceLinkedRoleDeletionStatusOutcomeCallable GetServiceLinkedRoleDeletionStatusCallable(const Model::GetServiceLinkedRoleDeletionStatusRequest& request) const;
+
+        /**
+         * <p>Retrieves the status of your service-linked role deletion. After you use the
+         * <a>DeleteServiceLinkedRole</a> API operation to submit a service-linked role for
+         * deletion, you can use the <code>DeletionTaskId</code> parameter in
+         * <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the
+         * deletion. If the deletion fails, this operation returns the reason that it
+         * failed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetServiceLinkedRoleDeletionStatusAsync(const Model::GetServiceLinkedRoleDeletionStatusRequest& request, const GetServiceLinkedRoleDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the specified IAM user, including the user's
@@ -6398,6 +6532,7 @@ namespace Model
         void DeleteSAMLProviderAsyncHelper(const Model::DeleteSAMLProviderRequest& request, const DeleteSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSSHPublicKeyAsyncHelper(const Model::DeleteSSHPublicKeyRequest& request, const DeleteSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteServerCertificateAsyncHelper(const Model::DeleteServerCertificateRequest& request, const DeleteServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteServiceLinkedRoleAsyncHelper(const Model::DeleteServiceLinkedRoleRequest& request, const DeleteServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteServiceSpecificCredentialAsyncHelper(const Model::DeleteServiceSpecificCredentialRequest& request, const DeleteServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSigningCertificateAsyncHelper(const Model::DeleteSigningCertificateRequest& request, const DeleteSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6427,6 +6562,7 @@ namespace Model
         void GetSAMLProviderAsyncHelper(const Model::GetSAMLProviderRequest& request, const GetSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSSHPublicKeyAsyncHelper(const Model::GetSSHPublicKeyRequest& request, const GetSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetServerCertificateAsyncHelper(const Model::GetServerCertificateRequest& request, const GetServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetServiceLinkedRoleDeletionStatusAsyncHelper(const Model::GetServiceLinkedRoleDeletionStatusRequest& request, const GetServiceLinkedRoleDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserPolicyAsyncHelper(const Model::GetUserPolicyRequest& request, const GetUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccessKeysAsyncHelper(const Model::ListAccessKeysRequest& request, const ListAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

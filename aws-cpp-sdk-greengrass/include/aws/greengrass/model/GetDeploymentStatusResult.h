@@ -16,6 +16,9 @@
 #pragma once
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrass/model/DeploymentType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/greengrass/model/ErrorDetail.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +79,68 @@ namespace Model
      * Status of the deployment.
      */
     inline GetDeploymentStatusResult& WithDeploymentStatus(const char* value) { SetDeploymentStatus(value); return *this;}
+
+
+    /**
+     * The type of the deployment.
+     */
+    inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+
+    /**
+     * The type of the deployment.
+     */
+    inline void SetDeploymentType(const DeploymentType& value) { m_deploymentType = value; }
+
+    /**
+     * The type of the deployment.
+     */
+    inline void SetDeploymentType(DeploymentType&& value) { m_deploymentType = std::move(value); }
+
+    /**
+     * The type of the deployment.
+     */
+    inline GetDeploymentStatusResult& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
+
+    /**
+     * The type of the deployment.
+     */
+    inline GetDeploymentStatusResult& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+
+
+    /**
+     * The error Details
+     */
+    inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const{ return m_errorDetails; }
+
+    /**
+     * The error Details
+     */
+    inline void SetErrorDetails(const Aws::Vector<ErrorDetail>& value) { m_errorDetails = value; }
+
+    /**
+     * The error Details
+     */
+    inline void SetErrorDetails(Aws::Vector<ErrorDetail>&& value) { m_errorDetails = std::move(value); }
+
+    /**
+     * The error Details
+     */
+    inline GetDeploymentStatusResult& WithErrorDetails(const Aws::Vector<ErrorDetail>& value) { SetErrorDetails(value); return *this;}
+
+    /**
+     * The error Details
+     */
+    inline GetDeploymentStatusResult& WithErrorDetails(Aws::Vector<ErrorDetail>&& value) { SetErrorDetails(std::move(value)); return *this;}
+
+    /**
+     * The error Details
+     */
+    inline GetDeploymentStatusResult& AddErrorDetails(const ErrorDetail& value) { m_errorDetails.push_back(value); return *this; }
+
+    /**
+     * The error Details
+     */
+    inline GetDeploymentStatusResult& AddErrorDetails(ErrorDetail&& value) { m_errorDetails.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -152,6 +217,10 @@ namespace Model
   private:
 
     Aws::String m_deploymentStatus;
+
+    DeploymentType m_deploymentType;
+
+    Aws::Vector<ErrorDetail> m_errorDetails;
 
     Aws::String m_errorMessage;
 

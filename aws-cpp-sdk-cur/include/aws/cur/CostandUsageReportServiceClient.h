@@ -117,6 +117,8 @@ namespace Model
 
         virtual ~CostandUsageReportServiceClient();
 
+        inline virtual const char* GetServiceClientName() override { return "cur"; }
+
 
         /**
          * Delete a specified report definition<p><h3>See Also:</h3>   <a

@@ -26,6 +26,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_nameHasBeenSet(false),
     m_imageNameHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_fleetType(FleetType::NOT_SET),
+    m_fleetTypeHasBeenSet(false),
     m_computeCapacityHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_maxUserDurationInSeconds(0),
@@ -60,6 +62,11 @@ Aws::String CreateFleetRequest::SerializePayload() const
   {
    payload.WithString("InstanceType", m_instanceType);
 
+  }
+
+  if(m_fleetTypeHasBeenSet)
+  {
+   payload.WithString("FleetType", FleetTypeMapper::GetNameForFleetType(m_fleetType));
   }
 
   if(m_computeCapacityHasBeenSet)

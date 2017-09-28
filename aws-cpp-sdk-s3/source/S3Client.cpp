@@ -1687,7 +1687,7 @@ ListBucketsOutcome S3Client::ListBuckets() const
 {
   Aws::StringStream ss;
   ss << ComputeEndpointString();
-  XmlOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "ListBuckets");
   if(outcome.IsSuccess())
   {
     return ListBucketsOutcome(ListBucketsResult(outcome.GetResult()));

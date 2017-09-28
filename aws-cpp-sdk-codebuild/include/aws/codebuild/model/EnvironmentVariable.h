@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codebuild/model/EnvironmentVariableType.h>
 #include <utility>
 
 namespace Aws
@@ -146,6 +147,47 @@ namespace Model
      */
     inline EnvironmentVariable& WithValue(const char* value) { SetValue(value); return *this;}
 
+
+    /**
+     * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
+     * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
+     * environment variable in plaintext format.</p> </li> </ul>
+     */
+    inline const EnvironmentVariableType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
+     * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
+     * environment variable in plaintext format.</p> </li> </ul>
+     */
+    inline void SetType(const EnvironmentVariableType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
+     * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
+     * environment variable in plaintext format.</p> </li> </ul>
+     */
+    inline void SetType(EnvironmentVariableType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
+     * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
+     * environment variable in plaintext format.</p> </li> </ul>
+     */
+    inline EnvironmentVariable& WithType(const EnvironmentVariableType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
+     * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
+     * environment variable in plaintext format.</p> </li> </ul>
+     */
+    inline EnvironmentVariable& WithType(EnvironmentVariableType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -153,6 +195,9 @@ namespace Model
 
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
+    EnvironmentVariableType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

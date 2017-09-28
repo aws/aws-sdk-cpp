@@ -150,6 +150,8 @@ namespace Aws
              */
             void EnableRequestProcessing();
 
+            inline virtual const char* GetServiceClientName() { return nullptr; }
+
         protected:
             /**
              * Calls AttemptOnRequest until it either, succeeds, runs out of retries from the retry strategy,
@@ -166,7 +168,8 @@ namespace Aws
              */
             HttpResponseOutcome AttemptExhaustively(const Aws::Http::URI& uri, 
                     Http::HttpMethod httpMethod,
-                    const char* signerName) const;
+                    const char* signerName,
+                    const char* requestName = nullptr) const;
 
             /**
              * Constructs and Http Request from the uri and AmazonWebServiceRequest object. Signs the request, sends it accross the wire
@@ -183,7 +186,8 @@ namespace Aws
             */
             HttpResponseOutcome AttemptOneRequest(const Aws::Http::URI& uri, 
                     Http::HttpMethod httpMethod,
-                    const char* signerName) const;
+                    const char* signerName,
+                    const char* requestName = nullptr) const;
 
             /**
              * This is used for structureless response payloads (file streams, binary data etc...). It calls AttemptExhaustively, but upon
@@ -193,6 +197,15 @@ namespace Aws
                 const Aws::AmazonWebServiceRequest& request,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
+
+            /**
+             * This is used for structureless response payloads (file streams, binary data etc...). It calls AttemptExhaustively, but upon
+             * return transfers ownership of the underlying stream for the http response to the caller.
+             */
+            StreamOutcome MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
+                    Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                    const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                    const char* requestName = nullptr) const;
 
             /**
              * Abstract.  Subclassing clients should override this to tell the client how to marshall error payloads
@@ -291,7 +304,8 @@ namespace Aws
              */
             JsonOutcome MakeRequest(const Aws::Http::URI& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
+                const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                const char* requestName = nullptr) const;
         };
 
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Xml::XmlDocument>, AWSError<CoreErrors>> XmlOutcome;
@@ -342,7 +356,8 @@ namespace Aws
              */
             XmlOutcome MakeRequest(const Aws::Http::URI& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER) const;
+                const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                const char* requesetName = nullptr) const;
         };
 
     } // namespace Client
