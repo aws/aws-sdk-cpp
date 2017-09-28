@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * Segments in your account.
+   * Segments in your account.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API SegmentsResponse
   {

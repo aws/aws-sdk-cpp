@@ -36,7 +36,9 @@ APNSMessage::APNSMessage() :
     m_bodyHasBeenSet(false),
     m_categoryHasBeenSet(false),
     m_dataHasBeenSet(false),
+    m_jsonDataHasBeenSet(false),
     m_mediaUrlHasBeenSet(false),
+    m_preferredAuthenticationMethodHasBeenSet(false),
     m_rawContentHasBeenSet(false),
     m_silentPush(false),
     m_silentPushHasBeenSet(false),
@@ -56,7 +58,9 @@ APNSMessage::APNSMessage(const JsonValue& jsonValue) :
     m_bodyHasBeenSet(false),
     m_categoryHasBeenSet(false),
     m_dataHasBeenSet(false),
+    m_jsonDataHasBeenSet(false),
     m_mediaUrlHasBeenSet(false),
+    m_preferredAuthenticationMethodHasBeenSet(false),
     m_rawContentHasBeenSet(false),
     m_silentPush(false),
     m_silentPushHasBeenSet(false),
@@ -109,11 +113,25 @@ APNSMessage& APNSMessage::operator =(const JsonValue& jsonValue)
     m_dataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JsonData"))
+  {
+    m_jsonData = jsonValue.GetString("JsonData");
+
+    m_jsonDataHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("MediaUrl"))
   {
     m_mediaUrl = jsonValue.GetString("MediaUrl");
 
     m_mediaUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreferredAuthenticationMethod"))
+  {
+    m_preferredAuthenticationMethod = jsonValue.GetString("PreferredAuthenticationMethod");
+
+    m_preferredAuthenticationMethodHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RawContent"))
@@ -216,9 +234,21 @@ JsonValue APNSMessage::Jsonize() const
 
   }
 
+  if(m_jsonDataHasBeenSet)
+  {
+   payload.WithString("JsonData", m_jsonData);
+
+  }
+
   if(m_mediaUrlHasBeenSet)
   {
    payload.WithString("MediaUrl", m_mediaUrl);
+
+  }
+
+  if(m_preferredAuthenticationMethodHasBeenSet)
+  {
+   payload.WithString("PreferredAuthenticationMethod", m_preferredAuthenticationMethod);
 
   }
 

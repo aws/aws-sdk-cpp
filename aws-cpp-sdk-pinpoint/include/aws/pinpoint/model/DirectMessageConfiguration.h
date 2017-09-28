@@ -15,9 +15,12 @@
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
+#include <aws/pinpoint/model/ADMMessage.h>
 #include <aws/pinpoint/model/APNSMessage.h>
+#include <aws/pinpoint/model/BaiduMessage.h>
 #include <aws/pinpoint/model/DefaultMessage.h>
 #include <aws/pinpoint/model/DefaultPushNotificationMessage.h>
+#include <aws/pinpoint/model/EmailMessage.h>
 #include <aws/pinpoint/model/GCMMessage.h>
 #include <aws/pinpoint/model/SMSMessage.h>
 #include <utility>
@@ -37,7 +40,9 @@ namespace Model
 {
 
   /**
-   * The message configuration.
+   * The message configuration.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DirectMessageConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API DirectMessageConfiguration
   {
@@ -46,6 +51,32 @@ namespace Model
     DirectMessageConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
     DirectMessageConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * The message to ADM channels. Overrides the default push notification message.
+     */
+    inline const ADMMessage& GetADMMessage() const{ return m_aDMMessage; }
+
+    /**
+     * The message to ADM channels. Overrides the default push notification message.
+     */
+    inline void SetADMMessage(const ADMMessage& value) { m_aDMMessageHasBeenSet = true; m_aDMMessage = value; }
+
+    /**
+     * The message to ADM channels. Overrides the default push notification message.
+     */
+    inline void SetADMMessage(ADMMessage&& value) { m_aDMMessageHasBeenSet = true; m_aDMMessage = std::move(value); }
+
+    /**
+     * The message to ADM channels. Overrides the default push notification message.
+     */
+    inline DirectMessageConfiguration& WithADMMessage(const ADMMessage& value) { SetADMMessage(value); return *this;}
+
+    /**
+     * The message to ADM channels. Overrides the default push notification message.
+     */
+    inline DirectMessageConfiguration& WithADMMessage(ADMMessage&& value) { SetADMMessage(std::move(value)); return *this;}
 
 
     /**
@@ -72,6 +103,37 @@ namespace Model
      * The message to APNS channels. Overrides the default push notification message.
      */
     inline DirectMessageConfiguration& WithAPNSMessage(APNSMessage&& value) { SetAPNSMessage(std::move(value)); return *this;}
+
+
+    /**
+     * The message to Baidu GCM channels. Overrides the default push notification
+     * message.
+     */
+    inline const BaiduMessage& GetBaiduMessage() const{ return m_baiduMessage; }
+
+    /**
+     * The message to Baidu GCM channels. Overrides the default push notification
+     * message.
+     */
+    inline void SetBaiduMessage(const BaiduMessage& value) { m_baiduMessageHasBeenSet = true; m_baiduMessage = value; }
+
+    /**
+     * The message to Baidu GCM channels. Overrides the default push notification
+     * message.
+     */
+    inline void SetBaiduMessage(BaiduMessage&& value) { m_baiduMessageHasBeenSet = true; m_baiduMessage = std::move(value); }
+
+    /**
+     * The message to Baidu GCM channels. Overrides the default push notification
+     * message.
+     */
+    inline DirectMessageConfiguration& WithBaiduMessage(const BaiduMessage& value) { SetBaiduMessage(value); return *this;}
+
+    /**
+     * The message to Baidu GCM channels. Overrides the default push notification
+     * message.
+     */
+    inline DirectMessageConfiguration& WithBaiduMessage(BaiduMessage&& value) { SetBaiduMessage(std::move(value)); return *this;}
 
 
     /**
@@ -127,6 +189,32 @@ namespace Model
 
 
     /**
+     * The message to Email channels. Overrides the default message.
+     */
+    inline const EmailMessage& GetEmailMessage() const{ return m_emailMessage; }
+
+    /**
+     * The message to Email channels. Overrides the default message.
+     */
+    inline void SetEmailMessage(const EmailMessage& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
+
+    /**
+     * The message to Email channels. Overrides the default message.
+     */
+    inline void SetEmailMessage(EmailMessage&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::move(value); }
+
+    /**
+     * The message to Email channels. Overrides the default message.
+     */
+    inline DirectMessageConfiguration& WithEmailMessage(const EmailMessage& value) { SetEmailMessage(value); return *this;}
+
+    /**
+     * The message to Email channels. Overrides the default message.
+     */
+    inline DirectMessageConfiguration& WithEmailMessage(EmailMessage&& value) { SetEmailMessage(std::move(value)); return *this;}
+
+
+    /**
      * The message to GCM channels. Overrides the default push notification message.
      */
     inline const GCMMessage& GetGCMMessage() const{ return m_gCMMessage; }
@@ -179,14 +267,23 @@ namespace Model
 
   private:
 
+    ADMMessage m_aDMMessage;
+    bool m_aDMMessageHasBeenSet;
+
     APNSMessage m_aPNSMessage;
     bool m_aPNSMessageHasBeenSet;
+
+    BaiduMessage m_baiduMessage;
+    bool m_baiduMessageHasBeenSet;
 
     DefaultMessage m_defaultMessage;
     bool m_defaultMessageHasBeenSet;
 
     DefaultPushNotificationMessage m_defaultPushNotificationMessage;
     bool m_defaultPushNotificationMessageHasBeenSet;
+
+    EmailMessage m_emailMessage;
+    bool m_emailMessageHasBeenSet;
 
     GCMMessage m_gCMMessage;
     bool m_gCMMessageHasBeenSet;

@@ -39,7 +39,9 @@ namespace Model
 {
 
   /**
-   * Campaign definition
+   * Campaign definition<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API CampaignResponse
   {

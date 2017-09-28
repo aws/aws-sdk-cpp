@@ -17,6 +17,7 @@
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/pinpoint/model/EndpointMessageResult.h>
 #include <aws/pinpoint/model/MessageResult.h>
 #include <utility>
 
@@ -35,7 +36,9 @@ namespace Model
 {
 
   /**
-   * Send message response.
+   * Send message response.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API MessageResponse
   {
@@ -80,6 +83,73 @@ namespace Model
      * Application id of the message.
      */
     inline MessageResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline const Aws::Map<Aws::String, EndpointMessageResult>& GetEndpointResult() const{ return m_endpointResult; }
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline void SetEndpointResult(const Aws::Map<Aws::String, EndpointMessageResult>& value) { m_endpointResultHasBeenSet = true; m_endpointResult = value; }
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline void SetEndpointResult(Aws::Map<Aws::String, EndpointMessageResult>&& value) { m_endpointResultHasBeenSet = true; m_endpointResult = std::move(value); }
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline MessageResponse& WithEndpointResult(const Aws::Map<Aws::String, EndpointMessageResult>& value) { SetEndpointResult(value); return *this;}
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline MessageResponse& WithEndpointResult(Aws::Map<Aws::String, EndpointMessageResult>&& value) { SetEndpointResult(std::move(value)); return *this;}
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline MessageResponse& AddEndpointResult(const Aws::String& key, const EndpointMessageResult& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(key, value); return *this; }
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline MessageResponse& AddEndpointResult(Aws::String&& key, const EndpointMessageResult& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(std::move(key), value); return *this; }
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline MessageResponse& AddEndpointResult(const Aws::String& key, EndpointMessageResult&& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline MessageResponse& AddEndpointResult(Aws::String&& key, EndpointMessageResult&& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline MessageResponse& AddEndpointResult(const char* key, EndpointMessageResult&& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline MessageResponse& AddEndpointResult(const char* key, const EndpointMessageResult& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(key, value); return *this; }
 
 
     /**
@@ -188,6 +258,9 @@ namespace Model
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
+    Aws::Map<Aws::String, EndpointMessageResult> m_endpointResult;
+    bool m_endpointResultHasBeenSet;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;

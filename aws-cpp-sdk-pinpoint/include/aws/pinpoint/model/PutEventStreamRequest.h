@@ -28,7 +28,6 @@ namespace Model
 {
 
   /**
-   * PutEventStream Request
    */
   class AWS_PINPOINT_API PutEventStreamRequest : public PinpointRequest
   {

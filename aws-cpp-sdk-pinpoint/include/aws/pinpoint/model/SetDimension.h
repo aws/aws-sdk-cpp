@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * Dimension specification of a segment.
+   * Dimension specification of a segment.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SetDimension">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API SetDimension
   {

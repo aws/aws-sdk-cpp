@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * SMS message configuration.
+   * SMS message configuration.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignSmsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API CampaignSmsMessage
   {

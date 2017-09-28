@@ -30,6 +30,7 @@ namespace Model
 
 MessageResponse::MessageResponse() : 
     m_applicationIdHasBeenSet(false),
+    m_endpointResultHasBeenSet(false),
     m_requestIdHasBeenSet(false),
     m_resultHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ MessageResponse::MessageResponse() :
 
 MessageResponse::MessageResponse(const JsonValue& jsonValue) : 
     m_applicationIdHasBeenSet(false),
+    m_endpointResultHasBeenSet(false),
     m_requestIdHasBeenSet(false),
     m_resultHasBeenSet(false)
 {
@@ -50,6 +52,16 @@ MessageResponse& MessageResponse::operator =(const JsonValue& jsonValue)
     m_applicationId = jsonValue.GetString("ApplicationId");
 
     m_applicationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndpointResult"))
+  {
+    Aws::Map<Aws::String, JsonValue> endpointResultJsonMap = jsonValue.GetObject("EndpointResult").GetAllObjects();
+    for(auto& endpointResultItem : endpointResultJsonMap)
+    {
+      m_endpointResult[endpointResultItem.first] = endpointResultItem.second.AsObject();
+    }
+    m_endpointResultHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RequestId"))
@@ -79,6 +91,17 @@ JsonValue MessageResponse::Jsonize() const
   if(m_applicationIdHasBeenSet)
   {
    payload.WithString("ApplicationId", m_applicationId);
+
+  }
+
+  if(m_endpointResultHasBeenSet)
+  {
+   JsonValue endpointResultJsonMap;
+   for(auto& endpointResultItem : m_endpointResult)
+   {
+     endpointResultJsonMap.WithObject(endpointResultItem.first, endpointResultItem.second.Jsonize());
+   }
+   payload.WithObject("EndpointResult", std::move(endpointResultJsonMap));
 
   }
 

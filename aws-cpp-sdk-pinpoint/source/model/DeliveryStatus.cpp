@@ -34,6 +34,9 @@ namespace Aws
         static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
         static const int TEMPORARY_FAILURE_HASH = HashingUtils::HashString("TEMPORARY_FAILURE");
         static const int PERMANENT_FAILURE_HASH = HashingUtils::HashString("PERMANENT_FAILURE");
+        static const int UNKNOWN_FAILURE_HASH = HashingUtils::HashString("UNKNOWN_FAILURE");
+        static const int OPT_OUT_HASH = HashingUtils::HashString("OPT_OUT");
+        static const int DUPLICATE_HASH = HashingUtils::HashString("DUPLICATE");
 
 
         DeliveryStatus GetDeliveryStatusForName(const Aws::String& name)
@@ -54,6 +57,18 @@ namespace Aws
           else if (hashCode == PERMANENT_FAILURE_HASH)
           {
             return DeliveryStatus::PERMANENT_FAILURE;
+          }
+          else if (hashCode == UNKNOWN_FAILURE_HASH)
+          {
+            return DeliveryStatus::UNKNOWN_FAILURE;
+          }
+          else if (hashCode == OPT_OUT_HASH)
+          {
+            return DeliveryStatus::OPT_OUT;
+          }
+          else if (hashCode == DUPLICATE_HASH)
+          {
+            return DeliveryStatus::DUPLICATE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +92,12 @@ namespace Aws
             return "TEMPORARY_FAILURE";
           case DeliveryStatus::PERMANENT_FAILURE:
             return "PERMANENT_FAILURE";
+          case DeliveryStatus::UNKNOWN_FAILURE:
+            return "UNKNOWN_FAILURE";
+          case DeliveryStatus::OPT_OUT:
+            return "OPT_OUT";
+          case DeliveryStatus::DUPLICATE:
+            return "DUPLICATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

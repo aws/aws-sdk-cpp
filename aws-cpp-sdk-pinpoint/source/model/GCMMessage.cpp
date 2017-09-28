@@ -37,6 +37,7 @@ GCMMessage::GCMMessage() :
     m_iconReferenceHasBeenSet(false),
     m_imageIconUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
+    m_jsonDataHasBeenSet(false),
     m_rawContentHasBeenSet(false),
     m_restrictedPackageNameHasBeenSet(false),
     m_silentPush(false),
@@ -58,6 +59,7 @@ GCMMessage::GCMMessage(const JsonValue& jsonValue) :
     m_iconReferenceHasBeenSet(false),
     m_imageIconUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
+    m_jsonDataHasBeenSet(false),
     m_rawContentHasBeenSet(false),
     m_restrictedPackageNameHasBeenSet(false),
     m_silentPush(false),
@@ -123,6 +125,13 @@ GCMMessage& GCMMessage::operator =(const JsonValue& jsonValue)
     m_imageUrl = jsonValue.GetString("ImageUrl");
 
     m_imageUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JsonData"))
+  {
+    m_jsonData = jsonValue.GetString("JsonData");
+
+    m_jsonDataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RawContent"))
@@ -241,6 +250,12 @@ JsonValue GCMMessage::Jsonize() const
   if(m_imageUrlHasBeenSet)
   {
    payload.WithString("ImageUrl", m_imageUrl);
+
+  }
+
+  if(m_jsonDataHasBeenSet)
+  {
+   payload.WithString("JsonData", m_jsonData);
 
   }
 

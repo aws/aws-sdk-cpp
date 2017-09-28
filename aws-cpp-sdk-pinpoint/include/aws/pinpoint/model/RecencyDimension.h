@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * Define how a segment based on recency of use.
+   * Define how a segment based on recency of use.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RecencyDimension">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API RecencyDimension
   {

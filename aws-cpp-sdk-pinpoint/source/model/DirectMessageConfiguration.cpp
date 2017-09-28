@@ -29,18 +29,24 @@ namespace Model
 {
 
 DirectMessageConfiguration::DirectMessageConfiguration() : 
+    m_aDMMessageHasBeenSet(false),
     m_aPNSMessageHasBeenSet(false),
+    m_baiduMessageHasBeenSet(false),
     m_defaultMessageHasBeenSet(false),
     m_defaultPushNotificationMessageHasBeenSet(false),
+    m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
     m_sMSMessageHasBeenSet(false)
 {
 }
 
 DirectMessageConfiguration::DirectMessageConfiguration(const JsonValue& jsonValue) : 
+    m_aDMMessageHasBeenSet(false),
     m_aPNSMessageHasBeenSet(false),
+    m_baiduMessageHasBeenSet(false),
     m_defaultMessageHasBeenSet(false),
     m_defaultPushNotificationMessageHasBeenSet(false),
+    m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
     m_sMSMessageHasBeenSet(false)
 {
@@ -49,11 +55,25 @@ DirectMessageConfiguration::DirectMessageConfiguration(const JsonValue& jsonValu
 
 DirectMessageConfiguration& DirectMessageConfiguration::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("ADMMessage"))
+  {
+    m_aDMMessage = jsonValue.GetObject("ADMMessage");
+
+    m_aDMMessageHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("APNSMessage"))
   {
     m_aPNSMessage = jsonValue.GetObject("APNSMessage");
 
     m_aPNSMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BaiduMessage"))
+  {
+    m_baiduMessage = jsonValue.GetObject("BaiduMessage");
+
+    m_baiduMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DefaultMessage"))
@@ -68,6 +88,13 @@ DirectMessageConfiguration& DirectMessageConfiguration::operator =(const JsonVal
     m_defaultPushNotificationMessage = jsonValue.GetObject("DefaultPushNotificationMessage");
 
     m_defaultPushNotificationMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EmailMessage"))
+  {
+    m_emailMessage = jsonValue.GetObject("EmailMessage");
+
+    m_emailMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("GCMMessage"))
@@ -91,9 +118,21 @@ JsonValue DirectMessageConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_aDMMessageHasBeenSet)
+  {
+   payload.WithObject("ADMMessage", m_aDMMessage.Jsonize());
+
+  }
+
   if(m_aPNSMessageHasBeenSet)
   {
    payload.WithObject("APNSMessage", m_aPNSMessage.Jsonize());
+
+  }
+
+  if(m_baiduMessageHasBeenSet)
+  {
+   payload.WithObject("BaiduMessage", m_baiduMessage.Jsonize());
 
   }
 
@@ -106,6 +145,12 @@ JsonValue DirectMessageConfiguration::Jsonize() const
   if(m_defaultPushNotificationMessageHasBeenSet)
   {
    payload.WithObject("DefaultPushNotificationMessage", m_defaultPushNotificationMessage.Jsonize());
+
+  }
+
+  if(m_emailMessageHasBeenSet)
+  {
+   payload.WithObject("EmailMessage", m_emailMessage.Jsonize());
 
   }
 

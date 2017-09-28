@@ -31,6 +31,10 @@ namespace Model
 CampaignLimits::CampaignLimits() : 
     m_daily(0),
     m_dailyHasBeenSet(false),
+    m_maximumDuration(0),
+    m_maximumDurationHasBeenSet(false),
+    m_messagesPerSecond(0),
+    m_messagesPerSecondHasBeenSet(false),
     m_total(0),
     m_totalHasBeenSet(false)
 {
@@ -39,6 +43,10 @@ CampaignLimits::CampaignLimits() :
 CampaignLimits::CampaignLimits(const JsonValue& jsonValue) : 
     m_daily(0),
     m_dailyHasBeenSet(false),
+    m_maximumDuration(0),
+    m_maximumDurationHasBeenSet(false),
+    m_messagesPerSecond(0),
+    m_messagesPerSecondHasBeenSet(false),
     m_total(0),
     m_totalHasBeenSet(false)
 {
@@ -52,6 +60,20 @@ CampaignLimits& CampaignLimits::operator =(const JsonValue& jsonValue)
     m_daily = jsonValue.GetInteger("Daily");
 
     m_dailyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaximumDuration"))
+  {
+    m_maximumDuration = jsonValue.GetInteger("MaximumDuration");
+
+    m_maximumDurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessagesPerSecond"))
+  {
+    m_messagesPerSecond = jsonValue.GetInteger("MessagesPerSecond");
+
+    m_messagesPerSecondHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Total"))
@@ -71,6 +93,18 @@ JsonValue CampaignLimits::Jsonize() const
   if(m_dailyHasBeenSet)
   {
    payload.WithInteger("Daily", m_daily);
+
+  }
+
+  if(m_maximumDurationHasBeenSet)
+  {
+   payload.WithInteger("MaximumDuration", m_maximumDuration);
+
+  }
+
+  if(m_messagesPerSecondHasBeenSet)
+  {
+   payload.WithInteger("MessagesPerSecond", m_messagesPerSecond);
 
   }
 

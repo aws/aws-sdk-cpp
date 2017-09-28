@@ -29,7 +29,10 @@ namespace Model
     SUCCESSFUL,
     THROTTLED,
     TEMPORARY_FAILURE,
-    PERMANENT_FAILURE
+    PERMANENT_FAILURE,
+    UNKNOWN_FAILURE,
+    OPT_OUT,
+    DUPLICATE
   };
 
 namespace DeliveryStatusMapper

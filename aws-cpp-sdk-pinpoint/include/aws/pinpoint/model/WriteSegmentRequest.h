@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * Segment definition.
+   * Segment definition.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteSegmentRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API WriteSegmentRequest
   {

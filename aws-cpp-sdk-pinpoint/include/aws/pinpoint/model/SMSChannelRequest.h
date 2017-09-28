@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * SMS Channel Request
+   * SMS Channel Request<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSChannelRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API SMSChannelRequest
   {
@@ -95,6 +97,42 @@ namespace Model
      */
     inline SMSChannelRequest& WithSenderId(const char* value) { SetSenderId(value); return *this;}
 
+
+    /**
+     * ShortCode registered with phone provider.
+     */
+    inline const Aws::String& GetShortCode() const{ return m_shortCode; }
+
+    /**
+     * ShortCode registered with phone provider.
+     */
+    inline void SetShortCode(const Aws::String& value) { m_shortCodeHasBeenSet = true; m_shortCode = value; }
+
+    /**
+     * ShortCode registered with phone provider.
+     */
+    inline void SetShortCode(Aws::String&& value) { m_shortCodeHasBeenSet = true; m_shortCode = std::move(value); }
+
+    /**
+     * ShortCode registered with phone provider.
+     */
+    inline void SetShortCode(const char* value) { m_shortCodeHasBeenSet = true; m_shortCode.assign(value); }
+
+    /**
+     * ShortCode registered with phone provider.
+     */
+    inline SMSChannelRequest& WithShortCode(const Aws::String& value) { SetShortCode(value); return *this;}
+
+    /**
+     * ShortCode registered with phone provider.
+     */
+    inline SMSChannelRequest& WithShortCode(Aws::String&& value) { SetShortCode(std::move(value)); return *this;}
+
+    /**
+     * ShortCode registered with phone provider.
+     */
+    inline SMSChannelRequest& WithShortCode(const char* value) { SetShortCode(value); return *this;}
+
   private:
 
     bool m_enabled;
@@ -102,6 +140,9 @@ namespace Model
 
     Aws::String m_senderId;
     bool m_senderIdHasBeenSet;
+
+    Aws::String m_shortCode;
+    bool m_shortCodeHasBeenSet;
   };
 
 } // namespace Model

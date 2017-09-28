@@ -38,7 +38,9 @@ namespace Model
 {
 
   /**
-   * Used to create a campaign.
+   * Used to create a campaign.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteCampaignRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API WriteCampaignRequest
   {
@@ -326,6 +328,22 @@ namespace Model
 
 
     /**
+     * Whether or not to enable trace logging for the campaign. Undocumented
+     */
+    inline bool GetTrace() const{ return m_trace; }
+
+    /**
+     * Whether or not to enable trace logging for the campaign. Undocumented
+     */
+    inline void SetTrace(bool value) { m_traceHasBeenSet = true; m_trace = value; }
+
+    /**
+     * Whether or not to enable trace logging for the campaign. Undocumented
+     */
+    inline WriteCampaignRequest& WithTrace(bool value) { SetTrace(value); return *this;}
+
+
+    /**
      * A custom description for the treatment.
      */
     inline const Aws::String& GetTreatmentDescription() const{ return m_treatmentDescription; }
@@ -427,6 +445,9 @@ namespace Model
 
     int m_segmentVersion;
     bool m_segmentVersionHasBeenSet;
+
+    bool m_trace;
+    bool m_traceHasBeenSet;
 
     Aws::String m_treatmentDescription;
     bool m_treatmentDescriptionHasBeenSet;

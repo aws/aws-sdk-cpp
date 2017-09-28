@@ -39,7 +39,9 @@ namespace Model
 {
 
   /**
-   * Endpoint response
+   * Endpoint response<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API EndpointResponse
   {
@@ -662,6 +664,42 @@ NONE - Users has
 
 
     /**
+     * The ShardId of endpoint.
+     */
+    inline const Aws::String& GetShardId() const{ return m_shardId; }
+
+    /**
+     * The ShardId of endpoint.
+     */
+    inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
+
+    /**
+     * The ShardId of endpoint.
+     */
+    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
+
+    /**
+     * The ShardId of endpoint.
+     */
+    inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
+
+    /**
+     * The ShardId of endpoint.
+     */
+    inline EndpointResponse& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
+
+    /**
+     * The ShardId of endpoint.
+     */
+    inline EndpointResponse& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
+
+    /**
+     * The ShardId of endpoint.
+     */
+    inline EndpointResponse& WithShardId(const char* value) { SetShardId(value); return *this;}
+
+
+    /**
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.
      */
     inline const EndpointUser& GetUser() const{ return m_user; }
@@ -685,42 +723,6 @@ NONE - Users has
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.
      */
     inline EndpointResponse& WithUser(EndpointUser&& value) { SetUser(std::move(value)); return *this;}
-
-
-    /**
-     * The ShardId of endpoint
-     */
-    inline const Aws::String& GetShardId() const{ return m_shardId; }
-
-    /**
-     * The ShardId of endpoint
-     */
-    inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
-
-    /**
-     * The ShardId of endpoint
-     */
-    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
-
-    /**
-     * The ShardId of endpoint
-     */
-    inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
-
-    /**
-     * The ShardId of endpoint
-     */
-    inline EndpointResponse& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
-
-    /**
-     * The ShardId of endpoint
-     */
-    inline EndpointResponse& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
-
-    /**
-     * The ShardId of endpoint
-     */
-    inline EndpointResponse& WithShardId(const char* value) { SetShardId(value); return *this;}
 
   private:
 
@@ -766,11 +768,11 @@ NONE - Users has
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
 
-    EndpointUser m_user;
-    bool m_userHasBeenSet;
-
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet;
+
+    EndpointUser m_user;
+    bool m_userHasBeenSet;
   };
 
 } // namespace Model

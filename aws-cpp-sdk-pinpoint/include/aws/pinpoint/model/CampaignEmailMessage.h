@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * The email message configuration.
+   * The email message configuration.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignEmailMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API CampaignEmailMessage
   {

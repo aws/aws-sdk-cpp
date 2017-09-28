@@ -31,20 +31,24 @@
 #include <aws/pinpoint/model/CreateCampaignRequest.h>
 #include <aws/pinpoint/model/CreateImportJobRequest.h>
 #include <aws/pinpoint/model/CreateSegmentRequest.h>
+#include <aws/pinpoint/model/DeleteAdmChannelRequest.h>
 #include <aws/pinpoint/model/DeleteApnsChannelRequest.h>
 #include <aws/pinpoint/model/DeleteApnsSandboxChannelRequest.h>
 #include <aws/pinpoint/model/DeleteAppRequest.h>
+#include <aws/pinpoint/model/DeleteBaiduChannelRequest.h>
 #include <aws/pinpoint/model/DeleteCampaignRequest.h>
 #include <aws/pinpoint/model/DeleteEmailChannelRequest.h>
 #include <aws/pinpoint/model/DeleteEventStreamRequest.h>
 #include <aws/pinpoint/model/DeleteGcmChannelRequest.h>
 #include <aws/pinpoint/model/DeleteSegmentRequest.h>
 #include <aws/pinpoint/model/DeleteSmsChannelRequest.h>
+#include <aws/pinpoint/model/GetAdmChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsSandboxChannelRequest.h>
 #include <aws/pinpoint/model/GetAppRequest.h>
 #include <aws/pinpoint/model/GetApplicationSettingsRequest.h>
 #include <aws/pinpoint/model/GetAppsRequest.h>
+#include <aws/pinpoint/model/GetBaiduChannelRequest.h>
 #include <aws/pinpoint/model/GetCampaignRequest.h>
 #include <aws/pinpoint/model/GetCampaignActivitiesRequest.h>
 #include <aws/pinpoint/model/GetCampaignVersionRequest.h>
@@ -64,9 +68,12 @@
 #include <aws/pinpoint/model/GetSmsChannelRequest.h>
 #include <aws/pinpoint/model/PutEventStreamRequest.h>
 #include <aws/pinpoint/model/SendMessagesRequest.h>
+#include <aws/pinpoint/model/SendUsersMessagesRequest.h>
+#include <aws/pinpoint/model/UpdateAdmChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApnsChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApnsSandboxChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApplicationSettingsRequest.h>
+#include <aws/pinpoint/model/UpdateBaiduChannelRequest.h>
 #include <aws/pinpoint/model/UpdateCampaignRequest.h>
 #include <aws/pinpoint/model/UpdateEmailChannelRequest.h>
 #include <aws/pinpoint/model/UpdateEndpointRequest.h>
@@ -279,6 +286,41 @@ void PinpointClient::CreateSegmentAsyncHelper(const CreateSegmentRequest& reques
   handler(this, request, CreateSegment(request), context);
 }
 
+DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/adm";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAdmChannelOutcome(DeleteAdmChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteAdmChannelOutcome(outcome.GetError());
+  }
+}
+
+DeleteAdmChannelOutcomeCallable PinpointClient::DeleteAdmChannelCallable(const DeleteAdmChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAdmChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAdmChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteAdmChannelAsync(const DeleteAdmChannelRequest& request, const DeleteAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAdmChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteAdmChannelAsyncHelper(const DeleteAdmChannelRequest& request, const DeleteAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAdmChannel(request), context);
+}
+
 DeleteApnsChannelOutcome PinpointClient::DeleteApnsChannel(const DeleteApnsChannelRequest& request) const
 {
   Aws::StringStream ss;
@@ -382,6 +424,41 @@ void PinpointClient::DeleteAppAsync(const DeleteAppRequest& request, const Delet
 void PinpointClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteApp(request), context);
+}
+
+DeleteBaiduChannelOutcome PinpointClient::DeleteBaiduChannel(const DeleteBaiduChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/baidu";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBaiduChannelOutcome(DeleteBaiduChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteBaiduChannelOutcome(outcome.GetError());
+  }
+}
+
+DeleteBaiduChannelOutcomeCallable PinpointClient::DeleteBaiduChannelCallable(const DeleteBaiduChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBaiduChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBaiduChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteBaiduChannelAsync(const DeleteBaiduChannelRequest& request, const DeleteBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBaiduChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteBaiduChannelAsyncHelper(const DeleteBaiduChannelRequest& request, const DeleteBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBaiduChannel(request), context);
 }
 
 DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest& request) const
@@ -594,6 +671,41 @@ void PinpointClient::DeleteSmsChannelAsyncHelper(const DeleteSmsChannelRequest& 
   handler(this, request, DeleteSmsChannel(request), context);
 }
 
+GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/adm";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetAdmChannelOutcome(GetAdmChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAdmChannelOutcome(outcome.GetError());
+  }
+}
+
+GetAdmChannelOutcomeCallable PinpointClient::GetAdmChannelCallable(const GetAdmChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAdmChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAdmChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetAdmChannelAsync(const GetAdmChannelRequest& request, const GetAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAdmChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetAdmChannelAsyncHelper(const GetAdmChannelRequest& request, const GetAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAdmChannel(request), context);
+}
+
 GetApnsChannelOutcome PinpointClient::GetApnsChannel(const GetApnsChannelRequest& request) const
 {
   Aws::StringStream ss;
@@ -767,6 +879,41 @@ void PinpointClient::GetAppsAsync(const GetAppsRequest& request, const GetAppsRe
 void PinpointClient::GetAppsAsyncHelper(const GetAppsRequest& request, const GetAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetApps(request), context);
+}
+
+GetBaiduChannelOutcome PinpointClient::GetBaiduChannel(const GetBaiduChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/baidu";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetBaiduChannelOutcome(GetBaiduChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBaiduChannelOutcome(outcome.GetError());
+  }
+}
+
+GetBaiduChannelOutcomeCallable PinpointClient::GetBaiduChannelCallable(const GetBaiduChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBaiduChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBaiduChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetBaiduChannelAsync(const GetBaiduChannelRequest& request, const GetBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBaiduChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetBaiduChannelAsyncHelper(const GetBaiduChannelRequest& request, const GetBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBaiduChannel(request), context);
 }
 
 GetCampaignOutcome PinpointClient::GetCampaign(const GetCampaignRequest& request) const
@@ -1436,6 +1583,76 @@ void PinpointClient::SendMessagesAsyncHelper(const SendMessagesRequest& request,
   handler(this, request, SendMessages(request), context);
 }
 
+SendUsersMessagesOutcome PinpointClient::SendUsersMessages(const SendUsersMessagesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/users-messages";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SendUsersMessagesOutcome(SendUsersMessagesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SendUsersMessagesOutcome(outcome.GetError());
+  }
+}
+
+SendUsersMessagesOutcomeCallable PinpointClient::SendUsersMessagesCallable(const SendUsersMessagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendUsersMessagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendUsersMessages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::SendUsersMessagesAsync(const SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendUsersMessagesAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::SendUsersMessagesAsyncHelper(const SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendUsersMessages(request), context);
+}
+
+UpdateAdmChannelOutcome PinpointClient::UpdateAdmChannel(const UpdateAdmChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/adm";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateAdmChannelOutcome(UpdateAdmChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateAdmChannelOutcome(outcome.GetError());
+  }
+}
+
+UpdateAdmChannelOutcomeCallable PinpointClient::UpdateAdmChannelCallable(const UpdateAdmChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAdmChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAdmChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateAdmChannelAsync(const UpdateAdmChannelRequest& request, const UpdateAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAdmChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateAdmChannelAsyncHelper(const UpdateAdmChannelRequest& request, const UpdateAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAdmChannel(request), context);
+}
+
 UpdateApnsChannelOutcome PinpointClient::UpdateApnsChannel(const UpdateApnsChannelRequest& request) const
 {
   Aws::StringStream ss;
@@ -1539,6 +1756,41 @@ void PinpointClient::UpdateApplicationSettingsAsync(const UpdateApplicationSetti
 void PinpointClient::UpdateApplicationSettingsAsyncHelper(const UpdateApplicationSettingsRequest& request, const UpdateApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateApplicationSettings(request), context);
+}
+
+UpdateBaiduChannelOutcome PinpointClient::UpdateBaiduChannel(const UpdateBaiduChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/baidu";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateBaiduChannelOutcome(UpdateBaiduChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateBaiduChannelOutcome(outcome.GetError());
+  }
+}
+
+UpdateBaiduChannelOutcomeCallable PinpointClient::UpdateBaiduChannelCallable(const UpdateBaiduChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBaiduChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBaiduChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateBaiduChannelAsync(const UpdateBaiduChannelRequest& request, const UpdateBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBaiduChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateBaiduChannelAsyncHelper(const UpdateBaiduChannelRequest& request, const UpdateBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBaiduChannel(request), context);
 }
 
 UpdateCampaignOutcome PinpointClient::UpdateCampaign(const UpdateCampaignRequest& request) const

@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * Endpoint demographic data
+   * Endpoint demographic data<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointDemographic">AWS
+   * API Reference</a></p>
    */
   class AWS_PINPOINT_API EndpointDemographic
   {
