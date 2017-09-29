@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for a streaming session.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes a streaming session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Session">AWS
    * API Reference</a></p>
    */
@@ -50,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>The unique ID for a streaming session.</p>
+     * <p>The ID of the streaming session.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique ID for a streaming session.</p>
+     * <p>The ID of the streaming session.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique ID for a streaming session.</p>
+     * <p>The ID of the streaming session.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique ID for a streaming session.</p>
+     * <p>The ID of the streaming session.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique ID for a streaming session.</p>
+     * <p>The ID of the streaming session.</p>
      */
     inline Session& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique ID for a streaming session.</p>
+     * <p>The ID of the streaming session.</p>
      */
     inline Session& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID for a streaming session.</p>
+     * <p>The ID of the streaming session.</p>
      */
     inline Session& WithId(const char* value) { SetId(value); return *this;}
 
@@ -122,73 +121,73 @@ namespace Model
 
 
     /**
-     * <p>The name of the stack for which the streaming session was created.</p>
+     * <p>The name of the stack for the streaming session.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>The name of the stack for which the streaming session was created.</p>
+     * <p>The name of the stack for the streaming session.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>The name of the stack for which the streaming session was created.</p>
+     * <p>The name of the stack for the streaming session.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>The name of the stack for which the streaming session was created.</p>
+     * <p>The name of the stack for the streaming session.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>The name of the stack for which the streaming session was created.</p>
+     * <p>The name of the stack for the streaming session.</p>
      */
     inline Session& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>The name of the stack for which the streaming session was created.</p>
+     * <p>The name of the stack for the streaming session.</p>
      */
     inline Session& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the stack for which the streaming session was created.</p>
+     * <p>The name of the stack for the streaming session.</p>
      */
     inline Session& WithStackName(const char* value) { SetStackName(value); return *this;}
 
 
     /**
-     * <p>The name of the fleet for which the streaming session was created.</p>
+     * <p>The name of the fleet for the streaming session.</p>
      */
     inline const Aws::String& GetFleetName() const{ return m_fleetName; }
 
     /**
-     * <p>The name of the fleet for which the streaming session was created.</p>
+     * <p>The name of the fleet for the streaming session.</p>
      */
     inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
 
     /**
-     * <p>The name of the fleet for which the streaming session was created.</p>
+     * <p>The name of the fleet for the streaming session.</p>
      */
     inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
 
     /**
-     * <p>The name of the fleet for which the streaming session was created.</p>
+     * <p>The name of the fleet for the streaming session.</p>
      */
     inline void SetFleetName(const char* value) { m_fleetNameHasBeenSet = true; m_fleetName.assign(value); }
 
     /**
-     * <p>The name of the fleet for which the streaming session was created.</p>
+     * <p>The name of the fleet for the streaming session.</p>
      */
     inline Session& WithFleetName(const Aws::String& value) { SetFleetName(value); return *this;}
 
     /**
-     * <p>The name of the fleet for which the streaming session was created.</p>
+     * <p>The name of the fleet for the streaming session.</p>
      */
     inline Session& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the fleet for which the streaming session was created.</p>
+     * <p>The name of the fleet for the streaming session.</p>
      */
     inline Session& WithFleetName(const char* value) { SetFleetName(value); return *this;}
 
@@ -220,37 +219,32 @@ namespace Model
 
 
     /**
-     * <p>The authentication method of the user for whom the session was created. It
-     * can be <code>API</code> for a user authenticated using a streaming URL or
-     * <code>SAML</code> for a SAML federated user.</p>
+     * <p>The authentication method. The user is authenticated using a streaming URL
+     * (<code>API</code>) or SAML federation (<code>SAML</code>).</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
-     * <p>The authentication method of the user for whom the session was created. It
-     * can be <code>API</code> for a user authenticated using a streaming URL or
-     * <code>SAML</code> for a SAML federated user.</p>
+     * <p>The authentication method. The user is authenticated using a streaming URL
+     * (<code>API</code>) or SAML federation (<code>SAML</code>).</p>
      */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
-     * <p>The authentication method of the user for whom the session was created. It
-     * can be <code>API</code> for a user authenticated using a streaming URL or
-     * <code>SAML</code> for a SAML federated user.</p>
+     * <p>The authentication method. The user is authenticated using a streaming URL
+     * (<code>API</code>) or SAML federation (<code>SAML</code>).</p>
      */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
-     * <p>The authentication method of the user for whom the session was created. It
-     * can be <code>API</code> for a user authenticated using a streaming URL or
-     * <code>SAML</code> for a SAML federated user.</p>
+     * <p>The authentication method. The user is authenticated using a streaming URL
+     * (<code>API</code>) or SAML federation (<code>SAML</code>).</p>
      */
     inline Session& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
-     * <p>The authentication method of the user for whom the session was created. It
-     * can be <code>API</code> for a user authenticated using a streaming URL or
-     * <code>SAML</code> for a SAML federated user.</p>
+     * <p>The authentication method. The user is authenticated using a streaming URL
+     * (<code>API</code>) or SAML federation (<code>SAML</code>).</p>
      */
     inline Session& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 

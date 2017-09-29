@@ -46,50 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The stack names to describe. Use null to describe all the stacks for the AWS
-     * account.</p>
+     * <p>The names of the stacks to describe.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
 
     /**
-     * <p>The stack names to describe. Use null to describe all the stacks for the AWS
-     * account.</p>
+     * <p>The names of the stacks to describe.</p>
      */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**
-     * <p>The stack names to describe. Use null to describe all the stacks for the AWS
-     * account.</p>
+     * <p>The names of the stacks to describe.</p>
      */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
-     * <p>The stack names to describe. Use null to describe all the stacks for the AWS
-     * account.</p>
+     * <p>The names of the stacks to describe.</p>
      */
     inline DescribeStacksRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
 
     /**
-     * <p>The stack names to describe. Use null to describe all the stacks for the AWS
-     * account.</p>
+     * <p>The names of the stacks to describe.</p>
      */
     inline DescribeStacksRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
-     * <p>The stack names to describe. Use null to describe all the stacks for the AWS
-     * account.</p>
+     * <p>The names of the stacks to describe.</p>
      */
     inline DescribeStacksRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
     /**
-     * <p>The stack names to describe. Use null to describe all the stacks for the AWS
-     * account.</p>
+     * <p>The names of the stacks to describe.</p>
      */
     inline DescribeStacksRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The stack names to describe. Use null to describe all the stacks for the AWS
-     * account.</p>
+     * <p>The names of the stacks to describe.</p>
      */
     inline DescribeStacksRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 

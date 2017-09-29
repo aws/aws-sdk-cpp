@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The list of stack details.</p>
+     * <p>Information about the stacks.</p>
      */
     inline const Aws::Vector<Stack>& GetStacks() const{ return m_stacks; }
 
     /**
-     * <p>The list of stack details.</p>
+     * <p>Information about the stacks.</p>
      */
     inline void SetStacks(const Aws::Vector<Stack>& value) { m_stacks = value; }
 
     /**
-     * <p>The list of stack details.</p>
+     * <p>Information about the stacks.</p>
      */
     inline void SetStacks(Aws::Vector<Stack>&& value) { m_stacks = std::move(value); }
 
     /**
-     * <p>The list of stack details.</p>
+     * <p>Information about the stacks.</p>
      */
     inline DescribeStacksResult& WithStacks(const Aws::Vector<Stack>& value) { SetStacks(value); return *this;}
 
     /**
-     * <p>The list of stack details.</p>
+     * <p>Information about the stacks.</p>
      */
     inline DescribeStacksResult& WithStacks(Aws::Vector<Stack>&& value) { SetStacks(std::move(value)); return *this;}
 
     /**
-     * <p>The list of stack details.</p>
+     * <p>Information about the stacks.</p>
      */
     inline DescribeStacksResult& AddStacks(const Stack& value) { m_stacks.push_back(value); return *this; }
 
     /**
-     * <p>The list of stack details.</p>
+     * <p>Information about the stacks.</p>
      */
     inline DescribeStacksResult& AddStacks(Stack&& value) { m_stacks.push_back(std::move(value)); return *this; }
 

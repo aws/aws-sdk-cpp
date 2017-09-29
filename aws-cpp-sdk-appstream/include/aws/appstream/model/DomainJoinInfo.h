@@ -33,9 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
-   * values, which are used to join domains for the AppStream 2.0 streaming
-   * instances.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the information needed for streaming instances to join a
+   * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DomainJoinInfo">AWS
    * API Reference</a></p>
    */
@@ -49,80 +48,80 @@ namespace Model
 
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline const Aws::String& GetDirectoryName() const{ return m_directoryName; }
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline void SetDirectoryName(const Aws::String& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline void SetDirectoryName(Aws::String&& value) { m_directoryNameHasBeenSet = true; m_directoryName = std::move(value); }
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline void SetDirectoryName(const char* value) { m_directoryNameHasBeenSet = true; m_directoryName.assign(value); }
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline DomainJoinInfo& WithDirectoryName(const Aws::String& value) { SetDirectoryName(value); return *this;}
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline DomainJoinInfo& WithDirectoryName(Aws::String&& value) { SetDirectoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline DomainJoinInfo& WithDirectoryName(const char* value) { SetDirectoryName(value); return *this;}
 
 
     /**
-     * <p>The distinguished name of the organizational unit to place the computer
-     * account in.</p>
+     * <p>The distinguished name of the organizational unit for computer accounts.</p>
      */
     inline const Aws::String& GetOrganizationalUnitDistinguishedName() const{ return m_organizationalUnitDistinguishedName; }
 
     /**
-     * <p>The distinguished name of the organizational unit to place the computer
-     * account in.</p>
+     * <p>The distinguished name of the organizational unit for computer accounts.</p>
      */
     inline void SetOrganizationalUnitDistinguishedName(const Aws::String& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = value; }
 
     /**
-     * <p>The distinguished name of the organizational unit to place the computer
-     * account in.</p>
+     * <p>The distinguished name of the organizational unit for computer accounts.</p>
      */
     inline void SetOrganizationalUnitDistinguishedName(Aws::String&& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = std::move(value); }
 
     /**
-     * <p>The distinguished name of the organizational unit to place the computer
-     * account in.</p>
+     * <p>The distinguished name of the organizational unit for computer accounts.</p>
      */
     inline void SetOrganizationalUnitDistinguishedName(const char* value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName.assign(value); }
 
     /**
-     * <p>The distinguished name of the organizational unit to place the computer
-     * account in.</p>
+     * <p>The distinguished name of the organizational unit for computer accounts.</p>
      */
     inline DomainJoinInfo& WithOrganizationalUnitDistinguishedName(const Aws::String& value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
 
     /**
-     * <p>The distinguished name of the organizational unit to place the computer
-     * account in.</p>
+     * <p>The distinguished name of the organizational unit for computer accounts.</p>
      */
     inline DomainJoinInfo& WithOrganizationalUnitDistinguishedName(Aws::String&& value) { SetOrganizationalUnitDistinguishedName(std::move(value)); return *this;}
 
     /**
-     * <p>The distinguished name of the organizational unit to place the computer
-     * account in.</p>
+     * <p>The distinguished name of the organizational unit for computer accounts.</p>
      */
     inline DomainJoinInfo& WithOrganizationalUnitDistinguishedName(const char* value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
 

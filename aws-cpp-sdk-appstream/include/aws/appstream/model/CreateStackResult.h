@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The details for the created stack.</p>
+     * <p>Information about the stack.</p>
      */
     inline const Stack& GetStack() const{ return m_stack; }
 
     /**
-     * <p>The details for the created stack.</p>
+     * <p>Information about the stack.</p>
      */
     inline void SetStack(const Stack& value) { m_stack = value; }
 
     /**
-     * <p>The details for the created stack.</p>
+     * <p>Information about the stack.</p>
      */
     inline void SetStack(Stack&& value) { m_stack = std::move(value); }
 
     /**
-     * <p>The details for the created stack.</p>
+     * <p>Information about the stack.</p>
      */
     inline CreateStackResult& WithStack(const Stack& value) { SetStack(value); return *this;}
 
     /**
-     * <p>The details for the created stack.</p>
+     * <p>Information about the stack.</p>
      */
     inline CreateStackResult& WithStack(Stack&& value) { SetStack(std::move(value)); return *this;}
 

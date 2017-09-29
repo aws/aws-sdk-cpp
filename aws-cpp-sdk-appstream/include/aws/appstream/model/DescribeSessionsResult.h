@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The list of streaming sessions.</p>
+     * <p>Information about the streaming sessions.</p>
      */
     inline const Aws::Vector<Session>& GetSessions() const{ return m_sessions; }
 
     /**
-     * <p>The list of streaming sessions.</p>
+     * <p>Information about the streaming sessions.</p>
      */
     inline void SetSessions(const Aws::Vector<Session>& value) { m_sessions = value; }
 
     /**
-     * <p>The list of streaming sessions.</p>
+     * <p>Information about the streaming sessions.</p>
      */
     inline void SetSessions(Aws::Vector<Session>&& value) { m_sessions = std::move(value); }
 
     /**
-     * <p>The list of streaming sessions.</p>
+     * <p>Information about the streaming sessions.</p>
      */
     inline DescribeSessionsResult& WithSessions(const Aws::Vector<Session>& value) { SetSessions(value); return *this;}
 
     /**
-     * <p>The list of streaming sessions.</p>
+     * <p>Information about the streaming sessions.</p>
      */
     inline DescribeSessionsResult& WithSessions(Aws::Vector<Session>&& value) { SetSessions(std::move(value)); return *this;}
 
     /**
-     * <p>The list of streaming sessions.</p>
+     * <p>Information about the streaming sessions.</p>
      */
     inline DescribeSessionsResult& AddSessions(const Session& value) { m_sessions.push_back(value); return *this; }
 
     /**
-     * <p>The list of streaming sessions.</p>
+     * <p>Information about the streaming sessions.</p>
      */
     inline DescribeSessionsResult& AddSessions(Session&& value) { m_sessions.push_back(std::move(value)); return *this; }
 

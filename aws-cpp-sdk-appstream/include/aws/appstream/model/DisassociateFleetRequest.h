@@ -45,73 +45,73 @@ namespace Model
 
 
     /**
-     * <p>The name of the fleet to disassociate.</p>
+     * <p>The name of the fleet.</p>
      */
     inline const Aws::String& GetFleetName() const{ return m_fleetName; }
 
     /**
-     * <p>The name of the fleet to disassociate.</p>
+     * <p>The name of the fleet.</p>
      */
     inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
 
     /**
-     * <p>The name of the fleet to disassociate.</p>
+     * <p>The name of the fleet.</p>
      */
     inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
 
     /**
-     * <p>The name of the fleet to disassociate.</p>
+     * <p>The name of the fleet.</p>
      */
     inline void SetFleetName(const char* value) { m_fleetNameHasBeenSet = true; m_fleetName.assign(value); }
 
     /**
-     * <p>The name of the fleet to disassociate.</p>
+     * <p>The name of the fleet.</p>
      */
     inline DisassociateFleetRequest& WithFleetName(const Aws::String& value) { SetFleetName(value); return *this;}
 
     /**
-     * <p>The name of the fleet to disassociate.</p>
+     * <p>The name of the fleet.</p>
      */
     inline DisassociateFleetRequest& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the fleet to disassociate.</p>
+     * <p>The name of the fleet.</p>
      */
     inline DisassociateFleetRequest& WithFleetName(const char* value) { SetFleetName(value); return *this;}
 
 
     /**
-     * <p>The name of the stack with which the fleet is associated.</p>
+     * <p>The name of the stack.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>The name of the stack with which the fleet is associated.</p>
+     * <p>The name of the stack.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>The name of the stack with which the fleet is associated.</p>
+     * <p>The name of the stack.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>The name of the stack with which the fleet is associated.</p>
+     * <p>The name of the stack.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>The name of the stack with which the fleet is associated.</p>
+     * <p>The name of the stack.</p>
      */
     inline DisassociateFleetRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>The name of the stack with which the fleet is associated.</p>
+     * <p>The name of the stack.</p>
      */
     inline DisassociateFleetRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the stack with which the fleet is associated.</p>
+     * <p>The name of the stack.</p>
      */
     inline DisassociateFleetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 

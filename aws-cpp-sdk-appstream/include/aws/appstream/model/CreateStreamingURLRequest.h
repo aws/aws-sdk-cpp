@@ -45,109 +45,109 @@ namespace Model
 
 
     /**
-     * <p>The stack for which the URL is generated.</p>
+     * <p>The name of the stack.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>The stack for which the URL is generated.</p>
+     * <p>The name of the stack.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>The stack for which the URL is generated.</p>
+     * <p>The name of the stack.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>The stack for which the URL is generated.</p>
+     * <p>The name of the stack.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>The stack for which the URL is generated.</p>
+     * <p>The name of the stack.</p>
      */
     inline CreateStreamingURLRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>The stack for which the URL is generated.</p>
+     * <p>The name of the stack.</p>
      */
     inline CreateStreamingURLRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The stack for which the URL is generated.</p>
+     * <p>The name of the stack.</p>
      */
     inline CreateStreamingURLRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
 
     /**
-     * <p>The fleet for which the URL is generated.</p>
+     * <p>The name of the fleet.</p>
      */
     inline const Aws::String& GetFleetName() const{ return m_fleetName; }
 
     /**
-     * <p>The fleet for which the URL is generated.</p>
+     * <p>The name of the fleet.</p>
      */
     inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
 
     /**
-     * <p>The fleet for which the URL is generated.</p>
+     * <p>The name of the fleet.</p>
      */
     inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
 
     /**
-     * <p>The fleet for which the URL is generated.</p>
+     * <p>The name of the fleet.</p>
      */
     inline void SetFleetName(const char* value) { m_fleetNameHasBeenSet = true; m_fleetName.assign(value); }
 
     /**
-     * <p>The fleet for which the URL is generated.</p>
+     * <p>The name of the fleet.</p>
      */
     inline CreateStreamingURLRequest& WithFleetName(const Aws::String& value) { SetFleetName(value); return *this;}
 
     /**
-     * <p>The fleet for which the URL is generated.</p>
+     * <p>The name of the fleet.</p>
      */
     inline CreateStreamingURLRequest& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
 
     /**
-     * <p>The fleet for which the URL is generated.</p>
+     * <p>The name of the fleet.</p>
      */
     inline CreateStreamingURLRequest& WithFleetName(const char* value) { SetFleetName(value); return *this;}
 
 
     /**
-     * <p>A unique user ID for whom the URL is generated.</p>
+     * <p>The ID of the user.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>A unique user ID for whom the URL is generated.</p>
+     * <p>The ID of the user.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>A unique user ID for whom the URL is generated.</p>
+     * <p>The ID of the user.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>A unique user ID for whom the URL is generated.</p>
+     * <p>The ID of the user.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>A unique user ID for whom the URL is generated.</p>
+     * <p>The ID of the user.</p>
      */
     inline CreateStreamingURLRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>A unique user ID for whom the URL is generated.</p>
+     * <p>The ID of the user.</p>
      */
     inline CreateStreamingURLRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique user ID for whom the URL is generated.</p>
+     * <p>The ID of the user.</p>
      */
     inline CreateStreamingURLRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 
@@ -189,56 +189,56 @@ namespace Model
 
 
     /**
-     * <p>The duration up to which the URL returned by this action is valid. The input
-     * can be any numeric value in seconds between 1 and 604800 seconds.</p>
+     * <p>The time that the streaming URL will be valid, in seconds. Specify a value
+     * between 1 and 604800 seconds.</p>
      */
     inline long long GetValidity() const{ return m_validity; }
 
     /**
-     * <p>The duration up to which the URL returned by this action is valid. The input
-     * can be any numeric value in seconds between 1 and 604800 seconds.</p>
+     * <p>The time that the streaming URL will be valid, in seconds. Specify a value
+     * between 1 and 604800 seconds.</p>
      */
     inline void SetValidity(long long value) { m_validityHasBeenSet = true; m_validity = value; }
 
     /**
-     * <p>The duration up to which the URL returned by this action is valid. The input
-     * can be any numeric value in seconds between 1 and 604800 seconds.</p>
+     * <p>The time that the streaming URL will be valid, in seconds. Specify a value
+     * between 1 and 604800 seconds.</p>
      */
     inline CreateStreamingURLRequest& WithValidity(long long value) { SetValidity(value); return *this;}
 
 
     /**
-     * <p>The sessionContext of the streaming URL.</p>
+     * <p>The session context of the streaming URL.</p>
      */
     inline const Aws::String& GetSessionContext() const{ return m_sessionContext; }
 
     /**
-     * <p>The sessionContext of the streaming URL.</p>
+     * <p>The session context of the streaming URL.</p>
      */
     inline void SetSessionContext(const Aws::String& value) { m_sessionContextHasBeenSet = true; m_sessionContext = value; }
 
     /**
-     * <p>The sessionContext of the streaming URL.</p>
+     * <p>The session context of the streaming URL.</p>
      */
     inline void SetSessionContext(Aws::String&& value) { m_sessionContextHasBeenSet = true; m_sessionContext = std::move(value); }
 
     /**
-     * <p>The sessionContext of the streaming URL.</p>
+     * <p>The session context of the streaming URL.</p>
      */
     inline void SetSessionContext(const char* value) { m_sessionContextHasBeenSet = true; m_sessionContext.assign(value); }
 
     /**
-     * <p>The sessionContext of the streaming URL.</p>
+     * <p>The session context of the streaming URL.</p>
      */
     inline CreateStreamingURLRequest& WithSessionContext(const Aws::String& value) { SetSessionContext(value); return *this;}
 
     /**
-     * <p>The sessionContext of the streaming URL.</p>
+     * <p>The session context of the streaming URL.</p>
      */
     inline CreateStreamingURLRequest& WithSessionContext(Aws::String&& value) { SetSessionContext(std::move(value)); return *this;}
 
     /**
-     * <p>The sessionContext of the streaming URL.</p>
+     * <p>The session context of the streaming URL.</p>
      */
     inline CreateStreamingURLRequest& WithSessionContext(const char* value) { SetSessionContext(value); return *this;}
 

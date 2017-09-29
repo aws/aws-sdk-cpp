@@ -31,10 +31,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for the new fleet to create.</p><p><h3>See Also:</h3>
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleetRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_APPSTREAM_API CreateFleetRequest : public AppStreamRequest
   {
@@ -53,73 +49,73 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the fleet.</p>
+     * <p>A unique name for the fleet.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A unique identifier for the fleet.</p>
+     * <p>A unique name for the fleet.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A unique identifier for the fleet.</p>
+     * <p>A unique name for the fleet.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A unique identifier for the fleet.</p>
+     * <p>A unique name for the fleet.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A unique identifier for the fleet.</p>
+     * <p>A unique name for the fleet.</p>
      */
     inline CreateFleetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet.</p>
+     * <p>A unique name for the fleet.</p>
      */
     inline CreateFleetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet.</p>
+     * <p>A unique name for the fleet.</p>
      */
     inline CreateFleetRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Unique name of the image used by the fleet.</p>
+     * <p>The name of the image used by the fleet.</p>
      */
     inline const Aws::String& GetImageName() const{ return m_imageName; }
 
     /**
-     * <p>Unique name of the image used by the fleet.</p>
+     * <p>The name of the image used by the fleet.</p>
      */
     inline void SetImageName(const Aws::String& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
 
     /**
-     * <p>Unique name of the image used by the fleet.</p>
+     * <p>The name of the image used by the fleet.</p>
      */
     inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = std::move(value); }
 
     /**
-     * <p>Unique name of the image used by the fleet.</p>
+     * <p>The name of the image used by the fleet.</p>
      */
     inline void SetImageName(const char* value) { m_imageNameHasBeenSet = true; m_imageName.assign(value); }
 
     /**
-     * <p>Unique name of the image used by the fleet.</p>
+     * <p>The name of the image used by the fleet.</p>
      */
     inline CreateFleetRequest& WithImageName(const Aws::String& value) { SetImageName(value); return *this;}
 
     /**
-     * <p>Unique name of the image used by the fleet.</p>
+     * <p>The name of the image used by the fleet.</p>
      */
     inline CreateFleetRequest& WithImageName(Aws::String&& value) { SetImageName(std::move(value)); return *this;}
 
     /**
-     * <p>Unique name of the image used by the fleet.</p>
+     * <p>The name of the image used by the fleet.</p>
      */
     inline CreateFleetRequest& WithImageName(const char* value) { SetImageName(value); return *this;}
 
@@ -275,27 +271,27 @@ namespace Model
 
 
     /**
-     * <p>The parameters for the capacity allocated to the fleet.</p>
+     * <p>The desired capacity for the fleet.</p>
      */
     inline const ComputeCapacity& GetComputeCapacity() const{ return m_computeCapacity; }
 
     /**
-     * <p>The parameters for the capacity allocated to the fleet.</p>
+     * <p>The desired capacity for the fleet.</p>
      */
     inline void SetComputeCapacity(const ComputeCapacity& value) { m_computeCapacityHasBeenSet = true; m_computeCapacity = value; }
 
     /**
-     * <p>The parameters for the capacity allocated to the fleet.</p>
+     * <p>The desired capacity for the fleet.</p>
      */
     inline void SetComputeCapacity(ComputeCapacity&& value) { m_computeCapacityHasBeenSet = true; m_computeCapacity = std::move(value); }
 
     /**
-     * <p>The parameters for the capacity allocated to the fleet.</p>
+     * <p>The desired capacity for the fleet.</p>
      */
     inline CreateFleetRequest& WithComputeCapacity(const ComputeCapacity& value) { SetComputeCapacity(value); return *this;}
 
     /**
-     * <p>The parameters for the capacity allocated to the fleet.</p>
+     * <p>The desired capacity for the fleet.</p>
      */
     inline CreateFleetRequest& WithComputeCapacity(ComputeCapacity&& value) { SetComputeCapacity(std::move(value)); return *this;}
 
@@ -327,117 +323,117 @@ namespace Model
 
 
     /**
-     * <p>The maximum time for which a streaming session can run. The input can be any
-     * numeric value in seconds between 600 and 57600.</p>
+     * <p>The maximum time that a streaming session can run, in seconds. Specify a
+     * value between 600 and 57600.</p>
      */
     inline int GetMaxUserDurationInSeconds() const{ return m_maxUserDurationInSeconds; }
 
     /**
-     * <p>The maximum time for which a streaming session can run. The input can be any
-     * numeric value in seconds between 600 and 57600.</p>
+     * <p>The maximum time that a streaming session can run, in seconds. Specify a
+     * value between 600 and 57600.</p>
      */
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
 
     /**
-     * <p>The maximum time for which a streaming session can run. The input can be any
-     * numeric value in seconds between 600 and 57600.</p>
+     * <p>The maximum time that a streaming session can run, in seconds. Specify a
+     * value between 600 and 57600.</p>
      */
     inline CreateFleetRequest& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
 
 
     /**
-     * <p>The time after disconnection when a session is considered to have ended. If a
-     * user who got disconnected reconnects within this timeout interval, the user is
-     * connected back to their previous session. The input can be any numeric value in
-     * seconds between 60 and 57600. </p>
+     * <p>The time after disconnection when a session is considered to have ended, in
+     * seconds. If a user who was disconnected reconnects within this time interval,
+     * the user is connected to their previous session. Specify a value between 60 and
+     * 57600.</p>
      */
     inline int GetDisconnectTimeoutInSeconds() const{ return m_disconnectTimeoutInSeconds; }
 
     /**
-     * <p>The time after disconnection when a session is considered to have ended. If a
-     * user who got disconnected reconnects within this timeout interval, the user is
-     * connected back to their previous session. The input can be any numeric value in
-     * seconds between 60 and 57600. </p>
+     * <p>The time after disconnection when a session is considered to have ended, in
+     * seconds. If a user who was disconnected reconnects within this time interval,
+     * the user is connected to their previous session. Specify a value between 60 and
+     * 57600.</p>
      */
     inline void SetDisconnectTimeoutInSeconds(int value) { m_disconnectTimeoutInSecondsHasBeenSet = true; m_disconnectTimeoutInSeconds = value; }
 
     /**
-     * <p>The time after disconnection when a session is considered to have ended. If a
-     * user who got disconnected reconnects within this timeout interval, the user is
-     * connected back to their previous session. The input can be any numeric value in
-     * seconds between 60 and 57600. </p>
+     * <p>The time after disconnection when a session is considered to have ended, in
+     * seconds. If a user who was disconnected reconnects within this time interval,
+     * the user is connected to their previous session. Specify a value between 60 and
+     * 57600.</p>
      */
     inline CreateFleetRequest& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
 
 
     /**
-     * <p>The description of the fleet.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the fleet.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the fleet.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the fleet.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the fleet.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline CreateFleetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the fleet.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the fleet.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline CreateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The display name of the fleet.</p>
+     * <p>The fleet name displayed to end users.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The display name of the fleet.</p>
+     * <p>The fleet name displayed to end users.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The display name of the fleet.</p>
+     * <p>The fleet name displayed to end users.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The display name of the fleet.</p>
+     * <p>The fleet name displayed to end users.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The display name of the fleet.</p>
+     * <p>The fleet name displayed to end users.</p>
      */
     inline CreateFleetRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The display name of the fleet.</p>
+     * <p>The fleet name displayed to end users.</p>
      */
     inline CreateFleetRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The display name of the fleet.</p>
+     * <p>The fleet name displayed to end users.</p>
      */
     inline CreateFleetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -459,37 +455,27 @@ namespace Model
 
 
     /**
-     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
-     * values, which are used to join domains for the AppStream 2.0 streaming
-     * instances.</p>
+     * <p>The information needed for streaming instances to join a domain.</p>
      */
     inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
 
     /**
-     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
-     * values, which are used to join domains for the AppStream 2.0 streaming
-     * instances.</p>
+     * <p>The information needed for streaming instances to join a domain.</p>
      */
     inline void SetDomainJoinInfo(const DomainJoinInfo& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = value; }
 
     /**
-     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
-     * values, which are used to join domains for the AppStream 2.0 streaming
-     * instances.</p>
+     * <p>The information needed for streaming instances to join a domain.</p>
      */
     inline void SetDomainJoinInfo(DomainJoinInfo&& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = std::move(value); }
 
     /**
-     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
-     * values, which are used to join domains for the AppStream 2.0 streaming
-     * instances.</p>
+     * <p>The information needed for streaming instances to join a domain.</p>
      */
     inline CreateFleetRequest& WithDomainJoinInfo(const DomainJoinInfo& value) { SetDomainJoinInfo(value); return *this;}
 
     /**
-     * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
-     * values, which are used to join domains for the AppStream 2.0 streaming
-     * instances.</p>
+     * <p>The information needed for streaming instances to join a domain.</p>
      */
     inline CreateFleetRequest& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
 

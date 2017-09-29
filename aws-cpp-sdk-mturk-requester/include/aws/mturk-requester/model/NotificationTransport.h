@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     Email,
-    SQS
+    SQS,
+    SNS
   };
 
 namespace NotificationTransportMapper

@@ -45,87 +45,80 @@ namespace Model
 
 
     /**
-     * <p>The list of directory configurations.</p>
+     * <p>Information about the directory configurations.</p>
      */
     inline const Aws::Vector<DirectoryConfig>& GetDirectoryConfigs() const{ return m_directoryConfigs; }
 
     /**
-     * <p>The list of directory configurations.</p>
+     * <p>Information about the directory configurations.</p>
      */
     inline void SetDirectoryConfigs(const Aws::Vector<DirectoryConfig>& value) { m_directoryConfigs = value; }
 
     /**
-     * <p>The list of directory configurations.</p>
+     * <p>Information about the directory configurations.</p>
      */
     inline void SetDirectoryConfigs(Aws::Vector<DirectoryConfig>&& value) { m_directoryConfigs = std::move(value); }
 
     /**
-     * <p>The list of directory configurations.</p>
+     * <p>Information about the directory configurations.</p>
      */
     inline DescribeDirectoryConfigsResult& WithDirectoryConfigs(const Aws::Vector<DirectoryConfig>& value) { SetDirectoryConfigs(value); return *this;}
 
     /**
-     * <p>The list of directory configurations.</p>
+     * <p>Information about the directory configurations.</p>
      */
     inline DescribeDirectoryConfigsResult& WithDirectoryConfigs(Aws::Vector<DirectoryConfig>&& value) { SetDirectoryConfigs(std::move(value)); return *this;}
 
     /**
-     * <p>The list of directory configurations.</p>
+     * <p>Information about the directory configurations.</p>
      */
     inline DescribeDirectoryConfigsResult& AddDirectoryConfigs(const DirectoryConfig& value) { m_directoryConfigs.push_back(value); return *this; }
 
     /**
-     * <p>The list of directory configurations.</p>
+     * <p>Information about the directory configurations.</p>
      */
     inline DescribeDirectoryConfigsResult& AddDirectoryConfigs(DirectoryConfig&& value) { m_directoryConfigs.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>If not null, more results are available. To retrieve the next set of items,
-     * pass this value for the NextToken parameter in a subsequent call to
-     * DescribeDirectoryConfigs.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If not null, more results are available. To retrieve the next set of items,
-     * pass this value for the NextToken parameter in a subsequent call to
-     * DescribeDirectoryConfigs.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If not null, more results are available. To retrieve the next set of items,
-     * pass this value for the NextToken parameter in a subsequent call to
-     * DescribeDirectoryConfigs.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If not null, more results are available. To retrieve the next set of items,
-     * pass this value for the NextToken parameter in a subsequent call to
-     * DescribeDirectoryConfigs.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If not null, more results are available. To retrieve the next set of items,
-     * pass this value for the NextToken parameter in a subsequent call to
-     * DescribeDirectoryConfigs.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
      */
     inline DescribeDirectoryConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If not null, more results are available. To retrieve the next set of items,
-     * pass this value for the NextToken parameter in a subsequent call to
-     * DescribeDirectoryConfigs.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
      */
     inline DescribeDirectoryConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If not null, more results are available. To retrieve the next set of items,
-     * pass this value for the NextToken parameter in a subsequent call to
-     * DescribeDirectoryConfigs.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If there are no more pages, this value is null.</p>
      */
     inline DescribeDirectoryConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for a storage connector.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes a storage connector.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StorageConnector">AWS
    * API Reference</a></p>
    */
@@ -49,63 +48,63 @@ namespace Model
 
 
     /**
-     * <p>The type of storage connector. The possible values include: HOMEFOLDERS.</p>
+     * <p>The type of storage connector.</p>
      */
     inline const StorageConnectorType& GetConnectorType() const{ return m_connectorType; }
 
     /**
-     * <p>The type of storage connector. The possible values include: HOMEFOLDERS.</p>
+     * <p>The type of storage connector.</p>
      */
     inline void SetConnectorType(const StorageConnectorType& value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
 
     /**
-     * <p>The type of storage connector. The possible values include: HOMEFOLDERS.</p>
+     * <p>The type of storage connector.</p>
      */
     inline void SetConnectorType(StorageConnectorType&& value) { m_connectorTypeHasBeenSet = true; m_connectorType = std::move(value); }
 
     /**
-     * <p>The type of storage connector. The possible values include: HOMEFOLDERS.</p>
+     * <p>The type of storage connector.</p>
      */
     inline StorageConnector& WithConnectorType(const StorageConnectorType& value) { SetConnectorType(value); return *this;}
 
     /**
-     * <p>The type of storage connector. The possible values include: HOMEFOLDERS.</p>
+     * <p>The type of storage connector.</p>
      */
     inline StorageConnector& WithConnectorType(StorageConnectorType&& value) { SetConnectorType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ARN associated with the storage connector.</p>
+     * <p>The ARN of the storage connector.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
 
     /**
-     * <p>The ARN associated with the storage connector.</p>
+     * <p>The ARN of the storage connector.</p>
      */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
-     * <p>The ARN associated with the storage connector.</p>
+     * <p>The ARN of the storage connector.</p>
      */
     inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
 
     /**
-     * <p>The ARN associated with the storage connector.</p>
+     * <p>The ARN of the storage connector.</p>
      */
     inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
 
     /**
-     * <p>The ARN associated with the storage connector.</p>
+     * <p>The ARN of the storage connector.</p>
      */
     inline StorageConnector& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
 
     /**
-     * <p>The ARN associated with the storage connector.</p>
+     * <p>The ARN of the storage connector.</p>
      */
     inline StorageConnector& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN associated with the storage connector.</p>
+     * <p>The ARN of the storage connector.</p>
      */
     inline StorageConnector& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 

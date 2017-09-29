@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>The list of images.</p>
+     * <p>Information about the images.</p>
      */
     inline const Aws::Vector<Image>& GetImages() const{ return m_images; }
 
     /**
-     * <p>The list of images.</p>
+     * <p>Information about the images.</p>
      */
     inline void SetImages(const Aws::Vector<Image>& value) { m_images = value; }
 
     /**
-     * <p>The list of images.</p>
+     * <p>Information about the images.</p>
      */
     inline void SetImages(Aws::Vector<Image>&& value) { m_images = std::move(value); }
 
     /**
-     * <p>The list of images.</p>
+     * <p>Information about the images.</p>
      */
     inline DescribeImagesResult& WithImages(const Aws::Vector<Image>& value) { SetImages(value); return *this;}
 
     /**
-     * <p>The list of images.</p>
+     * <p>Information about the images.</p>
      */
     inline DescribeImagesResult& WithImages(Aws::Vector<Image>&& value) { SetImages(std::move(value)); return *this;}
 
     /**
-     * <p>The list of images.</p>
+     * <p>Information about the images.</p>
      */
     inline DescribeImagesResult& AddImages(const Image& value) { m_images.push_back(value); return *this; }
 
     /**
-     * <p>The list of images.</p>
+     * <p>Information about the images.</p>
      */
     inline DescribeImagesResult& AddImages(Image&& value) { m_images.push_back(std::move(value)); return *this; }
 

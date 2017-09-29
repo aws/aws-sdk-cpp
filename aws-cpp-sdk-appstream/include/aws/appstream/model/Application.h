@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>An entry for a single application in the application catalog.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes an application in the application catalog.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Application">AWS
    * API Reference</a></p>
    */
@@ -49,109 +49,109 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the application.</p>
+     * <p>The name of the application.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The unique identifier for the application.</p>
+     * <p>The name of the application.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The unique identifier for the application.</p>
+     * <p>The name of the application.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The unique identifier for the application.</p>
+     * <p>The name of the application.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The unique identifier for the application.</p>
+     * <p>The name of the application.</p>
      */
     inline Application& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The unique identifier for the application.</p>
+     * <p>The name of the application.</p>
      */
     inline Application& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the application.</p>
+     * <p>The name of the application.</p>
      */
     inline Application& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The name of the application shown to the end users.</p>
+     * <p>The application name displayed to end users.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The name of the application shown to the end users.</p>
+     * <p>The application name displayed to end users.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The name of the application shown to the end users.</p>
+     * <p>The application name displayed to end users.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The name of the application shown to the end users.</p>
+     * <p>The application name displayed to end users.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The name of the application shown to the end users.</p>
+     * <p>The application name displayed to end users.</p>
      */
     inline Application& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The name of the application shown to the end users.</p>
+     * <p>The application name displayed to end users.</p>
      */
     inline Application& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the application shown to the end users.</p>
+     * <p>The application name displayed to end users.</p>
      */
     inline Application& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
-     * <p>The URL for the application icon. This URL may be time-limited.</p>
+     * <p>The URL for the application icon. This URL might be time-limited.</p>
      */
     inline const Aws::String& GetIconURL() const{ return m_iconURL; }
 
     /**
-     * <p>The URL for the application icon. This URL may be time-limited.</p>
+     * <p>The URL for the application icon. This URL might be time-limited.</p>
      */
     inline void SetIconURL(const Aws::String& value) { m_iconURLHasBeenSet = true; m_iconURL = value; }
 
     /**
-     * <p>The URL for the application icon. This URL may be time-limited.</p>
+     * <p>The URL for the application icon. This URL might be time-limited.</p>
      */
     inline void SetIconURL(Aws::String&& value) { m_iconURLHasBeenSet = true; m_iconURL = std::move(value); }
 
     /**
-     * <p>The URL for the application icon. This URL may be time-limited.</p>
+     * <p>The URL for the application icon. This URL might be time-limited.</p>
      */
     inline void SetIconURL(const char* value) { m_iconURLHasBeenSet = true; m_iconURL.assign(value); }
 
     /**
-     * <p>The URL for the application icon. This URL may be time-limited.</p>
+     * <p>The URL for the application icon. This URL might be time-limited.</p>
      */
     inline Application& WithIconURL(const Aws::String& value) { SetIconURL(value); return *this;}
 
     /**
-     * <p>The URL for the application icon. This URL may be time-limited.</p>
+     * <p>The URL for the application icon. This URL might be time-limited.</p>
      */
     inline Application& WithIconURL(Aws::String&& value) { SetIconURL(std::move(value)); return *this;}
 
     /**
-     * <p>The URL for the application icon. This URL may be time-limited.</p>
+     * <p>The URL for the application icon. This URL might be time-limited.</p>
      */
     inline Application& WithIconURL(const char* value) { SetIconURL(value); return *this;}
 
@@ -193,55 +193,55 @@ namespace Model
 
 
     /**
-     * <p>A list of arguments that are passed to the application at launch.</p>
+     * <p>The arguments that are passed to the application at launch.</p>
      */
     inline const Aws::String& GetLaunchParameters() const{ return m_launchParameters; }
 
     /**
-     * <p>A list of arguments that are passed to the application at launch.</p>
+     * <p>The arguments that are passed to the application at launch.</p>
      */
     inline void SetLaunchParameters(const Aws::String& value) { m_launchParametersHasBeenSet = true; m_launchParameters = value; }
 
     /**
-     * <p>A list of arguments that are passed to the application at launch.</p>
+     * <p>The arguments that are passed to the application at launch.</p>
      */
     inline void SetLaunchParameters(Aws::String&& value) { m_launchParametersHasBeenSet = true; m_launchParameters = std::move(value); }
 
     /**
-     * <p>A list of arguments that are passed to the application at launch.</p>
+     * <p>The arguments that are passed to the application at launch.</p>
      */
     inline void SetLaunchParameters(const char* value) { m_launchParametersHasBeenSet = true; m_launchParameters.assign(value); }
 
     /**
-     * <p>A list of arguments that are passed to the application at launch.</p>
+     * <p>The arguments that are passed to the application at launch.</p>
      */
     inline Application& WithLaunchParameters(const Aws::String& value) { SetLaunchParameters(value); return *this;}
 
     /**
-     * <p>A list of arguments that are passed to the application at launch.</p>
+     * <p>The arguments that are passed to the application at launch.</p>
      */
     inline Application& WithLaunchParameters(Aws::String&& value) { SetLaunchParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of arguments that are passed to the application at launch.</p>
+     * <p>The arguments that are passed to the application at launch.</p>
      */
     inline Application& WithLaunchParameters(const char* value) { SetLaunchParameters(value); return *this;}
 
 
     /**
-     * <p>If there is a problem, an application can be disabled after image
+     * <p>If there is a problem, the application can be disabled after image
      * creation.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>If there is a problem, an application can be disabled after image
+     * <p>If there is a problem, the application can be disabled after image
      * creation.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>If there is a problem, an application can be disabled after image
+     * <p>If there is a problem, the application can be disabled after image
      * creation.</p>
      */
     inline Application& WithEnabled(bool value) { SetEnabled(value); return *this;}

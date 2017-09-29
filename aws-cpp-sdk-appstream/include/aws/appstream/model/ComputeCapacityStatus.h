@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>The capacity information for the fleet.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the capacity status for a fleet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ComputeCapacityStatus">AWS
    * API Reference</a></p>
    */
@@ -77,17 +77,17 @@ namespace Model
 
 
     /**
-     * <p>The number of instances that are being used for streaming.</p>
+     * <p>The number of instances in use for streaming.</p>
      */
     inline int GetInUse() const{ return m_inUse; }
 
     /**
-     * <p>The number of instances that are being used for streaming.</p>
+     * <p>The number of instances in use for streaming.</p>
      */
     inline void SetInUse(int value) { m_inUseHasBeenSet = true; m_inUse = value; }
 
     /**
-     * <p>The number of instances that are being used for streaming.</p>
+     * <p>The number of instances in use for streaming.</p>
      */
     inline ComputeCapacityStatus& WithInUse(int value) { SetInUse(value); return *this;}
 

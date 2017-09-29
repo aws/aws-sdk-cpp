@@ -51,89 +51,96 @@ namespace Model
 
 
     /**
-     * <p> The destination for notification messages. or email notifications (if
-     * Transport is Email), this is an email address. For Amazon Simple Queue Service
-     * (Amazon SQS) notifications (if Transport is SQS), this is the URL for your
-     * Amazon SQS queue. </p>
+     * <p> The target for notification messages. The Destination’s format is determined
+     * by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the
+     * Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the
+     * Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the
+     * Destination is the ARN of your topic.</p> </li> </ul>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p> The destination for notification messages. or email notifications (if
-     * Transport is Email), this is an email address. For Amazon Simple Queue Service
-     * (Amazon SQS) notifications (if Transport is SQS), this is the URL for your
-     * Amazon SQS queue. </p>
+     * <p> The target for notification messages. The Destination’s format is determined
+     * by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the
+     * Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the
+     * Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the
+     * Destination is the ARN of your topic.</p> </li> </ul>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p> The destination for notification messages. or email notifications (if
-     * Transport is Email), this is an email address. For Amazon Simple Queue Service
-     * (Amazon SQS) notifications (if Transport is SQS), this is the URL for your
-     * Amazon SQS queue. </p>
+     * <p> The target for notification messages. The Destination’s format is determined
+     * by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the
+     * Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the
+     * Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the
+     * Destination is the ARN of your topic.</p> </li> </ul>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p> The destination for notification messages. or email notifications (if
-     * Transport is Email), this is an email address. For Amazon Simple Queue Service
-     * (Amazon SQS) notifications (if Transport is SQS), this is the URL for your
-     * Amazon SQS queue. </p>
+     * <p> The target for notification messages. The Destination’s format is determined
+     * by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the
+     * Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the
+     * Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the
+     * Destination is the ARN of your topic.</p> </li> </ul>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p> The destination for notification messages. or email notifications (if
-     * Transport is Email), this is an email address. For Amazon Simple Queue Service
-     * (Amazon SQS) notifications (if Transport is SQS), this is the URL for your
-     * Amazon SQS queue. </p>
+     * <p> The target for notification messages. The Destination’s format is determined
+     * by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the
+     * Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the
+     * Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the
+     * Destination is the ARN of your topic.</p> </li> </ul>
      */
     inline NotificationSpecification& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p> The destination for notification messages. or email notifications (if
-     * Transport is Email), this is an email address. For Amazon Simple Queue Service
-     * (Amazon SQS) notifications (if Transport is SQS), this is the URL for your
-     * Amazon SQS queue. </p>
+     * <p> The target for notification messages. The Destination’s format is determined
+     * by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the
+     * Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the
+     * Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the
+     * Destination is the ARN of your topic.</p> </li> </ul>
      */
     inline NotificationSpecification& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * <p> The destination for notification messages. or email notifications (if
-     * Transport is Email), this is an email address. For Amazon Simple Queue Service
-     * (Amazon SQS) notifications (if Transport is SQS), this is the URL for your
-     * Amazon SQS queue. </p>
+     * <p> The target for notification messages. The Destination’s format is determined
+     * by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the
+     * Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the
+     * Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the
+     * Destination is the ARN of your topic.</p> </li> </ul>
      */
     inline NotificationSpecification& WithDestination(const char* value) { SetDestination(value); return *this;}
 
 
     /**
      * <p> The method Amazon Mechanical Turk uses to send the notification. Valid
-     * Values: Email | SQS. </p>
+     * Values: Email | SQS | SNS. </p>
      */
     inline const NotificationTransport& GetTransport() const{ return m_transport; }
 
     /**
      * <p> The method Amazon Mechanical Turk uses to send the notification. Valid
-     * Values: Email | SQS. </p>
+     * Values: Email | SQS | SNS. </p>
      */
     inline void SetTransport(const NotificationTransport& value) { m_transportHasBeenSet = true; m_transport = value; }
 
     /**
      * <p> The method Amazon Mechanical Turk uses to send the notification. Valid
-     * Values: Email | SQS. </p>
+     * Values: Email | SQS | SNS. </p>
      */
     inline void SetTransport(NotificationTransport&& value) { m_transportHasBeenSet = true; m_transport = std::move(value); }
 
     /**
      * <p> The method Amazon Mechanical Turk uses to send the notification. Valid
-     * Values: Email | SQS. </p>
+     * Values: Email | SQS | SNS. </p>
      */
     inline NotificationSpecification& WithTransport(const NotificationTransport& value) { SetTransport(value); return *this;}
 
     /**
      * <p> The method Amazon Mechanical Turk uses to send the notification. Valid
-     * Values: Email | SQS. </p>
+     * Values: Email | SQS | SNS. </p>
      */
     inline NotificationSpecification& WithTransport(NotificationTransport&& value) { SetTransport(std::move(value)); return *this;}
 

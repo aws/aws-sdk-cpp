@@ -21,6 +21,7 @@
 #include <aws/codebuild/model/ProjectEnvironment.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/codebuild/model/Webhook.h>
 #include <aws/codebuild/model/Tag.h>
 #include <utility>
 
@@ -466,6 +467,37 @@ namespace Model
      */
     inline Project& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about a webhook in GitHub that connects repository events to a
+     * build project in AWS CodeBuild.</p>
+     */
+    inline const Webhook& GetWebhook() const{ return m_webhook; }
+
+    /**
+     * <p>Information about a webhook in GitHub that connects repository events to a
+     * build project in AWS CodeBuild.</p>
+     */
+    inline void SetWebhook(const Webhook& value) { m_webhookHasBeenSet = true; m_webhook = value; }
+
+    /**
+     * <p>Information about a webhook in GitHub that connects repository events to a
+     * build project in AWS CodeBuild.</p>
+     */
+    inline void SetWebhook(Webhook&& value) { m_webhookHasBeenSet = true; m_webhook = std::move(value); }
+
+    /**
+     * <p>Information about a webhook in GitHub that connects repository events to a
+     * build project in AWS CodeBuild.</p>
+     */
+    inline Project& WithWebhook(const Webhook& value) { SetWebhook(value); return *this;}
+
+    /**
+     * <p>Information about a webhook in GitHub that connects repository events to a
+     * build project in AWS CodeBuild.</p>
+     */
+    inline Project& WithWebhook(Webhook&& value) { SetWebhook(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -503,6 +535,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
+
+    Webhook m_webhook;
+    bool m_webhookHasBeenSet;
   };
 
 } // namespace Model

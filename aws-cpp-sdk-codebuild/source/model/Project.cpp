@@ -41,7 +41,8 @@ Project::Project() :
     m_encryptionKeyHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+    m_lastModifiedHasBeenSet(false),
+    m_webhookHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Project::Project(const JsonValue& jsonValue) :
     m_encryptionKeyHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+    m_lastModifiedHasBeenSet(false),
+    m_webhookHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -152,6 +154,13 @@ Project& Project::operator =(const JsonValue& jsonValue)
     m_lastModifiedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("webhook"))
+  {
+    m_webhook = jsonValue.GetObject("webhook");
+
+    m_webhookHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -232,6 +241,12 @@ JsonValue Project::Jsonize() const
   if(m_lastModifiedHasBeenSet)
   {
    payload.WithDouble("lastModified", m_lastModified.SecondsWithMSPrecision());
+  }
+
+  if(m_webhookHasBeenSet)
+  {
+   payload.WithObject("webhook", m_webhook.Jsonize());
+
   }
 
   return payload;

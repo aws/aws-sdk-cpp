@@ -47,122 +47,117 @@ namespace Model
 
 
     /**
-     * <p>The name of the existing directory configuration to be updated.</p>
+     * <p>The name of the directory configuration.</p>
      */
     inline const Aws::String& GetDirectoryName() const{ return m_directoryName; }
 
     /**
-     * <p>The name of the existing directory configuration to be updated.</p>
+     * <p>The name of the directory configuration.</p>
      */
     inline void SetDirectoryName(const Aws::String& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
 
     /**
-     * <p>The name of the existing directory configuration to be updated.</p>
+     * <p>The name of the directory configuration.</p>
      */
     inline void SetDirectoryName(Aws::String&& value) { m_directoryNameHasBeenSet = true; m_directoryName = std::move(value); }
 
     /**
-     * <p>The name of the existing directory configuration to be updated.</p>
+     * <p>The name of the directory configuration.</p>
      */
     inline void SetDirectoryName(const char* value) { m_directoryNameHasBeenSet = true; m_directoryName.assign(value); }
 
     /**
-     * <p>The name of the existing directory configuration to be updated.</p>
+     * <p>The name of the directory configuration.</p>
      */
     inline UpdateDirectoryConfigRequest& WithDirectoryName(const Aws::String& value) { SetDirectoryName(value); return *this;}
 
     /**
-     * <p>The name of the existing directory configuration to be updated.</p>
+     * <p>The name of the directory configuration.</p>
      */
     inline UpdateDirectoryConfigRequest& WithDirectoryName(Aws::String&& value) { SetDirectoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the existing directory configuration to be updated.</p>
+     * <p>The name of the directory configuration.</p>
      */
     inline UpdateDirectoryConfigRequest& WithDirectoryName(const char* value) { SetDirectoryName(value); return *this;}
 
 
     /**
-     * <p>The list of the distinguished names of organizational units to place computer
-     * accounts in.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitDistinguishedNames() const{ return m_organizationalUnitDistinguishedNames; }
 
     /**
-     * <p>The list of the distinguished names of organizational units to place computer
-     * accounts in.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline void SetOrganizationalUnitDistinguishedNames(const Aws::Vector<Aws::String>& value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames = value; }
 
     /**
-     * <p>The list of the distinguished names of organizational units to place computer
-     * accounts in.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline void SetOrganizationalUnitDistinguishedNames(Aws::Vector<Aws::String>&& value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames = std::move(value); }
 
     /**
-     * <p>The list of the distinguished names of organizational units to place computer
-     * accounts in.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline UpdateDirectoryConfigRequest& WithOrganizationalUnitDistinguishedNames(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitDistinguishedNames(value); return *this;}
 
     /**
-     * <p>The list of the distinguished names of organizational units to place computer
-     * accounts in.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline UpdateDirectoryConfigRequest& WithOrganizationalUnitDistinguishedNames(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitDistinguishedNames(std::move(value)); return *this;}
 
     /**
-     * <p>The list of the distinguished names of organizational units to place computer
-     * accounts in.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline UpdateDirectoryConfigRequest& AddOrganizationalUnitDistinguishedNames(const Aws::String& value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames.push_back(value); return *this; }
 
     /**
-     * <p>The list of the distinguished names of organizational units to place computer
-     * accounts in.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline UpdateDirectoryConfigRequest& AddOrganizationalUnitDistinguishedNames(Aws::String&& value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of the distinguished names of organizational units to place computer
-     * accounts in.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline UpdateDirectoryConfigRequest& AddOrganizationalUnitDistinguishedNames(const char* value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames.push_back(value); return *this; }
 
 
     /**
-     * <p>The <i>AccountName</i> and <i>AccountPassword</i> values for the service
-     * account, which are used by the streaming instance to connect to the
-     * directory</p>
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
      */
     inline const ServiceAccountCredentials& GetServiceAccountCredentials() const{ return m_serviceAccountCredentials; }
 
     /**
-     * <p>The <i>AccountName</i> and <i>AccountPassword</i> values for the service
-     * account, which are used by the streaming instance to connect to the
-     * directory</p>
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
      */
     inline void SetServiceAccountCredentials(const ServiceAccountCredentials& value) { m_serviceAccountCredentialsHasBeenSet = true; m_serviceAccountCredentials = value; }
 
     /**
-     * <p>The <i>AccountName</i> and <i>AccountPassword</i> values for the service
-     * account, which are used by the streaming instance to connect to the
-     * directory</p>
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
      */
     inline void SetServiceAccountCredentials(ServiceAccountCredentials&& value) { m_serviceAccountCredentialsHasBeenSet = true; m_serviceAccountCredentials = std::move(value); }
 
     /**
-     * <p>The <i>AccountName</i> and <i>AccountPassword</i> values for the service
-     * account, which are used by the streaming instance to connect to the
-     * directory</p>
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
      */
     inline UpdateDirectoryConfigRequest& WithServiceAccountCredentials(const ServiceAccountCredentials& value) { SetServiceAccountCredentials(value); return *this;}
 
     /**
-     * <p>The <i>AccountName</i> and <i>AccountPassword</i> values for the service
-     * account, which are used by the streaming instance to connect to the
-     * directory</p>
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
      */
     inline UpdateDirectoryConfigRequest& WithServiceAccountCredentials(ServiceAccountCredentials&& value) { SetServiceAccountCredentials(std::move(value)); return *this;}
 

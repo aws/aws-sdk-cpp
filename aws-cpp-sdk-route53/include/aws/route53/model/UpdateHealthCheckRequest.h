@@ -21,6 +21,7 @@
 #include <aws/route53/model/AlarmIdentifier.h>
 #include <aws/route53/model/InsufficientDataHealthStatus.h>
 #include <aws/route53/model/HealthCheckRegion.h>
+#include <aws/route53/model/ResettableElementName.h>
 #include <utility>
 
 namespace Aws
@@ -1357,6 +1358,112 @@ namespace Model
      */
     inline UpdateHealthCheckRequest& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A complex type that contains one <code>ResetElement</code> element for each
+     * element that you want to reset to the default value. Valid values for
+     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.</p> </li> <li> <p>
+     * <code>Regions</code>: Amazon Route 53 resets the
+     * <a>HealthCheckConfig$Regions</a> list to the default set of regions. </p> </li>
+     * <li> <p> <code>ResourcePath</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ResourcePath</a> to null.</p> </li> </ul>
+     */
+    inline const Aws::Vector<ResettableElementName>& GetResetElements() const{ return m_resetElements; }
+
+    /**
+     * <p>A complex type that contains one <code>ResetElement</code> element for each
+     * element that you want to reset to the default value. Valid values for
+     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.</p> </li> <li> <p>
+     * <code>Regions</code>: Amazon Route 53 resets the
+     * <a>HealthCheckConfig$Regions</a> list to the default set of regions. </p> </li>
+     * <li> <p> <code>ResourcePath</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ResourcePath</a> to null.</p> </li> </ul>
+     */
+    inline void SetResetElements(const Aws::Vector<ResettableElementName>& value) { m_resetElementsHasBeenSet = true; m_resetElements = value; }
+
+    /**
+     * <p>A complex type that contains one <code>ResetElement</code> element for each
+     * element that you want to reset to the default value. Valid values for
+     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.</p> </li> <li> <p>
+     * <code>Regions</code>: Amazon Route 53 resets the
+     * <a>HealthCheckConfig$Regions</a> list to the default set of regions. </p> </li>
+     * <li> <p> <code>ResourcePath</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ResourcePath</a> to null.</p> </li> </ul>
+     */
+    inline void SetResetElements(Aws::Vector<ResettableElementName>&& value) { m_resetElementsHasBeenSet = true; m_resetElements = std::move(value); }
+
+    /**
+     * <p>A complex type that contains one <code>ResetElement</code> element for each
+     * element that you want to reset to the default value. Valid values for
+     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.</p> </li> <li> <p>
+     * <code>Regions</code>: Amazon Route 53 resets the
+     * <a>HealthCheckConfig$Regions</a> list to the default set of regions. </p> </li>
+     * <li> <p> <code>ResourcePath</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ResourcePath</a> to null.</p> </li> </ul>
+     */
+    inline UpdateHealthCheckRequest& WithResetElements(const Aws::Vector<ResettableElementName>& value) { SetResetElements(value); return *this;}
+
+    /**
+     * <p>A complex type that contains one <code>ResetElement</code> element for each
+     * element that you want to reset to the default value. Valid values for
+     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.</p> </li> <li> <p>
+     * <code>Regions</code>: Amazon Route 53 resets the
+     * <a>HealthCheckConfig$Regions</a> list to the default set of regions. </p> </li>
+     * <li> <p> <code>ResourcePath</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ResourcePath</a> to null.</p> </li> </ul>
+     */
+    inline UpdateHealthCheckRequest& WithResetElements(Aws::Vector<ResettableElementName>&& value) { SetResetElements(std::move(value)); return *this;}
+
+    /**
+     * <p>A complex type that contains one <code>ResetElement</code> element for each
+     * element that you want to reset to the default value. Valid values for
+     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.</p> </li> <li> <p>
+     * <code>Regions</code>: Amazon Route 53 resets the
+     * <a>HealthCheckConfig$Regions</a> list to the default set of regions. </p> </li>
+     * <li> <p> <code>ResourcePath</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ResourcePath</a> to null.</p> </li> </ul>
+     */
+    inline UpdateHealthCheckRequest& AddResetElements(const ResettableElementName& value) { m_resetElementsHasBeenSet = true; m_resetElements.push_back(value); return *this; }
+
+    /**
+     * <p>A complex type that contains one <code>ResetElement</code> element for each
+     * element that you want to reset to the default value. Valid values for
+     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.</p> </li> <li> <p>
+     * <code>Regions</code>: Amazon Route 53 resets the
+     * <a>HealthCheckConfig$Regions</a> list to the default set of regions. </p> </li>
+     * <li> <p> <code>ResourcePath</code>: Amazon Route 53 resets
+     * <a>HealthCheckConfig$ResourcePath</a> to null.</p> </li> </ul>
+     */
+    inline UpdateHealthCheckRequest& AddResetElements(ResettableElementName&& value) { m_resetElementsHasBeenSet = true; m_resetElements.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_healthCheckId;
@@ -1403,6 +1510,9 @@ namespace Model
 
     InsufficientDataHealthStatus m_insufficientDataHealthStatus;
     bool m_insufficientDataHealthStatusHasBeenSet;
+
+    Aws::Vector<ResettableElementName> m_resetElements;
+    bool m_resetElementsHasBeenSet;
   };
 
 } // namespace Model

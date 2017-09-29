@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>A list of fleet details.</p>
+     * <p>Information about the fleet.</p>
      */
     inline const Fleet& GetFleet() const{ return m_fleet; }
 
     /**
-     * <p>A list of fleet details.</p>
+     * <p>Information about the fleet.</p>
      */
     inline void SetFleet(const Fleet& value) { m_fleet = value; }
 
     /**
-     * <p>A list of fleet details.</p>
+     * <p>Information about the fleet.</p>
      */
     inline void SetFleet(Fleet&& value) { m_fleet = std::move(value); }
 
     /**
-     * <p>A list of fleet details.</p>
+     * <p>Information about the fleet.</p>
      */
     inline UpdateFleetResult& WithFleet(const Fleet& value) { SetFleet(value); return *this;}
 
     /**
-     * <p>A list of fleet details.</p>
+     * <p>Information about the fleet.</p>
      */
     inline UpdateFleetResult& WithFleet(Fleet&& value) { SetFleet(std::move(value)); return *this;}
 

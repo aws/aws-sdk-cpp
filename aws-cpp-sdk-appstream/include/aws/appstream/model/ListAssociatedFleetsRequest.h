@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the stack whose associated fleets are listed.</p>
+     * <p>The name of the stack.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>The name of the stack whose associated fleets are listed.</p>
+     * <p>The name of the stack.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>The name of the stack whose associated fleets are listed.</p>
+     * <p>The name of the stack.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>The name of the stack whose associated fleets are listed.</p>
+     * <p>The name of the stack.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>The name of the stack whose associated fleets are listed.</p>
+     * <p>The name of the stack.</p>
      */
     inline ListAssociatedFleetsRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>The name of the stack whose associated fleets are listed.</p>
+     * <p>The name of the stack.</p>
      */
     inline ListAssociatedFleetsRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the stack whose associated fleets are listed.</p>
+     * <p>The name of the stack.</p>
      */
     inline ListAssociatedFleetsRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 

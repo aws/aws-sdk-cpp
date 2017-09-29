@@ -35,11 +35,6 @@ namespace AppStream
 {
 namespace Model
 {
-  /**
-   * <p>The response from a successful operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacksResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_APPSTREAM_API ListAssociatedStacksResult
   {
   public:
@@ -49,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The names of associated stacks.</p>
+     * <p>The names of the stacks.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
 
     /**
-     * <p>The names of associated stacks.</p>
+     * <p>The names of the stacks.</p>
      */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_names = value; }
 
     /**
-     * <p>The names of associated stacks.</p>
+     * <p>The names of the stacks.</p>
      */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_names = std::move(value); }
 
     /**
-     * <p>The names of associated stacks.</p>
+     * <p>The names of the stacks.</p>
      */
     inline ListAssociatedStacksResult& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
 
     /**
-     * <p>The names of associated stacks.</p>
+     * <p>The names of the stacks.</p>
      */
     inline ListAssociatedStacksResult& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of associated stacks.</p>
+     * <p>The names of the stacks.</p>
      */
     inline ListAssociatedStacksResult& AddNames(const Aws::String& value) { m_names.push_back(value); return *this; }
 
     /**
-     * <p>The names of associated stacks.</p>
+     * <p>The names of the stacks.</p>
      */
     inline ListAssociatedStacksResult& AddNames(Aws::String&& value) { m_names.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of associated stacks.</p>
+     * <p>The names of the stacks.</p>
      */
     inline ListAssociatedStacksResult& AddNames(const char* value) { m_names.push_back(value); return *this; }
 

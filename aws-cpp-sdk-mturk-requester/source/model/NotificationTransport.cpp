@@ -32,6 +32,7 @@ namespace Aws
 
         static const int Email_HASH = HashingUtils::HashString("Email");
         static const int SQS_HASH = HashingUtils::HashString("SQS");
+        static const int SNS_HASH = HashingUtils::HashString("SNS");
 
 
         NotificationTransport GetNotificationTransportForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == SQS_HASH)
           {
             return NotificationTransport::SQS;
+          }
+          else if (hashCode == SNS_HASH)
+          {
+            return NotificationTransport::SNS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "Email";
           case NotificationTransport::SQS:
             return "SQS";
+          case NotificationTransport::SNS:
+            return "SNS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -40,8 +40,7 @@ namespace Model
 {
 
   /**
-   * <p>New streaming instances are booted from images. The image stores the
-   * application catalog and is connected to fleets.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Image">AWS API
    * Reference</a></p>
    */
@@ -55,223 +54,223 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the image.</p>
+     * <p>The name of the image.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The unique identifier for the image.</p>
+     * <p>The name of the image.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The unique identifier for the image.</p>
+     * <p>The name of the image.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The unique identifier for the image.</p>
+     * <p>The name of the image.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The unique identifier for the image.</p>
+     * <p>The name of the image.</p>
      */
     inline Image& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The unique identifier for the image.</p>
+     * <p>The name of the image.</p>
      */
     inline Image& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the image.</p>
+     * <p>The name of the image.</p>
      */
     inline Image& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The ARN for the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN for the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN for the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN for the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN for the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline Image& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN for the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline Image& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline Image& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The source image ARN from which this image was created.</p>
+     * <p>The ARN of the image from which this image was created.</p>
      */
     inline const Aws::String& GetBaseImageArn() const{ return m_baseImageArn; }
 
     /**
-     * <p>The source image ARN from which this image was created.</p>
+     * <p>The ARN of the image from which this image was created.</p>
      */
     inline void SetBaseImageArn(const Aws::String& value) { m_baseImageArnHasBeenSet = true; m_baseImageArn = value; }
 
     /**
-     * <p>The source image ARN from which this image was created.</p>
+     * <p>The ARN of the image from which this image was created.</p>
      */
     inline void SetBaseImageArn(Aws::String&& value) { m_baseImageArnHasBeenSet = true; m_baseImageArn = std::move(value); }
 
     /**
-     * <p>The source image ARN from which this image was created.</p>
+     * <p>The ARN of the image from which this image was created.</p>
      */
     inline void SetBaseImageArn(const char* value) { m_baseImageArnHasBeenSet = true; m_baseImageArn.assign(value); }
 
     /**
-     * <p>The source image ARN from which this image was created.</p>
+     * <p>The ARN of the image from which this image was created.</p>
      */
     inline Image& WithBaseImageArn(const Aws::String& value) { SetBaseImageArn(value); return *this;}
 
     /**
-     * <p>The source image ARN from which this image was created.</p>
+     * <p>The ARN of the image from which this image was created.</p>
      */
     inline Image& WithBaseImageArn(Aws::String&& value) { SetBaseImageArn(std::move(value)); return *this;}
 
     /**
-     * <p>The source image ARN from which this image was created.</p>
+     * <p>The ARN of the image from which this image was created.</p>
      */
     inline Image& WithBaseImageArn(const char* value) { SetBaseImageArn(value); return *this;}
 
 
     /**
-     * <p>The display name for the image.</p>
+     * <p>The image name displayed to end users.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The display name for the image.</p>
+     * <p>The image name displayed to end users.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The display name for the image.</p>
+     * <p>The image name displayed to end users.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The display name for the image.</p>
+     * <p>The image name displayed to end users.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The display name for the image.</p>
+     * <p>The image name displayed to end users.</p>
      */
     inline Image& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The display name for the image.</p>
+     * <p>The image name displayed to end users.</p>
      */
     inline Image& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The display name for the image.</p>
+     * <p>The image name displayed to end users.</p>
      */
     inline Image& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
-     * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
-     * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
-     * <b>FAILED</b>.</p>
+     * <p>The image starts in the <code>PENDING</code> state. If image creation
+     * succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the
+     * state is <code>FAILED</code>.</p>
      */
     inline const ImageState& GetState() const{ return m_state; }
 
     /**
-     * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
-     * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
-     * <b>FAILED</b>.</p>
+     * <p>The image starts in the <code>PENDING</code> state. If image creation
+     * succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the
+     * state is <code>FAILED</code>.</p>
      */
     inline void SetState(const ImageState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
-     * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
-     * <b>FAILED</b>.</p>
+     * <p>The image starts in the <code>PENDING</code> state. If image creation
+     * succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the
+     * state is <code>FAILED</code>.</p>
      */
     inline void SetState(ImageState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
-     * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
-     * <b>FAILED</b>.</p>
+     * <p>The image starts in the <code>PENDING</code> state. If image creation
+     * succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the
+     * state is <code>FAILED</code>.</p>
      */
     inline Image& WithState(const ImageState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
-     * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
-     * <b>FAILED</b>.</p>
+     * <p>The image starts in the <code>PENDING</code> state. If image creation
+     * succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the
+     * state is <code>FAILED</code>.</p>
      */
     inline Image& WithState(ImageState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
-     * <p>The visibility of an image to the user; images can be public or private.</p>
+     * <p>Indicates whether the image is public or private.</p>
      */
     inline const VisibilityType& GetVisibility() const{ return m_visibility; }
 
     /**
-     * <p>The visibility of an image to the user; images can be public or private.</p>
+     * <p>Indicates whether the image is public or private.</p>
      */
     inline void SetVisibility(const VisibilityType& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
 
     /**
-     * <p>The visibility of an image to the user; images can be public or private.</p>
+     * <p>Indicates whether the image is public or private.</p>
      */
     inline void SetVisibility(VisibilityType&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
 
     /**
-     * <p>The visibility of an image to the user; images can be public or private.</p>
+     * <p>Indicates whether the image is public or private.</p>
      */
     inline Image& WithVisibility(const VisibilityType& value) { SetVisibility(value); return *this;}
 
     /**
-     * <p>The visibility of an image to the user; images can be public or private.</p>
+     * <p>Indicates whether the image is public or private.</p>
      */
     inline Image& WithVisibility(VisibilityType&& value) { SetVisibility(std::move(value)); return *this;}
 
 
     /**
-     * <p>Whether an image builder can be launched from this image.</p>
+     * <p>Indicates whether an image builder can be launched from this image.</p>
      */
     inline bool GetImageBuilderSupported() const{ return m_imageBuilderSupported; }
 
     /**
-     * <p>Whether an image builder can be launched from this image.</p>
+     * <p>Indicates whether an image builder can be launched from this image.</p>
      */
     inline void SetImageBuilderSupported(bool value) { m_imageBuilderSupportedHasBeenSet = true; m_imageBuilderSupported = value; }
 
     /**
-     * <p>Whether an image builder can be launched from this image.</p>
+     * <p>Indicates whether an image builder can be launched from this image.</p>
      */
     inline Image& WithImageBuilderSupported(bool value) { SetImageBuilderSupported(value); return *this;}
 
@@ -303,37 +302,37 @@ namespace Model
 
 
     /**
-     * <p>A meaningful description for the image.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A meaningful description for the image.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A meaningful description for the image.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A meaningful description for the image.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A meaningful description for the image.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline Image& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A meaningful description for the image.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline Image& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A meaningful description for the image.</p>
+     * <p>The description displayed to end users.</p>
      */
     inline Image& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -365,94 +364,94 @@ namespace Model
 
 
     /**
-     * <p>The applications associated with an image.</p>
+     * <p>The applications associated with the image.</p>
      */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
 
     /**
-     * <p>The applications associated with an image.</p>
+     * <p>The applications associated with the image.</p>
      */
     inline void SetApplications(const Aws::Vector<Application>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
 
     /**
-     * <p>The applications associated with an image.</p>
+     * <p>The applications associated with the image.</p>
      */
     inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
 
     /**
-     * <p>The applications associated with an image.</p>
+     * <p>The applications associated with the image.</p>
      */
     inline Image& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
 
     /**
-     * <p>The applications associated with an image.</p>
+     * <p>The applications associated with the image.</p>
      */
     inline Image& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
-     * <p>The applications associated with an image.</p>
+     * <p>The applications associated with the image.</p>
      */
     inline Image& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
 
     /**
-     * <p>The applications associated with an image.</p>
+     * <p>The applications associated with the image.</p>
      */
     inline Image& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The time stamp when the image was created.</p>
+     * <p>The time the image was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The time stamp when the image was created.</p>
+     * <p>The time the image was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The time stamp when the image was created.</p>
+     * <p>The time the image was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The time stamp when the image was created.</p>
+     * <p>The time the image was created.</p>
      */
     inline Image& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The time stamp when the image was created.</p>
+     * <p>The time the image was created.</p>
      */
     inline Image& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS release date of the public base image. For private images, this date
-     * is the release date of the base image from which the image was created.</p>
+     * <p>The release date of the public base image. For private images, this date is
+     * the release date of the base image from which the image was created.</p>
      */
     inline const Aws::Utils::DateTime& GetPublicBaseImageReleasedDate() const{ return m_publicBaseImageReleasedDate; }
 
     /**
-     * <p>The AWS release date of the public base image. For private images, this date
-     * is the release date of the base image from which the image was created.</p>
+     * <p>The release date of the public base image. For private images, this date is
+     * the release date of the base image from which the image was created.</p>
      */
     inline void SetPublicBaseImageReleasedDate(const Aws::Utils::DateTime& value) { m_publicBaseImageReleasedDateHasBeenSet = true; m_publicBaseImageReleasedDate = value; }
 
     /**
-     * <p>The AWS release date of the public base image. For private images, this date
-     * is the release date of the base image from which the image was created.</p>
+     * <p>The release date of the public base image. For private images, this date is
+     * the release date of the base image from which the image was created.</p>
      */
     inline void SetPublicBaseImageReleasedDate(Aws::Utils::DateTime&& value) { m_publicBaseImageReleasedDateHasBeenSet = true; m_publicBaseImageReleasedDate = std::move(value); }
 
     /**
-     * <p>The AWS release date of the public base image. For private images, this date
-     * is the release date of the base image from which the image was created.</p>
+     * <p>The release date of the public base image. For private images, this date is
+     * the release date of the base image from which the image was created.</p>
      */
     inline Image& WithPublicBaseImageReleasedDate(const Aws::Utils::DateTime& value) { SetPublicBaseImageReleasedDate(value); return *this;}
 
     /**
-     * <p>The AWS release date of the public base image. For private images, this date
-     * is the release date of the base image from which the image was created.</p>
+     * <p>The release date of the public base image. For private images, this date is
+     * the release date of the base image from which the image was created.</p>
      */
     inline Image& WithPublicBaseImageReleasedDate(Aws::Utils::DateTime&& value) { SetPublicBaseImageReleasedDate(std::move(value)); return *this;}
 

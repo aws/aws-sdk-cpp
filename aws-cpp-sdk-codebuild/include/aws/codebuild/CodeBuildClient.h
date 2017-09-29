@@ -25,7 +25,9 @@
 #include <aws/codebuild/model/BatchGetBuildsResult.h>
 #include <aws/codebuild/model/BatchGetProjectsResult.h>
 #include <aws/codebuild/model/CreateProjectResult.h>
+#include <aws/codebuild/model/CreateWebhookResult.h>
 #include <aws/codebuild/model/DeleteProjectResult.h>
+#include <aws/codebuild/model/DeleteWebhookResult.h>
 #include <aws/codebuild/model/ListBuildsResult.h>
 #include <aws/codebuild/model/ListBuildsForProjectResult.h>
 #include <aws/codebuild/model/ListCuratedEnvironmentImagesResult.h>
@@ -82,7 +84,9 @@ namespace Model
         class BatchGetBuildsRequest;
         class BatchGetProjectsRequest;
         class CreateProjectRequest;
+        class CreateWebhookRequest;
         class DeleteProjectRequest;
+        class DeleteWebhookRequest;
         class ListBuildsRequest;
         class ListBuildsForProjectRequest;
         class ListCuratedEnvironmentImagesRequest;
@@ -95,7 +99,9 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchGetBuildsResult, Aws::Client::AWSError<CodeBuildErrors>> BatchGetBuildsOutcome;
         typedef Aws::Utils::Outcome<BatchGetProjectsResult, Aws::Client::AWSError<CodeBuildErrors>> BatchGetProjectsOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<CodeBuildErrors>> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateWebhookResult, Aws::Client::AWSError<CodeBuildErrors>> CreateWebhookOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteWebhookResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteWebhookOutcome;
         typedef Aws::Utils::Outcome<ListBuildsResult, Aws::Client::AWSError<CodeBuildErrors>> ListBuildsOutcome;
         typedef Aws::Utils::Outcome<ListBuildsForProjectResult, Aws::Client::AWSError<CodeBuildErrors>> ListBuildsForProjectOutcome;
         typedef Aws::Utils::Outcome<ListCuratedEnvironmentImagesResult, Aws::Client::AWSError<CodeBuildErrors>> ListCuratedEnvironmentImagesOutcome;
@@ -108,7 +114,9 @@ namespace Model
         typedef std::future<BatchGetBuildsOutcome> BatchGetBuildsOutcomeCallable;
         typedef std::future<BatchGetProjectsOutcome> BatchGetProjectsOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
+        typedef std::future<CreateWebhookOutcome> CreateWebhookOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+        typedef std::future<DeleteWebhookOutcome> DeleteWebhookOutcomeCallable;
         typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
         typedef std::future<ListBuildsForProjectOutcome> ListBuildsForProjectOutcomeCallable;
         typedef std::future<ListCuratedEnvironmentImagesOutcome> ListCuratedEnvironmentImagesOutcomeCallable;
@@ -124,7 +132,9 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetBuildsRequest&, const Model::BatchGetBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetProjectsRequest&, const Model::BatchGetProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetProjectsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::CreateWebhookRequest&, const Model::CreateWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebhookResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::DeleteWebhookRequest&, const Model::DeleteWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebhookResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsForProjectRequest&, const Model::ListBuildsForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsForProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListCuratedEnvironmentImagesRequest&, const Model::ListCuratedEnvironmentImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCuratedEnvironmentImagesResponseReceivedHandler;
@@ -139,28 +149,35 @@ namespace Model
    * and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the
    * need to provision, manage, and scale your own build servers. It provides
    * prepackaged build environments for the most popular programming languages and
-   * build tools, such as Apach Maven, Gradle, and more. You can also fully customize
-   * build environments in AWS CodeBuild to use your own build tools. AWS CodeBuild
-   * scales automatically to meet peak build requests, and you pay only for the build
-   * time you consume. For more information about AWS CodeBuild, see the <i>AWS
-   * CodeBuild User Guide</i>.</p> <p>AWS CodeBuild supports these operations:</p>
-   * <ul> <li> <p> <code>BatchDeleteBuilds</code>: Deletes one or more builds.</p>
-   * </li> <li> <p> <code>BatchGetProjects</code>: Gets information about one or more
-   * build projects. A <i>build project</i> defines how AWS CodeBuild will run a
-   * build. This includes information such as where to get the source code to build,
-   * the build environment to use, the build commands to run, and where to store the
-   * build output. A <i>build environment</i> represents a combination of operating
-   * system, programming language runtime, and tools that AWS CodeBuild will use to
-   * run a build. Also, you can add tags to build projects to help manage your
-   * resources and costs.</p> </li> <li> <p> <code>CreateProject</code>: Creates a
-   * build project.</p> </li> <li> <p> <code>DeleteProject</code>: Deletes a build
-   * project.</p> </li> <li> <p> <code>ListProjects</code>: Gets a list of build
-   * project names, with each build project name representing a single build
-   * project.</p> </li> <li> <p> <code>UpdateProject</code>: Changes the settings of
-   * an existing build project.</p> </li> <li> <p> <code>BatchGetBuilds</code>: Gets
-   * information about one or more builds.</p> </li> <li> <p>
-   * <code>ListBuilds</code>: Gets a list of build IDs, with each build ID
-   * representing a single build.</p> </li> <li> <p>
+   * build tools, such as Apache Maven, Gradle, and more. You can also fully
+   * customize build environments in AWS CodeBuild to use your own build tools. AWS
+   * CodeBuild scales automatically to meet peak build requests, and you pay only for
+   * the build time you consume. For more information about AWS CodeBuild, see the
+   * <i>AWS CodeBuild User Guide</i>.</p> <p>AWS CodeBuild supports these
+   * operations:</p> <ul> <li> <p> <code>BatchDeleteBuilds</code>: Deletes one or
+   * more builds.</p> </li> <li> <p> <code>BatchGetProjects</code>: Gets information
+   * about one or more build projects. A <i>build project</i> defines how AWS
+   * CodeBuild will run a build. This includes information such as where to get the
+   * source code to build, the build environment to use, the build commands to run,
+   * and where to store the build output. A <i>build environment</i> represents a
+   * combination of operating system, programming language runtime, and tools that
+   * AWS CodeBuild will use to run a build. Also, you can add tags to build projects
+   * to help manage your resources and costs.</p> </li> <li> <p>
+   * <code>CreateProject</code>: Creates a build project.</p> </li> <li> <p>
+   * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has
+   * its source code stored in a GitHub repository, enables AWS CodeBuild to begin
+   * automatically rebuilding the source code every time a code change is pushed to
+   * the repository.</p> </li> <li> <p> <code>DeleteProject</code>: Deletes a build
+   * project.</p> </li> <li> <p> <code>DeleteWebhook</code>: For an existing AWS
+   * CodeBuild build project that has its source code stored in a GitHub repository,
+   * stops AWS CodeBuild from automatically rebuilding the source code every time a
+   * code change is pushed to the repository.</p> </li> <li> <p>
+   * <code>ListProjects</code>: Gets a list of build project names, with each build
+   * project name representing a single build project.</p> </li> <li> <p>
+   * <code>UpdateProject</code>: Changes the settings of an existing build
+   * project.</p> </li> <li> <p> <code>BatchGetBuilds</code>: Gets information about
+   * one or more builds.</p> </li> <li> <p> <code>ListBuilds</code>: Gets a list of
+   * build IDs, with each build ID representing a single build.</p> </li> <li> <p>
    * <code>ListBuildsForProject</code>: Gets a list of build IDs for the specified
    * build project, with each build ID representing a single build.</p> </li> <li>
    * <p> <code>StartBuild</code>: Starts running a build.</p> </li> <li> <p>
@@ -298,6 +315,64 @@ namespace Model
         virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>For an existing AWS CodeBuild build project that has its source code stored
+         * in a GitHub repository, enables AWS CodeBuild to begin automatically rebuilding
+         * the source code every time a code change is pushed to the repository.</p>
+         * <important> <p>If you enable webhooks for an AWS CodeBuild project, and the
+         * project is used as a build step in AWS CodePipeline, then two identical builds
+         * will be created for each commit. One build is triggered through webhooks, and
+         * one through AWS CodePipeline. Because billing is on a per-build basis, you will
+         * be billed for both builds. Therefore, if you are using AWS CodePipeline, we
+         * recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild console,
+         * clear the Webhook box. For more information, see step 9 in <a
+         * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+         * a Build Project’s Settings</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWebhookOutcome CreateWebhook(const Model::CreateWebhookRequest& request) const;
+
+        /**
+         * <p>For an existing AWS CodeBuild build project that has its source code stored
+         * in a GitHub repository, enables AWS CodeBuild to begin automatically rebuilding
+         * the source code every time a code change is pushed to the repository.</p>
+         * <important> <p>If you enable webhooks for an AWS CodeBuild project, and the
+         * project is used as a build step in AWS CodePipeline, then two identical builds
+         * will be created for each commit. One build is triggered through webhooks, and
+         * one through AWS CodePipeline. Because billing is on a per-build basis, you will
+         * be billed for both builds. Therefore, if you are using AWS CodePipeline, we
+         * recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild console,
+         * clear the Webhook box. For more information, see step 9 in <a
+         * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+         * a Build Project’s Settings</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateWebhookOutcomeCallable CreateWebhookCallable(const Model::CreateWebhookRequest& request) const;
+
+        /**
+         * <p>For an existing AWS CodeBuild build project that has its source code stored
+         * in a GitHub repository, enables AWS CodeBuild to begin automatically rebuilding
+         * the source code every time a code change is pushed to the repository.</p>
+         * <important> <p>If you enable webhooks for an AWS CodeBuild project, and the
+         * project is used as a build step in AWS CodePipeline, then two identical builds
+         * will be created for each commit. One build is triggered through webhooks, and
+         * one through AWS CodePipeline. Because billing is on a per-build basis, you will
+         * be billed for both builds. Therefore, if you are using AWS CodePipeline, we
+         * recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild console,
+         * clear the Webhook box. For more information, see step 9 in <a
+         * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+         * a Build Project’s Settings</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateWebhookAsync(const Model::CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a build project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">AWS
          * API Reference</a></p>
@@ -321,6 +396,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>For an existing AWS CodeBuild build project that has its source code stored
+         * in a GitHub repository, stops AWS CodeBuild from automatically rebuilding the
+         * source code every time a code change is pushed to the repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWebhookOutcome DeleteWebhook(const Model::DeleteWebhookRequest& request) const;
+
+        /**
+         * <p>For an existing AWS CodeBuild build project that has its source code stored
+         * in a GitHub repository, stops AWS CodeBuild from automatically rebuilding the
+         * source code every time a code change is pushed to the repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteWebhookOutcomeCallable DeleteWebhookCallable(const Model::DeleteWebhookRequest& request) const;
+
+        /**
+         * <p>For an existing AWS CodeBuild build project that has its source code stored
+         * in a GitHub repository, stops AWS CodeBuild from automatically rebuilding the
+         * source code every time a code change is pushed to the repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteWebhookAsync(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of build IDs, with each build ID representing a single
@@ -518,7 +627,9 @@ namespace Model
         void BatchGetBuildsAsyncHelper(const Model::BatchGetBuildsRequest& request, const BatchGetBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetProjectsAsyncHelper(const Model::BatchGetProjectsRequest& request, const BatchGetProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateWebhookAsyncHelper(const Model::CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteWebhookAsyncHelper(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsAsyncHelper(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsForProjectAsyncHelper(const Model::ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCuratedEnvironmentImagesAsyncHelper(const Model::ListCuratedEnvironmentImagesRequest& request, const ListCuratedEnvironmentImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

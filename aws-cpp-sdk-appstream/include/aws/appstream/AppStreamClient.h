@@ -24,13 +24,18 @@
 #include <aws/appstream/model/AssociateFleetResult.h>
 #include <aws/appstream/model/CreateDirectoryConfigResult.h>
 #include <aws/appstream/model/CreateFleetResult.h>
+#include <aws/appstream/model/CreateImageBuilderResult.h>
+#include <aws/appstream/model/CreateImageBuilderStreamingURLResult.h>
 #include <aws/appstream/model/CreateStackResult.h>
 #include <aws/appstream/model/CreateStreamingURLResult.h>
 #include <aws/appstream/model/DeleteDirectoryConfigResult.h>
 #include <aws/appstream/model/DeleteFleetResult.h>
+#include <aws/appstream/model/DeleteImageResult.h>
+#include <aws/appstream/model/DeleteImageBuilderResult.h>
 #include <aws/appstream/model/DeleteStackResult.h>
 #include <aws/appstream/model/DescribeDirectoryConfigsResult.h>
 #include <aws/appstream/model/DescribeFleetsResult.h>
+#include <aws/appstream/model/DescribeImageBuildersResult.h>
 #include <aws/appstream/model/DescribeImagesResult.h>
 #include <aws/appstream/model/DescribeSessionsResult.h>
 #include <aws/appstream/model/DescribeStacksResult.h>
@@ -39,7 +44,9 @@
 #include <aws/appstream/model/ListAssociatedFleetsResult.h>
 #include <aws/appstream/model/ListAssociatedStacksResult.h>
 #include <aws/appstream/model/StartFleetResult.h>
+#include <aws/appstream/model/StartImageBuilderResult.h>
 #include <aws/appstream/model/StopFleetResult.h>
+#include <aws/appstream/model/StopImageBuilderResult.h>
 #include <aws/appstream/model/UpdateDirectoryConfigResult.h>
 #include <aws/appstream/model/UpdateFleetResult.h>
 #include <aws/appstream/model/UpdateStackResult.h>
@@ -91,13 +98,18 @@ namespace Model
         class AssociateFleetRequest;
         class CreateDirectoryConfigRequest;
         class CreateFleetRequest;
+        class CreateImageBuilderRequest;
+        class CreateImageBuilderStreamingURLRequest;
         class CreateStackRequest;
         class CreateStreamingURLRequest;
         class DeleteDirectoryConfigRequest;
         class DeleteFleetRequest;
+        class DeleteImageRequest;
+        class DeleteImageBuilderRequest;
         class DeleteStackRequest;
         class DescribeDirectoryConfigsRequest;
         class DescribeFleetsRequest;
+        class DescribeImageBuildersRequest;
         class DescribeImagesRequest;
         class DescribeSessionsRequest;
         class DescribeStacksRequest;
@@ -106,7 +118,9 @@ namespace Model
         class ListAssociatedFleetsRequest;
         class ListAssociatedStacksRequest;
         class StartFleetRequest;
+        class StartImageBuilderRequest;
         class StopFleetRequest;
+        class StopImageBuilderRequest;
         class UpdateDirectoryConfigRequest;
         class UpdateFleetRequest;
         class UpdateStackRequest;
@@ -114,13 +128,18 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateFleetResult, Aws::Client::AWSError<AppStreamErrors>> AssociateFleetOutcome;
         typedef Aws::Utils::Outcome<CreateDirectoryConfigResult, Aws::Client::AWSError<AppStreamErrors>> CreateDirectoryConfigOutcome;
         typedef Aws::Utils::Outcome<CreateFleetResult, Aws::Client::AWSError<AppStreamErrors>> CreateFleetOutcome;
+        typedef Aws::Utils::Outcome<CreateImageBuilderResult, Aws::Client::AWSError<AppStreamErrors>> CreateImageBuilderOutcome;
+        typedef Aws::Utils::Outcome<CreateImageBuilderStreamingURLResult, Aws::Client::AWSError<AppStreamErrors>> CreateImageBuilderStreamingURLOutcome;
         typedef Aws::Utils::Outcome<CreateStackResult, Aws::Client::AWSError<AppStreamErrors>> CreateStackOutcome;
         typedef Aws::Utils::Outcome<CreateStreamingURLResult, Aws::Client::AWSError<AppStreamErrors>> CreateStreamingURLOutcome;
         typedef Aws::Utils::Outcome<DeleteDirectoryConfigResult, Aws::Client::AWSError<AppStreamErrors>> DeleteDirectoryConfigOutcome;
         typedef Aws::Utils::Outcome<DeleteFleetResult, Aws::Client::AWSError<AppStreamErrors>> DeleteFleetOutcome;
+        typedef Aws::Utils::Outcome<DeleteImageResult, Aws::Client::AWSError<AppStreamErrors>> DeleteImageOutcome;
+        typedef Aws::Utils::Outcome<DeleteImageBuilderResult, Aws::Client::AWSError<AppStreamErrors>> DeleteImageBuilderOutcome;
         typedef Aws::Utils::Outcome<DeleteStackResult, Aws::Client::AWSError<AppStreamErrors>> DeleteStackOutcome;
         typedef Aws::Utils::Outcome<DescribeDirectoryConfigsResult, Aws::Client::AWSError<AppStreamErrors>> DescribeDirectoryConfigsOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetsResult, Aws::Client::AWSError<AppStreamErrors>> DescribeFleetsOutcome;
+        typedef Aws::Utils::Outcome<DescribeImageBuildersResult, Aws::Client::AWSError<AppStreamErrors>> DescribeImageBuildersOutcome;
         typedef Aws::Utils::Outcome<DescribeImagesResult, Aws::Client::AWSError<AppStreamErrors>> DescribeImagesOutcome;
         typedef Aws::Utils::Outcome<DescribeSessionsResult, Aws::Client::AWSError<AppStreamErrors>> DescribeSessionsOutcome;
         typedef Aws::Utils::Outcome<DescribeStacksResult, Aws::Client::AWSError<AppStreamErrors>> DescribeStacksOutcome;
@@ -129,7 +148,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ListAssociatedFleetsResult, Aws::Client::AWSError<AppStreamErrors>> ListAssociatedFleetsOutcome;
         typedef Aws::Utils::Outcome<ListAssociatedStacksResult, Aws::Client::AWSError<AppStreamErrors>> ListAssociatedStacksOutcome;
         typedef Aws::Utils::Outcome<StartFleetResult, Aws::Client::AWSError<AppStreamErrors>> StartFleetOutcome;
+        typedef Aws::Utils::Outcome<StartImageBuilderResult, Aws::Client::AWSError<AppStreamErrors>> StartImageBuilderOutcome;
         typedef Aws::Utils::Outcome<StopFleetResult, Aws::Client::AWSError<AppStreamErrors>> StopFleetOutcome;
+        typedef Aws::Utils::Outcome<StopImageBuilderResult, Aws::Client::AWSError<AppStreamErrors>> StopImageBuilderOutcome;
         typedef Aws::Utils::Outcome<UpdateDirectoryConfigResult, Aws::Client::AWSError<AppStreamErrors>> UpdateDirectoryConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateFleetResult, Aws::Client::AWSError<AppStreamErrors>> UpdateFleetOutcome;
         typedef Aws::Utils::Outcome<UpdateStackResult, Aws::Client::AWSError<AppStreamErrors>> UpdateStackOutcome;
@@ -137,13 +158,18 @@ namespace Model
         typedef std::future<AssociateFleetOutcome> AssociateFleetOutcomeCallable;
         typedef std::future<CreateDirectoryConfigOutcome> CreateDirectoryConfigOutcomeCallable;
         typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
+        typedef std::future<CreateImageBuilderOutcome> CreateImageBuilderOutcomeCallable;
+        typedef std::future<CreateImageBuilderStreamingURLOutcome> CreateImageBuilderStreamingURLOutcomeCallable;
         typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
         typedef std::future<CreateStreamingURLOutcome> CreateStreamingURLOutcomeCallable;
         typedef std::future<DeleteDirectoryConfigOutcome> DeleteDirectoryConfigOutcomeCallable;
         typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
+        typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
+        typedef std::future<DeleteImageBuilderOutcome> DeleteImageBuilderOutcomeCallable;
         typedef std::future<DeleteStackOutcome> DeleteStackOutcomeCallable;
         typedef std::future<DescribeDirectoryConfigsOutcome> DescribeDirectoryConfigsOutcomeCallable;
         typedef std::future<DescribeFleetsOutcome> DescribeFleetsOutcomeCallable;
+        typedef std::future<DescribeImageBuildersOutcome> DescribeImageBuildersOutcomeCallable;
         typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
         typedef std::future<DescribeSessionsOutcome> DescribeSessionsOutcomeCallable;
         typedef std::future<DescribeStacksOutcome> DescribeStacksOutcomeCallable;
@@ -152,7 +178,9 @@ namespace Model
         typedef std::future<ListAssociatedFleetsOutcome> ListAssociatedFleetsOutcomeCallable;
         typedef std::future<ListAssociatedStacksOutcome> ListAssociatedStacksOutcomeCallable;
         typedef std::future<StartFleetOutcome> StartFleetOutcomeCallable;
+        typedef std::future<StartImageBuilderOutcome> StartImageBuilderOutcomeCallable;
         typedef std::future<StopFleetOutcome> StopFleetOutcomeCallable;
+        typedef std::future<StopImageBuilderOutcome> StopImageBuilderOutcomeCallable;
         typedef std::future<UpdateDirectoryConfigOutcome> UpdateDirectoryConfigOutcomeCallable;
         typedef std::future<UpdateFleetOutcome> UpdateFleetOutcomeCallable;
         typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
@@ -163,13 +191,18 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::AssociateFleetRequest&, const Model::AssociateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateDirectoryConfigRequest&, const Model::CreateDirectoryConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDirectoryConfigResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::CreateImageBuilderRequest&, const Model::CreateImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageBuilderResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::CreateImageBuilderStreamingURLRequest&, const Model::CreateImageBuilderStreamingURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageBuilderStreamingURLResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateStreamingURLRequest&, const Model::CreateStreamingURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingURLResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteDirectoryConfigRequest&, const Model::DeleteDirectoryConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDirectoryConfigResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteFleetRequest&, const Model::DeleteFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DeleteImageRequest&, const Model::DeleteImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DeleteImageBuilderRequest&, const Model::DeleteImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeDirectoryConfigsRequest&, const Model::DescribeDirectoryConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectoryConfigsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeFleetsRequest&, const Model::DescribeFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetsResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DescribeImageBuildersRequest&, const Model::DescribeImageBuildersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageBuildersResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeImagesRequest&, const Model::DescribeImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagesResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeSessionsRequest&, const Model::DescribeSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSessionsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeStacksRequest&, const Model::DescribeStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStacksResponseReceivedHandler;
@@ -178,14 +211,17 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::ListAssociatedFleetsRequest&, const Model::ListAssociatedFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedFleetsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::ListAssociatedStacksRequest&, const Model::ListAssociatedStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedStacksResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StartFleetRequest&, const Model::StartFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFleetResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::StartImageBuilderRequest&, const Model::StartImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImageBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StopFleetRequest&, const Model::StopFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopFleetResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::StopImageBuilderRequest&, const Model::StopImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopImageBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateDirectoryConfigRequest&, const Model::UpdateDirectoryConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDirectoryConfigResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateFleetRequest&, const Model::UpdateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon AppStream 2.0</fullname> <p>API documentation for Amazon
-   * AppStream 2.0.</p>
+   * <fullname>Amazon AppStream 2.0</fullname> <p>You can use Amazon AppStream 2.0 to
+   * stream desktop applications to any device running a web browser, without
+   * rewriting them.</p>
    */
   class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient
   {
@@ -217,14 +253,16 @@ namespace Model
 
 
         /**
-         * <p>Associate a fleet to a stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified fleet with the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateFleetOutcome AssociateFleet(const Model::AssociateFleetRequest& request) const;
 
         /**
-         * <p>Associate a fleet to a stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified fleet with the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">AWS
          * API Reference</a></p>
          *
@@ -233,7 +271,8 @@ namespace Model
         virtual Model::AssociateFleetOutcomeCallable AssociateFleetCallable(const Model::AssociateFleetRequest& request) const;
 
         /**
-         * <p>Associate a fleet to a stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified fleet with the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">AWS
          * API Reference</a></p>
          *
@@ -242,16 +281,14 @@ namespace Model
         virtual void AssociateFleetAsync(const Model::AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a directory configuration with the given parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a directory configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDirectoryConfigOutcome CreateDirectoryConfig(const Model::CreateDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Creates a directory configuration with the given parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a directory configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -260,8 +297,7 @@ namespace Model
         virtual Model::CreateDirectoryConfigOutcomeCallable CreateDirectoryConfigCallable(const Model::CreateDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Creates a directory configuration with the given parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a directory configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -270,14 +306,14 @@ namespace Model
         virtual void CreateDirectoryConfigAsync(const Model::CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
 
         /**
-         * <p>Creates a new fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">AWS
          * API Reference</a></p>
          *
@@ -286,7 +322,7 @@ namespace Model
         virtual Model::CreateFleetOutcomeCallable CreateFleetCallable(const Model::CreateFleetRequest& request) const;
 
         /**
-         * <p>Creates a new fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">AWS
          * API Reference</a></p>
          *
@@ -295,14 +331,52 @@ namespace Model
         virtual void CreateFleetAsync(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a new stack.</p><p><h3>See Also:</h3>   <a
+         * 
+         */
+        virtual Model::CreateImageBuilderOutcome CreateImageBuilder(const Model::CreateImageBuilderRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateImageBuilderOutcomeCallable CreateImageBuilderCallable(const Model::CreateImageBuilderRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateImageBuilderAsync(const Model::CreateImageBuilderRequest& request, const CreateImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::CreateImageBuilderStreamingURLOutcome CreateImageBuilderStreamingURL(const Model::CreateImageBuilderStreamingURLRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateImageBuilderStreamingURLOutcomeCallable CreateImageBuilderStreamingURLCallable(const Model::CreateImageBuilderStreamingURLRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateImageBuilderStreamingURLAsync(const Model::CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateStackOutcome CreateStack(const Model::CreateStackRequest& request) const;
 
         /**
-         * <p>Create a new stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">AWS
          * API Reference</a></p>
          *
@@ -311,7 +385,7 @@ namespace Model
         virtual Model::CreateStackOutcomeCallable CreateStackCallable(const Model::CreateStackRequest& request) const;
 
         /**
-         * <p>Create a new stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">AWS
          * API Reference</a></p>
          *
@@ -320,8 +394,8 @@ namespace Model
         virtual void CreateStackAsync(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a URL to start an AppStream 2.0 streaming session for a user. By
-         * default, the URL is valid only for 1 minute from the time that it is
+         * <p>Creates a URL to start a streaming session for the specified user.</p> <p>By
+         * default, the URL is valid only for one minute from the time that it is
          * generated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">AWS
          * API Reference</a></p>
@@ -329,8 +403,8 @@ namespace Model
         virtual Model::CreateStreamingURLOutcome CreateStreamingURL(const Model::CreateStreamingURLRequest& request) const;
 
         /**
-         * <p>Creates a URL to start an AppStream 2.0 streaming session for a user. By
-         * default, the URL is valid only for 1 minute from the time that it is
+         * <p>Creates a URL to start a streaming session for the specified user.</p> <p>By
+         * default, the URL is valid only for one minute from the time that it is
          * generated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">AWS
          * API Reference</a></p>
@@ -340,8 +414,8 @@ namespace Model
         virtual Model::CreateStreamingURLOutcomeCallable CreateStreamingURLCallable(const Model::CreateStreamingURLRequest& request) const;
 
         /**
-         * <p>Creates a URL to start an AppStream 2.0 streaming session for a user. By
-         * default, the URL is valid only for 1 minute from the time that it is
+         * <p>Creates a URL to start a streaming session for the specified user.</p> <p>By
+         * default, the URL is valid only for one minute from the time that it is
          * generated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">AWS
          * API Reference</a></p>
@@ -351,16 +425,14 @@ namespace Model
         virtual void CreateStreamingURLAsync(const Model::CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the directory configuration with the given parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified directory configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDirectoryConfigOutcome DeleteDirectoryConfig(const Model::DeleteDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Deletes the directory configuration with the given parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified directory configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -369,8 +441,7 @@ namespace Model
         virtual Model::DeleteDirectoryConfigOutcomeCallable DeleteDirectoryConfigCallable(const Model::DeleteDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Deletes the directory configuration with the given parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified directory configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -379,14 +450,14 @@ namespace Model
         virtual void DeleteDirectoryConfigAsync(const Model::DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteFleetOutcome DeleteFleet(const Model::DeleteFleetRequest& request) const;
 
         /**
-         * <p>Deletes a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">AWS
          * API Reference</a></p>
          *
@@ -395,7 +466,7 @@ namespace Model
         virtual Model::DeleteFleetOutcomeCallable DeleteFleetCallable(const Model::DeleteFleetRequest& request) const;
 
         /**
-         * <p>Deletes a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">AWS
          * API Reference</a></p>
          *
@@ -404,8 +475,46 @@ namespace Model
         virtual void DeleteFleetAsync(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the stack. After this operation completes, the environment can no
-         * longer be activated, and any reservations made for the stack are
+         * 
+         */
+        virtual Model::DeleteImageOutcome DeleteImage(const Model::DeleteImageRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteImageOutcomeCallable DeleteImageCallable(const Model::DeleteImageRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteImageAsync(const Model::DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::DeleteImageBuilderOutcome DeleteImageBuilder(const Model::DeleteImageBuilderRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteImageBuilderOutcomeCallable DeleteImageBuilderCallable(const Model::DeleteImageBuilderRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteImageBuilderAsync(const Model::DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified stack. After this operation completes, the environment
+         * can no longer be activated and any reservations made for the stack are
          * released.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">AWS
          * API Reference</a></p>
@@ -413,8 +522,8 @@ namespace Model
         virtual Model::DeleteStackOutcome DeleteStack(const Model::DeleteStackRequest& request) const;
 
         /**
-         * <p>Deletes the stack. After this operation completes, the environment can no
-         * longer be activated, and any reservations made for the stack are
+         * <p>Deletes the specified stack. After this operation completes, the environment
+         * can no longer be activated and any reservations made for the stack are
          * released.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">AWS
          * API Reference</a></p>
@@ -424,8 +533,8 @@ namespace Model
         virtual Model::DeleteStackOutcomeCallable DeleteStackCallable(const Model::DeleteStackRequest& request) const;
 
         /**
-         * <p>Deletes the stack. After this operation completes, the environment can no
-         * longer be activated, and any reservations made for the stack are
+         * <p>Deletes the specified stack. After this operation completes, the environment
+         * can no longer be activated and any reservations made for the stack are
          * released.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">AWS
          * API Reference</a></p>
@@ -435,16 +544,16 @@ namespace Model
         virtual void DeleteStackAsync(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list describing the specified directory
-         * configurations.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified directory configurations.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDirectoryConfigsOutcome DescribeDirectoryConfigs(const Model::DescribeDirectoryConfigsRequest& request) const;
 
         /**
-         * <p>Returns a list describing the specified directory
-         * configurations.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified directory configurations.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
          * API Reference</a></p>
          *
@@ -453,8 +562,8 @@ namespace Model
         virtual Model::DescribeDirectoryConfigsOutcomeCallable DescribeDirectoryConfigsCallable(const Model::DescribeDirectoryConfigsRequest& request) const;
 
         /**
-         * <p>Returns a list describing the specified directory
-         * configurations.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified directory configurations.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
          * API Reference</a></p>
          *
@@ -463,18 +572,16 @@ namespace Model
         virtual void DescribeDirectoryConfigsAsync(const Model::DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>If fleet names are provided, this operation describes the specified fleets;
-         * otherwise, all the fleets in the account are described.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Describes the specified fleets or all fleets in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>If fleet names are provided, this operation describes the specified fleets;
-         * otherwise, all the fleets in the account are described.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Describes the specified fleets or all fleets in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS
          * API Reference</a></p>
          *
@@ -483,9 +590,8 @@ namespace Model
         virtual Model::DescribeFleetsOutcomeCallable DescribeFleetsCallable(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>If fleet names are provided, this operation describes the specified fleets;
-         * otherwise, all the fleets in the account are described.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Describes the specified fleets or all fleets in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS
          * API Reference</a></p>
          *
@@ -494,18 +600,35 @@ namespace Model
         virtual void DescribeFleetsAsync(const Model::DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the images. If a list of names is not provided, all images in your
-         * account are returned. This operation does not return a paginated
-         * result.</p><p><h3>See Also:</h3>   <a
+         * 
+         */
+        virtual Model::DescribeImageBuildersOutcome DescribeImageBuilders(const Model::DescribeImageBuildersRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeImageBuildersOutcomeCallable DescribeImageBuildersCallable(const Model::DescribeImageBuildersRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeImageBuildersAsync(const Model::DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified images or all images in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Describes the images. If a list of names is not provided, all images in your
-         * account are returned. This operation does not return a paginated
-         * result.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified images or all images in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -514,9 +637,8 @@ namespace Model
         virtual Model::DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Describes the images. If a list of names is not provided, all images in your
-         * account are returned. This operation does not return a paginated
-         * result.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified images or all images in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -525,24 +647,20 @@ namespace Model
         virtual void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the streaming sessions for a stack and a fleet. If a user ID is
-         * provided, this operation returns streaming sessions for only that user. To
-         * retrieve the next set of items, pass this value for the <code>nextToken</code>
-         * parameter in a subsequent call to this operation. If an authentication type is
-         * not provided, the operation defaults to users authenticated using a streaming
-         * URL.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the streaming sessions for the specified stack and fleet. If a user
+         * ID is provided, only the streaming sessions for only that user are returned. If
+         * an authentication type is not provided, the default is to authenticate users
+         * using a streaming URL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeSessionsOutcome DescribeSessions(const Model::DescribeSessionsRequest& request) const;
 
         /**
-         * <p>Describes the streaming sessions for a stack and a fleet. If a user ID is
-         * provided, this operation returns streaming sessions for only that user. To
-         * retrieve the next set of items, pass this value for the <code>nextToken</code>
-         * parameter in a subsequent call to this operation. If an authentication type is
-         * not provided, the operation defaults to users authenticated using a streaming
-         * URL.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the streaming sessions for the specified stack and fleet. If a user
+         * ID is provided, only the streaming sessions for only that user are returned. If
+         * an authentication type is not provided, the default is to authenticate users
+         * using a streaming URL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          *
@@ -551,12 +669,10 @@ namespace Model
         virtual Model::DescribeSessionsOutcomeCallable DescribeSessionsCallable(const Model::DescribeSessionsRequest& request) const;
 
         /**
-         * <p>Describes the streaming sessions for a stack and a fleet. If a user ID is
-         * provided, this operation returns streaming sessions for only that user. To
-         * retrieve the next set of items, pass this value for the <code>nextToken</code>
-         * parameter in a subsequent call to this operation. If an authentication type is
-         * not provided, the operation defaults to users authenticated using a streaming
-         * URL.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the streaming sessions for the specified stack and fleet. If a user
+         * ID is provided, only the streaming sessions for only that user are returned. If
+         * an authentication type is not provided, the default is to authenticate users
+         * using a streaming URL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          *
@@ -565,20 +681,16 @@ namespace Model
         virtual void DescribeSessionsAsync(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>If stack names are not provided, this operation describes the specified
-         * stacks; otherwise, all stacks in the account are described. To retrieve the next
-         * set of items, pass the <code>nextToken</code> value in a subsequent call to this
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified stacks or all stacks in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
 
         /**
-         * <p>If stack names are not provided, this operation describes the specified
-         * stacks; otherwise, all stacks in the account are described. To retrieve the next
-         * set of items, pass the <code>nextToken</code> value in a subsequent call to this
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified stacks or all stacks in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">AWS
          * API Reference</a></p>
          *
@@ -587,10 +699,8 @@ namespace Model
         virtual Model::DescribeStacksOutcomeCallable DescribeStacksCallable(const Model::DescribeStacksRequest& request) const;
 
         /**
-         * <p>If stack names are not provided, this operation describes the specified
-         * stacks; otherwise, all stacks in the account are described. To retrieve the next
-         * set of items, pass the <code>nextToken</code> value in a subsequent call to this
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified stacks or all stacks in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">AWS
          * API Reference</a></p>
          *
@@ -599,14 +709,16 @@ namespace Model
         virtual void DescribeStacksAsync(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a fleet from a stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates the specified fleet from the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateFleetOutcome DisassociateFleet(const Model::DisassociateFleetRequest& request) const;
 
         /**
-         * <p>Disassociates a fleet from a stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates the specified fleet from the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">AWS
          * API Reference</a></p>
          *
@@ -615,7 +727,8 @@ namespace Model
         virtual Model::DisassociateFleetOutcomeCallable DisassociateFleetCallable(const Model::DisassociateFleetRequest& request) const;
 
         /**
-         * <p>Disassociates a fleet from a stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates the specified fleet from the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">AWS
          * API Reference</a></p>
          *
@@ -624,16 +737,14 @@ namespace Model
         virtual void DisassociateFleetAsync(const Model::DisassociateFleetRequest& request, const DisassociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation immediately stops a streaming session.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Stops the specified streaming session.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">AWS
          * API Reference</a></p>
          */
         virtual Model::ExpireSessionOutcome ExpireSession(const Model::ExpireSessionRequest& request) const;
 
         /**
-         * <p>This operation immediately stops a streaming session.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Stops the specified streaming session.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">AWS
          * API Reference</a></p>
          *
@@ -642,8 +753,7 @@ namespace Model
         virtual Model::ExpireSessionOutcomeCallable ExpireSessionCallable(const Model::ExpireSessionRequest& request) const;
 
         /**
-         * <p>This operation immediately stops a streaming session.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Stops the specified streaming session.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">AWS
          * API Reference</a></p>
          *
@@ -652,14 +762,16 @@ namespace Model
         virtual void ExpireSessionAsync(const Model::ExpireSessionRequest& request, const ExpireSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all fleets associated with the stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the fleets associated with the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAssociatedFleetsOutcome ListAssociatedFleets(const Model::ListAssociatedFleetsRequest& request) const;
 
         /**
-         * <p>Lists all fleets associated with the stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the fleets associated with the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">AWS
          * API Reference</a></p>
          *
@@ -668,7 +780,8 @@ namespace Model
         virtual Model::ListAssociatedFleetsOutcomeCallable ListAssociatedFleetsCallable(const Model::ListAssociatedFleetsRequest& request) const;
 
         /**
-         * <p>Lists all fleets associated with the stack.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the fleets associated with the specified stack.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">AWS
          * API Reference</a></p>
          *
@@ -677,7 +790,7 @@ namespace Model
         virtual void ListAssociatedFleetsAsync(const Model::ListAssociatedFleetsRequest& request, const ListAssociatedFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all stacks to which the specified fleet is associated.</p><p><h3>See
+         * <p>Lists the stacks associated with the specified fleet.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">AWS
          * API Reference</a></p>
@@ -685,7 +798,7 @@ namespace Model
         virtual Model::ListAssociatedStacksOutcome ListAssociatedStacks(const Model::ListAssociatedStacksRequest& request) const;
 
         /**
-         * <p>Lists all stacks to which the specified fleet is associated.</p><p><h3>See
+         * <p>Lists the stacks associated with the specified fleet.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">AWS
          * API Reference</a></p>
@@ -695,7 +808,7 @@ namespace Model
         virtual Model::ListAssociatedStacksOutcomeCallable ListAssociatedStacksCallable(const Model::ListAssociatedStacksRequest& request) const;
 
         /**
-         * <p>Lists all stacks to which the specified fleet is associated.</p><p><h3>See
+         * <p>Lists the stacks associated with the specified fleet.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">AWS
          * API Reference</a></p>
@@ -705,14 +818,14 @@ namespace Model
         virtual void ListAssociatedStacksAsync(const Model::ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">AWS
          * API Reference</a></p>
          */
         virtual Model::StartFleetOutcome StartFleet(const Model::StartFleetRequest& request) const;
 
         /**
-         * <p>Starts a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">AWS
          * API Reference</a></p>
          *
@@ -721,7 +834,7 @@ namespace Model
         virtual Model::StartFleetOutcomeCallable StartFleetCallable(const Model::StartFleetRequest& request) const;
 
         /**
-         * <p>Starts a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">AWS
          * API Reference</a></p>
          *
@@ -730,14 +843,33 @@ namespace Model
         virtual void StartFleetAsync(const Model::StartFleetRequest& request, const StartFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a fleet.</p><p><h3>See Also:</h3>   <a
+         * 
+         */
+        virtual Model::StartImageBuilderOutcome StartImageBuilder(const Model::StartImageBuilderRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartImageBuilderOutcomeCallable StartImageBuilderCallable(const Model::StartImageBuilderRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartImageBuilderAsync(const Model::StartImageBuilderRequest& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">AWS
          * API Reference</a></p>
          */
         virtual Model::StopFleetOutcome StopFleet(const Model::StopFleetRequest& request) const;
 
         /**
-         * <p>Stops a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">AWS
          * API Reference</a></p>
          *
@@ -746,7 +878,7 @@ namespace Model
         virtual Model::StopFleetOutcomeCallable StopFleetCallable(const Model::StopFleetRequest& request) const;
 
         /**
-         * <p>Stops a fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">AWS
          * API Reference</a></p>
          *
@@ -755,16 +887,33 @@ namespace Model
         virtual void StopFleetAsync(const Model::StopFleetRequest& request, const StopFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the directory configuration with the given parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * 
+         */
+        virtual Model::StopImageBuilderOutcome StopImageBuilder(const Model::StopImageBuilderRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopImageBuilderOutcomeCallable StopImageBuilderCallable(const Model::StopImageBuilderRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopImageBuilderAsync(const Model::StopImageBuilderRequest& request, const StopImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the specified directory configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDirectoryConfigOutcome UpdateDirectoryConfig(const Model::UpdateDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Updates the directory configuration with the given parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the specified directory configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -773,8 +922,7 @@ namespace Model
         virtual Model::UpdateDirectoryConfigOutcomeCallable UpdateDirectoryConfigCallable(const Model::UpdateDirectoryConfigRequest& request) const;
 
         /**
-         * <p>Updates the directory configuration with the given parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the specified directory configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -783,22 +931,24 @@ namespace Model
         virtual void UpdateDirectoryConfigAsync(const Model::UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing fleet. All the attributes except the fleet name can be
-         * updated in the <b>STOPPED</b> state. When a fleet is in the <b>RUNNING</b>
-         * state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can be
-         * updated. A fleet cannot be updated in a status of <b>STARTING</b> or
-         * <b>STOPPING</b>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified fleet.</p> <p>If the fleet is in the
+         * <code>STOPPED</code> state, you can update any attribute except the fleet name.
+         * If the fleet is in the <code>RUNNING</code> state, you can update the
+         * <code>DisplayName</code> and <code>ComputeCapacity</code> attributes. If the
+         * fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't
+         * update it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateFleetOutcome UpdateFleet(const Model::UpdateFleetRequest& request) const;
 
         /**
-         * <p>Updates an existing fleet. All the attributes except the fleet name can be
-         * updated in the <b>STOPPED</b> state. When a fleet is in the <b>RUNNING</b>
-         * state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can be
-         * updated. A fleet cannot be updated in a status of <b>STARTING</b> or
-         * <b>STOPPING</b>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified fleet.</p> <p>If the fleet is in the
+         * <code>STOPPED</code> state, you can update any attribute except the fleet name.
+         * If the fleet is in the <code>RUNNING</code> state, you can update the
+         * <code>DisplayName</code> and <code>ComputeCapacity</code> attributes. If the
+         * fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't
+         * update it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
          * API Reference</a></p>
          *
@@ -807,11 +957,12 @@ namespace Model
         virtual Model::UpdateFleetOutcomeCallable UpdateFleetCallable(const Model::UpdateFleetRequest& request) const;
 
         /**
-         * <p>Updates an existing fleet. All the attributes except the fleet name can be
-         * updated in the <b>STOPPED</b> state. When a fleet is in the <b>RUNNING</b>
-         * state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can be
-         * updated. A fleet cannot be updated in a status of <b>STARTING</b> or
-         * <b>STOPPING</b>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified fleet.</p> <p>If the fleet is in the
+         * <code>STOPPED</code> state, you can update any attribute except the fleet name.
+         * If the fleet is in the <code>RUNNING</code> state, you can update the
+         * <code>DisplayName</code> and <code>ComputeCapacity</code> attributes. If the
+         * fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't
+         * update it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
          * API Reference</a></p>
          *
@@ -820,16 +971,14 @@ namespace Model
         virtual void UpdateFleetAsync(const Model::UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified fields in the stack with the specified
-         * name.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateStackOutcome UpdateStack(const Model::UpdateStackRequest& request) const;
 
         /**
-         * <p>Updates the specified fields in the stack with the specified
-         * name.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">AWS
          * API Reference</a></p>
          *
@@ -838,8 +987,7 @@ namespace Model
         virtual Model::UpdateStackOutcomeCallable UpdateStackCallable(const Model::UpdateStackRequest& request) const;
 
         /**
-         * <p>Updates the specified fields in the stack with the specified
-         * name.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">AWS
          * API Reference</a></p>
          *
@@ -855,13 +1003,18 @@ namespace Model
         void AssociateFleetAsyncHelper(const Model::AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDirectoryConfigAsyncHelper(const Model::CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFleetAsyncHelper(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateImageBuilderAsyncHelper(const Model::CreateImageBuilderRequest& request, const CreateImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateImageBuilderStreamingURLAsyncHelper(const Model::CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStackAsyncHelper(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStreamingURLAsyncHelper(const Model::CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDirectoryConfigAsyncHelper(const Model::DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFleetAsyncHelper(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteImageAsyncHelper(const Model::DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteImageBuilderAsyncHelper(const Model::DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStackAsyncHelper(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDirectoryConfigsAsyncHelper(const Model::DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetsAsyncHelper(const Model::DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeImageBuildersAsyncHelper(const Model::DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImagesAsyncHelper(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSessionsAsyncHelper(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStacksAsyncHelper(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -870,7 +1023,9 @@ namespace Model
         void ListAssociatedFleetsAsyncHelper(const Model::ListAssociatedFleetsRequest& request, const ListAssociatedFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociatedStacksAsyncHelper(const Model::ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartFleetAsyncHelper(const Model::StartFleetRequest& request, const StartFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartImageBuilderAsyncHelper(const Model::StartImageBuilderRequest& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopFleetAsyncHelper(const Model::StopFleetRequest& request, const StopFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopImageBuilderAsyncHelper(const Model::StopImageBuilderRequest& request, const StopImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDirectoryConfigAsyncHelper(const Model::UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFleetAsyncHelper(const Model::UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

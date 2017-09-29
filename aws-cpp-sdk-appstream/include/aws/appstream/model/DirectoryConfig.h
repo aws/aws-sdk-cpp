@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Full directory configuration details, which are used to join domains for the
-   * AppStream 2.0 streaming instances.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration information for the directory used to join
+   * domains.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DirectoryConfig">AWS
    * API Reference</a></p>
    */
@@ -51,148 +51,150 @@ namespace Model
 
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline const Aws::String& GetDirectoryName() const{ return m_directoryName; }
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline void SetDirectoryName(const Aws::String& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline void SetDirectoryName(Aws::String&& value) { m_directoryNameHasBeenSet = true; m_directoryName = std::move(value); }
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline void SetDirectoryName(const char* value) { m_directoryNameHasBeenSet = true; m_directoryName.assign(value); }
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline DirectoryConfig& WithDirectoryName(const Aws::String& value) { SetDirectoryName(value); return *this;}
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline DirectoryConfig& WithDirectoryName(Aws::String&& value) { SetDirectoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified name of the directory, such as corp.example.com</p>
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
      */
     inline DirectoryConfig& WithDirectoryName(const char* value) { SetDirectoryName(value); return *this;}
 
 
     /**
-     * <p>The list of the distinguished names of organizational units in which to place
-     * computer accounts.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitDistinguishedNames() const{ return m_organizationalUnitDistinguishedNames; }
 
     /**
-     * <p>The list of the distinguished names of organizational units in which to place
-     * computer accounts.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline void SetOrganizationalUnitDistinguishedNames(const Aws::Vector<Aws::String>& value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames = value; }
 
     /**
-     * <p>The list of the distinguished names of organizational units in which to place
-     * computer accounts.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline void SetOrganizationalUnitDistinguishedNames(Aws::Vector<Aws::String>&& value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames = std::move(value); }
 
     /**
-     * <p>The list of the distinguished names of organizational units in which to place
-     * computer accounts.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline DirectoryConfig& WithOrganizationalUnitDistinguishedNames(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitDistinguishedNames(value); return *this;}
 
     /**
-     * <p>The list of the distinguished names of organizational units in which to place
-     * computer accounts.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline DirectoryConfig& WithOrganizationalUnitDistinguishedNames(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitDistinguishedNames(std::move(value)); return *this;}
 
     /**
-     * <p>The list of the distinguished names of organizational units in which to place
-     * computer accounts.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline DirectoryConfig& AddOrganizationalUnitDistinguishedNames(const Aws::String& value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames.push_back(value); return *this; }
 
     /**
-     * <p>The list of the distinguished names of organizational units in which to place
-     * computer accounts.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline DirectoryConfig& AddOrganizationalUnitDistinguishedNames(Aws::String&& value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of the distinguished names of organizational units in which to place
-     * computer accounts.</p>
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
      */
     inline DirectoryConfig& AddOrganizationalUnitDistinguishedNames(const char* value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames.push_back(value); return *this; }
 
 
     /**
-     * <p>The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to
-     * be used by the streaming instance to connect to the directory.</p>
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
      */
     inline const ServiceAccountCredentials& GetServiceAccountCredentials() const{ return m_serviceAccountCredentials; }
 
     /**
-     * <p>The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to
-     * be used by the streaming instance to connect to the directory.</p>
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
      */
     inline void SetServiceAccountCredentials(const ServiceAccountCredentials& value) { m_serviceAccountCredentialsHasBeenSet = true; m_serviceAccountCredentials = value; }
 
     /**
-     * <p>The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to
-     * be used by the streaming instance to connect to the directory.</p>
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
      */
     inline void SetServiceAccountCredentials(ServiceAccountCredentials&& value) { m_serviceAccountCredentialsHasBeenSet = true; m_serviceAccountCredentials = std::move(value); }
 
     /**
-     * <p>The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to
-     * be used by the streaming instance to connect to the directory.</p>
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
      */
     inline DirectoryConfig& WithServiceAccountCredentials(const ServiceAccountCredentials& value) { SetServiceAccountCredentials(value); return *this;}
 
     /**
-     * <p>The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to
-     * be used by the streaming instance to connect to the directory.</p>
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
      */
     inline DirectoryConfig& WithServiceAccountCredentials(ServiceAccountCredentials&& value) { SetServiceAccountCredentials(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time stamp when the directory configuration was created within AppStream
-     * 2.0.</p>
+     * <p>The time the directory configuration was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The time stamp when the directory configuration was created within AppStream
-     * 2.0.</p>
+     * <p>The time the directory configuration was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The time stamp when the directory configuration was created within AppStream
-     * 2.0.</p>
+     * <p>The time the directory configuration was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The time stamp when the directory configuration was created within AppStream
-     * 2.0.</p>
+     * <p>The time the directory configuration was created.</p>
      */
     inline DirectoryConfig& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The time stamp when the directory configuration was created within AppStream
-     * 2.0.</p>
+     * <p>The time the directory configuration was created.</p>
      */
     inline DirectoryConfig& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 

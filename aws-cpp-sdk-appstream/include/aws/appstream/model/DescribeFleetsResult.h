@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The list of fleet details.</p>
+     * <p>Information about the fleets.</p>
      */
     inline const Aws::Vector<Fleet>& GetFleets() const{ return m_fleets; }
 
     /**
-     * <p>The list of fleet details.</p>
+     * <p>Information about the fleets.</p>
      */
     inline void SetFleets(const Aws::Vector<Fleet>& value) { m_fleets = value; }
 
     /**
-     * <p>The list of fleet details.</p>
+     * <p>Information about the fleets.</p>
      */
     inline void SetFleets(Aws::Vector<Fleet>&& value) { m_fleets = std::move(value); }
 
     /**
-     * <p>The list of fleet details.</p>
+     * <p>Information about the fleets.</p>
      */
     inline DescribeFleetsResult& WithFleets(const Aws::Vector<Fleet>& value) { SetFleets(value); return *this;}
 
     /**
-     * <p>The list of fleet details.</p>
+     * <p>Information about the fleets.</p>
      */
     inline DescribeFleetsResult& WithFleets(Aws::Vector<Fleet>&& value) { SetFleets(std::move(value)); return *this;}
 
     /**
-     * <p>The list of fleet details.</p>
+     * <p>Information about the fleets.</p>
      */
     inline DescribeFleetsResult& AddFleets(const Fleet& value) { m_fleets.push_back(value); return *this; }
 
     /**
-     * <p>The list of fleet details.</p>
+     * <p>Information about the fleets.</p>
      */
     inline DescribeFleetsResult& AddFleets(Fleet&& value) { m_fleets.push_back(std::move(value)); return *this; }
 

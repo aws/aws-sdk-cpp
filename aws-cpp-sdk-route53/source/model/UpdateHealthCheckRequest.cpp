@@ -45,7 +45,8 @@ UpdateHealthCheckRequest::UpdateHealthCheckRequest() :
     m_regionsHasBeenSet(false),
     m_alarmIdentifierHasBeenSet(false),
     m_insufficientDataHealthStatus(InsufficientDataHealthStatus::NOT_SET),
-    m_insufficientDataHealthStatusHasBeenSet(false)
+    m_insufficientDataHealthStatusHasBeenSet(false),
+    m_resetElementsHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,16 @@ Aws::String UpdateHealthCheckRequest::SerializePayload() const
   {
    XmlNode insufficientDataHealthStatusNode = parentNode.CreateChildElement("InsufficientDataHealthStatus");
    insufficientDataHealthStatusNode.SetText(InsufficientDataHealthStatusMapper::GetNameForInsufficientDataHealthStatus(m_insufficientDataHealthStatus));
+  }
+
+  if(m_resetElementsHasBeenSet)
+  {
+   XmlNode resetElementsParentNode = parentNode.CreateChildElement("ResetElements");
+   for(const auto& item : m_resetElements)
+   {
+     XmlNode resetElementsNode = resetElementsParentNode.CreateChildElement("ResettableElementName");
+     resetElementsNode.SetText(ResettableElementNameMapper::GetNameForResettableElementName(item));
+   }
   }
 
   return payloadDoc.ConvertToString();

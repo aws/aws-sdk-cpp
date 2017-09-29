@@ -30,13 +30,18 @@
 #include <aws/appstream/model/AssociateFleetRequest.h>
 #include <aws/appstream/model/CreateDirectoryConfigRequest.h>
 #include <aws/appstream/model/CreateFleetRequest.h>
+#include <aws/appstream/model/CreateImageBuilderRequest.h>
+#include <aws/appstream/model/CreateImageBuilderStreamingURLRequest.h>
 #include <aws/appstream/model/CreateStackRequest.h>
 #include <aws/appstream/model/CreateStreamingURLRequest.h>
 #include <aws/appstream/model/DeleteDirectoryConfigRequest.h>
 #include <aws/appstream/model/DeleteFleetRequest.h>
+#include <aws/appstream/model/DeleteImageRequest.h>
+#include <aws/appstream/model/DeleteImageBuilderRequest.h>
 #include <aws/appstream/model/DeleteStackRequest.h>
 #include <aws/appstream/model/DescribeDirectoryConfigsRequest.h>
 #include <aws/appstream/model/DescribeFleetsRequest.h>
+#include <aws/appstream/model/DescribeImageBuildersRequest.h>
 #include <aws/appstream/model/DescribeImagesRequest.h>
 #include <aws/appstream/model/DescribeSessionsRequest.h>
 #include <aws/appstream/model/DescribeStacksRequest.h>
@@ -45,7 +50,9 @@
 #include <aws/appstream/model/ListAssociatedFleetsRequest.h>
 #include <aws/appstream/model/ListAssociatedStacksRequest.h>
 #include <aws/appstream/model/StartFleetRequest.h>
+#include <aws/appstream/model/StartImageBuilderRequest.h>
 #include <aws/appstream/model/StopFleetRequest.h>
+#include <aws/appstream/model/StopImageBuilderRequest.h>
 #include <aws/appstream/model/UpdateDirectoryConfigRequest.h>
 #include <aws/appstream/model/UpdateFleetRequest.h>
 #include <aws/appstream/model/UpdateStackRequest.h>
@@ -219,6 +226,76 @@ void AppStreamClient::CreateFleetAsyncHelper(const CreateFleetRequest& request, 
   handler(this, request, CreateFleet(request), context);
 }
 
+CreateImageBuilderOutcome AppStreamClient::CreateImageBuilder(const CreateImageBuilderRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateImageBuilderOutcome(CreateImageBuilderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateImageBuilderOutcome(outcome.GetError());
+  }
+}
+
+CreateImageBuilderOutcomeCallable AppStreamClient::CreateImageBuilderCallable(const CreateImageBuilderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateImageBuilderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImageBuilder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::CreateImageBuilderAsync(const CreateImageBuilderRequest& request, const CreateImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateImageBuilderAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::CreateImageBuilderAsyncHelper(const CreateImageBuilderRequest& request, const CreateImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateImageBuilder(request), context);
+}
+
+CreateImageBuilderStreamingURLOutcome AppStreamClient::CreateImageBuilderStreamingURL(const CreateImageBuilderStreamingURLRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateImageBuilderStreamingURLOutcome(CreateImageBuilderStreamingURLResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateImageBuilderStreamingURLOutcome(outcome.GetError());
+  }
+}
+
+CreateImageBuilderStreamingURLOutcomeCallable AppStreamClient::CreateImageBuilderStreamingURLCallable(const CreateImageBuilderStreamingURLRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateImageBuilderStreamingURLOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImageBuilderStreamingURL(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::CreateImageBuilderStreamingURLAsync(const CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateImageBuilderStreamingURLAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::CreateImageBuilderStreamingURLAsyncHelper(const CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateImageBuilderStreamingURL(request), context);
+}
+
 CreateStackOutcome AppStreamClient::CreateStack(const CreateStackRequest& request) const
 {
   Aws::StringStream ss;
@@ -359,6 +436,76 @@ void AppStreamClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, 
   handler(this, request, DeleteFleet(request), context);
 }
 
+DeleteImageOutcome AppStreamClient::DeleteImage(const DeleteImageRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteImageOutcome(DeleteImageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteImageOutcome(outcome.GetError());
+  }
+}
+
+DeleteImageOutcomeCallable AppStreamClient::DeleteImageCallable(const DeleteImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DeleteImageAsync(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteImageAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DeleteImageAsyncHelper(const DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteImage(request), context);
+}
+
+DeleteImageBuilderOutcome AppStreamClient::DeleteImageBuilder(const DeleteImageBuilderRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteImageBuilderOutcome(DeleteImageBuilderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteImageBuilderOutcome(outcome.GetError());
+  }
+}
+
+DeleteImageBuilderOutcomeCallable AppStreamClient::DeleteImageBuilderCallable(const DeleteImageBuilderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteImageBuilderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImageBuilder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DeleteImageBuilderAsync(const DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteImageBuilderAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DeleteImageBuilderAsyncHelper(const DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteImageBuilder(request), context);
+}
+
 DeleteStackOutcome AppStreamClient::DeleteStack(const DeleteStackRequest& request) const
 {
   Aws::StringStream ss;
@@ -462,6 +609,41 @@ void AppStreamClient::DescribeFleetsAsync(const DescribeFleetsRequest& request, 
 void AppStreamClient::DescribeFleetsAsyncHelper(const DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeFleets(request), context);
+}
+
+DescribeImageBuildersOutcome AppStreamClient::DescribeImageBuilders(const DescribeImageBuildersRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeImageBuildersOutcome(DescribeImageBuildersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeImageBuildersOutcome(outcome.GetError());
+  }
+}
+
+DescribeImageBuildersOutcomeCallable AppStreamClient::DescribeImageBuildersCallable(const DescribeImageBuildersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeImageBuildersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImageBuilders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DescribeImageBuildersAsync(const DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeImageBuildersAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DescribeImageBuildersAsyncHelper(const DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeImageBuilders(request), context);
 }
 
 DescribeImagesOutcome AppStreamClient::DescribeImages(const DescribeImagesRequest& request) const
@@ -744,6 +926,41 @@ void AppStreamClient::StartFleetAsyncHelper(const StartFleetRequest& request, co
   handler(this, request, StartFleet(request), context);
 }
 
+StartImageBuilderOutcome AppStreamClient::StartImageBuilder(const StartImageBuilderRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartImageBuilderOutcome(StartImageBuilderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartImageBuilderOutcome(outcome.GetError());
+  }
+}
+
+StartImageBuilderOutcomeCallable AppStreamClient::StartImageBuilderCallable(const StartImageBuilderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartImageBuilderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartImageBuilder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::StartImageBuilderAsync(const StartImageBuilderRequest& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartImageBuilderAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::StartImageBuilderAsyncHelper(const StartImageBuilderRequest& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartImageBuilder(request), context);
+}
+
 StopFleetOutcome AppStreamClient::StopFleet(const StopFleetRequest& request) const
 {
   Aws::StringStream ss;
@@ -777,6 +994,41 @@ void AppStreamClient::StopFleetAsync(const StopFleetRequest& request, const Stop
 void AppStreamClient::StopFleetAsyncHelper(const StopFleetRequest& request, const StopFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopFleet(request), context);
+}
+
+StopImageBuilderOutcome AppStreamClient::StopImageBuilder(const StopImageBuilderRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopImageBuilderOutcome(StopImageBuilderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopImageBuilderOutcome(outcome.GetError());
+  }
+}
+
+StopImageBuilderOutcomeCallable AppStreamClient::StopImageBuilderCallable(const StopImageBuilderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopImageBuilderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopImageBuilder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::StopImageBuilderAsync(const StopImageBuilderRequest& request, const StopImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopImageBuilderAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::StopImageBuilderAsyncHelper(const StopImageBuilderRequest& request, const StopImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopImageBuilder(request), context);
 }
 
 UpdateDirectoryConfigOutcome AppStreamClient::UpdateDirectoryConfig(const UpdateDirectoryConfigRequest& request) const

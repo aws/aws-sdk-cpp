@@ -33,9 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to
-   * be used by the streaming instance to connect to the directory.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the credentials for the service account used by the streaming
+   * instance to connect to the directory.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ServiceAccountCredentials">AWS
    * API Reference</a></p>
    */
@@ -49,63 +48,56 @@ namespace Model
 
 
     /**
-     * <p>The user name of an account in the directory that is used by AppStream 2.0
-     * streaming instances to connect to the directory. This account must have the
-     * following privileges: create computer objects, join computers to the domain,
+     * <p>The user name of the account. This account must have the following
+     * privileges: create computer objects, join computers to the domain, and
      * change/reset the password on descendant computer objects for the organizational
      * units specified.</p>
      */
     inline const Aws::String& GetAccountName() const{ return m_accountName; }
 
     /**
-     * <p>The user name of an account in the directory that is used by AppStream 2.0
-     * streaming instances to connect to the directory. This account must have the
-     * following privileges: create computer objects, join computers to the domain,
+     * <p>The user name of the account. This account must have the following
+     * privileges: create computer objects, join computers to the domain, and
      * change/reset the password on descendant computer objects for the organizational
      * units specified.</p>
      */
     inline void SetAccountName(const Aws::String& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
 
     /**
-     * <p>The user name of an account in the directory that is used by AppStream 2.0
-     * streaming instances to connect to the directory. This account must have the
-     * following privileges: create computer objects, join computers to the domain,
+     * <p>The user name of the account. This account must have the following
+     * privileges: create computer objects, join computers to the domain, and
      * change/reset the password on descendant computer objects for the organizational
      * units specified.</p>
      */
     inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = std::move(value); }
 
     /**
-     * <p>The user name of an account in the directory that is used by AppStream 2.0
-     * streaming instances to connect to the directory. This account must have the
-     * following privileges: create computer objects, join computers to the domain,
+     * <p>The user name of the account. This account must have the following
+     * privileges: create computer objects, join computers to the domain, and
      * change/reset the password on descendant computer objects for the organizational
      * units specified.</p>
      */
     inline void SetAccountName(const char* value) { m_accountNameHasBeenSet = true; m_accountName.assign(value); }
 
     /**
-     * <p>The user name of an account in the directory that is used by AppStream 2.0
-     * streaming instances to connect to the directory. This account must have the
-     * following privileges: create computer objects, join computers to the domain,
+     * <p>The user name of the account. This account must have the following
+     * privileges: create computer objects, join computers to the domain, and
      * change/reset the password on descendant computer objects for the organizational
      * units specified.</p>
      */
     inline ServiceAccountCredentials& WithAccountName(const Aws::String& value) { SetAccountName(value); return *this;}
 
     /**
-     * <p>The user name of an account in the directory that is used by AppStream 2.0
-     * streaming instances to connect to the directory. This account must have the
-     * following privileges: create computer objects, join computers to the domain,
+     * <p>The user name of the account. This account must have the following
+     * privileges: create computer objects, join computers to the domain, and
      * change/reset the password on descendant computer objects for the organizational
      * units specified.</p>
      */
     inline ServiceAccountCredentials& WithAccountName(Aws::String&& value) { SetAccountName(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of an account in the directory that is used by AppStream 2.0
-     * streaming instances to connect to the directory. This account must have the
-     * following privileges: create computer objects, join computers to the domain,
+     * <p>The user name of the account. This account must have the following
+     * privileges: create computer objects, join computers to the domain, and
      * change/reset the password on descendant computer objects for the organizational
      * units specified.</p>
      */
@@ -113,37 +105,37 @@ namespace Model
 
 
     /**
-     * <p>The password for the user account for directory actions.</p>
+     * <p>The password for the account.</p>
      */
     inline const Aws::String& GetAccountPassword() const{ return m_accountPassword; }
 
     /**
-     * <p>The password for the user account for directory actions.</p>
+     * <p>The password for the account.</p>
      */
     inline void SetAccountPassword(const Aws::String& value) { m_accountPasswordHasBeenSet = true; m_accountPassword = value; }
 
     /**
-     * <p>The password for the user account for directory actions.</p>
+     * <p>The password for the account.</p>
      */
     inline void SetAccountPassword(Aws::String&& value) { m_accountPasswordHasBeenSet = true; m_accountPassword = std::move(value); }
 
     /**
-     * <p>The password for the user account for directory actions.</p>
+     * <p>The password for the account.</p>
      */
     inline void SetAccountPassword(const char* value) { m_accountPasswordHasBeenSet = true; m_accountPassword.assign(value); }
 
     /**
-     * <p>The password for the user account for directory actions.</p>
+     * <p>The password for the account.</p>
      */
     inline ServiceAccountCredentials& WithAccountPassword(const Aws::String& value) { SetAccountPassword(value); return *this;}
 
     /**
-     * <p>The password for the user account for directory actions.</p>
+     * <p>The password for the account.</p>
      */
     inline ServiceAccountCredentials& WithAccountPassword(Aws::String&& value) { SetAccountPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the user account for directory actions.</p>
+     * <p>The password for the account.</p>
      */
     inline ServiceAccountCredentials& WithAccountPassword(const char* value) { SetAccountPassword(value); return *this;}
 

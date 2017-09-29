@@ -46,50 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The fleet names to describe. Use null to describe all the fleets for the AWS
-     * account.</p>
+     * <p>The names of the fleets to describe.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
 
     /**
-     * <p>The fleet names to describe. Use null to describe all the fleets for the AWS
-     * account.</p>
+     * <p>The names of the fleets to describe.</p>
      */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**
-     * <p>The fleet names to describe. Use null to describe all the fleets for the AWS
-     * account.</p>
+     * <p>The names of the fleets to describe.</p>
      */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
-     * <p>The fleet names to describe. Use null to describe all the fleets for the AWS
-     * account.</p>
+     * <p>The names of the fleets to describe.</p>
      */
     inline DescribeFleetsRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
 
     /**
-     * <p>The fleet names to describe. Use null to describe all the fleets for the AWS
-     * account.</p>
+     * <p>The names of the fleets to describe.</p>
      */
     inline DescribeFleetsRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
-     * <p>The fleet names to describe. Use null to describe all the fleets for the AWS
-     * account.</p>
+     * <p>The names of the fleets to describe.</p>
      */
     inline DescribeFleetsRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
     /**
-     * <p>The fleet names to describe. Use null to describe all the fleets for the AWS
-     * account.</p>
+     * <p>The names of the fleets to describe.</p>
      */
     inline DescribeFleetsRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The fleet names to describe. Use null to describe all the fleets for the AWS
-     * account.</p>
+     * <p>The names of the fleets to describe.</p>
      */
     inline DescribeFleetsRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
