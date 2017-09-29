@@ -87,7 +87,7 @@ namespace Aws
         std::shared_ptr<TransferHandle> TransferManager::UploadFile(const std::shared_ptr<Aws::IOStream>& fileStream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType,
 				const Aws::Map<Aws::String, Aws::String>& metadata)
         {
-            return this->DoUploadFile(fileStream.get(), bucketName, keyName, contentType, metadata);
+            return this->DoUploadFile(fileStream, bucketName, keyName, contentType, metadata);
         }
 
         std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, 
@@ -156,8 +156,8 @@ namespace Aws
 
             retryHandle->UpdateStatus(TransferStatus::NOT_STARTED);
             retryHandle->Restart();
-            
-            SubmitUpload(retryHandle, hasFileName ? nullptr : stream.get());
+
+            SubmitUpload(retryHandle, hasFileName ? nullptr : stream);
             return retryHandle;
         }
 
@@ -215,22 +215,23 @@ namespace Aws
             auto context = Aws::MakeShared<DownloadDirectoryContext>(CLASS_TAG);
             context->rootDirectory = directory;
             context->prefix = prefix;
-                
+
             m_transferConfig.s3Client->ListObjectsV2Async(request, handler, context);
         }
 
         void TransferManager::DoMultiPartUpload(const std::shared_ptr<TransferHandle>& handle)
         {
 #ifdef _MSC_VER
-            Aws::FStream streamToPut(Aws::Utils::StringUtils::ToWString(handle->GetTargetFilePath().c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
-            DoMultiPartUpload(&streamToPut, handle);
+            auto wide = Aws::Utils::StringUtils::ToWString(handle->GetTargetFilePath().c_str());
+            auto streamToPut = Aws::MakeShared<Aws::FStream>(CLASS_TAG, wide.c_str(), std::ios_base::in | std::ios_base::binary);
+            DoMultiPartUpload(streamToPut, handle);
 #else
-            Aws::FStream streamToPut(handle->GetTargetFilePath().c_str(), std::ios_base::in | std::ios_base::binary);
-            DoMultiPartUpload(&streamToPut, handle);
+            auto streamToPut = Aws::MakeShared<Aws::FStream>(CLASS_TAG, handle->GetTargetFilePath().c_str(), std::ios_base::in | std::ios_base::binary);
+            DoMultiPartUpload(streamToPut, handle);
 #endif
         }
 
-        void TransferManager::DoMultiPartUpload(Aws::IOStream* streamToPut, const std::shared_ptr<TransferHandle>& handle)
+        void TransferManager::DoMultiPartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)
         {
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             handle->SetIsMultipart(true);
@@ -348,15 +349,16 @@ namespace Aws
         void TransferManager::DoSinglePartUpload(const std::shared_ptr<TransferHandle>& handle)
         {
 #ifdef _MSC_VER
-            Aws::FStream streamToPut(Aws::Utils::StringUtils::ToWString(handle->GetTargetFilePath().c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
-            DoSinglePartUpload(&streamToPut, handle);
+            auto wide = Aws::Utils::StringUtils::ToWString(handle->GetTargetFilePath().c_str());
+            auto streamToPut = Aws::MakeShared<Aws::FStream>(CLASS_TAG, wide.c_str(), std::ios_base::in | std::ios_base::binary);
+            DoSinglePartUpload(streamToPut, handle);
 #else
-            Aws::FStream streamToPut(handle->GetTargetFilePath().c_str(), std::ios_base::in | std::ios_base::binary);
-            DoSinglePartUpload(&streamToPut, handle);
+            auto streamToPut = Aws::MakeShared<Aws::FStream>(CLASS_TAG, handle->GetTargetFilePath().c_str(), std::ios_base::in | std::ios_base::binary);
+            DoSinglePartUpload(streamToPut, handle);
 #endif
         }
 
-        void TransferManager::DoSinglePartUpload(Aws::IOStream* streamToPut, const std::shared_ptr<TransferHandle>& handle)
+        void TransferManager::DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)
         {
             auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, static_cast<size_t>(handle->GetBytesTotalSize()), true);
 
@@ -968,7 +970,8 @@ namespace Aws
             return handle;
         }
 
-        std::shared_ptr<TransferHandle> TransferManager::SubmitUpload(const std::shared_ptr<TransferHandle>& handle, Aws::IOStream* fileStream)
+        std::shared_ptr<TransferHandle> TransferManager::SubmitUpload(const std::shared_ptr<TransferHandle>& handle,
+                const std::shared_ptr<Aws::IOStream>& fileStream)
         {
             if (handle->GetStatus() != Aws::Transfer::TransferStatus::NOT_STARTED)
             {
@@ -978,7 +981,13 @@ namespace Aws
             auto self = shared_from_this();
             if (MultipartUploadSupported(handle->GetBytesTotalSize()))
             {
-                m_transferConfig.transferExecutor->Submit([self, handle, fileStream] { if (fileStream != nullptr) self->DoMultiPartUpload(fileStream, handle); else self->DoMultiPartUpload(handle); });
+                m_transferConfig.transferExecutor->Submit([self, handle, fileStream]
+                    {
+                        if (fileStream != nullptr)
+                            self->DoMultiPartUpload(fileStream, handle);
+                        else
+                            self->DoMultiPartUpload(handle);
+                    });
             }
             else
             {
@@ -987,10 +996,10 @@ namespace Aws
             return handle;
         }
 
-        std::shared_ptr<TransferHandle> TransferManager::DoUploadFile(Aws::IOStream* fileStream, const Aws::String& bucketName, const Aws::String& keyName, 
+        std::shared_ptr<TransferHandle> TransferManager::DoUploadFile(const std::shared_ptr<Aws::IOStream>& fileStream, const Aws::String& bucketName, const Aws::String& keyName,
                 const Aws::String& contentType, const Aws::Map<Aws::String, Aws::String>& metadata)
         {
-            auto handle = CreateUploadFileHandle(fileStream, bucketName, keyName, contentType, metadata);
+            auto handle = CreateUploadFileHandle(fileStream.get(), bucketName, keyName, contentType, metadata);
             return SubmitUpload(handle, fileStream);
         }
 
@@ -999,11 +1008,12 @@ namespace Aws
         {
             // destructor of FStream will close stream automatically (when out of scope), no need to call close explicitly
 #ifdef _MSC_VER
-            Aws::FStream fileStream(Aws::Utils::StringUtils::ToWString(fileName.c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
+            auto wide = Aws::Utils::StringUtils::ToWString(fileName.c_str());
+            auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, wide.c_str(), std::ios_base::in | std::ios_base::binary);
 #else
-			Aws::FStream fileStream(fileName.c_str(), std::ios_base::in | std::ios_base::binary);
+            auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, fileName.c_str(), std::ios_base::in | std::ios_base::binary);
 #endif
-            auto handle = CreateUploadFileHandle(&fileStream, bucketName, keyName, contentType, metadata, fileName);
+            auto handle = CreateUploadFileHandle(fileStream.get(), bucketName, keyName, contentType, metadata, fileName);
             return SubmitUpload(handle);
         }
     }
