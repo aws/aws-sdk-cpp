@@ -49,7 +49,8 @@ namespace Aws
                 template<class Fn, class ... Args>
                 bool Submit(Fn&& fn, Args&& ... args)
                 {
-                    return SubmitToThread(AWS_BUILD_TYPED_FUNCTION(std::bind(std::forward<Fn>(fn), std::forward<Args>(args)...), void()));
+                    std::function<void()> callable{ std::bind(std::forward<Fn>(fn), std::forward<Args>(args)...) };
+                    return SubmitToThread(std::move(callable));
                 }
 
             protected:
