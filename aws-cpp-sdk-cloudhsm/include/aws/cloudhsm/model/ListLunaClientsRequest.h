@@ -45,44 +45,44 @@ namespace Model
 
 
     /**
-     * <p>The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>.
-     * Pass null if this is the first call.</p>
+     * <p>The <code>NextToken</code> value from a previous call to
+     * <code>ListLunaClients</code>. Pass null if this is the first call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>.
-     * Pass null if this is the first call.</p>
+     * <p>The <code>NextToken</code> value from a previous call to
+     * <code>ListLunaClients</code>. Pass null if this is the first call.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>.
-     * Pass null if this is the first call.</p>
+     * <p>The <code>NextToken</code> value from a previous call to
+     * <code>ListLunaClients</code>. Pass null if this is the first call.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>.
-     * Pass null if this is the first call.</p>
+     * <p>The <code>NextToken</code> value from a previous call to
+     * <code>ListLunaClients</code>. Pass null if this is the first call.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>.
-     * Pass null if this is the first call.</p>
+     * <p>The <code>NextToken</code> value from a previous call to
+     * <code>ListLunaClients</code>. Pass null if this is the first call.</p>
      */
     inline ListLunaClientsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>.
-     * Pass null if this is the first call.</p>
+     * <p>The <code>NextToken</code> value from a previous call to
+     * <code>ListLunaClients</code>. Pass null if this is the first call.</p>
      */
     inline ListLunaClientsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>.
-     * Pass null if this is the first call.</p>
+     * <p>The <code>NextToken</code> value from a previous call to
+     * <code>ListLunaClients</code>. Pass null if this is the first call.</p>
      */
     inline ListLunaClientsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>CreateHsm</a> operation.</p><p><h3>See
+   * <p>Contains the inputs for the <code>CreateHsm</code> operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsmRequest">AWS
    * API Reference</a></p>
@@ -215,37 +215,37 @@ namespace Model
 
 
     /**
-     * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
+     * <p>The external ID from <code>IamRoleArn</code>, if present.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
-     * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
+     * <p>The external ID from <code>IamRoleArn</code>, if present.</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
-     * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
+     * <p>The external ID from <code>IamRoleArn</code>, if present.</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
-     * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
+     * <p>The external ID from <code>IamRoleArn</code>, if present.</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
-     * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
+     * <p>The external ID from <code>IamRoleArn</code>, if present.</p>
      */
     inline CreateHsmRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
-     * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
+     * <p>The external ID from <code>IamRoleArn</code>, if present.</p>
      */
     inline CreateHsmRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
-     * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
+     * <p>The external ID from <code>IamRoleArn</code>, if present.</p>
      */
     inline CreateHsmRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 

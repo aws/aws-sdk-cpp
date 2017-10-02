@@ -85,44 +85,44 @@ namespace Model
 
 
     /**
-     * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
-     * to retrieve the next set of items.</p>
+     * <p>If not null, more results are available. Pass this to
+     * <code>ListLunaClients</code> to retrieve the next set of items.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
-     * to retrieve the next set of items.</p>
+     * <p>If not null, more results are available. Pass this to
+     * <code>ListLunaClients</code> to retrieve the next set of items.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
-     * to retrieve the next set of items.</p>
+     * <p>If not null, more results are available. Pass this to
+     * <code>ListLunaClients</code> to retrieve the next set of items.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
-     * to retrieve the next set of items.</p>
+     * <p>If not null, more results are available. Pass this to
+     * <code>ListLunaClients</code> to retrieve the next set of items.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
-     * to retrieve the next set of items.</p>
+     * <p>If not null, more results are available. Pass this to
+     * <code>ListLunaClients</code> to retrieve the next set of items.</p>
      */
     inline ListLunaClientsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
-     * to retrieve the next set of items.</p>
+     * <p>If not null, more results are available. Pass this to
+     * <code>ListLunaClients</code> to retrieve the next set of items.</p>
      */
     inline ListLunaClientsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If not null, more results are available. Pass this to <a>ListLunaClients</a>
-     * to retrieve the next set of items.</p>
+     * <p>If not null, more results are available. Pass this to
+     * <code>ListLunaClients</code> to retrieve the next set of items.</p>
      */
     inline ListLunaClientsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

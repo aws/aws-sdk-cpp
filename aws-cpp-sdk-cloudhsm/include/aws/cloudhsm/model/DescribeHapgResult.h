@@ -122,78 +122,126 @@ namespace Model
     inline DescribeHapgResult& WithHapgSerial(const char* value) { SetHapgSerial(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Aws::String>& GetHsmsLastActionFailed() const{ return m_hsmsLastActionFailed; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetHsmsLastActionFailed(const Aws::Vector<Aws::String>& value) { m_hsmsLastActionFailed = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetHsmsLastActionFailed(Aws::Vector<Aws::String>&& value) { m_hsmsLastActionFailed = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& WithHsmsLastActionFailed(const Aws::Vector<Aws::String>& value) { SetHsmsLastActionFailed(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& WithHsmsLastActionFailed(Aws::Vector<Aws::String>&& value) { SetHsmsLastActionFailed(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& AddHsmsLastActionFailed(const Aws::String& value) { m_hsmsLastActionFailed.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& AddHsmsLastActionFailed(Aws::String&& value) { m_hsmsLastActionFailed.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& AddHsmsLastActionFailed(const char* value) { m_hsmsLastActionFailed.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Aws::String>& GetHsmsPendingDeletion() const{ return m_hsmsPendingDeletion; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetHsmsPendingDeletion(const Aws::Vector<Aws::String>& value) { m_hsmsPendingDeletion = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetHsmsPendingDeletion(Aws::Vector<Aws::String>&& value) { m_hsmsPendingDeletion = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& WithHsmsPendingDeletion(const Aws::Vector<Aws::String>& value) { SetHsmsPendingDeletion(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& WithHsmsPendingDeletion(Aws::Vector<Aws::String>&& value) { SetHsmsPendingDeletion(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& AddHsmsPendingDeletion(const Aws::String& value) { m_hsmsPendingDeletion.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& AddHsmsPendingDeletion(Aws::String&& value) { m_hsmsPendingDeletion.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& AddHsmsPendingDeletion(const char* value) { m_hsmsPendingDeletion.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Aws::String>& GetHsmsPendingRegistration() const{ return m_hsmsPendingRegistration; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetHsmsPendingRegistration(const Aws::Vector<Aws::String>& value) { m_hsmsPendingRegistration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetHsmsPendingRegistration(Aws::Vector<Aws::String>&& value) { m_hsmsPendingRegistration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& WithHsmsPendingRegistration(const Aws::Vector<Aws::String>& value) { SetHsmsPendingRegistration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& WithHsmsPendingRegistration(Aws::Vector<Aws::String>&& value) { SetHsmsPendingRegistration(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& AddHsmsPendingRegistration(const Aws::String& value) { m_hsmsPendingRegistration.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& AddHsmsPendingRegistration(Aws::String&& value) { m_hsmsPendingRegistration.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeHapgResult& AddHsmsPendingRegistration(const char* value) { m_hsmsPendingRegistration.push_back(value); return *this; }
 
 

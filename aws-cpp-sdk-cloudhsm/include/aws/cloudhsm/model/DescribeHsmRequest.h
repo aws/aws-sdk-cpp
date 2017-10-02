@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>DescribeHsm</a> operation. </p><p><h3>See
+   * <p>Contains the inputs for the <a>DescribeHsm</a> operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsmRequest">AWS
    * API Reference</a></p>
@@ -49,87 +49,87 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
-     * parameter must be specified.</p>
+     * <p>The ARN of the HSM. Either the <code>HsmArn</code> or the
+     * <code>SerialNumber</code> parameter must be specified.</p>
      */
     inline const Aws::String& GetHsmArn() const{ return m_hsmArn; }
 
     /**
-     * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
-     * parameter must be specified.</p>
+     * <p>The ARN of the HSM. Either the <code>HsmArn</code> or the
+     * <code>SerialNumber</code> parameter must be specified.</p>
      */
     inline void SetHsmArn(const Aws::String& value) { m_hsmArnHasBeenSet = true; m_hsmArn = value; }
 
     /**
-     * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
-     * parameter must be specified.</p>
+     * <p>The ARN of the HSM. Either the <code>HsmArn</code> or the
+     * <code>SerialNumber</code> parameter must be specified.</p>
      */
     inline void SetHsmArn(Aws::String&& value) { m_hsmArnHasBeenSet = true; m_hsmArn = std::move(value); }
 
     /**
-     * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
-     * parameter must be specified.</p>
+     * <p>The ARN of the HSM. Either the <code>HsmArn</code> or the
+     * <code>SerialNumber</code> parameter must be specified.</p>
      */
     inline void SetHsmArn(const char* value) { m_hsmArnHasBeenSet = true; m_hsmArn.assign(value); }
 
     /**
-     * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
-     * parameter must be specified.</p>
+     * <p>The ARN of the HSM. Either the <code>HsmArn</code> or the
+     * <code>SerialNumber</code> parameter must be specified.</p>
      */
     inline DescribeHsmRequest& WithHsmArn(const Aws::String& value) { SetHsmArn(value); return *this;}
 
     /**
-     * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
-     * parameter must be specified.</p>
+     * <p>The ARN of the HSM. Either the <code>HsmArn</code> or the
+     * <code>SerialNumber</code> parameter must be specified.</p>
      */
     inline DescribeHsmRequest& WithHsmArn(Aws::String&& value) { SetHsmArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
-     * parameter must be specified.</p>
+     * <p>The ARN of the HSM. Either the <code>HsmArn</code> or the
+     * <code>SerialNumber</code> parameter must be specified.</p>
      */
     inline DescribeHsmRequest& WithHsmArn(const char* value) { SetHsmArn(value); return *this;}
 
 
     /**
-     * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
-     * <i>HsmSerialNumber</i> parameter must be specified.</p>
+     * <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
+     * <code>HsmSerialNumber</code> parameter must be specified.</p>
      */
     inline const Aws::String& GetHsmSerialNumber() const{ return m_hsmSerialNumber; }
 
     /**
-     * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
-     * <i>HsmSerialNumber</i> parameter must be specified.</p>
+     * <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
+     * <code>HsmSerialNumber</code> parameter must be specified.</p>
      */
     inline void SetHsmSerialNumber(const Aws::String& value) { m_hsmSerialNumberHasBeenSet = true; m_hsmSerialNumber = value; }
 
     /**
-     * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
-     * <i>HsmSerialNumber</i> parameter must be specified.</p>
+     * <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
+     * <code>HsmSerialNumber</code> parameter must be specified.</p>
      */
     inline void SetHsmSerialNumber(Aws::String&& value) { m_hsmSerialNumberHasBeenSet = true; m_hsmSerialNumber = std::move(value); }
 
     /**
-     * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
-     * <i>HsmSerialNumber</i> parameter must be specified.</p>
+     * <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
+     * <code>HsmSerialNumber</code> parameter must be specified.</p>
      */
     inline void SetHsmSerialNumber(const char* value) { m_hsmSerialNumberHasBeenSet = true; m_hsmSerialNumber.assign(value); }
 
     /**
-     * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
-     * <i>HsmSerialNumber</i> parameter must be specified.</p>
+     * <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
+     * <code>HsmSerialNumber</code> parameter must be specified.</p>
      */
     inline DescribeHsmRequest& WithHsmSerialNumber(const Aws::String& value) { SetHsmSerialNumber(value); return *this;}
 
     /**
-     * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
-     * <i>HsmSerialNumber</i> parameter must be specified.</p>
+     * <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
+     * <code>HsmSerialNumber</code> parameter must be specified.</p>
      */
     inline DescribeHsmRequest& WithHsmSerialNumber(Aws::String&& value) { SetHsmSerialNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The serial number of the HSM. Either the <i>HsmArn</i> or the
-     * <i>HsmSerialNumber</i> parameter must be specified.</p>
+     * <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
+     * <code>HsmSerialNumber</code> parameter must be specified.</p>
      */
     inline DescribeHsmRequest& WithHsmSerialNumber(const char* value) { SetHsmSerialNumber(value); return *this;}
 

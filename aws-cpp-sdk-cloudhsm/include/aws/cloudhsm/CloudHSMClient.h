@@ -174,7 +174,15 @@ namespace Model
     typedef std::function<void(const CloudHSMClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
 
   /**
-   * <fullname>AWS CloudHSM Service</fullname>
+   * <fullname>AWS CloudHSM Service</fullname> <p>This is the reference for AWS
+   * CloudHSM Classic. For more information, see <a
+   * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic
+   * FAQs</a> and the <a
+   * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM
+   * Classic User Guide</a>.</p> <p>For more information about AWS CloudHSM, see <a
+   * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a> and the <a
+   * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
+   * Guide</a>.</p>
    */
   class AWS_CLOUDHSM_API CloudHSMClient : public Aws::Client::AWSJsonClient
   {
@@ -269,10 +277,10 @@ namespace Model
 
         /**
          * <p>Creates an uninitialized HSM instance.</p> <p>There is an upfront fee charged
-         * for each HSM instance that you create with the <a>CreateHsm</a> operation. If
-         * you accidentally provision an HSM and want to request a refund, delete the
+         * for each HSM instance that you create with the <code>CreateHsm</code> operation.
+         * If you accidentally provision an HSM and want to request a refund, delete the
          * instance using the <a>DeleteHsm</a> operation, go to the <a
-         * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>,
+         * href="https://console.aws.amazon.com/support/home">AWS Support Center</a>,
          * create a new case, and select <b>Account and Billing Support</b>.</p>
          * <important> <p>It can take up to 20 minutes to create and provision an HSM. You
          * can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM
@@ -285,10 +293,10 @@ namespace Model
 
         /**
          * <p>Creates an uninitialized HSM instance.</p> <p>There is an upfront fee charged
-         * for each HSM instance that you create with the <a>CreateHsm</a> operation. If
-         * you accidentally provision an HSM and want to request a refund, delete the
+         * for each HSM instance that you create with the <code>CreateHsm</code> operation.
+         * If you accidentally provision an HSM and want to request a refund, delete the
          * instance using the <a>DeleteHsm</a> operation, go to the <a
-         * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>,
+         * href="https://console.aws.amazon.com/support/home">AWS Support Center</a>,
          * create a new case, and select <b>Account and Billing Support</b>.</p>
          * <important> <p>It can take up to 20 minutes to create and provision an HSM. You
          * can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM
@@ -303,10 +311,10 @@ namespace Model
 
         /**
          * <p>Creates an uninitialized HSM instance.</p> <p>There is an upfront fee charged
-         * for each HSM instance that you create with the <a>CreateHsm</a> operation. If
-         * you accidentally provision an HSM and want to request a refund, delete the
+         * for each HSM instance that you create with the <code>CreateHsm</code> operation.
+         * If you accidentally provision an HSM and want to request a refund, delete the
          * instance using the <a>DeleteHsm</a> operation, go to the <a
-         * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>,
+         * href="https://console.aws.amazon.com/support/home">AWS Support Center</a>,
          * create a new case, and select <b>Account and Billing Support</b>.</p>
          * <important> <p>It can take up to 20 minutes to create and provision an HSM. You
          * can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM
@@ -561,10 +569,10 @@ namespace Model
 
         /**
          * <p>Lists the high-availability partition groups for the account.</p> <p>This
-         * operation supports pagination with the use of the <i>NextToken</i> member. If
-         * more results are available, the <i>NextToken</i> member of the response contains
-         * a token that you pass in the next call to <a>ListHapgs</a> to retrieve the next
-         * set of items.</p><p><h3>See Also:</h3>   <a
+         * operation supports pagination with the use of the <code>NextToken</code> member.
+         * If more results are available, the <code>NextToken</code> member of the response
+         * contains a token that you pass in the next call to <code>ListHapgs</code> to
+         * retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">AWS
          * API Reference</a></p>
          */
@@ -572,10 +580,10 @@ namespace Model
 
         /**
          * <p>Lists the high-availability partition groups for the account.</p> <p>This
-         * operation supports pagination with the use of the <i>NextToken</i> member. If
-         * more results are available, the <i>NextToken</i> member of the response contains
-         * a token that you pass in the next call to <a>ListHapgs</a> to retrieve the next
-         * set of items.</p><p><h3>See Also:</h3>   <a
+         * operation supports pagination with the use of the <code>NextToken</code> member.
+         * If more results are available, the <code>NextToken</code> member of the response
+         * contains a token that you pass in the next call to <code>ListHapgs</code> to
+         * retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">AWS
          * API Reference</a></p>
          *
@@ -585,10 +593,10 @@ namespace Model
 
         /**
          * <p>Lists the high-availability partition groups for the account.</p> <p>This
-         * operation supports pagination with the use of the <i>NextToken</i> member. If
-         * more results are available, the <i>NextToken</i> member of the response contains
-         * a token that you pass in the next call to <a>ListHapgs</a> to retrieve the next
-         * set of items.</p><p><h3>See Also:</h3>   <a
+         * operation supports pagination with the use of the <code>NextToken</code> member.
+         * If more results are available, the <code>NextToken</code> member of the response
+         * contains a token that you pass in the next call to <code>ListHapgs</code> to
+         * retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">AWS
          * API Reference</a></p>
          *
@@ -599,9 +607,10 @@ namespace Model
         /**
          * <p>Retrieves the identifiers of all of the HSMs provisioned for the current
          * customer.</p> <p>This operation supports pagination with the use of the
-         * <i>NextToken</i> member. If more results are available, the <i>NextToken</i>
-         * member of the response contains a token that you pass in the next call to
-         * <a>ListHsms</a> to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * <code>NextToken</code> member. If more results are available, the
+         * <code>NextToken</code> member of the response contains a token that you pass in
+         * the next call to <code>ListHsms</code> to retrieve the next set of
+         * items.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">AWS
          * API Reference</a></p>
          */
@@ -610,9 +619,10 @@ namespace Model
         /**
          * <p>Retrieves the identifiers of all of the HSMs provisioned for the current
          * customer.</p> <p>This operation supports pagination with the use of the
-         * <i>NextToken</i> member. If more results are available, the <i>NextToken</i>
-         * member of the response contains a token that you pass in the next call to
-         * <a>ListHsms</a> to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * <code>NextToken</code> member. If more results are available, the
+         * <code>NextToken</code> member of the response contains a token that you pass in
+         * the next call to <code>ListHsms</code> to retrieve the next set of
+         * items.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">AWS
          * API Reference</a></p>
          *
@@ -623,9 +633,10 @@ namespace Model
         /**
          * <p>Retrieves the identifiers of all of the HSMs provisioned for the current
          * customer.</p> <p>This operation supports pagination with the use of the
-         * <i>NextToken</i> member. If more results are available, the <i>NextToken</i>
-         * member of the response contains a token that you pass in the next call to
-         * <a>ListHsms</a> to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * <code>NextToken</code> member. If more results are available, the
+         * <code>NextToken</code> member of the response contains a token that you pass in
+         * the next call to <code>ListHsms</code> to retrieve the next set of
+         * items.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">AWS
          * API Reference</a></p>
          *
@@ -635,9 +646,9 @@ namespace Model
 
         /**
          * <p>Lists all of the clients.</p> <p>This operation supports pagination with the
-         * use of the <i>NextToken</i> member. If more results are available, the
-         * <i>NextToken</i> member of the response contains a token that you pass in the
-         * next call to <a>ListLunaClients</a> to retrieve the next set of
+         * use of the <code>NextToken</code> member. If more results are available, the
+         * <code>NextToken</code> member of the response contains a token that you pass in
+         * the next call to <code>ListLunaClients</code> to retrieve the next set of
          * items.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">AWS
          * API Reference</a></p>
@@ -646,9 +657,9 @@ namespace Model
 
         /**
          * <p>Lists all of the clients.</p> <p>This operation supports pagination with the
-         * use of the <i>NextToken</i> member. If more results are available, the
-         * <i>NextToken</i> member of the response contains a token that you pass in the
-         * next call to <a>ListLunaClients</a> to retrieve the next set of
+         * use of the <code>NextToken</code> member. If more results are available, the
+         * <code>NextToken</code> member of the response contains a token that you pass in
+         * the next call to <code>ListLunaClients</code> to retrieve the next set of
          * items.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">AWS
          * API Reference</a></p>
@@ -659,9 +670,9 @@ namespace Model
 
         /**
          * <p>Lists all of the clients.</p> <p>This operation supports pagination with the
-         * use of the <i>NextToken</i> member. If more results are available, the
-         * <i>NextToken</i> member of the response contains a token that you pass in the
-         * next call to <a>ListLunaClients</a> to retrieve the next set of
+         * use of the <code>NextToken</code> member. If more results are available, the
+         * <code>NextToken</code> member of the response contains a token that you pass in
+         * the next call to <code>ListLunaClients</code> to retrieve the next set of
          * items.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">AWS
          * API Reference</a></p>
