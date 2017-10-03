@@ -38,6 +38,18 @@ public class PlatformAndKeywordSanitizer {
         words.add("export");
         words.add("and");
         words.add("and_eq");
+        words.add("not");
+        words.add("not_eq");
+        words.add("or");
+        words.add("or_eq");
+        words.add("xor");
+        words.add("xor_eq");
+        words.add("switch");
+        words.add("template");
+        words.add("class");
+        words.add("struct");
+        words.add("concept");
+        words.add("requires");
         words.add("asm");
         words.add("auto");
         words.add("bool");
