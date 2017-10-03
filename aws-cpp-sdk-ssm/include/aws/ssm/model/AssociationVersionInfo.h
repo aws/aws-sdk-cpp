@@ -186,44 +186,44 @@ namespace Model
 
 
     /**
-     * <p>The version of an SSM document used when the association version was
-     * created.</p>
+     * <p>The version of a Systems Manager document used when the association version
+     * was created.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of an SSM document used when the association version was
-     * created.</p>
+     * <p>The version of a Systems Manager document used when the association version
+     * was created.</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of an SSM document used when the association version was
-     * created.</p>
+     * <p>The version of a Systems Manager document used when the association version
+     * was created.</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of an SSM document used when the association version was
-     * created.</p>
+     * <p>The version of a Systems Manager document used when the association version
+     * was created.</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of an SSM document used when the association version was
-     * created.</p>
+     * <p>The version of a Systems Manager document used when the association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of an SSM document used when the association version was
-     * created.</p>
+     * <p>The version of a Systems Manager document used when the association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of an SSM document used when the association version was
-     * created.</p>
+     * <p>The version of a Systems Manager document used when the association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 

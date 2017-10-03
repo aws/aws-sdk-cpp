@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The names of the SSM documents.</p>
+     * <p>The names of the Systems Manager documents.</p>
      */
     inline const Aws::Vector<DocumentIdentifier>& GetDocumentIdentifiers() const{ return m_documentIdentifiers; }
 
     /**
-     * <p>The names of the SSM documents.</p>
+     * <p>The names of the Systems Manager documents.</p>
      */
     inline void SetDocumentIdentifiers(const Aws::Vector<DocumentIdentifier>& value) { m_documentIdentifiers = value; }
 
     /**
-     * <p>The names of the SSM documents.</p>
+     * <p>The names of the Systems Manager documents.</p>
      */
     inline void SetDocumentIdentifiers(Aws::Vector<DocumentIdentifier>&& value) { m_documentIdentifiers = std::move(value); }
 
     /**
-     * <p>The names of the SSM documents.</p>
+     * <p>The names of the Systems Manager documents.</p>
      */
     inline ListDocumentsResult& WithDocumentIdentifiers(const Aws::Vector<DocumentIdentifier>& value) { SetDocumentIdentifiers(value); return *this;}
 
     /**
-     * <p>The names of the SSM documents.</p>
+     * <p>The names of the Systems Manager documents.</p>
      */
     inline ListDocumentsResult& WithDocumentIdentifiers(Aws::Vector<DocumentIdentifier>&& value) { SetDocumentIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the SSM documents.</p>
+     * <p>The names of the Systems Manager documents.</p>
      */
     inline ListDocumentsResult& AddDocumentIdentifiers(const DocumentIdentifier& value) { m_documentIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>The names of the SSM documents.</p>
+     * <p>The names of the Systems Manager documents.</p>
      */
     inline ListDocumentsResult& AddDocumentIdentifiers(DocumentIdentifier&& value) { m_documentIdentifiers.push_back(std::move(value)); return *this; }
 

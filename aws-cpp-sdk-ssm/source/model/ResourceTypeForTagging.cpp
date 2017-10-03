@@ -30,15 +30,21 @@ namespace Aws
       namespace ResourceTypeForTaggingMapper
       {
 
+        static const int Document_HASH = HashingUtils::HashString("Document");
         static const int ManagedInstance_HASH = HashingUtils::HashString("ManagedInstance");
         static const int MaintenanceWindow_HASH = HashingUtils::HashString("MaintenanceWindow");
         static const int Parameter_HASH = HashingUtils::HashString("Parameter");
+        static const int PatchBaseline_HASH = HashingUtils::HashString("PatchBaseline");
 
 
         ResourceTypeForTagging GetResourceTypeForTaggingForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ManagedInstance_HASH)
+          if (hashCode == Document_HASH)
+          {
+            return ResourceTypeForTagging::Document;
+          }
+          else if (hashCode == ManagedInstance_HASH)
           {
             return ResourceTypeForTagging::ManagedInstance;
           }
@@ -49,6 +55,10 @@ namespace Aws
           else if (hashCode == Parameter_HASH)
           {
             return ResourceTypeForTagging::Parameter;
+          }
+          else if (hashCode == PatchBaseline_HASH)
+          {
+            return ResourceTypeForTagging::PatchBaseline;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -64,12 +74,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceTypeForTagging::Document:
+            return "Document";
           case ResourceTypeForTagging::ManagedInstance:
             return "ManagedInstance";
           case ResourceTypeForTagging::MaintenanceWindow:
             return "MaintenanceWindow";
           case ResourceTypeForTagging::Parameter:
             return "Parameter";
+          case ResourceTypeForTagging::PatchBaseline:
+            return "PatchBaseline";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

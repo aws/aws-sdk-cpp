@@ -35,7 +35,8 @@ DocumentIdentifier::DocumentIdentifier() :
     m_documentVersionHasBeenSet(false),
     m_documentType(DocumentType::NOT_SET),
     m_documentTypeHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
+    m_schemaVersionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ DocumentIdentifier::DocumentIdentifier(const JsonValue& jsonValue) :
     m_documentVersionHasBeenSet(false),
     m_documentType(DocumentType::NOT_SET),
     m_documentTypeHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
+    m_schemaVersionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +100,16 @@ DocumentIdentifier& DocumentIdentifier::operator =(const JsonValue& jsonValue)
     m_schemaVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +154,17 @@ JsonValue DocumentIdentifier::Jsonize() const
   if(m_schemaVersionHasBeenSet)
   {
    payload.WithString("SchemaVersion", m_schemaVersion);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

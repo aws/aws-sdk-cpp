@@ -184,27 +184,27 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
      */
     inline const AttributeBooleanValue& GetEbsOptimized() const{ return m_ebsOptimized; }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
      */
     inline void SetEbsOptimized(const AttributeBooleanValue& value) { m_ebsOptimized = value; }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
      */
     inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimized = std::move(value); }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
      */
     inline DescribeInstanceAttributeResponse& WithEbsOptimized(const AttributeBooleanValue& value) { SetEbsOptimized(value); return *this;}
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O.</p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
      */
     inline DescribeInstanceAttributeResponse& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
 
@@ -423,41 +423,41 @@ namespace Model
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT.</p>
+     * <code>true</code> means that checking is enabled, and <code>false</code> means
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
      */
     inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT.</p>
+     * <code>true</code> means that checking is enabled, and <code>false</code> means
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
      */
     inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheck = value; }
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT.</p>
+     * <code>true</code> means that checking is enabled, and <code>false</code> means
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
      */
     inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheck = std::move(value); }
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT.</p>
+     * <code>true</code> means that checking is enabled, and <code>false</code> means
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
      */
     inline DescribeInstanceAttributeResponse& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT.</p>
+     * <code>true</code> means that checking is enabled, and <code>false</code> means
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
      */
     inline DescribeInstanceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 

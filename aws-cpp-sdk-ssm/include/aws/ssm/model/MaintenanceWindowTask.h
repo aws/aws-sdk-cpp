@@ -127,57 +127,57 @@ namespace Model
 
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the SSM document name or ARN. For
-     * LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's the
-     * state machine ARN.</p>
+     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * tasks, it's the state machine ARN.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the SSM document name or ARN. For
-     * LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's the
-     * state machine ARN.</p>
+     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the SSM document name or ARN. For
-     * LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's the
-     * state machine ARN.</p>
+     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the SSM document name or ARN. For
-     * LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's the
-     * state machine ARN.</p>
+     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the SSM document name or ARN. For
-     * LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's the
-     * state machine ARN.</p>
+     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the SSM document name or ARN. For
-     * LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's the
-     * state machine ARN.</p>
+     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the SSM document name or ARN. For
-     * LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's the
-     * state machine ARN.</p>
+     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 

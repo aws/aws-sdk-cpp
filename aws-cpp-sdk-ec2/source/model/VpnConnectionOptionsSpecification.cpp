@@ -32,13 +32,15 @@ namespace Model
 
 VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification() : 
     m_staticRoutesOnly(false),
-    m_staticRoutesOnlyHasBeenSet(false)
+    m_staticRoutesOnlyHasBeenSet(false),
+    m_tunnelOptionsHasBeenSet(false)
 {
 }
 
 VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification(const XmlNode& xmlNode) : 
     m_staticRoutesOnly(false),
-    m_staticRoutesOnlyHasBeenSet(false)
+    m_staticRoutesOnlyHasBeenSet(false),
+    m_tunnelOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,6 +57,18 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
       m_staticRoutesOnly = StringUtils::ConvertToBool(StringUtils::Trim(staticRoutesOnlyNode.GetText().c_str()).c_str());
       m_staticRoutesOnlyHasBeenSet = true;
     }
+    XmlNode tunnelOptionsNode = resultNode.FirstChild("TunnelOptions");
+    if(!tunnelOptionsNode.IsNull())
+    {
+      XmlNode tunnelOptionsMember = tunnelOptionsNode.FirstChild("item");
+      while(!tunnelOptionsMember.IsNull())
+      {
+        m_tunnelOptions.push_back(tunnelOptionsMember);
+        tunnelOptionsMember = tunnelOptionsMember.NextNode("item");
+      }
+
+      m_tunnelOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -67,6 +81,17 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
 
+  if(m_tunnelOptionsHasBeenSet)
+  {
+      unsigned tunnelOptionsIdx = 1;
+      for(auto& item : m_tunnelOptions)
+      {
+        Aws::StringStream tunnelOptionsSs;
+        tunnelOptionsSs << location << index << locationValue << ".TunnelOptions." << tunnelOptionsIdx++;
+        item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
+      }
+  }
+
 }
 
 void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -74,6 +99,16 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
   if(m_staticRoutesOnlyHasBeenSet)
   {
       oStream << location << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
+  }
+  if(m_tunnelOptionsHasBeenSet)
+  {
+      unsigned tunnelOptionsIdx = 1;
+      for(auto& item : m_tunnelOptions)
+      {
+        Aws::StringStream tunnelOptionsSs;
+        tunnelOptionsSs << location <<  ".Item." << tunnelOptionsIdx++;
+        item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
+      }
   }
 }
 

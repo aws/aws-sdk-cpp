@@ -79,34 +79,33 @@ namespace Model
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
      * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
      * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the
-     * Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The RAM disk
-     * ID.</p> </li> <li> <p> <code>network-interface.network-interface-id</code> - The
-     * ID of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.device-index</code> - The index of the device for the
-     * network interface attachment on the instance.</p> </li> <li> <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>network-interface.description</code> - A
-     * description of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP
-     * address of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.delete-on-termination</code> - Indicates whether the
-     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
-     * <code>network-interface.group-id</code> - The ID of the security group
-     * associated with the network interface.</p> </li> <li> <p>
-     * <code>network-interface.group-name</code> - The name of the security group
-     * associated with the network interface.</p> </li> <li> <p>
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
+     * for the Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
+     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
+     * Availability Zone in which the bid is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
-     * <code>product-description</code> - The product description associated with the
-     * instance (<code>Linux/UNIX</code> | <code>Windows</code>).</p> </li> <li> <p>
-     * <code>spot-instance-request-id</code> - The Spot instance request ID.</p> </li>
-     * <li> <p> <code>spot-price</code> - The maximum hourly price for any Spot
-     * instance launched to fulfill the request.</p> </li> <li> <p> <code>state</code>
-     * - The state of the Spot instance request (<code>open</code> |
-     * <code>active</code> | <code>closed</code> | <code>cancelled</code> |
-     * <code>failed</code>). Spot bid status information can help you track your Amazon
-     * EC2 Spot instance requests. For more information, see <a
+     * <code>network-interface.delete-on-termination</code> - Indicates whether the
+     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
+     * <code>network-interface.description</code> - A description of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.device-index</code> - The
+     * index of the device for the network interface attachment on the instance.</p>
+     * </li> <li> <p> <code>network-interface.group-id</code> - The ID of the security
+     * group associated with the network interface.</p> </li> <li> <p>
+     * <code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.private-ip-address</code>
+     * - The primary private IP address of the network interface.</p> </li> <li> <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p> <code>product-description</code> - The product
+     * description associated with the instance (<code>Linux/UNIX</code> |
+     * <code>Windows</code>).</p> </li> <li> <p> <code>spot-instance-request-id</code>
+     * - The Spot instance request ID.</p> </li> <li> <p> <code>spot-price</code> - The
+     * maximum hourly price for any Spot instance launched to fulfill the request.</p>
+     * </li> <li> <p> <code>state</code> - The state of the Spot instance request
+     * (<code>open</code> | <code>active</code> | <code>closed</code> |
+     * <code>cancelled</code> | <code>failed</code>). Spot bid status information can
+     * help you track your Amazon EC2 Spot instance requests. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li> <li>
      * <p> <code>status-code</code> - The short code describing the most recent
@@ -127,10 +126,8 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid
-     * is launched.</p> </li> <li> <p> <code>valid-from</code> - The start date of the
-     * request.</p> </li> <li> <p> <code>valid-until</code> - The end date of the
-     * request.</p> </li> </ul>
+     * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
+     * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -161,34 +158,33 @@ namespace Model
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
      * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
      * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the
-     * Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The RAM disk
-     * ID.</p> </li> <li> <p> <code>network-interface.network-interface-id</code> - The
-     * ID of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.device-index</code> - The index of the device for the
-     * network interface attachment on the instance.</p> </li> <li> <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>network-interface.description</code> - A
-     * description of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP
-     * address of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.delete-on-termination</code> - Indicates whether the
-     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
-     * <code>network-interface.group-id</code> - The ID of the security group
-     * associated with the network interface.</p> </li> <li> <p>
-     * <code>network-interface.group-name</code> - The name of the security group
-     * associated with the network interface.</p> </li> <li> <p>
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
+     * for the Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
+     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
+     * Availability Zone in which the bid is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
-     * <code>product-description</code> - The product description associated with the
-     * instance (<code>Linux/UNIX</code> | <code>Windows</code>).</p> </li> <li> <p>
-     * <code>spot-instance-request-id</code> - The Spot instance request ID.</p> </li>
-     * <li> <p> <code>spot-price</code> - The maximum hourly price for any Spot
-     * instance launched to fulfill the request.</p> </li> <li> <p> <code>state</code>
-     * - The state of the Spot instance request (<code>open</code> |
-     * <code>active</code> | <code>closed</code> | <code>cancelled</code> |
-     * <code>failed</code>). Spot bid status information can help you track your Amazon
-     * EC2 Spot instance requests. For more information, see <a
+     * <code>network-interface.delete-on-termination</code> - Indicates whether the
+     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
+     * <code>network-interface.description</code> - A description of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.device-index</code> - The
+     * index of the device for the network interface attachment on the instance.</p>
+     * </li> <li> <p> <code>network-interface.group-id</code> - The ID of the security
+     * group associated with the network interface.</p> </li> <li> <p>
+     * <code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.private-ip-address</code>
+     * - The primary private IP address of the network interface.</p> </li> <li> <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p> <code>product-description</code> - The product
+     * description associated with the instance (<code>Linux/UNIX</code> |
+     * <code>Windows</code>).</p> </li> <li> <p> <code>spot-instance-request-id</code>
+     * - The Spot instance request ID.</p> </li> <li> <p> <code>spot-price</code> - The
+     * maximum hourly price for any Spot instance launched to fulfill the request.</p>
+     * </li> <li> <p> <code>state</code> - The state of the Spot instance request
+     * (<code>open</code> | <code>active</code> | <code>closed</code> |
+     * <code>cancelled</code> | <code>failed</code>). Spot bid status information can
+     * help you track your Amazon EC2 Spot instance requests. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li> <li>
      * <p> <code>status-code</code> - The short code describing the most recent
@@ -209,10 +205,8 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid
-     * is launched.</p> </li> <li> <p> <code>valid-from</code> - The start date of the
-     * request.</p> </li> <li> <p> <code>valid-until</code> - The end date of the
-     * request.</p> </li> </ul>
+     * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
+     * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -243,34 +237,33 @@ namespace Model
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
      * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
      * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the
-     * Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The RAM disk
-     * ID.</p> </li> <li> <p> <code>network-interface.network-interface-id</code> - The
-     * ID of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.device-index</code> - The index of the device for the
-     * network interface attachment on the instance.</p> </li> <li> <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>network-interface.description</code> - A
-     * description of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP
-     * address of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.delete-on-termination</code> - Indicates whether the
-     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
-     * <code>network-interface.group-id</code> - The ID of the security group
-     * associated with the network interface.</p> </li> <li> <p>
-     * <code>network-interface.group-name</code> - The name of the security group
-     * associated with the network interface.</p> </li> <li> <p>
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
+     * for the Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
+     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
+     * Availability Zone in which the bid is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
-     * <code>product-description</code> - The product description associated with the
-     * instance (<code>Linux/UNIX</code> | <code>Windows</code>).</p> </li> <li> <p>
-     * <code>spot-instance-request-id</code> - The Spot instance request ID.</p> </li>
-     * <li> <p> <code>spot-price</code> - The maximum hourly price for any Spot
-     * instance launched to fulfill the request.</p> </li> <li> <p> <code>state</code>
-     * - The state of the Spot instance request (<code>open</code> |
-     * <code>active</code> | <code>closed</code> | <code>cancelled</code> |
-     * <code>failed</code>). Spot bid status information can help you track your Amazon
-     * EC2 Spot instance requests. For more information, see <a
+     * <code>network-interface.delete-on-termination</code> - Indicates whether the
+     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
+     * <code>network-interface.description</code> - A description of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.device-index</code> - The
+     * index of the device for the network interface attachment on the instance.</p>
+     * </li> <li> <p> <code>network-interface.group-id</code> - The ID of the security
+     * group associated with the network interface.</p> </li> <li> <p>
+     * <code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.private-ip-address</code>
+     * - The primary private IP address of the network interface.</p> </li> <li> <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p> <code>product-description</code> - The product
+     * description associated with the instance (<code>Linux/UNIX</code> |
+     * <code>Windows</code>).</p> </li> <li> <p> <code>spot-instance-request-id</code>
+     * - The Spot instance request ID.</p> </li> <li> <p> <code>spot-price</code> - The
+     * maximum hourly price for any Spot instance launched to fulfill the request.</p>
+     * </li> <li> <p> <code>state</code> - The state of the Spot instance request
+     * (<code>open</code> | <code>active</code> | <code>closed</code> |
+     * <code>cancelled</code> | <code>failed</code>). Spot bid status information can
+     * help you track your Amazon EC2 Spot instance requests. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li> <li>
      * <p> <code>status-code</code> - The short code describing the most recent
@@ -291,10 +284,8 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid
-     * is launched.</p> </li> <li> <p> <code>valid-from</code> - The start date of the
-     * request.</p> </li> <li> <p> <code>valid-until</code> - The end date of the
-     * request.</p> </li> </ul>
+     * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
+     * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -325,34 +316,33 @@ namespace Model
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
      * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
      * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the
-     * Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The RAM disk
-     * ID.</p> </li> <li> <p> <code>network-interface.network-interface-id</code> - The
-     * ID of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.device-index</code> - The index of the device for the
-     * network interface attachment on the instance.</p> </li> <li> <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>network-interface.description</code> - A
-     * description of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP
-     * address of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.delete-on-termination</code> - Indicates whether the
-     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
-     * <code>network-interface.group-id</code> - The ID of the security group
-     * associated with the network interface.</p> </li> <li> <p>
-     * <code>network-interface.group-name</code> - The name of the security group
-     * associated with the network interface.</p> </li> <li> <p>
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
+     * for the Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
+     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
+     * Availability Zone in which the bid is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
-     * <code>product-description</code> - The product description associated with the
-     * instance (<code>Linux/UNIX</code> | <code>Windows</code>).</p> </li> <li> <p>
-     * <code>spot-instance-request-id</code> - The Spot instance request ID.</p> </li>
-     * <li> <p> <code>spot-price</code> - The maximum hourly price for any Spot
-     * instance launched to fulfill the request.</p> </li> <li> <p> <code>state</code>
-     * - The state of the Spot instance request (<code>open</code> |
-     * <code>active</code> | <code>closed</code> | <code>cancelled</code> |
-     * <code>failed</code>). Spot bid status information can help you track your Amazon
-     * EC2 Spot instance requests. For more information, see <a
+     * <code>network-interface.delete-on-termination</code> - Indicates whether the
+     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
+     * <code>network-interface.description</code> - A description of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.device-index</code> - The
+     * index of the device for the network interface attachment on the instance.</p>
+     * </li> <li> <p> <code>network-interface.group-id</code> - The ID of the security
+     * group associated with the network interface.</p> </li> <li> <p>
+     * <code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.private-ip-address</code>
+     * - The primary private IP address of the network interface.</p> </li> <li> <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p> <code>product-description</code> - The product
+     * description associated with the instance (<code>Linux/UNIX</code> |
+     * <code>Windows</code>).</p> </li> <li> <p> <code>spot-instance-request-id</code>
+     * - The Spot instance request ID.</p> </li> <li> <p> <code>spot-price</code> - The
+     * maximum hourly price for any Spot instance launched to fulfill the request.</p>
+     * </li> <li> <p> <code>state</code> - The state of the Spot instance request
+     * (<code>open</code> | <code>active</code> | <code>closed</code> |
+     * <code>cancelled</code> | <code>failed</code>). Spot bid status information can
+     * help you track your Amazon EC2 Spot instance requests. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li> <li>
      * <p> <code>status-code</code> - The short code describing the most recent
@@ -373,10 +363,8 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid
-     * is launched.</p> </li> <li> <p> <code>valid-from</code> - The start date of the
-     * request.</p> </li> <li> <p> <code>valid-until</code> - The end date of the
-     * request.</p> </li> </ul>
+     * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
+     * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
     inline DescribeSpotInstanceRequestsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -407,34 +395,33 @@ namespace Model
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
      * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
      * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the
-     * Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The RAM disk
-     * ID.</p> </li> <li> <p> <code>network-interface.network-interface-id</code> - The
-     * ID of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.device-index</code> - The index of the device for the
-     * network interface attachment on the instance.</p> </li> <li> <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>network-interface.description</code> - A
-     * description of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP
-     * address of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.delete-on-termination</code> - Indicates whether the
-     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
-     * <code>network-interface.group-id</code> - The ID of the security group
-     * associated with the network interface.</p> </li> <li> <p>
-     * <code>network-interface.group-name</code> - The name of the security group
-     * associated with the network interface.</p> </li> <li> <p>
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
+     * for the Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
+     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
+     * Availability Zone in which the bid is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
-     * <code>product-description</code> - The product description associated with the
-     * instance (<code>Linux/UNIX</code> | <code>Windows</code>).</p> </li> <li> <p>
-     * <code>spot-instance-request-id</code> - The Spot instance request ID.</p> </li>
-     * <li> <p> <code>spot-price</code> - The maximum hourly price for any Spot
-     * instance launched to fulfill the request.</p> </li> <li> <p> <code>state</code>
-     * - The state of the Spot instance request (<code>open</code> |
-     * <code>active</code> | <code>closed</code> | <code>cancelled</code> |
-     * <code>failed</code>). Spot bid status information can help you track your Amazon
-     * EC2 Spot instance requests. For more information, see <a
+     * <code>network-interface.delete-on-termination</code> - Indicates whether the
+     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
+     * <code>network-interface.description</code> - A description of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.device-index</code> - The
+     * index of the device for the network interface attachment on the instance.</p>
+     * </li> <li> <p> <code>network-interface.group-id</code> - The ID of the security
+     * group associated with the network interface.</p> </li> <li> <p>
+     * <code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.private-ip-address</code>
+     * - The primary private IP address of the network interface.</p> </li> <li> <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p> <code>product-description</code> - The product
+     * description associated with the instance (<code>Linux/UNIX</code> |
+     * <code>Windows</code>).</p> </li> <li> <p> <code>spot-instance-request-id</code>
+     * - The Spot instance request ID.</p> </li> <li> <p> <code>spot-price</code> - The
+     * maximum hourly price for any Spot instance launched to fulfill the request.</p>
+     * </li> <li> <p> <code>state</code> - The state of the Spot instance request
+     * (<code>open</code> | <code>active</code> | <code>closed</code> |
+     * <code>cancelled</code> | <code>failed</code>). Spot bid status information can
+     * help you track your Amazon EC2 Spot instance requests. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li> <li>
      * <p> <code>status-code</code> - The short code describing the most recent
@@ -455,10 +442,8 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid
-     * is launched.</p> </li> <li> <p> <code>valid-from</code> - The start date of the
-     * request.</p> </li> <li> <p> <code>valid-until</code> - The end date of the
-     * request.</p> </li> </ul>
+     * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
+     * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
     inline DescribeSpotInstanceRequestsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -489,34 +474,33 @@ namespace Model
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
      * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
      * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the
-     * Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The RAM disk
-     * ID.</p> </li> <li> <p> <code>network-interface.network-interface-id</code> - The
-     * ID of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.device-index</code> - The index of the device for the
-     * network interface attachment on the instance.</p> </li> <li> <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>network-interface.description</code> - A
-     * description of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP
-     * address of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.delete-on-termination</code> - Indicates whether the
-     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
-     * <code>network-interface.group-id</code> - The ID of the security group
-     * associated with the network interface.</p> </li> <li> <p>
-     * <code>network-interface.group-name</code> - The name of the security group
-     * associated with the network interface.</p> </li> <li> <p>
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
+     * for the Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
+     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
+     * Availability Zone in which the bid is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
-     * <code>product-description</code> - The product description associated with the
-     * instance (<code>Linux/UNIX</code> | <code>Windows</code>).</p> </li> <li> <p>
-     * <code>spot-instance-request-id</code> - The Spot instance request ID.</p> </li>
-     * <li> <p> <code>spot-price</code> - The maximum hourly price for any Spot
-     * instance launched to fulfill the request.</p> </li> <li> <p> <code>state</code>
-     * - The state of the Spot instance request (<code>open</code> |
-     * <code>active</code> | <code>closed</code> | <code>cancelled</code> |
-     * <code>failed</code>). Spot bid status information can help you track your Amazon
-     * EC2 Spot instance requests. For more information, see <a
+     * <code>network-interface.delete-on-termination</code> - Indicates whether the
+     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
+     * <code>network-interface.description</code> - A description of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.device-index</code> - The
+     * index of the device for the network interface attachment on the instance.</p>
+     * </li> <li> <p> <code>network-interface.group-id</code> - The ID of the security
+     * group associated with the network interface.</p> </li> <li> <p>
+     * <code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.private-ip-address</code>
+     * - The primary private IP address of the network interface.</p> </li> <li> <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p> <code>product-description</code> - The product
+     * description associated with the instance (<code>Linux/UNIX</code> |
+     * <code>Windows</code>).</p> </li> <li> <p> <code>spot-instance-request-id</code>
+     * - The Spot instance request ID.</p> </li> <li> <p> <code>spot-price</code> - The
+     * maximum hourly price for any Spot instance launched to fulfill the request.</p>
+     * </li> <li> <p> <code>state</code> - The state of the Spot instance request
+     * (<code>open</code> | <code>active</code> | <code>closed</code> |
+     * <code>cancelled</code> | <code>failed</code>). Spot bid status information can
+     * help you track your Amazon EC2 Spot instance requests. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li> <li>
      * <p> <code>status-code</code> - The short code describing the most recent
@@ -537,10 +521,8 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid
-     * is launched.</p> </li> <li> <p> <code>valid-from</code> - The start date of the
-     * request.</p> </li> <li> <p> <code>valid-until</code> - The end date of the
-     * request.</p> </li> </ul>
+     * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
+     * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
     inline DescribeSpotInstanceRequestsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -571,34 +553,33 @@ namespace Model
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
      * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
      * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the
-     * Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The RAM disk
-     * ID.</p> </li> <li> <p> <code>network-interface.network-interface-id</code> - The
-     * ID of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.device-index</code> - The index of the device for the
-     * network interface attachment on the instance.</p> </li> <li> <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>network-interface.description</code> - A
-     * description of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP
-     * address of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.delete-on-termination</code> - Indicates whether the
-     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
-     * <code>network-interface.group-id</code> - The ID of the security group
-     * associated with the network interface.</p> </li> <li> <p>
-     * <code>network-interface.group-name</code> - The name of the security group
-     * associated with the network interface.</p> </li> <li> <p>
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
+     * for the Spot instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
+     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
+     * Availability Zone in which the bid is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
-     * <code>product-description</code> - The product description associated with the
-     * instance (<code>Linux/UNIX</code> | <code>Windows</code>).</p> </li> <li> <p>
-     * <code>spot-instance-request-id</code> - The Spot instance request ID.</p> </li>
-     * <li> <p> <code>spot-price</code> - The maximum hourly price for any Spot
-     * instance launched to fulfill the request.</p> </li> <li> <p> <code>state</code>
-     * - The state of the Spot instance request (<code>open</code> |
-     * <code>active</code> | <code>closed</code> | <code>cancelled</code> |
-     * <code>failed</code>). Spot bid status information can help you track your Amazon
-     * EC2 Spot instance requests. For more information, see <a
+     * <code>network-interface.delete-on-termination</code> - Indicates whether the
+     * network interface is deleted when the instance is terminated.</p> </li> <li> <p>
+     * <code>network-interface.description</code> - A description of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.device-index</code> - The
+     * index of the device for the network interface attachment on the instance.</p>
+     * </li> <li> <p> <code>network-interface.group-id</code> - The ID of the security
+     * group associated with the network interface.</p> </li> <li> <p>
+     * <code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.private-ip-address</code>
+     * - The primary private IP address of the network interface.</p> </li> <li> <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p> <code>product-description</code> - The product
+     * description associated with the instance (<code>Linux/UNIX</code> |
+     * <code>Windows</code>).</p> </li> <li> <p> <code>spot-instance-request-id</code>
+     * - The Spot instance request ID.</p> </li> <li> <p> <code>spot-price</code> - The
+     * maximum hourly price for any Spot instance launched to fulfill the request.</p>
+     * </li> <li> <p> <code>state</code> - The state of the Spot instance request
+     * (<code>open</code> | <code>active</code> | <code>closed</code> |
+     * <code>cancelled</code> | <code>failed</code>). Spot bid status information can
+     * help you track your Amazon EC2 Spot instance requests. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Bid Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li> <li>
      * <p> <code>status-code</code> - The short code describing the most recent
@@ -619,10 +600,8 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid
-     * is launched.</p> </li> <li> <p> <code>valid-from</code> - The start date of the
-     * request.</p> </li> <li> <p> <code>valid-until</code> - The end date of the
-     * request.</p> </li> </ul>
+     * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
+     * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
      */
     inline DescribeSpotInstanceRequestsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

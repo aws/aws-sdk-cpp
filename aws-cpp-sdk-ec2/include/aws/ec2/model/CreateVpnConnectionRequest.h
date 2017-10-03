@@ -185,37 +185,27 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the VPN connection requires static routes. If you are
-     * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
+     * <p>The options for the VPN connection.</p>
      */
     inline const VpnConnectionOptionsSpecification& GetOptions() const{ return m_options; }
 
     /**
-     * <p>Indicates whether the VPN connection requires static routes. If you are
-     * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
+     * <p>The options for the VPN connection.</p>
      */
     inline void SetOptions(const VpnConnectionOptionsSpecification& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p>Indicates whether the VPN connection requires static routes. If you are
-     * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
+     * <p>The options for the VPN connection.</p>
      */
     inline void SetOptions(VpnConnectionOptionsSpecification&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
-     * <p>Indicates whether the VPN connection requires static routes. If you are
-     * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
+     * <p>The options for the VPN connection.</p>
      */
     inline CreateVpnConnectionRequest& WithOptions(const VpnConnectionOptionsSpecification& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>Indicates whether the VPN connection requires static routes. If you are
-     * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
+     * <p>The options for the VPN connection.</p>
      */
     inline CreateVpnConnectionRequest& WithOptions(VpnConnectionOptionsSpecification&& value) { SetOptions(std::move(value)); return *this;}
 

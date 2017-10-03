@@ -159,8 +159,8 @@ namespace Model
      * <p> <code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li> <p>
      * <code>network-interface.source-dest-check</code> - Whether the network interface
-     * performs source/destination checking. A value of <code>true</code> means
-     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * performs source/destination checking. A value of <code>true</code> means that
+     * checking is enabled, and <code>false</code> means that checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
@@ -187,20 +187,20 @@ namespace Model
      * reservation ID has a one-to-one relationship with an instance launch request,
      * but can be associated with more than one instance if you launch multiple
      * instances using the same launch request. For example, if you launch one
-     * instance, you'll get one reservation ID. If you launch ten instances using the
-     * same launch request, you'll also get one reservation ID.</p> </li> <li> <p>
+     * instance, you get one reservation ID. If you launch ten instances using the same
+     * launch request, you also get one reservation ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The name of the root device for the instance
      * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
      * <p> <code>root-device-type</code> - The type of root device that the instance
      * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means checking is disabled. The value must be
-     * <code>false</code> for the instance to perform network address translation (NAT)
-     * in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> - The ID
-     * of the Spot instance request.</p> </li> <li> <p> <code>state-reason-code</code>
-     * - The reason code for the state change.</p> </li> <li> <p>
-     * <code>state-reason-message</code> - A message that describes the state
+     * enabled, and <code>false</code> means that checking is disabled. The value must
+     * be <code>false</code> for the instance to perform network address translation
+     * (NAT) in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> -
+     * The ID of the Spot Instance request.</p> </li> <li> <p>
+     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
+     * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
      * instance.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
      * key/value combination of a tag assigned to the resource. Specify the key of the
@@ -211,7 +211,7 @@ namespace Model
      * independent of the <code>tag-value</code> filter. For example, if you use both
      * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
      * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
+     * the tag value X (regardless of the tag's key). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -332,8 +332,8 @@ namespace Model
      * <p> <code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li> <p>
      * <code>network-interface.source-dest-check</code> - Whether the network interface
-     * performs source/destination checking. A value of <code>true</code> means
-     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * performs source/destination checking. A value of <code>true</code> means that
+     * checking is enabled, and <code>false</code> means that checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
@@ -360,20 +360,20 @@ namespace Model
      * reservation ID has a one-to-one relationship with an instance launch request,
      * but can be associated with more than one instance if you launch multiple
      * instances using the same launch request. For example, if you launch one
-     * instance, you'll get one reservation ID. If you launch ten instances using the
-     * same launch request, you'll also get one reservation ID.</p> </li> <li> <p>
+     * instance, you get one reservation ID. If you launch ten instances using the same
+     * launch request, you also get one reservation ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The name of the root device for the instance
      * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
      * <p> <code>root-device-type</code> - The type of root device that the instance
      * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means checking is disabled. The value must be
-     * <code>false</code> for the instance to perform network address translation (NAT)
-     * in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> - The ID
-     * of the Spot instance request.</p> </li> <li> <p> <code>state-reason-code</code>
-     * - The reason code for the state change.</p> </li> <li> <p>
-     * <code>state-reason-message</code> - A message that describes the state
+     * enabled, and <code>false</code> means that checking is disabled. The value must
+     * be <code>false</code> for the instance to perform network address translation
+     * (NAT) in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> -
+     * The ID of the Spot Instance request.</p> </li> <li> <p>
+     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
+     * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
      * instance.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
      * key/value combination of a tag assigned to the resource. Specify the key of the
@@ -384,7 +384,7 @@ namespace Model
      * independent of the <code>tag-value</code> filter. For example, if you use both
      * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
      * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
+     * the tag value X (regardless of the tag's key). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -505,8 +505,8 @@ namespace Model
      * <p> <code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li> <p>
      * <code>network-interface.source-dest-check</code> - Whether the network interface
-     * performs source/destination checking. A value of <code>true</code> means
-     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * performs source/destination checking. A value of <code>true</code> means that
+     * checking is enabled, and <code>false</code> means that checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
@@ -533,20 +533,20 @@ namespace Model
      * reservation ID has a one-to-one relationship with an instance launch request,
      * but can be associated with more than one instance if you launch multiple
      * instances using the same launch request. For example, if you launch one
-     * instance, you'll get one reservation ID. If you launch ten instances using the
-     * same launch request, you'll also get one reservation ID.</p> </li> <li> <p>
+     * instance, you get one reservation ID. If you launch ten instances using the same
+     * launch request, you also get one reservation ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The name of the root device for the instance
      * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
      * <p> <code>root-device-type</code> - The type of root device that the instance
      * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means checking is disabled. The value must be
-     * <code>false</code> for the instance to perform network address translation (NAT)
-     * in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> - The ID
-     * of the Spot instance request.</p> </li> <li> <p> <code>state-reason-code</code>
-     * - The reason code for the state change.</p> </li> <li> <p>
-     * <code>state-reason-message</code> - A message that describes the state
+     * enabled, and <code>false</code> means that checking is disabled. The value must
+     * be <code>false</code> for the instance to perform network address translation
+     * (NAT) in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> -
+     * The ID of the Spot Instance request.</p> </li> <li> <p>
+     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
+     * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
      * instance.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
      * key/value combination of a tag assigned to the resource. Specify the key of the
@@ -557,7 +557,7 @@ namespace Model
      * independent of the <code>tag-value</code> filter. For example, if you use both
      * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
      * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
+     * the tag value X (regardless of the tag's key). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -678,8 +678,8 @@ namespace Model
      * <p> <code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li> <p>
      * <code>network-interface.source-dest-check</code> - Whether the network interface
-     * performs source/destination checking. A value of <code>true</code> means
-     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * performs source/destination checking. A value of <code>true</code> means that
+     * checking is enabled, and <code>false</code> means that checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
@@ -706,20 +706,20 @@ namespace Model
      * reservation ID has a one-to-one relationship with an instance launch request,
      * but can be associated with more than one instance if you launch multiple
      * instances using the same launch request. For example, if you launch one
-     * instance, you'll get one reservation ID. If you launch ten instances using the
-     * same launch request, you'll also get one reservation ID.</p> </li> <li> <p>
+     * instance, you get one reservation ID. If you launch ten instances using the same
+     * launch request, you also get one reservation ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The name of the root device for the instance
      * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
      * <p> <code>root-device-type</code> - The type of root device that the instance
      * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means checking is disabled. The value must be
-     * <code>false</code> for the instance to perform network address translation (NAT)
-     * in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> - The ID
-     * of the Spot instance request.</p> </li> <li> <p> <code>state-reason-code</code>
-     * - The reason code for the state change.</p> </li> <li> <p>
-     * <code>state-reason-message</code> - A message that describes the state
+     * enabled, and <code>false</code> means that checking is disabled. The value must
+     * be <code>false</code> for the instance to perform network address translation
+     * (NAT) in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> -
+     * The ID of the Spot Instance request.</p> </li> <li> <p>
+     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
+     * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
      * instance.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
      * key/value combination of a tag assigned to the resource. Specify the key of the
@@ -730,7 +730,7 @@ namespace Model
      * independent of the <code>tag-value</code> filter. For example, if you use both
      * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
      * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
+     * the tag value X (regardless of the tag's key). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -851,8 +851,8 @@ namespace Model
      * <p> <code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li> <p>
      * <code>network-interface.source-dest-check</code> - Whether the network interface
-     * performs source/destination checking. A value of <code>true</code> means
-     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * performs source/destination checking. A value of <code>true</code> means that
+     * checking is enabled, and <code>false</code> means that checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
@@ -879,20 +879,20 @@ namespace Model
      * reservation ID has a one-to-one relationship with an instance launch request,
      * but can be associated with more than one instance if you launch multiple
      * instances using the same launch request. For example, if you launch one
-     * instance, you'll get one reservation ID. If you launch ten instances using the
-     * same launch request, you'll also get one reservation ID.</p> </li> <li> <p>
+     * instance, you get one reservation ID. If you launch ten instances using the same
+     * launch request, you also get one reservation ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The name of the root device for the instance
      * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
      * <p> <code>root-device-type</code> - The type of root device that the instance
      * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means checking is disabled. The value must be
-     * <code>false</code> for the instance to perform network address translation (NAT)
-     * in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> - The ID
-     * of the Spot instance request.</p> </li> <li> <p> <code>state-reason-code</code>
-     * - The reason code for the state change.</p> </li> <li> <p>
-     * <code>state-reason-message</code> - A message that describes the state
+     * enabled, and <code>false</code> means that checking is disabled. The value must
+     * be <code>false</code> for the instance to perform network address translation
+     * (NAT) in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> -
+     * The ID of the Spot Instance request.</p> </li> <li> <p>
+     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
+     * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
      * instance.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
      * key/value combination of a tag assigned to the resource. Specify the key of the
@@ -903,7 +903,7 @@ namespace Model
      * independent of the <code>tag-value</code> filter. For example, if you use both
      * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
      * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
+     * the tag value X (regardless of the tag's key). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -1024,8 +1024,8 @@ namespace Model
      * <p> <code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li> <p>
      * <code>network-interface.source-dest-check</code> - Whether the network interface
-     * performs source/destination checking. A value of <code>true</code> means
-     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * performs source/destination checking. A value of <code>true</code> means that
+     * checking is enabled, and <code>false</code> means that checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
@@ -1052,20 +1052,20 @@ namespace Model
      * reservation ID has a one-to-one relationship with an instance launch request,
      * but can be associated with more than one instance if you launch multiple
      * instances using the same launch request. For example, if you launch one
-     * instance, you'll get one reservation ID. If you launch ten instances using the
-     * same launch request, you'll also get one reservation ID.</p> </li> <li> <p>
+     * instance, you get one reservation ID. If you launch ten instances using the same
+     * launch request, you also get one reservation ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The name of the root device for the instance
      * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
      * <p> <code>root-device-type</code> - The type of root device that the instance
      * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means checking is disabled. The value must be
-     * <code>false</code> for the instance to perform network address translation (NAT)
-     * in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> - The ID
-     * of the Spot instance request.</p> </li> <li> <p> <code>state-reason-code</code>
-     * - The reason code for the state change.</p> </li> <li> <p>
-     * <code>state-reason-message</code> - A message that describes the state
+     * enabled, and <code>false</code> means that checking is disabled. The value must
+     * be <code>false</code> for the instance to perform network address translation
+     * (NAT) in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> -
+     * The ID of the Spot Instance request.</p> </li> <li> <p>
+     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
+     * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
      * instance.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
      * key/value combination of a tag assigned to the resource. Specify the key of the
@@ -1076,7 +1076,7 @@ namespace Model
      * independent of the <code>tag-value</code> filter. For example, if you use both
      * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
      * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
+     * the tag value X (regardless of the tag's key). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
@@ -1197,8 +1197,8 @@ namespace Model
      * <p> <code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li> <p>
      * <code>network-interface.source-dest-check</code> - Whether the network interface
-     * performs source/destination checking. A value of <code>true</code> means
-     * checking is enabled, and <code>false</code> means checking is disabled. The
+     * performs source/destination checking. A value of <code>true</code> means that
+     * checking is enabled, and <code>false</code> means that checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
@@ -1225,20 +1225,20 @@ namespace Model
      * reservation ID has a one-to-one relationship with an instance launch request,
      * but can be associated with more than one instance if you launch multiple
      * instances using the same launch request. For example, if you launch one
-     * instance, you'll get one reservation ID. If you launch ten instances using the
-     * same launch request, you'll also get one reservation ID.</p> </li> <li> <p>
+     * instance, you get one reservation ID. If you launch ten instances using the same
+     * launch request, you also get one reservation ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The name of the root device for the instance
      * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
      * <p> <code>root-device-type</code> - The type of root device that the instance
      * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means checking is disabled. The value must be
-     * <code>false</code> for the instance to perform network address translation (NAT)
-     * in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> - The ID
-     * of the Spot instance request.</p> </li> <li> <p> <code>state-reason-code</code>
-     * - The reason code for the state change.</p> </li> <li> <p>
-     * <code>state-reason-message</code> - A message that describes the state
+     * enabled, and <code>false</code> means that checking is disabled. The value must
+     * be <code>false</code> for the instance to perform network address translation
+     * (NAT) in your VPC. </p> </li> <li> <p> <code>spot-instance-request-id</code> -
+     * The ID of the Spot Instance request.</p> </li> <li> <p>
+     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
+     * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
      * instance.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
      * key/value combination of a tag assigned to the resource. Specify the key of the
@@ -1249,7 +1249,7 @@ namespace Model
      * independent of the <code>tag-value</code> filter. For example, if you use both
      * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
      * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
+     * the tag value X (regardless of the tag's key). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
      * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>

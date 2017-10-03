@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline GetDocumentResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline GetDocumentResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline GetDocumentResult& WithName(const char* value) { SetName(value); return *this;}
 
@@ -116,37 +116,37 @@ namespace Model
 
 
     /**
-     * <p>The contents of the SSM document.</p>
+     * <p>The contents of the Systems Manager document.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>The contents of the SSM document.</p>
+     * <p>The contents of the Systems Manager document.</p>
      */
     inline void SetContent(const Aws::String& value) { m_content = value; }
 
     /**
-     * <p>The contents of the SSM document.</p>
+     * <p>The contents of the Systems Manager document.</p>
      */
     inline void SetContent(Aws::String&& value) { m_content = std::move(value); }
 
     /**
-     * <p>The contents of the SSM document.</p>
+     * <p>The contents of the Systems Manager document.</p>
      */
     inline void SetContent(const char* value) { m_content.assign(value); }
 
     /**
-     * <p>The contents of the SSM document.</p>
+     * <p>The contents of the Systems Manager document.</p>
      */
     inline GetDocumentResult& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>The contents of the SSM document.</p>
+     * <p>The contents of the Systems Manager document.</p>
      */
     inline GetDocumentResult& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>The contents of the SSM document.</p>
+     * <p>The contents of the Systems Manager document.</p>
      */
     inline GetDocumentResult& WithContent(const char* value) { SetContent(value); return *this;}
 

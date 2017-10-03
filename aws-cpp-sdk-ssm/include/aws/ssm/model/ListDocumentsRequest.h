@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentFilter.h>
+#include <aws/ssm/model/DocumentKeyValuesFilter.h>
 #include <utility>
 
 namespace Aws
@@ -90,6 +91,49 @@ namespace Model
 
 
     /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline const Aws::Vector<DocumentKeyValuesFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline void SetFilters(const Aws::Vector<DocumentKeyValuesFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline void SetFilters(Aws::Vector<DocumentKeyValuesFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline ListDocumentsRequest& WithFilters(const Aws::Vector<DocumentKeyValuesFilter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline ListDocumentsRequest& WithFilters(Aws::Vector<DocumentKeyValuesFilter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline ListDocumentsRequest& AddFilters(const DocumentKeyValuesFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline ListDocumentsRequest& AddFilters(DocumentKeyValuesFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
@@ -157,6 +201,9 @@ namespace Model
 
     Aws::Vector<DocumentFilter> m_documentFilterList;
     bool m_documentFilterListHasBeenSet;
+
+    Aws::Vector<DocumentKeyValuesFilter> m_filters;
+    bool m_filtersHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

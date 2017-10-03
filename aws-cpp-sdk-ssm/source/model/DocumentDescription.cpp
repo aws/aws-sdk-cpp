@@ -46,7 +46,8 @@ DocumentDescription::DocumentDescription() :
     m_documentTypeHasBeenSet(false),
     m_schemaVersionHasBeenSet(false),
     m_latestVersionHasBeenSet(false),
-    m_defaultVersionHasBeenSet(false)
+    m_defaultVersionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ DocumentDescription::DocumentDescription(const JsonValue& jsonValue) :
     m_documentTypeHasBeenSet(false),
     m_schemaVersionHasBeenSet(false),
     m_latestVersionHasBeenSet(false),
-    m_defaultVersionHasBeenSet(false)
+    m_defaultVersionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -186,6 +188,16 @@ DocumentDescription& DocumentDescription::operator =(const JsonValue& jsonValue)
     m_defaultVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -286,6 +298,17 @@ JsonValue DocumentDescription::Jsonize() const
   if(m_defaultVersionHasBeenSet)
   {
    payload.WithString("DefaultVersion", m_defaultVersion);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

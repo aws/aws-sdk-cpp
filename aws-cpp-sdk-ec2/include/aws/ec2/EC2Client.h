@@ -2505,7 +2505,7 @@ namespace Model
         /**
          * <p>Determines whether a product code is associated with an instance. This action
          * can only be used by the owner of the product code. It is useful when a product
-         * code owner needs to verify whether another user's instance is eligible for
+         * code owner must verify whether another user's instance is eligible for
          * support.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">AWS
          * API Reference</a></p>
@@ -2515,7 +2515,7 @@ namespace Model
         /**
          * <p>Determines whether a product code is associated with an instance. This action
          * can only be used by the owner of the product code. It is useful when a product
-         * code owner needs to verify whether another user's instance is eligible for
+         * code owner must verify whether another user's instance is eligible for
          * support.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">AWS
          * API Reference</a></p>
@@ -2527,7 +2527,7 @@ namespace Model
         /**
          * <p>Determines whether a product code is associated with an instance. This action
          * can only be used by the owner of the product code. It is useful when a product
-         * code owner needs to verify whether another user's instance is eligible for
+         * code owner must verify whether another user's instance is eligible for
          * support.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">AWS
          * API Reference</a></p>
@@ -3494,9 +3494,9 @@ namespace Model
         virtual void CreateNetworkInterfacePermissionAsync(const Model::CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a placement group that you launch cluster instances into. You must
-         * give the group a name that's unique within the scope of your account.</p> <p>For
-         * more information about placement groups and cluster instances, see <a
+         * <p>Creates a placement group that you launch cluster instances into. Give the
+         * group a name that's unique within the scope of your account.</p> <p>For more
+         * information about placement groups and cluster instances, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3506,9 +3506,9 @@ namespace Model
         virtual Model::CreatePlacementGroupOutcome CreatePlacementGroup(const Model::CreatePlacementGroupRequest& request) const;
 
         /**
-         * <p>Creates a placement group that you launch cluster instances into. You must
-         * give the group a name that's unique within the scope of your account.</p> <p>For
-         * more information about placement groups and cluster instances, see <a
+         * <p>Creates a placement group that you launch cluster instances into. Give the
+         * group a name that's unique within the scope of your account.</p> <p>For more
+         * information about placement groups and cluster instances, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3520,9 +3520,9 @@ namespace Model
         virtual Model::CreatePlacementGroupOutcomeCallable CreatePlacementGroupCallable(const Model::CreatePlacementGroupRequest& request) const;
 
         /**
-         * <p>Creates a placement group that you launch cluster instances into. You must
-         * give the group a name that's unique within the scope of your account.</p> <p>For
-         * more information about placement groups and cluster instances, see <a
+         * <p>Creates a placement group that you launch cluster instances into. Give the
+         * group a name that's unique within the scope of your account.</p> <p>For more
+         * information about placement groups and cluster instances, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4358,10 +4358,10 @@ namespace Model
          * you must reconfigure your customer gateway with the new information returned
          * from this call.</p> <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
-         * information about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
          * API Reference</a></p>
          */
@@ -4379,10 +4379,10 @@ namespace Model
          * you must reconfigure your customer gateway with the new information returned
          * from this call.</p> <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
-         * information about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
          * API Reference</a></p>
          *
@@ -4402,10 +4402,10 @@ namespace Model
          * you must reconfigure your customer gateway with the new information returned
          * from this call.</p> <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
-         * information about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
          * API Reference</a></p>
          *
@@ -9014,13 +9014,13 @@ namespace Model
          * down. To allow these actions, we provide them through the Amazon EC2 API and
          * command line interface.</p> <p>Instance console output is buffered and posted
          * shortly after instance boot, reboot, and termination. Amazon EC2 preserves the
-         * most recent 64 KB output which is available for at least one hour after the most
-         * recent post.</p> <p>For Linux instances, the instance console output displays
-         * the exact console output that would normally be displayed on a physical monitor
-         * attached to a computer. This output is buffered because the instance produces it
-         * and then posts it to a store where the instance's owner can retrieve it.</p>
-         * <p>For Windows instances, the instance console output includes output from the
-         * EC2Config service.</p><p><h3>See Also:</h3>   <a
+         * most recent 64 KB output, which is available for at least one hour after the
+         * most recent post.</p> <p>For Linux instances, the instance console output
+         * displays the exact console output that would normally be displayed on a physical
+         * monitor attached to a computer. This output is buffered because the instance
+         * produces it and then posts it to a store where the instance's owner can retrieve
+         * it.</p> <p>For Windows instances, the instance console output includes output
+         * from the EC2Config service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
          * API Reference</a></p>
          */
@@ -9033,13 +9033,13 @@ namespace Model
          * down. To allow these actions, we provide them through the Amazon EC2 API and
          * command line interface.</p> <p>Instance console output is buffered and posted
          * shortly after instance boot, reboot, and termination. Amazon EC2 preserves the
-         * most recent 64 KB output which is available for at least one hour after the most
-         * recent post.</p> <p>For Linux instances, the instance console output displays
-         * the exact console output that would normally be displayed on a physical monitor
-         * attached to a computer. This output is buffered because the instance produces it
-         * and then posts it to a store where the instance's owner can retrieve it.</p>
-         * <p>For Windows instances, the instance console output includes output from the
-         * EC2Config service.</p><p><h3>See Also:</h3>   <a
+         * most recent 64 KB output, which is available for at least one hour after the
+         * most recent post.</p> <p>For Linux instances, the instance console output
+         * displays the exact console output that would normally be displayed on a physical
+         * monitor attached to a computer. This output is buffered because the instance
+         * produces it and then posts it to a store where the instance's owner can retrieve
+         * it.</p> <p>For Windows instances, the instance console output includes output
+         * from the EC2Config service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
          * API Reference</a></p>
          *
@@ -9054,13 +9054,13 @@ namespace Model
          * down. To allow these actions, we provide them through the Amazon EC2 API and
          * command line interface.</p> <p>Instance console output is buffered and posted
          * shortly after instance boot, reboot, and termination. Amazon EC2 preserves the
-         * most recent 64 KB output which is available for at least one hour after the most
-         * recent post.</p> <p>For Linux instances, the instance console output displays
-         * the exact console output that would normally be displayed on a physical monitor
-         * attached to a computer. This output is buffered because the instance produces it
-         * and then posts it to a store where the instance's owner can retrieve it.</p>
-         * <p>For Windows instances, the instance console output includes output from the
-         * EC2Config service.</p><p><h3>See Also:</h3>   <a
+         * most recent 64 KB output, which is available for at least one hour after the
+         * most recent post.</p> <p>For Linux instances, the instance console output
+         * displays the exact console output that would normally be displayed on a physical
+         * monitor attached to a computer. This output is buffered because the instance
+         * produces it and then posts it to a store where the instance's owner can retrieve
+         * it.</p> <p>For Windows instances, the instance console output includes output
+         * from the EC2Config service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
          * API Reference</a></p>
          *
@@ -11546,9 +11546,9 @@ namespace Model
          * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>To
          * ensure faster instance launches, break up large requests into smaller batches.
-         * For example, create 5 separate launch requests for 100 instances each instead of
-         * 1 launch request for 500 instances.</p> <p>An instance is ready for you to use
-         * when it's in the <code>running</code> state. You can check the state of your
+         * For example, create five separate launch requests for 100 instances each instead
+         * of one launch request for 500 instances.</p> <p>An instance is ready for you to
+         * use when it's in the <code>running</code> state. You can check the state of your
          * instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes
          * during launch, after launch, or both. For more information, see
          * <a>CreateTags</a> and <a
@@ -11593,9 +11593,9 @@ namespace Model
          * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>To
          * ensure faster instance launches, break up large requests into smaller batches.
-         * For example, create 5 separate launch requests for 100 instances each instead of
-         * 1 launch request for 500 instances.</p> <p>An instance is ready for you to use
-         * when it's in the <code>running</code> state. You can check the state of your
+         * For example, create five separate launch requests for 100 instances each instead
+         * of one launch request for 500 instances.</p> <p>An instance is ready for you to
+         * use when it's in the <code>running</code> state. You can check the state of your
          * instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes
          * during launch, after launch, or both. For more information, see
          * <a>CreateTags</a> and <a
@@ -11642,9 +11642,9 @@ namespace Model
          * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>To
          * ensure faster instance launches, break up large requests into smaller batches.
-         * For example, create 5 separate launch requests for 100 instances each instead of
-         * 1 launch request for 500 instances.</p> <p>An instance is ready for you to use
-         * when it's in the <code>running</code> state. You can check the state of your
+         * For example, create five separate launch requests for 100 instances each instead
+         * of one launch request for 500 instances.</p> <p>An instance is ready for you to
+         * use when it's in the <code>running</code> state. You can check the state of your
          * instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes
          * during launch, after launch, or both. For more information, see
          * <a>CreateTags</a> and <a
@@ -11721,18 +11721,22 @@ namespace Model
         virtual void RunScheduledInstancesAsync(const Model::RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts an Amazon EBS-backed AMI that you've previously stopped.</p>
+         * <p>Starts an Amazon EBS-backed instance that you've previously stopped.</p>
          * <p>Instances that use Amazon EBS volumes as their root devices can be quickly
          * stopped and started. When an instance is stopped, the compute resources are
-         * released and you are not billed for hourly instance usage. However, your root
-         * partition Amazon EBS volume remains, continues to persist your data, and you are
+         * released and you are not billed for instance usage. However, your root partition
+         * Amazon EBS volume remains and continues to persist your data, and you are
          * charged for Amazon EBS volume usage. You can restart your instance at any time.
-         * Each time you transition an instance from stopped to started, Amazon EC2 charges
-         * a full instance hour, even if transitions happen multiple times within a single
-         * hour.</p> <p>Before stopping an instance, make sure it is in a state from which
-         * it can be restarted. Stopping an instance does not preserve data stored in
-         * RAM.</p> <p>Performing this operation on an instance that uses an instance store
-         * as its root device returns an error.</p> <p>For more information, see <a
+         * Every time you start your Windows instance, Amazon EC2 charges you for a full
+         * instance hour. If you stop and restart your Windows instance, a new instance
+         * hour begins and Amazon EC2 charges you for another full instance hour even if
+         * you are still within the same 60-minute period when it was stopped. Every time
+         * you start your Linux instance, Amazon EC2 charges a one-minute minimum for
+         * instance usage, and thereafter charges per second for instance usage.</p>
+         * <p>Before stopping an instance, make sure it is in a state from which it can be
+         * restarted. Stopping an instance does not preserve data stored in RAM.</p>
+         * <p>Performing this operation on an instance that uses an instance store as its
+         * root device returns an error.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -11742,18 +11746,22 @@ namespace Model
         virtual Model::StartInstancesOutcome StartInstances(const Model::StartInstancesRequest& request) const;
 
         /**
-         * <p>Starts an Amazon EBS-backed AMI that you've previously stopped.</p>
+         * <p>Starts an Amazon EBS-backed instance that you've previously stopped.</p>
          * <p>Instances that use Amazon EBS volumes as their root devices can be quickly
          * stopped and started. When an instance is stopped, the compute resources are
-         * released and you are not billed for hourly instance usage. However, your root
-         * partition Amazon EBS volume remains, continues to persist your data, and you are
+         * released and you are not billed for instance usage. However, your root partition
+         * Amazon EBS volume remains and continues to persist your data, and you are
          * charged for Amazon EBS volume usage. You can restart your instance at any time.
-         * Each time you transition an instance from stopped to started, Amazon EC2 charges
-         * a full instance hour, even if transitions happen multiple times within a single
-         * hour.</p> <p>Before stopping an instance, make sure it is in a state from which
-         * it can be restarted. Stopping an instance does not preserve data stored in
-         * RAM.</p> <p>Performing this operation on an instance that uses an instance store
-         * as its root device returns an error.</p> <p>For more information, see <a
+         * Every time you start your Windows instance, Amazon EC2 charges you for a full
+         * instance hour. If you stop and restart your Windows instance, a new instance
+         * hour begins and Amazon EC2 charges you for another full instance hour even if
+         * you are still within the same 60-minute period when it was stopped. Every time
+         * you start your Linux instance, Amazon EC2 charges a one-minute minimum for
+         * instance usage, and thereafter charges per second for instance usage.</p>
+         * <p>Before stopping an instance, make sure it is in a state from which it can be
+         * restarted. Stopping an instance does not preserve data stored in RAM.</p>
+         * <p>Performing this operation on an instance that uses an instance store as its
+         * root device returns an error.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -11765,18 +11773,22 @@ namespace Model
         virtual Model::StartInstancesOutcomeCallable StartInstancesCallable(const Model::StartInstancesRequest& request) const;
 
         /**
-         * <p>Starts an Amazon EBS-backed AMI that you've previously stopped.</p>
+         * <p>Starts an Amazon EBS-backed instance that you've previously stopped.</p>
          * <p>Instances that use Amazon EBS volumes as their root devices can be quickly
          * stopped and started. When an instance is stopped, the compute resources are
-         * released and you are not billed for hourly instance usage. However, your root
-         * partition Amazon EBS volume remains, continues to persist your data, and you are
+         * released and you are not billed for instance usage. However, your root partition
+         * Amazon EBS volume remains and continues to persist your data, and you are
          * charged for Amazon EBS volume usage. You can restart your instance at any time.
-         * Each time you transition an instance from stopped to started, Amazon EC2 charges
-         * a full instance hour, even if transitions happen multiple times within a single
-         * hour.</p> <p>Before stopping an instance, make sure it is in a state from which
-         * it can be restarted. Stopping an instance does not preserve data stored in
-         * RAM.</p> <p>Performing this operation on an instance that uses an instance store
-         * as its root device returns an error.</p> <p>For more information, see <a
+         * Every time you start your Windows instance, Amazon EC2 charges you for a full
+         * instance hour. If you stop and restart your Windows instance, a new instance
+         * hour begins and Amazon EC2 charges you for another full instance hour even if
+         * you are still within the same 60-minute period when it was stopped. Every time
+         * you start your Linux instance, Amazon EC2 charges a one-minute minimum for
+         * instance usage, and thereafter charges per second for instance usage.</p>
+         * <p>Before stopping an instance, make sure it is in a state from which it can be
+         * restarted. Stopping an instance does not preserve data stored in RAM.</p>
+         * <p>Performing this operation on an instance that uses an instance store as its
+         * root device returns an error.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -11788,22 +11800,25 @@ namespace Model
         virtual void StartInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance.</p> <p>We don't charge hourly usage for
-         * a stopped instance, or data transfer fees; however, your root partition Amazon
-         * EBS volume remains, continues to persist your data, and you are charged for
-         * Amazon EBS volume usage. Each time you transition an instance from stopped to
-         * started, Amazon EC2 charges a full instance hour, even if transitions happen
-         * multiple times within a single hour.</p> <p>You can't start or stop Spot
-         * instances, and you can't stop instance store-backed instances.</p> <p>When you
-         * stop an instance, we shut it down. You can restart your instance at any time.
-         * Before stopping an instance, make sure it is in a state from which it can be
-         * restarted. Stopping an instance does not preserve data stored in RAM.</p>
-         * <p>Stopping an instance is different to rebooting or terminating it. For
-         * example, when you stop an instance, the root device and any other devices
-         * attached to the instance persist. When you terminate an instance, the root
-         * device and any other devices attached during the instance launch are
-         * automatically deleted. For more information about the differences between
-         * rebooting, stopping, and terminating instances, see <a
+         * <p>Stops an Amazon EBS-backed instance.</p> <p>We don't charge usage for a
+         * stopped instance, or data transfer fees; however, your root partition Amazon EBS
+         * volume remains and continues to persist your data, and you are charged for
+         * Amazon EBS volume usage. Every time you start your Windows instance, Amazon EC2
+         * charges you for a full instance hour. If you stop and restart your Windows
+         * instance, a new instance hour begins and Amazon EC2 charges you for another full
+         * instance hour even if you are still within the same 60-minute period when it was
+         * stopped. Every time you start your Linux instance, Amazon EC2 charges a
+         * one-minute minimum for instance usage, and thereafter charges per second for
+         * instance usage.</p> <p>You can't start or stop Spot Instances, and you can't
+         * stop instance store-backed instances.</p> <p>When you stop an instance, we shut
+         * it down. You can restart your instance at any time. Before stopping an instance,
+         * make sure it is in a state from which it can be restarted. Stopping an instance
+         * does not preserve data stored in RAM.</p> <p>Stopping an instance is different
+         * to rebooting or terminating it. For example, when you stop an instance, the root
+         * device and any other devices attached to the instance persist. When you
+         * terminate an instance, the root device and any other devices attached during the
+         * instance launch are automatically deleted. For more information about the
+         * differences between rebooting, stopping, and terminating instances, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
          * you stop an instance, we attempt to shut it down forcibly after a short while.
@@ -11819,22 +11834,25 @@ namespace Model
         virtual Model::StopInstancesOutcome StopInstances(const Model::StopInstancesRequest& request) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance.</p> <p>We don't charge hourly usage for
-         * a stopped instance, or data transfer fees; however, your root partition Amazon
-         * EBS volume remains, continues to persist your data, and you are charged for
-         * Amazon EBS volume usage. Each time you transition an instance from stopped to
-         * started, Amazon EC2 charges a full instance hour, even if transitions happen
-         * multiple times within a single hour.</p> <p>You can't start or stop Spot
-         * instances, and you can't stop instance store-backed instances.</p> <p>When you
-         * stop an instance, we shut it down. You can restart your instance at any time.
-         * Before stopping an instance, make sure it is in a state from which it can be
-         * restarted. Stopping an instance does not preserve data stored in RAM.</p>
-         * <p>Stopping an instance is different to rebooting or terminating it. For
-         * example, when you stop an instance, the root device and any other devices
-         * attached to the instance persist. When you terminate an instance, the root
-         * device and any other devices attached during the instance launch are
-         * automatically deleted. For more information about the differences between
-         * rebooting, stopping, and terminating instances, see <a
+         * <p>Stops an Amazon EBS-backed instance.</p> <p>We don't charge usage for a
+         * stopped instance, or data transfer fees; however, your root partition Amazon EBS
+         * volume remains and continues to persist your data, and you are charged for
+         * Amazon EBS volume usage. Every time you start your Windows instance, Amazon EC2
+         * charges you for a full instance hour. If you stop and restart your Windows
+         * instance, a new instance hour begins and Amazon EC2 charges you for another full
+         * instance hour even if you are still within the same 60-minute period when it was
+         * stopped. Every time you start your Linux instance, Amazon EC2 charges a
+         * one-minute minimum for instance usage, and thereafter charges per second for
+         * instance usage.</p> <p>You can't start or stop Spot Instances, and you can't
+         * stop instance store-backed instances.</p> <p>When you stop an instance, we shut
+         * it down. You can restart your instance at any time. Before stopping an instance,
+         * make sure it is in a state from which it can be restarted. Stopping an instance
+         * does not preserve data stored in RAM.</p> <p>Stopping an instance is different
+         * to rebooting or terminating it. For example, when you stop an instance, the root
+         * device and any other devices attached to the instance persist. When you
+         * terminate an instance, the root device and any other devices attached during the
+         * instance launch are automatically deleted. For more information about the
+         * differences between rebooting, stopping, and terminating instances, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
          * you stop an instance, we attempt to shut it down forcibly after a short while.
@@ -11852,22 +11870,25 @@ namespace Model
         virtual Model::StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance.</p> <p>We don't charge hourly usage for
-         * a stopped instance, or data transfer fees; however, your root partition Amazon
-         * EBS volume remains, continues to persist your data, and you are charged for
-         * Amazon EBS volume usage. Each time you transition an instance from stopped to
-         * started, Amazon EC2 charges a full instance hour, even if transitions happen
-         * multiple times within a single hour.</p> <p>You can't start or stop Spot
-         * instances, and you can't stop instance store-backed instances.</p> <p>When you
-         * stop an instance, we shut it down. You can restart your instance at any time.
-         * Before stopping an instance, make sure it is in a state from which it can be
-         * restarted. Stopping an instance does not preserve data stored in RAM.</p>
-         * <p>Stopping an instance is different to rebooting or terminating it. For
-         * example, when you stop an instance, the root device and any other devices
-         * attached to the instance persist. When you terminate an instance, the root
-         * device and any other devices attached during the instance launch are
-         * automatically deleted. For more information about the differences between
-         * rebooting, stopping, and terminating instances, see <a
+         * <p>Stops an Amazon EBS-backed instance.</p> <p>We don't charge usage for a
+         * stopped instance, or data transfer fees; however, your root partition Amazon EBS
+         * volume remains and continues to persist your data, and you are charged for
+         * Amazon EBS volume usage. Every time you start your Windows instance, Amazon EC2
+         * charges you for a full instance hour. If you stop and restart your Windows
+         * instance, a new instance hour begins and Amazon EC2 charges you for another full
+         * instance hour even if you are still within the same 60-minute period when it was
+         * stopped. Every time you start your Linux instance, Amazon EC2 charges a
+         * one-minute minimum for instance usage, and thereafter charges per second for
+         * instance usage.</p> <p>You can't start or stop Spot Instances, and you can't
+         * stop instance store-backed instances.</p> <p>When you stop an instance, we shut
+         * it down. You can restart your instance at any time. Before stopping an instance,
+         * make sure it is in a state from which it can be restarted. Stopping an instance
+         * does not preserve data stored in RAM.</p> <p>Stopping an instance is different
+         * to rebooting or terminating it. For example, when you stop an instance, the root
+         * device and any other devices attached to the instance persist. When you
+         * terminate an instance, the root device and any other devices attached during the
+         * instance launch are automatically deleted. For more information about the
+         * differences between rebooting, stopping, and terminating instances, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
          * you stop an instance, we attempt to shut it down forcibly after a short while.

@@ -567,7 +567,12 @@ namespace Model
    * Systems Manager User Guide</a>.</p> <p>To get started, verify prerequisites and
    * configure managed instances. For more information, see <a
    * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems
-   * Manager Prerequisites</a>.</p>
+   * Manager Prerequisites</a>.</p> <p>For information about other API actions you
+   * can perform on Amazon EC2 instances, see the <a
+   * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API
+   * Reference</a>. For information about how to use a Query API, see <a
+   * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making
+   * API Requests</a>. </p>
    */
   class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient
   {
@@ -600,20 +605,20 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you assign to your managed instances, Maintenance Windows, or
-         * Parameter Store parameters. Tags enable you to categorize your resources in
-         * different ways, for example, by purpose, owner, or environment. Each tag
-         * consists of a key and an optional value, both of which you define. For example,
-         * you could define a set of tags for your account's managed instances that helps
-         * you track each instance's owner and stack level. For example: Key=Owner and
-         * Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
-         * Pre-Production, or Test.</p> <p>Each resource can have a maximum of 10 tags.
-         * </p> <p>We recommend that you devise a set of tag keys that meets your needs for
-         * each resource type. Using a consistent set of tag keys makes it easier for you
-         * to manage your resources. You can search and filter the resources based on the
-         * tags you add. Tags don't have any semantic meaning to Amazon EC2 and are
-         * interpreted strictly as a string of characters. </p> <p>For more information
-         * about tags, see <a
+         * metadata that you can assign to your documents, managed instances, Maintenance
+         * Windows, Parameter Store parameters, and patch baselines. Tags enable you to
+         * categorize your resources in different ways, for example, by purpose, owner, or
+         * environment. Each tag consists of a key and an optional value, both of which you
+         * define. For example, you could define a set of tags for your account's managed
+         * instances that helps you track each instance's owner and stack level. For
+         * example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
+         * Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a
+         * maximum of 10 tags. </p> <p>We recommend that you devise a set of tag keys that
+         * meets your needs for each resource type. Using a consistent set of tag keys
+         * makes it easier for you to manage your resources. You can search and filter the
+         * resources based on the tags you add. Tags don't have any semantic meaning to
+         * Amazon EC2 and are interpreted strictly as a string of characters. </p> <p>For
+         * more information about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -624,20 +629,20 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you assign to your managed instances, Maintenance Windows, or
-         * Parameter Store parameters. Tags enable you to categorize your resources in
-         * different ways, for example, by purpose, owner, or environment. Each tag
-         * consists of a key and an optional value, both of which you define. For example,
-         * you could define a set of tags for your account's managed instances that helps
-         * you track each instance's owner and stack level. For example: Key=Owner and
-         * Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
-         * Pre-Production, or Test.</p> <p>Each resource can have a maximum of 10 tags.
-         * </p> <p>We recommend that you devise a set of tag keys that meets your needs for
-         * each resource type. Using a consistent set of tag keys makes it easier for you
-         * to manage your resources. You can search and filter the resources based on the
-         * tags you add. Tags don't have any semantic meaning to Amazon EC2 and are
-         * interpreted strictly as a string of characters. </p> <p>For more information
-         * about tags, see <a
+         * metadata that you can assign to your documents, managed instances, Maintenance
+         * Windows, Parameter Store parameters, and patch baselines. Tags enable you to
+         * categorize your resources in different ways, for example, by purpose, owner, or
+         * environment. Each tag consists of a key and an optional value, both of which you
+         * define. For example, you could define a set of tags for your account's managed
+         * instances that helps you track each instance's owner and stack level. For
+         * example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
+         * Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a
+         * maximum of 10 tags. </p> <p>We recommend that you devise a set of tag keys that
+         * meets your needs for each resource type. Using a consistent set of tag keys
+         * makes it easier for you to manage your resources. You can search and filter the
+         * resources based on the tags you add. Tags don't have any semantic meaning to
+         * Amazon EC2 and are interpreted strictly as a string of characters. </p> <p>For
+         * more information about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -650,20 +655,20 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you assign to your managed instances, Maintenance Windows, or
-         * Parameter Store parameters. Tags enable you to categorize your resources in
-         * different ways, for example, by purpose, owner, or environment. Each tag
-         * consists of a key and an optional value, both of which you define. For example,
-         * you could define a set of tags for your account's managed instances that helps
-         * you track each instance's owner and stack level. For example: Key=Owner and
-         * Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
-         * Pre-Production, or Test.</p> <p>Each resource can have a maximum of 10 tags.
-         * </p> <p>We recommend that you devise a set of tag keys that meets your needs for
-         * each resource type. Using a consistent set of tag keys makes it easier for you
-         * to manage your resources. You can search and filter the resources based on the
-         * tags you add. Tags don't have any semantic meaning to Amazon EC2 and are
-         * interpreted strictly as a string of characters. </p> <p>For more information
-         * about tags, see <a
+         * metadata that you can assign to your documents, managed instances, Maintenance
+         * Windows, Parameter Store parameters, and patch baselines. Tags enable you to
+         * categorize your resources in different ways, for example, by purpose, owner, or
+         * environment. Each tag consists of a key and an optional value, both of which you
+         * define. For example, you could define a set of tags for your account's managed
+         * instances that helps you track each instance's owner and stack level. For
+         * example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
+         * Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a
+         * maximum of 10 tags. </p> <p>We recommend that you devise a set of tag keys that
+         * meets your needs for each resource type. Using a consistent set of tag keys
+         * makes it easier for you to manage your resources. You can search and filter the
+         * resources based on the tags you add. Tags don't have any semantic meaning to
+         * Amazon EC2 and are interpreted strictly as a string of characters. </p> <p>For
+         * more information about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1443,14 +1448,16 @@ namespace Model
         virtual void DescribeAvailablePatchesAsync(const Model::DescribeAvailablePatchesRequest& request, const DescribeAvailablePatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified SSM document.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified Systems Manager document.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDocumentOutcome DescribeDocument(const Model::DescribeDocumentRequest& request) const;
 
         /**
-         * <p>Describes the specified SSM document.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified Systems Manager document.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">AWS
          * API Reference</a></p>
          *
@@ -1459,7 +1466,8 @@ namespace Model
         virtual Model::DescribeDocumentOutcomeCallable DescribeDocumentCallable(const Model::DescribeDocumentRequest& request) const;
 
         /**
-         * <p>Describes the specified SSM document.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified Systems Manager document.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">AWS
          * API Reference</a></p>
          *
@@ -2135,25 +2143,28 @@ namespace Model
         virtual void GetDeployablePatchSnapshotForInstanceAsync(const Model::GetDeployablePatchSnapshotForInstanceRequest& request, const GetDeployablePatchSnapshotForInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the contents of the specified SSM document.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS
-         * API Reference</a></p>
+         * <p>Gets the contents of the specified Systems Manager document.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS API
+         * Reference</a></p>
          */
         virtual Model::GetDocumentOutcome GetDocument(const Model::GetDocumentRequest& request) const;
 
         /**
-         * <p>Gets the contents of the specified SSM document.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS
-         * API Reference</a></p>
+         * <p>Gets the contents of the specified Systems Manager document.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDocumentOutcomeCallable GetDocumentCallable(const Model::GetDocumentRequest& request) const;
 
         /**
-         * <p>Gets the contents of the specified SSM document.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS
-         * API Reference</a></p>
+         * <p>Gets the contents of the specified Systems Manager document.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2756,14 +2767,16 @@ namespace Model
         virtual void ListDocumentVersionsAsync(const Model::ListDocumentVersionsRequest& request, const ListDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your SSM documents.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your Systems Manager documents.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDocumentsOutcome ListDocuments(const Model::ListDocumentsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your SSM documents.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your Systems Manager documents.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
          * API Reference</a></p>
          *
@@ -2772,7 +2785,8 @@ namespace Model
         virtual Model::ListDocumentsOutcomeCallable ListDocumentsCallable(const Model::ListDocumentsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your SSM documents.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your Systems Manager documents.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
          * API Reference</a></p>
          *

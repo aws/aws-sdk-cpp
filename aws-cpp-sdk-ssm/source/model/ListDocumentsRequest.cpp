@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 ListDocumentsRequest::ListDocumentsRequest() : 
     m_documentFilterListHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -42,6 +43,17 @@ Aws::String ListDocumentsRequest::SerializePayload() const
      documentFilterListJsonList[documentFilterListIndex].AsObject(m_documentFilterList[documentFilterListIndex].Jsonize());
    }
    payload.WithArray("DocumentFilterList", std::move(documentFilterListJsonList));
+
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+   Array<JsonValue> filtersJsonList(m_filters.size());
+   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+   {
+     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+   }
+   payload.WithArray("Filters", std::move(filtersJsonList));
 
   }
 

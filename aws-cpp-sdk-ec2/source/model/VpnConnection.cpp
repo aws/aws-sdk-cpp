@@ -33,6 +33,7 @@ namespace Model
 VpnConnection::VpnConnection() : 
     m_customerGatewayConfigurationHasBeenSet(false),
     m_customerGatewayIdHasBeenSet(false),
+    m_categoryHasBeenSet(false),
     m_state(VpnState::NOT_SET),
     m_stateHasBeenSet(false),
     m_type(GatewayType::NOT_SET),
@@ -49,6 +50,7 @@ VpnConnection::VpnConnection() :
 VpnConnection::VpnConnection(const XmlNode& xmlNode) : 
     m_customerGatewayConfigurationHasBeenSet(false),
     m_customerGatewayIdHasBeenSet(false),
+    m_categoryHasBeenSet(false),
     m_state(VpnState::NOT_SET),
     m_stateHasBeenSet(false),
     m_type(GatewayType::NOT_SET),
@@ -80,6 +82,12 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     {
       m_customerGatewayId = StringUtils::Trim(customerGatewayIdNode.GetText().c_str());
       m_customerGatewayIdHasBeenSet = true;
+    }
+    XmlNode categoryNode = resultNode.FirstChild("category");
+    if(!categoryNode.IsNull())
+    {
+      m_category = StringUtils::Trim(categoryNode.GetText().c_str());
+      m_categoryHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
@@ -164,6 +172,11 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
   }
 
+  if(m_categoryHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Category=" << StringUtils::URLEncode(m_category.c_str()) << "&";
+  }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << VpnStateMapper::GetNameForVpnState(m_state) << "&";
@@ -235,6 +248,10 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_customerGatewayIdHasBeenSet)
   {
       oStream << location << ".CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
+  }
+  if(m_categoryHasBeenSet)
+  {
+      oStream << location << ".Category=" << StringUtils::URLEncode(m_category.c_str()) << "&";
   }
   if(m_stateHasBeenSet)
   {

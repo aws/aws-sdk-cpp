@@ -58,11 +58,11 @@ GetHostReservationPurchasePreviewResponse& GetHostReservationPurchasePreviewResp
     XmlNode purchaseNode = resultNode.FirstChild("purchase");
     if(!purchaseNode.IsNull())
     {
-      XmlNode purchaseMember = purchaseNode.FirstChild("member");
+      XmlNode purchaseMember = purchaseNode.FirstChild("item");
       while(!purchaseMember.IsNull())
       {
         m_purchase.push_back(purchaseMember);
-        purchaseMember = purchaseMember.NextNode("member");
+        purchaseMember = purchaseMember.NextNode("item");
       }
 
     }

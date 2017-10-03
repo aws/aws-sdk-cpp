@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/PlatformType.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the name of an SSM document.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the name of a Systems Manager document.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentIdentifier">AWS
    * API Reference</a></p>
    */
@@ -50,73 +52,73 @@ namespace Model
 
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline DocumentIdentifier& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline DocumentIdentifier& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the Systems Manager document.</p>
      */
     inline DocumentIdentifier& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The AWS user account of the person who created the document.</p>
+     * <p>The AWS user account that created the document.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The AWS user account of the person who created the document.</p>
+     * <p>The AWS user account that created the document.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The AWS user account of the person who created the document.</p>
+     * <p>The AWS user account that created the document.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The AWS user account of the person who created the document.</p>
+     * <p>The AWS user account that created the document.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The AWS user account of the person who created the document.</p>
+     * <p>The AWS user account that created the document.</p>
      */
     inline DocumentIdentifier& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The AWS user account of the person who created the document.</p>
+     * <p>The AWS user account that created the document.</p>
      */
     inline DocumentIdentifier& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS user account of the person who created the document.</p>
+     * <p>The AWS user account that created the document.</p>
      */
     inline DocumentIdentifier& WithOwner(const char* value) { SetOwner(value); return *this;}
 
@@ -254,6 +256,42 @@ namespace Model
      */
     inline DocumentIdentifier& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
 
+
+    /**
+     * <p>The tags, or metadata, that have been applied to the document.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags, or metadata, that have been applied to the document.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags, or metadata, that have been applied to the document.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags, or metadata, that have been applied to the document.</p>
+     */
+    inline DocumentIdentifier& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags, or metadata, that have been applied to the document.</p>
+     */
+    inline DocumentIdentifier& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags, or metadata, that have been applied to the document.</p>
+     */
+    inline DocumentIdentifier& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags, or metadata, that have been applied to the document.</p>
+     */
+    inline DocumentIdentifier& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -273,6 +311,9 @@ namespace Model
 
     Aws::String m_schemaVersion;
     bool m_schemaVersionHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

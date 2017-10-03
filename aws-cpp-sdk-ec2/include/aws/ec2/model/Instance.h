@@ -373,9 +373,9 @@ namespace Model
      * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
      * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
-     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
-     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
+     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
+     * are not using the Amazon-provided DNS server in your VPC, your custom domain
      * name servers must resolve the hostname as appropriate.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
@@ -384,9 +384,9 @@ namespace Model
      * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
      * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
-     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
-     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
+     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
+     * are not using the Amazon-provided DNS server in your VPC, your custom domain
      * name servers must resolve the hostname as appropriate.</p>
      */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
@@ -395,9 +395,9 @@ namespace Model
      * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
      * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
-     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
-     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
+     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
+     * are not using the Amazon-provided DNS server in your VPC, your custom domain
      * name servers must resolve the hostname as appropriate.</p>
      */
     inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::move(value); }
@@ -406,9 +406,9 @@ namespace Model
      * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
      * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
-     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
-     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
+     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
+     * are not using the Amazon-provided DNS server in your VPC, your custom domain
      * name servers must resolve the hostname as appropriate.</p>
      */
     inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
@@ -417,9 +417,9 @@ namespace Model
      * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
      * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
-     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
-     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
+     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
+     * are not using the Amazon-provided DNS server in your VPC, your custom domain
      * name servers must resolve the hostname as appropriate.</p>
      */
     inline Instance& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
@@ -428,9 +428,9 @@ namespace Model
      * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
      * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
-     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
-     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
+     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
+     * are not using the Amazon-provided DNS server in your VPC, your custom domain
      * name servers must resolve the hostname as appropriate.</p>
      */
     inline Instance& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(std::move(value)); return *this;}
@@ -439,9 +439,9 @@ namespace Model
      * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
      * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
-     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
-     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
+     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
+     * are not using the Amazon-provided DNS server in your VPC, your custom domain
      * name servers must resolve the hostname as appropriate.</p>
      */
     inline Instance& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
@@ -888,29 +888,29 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal I/O performance. This optimization isn't available with all
-     * instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an
+     * EBS Optimized instance.</p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal I/O performance. This optimization isn't available with all
-     * instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an
+     * EBS Optimized instance.</p>
      */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal I/O performance. This optimization isn't available with all
-     * instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an
+     * EBS Optimized instance.</p>
      */
     inline Instance& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
@@ -984,27 +984,27 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
+     * <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
      */
     inline const InstanceLifecycleType& GetInstanceLifecycle() const{ return m_instanceLifecycle; }
 
     /**
-     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
+     * <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
      */
     inline void SetInstanceLifecycle(const InstanceLifecycleType& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = value; }
 
     /**
-     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
+     * <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
      */
     inline void SetInstanceLifecycle(InstanceLifecycleType&& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = std::move(value); }
 
     /**
-     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
+     * <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
      */
     inline Instance& WithInstanceLifecycle(const InstanceLifecycleType& value) { SetInstanceLifecycle(value); return *this;}
 
     /**
-     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
+     * <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
      */
     inline Instance& WithInstanceLifecycle(InstanceLifecycleType&& value) { SetInstanceLifecycle(std::move(value)); return *this;}
 
@@ -1194,9 +1194,9 @@ namespace Model
     /**
      * <p>Specifies whether to enable an instance launched in a VPC to perform NAT.
      * This controls whether source/destination checking is enabled on the instance. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the
-     * instance to perform NAT. For more information, see <a
+     * value of <code>true</code> means that checking is enabled, and
+     * <code>false</code> means that checking is disabled. The value must be
+     * <code>false</code> for the instance to perform NAT. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
@@ -1205,9 +1205,9 @@ namespace Model
     /**
      * <p>Specifies whether to enable an instance launched in a VPC to perform NAT.
      * This controls whether source/destination checking is enabled on the instance. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the
-     * instance to perform NAT. For more information, see <a
+     * value of <code>true</code> means that checking is enabled, and
+     * <code>false</code> means that checking is disabled. The value must be
+     * <code>false</code> for the instance to perform NAT. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
@@ -1216,9 +1216,9 @@ namespace Model
     /**
      * <p>Specifies whether to enable an instance launched in a VPC to perform NAT.
      * This controls whether source/destination checking is enabled on the instance. A
-     * value of <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. The value must be <code>false</code> for the
-     * instance to perform NAT. For more information, see <a
+     * value of <code>true</code> means that checking is enabled, and
+     * <code>false</code> means that checking is disabled. The value must be
+     * <code>false</code> for the instance to perform NAT. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
@@ -1226,37 +1226,37 @@ namespace Model
 
 
     /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
+     * <p>If the request is a Spot Instance request, the ID of the request.</p>
      */
     inline const Aws::String& GetSpotInstanceRequestId() const{ return m_spotInstanceRequestId; }
 
     /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
+     * <p>If the request is a Spot Instance request, the ID of the request.</p>
      */
     inline void SetSpotInstanceRequestId(const Aws::String& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
+     * <p>If the request is a Spot Instance request, the ID of the request.</p>
      */
     inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = std::move(value); }
 
     /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
+     * <p>If the request is a Spot Instance request, the ID of the request.</p>
      */
     inline void SetSpotInstanceRequestId(const char* value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId.assign(value); }
 
     /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
+     * <p>If the request is a Spot Instance request, the ID of the request.</p>
      */
     inline Instance& WithSpotInstanceRequestId(const Aws::String& value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
+     * <p>If the request is a Spot Instance request, the ID of the request.</p>
      */
     inline Instance& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>If the request is a Spot instance request, the ID of the request.</p>
+     * <p>If the request is a Spot Instance request, the ID of the request.</p>
      */
     inline Instance& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 

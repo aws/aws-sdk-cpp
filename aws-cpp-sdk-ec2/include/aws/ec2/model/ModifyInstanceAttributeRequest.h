@@ -59,40 +59,40 @@ namespace Model
     /**
      * <p>Specifies whether source/destination checking is enabled. A value of
      * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT.</p>
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
      */
     inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
 
     /**
      * <p>Specifies whether source/destination checking is enabled. A value of
      * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT.</p>
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
      */
     inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
 
     /**
      * <p>Specifies whether source/destination checking is enabled. A value of
      * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT.</p>
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
      */
     inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::move(value); }
 
     /**
      * <p>Specifies whether source/destination checking is enabled. A value of
      * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT.</p>
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
      */
     inline ModifyInstanceAttributeRequest& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
 
     /**
      * <p>Specifies whether source/destination checking is enabled. A value of
      * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * checking is disabled. This value must be <code>false</code> for a NAT instance
-     * to perform NAT.</p>
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
      */
     inline ModifyInstanceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
@@ -277,47 +277,47 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
+     * <p>Specifies whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This optimization
+     * isn't available with all instance types. Additional usage charges apply when
+     * using an EBS Optimized instance.</p>
      */
     inline const AttributeBooleanValue& GetEbsOptimized() const{ return m_ebsOptimized; }
 
     /**
-     * <p>Specifies whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
+     * <p>Specifies whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This optimization
+     * isn't available with all instance types. Additional usage charges apply when
+     * using an EBS Optimized instance.</p>
      */
     inline void SetEbsOptimized(const AttributeBooleanValue& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
-     * <p>Specifies whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
+     * <p>Specifies whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This optimization
+     * isn't available with all instance types. Additional usage charges apply when
+     * using an EBS Optimized instance.</p>
      */
     inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = std::move(value); }
 
     /**
-     * <p>Specifies whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
+     * <p>Specifies whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This optimization
+     * isn't available with all instance types. Additional usage charges apply when
+     * using an EBS Optimized instance.</p>
      */
     inline ModifyInstanceAttributeRequest& WithEbsOptimized(const AttributeBooleanValue& value) { SetEbsOptimized(value); return *this;}
 
     /**
-     * <p>Specifies whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p>
+     * <p>Specifies whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This optimization
+     * isn't available with all instance types. Additional usage charges apply when
+     * using an EBS Optimized instance.</p>
      */
     inline ModifyInstanceAttributeRequest& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
 
@@ -648,36 +648,36 @@ namespace Model
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
      */
     inline const BlobAttributeValue& GetUserData() const{ return m_userData; }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
      */
     inline void SetUserData(const BlobAttributeValue& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
      */
     inline void SetUserData(BlobAttributeValue&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(const BlobAttributeValue& value) { SetUserData(value); return *this;}
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(BlobAttributeValue&& value) { SetUserData(std::move(value)); return *this;}
 

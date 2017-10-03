@@ -764,8 +764,8 @@ namespace Model
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
@@ -775,8 +775,8 @@ namespace Model
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
@@ -786,8 +786,8 @@ namespace Model
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
@@ -797,8 +797,8 @@ namespace Model
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
@@ -808,8 +808,8 @@ namespace Model
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text.</p>
      */
     inline RunInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
@@ -819,8 +819,8 @@ namespace Model
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text.</p>
      */
     inline RunInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
@@ -830,8 +830,8 @@ namespace Model
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text.</p>
      */
     inline RunInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -989,29 +989,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code> </p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal Amazon EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage charges
+     * apply when using an EBS-optimized instance.</p> <p>Default: <code>false</code>
+     * </p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code> </p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal Amazon EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage charges
+     * apply when using an EBS-optimized instance.</p> <p>Default: <code>false</code>
+     * </p>
      */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
-     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
-     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
-     * to provide optimal EBS I/O performance. This optimization isn't available with
-     * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code> </p>
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal Amazon EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage charges
+     * apply when using an EBS-optimized instance.</p> <p>Default: <code>false</code>
+     * </p>
      */
     inline RunInstancesRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
