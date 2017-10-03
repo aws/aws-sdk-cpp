@@ -216,7 +216,7 @@ Aws::String StringUtils::URLDecode(const char* safe)
 Aws::String StringUtils::LTrim(const char* source)
 {
     Aws::String copy(source);
-    copy.erase(copy.begin(), std::find_if(copy.begin(), copy.end(), std::not1(std::ptr_fun<int, int>(::isspace))));
+    copy.erase(copy.begin(), std::find_if(copy.begin(), copy.end(), [](const char &a)->int {return (::isspace(static_cast<unsigned char>(a)) == 0); }));
     return copy;
 }
 
@@ -224,7 +224,7 @@ Aws::String StringUtils::LTrim(const char* source)
 Aws::String StringUtils::RTrim(const char* source)
 {
     Aws::String copy(source);
-    copy.erase(std::find_if(copy.rbegin(), copy.rend(), std::not1(std::ptr_fun<int, int>(::isspace))).base(), copy.end());
+    copy.erase(std::find_if(copy.rbegin(), copy.rend(), [](const char &a)->int {return (::isspace(static_cast<unsigned char>(a)) == 0); }).base(), copy.end());
     return copy;
 }
 
