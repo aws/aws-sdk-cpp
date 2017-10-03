@@ -133,6 +133,8 @@ namespace FileSystem
          */
         Directory(const Aws::String& path, const Aws::String& relativePath);        
 
+        virtual ~Directory() = default;
+
         /**
          * If this directory is valid for use.
          */
