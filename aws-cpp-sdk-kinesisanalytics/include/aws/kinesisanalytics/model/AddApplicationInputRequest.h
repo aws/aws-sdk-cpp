@@ -114,27 +114,27 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The <a>Input</a> to add.</p>
      */
     inline const Input& GetInput() const{ return m_input; }
 
     /**
-     * <p/>
+     * <p>The <a>Input</a> to add.</p>
      */
     inline void SetInput(const Input& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p/>
+     * <p>The <a>Input</a> to add.</p>
      */
     inline void SetInput(Input&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The <a>Input</a> to add.</p>
      */
     inline AddApplicationInputRequest& WithInput(const Input& value) { SetInput(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The <a>Input</a> to add.</p>
      */
     inline AddApplicationInputRequest& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
 

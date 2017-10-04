@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes updates for the application's input schema. </p><p><h3>See
+   * <p>Describes updates for the application's input schema.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputSchemaUpdate">AWS
    * API Reference</a></p>

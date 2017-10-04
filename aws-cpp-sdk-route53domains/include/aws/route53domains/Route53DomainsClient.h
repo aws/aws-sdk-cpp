@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53domains/model/CheckDomainAvailabilityResult.h>
+#include <aws/route53domains/model/CheckDomainTransferabilityResult.h>
 #include <aws/route53domains/model/DeleteTagsForDomainResult.h>
 #include <aws/route53domains/model/DisableDomainAutoRenewResult.h>
 #include <aws/route53domains/model/DisableDomainTransferLockResult.h>
@@ -90,6 +91,7 @@ namespace Route53Domains
 namespace Model
 {
         class CheckDomainAvailabilityRequest;
+        class CheckDomainTransferabilityRequest;
         class DeleteTagsForDomainRequest;
         class DisableDomainAutoRenewRequest;
         class DisableDomainTransferLockRequest;
@@ -114,6 +116,7 @@ namespace Model
         class ViewBillingRequest;
 
         typedef Aws::Utils::Outcome<CheckDomainAvailabilityResult, Aws::Client::AWSError<Route53DomainsErrors>> CheckDomainAvailabilityOutcome;
+        typedef Aws::Utils::Outcome<CheckDomainTransferabilityResult, Aws::Client::AWSError<Route53DomainsErrors>> CheckDomainTransferabilityOutcome;
         typedef Aws::Utils::Outcome<DeleteTagsForDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> DeleteTagsForDomainOutcome;
         typedef Aws::Utils::Outcome<DisableDomainAutoRenewResult, Aws::Client::AWSError<Route53DomainsErrors>> DisableDomainAutoRenewOutcome;
         typedef Aws::Utils::Outcome<DisableDomainTransferLockResult, Aws::Client::AWSError<Route53DomainsErrors>> DisableDomainTransferLockOutcome;
@@ -138,6 +141,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ViewBillingResult, Aws::Client::AWSError<Route53DomainsErrors>> ViewBillingOutcome;
 
         typedef std::future<CheckDomainAvailabilityOutcome> CheckDomainAvailabilityOutcomeCallable;
+        typedef std::future<CheckDomainTransferabilityOutcome> CheckDomainTransferabilityOutcomeCallable;
         typedef std::future<DeleteTagsForDomainOutcome> DeleteTagsForDomainOutcomeCallable;
         typedef std::future<DisableDomainAutoRenewOutcome> DisableDomainAutoRenewOutcomeCallable;
         typedef std::future<DisableDomainTransferLockOutcome> DisableDomainTransferLockOutcomeCallable;
@@ -165,6 +169,7 @@ namespace Model
   class Route53DomainsClient;
 
     typedef std::function<void(const Route53DomainsClient*, const Model::CheckDomainAvailabilityRequest&, const Model::CheckDomainAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckDomainAvailabilityResponseReceivedHandler;
+    typedef std::function<void(const Route53DomainsClient*, const Model::CheckDomainTransferabilityRequest&, const Model::CheckDomainTransferabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckDomainTransferabilityResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::DeleteTagsForDomainRequest&, const Model::DeleteTagsForDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsForDomainResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::DisableDomainAutoRenewRequest&, const Model::DisableDomainAutoRenewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableDomainAutoRenewResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::DisableDomainTransferLockRequest&, const Model::DisableDomainTransferLockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableDomainTransferLockResponseReceivedHandler;
@@ -253,9 +258,37 @@ namespace Model
         virtual void CheckDomainAvailabilityAsync(const Model::CheckDomainAvailabilityRequest& request, const CheckDomainAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Checks whether a domain name can be transferred to Amazon Route 53.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CheckDomainTransferabilityOutcome CheckDomainTransferability(const Model::CheckDomainTransferabilityRequest& request) const;
+
+        /**
+         * <p>Checks whether a domain name can be transferred to Amazon Route 53.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CheckDomainTransferabilityOutcomeCallable CheckDomainTransferabilityCallable(const Model::CheckDomainTransferabilityRequest& request) const;
+
+        /**
+         * <p>Checks whether a domain name can be transferred to Amazon Route 53.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CheckDomainTransferabilityAsync(const Model::CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This operation deletes the specified tags for a domain.</p> <p>All tag
-         * operations are eventually consistent; subsequent operations may not immediately
-         * represent all issued operations.</p><p><h3>See Also:</h3>   <a
+         * operations are eventually consistent; subsequent operations might not
+         * immediately represent all issued operations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">AWS
          * API Reference</a></p>
          */
@@ -263,8 +296,8 @@ namespace Model
 
         /**
          * <p>This operation deletes the specified tags for a domain.</p> <p>All tag
-         * operations are eventually consistent; subsequent operations may not immediately
-         * represent all issued operations.</p><p><h3>See Also:</h3>   <a
+         * operations are eventually consistent; subsequent operations might not
+         * immediately represent all issued operations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">AWS
          * API Reference</a></p>
          *
@@ -274,8 +307,8 @@ namespace Model
 
         /**
          * <p>This operation deletes the specified tags for a domain.</p> <p>All tag
-         * operations are eventually consistent; subsequent operations may not immediately
-         * represent all issued operations.</p><p><h3>See Also:</h3>   <a
+         * operations are eventually consistent; subsequent operations might not
+         * immediately represent all issued operations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">AWS
          * API Reference</a></p>
          *
@@ -635,7 +668,7 @@ namespace Model
         /**
          * <p>This operation returns all of the tags that are associated with the specified
          * domain.</p> <p>All tag operations are eventually consistent; subsequent
-         * operations may not immediately represent all issued operations.</p><p><h3>See
+         * operations might not immediately represent all issued operations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">AWS
          * API Reference</a></p>
@@ -645,7 +678,7 @@ namespace Model
         /**
          * <p>This operation returns all of the tags that are associated with the specified
          * domain.</p> <p>All tag operations are eventually consistent; subsequent
-         * operations may not immediately represent all issued operations.</p><p><h3>See
+         * operations might not immediately represent all issued operations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">AWS
          * API Reference</a></p>
@@ -657,7 +690,7 @@ namespace Model
         /**
          * <p>This operation returns all of the tags that are associated with the specified
          * domain.</p> <p>All tag operations are eventually consistent; subsequent
-         * operations may not immediately represent all issued operations.</p><p><h3>See
+         * operations might not immediately represent all issued operations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">AWS
          * API Reference</a></p>
@@ -1075,8 +1108,8 @@ namespace Model
 
         /**
          * <p>This operation adds or updates tags for a specified domain.</p> <p>All tag
-         * operations are eventually consistent; subsequent operations may not immediately
-         * represent all issued operations.</p><p><h3>See Also:</h3>   <a
+         * operations are eventually consistent; subsequent operations might not
+         * immediately represent all issued operations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">AWS
          * API Reference</a></p>
          */
@@ -1084,8 +1117,8 @@ namespace Model
 
         /**
          * <p>This operation adds or updates tags for a specified domain.</p> <p>All tag
-         * operations are eventually consistent; subsequent operations may not immediately
-         * represent all issued operations.</p><p><h3>See Also:</h3>   <a
+         * operations are eventually consistent; subsequent operations might not
+         * immediately represent all issued operations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">AWS
          * API Reference</a></p>
          *
@@ -1095,8 +1128,8 @@ namespace Model
 
         /**
          * <p>This operation adds or updates tags for a specified domain.</p> <p>All tag
-         * operations are eventually consistent; subsequent operations may not immediately
-         * represent all issued operations.</p><p><h3>See Also:</h3>   <a
+         * operations are eventually consistent; subsequent operations might not
+         * immediately represent all issued operations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">AWS
          * API Reference</a></p>
          *
@@ -1138,6 +1171,7 @@ namespace Model
 
         /**Async helpers**/
         void CheckDomainAvailabilityAsyncHelper(const Model::CheckDomainAvailabilityRequest& request, const CheckDomainAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CheckDomainTransferabilityAsyncHelper(const Model::CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsForDomainAsyncHelper(const Model::DeleteTagsForDomainRequest& request, const DeleteTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableDomainAutoRenewAsyncHelper(const Model::DisableDomainAutoRenewRequest& request, const DisableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableDomainTransferLockAsyncHelper(const Model::DisableDomainTransferLockRequest& request, const DisableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

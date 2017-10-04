@@ -31,6 +31,7 @@ namespace Model
 InputUpdate::InputUpdate() : 
     m_inputIdHasBeenSet(false),
     m_namePrefixUpdateHasBeenSet(false),
+    m_inputProcessingConfigurationUpdateHasBeenSet(false),
     m_kinesisStreamsInputUpdateHasBeenSet(false),
     m_kinesisFirehoseInputUpdateHasBeenSet(false),
     m_inputSchemaUpdateHasBeenSet(false),
@@ -41,6 +42,7 @@ InputUpdate::InputUpdate() :
 InputUpdate::InputUpdate(const JsonValue& jsonValue) : 
     m_inputIdHasBeenSet(false),
     m_namePrefixUpdateHasBeenSet(false),
+    m_inputProcessingConfigurationUpdateHasBeenSet(false),
     m_kinesisStreamsInputUpdateHasBeenSet(false),
     m_kinesisFirehoseInputUpdateHasBeenSet(false),
     m_inputSchemaUpdateHasBeenSet(false),
@@ -63,6 +65,13 @@ InputUpdate& InputUpdate::operator =(const JsonValue& jsonValue)
     m_namePrefixUpdate = jsonValue.GetString("NamePrefixUpdate");
 
     m_namePrefixUpdateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InputProcessingConfigurationUpdate"))
+  {
+    m_inputProcessingConfigurationUpdate = jsonValue.GetObject("InputProcessingConfigurationUpdate");
+
+    m_inputProcessingConfigurationUpdateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("KinesisStreamsInputUpdate"))
@@ -109,6 +118,12 @@ JsonValue InputUpdate::Jsonize() const
   if(m_namePrefixUpdateHasBeenSet)
   {
    payload.WithString("NamePrefixUpdate", m_namePrefixUpdate);
+
+  }
+
+  if(m_inputProcessingConfigurationUpdateHasBeenSet)
+  {
+   payload.WithObject("InputProcessingConfigurationUpdate", m_inputProcessingConfigurationUpdate.Jsonize());
 
   }
 

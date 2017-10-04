@@ -60,6 +60,15 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
     }
   }
 
+  if(jsonValue.ValueExists("ProcessedInputRecords"))
+  {
+    Array<JsonValue> processedInputRecordsJsonList = jsonValue.GetArray("ProcessedInputRecords");
+    for(unsigned processedInputRecordsIndex = 0; processedInputRecordsIndex < processedInputRecordsJsonList.GetLength(); ++processedInputRecordsIndex)
+    {
+      m_processedInputRecords.push_back(processedInputRecordsJsonList[processedInputRecordsIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("RawInputRecords"))
   {
     Array<JsonValue> rawInputRecordsJsonList = jsonValue.GetArray("RawInputRecords");

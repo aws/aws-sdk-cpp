@@ -30,6 +30,7 @@ namespace Model
 
 Input::Input() : 
     m_namePrefixHasBeenSet(false),
+    m_inputProcessingConfigurationHasBeenSet(false),
     m_kinesisStreamsInputHasBeenSet(false),
     m_kinesisFirehoseInputHasBeenSet(false),
     m_inputParallelismHasBeenSet(false),
@@ -39,6 +40,7 @@ Input::Input() :
 
 Input::Input(const JsonValue& jsonValue) : 
     m_namePrefixHasBeenSet(false),
+    m_inputProcessingConfigurationHasBeenSet(false),
     m_kinesisStreamsInputHasBeenSet(false),
     m_kinesisFirehoseInputHasBeenSet(false),
     m_inputParallelismHasBeenSet(false),
@@ -54,6 +56,13 @@ Input& Input::operator =(const JsonValue& jsonValue)
     m_namePrefix = jsonValue.GetString("NamePrefix");
 
     m_namePrefixHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InputProcessingConfiguration"))
+  {
+    m_inputProcessingConfiguration = jsonValue.GetObject("InputProcessingConfiguration");
+
+    m_inputProcessingConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("KinesisStreamsInput"))
@@ -94,6 +103,12 @@ JsonValue Input::Jsonize() const
   if(m_namePrefixHasBeenSet)
   {
    payload.WithString("NamePrefix", m_namePrefix);
+
+  }
+
+  if(m_inputProcessingConfigurationHasBeenSet)
+  {
+   payload.WithObject("InputProcessingConfiguration", m_inputProcessingConfiguration.Jsonize());
 
   }
 

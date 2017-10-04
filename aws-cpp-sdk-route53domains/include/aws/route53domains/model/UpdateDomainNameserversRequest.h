@@ -92,42 +92,6 @@ namespace Model
 
 
     /**
-     * <p>The authorization key for .fi domains</p>
-     */
-    inline const Aws::String& GetFIAuthKey() const{ return m_fIAuthKey; }
-
-    /**
-     * <p>The authorization key for .fi domains</p>
-     */
-    inline void SetFIAuthKey(const Aws::String& value) { m_fIAuthKeyHasBeenSet = true; m_fIAuthKey = value; }
-
-    /**
-     * <p>The authorization key for .fi domains</p>
-     */
-    inline void SetFIAuthKey(Aws::String&& value) { m_fIAuthKeyHasBeenSet = true; m_fIAuthKey = std::move(value); }
-
-    /**
-     * <p>The authorization key for .fi domains</p>
-     */
-    inline void SetFIAuthKey(const char* value) { m_fIAuthKeyHasBeenSet = true; m_fIAuthKey.assign(value); }
-
-    /**
-     * <p>The authorization key for .fi domains</p>
-     */
-    inline UpdateDomainNameserversRequest& WithFIAuthKey(const Aws::String& value) { SetFIAuthKey(value); return *this;}
-
-    /**
-     * <p>The authorization key for .fi domains</p>
-     */
-    inline UpdateDomainNameserversRequest& WithFIAuthKey(Aws::String&& value) { SetFIAuthKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The authorization key for .fi domains</p>
-     */
-    inline UpdateDomainNameserversRequest& WithFIAuthKey(const char* value) { SetFIAuthKey(value); return *this;}
-
-
-    /**
      * <p>A list of new name servers for the domain.</p>
      */
     inline const Aws::Vector<Nameserver>& GetNameservers() const{ return m_nameservers; }
@@ -166,9 +130,6 @@ namespace Model
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
-
-    Aws::String m_fIAuthKey;
-    bool m_fIAuthKeyHasBeenSet;
 
     Aws::Vector<Nameserver> m_nameservers;
     bool m_nameserversHasBeenSet;

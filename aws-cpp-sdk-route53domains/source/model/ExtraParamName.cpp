@@ -46,11 +46,16 @@ namespace Aws
         static const int ES_LEGAL_FORM_HASH = HashingUtils::HashString("ES_LEGAL_FORM");
         static const int FI_BUSINESS_NUMBER_HASH = HashingUtils::HashString("FI_BUSINESS_NUMBER");
         static const int FI_ID_NUMBER_HASH = HashingUtils::HashString("FI_ID_NUMBER");
+        static const int FI_NATIONALITY_HASH = HashingUtils::HashString("FI_NATIONALITY");
+        static const int FI_ORGANIZATION_TYPE_HASH = HashingUtils::HashString("FI_ORGANIZATION_TYPE");
         static const int IT_PIN_HASH = HashingUtils::HashString("IT_PIN");
+        static const int IT_REGISTRANT_ENTITY_TYPE_HASH = HashingUtils::HashString("IT_REGISTRANT_ENTITY_TYPE");
         static const int RU_PASSPORT_DATA_HASH = HashingUtils::HashString("RU_PASSPORT_DATA");
         static const int SE_ID_NUMBER_HASH = HashingUtils::HashString("SE_ID_NUMBER");
         static const int SG_ID_NUMBER_HASH = HashingUtils::HashString("SG_ID_NUMBER");
         static const int VAT_NUMBER_HASH = HashingUtils::HashString("VAT_NUMBER");
+        static const int UK_CONTACT_TYPE_HASH = HashingUtils::HashString("UK_CONTACT_TYPE");
+        static const int UK_COMPANY_NUMBER_HASH = HashingUtils::HashString("UK_COMPANY_NUMBER");
 
 
         ExtraParamName GetExtraParamNameForName(const Aws::String& name)
@@ -120,9 +125,21 @@ namespace Aws
           {
             return ExtraParamName::FI_ID_NUMBER;
           }
+          else if (hashCode == FI_NATIONALITY_HASH)
+          {
+            return ExtraParamName::FI_NATIONALITY;
+          }
+          else if (hashCode == FI_ORGANIZATION_TYPE_HASH)
+          {
+            return ExtraParamName::FI_ORGANIZATION_TYPE;
+          }
           else if (hashCode == IT_PIN_HASH)
           {
             return ExtraParamName::IT_PIN;
+          }
+          else if (hashCode == IT_REGISTRANT_ENTITY_TYPE_HASH)
+          {
+            return ExtraParamName::IT_REGISTRANT_ENTITY_TYPE;
           }
           else if (hashCode == RU_PASSPORT_DATA_HASH)
           {
@@ -139,6 +156,14 @@ namespace Aws
           else if (hashCode == VAT_NUMBER_HASH)
           {
             return ExtraParamName::VAT_NUMBER;
+          }
+          else if (hashCode == UK_CONTACT_TYPE_HASH)
+          {
+            return ExtraParamName::UK_CONTACT_TYPE;
+          }
+          else if (hashCode == UK_COMPANY_NUMBER_HASH)
+          {
+            return ExtraParamName::UK_COMPANY_NUMBER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -186,8 +211,14 @@ namespace Aws
             return "FI_BUSINESS_NUMBER";
           case ExtraParamName::FI_ID_NUMBER:
             return "FI_ID_NUMBER";
+          case ExtraParamName::FI_NATIONALITY:
+            return "FI_NATIONALITY";
+          case ExtraParamName::FI_ORGANIZATION_TYPE:
+            return "FI_ORGANIZATION_TYPE";
           case ExtraParamName::IT_PIN:
             return "IT_PIN";
+          case ExtraParamName::IT_REGISTRANT_ENTITY_TYPE:
+            return "IT_REGISTRANT_ENTITY_TYPE";
           case ExtraParamName::RU_PASSPORT_DATA:
             return "RU_PASSPORT_DATA";
           case ExtraParamName::SE_ID_NUMBER:
@@ -196,6 +227,10 @@ namespace Aws
             return "SG_ID_NUMBER";
           case ExtraParamName::VAT_NUMBER:
             return "VAT_NUMBER";
+          case ExtraParamName::UK_CONTACT_TYPE:
+            return "UK_CONTACT_TYPE";
+          case ExtraParamName::UK_COMPANY_NUMBER:
+            return "UK_COMPANY_NUMBER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

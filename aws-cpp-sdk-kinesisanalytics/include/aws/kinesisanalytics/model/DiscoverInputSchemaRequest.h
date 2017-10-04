@@ -18,6 +18,8 @@
 #include <aws/kinesisanalytics/KinesisAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalytics/model/InputStartingPositionConfiguration.h>
+#include <aws/kinesisanalytics/model/S3Configuration.h>
+#include <aws/kinesisanalytics/model/InputProcessingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -28,9 +30,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchemaRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API DiscoverInputSchemaRequest : public KinesisAnalyticsRequest
   {
@@ -157,6 +156,53 @@ namespace Model
      */
     inline DiscoverInputSchemaRequest& WithInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { SetInputStartingPositionConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const S3Configuration& GetS3Configuration() const{ return m_s3Configuration; }
+
+    
+    inline void SetS3Configuration(const S3Configuration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
+
+    
+    inline void SetS3Configuration(S3Configuration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
+
+    
+    inline DiscoverInputSchemaRequest& WithS3Configuration(const S3Configuration& value) { SetS3Configuration(value); return *this;}
+
+    
+    inline DiscoverInputSchemaRequest& WithS3Configuration(S3Configuration&& value) { SetS3Configuration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
+     * before discovering the schema of the records.</p>
+     */
+    inline const InputProcessingConfiguration& GetInputProcessingConfiguration() const{ return m_inputProcessingConfiguration; }
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
+     * before discovering the schema of the records.</p>
+     */
+    inline void SetInputProcessingConfiguration(const InputProcessingConfiguration& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = value; }
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
+     * before discovering the schema of the records.</p>
+     */
+    inline void SetInputProcessingConfiguration(InputProcessingConfiguration&& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = std::move(value); }
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
+     * before discovering the schema of the records.</p>
+     */
+    inline DiscoverInputSchemaRequest& WithInputProcessingConfiguration(const InputProcessingConfiguration& value) { SetInputProcessingConfiguration(value); return *this;}
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
+     * before discovering the schema of the records.</p>
+     */
+    inline DiscoverInputSchemaRequest& WithInputProcessingConfiguration(InputProcessingConfiguration&& value) { SetInputProcessingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceARN;
@@ -167,6 +213,12 @@ namespace Model
 
     InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
     bool m_inputStartingPositionConfigurationHasBeenSet;
+
+    S3Configuration m_s3Configuration;
+    bool m_s3ConfigurationHasBeenSet;
+
+    InputProcessingConfiguration m_inputProcessingConfiguration;
+    bool m_inputProcessingConfigurationHasBeenSet;
   };
 
 } // namespace Model

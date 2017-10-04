@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesisanalytics/model/InputProcessingConfiguration.h>
 #include <aws/kinesisanalytics/model/KinesisStreamsInput.h>
 #include <aws/kinesisanalytics/model/KinesisFirehoseInput.h>
 #include <aws/kinesisanalytics/model/InputParallelism.h>
@@ -116,6 +117,47 @@ namespace Model
      * "MyInApplicationStream_002" and so on. </p>
      */
     inline Input& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
+
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> for the Input. An input processor
+     * transforms records as they are received from the stream, before the
+     * application's SQL code executes. Currently, the only input processing
+     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     */
+    inline const InputProcessingConfiguration& GetInputProcessingConfiguration() const{ return m_inputProcessingConfiguration; }
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> for the Input. An input processor
+     * transforms records as they are received from the stream, before the
+     * application's SQL code executes. Currently, the only input processing
+     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     */
+    inline void SetInputProcessingConfiguration(const InputProcessingConfiguration& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = value; }
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> for the Input. An input processor
+     * transforms records as they are received from the stream, before the
+     * application's SQL code executes. Currently, the only input processing
+     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     */
+    inline void SetInputProcessingConfiguration(InputProcessingConfiguration&& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = std::move(value); }
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> for the Input. An input processor
+     * transforms records as they are received from the stream, before the
+     * application's SQL code executes. Currently, the only input processing
+     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     */
+    inline Input& WithInputProcessingConfiguration(const InputProcessingConfiguration& value) { SetInputProcessingConfiguration(value); return *this;}
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> for the Input. An input processor
+     * transforms records as they are received from the stream, before the
+     * application's SQL code executes. Currently, the only input processing
+     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     */
+    inline Input& WithInputProcessingConfiguration(InputProcessingConfiguration&& value) { SetInputProcessingConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -300,6 +342,9 @@ namespace Model
 
     Aws::String m_namePrefix;
     bool m_namePrefixHasBeenSet;
+
+    InputProcessingConfiguration m_inputProcessingConfiguration;
+    bool m_inputProcessingConfigurationHasBeenSet;
 
     KinesisStreamsInput m_kinesisStreamsInput;
     bool m_kinesisStreamsInputHasBeenSet;

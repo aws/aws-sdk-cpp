@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>Whether the domain name is available for registering.</p> <note> <p>You can
-     * only register domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
+     * register only domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
      * values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is available.</p>
      * </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is reserved under
      * specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd> <p>The domain
@@ -71,7 +71,7 @@ namespace Model
 
     /**
      * <p>Whether the domain name is available for registering.</p> <note> <p>You can
-     * only register domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
+     * register only domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
      * values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is available.</p>
      * </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is reserved under
      * specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd> <p>The domain
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>Whether the domain name is available for registering.</p> <note> <p>You can
-     * only register domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
+     * register only domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
      * values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is available.</p>
      * </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is reserved under
      * specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd> <p>The domain
@@ -113,7 +113,7 @@ namespace Model
 
     /**
      * <p>Whether the domain name is available for registering.</p> <note> <p>You can
-     * only register domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
+     * register only domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
      * values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is available.</p>
      * </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is reserved under
      * specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd> <p>The domain
@@ -134,7 +134,7 @@ namespace Model
 
     /**
      * <p>Whether the domain name is available for registering.</p> <note> <p>You can
-     * only register domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
+     * register only domains designated as <code>AVAILABLE</code>.</p> </note> <p>Valid
      * values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is available.</p>
      * </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is reserved under
      * specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd> <p>The domain

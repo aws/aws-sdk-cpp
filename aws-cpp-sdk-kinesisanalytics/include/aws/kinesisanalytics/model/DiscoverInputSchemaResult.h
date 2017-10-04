@@ -129,6 +129,55 @@ namespace Model
 
 
     /**
+     * <p>Stream data that was modified by the processor specified in the
+     * <code>InputProcessingConfiguration</code> parameter.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetProcessedInputRecords() const{ return m_processedInputRecords; }
+
+    /**
+     * <p>Stream data that was modified by the processor specified in the
+     * <code>InputProcessingConfiguration</code> parameter.</p>
+     */
+    inline void SetProcessedInputRecords(const Aws::Vector<Aws::String>& value) { m_processedInputRecords = value; }
+
+    /**
+     * <p>Stream data that was modified by the processor specified in the
+     * <code>InputProcessingConfiguration</code> parameter.</p>
+     */
+    inline void SetProcessedInputRecords(Aws::Vector<Aws::String>&& value) { m_processedInputRecords = std::move(value); }
+
+    /**
+     * <p>Stream data that was modified by the processor specified in the
+     * <code>InputProcessingConfiguration</code> parameter.</p>
+     */
+    inline DiscoverInputSchemaResult& WithProcessedInputRecords(const Aws::Vector<Aws::String>& value) { SetProcessedInputRecords(value); return *this;}
+
+    /**
+     * <p>Stream data that was modified by the processor specified in the
+     * <code>InputProcessingConfiguration</code> parameter.</p>
+     */
+    inline DiscoverInputSchemaResult& WithProcessedInputRecords(Aws::Vector<Aws::String>&& value) { SetProcessedInputRecords(std::move(value)); return *this;}
+
+    /**
+     * <p>Stream data that was modified by the processor specified in the
+     * <code>InputProcessingConfiguration</code> parameter.</p>
+     */
+    inline DiscoverInputSchemaResult& AddProcessedInputRecords(const Aws::String& value) { m_processedInputRecords.push_back(value); return *this; }
+
+    /**
+     * <p>Stream data that was modified by the processor specified in the
+     * <code>InputProcessingConfiguration</code> parameter.</p>
+     */
+    inline DiscoverInputSchemaResult& AddProcessedInputRecords(Aws::String&& value) { m_processedInputRecords.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Stream data that was modified by the processor specified in the
+     * <code>InputProcessingConfiguration</code> parameter.</p>
+     */
+    inline DiscoverInputSchemaResult& AddProcessedInputRecords(const char* value) { m_processedInputRecords.push_back(value); return *this; }
+
+
+    /**
      * <p>Raw stream data that was sampled to infer the schema.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRawInputRecords() const{ return m_rawInputRecords; }
@@ -173,6 +222,8 @@ namespace Model
     SourceSchema m_inputSchema;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_parsedInputRecords;
+
+    Aws::Vector<Aws::String> m_processedInputRecords;
 
     Aws::Vector<Aws::String> m_rawInputRecords;
   };

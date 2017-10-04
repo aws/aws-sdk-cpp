@@ -28,6 +28,7 @@
 #include <aws/route53domains/Route53DomainsEndpoint.h>
 #include <aws/route53domains/Route53DomainsErrorMarshaller.h>
 #include <aws/route53domains/model/CheckDomainAvailabilityRequest.h>
+#include <aws/route53domains/model/CheckDomainTransferabilityRequest.h>
 #include <aws/route53domains/model/DeleteTagsForDomainRequest.h>
 #include <aws/route53domains/model/DisableDomainAutoRenewRequest.h>
 #include <aws/route53domains/model/DisableDomainTransferLockRequest.h>
@@ -148,6 +149,41 @@ void Route53DomainsClient::CheckDomainAvailabilityAsync(const CheckDomainAvailab
 void Route53DomainsClient::CheckDomainAvailabilityAsyncHelper(const CheckDomainAvailabilityRequest& request, const CheckDomainAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CheckDomainAvailability(request), context);
+}
+
+CheckDomainTransferabilityOutcome Route53DomainsClient::CheckDomainTransferability(const CheckDomainTransferabilityRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CheckDomainTransferabilityOutcome(CheckDomainTransferabilityResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CheckDomainTransferabilityOutcome(outcome.GetError());
+  }
+}
+
+CheckDomainTransferabilityOutcomeCallable Route53DomainsClient::CheckDomainTransferabilityCallable(const CheckDomainTransferabilityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CheckDomainTransferabilityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CheckDomainTransferability(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::CheckDomainTransferabilityAsync(const CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CheckDomainTransferabilityAsyncHelper( request, handler, context ); } );
+}
+
+void Route53DomainsClient::CheckDomainTransferabilityAsyncHelper(const CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CheckDomainTransferability(request), context);
 }
 
 DeleteTagsForDomainOutcome Route53DomainsClient::DeleteTagsForDomain(const DeleteTagsForDomainRequest& request) const

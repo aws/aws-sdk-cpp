@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 
 UpdateDomainNameserversRequest::UpdateDomainNameserversRequest() : 
     m_domainNameHasBeenSet(false),
-    m_fIAuthKeyHasBeenSet(false),
     m_nameserversHasBeenSet(false)
 {
 }
@@ -36,12 +35,6 @@ Aws::String UpdateDomainNameserversRequest::SerializePayload() const
   if(m_domainNameHasBeenSet)
   {
    payload.WithString("DomainName", m_domainName);
-
-  }
-
-  if(m_fIAuthKeyHasBeenSet)
-  {
-   payload.WithString("FIAuthKey", m_fIAuthKey);
 
   }
 

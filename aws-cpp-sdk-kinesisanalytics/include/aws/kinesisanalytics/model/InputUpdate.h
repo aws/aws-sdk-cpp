@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesisanalytics/model/InputProcessingConfigurationUpdate.h>
 #include <aws/kinesisanalytics/model/KinesisStreamsInputUpdate.h>
 #include <aws/kinesisanalytics/model/KinesisFirehoseInputUpdate.h>
 #include <aws/kinesisanalytics/model/InputSchemaUpdate.h>
@@ -128,6 +129,32 @@ namespace Model
      * for the specific streaming source.</p>
      */
     inline InputUpdate& WithNamePrefixUpdate(const char* value) { SetNamePrefixUpdate(value); return *this;}
+
+
+    /**
+     * <p>Describes updates for an input processing configuration.</p>
+     */
+    inline const InputProcessingConfigurationUpdate& GetInputProcessingConfigurationUpdate() const{ return m_inputProcessingConfigurationUpdate; }
+
+    /**
+     * <p>Describes updates for an input processing configuration.</p>
+     */
+    inline void SetInputProcessingConfigurationUpdate(const InputProcessingConfigurationUpdate& value) { m_inputProcessingConfigurationUpdateHasBeenSet = true; m_inputProcessingConfigurationUpdate = value; }
+
+    /**
+     * <p>Describes updates for an input processing configuration.</p>
+     */
+    inline void SetInputProcessingConfigurationUpdate(InputProcessingConfigurationUpdate&& value) { m_inputProcessingConfigurationUpdateHasBeenSet = true; m_inputProcessingConfigurationUpdate = std::move(value); }
+
+    /**
+     * <p>Describes updates for an input processing configuration.</p>
+     */
+    inline InputUpdate& WithInputProcessingConfigurationUpdate(const InputProcessingConfigurationUpdate& value) { SetInputProcessingConfigurationUpdate(value); return *this;}
+
+    /**
+     * <p>Describes updates for an input processing configuration.</p>
+     */
+    inline InputUpdate& WithInputProcessingConfigurationUpdate(InputProcessingConfigurationUpdate&& value) { SetInputProcessingConfigurationUpdate(std::move(value)); return *this;}
 
 
     /**
@@ -270,6 +297,9 @@ namespace Model
 
     Aws::String m_namePrefixUpdate;
     bool m_namePrefixUpdateHasBeenSet;
+
+    InputProcessingConfigurationUpdate m_inputProcessingConfigurationUpdate;
+    bool m_inputProcessingConfigurationUpdateHasBeenSet;
 
     KinesisStreamsInputUpdate m_kinesisStreamsInputUpdate;
     bool m_kinesisStreamsInputUpdateHasBeenSet;

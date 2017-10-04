@@ -23,11 +23,13 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisanalytics/model/AddApplicationCloudWatchLoggingOptionResult.h>
 #include <aws/kinesisanalytics/model/AddApplicationInputResult.h>
+#include <aws/kinesisanalytics/model/AddApplicationInputProcessingConfigurationResult.h>
 #include <aws/kinesisanalytics/model/AddApplicationOutputResult.h>
 #include <aws/kinesisanalytics/model/AddApplicationReferenceDataSourceResult.h>
 #include <aws/kinesisanalytics/model/CreateApplicationResult.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationResult.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationCloudWatchLoggingOptionResult.h>
+#include <aws/kinesisanalytics/model/DeleteApplicationInputProcessingConfigurationResult.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationOutputResult.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationReferenceDataSourceResult.h>
 #include <aws/kinesisanalytics/model/DescribeApplicationResult.h>
@@ -83,11 +85,13 @@ namespace Model
 {
         class AddApplicationCloudWatchLoggingOptionRequest;
         class AddApplicationInputRequest;
+        class AddApplicationInputProcessingConfigurationRequest;
         class AddApplicationOutputRequest;
         class AddApplicationReferenceDataSourceRequest;
         class CreateApplicationRequest;
         class DeleteApplicationRequest;
         class DeleteApplicationCloudWatchLoggingOptionRequest;
+        class DeleteApplicationInputProcessingConfigurationRequest;
         class DeleteApplicationOutputRequest;
         class DeleteApplicationReferenceDataSourceRequest;
         class DescribeApplicationRequest;
@@ -99,11 +103,13 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AddApplicationCloudWatchLoggingOptionResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationCloudWatchLoggingOptionOutcome;
         typedef Aws::Utils::Outcome<AddApplicationInputResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationInputOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationInputProcessingConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationInputProcessingConfigurationOutcome;
         typedef Aws::Utils::Outcome<AddApplicationOutputResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationOutputOutcome;
         typedef Aws::Utils::Outcome<AddApplicationReferenceDataSourceResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> AddApplicationReferenceDataSourceOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> CreateApplicationOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationCloudWatchLoggingOptionResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationCloudWatchLoggingOptionOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationInputProcessingConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationInputProcessingConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationOutputResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationOutputOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationReferenceDataSourceResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DeleteApplicationReferenceDataSourceOutcome;
         typedef Aws::Utils::Outcome<DescribeApplicationResult, Aws::Client::AWSError<KinesisAnalyticsErrors>> DescribeApplicationOutcome;
@@ -115,11 +121,13 @@ namespace Model
 
         typedef std::future<AddApplicationCloudWatchLoggingOptionOutcome> AddApplicationCloudWatchLoggingOptionOutcomeCallable;
         typedef std::future<AddApplicationInputOutcome> AddApplicationInputOutcomeCallable;
+        typedef std::future<AddApplicationInputProcessingConfigurationOutcome> AddApplicationInputProcessingConfigurationOutcomeCallable;
         typedef std::future<AddApplicationOutputOutcome> AddApplicationOutputOutcomeCallable;
         typedef std::future<AddApplicationReferenceDataSourceOutcome> AddApplicationReferenceDataSourceOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
         typedef std::future<DeleteApplicationCloudWatchLoggingOptionOutcome> DeleteApplicationCloudWatchLoggingOptionOutcomeCallable;
+        typedef std::future<DeleteApplicationInputProcessingConfigurationOutcome> DeleteApplicationInputProcessingConfigurationOutcomeCallable;
         typedef std::future<DeleteApplicationOutputOutcome> DeleteApplicationOutputOutcomeCallable;
         typedef std::future<DeleteApplicationReferenceDataSourceOutcome> DeleteApplicationReferenceDataSourceOutcomeCallable;
         typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
@@ -134,11 +142,13 @@ namespace Model
 
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationCloudWatchLoggingOptionRequest&, const Model::AddApplicationCloudWatchLoggingOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationCloudWatchLoggingOptionResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationInputRequest&, const Model::AddApplicationInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationInputResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationInputProcessingConfigurationRequest&, const Model::AddApplicationInputProcessingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationInputProcessingConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationOutputRequest&, const Model::AddApplicationOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationOutputResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationReferenceDataSourceRequest&, const Model::AddApplicationReferenceDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationReferenceDataSourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationCloudWatchLoggingOptionRequest&, const Model::DeleteApplicationCloudWatchLoggingOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationInputProcessingConfigurationRequest&, const Model::DeleteApplicationInputProcessingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationInputProcessingConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationOutputRequest&, const Model::DeleteApplicationOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationOutputResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationReferenceDataSourceRequest&, const Model::DeleteApplicationReferenceDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationReferenceDataSourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsClient*, const Model::DescribeApplicationRequest&, const Model::DescribeApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationResponseReceivedHandler;
@@ -271,6 +281,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddApplicationInputAsync(const Model::AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds an <a>InputProcessingConfiguration</a> to an application. An input
+         * processor preprocesses records on the input stream before the application's SQL
+         * code executes. Currently, the only input processor available is <a
+         * href="https://aws.amazon.com/documentation/lambda/">AWS
+         * Lambda</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddApplicationInputProcessingConfigurationOutcome AddApplicationInputProcessingConfiguration(const Model::AddApplicationInputProcessingConfigurationRequest& request) const;
+
+        /**
+         * <p>Adds an <a>InputProcessingConfiguration</a> to an application. An input
+         * processor preprocesses records on the input stream before the application's SQL
+         * code executes. Currently, the only input processor available is <a
+         * href="https://aws.amazon.com/documentation/lambda/">AWS
+         * Lambda</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddApplicationInputProcessingConfigurationOutcomeCallable AddApplicationInputProcessingConfigurationCallable(const Model::AddApplicationInputProcessingConfigurationRequest& request) const;
+
+        /**
+         * <p>Adds an <a>InputProcessingConfiguration</a> to an application. An input
+         * processor preprocesses records on the input stream before the application's SQL
+         * code executes. Currently, the only input processor available is <a
+         * href="https://aws.amazon.com/documentation/lambda/">AWS
+         * Lambda</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddApplicationInputProcessingConfigurationAsync(const Model::AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an external destination to your Amazon Kinesis Analytics
@@ -582,6 +629,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteApplicationCloudWatchLoggingOptionAsync(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an <a>InputProcessingConfiguration</a> from an input.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationInputProcessingConfigurationOutcome DeleteApplicationInputProcessingConfiguration(const Model::DeleteApplicationInputProcessingConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes an <a>InputProcessingConfiguration</a> from an input.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteApplicationInputProcessingConfigurationOutcomeCallable DeleteApplicationInputProcessingConfigurationCallable(const Model::DeleteApplicationInputProcessingConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes an <a>InputProcessingConfiguration</a> from an input.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteApplicationInputProcessingConfigurationAsync(const Model::DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes output destination configuration from your application configuration.
@@ -973,11 +1048,13 @@ namespace Model
         /**Async helpers**/
         void AddApplicationCloudWatchLoggingOptionAsyncHelper(const Model::AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationInputAsyncHelper(const Model::AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AddApplicationInputProcessingConfigurationAsyncHelper(const Model::AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationOutputAsyncHelper(const Model::AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationReferenceDataSourceAsyncHelper(const Model::AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationCloudWatchLoggingOptionAsyncHelper(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteApplicationInputProcessingConfigurationAsyncHelper(const Model::DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationOutputAsyncHelper(const Model::DeleteApplicationOutputRequest& request, const DeleteApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationReferenceDataSourceAsyncHelper(const Model::DeleteApplicationReferenceDataSourceRequest& request, const DeleteApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeApplicationAsyncHelper(const Model::DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

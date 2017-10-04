@@ -29,11 +29,13 @@
 #include <aws/kinesisanalytics/KinesisAnalyticsErrorMarshaller.h>
 #include <aws/kinesisanalytics/model/AddApplicationCloudWatchLoggingOptionRequest.h>
 #include <aws/kinesisanalytics/model/AddApplicationInputRequest.h>
+#include <aws/kinesisanalytics/model/AddApplicationInputProcessingConfigurationRequest.h>
 #include <aws/kinesisanalytics/model/AddApplicationOutputRequest.h>
 #include <aws/kinesisanalytics/model/AddApplicationReferenceDataSourceRequest.h>
 #include <aws/kinesisanalytics/model/CreateApplicationRequest.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationRequest.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationCloudWatchLoggingOptionRequest.h>
+#include <aws/kinesisanalytics/model/DeleteApplicationInputProcessingConfigurationRequest.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationOutputRequest.h>
 #include <aws/kinesisanalytics/model/DeleteApplicationReferenceDataSourceRequest.h>
 #include <aws/kinesisanalytics/model/DescribeApplicationRequest.h>
@@ -175,6 +177,41 @@ void KinesisAnalyticsClient::AddApplicationInputAsync(const AddApplicationInputR
 void KinesisAnalyticsClient::AddApplicationInputAsyncHelper(const AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddApplicationInput(request), context);
+}
+
+AddApplicationInputProcessingConfigurationOutcome KinesisAnalyticsClient::AddApplicationInputProcessingConfiguration(const AddApplicationInputProcessingConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AddApplicationInputProcessingConfigurationOutcome(AddApplicationInputProcessingConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddApplicationInputProcessingConfigurationOutcome(outcome.GetError());
+  }
+}
+
+AddApplicationInputProcessingConfigurationOutcomeCallable KinesisAnalyticsClient::AddApplicationInputProcessingConfigurationCallable(const AddApplicationInputProcessingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddApplicationInputProcessingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddApplicationInputProcessingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisAnalyticsClient::AddApplicationInputProcessingConfigurationAsync(const AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddApplicationInputProcessingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisAnalyticsClient::AddApplicationInputProcessingConfigurationAsyncHelper(const AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddApplicationInputProcessingConfiguration(request), context);
 }
 
 AddApplicationOutputOutcome KinesisAnalyticsClient::AddApplicationOutput(const AddApplicationOutputRequest& request) const
@@ -350,6 +387,41 @@ void KinesisAnalyticsClient::DeleteApplicationCloudWatchLoggingOptionAsync(const
 void KinesisAnalyticsClient::DeleteApplicationCloudWatchLoggingOptionAsyncHelper(const DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteApplicationCloudWatchLoggingOption(request), context);
+}
+
+DeleteApplicationInputProcessingConfigurationOutcome KinesisAnalyticsClient::DeleteApplicationInputProcessingConfiguration(const DeleteApplicationInputProcessingConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteApplicationInputProcessingConfigurationOutcome(DeleteApplicationInputProcessingConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteApplicationInputProcessingConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteApplicationInputProcessingConfigurationOutcomeCallable KinesisAnalyticsClient::DeleteApplicationInputProcessingConfigurationCallable(const DeleteApplicationInputProcessingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationInputProcessingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplicationInputProcessingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisAnalyticsClient::DeleteApplicationInputProcessingConfigurationAsync(const DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationInputProcessingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisAnalyticsClient::DeleteApplicationInputProcessingConfigurationAsyncHelper(const DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApplicationInputProcessingConfiguration(request), context);
 }
 
 DeleteApplicationOutputOutcome KinesisAnalyticsClient::DeleteApplicationOutput(const DeleteApplicationOutputRequest& request) const

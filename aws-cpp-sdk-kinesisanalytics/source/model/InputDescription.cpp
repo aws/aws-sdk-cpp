@@ -32,6 +32,7 @@ InputDescription::InputDescription() :
     m_inputIdHasBeenSet(false),
     m_namePrefixHasBeenSet(false),
     m_inAppStreamNamesHasBeenSet(false),
+    m_inputProcessingConfigurationDescriptionHasBeenSet(false),
     m_kinesisStreamsInputDescriptionHasBeenSet(false),
     m_kinesisFirehoseInputDescriptionHasBeenSet(false),
     m_inputSchemaHasBeenSet(false),
@@ -44,6 +45,7 @@ InputDescription::InputDescription(const JsonValue& jsonValue) :
     m_inputIdHasBeenSet(false),
     m_namePrefixHasBeenSet(false),
     m_inAppStreamNamesHasBeenSet(false),
+    m_inputProcessingConfigurationDescriptionHasBeenSet(false),
     m_kinesisStreamsInputDescriptionHasBeenSet(false),
     m_kinesisFirehoseInputDescriptionHasBeenSet(false),
     m_inputSchemaHasBeenSet(false),
@@ -77,6 +79,13 @@ InputDescription& InputDescription::operator =(const JsonValue& jsonValue)
       m_inAppStreamNames.push_back(inAppStreamNamesJsonList[inAppStreamNamesIndex].AsString());
     }
     m_inAppStreamNamesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InputProcessingConfigurationDescription"))
+  {
+    m_inputProcessingConfigurationDescription = jsonValue.GetObject("InputProcessingConfigurationDescription");
+
+    m_inputProcessingConfigurationDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("KinesisStreamsInputDescription"))
@@ -141,6 +150,12 @@ JsonValue InputDescription::Jsonize() const
      inAppStreamNamesJsonList[inAppStreamNamesIndex].AsString(m_inAppStreamNames[inAppStreamNamesIndex]);
    }
    payload.WithArray("InAppStreamNames", std::move(inAppStreamNamesJsonList));
+
+  }
+
+  if(m_inputProcessingConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("InputProcessingConfigurationDescription", m_inputProcessingConfigurationDescription.Jsonize());
 
   }
 

@@ -25,7 +25,9 @@ using namespace Aws::Utils;
 DiscoverInputSchemaRequest::DiscoverInputSchemaRequest() : 
     m_resourceARNHasBeenSet(false),
     m_roleARNHasBeenSet(false),
-    m_inputStartingPositionConfigurationHasBeenSet(false)
+    m_inputStartingPositionConfigurationHasBeenSet(false),
+    m_s3ConfigurationHasBeenSet(false),
+    m_inputProcessingConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,18 @@ Aws::String DiscoverInputSchemaRequest::SerializePayload() const
   if(m_inputStartingPositionConfigurationHasBeenSet)
   {
    payload.WithObject("InputStartingPositionConfiguration", m_inputStartingPositionConfiguration.Jsonize());
+
+  }
+
+  if(m_s3ConfigurationHasBeenSet)
+  {
+   payload.WithObject("S3Configuration", m_s3Configuration.Jsonize());
+
+  }
+
+  if(m_inputProcessingConfigurationHasBeenSet)
+  {
+   payload.WithObject("InputProcessingConfiguration", m_inputProcessingConfiguration.Jsonize());
 
   }
 

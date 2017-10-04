@@ -17,6 +17,7 @@
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kinesisanalytics/model/InputProcessingConfigurationDescription.h>
 #include <aws/kinesisanalytics/model/KinesisStreamsInputDescription.h>
 #include <aws/kinesisanalytics/model/KinesisFirehoseInputDescription.h>
 #include <aws/kinesisanalytics/model/SourceSchema.h>
@@ -190,6 +191,37 @@ namespace Model
 
 
     /**
+     * <p>The description of the preprocessor that executes on records in this input
+     * before the application's code is run.</p>
+     */
+    inline const InputProcessingConfigurationDescription& GetInputProcessingConfigurationDescription() const{ return m_inputProcessingConfigurationDescription; }
+
+    /**
+     * <p>The description of the preprocessor that executes on records in this input
+     * before the application's code is run.</p>
+     */
+    inline void SetInputProcessingConfigurationDescription(const InputProcessingConfigurationDescription& value) { m_inputProcessingConfigurationDescriptionHasBeenSet = true; m_inputProcessingConfigurationDescription = value; }
+
+    /**
+     * <p>The description of the preprocessor that executes on records in this input
+     * before the application's code is run.</p>
+     */
+    inline void SetInputProcessingConfigurationDescription(InputProcessingConfigurationDescription&& value) { m_inputProcessingConfigurationDescriptionHasBeenSet = true; m_inputProcessingConfigurationDescription = std::move(value); }
+
+    /**
+     * <p>The description of the preprocessor that executes on records in this input
+     * before the application's code is run.</p>
+     */
+    inline InputDescription& WithInputProcessingConfigurationDescription(const InputProcessingConfigurationDescription& value) { SetInputProcessingConfigurationDescription(value); return *this;}
+
+    /**
+     * <p>The description of the preprocessor that executes on records in this input
+     * before the application's code is run.</p>
+     */
+    inline InputDescription& WithInputProcessingConfigurationDescription(InputProcessingConfigurationDescription&& value) { SetInputProcessingConfigurationDescription(std::move(value)); return *this;}
+
+
+    /**
      * <p>If an Amazon Kinesis stream is configured as streaming source, provides
      * Amazon Kinesis stream's ARN and an IAM role that enables Amazon Kinesis
      * Analytics to access the stream on your behalf.</p>
@@ -266,19 +298,39 @@ namespace Model
     inline InputDescription& WithKinesisFirehoseInputDescription(KinesisFirehoseInputDescription&& value) { SetKinesisFirehoseInputDescription(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns in the in-application stream that is being
+     * created. </p>
+     */
     inline const SourceSchema& GetInputSchema() const{ return m_inputSchema; }
 
-    
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns in the in-application stream that is being
+     * created. </p>
+     */
     inline void SetInputSchema(const SourceSchema& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = value; }
 
-    
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns in the in-application stream that is being
+     * created. </p>
+     */
     inline void SetInputSchema(SourceSchema&& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = std::move(value); }
 
-    
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns in the in-application stream that is being
+     * created. </p>
+     */
     inline InputDescription& WithInputSchema(const SourceSchema& value) { SetInputSchema(value); return *this;}
 
-    
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns in the in-application stream that is being
+     * created. </p>
+     */
     inline InputDescription& WithInputSchema(SourceSchema&& value) { SetInputSchema(std::move(value)); return *this;}
 
 
@@ -353,6 +405,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_inAppStreamNames;
     bool m_inAppStreamNamesHasBeenSet;
+
+    InputProcessingConfigurationDescription m_inputProcessingConfigurationDescription;
+    bool m_inputProcessingConfigurationDescriptionHasBeenSet;
 
     KinesisStreamsInputDescription m_kinesisStreamsInputDescription;
     bool m_kinesisStreamsInputDescriptionHasBeenSet;
