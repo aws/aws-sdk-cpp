@@ -287,11 +287,11 @@ public class C2jModelToGeneratorModelTransformer {
             }
 
             requestShape.setSignBody(true);
-            if(operation.getAuthtype() != null && operation.getAuthtype().equals("v4-unsigned-body")) {
-                requestShape.setSignBody(false);
-            }
 
             if(operation.getAuthtype() == null) {
+                requestShape.setSignerName("Aws::Auth::SIGV4_SIGNER");
+            } else if (operation.getAuthtype().equals("v4-unsigned-body")) {
+                requestShape.setSignBody(false);
                 requestShape.setSignerName("Aws::Auth::SIGV4_SIGNER");
             } else if (operation.getAuthtype().equals("custom")) {
                requestShape.setSignerName("\"" + operation.getAuthorizer() + "\"");
