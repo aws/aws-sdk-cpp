@@ -17,6 +17,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -125,73 +126,251 @@ namespace Model
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
-     * response records. When the results of a <a>DescribeEventSubscriptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
+     * response records. When the results of a DescribeEventSubscriptions request
+     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+     * the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
-     * response records. When the results of a <a>DescribeEventSubscriptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
+     * response records. When the results of a DescribeEventSubscriptions request
+     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+     * the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
-     * response records. When the results of a <a>DescribeEventSubscriptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
+     * response records. When the results of a DescribeEventSubscriptions request
+     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+     * the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
-     * response records. When the results of a <a>DescribeEventSubscriptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
+     * response records. When the results of a DescribeEventSubscriptions request
+     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+     * the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
-     * response records. When the results of a <a>DescribeEventSubscriptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
+     * response records. When the results of a DescribeEventSubscriptions request
+     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+     * the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeEventSubscriptionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
-     * response records. When the results of a <a>DescribeEventSubscriptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
+     * response records. When the results of a DescribeEventSubscriptions request
+     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+     * the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeEventSubscriptionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
-     * response records. When the results of a <a>DescribeEventSubscriptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
+     * response records. When the results of a DescribeEventSubscriptions request
+     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+     * the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeEventSubscriptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+
+
+    /**
+     * <p>A tag key or keys for which you want to return all matching event
+     * notification subscriptions that are associated with the specified key or keys.
+     * For example, suppose that you have subscriptions that are tagged with keys
+     * called <code>owner</code> and <code>environment</code>. If you specify both of
+     * these tag keys in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag keys associated with
+     * them.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A tag key or keys for which you want to return all matching event
+     * notification subscriptions that are associated with the specified key or keys.
+     * For example, suppose that you have subscriptions that are tagged with keys
+     * called <code>owner</code> and <code>environment</code>. If you specify both of
+     * these tag keys in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag keys associated with
+     * them.</p>
+     */
+    inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+
+    /**
+     * <p>A tag key or keys for which you want to return all matching event
+     * notification subscriptions that are associated with the specified key or keys.
+     * For example, suppose that you have subscriptions that are tagged with keys
+     * called <code>owner</code> and <code>environment</code>. If you specify both of
+     * these tag keys in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag keys associated with
+     * them.</p>
+     */
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
+
+    /**
+     * <p>A tag key or keys for which you want to return all matching event
+     * notification subscriptions that are associated with the specified key or keys.
+     * For example, suppose that you have subscriptions that are tagged with keys
+     * called <code>owner</code> and <code>environment</code>. If you specify both of
+     * these tag keys in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag keys associated with
+     * them.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
+
+    /**
+     * <p>A tag key or keys for which you want to return all matching event
+     * notification subscriptions that are associated with the specified key or keys.
+     * For example, suppose that you have subscriptions that are tagged with keys
+     * called <code>owner</code> and <code>environment</code>. If you specify both of
+     * these tag keys in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag keys associated with
+     * them.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>A tag key or keys for which you want to return all matching event
+     * notification subscriptions that are associated with the specified key or keys.
+     * For example, suppose that you have subscriptions that are tagged with keys
+     * called <code>owner</code> and <code>environment</code>. If you specify both of
+     * these tag keys in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag keys associated with
+     * them.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+
+    /**
+     * <p>A tag key or keys for which you want to return all matching event
+     * notification subscriptions that are associated with the specified key or keys.
+     * For example, suppose that you have subscriptions that are tagged with keys
+     * called <code>owner</code> and <code>environment</code>. If you specify both of
+     * these tag keys in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag keys associated with
+     * them.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A tag key or keys for which you want to return all matching event
+     * notification subscriptions that are associated with the specified key or keys.
+     * For example, suppose that you have subscriptions that are tagged with keys
+     * called <code>owner</code> and <code>environment</code>. If you specify both of
+     * these tag keys in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag keys associated with
+     * them.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+
+
+    /**
+     * <p>A tag value or values for which you want to return all matching event
+     * notification subscriptions that are associated with the specified tag value or
+     * values. For example, suppose that you have subscriptions that are tagged with
+     * values called <code>admin</code> and <code>test</code>. If you specify both of
+     * these tag values in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag values associated with
+     * them.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTagValues() const{ return m_tagValues; }
+
+    /**
+     * <p>A tag value or values for which you want to return all matching event
+     * notification subscriptions that are associated with the specified tag value or
+     * values. For example, suppose that you have subscriptions that are tagged with
+     * values called <code>admin</code> and <code>test</code>. If you specify both of
+     * these tag values in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag values associated with
+     * them.</p>
+     */
+    inline void SetTagValues(const Aws::Vector<Aws::String>& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
+
+    /**
+     * <p>A tag value or values for which you want to return all matching event
+     * notification subscriptions that are associated with the specified tag value or
+     * values. For example, suppose that you have subscriptions that are tagged with
+     * values called <code>admin</code> and <code>test</code>. If you specify both of
+     * these tag values in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag values associated with
+     * them.</p>
+     */
+    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
+
+    /**
+     * <p>A tag value or values for which you want to return all matching event
+     * notification subscriptions that are associated with the specified tag value or
+     * values. For example, suppose that you have subscriptions that are tagged with
+     * values called <code>admin</code> and <code>test</code>. If you specify both of
+     * these tag values in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag values associated with
+     * them.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& WithTagValues(const Aws::Vector<Aws::String>& value) { SetTagValues(value); return *this;}
+
+    /**
+     * <p>A tag value or values for which you want to return all matching event
+     * notification subscriptions that are associated with the specified tag value or
+     * values. For example, suppose that you have subscriptions that are tagged with
+     * values called <code>admin</code> and <code>test</code>. If you specify both of
+     * these tag values in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag values associated with
+     * them.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(std::move(value)); return *this;}
+
+    /**
+     * <p>A tag value or values for which you want to return all matching event
+     * notification subscriptions that are associated with the specified tag value or
+     * values. For example, suppose that you have subscriptions that are tagged with
+     * values called <code>admin</code> and <code>test</code>. If you specify both of
+     * these tag values in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag values associated with
+     * them.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& AddTagValues(const Aws::String& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
+
+    /**
+     * <p>A tag value or values for which you want to return all matching event
+     * notification subscriptions that are associated with the specified tag value or
+     * values. For example, suppose that you have subscriptions that are tagged with
+     * values called <code>admin</code> and <code>test</code>. If you specify both of
+     * these tag values in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag values associated with
+     * them.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A tag value or values for which you want to return all matching event
+     * notification subscriptions that are associated with the specified tag value or
+     * values. For example, suppose that you have subscriptions that are tagged with
+     * values called <code>admin</code> and <code>test</code>. If you specify both of
+     * these tag values in the request, Amazon Redshift returns a response with the
+     * subscriptions that have either or both of these tag values associated with
+     * them.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& AddTagValues(const char* value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
 
   private:
 
@@ -203,6 +382,12 @@ namespace Model
 
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
+    Aws::Vector<Aws::String> m_tagKeys;
+    bool m_tagKeysHasBeenSet;
+
+    Aws::Vector<Aws::String> m_tagValues;
+    bool m_tagValuesHasBeenSet;
   };
 
 } // namespace Model

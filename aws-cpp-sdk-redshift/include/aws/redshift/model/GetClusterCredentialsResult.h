@@ -37,7 +37,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p>Temporary credentials with authorization to log in to an Amazon Redshift
+   * <p>Temporary credentials with authorization to log on to an Amazon Redshift
    * database. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterCredentials">AWS
    * API Reference</a></p>
@@ -52,71 +52,78 @@ namespace Model
 
     /**
      * <p>A database user name that is authorized to log on to the database
-     * <code>DbName</code> using the password <code>DbPassword</code>. If the
-     * <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with
-     * <code>IAM:</code> for an existing user name or <code>IAMA:</code> if the user
-     * was auto-created. </p>
+     * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
+     * DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to
+     * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
+     * is added to the listed groups for any sessions created using these
+     * credentials.</p>
      */
     inline const Aws::String& GetDbUser() const{ return m_dbUser; }
 
     /**
      * <p>A database user name that is authorized to log on to the database
-     * <code>DbName</code> using the password <code>DbPassword</code>. If the
-     * <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with
-     * <code>IAM:</code> for an existing user name or <code>IAMA:</code> if the user
-     * was auto-created. </p>
+     * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
+     * DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to
+     * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
+     * is added to the listed groups for any sessions created using these
+     * credentials.</p>
      */
     inline void SetDbUser(const Aws::String& value) { m_dbUser = value; }
 
     /**
      * <p>A database user name that is authorized to log on to the database
-     * <code>DbName</code> using the password <code>DbPassword</code>. If the
-     * <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with
-     * <code>IAM:</code> for an existing user name or <code>IAMA:</code> if the user
-     * was auto-created. </p>
+     * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
+     * DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to
+     * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
+     * is added to the listed groups for any sessions created using these
+     * credentials.</p>
      */
     inline void SetDbUser(Aws::String&& value) { m_dbUser = std::move(value); }
 
     /**
      * <p>A database user name that is authorized to log on to the database
-     * <code>DbName</code> using the password <code>DbPassword</code>. If the
-     * <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with
-     * <code>IAM:</code> for an existing user name or <code>IAMA:</code> if the user
-     * was auto-created. </p>
+     * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
+     * DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to
+     * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
+     * is added to the listed groups for any sessions created using these
+     * credentials.</p>
      */
     inline void SetDbUser(const char* value) { m_dbUser.assign(value); }
 
     /**
      * <p>A database user name that is authorized to log on to the database
-     * <code>DbName</code> using the password <code>DbPassword</code>. If the
-     * <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with
-     * <code>IAM:</code> for an existing user name or <code>IAMA:</code> if the user
-     * was auto-created. </p>
+     * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
+     * DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to
+     * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
+     * is added to the listed groups for any sessions created using these
+     * credentials.</p>
      */
     inline GetClusterCredentialsResult& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
 
     /**
      * <p>A database user name that is authorized to log on to the database
-     * <code>DbName</code> using the password <code>DbPassword</code>. If the
-     * <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with
-     * <code>IAM:</code> for an existing user name or <code>IAMA:</code> if the user
-     * was auto-created. </p>
+     * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
+     * DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to
+     * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
+     * is added to the listed groups for any sessions created using these
+     * credentials.</p>
      */
     inline GetClusterCredentialsResult& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
 
     /**
      * <p>A database user name that is authorized to log on to the database
-     * <code>DbName</code> using the password <code>DbPassword</code>. If the
-     * <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with
-     * <code>IAM:</code> for an existing user name or <code>IAMA:</code> if the user
-     * was auto-created. </p>
+     * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
+     * DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to
+     * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
+     * is added to the listed groups for any sessions created using these
+     * credentials.</p>
      */
     inline GetClusterCredentialsResult& WithDbUser(const char* value) { SetDbUser(value); return *this;}
 
@@ -165,27 +172,27 @@ namespace Model
 
 
     /**
-     * <p>The date and time <code>DbPassword</code> expires.</p>
+     * <p>The date and time the password in <code>DbPassword</code> expires.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiration() const{ return m_expiration; }
 
     /**
-     * <p>The date and time <code>DbPassword</code> expires.</p>
+     * <p>The date and time the password in <code>DbPassword</code> expires.</p>
      */
     inline void SetExpiration(const Aws::Utils::DateTime& value) { m_expiration = value; }
 
     /**
-     * <p>The date and time <code>DbPassword</code> expires.</p>
+     * <p>The date and time the password in <code>DbPassword</code> expires.</p>
      */
     inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expiration = std::move(value); }
 
     /**
-     * <p>The date and time <code>DbPassword</code> expires.</p>
+     * <p>The date and time the password in <code>DbPassword</code> expires.</p>
      */
     inline GetClusterCredentialsResult& WithExpiration(const Aws::Utils::DateTime& value) { SetExpiration(value); return *this;}
 
     /**
-     * <p>The date and time <code>DbPassword</code> expires.</p>
+     * <p>The date and time the password in <code>DbPassword</code> expires.</p>
      */
     inline GetClusterCredentialsResult& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 

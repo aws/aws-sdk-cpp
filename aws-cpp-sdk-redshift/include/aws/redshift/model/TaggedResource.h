@@ -127,7 +127,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> </ul> <p>For
      * more information about Amazon Redshift resource types and constructing ARNs, go
      * to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
@@ -141,7 +141,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> </ul> <p>For
      * more information about Amazon Redshift resource types and constructing ARNs, go
      * to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
@@ -155,7 +155,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> </ul> <p>For
      * more information about Amazon Redshift resource types and constructing ARNs, go
      * to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
@@ -169,7 +169,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> </ul> <p>For
      * more information about Amazon Redshift resource types and constructing ARNs, go
      * to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
@@ -183,7 +183,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> </ul> <p>For
      * more information about Amazon Redshift resource types and constructing ARNs, go
      * to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
@@ -197,7 +197,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> </ul> <p>For
      * more information about Amazon Redshift resource types and constructing ARNs, go
      * to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
@@ -211,7 +211,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> </ul> <p>For
      * more information about Amazon Redshift resource types and constructing ARNs, go
      * to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */

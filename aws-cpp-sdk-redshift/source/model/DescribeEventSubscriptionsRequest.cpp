@@ -24,7 +24,9 @@ DescribeEventSubscriptionsRequest::DescribeEventSubscriptionsRequest() :
     m_subscriptionNameHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
+    m_markerHasBeenSet(false),
+    m_tagKeysHasBeenSet(false),
+    m_tagValuesHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,28 @@ Aws::String DescribeEventSubscriptionsRequest::SerializePayload() const
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
+  }
+
+  if(m_tagKeysHasBeenSet)
+  {
+    unsigned tagKeysCount = 1;
+    for(auto& item : m_tagKeys)
+    {
+      ss << "TagKeys.member." << tagKeysCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      tagKeysCount++;
+    }
+  }
+
+  if(m_tagValuesHasBeenSet)
+  {
+    unsigned tagValuesCount = 1;
+    for(auto& item : m_tagValues)
+    {
+      ss << "TagValues.member." << tagValuesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      tagValuesCount++;
+    }
   }
 
   ss << "Version=2012-12-01";
