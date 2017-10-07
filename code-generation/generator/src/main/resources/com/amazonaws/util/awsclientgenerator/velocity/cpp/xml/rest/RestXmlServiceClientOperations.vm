@@ -22,9 +22,16 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #set($queryStart = false)
 #if($uriParts.size() > $startIndex)
 #set($uriPartString = ${uriParts.get($startIndex)})
-  ss << "$uriPartString";
 #if($uriPartString.contains("?"))
 #set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+  ss << "${pathAndQuery.get(0)}";
+  uri.SetPath(uri.GetPath() + ss.str());
+#end
+  ss.str("${pathAndQuery.get(1)}");
+#else
+  ss << "$uriPartString";
 #end
 #foreach($var in $uriVars)
 #set($varIndex = $partIndex - 1)
@@ -39,8 +46,12 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #set($uriPartString = "${uriParts.get($partIndex)}")
 #if(!$queryStart && $uriPartString.contains("?"))
 #set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+  ss << "${pathAndQuery.get(0)}";
+#end
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("$uriPartString");
+  ss.str("${pathAndQuery.get(1)}");
 #else
   ss << "$uriPartString";
 #end

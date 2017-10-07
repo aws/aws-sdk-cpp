@@ -83,4 +83,43 @@ public class HttpTest {
         vars = http.getRequestParameters();
         assertEquals(0, vars.size());
     }
+
+    @Test
+    public void testSplitUriPartIntoPathAndQuery() {
+        Http http = new Http();
+        String requestUri = "/test?varParam=var";
+
+        List<String> pathAndQuery = http.splitUriPartIntoPathAndQuery(requestUri);
+        assertEquals(2, pathAndQuery.size());
+        assertEquals("/test", pathAndQuery.get(0));
+        assertEquals("?varParam=var", pathAndQuery.get(1));
+
+        requestUri = "?varParam=var";
+        pathAndQuery = http.splitUriPartIntoPathAndQuery(requestUri);
+        assertEquals(2, pathAndQuery.size());
+        assertEquals("", pathAndQuery.get(0));
+        assertEquals("?varParam=var", pathAndQuery.get(1));
+
+        requestUri = "/test?";
+        pathAndQuery = http.splitUriPartIntoPathAndQuery(requestUri);
+        assertEquals(2, pathAndQuery.size());
+        assertEquals("/test", pathAndQuery.get(0));
+        assertEquals("?", pathAndQuery.get(1));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testNoQuestionMarkInRequestUri() {
+        Http http = new Http();
+        String requestUri = "/testvarParam=var";
+
+        http.splitUriPartIntoPathAndQuery(requestUri);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testMoreThanOneQuestionMarkInRequestUri() {
+        Http http = new Http();
+        String requestUri = "/test?test1?varParam=var";
+
+        http.splitUriPartIntoPathAndQuery(requestUri);
+    }
 }

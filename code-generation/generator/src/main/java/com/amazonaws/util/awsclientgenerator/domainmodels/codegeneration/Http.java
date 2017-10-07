@@ -51,4 +51,13 @@ public class Http {
 
         return paramList;
     }
+
+    public List<String> splitUriPartIntoPathAndQuery(String requestUri) {
+        String[] pathAndQuery = requestUri.split("\\?", -1);
+        if (pathAndQuery.length != 2) {
+            throw new IllegalArgumentException("Unexpected number of question marks in the request URI, one and only one is expected.");
+        }
+        pathAndQuery[1] = "?" + pathAndQuery[1];
+        return Arrays.asList(pathAndQuery);
+    }
 }
