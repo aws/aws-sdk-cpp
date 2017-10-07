@@ -560,21 +560,24 @@ namespace Model
     /**
      * <p>The duration (in seconds) for which the call waits for a message to arrive in
      * the queue before returning. If a message is available, the call returns sooner
-     * than <code>WaitTimeSeconds</code>.</p>
+     * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
+     * time expires, the call returns successfully with an empty list of messages.</p>
      */
     inline int GetWaitTimeSeconds() const{ return m_waitTimeSeconds; }
 
     /**
      * <p>The duration (in seconds) for which the call waits for a message to arrive in
      * the queue before returning. If a message is available, the call returns sooner
-     * than <code>WaitTimeSeconds</code>.</p>
+     * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
+     * time expires, the call returns successfully with an empty list of messages.</p>
      */
     inline void SetWaitTimeSeconds(int value) { m_waitTimeSecondsHasBeenSet = true; m_waitTimeSeconds = value; }
 
     /**
      * <p>The duration (in seconds) for which the call waits for a message to arrive in
      * the queue before returning. If a message is available, the call returns sooner
-     * than <code>WaitTimeSeconds</code>.</p>
+     * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
+     * time expires, the call returns successfully with an empty list of messages.</p>
      */
     inline ReceiveMessageRequest& WithWaitTimeSeconds(int value) { SetWaitTimeSeconds(value); return *this;}
 

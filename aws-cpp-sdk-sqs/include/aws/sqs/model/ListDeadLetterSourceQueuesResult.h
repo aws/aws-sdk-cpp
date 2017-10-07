@@ -51,49 +51,49 @@ namespace Model
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
-     * attribute configured with a dead letter queue.</p>
+     * attribute configured with a dead-letter queue.</p>
      */
     inline const Aws::Vector<Aws::String>& GetQueueUrls() const{ return m_queueUrls; }
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
-     * attribute configured with a dead letter queue.</p>
+     * attribute configured with a dead-letter queue.</p>
      */
     inline void SetQueueUrls(const Aws::Vector<Aws::String>& value) { m_queueUrls = value; }
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
-     * attribute configured with a dead letter queue.</p>
+     * attribute configured with a dead-letter queue.</p>
      */
     inline void SetQueueUrls(Aws::Vector<Aws::String>&& value) { m_queueUrls = std::move(value); }
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
-     * attribute configured with a dead letter queue.</p>
+     * attribute configured with a dead-letter queue.</p>
      */
     inline ListDeadLetterSourceQueuesResult& WithQueueUrls(const Aws::Vector<Aws::String>& value) { SetQueueUrls(value); return *this;}
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
-     * attribute configured with a dead letter queue.</p>
+     * attribute configured with a dead-letter queue.</p>
      */
     inline ListDeadLetterSourceQueuesResult& WithQueueUrls(Aws::Vector<Aws::String>&& value) { SetQueueUrls(std::move(value)); return *this;}
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
-     * attribute configured with a dead letter queue.</p>
+     * attribute configured with a dead-letter queue.</p>
      */
     inline ListDeadLetterSourceQueuesResult& AddQueueUrls(const Aws::String& value) { m_queueUrls.push_back(value); return *this; }
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
-     * attribute configured with a dead letter queue.</p>
+     * attribute configured with a dead-letter queue.</p>
      */
     inline ListDeadLetterSourceQueuesResult& AddQueueUrls(Aws::String&& value) { m_queueUrls.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
-     * attribute configured with a dead letter queue.</p>
+     * attribute configured with a dead-letter queue.</p>
      */
     inline ListDeadLetterSourceQueuesResult& AddQueueUrls(const char* value) { m_queueUrls.push_back(value); return *this; }
 

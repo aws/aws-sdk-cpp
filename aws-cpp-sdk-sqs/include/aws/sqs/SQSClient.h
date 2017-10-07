@@ -162,20 +162,21 @@ namespace Model
    * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html">Standard
    * queues</a> are available in all regions. <a
    * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
-   * queues</a> are available in US West (Oregon) and US East (Ohio).</p> </note>
-   * <p>You can use <a href="http://aws.amazon.com/tools/#sdk">AWS SDKs</a> to access
-   * Amazon SQS using your favorite programming language. The SDKs perform tasks such
-   * as the following automatically:</p> <ul> <li> <p>Cryptographically sign your
-   * service requests</p> </li> <li> <p>Retry requests</p> </li> <li> <p>Handle error
-   * responses</p> </li> </ul> <p> <b>Additional Information</b> </p> <ul> <li> <p>
-   * <a href="http://aws.amazon.com/sqs/">Amazon SQS Product Page</a> </p> </li> <li>
+   * queues</a> are available in the US East (N. Virginia), US East (Ohio), US West
+   * (Oregon), and EU (Ireland) regions.</p> </note> <p>You can use <a
+   * href="http://aws.amazon.com/tools/#sdk">AWS SDKs</a> to access Amazon SQS using
+   * your favorite programming language. The SDKs perform tasks such as the following
+   * automatically:</p> <ul> <li> <p>Cryptographically sign your service requests</p>
+   * </li> <li> <p>Retry requests</p> </li> <li> <p>Handle error responses</p> </li>
+   * </ul> <p> <b>Additional Information</b> </p> <ul> <li> <p> <a
+   * href="http://aws.amazon.com/sqs/">Amazon SQS Product Page</a> </p> </li> <li>
    * <p> <i>Amazon SQS Developer Guide</i> </p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
    * API Requests</a> </p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Using
    * Amazon SQS Message Attributes</a> </p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-   * Amazon SQS Dead Letter Queues</a> </p> </li> </ul> </li> <li> <p> <i>Amazon Web
+   * Amazon SQS Dead-Letter Queues</a> </p> </li> </ul> </li> <li> <p> <i>Amazon Web
    * Services General Reference</i> </p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
    * and Endpoints</a> </p> </li> </ul> </li> </ul>
@@ -298,11 +299,11 @@ namespace Model
          * timeout of 12 hours. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, you
-         * have a message and with the default visibility timeout of 5 minutes. After 3
-         * minutes, you call <code>ChangeMessageVisiblity</code> with a timeout of 10
-         * minutes. At that time, the timeout for the message is extended by 10 minutes
-         * beyond the time of the <code>ChangeMessageVisibility</code> action. This results
-         * in a total visibility timeout of 13 minutes. You can continue to call the
+         * have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
+         * <code>ChangeMessageVisiblity</code> with a timeout of 10 minutes. At that time,
+         * the timeout for the message is extended by 10 minutes beyond the time of the
+         * <code>ChangeMessageVisibility</code> action. This results in a total visibility
+         * timeout of 13 minutes. You can continue to call the
          * <code>ChangeMessageVisibility</code> to extend the visibility timeout to a
          * maximum of 12 hours. If you try to extend the visibility timeout beyond 12
          * hours, your request is rejected.</p> <p>A message is considered to be <i>in
@@ -335,11 +336,11 @@ namespace Model
          * timeout of 12 hours. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, you
-         * have a message and with the default visibility timeout of 5 minutes. After 3
-         * minutes, you call <code>ChangeMessageVisiblity</code> with a timeout of 10
-         * minutes. At that time, the timeout for the message is extended by 10 minutes
-         * beyond the time of the <code>ChangeMessageVisibility</code> action. This results
-         * in a total visibility timeout of 13 minutes. You can continue to call the
+         * have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
+         * <code>ChangeMessageVisiblity</code> with a timeout of 10 minutes. At that time,
+         * the timeout for the message is extended by 10 minutes beyond the time of the
+         * <code>ChangeMessageVisibility</code> action. This results in a total visibility
+         * timeout of 13 minutes. You can continue to call the
          * <code>ChangeMessageVisibility</code> to extend the visibility timeout to a
          * maximum of 12 hours. If you try to extend the visibility timeout beyond 12
          * hours, your request is rejected.</p> <p>A message is considered to be <i>in
@@ -374,11 +375,11 @@ namespace Model
          * timeout of 12 hours. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, you
-         * have a message and with the default visibility timeout of 5 minutes. After 3
-         * minutes, you call <code>ChangeMessageVisiblity</code> with a timeout of 10
-         * minutes. At that time, the timeout for the message is extended by 10 minutes
-         * beyond the time of the <code>ChangeMessageVisibility</code> action. This results
-         * in a total visibility timeout of 13 minutes. You can continue to call the
+         * have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
+         * <code>ChangeMessageVisiblity</code> with a timeout of 10 minutes. At that time,
+         * the timeout for the message is extended by 10 minutes beyond the time of the
+         * <code>ChangeMessageVisibility</code> action. This results in a total visibility
+         * timeout of 13 minutes. You can continue to call the
          * <code>ChangeMessageVisibility</code> to extend the visibility timeout to a
          * maximum of 12 hours. If you try to extend the visibility timeout beyond 12
          * hours, your request is rejected.</p> <p>A message is considered to be <i>in
@@ -705,52 +706,52 @@ namespace Model
         virtual void DeleteMessageBatchAsync(const Model::DeleteMessageBatchRequest& request, const DeleteMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the queue specified by the <code>QueueUrl</code>, even if the queue
-         * is empty. If the specified queue doesn't exist, Amazon SQS returns a successful
-         * response.</p> <important> <p>Be careful with the <code>DeleteQueue</code>
-         * action: When you delete a queue, any messages in the queue are no longer
-         * available. </p> </important> <p>When you delete a queue, the deletion process
-         * takes up to 60 seconds. Requests you send involving that queue during the 60
-         * seconds might succeed. For example, a <code> <a>SendMessage</a> </code> request
-         * might succeed, but after 60 seconds the queue and the message you sent no longer
-         * exist.</p> <p>When you delete a queue, you must wait at least 60 seconds before
-         * creating a queue with the same name. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
-         * Reference</a></p>
+         * <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the
+         * queue's contents. If the specified queue doesn't exist, Amazon SQS returns a
+         * successful response.</p> <important> <p>Be careful with the
+         * <code>DeleteQueue</code> action: When you delete a queue, any messages in the
+         * queue are no longer available. </p> </important> <p>When you delete a queue, the
+         * deletion process takes up to 60 seconds. Requests you send involving that queue
+         * during the 60 seconds might succeed. For example, a <code> <a>SendMessage</a>
+         * </code> request might succeed, but after 60 seconds the queue and the message
+         * you sent no longer exist.</p> <p>When you delete a queue, you must wait at least
+         * 60 seconds before creating a queue with the same name. </p><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteQueueOutcome DeleteQueue(const Model::DeleteQueueRequest& request) const;
 
         /**
-         * <p>Deletes the queue specified by the <code>QueueUrl</code>, even if the queue
-         * is empty. If the specified queue doesn't exist, Amazon SQS returns a successful
-         * response.</p> <important> <p>Be careful with the <code>DeleteQueue</code>
-         * action: When you delete a queue, any messages in the queue are no longer
-         * available. </p> </important> <p>When you delete a queue, the deletion process
-         * takes up to 60 seconds. Requests you send involving that queue during the 60
-         * seconds might succeed. For example, a <code> <a>SendMessage</a> </code> request
-         * might succeed, but after 60 seconds the queue and the message you sent no longer
-         * exist.</p> <p>When you delete a queue, you must wait at least 60 seconds before
-         * creating a queue with the same name. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
-         * Reference</a></p>
+         * <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the
+         * queue's contents. If the specified queue doesn't exist, Amazon SQS returns a
+         * successful response.</p> <important> <p>Be careful with the
+         * <code>DeleteQueue</code> action: When you delete a queue, any messages in the
+         * queue are no longer available. </p> </important> <p>When you delete a queue, the
+         * deletion process takes up to 60 seconds. Requests you send involving that queue
+         * during the 60 seconds might succeed. For example, a <code> <a>SendMessage</a>
+         * </code> request might succeed, but after 60 seconds the queue and the message
+         * you sent no longer exist.</p> <p>When you delete a queue, you must wait at least
+         * 60 seconds before creating a queue with the same name. </p><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteQueueOutcomeCallable DeleteQueueCallable(const Model::DeleteQueueRequest& request) const;
 
         /**
-         * <p>Deletes the queue specified by the <code>QueueUrl</code>, even if the queue
-         * is empty. If the specified queue doesn't exist, Amazon SQS returns a successful
-         * response.</p> <important> <p>Be careful with the <code>DeleteQueue</code>
-         * action: When you delete a queue, any messages in the queue are no longer
-         * available. </p> </important> <p>When you delete a queue, the deletion process
-         * takes up to 60 seconds. Requests you send involving that queue during the 60
-         * seconds might succeed. For example, a <code> <a>SendMessage</a> </code> request
-         * might succeed, but after 60 seconds the queue and the message you sent no longer
-         * exist.</p> <p>When you delete a queue, you must wait at least 60 seconds before
-         * creating a queue with the same name. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
-         * Reference</a></p>
+         * <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the
+         * queue's contents. If the specified queue doesn't exist, Amazon SQS returns a
+         * successful response.</p> <important> <p>Be careful with the
+         * <code>DeleteQueue</code> action: When you delete a queue, any messages in the
+         * queue are no longer available. </p> </important> <p>When you delete a queue, the
+         * deletion process takes up to 60 seconds. Requests you send involving that queue
+         * during the 60 seconds might succeed. For example, a <code> <a>SendMessage</a>
+         * </code> request might succeed, but after 60 seconds the queue and the message
+         * you sent no longer exist.</p> <p>When you delete a queue, you must wait at least
+         * 60 seconds before creating a queue with the same name. </p><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -853,10 +854,10 @@ namespace Model
 
         /**
          * <p>Returns a list of your queues that have the <code>RedrivePolicy</code> queue
-         * attribute configured with a dead letter queue.</p> <p>For more information about
-         * using dead letter queues, see <a
+         * attribute configured with a dead-letter queue.</p> <p>For more information about
+         * using dead-letter queues, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-         * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer
+         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">AWS
          * API Reference</a></p>
@@ -865,10 +866,10 @@ namespace Model
 
         /**
          * <p>Returns a list of your queues that have the <code>RedrivePolicy</code> queue
-         * attribute configured with a dead letter queue.</p> <p>For more information about
-         * using dead letter queues, see <a
+         * attribute configured with a dead-letter queue.</p> <p>For more information about
+         * using dead-letter queues, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-         * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer
+         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">AWS
          * API Reference</a></p>
@@ -879,10 +880,10 @@ namespace Model
 
         /**
          * <p>Returns a list of your queues that have the <code>RedrivePolicy</code> queue
-         * attribute configured with a dead letter queue.</p> <p>For more information about
-         * using dead letter queues, see <a
+         * attribute configured with a dead-letter queue.</p> <p>For more information about
+         * using dead-letter queues, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-         * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer
+         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">AWS
          * API Reference</a></p>
@@ -1006,7 +1007,7 @@ namespace Model
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>A message that
          * isn't deleted or a message whose visibility isn't extended before the visibility
          * timeout expires counts as a failed receive. Depending on the configuration of
-         * the queue, the message might be sent to the dead letter queue.</p> <note> <p>In
+         * the queue, the message might be sent to the dead-letter queue.</p> <note> <p>In
          * the future, new attributes might be added. If you write code that calls this
          * action, we recommend that you structure your code so that it can handle new
          * attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
@@ -1047,7 +1048,7 @@ namespace Model
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>A message that
          * isn't deleted or a message whose visibility isn't extended before the visibility
          * timeout expires counts as a failed receive. Depending on the configuration of
-         * the queue, the message might be sent to the dead letter queue.</p> <note> <p>In
+         * the queue, the message might be sent to the dead-letter queue.</p> <note> <p>In
          * the future, new attributes might be added. If you write code that calls this
          * action, we recommend that you structure your code so that it can handle new
          * attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
@@ -1090,7 +1091,7 @@ namespace Model
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>A message that
          * isn't deleted or a message whose visibility isn't extended before the visibility
          * timeout expires counts as a failed receive. Depending on the configuration of
-         * the queue, the message might be sent to the dead letter queue.</p> <note> <p>In
+         * the queue, the message might be sent to the dead-letter queue.</p> <note> <p>In
          * the future, new attributes might be added. If you write code that calls this
          * action, we recommend that you structure your code so that it can handle new
          * attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a

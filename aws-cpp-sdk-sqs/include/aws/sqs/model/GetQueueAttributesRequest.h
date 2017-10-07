@@ -126,12 +126,18 @@ namespace Model
      * </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length
      * of time, in seconds, for which the <code>ReceiveMessage</code> action waits for
      * a message to arrive. </p> </li> <li> <p> <code>RedrivePolicy</code> - Returns
-     * the parameters for dead letter queue functionality of the source queue. For more
-     * information about the redrive policy and dead letter queues, see <a
+     * the string that includes the parameters for dead-letter queue functionality of
+     * the source queue. For more information about the redrive policy and dead-letter
+     * queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
-     * for the queue. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue.</p> </li> </ul> </li>
+     * <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout for the
+     * queue. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
@@ -142,8 +148,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> -
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. </p> </li>
-     * </ul> <p>The following attributes apply only to <a
+     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> -
      * Returns whether the queue is FIFO. For more information, see <a
@@ -192,12 +201,18 @@ namespace Model
      * </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length
      * of time, in seconds, for which the <code>ReceiveMessage</code> action waits for
      * a message to arrive. </p> </li> <li> <p> <code>RedrivePolicy</code> - Returns
-     * the parameters for dead letter queue functionality of the source queue. For more
-     * information about the redrive policy and dead letter queues, see <a
+     * the string that includes the parameters for dead-letter queue functionality of
+     * the source queue. For more information about the redrive policy and dead-letter
+     * queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
-     * for the queue. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue.</p> </li> </ul> </li>
+     * <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout for the
+     * queue. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
@@ -208,8 +223,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> -
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. </p> </li>
-     * </ul> <p>The following attributes apply only to <a
+     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> -
      * Returns whether the queue is FIFO. For more information, see <a
@@ -258,12 +276,18 @@ namespace Model
      * </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length
      * of time, in seconds, for which the <code>ReceiveMessage</code> action waits for
      * a message to arrive. </p> </li> <li> <p> <code>RedrivePolicy</code> - Returns
-     * the parameters for dead letter queue functionality of the source queue. For more
-     * information about the redrive policy and dead letter queues, see <a
+     * the string that includes the parameters for dead-letter queue functionality of
+     * the source queue. For more information about the redrive policy and dead-letter
+     * queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
-     * for the queue. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue.</p> </li> </ul> </li>
+     * <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout for the
+     * queue. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
@@ -274,8 +298,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> -
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. </p> </li>
-     * </ul> <p>The following attributes apply only to <a
+     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> -
      * Returns whether the queue is FIFO. For more information, see <a
@@ -324,12 +351,18 @@ namespace Model
      * </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length
      * of time, in seconds, for which the <code>ReceiveMessage</code> action waits for
      * a message to arrive. </p> </li> <li> <p> <code>RedrivePolicy</code> - Returns
-     * the parameters for dead letter queue functionality of the source queue. For more
-     * information about the redrive policy and dead letter queues, see <a
+     * the string that includes the parameters for dead-letter queue functionality of
+     * the source queue. For more information about the redrive policy and dead-letter
+     * queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
-     * for the queue. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue.</p> </li> </ul> </li>
+     * <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout for the
+     * queue. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
@@ -340,8 +373,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> -
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. </p> </li>
-     * </ul> <p>The following attributes apply only to <a
+     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> -
      * Returns whether the queue is FIFO. For more information, see <a
@@ -390,12 +426,18 @@ namespace Model
      * </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length
      * of time, in seconds, for which the <code>ReceiveMessage</code> action waits for
      * a message to arrive. </p> </li> <li> <p> <code>RedrivePolicy</code> - Returns
-     * the parameters for dead letter queue functionality of the source queue. For more
-     * information about the redrive policy and dead letter queues, see <a
+     * the string that includes the parameters for dead-letter queue functionality of
+     * the source queue. For more information about the redrive policy and dead-letter
+     * queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
-     * for the queue. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue.</p> </li> </ul> </li>
+     * <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout for the
+     * queue. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
@@ -406,8 +448,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> -
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. </p> </li>
-     * </ul> <p>The following attributes apply only to <a
+     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> -
      * Returns whether the queue is FIFO. For more information, see <a
@@ -456,12 +501,18 @@ namespace Model
      * </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length
      * of time, in seconds, for which the <code>ReceiveMessage</code> action waits for
      * a message to arrive. </p> </li> <li> <p> <code>RedrivePolicy</code> - Returns
-     * the parameters for dead letter queue functionality of the source queue. For more
-     * information about the redrive policy and dead letter queues, see <a
+     * the string that includes the parameters for dead-letter queue functionality of
+     * the source queue. For more information about the redrive policy and dead-letter
+     * queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
-     * for the queue. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue.</p> </li> </ul> </li>
+     * <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout for the
+     * queue. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
@@ -472,8 +523,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> -
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. </p> </li>
-     * </ul> <p>The following attributes apply only to <a
+     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> -
      * Returns whether the queue is FIFO. For more information, see <a
@@ -522,12 +576,18 @@ namespace Model
      * </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length
      * of time, in seconds, for which the <code>ReceiveMessage</code> action waits for
      * a message to arrive. </p> </li> <li> <p> <code>RedrivePolicy</code> - Returns
-     * the parameters for dead letter queue functionality of the source queue. For more
-     * information about the redrive policy and dead letter queues, see <a
+     * the string that includes the parameters for dead-letter queue functionality of
+     * the source queue. For more information about the redrive policy and dead-letter
+     * queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
-     * for the queue. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
+     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
+     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
+     * source queue before being moved to the dead-letter queue.</p> </li> </ul> </li>
+     * <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout for the
+     * queue. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
@@ -538,8 +598,11 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. </p> </li> <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> -
      * Returns the length of time, in seconds, for which Amazon SQS can reuse a data
-     * key to encrypt or decrypt messages before calling AWS KMS again. </p> </li>
-     * </ul> <p>The following attributes apply only to <a
+     * key to encrypt or decrypt messages before calling AWS KMS again. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
+     * attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p> <code>FifoQueue</code> -
      * Returns whether the queue is FIFO. For more information, see <a
