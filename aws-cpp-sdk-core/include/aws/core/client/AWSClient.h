@@ -150,7 +150,7 @@ namespace Aws
              */
             void EnableRequestProcessing();
 
-            inline virtual const char* GetServiceClientName() { return nullptr; }
+            inline virtual const char* GetServiceClientName() const { return nullptr; }
 
         protected:
             /**
