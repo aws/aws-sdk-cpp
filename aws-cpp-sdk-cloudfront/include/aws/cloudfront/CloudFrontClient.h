@@ -238,7 +238,7 @@ namespace Model
 
         virtual ~CloudFrontClient();
 
-        inline virtual const char* GetServiceClientName() override { return "cloudfront"; }
+        inline virtual const char* GetServiceClientName() const override { return "cloudfront"; }
 
 
         /**

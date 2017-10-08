@@ -276,7 +276,7 @@ namespace Model
 
         virtual ~DirectConnectClient();
 
-        inline virtual const char* GetServiceClientName() override { return "directconnect"; }
+        inline virtual const char* GetServiceClientName() const override { return "directconnect"; }
 
 
         /**

@@ -182,7 +182,7 @@ namespace Model
 
         virtual ~STSClient();
 
-        inline virtual const char* GetServiceClientName() override { return "sts"; }
+        inline virtual const char* GetServiceClientName() const override { return "sts"; }
 
 
        /**

@@ -158,7 +158,7 @@ namespace Model
 
         virtual ~SMSClient();
 
-        inline virtual const char* GetServiceClientName() override { return "sms"; }
+        inline virtual const char* GetServiceClientName() const override { return "sms"; }
 
 
         /**

@@ -406,7 +406,7 @@ namespace Model
 
         virtual ~CloudDirectoryClient();
 
-        inline virtual const char* GetServiceClientName() override { return "clouddirectory"; }
+        inline virtual const char* GetServiceClientName() const override { return "clouddirectory"; }
 
 
         /**

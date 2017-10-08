@@ -257,7 +257,7 @@ namespace Model
 
         virtual ~SWFClient();
 
-        inline virtual const char* GetServiceClientName() override { return "swf"; }
+        inline virtual const char* GetServiceClientName() const override { return "swf"; }
 
 
         /**

@@ -160,7 +160,7 @@ namespace Model
 
         virtual ~ResourceGroupsTaggingAPIClient();
 
-        inline virtual const char* GetServiceClientName() override { return "tagging"; }
+        inline virtual const char* GetServiceClientName() const override { return "tagging"; }
 
 
         /**

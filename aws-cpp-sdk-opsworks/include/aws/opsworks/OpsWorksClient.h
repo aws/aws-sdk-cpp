@@ -478,7 +478,7 @@ namespace Model
 
         virtual ~OpsWorksClient();
 
-        inline virtual const char* GetServiceClientName() override { return "opsworks"; }
+        inline virtual const char* GetServiceClientName() const override { return "opsworks"; }
 
 
         /**

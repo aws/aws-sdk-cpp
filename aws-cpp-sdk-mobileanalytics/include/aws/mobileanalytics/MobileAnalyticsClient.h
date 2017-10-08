@@ -108,7 +108,7 @@ namespace Model
 
         virtual ~MobileAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() override { return "mobileanalytics"; }
+        inline virtual const char* GetServiceClientName() const override { return "mobileanalytics"; }
 
 
         /**

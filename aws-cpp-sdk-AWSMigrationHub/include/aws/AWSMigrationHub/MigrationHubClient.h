@@ -182,7 +182,7 @@ namespace Model
 
         virtual ~MigrationHubClient();
 
-        inline virtual const char* GetServiceClientName() override { return "mgh"; }
+        inline virtual const char* GetServiceClientName() const override { return "mgh"; }
 
 
         /**

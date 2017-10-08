@@ -219,7 +219,7 @@ namespace Model
 
         virtual ~CognitoIdentityClient();
 
-        inline virtual const char* GetServiceClientName() override { return "cognito-identity"; }
+        inline virtual const char* GetServiceClientName() const override { return "cognito-identity"; }
 
 
         /**

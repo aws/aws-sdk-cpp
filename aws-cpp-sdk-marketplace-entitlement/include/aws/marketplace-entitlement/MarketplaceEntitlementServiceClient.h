@@ -115,7 +115,7 @@ namespace Model
 
         virtual ~MarketplaceEntitlementServiceClient();
 
-        inline virtual const char* GetServiceClientName() override { return "aws-marketplace"; }
+        inline virtual const char* GetServiceClientName() const override { return "aws-marketplace"; }
 
 
         /**

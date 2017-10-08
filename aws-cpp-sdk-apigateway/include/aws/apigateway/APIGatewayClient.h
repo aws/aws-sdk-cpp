@@ -645,7 +645,7 @@ namespace Model
 
         virtual ~APIGatewayClient();
 
-        inline virtual const char* GetServiceClientName() override { return "apigateway"; }
+        inline virtual const char* GetServiceClientName() const override { return "apigateway"; }
 
 
         /**

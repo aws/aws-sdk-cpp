@@ -138,7 +138,7 @@ namespace Model
 
         virtual ~ImportExportClient();
 
-        inline virtual const char* GetServiceClientName() override { return "importexport"; }
+        inline virtual const char* GetServiceClientName() const override { return "importexport"; }
 
 
        /**

@@ -192,7 +192,7 @@ namespace Model
 
         virtual ~ECRClient();
 
-        inline virtual const char* GetServiceClientName() override { return "ecr"; }
+        inline virtual const char* GetServiceClientName() const override { return "ecr"; }
 
 
         /**

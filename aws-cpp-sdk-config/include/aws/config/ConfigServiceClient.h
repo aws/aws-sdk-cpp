@@ -250,7 +250,7 @@ namespace Model
 
         virtual ~ConfigServiceClient();
 
-        inline virtual const char* GetServiceClientName() override { return "config"; }
+        inline virtual const char* GetServiceClientName() const override { return "config"; }
 
 
         /**

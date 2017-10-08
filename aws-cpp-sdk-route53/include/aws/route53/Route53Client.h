@@ -365,7 +365,7 @@ namespace Model
 
         virtual ~Route53Client();
 
-        inline virtual const char* GetServiceClientName() override { return "route53"; }
+        inline virtual const char* GetServiceClientName() const override { return "route53"; }
 
 
         /**

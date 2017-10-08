@@ -309,7 +309,7 @@ namespace Model
 
         virtual ~WorkDocsClient();
 
-        inline virtual const char* GetServiceClientName() override { return "workdocs"; }
+        inline virtual const char* GetServiceClientName() const override { return "workdocs"; }
 
 
         /**

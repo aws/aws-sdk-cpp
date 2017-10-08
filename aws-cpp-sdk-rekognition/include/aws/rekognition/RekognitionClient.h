@@ -172,7 +172,7 @@ namespace Model
 
         virtual ~RekognitionClient();
 
-        inline virtual const char* GetServiceClientName() override { return "rekognition"; }
+        inline virtual const char* GetServiceClientName() const override { return "rekognition"; }
 
 
         /**

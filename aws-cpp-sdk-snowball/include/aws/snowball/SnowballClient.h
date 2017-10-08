@@ -196,7 +196,7 @@ namespace Model
 
         virtual ~SnowballClient();
 
-        inline virtual const char* GetServiceClientName() override { return "snowball"; }
+        inline virtual const char* GetServiceClientName() const override { return "snowball"; }
 
 
         /**

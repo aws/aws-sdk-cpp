@@ -272,7 +272,7 @@ namespace Model
 
         virtual ~ElasticLoadBalancingClient();
 
-        inline virtual const char* GetServiceClientName() override { return "elasticloadbalancing"; }
+        inline virtual const char* GetServiceClientName() const override { return "elasticloadbalancing"; }
 
 
        /**

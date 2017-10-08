@@ -210,7 +210,7 @@ namespace Model
 
         virtual ~CloudHSMClient();
 
-        inline virtual const char* GetServiceClientName() override { return "cloudhsm"; }
+        inline virtual const char* GetServiceClientName() const override { return "cloudhsm"; }
 
 
         /**

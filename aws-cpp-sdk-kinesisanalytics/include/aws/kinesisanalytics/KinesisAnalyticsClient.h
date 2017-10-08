@@ -184,7 +184,7 @@ namespace Model
 
         virtual ~KinesisAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() override { return "kinesisanalytics"; }
+        inline virtual const char* GetServiceClientName() const override { return "kinesisanalytics"; }
 
 
         /**

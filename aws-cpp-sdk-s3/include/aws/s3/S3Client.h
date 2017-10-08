@@ -425,7 +425,7 @@ namespace Aws
 
         virtual ~S3Client();
 
-        inline virtual const char* GetServiceClientName() override { return "s3"; }
+        inline virtual const char* GetServiceClientName() const override { return "s3"; }
 
 
         /**

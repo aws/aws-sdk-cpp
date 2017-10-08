@@ -160,7 +160,7 @@ namespace Model
 
         virtual ~EFSClient();
 
-        inline virtual const char* GetServiceClientName() override { return "elasticfilesystem"; }
+        inline virtual const char* GetServiceClientName() const override { return "elasticfilesystem"; }
 
 
         /**

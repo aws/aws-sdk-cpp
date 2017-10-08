@@ -210,7 +210,7 @@ namespace Model
 
         virtual ~SupportClient();
 
-        inline virtual const char* GetServiceClientName() override { return "support"; }
+        inline virtual const char* GetServiceClientName() const override { return "support"; }
 
 
         /**

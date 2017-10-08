@@ -155,7 +155,7 @@ namespace Model
 
         virtual ~CloudHSMV2Client();
 
-        inline virtual const char* GetServiceClientName() override { return "cloudhsm"; }
+        inline virtual const char* GetServiceClientName() const override { return "cloudhsm"; }
 
 
         /**

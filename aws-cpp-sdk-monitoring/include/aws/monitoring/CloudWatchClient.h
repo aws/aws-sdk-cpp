@@ -184,7 +184,7 @@ namespace Model
 
         virtual ~CloudWatchClient();
 
-        inline virtual const char* GetServiceClientName() override { return "monitoring"; }
+        inline virtual const char* GetServiceClientName() const override { return "monitoring"; }
 
 
        /**

@@ -600,7 +600,7 @@ namespace Model
 
         virtual ~SSMClient();
 
-        inline virtual const char* GetServiceClientName() override { return "ssm"; }
+        inline virtual const char* GetServiceClientName() const override { return "ssm"; }
 
 
         /**

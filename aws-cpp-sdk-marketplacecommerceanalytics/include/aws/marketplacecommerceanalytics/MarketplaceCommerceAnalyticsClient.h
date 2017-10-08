@@ -112,7 +112,7 @@ namespace Model
 
         virtual ~MarketplaceCommerceAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() override { return "marketplacecommerceanalytics"; }
+        inline virtual const char* GetServiceClientName() const override { return "marketplacecommerceanalytics"; }
 
 
         /**

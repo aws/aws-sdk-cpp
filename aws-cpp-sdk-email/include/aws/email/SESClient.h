@@ -372,7 +372,7 @@ namespace Model
 
         virtual ~SESClient();
 
-        inline virtual const char* GetServiceClientName() override { return "ses"; }
+        inline virtual const char* GetServiceClientName() const override { return "ses"; }
 
 
        /**

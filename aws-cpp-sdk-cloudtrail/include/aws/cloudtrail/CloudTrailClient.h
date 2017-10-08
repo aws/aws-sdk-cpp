@@ -189,7 +189,7 @@ namespace Model
 
         virtual ~CloudTrailClient();
 
-        inline virtual const char* GetServiceClientName() override { return "cloudtrail"; }
+        inline virtual const char* GetServiceClientName() const override { return "cloudtrail"; }
 
 
         /**

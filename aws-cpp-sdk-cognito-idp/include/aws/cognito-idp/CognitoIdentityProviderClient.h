@@ -511,7 +511,7 @@ namespace Model
 
         virtual ~CognitoIdentityProviderClient();
 
-        inline virtual const char* GetServiceClientName() override { return "cognito-idp"; }
+        inline virtual const char* GetServiceClientName() const override { return "cognito-idp"; }
 
 
         /**

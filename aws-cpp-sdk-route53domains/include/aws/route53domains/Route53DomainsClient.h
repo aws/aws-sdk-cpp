@@ -223,7 +223,7 @@ namespace Model
 
         virtual ~Route53DomainsClient();
 
-        inline virtual const char* GetServiceClientName() override { return "route53domains"; }
+        inline virtual const char* GetServiceClientName() const override { return "route53domains"; }
 
 
         /**

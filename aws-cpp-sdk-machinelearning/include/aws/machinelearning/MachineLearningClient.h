@@ -242,7 +242,7 @@ namespace Model
 
         virtual ~MachineLearningClient();
 
-        inline virtual const char* GetServiceClientName() override { return "machinelearning"; }
+        inline virtual const char* GetServiceClientName() const override { return "machinelearning"; }
 
 
         /**

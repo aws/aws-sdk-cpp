@@ -297,7 +297,7 @@ namespace Model
 
         virtual ~MTurkClient();
 
-        inline virtual const char* GetServiceClientName() override { return "mturk-requester"; }
+        inline virtual const char* GetServiceClientName() const override { return "mturk-requester"; }
 
 
         /**

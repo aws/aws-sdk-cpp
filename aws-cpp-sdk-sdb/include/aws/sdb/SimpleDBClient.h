@@ -161,7 +161,7 @@ namespace Model
 
         virtual ~SimpleDBClient();
 
-        inline virtual const char* GetServiceClientName() override { return "sdb"; }
+        inline virtual const char* GetServiceClientName() const override { return "sdb"; }
 
 
        /**

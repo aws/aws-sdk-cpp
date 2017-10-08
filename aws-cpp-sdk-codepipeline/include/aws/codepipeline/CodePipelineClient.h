@@ -302,7 +302,7 @@ namespace Model
 
         virtual ~CodePipelineClient();
 
-        inline virtual const char* GetServiceClientName() override { return "codepipeline"; }
+        inline virtual const char* GetServiceClientName() const override { return "codepipeline"; }
 
 
         /**

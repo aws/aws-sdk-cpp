@@ -221,7 +221,7 @@ namespace Model
 
         virtual ~CodeStarClient();
 
-        inline virtual const char* GetServiceClientName() override { return "codestar"; }
+        inline virtual const char* GetServiceClientName() const override { return "codestar"; }
 
 
         /**

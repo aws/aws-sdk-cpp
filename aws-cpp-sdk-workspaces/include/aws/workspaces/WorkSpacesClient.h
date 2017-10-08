@@ -173,7 +173,7 @@ namespace Model
 
         virtual ~WorkSpacesClient();
 
-        inline virtual const char* GetServiceClientName() override { return "workspaces"; }
+        inline virtual const char* GetServiceClientName() const override { return "workspaces"; }
 
 
         /**

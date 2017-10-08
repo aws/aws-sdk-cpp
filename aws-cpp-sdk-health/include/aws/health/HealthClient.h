@@ -157,7 +157,7 @@ namespace Model
 
         virtual ~HealthClient();
 
-        inline virtual const char* GetServiceClientName() override { return "health"; }
+        inline virtual const char* GetServiceClientName() const override { return "health"; }
 
 
         /**

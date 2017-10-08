@@ -432,7 +432,7 @@ namespace Model
 
         virtual ~GreengrassClient();
 
-        inline virtual const char* GetServiceClientName() override { return "greengrass"; }
+        inline virtual const char* GetServiceClientName() const override { return "greengrass"; }
 
 
         /**

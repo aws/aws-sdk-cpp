@@ -380,7 +380,7 @@ namespace Model
 
         virtual ~IoTClient();
 
-        inline virtual const char* GetServiceClientName() override { return "execute-api"; }
+        inline virtual const char* GetServiceClientName() const override { return "execute-api"; }
 
 
         /**

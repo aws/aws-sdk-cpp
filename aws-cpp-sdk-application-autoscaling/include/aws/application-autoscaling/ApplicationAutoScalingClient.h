@@ -166,7 +166,7 @@ namespace Model
 
         virtual ~ApplicationAutoScalingClient();
 
-        inline virtual const char* GetServiceClientName() override { return "application-autoscaling"; }
+        inline virtual const char* GetServiceClientName() const override { return "application-autoscaling"; }
 
 
         /**

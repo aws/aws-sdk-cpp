@@ -206,7 +206,7 @@ namespace Model
 
         virtual ~CognitoSyncClient();
 
-        inline virtual const char* GetServiceClientName() override { return "cognito-sync"; }
+        inline virtual const char* GetServiceClientName() const override { return "cognito-sync"; }
 
 
         /**

@@ -594,7 +594,7 @@ namespace Model
 
         virtual ~GameLiftClient();
 
-        inline virtual const char* GetServiceClientName() override { return "gamelift"; }
+        inline virtual const char* GetServiceClientName() const override { return "gamelift"; }
 
 
         /**

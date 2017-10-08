@@ -154,7 +154,7 @@ namespace Model
 
         virtual ~ACMClient();
 
-        inline virtual const char* GetServiceClientName() override { return "acm"; }
+        inline virtual const char* GetServiceClientName() const override { return "acm"; }
 
 
         /**

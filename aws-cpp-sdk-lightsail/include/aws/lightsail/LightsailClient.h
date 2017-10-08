@@ -354,7 +354,7 @@ namespace Model
 
         virtual ~LightsailClient();
 
-        inline virtual const char* GetServiceClientName() override { return "lightsail"; }
+        inline virtual const char* GetServiceClientName() const override { return "lightsail"; }
 
 
         /**

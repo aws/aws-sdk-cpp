@@ -117,7 +117,7 @@ namespace Model
 
         virtual ~CostandUsageReportServiceClient();
 
-        inline virtual const char* GetServiceClientName() override { return "cur"; }
+        inline virtual const char* GetServiceClientName() const override { return "cur"; }
 
 
         /**

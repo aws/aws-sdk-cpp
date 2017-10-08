@@ -315,7 +315,7 @@ namespace Model
 
         virtual ~CloudFormationClient();
 
-        inline virtual const char* GetServiceClientName() override { return "cloudformation"; }
+        inline virtual const char* GetServiceClientName() const override { return "cloudformation"; }
 
 
        /**

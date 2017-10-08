@@ -707,7 +707,7 @@ namespace Model
 
         virtual ~IAMClient();
 
-        inline virtual const char* GetServiceClientName() override { return "iam"; }
+        inline virtual const char* GetServiceClientName() const override { return "iam"; }
 
 
        /**

@@ -207,7 +207,7 @@ namespace Model
 
         virtual ~OpsWorksCMClient();
 
-        inline virtual const char* GetServiceClientName() override { return "opsworks-cm"; }
+        inline virtual const char* GetServiceClientName() const override { return "opsworks-cm"; }
 
 
         /**

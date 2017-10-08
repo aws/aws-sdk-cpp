@@ -314,7 +314,7 @@ namespace Model
 
         virtual ~KMSClient();
 
-        inline virtual const char* GetServiceClientName() override { return "kms"; }
+        inline virtual const char* GetServiceClientName() const override { return "kms"; }
 
 
         /**

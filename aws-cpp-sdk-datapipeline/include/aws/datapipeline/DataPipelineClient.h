@@ -213,7 +213,7 @@ namespace Model
 
         virtual ~DataPipelineClient();
 
-        inline virtual const char* GetServiceClientName() override { return "datapipeline"; }
+        inline virtual const char* GetServiceClientName() const override { return "datapipeline"; }
 
 
         /**

@@ -168,7 +168,7 @@ namespace Model
 
         virtual ~AthenaClient();
 
-        inline virtual const char* GetServiceClientName() override { return "athena"; }
+        inline virtual const char* GetServiceClientName() const override { return "athena"; }
 
 
         /**

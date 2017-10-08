@@ -304,7 +304,7 @@ namespace Model
 
         virtual ~ElastiCacheClient();
 
-        inline virtual const char* GetServiceClientName() override { return "elasticache"; }
+        inline virtual const char* GetServiceClientName() const override { return "elasticache"; }
 
 
        /**

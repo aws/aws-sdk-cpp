@@ -200,7 +200,7 @@ namespace Model
 
         virtual ~KinesisClient();
 
-        inline virtual const char* GetServiceClientName() override { return "kinesis"; }
+        inline virtual const char* GetServiceClientName() const override { return "kinesis"; }
 
 
         /**

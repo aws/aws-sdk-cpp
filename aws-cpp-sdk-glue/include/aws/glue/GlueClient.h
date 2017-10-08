@@ -472,7 +472,7 @@ namespace Model
 
         virtual ~GlueClient();
 
-        inline virtual const char* GetServiceClientName() override { return "glue"; }
+        inline virtual const char* GetServiceClientName() const override { return "glue"; }
 
 
         /**
