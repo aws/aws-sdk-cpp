@@ -835,9 +835,9 @@ namespace Model
      * typically creates the service role for you, if you are using the AWS CLI or API
      * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a CloudFormation stack that includes the service role that you
-     * need. </p>
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the service role that
+     * you need. </p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
@@ -847,9 +847,9 @@ namespace Model
      * typically creates the service role for you, if you are using the AWS CLI or API
      * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a CloudFormation stack that includes the service role that you
-     * need. </p>
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the service role that
+     * you need. </p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
@@ -859,9 +859,9 @@ namespace Model
      * typically creates the service role for you, if you are using the AWS CLI or API
      * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a CloudFormation stack that includes the service role that you
-     * need. </p>
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the service role that
+     * you need. </p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
@@ -871,9 +871,9 @@ namespace Model
      * typically creates the service role for you, if you are using the AWS CLI or API
      * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a CloudFormation stack that includes the service role that you
-     * need. </p>
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the service role that
+     * you need. </p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
@@ -883,9 +883,9 @@ namespace Model
      * typically creates the service role for you, if you are using the AWS CLI or API
      * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a CloudFormation stack that includes the service role that you
-     * need. </p>
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the service role that
+     * you need. </p>
      */
     inline CreateServerRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
@@ -895,9 +895,9 @@ namespace Model
      * typically creates the service role for you, if you are using the AWS CLI or API
      * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a CloudFormation stack that includes the service role that you
-     * need. </p>
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the service role that
+     * you need. </p>
      */
     inline CreateServerRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
@@ -907,9 +907,9 @@ namespace Model
      * typically creates the service role for you, if you are using the AWS CLI or API
      * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a CloudFormation stack that includes the service role that you
-     * need. </p>
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the service role that
+     * you need. </p>
      */
     inline CreateServerRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -923,7 +923,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
@@ -937,7 +937,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
@@ -951,7 +951,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
@@ -965,7 +965,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline CreateServerRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
@@ -979,7 +979,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline CreateServerRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
@@ -993,7 +993,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline CreateServerRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
@@ -1007,7 +1007,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline CreateServerRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
@@ -1021,7 +1021,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline CreateServerRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }

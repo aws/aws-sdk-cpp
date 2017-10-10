@@ -53,15 +53,16 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
-     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
-     * <code>detached</code>).</p> </li> <li> <p> <code>attachment.vpc-id</code> - The
-     * ID of an attached VPC.</p> </li> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
-     * <li> <p> <code>state</code> - The state of the virtual private gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>amazon-side-asn</code> - The
+     * Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
+     * <li> <p> <code>attachment.state</code> - The current state of the attachment
+     * between the gateway and the VPC (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone for the virtual private
+     * gateway (if applicable).</p> </li> <li> <p> <code>state</code> - The state of
+     * the virtual private gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -83,15 +84,16 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
-     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
-     * <code>detached</code>).</p> </li> <li> <p> <code>attachment.vpc-id</code> - The
-     * ID of an attached VPC.</p> </li> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
-     * <li> <p> <code>state</code> - The state of the virtual private gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>amazon-side-asn</code> - The
+     * Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
+     * <li> <p> <code>attachment.state</code> - The current state of the attachment
+     * between the gateway and the VPC (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone for the virtual private
+     * gateway (if applicable).</p> </li> <li> <p> <code>state</code> - The state of
+     * the virtual private gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -113,15 +115,16 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
-     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
-     * <code>detached</code>).</p> </li> <li> <p> <code>attachment.vpc-id</code> - The
-     * ID of an attached VPC.</p> </li> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
-     * <li> <p> <code>state</code> - The state of the virtual private gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>amazon-side-asn</code> - The
+     * Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
+     * <li> <p> <code>attachment.state</code> - The current state of the attachment
+     * between the gateway and the VPC (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone for the virtual private
+     * gateway (if applicable).</p> </li> <li> <p> <code>state</code> - The state of
+     * the virtual private gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -143,15 +146,16 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
-     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
-     * <code>detached</code>).</p> </li> <li> <p> <code>attachment.vpc-id</code> - The
-     * ID of an attached VPC.</p> </li> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
-     * <li> <p> <code>state</code> - The state of the virtual private gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>amazon-side-asn</code> - The
+     * Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
+     * <li> <p> <code>attachment.state</code> - The current state of the attachment
+     * between the gateway and the VPC (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone for the virtual private
+     * gateway (if applicable).</p> </li> <li> <p> <code>state</code> - The state of
+     * the virtual private gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -173,15 +177,16 @@ namespace Model
     inline DescribeVpnGatewaysRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
-     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
-     * <code>detached</code>).</p> </li> <li> <p> <code>attachment.vpc-id</code> - The
-     * ID of an attached VPC.</p> </li> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
-     * <li> <p> <code>state</code> - The state of the virtual private gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>amazon-side-asn</code> - The
+     * Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
+     * <li> <p> <code>attachment.state</code> - The current state of the attachment
+     * between the gateway and the VPC (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone for the virtual private
+     * gateway (if applicable).</p> </li> <li> <p> <code>state</code> - The state of
+     * the virtual private gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -203,15 +208,16 @@ namespace Model
     inline DescribeVpnGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
-     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
-     * <code>detached</code>).</p> </li> <li> <p> <code>attachment.vpc-id</code> - The
-     * ID of an attached VPC.</p> </li> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
-     * <li> <p> <code>state</code> - The state of the virtual private gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>amazon-side-asn</code> - The
+     * Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
+     * <li> <p> <code>attachment.state</code> - The current state of the attachment
+     * between the gateway and the VPC (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone for the virtual private
+     * gateway (if applicable).</p> </li> <li> <p> <code>state</code> - The state of
+     * the virtual private gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,
@@ -233,15 +239,16 @@ namespace Model
     inline DescribeVpnGatewaysRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
-     * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
-     * <code>detached</code>).</p> </li> <li> <p> <code>attachment.vpc-id</code> - The
-     * ID of an attached VPC.</p> </li> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
-     * <li> <p> <code>state</code> - The state of the virtual private gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>amazon-side-asn</code> - The
+     * Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
+     * <li> <p> <code>attachment.state</code> - The current state of the attachment
+     * between the gateway and the VPC (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>availability-zone</code> - The Availability Zone for the virtual private
+     * gateway (if applicable).</p> </li> <li> <p> <code>state</code> - The state of
+     * the virtual private gateway (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource. Specify the key of the tag in the filter name and the
      * value of the tag in the filter value. For example, for the tag Purpose=X,

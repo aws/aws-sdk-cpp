@@ -113,6 +113,31 @@ namespace Model
 
 
     /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range.
+     * If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
+     * range.</p> <p>Default: 64512</p>
+     */
+    inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range.
+     * If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
+     * range.</p> <p>Default: 64512</p>
+     */
+    inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range.
+     * If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
+     * range.</p> <p>Default: 64512</p>
+     */
+    inline CreateVpnGatewayRequest& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -143,6 +168,9 @@ namespace Model
 
     GatewayType m_type;
     bool m_typeHasBeenSet;
+
+    long long m_amazonSideAsn;
+    bool m_amazonSideAsnHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

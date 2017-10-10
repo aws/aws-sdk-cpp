@@ -211,44 +211,44 @@ namespace Model
 
 
     /**
-     * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command.</p>
+     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
+     * a single command.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
 
     /**
-     * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command.</p>
+     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
+     * a single command.</p>
      */
     inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
 
     /**
-     * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command.</p>
+     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
+     * a single command.</p>
      */
     inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
 
     /**
-     * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command.</p>
+     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
+     * a single command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
 
     /**
-     * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command.</p>
+     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
+     * a single command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command.</p>
+     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
+     * a single command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
 
     /**
-     * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command.</p>
+     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
+     * a single command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
 
@@ -424,79 +424,72 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic] The AWS account number for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port
-     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
-     * with a specific IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The AWS account ID for the source security group, if the source
+     * security group is in a different account. You can't specify this parameter in
+     * combination with the following parameters: the CIDR IP address range, the IP
+     * protocol, the start of the port range, and the end of the port range. Creates
+     * rules that grant full ICMP, UDP, and TCP access. To create a rule with a
+     * specific IP protocol and port range, use a set of IP permissions instead.</p>
      */
     inline const Aws::String& GetSourceSecurityGroupOwnerId() const{ return m_sourceSecurityGroupOwnerId; }
 
     /**
-     * <p>[EC2-Classic] The AWS account number for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port
-     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
-     * with a specific IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The AWS account ID for the source security group, if the source
+     * security group is in a different account. You can't specify this parameter in
+     * combination with the following parameters: the CIDR IP address range, the IP
+     * protocol, the start of the port range, and the end of the port range. Creates
+     * rules that grant full ICMP, UDP, and TCP access. To create a rule with a
+     * specific IP protocol and port range, use a set of IP permissions instead.</p>
      */
     inline void SetSourceSecurityGroupOwnerId(const Aws::String& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = value; }
 
     /**
-     * <p>[EC2-Classic] The AWS account number for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port
-     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
-     * with a specific IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The AWS account ID for the source security group, if the source
+     * security group is in a different account. You can't specify this parameter in
+     * combination with the following parameters: the CIDR IP address range, the IP
+     * protocol, the start of the port range, and the end of the port range. Creates
+     * rules that grant full ICMP, UDP, and TCP access. To create a rule with a
+     * specific IP protocol and port range, use a set of IP permissions instead.</p>
      */
     inline void SetSourceSecurityGroupOwnerId(Aws::String&& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = std::move(value); }
 
     /**
-     * <p>[EC2-Classic] The AWS account number for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port
-     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
-     * with a specific IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The AWS account ID for the source security group, if the source
+     * security group is in a different account. You can't specify this parameter in
+     * combination with the following parameters: the CIDR IP address range, the IP
+     * protocol, the start of the port range, and the end of the port range. Creates
+     * rules that grant full ICMP, UDP, and TCP access. To create a rule with a
+     * specific IP protocol and port range, use a set of IP permissions instead.</p>
      */
     inline void SetSourceSecurityGroupOwnerId(const char* value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId.assign(value); }
 
     /**
-     * <p>[EC2-Classic] The AWS account number for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port
-     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
-     * with a specific IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The AWS account ID for the source security group, if the source
+     * security group is in a different account. You can't specify this parameter in
+     * combination with the following parameters: the CIDR IP address range, the IP
+     * protocol, the start of the port range, and the end of the port range. Creates
+     * rules that grant full ICMP, UDP, and TCP access. To create a rule with a
+     * specific IP protocol and port range, use a set of IP permissions instead.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(const Aws::String& value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
     /**
-     * <p>[EC2-Classic] The AWS account number for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port
-     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
-     * with a specific IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The AWS account ID for the source security group, if the source
+     * security group is in a different account. You can't specify this parameter in
+     * combination with the following parameters: the CIDR IP address range, the IP
+     * protocol, the start of the port range, and the end of the port range. Creates
+     * rules that grant full ICMP, UDP, and TCP access. To create a rule with a
+     * specific IP protocol and port range, use a set of IP permissions instead.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(Aws::String&& value) { SetSourceSecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic] The AWS account number for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port
-     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
-     * with a specific IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The AWS account ID for the source security group, if the source
+     * security group is in a different account. You can't specify this parameter in
+     * combination with the following parameters: the CIDR IP address range, the IP
+     * protocol, the start of the port range, and the end of the port range. Creates
+     * rules that grant full ICMP, UDP, and TCP access. To create a rule with a
+     * specific IP protocol and port range, use a set of IP permissions instead.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(const char* value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 

@@ -27,6 +27,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Client.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Endpoint.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2ErrorMarshaller.h>
+#include <aws/elasticloadbalancingv2/model/AddListenerCertificatesRequest.h>
 #include <aws/elasticloadbalancingv2/model/AddTagsRequest.h>
 #include <aws/elasticloadbalancingv2/model/CreateListenerRequest.h>
 #include <aws/elasticloadbalancingv2/model/CreateLoadBalancerRequest.h>
@@ -38,6 +39,7 @@
 #include <aws/elasticloadbalancingv2/model/DeleteTargetGroupRequest.h>
 #include <aws/elasticloadbalancingv2/model/DeregisterTargetsRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeAccountLimitsRequest.h>
+#include <aws/elasticloadbalancingv2/model/DescribeListenerCertificatesRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenersRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancerAttributesRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancersRequest.h>
@@ -53,6 +55,7 @@
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupAttributesRequest.h>
 #include <aws/elasticloadbalancingv2/model/RegisterTargetsRequest.h>
+#include <aws/elasticloadbalancingv2/model/RemoveListenerCertificatesRequest.h>
 #include <aws/elasticloadbalancingv2/model/RemoveTagsRequest.h>
 #include <aws/elasticloadbalancingv2/model/SetIpAddressTypeRequest.h>
 #include <aws/elasticloadbalancingv2/model/SetRulePrioritiesRequest.h>
@@ -132,6 +135,41 @@ Aws::String ElasticLoadBalancingv2Client::ConvertRequestToPresignedUrl(const Ama
 
   URI uri(ss.str());
   return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
+AddListenerCertificatesOutcome ElasticLoadBalancingv2Client::AddListenerCertificates(const AddListenerCertificatesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AddListenerCertificatesOutcome(AddListenerCertificatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddListenerCertificatesOutcome(outcome.GetError());
+  }
+}
+
+AddListenerCertificatesOutcomeCallable ElasticLoadBalancingv2Client::AddListenerCertificatesCallable(const AddListenerCertificatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddListenerCertificatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddListenerCertificates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticLoadBalancingv2Client::AddListenerCertificatesAsync(const AddListenerCertificatesRequest& request, const AddListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddListenerCertificatesAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticLoadBalancingv2Client::AddListenerCertificatesAsyncHelper(const AddListenerCertificatesRequest& request, const AddListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddListenerCertificates(request), context);
 }
 
 AddTagsOutcome ElasticLoadBalancingv2Client::AddTags(const AddTagsRequest& request) const
@@ -517,6 +555,41 @@ void ElasticLoadBalancingv2Client::DescribeAccountLimitsAsync(const DescribeAcco
 void ElasticLoadBalancingv2Client::DescribeAccountLimitsAsyncHelper(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAccountLimits(request), context);
+}
+
+DescribeListenerCertificatesOutcome ElasticLoadBalancingv2Client::DescribeListenerCertificates(const DescribeListenerCertificatesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeListenerCertificatesOutcome(DescribeListenerCertificatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeListenerCertificatesOutcome(outcome.GetError());
+  }
+}
+
+DescribeListenerCertificatesOutcomeCallable ElasticLoadBalancingv2Client::DescribeListenerCertificatesCallable(const DescribeListenerCertificatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeListenerCertificatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeListenerCertificates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticLoadBalancingv2Client::DescribeListenerCertificatesAsync(const DescribeListenerCertificatesRequest& request, const DescribeListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeListenerCertificatesAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticLoadBalancingv2Client::DescribeListenerCertificatesAsyncHelper(const DescribeListenerCertificatesRequest& request, const DescribeListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeListenerCertificates(request), context);
 }
 
 DescribeListenersOutcome ElasticLoadBalancingv2Client::DescribeListeners(const DescribeListenersRequest& request) const
@@ -1042,6 +1115,41 @@ void ElasticLoadBalancingv2Client::RegisterTargetsAsync(const RegisterTargetsReq
 void ElasticLoadBalancingv2Client::RegisterTargetsAsyncHelper(const RegisterTargetsRequest& request, const RegisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RegisterTargets(request), context);
+}
+
+RemoveListenerCertificatesOutcome ElasticLoadBalancingv2Client::RemoveListenerCertificates(const RemoveListenerCertificatesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RemoveListenerCertificatesOutcome(RemoveListenerCertificatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RemoveListenerCertificatesOutcome(outcome.GetError());
+  }
+}
+
+RemoveListenerCertificatesOutcomeCallable ElasticLoadBalancingv2Client::RemoveListenerCertificatesCallable(const RemoveListenerCertificatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveListenerCertificatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveListenerCertificates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticLoadBalancingv2Client::RemoveListenerCertificatesAsync(const RemoveListenerCertificatesRequest& request, const RemoveListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveListenerCertificatesAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticLoadBalancingv2Client::RemoveListenerCertificatesAsyncHelper(const RemoveListenerCertificatesRequest& request, const RemoveListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveListenerCertificates(request), context);
 }
 
 RemoveTagsOutcome ElasticLoadBalancingv2Client::RemoveTags(const RemoveTagsRequest& request) const

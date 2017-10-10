@@ -51,43 +51,50 @@ namespace Model
 
     /**
      * <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security
-     * group, not both. To specify a single IPv6 address, use the /128 prefix.</p>
+     * group, not both. To specify a single IPv6 address, use the /128 prefix
+     * length.</p>
      */
     inline const Aws::String& GetCidrIpv6() const{ return m_cidrIpv6; }
 
     /**
      * <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security
-     * group, not both. To specify a single IPv6 address, use the /128 prefix.</p>
+     * group, not both. To specify a single IPv6 address, use the /128 prefix
+     * length.</p>
      */
     inline void SetCidrIpv6(const Aws::String& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = value; }
 
     /**
      * <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security
-     * group, not both. To specify a single IPv6 address, use the /128 prefix.</p>
+     * group, not both. To specify a single IPv6 address, use the /128 prefix
+     * length.</p>
      */
     inline void SetCidrIpv6(Aws::String&& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = std::move(value); }
 
     /**
      * <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security
-     * group, not both. To specify a single IPv6 address, use the /128 prefix.</p>
+     * group, not both. To specify a single IPv6 address, use the /128 prefix
+     * length.</p>
      */
     inline void SetCidrIpv6(const char* value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6.assign(value); }
 
     /**
      * <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security
-     * group, not both. To specify a single IPv6 address, use the /128 prefix.</p>
+     * group, not both. To specify a single IPv6 address, use the /128 prefix
+     * length.</p>
      */
     inline Ipv6Range& WithCidrIpv6(const Aws::String& value) { SetCidrIpv6(value); return *this;}
 
     /**
      * <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security
-     * group, not both. To specify a single IPv6 address, use the /128 prefix.</p>
+     * group, not both. To specify a single IPv6 address, use the /128 prefix
+     * length.</p>
      */
     inline Ipv6Range& WithCidrIpv6(Aws::String&& value) { SetCidrIpv6(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security
-     * group, not both. To specify a single IPv6 address, use the /128 prefix.</p>
+     * group, not both. To specify a single IPv6 address, use the /128 prefix
+     * length.</p>
      */
     inline Ipv6Range& WithCidrIpv6(const char* value) { SetCidrIpv6(value); return *this;}
 

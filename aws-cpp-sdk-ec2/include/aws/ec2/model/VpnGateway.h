@@ -222,6 +222,25 @@ namespace Model
 
 
     /**
+     * <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session.</p>
+     */
+    inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
+
+    /**
+     * <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session.</p>
+     */
+    inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
+
+    /**
+     * <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session.</p>
+     */
+    inline VpnGateway& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
+
+
+    /**
      * <p>Any tags assigned to the virtual private gateway.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -272,6 +291,9 @@ namespace Model
 
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;
+
+    long long m_amazonSideAsn;
+    bool m_amazonSideAsnHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

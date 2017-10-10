@@ -44,25 +44,46 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The token returned in either the AssociateNodeResponse or the
+     * DisassociateNodeResponse. </p>
+     */
     inline const Aws::String& GetNodeAssociationStatusToken() const{ return m_nodeAssociationStatusToken; }
 
-    
+    /**
+     * <p>The token returned in either the AssociateNodeResponse or the
+     * DisassociateNodeResponse. </p>
+     */
     inline void SetNodeAssociationStatusToken(const Aws::String& value) { m_nodeAssociationStatusTokenHasBeenSet = true; m_nodeAssociationStatusToken = value; }
 
-    
+    /**
+     * <p>The token returned in either the AssociateNodeResponse or the
+     * DisassociateNodeResponse. </p>
+     */
     inline void SetNodeAssociationStatusToken(Aws::String&& value) { m_nodeAssociationStatusTokenHasBeenSet = true; m_nodeAssociationStatusToken = std::move(value); }
 
-    
+    /**
+     * <p>The token returned in either the AssociateNodeResponse or the
+     * DisassociateNodeResponse. </p>
+     */
     inline void SetNodeAssociationStatusToken(const char* value) { m_nodeAssociationStatusTokenHasBeenSet = true; m_nodeAssociationStatusToken.assign(value); }
 
-    
+    /**
+     * <p>The token returned in either the AssociateNodeResponse or the
+     * DisassociateNodeResponse. </p>
+     */
     inline DescribeNodeAssociationStatusRequest& WithNodeAssociationStatusToken(const Aws::String& value) { SetNodeAssociationStatusToken(value); return *this;}
 
-    
+    /**
+     * <p>The token returned in either the AssociateNodeResponse or the
+     * DisassociateNodeResponse. </p>
+     */
     inline DescribeNodeAssociationStatusRequest& WithNodeAssociationStatusToken(Aws::String&& value) { SetNodeAssociationStatusToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The token returned in either the AssociateNodeResponse or the
+     * DisassociateNodeResponse. </p>
+     */
     inline DescribeNodeAssociationStatusRequest& WithNodeAssociationStatusToken(const char* value) { SetNodeAssociationStatusToken(value); return *this;}
 
 

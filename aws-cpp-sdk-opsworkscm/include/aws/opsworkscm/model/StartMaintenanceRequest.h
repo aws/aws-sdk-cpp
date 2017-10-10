@@ -17,6 +17,8 @@
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/opsworkscm/OpsWorksCMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/opsworkscm/model/EngineAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -79,10 +81,56 @@ namespace Model
      */
     inline StartMaintenanceRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
+
+    /**
+     * <p>Engine attributes that are specific to the server on which you want to run
+     * maintenance. </p>
+     */
+    inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
+
+    /**
+     * <p>Engine attributes that are specific to the server on which you want to run
+     * maintenance. </p>
+     */
+    inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
+
+    /**
+     * <p>Engine attributes that are specific to the server on which you want to run
+     * maintenance. </p>
+     */
+    inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::move(value); }
+
+    /**
+     * <p>Engine attributes that are specific to the server on which you want to run
+     * maintenance. </p>
+     */
+    inline StartMaintenanceRequest& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
+
+    /**
+     * <p>Engine attributes that are specific to the server on which you want to run
+     * maintenance. </p>
+     */
+    inline StartMaintenanceRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>Engine attributes that are specific to the server on which you want to run
+     * maintenance. </p>
+     */
+    inline StartMaintenanceRequest& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>Engine attributes that are specific to the server on which you want to run
+     * maintenance. </p>
+     */
+    inline StartMaintenanceRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
+    Aws::Vector<EngineAttribute> m_engineAttributes;
+    bool m_engineAttributesHasBeenSet;
   };
 
 } // namespace Model

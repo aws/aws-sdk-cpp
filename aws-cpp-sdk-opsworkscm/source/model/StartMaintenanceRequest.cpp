@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartMaintenanceRequest::StartMaintenanceRequest() : 
-    m_serverNameHasBeenSet(false)
+    m_serverNameHasBeenSet(false),
+    m_engineAttributesHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,17 @@ Aws::String StartMaintenanceRequest::SerializePayload() const
   if(m_serverNameHasBeenSet)
   {
    payload.WithString("ServerName", m_serverName);
+
+  }
+
+  if(m_engineAttributesHasBeenSet)
+  {
+   Array<JsonValue> engineAttributesJsonList(m_engineAttributes.size());
+   for(unsigned engineAttributesIndex = 0; engineAttributesIndex < engineAttributesJsonList.GetLength(); ++engineAttributesIndex)
+   {
+     engineAttributesJsonList[engineAttributesIndex].AsObject(m_engineAttributes[engineAttributesIndex].Jsonize());
+   }
+   payload.WithArray("EngineAttributes", std::move(engineAttributesJsonList));
 
   }
 

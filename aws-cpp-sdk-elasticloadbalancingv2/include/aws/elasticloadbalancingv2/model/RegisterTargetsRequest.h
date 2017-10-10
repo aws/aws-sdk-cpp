@@ -85,51 +85,37 @@ namespace Model
 
 
     /**
-     * <p>The targets. The default port for a target is the port for the target group.
-     * You can specify a port override. If a target is already registered, you can
-     * register it again using a different port.</p>
+     * <p>The targets.</p>
      */
     inline const Aws::Vector<TargetDescription>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets. The default port for a target is the port for the target group.
-     * You can specify a port override. If a target is already registered, you can
-     * register it again using a different port.</p>
+     * <p>The targets.</p>
      */
     inline void SetTargets(const Aws::Vector<TargetDescription>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets. The default port for a target is the port for the target group.
-     * You can specify a port override. If a target is already registered, you can
-     * register it again using a different port.</p>
+     * <p>The targets.</p>
      */
     inline void SetTargets(Aws::Vector<TargetDescription>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets. The default port for a target is the port for the target group.
-     * You can specify a port override. If a target is already registered, you can
-     * register it again using a different port.</p>
+     * <p>The targets.</p>
      */
     inline RegisterTargetsRequest& WithTargets(const Aws::Vector<TargetDescription>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets. The default port for a target is the port for the target group.
-     * You can specify a port override. If a target is already registered, you can
-     * register it again using a different port.</p>
+     * <p>The targets.</p>
      */
     inline RegisterTargetsRequest& WithTargets(Aws::Vector<TargetDescription>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets. The default port for a target is the port for the target group.
-     * You can specify a port override. If a target is already registered, you can
-     * register it again using a different port.</p>
+     * <p>The targets.</p>
      */
     inline RegisterTargetsRequest& AddTargets(const TargetDescription& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets. The default port for a target is the port for the target group.
-     * You can specify a port override. If a target is already registered, you can
-     * register it again using a different port.</p>
+     * <p>The targets.</p>
      */
     inline RegisterTargetsRequest& AddTargets(TargetDescription&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 

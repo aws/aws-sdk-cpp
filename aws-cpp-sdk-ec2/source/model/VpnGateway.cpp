@@ -38,6 +38,8 @@ VpnGateway::VpnGateway() :
     m_typeHasBeenSet(false),
     m_vpcAttachmentsHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
+    m_amazonSideAsn(0),
+    m_amazonSideAsnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -50,6 +52,8 @@ VpnGateway::VpnGateway(const XmlNode& xmlNode) :
     m_typeHasBeenSet(false),
     m_vpcAttachmentsHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
+    m_amazonSideAsn(0),
+    m_amazonSideAsnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -96,6 +100,12 @@ VpnGateway& VpnGateway::operator =(const XmlNode& xmlNode)
     {
       m_vpnGatewayId = StringUtils::Trim(vpnGatewayIdNode.GetText().c_str());
       m_vpnGatewayIdHasBeenSet = true;
+    }
+    XmlNode amazonSideAsnNode = resultNode.FirstChild("amazonSideAsn");
+    if(!amazonSideAsnNode.IsNull())
+    {
+      m_amazonSideAsn = StringUtils::ConvertToInt64(StringUtils::Trim(amazonSideAsnNode.GetText().c_str()).c_str());
+      m_amazonSideAsnHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -147,6 +157,11 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
   }
 
+  if(m_amazonSideAsnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AmazonSideAsn=" << m_amazonSideAsn << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -187,6 +202,10 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_vpnGatewayIdHasBeenSet)
   {
       oStream << location << ".VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
+  }
+  if(m_amazonSideAsnHasBeenSet)
+  {
+      oStream << location << ".AmazonSideAsn=" << m_amazonSideAsn << "&";
   }
   if(m_tagsHasBeenSet)
   {

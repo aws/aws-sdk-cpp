@@ -118,123 +118,137 @@ namespace Model
 
 
     /**
-     * <p>The ID of the security group. Required for a security group in a nondefault
-     * VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>The ID of the security group. Required for a security group in a nondefault
-     * VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>The ID of the security group. Required for a security group in a nondefault
-     * VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>The ID of the security group. Required for a security group in a nondefault
-     * VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * <p>The ID of the security group. Required for a security group in a nondefault
-     * VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>The ID of the security group. Required for a security group in a nondefault
-     * VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the security group. Required for a security group in a nondefault
-     * VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
 
     /**
-     * <p>A set of IP permissions. You can't specify a source security group and a CIDR
-     * IP address range.</p>
+     * <p>One or more sets of IP permissions. You can't specify a source security group
+     * and a CIDR IP address range in the same set of permissions.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
 
     /**
-     * <p>A set of IP permissions. You can't specify a source security group and a CIDR
-     * IP address range.</p>
+     * <p>One or more sets of IP permissions. You can't specify a source security group
+     * and a CIDR IP address range in the same set of permissions.</p>
      */
     inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
 
     /**
-     * <p>A set of IP permissions. You can't specify a source security group and a CIDR
-     * IP address range.</p>
+     * <p>One or more sets of IP permissions. You can't specify a source security group
+     * and a CIDR IP address range in the same set of permissions.</p>
      */
     inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
 
     /**
-     * <p>A set of IP permissions. You can't specify a source security group and a CIDR
-     * IP address range.</p>
+     * <p>One or more sets of IP permissions. You can't specify a source security group
+     * and a CIDR IP address range in the same set of permissions.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
 
     /**
-     * <p>A set of IP permissions. You can't specify a source security group and a CIDR
-     * IP address range.</p>
+     * <p>One or more sets of IP permissions. You can't specify a source security group
+     * and a CIDR IP address range in the same set of permissions.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>A set of IP permissions. You can't specify a source security group and a CIDR
-     * IP address range.</p>
+     * <p>One or more sets of IP permissions. You can't specify a source security group
+     * and a CIDR IP address range in the same set of permissions.</p>
      */
     inline RevokeSecurityGroupIngressRequest& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
 
     /**
-     * <p>A set of IP permissions. You can't specify a source security group and a CIDR
-     * IP address range.</p>
+     * <p>One or more sets of IP permissions. You can't specify a source security group
+     * and a CIDR IP address range in the same set of permissions.</p>
      */
     inline RevokeSecurityGroupIngressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
 

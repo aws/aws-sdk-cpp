@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/opsworkscm/model/NodeAssociationStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/opsworkscm/model/EngineAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -92,9 +94,47 @@ namespace Model
      */
     inline DescribeNodeAssociationStatusResult& WithNodeAssociationStatus(NodeAssociationStatus&& value) { SetNodeAssociationStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Attributes specific to the node association. </p>
+     */
+    inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
+
+    /**
+     * <p>Attributes specific to the node association. </p>
+     */
+    inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributes = value; }
+
+    /**
+     * <p>Attributes specific to the node association. </p>
+     */
+    inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributes = std::move(value); }
+
+    /**
+     * <p>Attributes specific to the node association. </p>
+     */
+    inline DescribeNodeAssociationStatusResult& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
+
+    /**
+     * <p>Attributes specific to the node association. </p>
+     */
+    inline DescribeNodeAssociationStatusResult& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>Attributes specific to the node association. </p>
+     */
+    inline DescribeNodeAssociationStatusResult& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>Attributes specific to the node association. </p>
+     */
+    inline DescribeNodeAssociationStatusResult& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributes.push_back(std::move(value)); return *this; }
+
   private:
 
     NodeAssociationStatus m_nodeAssociationStatus;
+
+    Aws::Vector<EngineAttribute> m_engineAttributes;
   };
 
 } // namespace Model

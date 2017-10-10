@@ -46,6 +46,15 @@ DescribeNodeAssociationStatusResult& DescribeNodeAssociationStatusResult::operat
 
   }
 
+  if(jsonValue.ValueExists("EngineAttributes"))
+  {
+    Array<JsonValue> engineAttributesJsonList = jsonValue.GetArray("EngineAttributes");
+    for(unsigned engineAttributesIndex = 0; engineAttributesIndex < engineAttributesJsonList.GetLength(); ++engineAttributesIndex)
+    {
+      m_engineAttributes.push_back(engineAttributesJsonList[engineAttributesIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

@@ -196,37 +196,37 @@ namespace Model
 
 
     /**
-     * <p>The SSL server certificate.</p>
+     * <p>The default SSL server certificate.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
 
     /**
-     * <p>The SSL server certificate.</p>
+     * <p>The default SSL server certificate.</p>
      */
     inline void SetCertificates(const Aws::Vector<Certificate>& value) { m_certificatesHasBeenSet = true; m_certificates = value; }
 
     /**
-     * <p>The SSL server certificate.</p>
+     * <p>The default SSL server certificate.</p>
      */
     inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificatesHasBeenSet = true; m_certificates = std::move(value); }
 
     /**
-     * <p>The SSL server certificate.</p>
+     * <p>The default SSL server certificate.</p>
      */
     inline ModifyListenerRequest& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>The SSL server certificate.</p>
+     * <p>The default SSL server certificate.</p>
      */
     inline ModifyListenerRequest& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>The SSL server certificate.</p>
+     * <p>The default SSL server certificate.</p>
      */
     inline ModifyListenerRequest& AddCertificates(const Certificate& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>The SSL server certificate.</p>
+     * <p>The default SSL server certificate.</p>
      */
     inline ModifyListenerRequest& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
 

@@ -22,6 +22,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/model/AddListenerCertificatesResult.h>
 #include <aws/elasticloadbalancingv2/model/AddTagsResult.h>
 #include <aws/elasticloadbalancingv2/model/CreateListenerResult.h>
 #include <aws/elasticloadbalancingv2/model/CreateLoadBalancerResult.h>
@@ -33,6 +34,7 @@
 #include <aws/elasticloadbalancingv2/model/DeleteTargetGroupResult.h>
 #include <aws/elasticloadbalancingv2/model/DeregisterTargetsResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeAccountLimitsResult.h>
+#include <aws/elasticloadbalancingv2/model/DescribeListenerCertificatesResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenersResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancerAttributesResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancersResult.h>
@@ -48,6 +50,7 @@
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupAttributesResult.h>
 #include <aws/elasticloadbalancingv2/model/RegisterTargetsResult.h>
+#include <aws/elasticloadbalancingv2/model/RemoveListenerCertificatesResult.h>
 #include <aws/elasticloadbalancingv2/model/RemoveTagsResult.h>
 #include <aws/elasticloadbalancingv2/model/SetIpAddressTypeResult.h>
 #include <aws/elasticloadbalancingv2/model/SetRulePrioritiesResult.h>
@@ -98,6 +101,7 @@ namespace ElasticLoadBalancingv2
 
 namespace Model
 {
+        class AddListenerCertificatesRequest;
         class AddTagsRequest;
         class CreateListenerRequest;
         class CreateLoadBalancerRequest;
@@ -109,6 +113,7 @@ namespace Model
         class DeleteTargetGroupRequest;
         class DeregisterTargetsRequest;
         class DescribeAccountLimitsRequest;
+        class DescribeListenerCertificatesRequest;
         class DescribeListenersRequest;
         class DescribeLoadBalancerAttributesRequest;
         class DescribeLoadBalancersRequest;
@@ -124,12 +129,14 @@ namespace Model
         class ModifyTargetGroupRequest;
         class ModifyTargetGroupAttributesRequest;
         class RegisterTargetsRequest;
+        class RemoveListenerCertificatesRequest;
         class RemoveTagsRequest;
         class SetIpAddressTypeRequest;
         class SetRulePrioritiesRequest;
         class SetSecurityGroupsRequest;
         class SetSubnetsRequest;
 
+        typedef Aws::Utils::Outcome<AddListenerCertificatesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> AddListenerCertificatesOutcome;
         typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> AddTagsOutcome;
         typedef Aws::Utils::Outcome<CreateListenerResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> CreateListenerOutcome;
         typedef Aws::Utils::Outcome<CreateLoadBalancerResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> CreateLoadBalancerOutcome;
@@ -141,6 +148,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteTargetGroupResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DeleteTargetGroupOutcome;
         typedef Aws::Utils::Outcome<DeregisterTargetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DeregisterTargetsOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeAccountLimitsOutcome;
+        typedef Aws::Utils::Outcome<DescribeListenerCertificatesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeListenerCertificatesOutcome;
         typedef Aws::Utils::Outcome<DescribeListenersResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeListenersOutcome;
         typedef Aws::Utils::Outcome<DescribeLoadBalancerAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeLoadBalancerAttributesOutcome;
         typedef Aws::Utils::Outcome<DescribeLoadBalancersResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeLoadBalancersOutcome;
@@ -156,12 +164,14 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyTargetGroupResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyTargetGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyTargetGroupAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyTargetGroupAttributesOutcome;
         typedef Aws::Utils::Outcome<RegisterTargetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> RegisterTargetsOutcome;
+        typedef Aws::Utils::Outcome<RemoveListenerCertificatesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> RemoveListenerCertificatesOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> RemoveTagsOutcome;
         typedef Aws::Utils::Outcome<SetIpAddressTypeResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetIpAddressTypeOutcome;
         typedef Aws::Utils::Outcome<SetRulePrioritiesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetRulePrioritiesOutcome;
         typedef Aws::Utils::Outcome<SetSecurityGroupsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<SetSubnetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetSubnetsOutcome;
 
+        typedef std::future<AddListenerCertificatesOutcome> AddListenerCertificatesOutcomeCallable;
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
         typedef std::future<CreateListenerOutcome> CreateListenerOutcomeCallable;
         typedef std::future<CreateLoadBalancerOutcome> CreateLoadBalancerOutcomeCallable;
@@ -173,6 +183,7 @@ namespace Model
         typedef std::future<DeleteTargetGroupOutcome> DeleteTargetGroupOutcomeCallable;
         typedef std::future<DeregisterTargetsOutcome> DeregisterTargetsOutcomeCallable;
         typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
+        typedef std::future<DescribeListenerCertificatesOutcome> DescribeListenerCertificatesOutcomeCallable;
         typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
         typedef std::future<DescribeLoadBalancerAttributesOutcome> DescribeLoadBalancerAttributesOutcomeCallable;
         typedef std::future<DescribeLoadBalancersOutcome> DescribeLoadBalancersOutcomeCallable;
@@ -188,6 +199,7 @@ namespace Model
         typedef std::future<ModifyTargetGroupOutcome> ModifyTargetGroupOutcomeCallable;
         typedef std::future<ModifyTargetGroupAttributesOutcome> ModifyTargetGroupAttributesOutcomeCallable;
         typedef std::future<RegisterTargetsOutcome> RegisterTargetsOutcomeCallable;
+        typedef std::future<RemoveListenerCertificatesOutcome> RemoveListenerCertificatesOutcomeCallable;
         typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
         typedef std::future<SetIpAddressTypeOutcome> SetIpAddressTypeOutcomeCallable;
         typedef std::future<SetRulePrioritiesOutcome> SetRulePrioritiesOutcomeCallable;
@@ -197,6 +209,7 @@ namespace Model
 
   class ElasticLoadBalancingv2Client;
 
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::AddListenerCertificatesRequest&, const Model::AddListenerCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddListenerCertificatesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::CreateListenerRequest&, const Model::CreateListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateListenerResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::CreateLoadBalancerRequest&, const Model::CreateLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLoadBalancerResponseReceivedHandler;
@@ -208,6 +221,7 @@ namespace Model
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeleteTargetGroupRequest&, const Model::DeleteTargetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTargetGroupResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeregisterTargetsRequest&, const Model::DeregisterTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTargetsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeListenerCertificatesRequest&, const Model::DescribeListenerCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeListenerCertificatesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeListenersRequest&, const Model::DescribeListenersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeListenersResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeLoadBalancerAttributesRequest&, const Model::DescribeLoadBalancerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancerAttributesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeLoadBalancersRequest&, const Model::DescribeLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancersResponseReceivedHandler;
@@ -223,6 +237,7 @@ namespace Model
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyTargetGroupRequest&, const Model::ModifyTargetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyTargetGroupResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyTargetGroupAttributesRequest&, const Model::ModifyTargetGroupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyTargetGroupAttributesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::RegisterTargetsRequest&, const Model::RegisterTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTargetsResponseReceivedHandler;
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::RemoveListenerCertificatesRequest&, const Model::RemoveListenerCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveListenerCertificatesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::SetIpAddressTypeRequest&, const Model::SetIpAddressTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIpAddressTypeResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::SetRulePrioritiesRequest&, const Model::SetRulePrioritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRulePrioritiesResponseReceivedHandler;
@@ -300,6 +315,43 @@ namespace Model
         */
         Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
+
+        /**
+         * <p>Adds the specified certificate to the specified secure listener.</p> <p>If
+         * the certificate was already added, the call is successful but the certificate is
+         * not added again.</p> <p>To list the certificates for your listener, use
+         * <a>DescribeListenerCertificates</a>. To remove certificates from your listener,
+         * use <a>RemoveListenerCertificates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddListenerCertificatesOutcome AddListenerCertificates(const Model::AddListenerCertificatesRequest& request) const;
+
+        /**
+         * <p>Adds the specified certificate to the specified secure listener.</p> <p>If
+         * the certificate was already added, the call is successful but the certificate is
+         * not added again.</p> <p>To list the certificates for your listener, use
+         * <a>DescribeListenerCertificates</a>. To remove certificates from your listener,
+         * use <a>RemoveListenerCertificates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddListenerCertificatesOutcomeCallable AddListenerCertificatesCallable(const Model::AddListenerCertificatesRequest& request) const;
+
+        /**
+         * <p>Adds the specified certificate to the specified secure listener.</p> <p>If
+         * the certificate was already added, the call is successful but the certificate is
+         * not added again.</p> <p>To list the certificates for your listener, use
+         * <a>DescribeListenerCertificates</a>. To remove certificates from your listener,
+         * use <a>RemoveListenerCertificates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddListenerCertificatesAsync(const Model::AddListenerCertificatesRequest& request, const AddListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified tags to the specified Elastic Load Balancing resource. You
@@ -811,6 +863,34 @@ namespace Model
         virtual void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the certificates for the specified secure listener.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeListenerCertificatesOutcome DescribeListenerCertificates(const Model::DescribeListenerCertificatesRequest& request) const;
+
+        /**
+         * <p>Describes the certificates for the specified secure listener.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeListenerCertificatesOutcomeCallable DescribeListenerCertificatesCallable(const Model::DescribeListenerCertificatesRequest& request) const;
+
+        /**
+         * <p>Describes the certificates for the specified secure listener.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeListenerCertificatesAsync(const Model::DescribeListenerCertificatesRequest& request, const DescribeListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the specified listeners or the listeners for the specified
          * Application Load Balancer or Network Load Balancer. You must specify either a
          * load balancer or one or more listeners.</p><p><h3>See Also:</h3>   <a
@@ -1263,15 +1343,17 @@ namespace Model
         virtual void ModifyTargetGroupAttributesAsync(const Model::ModifyTargetGroupAttributesRequest& request, const ModifyTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers the specified targets with the specified target group.</p> <p>By
-         * default, the load balancer routes requests to registered targets using the
-         * protocol and port number for the target group. Alternatively, you can override
-         * the port for a target when you register it.</p> <p>The target must be in the
-         * virtual private cloud (VPC) that you specified for the target group. If the
-         * target is an EC2 instance, it must be in the <code>running</code> state when you
-         * register it.</p> <p>Network Load Balancers do not support the following instance
-         * types as targets: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2,
-         * M3, and T1.</p> <p>To remove a target from a target group, use
+         * <p>Registers the specified targets with the specified target group.</p> <p>You
+         * can register targets by instance ID or by IP address. If the target is an EC2
+         * instance, it must be in the <code>running</code> state when you register it.</p>
+         * <p>By default, the load balancer routes requests to registered targets using the
+         * protocol and port for the target group. Alternatively, you can override the port
+         * for a target when you register it. You can register each EC2 instance or IP
+         * address with the same target group multiple times using different ports.</p>
+         * <p>With a Network Load Balancer, you cannot register instances by instance ID if
+         * they have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1,
+         * G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of these types by
+         * IP address.</p> <p>To remove a target from a target group, use
          * <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">AWS
          * API Reference</a></p>
@@ -1279,15 +1361,17 @@ namespace Model
         virtual Model::RegisterTargetsOutcome RegisterTargets(const Model::RegisterTargetsRequest& request) const;
 
         /**
-         * <p>Registers the specified targets with the specified target group.</p> <p>By
-         * default, the load balancer routes requests to registered targets using the
-         * protocol and port number for the target group. Alternatively, you can override
-         * the port for a target when you register it.</p> <p>The target must be in the
-         * virtual private cloud (VPC) that you specified for the target group. If the
-         * target is an EC2 instance, it must be in the <code>running</code> state when you
-         * register it.</p> <p>Network Load Balancers do not support the following instance
-         * types as targets: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2,
-         * M3, and T1.</p> <p>To remove a target from a target group, use
+         * <p>Registers the specified targets with the specified target group.</p> <p>You
+         * can register targets by instance ID or by IP address. If the target is an EC2
+         * instance, it must be in the <code>running</code> state when you register it.</p>
+         * <p>By default, the load balancer routes requests to registered targets using the
+         * protocol and port for the target group. Alternatively, you can override the port
+         * for a target when you register it. You can register each EC2 instance or IP
+         * address with the same target group multiple times using different ports.</p>
+         * <p>With a Network Load Balancer, you cannot register instances by instance ID if
+         * they have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1,
+         * G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of these types by
+         * IP address.</p> <p>To remove a target from a target group, use
          * <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">AWS
          * API Reference</a></p>
@@ -1297,15 +1381,17 @@ namespace Model
         virtual Model::RegisterTargetsOutcomeCallable RegisterTargetsCallable(const Model::RegisterTargetsRequest& request) const;
 
         /**
-         * <p>Registers the specified targets with the specified target group.</p> <p>By
-         * default, the load balancer routes requests to registered targets using the
-         * protocol and port number for the target group. Alternatively, you can override
-         * the port for a target when you register it.</p> <p>The target must be in the
-         * virtual private cloud (VPC) that you specified for the target group. If the
-         * target is an EC2 instance, it must be in the <code>running</code> state when you
-         * register it.</p> <p>Network Load Balancers do not support the following instance
-         * types as targets: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2,
-         * M3, and T1.</p> <p>To remove a target from a target group, use
+         * <p>Registers the specified targets with the specified target group.</p> <p>You
+         * can register targets by instance ID or by IP address. If the target is an EC2
+         * instance, it must be in the <code>running</code> state when you register it.</p>
+         * <p>By default, the load balancer routes requests to registered targets using the
+         * protocol and port for the target group. Alternatively, you can override the port
+         * for a target when you register it. You can register each EC2 instance or IP
+         * address with the same target group multiple times using different ports.</p>
+         * <p>With a Network Load Balancer, you cannot register instances by instance ID if
+         * they have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1,
+         * G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of these types by
+         * IP address.</p> <p>To remove a target from a target group, use
          * <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">AWS
          * API Reference</a></p>
@@ -1313,6 +1399,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterTargetsAsync(const Model::RegisterTargetsRequest& request, const RegisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified certificate from the specified secure listener.</p>
+         * <p>You can't remove the default certificate for a listener. To replace the
+         * default certificate, call <a>ModifyListener</a>.</p> <p>To list the certificates
+         * for your listener, use <a>DescribeListenerCertificates</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveListenerCertificatesOutcome RemoveListenerCertificates(const Model::RemoveListenerCertificatesRequest& request) const;
+
+        /**
+         * <p>Removes the specified certificate from the specified secure listener.</p>
+         * <p>You can't remove the default certificate for a listener. To replace the
+         * default certificate, call <a>ModifyListener</a>.</p> <p>To list the certificates
+         * for your listener, use <a>DescribeListenerCertificates</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveListenerCertificatesOutcomeCallable RemoveListenerCertificatesCallable(const Model::RemoveListenerCertificatesRequest& request) const;
+
+        /**
+         * <p>Removes the specified certificate from the specified secure listener.</p>
+         * <p>You can't remove the default certificate for a listener. To replace the
+         * default certificate, call <a>ModifyListener</a>.</p> <p>To list the certificates
+         * for your listener, use <a>DescribeListenerCertificates</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveListenerCertificatesAsync(const Model::RemoveListenerCertificatesRequest& request, const RemoveListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified Elastic Load Balancing
@@ -1483,6 +1606,7 @@ namespace Model
     void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AddListenerCertificatesAsyncHelper(const Model::AddListenerCertificatesRequest& request, const AddListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateListenerAsyncHelper(const Model::CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLoadBalancerAsyncHelper(const Model::CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1494,6 +1618,7 @@ namespace Model
         void DeleteTargetGroupAsyncHelper(const Model::DeleteTargetGroupRequest& request, const DeleteTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterTargetsAsyncHelper(const Model::DeregisterTargetsRequest& request, const DeregisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeListenerCertificatesAsyncHelper(const Model::DescribeListenerCertificatesRequest& request, const DescribeListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeListenersAsyncHelper(const Model::DescribeListenersRequest& request, const DescribeListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoadBalancerAttributesAsyncHelper(const Model::DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoadBalancersAsyncHelper(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1509,6 +1634,7 @@ namespace Model
         void ModifyTargetGroupAsyncHelper(const Model::ModifyTargetGroupRequest& request, const ModifyTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyTargetGroupAttributesAsyncHelper(const Model::ModifyTargetGroupAttributesRequest& request, const ModifyTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTargetsAsyncHelper(const Model::RegisterTargetsRequest& request, const RegisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveListenerCertificatesAsyncHelper(const Model::RemoveListenerCertificatesRequest& request, const RemoveListenerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIpAddressTypeAsyncHelper(const Model::SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetRulePrioritiesAsyncHelper(const Model::SetRulePrioritiesRequest& request, const SetRulePrioritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

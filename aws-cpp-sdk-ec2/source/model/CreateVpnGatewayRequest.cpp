@@ -24,6 +24,8 @@ CreateVpnGatewayRequest::CreateVpnGatewayRequest() :
     m_availabilityZoneHasBeenSet(false),
     m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_amazonSideAsn(0),
+    m_amazonSideAsnHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -41,6 +43,11 @@ Aws::String CreateVpnGatewayRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
     ss << "Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
+  }
+
+  if(m_amazonSideAsnHasBeenSet)
+  {
+    ss << "AmazonSideAsn=" << m_amazonSideAsn << "&";
   }
 
   if(m_dryRunHasBeenSet)

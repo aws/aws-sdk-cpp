@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about an SSL server certificate deployed on a load
-   * balancer.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an SSL server certificate.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Certificate">AWS
    * API Reference</a></p>
    */
@@ -85,10 +84,29 @@ namespace Model
      */
     inline Certificate& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the certificate is the default certificate.</p>
+     */
+    inline bool GetIsDefault() const{ return m_isDefault; }
+
+    /**
+     * <p>Indicates whether the certificate is the default certificate.</p>
+     */
+    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
+
+    /**
+     * <p>Indicates whether the certificate is the default certificate.</p>
+     */
+    inline Certificate& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
+
   private:
 
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
+    bool m_isDefault;
+    bool m_isDefaultHasBeenSet;
   };
 
 } // namespace Model

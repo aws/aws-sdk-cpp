@@ -31,12 +31,16 @@ namespace Model
 {
 
 Certificate::Certificate() : 
-    m_certificateArnHasBeenSet(false)
+    m_certificateArnHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false)
 {
 }
 
 Certificate::Certificate(const XmlNode& xmlNode) : 
-    m_certificateArnHasBeenSet(false)
+    m_certificateArnHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +57,12 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
       m_certificateArn = StringUtils::Trim(certificateArnNode.GetText().c_str());
       m_certificateArnHasBeenSet = true;
     }
+    XmlNode isDefaultNode = resultNode.FirstChild("IsDefault");
+    if(!isDefaultNode.IsNull())
+    {
+      m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(isDefaultNode.GetText().c_str()).c_str());
+      m_isDefaultHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -65,6 +75,11 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
   }
 
+  if(m_isDefaultHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
+  }
+
 }
 
 void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -72,6 +87,10 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_certificateArnHasBeenSet)
   {
       oStream << location << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
+  }
+  if(m_isDefaultHasBeenSet)
+  {
+      oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 }
 

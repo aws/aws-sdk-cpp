@@ -2017,9 +2017,9 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
          * API Reference</a></p>
          */
@@ -2028,9 +2028,9 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
          * API Reference</a></p>
          *
@@ -2041,9 +2041,9 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
          * API Reference</a></p>
          *
@@ -2694,14 +2694,14 @@ namespace Model
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p>
          * </note> <p>For more information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p> <important> <p>You cannot create more than one
-         * customer gateway with the same VPN type, IP address, and BGP ASN parameter
-         * values. If you run an identical request more than one time, the first request
-         * creates the customer gateway, and subsequent requests return information about
-         * the existing customer gateway. The subsequent requests do not create new
-         * customer gateway resources.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p> <important> <p>You cannot create more than one customer gateway
+         * with the same VPN type, IP address, and BGP ASN parameter values. If you run an
+         * identical request more than one time, the first request creates the customer
+         * gateway, and subsequent requests return information about the existing customer
+         * gateway. The subsequent requests do not create new customer gateway
+         * resources.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          */
@@ -2721,14 +2721,14 @@ namespace Model
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p>
          * </note> <p>For more information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p> <important> <p>You cannot create more than one
-         * customer gateway with the same VPN type, IP address, and BGP ASN parameter
-         * values. If you run an identical request more than one time, the first request
-         * creates the customer gateway, and subsequent requests return information about
-         * the existing customer gateway. The subsequent requests do not create new
-         * customer gateway resources.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p> <important> <p>You cannot create more than one customer gateway
+         * with the same VPN type, IP address, and BGP ASN parameter values. If you run an
+         * identical request more than one time, the first request creates the customer
+         * gateway, and subsequent requests return information about the existing customer
+         * gateway. The subsequent requests do not create new customer gateway
+         * resources.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          *
@@ -2750,14 +2750,14 @@ namespace Model
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p>
          * </note> <p>For more information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p> <important> <p>You cannot create more than one
-         * customer gateway with the same VPN type, IP address, and BGP ASN parameter
-         * values. If you run an identical request more than one time, the first request
-         * creates the customer gateway, and subsequent requests return information about
-         * the existing customer gateway. The subsequent requests do not create new
-         * customer gateway resources.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p> <important> <p>You cannot create more than one customer gateway
+         * with the same VPN type, IP address, and BGP ASN parameter values. If you run an
+         * identical request more than one time, the first request creates the customer
+         * gateway, and subsequent requests return information about the existing customer
+         * gateway. The subsequent requests do not create new customer gateway
+         * resources.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          *
@@ -4418,9 +4418,9 @@ namespace Model
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
          * gateway.</p> <p>For more information about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
          * API Reference</a></p>
          */
@@ -4431,9 +4431,9 @@ namespace Model
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
          * gateway.</p> <p>For more information about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
          * API Reference</a></p>
          *
@@ -4446,9 +4446,9 @@ namespace Model
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
          * gateway.</p> <p>For more information about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
          * API Reference</a></p>
          *
@@ -4461,9 +4461,9 @@ namespace Model
          * on the VPC side of your VPN connection. You can create a virtual private gateway
          * before creating the VPC itself.</p> <p>For more information about virtual
          * private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
          * API Reference</a></p>
          */
@@ -4474,9 +4474,9 @@ namespace Model
          * on the VPC side of your VPN connection. You can create a virtual private gateway
          * before creating the VPC itself.</p> <p>For more information about virtual
          * private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
          * API Reference</a></p>
          *
@@ -4489,9 +4489,9 @@ namespace Model
          * on the VPC side of your VPN connection. You can create a virtual private gateway
          * before creating the VPC itself.</p> <p>For more information about virtual
          * private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
          * API Reference</a></p>
          *
@@ -5709,9 +5709,9 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
          * information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
          * API Reference</a></p>
          */
@@ -5720,9 +5720,9 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
          * information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
          * API Reference</a></p>
          *
@@ -5733,9 +5733,9 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
          * information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
          * API Reference</a></p>
          *
@@ -8295,9 +8295,9 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN connections.</p> <p>For more information
          * about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
          * API Reference</a></p>
          */
@@ -8306,9 +8306,9 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN connections.</p> <p>For more information
          * about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
          * API Reference</a></p>
          *
@@ -8319,9 +8319,9 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN connections.</p> <p>For more information
          * about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
-         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
          * API Reference</a></p>
          *
@@ -8332,9 +8332,9 @@ namespace Model
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
          * information about virtual private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon Virtual Private Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
          * API Reference</a></p>
          */
@@ -8343,9 +8343,9 @@ namespace Model
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
          * information about virtual private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon Virtual Private Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
          * API Reference</a></p>
          *
@@ -8356,9 +8356,9 @@ namespace Model
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
          * information about virtual private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
-         * an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon Virtual Private Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
          * API Reference</a></p>
          *
@@ -9653,12 +9653,14 @@ namespace Model
 
         /**
          * <p>Modifies the specified attribute of the specified AMI. You can specify only
-         * one attribute at a time.</p> <note> <p>AWS Marketplace product codes cannot be
+         * one attribute at a time. You can use the <code>Attribute</code> parameter to
+         * specify the attribute or one of the following parameters:
+         * <code>Description</code>, <code>LaunchPermission</code>, or
+         * <code>ProductCode</code>.</p> <p>AWS Marketplace product codes cannot be
          * modified. Images with an AWS Marketplace product code cannot be made public.</p>
-         * </note> <note> <p>The SriovNetSupport enhanced networking attribute cannot be
-         * changed using this command. Instead, enable SriovNetSupport on an instance and
-         * create an AMI from the instance. This will result in an image with
-         * SriovNetSupport enabled.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>To enable the SriovNetSupport enhanced networking attribute of an image,
+         * enable SriovNetSupport on an instance and create an AMI from the
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">AWS
          * API Reference</a></p>
          */
@@ -9666,12 +9668,14 @@ namespace Model
 
         /**
          * <p>Modifies the specified attribute of the specified AMI. You can specify only
-         * one attribute at a time.</p> <note> <p>AWS Marketplace product codes cannot be
+         * one attribute at a time. You can use the <code>Attribute</code> parameter to
+         * specify the attribute or one of the following parameters:
+         * <code>Description</code>, <code>LaunchPermission</code>, or
+         * <code>ProductCode</code>.</p> <p>AWS Marketplace product codes cannot be
          * modified. Images with an AWS Marketplace product code cannot be made public.</p>
-         * </note> <note> <p>The SriovNetSupport enhanced networking attribute cannot be
-         * changed using this command. Instead, enable SriovNetSupport on an instance and
-         * create an AMI from the instance. This will result in an image with
-         * SriovNetSupport enabled.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>To enable the SriovNetSupport enhanced networking attribute of an image,
+         * enable SriovNetSupport on an instance and create an AMI from the
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">AWS
          * API Reference</a></p>
          *
@@ -9681,12 +9685,14 @@ namespace Model
 
         /**
          * <p>Modifies the specified attribute of the specified AMI. You can specify only
-         * one attribute at a time.</p> <note> <p>AWS Marketplace product codes cannot be
+         * one attribute at a time. You can use the <code>Attribute</code> parameter to
+         * specify the attribute or one of the following parameters:
+         * <code>Description</code>, <code>LaunchPermission</code>, or
+         * <code>ProductCode</code>.</p> <p>AWS Marketplace product codes cannot be
          * modified. Images with an AWS Marketplace product code cannot be made public.</p>
-         * </note> <note> <p>The SriovNetSupport enhanced networking attribute cannot be
-         * changed using this command. Instead, enable SriovNetSupport on an instance and
-         * create an AMI from the instance. This will result in an image with
-         * SriovNetSupport enabled.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>To enable the SriovNetSupport enhanced networking attribute of an image,
+         * enable SriovNetSupport on an instance and create an AMI from the
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">AWS
          * API Reference</a></p>
          *
