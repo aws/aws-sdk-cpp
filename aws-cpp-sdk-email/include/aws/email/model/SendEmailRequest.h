@@ -381,7 +381,7 @@ namespace Model
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
@@ -397,7 +397,7 @@ namespace Model
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
@@ -413,7 +413,7 @@ namespace Model
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
@@ -429,7 +429,7 @@ namespace Model
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
@@ -445,7 +445,7 @@ namespace Model
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline SendEmailRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
@@ -461,7 +461,7 @@ namespace Model
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline SendEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
@@ -477,7 +477,7 @@ namespace Model
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline SendEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
@@ -495,7 +495,7 @@ namespace Model
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetReturnPathArn() const{ return m_returnPathArn; }
 
@@ -512,7 +512,7 @@ namespace Model
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline void SetReturnPathArn(const Aws::String& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
 
@@ -529,7 +529,7 @@ namespace Model
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::move(value); }
 
@@ -546,7 +546,7 @@ namespace Model
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline void SetReturnPathArn(const char* value) { m_returnPathArnHasBeenSet = true; m_returnPathArn.assign(value); }
 
@@ -563,7 +563,7 @@ namespace Model
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline SendEmailRequest& WithReturnPathArn(const Aws::String& value) { SetReturnPathArn(value); return *this;}
 
@@ -580,7 +580,7 @@ namespace Model
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline SendEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(std::move(value)); return *this;}
 
@@ -597,7 +597,7 @@ namespace Model
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-     * SES Developer Guide</a>. </p>
+     * SES Developer Guide</a>.</p>
      */
     inline SendEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}
 

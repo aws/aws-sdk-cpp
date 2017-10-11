@@ -37,9 +37,9 @@ namespace Model
    * <p>Contains the topic ARN associated with an Amazon Simple Notification Service
    * (Amazon SNS) event destination.</p> <p>Event destinations, such as Amazon SNS,
    * are associated with configuration sets, which enable you to publish email
-   * sending events. For information about using configuration sets, see the <i> <a
+   * sending events. For information about using configuration sets, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-   * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SNSDestination">AWS
    * API Reference</a></p>
    */
@@ -58,9 +58,9 @@ namespace Model
      * <p>The ARN of the Amazon SNS topic that email sending events will be published
      * to. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <i> <a
+     * about Amazon SNS topics, see the <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</i> </p>
+     * Developer Guide</a>.</p>
      */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
 
@@ -68,9 +68,9 @@ namespace Model
      * <p>The ARN of the Amazon SNS topic that email sending events will be published
      * to. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <i> <a
+     * about Amazon SNS topics, see the <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</i> </p>
+     * Developer Guide</a>.</p>
      */
     inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
 
@@ -78,9 +78,9 @@ namespace Model
      * <p>The ARN of the Amazon SNS topic that email sending events will be published
      * to. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <i> <a
+     * about Amazon SNS topics, see the <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</i> </p>
+     * Developer Guide</a>.</p>
      */
     inline void SetTopicARN(Aws::String&& value) { m_topicARNHasBeenSet = true; m_topicARN = std::move(value); }
 
@@ -88,9 +88,9 @@ namespace Model
      * <p>The ARN of the Amazon SNS topic that email sending events will be published
      * to. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <i> <a
+     * about Amazon SNS topics, see the <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</i> </p>
+     * Developer Guide</a>.</p>
      */
     inline void SetTopicARN(const char* value) { m_topicARNHasBeenSet = true; m_topicARN.assign(value); }
 
@@ -98,9 +98,9 @@ namespace Model
      * <p>The ARN of the Amazon SNS topic that email sending events will be published
      * to. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <i> <a
+     * about Amazon SNS topics, see the <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</i> </p>
+     * Developer Guide</a>.</p>
      */
     inline SNSDestination& WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
 
@@ -108,9 +108,9 @@ namespace Model
      * <p>The ARN of the Amazon SNS topic that email sending events will be published
      * to. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <i> <a
+     * about Amazon SNS topics, see the <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</i> </p>
+     * Developer Guide</a>.</p>
      */
     inline SNSDestination& WithTopicARN(Aws::String&& value) { SetTopicARN(std::move(value)); return *this;}
 
@@ -118,9 +118,9 @@ namespace Model
      * <p>The ARN of the Amazon SNS topic that email sending events will be published
      * to. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <i> <a
+     * about Amazon SNS topics, see the <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</i> </p>
+     * Developer Guide</a>.</p>
      */
     inline SNSDestination& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
 

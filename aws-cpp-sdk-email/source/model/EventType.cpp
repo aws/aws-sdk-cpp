@@ -37,6 +37,7 @@ namespace Aws
         static const int delivery_HASH = HashingUtils::HashString("delivery");
         static const int open_HASH = HashingUtils::HashString("open");
         static const int click_HASH = HashingUtils::HashString("click");
+        static const int renderingFailure_HASH = HashingUtils::HashString("renderingFailure");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return EventType::click;
           }
+          else if (hashCode == renderingFailure_HASH)
+          {
+            return EventType::renderingFailure;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +103,8 @@ namespace Aws
             return "open";
           case EventType::click:
             return "click";
+          case EventType::renderingFailure:
+            return "renderingFailure";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

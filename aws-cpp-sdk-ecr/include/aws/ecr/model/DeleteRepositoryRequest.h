@@ -131,17 +131,17 @@ namespace Model
 
 
     /**
-     * <p>Force the deletion of the repository if it contains images.</p>
+     * <p> If a repository contains images, forces the deletion.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p>Force the deletion of the repository if it contains images.</p>
+     * <p> If a repository contains images, forces the deletion.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p>Force the deletion of the repository if it contains images.</p>
+     * <p> If a repository contains images, forces the deletion.</p>
      */
     inline DeleteRepositoryRequest& WithForce(bool value) { SetForce(value); return *this;}
 

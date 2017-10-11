@@ -26,17 +26,22 @@
 #include <aws/ecr/model/BatchGetImageResult.h>
 #include <aws/ecr/model/CompleteLayerUploadResult.h>
 #include <aws/ecr/model/CreateRepositoryResult.h>
+#include <aws/ecr/model/DeleteLifecyclePolicyResult.h>
 #include <aws/ecr/model/DeleteRepositoryResult.h>
 #include <aws/ecr/model/DeleteRepositoryPolicyResult.h>
 #include <aws/ecr/model/DescribeImagesResult.h>
 #include <aws/ecr/model/DescribeRepositoriesResult.h>
 #include <aws/ecr/model/GetAuthorizationTokenResult.h>
 #include <aws/ecr/model/GetDownloadUrlForLayerResult.h>
+#include <aws/ecr/model/GetLifecyclePolicyResult.h>
+#include <aws/ecr/model/GetLifecyclePolicyPreviewResult.h>
 #include <aws/ecr/model/GetRepositoryPolicyResult.h>
 #include <aws/ecr/model/InitiateLayerUploadResult.h>
 #include <aws/ecr/model/ListImagesResult.h>
 #include <aws/ecr/model/PutImageResult.h>
+#include <aws/ecr/model/PutLifecyclePolicyResult.h>
 #include <aws/ecr/model/SetRepositoryPolicyResult.h>
+#include <aws/ecr/model/StartLifecyclePolicyPreviewResult.h>
 #include <aws/ecr/model/UploadLayerPartResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -88,17 +93,22 @@ namespace Model
         class BatchGetImageRequest;
         class CompleteLayerUploadRequest;
         class CreateRepositoryRequest;
+        class DeleteLifecyclePolicyRequest;
         class DeleteRepositoryRequest;
         class DeleteRepositoryPolicyRequest;
         class DescribeImagesRequest;
         class DescribeRepositoriesRequest;
         class GetAuthorizationTokenRequest;
         class GetDownloadUrlForLayerRequest;
+        class GetLifecyclePolicyRequest;
+        class GetLifecyclePolicyPreviewRequest;
         class GetRepositoryPolicyRequest;
         class InitiateLayerUploadRequest;
         class ListImagesRequest;
         class PutImageRequest;
+        class PutLifecyclePolicyRequest;
         class SetRepositoryPolicyRequest;
+        class StartLifecyclePolicyPreviewRequest;
         class UploadLayerPartRequest;
 
         typedef Aws::Utils::Outcome<BatchCheckLayerAvailabilityResult, Aws::Client::AWSError<ECRErrors>> BatchCheckLayerAvailabilityOutcome;
@@ -106,17 +116,22 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchGetImageResult, Aws::Client::AWSError<ECRErrors>> BatchGetImageOutcome;
         typedef Aws::Utils::Outcome<CompleteLayerUploadResult, Aws::Client::AWSError<ECRErrors>> CompleteLayerUploadOutcome;
         typedef Aws::Utils::Outcome<CreateRepositoryResult, Aws::Client::AWSError<ECRErrors>> CreateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, Aws::Client::AWSError<ECRErrors>> DeleteLifecyclePolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteRepositoryResult, Aws::Client::AWSError<ECRErrors>> DeleteRepositoryOutcome;
         typedef Aws::Utils::Outcome<DeleteRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> DeleteRepositoryPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeImagesResult, Aws::Client::AWSError<ECRErrors>> DescribeImagesOutcome;
         typedef Aws::Utils::Outcome<DescribeRepositoriesResult, Aws::Client::AWSError<ECRErrors>> DescribeRepositoriesOutcome;
         typedef Aws::Utils::Outcome<GetAuthorizationTokenResult, Aws::Client::AWSError<ECRErrors>> GetAuthorizationTokenOutcome;
         typedef Aws::Utils::Outcome<GetDownloadUrlForLayerResult, Aws::Client::AWSError<ECRErrors>> GetDownloadUrlForLayerOutcome;
+        typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, Aws::Client::AWSError<ECRErrors>> GetLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<GetLifecyclePolicyPreviewResult, Aws::Client::AWSError<ECRErrors>> GetLifecyclePolicyPreviewOutcome;
         typedef Aws::Utils::Outcome<GetRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> GetRepositoryPolicyOutcome;
         typedef Aws::Utils::Outcome<InitiateLayerUploadResult, Aws::Client::AWSError<ECRErrors>> InitiateLayerUploadOutcome;
         typedef Aws::Utils::Outcome<ListImagesResult, Aws::Client::AWSError<ECRErrors>> ListImagesOutcome;
         typedef Aws::Utils::Outcome<PutImageResult, Aws::Client::AWSError<ECRErrors>> PutImageOutcome;
+        typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, Aws::Client::AWSError<ECRErrors>> PutLifecyclePolicyOutcome;
         typedef Aws::Utils::Outcome<SetRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> SetRepositoryPolicyOutcome;
+        typedef Aws::Utils::Outcome<StartLifecyclePolicyPreviewResult, Aws::Client::AWSError<ECRErrors>> StartLifecyclePolicyPreviewOutcome;
         typedef Aws::Utils::Outcome<UploadLayerPartResult, Aws::Client::AWSError<ECRErrors>> UploadLayerPartOutcome;
 
         typedef std::future<BatchCheckLayerAvailabilityOutcome> BatchCheckLayerAvailabilityOutcomeCallable;
@@ -124,17 +139,22 @@ namespace Model
         typedef std::future<BatchGetImageOutcome> BatchGetImageOutcomeCallable;
         typedef std::future<CompleteLayerUploadOutcome> CompleteLayerUploadOutcomeCallable;
         typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
+        typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
         typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
         typedef std::future<DeleteRepositoryPolicyOutcome> DeleteRepositoryPolicyOutcomeCallable;
         typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
         typedef std::future<DescribeRepositoriesOutcome> DescribeRepositoriesOutcomeCallable;
         typedef std::future<GetAuthorizationTokenOutcome> GetAuthorizationTokenOutcomeCallable;
         typedef std::future<GetDownloadUrlForLayerOutcome> GetDownloadUrlForLayerOutcomeCallable;
+        typedef std::future<GetLifecyclePolicyOutcome> GetLifecyclePolicyOutcomeCallable;
+        typedef std::future<GetLifecyclePolicyPreviewOutcome> GetLifecyclePolicyPreviewOutcomeCallable;
         typedef std::future<GetRepositoryPolicyOutcome> GetRepositoryPolicyOutcomeCallable;
         typedef std::future<InitiateLayerUploadOutcome> InitiateLayerUploadOutcomeCallable;
         typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
         typedef std::future<PutImageOutcome> PutImageOutcomeCallable;
+        typedef std::future<PutLifecyclePolicyOutcome> PutLifecyclePolicyOutcomeCallable;
         typedef std::future<SetRepositoryPolicyOutcome> SetRepositoryPolicyOutcomeCallable;
+        typedef std::future<StartLifecyclePolicyPreviewOutcome> StartLifecyclePolicyPreviewOutcomeCallable;
         typedef std::future<UploadLayerPartOutcome> UploadLayerPartOutcomeCallable;
 } // namespace Model
 
@@ -145,26 +165,31 @@ namespace Model
     typedef std::function<void(const ECRClient*, const Model::BatchGetImageRequest&, const Model::BatchGetImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetImageResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::CompleteLayerUploadRequest&, const Model::CompleteLayerUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteLayerUploadResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::DeleteLifecyclePolicyRequest&, const Model::DeleteLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryPolicyRequest&, const Model::DeleteRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryPolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DescribeImagesRequest&, const Model::DescribeImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagesResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DescribeRepositoriesRequest&, const Model::DescribeRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoriesResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetAuthorizationTokenRequest&, const Model::GetAuthorizationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAuthorizationTokenResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetDownloadUrlForLayerRequest&, const Model::GetDownloadUrlForLayerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDownloadUrlForLayerResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::GetLifecyclePolicyRequest&, const Model::GetLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecyclePolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::GetLifecyclePolicyPreviewRequest&, const Model::GetLifecyclePolicyPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecyclePolicyPreviewResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetRepositoryPolicyRequest&, const Model::GetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryPolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::InitiateLayerUploadRequest&, const Model::InitiateLayerUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateLayerUploadResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutImageRequest&, const Model::PutImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::PutLifecyclePolicyRequest&, const Model::PutLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::SetRepositoryPolicyRequest&, const Model::SetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRepositoryPolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::StartLifecyclePolicyPreviewRequest&, const Model::StartLifecyclePolicyPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLifecyclePolicyPreviewResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::UploadLayerPartRequest&, const Model::UploadLayerPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadLayerPartResponseReceivedHandler;
 
   /**
-   * <p>Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry
+   * <p>Amazon EC2 Container Registry (Amazon ECR) is a managed Docker registry
    * service. Customers can use the familiar Docker CLI to push, pull, and manage
    * images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
    * ECR supports private Docker repositories with resource-based permissions using
-   * AWS IAM so that specific users or Amazon EC2 instances can access repositories
-   * and images. Developers can use the Docker CLI to author and manage images.</p>
+   * IAM so that specific users or Amazon EC2 instances can access repositories and
+   * images. Developers can use the Docker CLI to author and manage images.</p>
    */
   class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient
   {
@@ -304,8 +329,8 @@ namespace Model
         virtual void BatchGetImageAsync(const Model::BatchGetImageRequest& request, const BatchGetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Inform Amazon ECR that the image layer upload for a specified registry,
-         * repository name, and upload ID, has completed. You can optionally provide a
+         * <p>Informs Amazon ECR that the image layer upload has completed for a specified
+         * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
          * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
          * for general use by customers for pulling and pushing images. In most cases, you
@@ -317,8 +342,8 @@ namespace Model
         virtual Model::CompleteLayerUploadOutcome CompleteLayerUpload(const Model::CompleteLayerUploadRequest& request) const;
 
         /**
-         * <p>Inform Amazon ECR that the image layer upload for a specified registry,
-         * repository name, and upload ID, has completed. You can optionally provide a
+         * <p>Informs Amazon ECR that the image layer upload has completed for a specified
+         * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
          * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
          * for general use by customers for pulling and pushing images. In most cases, you
@@ -332,8 +357,8 @@ namespace Model
         virtual Model::CompleteLayerUploadOutcomeCallable CompleteLayerUploadCallable(const Model::CompleteLayerUploadRequest& request) const;
 
         /**
-         * <p>Inform Amazon ECR that the image layer upload for a specified registry,
-         * repository name, and upload ID, has completed. You can optionally provide a
+         * <p>Informs Amazon ECR that the image layer upload has completed for a specified
+         * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
          * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
          * for general use by customers for pulling and pushing images. In most cases, you
@@ -370,6 +395,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLifecyclePolicyOutcome DeleteLifecyclePolicy(const Model::DeleteLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLifecyclePolicyOutcomeCallable DeleteLifecyclePolicyCallable(const Model::DeleteLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLifecyclePolicyAsync(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing image repository. If a repository contains images, you
@@ -582,6 +632,59 @@ namespace Model
         virtual void GetDownloadUrlForLayerAsync(const Model::GetDownloadUrlForLayerRequest& request, const GetDownloadUrlForLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLifecyclePolicyOutcome GetLifecyclePolicy(const Model::GetLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLifecyclePolicyOutcomeCallable GetLifecyclePolicyCallable(const Model::GetLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLifecyclePolicyAsync(const Model::GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the results of the specified lifecycle policy preview
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLifecyclePolicyPreviewOutcome GetLifecyclePolicyPreview(const Model::GetLifecyclePolicyPreviewRequest& request) const;
+
+        /**
+         * <p>Retrieves the results of the specified lifecycle policy preview
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLifecyclePolicyPreviewOutcomeCallable GetLifecyclePolicyPreviewCallable(const Model::GetLifecyclePolicyPreviewRequest& request) const;
+
+        /**
+         * <p>Retrieves the results of the specified lifecycle policy preview
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLifecyclePolicyPreviewAsync(const Model::GetLifecyclePolicyPreviewRequest& request, const GetLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the repository policy for a specified repository.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">AWS
@@ -727,6 +830,31 @@ namespace Model
         virtual void PutImageAsync(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or updates a lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutLifecyclePolicyOutcome PutLifecyclePolicy(const Model::PutLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Creates or updates a lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutLifecyclePolicyOutcomeCallable PutLifecyclePolicyCallable(const Model::PutLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Creates or updates a lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutLifecyclePolicyAsync(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Applies a repository policy on a specified repository to control access
          * permissions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">AWS
@@ -753,6 +881,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SetRepositoryPolicyAsync(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts a preview of the specified lifecycle policy. This allows you to see
+         * the results before creating the lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartLifecyclePolicyPreviewOutcome StartLifecyclePolicyPreview(const Model::StartLifecyclePolicyPreviewRequest& request) const;
+
+        /**
+         * <p>Starts a preview of the specified lifecycle policy. This allows you to see
+         * the results before creating the lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartLifecyclePolicyPreviewOutcomeCallable StartLifecyclePolicyPreviewCallable(const Model::StartLifecyclePolicyPreviewRequest& request) const;
+
+        /**
+         * <p>Starts a preview of the specified lifecycle policy. This allows you to see
+         * the results before creating the lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartLifecyclePolicyPreviewAsync(const Model::StartLifecyclePolicyPreviewRequest& request, const StartLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads an image layer part to Amazon ECR.</p> <note> <p>This operation is
@@ -801,17 +957,22 @@ namespace Model
         void BatchGetImageAsyncHelper(const Model::BatchGetImageRequest& request, const BatchGetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CompleteLayerUploadAsyncHelper(const Model::CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRepositoryAsyncHelper(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLifecyclePolicyAsyncHelper(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRepositoryPolicyAsyncHelper(const Model::DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImagesAsyncHelper(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRepositoriesAsyncHelper(const Model::DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAuthorizationTokenAsyncHelper(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDownloadUrlForLayerAsyncHelper(const Model::GetDownloadUrlForLayerRequest& request, const GetDownloadUrlForLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLifecyclePolicyAsyncHelper(const Model::GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLifecyclePolicyPreviewAsyncHelper(const Model::GetLifecyclePolicyPreviewRequest& request, const GetLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRepositoryPolicyAsyncHelper(const Model::GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InitiateLayerUploadAsyncHelper(const Model::InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImagesAsyncHelper(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutImageAsyncHelper(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutLifecyclePolicyAsyncHelper(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetRepositoryPolicyAsyncHelper(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartLifecyclePolicyPreviewAsyncHelper(const Model::StartLifecyclePolicyPreviewRequest& request, const StartLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UploadLayerPartAsyncHelper(const Model::UploadLayerPartRequest& request, const UploadLayerPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

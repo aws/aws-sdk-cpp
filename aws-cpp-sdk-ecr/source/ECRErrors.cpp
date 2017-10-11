@@ -37,7 +37,10 @@ static const int LAYER_PART_TOO_SMALL_HASH = HashingUtils::HashString("LayerPart
 static const int REPOSITORY_NOT_EMPTY_HASH = HashingUtils::HashString("RepositoryNotEmptyException");
 static const int REPOSITORY_ALREADY_EXISTS_HASH = HashingUtils::HashString("RepositoryAlreadyExistsException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int LIFECYCLE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("LifecyclePolicyNotFoundException");
+static const int LIFECYCLE_POLICY_PREVIEW_IN_PROGRESS_HASH = HashingUtils::HashString("LifecyclePolicyPreviewInProgressException");
 static const int EMPTY_UPLOAD_HASH = HashingUtils::HashString("EmptyUploadException");
+static const int LIFECYCLE_POLICY_PREVIEW_NOT_FOUND_HASH = HashingUtils::HashString("LifecyclePolicyPreviewNotFoundException");
 static const int IMAGE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageAlreadyExistsException");
 static const int LAYER_INACCESSIBLE_HASH = HashingUtils::HashString("LayerInaccessibleException");
 static const int REPOSITORY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryPolicyNotFoundException");
@@ -87,9 +90,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_PARAMETER), false);
   }
+  else if (hashCode == LIFECYCLE_POLICY_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LIFECYCLE_POLICY_NOT_FOUND), false);
+  }
+  else if (hashCode == LIFECYCLE_POLICY_PREVIEW_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LIFECYCLE_POLICY_PREVIEW_IN_PROGRESS), false);
+  }
   else if (hashCode == EMPTY_UPLOAD_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::EMPTY_UPLOAD), false);
+  }
+  else if (hashCode == LIFECYCLE_POLICY_PREVIEW_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::LIFECYCLE_POLICY_PREVIEW_NOT_FOUND), false);
   }
   else if (hashCode == IMAGE_ALREADY_EXISTS_HASH)
   {

@@ -47,86 +47,86 @@ namespace Model
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * to list images in. If you do not specify a registry, the default registry is
-     * assumed.</p>
+     * in which to list images. If you do not specify a registry, the default registry
+     * is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * to list images in. If you do not specify a registry, the default registry is
-     * assumed.</p>
+     * in which to list images. If you do not specify a registry, the default registry
+     * is assumed.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * to list images in. If you do not specify a registry, the default registry is
-     * assumed.</p>
+     * in which to list images. If you do not specify a registry, the default registry
+     * is assumed.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * to list images in. If you do not specify a registry, the default registry is
-     * assumed.</p>
+     * in which to list images. If you do not specify a registry, the default registry
+     * is assumed.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * to list images in. If you do not specify a registry, the default registry is
-     * assumed.</p>
+     * in which to list images. If you do not specify a registry, the default registry
+     * is assumed.</p>
      */
     inline ListImagesRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * to list images in. If you do not specify a registry, the default registry is
-     * assumed.</p>
+     * in which to list images. If you do not specify a registry, the default registry
+     * is assumed.</p>
      */
     inline ListImagesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * to list images in. If you do not specify a registry, the default registry is
-     * assumed.</p>
+     * in which to list images. If you do not specify a registry, the default registry
+     * is assumed.</p>
      */
     inline ListImagesRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
 
     /**
-     * <p>The repository whose image IDs are to be listed.</p>
+     * <p>The repository with image IDs to be listed.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The repository whose image IDs are to be listed.</p>
+     * <p>The repository with image IDs to be listed.</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The repository whose image IDs are to be listed.</p>
+     * <p>The repository with image IDs to be listed.</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>The repository whose image IDs are to be listed.</p>
+     * <p>The repository with image IDs to be listed.</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The repository whose image IDs are to be listed.</p>
+     * <p>The repository with image IDs to be listed.</p>
      */
     inline ListImagesRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The repository whose image IDs are to be listed.</p>
+     * <p>The repository with image IDs to be listed.</p>
      */
     inline ListImagesRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The repository whose image IDs are to be listed.</p>
+     * <p>The repository with image IDs to be listed.</p>
      */
     inline ListImagesRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
