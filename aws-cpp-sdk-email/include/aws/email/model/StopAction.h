@@ -38,9 +38,9 @@ namespace Model
    * <p>When included in a receipt rule, this action terminates the evaluation of the
    * receipt rule set and, optionally, publishes a notification to Amazon Simple
    * Notification Service (Amazon SNS).</p> <p>For information about setting a stop
-   * action in a receipt rule, see the <i> <a
+   * action in a receipt rule, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon
-   * SES Developer Guide</a>.</i> </p><p><h3>See Also:</h3>   <a
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/StopAction">AWS
    * API Reference</a></p>
    */

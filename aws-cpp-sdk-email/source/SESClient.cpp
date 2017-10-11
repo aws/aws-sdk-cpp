@@ -34,6 +34,7 @@
 #include <aws/email/model/CreateReceiptFilterRequest.h>
 #include <aws/email/model/CreateReceiptRuleRequest.h>
 #include <aws/email/model/CreateReceiptRuleSetRequest.h>
+#include <aws/email/model/CreateTemplateRequest.h>
 #include <aws/email/model/DeleteConfigurationSetRequest.h>
 #include <aws/email/model/DeleteConfigurationSetEventDestinationRequest.h>
 #include <aws/email/model/DeleteConfigurationSetTrackingOptionsRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/email/model/DeleteReceiptFilterRequest.h>
 #include <aws/email/model/DeleteReceiptRuleRequest.h>
 #include <aws/email/model/DeleteReceiptRuleSetRequest.h>
+#include <aws/email/model/DeleteTemplateRequest.h>
 #include <aws/email/model/DeleteVerifiedEmailAddressRequest.h>
 #include <aws/email/model/DescribeActiveReceiptRuleSetRequest.h>
 #include <aws/email/model/DescribeConfigurationSetRequest.h>
@@ -54,17 +56,21 @@
 #include <aws/email/model/GetIdentityVerificationAttributesRequest.h>
 #include <aws/email/model/GetSendQuotaRequest.h>
 #include <aws/email/model/GetSendStatisticsRequest.h>
+#include <aws/email/model/GetTemplateRequest.h>
 #include <aws/email/model/ListConfigurationSetsRequest.h>
 #include <aws/email/model/ListIdentitiesRequest.h>
 #include <aws/email/model/ListIdentityPoliciesRequest.h>
 #include <aws/email/model/ListReceiptFiltersRequest.h>
 #include <aws/email/model/ListReceiptRuleSetsRequest.h>
+#include <aws/email/model/ListTemplatesRequest.h>
 #include <aws/email/model/ListVerifiedEmailAddressesRequest.h>
 #include <aws/email/model/PutIdentityPolicyRequest.h>
 #include <aws/email/model/ReorderReceiptRuleSetRequest.h>
 #include <aws/email/model/SendBounceRequest.h>
+#include <aws/email/model/SendBulkTemplatedEmailRequest.h>
 #include <aws/email/model/SendEmailRequest.h>
 #include <aws/email/model/SendRawEmailRequest.h>
+#include <aws/email/model/SendTemplatedEmailRequest.h>
 #include <aws/email/model/SetActiveReceiptRuleSetRequest.h>
 #include <aws/email/model/SetIdentityDkimEnabledRequest.h>
 #include <aws/email/model/SetIdentityFeedbackForwardingEnabledRequest.h>
@@ -72,9 +78,11 @@
 #include <aws/email/model/SetIdentityMailFromDomainRequest.h>
 #include <aws/email/model/SetIdentityNotificationTopicRequest.h>
 #include <aws/email/model/SetReceiptRulePositionRequest.h>
+#include <aws/email/model/TestRenderTemplateRequest.h>
 #include <aws/email/model/UpdateConfigurationSetEventDestinationRequest.h>
 #include <aws/email/model/UpdateConfigurationSetTrackingOptionsRequest.h>
 #include <aws/email/model/UpdateReceiptRuleRequest.h>
+#include <aws/email/model/UpdateTemplateRequest.h>
 #include <aws/email/model/VerifyDomainDkimRequest.h>
 #include <aws/email/model/VerifyDomainIdentityRequest.h>
 #include <aws/email/model/VerifyEmailAddressRequest.h>
@@ -400,6 +408,41 @@ void SESClient::CreateReceiptRuleSetAsyncHelper(const CreateReceiptRuleSetReques
   handler(this, request, CreateReceiptRuleSet(request), context);
 }
 
+CreateTemplateOutcome SESClient::CreateTemplate(const CreateTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateTemplateOutcome(CreateTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateTemplateOutcome(outcome.GetError());
+  }
+}
+
+CreateTemplateOutcomeCallable SESClient::CreateTemplateCallable(const CreateTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::CreateTemplateAsync(const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::CreateTemplateAsyncHelper(const CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTemplate(request), context);
+}
+
 DeleteConfigurationSetOutcome SESClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
 {
   Aws::StringStream ss;
@@ -678,6 +721,41 @@ void SESClient::DeleteReceiptRuleSetAsync(const DeleteReceiptRuleSetRequest& req
 void SESClient::DeleteReceiptRuleSetAsyncHelper(const DeleteReceiptRuleSetRequest& request, const DeleteReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteReceiptRuleSet(request), context);
+}
+
+DeleteTemplateOutcome SESClient::DeleteTemplate(const DeleteTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTemplateOutcome(DeleteTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteTemplateOutcome(outcome.GetError());
+  }
+}
+
+DeleteTemplateOutcomeCallable SESClient::DeleteTemplateCallable(const DeleteTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::DeleteTemplateAsync(const DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::DeleteTemplateAsyncHelper(const DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTemplate(request), context);
 }
 
 DeleteVerifiedEmailAddressOutcome SESClient::DeleteVerifiedEmailAddress(const DeleteVerifiedEmailAddressRequest& request) const
@@ -1100,6 +1178,41 @@ void SESClient::GetSendStatisticsAsyncHelper(const GetSendStatisticsRequest& req
   handler(this, request, GetSendStatistics(request), context);
 }
 
+GetTemplateOutcome SESClient::GetTemplate(const GetTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetTemplateOutcome(GetTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetTemplateOutcome(outcome.GetError());
+  }
+}
+
+GetTemplateOutcomeCallable SESClient::GetTemplateCallable(const GetTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::GetTemplateAsync(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::GetTemplateAsyncHelper(const GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTemplate(request), context);
+}
+
 ListConfigurationSetsOutcome SESClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1275,6 +1388,41 @@ void SESClient::ListReceiptRuleSetsAsyncHelper(const ListReceiptRuleSetsRequest&
   handler(this, request, ListReceiptRuleSets(request), context);
 }
 
+ListTemplatesOutcome SESClient::ListTemplates(const ListTemplatesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTemplatesOutcome(ListTemplatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTemplatesOutcome(outcome.GetError());
+  }
+}
+
+ListTemplatesOutcomeCallable SESClient::ListTemplatesCallable(const ListTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::ListTemplatesAsyncHelper(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTemplates(request), context);
+}
+
 ListVerifiedEmailAddressesOutcome SESClient::ListVerifiedEmailAddresses(const ListVerifiedEmailAddressesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1415,6 +1563,41 @@ void SESClient::SendBounceAsyncHelper(const SendBounceRequest& request, const Se
   handler(this, request, SendBounce(request), context);
 }
 
+SendBulkTemplatedEmailOutcome SESClient::SendBulkTemplatedEmail(const SendBulkTemplatedEmailRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SendBulkTemplatedEmailOutcome(SendBulkTemplatedEmailResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SendBulkTemplatedEmailOutcome(outcome.GetError());
+  }
+}
+
+SendBulkTemplatedEmailOutcomeCallable SESClient::SendBulkTemplatedEmailCallable(const SendBulkTemplatedEmailRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendBulkTemplatedEmailOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendBulkTemplatedEmail(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::SendBulkTemplatedEmailAsync(const SendBulkTemplatedEmailRequest& request, const SendBulkTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendBulkTemplatedEmailAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::SendBulkTemplatedEmailAsyncHelper(const SendBulkTemplatedEmailRequest& request, const SendBulkTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendBulkTemplatedEmail(request), context);
+}
+
 SendEmailOutcome SESClient::SendEmail(const SendEmailRequest& request) const
 {
   Aws::StringStream ss;
@@ -1483,6 +1666,41 @@ void SESClient::SendRawEmailAsync(const SendRawEmailRequest& request, const Send
 void SESClient::SendRawEmailAsyncHelper(const SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SendRawEmail(request), context);
+}
+
+SendTemplatedEmailOutcome SESClient::SendTemplatedEmail(const SendTemplatedEmailRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SendTemplatedEmailOutcome(SendTemplatedEmailResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SendTemplatedEmailOutcome(outcome.GetError());
+  }
+}
+
+SendTemplatedEmailOutcomeCallable SESClient::SendTemplatedEmailCallable(const SendTemplatedEmailRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendTemplatedEmailOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendTemplatedEmail(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::SendTemplatedEmailAsync(const SendTemplatedEmailRequest& request, const SendTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendTemplatedEmailAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::SendTemplatedEmailAsyncHelper(const SendTemplatedEmailRequest& request, const SendTemplatedEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendTemplatedEmail(request), context);
 }
 
 SetActiveReceiptRuleSetOutcome SESClient::SetActiveReceiptRuleSet(const SetActiveReceiptRuleSetRequest& request) const
@@ -1730,6 +1948,41 @@ void SESClient::SetReceiptRulePositionAsyncHelper(const SetReceiptRulePositionRe
   handler(this, request, SetReceiptRulePosition(request), context);
 }
 
+TestRenderTemplateOutcome SESClient::TestRenderTemplate(const TestRenderTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return TestRenderTemplateOutcome(TestRenderTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TestRenderTemplateOutcome(outcome.GetError());
+  }
+}
+
+TestRenderTemplateOutcomeCallable SESClient::TestRenderTemplateCallable(const TestRenderTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TestRenderTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestRenderTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::TestRenderTemplateAsync(const TestRenderTemplateRequest& request, const TestRenderTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestRenderTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::TestRenderTemplateAsyncHelper(const TestRenderTemplateRequest& request, const TestRenderTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestRenderTemplate(request), context);
+}
+
 UpdateConfigurationSetEventDestinationOutcome SESClient::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
 {
   Aws::StringStream ss;
@@ -1833,6 +2086,41 @@ void SESClient::UpdateReceiptRuleAsync(const UpdateReceiptRuleRequest& request, 
 void SESClient::UpdateReceiptRuleAsyncHelper(const UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateReceiptRule(request), context);
+}
+
+UpdateTemplateOutcome SESClient::UpdateTemplate(const UpdateTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateTemplateOutcome(UpdateTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateTemplateOutcome(outcome.GetError());
+  }
+}
+
+UpdateTemplateOutcomeCallable SESClient::UpdateTemplateCallable(const UpdateTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::UpdateTemplateAsync(const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::UpdateTemplateAsyncHelper(const UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTemplate(request), context);
 }
 
 VerifyDomainDkimOutcome SESClient::VerifyDomainDkim(const VerifyDomainDkimRequest& request) const

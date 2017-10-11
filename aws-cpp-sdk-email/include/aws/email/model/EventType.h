@@ -32,7 +32,8 @@ namespace Model
     complaint,
     delivery,
     open,
-    click
+    click,
+    renderingFailure
   };
 
 namespace EventTypeMapper

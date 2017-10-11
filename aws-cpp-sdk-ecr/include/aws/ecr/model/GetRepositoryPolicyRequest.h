@@ -88,37 +88,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the repository whose policy you want to retrieve.</p>
+     * <p>The name of the repository with the policy to retrieve.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of the repository whose policy you want to retrieve.</p>
+     * <p>The name of the repository with the policy to retrieve.</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the repository whose policy you want to retrieve.</p>
+     * <p>The name of the repository with the policy to retrieve.</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>The name of the repository whose policy you want to retrieve.</p>
+     * <p>The name of the repository with the policy to retrieve.</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of the repository whose policy you want to retrieve.</p>
+     * <p>The name of the repository with the policy to retrieve.</p>
      */
     inline GetRepositoryPolicyRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the repository whose policy you want to retrieve.</p>
+     * <p>The name of the repository with the policy to retrieve.</p>
      */
     inline GetRepositoryPolicyRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the repository whose policy you want to retrieve.</p>
+     * <p>The name of the repository with the policy to retrieve.</p>
      */
     inline GetRepositoryPolicyRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 

@@ -1206,8 +1206,9 @@ GetUtterancesViewOutcome LexModelBuildingServiceClient::GetUtterancesView(const 
   Aws::Http::URI uri = m_uri;
   ss << "/bots/";
   ss << request.GetBotName();
+  ss << "/utterances";
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("/utterances?view=aggregation");
+  ss.str("?view=aggregation");
   uri.SetQueryString(ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())

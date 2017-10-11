@@ -212,8 +212,9 @@ AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest&
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
+  ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("/tags?operation=add");
+  ss.str("?operation=add");
   uri.SetQueryString(ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1184,8 +1185,9 @@ RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFr
   ss << request.GetAccountId();
   ss << "/vaults/";
   ss << request.GetVaultName();
+  ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("/tags?operation=remove");
+  ss.str("?operation=remove");
   uri.SetQueryString(ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())

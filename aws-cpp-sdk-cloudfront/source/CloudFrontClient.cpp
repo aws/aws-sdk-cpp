@@ -194,7 +194,9 @@ CreateDistributionWithTags2017_03_25Outcome CloudFrontClient::CreateDistribution
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/2017-03-25/distribution?WithTags";
+  ss << "/2017-03-25/distribution";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?WithTags");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -301,7 +303,9 @@ CreateStreamingDistributionWithTags2017_03_25Outcome CloudFrontClient::CreateStr
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/2017-03-25/streaming-distribution?WithTags";
+  ss << "/2017-03-25/streaming-distribution";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?WithTags");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -914,7 +918,9 @@ TagResource2017_03_25Outcome CloudFrontClient::TagResource2017_03_25(const TagRe
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/2017-03-25/tagging?Operation=Tag";
+  ss << "/2017-03-25/tagging";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?Operation=Tag");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -949,7 +955,9 @@ UntagResource2017_03_25Outcome CloudFrontClient::UntagResource2017_03_25(const U
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/2017-03-25/tagging?Operation=Untag";
+  ss << "/2017-03-25/tagging";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?Operation=Untag");
   uri.SetQueryString(ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())

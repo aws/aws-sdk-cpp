@@ -3202,7 +3202,9 @@ ImportApiKeysOutcome APIGatewayClient::ImportApiKeys(const ImportApiKeysRequest&
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/apikeys?mode=import";
+  ss << "/apikeys";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?mode=import");
   uri.SetQueryString(ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -3274,7 +3276,9 @@ ImportRestApiOutcome APIGatewayClient::ImportRestApi(const ImportRestApiRequest&
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/restapis?mode=import";
+  ss << "/restapis";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?mode=import");
   uri.SetQueryString(ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
