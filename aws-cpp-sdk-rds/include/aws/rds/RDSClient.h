@@ -74,6 +74,7 @@
 #include <aws/rds/model/DescribeReservedDBInstancesResult.h>
 #include <aws/rds/model/DescribeReservedDBInstancesOfferingsResult.h>
 #include <aws/rds/model/DescribeSourceRegionsResult.h>
+#include <aws/rds/model/DescribeValidDBInstanceModificationsResult.h>
 #include <aws/rds/model/DownloadDBLogFilePortionResult.h>
 #include <aws/rds/model/FailoverDBClusterResult.h>
 #include <aws/rds/model/ListTagsForResourceResult.h>
@@ -205,6 +206,7 @@ namespace Aws
         class DescribeReservedDBInstancesRequest;
         class DescribeReservedDBInstancesOfferingsRequest;
         class DescribeSourceRegionsRequest;
+        class DescribeValidDBInstanceModificationsRequest;
         class DownloadDBLogFilePortionRequest;
         class FailoverDBClusterRequest;
         class ListTagsForResourceRequest;
@@ -295,6 +297,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<DescribeReservedDBInstancesResult, Aws::Client::AWSError<RDSErrors>> DescribeReservedDBInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedDBInstancesOfferingsResult, Aws::Client::AWSError<RDSErrors>> DescribeReservedDBInstancesOfferingsOutcome;
         typedef Aws::Utils::Outcome<DescribeSourceRegionsResult, Aws::Client::AWSError<RDSErrors>> DescribeSourceRegionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeValidDBInstanceModificationsResult, Aws::Client::AWSError<RDSErrors>> DescribeValidDBInstanceModificationsOutcome;
         typedef Aws::Utils::Outcome<DownloadDBLogFilePortionResult, Aws::Client::AWSError<RDSErrors>> DownloadDBLogFilePortionOutcome;
         typedef Aws::Utils::Outcome<FailoverDBClusterResult, Aws::Client::AWSError<RDSErrors>> FailoverDBClusterOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<RDSErrors>> ListTagsForResourceOutcome;
@@ -385,6 +388,7 @@ namespace Aws
         typedef std::future<DescribeReservedDBInstancesOutcome> DescribeReservedDBInstancesOutcomeCallable;
         typedef std::future<DescribeReservedDBInstancesOfferingsOutcome> DescribeReservedDBInstancesOfferingsOutcomeCallable;
         typedef std::future<DescribeSourceRegionsOutcome> DescribeSourceRegionsOutcomeCallable;
+        typedef std::future<DescribeValidDBInstanceModificationsOutcome> DescribeValidDBInstanceModificationsOutcomeCallable;
         typedef std::future<DownloadDBLogFilePortionOutcome> DownloadDBLogFilePortionOutcomeCallable;
         typedef std::future<FailoverDBClusterOutcome> FailoverDBClusterOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -478,6 +482,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::DescribeReservedDBInstancesRequest&, const Model::DescribeReservedDBInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedDBInstancesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeReservedDBInstancesOfferingsRequest&, const Model::DescribeReservedDBInstancesOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedDBInstancesOfferingsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeSourceRegionsRequest&, const Model::DescribeSourceRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSourceRegionsResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::DescribeValidDBInstanceModificationsRequest&, const Model::DescribeValidDBInstanceModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeValidDBInstanceModificationsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DownloadDBLogFilePortionRequest&, const Model::DownloadDBLogFilePortionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DownloadDBLogFilePortionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::FailoverDBClusterRequest&, const Model::FailoverDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -2947,6 +2952,37 @@ namespace Aws
         virtual void DescribeSourceRegionsAsync(const Model::DescribeSourceRegionsRequest& request, const DescribeSourceRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>You can call <a>DescribeValidDBInstanceModifications</a> to learn what
+         * modifications you can make to your DB instance. You can use this information
+         * when you call <a>ModifyDBInstance</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeValidDBInstanceModificationsOutcome DescribeValidDBInstanceModifications(const Model::DescribeValidDBInstanceModificationsRequest& request) const;
+
+        /**
+         * <p>You can call <a>DescribeValidDBInstanceModifications</a> to learn what
+         * modifications you can make to your DB instance. You can use this information
+         * when you call <a>ModifyDBInstance</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeValidDBInstanceModificationsOutcomeCallable DescribeValidDBInstanceModificationsCallable(const Model::DescribeValidDBInstanceModificationsRequest& request) const;
+
+        /**
+         * <p>You can call <a>DescribeValidDBInstanceModifications</a> to learn what
+         * modifications you can make to your DB instance. You can use this information
+         * when you call <a>ModifyDBInstance</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeValidDBInstanceModificationsAsync(const Model::DescribeValidDBInstanceModificationsRequest& request, const DescribeValidDBInstanceModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Downloads all or a portion of the specified log file, up to 1 MB in
          * size.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
@@ -3267,7 +3303,9 @@ namespace Aws
         /**
          * <p>Modifies settings for a DB instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
-         * the request.</p><p><h3>See Also:</h3>   <a
+         * the request. To learn what modifications you can make to your DB instance, call
+         * <a>DescribeValidDBInstanceModifications</a> before you call
+         * <a>ModifyDBInstance</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">AWS
          * API Reference</a></p>
          */
@@ -3276,7 +3314,9 @@ namespace Aws
         /**
          * <p>Modifies settings for a DB instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
-         * the request.</p><p><h3>See Also:</h3>   <a
+         * the request. To learn what modifications you can make to your DB instance, call
+         * <a>DescribeValidDBInstanceModifications</a> before you call
+         * <a>ModifyDBInstance</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">AWS
          * API Reference</a></p>
          *
@@ -3287,7 +3327,9 @@ namespace Aws
         /**
          * <p>Modifies settings for a DB instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
-         * the request.</p><p><h3>See Also:</h3>   <a
+         * the request. To learn what modifications you can make to your DB instance, call
+         * <a>DescribeValidDBInstanceModifications</a> before you call
+         * <a>ModifyDBInstance</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">AWS
          * API Reference</a></p>
          *
@@ -4384,6 +4426,7 @@ namespace Aws
         void DescribeReservedDBInstancesAsyncHelper(const Model::DescribeReservedDBInstancesRequest& request, const DescribeReservedDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedDBInstancesOfferingsAsyncHelper(const Model::DescribeReservedDBInstancesOfferingsRequest& request, const DescribeReservedDBInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSourceRegionsAsyncHelper(const Model::DescribeSourceRegionsRequest& request, const DescribeSourceRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeValidDBInstanceModificationsAsyncHelper(const Model::DescribeValidDBInstanceModificationsRequest& request, const DescribeValidDBInstanceModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DownloadDBLogFilePortionAsyncHelper(const Model::DownloadDBLogFilePortionRequest& request, const DownloadDBLogFilePortionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FailoverDBClusterAsyncHelper(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -1128,8 +1128,10 @@ namespace Model
 
         /**
          * <p>Returns table statistics on the database migration task, including table
-         * name, rows inserted, rows updated, and rows deleted.</p><p><h3>See Also:</h3>  
-         * <a
+         * name, rows inserted, rows updated, and rows deleted.</p> <p>Note that the "last
+         * updated" column the DMS console only indicates the time that AWS DMS last
+         * updated the table statistics record for a table. It does not indicate the time
+         * of the last update to the table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">AWS
          * API Reference</a></p>
          */
@@ -1137,8 +1139,10 @@ namespace Model
 
         /**
          * <p>Returns table statistics on the database migration task, including table
-         * name, rows inserted, rows updated, and rows deleted.</p><p><h3>See Also:</h3>  
-         * <a
+         * name, rows inserted, rows updated, and rows deleted.</p> <p>Note that the "last
+         * updated" column the DMS console only indicates the time that AWS DMS last
+         * updated the table statistics record for a table. It does not indicate the time
+         * of the last update to the table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">AWS
          * API Reference</a></p>
          *
@@ -1148,8 +1152,10 @@ namespace Model
 
         /**
          * <p>Returns table statistics on the database migration task, including table
-         * name, rows inserted, rows updated, and rows deleted.</p><p><h3>See Also:</h3>  
-         * <a
+         * name, rows inserted, rows updated, and rows deleted.</p> <p>Note that the "last
+         * updated" column the DMS console only indicates the time that AWS DMS last
+         * updated the table statistics record for a table. It does not indicate the time
+         * of the last update to the table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">AWS
          * API Reference</a></p>
          *

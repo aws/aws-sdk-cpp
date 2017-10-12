@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Text-To-Speech;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.2.13;
+        version : 1.2.14;
 
         // Display name for package.
         title: AWS SDK for C++ (Text-To-Speech);
@@ -48,8 +48,8 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.2.13,
-            AWSSDKCPP-Polly/1.2.20160610.13
+            AWSSDKCPP-Core/1.2.14,
+            AWSSDKCPP-Polly/1.2.20160610.14
        }
     }
 

@@ -44,6 +44,7 @@ namespace Model
     Justin,
     Kendra,
     Kimberly,
+    Matthew,
     Salli,
     Conchita,
     Enrique,
@@ -73,7 +74,8 @@ namespace Model
     Tatyana,
     Astrid,
     Filiz,
-    Vicki
+    Vicki,
+    Takumi
   };
 
 namespace VoiceIdMapper

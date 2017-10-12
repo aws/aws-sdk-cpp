@@ -33,6 +33,7 @@ static const int INSUFFICIENT_PRIVILEGES_HASH = HashingUtils::HashString("Insuff
 static const int MANAGED_ACTION_INVALID_STATE_HASH = HashingUtils::HashString("ManagedActionInvalidStateException");
 static const int TOO_MANY_APPLICATION_VERSIONS_HASH = HashingUtils::HashString("TooManyApplicationVersionsException");
 static const int TOO_MANY_PLATFORMS_HASH = HashingUtils::HashString("TooManyPlatformsException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int CODE_BUILD_NOT_IN_SERVICE_REGION_HASH = HashingUtils::HashString("CodeBuildNotInServiceRegionException");
 static const int TOO_MANY_CONFIGURATION_TEMPLATES_HASH = HashingUtils::HashString("TooManyConfigurationTemplatesException");
 static const int S3_LOCATION_NOT_IN_SERVICE_REGION_HASH = HashingUtils::HashString("S3LocationNotInServiceRegionException");
@@ -43,6 +44,7 @@ static const int TOO_MANY_BUCKETS_HASH = HashingUtils::HashString("TooManyBucket
 static const int TOO_MANY_ENVIRONMENTS_HASH = HashingUtils::HashString("TooManyEnvironmentsException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int ELASTIC_BEANSTALK_SERVICE_HASH = HashingUtils::HashString("ElasticBeanstalkServiceException");
+static const int RESOURCE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ResourceTypeNotSupportedException");
 static const int PLATFORM_VERSION_STILL_REFERENCED_HASH = HashingUtils::HashString("PlatformVersionStillReferencedException");
 
 
@@ -69,6 +71,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_PLATFORMS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_PLATFORMS), false);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_TAGS), false);
   }
   else if (hashCode == CODE_BUILD_NOT_IN_SERVICE_REGION_HASH)
   {
@@ -109,6 +115,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ELASTIC_BEANSTALK_SERVICE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::ELASTIC_BEANSTALK_SERVICE), false);
+  }
+  else if (hashCode == RESOURCE_TYPE_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::RESOURCE_TYPE_NOT_SUPPORTED), false);
   }
   else if (hashCode == PLATFORM_VERSION_STILL_REFERENCED_HASH)
   {

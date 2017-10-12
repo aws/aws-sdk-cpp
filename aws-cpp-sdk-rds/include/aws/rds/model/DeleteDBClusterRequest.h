@@ -51,64 +51,50 @@ namespace Model
 
     /**
      * <p>The DB cluster identifier for the DB cluster to be deleted. This parameter
-     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match an
+     * existing DBClusterIdentifier.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
      * <p>The DB cluster identifier for the DB cluster to be deleted. This parameter
-     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match an
+     * existing DBClusterIdentifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
      * <p>The DB cluster identifier for the DB cluster to be deleted. This parameter
-     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match an
+     * existing DBClusterIdentifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The DB cluster identifier for the DB cluster to be deleted. This parameter
-     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match an
+     * existing DBClusterIdentifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
      * <p>The DB cluster identifier for the DB cluster to be deleted. This parameter
-     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match an
+     * existing DBClusterIdentifier.</p> </li> </ul>
      */
     inline DeleteDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>The DB cluster identifier for the DB cluster to be deleted. This parameter
-     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match an
+     * existing DBClusterIdentifier.</p> </li> </ul>
      */
     inline DeleteDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The DB cluster identifier for the DB cluster to be deleted. This parameter
-     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match an
+     * existing DBClusterIdentifier.</p> </li> </ul>
      */
     inline DeleteDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -152,8 +138,8 @@ namespace Model
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
      * <p> Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
-     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetFinalDBSnapshotIdentifier() const{ return m_finalDBSnapshotIdentifier; }
@@ -163,8 +149,8 @@ namespace Model
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
      * <p> Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
-     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(const Aws::String& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = value; }
@@ -174,8 +160,8 @@ namespace Model
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
      * <p> Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
-     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(Aws::String&& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = std::move(value); }
@@ -185,8 +171,8 @@ namespace Model
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
      * <p> Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
-     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(const char* value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier.assign(value); }
@@ -196,8 +182,8 @@ namespace Model
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
      * <p> Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
-     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(const Aws::String& value) { SetFinalDBSnapshotIdentifier(value); return *this;}
@@ -207,8 +193,8 @@ namespace Model
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
      * <p> Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
-     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(Aws::String&& value) { SetFinalDBSnapshotIdentifier(std::move(value)); return *this;}
@@ -218,8 +204,8 @@ namespace Model
      * when <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
      * <p> Specifying this parameter and also setting the
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
-     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(const char* value) { SetFinalDBSnapshotIdentifier(value); return *this;}

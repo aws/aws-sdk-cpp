@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
@@ -169,7 +169,7 @@ namespace Model
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
@@ -178,7 +178,7 @@ namespace Model
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
@@ -187,7 +187,7 @@ namespace Model
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
@@ -196,7 +196,7 @@ namespace Model
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
@@ -205,7 +205,7 @@ namespace Model
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
@@ -214,7 +214,7 @@ namespace Model
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */

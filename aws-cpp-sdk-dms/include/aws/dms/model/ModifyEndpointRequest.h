@@ -382,37 +382,44 @@ namespace Model
 
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. To reset this
+     * parameter, pass the empty string ("") as an argument.</p>
      */
     inline const Aws::String& GetExtraConnectionAttributes() const{ return m_extraConnectionAttributes; }
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. To reset this
+     * parameter, pass the empty string ("") as an argument.</p>
      */
     inline void SetExtraConnectionAttributes(const Aws::String& value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes = value; }
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. To reset this
+     * parameter, pass the empty string ("") as an argument.</p>
      */
     inline void SetExtraConnectionAttributes(Aws::String&& value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes = std::move(value); }
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. To reset this
+     * parameter, pass the empty string ("") as an argument.</p>
      */
     inline void SetExtraConnectionAttributes(const char* value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes.assign(value); }
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. To reset this
+     * parameter, pass the empty string ("") as an argument.</p>
      */
     inline ModifyEndpointRequest& WithExtraConnectionAttributes(const Aws::String& value) { SetExtraConnectionAttributes(value); return *this;}
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. To reset this
+     * parameter, pass the empty string ("") as an argument.</p>
      */
     inline ModifyEndpointRequest& WithExtraConnectionAttributes(Aws::String&& value) { SetExtraConnectionAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. To reset this
+     * parameter, pass the empty string ("") as an argument.</p>
      */
     inline ModifyEndpointRequest& WithExtraConnectionAttributes(const char* value) { SetExtraConnectionAttributes(value); return *this;}
 

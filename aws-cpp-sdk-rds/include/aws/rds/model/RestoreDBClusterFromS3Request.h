@@ -201,7 +201,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the source data in the S3 bucket.
      * This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -211,7 +211,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the source data in the S3 bucket.
      * This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -221,7 +221,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the source data in the S3 bucket.
      * This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -231,7 +231,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the source data in the S3 bucket.
      * This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -241,7 +241,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the source data in the S3 bucket.
      * This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -251,7 +251,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the source data in the S3 bucket.
      * This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -261,7 +261,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the source data in the S3 bucket.
      * This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -272,63 +272,56 @@ namespace Model
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -384,57 +377,50 @@ namespace Model
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+     * </p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+     * </p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+     * </p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+     * </p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+     * </p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+     * </p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+     * </p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -546,57 +532,57 @@ namespace Model
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * word for the chosen database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * word for the chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * word for the chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * word for the chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * word for the chosen database engine.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * word for the chosen database engine.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * word for the chosen database engine.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 

@@ -53,7 +53,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the option group to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>myoptiongroup</code> </p>
@@ -62,7 +62,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the option group to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>myoptiongroup</code> </p>
@@ -71,7 +71,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the option group to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>myoptiongroup</code> </p>
@@ -80,7 +80,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the option group to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>myoptiongroup</code> </p>
@@ -89,7 +89,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the option group to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>myoptiongroup</code> </p>
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the option group to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>myoptiongroup</code> </p>
@@ -107,7 +107,7 @@ namespace Model
 
     /**
      * <p>Specifies the name of the option group to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>myoptiongroup</code> </p>

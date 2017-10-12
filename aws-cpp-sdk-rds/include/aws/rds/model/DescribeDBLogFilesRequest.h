@@ -53,64 +53,50 @@ namespace Model
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBLogFilesRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBLogFilesRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
-     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBLogFilesRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 

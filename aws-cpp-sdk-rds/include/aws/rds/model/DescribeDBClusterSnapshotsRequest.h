@@ -55,10 +55,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
@@ -66,10 +64,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
@@ -77,10 +73,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
@@ -88,10 +82,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
@@ -99,10 +91,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -110,10 +100,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
@@ -121,10 +109,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -132,84 +118,70 @@ namespace Model
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
-     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
-     * </li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
+     * <li> <p>If this identifier is for an automated snapshot, the
+     * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
-     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
-     * </li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
+     * <li> <p>If this identifier is for an automated snapshot, the
+     * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
      */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
-     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
-     * </li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
+     * <li> <p>If this identifier is for an automated snapshot, the
+     * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
      */
     inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
-     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
-     * </li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
+     * <li> <p>If this identifier is for an automated snapshot, the
+     * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
      */
     inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
-     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
-     * </li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
+     * <li> <p>If this identifier is for an automated snapshot, the
+     * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
-     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
-     * </li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
+     * <li> <p>If this identifier is for an automated snapshot, the
+     * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
-     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
-     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
-     * </li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
+     * <li> <p>If this identifier is for an automated snapshot, the
+     * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 

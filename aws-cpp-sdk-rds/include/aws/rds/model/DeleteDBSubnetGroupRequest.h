@@ -52,63 +52,56 @@ namespace Model
     /**
      * <p>The name of the database subnet group to delete.</p> <note> <p>You cannot
      * delete the default subnet group.</p> </note> <p>Constraints:</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
      * <p>The name of the database subnet group to delete.</p> <note> <p>You cannot
      * delete the default subnet group.</p> </note> <p>Constraints:</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>The name of the database subnet group to delete.</p> <note> <p>You cannot
      * delete the default subnet group.</p> </note> <p>Constraints:</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the database subnet group to delete.</p> <note> <p>You cannot
      * delete the default subnet group.</p> </note> <p>Constraints:</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
      * <p>The name of the database subnet group to delete.</p> <note> <p>You cannot
      * delete the default subnet group.</p> </note> <p>Constraints:</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline DeleteDBSubnetGroupRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name of the database subnet group to delete.</p> <note> <p>You cannot
      * delete the default subnet group.</p> </note> <p>Constraints:</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline DeleteDBSubnetGroupRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database subnet group to delete.</p> <note> <p>You cannot
      * delete the default subnet group.</p> </note> <p>Constraints:</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline DeleteDBSubnetGroupRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

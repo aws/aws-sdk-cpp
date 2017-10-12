@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -113,7 +113,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -133,7 +133,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -143,7 +143,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -153,7 +153,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -175,10 +175,8 @@ namespace Model
      * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
      * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
      * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
+     * existing Snapshot.</p> </li> </ul>
      */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
 
@@ -186,10 +184,8 @@ namespace Model
      * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
      * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
      * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
+     * existing Snapshot.</p> </li> </ul>
      */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
@@ -197,10 +193,8 @@ namespace Model
      * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
      * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
      * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
+     * existing Snapshot.</p> </li> </ul>
      */
     inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
 
@@ -208,10 +202,8 @@ namespace Model
      * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
      * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
      * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
+     * existing Snapshot.</p> </li> </ul>
      */
     inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
@@ -219,10 +211,8 @@ namespace Model
      * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
      * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
      * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
+     * existing Snapshot.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
 
@@ -230,10 +220,8 @@ namespace Model
      * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
      * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
      * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
+     * existing Snapshot.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
 
@@ -241,10 +229,8 @@ namespace Model
      * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
      * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
      * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
+     * existing Snapshot.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
 
@@ -359,57 +345,50 @@ namespace Model
 
     /**
      * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
      * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
      * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters, periods,
-     * underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <p>Constraints: If supplied, must match the name of an existing
+     * DBSubnetGroup.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

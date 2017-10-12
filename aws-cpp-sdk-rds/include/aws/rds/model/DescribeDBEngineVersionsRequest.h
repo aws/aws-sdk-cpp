@@ -129,57 +129,50 @@ namespace Model
 
     /**
      * <p>The name of a specific DB parameter group family to return details for.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBParameterGroupFamily.</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /**
      * <p>The name of a specific DB parameter group family to return details for.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBParameterGroupFamily.</p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
      * <p>The name of a specific DB parameter group family to return details for.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBParameterGroupFamily.</p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = std::move(value); }
 
     /**
      * <p>The name of a specific DB parameter group family to return details for.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBParameterGroupFamily.</p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /**
      * <p>The name of a specific DB parameter group family to return details for.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBParameterGroupFamily.</p> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
      * <p>The name of a specific DB parameter group family to return details for.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBParameterGroupFamily.</p> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(std::move(value)); return *this;}
 
     /**
      * <p>The name of a specific DB parameter group family to return details for.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBParameterGroupFamily.</p> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 

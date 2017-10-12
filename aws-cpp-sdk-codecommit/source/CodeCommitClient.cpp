@@ -30,6 +30,7 @@
 #include <aws/codecommit/model/BatchGetRepositoriesRequest.h>
 #include <aws/codecommit/model/CreateBranchRequest.h>
 #include <aws/codecommit/model/CreateRepositoryRequest.h>
+#include <aws/codecommit/model/DeleteBranchRequest.h>
 #include <aws/codecommit/model/DeleteRepositoryRequest.h>
 #include <aws/codecommit/model/GetBlobRequest.h>
 #include <aws/codecommit/model/GetBranchRequest.h>
@@ -212,6 +213,41 @@ void CodeCommitClient::CreateRepositoryAsync(const CreateRepositoryRequest& requ
 void CodeCommitClient::CreateRepositoryAsyncHelper(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateRepository(request), context);
+}
+
+DeleteBranchOutcome CodeCommitClient::DeleteBranch(const DeleteBranchRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBranchOutcome(DeleteBranchResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteBranchOutcome(outcome.GetError());
+  }
+}
+
+DeleteBranchOutcomeCallable CodeCommitClient::DeleteBranchCallable(const DeleteBranchRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBranchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBranch(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::DeleteBranchAsync(const DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBranchAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::DeleteBranchAsyncHelper(const DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBranch(request), context);
 }
 
 DeleteRepositoryOutcome CodeCommitClient::DeleteRepository(const DeleteRepositoryRequest& request) const

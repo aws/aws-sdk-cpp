@@ -17,6 +17,8 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dms/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -87,7 +89,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 500.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -95,7 +97,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 500.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -103,7 +105,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 500.</p>
      */
     inline DescribeTableStatisticsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
@@ -157,6 +159,56 @@ namespace Model
      */
     inline DescribeTableStatisticsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
+    /**
+     * <p>Filters applied to the describe table statistics action.</p> <p>Valid filter
+     * names: schema-name | table-name | table-state</p> <p>A combination of filters
+     * creates an AND condition where each record matches all specified filters.</p>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Filters applied to the describe table statistics action.</p> <p>Valid filter
+     * names: schema-name | table-name | table-state</p> <p>A combination of filters
+     * creates an AND condition where each record matches all specified filters.</p>
+     */
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>Filters applied to the describe table statistics action.</p> <p>Valid filter
+     * names: schema-name | table-name | table-state</p> <p>A combination of filters
+     * creates an AND condition where each record matches all specified filters.</p>
+     */
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>Filters applied to the describe table statistics action.</p> <p>Valid filter
+     * names: schema-name | table-name | table-state</p> <p>A combination of filters
+     * creates an AND condition where each record matches all specified filters.</p>
+     */
+    inline DescribeTableStatisticsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>Filters applied to the describe table statistics action.</p> <p>Valid filter
+     * names: schema-name | table-name | table-state</p> <p>A combination of filters
+     * creates an AND condition where each record matches all specified filters.</p>
+     */
+    inline DescribeTableStatisticsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters applied to the describe table statistics action.</p> <p>Valid filter
+     * names: schema-name | table-name | table-state</p> <p>A combination of filters
+     * creates an AND condition where each record matches all specified filters.</p>
+     */
+    inline DescribeTableStatisticsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>Filters applied to the describe table statistics action.</p> <p>Valid filter
+     * names: schema-name | table-name | table-state</p> <p>A combination of filters
+     * creates an AND condition where each record matches all specified filters.</p>
+     */
+    inline DescribeTableStatisticsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_replicationTaskArn;
@@ -167,6 +219,9 @@ namespace Model
 
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

@@ -171,50 +171,66 @@ namespace Model
 
 
     /**
-     * <p>The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.</p>
+     * <p>The branches that will be included in the trigger configuration. If you
+     * specify an empty array, the trigger will apply to all branches.</p> <note>
+     * <p>While no content is required in the array, you must include the array
+     * itself.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetBranches() const{ return m_branches; }
 
     /**
-     * <p>The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.</p>
+     * <p>The branches that will be included in the trigger configuration. If you
+     * specify an empty array, the trigger will apply to all branches.</p> <note>
+     * <p>While no content is required in the array, you must include the array
+     * itself.</p> </note>
      */
     inline void SetBranches(const Aws::Vector<Aws::String>& value) { m_branchesHasBeenSet = true; m_branches = value; }
 
     /**
-     * <p>The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.</p>
+     * <p>The branches that will be included in the trigger configuration. If you
+     * specify an empty array, the trigger will apply to all branches.</p> <note>
+     * <p>While no content is required in the array, you must include the array
+     * itself.</p> </note>
      */
     inline void SetBranches(Aws::Vector<Aws::String>&& value) { m_branchesHasBeenSet = true; m_branches = std::move(value); }
 
     /**
-     * <p>The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.</p>
+     * <p>The branches that will be included in the trigger configuration. If you
+     * specify an empty array, the trigger will apply to all branches.</p> <note>
+     * <p>While no content is required in the array, you must include the array
+     * itself.</p> </note>
      */
     inline RepositoryTrigger& WithBranches(const Aws::Vector<Aws::String>& value) { SetBranches(value); return *this;}
 
     /**
-     * <p>The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.</p>
+     * <p>The branches that will be included in the trigger configuration. If you
+     * specify an empty array, the trigger will apply to all branches.</p> <note>
+     * <p>While no content is required in the array, you must include the array
+     * itself.</p> </note>
      */
     inline RepositoryTrigger& WithBranches(Aws::Vector<Aws::String>&& value) { SetBranches(std::move(value)); return *this;}
 
     /**
-     * <p>The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.</p>
+     * <p>The branches that will be included in the trigger configuration. If you
+     * specify an empty array, the trigger will apply to all branches.</p> <note>
+     * <p>While no content is required in the array, you must include the array
+     * itself.</p> </note>
      */
     inline RepositoryTrigger& AddBranches(const Aws::String& value) { m_branchesHasBeenSet = true; m_branches.push_back(value); return *this; }
 
     /**
-     * <p>The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.</p>
+     * <p>The branches that will be included in the trigger configuration. If you
+     * specify an empty array, the trigger will apply to all branches.</p> <note>
+     * <p>While no content is required in the array, you must include the array
+     * itself.</p> </note>
      */
     inline RepositoryTrigger& AddBranches(Aws::String&& value) { m_branchesHasBeenSet = true; m_branches.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The branches that will be included in the trigger configuration. If no
-     * branches are specified, the trigger will apply to all branches.</p>
+     * <p>The branches that will be included in the trigger configuration. If you
+     * specify an empty array, the trigger will apply to all branches.</p> <note>
+     * <p>While no content is required in the array, you must include the array
+     * itself.</p> </note>
      */
     inline RepositoryTrigger& AddBranches(const char* value) { m_branchesHasBeenSet = true; m_branches.push_back(value); return *this; }
 

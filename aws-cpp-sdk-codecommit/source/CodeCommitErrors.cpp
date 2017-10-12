@@ -46,6 +46,7 @@ static const int INVALID_REPOSITORY_NAME_HASH = HashingUtils::HashString("Invali
 static const int ENCRYPTION_KEY_ACCESS_DENIED_HASH = HashingUtils::HashString("EncryptionKeyAccessDeniedException");
 static const int COMMIT_REQUIRED_HASH = HashingUtils::HashString("CommitRequiredException");
 static const int REPOSITORY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RepositoryDoesNotExistException");
+static const int DEFAULT_BRANCH_CANNOT_BE_DELETED_HASH = HashingUtils::HashString("DefaultBranchCannotBeDeletedException");
 static const int MAXIMUM_BRANCHES_EXCEEDED_HASH = HashingUtils::HashString("MaximumBranchesExceededException");
 static const int INVALID_BRANCH_NAME_HASH = HashingUtils::HashString("InvalidBranchNameException");
 static const int REPOSITORY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RepositoryLimitExceededException");
@@ -151,6 +152,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REPOSITORY_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_DOES_NOT_EXIST), false);
+  }
+  else if (hashCode == DEFAULT_BRANCH_CANNOT_BE_DELETED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::DEFAULT_BRANCH_CANNOT_BE_DELETED), false);
   }
   else if (hashCode == MAXIMUM_BRANCHES_EXCEEDED_HASH)
   {

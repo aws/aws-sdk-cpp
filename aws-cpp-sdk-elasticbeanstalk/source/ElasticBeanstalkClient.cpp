@@ -56,6 +56,7 @@
 #include <aws/elasticbeanstalk/model/DescribePlatformVersionRequest.h>
 #include <aws/elasticbeanstalk/model/ListAvailableSolutionStacksRequest.h>
 #include <aws/elasticbeanstalk/model/ListPlatformVersionsRequest.h>
+#include <aws/elasticbeanstalk/model/ListTagsForResourceRequest.h>
 #include <aws/elasticbeanstalk/model/RebuildEnvironmentRequest.h>
 #include <aws/elasticbeanstalk/model/RequestEnvironmentInfoRequest.h>
 #include <aws/elasticbeanstalk/model/RestartAppServerRequest.h>
@@ -67,6 +68,7 @@
 #include <aws/elasticbeanstalk/model/UpdateApplicationVersionRequest.h>
 #include <aws/elasticbeanstalk/model/UpdateConfigurationTemplateRequest.h>
 #include <aws/elasticbeanstalk/model/UpdateEnvironmentRequest.h>
+#include <aws/elasticbeanstalk/model/UpdateTagsForResourceRequest.h>
 #include <aws/elasticbeanstalk/model/ValidateConfigurationSettingsRequest.h>
 
 using namespace Aws;
@@ -1159,6 +1161,41 @@ void ElasticBeanstalkClient::ListPlatformVersionsAsyncHelper(const ListPlatformV
   handler(this, request, ListPlatformVersions(request), context);
 }
 
+ListTagsForResourceOutcome ElasticBeanstalkClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable ElasticBeanstalkClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 RebuildEnvironmentOutcome ElasticBeanstalkClient::RebuildEnvironment(const RebuildEnvironmentRequest& request) const
 {
   Aws::StringStream ss;
@@ -1542,6 +1579,41 @@ void ElasticBeanstalkClient::UpdateEnvironmentAsync(const UpdateEnvironmentReque
 void ElasticBeanstalkClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateEnvironment(request), context);
+}
+
+UpdateTagsForResourceOutcome ElasticBeanstalkClient::UpdateTagsForResource(const UpdateTagsForResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateTagsForResourceOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+UpdateTagsForResourceOutcomeCallable ElasticBeanstalkClient::UpdateTagsForResourceCallable(const UpdateTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::UpdateTagsForResourceAsync(const UpdateTagsForResourceRequest& request, const UpdateTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::UpdateTagsForResourceAsyncHelper(const UpdateTagsForResourceRequest& request, const UpdateTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTagsForResource(request), context);
 }
 
 ValidateConfigurationSettingsOutcome ElasticBeanstalkClient::ValidateConfigurationSettings(const ValidateConfigurationSettingsRequest& request) const

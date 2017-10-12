@@ -55,13 +55,11 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
      * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
      * from one AWS Region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
-     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
-     * in the same AWS Region as the copy, specify a valid DB snapshot identifier.</p>
-     * </li> <li> <p>If the source snapshot is in a different AWS Region than the copy,
-     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * specify a valid system snapshot in the "available" state.</p> </li> <li> <p>If
+     * the source snapshot is in the same AWS Region as the copy, specify a valid DB
+     * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
+     * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot1</code> </p>
@@ -72,13 +70,11 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
      * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
      * from one AWS Region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
-     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
-     * in the same AWS Region as the copy, specify a valid DB snapshot identifier.</p>
-     * </li> <li> <p>If the source snapshot is in a different AWS Region than the copy,
-     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * specify a valid system snapshot in the "available" state.</p> </li> <li> <p>If
+     * the source snapshot is in the same AWS Region as the copy, specify a valid DB
+     * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
+     * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot1</code> </p>
@@ -89,13 +85,11 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
      * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
      * from one AWS Region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
-     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
-     * in the same AWS Region as the copy, specify a valid DB snapshot identifier.</p>
-     * </li> <li> <p>If the source snapshot is in a different AWS Region than the copy,
-     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * specify a valid system snapshot in the "available" state.</p> </li> <li> <p>If
+     * the source snapshot is in the same AWS Region as the copy, specify a valid DB
+     * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
+     * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot1</code> </p>
@@ -106,13 +100,11 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
      * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
      * from one AWS Region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
-     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
-     * in the same AWS Region as the copy, specify a valid DB snapshot identifier.</p>
-     * </li> <li> <p>If the source snapshot is in a different AWS Region than the copy,
-     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * specify a valid system snapshot in the "available" state.</p> </li> <li> <p>If
+     * the source snapshot is in the same AWS Region as the copy, specify a valid DB
+     * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
+     * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot1</code> </p>
@@ -123,13 +115,11 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
      * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
      * from one AWS Region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
-     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
-     * in the same AWS Region as the copy, specify a valid DB snapshot identifier.</p>
-     * </li> <li> <p>If the source snapshot is in a different AWS Region than the copy,
-     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * specify a valid system snapshot in the "available" state.</p> </li> <li> <p>If
+     * the source snapshot is in the same AWS Region as the copy, specify a valid DB
+     * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
+     * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot1</code> </p>
@@ -140,13 +130,11 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
      * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
      * from one AWS Region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
-     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
-     * in the same AWS Region as the copy, specify a valid DB snapshot identifier.</p>
-     * </li> <li> <p>If the source snapshot is in a different AWS Region than the copy,
-     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * specify a valid system snapshot in the "available" state.</p> </li> <li> <p>If
+     * the source snapshot is in the same AWS Region as the copy, specify a valid DB
+     * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
+     * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot1</code> </p>
@@ -157,13 +145,11 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
      * case-sensitive.</p> <p>You cannot copy an encrypted, shared DB cluster snapshot
      * from one AWS Region to another.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> <li> <p>Must specify a valid system
-     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
-     * in the same AWS Region as the copy, specify a valid DB snapshot identifier.</p>
-     * </li> <li> <p>If the source snapshot is in a different AWS Region than the copy,
-     * specify a valid DB cluster snapshot ARN. For more information, go to <a
+     * specify a valid system snapshot in the "available" state.</p> </li> <li> <p>If
+     * the source snapshot is in the same AWS Region as the copy, specify a valid DB
+     * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
+     * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot or DB Cluster Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot1</code> </p>
@@ -174,9 +160,9 @@ namespace Model
     /**
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
     inline const Aws::String& GetTargetDBClusterSnapshotIdentifier() const{ return m_targetDBClusterSnapshotIdentifier; }
@@ -184,9 +170,9 @@ namespace Model
     /**
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
     inline void SetTargetDBClusterSnapshotIdentifier(const Aws::String& value) { m_targetDBClusterSnapshotIdentifierHasBeenSet = true; m_targetDBClusterSnapshotIdentifier = value; }
@@ -194,9 +180,9 @@ namespace Model
     /**
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
     inline void SetTargetDBClusterSnapshotIdentifier(Aws::String&& value) { m_targetDBClusterSnapshotIdentifierHasBeenSet = true; m_targetDBClusterSnapshotIdentifier = std::move(value); }
@@ -204,9 +190,9 @@ namespace Model
     /**
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
     inline void SetTargetDBClusterSnapshotIdentifier(const char* value) { m_targetDBClusterSnapshotIdentifierHasBeenSet = true; m_targetDBClusterSnapshotIdentifier.assign(value); }
@@ -214,9 +200,9 @@ namespace Model
     /**
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
     inline CopyDBClusterSnapshotRequest& WithTargetDBClusterSnapshotIdentifier(const Aws::String& value) { SetTargetDBClusterSnapshotIdentifier(value); return *this;}
@@ -224,9 +210,9 @@ namespace Model
     /**
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
     inline CopyDBClusterSnapshotRequest& WithTargetDBClusterSnapshotIdentifier(Aws::String&& value) { SetTargetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
@@ -234,9 +220,9 @@ namespace Model
     /**
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
     inline CopyDBClusterSnapshotRequest& WithTargetDBClusterSnapshotIdentifier(const char* value) { SetTargetDBClusterSnapshotIdentifier(value); return *this;}

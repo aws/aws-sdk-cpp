@@ -549,16 +549,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same AWS Region in which the operation
-     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
-     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
+     * <p>The specified DB subnet group must be in the same AWS Region in which the
+     * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
+     * are created from the same source DB instance must either:&gt;</p> <ul> <li>
      * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
      * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
@@ -567,16 +566,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same AWS Region in which the operation
-     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
-     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
+     * <p>The specified DB subnet group must be in the same AWS Region in which the
+     * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
+     * are created from the same source DB instance must either:&gt;</p> <ul> <li>
      * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
      * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
@@ -585,16 +583,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same AWS Region in which the operation
-     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
-     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
+     * <p>The specified DB subnet group must be in the same AWS Region in which the
+     * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
+     * are created from the same source DB instance must either:&gt;</p> <ul> <li>
      * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
      * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
@@ -603,16 +600,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same AWS Region in which the operation
-     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
-     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
+     * <p>The specified DB subnet group must be in the same AWS Region in which the
+     * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
+     * are created from the same source DB instance must either:&gt;</p> <ul> <li>
      * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
      * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
@@ -621,16 +617,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same AWS Region in which the operation
-     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
-     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
+     * <p>The specified DB subnet group must be in the same AWS Region in which the
+     * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
+     * are created from the same source DB instance must either:&gt;</p> <ul> <li>
      * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
      * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -639,16 +634,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same AWS Region in which the operation
-     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
-     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
+     * <p>The specified DB subnet group must be in the same AWS Region in which the
+     * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
+     * are created from the same source DB instance must either:&gt;</p> <ul> <li>
      * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
      * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
@@ -657,16 +651,15 @@ namespace Model
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
-     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>The
-     * specified DB subnet group must be in the same AWS Region in which the operation
-     * is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that are
-     * created from the same source DB instance must either:&gt;</p> <ul> <li>
+     * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
+     * <p>The specified DB subnet group must be in the same AWS Region in which the
+     * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
+     * are created from the same source DB instance must either:&gt;</p> <ul> <li>
      * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
      * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

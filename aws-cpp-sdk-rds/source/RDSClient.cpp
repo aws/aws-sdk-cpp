@@ -86,6 +86,7 @@
 #include <aws/rds/model/DescribeReservedDBInstancesRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesOfferingsRequest.h>
 #include <aws/rds/model/DescribeSourceRegionsRequest.h>
+#include <aws/rds/model/DescribeValidDBInstanceModificationsRequest.h>
 #include <aws/rds/model/DownloadDBLogFilePortionRequest.h>
 #include <aws/rds/model/FailoverDBClusterRequest.h>
 #include <aws/rds/model/ListTagsForResourceRequest.h>
@@ -2255,6 +2256,41 @@ void RDSClient::DescribeSourceRegionsAsync(const DescribeSourceRegionsRequest& r
 void RDSClient::DescribeSourceRegionsAsyncHelper(const DescribeSourceRegionsRequest& request, const DescribeSourceRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSourceRegions(request), context);
+}
+
+DescribeValidDBInstanceModificationsOutcome RDSClient::DescribeValidDBInstanceModifications(const DescribeValidDBInstanceModificationsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeValidDBInstanceModificationsOutcome(DescribeValidDBInstanceModificationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeValidDBInstanceModificationsOutcome(outcome.GetError());
+  }
+}
+
+DescribeValidDBInstanceModificationsOutcomeCallable RDSClient::DescribeValidDBInstanceModificationsCallable(const DescribeValidDBInstanceModificationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeValidDBInstanceModificationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeValidDBInstanceModifications(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::DescribeValidDBInstanceModificationsAsync(const DescribeValidDBInstanceModificationsRequest& request, const DescribeValidDBInstanceModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeValidDBInstanceModificationsAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::DescribeValidDBInstanceModificationsAsyncHelper(const DescribeValidDBInstanceModificationsRequest& request, const DescribeValidDBInstanceModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeValidDBInstanceModifications(request), context);
 }
 
 DownloadDBLogFilePortionOutcome RDSClient::DownloadDBLogFilePortion(const DownloadDBLogFilePortionRequest& request) const

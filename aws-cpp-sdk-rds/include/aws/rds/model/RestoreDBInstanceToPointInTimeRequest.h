@@ -54,121 +54,107 @@ namespace Model
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDBInstanceIdentifier() const{ return m_sourceDBInstanceIdentifier; }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(Aws::String&& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const char* value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(const Aws::String& value) { SetSourceDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(Aws::String&& value) { SetSourceDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceIdentifier(const char* value) { SetSourceDBInstanceIdentifier(value); return *this;}
 
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetTargetDBInstanceIdentifier() const{ return m_targetDBInstanceIdentifier; }
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(const char* value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const Aws::String& value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p>
-     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
-     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const char* value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
@@ -409,57 +395,50 @@ namespace Model
 
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
-     * Must contain no more than 255 alphanumeric characters, periods, underscores,
-     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
@@ -651,77 +630,98 @@ namespace Model
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 

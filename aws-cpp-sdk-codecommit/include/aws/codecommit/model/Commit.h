@@ -49,6 +49,42 @@ namespace Model
 
 
     /**
+     * <p>The full SHA of the specified commit. </p>
+     */
+    inline const Aws::String& GetCommitId() const{ return m_commitId; }
+
+    /**
+     * <p>The full SHA of the specified commit. </p>
+     */
+    inline void SetCommitId(const Aws::String& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
+
+    /**
+     * <p>The full SHA of the specified commit. </p>
+     */
+    inline void SetCommitId(Aws::String&& value) { m_commitIdHasBeenSet = true; m_commitId = std::move(value); }
+
+    /**
+     * <p>The full SHA of the specified commit. </p>
+     */
+    inline void SetCommitId(const char* value) { m_commitIdHasBeenSet = true; m_commitId.assign(value); }
+
+    /**
+     * <p>The full SHA of the specified commit. </p>
+     */
+    inline Commit& WithCommitId(const Aws::String& value) { SetCommitId(value); return *this;}
+
+    /**
+     * <p>The full SHA of the specified commit. </p>
+     */
+    inline Commit& WithCommitId(Aws::String&& value) { SetCommitId(std::move(value)); return *this;}
+
+    /**
+     * <p>The full SHA of the specified commit. </p>
+     */
+    inline Commit& WithCommitId(const char* value) { SetCommitId(value); return *this;}
+
+
+    /**
      * <p>Tree information for the specified commit.</p>
      */
     inline const Aws::String& GetTreeId() const{ return m_treeId; }
@@ -289,6 +325,9 @@ namespace Model
     inline Commit& WithAdditionalData(const char* value) { SetAdditionalData(value); return *this;}
 
   private:
+
+    Aws::String m_commitId;
+    bool m_commitIdHasBeenSet;
 
     Aws::String m_treeId;
     bool m_treeIdHasBeenSet;

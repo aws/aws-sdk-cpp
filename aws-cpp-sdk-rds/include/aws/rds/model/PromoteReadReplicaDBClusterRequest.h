@@ -51,64 +51,57 @@ namespace Model
 
     /**
      * <p>The identifier of the DB cluster Read Replica to promote. This parameter is
-     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-replica1</code> </p>
+     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing DBCluster Read Replica.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-replica1</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
      * <p>The identifier of the DB cluster Read Replica to promote. This parameter is
-     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-replica1</code> </p>
+     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing DBCluster Read Replica.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-replica1</code> </p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
      * <p>The identifier of the DB cluster Read Replica to promote. This parameter is
-     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-replica1</code> </p>
+     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing DBCluster Read Replica.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-replica1</code> </p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the DB cluster Read Replica to promote. This parameter is
-     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-replica1</code> </p>
+     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing DBCluster Read Replica.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-replica1</code> </p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the DB cluster Read Replica to promote. This parameter is
-     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-replica1</code> </p>
+     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing DBCluster Read Replica.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-replica1</code> </p>
      */
     inline PromoteReadReplicaDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the DB cluster Read Replica to promote. This parameter is
-     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-replica1</code> </p>
+     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing DBCluster Read Replica.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-replica1</code> </p>
      */
     inline PromoteReadReplicaDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the DB cluster Read Replica to promote. This parameter is
-     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-replica1</code> </p>
+     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing DBCluster Read Replica.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-replica1</code> </p>
      */
     inline PromoteReadReplicaDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 

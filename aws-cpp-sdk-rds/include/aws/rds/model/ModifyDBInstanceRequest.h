@@ -52,64 +52,50 @@ namespace Model
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
-     * instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * DBInstance.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
@@ -355,9 +341,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
@@ -370,9 +356,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
@@ -385,9 +371,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
@@ -400,9 +386,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
@@ -415,9 +401,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -430,9 +416,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
@@ -445,9 +431,9 @@ namespace Model
      * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
      * outage during the change. The change is applied during the next maintenance
      * window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
-     * more than 255 alphanumeric characters, periods, underscores, spaces, or
-     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetGroup</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -455,80 +441,64 @@ namespace Model
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline void SetDBSecurityGroups(const Aws::Vector<Aws::String>& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline void SetDBSecurityGroups(Aws::Vector<Aws::String>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBSecurityGroups(const Aws::Vector<Aws::String>& value) { SetDBSecurityGroups(value); return *this;}
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBSecurityGroups(Aws::Vector<Aws::String>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddDBSecurityGroups(const Aws::String& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddDBSecurityGroups(Aws::String&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
-     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * existing DBSecurityGroups.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddDBSecurityGroups(const char* value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
@@ -538,10 +508,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
@@ -550,10 +518,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
@@ -562,10 +528,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
@@ -574,10 +538,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
@@ -586,10 +548,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
@@ -598,10 +558,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
@@ -610,10 +568,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
@@ -622,10 +578,8 @@ namespace Model
      * change is asynchronously applied as soon as possible.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC security
      * groups is managed by the DB cluster. For more information, see
-     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
@@ -687,14 +641,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
@@ -706,14 +663,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
@@ -725,14 +685,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
@@ -744,14 +707,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
@@ -763,14 +729,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
@@ -782,14 +751,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
@@ -801,14 +773,17 @@ namespace Model
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p> <p>Constraints: Must be 8 to 41
-     * alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     * alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
-     * Server).</p> <note> <p>Amazon RDS API actions never return the password, so this
-     * action provides a way to regain access to a primary instance user if the
+     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.
+     * </p> <p>Default: Uses existing setting</p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL
+     * Server</b> </p> <p>Constraints: Must contain from 8 to 128 characters.</p> <p>
+     * <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p> <p>
+     * <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30 characters.</p> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <note> <p>Amazon RDS API actions never return the password, so
+     * this action provides a way to regain access to a primary instance user if the
      * password is lost. This includes restoring privileges that might have been
-     * accidentally revoked.</p> </note>
+     * accidentally revoked. </p> </note>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -1586,9 +1561,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline const Aws::String& GetNewDBInstanceIdentifier() const{ return m_newDBInstanceIdentifier; }
 
@@ -1598,9 +1574,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline void SetNewDBInstanceIdentifier(const Aws::String& value) { m_newDBInstanceIdentifierHasBeenSet = true; m_newDBInstanceIdentifier = value; }
 
@@ -1610,9 +1587,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline void SetNewDBInstanceIdentifier(Aws::String&& value) { m_newDBInstanceIdentifierHasBeenSet = true; m_newDBInstanceIdentifier = std::move(value); }
 
@@ -1622,9 +1600,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline void SetNewDBInstanceIdentifier(const char* value) { m_newDBInstanceIdentifierHasBeenSet = true; m_newDBInstanceIdentifier.assign(value); }
 
@@ -1634,9 +1613,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(const Aws::String& value) { SetNewDBInstanceIdentifier(value); return *this;}
 
@@ -1646,9 +1626,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(Aws::String&& value) { SetNewDBInstanceIdentifier(std::move(value)); return *this;}
 
@@ -1658,9 +1639,10 @@ namespace Model
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>mydbinstance</code> </p>
      */
     inline ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(const char* value) { SetNewDBInstanceIdentifier(value); return *this;}
 

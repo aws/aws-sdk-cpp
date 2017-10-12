@@ -23,6 +23,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codecommit/model/BatchGetRepositoriesResult.h>
 #include <aws/codecommit/model/CreateRepositoryResult.h>
+#include <aws/codecommit/model/DeleteBranchResult.h>
 #include <aws/codecommit/model/DeleteRepositoryResult.h>
 #include <aws/codecommit/model/GetBlobResult.h>
 #include <aws/codecommit/model/GetBranchResult.h>
@@ -83,6 +84,7 @@ namespace Model
         class BatchGetRepositoriesRequest;
         class CreateBranchRequest;
         class CreateRepositoryRequest;
+        class DeleteBranchRequest;
         class DeleteRepositoryRequest;
         class GetBlobRequest;
         class GetBranchRequest;
@@ -101,6 +103,7 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchGetRepositoriesResult, Aws::Client::AWSError<CodeCommitErrors>> BatchGetRepositoriesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> CreateBranchOutcome;
         typedef Aws::Utils::Outcome<CreateRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> CreateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<DeleteBranchResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteBranchOutcome;
         typedef Aws::Utils::Outcome<DeleteRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteRepositoryOutcome;
         typedef Aws::Utils::Outcome<GetBlobResult, Aws::Client::AWSError<CodeCommitErrors>> GetBlobOutcome;
         typedef Aws::Utils::Outcome<GetBranchResult, Aws::Client::AWSError<CodeCommitErrors>> GetBranchOutcome;
@@ -119,6 +122,7 @@ namespace Model
         typedef std::future<BatchGetRepositoriesOutcome> BatchGetRepositoriesOutcomeCallable;
         typedef std::future<CreateBranchOutcome> CreateBranchOutcomeCallable;
         typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
+        typedef std::future<DeleteBranchOutcome> DeleteBranchOutcomeCallable;
         typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
         typedef std::future<GetBlobOutcome> GetBlobOutcomeCallable;
         typedef std::future<GetBranchOutcome> GetBranchOutcomeCallable;
@@ -140,6 +144,7 @@ namespace Model
     typedef std::function<void(const CodeCommitClient*, const Model::BatchGetRepositoriesRequest&, const Model::BatchGetRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetRepositoriesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreateBranchRequest&, const Model::CreateBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBranchResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::DeleteBranchRequest&, const Model::DeleteBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBranchResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetBlobRequest&, const Model::GetBlobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlobResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetBranchRequest&, const Model::GetBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBranchResponseReceivedHandler;
@@ -174,24 +179,26 @@ namespace Model
    * to access it until you send them the new HTTPS or SSH URL to use.</p> </li>
    * </ul> <p>Branches, by calling the following:</p> <ul> <li> <p>
    * <a>CreateBranch</a>, which creates a new branch in a specified repository</p>
-   * </li> <li> <p> <a>GetBranch</a>, which returns information about a specified
-   * branch</p> </li> <li> <p> <a>ListBranches</a>, which lists all branches for a
-   * specified repository</p> </li> <li> <p> <a>UpdateDefaultBranch</a>, which
-   * changes the default branch for a repository</p> </li> </ul> <p>Information about
-   * committed code in a repository, by calling the following:</p> <ul> <li> <p>
-   * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git
-   * blob object within a repository</p> </li> <li> <p> <a>GetCommit</a>, which
-   * returns information about a commit, including commit messages and author and
-   * committer information</p> </li> <li> <p> <a>GetDifferences</a>, which returns
-   * information about the differences in a valid commit specifier (such as a branch,
-   * tag, HEAD, commit ID or other fully qualified reference)</p> </li> </ul>
-   * <p>Triggers, by calling the following:</p> <ul> <li> <p>
-   * <a>GetRepositoryTriggers</a>, which returns information about triggers
-   * configured for a repository</p> </li> <li> <p> <a>PutRepositoryTriggers</a>,
-   * which replaces all triggers for a repository and can be used to create or delete
-   * triggers</p> </li> <li> <p> <a>TestRepositoryTriggers</a>, which tests the
-   * functionality of a repository trigger by sending data to the trigger target</p>
-   * </li> </ul> <p>For information about how to use AWS CodeCommit, see the <a
+   * </li> <li> <p> <a>DeleteBranch</a>, which deletes the specified branch in a
+   * repository unless it is the default branch</p> </li> <li> <p> <a>GetBranch</a>,
+   * which returns information about a specified branch</p> </li> <li> <p>
+   * <a>ListBranches</a>, which lists all branches for a specified repository</p>
+   * </li> <li> <p> <a>UpdateDefaultBranch</a>, which changes the default branch for
+   * a repository</p> </li> </ul> <p>Information about committed code in a
+   * repository, by calling the following:</p> <ul> <li> <p> <a>GetBlob</a>, which
+   * returns the base-64 encoded content of an individual Git blob object within a
+   * repository</p> </li> <li> <p> <a>GetCommit</a>, which returns information about
+   * a commit, including commit messages and author and committer information</p>
+   * </li> <li> <p> <a>GetDifferences</a>, which returns information about the
+   * differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID
+   * or other fully qualified reference)</p> </li> </ul> <p>Triggers, by calling the
+   * following:</p> <ul> <li> <p> <a>GetRepositoryTriggers</a>, which returns
+   * information about triggers configured for a repository</p> </li> <li> <p>
+   * <a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and
+   * can be used to create or delete triggers</p> </li> <li> <p>
+   * <a>TestRepositoryTriggers</a>, which tests the functionality of a repository
+   * trigger by sending data to the trigger target</p> </li> </ul> <p>For information
+   * about how to use AWS CodeCommit, see the <a
    * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
    * CodeCommit User Guide</a>.</p>
    */
@@ -327,8 +334,36 @@ namespace Model
         virtual void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a branch from a repository, unless that branch is the default branch
+         * for the repository. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBranchOutcome DeleteBranch(const Model::DeleteBranchRequest& request) const;
+
+        /**
+         * <p>Deletes a branch from a repository, unless that branch is the default branch
+         * for the repository. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBranchOutcomeCallable DeleteBranchCallable(const Model::DeleteBranchRequest& request) const;
+
+        /**
+         * <p>Deletes a branch from a repository, unless that branch is the default branch
+         * for the repository. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBranchAsync(const Model::DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
-         * repository ID will be returned.</p> <important><p>Deleting a repository also
+         * repository ID will be returned.</p> <important> <p>Deleting a repository also
          * deletes all associated objects and metadata. After a repository is deleted, all
          * future push calls to the deleted repository will fail.</p>
          * </important><p><h3>See Also:</h3>   <a
@@ -339,7 +374,7 @@ namespace Model
 
         /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
-         * repository ID will be returned.</p> <important><p>Deleting a repository also
+         * repository ID will be returned.</p> <important> <p>Deleting a repository also
          * deletes all associated objects and metadata. After a repository is deleted, all
          * future push calls to the deleted repository will fail.</p>
          * </important><p><h3>See Also:</h3>   <a
@@ -352,7 +387,7 @@ namespace Model
 
         /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
-         * repository ID will be returned.</p> <important><p>Deleting a repository also
+         * repository ID will be returned.</p> <important> <p>Deleting a repository also
          * deletes all associated objects and metadata. After a repository is deleted, all
          * future push calls to the deleted repository will fail.</p>
          * </important><p><h3>See Also:</h3>   <a
@@ -795,6 +830,7 @@ namespace Model
         void BatchGetRepositoriesAsyncHelper(const Model::BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBranchAsyncHelper(const Model::CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRepositoryAsyncHelper(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBranchAsyncHelper(const Model::DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBlobAsyncHelper(const Model::GetBlobRequest& request, const GetBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBranchAsyncHelper(const Model::GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

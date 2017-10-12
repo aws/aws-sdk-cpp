@@ -29,6 +29,7 @@ namespace Model
 {
 
 Commit::Commit() : 
+    m_commitIdHasBeenSet(false),
     m_treeIdHasBeenSet(false),
     m_parentsHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -39,6 +40,7 @@ Commit::Commit() :
 }
 
 Commit::Commit(const JsonValue& jsonValue) : 
+    m_commitIdHasBeenSet(false),
     m_treeIdHasBeenSet(false),
     m_parentsHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -51,6 +53,13 @@ Commit::Commit(const JsonValue& jsonValue) :
 
 Commit& Commit::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("commitId"))
+  {
+    m_commitId = jsonValue.GetString("commitId");
+
+    m_commitIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("treeId"))
   {
     m_treeId = jsonValue.GetString("treeId");
@@ -102,6 +111,12 @@ Commit& Commit::operator =(const JsonValue& jsonValue)
 JsonValue Commit::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_commitIdHasBeenSet)
+  {
+   payload.WithString("commitId", m_commitId);
+
+  }
 
   if(m_treeIdHasBeenSet)
   {

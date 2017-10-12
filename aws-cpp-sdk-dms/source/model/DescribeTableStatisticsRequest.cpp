@@ -26,7 +26,8 @@ DescribeTableStatisticsRequest::DescribeTableStatisticsRequest() :
     m_replicationTaskArnHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
+    m_markerHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,17 @@ Aws::String DescribeTableStatisticsRequest::SerializePayload() const
   if(m_markerHasBeenSet)
   {
    payload.WithString("Marker", m_marker);
+
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+   Array<JsonValue> filtersJsonList(m_filters.size());
+   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+   {
+     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+   }
+   payload.WithArray("Filters", std::move(filtersJsonList));
 
   }
 
