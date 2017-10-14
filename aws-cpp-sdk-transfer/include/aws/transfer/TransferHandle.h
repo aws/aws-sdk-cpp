@@ -149,7 +149,7 @@ namespace Aws
             /**
              * Alternate DOWNLOAD constructor
              */
-            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn);
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath = "");
 
             ~TransferHandle();
 

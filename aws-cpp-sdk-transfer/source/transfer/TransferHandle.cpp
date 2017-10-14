@@ -100,7 +100,7 @@ namespace Aws
             m_downloadStream(nullptr)
         {}
 
-        TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn) :
+        TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath) :
             m_isMultipart(false), 
             m_direction(TransferDirection::DOWNLOAD), 
             m_bytesTransferred(0), 
@@ -108,7 +108,7 @@ namespace Aws
             m_bytesTotalSize(0),
             m_bucket(bucketName), 
             m_key(keyName), 
-            m_fileName(""), 
+            m_fileName(targetFilePath),
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED), 
             m_cancel(false),
