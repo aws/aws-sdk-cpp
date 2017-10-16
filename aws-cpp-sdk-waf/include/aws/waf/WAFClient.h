@@ -22,16 +22,22 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/waf/model/CreateByteMatchSetResult.h>
+#include <aws/waf/model/CreateGeoMatchSetResult.h>
 #include <aws/waf/model/CreateIPSetResult.h>
 #include <aws/waf/model/CreateRateBasedRuleResult.h>
+#include <aws/waf/model/CreateRegexMatchSetResult.h>
+#include <aws/waf/model/CreateRegexPatternSetResult.h>
 #include <aws/waf/model/CreateRuleResult.h>
 #include <aws/waf/model/CreateSizeConstraintSetResult.h>
 #include <aws/waf/model/CreateSqlInjectionMatchSetResult.h>
 #include <aws/waf/model/CreateWebACLResult.h>
 #include <aws/waf/model/CreateXssMatchSetResult.h>
 #include <aws/waf/model/DeleteByteMatchSetResult.h>
+#include <aws/waf/model/DeleteGeoMatchSetResult.h>
 #include <aws/waf/model/DeleteIPSetResult.h>
 #include <aws/waf/model/DeleteRateBasedRuleResult.h>
+#include <aws/waf/model/DeleteRegexMatchSetResult.h>
+#include <aws/waf/model/DeleteRegexPatternSetResult.h>
 #include <aws/waf/model/DeleteRuleResult.h>
 #include <aws/waf/model/DeleteSizeConstraintSetResult.h>
 #include <aws/waf/model/DeleteSqlInjectionMatchSetResult.h>
@@ -40,9 +46,12 @@
 #include <aws/waf/model/GetByteMatchSetResult.h>
 #include <aws/waf/model/GetChangeTokenResult.h>
 #include <aws/waf/model/GetChangeTokenStatusResult.h>
+#include <aws/waf/model/GetGeoMatchSetResult.h>
 #include <aws/waf/model/GetIPSetResult.h>
 #include <aws/waf/model/GetRateBasedRuleResult.h>
 #include <aws/waf/model/GetRateBasedRuleManagedKeysResult.h>
+#include <aws/waf/model/GetRegexMatchSetResult.h>
+#include <aws/waf/model/GetRegexPatternSetResult.h>
 #include <aws/waf/model/GetRuleResult.h>
 #include <aws/waf/model/GetSampledRequestsResult.h>
 #include <aws/waf/model/GetSizeConstraintSetResult.h>
@@ -50,16 +59,22 @@
 #include <aws/waf/model/GetWebACLResult.h>
 #include <aws/waf/model/GetXssMatchSetResult.h>
 #include <aws/waf/model/ListByteMatchSetsResult.h>
+#include <aws/waf/model/ListGeoMatchSetsResult.h>
 #include <aws/waf/model/ListIPSetsResult.h>
 #include <aws/waf/model/ListRateBasedRulesResult.h>
+#include <aws/waf/model/ListRegexMatchSetsResult.h>
+#include <aws/waf/model/ListRegexPatternSetsResult.h>
 #include <aws/waf/model/ListRulesResult.h>
 #include <aws/waf/model/ListSizeConstraintSetsResult.h>
 #include <aws/waf/model/ListSqlInjectionMatchSetsResult.h>
 #include <aws/waf/model/ListWebACLsResult.h>
 #include <aws/waf/model/ListXssMatchSetsResult.h>
 #include <aws/waf/model/UpdateByteMatchSetResult.h>
+#include <aws/waf/model/UpdateGeoMatchSetResult.h>
 #include <aws/waf/model/UpdateIPSetResult.h>
 #include <aws/waf/model/UpdateRateBasedRuleResult.h>
+#include <aws/waf/model/UpdateRegexMatchSetResult.h>
+#include <aws/waf/model/UpdateRegexPatternSetResult.h>
 #include <aws/waf/model/UpdateRuleResult.h>
 #include <aws/waf/model/UpdateSizeConstraintSetResult.h>
 #include <aws/waf/model/UpdateSqlInjectionMatchSetResult.h>
@@ -111,16 +126,22 @@ namespace WAF
 namespace Model
 {
         class CreateByteMatchSetRequest;
+        class CreateGeoMatchSetRequest;
         class CreateIPSetRequest;
         class CreateRateBasedRuleRequest;
+        class CreateRegexMatchSetRequest;
+        class CreateRegexPatternSetRequest;
         class CreateRuleRequest;
         class CreateSizeConstraintSetRequest;
         class CreateSqlInjectionMatchSetRequest;
         class CreateWebACLRequest;
         class CreateXssMatchSetRequest;
         class DeleteByteMatchSetRequest;
+        class DeleteGeoMatchSetRequest;
         class DeleteIPSetRequest;
         class DeleteRateBasedRuleRequest;
+        class DeleteRegexMatchSetRequest;
+        class DeleteRegexPatternSetRequest;
         class DeleteRuleRequest;
         class DeleteSizeConstraintSetRequest;
         class DeleteSqlInjectionMatchSetRequest;
@@ -129,9 +150,12 @@ namespace Model
         class GetByteMatchSetRequest;
         class GetChangeTokenRequest;
         class GetChangeTokenStatusRequest;
+        class GetGeoMatchSetRequest;
         class GetIPSetRequest;
         class GetRateBasedRuleRequest;
         class GetRateBasedRuleManagedKeysRequest;
+        class GetRegexMatchSetRequest;
+        class GetRegexPatternSetRequest;
         class GetRuleRequest;
         class GetSampledRequestsRequest;
         class GetSizeConstraintSetRequest;
@@ -139,16 +163,22 @@ namespace Model
         class GetWebACLRequest;
         class GetXssMatchSetRequest;
         class ListByteMatchSetsRequest;
+        class ListGeoMatchSetsRequest;
         class ListIPSetsRequest;
         class ListRateBasedRulesRequest;
+        class ListRegexMatchSetsRequest;
+        class ListRegexPatternSetsRequest;
         class ListRulesRequest;
         class ListSizeConstraintSetsRequest;
         class ListSqlInjectionMatchSetsRequest;
         class ListWebACLsRequest;
         class ListXssMatchSetsRequest;
         class UpdateByteMatchSetRequest;
+        class UpdateGeoMatchSetRequest;
         class UpdateIPSetRequest;
         class UpdateRateBasedRuleRequest;
+        class UpdateRegexMatchSetRequest;
+        class UpdateRegexPatternSetRequest;
         class UpdateRuleRequest;
         class UpdateSizeConstraintSetRequest;
         class UpdateSqlInjectionMatchSetRequest;
@@ -156,16 +186,22 @@ namespace Model
         class UpdateXssMatchSetRequest;
 
         typedef Aws::Utils::Outcome<CreateByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateByteMatchSetOutcome;
+        typedef Aws::Utils::Outcome<CreateGeoMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<CreateIPSetResult, Aws::Client::AWSError<WAFErrors>> CreateIPSetOutcome;
         typedef Aws::Utils::Outcome<CreateRateBasedRuleResult, Aws::Client::AWSError<WAFErrors>> CreateRateBasedRuleOutcome;
+        typedef Aws::Utils::Outcome<CreateRegexMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateRegexMatchSetOutcome;
+        typedef Aws::Utils::Outcome<CreateRegexPatternSetResult, Aws::Client::AWSError<WAFErrors>> CreateRegexPatternSetOutcome;
         typedef Aws::Utils::Outcome<CreateRuleResult, Aws::Client::AWSError<WAFErrors>> CreateRuleOutcome;
         typedef Aws::Utils::Outcome<CreateSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> CreateSizeConstraintSetOutcome;
         typedef Aws::Utils::Outcome<CreateSqlInjectionMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateSqlInjectionMatchSetOutcome;
         typedef Aws::Utils::Outcome<CreateWebACLResult, Aws::Client::AWSError<WAFErrors>> CreateWebACLOutcome;
         typedef Aws::Utils::Outcome<CreateXssMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateXssMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteByteMatchSetOutcome;
+        typedef Aws::Utils::Outcome<DeleteGeoMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteIPSetResult, Aws::Client::AWSError<WAFErrors>> DeleteIPSetOutcome;
         typedef Aws::Utils::Outcome<DeleteRateBasedRuleResult, Aws::Client::AWSError<WAFErrors>> DeleteRateBasedRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteRegexMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteRegexMatchSetOutcome;
+        typedef Aws::Utils::Outcome<DeleteRegexPatternSetResult, Aws::Client::AWSError<WAFErrors>> DeleteRegexPatternSetOutcome;
         typedef Aws::Utils::Outcome<DeleteRuleResult, Aws::Client::AWSError<WAFErrors>> DeleteRuleOutcome;
         typedef Aws::Utils::Outcome<DeleteSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> DeleteSizeConstraintSetOutcome;
         typedef Aws::Utils::Outcome<DeleteSqlInjectionMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteSqlInjectionMatchSetOutcome;
@@ -174,9 +210,12 @@ namespace Model
         typedef Aws::Utils::Outcome<GetByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> GetByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<GetChangeTokenResult, Aws::Client::AWSError<WAFErrors>> GetChangeTokenOutcome;
         typedef Aws::Utils::Outcome<GetChangeTokenStatusResult, Aws::Client::AWSError<WAFErrors>> GetChangeTokenStatusOutcome;
+        typedef Aws::Utils::Outcome<GetGeoMatchSetResult, Aws::Client::AWSError<WAFErrors>> GetGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<GetIPSetResult, Aws::Client::AWSError<WAFErrors>> GetIPSetOutcome;
         typedef Aws::Utils::Outcome<GetRateBasedRuleResult, Aws::Client::AWSError<WAFErrors>> GetRateBasedRuleOutcome;
         typedef Aws::Utils::Outcome<GetRateBasedRuleManagedKeysResult, Aws::Client::AWSError<WAFErrors>> GetRateBasedRuleManagedKeysOutcome;
+        typedef Aws::Utils::Outcome<GetRegexMatchSetResult, Aws::Client::AWSError<WAFErrors>> GetRegexMatchSetOutcome;
+        typedef Aws::Utils::Outcome<GetRegexPatternSetResult, Aws::Client::AWSError<WAFErrors>> GetRegexPatternSetOutcome;
         typedef Aws::Utils::Outcome<GetRuleResult, Aws::Client::AWSError<WAFErrors>> GetRuleOutcome;
         typedef Aws::Utils::Outcome<GetSampledRequestsResult, Aws::Client::AWSError<WAFErrors>> GetSampledRequestsOutcome;
         typedef Aws::Utils::Outcome<GetSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> GetSizeConstraintSetOutcome;
@@ -184,16 +223,22 @@ namespace Model
         typedef Aws::Utils::Outcome<GetWebACLResult, Aws::Client::AWSError<WAFErrors>> GetWebACLOutcome;
         typedef Aws::Utils::Outcome<GetXssMatchSetResult, Aws::Client::AWSError<WAFErrors>> GetXssMatchSetOutcome;
         typedef Aws::Utils::Outcome<ListByteMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListByteMatchSetsOutcome;
+        typedef Aws::Utils::Outcome<ListGeoMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListGeoMatchSetsOutcome;
         typedef Aws::Utils::Outcome<ListIPSetsResult, Aws::Client::AWSError<WAFErrors>> ListIPSetsOutcome;
         typedef Aws::Utils::Outcome<ListRateBasedRulesResult, Aws::Client::AWSError<WAFErrors>> ListRateBasedRulesOutcome;
+        typedef Aws::Utils::Outcome<ListRegexMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListRegexMatchSetsOutcome;
+        typedef Aws::Utils::Outcome<ListRegexPatternSetsResult, Aws::Client::AWSError<WAFErrors>> ListRegexPatternSetsOutcome;
         typedef Aws::Utils::Outcome<ListRulesResult, Aws::Client::AWSError<WAFErrors>> ListRulesOutcome;
         typedef Aws::Utils::Outcome<ListSizeConstraintSetsResult, Aws::Client::AWSError<WAFErrors>> ListSizeConstraintSetsOutcome;
         typedef Aws::Utils::Outcome<ListSqlInjectionMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListSqlInjectionMatchSetsOutcome;
         typedef Aws::Utils::Outcome<ListWebACLsResult, Aws::Client::AWSError<WAFErrors>> ListWebACLsOutcome;
         typedef Aws::Utils::Outcome<ListXssMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListXssMatchSetsOutcome;
         typedef Aws::Utils::Outcome<UpdateByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateByteMatchSetOutcome;
+        typedef Aws::Utils::Outcome<UpdateGeoMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, Aws::Client::AWSError<WAFErrors>> UpdateIPSetOutcome;
         typedef Aws::Utils::Outcome<UpdateRateBasedRuleResult, Aws::Client::AWSError<WAFErrors>> UpdateRateBasedRuleOutcome;
+        typedef Aws::Utils::Outcome<UpdateRegexMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateRegexMatchSetOutcome;
+        typedef Aws::Utils::Outcome<UpdateRegexPatternSetResult, Aws::Client::AWSError<WAFErrors>> UpdateRegexPatternSetOutcome;
         typedef Aws::Utils::Outcome<UpdateRuleResult, Aws::Client::AWSError<WAFErrors>> UpdateRuleOutcome;
         typedef Aws::Utils::Outcome<UpdateSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> UpdateSizeConstraintSetOutcome;
         typedef Aws::Utils::Outcome<UpdateSqlInjectionMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateSqlInjectionMatchSetOutcome;
@@ -201,16 +246,22 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateXssMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateXssMatchSetOutcome;
 
         typedef std::future<CreateByteMatchSetOutcome> CreateByteMatchSetOutcomeCallable;
+        typedef std::future<CreateGeoMatchSetOutcome> CreateGeoMatchSetOutcomeCallable;
         typedef std::future<CreateIPSetOutcome> CreateIPSetOutcomeCallable;
         typedef std::future<CreateRateBasedRuleOutcome> CreateRateBasedRuleOutcomeCallable;
+        typedef std::future<CreateRegexMatchSetOutcome> CreateRegexMatchSetOutcomeCallable;
+        typedef std::future<CreateRegexPatternSetOutcome> CreateRegexPatternSetOutcomeCallable;
         typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
         typedef std::future<CreateSizeConstraintSetOutcome> CreateSizeConstraintSetOutcomeCallable;
         typedef std::future<CreateSqlInjectionMatchSetOutcome> CreateSqlInjectionMatchSetOutcomeCallable;
         typedef std::future<CreateWebACLOutcome> CreateWebACLOutcomeCallable;
         typedef std::future<CreateXssMatchSetOutcome> CreateXssMatchSetOutcomeCallable;
         typedef std::future<DeleteByteMatchSetOutcome> DeleteByteMatchSetOutcomeCallable;
+        typedef std::future<DeleteGeoMatchSetOutcome> DeleteGeoMatchSetOutcomeCallable;
         typedef std::future<DeleteIPSetOutcome> DeleteIPSetOutcomeCallable;
         typedef std::future<DeleteRateBasedRuleOutcome> DeleteRateBasedRuleOutcomeCallable;
+        typedef std::future<DeleteRegexMatchSetOutcome> DeleteRegexMatchSetOutcomeCallable;
+        typedef std::future<DeleteRegexPatternSetOutcome> DeleteRegexPatternSetOutcomeCallable;
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
         typedef std::future<DeleteSizeConstraintSetOutcome> DeleteSizeConstraintSetOutcomeCallable;
         typedef std::future<DeleteSqlInjectionMatchSetOutcome> DeleteSqlInjectionMatchSetOutcomeCallable;
@@ -219,9 +270,12 @@ namespace Model
         typedef std::future<GetByteMatchSetOutcome> GetByteMatchSetOutcomeCallable;
         typedef std::future<GetChangeTokenOutcome> GetChangeTokenOutcomeCallable;
         typedef std::future<GetChangeTokenStatusOutcome> GetChangeTokenStatusOutcomeCallable;
+        typedef std::future<GetGeoMatchSetOutcome> GetGeoMatchSetOutcomeCallable;
         typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
         typedef std::future<GetRateBasedRuleOutcome> GetRateBasedRuleOutcomeCallable;
         typedef std::future<GetRateBasedRuleManagedKeysOutcome> GetRateBasedRuleManagedKeysOutcomeCallable;
+        typedef std::future<GetRegexMatchSetOutcome> GetRegexMatchSetOutcomeCallable;
+        typedef std::future<GetRegexPatternSetOutcome> GetRegexPatternSetOutcomeCallable;
         typedef std::future<GetRuleOutcome> GetRuleOutcomeCallable;
         typedef std::future<GetSampledRequestsOutcome> GetSampledRequestsOutcomeCallable;
         typedef std::future<GetSizeConstraintSetOutcome> GetSizeConstraintSetOutcomeCallable;
@@ -229,16 +283,22 @@ namespace Model
         typedef std::future<GetWebACLOutcome> GetWebACLOutcomeCallable;
         typedef std::future<GetXssMatchSetOutcome> GetXssMatchSetOutcomeCallable;
         typedef std::future<ListByteMatchSetsOutcome> ListByteMatchSetsOutcomeCallable;
+        typedef std::future<ListGeoMatchSetsOutcome> ListGeoMatchSetsOutcomeCallable;
         typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
         typedef std::future<ListRateBasedRulesOutcome> ListRateBasedRulesOutcomeCallable;
+        typedef std::future<ListRegexMatchSetsOutcome> ListRegexMatchSetsOutcomeCallable;
+        typedef std::future<ListRegexPatternSetsOutcome> ListRegexPatternSetsOutcomeCallable;
         typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
         typedef std::future<ListSizeConstraintSetsOutcome> ListSizeConstraintSetsOutcomeCallable;
         typedef std::future<ListSqlInjectionMatchSetsOutcome> ListSqlInjectionMatchSetsOutcomeCallable;
         typedef std::future<ListWebACLsOutcome> ListWebACLsOutcomeCallable;
         typedef std::future<ListXssMatchSetsOutcome> ListXssMatchSetsOutcomeCallable;
         typedef std::future<UpdateByteMatchSetOutcome> UpdateByteMatchSetOutcomeCallable;
+        typedef std::future<UpdateGeoMatchSetOutcome> UpdateGeoMatchSetOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
         typedef std::future<UpdateRateBasedRuleOutcome> UpdateRateBasedRuleOutcomeCallable;
+        typedef std::future<UpdateRegexMatchSetOutcome> UpdateRegexMatchSetOutcomeCallable;
+        typedef std::future<UpdateRegexPatternSetOutcome> UpdateRegexPatternSetOutcomeCallable;
         typedef std::future<UpdateRuleOutcome> UpdateRuleOutcomeCallable;
         typedef std::future<UpdateSizeConstraintSetOutcome> UpdateSizeConstraintSetOutcomeCallable;
         typedef std::future<UpdateSqlInjectionMatchSetOutcome> UpdateSqlInjectionMatchSetOutcomeCallable;
@@ -249,16 +309,22 @@ namespace Model
   class WAFClient;
 
     typedef std::function<void(const WAFClient*, const Model::CreateByteMatchSetRequest&, const Model::CreateByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateByteMatchSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::CreateGeoMatchSetRequest&, const Model::CreateGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateIPSetRequest&, const Model::CreateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIPSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateRateBasedRuleRequest&, const Model::CreateRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRateBasedRuleResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::CreateRegexMatchSetRequest&, const Model::CreateRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRegexMatchSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::CreateRegexPatternSetRequest&, const Model::CreateRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRegexPatternSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateRuleRequest&, const Model::CreateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateSizeConstraintSetRequest&, const Model::CreateSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSizeConstraintSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateSqlInjectionMatchSetRequest&, const Model::CreateSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSqlInjectionMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateWebACLRequest&, const Model::CreateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebACLResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateXssMatchSetRequest&, const Model::CreateXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateXssMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteByteMatchSetRequest&, const Model::DeleteByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteByteMatchSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::DeleteGeoMatchSetRequest&, const Model::DeleteGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteIPSetRequest&, const Model::DeleteIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIPSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteRateBasedRuleRequest&, const Model::DeleteRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRateBasedRuleResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::DeleteRegexMatchSetRequest&, const Model::DeleteRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegexMatchSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::DeleteRegexPatternSetRequest&, const Model::DeleteRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegexPatternSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteSizeConstraintSetRequest&, const Model::DeleteSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSizeConstraintSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteSqlInjectionMatchSetRequest&, const Model::DeleteSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSqlInjectionMatchSetResponseReceivedHandler;
@@ -267,9 +333,12 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::GetByteMatchSetRequest&, const Model::GetByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetChangeTokenRequest&, const Model::GetChangeTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeTokenResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetChangeTokenStatusRequest&, const Model::GetChangeTokenStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeTokenStatusResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::GetGeoMatchSetRequest&, const Model::GetGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIPSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetRateBasedRuleRequest&, const Model::GetRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetRateBasedRuleManagedKeysRequest&, const Model::GetRateBasedRuleManagedKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedRuleManagedKeysResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::GetRegexMatchSetRequest&, const Model::GetRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegexMatchSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::GetRegexPatternSetRequest&, const Model::GetRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegexPatternSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetRuleRequest&, const Model::GetRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetSampledRequestsRequest&, const Model::GetSampledRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSampledRequestsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetSizeConstraintSetRequest&, const Model::GetSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSizeConstraintSetResponseReceivedHandler;
@@ -277,16 +346,22 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::GetWebACLRequest&, const Model::GetWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWebACLResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetXssMatchSetRequest&, const Model::GetXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetXssMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListByteMatchSetsRequest&, const Model::ListByteMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListByteMatchSetsResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::ListGeoMatchSetsRequest&, const Model::ListGeoMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGeoMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIPSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListRateBasedRulesRequest&, const Model::ListRateBasedRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRateBasedRulesResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::ListRegexMatchSetsRequest&, const Model::ListRegexMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegexMatchSetsResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::ListRegexPatternSetsRequest&, const Model::ListRegexPatternSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegexPatternSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListSizeConstraintSetsRequest&, const Model::ListSizeConstraintSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSizeConstraintSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListSqlInjectionMatchSetsRequest&, const Model::ListSqlInjectionMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSqlInjectionMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListWebACLsRequest&, const Model::ListWebACLsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebACLsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListXssMatchSetsRequest&, const Model::ListXssMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListXssMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateByteMatchSetRequest&, const Model::UpdateByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateByteMatchSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::UpdateGeoMatchSetRequest&, const Model::UpdateGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateRateBasedRuleRequest&, const Model::UpdateRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRateBasedRuleResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::UpdateRegexMatchSetRequest&, const Model::UpdateRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRegexMatchSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::UpdateRegexPatternSetRequest&, const Model::UpdateRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRegexPatternSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateRuleRequest&, const Model::UpdateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateSizeConstraintSetRequest&, const Model::UpdateSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSizeConstraintSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateSqlInjectionMatchSetRequest&, const Model::UpdateSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSqlInjectionMatchSetResponseReceivedHandler;
@@ -414,6 +489,82 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateByteMatchSetAsync(const Model::CreateByteMatchSetRequest& request, const CreateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an <a>GeoMatchSet</a>, which you use to specify which web requests
+         * you want to allow or block based on the country that the requests originate
+         * from. For example, if you're receiving a lot of requests from one or more
+         * countries and you want to block the requests, you can create an
+         * <code>GeoMatchSet</code> that contains those countries and then configure AWS
+         * WAF to block the requests. </p> <p>To create and configure a
+         * <code>GeoMatchSet</code>, perform the following steps:</p> <ol> <li> <p>Use
+         * <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of a <code>CreateGeoMatchSet</code>
+         * request.</p> </li> <li> <p>Submit a <code>CreateGeoMatchSet</code> request.</p>
+         * </li> <li> <p>Use <code>GetChangeToken</code> to get the change token that you
+         * provide in the <code>ChangeToken</code> parameter of an <a>UpdateGeoMatchSet</a>
+         * request.</p> </li> <li> <p>Submit an <code>UpdateGeoMatchSetSet</code> request
+         * to specify the countries that you want AWS WAF to watch for.</p> </li> </ol>
+         * <p>For more information about how to use the AWS WAF API to allow or block HTTP
+         * requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGeoMatchSetOutcome CreateGeoMatchSet(const Model::CreateGeoMatchSetRequest& request) const;
+
+        /**
+         * <p>Creates an <a>GeoMatchSet</a>, which you use to specify which web requests
+         * you want to allow or block based on the country that the requests originate
+         * from. For example, if you're receiving a lot of requests from one or more
+         * countries and you want to block the requests, you can create an
+         * <code>GeoMatchSet</code> that contains those countries and then configure AWS
+         * WAF to block the requests. </p> <p>To create and configure a
+         * <code>GeoMatchSet</code>, perform the following steps:</p> <ol> <li> <p>Use
+         * <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of a <code>CreateGeoMatchSet</code>
+         * request.</p> </li> <li> <p>Submit a <code>CreateGeoMatchSet</code> request.</p>
+         * </li> <li> <p>Use <code>GetChangeToken</code> to get the change token that you
+         * provide in the <code>ChangeToken</code> parameter of an <a>UpdateGeoMatchSet</a>
+         * request.</p> </li> <li> <p>Submit an <code>UpdateGeoMatchSetSet</code> request
+         * to specify the countries that you want AWS WAF to watch for.</p> </li> </ol>
+         * <p>For more information about how to use the AWS WAF API to allow or block HTTP
+         * requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateGeoMatchSetOutcomeCallable CreateGeoMatchSetCallable(const Model::CreateGeoMatchSetRequest& request) const;
+
+        /**
+         * <p>Creates an <a>GeoMatchSet</a>, which you use to specify which web requests
+         * you want to allow or block based on the country that the requests originate
+         * from. For example, if you're receiving a lot of requests from one or more
+         * countries and you want to block the requests, you can create an
+         * <code>GeoMatchSet</code> that contains those countries and then configure AWS
+         * WAF to block the requests. </p> <p>To create and configure a
+         * <code>GeoMatchSet</code>, perform the following steps:</p> <ol> <li> <p>Use
+         * <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of a <code>CreateGeoMatchSet</code>
+         * request.</p> </li> <li> <p>Submit a <code>CreateGeoMatchSet</code> request.</p>
+         * </li> <li> <p>Use <code>GetChangeToken</code> to get the change token that you
+         * provide in the <code>ChangeToken</code> parameter of an <a>UpdateGeoMatchSet</a>
+         * request.</p> </li> <li> <p>Submit an <code>UpdateGeoMatchSetSet</code> request
+         * to specify the countries that you want AWS WAF to watch for.</p> </li> </ol>
+         * <p>For more information about how to use the AWS WAF API to allow or block HTTP
+         * requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateGeoMatchSetAsync(const Model::CreateGeoMatchSetRequest& request, const CreateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an <a>IPSet</a>, which you use to specify which web requests you want
@@ -653,6 +804,161 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRateBasedRuleAsync(const Model::CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to
+         * identify the part of a web request that you want AWS WAF to inspect, such as the
+         * values of the <code>User-Agent</code> header or the query string. For example,
+         * you can create a <code>RegexMatchSet</code> that contains a
+         * <code>RegexMatchTuple</code> that looks for any requests with
+         * <code>User-Agent</code> headers that match a <code>RegexPatternSet</code> with
+         * pattern <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject
+         * those requests.</p> <p>To create and configure a <code>RegexMatchSet</code>,
+         * perform the following steps:</p> <ol> <li> <p>Use <a>GetChangeToken</a> to get
+         * the change token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>CreateRegexMatchSet</code> request.</p> </li> <li> <p>Submit a
+         * <code>CreateRegexMatchSet</code> request.</p> </li> <li> <p>Use
+         * <code>GetChangeToken</code> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of an <code>UpdateRegexMatchSet</code>
+         * request.</p> </li> <li> <p>Submit an <a>UpdateRegexMatchSet</a> request to
+         * specify the part of the request that you want AWS WAF to inspect (for example,
+         * the header or the URI) and the value, using a <code>RegexPatternSet</code>, that
+         * you want AWS WAF to watch for.</p> </li> </ol> <p>For more information about how
+         * to use the AWS WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRegexMatchSetOutcome CreateRegexMatchSet(const Model::CreateRegexMatchSetRequest& request) const;
+
+        /**
+         * <p>Creates a <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to
+         * identify the part of a web request that you want AWS WAF to inspect, such as the
+         * values of the <code>User-Agent</code> header or the query string. For example,
+         * you can create a <code>RegexMatchSet</code> that contains a
+         * <code>RegexMatchTuple</code> that looks for any requests with
+         * <code>User-Agent</code> headers that match a <code>RegexPatternSet</code> with
+         * pattern <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject
+         * those requests.</p> <p>To create and configure a <code>RegexMatchSet</code>,
+         * perform the following steps:</p> <ol> <li> <p>Use <a>GetChangeToken</a> to get
+         * the change token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>CreateRegexMatchSet</code> request.</p> </li> <li> <p>Submit a
+         * <code>CreateRegexMatchSet</code> request.</p> </li> <li> <p>Use
+         * <code>GetChangeToken</code> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of an <code>UpdateRegexMatchSet</code>
+         * request.</p> </li> <li> <p>Submit an <a>UpdateRegexMatchSet</a> request to
+         * specify the part of the request that you want AWS WAF to inspect (for example,
+         * the header or the URI) and the value, using a <code>RegexPatternSet</code>, that
+         * you want AWS WAF to watch for.</p> </li> </ol> <p>For more information about how
+         * to use the AWS WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateRegexMatchSetOutcomeCallable CreateRegexMatchSetCallable(const Model::CreateRegexMatchSetRequest& request) const;
+
+        /**
+         * <p>Creates a <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to
+         * identify the part of a web request that you want AWS WAF to inspect, such as the
+         * values of the <code>User-Agent</code> header or the query string. For example,
+         * you can create a <code>RegexMatchSet</code> that contains a
+         * <code>RegexMatchTuple</code> that looks for any requests with
+         * <code>User-Agent</code> headers that match a <code>RegexPatternSet</code> with
+         * pattern <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject
+         * those requests.</p> <p>To create and configure a <code>RegexMatchSet</code>,
+         * perform the following steps:</p> <ol> <li> <p>Use <a>GetChangeToken</a> to get
+         * the change token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>CreateRegexMatchSet</code> request.</p> </li> <li> <p>Submit a
+         * <code>CreateRegexMatchSet</code> request.</p> </li> <li> <p>Use
+         * <code>GetChangeToken</code> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of an <code>UpdateRegexMatchSet</code>
+         * request.</p> </li> <li> <p>Submit an <a>UpdateRegexMatchSet</a> request to
+         * specify the part of the request that you want AWS WAF to inspect (for example,
+         * the header or the URI) and the value, using a <code>RegexPatternSet</code>, that
+         * you want AWS WAF to watch for.</p> </li> </ol> <p>For more information about how
+         * to use the AWS WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateRegexMatchSetAsync(const Model::CreateRegexMatchSetRequest& request, const CreateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a <code>RegexPatternSet</code>. You then use
+         * <a>UpdateRegexPatternSet</a> to specify the regular expression (regex) pattern
+         * that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can
+         * then configure AWS WAF to reject those requests.</p> <p>To create and configure
+         * a <code>RegexPatternSet</code>, perform the following steps:</p> <ol> <li>
+         * <p>Use <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of a <code>CreateRegexPatternSet</code>
+         * request.</p> </li> <li> <p>Submit a <code>CreateRegexPatternSet</code>
+         * request.</p> </li> <li> <p>Use <code>GetChangeToken</code> to get the change
+         * token that you provide in the <code>ChangeToken</code> parameter of an
+         * <code>UpdateRegexPatternSet</code> request.</p> </li> <li> <p>Submit an
+         * <a>UpdateRegexPatternSet</a> request to specify the string that you want AWS WAF
+         * to watch for.</p> </li> </ol> <p>For more information about how to use the AWS
+         * WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRegexPatternSetOutcome CreateRegexPatternSet(const Model::CreateRegexPatternSetRequest& request) const;
+
+        /**
+         * <p>Creates a <code>RegexPatternSet</code>. You then use
+         * <a>UpdateRegexPatternSet</a> to specify the regular expression (regex) pattern
+         * that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can
+         * then configure AWS WAF to reject those requests.</p> <p>To create and configure
+         * a <code>RegexPatternSet</code>, perform the following steps:</p> <ol> <li>
+         * <p>Use <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of a <code>CreateRegexPatternSet</code>
+         * request.</p> </li> <li> <p>Submit a <code>CreateRegexPatternSet</code>
+         * request.</p> </li> <li> <p>Use <code>GetChangeToken</code> to get the change
+         * token that you provide in the <code>ChangeToken</code> parameter of an
+         * <code>UpdateRegexPatternSet</code> request.</p> </li> <li> <p>Submit an
+         * <a>UpdateRegexPatternSet</a> request to specify the string that you want AWS WAF
+         * to watch for.</p> </li> </ol> <p>For more information about how to use the AWS
+         * WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateRegexPatternSetOutcomeCallable CreateRegexPatternSetCallable(const Model::CreateRegexPatternSetRequest& request) const;
+
+        /**
+         * <p>Creates a <code>RegexPatternSet</code>. You then use
+         * <a>UpdateRegexPatternSet</a> to specify the regular expression (regex) pattern
+         * that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can
+         * then configure AWS WAF to reject those requests.</p> <p>To create and configure
+         * a <code>RegexPatternSet</code>, perform the following steps:</p> <ol> <li>
+         * <p>Use <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of a <code>CreateRegexPatternSet</code>
+         * request.</p> </li> <li> <p>Submit a <code>CreateRegexPatternSet</code>
+         * request.</p> </li> <li> <p>Use <code>GetChangeToken</code> to get the change
+         * token that you provide in the <code>ChangeToken</code> parameter of an
+         * <code>UpdateRegexPatternSet</code> request.</p> </li> <li> <p>Submit an
+         * <a>UpdateRegexPatternSet</a> request to specify the string that you want AWS WAF
+         * to watch for.</p> </li> </ol> <p>For more information about how to use the AWS
+         * WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateRegexPatternSetAsync(const Model::CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects,
@@ -1150,6 +1456,61 @@ namespace Model
         virtual void DeleteByteMatchSetAsync(const Model::DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Permanently deletes a <a>GeoMatchSet</a>. You can't delete a
+         * <code>GeoMatchSet</code> if it's still used in any <code>Rules</code> or if it
+         * still includes any countries.</p> <p>If you just want to remove a
+         * <code>GeoMatchSet</code> from a <code>Rule</code>, use <a>UpdateRule</a>.</p>
+         * <p>To permanently delete a <code>GeoMatchSet</code> from AWS WAF, perform the
+         * following steps:</p> <ol> <li> <p>Update the <code>GeoMatchSet</code> to remove
+         * any countries. For more information, see <a>UpdateGeoMatchSet</a>.</p> </li>
+         * <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide in
+         * the <code>ChangeToken</code> parameter of a <code>DeleteGeoMatchSet</code>
+         * request.</p> </li> <li> <p>Submit a <code>DeleteGeoMatchSet</code> request.</p>
+         * </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteGeoMatchSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteGeoMatchSetOutcome DeleteGeoMatchSet(const Model::DeleteGeoMatchSetRequest& request) const;
+
+        /**
+         * <p>Permanently deletes a <a>GeoMatchSet</a>. You can't delete a
+         * <code>GeoMatchSet</code> if it's still used in any <code>Rules</code> or if it
+         * still includes any countries.</p> <p>If you just want to remove a
+         * <code>GeoMatchSet</code> from a <code>Rule</code>, use <a>UpdateRule</a>.</p>
+         * <p>To permanently delete a <code>GeoMatchSet</code> from AWS WAF, perform the
+         * following steps:</p> <ol> <li> <p>Update the <code>GeoMatchSet</code> to remove
+         * any countries. For more information, see <a>UpdateGeoMatchSet</a>.</p> </li>
+         * <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide in
+         * the <code>ChangeToken</code> parameter of a <code>DeleteGeoMatchSet</code>
+         * request.</p> </li> <li> <p>Submit a <code>DeleteGeoMatchSet</code> request.</p>
+         * </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteGeoMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteGeoMatchSetOutcomeCallable DeleteGeoMatchSetCallable(const Model::DeleteGeoMatchSetRequest& request) const;
+
+        /**
+         * <p>Permanently deletes a <a>GeoMatchSet</a>. You can't delete a
+         * <code>GeoMatchSet</code> if it's still used in any <code>Rules</code> or if it
+         * still includes any countries.</p> <p>If you just want to remove a
+         * <code>GeoMatchSet</code> from a <code>Rule</code>, use <a>UpdateRule</a>.</p>
+         * <p>To permanently delete a <code>GeoMatchSet</code> from AWS WAF, perform the
+         * following steps:</p> <ol> <li> <p>Update the <code>GeoMatchSet</code> to remove
+         * any countries. For more information, see <a>UpdateGeoMatchSet</a>.</p> </li>
+         * <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide in
+         * the <code>ChangeToken</code> parameter of a <code>DeleteGeoMatchSet</code>
+         * request.</p> </li> <li> <p>Submit a <code>DeleteGeoMatchSet</code> request.</p>
+         * </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteGeoMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteGeoMatchSetAsync(const Model::DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Permanently deletes an <a>IPSet</a>. You can't delete an <code>IPSet</code>
          * if it's still used in any <code>Rules</code> or if it still includes any IP
          * addresses.</p> <p>If you just want to remove an <code>IPSet</code> from a
@@ -1258,6 +1619,98 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRateBasedRuleAsync(const Model::DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Permanently deletes a <a>RegexMatchSet</a>. You can't delete a
+         * <code>RegexMatchSet</code> if it's still used in any <code>Rules</code> or if it
+         * still includes any <code>RegexMatchTuples</code> objects (any filters).</p>
+         * <p>If you just want to remove a <code>RegexMatchSet</code> from a
+         * <code>Rule</code>, use <a>UpdateRule</a>.</p> <p>To permanently delete a
+         * <code>RegexMatchSet</code>, perform the following steps:</p> <ol> <li> <p>Update
+         * the <code>RegexMatchSet</code> to remove filters, if any. For more information,
+         * see <a>UpdateRegexMatchSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to
+         * get the change token that you provide in the <code>ChangeToken</code> parameter
+         * of a <code>DeleteRegexMatchSet</code> request.</p> </li> <li> <p>Submit a
+         * <code>DeleteRegexMatchSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexMatchSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRegexMatchSetOutcome DeleteRegexMatchSet(const Model::DeleteRegexMatchSetRequest& request) const;
+
+        /**
+         * <p>Permanently deletes a <a>RegexMatchSet</a>. You can't delete a
+         * <code>RegexMatchSet</code> if it's still used in any <code>Rules</code> or if it
+         * still includes any <code>RegexMatchTuples</code> objects (any filters).</p>
+         * <p>If you just want to remove a <code>RegexMatchSet</code> from a
+         * <code>Rule</code>, use <a>UpdateRule</a>.</p> <p>To permanently delete a
+         * <code>RegexMatchSet</code>, perform the following steps:</p> <ol> <li> <p>Update
+         * the <code>RegexMatchSet</code> to remove filters, if any. For more information,
+         * see <a>UpdateRegexMatchSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to
+         * get the change token that you provide in the <code>ChangeToken</code> parameter
+         * of a <code>DeleteRegexMatchSet</code> request.</p> </li> <li> <p>Submit a
+         * <code>DeleteRegexMatchSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRegexMatchSetOutcomeCallable DeleteRegexMatchSetCallable(const Model::DeleteRegexMatchSetRequest& request) const;
+
+        /**
+         * <p>Permanently deletes a <a>RegexMatchSet</a>. You can't delete a
+         * <code>RegexMatchSet</code> if it's still used in any <code>Rules</code> or if it
+         * still includes any <code>RegexMatchTuples</code> objects (any filters).</p>
+         * <p>If you just want to remove a <code>RegexMatchSet</code> from a
+         * <code>Rule</code>, use <a>UpdateRule</a>.</p> <p>To permanently delete a
+         * <code>RegexMatchSet</code>, perform the following steps:</p> <ol> <li> <p>Update
+         * the <code>RegexMatchSet</code> to remove filters, if any. For more information,
+         * see <a>UpdateRegexMatchSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to
+         * get the change token that you provide in the <code>ChangeToken</code> parameter
+         * of a <code>DeleteRegexMatchSet</code> request.</p> </li> <li> <p>Submit a
+         * <code>DeleteRegexMatchSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRegexMatchSetAsync(const Model::DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Permanently deletes a <a>RegexPatternSet</a>. You can't delete a
+         * <code>RegexPatternSet</code> if it's still used in any
+         * <code>RegexMatchSet</code> or if the <code>RegexPatternSet</code> is not empty.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexPatternSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRegexPatternSetOutcome DeleteRegexPatternSet(const Model::DeleteRegexPatternSetRequest& request) const;
+
+        /**
+         * <p>Permanently deletes a <a>RegexPatternSet</a>. You can't delete a
+         * <code>RegexPatternSet</code> if it's still used in any
+         * <code>RegexMatchSet</code> or if the <code>RegexPatternSet</code> is not empty.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexPatternSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRegexPatternSetOutcomeCallable DeleteRegexPatternSetCallable(const Model::DeleteRegexPatternSetRequest& request) const;
+
+        /**
+         * <p>Permanently deletes a <a>RegexPatternSet</a>. You can't delete a
+         * <code>RegexPatternSet</code> if it's still used in any
+         * <code>RegexMatchSet</code> or if the <code>RegexPatternSet</code> is not empty.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexPatternSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRegexPatternSetAsync(const Model::DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently deletes a <a>Rule</a>. You can't delete a <code>Rule</code> if
@@ -1670,6 +2123,34 @@ namespace Model
         virtual void GetChangeTokenStatusAsync(const Model::GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the <a>GeoMatchSet</a> that is specified by
+         * <code>GeoMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetGeoMatchSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetGeoMatchSetOutcome GetGeoMatchSet(const Model::GetGeoMatchSetRequest& request) const;
+
+        /**
+         * <p>Returns the <a>GeoMatchSet</a> that is specified by
+         * <code>GeoMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetGeoMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetGeoMatchSetOutcomeCallable GetGeoMatchSetCallable(const Model::GetGeoMatchSetRequest& request) const;
+
+        /**
+         * <p>Returns the <a>GeoMatchSet</a> that is specified by
+         * <code>GeoMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetGeoMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetGeoMatchSetAsync(const Model::GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the <a>IPSet</a> that is specified by
          * <code>IPSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">AWS API
@@ -1764,6 +2245,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRateBasedRuleManagedKeysAsync(const Model::GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the <a>RegexMatchSet</a> specified by
+         * <code>RegexMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexMatchSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRegexMatchSetOutcome GetRegexMatchSet(const Model::GetRegexMatchSetRequest& request) const;
+
+        /**
+         * <p>Returns the <a>RegexMatchSet</a> specified by
+         * <code>RegexMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRegexMatchSetOutcomeCallable GetRegexMatchSetCallable(const Model::GetRegexMatchSetRequest& request) const;
+
+        /**
+         * <p>Returns the <a>RegexMatchSet</a> specified by
+         * <code>RegexMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRegexMatchSetAsync(const Model::GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the <a>RegexPatternSet</a> specified by
+         * <code>RegexPatternSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexPatternSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRegexPatternSetOutcome GetRegexPatternSet(const Model::GetRegexPatternSetRequest& request) const;
+
+        /**
+         * <p>Returns the <a>RegexPatternSet</a> specified by
+         * <code>RegexPatternSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexPatternSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRegexPatternSetOutcomeCallable GetRegexPatternSetCallable(const Model::GetRegexPatternSetRequest& request) const;
+
+        /**
+         * <p>Returns the <a>RegexPatternSet</a> specified by
+         * <code>RegexPatternSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexPatternSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRegexPatternSetAsync(const Model::GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the <a>Rule</a> that is specified by the <code>RuleId</code> that you
@@ -1986,6 +2523,34 @@ namespace Model
         virtual void ListByteMatchSetsAsync(const Model::ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns an array of <a>GeoMatchSetSummary</a> objects in the
+         * response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListGeoMatchSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGeoMatchSetsOutcome ListGeoMatchSets(const Model::ListGeoMatchSetsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>GeoMatchSetSummary</a> objects in the
+         * response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListGeoMatchSets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListGeoMatchSetsOutcomeCallable ListGeoMatchSetsCallable(const Model::ListGeoMatchSetsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>GeoMatchSetSummary</a> objects in the
+         * response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListGeoMatchSets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListGeoMatchSetsAsync(const Model::ListGeoMatchSetsRequest& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of <a>IPSetSummary</a> objects in the
          * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">AWS API
@@ -2037,6 +2602,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRateBasedRulesAsync(const Model::ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of <a>RegexMatchSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexMatchSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRegexMatchSetsOutcome ListRegexMatchSets(const Model::ListRegexMatchSetsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>RegexMatchSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexMatchSets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRegexMatchSetsOutcomeCallable ListRegexMatchSetsCallable(const Model::ListRegexMatchSetsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>RegexMatchSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexMatchSets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRegexMatchSetsAsync(const Model::ListRegexMatchSetsRequest& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of <a>RegexPatternSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexPatternSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRegexPatternSetsOutcome ListRegexPatternSets(const Model::ListRegexPatternSetsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>RegexPatternSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexPatternSets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRegexPatternSetsOutcomeCallable ListRegexPatternSetsCallable(const Model::ListRegexPatternSetsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>RegexPatternSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexPatternSets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRegexPatternSetsAsync(const Model::ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
@@ -2279,6 +2900,91 @@ namespace Model
         virtual void UpdateByteMatchSetAsync(const Model::UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Inserts or deletes <a>GeoMatchConstraint</a> objects in an
+         * <code>GeoMatchSet</code>. For each <code>GeoMatchConstraint</code> object, you
+         * specify the following values: </p> <ul> <li> <p>Whether to insert or delete the
+         * object from the array. If you want to change an <code>GeoMatchConstraint</code>
+         * object, you delete the existing object and add a new one.</p> </li> <li> <p>The
+         * <code>Type</code>. The only valid value for <code>Type</code> is
+         * <code>Country</code>.</p> </li> <li> <p>The <code>Value</code>, which is a two
+         * character code for the country to add to the <code>GeoMatchConstraint</code>
+         * object. Valid codes are listed in <a>GeoMatchConstraint$Value</a>.</p> </li>
+         * </ul> <p>To create and configure an <code>GeoMatchSet</code>, perform the
+         * following steps:</p> <ol> <li> <p>Submit a <a>CreateGeoMatchSet</a> request.</p>
+         * </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide
+         * in the <code>ChangeToken</code> parameter of an <a>UpdateGeoMatchSet</a>
+         * request.</p> </li> <li> <p>Submit an <code>UpdateGeoMatchSet</code> request to
+         * specify the country that you want AWS WAF to watch for.</p> </li> </ol> <p>When
+         * you update an <code>GeoMatchSet</code>, you specify the country that you want to
+         * add and/or the country that you want to delete. If you want to change a country,
+         * you delete the existing country and add the new one.</p> <p>For more information
+         * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGeoMatchSetOutcome UpdateGeoMatchSet(const Model::UpdateGeoMatchSetRequest& request) const;
+
+        /**
+         * <p>Inserts or deletes <a>GeoMatchConstraint</a> objects in an
+         * <code>GeoMatchSet</code>. For each <code>GeoMatchConstraint</code> object, you
+         * specify the following values: </p> <ul> <li> <p>Whether to insert or delete the
+         * object from the array. If you want to change an <code>GeoMatchConstraint</code>
+         * object, you delete the existing object and add a new one.</p> </li> <li> <p>The
+         * <code>Type</code>. The only valid value for <code>Type</code> is
+         * <code>Country</code>.</p> </li> <li> <p>The <code>Value</code>, which is a two
+         * character code for the country to add to the <code>GeoMatchConstraint</code>
+         * object. Valid codes are listed in <a>GeoMatchConstraint$Value</a>.</p> </li>
+         * </ul> <p>To create and configure an <code>GeoMatchSet</code>, perform the
+         * following steps:</p> <ol> <li> <p>Submit a <a>CreateGeoMatchSet</a> request.</p>
+         * </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide
+         * in the <code>ChangeToken</code> parameter of an <a>UpdateGeoMatchSet</a>
+         * request.</p> </li> <li> <p>Submit an <code>UpdateGeoMatchSet</code> request to
+         * specify the country that you want AWS WAF to watch for.</p> </li> </ol> <p>When
+         * you update an <code>GeoMatchSet</code>, you specify the country that you want to
+         * add and/or the country that you want to delete. If you want to change a country,
+         * you delete the existing country and add the new one.</p> <p>For more information
+         * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateGeoMatchSetOutcomeCallable UpdateGeoMatchSetCallable(const Model::UpdateGeoMatchSetRequest& request) const;
+
+        /**
+         * <p>Inserts or deletes <a>GeoMatchConstraint</a> objects in an
+         * <code>GeoMatchSet</code>. For each <code>GeoMatchConstraint</code> object, you
+         * specify the following values: </p> <ul> <li> <p>Whether to insert or delete the
+         * object from the array. If you want to change an <code>GeoMatchConstraint</code>
+         * object, you delete the existing object and add a new one.</p> </li> <li> <p>The
+         * <code>Type</code>. The only valid value for <code>Type</code> is
+         * <code>Country</code>.</p> </li> <li> <p>The <code>Value</code>, which is a two
+         * character code for the country to add to the <code>GeoMatchConstraint</code>
+         * object. Valid codes are listed in <a>GeoMatchConstraint$Value</a>.</p> </li>
+         * </ul> <p>To create and configure an <code>GeoMatchSet</code>, perform the
+         * following steps:</p> <ol> <li> <p>Submit a <a>CreateGeoMatchSet</a> request.</p>
+         * </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide
+         * in the <code>ChangeToken</code> parameter of an <a>UpdateGeoMatchSet</a>
+         * request.</p> </li> <li> <p>Submit an <code>UpdateGeoMatchSet</code> request to
+         * specify the country that you want AWS WAF to watch for.</p> </li> </ol> <p>When
+         * you update an <code>GeoMatchSet</code>, you specify the country that you want to
+         * add and/or the country that you want to delete. If you want to change a country,
+         * you delete the existing country and add the new one.</p> <p>For more information
+         * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateGeoMatchSetAsync(const Model::UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Inserts or deletes <a>IPSetDescriptor</a> objects in an <code>IPSet</code>.
          * For each <code>IPSetDescriptor</code> object, you specify the following values:
          * </p> <ul> <li> <p>Whether to insert or delete the object from the array. If you
@@ -2513,6 +3219,194 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateRateBasedRuleAsync(const Model::UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a
+         * <a>RegexMatchSet</a>. For each <code>RegexMatchSetUpdate</code> object, you
+         * specify the following values: </p> <ul> <li> <p>Whether to insert or delete the
+         * object from the array. If you want to change a <code>RegexMatchSetUpdate</code>
+         * object, you delete the existing object and add a new one.</p> </li> <li> <p>The
+         * part of a web request that you want AWS WAF to inspect, such as a query string
+         * or the value of the <code>User-Agent</code> header. </p> </li> <li> <p>The
+         * identifier of the pattern (a regular expression) that you want AWS WAF to look
+         * for. For more information, see <a>RegexPatternSet</a>. </p> </li> <li>
+         * <p>Whether to perform any conversions on the request, such as converting it to
+         * lowercase, before inspecting it for the specified string.</p> </li> </ul> <p>
+         * For example, you can create a <code>RegexPatternSet</code> that matches any
+         * requests with <code>User-Agent</code> headers that contain the string
+         * <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those
+         * requests.</p> <p>To create and configure a <code>RegexMatchSet</code>, perform
+         * the following steps:</p> <ol> <li> <p>Create a <code>RegexMatchSet.</code> For
+         * more information, see <a>CreateRegexMatchSet</a>.</p> </li> <li> <p>Use
+         * <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of an <code>UpdateRegexMatchSet</code>
+         * request.</p> </li> <li> <p>Submit an <code>UpdateRegexMatchSet</code> request to
+         * specify the part of the request that you want AWS WAF to inspect (for example,
+         * the header or the URI) and the identifier of the <code>RegexPatternSet</code>
+         * that contain the regular expression patters you want AWS WAF to watch for.</p>
+         * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
+         * block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexMatchSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRegexMatchSetOutcome UpdateRegexMatchSet(const Model::UpdateRegexMatchSetRequest& request) const;
+
+        /**
+         * <p>Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a
+         * <a>RegexMatchSet</a>. For each <code>RegexMatchSetUpdate</code> object, you
+         * specify the following values: </p> <ul> <li> <p>Whether to insert or delete the
+         * object from the array. If you want to change a <code>RegexMatchSetUpdate</code>
+         * object, you delete the existing object and add a new one.</p> </li> <li> <p>The
+         * part of a web request that you want AWS WAF to inspect, such as a query string
+         * or the value of the <code>User-Agent</code> header. </p> </li> <li> <p>The
+         * identifier of the pattern (a regular expression) that you want AWS WAF to look
+         * for. For more information, see <a>RegexPatternSet</a>. </p> </li> <li>
+         * <p>Whether to perform any conversions on the request, such as converting it to
+         * lowercase, before inspecting it for the specified string.</p> </li> </ul> <p>
+         * For example, you can create a <code>RegexPatternSet</code> that matches any
+         * requests with <code>User-Agent</code> headers that contain the string
+         * <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those
+         * requests.</p> <p>To create and configure a <code>RegexMatchSet</code>, perform
+         * the following steps:</p> <ol> <li> <p>Create a <code>RegexMatchSet.</code> For
+         * more information, see <a>CreateRegexMatchSet</a>.</p> </li> <li> <p>Use
+         * <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of an <code>UpdateRegexMatchSet</code>
+         * request.</p> </li> <li> <p>Submit an <code>UpdateRegexMatchSet</code> request to
+         * specify the part of the request that you want AWS WAF to inspect (for example,
+         * the header or the URI) and the identifier of the <code>RegexPatternSet</code>
+         * that contain the regular expression patters you want AWS WAF to watch for.</p>
+         * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
+         * block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRegexMatchSetOutcomeCallable UpdateRegexMatchSetCallable(const Model::UpdateRegexMatchSetRequest& request) const;
+
+        /**
+         * <p>Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a
+         * <a>RegexMatchSet</a>. For each <code>RegexMatchSetUpdate</code> object, you
+         * specify the following values: </p> <ul> <li> <p>Whether to insert or delete the
+         * object from the array. If you want to change a <code>RegexMatchSetUpdate</code>
+         * object, you delete the existing object and add a new one.</p> </li> <li> <p>The
+         * part of a web request that you want AWS WAF to inspect, such as a query string
+         * or the value of the <code>User-Agent</code> header. </p> </li> <li> <p>The
+         * identifier of the pattern (a regular expression) that you want AWS WAF to look
+         * for. For more information, see <a>RegexPatternSet</a>. </p> </li> <li>
+         * <p>Whether to perform any conversions on the request, such as converting it to
+         * lowercase, before inspecting it for the specified string.</p> </li> </ul> <p>
+         * For example, you can create a <code>RegexPatternSet</code> that matches any
+         * requests with <code>User-Agent</code> headers that contain the string
+         * <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those
+         * requests.</p> <p>To create and configure a <code>RegexMatchSet</code>, perform
+         * the following steps:</p> <ol> <li> <p>Create a <code>RegexMatchSet.</code> For
+         * more information, see <a>CreateRegexMatchSet</a>.</p> </li> <li> <p>Use
+         * <a>GetChangeToken</a> to get the change token that you provide in the
+         * <code>ChangeToken</code> parameter of an <code>UpdateRegexMatchSet</code>
+         * request.</p> </li> <li> <p>Submit an <code>UpdateRegexMatchSet</code> request to
+         * specify the part of the request that you want AWS WAF to inspect (for example,
+         * the header or the URI) and the identifier of the <code>RegexPatternSet</code>
+         * that contain the regular expression patters you want AWS WAF to watch for.</p>
+         * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
+         * block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexMatchSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRegexMatchSetAsync(const Model::UpdateRegexMatchSetRequest& request, const UpdateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a
+         * <a>RegexPatternSet</a>. For each <code>RegexPatternSet</code> object, you
+         * specify the following values: </p> <ul> <li> <p>Whether to insert or delete the
+         * object from the array. If you want to change a <code>RegexPatternSet</code>
+         * object, you delete the existing object and add a new one.</p> </li> <li> <p>The
+         * regular expression pattern that you want AWS WAF to look for. For more
+         * information, see <a>RegexPatternSet</a>. </p> </li> </ul> <p> For example, you
+         * can create a <code>RegexPatternString</code> such as <code>B[a@]dB[o0]t</code>.
+         * AWS WAF will match this <code>RegexPatternString</code> to:</p> <ul> <li>
+         * <p>BadBot</p> </li> <li> <p>BadB0t</p> </li> <li> <p>B@dBot</p> </li> <li>
+         * <p>B@dB0t</p> </li> </ul> <p>To create and configure a
+         * <code>RegexPatternSet</code>, perform the following steps:</p> <ol> <li>
+         * <p>Create a <code>RegexPatternSet.</code> For more information, see
+         * <a>CreateRegexPatternSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get
+         * the change token that you provide in the <code>ChangeToken</code> parameter of
+         * an <code>UpdateRegexPatternSet</code> request.</p> </li> <li> <p>Submit an
+         * <code>UpdateRegexPatternSet</code> request to specify the regular expression
+         * pattern that you want AWS WAF to watch for.</p> </li> </ol> <p>For more
+         * information about how to use the AWS WAF API to allow or block HTTP requests,
+         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexPatternSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRegexPatternSetOutcome UpdateRegexPatternSet(const Model::UpdateRegexPatternSetRequest& request) const;
+
+        /**
+         * <p>Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a
+         * <a>RegexPatternSet</a>. For each <code>RegexPatternSet</code> object, you
+         * specify the following values: </p> <ul> <li> <p>Whether to insert or delete the
+         * object from the array. If you want to change a <code>RegexPatternSet</code>
+         * object, you delete the existing object and add a new one.</p> </li> <li> <p>The
+         * regular expression pattern that you want AWS WAF to look for. For more
+         * information, see <a>RegexPatternSet</a>. </p> </li> </ul> <p> For example, you
+         * can create a <code>RegexPatternString</code> such as <code>B[a@]dB[o0]t</code>.
+         * AWS WAF will match this <code>RegexPatternString</code> to:</p> <ul> <li>
+         * <p>BadBot</p> </li> <li> <p>BadB0t</p> </li> <li> <p>B@dBot</p> </li> <li>
+         * <p>B@dB0t</p> </li> </ul> <p>To create and configure a
+         * <code>RegexPatternSet</code>, perform the following steps:</p> <ol> <li>
+         * <p>Create a <code>RegexPatternSet.</code> For more information, see
+         * <a>CreateRegexPatternSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get
+         * the change token that you provide in the <code>ChangeToken</code> parameter of
+         * an <code>UpdateRegexPatternSet</code> request.</p> </li> <li> <p>Submit an
+         * <code>UpdateRegexPatternSet</code> request to specify the regular expression
+         * pattern that you want AWS WAF to watch for.</p> </li> </ol> <p>For more
+         * information about how to use the AWS WAF API to allow or block HTTP requests,
+         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexPatternSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRegexPatternSetOutcomeCallable UpdateRegexPatternSetCallable(const Model::UpdateRegexPatternSetRequest& request) const;
+
+        /**
+         * <p>Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a
+         * <a>RegexPatternSet</a>. For each <code>RegexPatternSet</code> object, you
+         * specify the following values: </p> <ul> <li> <p>Whether to insert or delete the
+         * object from the array. If you want to change a <code>RegexPatternSet</code>
+         * object, you delete the existing object and add a new one.</p> </li> <li> <p>The
+         * regular expression pattern that you want AWS WAF to look for. For more
+         * information, see <a>RegexPatternSet</a>. </p> </li> </ul> <p> For example, you
+         * can create a <code>RegexPatternString</code> such as <code>B[a@]dB[o0]t</code>.
+         * AWS WAF will match this <code>RegexPatternString</code> to:</p> <ul> <li>
+         * <p>BadBot</p> </li> <li> <p>BadB0t</p> </li> <li> <p>B@dBot</p> </li> <li>
+         * <p>B@dB0t</p> </li> </ul> <p>To create and configure a
+         * <code>RegexPatternSet</code>, perform the following steps:</p> <ol> <li>
+         * <p>Create a <code>RegexPatternSet.</code> For more information, see
+         * <a>CreateRegexPatternSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get
+         * the change token that you provide in the <code>ChangeToken</code> parameter of
+         * an <code>UpdateRegexPatternSet</code> request.</p> </li> <li> <p>Submit an
+         * <code>UpdateRegexPatternSet</code> request to specify the regular expression
+         * pattern that you want AWS WAF to watch for.</p> </li> </ol> <p>For more
+         * information about how to use the AWS WAF API to allow or block HTTP requests,
+         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexPatternSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRegexPatternSetAsync(const Model::UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Inserts or deletes <a>Predicate</a> objects in a <code>Rule</code>. Each
@@ -3086,16 +3980,22 @@ namespace Model
 
         /**Async helpers**/
         void CreateByteMatchSetAsyncHelper(const Model::CreateByteMatchSetRequest& request, const CreateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateGeoMatchSetAsyncHelper(const Model::CreateGeoMatchSetRequest& request, const CreateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIPSetAsyncHelper(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRateBasedRuleAsyncHelper(const Model::CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateRegexMatchSetAsyncHelper(const Model::CreateRegexMatchSetRequest& request, const CreateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateRegexPatternSetAsyncHelper(const Model::CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRuleAsyncHelper(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSizeConstraintSetAsyncHelper(const Model::CreateSizeConstraintSetRequest& request, const CreateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSqlInjectionMatchSetAsyncHelper(const Model::CreateSqlInjectionMatchSetRequest& request, const CreateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWebACLAsyncHelper(const Model::CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateXssMatchSetAsyncHelper(const Model::CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteByteMatchSetAsyncHelper(const Model::DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteGeoMatchSetAsyncHelper(const Model::DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIPSetAsyncHelper(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRateBasedRuleAsyncHelper(const Model::DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRegexMatchSetAsyncHelper(const Model::DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRegexPatternSetAsyncHelper(const Model::DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSizeConstraintSetAsyncHelper(const Model::DeleteSizeConstraintSetRequest& request, const DeleteSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSqlInjectionMatchSetAsyncHelper(const Model::DeleteSqlInjectionMatchSetRequest& request, const DeleteSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3104,9 +4004,12 @@ namespace Model
         void GetByteMatchSetAsyncHelper(const Model::GetByteMatchSetRequest& request, const GetByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChangeTokenAsyncHelper(const Model::GetChangeTokenRequest& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChangeTokenStatusAsyncHelper(const Model::GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetGeoMatchSetAsyncHelper(const Model::GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIPSetAsyncHelper(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRateBasedRuleAsyncHelper(const Model::GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRateBasedRuleManagedKeysAsyncHelper(const Model::GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRegexMatchSetAsyncHelper(const Model::GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRegexPatternSetAsyncHelper(const Model::GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRuleAsyncHelper(const Model::GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSampledRequestsAsyncHelper(const Model::GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSizeConstraintSetAsyncHelper(const Model::GetSizeConstraintSetRequest& request, const GetSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3114,16 +4017,22 @@ namespace Model
         void GetWebACLAsyncHelper(const Model::GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetXssMatchSetAsyncHelper(const Model::GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListByteMatchSetsAsyncHelper(const Model::ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListGeoMatchSetsAsyncHelper(const Model::ListGeoMatchSetsRequest& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIPSetsAsyncHelper(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRateBasedRulesAsyncHelper(const Model::ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListRegexMatchSetsAsyncHelper(const Model::ListRegexMatchSetsRequest& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListRegexPatternSetsAsyncHelper(const Model::ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRulesAsyncHelper(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSizeConstraintSetsAsyncHelper(const Model::ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSqlInjectionMatchSetsAsyncHelper(const Model::ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWebACLsAsyncHelper(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListXssMatchSetsAsyncHelper(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateByteMatchSetAsyncHelper(const Model::UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateGeoMatchSetAsyncHelper(const Model::UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRateBasedRuleAsyncHelper(const Model::UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRegexMatchSetAsyncHelper(const Model::UpdateRegexMatchSetRequest& request, const UpdateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRegexPatternSetAsyncHelper(const Model::UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRuleAsyncHelper(const Model::UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSizeConstraintSetAsyncHelper(const Model::UpdateSizeConstraintSetRequest& request, const UpdateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSqlInjectionMatchSetAsyncHelper(const Model::UpdateSqlInjectionMatchSetRequest& request, const UpdateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

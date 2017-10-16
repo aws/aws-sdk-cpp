@@ -33,8 +33,10 @@ namespace Aws
         static const int IPMatch_HASH = HashingUtils::HashString("IPMatch");
         static const int ByteMatch_HASH = HashingUtils::HashString("ByteMatch");
         static const int SqlInjectionMatch_HASH = HashingUtils::HashString("SqlInjectionMatch");
+        static const int GeoMatch_HASH = HashingUtils::HashString("GeoMatch");
         static const int SizeConstraint_HASH = HashingUtils::HashString("SizeConstraint");
         static const int XssMatch_HASH = HashingUtils::HashString("XssMatch");
+        static const int RegexMatch_HASH = HashingUtils::HashString("RegexMatch");
 
 
         PredicateType GetPredicateTypeForName(const Aws::String& name)
@@ -52,6 +54,10 @@ namespace Aws
           {
             return PredicateType::SqlInjectionMatch;
           }
+          else if (hashCode == GeoMatch_HASH)
+          {
+            return PredicateType::GeoMatch;
+          }
           else if (hashCode == SizeConstraint_HASH)
           {
             return PredicateType::SizeConstraint;
@@ -59,6 +65,10 @@ namespace Aws
           else if (hashCode == XssMatch_HASH)
           {
             return PredicateType::XssMatch;
+          }
+          else if (hashCode == RegexMatch_HASH)
+          {
+            return PredicateType::RegexMatch;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -80,10 +90,14 @@ namespace Aws
             return "ByteMatch";
           case PredicateType::SqlInjectionMatch:
             return "SqlInjectionMatch";
+          case PredicateType::GeoMatch:
+            return "GeoMatch";
           case PredicateType::SizeConstraint:
             return "SizeConstraint";
           case PredicateType::XssMatch:
             return "XssMatch";
+          case PredicateType::RegexMatch:
+            return "RegexMatch";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

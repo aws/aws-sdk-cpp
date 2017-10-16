@@ -20,6 +20,8 @@
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/SnapshotOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/es/model/LogType.h>
+#include <aws/es/model/LogPublishingOption.h>
 #include <utility>
 
 namespace Aws
@@ -518,6 +520,52 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline void SetLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline void SetLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& WithLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { SetLogPublishingOptions(value); return *this;}
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& WithLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& AddLogPublishingOptions(const LogType& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, value); return *this; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& AddLogPublishingOptions(LogType&& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& AddLogPublishingOptions(const LogType& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainStatus& AddLogPublishingOptions(LogType&& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domainId;
@@ -558,6 +606,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
+
+    Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
+    bool m_logPublishingOptionsHasBeenSet;
   };
 
 } // namespace Model

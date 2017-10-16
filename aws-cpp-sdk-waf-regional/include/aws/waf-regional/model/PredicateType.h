@@ -29,8 +29,10 @@ namespace Model
     IPMatch,
     ByteMatch,
     SqlInjectionMatch,
+    GeoMatch,
     SizeConstraint,
-    XssMatch
+    XssMatch,
+    RegexMatch
   };
 
 namespace PredicateTypeMapper

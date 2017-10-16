@@ -21,6 +21,7 @@
 #include <aws/es/model/AccessPoliciesStatus.h>
 #include <aws/es/model/SnapshotOptionsStatus.h>
 #include <aws/es/model/AdvancedOptionsStatus.h>
+#include <aws/es/model/LogPublishingOptionsStatus.h>
 #include <utility>
 
 namespace Aws
@@ -221,6 +222,32 @@ namespace Model
      */
     inline ElasticsearchDomainConfig& WithAdvancedOptions(AdvancedOptionsStatus&& value) { SetAdvancedOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline const LogPublishingOptionsStatus& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline void SetLogPublishingOptions(const LogPublishingOptionsStatus& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline void SetLogPublishingOptions(LogPublishingOptionsStatus&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainConfig& WithLogPublishingOptions(const LogPublishingOptionsStatus& value) { SetLogPublishingOptions(value); return *this;}
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
+    inline ElasticsearchDomainConfig& WithLogPublishingOptions(LogPublishingOptionsStatus&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
+
   private:
 
     ElasticsearchVersionStatus m_elasticsearchVersion;
@@ -240,6 +267,9 @@ namespace Model
 
     AdvancedOptionsStatus m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
+
+    LogPublishingOptionsStatus m_logPublishingOptions;
+    bool m_logPublishingOptionsHasBeenSet;
   };
 
 } // namespace Model

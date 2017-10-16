@@ -21,6 +21,8 @@
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/SnapshotOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/es/model/LogType.h>
+#include <aws/es/model/LogPublishingOption.h>
 #include <utility>
 
 namespace Aws
@@ -404,6 +406,61 @@ namespace Model
      */
     inline CreateElasticsearchDomainRequest& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline void SetLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline void SetLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { SetLogPublishingOptions(value); return *this;}
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline CreateElasticsearchDomainRequest& AddLogPublishingOptions(const LogType& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, value); return *this; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline CreateElasticsearchDomainRequest& AddLogPublishingOptions(LogType&& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline CreateElasticsearchDomainRequest& AddLogPublishingOptions(const LogType& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline CreateElasticsearchDomainRequest& AddLogPublishingOptions(LogType&& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domainName;
@@ -426,6 +483,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
+
+    Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
+    bool m_logPublishingOptionsHasBeenSet;
   };
 
 } // namespace Model

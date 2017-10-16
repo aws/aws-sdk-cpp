@@ -28,7 +28,8 @@ UpdateElasticsearchDomainConfigRequest::UpdateElasticsearchDomainConfigRequest()
     m_eBSOptionsHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
-    m_accessPoliciesHasBeenSet(false)
+    m_accessPoliciesHasBeenSet(false),
+    m_logPublishingOptionsHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,17 @@ Aws::String UpdateElasticsearchDomainConfigRequest::SerializePayload() const
   if(m_accessPoliciesHasBeenSet)
   {
    payload.WithString("AccessPolicies", m_accessPolicies);
+
+  }
+
+  if(m_logPublishingOptionsHasBeenSet)
+  {
+   JsonValue logPublishingOptionsJsonMap;
+   for(auto& logPublishingOptionsItem : m_logPublishingOptions)
+   {
+     logPublishingOptionsJsonMap.WithObject(LogTypeMapper::GetNameForLogType(logPublishingOptionsItem.first), logPublishingOptionsItem.second.Jsonize());
+   }
+   payload.WithObject("LogPublishingOptions", std::move(logPublishingOptionsJsonMap));
 
   }
 

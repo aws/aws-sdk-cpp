@@ -44,7 +44,8 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false)
+    m_advancedOptionsHasBeenSet(false),
+    m_logPublishingOptionsHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(const JsonValue& jsonValue)
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false)
+    m_advancedOptionsHasBeenSet(false),
+    m_logPublishingOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -165,6 +167,16 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
     m_advancedOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogPublishingOptions"))
+  {
+    Aws::Map<Aws::String, JsonValue> logPublishingOptionsJsonMap = jsonValue.GetObject("LogPublishingOptions").GetAllObjects();
+    for(auto& logPublishingOptionsItem : logPublishingOptionsJsonMap)
+    {
+      m_logPublishingOptions[LogTypeMapper::GetLogTypeForName(logPublishingOptionsItem.first)] = logPublishingOptionsItem.second.AsObject();
+    }
+    m_logPublishingOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -252,6 +264,17 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
      advancedOptionsJsonMap.WithString(advancedOptionsItem.first, advancedOptionsItem.second);
    }
    payload.WithObject("AdvancedOptions", std::move(advancedOptionsJsonMap));
+
+  }
+
+  if(m_logPublishingOptionsHasBeenSet)
+  {
+   JsonValue logPublishingOptionsJsonMap;
+   for(auto& logPublishingOptionsItem : m_logPublishingOptions)
+   {
+     logPublishingOptionsJsonMap.WithObject(LogTypeMapper::GetNameForLogType(logPublishingOptionsItem.first), logPublishingOptionsItem.second.Jsonize());
+   }
+   payload.WithObject("LogPublishingOptions", std::move(logPublishingOptionsJsonMap));
 
   }
 

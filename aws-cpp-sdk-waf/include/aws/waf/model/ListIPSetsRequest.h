@@ -51,7 +51,7 @@ namespace Model
      * group of <code>IPSets</code>. For the second and subsequent
      * <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code>
      * from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.</p>
+     * <code>IPSets</code>.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
@@ -62,7 +62,7 @@ namespace Model
      * group of <code>IPSets</code>. For the second and subsequent
      * <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code>
      * from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.</p>
+     * <code>IPSets</code>.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
 
@@ -73,7 +73,7 @@ namespace Model
      * group of <code>IPSets</code>. For the second and subsequent
      * <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code>
      * from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.</p>
+     * <code>IPSets</code>.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
 
@@ -84,7 +84,7 @@ namespace Model
      * group of <code>IPSets</code>. For the second and subsequent
      * <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code>
      * from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.</p>
+     * <code>IPSets</code>.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
 
@@ -95,7 +95,7 @@ namespace Model
      * group of <code>IPSets</code>. For the second and subsequent
      * <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code>
      * from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.</p>
+     * <code>IPSets</code>.</p>
      */
     inline ListIPSetsRequest& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
@@ -106,7 +106,7 @@ namespace Model
      * group of <code>IPSets</code>. For the second and subsequent
      * <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code>
      * from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.</p>
+     * <code>IPSets</code>.</p>
      */
     inline ListIPSetsRequest& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
@@ -117,7 +117,7 @@ namespace Model
      * group of <code>IPSets</code>. For the second and subsequent
      * <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code>
      * from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.</p>
+     * <code>IPSets</code>.</p>
      */
     inline ListIPSetsRequest& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
