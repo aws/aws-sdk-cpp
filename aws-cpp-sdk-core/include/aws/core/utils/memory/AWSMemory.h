@@ -22,6 +22,7 @@
 #include <memory>
 #include <cstdlib>
 #include <algorithm>
+#include <type_traits>
 
 namespace Aws
 {
@@ -71,13 +72,32 @@ namespace Aws
         T *constructedMemory = new (rawMemory) T(std::forward<ArgTypes>(args)...);
         return constructedMemory;
     }
-
+/*
+ * dynamic_cast of all sorts do not work on MSVC if RTTI is turned off.
+ * This means that deleting an object via a pointer to one of its polymorphic base types that do not point to the 
+ * address of their concrete class will result in undefined behavior.
+ * Example:
+ * struct Foo : InterfaceA, InterfaceB {};
+ * Aws::Delete(pointerToInterfaceB);
+ */
+#if defined(_MSC_VER) && !defined(_CPPRTTI)
+    template<typename T>
+    void Delete(T* pointerToT)
+    {
+        if (pointerToT == nullptr)
+        {
+            return;
+        }
+        pointerToT->~T();
+        Free(pointerToT);
+    }
+#else
     /**
      * ::new, ::delete, ::malloc, ::free, std::make_shared, and std::make_unique should not be used in SDK code
      *  use these functions instead or Aws::MakeShared
      */
     template<typename T>
-    void Delete(T* pointerToT)
+    typename std::enable_if<!std::is_polymorphic<T>::value>::type Delete(T* pointerToT)
     {
         if (pointerToT == nullptr)
         {
@@ -87,6 +107,24 @@ namespace Aws
         pointerToT->~T();
         Free(pointerToT);
     }
+
+    template<typename T>
+    typename std::enable_if<std::is_polymorphic<T>::value>::type Delete(T* pointerToT)
+    {
+        if (pointerToT == nullptr)
+        {
+            return;
+        }
+        // deal with deleting objects that implement multiple interfaces
+        // see casting to pointer to void in http://en.cppreference.com/w/cpp/language/dynamic_cast
+        // https://stackoverflow.com/questions/8123776/are-there-practical-uses-for-dynamic-casting-to-void-pointer
+        // NOTE: on some compilers, calling the destructor before doing the dynamic_cast affects how calculation of
+        // the address of the most derived class.
+        void* mostDerivedT = dynamic_cast<void*>(pointerToT);
+        pointerToT->~T();
+        Free(mostDerivedT);
+    }
+#endif // _CPPRTTI
 
     template<typename T>
     bool ShouldConstructArrayMembers()

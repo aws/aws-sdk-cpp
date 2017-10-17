@@ -18,6 +18,7 @@ file(GLOB UTILS_LOGGING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/logging/*.cpp")
 file(GLOB UTILS_RATE_LIMITER_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/ratelimiter/*.cpp")
 file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/xml/*.cpp")
 file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/threading/*.cpp")
+file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/memory/*.cpp")
 
 file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   "${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp"
