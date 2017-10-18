@@ -34,6 +34,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
     private static Set<String> opsThatNeedMd5 = new HashSet<>();
     private static Set<String> opsThatDoNotSupportVirtualAddressing = new HashSet<>();
+    private static Set<String> bucketLocationConstraints = new HashSet<>();
 
     static {
         opsThatNeedMd5.add("DeleteObjects");
@@ -45,6 +46,21 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
         opsThatDoNotSupportVirtualAddressing.add("ListBuckets");
+
+        bucketLocationConstraints.add("us-east-2");
+        bucketLocationConstraints.add("us-west-1");
+        bucketLocationConstraints.add("us-west-2");
+        bucketLocationConstraints.add("ca-central-1");
+        bucketLocationConstraints.add("ap-south-1");
+        bucketLocationConstraints.add("ap-northeast-1");
+        bucketLocationConstraints.add("ap-northeast-2");
+        bucketLocationConstraints.add("ap-southeast-1");
+        bucketLocationConstraints.add("ap-southeast-2");
+        bucketLocationConstraints.add("eu-central-1");
+        bucketLocationConstraints.add("EU");
+        bucketLocationConstraints.add("eu-west-1");
+        bucketLocationConstraints.add("eu-west-2");
+        bucketLocationConstraints.add("sa-east-1");
     }
 
     public S3RestXmlCppClientGenerator() throws Exception {
@@ -80,9 +96,9 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");
 
         if(locationConstraints != null) {
-            if(!locationConstraints.getEnumValues().contains("us-east-2")) {
-                locationConstraints.getEnumValues().add("us-east-2");
-            }
+            bucketLocationConstraints.stream()
+                    .filter(enumEntry -> !locationConstraints.getEnumValues().contains(enumEntry))
+                    .forEach(enumEntry -> locationConstraints.getEnumValues().add(enumEntry));
         }
 
         return super.generateSourceFiles(serviceModel);
@@ -170,12 +186,17 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
         Map<String, String> endpoints = new LinkedHashMap<>();
         endpoints.put("us-east-1", serviceModel.getMetadata().getGlobalEndpoint());
+        endpoints.put("us-east-2", "s3.us-east-2.amazonaws.com");
         endpoints.put("us-west-1", "s3-us-west-1.amazonaws.com");
         endpoints.put("us-west-2", "s3-us-west-2.amazonaws.com");
-        endpoints.put("eu-west-1", "s3-eu-west-1.amazonaws.com");
+        endpoints.put("ca-central-1", "s3.ca-central-1.amazonaws.com");
+        endpoints.put("ap-south-1", "s3.ap-south-1.amazonaws.com");
+        endpoints.put("ap-northeast-1", "s3-ap-northeast-1.amazonaws.com");
+        endpoints.put("ap-northeast-2", "s3.ap-northeast-2.amazonaws.com");
         endpoints.put("ap-southeast-1", "s3-ap-southeast-1.amazonaws.com");
         endpoints.put("ap-southeast-2", "s3-ap-southeast-2.amazonaws.com");
-        endpoints.put("ap-northeast-1", "s3-ap-northeast-1.amazonaws.com");
+        endpoints.put("eu-west-1", "s3-eu-west-1.amazonaws.com");
+        endpoints.put("eu-west-2", "s3.eu-west-2.amazonaws.com");
         endpoints.put("sa-east-1", "s3-sa-east-1.amazonaws.com");
         endpoints.put("us-gov-west-1", "s3-us-gov-west-1.amazonaws.com");
         endpoints.put("fips-us-gov-west-1", "s3-fips-us-gov-west-1.amazonaws.com");
