@@ -17,6 +17,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lightsail/model/PasswordData.h>
 #include <aws/lightsail/model/InstanceAccessProtocol.h>
 #include <utility>
 
@@ -162,39 +163,141 @@ namespace Model
 
 
     /**
-     * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
+     * <p>For RDP access, the password for your Amazon Lightsail instance. Password
+     * will be an empty string if the password for your new instance is not ready yet.
+     * When you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p> <note> <p>If you create an instance using any key pair other than the
+     * default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will
+     * always be an empty string.</p> <p>If you change the Administrator password on
+     * the instance, Lightsail will continue to return the original password value.
+     * When accessing the instance using RDP, you need to manually enter the
+     * Administrator password after changing it from the default.</p> </note>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
+     * <p>For RDP access, the password for your Amazon Lightsail instance. Password
+     * will be an empty string if the password for your new instance is not ready yet.
+     * When you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p> <note> <p>If you create an instance using any key pair other than the
+     * default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will
+     * always be an empty string.</p> <p>If you change the Administrator password on
+     * the instance, Lightsail will continue to return the original password value.
+     * When accessing the instance using RDP, you need to manually enter the
+     * Administrator password after changing it from the default.</p> </note>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
+     * <p>For RDP access, the password for your Amazon Lightsail instance. Password
+     * will be an empty string if the password for your new instance is not ready yet.
+     * When you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p> <note> <p>If you create an instance using any key pair other than the
+     * default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will
+     * always be an empty string.</p> <p>If you change the Administrator password on
+     * the instance, Lightsail will continue to return the original password value.
+     * When accessing the instance using RDP, you need to manually enter the
+     * Administrator password after changing it from the default.</p> </note>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
-     * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
+     * <p>For RDP access, the password for your Amazon Lightsail instance. Password
+     * will be an empty string if the password for your new instance is not ready yet.
+     * When you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p> <note> <p>If you create an instance using any key pair other than the
+     * default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will
+     * always be an empty string.</p> <p>If you change the Administrator password on
+     * the instance, Lightsail will continue to return the original password value.
+     * When accessing the instance using RDP, you need to manually enter the
+     * Administrator password after changing it from the default.</p> </note>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
-     * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
+     * <p>For RDP access, the password for your Amazon Lightsail instance. Password
+     * will be an empty string if the password for your new instance is not ready yet.
+     * When you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p> <note> <p>If you create an instance using any key pair other than the
+     * default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will
+     * always be an empty string.</p> <p>If you change the Administrator password on
+     * the instance, Lightsail will continue to return the original password value.
+     * When accessing the instance using RDP, you need to manually enter the
+     * Administrator password after changing it from the default.</p> </note>
      */
     inline InstanceAccessDetails& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
+     * <p>For RDP access, the password for your Amazon Lightsail instance. Password
+     * will be an empty string if the password for your new instance is not ready yet.
+     * When you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p> <note> <p>If you create an instance using any key pair other than the
+     * default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will
+     * always be an empty string.</p> <p>If you change the Administrator password on
+     * the instance, Lightsail will continue to return the original password value.
+     * When accessing the instance using RDP, you need to manually enter the
+     * Administrator password after changing it from the default.</p> </note>
      */
     inline InstanceAccessDetails& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
-     * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
+     * <p>For RDP access, the password for your Amazon Lightsail instance. Password
+     * will be an empty string if the password for your new instance is not ready yet.
+     * When you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p> <note> <p>If you create an instance using any key pair other than the
+     * default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will
+     * always be an empty string.</p> <p>If you change the Administrator password on
+     * the instance, Lightsail will continue to return the original password value.
+     * When accessing the instance using RDP, you need to manually enter the
+     * Administrator password after changing it from the default.</p> </note>
      */
     inline InstanceAccessDetails& WithPassword(const char* value) { SetPassword(value); return *this;}
+
+
+    /**
+     * <p>For a Windows Server-based instance, an object with the data you can use to
+     * retrieve your password. This is only needed if <code>password</code> is empty
+     * and the instance is not new (and therefore the password is not ready yet). When
+     * you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p>
+     */
+    inline const PasswordData& GetPasswordData() const{ return m_passwordData; }
+
+    /**
+     * <p>For a Windows Server-based instance, an object with the data you can use to
+     * retrieve your password. This is only needed if <code>password</code> is empty
+     * and the instance is not new (and therefore the password is not ready yet). When
+     * you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p>
+     */
+    inline void SetPasswordData(const PasswordData& value) { m_passwordDataHasBeenSet = true; m_passwordData = value; }
+
+    /**
+     * <p>For a Windows Server-based instance, an object with the data you can use to
+     * retrieve your password. This is only needed if <code>password</code> is empty
+     * and the instance is not new (and therefore the password is not ready yet). When
+     * you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p>
+     */
+    inline void SetPasswordData(PasswordData&& value) { m_passwordDataHasBeenSet = true; m_passwordData = std::move(value); }
+
+    /**
+     * <p>For a Windows Server-based instance, an object with the data you can use to
+     * retrieve your password. This is only needed if <code>password</code> is empty
+     * and the instance is not new (and therefore the password is not ready yet). When
+     * you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p>
+     */
+    inline InstanceAccessDetails& WithPasswordData(const PasswordData& value) { SetPasswordData(value); return *this;}
+
+    /**
+     * <p>For a Windows Server-based instance, an object with the data you can use to
+     * retrieve your password. This is only needed if <code>password</code> is empty
+     * and the instance is not new (and therefore the password is not ready yet). When
+     * you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p>
+     */
+    inline InstanceAccessDetails& WithPasswordData(PasswordData&& value) { SetPasswordData(std::move(value)); return *this;}
 
 
     /**
@@ -350,6 +453,9 @@ namespace Model
 
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
+    PasswordData m_passwordData;
+    bool m_passwordDataHasBeenSet;
 
     Aws::String m_privateKey;
     bool m_privateKeyHasBeenSet;
