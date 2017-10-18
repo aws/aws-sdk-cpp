@@ -42,7 +42,9 @@ Blueprint::Blueprint() :
     m_versionHasBeenSet(false),
     m_versionCodeHasBeenSet(false),
     m_productUrlHasBeenSet(false),
-    m_licenseUrlHasBeenSet(false)
+    m_licenseUrlHasBeenSet(false),
+    m_platform(InstancePlatform::NOT_SET),
+    m_platformHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ Blueprint::Blueprint(const JsonValue& jsonValue) :
     m_versionHasBeenSet(false),
     m_versionCodeHasBeenSet(false),
     m_productUrlHasBeenSet(false),
-    m_licenseUrlHasBeenSet(false)
+    m_licenseUrlHasBeenSet(false),
+    m_platform(InstancePlatform::NOT_SET),
+    m_platformHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +148,13 @@ Blueprint& Blueprint::operator =(const JsonValue& jsonValue)
     m_licenseUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("platform"))
+  {
+    m_platform = InstancePlatformMapper::GetInstancePlatformForName(jsonValue.GetString("platform"));
+
+    m_platformHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -214,6 +225,11 @@ JsonValue Blueprint::Jsonize() const
   {
    payload.WithString("licenseUrl", m_licenseUrl);
 
+  }
+
+  if(m_platformHasBeenSet)
+  {
+   payload.WithString("platform", InstancePlatformMapper::GetNameForInstancePlatform(m_platform));
   }
 
   return payload;

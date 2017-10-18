@@ -20,6 +20,7 @@
 #include <aws/es/model/ElasticsearchClusterConfig.h>
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/SnapshotOptions.h>
+#include <aws/es/model/VPCOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
@@ -170,6 +171,52 @@ namespace Model
      * Default value is <code>0</code> hours. </p>
      */
     inline UpdateElasticsearchDomainConfigRequest& WithSnapshotOptions(SnapshotOptions&& value) { SetSnapshotOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline const VPCOptions& GetVPCOptions() const{ return m_vPCOptions; }
+
+    /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline void SetVPCOptions(const VPCOptions& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = value; }
+
+    /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline void SetVPCOptions(VPCOptions&& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = std::move(value); }
+
+    /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithVPCOptions(const VPCOptions& value) { SetVPCOptions(value); return *this;}
+
+    /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithVPCOptions(VPCOptions&& value) { SetVPCOptions(std::move(value)); return *this;}
 
 
     /**
@@ -384,6 +431,9 @@ namespace Model
 
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet;
+
+    VPCOptions m_vPCOptions;
+    bool m_vPCOptionsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;

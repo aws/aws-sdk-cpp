@@ -17,6 +17,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/BlueprintType.h>
+#include <aws/lightsail/model/InstancePlatform.h>
 #include <utility>
 
 namespace Aws
@@ -248,20 +249,26 @@ namespace Model
 
 
     /**
-     * <p>The minimum machine size required to run this blueprint. <code>0</code>
-     * indicates that the blueprint runs on all instances.</p>
+     * <p>The minimum bundle power required to run this blueprint. For example, you
+     * need a bundle with a power value of 500 or more to create an instance that uses
+     * a blueprint with a minimum power value of 500. <code>0</code> indicates that the
+     * blueprint runs on all instance sizes. </p>
      */
     inline int GetMinPower() const{ return m_minPower; }
 
     /**
-     * <p>The minimum machine size required to run this blueprint. <code>0</code>
-     * indicates that the blueprint runs on all instances.</p>
+     * <p>The minimum bundle power required to run this blueprint. For example, you
+     * need a bundle with a power value of 500 or more to create an instance that uses
+     * a blueprint with a minimum power value of 500. <code>0</code> indicates that the
+     * blueprint runs on all instance sizes. </p>
      */
     inline void SetMinPower(int value) { m_minPowerHasBeenSet = true; m_minPower = value; }
 
     /**
-     * <p>The minimum machine size required to run this blueprint. <code>0</code>
-     * indicates that the blueprint runs on all instances.</p>
+     * <p>The minimum bundle power required to run this blueprint. For example, you
+     * need a bundle with a power value of 500 or more to create an instance that uses
+     * a blueprint with a minimum power value of 500. <code>0</code> indicates that the
+     * blueprint runs on all instance sizes. </p>
      */
     inline Blueprint& WithMinPower(int value) { SetMinPower(value); return *this;}
 
@@ -416,6 +423,37 @@ namespace Model
      */
     inline Blueprint& WithLicenseUrl(const char* value) { SetLicenseUrl(value); return *this;}
 
+
+    /**
+     * <p>The operating system platform (either Linux/Unix-based or Windows
+     * Server-based) of the blueprint.</p>
+     */
+    inline const InstancePlatform& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The operating system platform (either Linux/Unix-based or Windows
+     * Server-based) of the blueprint.</p>
+     */
+    inline void SetPlatform(const InstancePlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
+
+    /**
+     * <p>The operating system platform (either Linux/Unix-based or Windows
+     * Server-based) of the blueprint.</p>
+     */
+    inline void SetPlatform(InstancePlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
+
+    /**
+     * <p>The operating system platform (either Linux/Unix-based or Windows
+     * Server-based) of the blueprint.</p>
+     */
+    inline Blueprint& WithPlatform(const InstancePlatform& value) { SetPlatform(value); return *this;}
+
+    /**
+     * <p>The operating system platform (either Linux/Unix-based or Windows
+     * Server-based) of the blueprint.</p>
+     */
+    inline Blueprint& WithPlatform(InstancePlatform&& value) { SetPlatform(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_blueprintId;
@@ -450,6 +488,9 @@ namespace Model
 
     Aws::String m_licenseUrl;
     bool m_licenseUrlHasBeenSet;
+
+    InstancePlatform m_platform;
+    bool m_platformHasBeenSet;
   };
 
 } // namespace Model

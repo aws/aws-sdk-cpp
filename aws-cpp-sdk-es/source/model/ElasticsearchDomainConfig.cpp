@@ -34,6 +34,7 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig() :
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
+    m_vPCOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
@@ -45,6 +46,7 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig(const JsonValue& jsonValue)
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
+    m_vPCOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
@@ -86,6 +88,13 @@ ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator =(const JsonValue
     m_snapshotOptions = jsonValue.GetObject("SnapshotOptions");
 
     m_snapshotOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VPCOptions"))
+  {
+    m_vPCOptions = jsonValue.GetObject("VPCOptions");
+
+    m_vPCOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AdvancedOptions"))
@@ -136,6 +145,12 @@ JsonValue ElasticsearchDomainConfig::Jsonize() const
   if(m_snapshotOptionsHasBeenSet)
   {
    payload.WithObject("SnapshotOptions", m_snapshotOptions.Jsonize());
+
+  }
+
+  if(m_vPCOptionsHasBeenSet)
+  {
+   payload.WithObject("VPCOptions", m_vPCOptions.Jsonize());
 
   }
 

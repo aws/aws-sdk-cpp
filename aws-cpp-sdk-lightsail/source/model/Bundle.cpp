@@ -45,7 +45,8 @@ Bundle::Bundle() :
     m_ramSizeInGb(0.0),
     m_ramSizeInGbHasBeenSet(false),
     m_transferPerMonthInGb(0),
-    m_transferPerMonthInGbHasBeenSet(false)
+    m_transferPerMonthInGbHasBeenSet(false),
+    m_supportedPlatformsHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Bundle::Bundle(const JsonValue& jsonValue) :
     m_ramSizeInGb(0.0),
     m_ramSizeInGbHasBeenSet(false),
     m_transferPerMonthInGb(0),
-    m_transferPerMonthInGbHasBeenSet(false)
+    m_transferPerMonthInGbHasBeenSet(false),
+    m_supportedPlatformsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -143,6 +145,16 @@ Bundle& Bundle::operator =(const JsonValue& jsonValue)
     m_transferPerMonthInGbHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("supportedPlatforms"))
+  {
+    Array<JsonValue> supportedPlatformsJsonList = jsonValue.GetArray("supportedPlatforms");
+    for(unsigned supportedPlatformsIndex = 0; supportedPlatformsIndex < supportedPlatformsJsonList.GetLength(); ++supportedPlatformsIndex)
+    {
+      m_supportedPlatforms.push_back(InstancePlatformMapper::GetInstancePlatformForName(supportedPlatformsJsonList[supportedPlatformsIndex].AsString()));
+    }
+    m_supportedPlatformsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -207,6 +219,17 @@ JsonValue Bundle::Jsonize() const
   if(m_transferPerMonthInGbHasBeenSet)
   {
    payload.WithInteger("transferPerMonthInGb", m_transferPerMonthInGb);
+
+  }
+
+  if(m_supportedPlatformsHasBeenSet)
+  {
+   Array<JsonValue> supportedPlatformsJsonList(m_supportedPlatforms.size());
+   for(unsigned supportedPlatformsIndex = 0; supportedPlatformsIndex < supportedPlatformsJsonList.GetLength(); ++supportedPlatformsIndex)
+   {
+     supportedPlatformsJsonList[supportedPlatformsIndex].AsString(InstancePlatformMapper::GetNameForInstancePlatform(m_supportedPlatforms[supportedPlatformsIndex]));
+   }
+   payload.WithArray("supportedPlatforms", std::move(supportedPlatformsJsonList));
 
   }
 

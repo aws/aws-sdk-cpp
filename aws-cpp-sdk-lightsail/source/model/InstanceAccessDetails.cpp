@@ -33,6 +33,7 @@ InstanceAccessDetails::InstanceAccessDetails() :
     m_expiresAtHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_passwordHasBeenSet(false),
+    m_passwordDataHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
     m_protocol(InstanceAccessProtocol::NOT_SET),
     m_protocolHasBeenSet(false),
@@ -46,6 +47,7 @@ InstanceAccessDetails::InstanceAccessDetails(const JsonValue& jsonValue) :
     m_expiresAtHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_passwordHasBeenSet(false),
+    m_passwordDataHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
     m_protocol(InstanceAccessProtocol::NOT_SET),
     m_protocolHasBeenSet(false),
@@ -83,6 +85,13 @@ InstanceAccessDetails& InstanceAccessDetails::operator =(const JsonValue& jsonVa
     m_password = jsonValue.GetString("password");
 
     m_passwordHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("passwordData"))
+  {
+    m_passwordData = jsonValue.GetObject("passwordData");
+
+    m_passwordDataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("privateKey"))
@@ -140,6 +149,12 @@ JsonValue InstanceAccessDetails::Jsonize() const
   if(m_passwordHasBeenSet)
   {
    payload.WithString("password", m_password);
+
+  }
+
+  if(m_passwordDataHasBeenSet)
+  {
+   payload.WithObject("passwordData", m_passwordData.Jsonize());
 
   }
 
