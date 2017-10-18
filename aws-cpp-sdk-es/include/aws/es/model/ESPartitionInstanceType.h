@@ -59,7 +59,13 @@ namespace Model
     r4_2xlarge_elasticsearch,
     r4_4xlarge_elasticsearch,
     r4_8xlarge_elasticsearch,
-    r4_16xlarge_elasticsearch
+    r4_16xlarge_elasticsearch,
+    i3_large_elasticsearch,
+    i3_xlarge_elasticsearch,
+    i3_2xlarge_elasticsearch,
+    i3_4xlarge_elasticsearch,
+    i3_8xlarge_elasticsearch,
+    i3_16xlarge_elasticsearch
   };
 
 namespace ESPartitionInstanceTypeMapper

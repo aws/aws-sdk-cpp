@@ -210,6 +210,40 @@ void ElasticsearchServiceClient::DeleteElasticsearchDomainAsyncHelper(const Dele
   handler(this, request, DeleteElasticsearchDomain(request), context);
 }
 
+DeleteElasticsearchServiceRoleOutcome ElasticsearchServiceClient::DeleteElasticsearchServiceRole() const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/2015-01-01/es/role";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
+  if(outcome.IsSuccess())
+  {
+    return DeleteElasticsearchServiceRoleOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteElasticsearchServiceRoleOutcome(outcome.GetError());
+  }
+}
+
+DeleteElasticsearchServiceRoleOutcomeCallable ElasticsearchServiceClient::DeleteElasticsearchServiceRoleCallable() const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteElasticsearchServiceRoleOutcome() > >(ALLOCATION_TAG, [this](){ return this->DeleteElasticsearchServiceRole(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DeleteElasticsearchServiceRoleAsync(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, handler, context](){ this->DeleteElasticsearchServiceRoleAsyncHelper( handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DeleteElasticsearchServiceRoleAsyncHelper(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, DeleteElasticsearchServiceRole(), context);
+}
+
 DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticsearchDomain(const DescribeElasticsearchDomainRequest& request) const
 {
   Aws::StringStream ss;
