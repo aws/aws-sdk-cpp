@@ -37,6 +37,7 @@
 #include <aws/sqs/model/GetQueueAttributesRequest.h>
 #include <aws/sqs/model/GetQueueUrlRequest.h>
 #include <aws/sqs/model/ListDeadLetterSourceQueuesRequest.h>
+#include <aws/sqs/model/ListQueueTagsRequest.h>
 #include <aws/sqs/model/ListQueuesRequest.h>
 #include <aws/sqs/model/PurgeQueueRequest.h>
 #include <aws/sqs/model/ReceiveMessageRequest.h>
@@ -44,6 +45,8 @@
 #include <aws/sqs/model/SendMessageRequest.h>
 #include <aws/sqs/model/SendMessageBatchRequest.h>
 #include <aws/sqs/model/SetQueueAttributesRequest.h>
+#include <aws/sqs/model/TagQueueRequest.h>
+#include <aws/sqs/model/UntagQueueRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -428,6 +431,37 @@ void SQSClient::ListDeadLetterSourceQueuesAsyncHelper(const ListDeadLetterSource
   handler(this, request, ListDeadLetterSourceQueues(request), context);
 }
 
+ListQueueTagsOutcome SQSClient::ListQueueTags(const ListQueueTagsRequest& request) const
+{
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListQueueTagsOutcome(ListQueueTagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListQueueTagsOutcome(outcome.GetError());
+  }
+}
+
+ListQueueTagsOutcomeCallable SQSClient::ListQueueTagsCallable(const ListQueueTagsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListQueueTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListQueueTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SQSClient::ListQueueTagsAsync(const ListQueueTagsRequest& request, const ListQueueTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListQueueTagsAsyncHelper(request, handler, context); } );
+}
+
+void SQSClient::ListQueueTagsAsyncHelper(const ListQueueTagsRequest& request, const ListQueueTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListQueueTags(request), context);
+}
+
 ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const
 {
 
@@ -647,5 +681,67 @@ void SQSClient::SetQueueAttributesAsync(const SetQueueAttributesRequest& request
 void SQSClient::SetQueueAttributesAsyncHelper(const SetQueueAttributesRequest& request, const SetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SetQueueAttributes(request), context);
+}
+
+TagQueueOutcome SQSClient::TagQueue(const TagQueueRequest& request) const
+{
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return TagQueueOutcome(NoResult());
+  }
+  else
+  {
+    return TagQueueOutcome(outcome.GetError());
+  }
+}
+
+TagQueueOutcomeCallable SQSClient::TagQueueCallable(const TagQueueRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagQueueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagQueue(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SQSClient::TagQueueAsync(const TagQueueRequest& request, const TagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagQueueAsyncHelper(request, handler, context); } );
+}
+
+void SQSClient::TagQueueAsyncHelper(const TagQueueRequest& request, const TagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagQueue(request), context);
+}
+
+UntagQueueOutcome SQSClient::UntagQueue(const UntagQueueRequest& request) const
+{
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UntagQueueOutcome(NoResult());
+  }
+  else
+  {
+    return UntagQueueOutcome(outcome.GetError());
+  }
+}
+
+UntagQueueOutcomeCallable SQSClient::UntagQueueCallable(const UntagQueueRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagQueueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagQueue(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SQSClient::UntagQueueAsync(const UntagQueueRequest& request, const UntagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagQueueAsyncHelper(request, handler, context); } );
+}
+
+void SQSClient::UntagQueueAsyncHelper(const UntagQueueRequest& request, const UntagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagQueue(request), context);
 }
 

@@ -32,7 +32,9 @@ Parameter::Parameter() :
     m_nameHasBeenSet(false),
     m_type(ParameterType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ Parameter::Parameter(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_type(ParameterType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +72,13 @@ Parameter& Parameter::operator =(const JsonValue& jsonValue)
     m_valueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetInt64("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -89,6 +100,12 @@ JsonValue Parameter::Jsonize() const
   if(m_valueHasBeenSet)
   {
    payload.WithString("Value", m_value);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithInt64("Version", m_version);
 
   }
 

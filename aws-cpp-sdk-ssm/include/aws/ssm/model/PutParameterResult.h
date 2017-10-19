@@ -39,6 +39,40 @@ namespace Model
     PutParameterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     PutParameterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+
+    /**
+     * <p>The new version number of a parameter. If you edit a parameter value,
+     * Parameter Store automatically creates a new version and assigns this new version
+     * a unique ID. You can reference a parameter version ID in API actions or in
+     * Systems Manager documents (SSM documents). By default, if you don't specify a
+     * specific version, the system returns the latest parameter value when a parameter
+     * is called.</p>
+     */
+    inline long long GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The new version number of a parameter. If you edit a parameter value,
+     * Parameter Store automatically creates a new version and assigns this new version
+     * a unique ID. You can reference a parameter version ID in API actions or in
+     * Systems Manager documents (SSM documents). By default, if you don't specify a
+     * specific version, the system returns the latest parameter value when a parameter
+     * is called.</p>
+     */
+    inline void SetVersion(long long value) { m_version = value; }
+
+    /**
+     * <p>The new version number of a parameter. If you edit a parameter value,
+     * Parameter Store automatically creates a new version and assigns this new version
+     * a unique ID. You can reference a parameter version ID in API actions or in
+     * Systems Manager documents (SSM documents). By default, if you don't specify a
+     * specific version, the system returns the latest parameter value when a parameter
+     * is called.</p>
+     */
+    inline PutParameterResult& WithVersion(long long value) { SetVersion(value); return *this;}
+
+  private:
+
+    long long m_version;
   };
 
 } // namespace Model

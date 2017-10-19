@@ -299,6 +299,22 @@ namespace Model
      */
     inline ParameterMetadata& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
 
+
+    /**
+     * <p>The parameter version.</p>
+     */
+    inline long long GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The parameter version.</p>
+     */
+    inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>The parameter version.</p>
+     */
+    inline ParameterMetadata& WithVersion(long long value) { SetVersion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -321,6 +337,9 @@ namespace Model
 
     Aws::String m_allowedPattern;
     bool m_allowedPatternHasBeenSet;
+
+    long long m_version;
+    bool m_versionHasBeenSet;
   };
 
 } // namespace Model
