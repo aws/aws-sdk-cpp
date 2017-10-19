@@ -26,18 +26,26 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutParameterResult::PutParameterResult()
+PutParameterResult::PutParameterResult() : 
+    m_version(0)
 {
 }
 
-PutParameterResult::PutParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+PutParameterResult::PutParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_version(0)
 {
   *this = result;
 }
 
 PutParameterResult& PutParameterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  const JsonValue& jsonValue = result.GetPayload();
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetInt64("Version");
+
+  }
+
 
 
   return *this;

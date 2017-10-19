@@ -147,20 +147,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -189,22 +190,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
@@ -249,20 +250,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -291,22 +293,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
@@ -351,20 +353,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -393,22 +396,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
@@ -453,20 +456,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -495,22 +499,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
@@ -555,20 +559,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -597,22 +602,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
@@ -657,20 +662,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -699,22 +705,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
@@ -759,20 +765,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -801,22 +808,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
@@ -861,20 +868,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -903,22 +911,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
@@ -963,20 +971,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -1005,22 +1014,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
@@ -1065,20 +1074,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -1107,22 +1117,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as
@@ -1167,20 +1177,21 @@ namespace Model
      * queue. For more information about the redrive policy and dead-letter queues, see
      * <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-     * <ul> <li> <p> <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN)
-     * of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
-     * <code>maxReceiveCount</code> - The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue.</p> </li> </ul> <note>
-     * <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly,
-     * the dead-letter queue of a standard queue must also be a standard queue.</p>
-     * </note> </li> <li> <p> <code>VisibilityTimeout</code> - The visibility timeout
-     * for the queue. Valid values: An integer from 0 to 43,200 (12 hours). The default
-     * is 30. For more information about the visibility timeout, see <a
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
+     * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
+     * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+     * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
+     * delivered to the source queue before being moved to the dead-letter queue.</p>
+     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
+     * queue. Similarly, the dead-letter queue of a standard queue must also be a
+     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
+     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
+     * hours). The default is 30. For more information about the visibility timeout,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
+     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
+     * </ul> <p>The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
@@ -1209,22 +1220,22 @@ namespace Model
      * <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
-     * Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
-     * Valid values: <code>true</code>, <code>false</code>. For more information, see
-     * <a
+     * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * </li> <li> <p> <code>ContentBasedDeduplication</code> - Enables content-based
+     * deduplication. Valid values: <code>true</code>, <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
-     * Processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> <ul> <li> <p>Every
-     * message must have a unique <code>MessageDeduplicationId</code>,</p> <ul> <li>
-     * <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
-     * <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and
-     * you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS
-     * uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-     * the body of the message (but not the attributes of the message). </p> </li> <li>
-     * <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue
-     * doesn't have <code>ContentBasedDeduplication</code> set, the action fails with
-     * an error.</p> </li> <li> <p>If the queue has
-     * <code>ContentBasedDeduplication</code> set, your
+     * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+     * <ul> <li> <p>Every message must have a unique
+     * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
+     * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
+     * able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256
+     * hash to generate the <code>MessageDeduplicationId</code> using the body of the
+     * message (but not the attributes of the message). </p> </li> <li> <p>If you don't
+     * provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
+     * </li> <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your
      * <code>MessageDeduplicationId</code> overrides the generated one.</p> </li> </ul>
      * </li> <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages
      * with identical content sent within the deduplication interval are treated as

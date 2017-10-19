@@ -37,6 +37,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
     m_deleted(false),
     m_deletedHasBeenSet(false),
     m_endpointHasBeenSet(false),
+    m_endpointsHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
     m_elasticsearchVersionHasBeenSet(false),
@@ -44,6 +45,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
+    m_vPCOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
@@ -58,6 +60,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(const JsonValue& jsonValue)
     m_deleted(false),
     m_deletedHasBeenSet(false),
     m_endpointHasBeenSet(false),
+    m_endpointsHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
     m_elasticsearchVersionHasBeenSet(false),
@@ -65,6 +68,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(const JsonValue& jsonValue)
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
+    m_vPCOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
@@ -115,6 +119,16 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
     m_endpointHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Endpoints"))
+  {
+    Aws::Map<Aws::String, JsonValue> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
+    for(auto& endpointsItem : endpointsJsonMap)
+    {
+      m_endpoints[endpointsItem.first] = endpointsItem.second.AsString();
+    }
+    m_endpointsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Processing"))
   {
     m_processing = jsonValue.GetBool("Processing");
@@ -155,6 +169,13 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
     m_snapshotOptions = jsonValue.GetObject("SnapshotOptions");
 
     m_snapshotOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VPCOptions"))
+  {
+    m_vPCOptions = jsonValue.GetObject("VPCOptions");
+
+    m_vPCOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AdvancedOptions"))
@@ -220,6 +241,17 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
 
   }
 
+  if(m_endpointsHasBeenSet)
+  {
+   JsonValue endpointsJsonMap;
+   for(auto& endpointsItem : m_endpoints)
+   {
+     endpointsJsonMap.WithString(endpointsItem.first, endpointsItem.second);
+   }
+   payload.WithObject("Endpoints", std::move(endpointsJsonMap));
+
+  }
+
   if(m_processingHasBeenSet)
   {
    payload.WithBool("Processing", m_processing);
@@ -253,6 +285,12 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
   if(m_snapshotOptionsHasBeenSet)
   {
    payload.WithObject("SnapshotOptions", m_snapshotOptions.Jsonize());
+
+  }
+
+  if(m_vPCOptionsHasBeenSet)
+  {
+   payload.WithObject("VPCOptions", m_vPCOptions.Jsonize());
 
   }
 

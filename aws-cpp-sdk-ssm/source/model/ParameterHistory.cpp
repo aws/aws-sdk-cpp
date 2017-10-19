@@ -37,7 +37,9 @@ ParameterHistory::ParameterHistory() :
     m_lastModifiedUserHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_allowedPatternHasBeenSet(false)
+    m_allowedPatternHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ ParameterHistory::ParameterHistory(const JsonValue& jsonValue) :
     m_lastModifiedUserHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_allowedPatternHasBeenSet(false)
+    m_allowedPatternHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +117,13 @@ ParameterHistory& ParameterHistory::operator =(const JsonValue& jsonValue)
     m_allowedPatternHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetInt64("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +174,12 @@ JsonValue ParameterHistory::Jsonize() const
   if(m_allowedPatternHasBeenSet)
   {
    payload.WithString("AllowedPattern", m_allowedPattern);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithInt64("Version", m_version);
 
   }
 

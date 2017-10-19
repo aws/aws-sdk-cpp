@@ -53,6 +53,7 @@ static const int DUPLICATE_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("Dup
 static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParameters");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
 static const int UNSUPPORTED_INVENTORY_ITEM_CONTEXT_HASH = HashingUtils::HashString("UnsupportedInventoryItemContextException");
+static const int PARAMETER_MAX_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterMaxVersionLimitExceeded");
 static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("DocumentAlreadyExists");
 static const int RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceDataSyncAlreadyExistsException");
 static const int INVALID_PLUGIN_NAME_HASH = HashingUtils::HashString("InvalidPluginName");
@@ -97,6 +98,7 @@ static const int INVALID_UPDATE_HASH = HashingUtils::HashString("InvalidUpdate")
 static const int INVALID_ITEM_CONTENT_HASH = HashingUtils::HashString("InvalidItemContentException");
 static const int INVALID_OUTPUT_LOCATION_HASH = HashingUtils::HashString("InvalidOutputLocation");
 static const int COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ComplianceTypeCountLimitExceededException");
+static const int PARAMETER_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("ParameterVersionNotFound");
 static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
 static const int AUTOMATION_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationExecutionNotFoundException");
 static const int INVALID_INVENTORY_ITEM_CONTEXT_HASH = HashingUtils::HashString("InvalidInventoryItemContextException");
@@ -217,6 +219,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_INVENTORY_ITEM_CONTEXT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_INVENTORY_ITEM_CONTEXT), false);
+  }
+  else if (hashCode == PARAMETER_MAX_VERSION_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_MAX_VERSION_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == DOCUMENT_ALREADY_EXISTS_HASH)
   {
@@ -393,6 +399,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == PARAMETER_VERSION_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_NOT_FOUND), false);
   }
   else if (hashCode == ASSOCIATION_LIMIT_EXCEEDED_HASH)
   {

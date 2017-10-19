@@ -389,7 +389,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
 
@@ -397,7 +398,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
 
@@ -405,7 +407,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::move(value); }
 
@@ -413,7 +416,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline Message& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
 
@@ -421,7 +425,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline Message& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(std::move(value)); return *this;}
 
@@ -429,7 +434,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
@@ -437,7 +443,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), value); return *this; }
 
@@ -445,7 +452,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
 
@@ -453,7 +461,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -461,7 +470,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
 
@@ -469,7 +479,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 

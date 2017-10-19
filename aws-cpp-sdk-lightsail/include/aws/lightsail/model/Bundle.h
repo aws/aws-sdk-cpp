@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/InstancePlatform.h>
 #include <utility>
 
 namespace Aws
@@ -220,17 +222,29 @@ namespace Model
 
 
     /**
-     * <p>The power of the bundle (e.g., <code>500</code>).</p>
+     * <p>A numeric value that represents the power of the bundle (e.g.,
+     * <code>500</code>). You can use the bundle's power value in conjunction with a
+     * blueprint's minimum power value to determine whether the blueprint will run on
+     * the bundle. For example, you need a bundle with a power value of 500 or more to
+     * create an instance that uses a blueprint with a minimum power value of 500.</p>
      */
     inline int GetPower() const{ return m_power; }
 
     /**
-     * <p>The power of the bundle (e.g., <code>500</code>).</p>
+     * <p>A numeric value that represents the power of the bundle (e.g.,
+     * <code>500</code>). You can use the bundle's power value in conjunction with a
+     * blueprint's minimum power value to determine whether the blueprint will run on
+     * the bundle. For example, you need a bundle with a power value of 500 or more to
+     * create an instance that uses a blueprint with a minimum power value of 500.</p>
      */
     inline void SetPower(int value) { m_powerHasBeenSet = true; m_power = value; }
 
     /**
-     * <p>The power of the bundle (e.g., <code>500</code>).</p>
+     * <p>A numeric value that represents the power of the bundle (e.g.,
+     * <code>500</code>). You can use the bundle's power value in conjunction with a
+     * blueprint's minimum power value to determine whether the blueprint will run on
+     * the bundle. For example, you need a bundle with a power value of 500 or more to
+     * create an instance that uses a blueprint with a minimum power value of 500.</p>
      */
     inline Bundle& WithPower(int value) { SetPower(value); return *this;}
 
@@ -266,6 +280,63 @@ namespace Model
      */
     inline Bundle& WithTransferPerMonthInGb(int value) { SetTransferPerMonthInGb(value); return *this;}
 
+
+    /**
+     * <p>The operating system platform (Linux/Unix-based or Windows Server-based) that
+     * the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a
+     * blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
+     */
+    inline const Aws::Vector<InstancePlatform>& GetSupportedPlatforms() const{ return m_supportedPlatforms; }
+
+    /**
+     * <p>The operating system platform (Linux/Unix-based or Windows Server-based) that
+     * the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a
+     * blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
+     */
+    inline void SetSupportedPlatforms(const Aws::Vector<InstancePlatform>& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms = value; }
+
+    /**
+     * <p>The operating system platform (Linux/Unix-based or Windows Server-based) that
+     * the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a
+     * blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
+     */
+    inline void SetSupportedPlatforms(Aws::Vector<InstancePlatform>&& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms = std::move(value); }
+
+    /**
+     * <p>The operating system platform (Linux/Unix-based or Windows Server-based) that
+     * the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a
+     * blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
+     */
+    inline Bundle& WithSupportedPlatforms(const Aws::Vector<InstancePlatform>& value) { SetSupportedPlatforms(value); return *this;}
+
+    /**
+     * <p>The operating system platform (Linux/Unix-based or Windows Server-based) that
+     * the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a
+     * blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
+     */
+    inline Bundle& WithSupportedPlatforms(Aws::Vector<InstancePlatform>&& value) { SetSupportedPlatforms(std::move(value)); return *this;}
+
+    /**
+     * <p>The operating system platform (Linux/Unix-based or Windows Server-based) that
+     * the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a
+     * blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
+     */
+    inline Bundle& AddSupportedPlatforms(const InstancePlatform& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms.push_back(value); return *this; }
+
+    /**
+     * <p>The operating system platform (Linux/Unix-based or Windows Server-based) that
+     * the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a
+     * blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
+     */
+    inline Bundle& AddSupportedPlatforms(InstancePlatform&& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms.push_back(std::move(value)); return *this; }
+
   private:
 
     double m_price;
@@ -297,6 +368,9 @@ namespace Model
 
     int m_transferPerMonthInGb;
     bool m_transferPerMonthInGbHasBeenSet;
+
+    Aws::Vector<InstancePlatform> m_supportedPlatforms;
+    bool m_supportedPlatformsHasBeenSet;
   };
 
 } // namespace Model

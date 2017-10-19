@@ -28,6 +28,7 @@
 #include <aws/sqs/model/GetQueueAttributesResult.h>
 #include <aws/sqs/model/GetQueueUrlResult.h>
 #include <aws/sqs/model/ListDeadLetterSourceQueuesResult.h>
+#include <aws/sqs/model/ListQueueTagsResult.h>
 #include <aws/sqs/model/ListQueuesResult.h>
 #include <aws/sqs/model/ReceiveMessageResult.h>
 #include <aws/sqs/model/SendMessageResult.h>
@@ -88,6 +89,7 @@ namespace Model
         class GetQueueAttributesRequest;
         class GetQueueUrlRequest;
         class ListDeadLetterSourceQueuesRequest;
+        class ListQueueTagsRequest;
         class ListQueuesRequest;
         class PurgeQueueRequest;
         class ReceiveMessageRequest;
@@ -95,6 +97,8 @@ namespace Model
         class SendMessageRequest;
         class SendMessageBatchRequest;
         class SetQueueAttributesRequest;
+        class TagQueueRequest;
+        class UntagQueueRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> AddPermissionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> ChangeMessageVisibilityOutcome;
@@ -106,6 +110,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetQueueAttributesResult, Aws::Client::AWSError<SQSErrors>> GetQueueAttributesOutcome;
         typedef Aws::Utils::Outcome<GetQueueUrlResult, Aws::Client::AWSError<SQSErrors>> GetQueueUrlOutcome;
         typedef Aws::Utils::Outcome<ListDeadLetterSourceQueuesResult, Aws::Client::AWSError<SQSErrors>> ListDeadLetterSourceQueuesOutcome;
+        typedef Aws::Utils::Outcome<ListQueueTagsResult, Aws::Client::AWSError<SQSErrors>> ListQueueTagsOutcome;
         typedef Aws::Utils::Outcome<ListQueuesResult, Aws::Client::AWSError<SQSErrors>> ListQueuesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> PurgeQueueOutcome;
         typedef Aws::Utils::Outcome<ReceiveMessageResult, Aws::Client::AWSError<SQSErrors>> ReceiveMessageOutcome;
@@ -113,6 +118,8 @@ namespace Model
         typedef Aws::Utils::Outcome<SendMessageResult, Aws::Client::AWSError<SQSErrors>> SendMessageOutcome;
         typedef Aws::Utils::Outcome<SendMessageBatchResult, Aws::Client::AWSError<SQSErrors>> SendMessageBatchOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> SetQueueAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> TagQueueOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> UntagQueueOutcome;
 
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
         typedef std::future<ChangeMessageVisibilityOutcome> ChangeMessageVisibilityOutcomeCallable;
@@ -124,6 +131,7 @@ namespace Model
         typedef std::future<GetQueueAttributesOutcome> GetQueueAttributesOutcomeCallable;
         typedef std::future<GetQueueUrlOutcome> GetQueueUrlOutcomeCallable;
         typedef std::future<ListDeadLetterSourceQueuesOutcome> ListDeadLetterSourceQueuesOutcomeCallable;
+        typedef std::future<ListQueueTagsOutcome> ListQueueTagsOutcomeCallable;
         typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
         typedef std::future<PurgeQueueOutcome> PurgeQueueOutcomeCallable;
         typedef std::future<ReceiveMessageOutcome> ReceiveMessageOutcomeCallable;
@@ -131,6 +139,8 @@ namespace Model
         typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
         typedef std::future<SendMessageBatchOutcome> SendMessageBatchOutcomeCallable;
         typedef std::future<SetQueueAttributesOutcome> SetQueueAttributesOutcomeCallable;
+        typedef std::future<TagQueueOutcome> TagQueueOutcomeCallable;
+        typedef std::future<UntagQueueOutcome> UntagQueueOutcomeCallable;
 } // namespace Model
 
   class SQSClient;
@@ -145,6 +155,7 @@ namespace Model
     typedef std::function<void(const SQSClient*, const Model::GetQueueAttributesRequest&, const Model::GetQueueAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueueAttributesResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::GetQueueUrlRequest&, const Model::GetQueueUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueueUrlResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::ListDeadLetterSourceQueuesRequest&, const Model::ListDeadLetterSourceQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeadLetterSourceQueuesResponseReceivedHandler;
+    typedef std::function<void(const SQSClient*, const Model::ListQueueTagsRequest&, const Model::ListQueueTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueueTagsResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::ListQueuesRequest&, const Model::ListQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuesResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::PurgeQueueRequest&, const Model::PurgeQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurgeQueueResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::ReceiveMessageRequest&, const Model::ReceiveMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReceiveMessageResponseReceivedHandler;
@@ -152,6 +163,8 @@ namespace Model
     typedef std::function<void(const SQSClient*, const Model::SendMessageRequest&, const Model::SendMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessageResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::SendMessageBatchRequest&, const Model::SendMessageBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessageBatchResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::SetQueueAttributesRequest&, const Model::SetQueueAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetQueueAttributesResponseReceivedHandler;
+    typedef std::function<void(const SQSClient*, const Model::TagQueueRequest&, const Model::TagQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagQueueResponseReceivedHandler;
+    typedef std::function<void(const SQSClient*, const Model::UntagQueueRequest&, const Model::UntagQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagQueueResponseReceivedHandler;
 
   /**
    * <p>Welcome to the <i>Amazon Simple Queue Service API Reference</i>.</p>
@@ -170,7 +183,7 @@ namespace Model
    * </li> <li> <p>Retry requests</p> </li> <li> <p>Handle error responses</p> </li>
    * </ul> <p> <b>Additional Information</b> </p> <ul> <li> <p> <a
    * href="http://aws.amazon.com/sqs/">Amazon SQS Product Page</a> </p> </li> <li>
-   * <p> <i>Amazon SQS Developer Guide</i> </p> <ul> <li> <p> <a
+   * <p> <i>Amazon Simple Queue Service Developer Guide</i> </p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
    * API Requests</a> </p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Using
@@ -224,17 +237,17 @@ namespace Model
          * can grant or deny permissions to the queue. For more information about these
          * permissions, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-         * Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note> <p>
-         * <code>AddPermission</code> writes an Amazon-SQS-generated policy. If you want to
-         * write your own policy, use <code> <a>SetQueueAttributes</a> </code> to upload
-         * your policy. For more information about writing your own policy, see <a
+         * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <note>
+         * <p> <code>AddPermission</code> writes an Amazon-SQS-generated policy. If you
+         * want to write your own policy, use <code> <a>SetQueueAttributes</a> </code> to
+         * upload your policy. For more information about writing your own policy, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
-         * The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-         * <p>Some actions take lists of parameters. These lists are specified using the
-         * <code>param.n</code> notation. Values of <code>n</code> are integers starting
-         * from 1. For example, a parameter list with two elements looks like this:</p> <p>
-         * <code>&amp;Attribute.1=this</code> </p> <p> <code>&amp;Attribute.2=that</code>
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * The Access Policy Language</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>Some actions take lists of parameters. These lists are
+         * specified using the <code>param.n</code> notation. Values of <code>n</code> are
+         * integers starting from 1. For example, a parameter list with two elements looks
+         * like this:</p> <p> <code>&amp;Attribute.1=this</code> </p> <p>
+         * <code>&amp;Attribute.2=that</code> </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
          */
@@ -248,17 +261,17 @@ namespace Model
          * can grant or deny permissions to the queue. For more information about these
          * permissions, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-         * Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note> <p>
-         * <code>AddPermission</code> writes an Amazon-SQS-generated policy. If you want to
-         * write your own policy, use <code> <a>SetQueueAttributes</a> </code> to upload
-         * your policy. For more information about writing your own policy, see <a
+         * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <note>
+         * <p> <code>AddPermission</code> writes an Amazon-SQS-generated policy. If you
+         * want to write your own policy, use <code> <a>SetQueueAttributes</a> </code> to
+         * upload your policy. For more information about writing your own policy, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
-         * The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-         * <p>Some actions take lists of parameters. These lists are specified using the
-         * <code>param.n</code> notation. Values of <code>n</code> are integers starting
-         * from 1. For example, a parameter list with two elements looks like this:</p> <p>
-         * <code>&amp;Attribute.1=this</code> </p> <p> <code>&amp;Attribute.2=that</code>
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * The Access Policy Language</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>Some actions take lists of parameters. These lists are
+         * specified using the <code>param.n</code> notation. Values of <code>n</code> are
+         * integers starting from 1. For example, a parameter list with two elements looks
+         * like this:</p> <p> <code>&amp;Attribute.1=this</code> </p> <p>
+         * <code>&amp;Attribute.2=that</code> </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
          *
@@ -274,17 +287,17 @@ namespace Model
          * can grant or deny permissions to the queue. For more information about these
          * permissions, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-         * Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note> <p>
-         * <code>AddPermission</code> writes an Amazon-SQS-generated policy. If you want to
-         * write your own policy, use <code> <a>SetQueueAttributes</a> </code> to upload
-         * your policy. For more information about writing your own policy, see <a
+         * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <note>
+         * <p> <code>AddPermission</code> writes an Amazon-SQS-generated policy. If you
+         * want to write your own policy, use <code> <a>SetQueueAttributes</a> </code> to
+         * upload your policy. For more information about writing your own policy, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
-         * The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-         * <p>Some actions take lists of parameters. These lists are specified using the
-         * <code>param.n</code> notation. Values of <code>n</code> are integers starting
-         * from 1. For example, a parameter list with two elements looks like this:</p> <p>
-         * <code>&amp;Attribute.1=this</code> </p> <p> <code>&amp;Attribute.2=that</code>
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * The Access Policy Language</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>Some actions take lists of parameters. These lists are
+         * specified using the <code>param.n</code> notation. Values of <code>n</code> are
+         * integers starting from 1. For example, a parameter list with two elements looks
+         * like this:</p> <p> <code>&amp;Attribute.1=this</code> </p> <p>
+         * <code>&amp;Attribute.2=that</code> </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
          *
@@ -298,12 +311,12 @@ namespace Model
          * timeout of a message in an existing queue to more than a total visibility
          * timeout of 12 hours. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, you
-         * have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
-         * <code>ChangeMessageVisiblity</code> with a timeout of 10 minutes. At that time,
-         * the timeout for the message is extended by 10 minutes beyond the time of the
-         * <code>ChangeMessageVisibility</code> action. This results in a total visibility
-         * timeout of 13 minutes. You can continue to call the
+         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+         * <p>For example, you have a message with a visibility timeout of 5 minutes. After
+         * 3 minutes, you call <code>ChangeMessageVisiblity</code> with a timeout of 10
+         * minutes. At that time, the timeout for the message is extended by 10 minutes
+         * beyond the time of the <code>ChangeMessageVisibility</code> action. This results
+         * in a total visibility timeout of 13 minutes. You can continue to call the
          * <code>ChangeMessageVisibility</code> to extend the visibility timeout to a
          * maximum of 12 hours. If you try to extend the visibility timeout beyond 12
          * hours, your request is rejected.</p> <p>A message is considered to be <i>in
@@ -335,12 +348,12 @@ namespace Model
          * timeout of a message in an existing queue to more than a total visibility
          * timeout of 12 hours. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, you
-         * have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
-         * <code>ChangeMessageVisiblity</code> with a timeout of 10 minutes. At that time,
-         * the timeout for the message is extended by 10 minutes beyond the time of the
-         * <code>ChangeMessageVisibility</code> action. This results in a total visibility
-         * timeout of 13 minutes. You can continue to call the
+         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+         * <p>For example, you have a message with a visibility timeout of 5 minutes. After
+         * 3 minutes, you call <code>ChangeMessageVisiblity</code> with a timeout of 10
+         * minutes. At that time, the timeout for the message is extended by 10 minutes
+         * beyond the time of the <code>ChangeMessageVisibility</code> action. This results
+         * in a total visibility timeout of 13 minutes. You can continue to call the
          * <code>ChangeMessageVisibility</code> to extend the visibility timeout to a
          * maximum of 12 hours. If you try to extend the visibility timeout beyond 12
          * hours, your request is rejected.</p> <p>A message is considered to be <i>in
@@ -374,12 +387,12 @@ namespace Model
          * timeout of a message in an existing queue to more than a total visibility
          * timeout of 12 hours. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, you
-         * have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
-         * <code>ChangeMessageVisiblity</code> with a timeout of 10 minutes. At that time,
-         * the timeout for the message is extended by 10 minutes beyond the time of the
-         * <code>ChangeMessageVisibility</code> action. This results in a total visibility
-         * timeout of 13 minutes. You can continue to call the
+         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+         * <p>For example, you have a message with a visibility timeout of 5 minutes. After
+         * 3 minutes, you call <code>ChangeMessageVisiblity</code> with a timeout of 10
+         * minutes. At that time, the timeout for the message is extended by 10 minutes
+         * beyond the time of the <code>ChangeMessageVisibility</code> action. This results
+         * in a total visibility timeout of 13 minutes. You can continue to call the
          * <code>ChangeMessageVisibility</code> to extend the visibility timeout to a
          * maximum of 12 hours. If you try to extend the visibility timeout beyond 12
          * hours, your request is rejected.</p> <p>A message is considered to be <i>in
@@ -477,12 +490,13 @@ namespace Model
          * create a new FIFO queue for your application or delete your existing standard
          * queue and recreate it as a FIFO queue. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
-         * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer
-         * Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for an
-         * attribute, the queue is created with the default value for the attribute.</p>
-         * </li> <li> <p>If you delete a queue, you must wait at least 60 seconds before
-         * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
-         * new queue, you must provide a queue name that adheres to the <a
+         * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue
+         * Service Developer Guide</i>. </p> </note> </li> <li> <p>If you don't provide a
+         * value for an attribute, the queue is created with the default value for the
+         * attribute.</p> </li> <li> <p>If you delete a queue, you must wait at least 60
+         * seconds before creating a queue with the same name.</p> </li> </ul> <p>To
+         * successfully create a new queue, you must provide a queue name that adheres to
+         * the <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
          * related to queues</a> and is unique within the scope of your queues.</p> <p>To
          * get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code>
@@ -511,12 +525,13 @@ namespace Model
          * create a new FIFO queue for your application or delete your existing standard
          * queue and recreate it as a FIFO queue. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
-         * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer
-         * Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for an
-         * attribute, the queue is created with the default value for the attribute.</p>
-         * </li> <li> <p>If you delete a queue, you must wait at least 60 seconds before
-         * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
-         * new queue, you must provide a queue name that adheres to the <a
+         * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue
+         * Service Developer Guide</i>. </p> </note> </li> <li> <p>If you don't provide a
+         * value for an attribute, the queue is created with the default value for the
+         * attribute.</p> </li> <li> <p>If you delete a queue, you must wait at least 60
+         * seconds before creating a queue with the same name.</p> </li> </ul> <p>To
+         * successfully create a new queue, you must provide a queue name that adheres to
+         * the <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
          * related to queues</a> and is unique within the scope of your queues.</p> <p>To
          * get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code>
@@ -547,12 +562,13 @@ namespace Model
          * create a new FIFO queue for your application or delete your existing standard
          * queue and recreate it as a FIFO queue. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
-         * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer
-         * Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for an
-         * attribute, the queue is created with the default value for the attribute.</p>
-         * </li> <li> <p>If you delete a queue, you must wait at least 60 seconds before
-         * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
-         * new queue, you must provide a queue name that adheres to the <a
+         * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue
+         * Service Developer Guide</i>. </p> </note> </li> <li> <p>If you don't provide a
+         * value for an attribute, the queue is created with the default value for the
+         * attribute.</p> </li> <li> <p>If you delete a queue, you must wait at least 60
+         * seconds before creating a queue with the same name.</p> </li> </ul> <p>To
+         * successfully create a new queue, you must provide a queue name that adheres to
+         * the <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
          * related to queues</a> and is unique within the scope of your queues.</p> <p>To
          * get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code>
@@ -814,9 +830,10 @@ namespace Model
          * permission to access the queue. For more information about shared queue access,
          * see <code> <a>AddPermission</a> </code> or see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-         * Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">AWS
-         * API Reference</a></p>
+         * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">AWS API
+         * Reference</a></p>
          */
         virtual Model::GetQueueUrlOutcome GetQueueUrl(const Model::GetQueueUrlRequest& request) const;
 
@@ -828,9 +845,10 @@ namespace Model
          * permission to access the queue. For more information about shared queue access,
          * see <code> <a>AddPermission</a> </code> or see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-         * Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">AWS
-         * API Reference</a></p>
+         * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -844,9 +862,10 @@ namespace Model
          * permission to access the queue. For more information about shared queue access,
          * see <code> <a>AddPermission</a> </code> or see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-         * Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">AWS
-         * API Reference</a></p>
+         * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -857,8 +876,8 @@ namespace Model
          * attribute configured with a dead-letter queue.</p> <p>For more information about
          * using dead-letter queues, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">AWS
          * API Reference</a></p>
          */
@@ -869,8 +888,8 @@ namespace Model
          * attribute configured with a dead-letter queue.</p> <p>For more information about
          * using dead-letter queues, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">AWS
          * API Reference</a></p>
          *
@@ -883,14 +902,90 @@ namespace Model
          * attribute configured with a dead-letter queue.</p> <p>For more information about
          * using dead-letter queues, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDeadLetterSourceQueuesAsync(const Model::ListDeadLetterSourceQueuesRequest& request, const ListDeadLetterSourceQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List all cost allocation tags added to the specified Amazon SQS queue. For an
+         * overview, see <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+         * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
+         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
+         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
+         * interprets tags as character strings.</p> </li> <li> <p>Tags are
+         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
+         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging API actions
+         * are limited to 5 TPS per AWS account. If your application requires a higher
+         * throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListQueueTagsOutcome ListQueueTags(const Model::ListQueueTagsRequest& request) const;
+
+        /**
+         * <p>List all cost allocation tags added to the specified Amazon SQS queue. For an
+         * overview, see <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+         * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
+         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
+         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
+         * interprets tags as character strings.</p> </li> <li> <p>Tags are
+         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
+         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging API actions
+         * are limited to 5 TPS per AWS account. If your application requires a higher
+         * throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListQueueTagsOutcomeCallable ListQueueTagsCallable(const Model::ListQueueTagsRequest& request) const;
+
+        /**
+         * <p>List all cost allocation tags added to the specified Amazon SQS queue. For an
+         * overview, see <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+         * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
+         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
+         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
+         * interprets tags as character strings.</p> </li> <li> <p>Tags are
+         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
+         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging API actions
+         * are limited to 5 TPS per AWS account. If your application requires a higher
+         * throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListQueueTagsAsync(const Model::ListQueueTagsRequest& request, const ListQueueTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of your queues. The maximum number of queues that can be
@@ -980,13 +1075,13 @@ namespace Model
          * the <code>WaitTimeSeconds</code> parameter enables long-poll support. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-         * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p>Short
-         * poll is the default behavior where a weighted random set of machines is sampled
-         * on a <code>ReceiveMessage</code> call. Thus, only the messages on the sampled
-         * machines are returned. If the number of messages in the queue is small (fewer
-         * than 1,000), you most likely get fewer messages than you requested per
-         * <code>ReceiveMessage</code> call. If the number of messages in the queue is
-         * extremely small, you might not receive any messages in a particular
+         * SQS Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+         * </p> <p>Short poll is the default behavior where a weighted random set of
+         * machines is sampled on a <code>ReceiveMessage</code> call. Thus, only the
+         * messages on the sampled machines are returned. If the number of messages in the
+         * queue is small (fewer than 1,000), you most likely get fewer messages than you
+         * requested per <code>ReceiveMessage</code> call. If the number of messages in the
+         * queue is extremely small, you might not receive any messages in a particular
          * <code>ReceiveMessage</code> response. If this happens, repeat the request. </p>
          * <p>For each message returned, the response includes the following:</p> <ul> <li>
          * <p>The message body.</p> </li> <li> <p>An MD5 digest of the message body. For
@@ -998,19 +1093,20 @@ namespace Model
          * receipt handle is the identifier you must provide when deleting the message. For
          * more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-         * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>You
-         * can provide the <code>VisibilityTimeout</code> parameter in your request. The
-         * parameter is applied to the messages that Amazon SQS returns in the response. If
-         * you don't include the parameter, the overall visibility timeout for the queue is
-         * used for the returned messages. For more information, see <a
+         * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>You can provide the <code>VisibilityTimeout</code> parameter
+         * in your request. The parameter is applied to the messages that Amazon SQS
+         * returns in the response. If you don't include the parameter, the overall
+         * visibility timeout for the queue is used for the returned messages. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>A message that
-         * isn't deleted or a message whose visibility isn't extended before the visibility
-         * timeout expires counts as a failed receive. Depending on the configuration of
-         * the queue, the message might be sent to the dead-letter queue.</p> <note> <p>In
-         * the future, new attributes might be added. If you write code that calls this
-         * action, we recommend that you structure your code so that it can handle new
-         * attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
+         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>A
+         * message that isn't deleted or a message whose visibility isn't extended before
+         * the visibility timeout expires counts as a failed receive. Depending on the
+         * configuration of the queue, the message might be sent to the dead-letter
+         * queue.</p> <note> <p>In the future, new attributes might be added. If you write
+         * code that calls this action, we recommend that you structure your code so that
+         * it can handle new attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">AWS
          * API Reference</a></p>
          */
@@ -1021,13 +1117,13 @@ namespace Model
          * the <code>WaitTimeSeconds</code> parameter enables long-poll support. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-         * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p>Short
-         * poll is the default behavior where a weighted random set of machines is sampled
-         * on a <code>ReceiveMessage</code> call. Thus, only the messages on the sampled
-         * machines are returned. If the number of messages in the queue is small (fewer
-         * than 1,000), you most likely get fewer messages than you requested per
-         * <code>ReceiveMessage</code> call. If the number of messages in the queue is
-         * extremely small, you might not receive any messages in a particular
+         * SQS Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+         * </p> <p>Short poll is the default behavior where a weighted random set of
+         * machines is sampled on a <code>ReceiveMessage</code> call. Thus, only the
+         * messages on the sampled machines are returned. If the number of messages in the
+         * queue is small (fewer than 1,000), you most likely get fewer messages than you
+         * requested per <code>ReceiveMessage</code> call. If the number of messages in the
+         * queue is extremely small, you might not receive any messages in a particular
          * <code>ReceiveMessage</code> response. If this happens, repeat the request. </p>
          * <p>For each message returned, the response includes the following:</p> <ul> <li>
          * <p>The message body.</p> </li> <li> <p>An MD5 digest of the message body. For
@@ -1039,19 +1135,20 @@ namespace Model
          * receipt handle is the identifier you must provide when deleting the message. For
          * more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-         * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>You
-         * can provide the <code>VisibilityTimeout</code> parameter in your request. The
-         * parameter is applied to the messages that Amazon SQS returns in the response. If
-         * you don't include the parameter, the overall visibility timeout for the queue is
-         * used for the returned messages. For more information, see <a
+         * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>You can provide the <code>VisibilityTimeout</code> parameter
+         * in your request. The parameter is applied to the messages that Amazon SQS
+         * returns in the response. If you don't include the parameter, the overall
+         * visibility timeout for the queue is used for the returned messages. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>A message that
-         * isn't deleted or a message whose visibility isn't extended before the visibility
-         * timeout expires counts as a failed receive. Depending on the configuration of
-         * the queue, the message might be sent to the dead-letter queue.</p> <note> <p>In
-         * the future, new attributes might be added. If you write code that calls this
-         * action, we recommend that you structure your code so that it can handle new
-         * attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
+         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>A
+         * message that isn't deleted or a message whose visibility isn't extended before
+         * the visibility timeout expires counts as a failed receive. Depending on the
+         * configuration of the queue, the message might be sent to the dead-letter
+         * queue.</p> <note> <p>In the future, new attributes might be added. If you write
+         * code that calls this action, we recommend that you structure your code so that
+         * it can handle new attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">AWS
          * API Reference</a></p>
          *
@@ -1064,13 +1161,13 @@ namespace Model
          * the <code>WaitTimeSeconds</code> parameter enables long-poll support. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-         * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p>Short
-         * poll is the default behavior where a weighted random set of machines is sampled
-         * on a <code>ReceiveMessage</code> call. Thus, only the messages on the sampled
-         * machines are returned. If the number of messages in the queue is small (fewer
-         * than 1,000), you most likely get fewer messages than you requested per
-         * <code>ReceiveMessage</code> call. If the number of messages in the queue is
-         * extremely small, you might not receive any messages in a particular
+         * SQS Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+         * </p> <p>Short poll is the default behavior where a weighted random set of
+         * machines is sampled on a <code>ReceiveMessage</code> call. Thus, only the
+         * messages on the sampled machines are returned. If the number of messages in the
+         * queue is small (fewer than 1,000), you most likely get fewer messages than you
+         * requested per <code>ReceiveMessage</code> call. If the number of messages in the
+         * queue is extremely small, you might not receive any messages in a particular
          * <code>ReceiveMessage</code> response. If this happens, repeat the request. </p>
          * <p>For each message returned, the response includes the following:</p> <ul> <li>
          * <p>The message body.</p> </li> <li> <p>An MD5 digest of the message body. For
@@ -1082,19 +1179,20 @@ namespace Model
          * receipt handle is the identifier you must provide when deleting the message. For
          * more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-         * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>You
-         * can provide the <code>VisibilityTimeout</code> parameter in your request. The
-         * parameter is applied to the messages that Amazon SQS returns in the response. If
-         * you don't include the parameter, the overall visibility timeout for the queue is
-         * used for the returned messages. For more information, see <a
+         * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>You can provide the <code>VisibilityTimeout</code> parameter
+         * in your request. The parameter is applied to the messages that Amazon SQS
+         * returns in the response. If you don't include the parameter, the overall
+         * visibility timeout for the queue is used for the returned messages. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>A message that
-         * isn't deleted or a message whose visibility isn't extended before the visibility
-         * timeout expires counts as a failed receive. Depending on the configuration of
-         * the queue, the message might be sent to the dead-letter queue.</p> <note> <p>In
-         * the future, new attributes might be added. If you write code that calls this
-         * action, we recommend that you structure your code so that it can handle new
-         * attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
+         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>A
+         * message that isn't deleted or a message whose visibility isn't extended before
+         * the visibility timeout expires counts as a failed receive. Depending on the
+         * configuration of the queue, the message might be sent to the dead-letter
+         * queue.</p> <note> <p>In the future, new attributes might be added. If you write
+         * code that calls this action, we recommend that you structure your code so that
+         * it can handle new attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">AWS
          * API Reference</a></p>
          *
@@ -1313,6 +1411,158 @@ namespace Model
          */
         virtual void SetQueueAttributesAsync(const Model::SetQueueAttributesRequest& request, const SetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+         * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
+         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
+         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
+         * interprets tags as character strings.</p> </li> <li> <p>Tags are
+         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
+         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging API actions
+         * are limited to 5 TPS per AWS account. If your application requires a higher
+         * throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::TagQueueOutcome TagQueue(const Model::TagQueueRequest& request) const;
+
+        /**
+         * <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+         * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
+         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
+         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
+         * interprets tags as character strings.</p> </li> <li> <p>Tags are
+         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
+         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging API actions
+         * are limited to 5 TPS per AWS account. If your application requires a higher
+         * throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagQueueOutcomeCallable TagQueueCallable(const Model::TagQueueRequest& request) const;
+
+        /**
+         * <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+         * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
+         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
+         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
+         * interprets tags as character strings.</p> </li> <li> <p>Tags are
+         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
+         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging API actions
+         * are limited to 5 TPS per AWS account. If your application requires a higher
+         * throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagQueueAsync(const Model::TagQueueRequest& request, const TagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove cost allocation tags from the specified Amazon SQS queue. For an
+         * overview, see <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+         * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
+         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
+         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
+         * interprets tags as character strings.</p> </li> <li> <p>Tags are
+         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
+         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging API actions
+         * are limited to 5 TPS per AWS account. If your application requires a higher
+         * throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::UntagQueueOutcome UntagQueue(const Model::UntagQueueRequest& request) const;
+
+        /**
+         * <p>Remove cost allocation tags from the specified Amazon SQS queue. For an
+         * overview, see <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+         * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
+         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
+         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
+         * interprets tags as character strings.</p> </li> <li> <p>Tags are
+         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
+         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging API actions
+         * are limited to 5 TPS per AWS account. If your application requires a higher
+         * throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagQueueOutcomeCallable UntagQueueCallable(const Model::UntagQueueRequest& request) const;
+
+        /**
+         * <p>Remove cost allocation tags from the specified Amazon SQS queue. For an
+         * overview, see <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+         * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
+         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
+         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
+         * interprets tags as character strings.</p> </li> <li> <p>Tags are
+         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
+         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging API actions
+         * are limited to 5 TPS per AWS account. If your application requires a higher
+         * throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagQueueAsync(const Model::UntagQueueRequest& request, const UntagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
   private:
     void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -1328,6 +1578,7 @@ namespace Model
         void GetQueueAttributesAsyncHelper(const Model::GetQueueAttributesRequest& request, const GetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetQueueUrlAsyncHelper(const Model::GetQueueUrlRequest& request, const GetQueueUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeadLetterSourceQueuesAsyncHelper(const Model::ListDeadLetterSourceQueuesRequest& request, const ListDeadLetterSourceQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListQueueTagsAsyncHelper(const Model::ListQueueTagsRequest& request, const ListQueueTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueuesAsyncHelper(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurgeQueueAsyncHelper(const Model::PurgeQueueRequest& request, const PurgeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReceiveMessageAsyncHelper(const Model::ReceiveMessageRequest& request, const ReceiveMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1335,6 +1586,8 @@ namespace Model
         void SendMessageAsyncHelper(const Model::SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendMessageBatchAsyncHelper(const Model::SendMessageBatchRequest& request, const SendMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetQueueAttributesAsyncHelper(const Model::SetQueueAttributesRequest& request, const SetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagQueueAsyncHelper(const Model::TagQueueRequest& request, const TagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagQueueAsyncHelper(const Model::UntagQueueRequest& request, const UntagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

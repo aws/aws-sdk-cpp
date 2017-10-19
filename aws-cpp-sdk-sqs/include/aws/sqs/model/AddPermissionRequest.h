@@ -157,7 +157,8 @@ namespace Model
      * need to be signed up for Amazon SQS. For information about locating the AWS
      * account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
-     * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAWSAccountIds() const{ return m_aWSAccountIds; }
 
@@ -168,7 +169,8 @@ namespace Model
      * need to be signed up for Amazon SQS. For information about locating the AWS
      * account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
-     * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline void SetAWSAccountIds(const Aws::Vector<Aws::String>& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds = value; }
 
@@ -179,7 +181,8 @@ namespace Model
      * need to be signed up for Amazon SQS. For information about locating the AWS
      * account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
-     * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline void SetAWSAccountIds(Aws::Vector<Aws::String>&& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds = std::move(value); }
 
@@ -190,7 +193,8 @@ namespace Model
      * need to be signed up for Amazon SQS. For information about locating the AWS
      * account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
-     * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline AddPermissionRequest& WithAWSAccountIds(const Aws::Vector<Aws::String>& value) { SetAWSAccountIds(value); return *this;}
 
@@ -201,7 +205,8 @@ namespace Model
      * need to be signed up for Amazon SQS. For information about locating the AWS
      * account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
-     * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline AddPermissionRequest& WithAWSAccountIds(Aws::Vector<Aws::String>&& value) { SetAWSAccountIds(std::move(value)); return *this;}
 
@@ -212,7 +217,8 @@ namespace Model
      * need to be signed up for Amazon SQS. For information about locating the AWS
      * account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
-     * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline AddPermissionRequest& AddAWSAccountIds(const Aws::String& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(value); return *this; }
 
@@ -223,7 +229,8 @@ namespace Model
      * need to be signed up for Amazon SQS. For information about locating the AWS
      * account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
-     * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline AddPermissionRequest& AddAWSAccountIds(Aws::String&& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(std::move(value)); return *this; }
 
@@ -234,7 +241,8 @@ namespace Model
      * need to be signed up for Amazon SQS. For information about locating the AWS
      * account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
-     * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline AddPermissionRequest& AddAWSAccountIds(const char* value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(value); return *this; }
 
@@ -248,8 +256,8 @@ namespace Model
      * <code>ReceiveMessage</code> </p> </li> <li> <p> <code>SendMessage</code> </p>
      * </li> </ul> <p>For more information about these actions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding
-     * Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
-     * <code>SendMessage</code>, <code>DeleteMessage</code>, or
+     * Permissions</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
@@ -266,8 +274,8 @@ namespace Model
      * <code>ReceiveMessage</code> </p> </li> <li> <p> <code>SendMessage</code> </p>
      * </li> </ul> <p>For more information about these actions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding
-     * Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
-     * <code>SendMessage</code>, <code>DeleteMessage</code>, or
+     * Permissions</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
@@ -284,8 +292,8 @@ namespace Model
      * <code>ReceiveMessage</code> </p> </li> <li> <p> <code>SendMessage</code> </p>
      * </li> </ul> <p>For more information about these actions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding
-     * Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
-     * <code>SendMessage</code>, <code>DeleteMessage</code>, or
+     * Permissions</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
@@ -302,8 +310,8 @@ namespace Model
      * <code>ReceiveMessage</code> </p> </li> <li> <p> <code>SendMessage</code> </p>
      * </li> </ul> <p>For more information about these actions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding
-     * Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
-     * <code>SendMessage</code>, <code>DeleteMessage</code>, or
+     * Permissions</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
@@ -320,8 +328,8 @@ namespace Model
      * <code>ReceiveMessage</code> </p> </li> <li> <p> <code>SendMessage</code> </p>
      * </li> </ul> <p>For more information about these actions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding
-     * Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
-     * <code>SendMessage</code>, <code>DeleteMessage</code>, or
+     * Permissions</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
@@ -338,8 +346,8 @@ namespace Model
      * <code>ReceiveMessage</code> </p> </li> <li> <p> <code>SendMessage</code> </p>
      * </li> </ul> <p>For more information about these actions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding
-     * Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
-     * <code>SendMessage</code>, <code>DeleteMessage</code>, or
+     * Permissions</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
@@ -356,8 +364,8 @@ namespace Model
      * <code>ReceiveMessage</code> </p> </li> <li> <p> <code>SendMessage</code> </p>
      * </li> </ul> <p>For more information about these actions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding
-     * Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
-     * <code>SendMessage</code>, <code>DeleteMessage</code>, or
+     * Permissions</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
@@ -374,8 +382,8 @@ namespace Model
      * <code>ReceiveMessage</code> </p> </li> <li> <p> <code>SendMessage</code> </p>
      * </li> </ul> <p>For more information about these actions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding
-     * Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
-     * <code>SendMessage</code>, <code>DeleteMessage</code>, or
+     * Permissions</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     * <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and

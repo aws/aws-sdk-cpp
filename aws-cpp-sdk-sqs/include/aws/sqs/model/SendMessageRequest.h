@@ -224,7 +224,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
 
@@ -232,7 +233,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
 
@@ -240,7 +242,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::move(value); }
 
@@ -248,7 +251,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline SendMessageRequest& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
 
@@ -256,7 +260,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline SendMessageRequest& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(std::move(value)); return *this;}
 
@@ -264,7 +269,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
@@ -272,7 +278,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), value); return *this; }
 
@@ -280,7 +287,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
 
@@ -288,7 +296,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -296,7 +305,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
 
@@ -304,7 +314,8 @@ namespace Model
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
+     * Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
@@ -317,8 +328,8 @@ namespace Model
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.</p> <ul>
-     * <li> <p>Every message must have a unique
+     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
      * able to provide a <code>MessageDeduplicationId</code> and you enable
@@ -361,8 +372,8 @@ namespace Model
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.</p> <ul>
-     * <li> <p>Every message must have a unique
+     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
      * able to provide a <code>MessageDeduplicationId</code> and you enable
@@ -405,8 +416,8 @@ namespace Model
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.</p> <ul>
-     * <li> <p>Every message must have a unique
+     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
      * able to provide a <code>MessageDeduplicationId</code> and you enable
@@ -449,8 +460,8 @@ namespace Model
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.</p> <ul>
-     * <li> <p>Every message must have a unique
+     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
      * able to provide a <code>MessageDeduplicationId</code> and you enable
@@ -493,8 +504,8 @@ namespace Model
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.</p> <ul>
-     * <li> <p>Every message must have a unique
+     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
      * able to provide a <code>MessageDeduplicationId</code> and you enable
@@ -537,8 +548,8 @@ namespace Model
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.</p> <ul>
-     * <li> <p>Every message must have a unique
+     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
      * able to provide a <code>MessageDeduplicationId</code> and you enable
@@ -581,8 +592,8 @@ namespace Model
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.</p> <ul>
-     * <li> <p>Every message must have a unique
+     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
      * able to provide a <code>MessageDeduplicationId</code> and you enable
