@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/Outcome.h>
 #include <aws/polly/model/DeleteLexiconResult.h>
 #include <aws/polly/model/DescribeVoicesResult.h>
 #include <aws/polly/model/GetLexiconResult.h>
