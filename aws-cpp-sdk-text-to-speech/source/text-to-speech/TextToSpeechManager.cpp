@@ -27,7 +27,6 @@ namespace Aws
 {
     namespace TextToSpeech
     {
-        static const size_t BUFF_SIZE = 8192;
         static const char* CLASS_TAG = "TextToSpeechManager";
 
         struct SendTextCompletionHandlerCallbackContext : public Aws::Client::AsyncCallerContext
