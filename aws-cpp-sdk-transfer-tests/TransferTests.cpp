@@ -1335,7 +1335,8 @@ TEST_F(TransferTests, BadFileTest)
 
 TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
 {
-    Aws::String cancelTestFileName = MakeFilePath( CANCEL_TEST_FILE_NAME );;
+    Aws::String cancelTestFileName = MakeFilePath( CANCEL_TEST_FILE_NAME );
+    Aws::String downloadFileName = MakeDownloadFileName(cancelTestFileName);
     ScopedTestFile testFile(cancelTestFileName, CANCEL_TEST_SIZE, testString);
 
     if (EmptyBucket(GetTestBucketName()))
@@ -1367,6 +1368,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
         downloadConfig.transferStatusUpdatedCallback = 
             [&](const TransferManager*, const std::shared_ptr<const TransferHandle>& handle)
             {
+                ASSERT_EQ(downloadFileName, handle->GetTargetFilePath());
                 if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
                 {
                     std::const_pointer_cast<TransferHandle>(handle)->Cancel();
@@ -1383,7 +1385,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
             };
 
         auto transferManager = TransferManager::Create(downloadConfig);
-        std::shared_ptr<TransferHandle> requestPtr = transferManager->DownloadFile(GetTestBucketName(), CANCEL_FILE_KEY, MakeDownloadFileName(cancelTestFileName));
+        std::shared_ptr<TransferHandle> requestPtr = transferManager->DownloadFile(GetTestBucketName(), CANCEL_FILE_KEY, downloadFileName);
 
         requestPtr->WaitUntilFinished();
 
@@ -1420,7 +1422,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
 
         ASSERT_TRUE(requestPtr->GetBytesTotalSize() == requestPtr->GetBytesTransferred());
 
-        ASSERT_TRUE(AreFilesSame(MakeDownloadFileName(cancelTestFileName), cancelTestFileName));
+        ASSERT_TRUE(AreFilesSame(downloadFileName, cancelTestFileName));
     }
 }
 /*

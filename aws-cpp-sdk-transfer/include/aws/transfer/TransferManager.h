@@ -161,7 +161,8 @@ namespace Aws
             std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, 
                                                          const Aws::String& keyName, 
                                                          CreateDownloadStreamCallback writeToStreamfn, 
-                                                         const DownloadConfiguration& downloadConfig = DownloadConfiguration());
+                                                         const DownloadConfiguration& downloadConfig = DownloadConfiguration(),
+                                                         const Aws::String& writeToFile = "");
 
             /**
              * Retry an download that failed from a previous DownloadFile operation. If a multi-part download was used, only the failed parts will be re-fetched.

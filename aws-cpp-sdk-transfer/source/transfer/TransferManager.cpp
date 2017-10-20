@@ -93,9 +93,10 @@ namespace Aws
         std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, 
                                                                       const Aws::String& keyName, 
                                                                       CreateDownloadStreamCallback writeToStreamfn, 
-                                                                      const DownloadConfiguration& downloadConfig)
+                                                                      const DownloadConfiguration& downloadConfig,
+                                                                      const Aws::String& writeToFile)
         {
-            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, writeToStreamfn);
+            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, writeToStreamfn, writeToFile);
             handle->ApplyDownloadConfiguration(downloadConfig);
 
             auto self = shared_from_this();
@@ -116,12 +117,7 @@ namespace Aws
                                                                      std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};
 #endif
 
-            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, createFileFn);
-            handle->ApplyDownloadConfiguration(downloadConfig);
-
-            auto self = shared_from_this();
-            m_transferConfig.transferExecutor->Submit([self, handle] { self->DoDownload(handle); });
-            return handle;
+            return DownloadFile(bucketName, keyName, createFileFn, downloadConfig, writeToFile);
         }
 
         std::shared_ptr<TransferHandle> TransferManager::RetryUpload(const Aws::String& fileName, const std::shared_ptr<TransferHandle>& retryHandle)
@@ -518,7 +514,9 @@ namespace Aws
 
             if (retryHandle->GetStatus() == TransferStatus::ABORTED)
             {
-                return DownloadFile(retryHandle->GetBucketName(), retryHandle->GetKey(), retryHandle->GetCreateDownloadStreamFunction());
+                DownloadConfiguration retryDownloadConfig;
+                retryDownloadConfig.versionId = retryHandle->GetVersionId();
+                return DownloadFile(retryHandle->GetBucketName(), retryHandle->GetKey(), retryHandle->GetCreateDownloadStreamFunction(), retryDownloadConfig, retryHandle->GetTargetFilePath());
             }
 
             retryHandle->UpdateStatus(TransferStatus::NOT_STARTED);
