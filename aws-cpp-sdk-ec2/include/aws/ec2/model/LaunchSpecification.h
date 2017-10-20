@@ -195,51 +195,37 @@ namespace Model
 
 
     /**
-     * <p>One or more block device mapping entries.</p> <p>Although you can specify
-     * encrypted EBS volumes in this block device mapping for your Spot Instances,
-     * these volumes are not encrypted.</p>
+     * <p>One or more block device mapping entries.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>One or more block device mapping entries.</p> <p>Although you can specify
-     * encrypted EBS volumes in this block device mapping for your Spot Instances,
-     * these volumes are not encrypted.</p>
+     * <p>One or more block device mapping entries.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>One or more block device mapping entries.</p> <p>Although you can specify
-     * encrypted EBS volumes in this block device mapping for your Spot Instances,
-     * these volumes are not encrypted.</p>
+     * <p>One or more block device mapping entries.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>One or more block device mapping entries.</p> <p>Although you can specify
-     * encrypted EBS volumes in this block device mapping for your Spot Instances,
-     * these volumes are not encrypted.</p>
+     * <p>One or more block device mapping entries.</p>
      */
     inline LaunchSpecification& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>One or more block device mapping entries.</p> <p>Although you can specify
-     * encrypted EBS volumes in this block device mapping for your Spot Instances,
-     * these volumes are not encrypted.</p>
+     * <p>One or more block device mapping entries.</p>
      */
     inline LaunchSpecification& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>One or more block device mapping entries.</p> <p>Although you can specify
-     * encrypted EBS volumes in this block device mapping for your Spot Instances,
-     * these volumes are not encrypted.</p>
+     * <p>One or more block device mapping entries.</p>
      */
     inline LaunchSpecification& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>One or more block device mapping entries.</p> <p>Although you can specify
-     * encrypted EBS volumes in this block device mapping for your Spot Instances,
-     * these volumes are not encrypted.</p>
+     * <p>One or more block device mapping entries.</p>
      */
     inline LaunchSpecification& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 

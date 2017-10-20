@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CloudTrail;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.2.20131101.20;
+        version : 1.2.20131101.21;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS CloudTrail);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.2.20
+            AWSSDKCPP-Core/1.2.21
        }
     }
 

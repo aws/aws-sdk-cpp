@@ -29,12 +29,17 @@ namespace S3Endpoint
   static const int CN_REGION_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
   
   static const int US_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-east-1");
+  static const int US_EAST_2_HASH = Aws::Utils::HashingUtils::HashString("us-east-2");
   static const int US_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-west-1");
   static const int US_WEST_2_HASH = Aws::Utils::HashingUtils::HashString("us-west-2");
-  static const int EU_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("eu-west-1");
+  static const int CA_CENTRAL_1_HASH = Aws::Utils::HashingUtils::HashString("ca-central-1");
+  static const int AP_SOUTH_1_HASH = Aws::Utils::HashingUtils::HashString("ap-south-1");
+  static const int AP_NORTHEAST_1_HASH = Aws::Utils::HashingUtils::HashString("ap-northeast-1");
+  static const int AP_NORTHEAST_2_HASH = Aws::Utils::HashingUtils::HashString("ap-northeast-2");
   static const int AP_SOUTHEAST_1_HASH = Aws::Utils::HashingUtils::HashString("ap-southeast-1");
   static const int AP_SOUTHEAST_2_HASH = Aws::Utils::HashingUtils::HashString("ap-southeast-2");
-  static const int AP_NORTHEAST_1_HASH = Aws::Utils::HashingUtils::HashString("ap-northeast-1");
+  static const int EU_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("eu-west-1");
+  static const int EU_WEST_2_HASH = Aws::Utils::HashingUtils::HashString("eu-west-2");
   static const int SA_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("sa-east-1");
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
   static const int FIPS_US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("fips-us-gov-west-1");
@@ -49,6 +54,10 @@ namespace S3Endpoint
       {
         return "s3.amazonaws.com";
       }
+      else if(hash == US_EAST_2_HASH)
+      {
+        return "s3.us-east-2.amazonaws.com";
+      }
       else if(hash == US_WEST_1_HASH)
       {
         return "s3-us-west-1.amazonaws.com";
@@ -57,9 +66,21 @@ namespace S3Endpoint
       {
         return "s3-us-west-2.amazonaws.com";
       }
-      else if(hash == EU_WEST_1_HASH)
+      else if(hash == CA_CENTRAL_1_HASH)
       {
-        return "s3-eu-west-1.amazonaws.com";
+        return "s3.ca-central-1.amazonaws.com";
+      }
+      else if(hash == AP_SOUTH_1_HASH)
+      {
+        return "s3.ap-south-1.amazonaws.com";
+      }
+      else if(hash == AP_NORTHEAST_1_HASH)
+      {
+        return "s3-ap-northeast-1.amazonaws.com";
+      }
+      else if(hash == AP_NORTHEAST_2_HASH)
+      {
+        return "s3.ap-northeast-2.amazonaws.com";
       }
       else if(hash == AP_SOUTHEAST_1_HASH)
       {
@@ -69,9 +90,13 @@ namespace S3Endpoint
       {
         return "s3-ap-southeast-2.amazonaws.com";
       }
-      else if(hash == AP_NORTHEAST_1_HASH)
+      else if(hash == EU_WEST_1_HASH)
       {
-        return "s3-ap-northeast-1.amazonaws.com";
+        return "s3-eu-west-1.amazonaws.com";
+      }
+      else if(hash == EU_WEST_2_HASH)
+      {
+        return "s3.eu-west-2.amazonaws.com";
       }
       else if(hash == SA_EAST_1_HASH)
       {
