@@ -22,6 +22,7 @@ struct A { virtual ~A() = default; };
 struct B { virtual ~B() = default; };
 struct C : A, B { };
 
+#if !defined(_MSC_VER) || defined(_CPPRTTI)
 TEST(AWSMemory, DeleteViaFirstInterface)
 {
     A* a = Aws::New<C>(ALLOCATION_TAG);
@@ -37,3 +38,4 @@ TEST(AWSMemory, DeleteViaSecondInterface)
     ASSERT_NE(c, static_cast<void*>(b));
     Aws::Delete(b);
 }
+#endif
