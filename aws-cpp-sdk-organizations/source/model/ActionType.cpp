@@ -33,6 +33,7 @@ namespace Aws
         static const int INVITE_HASH = HashingUtils::HashString("INVITE");
         static const int ENABLE_ALL_FEATURES_HASH = HashingUtils::HashString("ENABLE_ALL_FEATURES");
         static const int APPROVE_ALL_FEATURES_HASH = HashingUtils::HashString("APPROVE_ALL_FEATURES");
+        static const int ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE_HASH = HashingUtils::HashString("ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == APPROVE_ALL_FEATURES_HASH)
           {
             return ActionType::APPROVE_ALL_FEATURES;
+          }
+          else if (hashCode == ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE_HASH)
+          {
+            return ActionType::ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "ENABLE_ALL_FEATURES";
           case ActionType::APPROVE_ALL_FEATURES:
             return "APPROVE_ALL_FEATURES";
+          case ActionType::ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE:
+            return "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

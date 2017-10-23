@@ -23,21 +23,18 @@ namespace Organizations
 {
 namespace Model
 {
-  enum class ActionType
+  enum class AccessDeniedForDependencyExceptionReason
   {
     NOT_SET,
-    INVITE,
-    ENABLE_ALL_FEATURES,
-    APPROVE_ALL_FEATURES,
-    ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE
+    ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE
   };
 
-namespace ActionTypeMapper
+namespace AccessDeniedForDependencyExceptionReasonMapper
 {
-AWS_ORGANIZATIONS_API ActionType GetActionTypeForName(const Aws::String& name);
+AWS_ORGANIZATIONS_API AccessDeniedForDependencyExceptionReason GetAccessDeniedForDependencyExceptionReasonForName(const Aws::String& name);
 
-AWS_ORGANIZATIONS_API Aws::String GetNameForActionType(ActionType value);
-} // namespace ActionTypeMapper
+AWS_ORGANIZATIONS_API Aws::String GetNameForAccessDeniedForDependencyExceptionReason(AccessDeniedForDependencyExceptionReason value);
+} // namespace AccessDeniedForDependencyExceptionReasonMapper
 } // namespace Model
 } // namespace Organizations
 } // namespace Aws

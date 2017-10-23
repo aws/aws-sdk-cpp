@@ -41,6 +41,7 @@ static const int POLICY_TYPE_ALREADY_ENABLED_HASH = HashingUtils::HashString("Po
 static const int POLICY_NOT_ATTACHED_HASH = HashingUtils::HashString("PolicyNotAttachedException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int FINALIZING_ORGANIZATION_HASH = HashingUtils::HashString("FinalizingOrganizationException");
+static const int ACCESS_DENIED_FOR_DEPENDENCY_HASH = HashingUtils::HashString("AccessDeniedForDependencyException");
 static const int POLICY_IN_USE_HASH = HashingUtils::HashString("PolicyInUseException");
 static const int ALREADY_IN_ORGANIZATION_HASH = HashingUtils::HashString("AlreadyInOrganizationException");
 static const int ACCOUNT_NOT_FOUND_HASH = HashingUtils::HashString("AccountNotFoundException");
@@ -121,6 +122,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == FINALIZING_ORGANIZATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::FINALIZING_ORGANIZATION), false);
+  }
+  else if (hashCode == ACCESS_DENIED_FOR_DEPENDENCY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCESS_DENIED_FOR_DEPENDENCY), false);
   }
   else if (hashCode == POLICY_IN_USE_HASH)
   {

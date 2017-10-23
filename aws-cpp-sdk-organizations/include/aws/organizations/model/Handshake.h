@@ -387,31 +387,91 @@ namespace Model
 
     /**
      * <p>The type of handshake, indicating what action occurs when the recipient
-     * accepts the handshake.</p>
+     * accepts the handshake. The following handshake types are supported:</p> <ul>
+     * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
+     * organization. It is always sent from the master account to only non-member
+     * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
+     * represents a request to enable all features in an organization. It is always
+     * sent from the master account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the
+     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
+     * Organizations service when all member accounts have approved the
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * account and signals the master that it can finalize the process to enable all
+     * features.</p> </li> </ul>
      */
     inline const ActionType& GetAction() const{ return m_action; }
 
     /**
      * <p>The type of handshake, indicating what action occurs when the recipient
-     * accepts the handshake.</p>
+     * accepts the handshake. The following handshake types are supported:</p> <ul>
+     * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
+     * organization. It is always sent from the master account to only non-member
+     * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
+     * represents a request to enable all features in an organization. It is always
+     * sent from the master account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the
+     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
+     * Organizations service when all member accounts have approved the
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * account and signals the master that it can finalize the process to enable all
+     * features.</p> </li> </ul>
      */
     inline void SetAction(const ActionType& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>The type of handshake, indicating what action occurs when the recipient
-     * accepts the handshake.</p>
+     * accepts the handshake. The following handshake types are supported:</p> <ul>
+     * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
+     * organization. It is always sent from the master account to only non-member
+     * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
+     * represents a request to enable all features in an organization. It is always
+     * sent from the master account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the
+     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
+     * Organizations service when all member accounts have approved the
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * account and signals the master that it can finalize the process to enable all
+     * features.</p> </li> </ul>
      */
     inline void SetAction(ActionType&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The type of handshake, indicating what action occurs when the recipient
-     * accepts the handshake.</p>
+     * accepts the handshake. The following handshake types are supported:</p> <ul>
+     * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
+     * organization. It is always sent from the master account to only non-member
+     * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
+     * represents a request to enable all features in an organization. It is always
+     * sent from the master account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the
+     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
+     * Organizations service when all member accounts have approved the
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * account and signals the master that it can finalize the process to enable all
+     * features.</p> </li> </ul>
      */
     inline Handshake& WithAction(const ActionType& value) { SetAction(value); return *this;}
 
     /**
      * <p>The type of handshake, indicating what action occurs when the recipient
-     * accepts the handshake.</p>
+     * accepts the handshake. The following handshake types are supported:</p> <ul>
+     * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
+     * organization. It is always sent from the master account to only non-member
+     * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
+     * represents a request to enable all features in an organization. It is always
+     * sent from the master account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the
+     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
+     * Organizations service when all member accounts have approved the
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * account and signals the master that it can finalize the process to enable all
+     * features.</p> </li> </ul>
      */
     inline Handshake& WithAction(ActionType&& value) { SetAction(std::move(value)); return *this;}
 

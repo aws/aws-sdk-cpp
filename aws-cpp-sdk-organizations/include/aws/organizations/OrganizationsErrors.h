@@ -55,7 +55,8 @@ enum class OrganizationsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCOUNT_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_DENIED_FOR_DEPENDENCY= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_NOT_FOUND,
   ALREADY_IN_ORGANIZATION,
   A_W_S_ORGANIZATIONS_NOT_IN_USE,
   CHILD_NOT_FOUND,
