@@ -20,6 +20,7 @@
 #include <aws/polly/PollyClient.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <functional>
+#include <memory>
 #include <mutex>
 
 namespace Aws
@@ -34,8 +35,8 @@ namespace Aws
          */
         typedef std::function<void(const char*, const Polly::Model::SynthesizeSpeechOutcome&, bool)> SendTextCompletedHandler;
 
-		typedef std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>> OutputDevicePair;
-		typedef Aws::Vector<OutputDevicePair> OutputDeviceList;
+        typedef std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>> OutputDevicePair;
+        typedef Aws::Vector<OutputDevicePair> OutputDeviceList;
 
         /**
          * Manager for rendering text to the Polly service and then sending directly to an audio driver.
@@ -46,14 +47,15 @@ namespace Aws
          *
          * The drivers used can be arbitrarily overridden to send the stream anywhere you want. Simply provide your own driverFactory implementation.
          */
-        class AWS_TEXT_TO_SPEECH_API TextToSpeechManager
+        class AWS_TEXT_TO_SPEECH_API TextToSpeechManager : public std::enable_shared_from_this<TextToSpeechManager>
         {
         public:
             /**
-             * Initializes a TextToSpeechManager with a polly client and a driver factory.
+             * Create a TextToSpeechManager instance initialized with a polly client and a driver factory.
              * If driver factory is nullptr, we will create a default implementation for your operating system.
              */
-            TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient, const std::shared_ptr<PCMOutputDriverFactory>& driverFactory = nullptr);
+            static std::shared_ptr<TextToSpeechManager> Create(const std::shared_ptr<Polly::PollyClient>& pollyClient,
+                const std::shared_ptr<PCMOutputDriverFactory>& driverFactory = nullptr);
             
             ~TextToSpeechManager();
             TextToSpeechManager(const TextToSpeechManager&) = delete;
@@ -72,7 +74,7 @@ namespace Aws
              * the ability to choose devices is limited. On windows, this will be more detailed. Call this function
              * to determine what to pass to SetActiveDevice().
              */
-			OutputDeviceList EnumerateDevices() const;
+            OutputDeviceList EnumerateDevices() const;
 
             /**
              * Sets the active driver (if there are multiple possbilities), the device to use for that driver, and the 
@@ -92,6 +94,9 @@ namespace Aws
             void SetActiveVoice(const Aws::String& voice);
 
         private:
+            TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient,
+                const std::shared_ptr<PCMOutputDriverFactory>& driverFactory);
+
             void OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&, 
                 const Polly::Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const;
             

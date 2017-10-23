@@ -18,12 +18,14 @@
 #include <aws/polly/model/DescribeVoicesRequest.h>
 #include <aws/polly/model/SynthesizeSpeechRequest.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/threading/Semaphore.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 
 using namespace Aws::TextToSpeech;
 using namespace Aws::Polly;
 using namespace Aws::Polly::Model;
 using namespace Aws::Utils;
+using namespace Aws::Utils::Threading;
 
 static const char* MOCK_DRIVER_NAME = "Mock Driver";
 static const char* ALLOC_TAG = "TextToSpeechManagerTests";
@@ -192,11 +194,11 @@ TEST(TextToSpeechManagerTests, TestListVoicesSuccess)
     describeVoiceResult.AddVoices(voice1).AddVoices(voice2);
 
     auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG);
-    TextToSpeechManager manager(pollyClient);
+    auto manager = TextToSpeechManager::Create(pollyClient);
 
     pollyClient->MockDescribeVoices(describeVoiceResult);
 
-    auto voices = manager.ListAvailableVoices();
+    auto voices = manager->ListAvailableVoices();
 
     ASSERT_EQ(2u, voices.size());
     ASSERT_STREQ(voice1.GetName().c_str(), voices[0].first.c_str());
@@ -208,11 +210,11 @@ TEST(TextToSpeechManagerTests, TestListVoicesSuccess)
 TEST(TextToSpeechManagerTests, TestListVoicesFailure)
 {
     auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG);
-    TextToSpeechManager manager(pollyClient);
+    auto manager = TextToSpeechManager::Create(pollyClient);
 
     pollyClient->MockDescribeVoices(Aws::Client::AWSError<PollyErrors>());
 
-    auto voices = manager.ListAvailableVoices();
+    auto voices = manager->ListAvailableVoices();
 
     ASSERT_EQ(0u, voices.size());    
 }
@@ -228,7 +230,7 @@ TEST(TextToSpeechManagerTests, TestDeviceListAndSelection)
     driverFactory->AddDriver(driver1);
     driverFactory->AddDriver(driver2);
     
-    TextToSpeechManager manager(pollyClient, driverFactory);
+    auto manager = TextToSpeechManager::Create(pollyClient, driverFactory);
 
     DeviceInfo devInfo1;
     devInfo1.deviceId = "device1";
@@ -249,7 +251,7 @@ TEST(TextToSpeechManagerTests, TestDeviceListAndSelection)
     devInfo2.capabilities.push_back(capability);
     driver2->AddDevice(devInfo2);
 
-    auto devices = manager.EnumerateDevices();
+    auto devices = manager->EnumerateDevices();
     ASSERT_EQ(2u, devices.size());
     ASSERT_STREQ(devInfo1.deviceId.c_str(), devices[0].first.deviceId.c_str());
     ASSERT_STREQ(devInfo1.deviceName.c_str(), devices[0].first.deviceName.c_str());
@@ -264,7 +266,7 @@ TEST(TextToSpeechManagerTests, TestDeviceListAndSelection)
     ASSERT_EQ(KHZ_22_5, devices[1].first.capabilities[0].sampleRate);
     ASSERT_EQ(devices[1].second, driver2);
 
-    manager.SetActiveDevice(driver2, devInfo2, devInfo2.capabilities[0]);
+    manager->SetActiveDevice(driver2, devInfo2, devInfo2.capabilities[0]);
     ASSERT_STREQ(devInfo2.deviceId.c_str(), driver2->GetActiveDevice().deviceId.c_str());
     ASSERT_EQ(KHZ_22_5, driver2->GetActiveCaps().sampleRate);
 }
@@ -275,8 +277,61 @@ TEST(TextToSpeechManagerTests, TestDeviceListEmpty)
     
     auto driverFactory = Aws::MakeShared<MockPCMDriverFactory>(ALLOC_TAG);    
 
-    TextToSpeechManager manager(pollyClient, driverFactory);
-    ASSERT_EQ(0u, manager.EnumerateDevices().size());
+    auto manager = TextToSpeechManager::Create(pollyClient, driverFactory);
+    ASSERT_EQ(0u, manager->EnumerateDevices().size());
+}
+
+TEST(TextToSpeechManagerTests, TestTextToSpeechManagerLifetime)
+{
+    auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG);
+
+    auto driver1 = Aws::MakeShared<MockPCMDriver>(ALLOC_TAG);
+    driver1->MockWriteResponse(true);
+
+    auto driverFactory = Aws::MakeShared<MockPCMDriverFactory>(ALLOC_TAG);
+    driverFactory->AddDriver(driver1);
+
+    auto strStream = Aws::New<Aws::StringStream>(ALLOC_TAG);
+    const char STREAM_CONTENT[] = "Stream content. blah blah blah";
+    *strStream << STREAM_CONTENT;
+
+    SynthesizeSpeechResult res;
+    res.ReplaceBody(strStream);
+
+    pollyClient->MockSynthesizeSpeech(std::move(res));
+
+    DeviceInfo devInfo1;
+    devInfo1.deviceId = "device1";
+    devInfo1.deviceName = "deviceName1";
+
+    CapabilityInfo capability;
+    capability.sampleRate = KHZ_8;
+    devInfo1.capabilities.push_back(capability);
+
+    const char* REQUEST_TEXT = "Blah blah blah";
+
+    Aws::Utils::Threading::Semaphore handlerExitSemaphore(0, 1);
+    Aws::Utils::Threading::Semaphore scopeExitSemaphore(0, 1);
+
+    {
+        auto manager = TextToSpeechManager::Create(pollyClient, driverFactory);
+        manager->SetActiveDevice(driver1, devInfo1, capability);
+        manager->SetActiveVoice("Maxim");
+        SendTextCompletedHandler handler = [&](const char*, const SynthesizeSpeechOutcome&, bool)
+        {
+            // scopeExitsemaphore is used to ensure the handler is executed after the manager is "out of scope",
+            // so that the use_count of the manager is 1 in the handler.
+            scopeExitSemaphore.WaitOne();
+            ASSERT_EQ(1u, manager.use_count());
+            // handlerExitSemaphore is used to ensure the main thread is waiting for the async handler thread.
+            handlerExitSemaphore.Release();
+        };
+        manager->SendTextToOutputDevice(REQUEST_TEXT, handler);
+        // use_count for manager should be 2, one in this scope, another in SendTextToOutputDevice calling shared_from_this.
+        ASSERT_EQ(2u, manager.use_count());
+    }
+    scopeExitSemaphore.Release();
+    handlerExitSemaphore.WaitOne();
 }
 
 TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
@@ -301,7 +356,7 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
 
     pollyClient->MockSynthesizeSpeech(std::move(res));
 
-    TextToSpeechManager manager(pollyClient, driverFactory);
+    auto manager = TextToSpeechManager::Create(pollyClient, driverFactory);
 
     DeviceInfo devInfo1;
     devInfo1.deviceId = "device1";
@@ -312,7 +367,7 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
     devInfo1.capabilities.push_back(capability);  
     driver1->AddDevice(devInfo1);
 
-    manager.SetActiveVoice("Maxim");
+    manager->SetActiveVoice("Maxim");
 
     std::mutex lock;
     std::condition_variable semaphore;
@@ -328,7 +383,7 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
         };
 
     std::unique_lock<std::mutex> locker(lock);
-    manager.SendTextToOutputDevice(REQUEST_TEXT, handler);
+    manager->SendTextToOutputDevice(REQUEST_TEXT, handler);
     semaphore.wait(locker);
 
     auto capturedRequest = pollyClient->GetCapturedSynthesizeSpeech();
@@ -362,7 +417,7 @@ TEST(TextToSpeechManagerTests, TestSynthRequestFailedAndNoOutput)
 
     pollyClient->MockSynthesizeSpeech(Aws::Client::AWSError<PollyErrors>(PollyErrors::ACCESS_DENIED, false));
 
-    TextToSpeechManager manager(pollyClient, driverFactory);
+    auto manager = TextToSpeechManager::Create(pollyClient, driverFactory);
 
     DeviceInfo devInfo1;
     devInfo1.deviceId = "device1";
@@ -372,8 +427,8 @@ TEST(TextToSpeechManagerTests, TestSynthRequestFailedAndNoOutput)
     capability.sampleRate = KHZ_8;
     devInfo1.capabilities.push_back(capability);
 
-    manager.SetActiveDevice(driver1, devInfo1, capability);
-    manager.SetActiveVoice("Maxim");
+    manager->SetActiveDevice(driver1, devInfo1, capability);
+    manager->SetActiveVoice("Maxim");
 
     std::mutex lock;
     std::condition_variable semaphore;
@@ -389,7 +444,7 @@ TEST(TextToSpeechManagerTests, TestSynthRequestFailedAndNoOutput)
     };
 
     std::unique_lock<std::mutex> locker(lock);
-    manager.SendTextToOutputDevice(REQUEST_TEXT, handler);
+    manager->SendTextToOutputDevice(REQUEST_TEXT, handler);
     semaphore.wait(locker);
 
     auto capturedRequest = pollyClient->GetCapturedSynthesizeSpeech();

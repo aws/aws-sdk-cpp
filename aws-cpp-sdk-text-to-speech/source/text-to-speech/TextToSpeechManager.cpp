@@ -35,6 +35,21 @@ namespace Aws
             SendTextCompletedHandler callback;
         };
 
+        std::shared_ptr<TextToSpeechManager> TextToSpeechManager::Create(const std::shared_ptr<Polly::PollyClient>& pollyClient,
+            const std::shared_ptr<PCMOutputDriverFactory>& driverFactory)
+        {
+            // Because TextToSpeechManager's ctor is private (to ensure it's always constructed as a shared_ptr)
+            // Aws::MakeShared does not have access to that private constructor. This workaround essentially 
+            // enables Aws::MakeShared to construct TextToSpeechManager.
+            struct MakeSharedEnabler : public TextToSpeechManager {
+                MakeSharedEnabler(const std::shared_ptr<Polly::PollyClient>& pollyClient,
+                    const std::shared_ptr<PCMOutputDriverFactory>& driverFactory)
+                    : TextToSpeechManager(pollyClient, driverFactory) {}
+            };
+            
+            return Aws::MakeShared<MakeSharedEnabler>(CLASS_TAG, pollyClient, driverFactory);
+        }
+
         TextToSpeechManager::TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient, 
             const std::shared_ptr<PCMOutputDriverFactory>& driverFactory) 
             : m_pollyClient(pollyClient), m_activeVoice(VoiceId::Kimberly)
@@ -67,22 +82,23 @@ namespace Aws
             auto context = Aws::MakeShared<SendTextCompletionHandlerCallbackContext>(CLASS_TAG);
             context->callback = handler;
 
-            m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest, [this](const Polly::PollyClient* client, const Polly::Model::SynthesizeSpeechRequest& request,
+            auto self = shared_from_this();
+            m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest, [self](const Polly::PollyClient* client, const Polly::Model::SynthesizeSpeechRequest& request,
                 const Polly::Model::SynthesizeSpeechOutcome& speechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
-            {OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, context);}, context);
+            {self -> OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, context);}, context);
         }
 
-		OutputDeviceList TextToSpeechManager::EnumerateDevices() const
+        OutputDeviceList TextToSpeechManager::EnumerateDevices() const
         {
-			OutputDeviceList deviceDriverList;
+            OutputDeviceList deviceDriverList;
 
             for (auto& driver : m_drivers)
             {
-				std::lock_guard<std::mutex> m(m_driverLock);
+                std::lock_guard<std::mutex> m(m_driverLock);
                 for (auto& deviceInfo : driver->EnumerateDevices())
                 {
                     AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Adding device " << deviceInfo.deviceName << " for driver " << driver->GetName());
-					OutputDevicePair device(deviceInfo, driver);
+                    OutputDevicePair device(deviceInfo, driver);
                     deviceDriverList.push_back(device);
                 }
             }
