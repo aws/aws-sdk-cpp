@@ -42,8 +42,6 @@ WriteCampaignRequest::WriteCampaignRequest() :
     m_segmentIdHasBeenSet(false),
     m_segmentVersion(0),
     m_segmentVersionHasBeenSet(false),
-    m_trace(false),
-    m_traceHasBeenSet(false),
     m_treatmentDescriptionHasBeenSet(false),
     m_treatmentNameHasBeenSet(false)
 {
@@ -63,8 +61,6 @@ WriteCampaignRequest::WriteCampaignRequest(const JsonValue& jsonValue) :
     m_segmentIdHasBeenSet(false),
     m_segmentVersion(0),
     m_segmentVersionHasBeenSet(false),
-    m_trace(false),
-    m_traceHasBeenSet(false),
     m_treatmentDescriptionHasBeenSet(false),
     m_treatmentNameHasBeenSet(false)
 {
@@ -144,13 +140,6 @@ WriteCampaignRequest& WriteCampaignRequest::operator =(const JsonValue& jsonValu
     m_segmentVersion = jsonValue.GetInteger("SegmentVersion");
 
     m_segmentVersionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Trace"))
-  {
-    m_trace = jsonValue.GetBool("Trace");
-
-    m_traceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TreatmentDescription"))
@@ -236,12 +225,6 @@ JsonValue WriteCampaignRequest::Jsonize() const
   if(m_segmentVersionHasBeenSet)
   {
    payload.WithInteger("SegmentVersion", m_segmentVersion);
-
-  }
-
-  if(m_traceHasBeenSet)
-  {
-   payload.WithBool("Trace", m_trace);
 
   }
 

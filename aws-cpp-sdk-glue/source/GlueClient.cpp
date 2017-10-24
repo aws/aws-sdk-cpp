@@ -32,6 +32,7 @@
 #include <aws/glue/model/BatchDeletePartitionRequest.h>
 #include <aws/glue/model/BatchDeleteTableRequest.h>
 #include <aws/glue/model/BatchGetPartitionRequest.h>
+#include <aws/glue/model/BatchStopJobRunRequest.h>
 #include <aws/glue/model/CreateClassifierRequest.h>
 #include <aws/glue/model/CreateConnectionRequest.h>
 #include <aws/glue/model/CreateCrawlerRequest.h>
@@ -339,6 +340,41 @@ void GlueClient::BatchGetPartitionAsync(const BatchGetPartitionRequest& request,
 void GlueClient::BatchGetPartitionAsyncHelper(const BatchGetPartitionRequest& request, const BatchGetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchGetPartition(request), context);
+}
+
+BatchStopJobRunOutcome GlueClient::BatchStopJobRun(const BatchStopJobRunRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchStopJobRunOutcome(BatchStopJobRunResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchStopJobRunOutcome(outcome.GetError());
+  }
+}
+
+BatchStopJobRunOutcomeCallable GlueClient::BatchStopJobRunCallable(const BatchStopJobRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchStopJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchStopJobRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::BatchStopJobRunAsync(const BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchStopJobRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::BatchStopJobRunAsyncHelper(const BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchStopJobRun(request), context);
 }
 
 CreateClassifierOutcome GlueClient::CreateClassifier(const CreateClassifierRequest& request) const

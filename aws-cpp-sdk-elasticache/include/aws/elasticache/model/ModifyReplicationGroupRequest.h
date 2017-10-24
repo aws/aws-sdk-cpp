@@ -240,33 +240,33 @@ namespace Model
     /**
      * <p>Determines whether a read replica is automatically promoted to read/write
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
-     * <code>true</code> | <code>false</code> </p> <note> <p>ElastiCache Multi-AZ
-     * replication groups are not supported on:</p> <ul> <li> <p>Redis versions earlier
-     * than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled):T1 and T2 cache node
-     * types.</p> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
-     * </note>
+     * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
+     * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
+     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2
+     * cache node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node
+     * types.</p> </li> </ul>
      */
     inline bool GetAutomaticFailoverEnabled() const{ return m_automaticFailoverEnabled; }
 
     /**
      * <p>Determines whether a read replica is automatically promoted to read/write
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
-     * <code>true</code> | <code>false</code> </p> <note> <p>ElastiCache Multi-AZ
-     * replication groups are not supported on:</p> <ul> <li> <p>Redis versions earlier
-     * than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled):T1 and T2 cache node
-     * types.</p> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
-     * </note>
+     * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
+     * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
+     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2
+     * cache node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node
+     * types.</p> </li> </ul>
      */
     inline void SetAutomaticFailoverEnabled(bool value) { m_automaticFailoverEnabledHasBeenSet = true; m_automaticFailoverEnabled = value; }
 
     /**
      * <p>Determines whether a read replica is automatically promoted to read/write
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
-     * <code>true</code> | <code>false</code> </p> <note> <p>ElastiCache Multi-AZ
-     * replication groups are not supported on:</p> <ul> <li> <p>Redis versions earlier
-     * than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled):T1 and T2 cache node
-     * types.</p> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
-     * </note>
+     * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
+     * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
+     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2
+     * cache node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node
+     * types.</p> </li> </ul>
      */
     inline ModifyReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
 

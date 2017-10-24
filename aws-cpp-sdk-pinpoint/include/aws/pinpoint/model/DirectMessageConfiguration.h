@@ -20,7 +20,6 @@
 #include <aws/pinpoint/model/BaiduMessage.h>
 #include <aws/pinpoint/model/DefaultMessage.h>
 #include <aws/pinpoint/model/DefaultPushNotificationMessage.h>
-#include <aws/pinpoint/model/EmailMessage.h>
 #include <aws/pinpoint/model/GCMMessage.h>
 #include <aws/pinpoint/model/SMSMessage.h>
 #include <utility>
@@ -189,32 +188,6 @@ namespace Model
 
 
     /**
-     * The message to Email channels. Overrides the default message.
-     */
-    inline const EmailMessage& GetEmailMessage() const{ return m_emailMessage; }
-
-    /**
-     * The message to Email channels. Overrides the default message.
-     */
-    inline void SetEmailMessage(const EmailMessage& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
-
-    /**
-     * The message to Email channels. Overrides the default message.
-     */
-    inline void SetEmailMessage(EmailMessage&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::move(value); }
-
-    /**
-     * The message to Email channels. Overrides the default message.
-     */
-    inline DirectMessageConfiguration& WithEmailMessage(const EmailMessage& value) { SetEmailMessage(value); return *this;}
-
-    /**
-     * The message to Email channels. Overrides the default message.
-     */
-    inline DirectMessageConfiguration& WithEmailMessage(EmailMessage&& value) { SetEmailMessage(std::move(value)); return *this;}
-
-
-    /**
      * The message to GCM channels. Overrides the default push notification message.
      */
     inline const GCMMessage& GetGCMMessage() const{ return m_gCMMessage; }
@@ -281,9 +254,6 @@ namespace Model
 
     DefaultPushNotificationMessage m_defaultPushNotificationMessage;
     bool m_defaultPushNotificationMessageHasBeenSet;
-
-    EmailMessage m_emailMessage;
-    bool m_emailMessageHasBeenSet;
 
     GCMMessage m_gCMMessage;
     bool m_gCMMessageHasBeenSet;

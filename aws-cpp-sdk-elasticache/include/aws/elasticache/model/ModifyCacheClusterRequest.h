@@ -190,7 +190,7 @@ namespace Model
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
      * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
      * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
-     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5)
      * cache node IDs to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheNodeIdsToRemove() const{ return m_cacheNodeIdsToRemove; }
@@ -203,7 +203,7 @@ namespace Model
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
      * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
      * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
-     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5)
      * cache node IDs to remove.</p>
      */
     inline void SetCacheNodeIdsToRemove(const Aws::Vector<Aws::String>& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove = value; }
@@ -216,7 +216,7 @@ namespace Model
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
      * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
      * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
-     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5)
      * cache node IDs to remove.</p>
      */
     inline void SetCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove = std::move(value); }
@@ -229,7 +229,7 @@ namespace Model
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
      * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
      * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
-     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5)
      * cache node IDs to remove.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheNodeIdsToRemove(const Aws::Vector<Aws::String>& value) { SetCacheNodeIdsToRemove(value); return *this;}
@@ -242,7 +242,7 @@ namespace Model
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
      * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
      * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
-     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5)
      * cache node IDs to remove.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { SetCacheNodeIdsToRemove(std::move(value)); return *this;}
@@ -255,7 +255,7 @@ namespace Model
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
      * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
      * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
-     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5)
      * cache node IDs to remove.</p>
      */
     inline ModifyCacheClusterRequest& AddCacheNodeIdsToRemove(const Aws::String& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
@@ -268,7 +268,7 @@ namespace Model
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
      * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
      * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
-     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5)
      * cache node IDs to remove.</p>
      */
     inline ModifyCacheClusterRequest& AddCacheNodeIdsToRemove(Aws::String&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(std::move(value)); return *this; }
@@ -281,7 +281,7 @@ namespace Model
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
      * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
      * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
-     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5)
      * cache node IDs to remove.</p>
      */
     inline ModifyCacheClusterRequest& AddCacheNodeIdsToRemove(const char* value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }

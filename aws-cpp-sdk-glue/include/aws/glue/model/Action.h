@@ -33,6 +33,11 @@ namespace Glue
 namespace Model
 {
 
+  /**
+   * <p>Defines an action to be initiated by a trigger.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Action">AWS API
+   * Reference</a></p>
+   */
   class AWS_GLUE_API Action
   {
   public:
@@ -42,62 +47,100 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The name of a job to be executed.</p>
+     */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
-    
+    /**
+     * <p>The name of a job to be executed.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
-    
+    /**
+     * <p>The name of a job to be executed.</p>
+     */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
-    
+    /**
+     * <p>The name of a job to be executed.</p>
+     */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
-    
+    /**
+     * <p>The name of a job to be executed.</p>
+     */
     inline Action& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
-    
+    /**
+     * <p>The name of a job to be executed.</p>
+     */
     inline Action& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of a job to be executed.</p>
+     */
     inline Action& WithJobName(const char* value) { SetJobName(value); return *this;}
 
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline Action& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline Action& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline Action& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline Action& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline Action& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline Action& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline Action& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline Action& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p>Arguments to be passed to the job.</p>
+     */
     inline Action& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
   private:

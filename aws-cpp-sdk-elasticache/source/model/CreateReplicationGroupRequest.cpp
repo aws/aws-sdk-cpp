@@ -53,7 +53,11 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
     m_snapshotWindowHasBeenSet(false),
-    m_authTokenHasBeenSet(false)
+    m_authTokenHasBeenSet(false),
+    m_transitEncryptionEnabled(false),
+    m_transitEncryptionEnabledHasBeenSet(false),
+    m_atRestEncryptionEnabled(false),
+    m_atRestEncryptionEnabledHasBeenSet(false)
 {
 }
 
@@ -223,6 +227,16 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_authTokenHasBeenSet)
   {
     ss << "AuthToken=" << StringUtils::URLEncode(m_authToken.c_str()) << "&";
+  }
+
+  if(m_transitEncryptionEnabledHasBeenSet)
+  {
+    ss << "TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
+  }
+
+  if(m_atRestEncryptionEnabledHasBeenSet)
+  {
+    ss << "AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
   }
 
   ss << "Version=2015-02-02";

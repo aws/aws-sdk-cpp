@@ -34,6 +34,11 @@ namespace Glue
 namespace Model
 {
 
+  /**
+   * <p>Defines a condition under which a trigger fires.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Condition">AWS
+   * API Reference</a></p>
+   */
   class AWS_GLUE_API Condition
   {
   public:
@@ -43,57 +48,91 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>A logical operator.</p>
+     */
     inline const LogicalOperator& GetLogicalOperator() const{ return m_logicalOperator; }
 
-    
+    /**
+     * <p>A logical operator.</p>
+     */
     inline void SetLogicalOperator(const LogicalOperator& value) { m_logicalOperatorHasBeenSet = true; m_logicalOperator = value; }
 
-    
+    /**
+     * <p>A logical operator.</p>
+     */
     inline void SetLogicalOperator(LogicalOperator&& value) { m_logicalOperatorHasBeenSet = true; m_logicalOperator = std::move(value); }
 
-    
+    /**
+     * <p>A logical operator.</p>
+     */
     inline Condition& WithLogicalOperator(const LogicalOperator& value) { SetLogicalOperator(value); return *this;}
 
-    
+    /**
+     * <p>A logical operator.</p>
+     */
     inline Condition& WithLogicalOperator(LogicalOperator&& value) { SetLogicalOperator(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The name of the job in question.</p>
+     */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
-    
+    /**
+     * <p>The name of the job in question.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
-    
+    /**
+     * <p>The name of the job in question.</p>
+     */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the job in question.</p>
+     */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
-    
+    /**
+     * <p>The name of the job in question.</p>
+     */
     inline Condition& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the job in question.</p>
+     */
     inline Condition& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the job in question.</p>
+     */
     inline Condition& WithJobName(const char* value) { SetJobName(value); return *this;}
 
 
-    
+    /**
+     * <p>The condition state.</p>
+     */
     inline const JobRunState& GetState() const{ return m_state; }
 
-    
+    /**
+     * <p>The condition state.</p>
+     */
     inline void SetState(const JobRunState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    
+    /**
+     * <p>The condition state.</p>
+     */
     inline void SetState(JobRunState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
-    
+    /**
+     * <p>The condition state.</p>
+     */
     inline Condition& WithState(const JobRunState& value) { SetState(value); return *this;}
 
-    
+    /**
+     * <p>The condition state.</p>
+     */
     inline Condition& WithState(JobRunState&& value) { SetState(std::move(value)); return *this;}
 
   private:

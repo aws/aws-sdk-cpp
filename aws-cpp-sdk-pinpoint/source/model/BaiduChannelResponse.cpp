@@ -34,6 +34,8 @@ BaiduChannelResponse::BaiduChannelResponse() :
     m_credentialHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
+    m_hasCredential(false),
+    m_hasCredentialHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
@@ -51,6 +53,8 @@ BaiduChannelResponse::BaiduChannelResponse(const JsonValue& jsonValue) :
     m_credentialHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
+    m_hasCredential(false),
+    m_hasCredentialHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
@@ -91,6 +95,13 @@ BaiduChannelResponse& BaiduChannelResponse::operator =(const JsonValue& jsonValu
     m_enabled = jsonValue.GetBool("Enabled");
 
     m_enabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HasCredential"))
+  {
+    m_hasCredential = jsonValue.GetBool("HasCredential");
+
+    m_hasCredentialHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Id"))
@@ -163,6 +174,12 @@ JsonValue BaiduChannelResponse::Jsonize() const
   if(m_enabledHasBeenSet)
   {
    payload.WithBool("Enabled", m_enabled);
+
+  }
+
+  if(m_hasCredentialHasBeenSet)
+  {
+   payload.WithBool("HasCredential", m_hasCredential);
 
   }
 

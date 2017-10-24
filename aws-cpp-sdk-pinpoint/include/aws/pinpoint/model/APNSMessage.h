@@ -214,6 +214,49 @@ namespace Model
 
 
     /**
+     * Multiple notifications with the same collapse identifier are displayed to the
+     * user as a single notification. The value of this key must not exceed 64 bytes.
+     */
+    inline const Aws::String& GetCollapseId() const{ return m_collapseId; }
+
+    /**
+     * Multiple notifications with the same collapse identifier are displayed to the
+     * user as a single notification. The value of this key must not exceed 64 bytes.
+     */
+    inline void SetCollapseId(const Aws::String& value) { m_collapseIdHasBeenSet = true; m_collapseId = value; }
+
+    /**
+     * Multiple notifications with the same collapse identifier are displayed to the
+     * user as a single notification. The value of this key must not exceed 64 bytes.
+     */
+    inline void SetCollapseId(Aws::String&& value) { m_collapseIdHasBeenSet = true; m_collapseId = std::move(value); }
+
+    /**
+     * Multiple notifications with the same collapse identifier are displayed to the
+     * user as a single notification. The value of this key must not exceed 64 bytes.
+     */
+    inline void SetCollapseId(const char* value) { m_collapseIdHasBeenSet = true; m_collapseId.assign(value); }
+
+    /**
+     * Multiple notifications with the same collapse identifier are displayed to the
+     * user as a single notification. The value of this key must not exceed 64 bytes.
+     */
+    inline APNSMessage& WithCollapseId(const Aws::String& value) { SetCollapseId(value); return *this;}
+
+    /**
+     * Multiple notifications with the same collapse identifier are displayed to the
+     * user as a single notification. The value of this key must not exceed 64 bytes.
+     */
+    inline APNSMessage& WithCollapseId(Aws::String&& value) { SetCollapseId(std::move(value)); return *this;}
+
+    /**
+     * Multiple notifications with the same collapse identifier are displayed to the
+     * user as a single notification. The value of this key must not exceed 64 bytes.
+     */
+    inline APNSMessage& WithCollapseId(const char* value) { SetCollapseId(value); return *this;}
+
+
+    /**
      * The data payload used for a silent push. This payload is added to the
      * notifications' data.pinpoint.jsonBody' object
      */
@@ -287,49 +330,6 @@ namespace Model
 
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline const Aws::String& GetJsonData() const{ return m_jsonData; }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline void SetJsonData(const Aws::String& value) { m_jsonDataHasBeenSet = true; m_jsonData = value; }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline void SetJsonData(Aws::String&& value) { m_jsonDataHasBeenSet = true; m_jsonData = std::move(value); }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline void SetJsonData(const char* value) { m_jsonDataHasBeenSet = true; m_jsonData.assign(value); }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline APNSMessage& WithJsonData(const Aws::String& value) { SetJsonData(value); return *this;}
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline APNSMessage& WithJsonData(Aws::String&& value) { SetJsonData(std::move(value)); return *this;}
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline APNSMessage& WithJsonData(const char* value) { SetJsonData(value); return *this;}
-
-
-    /**
      * The URL that points to a video used in the push notification.
      */
     inline const Aws::String& GetMediaUrl() const{ return m_mediaUrl; }
@@ -399,6 +399,42 @@ namespace Model
      * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
      */
     inline APNSMessage& WithPreferredAuthenticationMethod(const char* value) { SetPreferredAuthenticationMethod(value); return *this;}
+
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     */
+    inline const Aws::String& GetPriority() const{ return m_priority; }
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     */
+    inline void SetPriority(const Aws::String& value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     */
+    inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     */
+    inline void SetPriority(const char* value) { m_priorityHasBeenSet = true; m_priority.assign(value); }
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     */
+    inline APNSMessage& WithPriority(const Aws::String& value) { SetPriority(value); return *this;}
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     */
+    inline APNSMessage& WithPriority(Aws::String&& value) { SetPriority(std::move(value)); return *this;}
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     */
+    inline APNSMessage& WithPriority(const char* value) { SetPriority(value); return *this;}
 
 
     /**
@@ -638,6 +674,34 @@ namespace Model
 
 
     /**
+     * This parameter specifies how long (in seconds) the message should be kept if
+     * APNS is unable to deliver the notification the first time. If the value is 0,
+     * APNS treats the notification as if it expires immediately and does not store the
+     * notification or attempt to redeliver it. This value is converted to the
+     * expiration field when sent to APNS
+     */
+    inline int GetTimeToLive() const{ return m_timeToLive; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept if
+     * APNS is unable to deliver the notification the first time. If the value is 0,
+     * APNS treats the notification as if it expires immediately and does not store the
+     * notification or attempt to redeliver it. This value is converted to the
+     * expiration field when sent to APNS
+     */
+    inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept if
+     * APNS is unable to deliver the notification the first time. If the value is 0,
+     * APNS treats the notification as if it expires immediately and does not store the
+     * notification or attempt to redeliver it. This value is converted to the
+     * expiration field when sent to APNS
+     */
+    inline APNSMessage& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
+
+
+    /**
      * The message title that displays above the message on the user's device.
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
@@ -729,17 +793,20 @@ namespace Model
     Aws::String m_category;
     bool m_categoryHasBeenSet;
 
+    Aws::String m_collapseId;
+    bool m_collapseIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_data;
     bool m_dataHasBeenSet;
-
-    Aws::String m_jsonData;
-    bool m_jsonDataHasBeenSet;
 
     Aws::String m_mediaUrl;
     bool m_mediaUrlHasBeenSet;
 
     Aws::String m_preferredAuthenticationMethod;
     bool m_preferredAuthenticationMethodHasBeenSet;
+
+    Aws::String m_priority;
+    bool m_priorityHasBeenSet;
 
     Aws::String m_rawContent;
     bool m_rawContentHasBeenSet;
@@ -755,6 +822,9 @@ namespace Model
 
     Aws::String m_threadId;
     bool m_threadIdHasBeenSet;
+
+    int m_timeToLive;
+    bool m_timeToLiveHasBeenSet;
 
     Aws::String m_title;
     bool m_titleHasBeenSet;

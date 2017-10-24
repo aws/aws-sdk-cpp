@@ -25,7 +25,9 @@ using namespace Aws::Utils;
 UpdateDevEndpointRequest::UpdateDevEndpointRequest() : 
     m_endpointNameHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
-    m_customLibrariesHasBeenSet(false)
+    m_customLibrariesHasBeenSet(false),
+    m_updateEtlLibraries(false),
+    m_updateEtlLibrariesHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,12 @@ Aws::String UpdateDevEndpointRequest::SerializePayload() const
   if(m_customLibrariesHasBeenSet)
   {
    payload.WithObject("CustomLibraries", m_customLibraries.Jsonize());
+
+  }
+
+  if(m_updateEtlLibrariesHasBeenSet)
+  {
+   payload.WithBool("UpdateEtlLibraries", m_updateEtlLibraries);
 
   }
 

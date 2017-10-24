@@ -38,7 +38,6 @@ ADMMessage::ADMMessage() :
     m_iconReferenceHasBeenSet(false),
     m_imageIconUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_jsonDataHasBeenSet(false),
     m_mD5HasBeenSet(false),
     m_rawContentHasBeenSet(false),
     m_silentPush(false),
@@ -61,7 +60,6 @@ ADMMessage::ADMMessage(const JsonValue& jsonValue) :
     m_iconReferenceHasBeenSet(false),
     m_imageIconUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_jsonDataHasBeenSet(false),
     m_mD5HasBeenSet(false),
     m_rawContentHasBeenSet(false),
     m_silentPush(false),
@@ -134,13 +132,6 @@ ADMMessage& ADMMessage::operator =(const JsonValue& jsonValue)
     m_imageUrl = jsonValue.GetString("ImageUrl");
 
     m_imageUrlHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("JsonData"))
-  {
-    m_jsonData = jsonValue.GetString("JsonData");
-
-    m_jsonDataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MD5"))
@@ -265,12 +256,6 @@ JsonValue ADMMessage::Jsonize() const
   if(m_imageUrlHasBeenSet)
   {
    payload.WithString("ImageUrl", m_imageUrl);
-
-  }
-
-  if(m_jsonDataHasBeenSet)
-  {
-   payload.WithString("JsonData", m_jsonData);
 
   }
 

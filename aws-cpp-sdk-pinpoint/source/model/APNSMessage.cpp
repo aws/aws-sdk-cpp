@@ -35,16 +35,19 @@ APNSMessage::APNSMessage() :
     m_badgeHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_categoryHasBeenSet(false),
+    m_collapseIdHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_jsonDataHasBeenSet(false),
     m_mediaUrlHasBeenSet(false),
     m_preferredAuthenticationMethodHasBeenSet(false),
+    m_priorityHasBeenSet(false),
     m_rawContentHasBeenSet(false),
     m_silentPush(false),
     m_silentPushHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_substitutionsHasBeenSet(false),
     m_threadIdHasBeenSet(false),
+    m_timeToLive(0),
+    m_timeToLiveHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
@@ -57,16 +60,19 @@ APNSMessage::APNSMessage(const JsonValue& jsonValue) :
     m_badgeHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_categoryHasBeenSet(false),
+    m_collapseIdHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_jsonDataHasBeenSet(false),
     m_mediaUrlHasBeenSet(false),
     m_preferredAuthenticationMethodHasBeenSet(false),
+    m_priorityHasBeenSet(false),
     m_rawContentHasBeenSet(false),
     m_silentPush(false),
     m_silentPushHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_substitutionsHasBeenSet(false),
     m_threadIdHasBeenSet(false),
+    m_timeToLive(0),
+    m_timeToLiveHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
@@ -103,6 +109,13 @@ APNSMessage& APNSMessage::operator =(const JsonValue& jsonValue)
     m_categoryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CollapseId"))
+  {
+    m_collapseId = jsonValue.GetString("CollapseId");
+
+    m_collapseIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Data"))
   {
     Aws::Map<Aws::String, JsonValue> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
@@ -111,13 +124,6 @@ APNSMessage& APNSMessage::operator =(const JsonValue& jsonValue)
       m_data[dataItem.first] = dataItem.second.AsString();
     }
     m_dataHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("JsonData"))
-  {
-    m_jsonData = jsonValue.GetString("JsonData");
-
-    m_jsonDataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MediaUrl"))
@@ -132,6 +138,13 @@ APNSMessage& APNSMessage::operator =(const JsonValue& jsonValue)
     m_preferredAuthenticationMethod = jsonValue.GetString("PreferredAuthenticationMethod");
 
     m_preferredAuthenticationMethodHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Priority"))
+  {
+    m_priority = jsonValue.GetString("Priority");
+
+    m_priorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RawContent"))
@@ -179,6 +192,13 @@ APNSMessage& APNSMessage::operator =(const JsonValue& jsonValue)
     m_threadIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimeToLive"))
+  {
+    m_timeToLive = jsonValue.GetInteger("TimeToLive");
+
+    m_timeToLiveHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
@@ -223,6 +243,12 @@ JsonValue APNSMessage::Jsonize() const
 
   }
 
+  if(m_collapseIdHasBeenSet)
+  {
+   payload.WithString("CollapseId", m_collapseId);
+
+  }
+
   if(m_dataHasBeenSet)
   {
    JsonValue dataJsonMap;
@@ -231,12 +257,6 @@ JsonValue APNSMessage::Jsonize() const
      dataJsonMap.WithString(dataItem.first, dataItem.second);
    }
    payload.WithObject("Data", std::move(dataJsonMap));
-
-  }
-
-  if(m_jsonDataHasBeenSet)
-  {
-   payload.WithString("JsonData", m_jsonData);
 
   }
 
@@ -249,6 +269,12 @@ JsonValue APNSMessage::Jsonize() const
   if(m_preferredAuthenticationMethodHasBeenSet)
   {
    payload.WithString("PreferredAuthenticationMethod", m_preferredAuthenticationMethod);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithString("Priority", m_priority);
 
   }
 
@@ -289,6 +315,12 @@ JsonValue APNSMessage::Jsonize() const
   if(m_threadIdHasBeenSet)
   {
    payload.WithString("ThreadId", m_threadId);
+
+  }
+
+  if(m_timeToLiveHasBeenSet)
+  {
+   payload.WithInteger("TimeToLive", m_timeToLive);
 
   }
 

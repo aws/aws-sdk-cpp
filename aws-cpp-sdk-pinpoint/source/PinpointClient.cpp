@@ -34,6 +34,8 @@
 #include <aws/pinpoint/model/DeleteAdmChannelRequest.h>
 #include <aws/pinpoint/model/DeleteApnsChannelRequest.h>
 #include <aws/pinpoint/model/DeleteApnsSandboxChannelRequest.h>
+#include <aws/pinpoint/model/DeleteApnsVoipChannelRequest.h>
+#include <aws/pinpoint/model/DeleteApnsVoipSandboxChannelRequest.h>
 #include <aws/pinpoint/model/DeleteAppRequest.h>
 #include <aws/pinpoint/model/DeleteBaiduChannelRequest.h>
 #include <aws/pinpoint/model/DeleteCampaignRequest.h>
@@ -45,6 +47,8 @@
 #include <aws/pinpoint/model/GetAdmChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsSandboxChannelRequest.h>
+#include <aws/pinpoint/model/GetApnsVoipChannelRequest.h>
+#include <aws/pinpoint/model/GetApnsVoipSandboxChannelRequest.h>
 #include <aws/pinpoint/model/GetAppRequest.h>
 #include <aws/pinpoint/model/GetApplicationSettingsRequest.h>
 #include <aws/pinpoint/model/GetAppsRequest.h>
@@ -72,6 +76,8 @@
 #include <aws/pinpoint/model/UpdateAdmChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApnsChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApnsSandboxChannelRequest.h>
+#include <aws/pinpoint/model/UpdateApnsVoipChannelRequest.h>
+#include <aws/pinpoint/model/UpdateApnsVoipSandboxChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApplicationSettingsRequest.h>
 #include <aws/pinpoint/model/UpdateBaiduChannelRequest.h>
 #include <aws/pinpoint/model/UpdateCampaignRequest.h>
@@ -389,6 +395,76 @@ void PinpointClient::DeleteApnsSandboxChannelAsync(const DeleteApnsSandboxChanne
 void PinpointClient::DeleteApnsSandboxChannelAsyncHelper(const DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteApnsSandboxChannel(request), context);
+}
+
+DeleteApnsVoipChannelOutcome PinpointClient::DeleteApnsVoipChannel(const DeleteApnsVoipChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/apns_voip";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteApnsVoipChannelOutcome(DeleteApnsVoipChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteApnsVoipChannelOutcome(outcome.GetError());
+  }
+}
+
+DeleteApnsVoipChannelOutcomeCallable PinpointClient::DeleteApnsVoipChannelCallable(const DeleteApnsVoipChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApnsVoipChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApnsVoipChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteApnsVoipChannelAsync(const DeleteApnsVoipChannelRequest& request, const DeleteApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteApnsVoipChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteApnsVoipChannelAsyncHelper(const DeleteApnsVoipChannelRequest& request, const DeleteApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApnsVoipChannel(request), context);
+}
+
+DeleteApnsVoipSandboxChannelOutcome PinpointClient::DeleteApnsVoipSandboxChannel(const DeleteApnsVoipSandboxChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/apns_voip_sandbox";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteApnsVoipSandboxChannelOutcome(DeleteApnsVoipSandboxChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteApnsVoipSandboxChannelOutcome(outcome.GetError());
+  }
+}
+
+DeleteApnsVoipSandboxChannelOutcomeCallable PinpointClient::DeleteApnsVoipSandboxChannelCallable(const DeleteApnsVoipSandboxChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApnsVoipSandboxChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApnsVoipSandboxChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteApnsVoipSandboxChannelAsync(const DeleteApnsVoipSandboxChannelRequest& request, const DeleteApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteApnsVoipSandboxChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteApnsVoipSandboxChannelAsyncHelper(const DeleteApnsVoipSandboxChannelRequest& request, const DeleteApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApnsVoipSandboxChannel(request), context);
 }
 
 DeleteAppOutcome PinpointClient::DeleteApp(const DeleteAppRequest& request) const
@@ -774,6 +850,76 @@ void PinpointClient::GetApnsSandboxChannelAsync(const GetApnsSandboxChannelReque
 void PinpointClient::GetApnsSandboxChannelAsyncHelper(const GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetApnsSandboxChannel(request), context);
+}
+
+GetApnsVoipChannelOutcome PinpointClient::GetApnsVoipChannel(const GetApnsVoipChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/apns_voip";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetApnsVoipChannelOutcome(GetApnsVoipChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetApnsVoipChannelOutcome(outcome.GetError());
+  }
+}
+
+GetApnsVoipChannelOutcomeCallable PinpointClient::GetApnsVoipChannelCallable(const GetApnsVoipChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetApnsVoipChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApnsVoipChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetApnsVoipChannelAsync(const GetApnsVoipChannelRequest& request, const GetApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetApnsVoipChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetApnsVoipChannelAsyncHelper(const GetApnsVoipChannelRequest& request, const GetApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetApnsVoipChannel(request), context);
+}
+
+GetApnsVoipSandboxChannelOutcome PinpointClient::GetApnsVoipSandboxChannel(const GetApnsVoipSandboxChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/apns_voip_sandbox";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetApnsVoipSandboxChannelOutcome(GetApnsVoipSandboxChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetApnsVoipSandboxChannelOutcome(outcome.GetError());
+  }
+}
+
+GetApnsVoipSandboxChannelOutcomeCallable PinpointClient::GetApnsVoipSandboxChannelCallable(const GetApnsVoipSandboxChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetApnsVoipSandboxChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApnsVoipSandboxChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetApnsVoipSandboxChannelAsync(const GetApnsVoipSandboxChannelRequest& request, const GetApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetApnsVoipSandboxChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetApnsVoipSandboxChannelAsyncHelper(const GetApnsVoipSandboxChannelRequest& request, const GetApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetApnsVoipSandboxChannel(request), context);
 }
 
 GetAppOutcome PinpointClient::GetApp(const GetAppRequest& request) const
@@ -1721,6 +1867,76 @@ void PinpointClient::UpdateApnsSandboxChannelAsync(const UpdateApnsSandboxChanne
 void PinpointClient::UpdateApnsSandboxChannelAsyncHelper(const UpdateApnsSandboxChannelRequest& request, const UpdateApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateApnsSandboxChannel(request), context);
+}
+
+UpdateApnsVoipChannelOutcome PinpointClient::UpdateApnsVoipChannel(const UpdateApnsVoipChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/apns_voip";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateApnsVoipChannelOutcome(UpdateApnsVoipChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateApnsVoipChannelOutcome(outcome.GetError());
+  }
+}
+
+UpdateApnsVoipChannelOutcomeCallable PinpointClient::UpdateApnsVoipChannelCallable(const UpdateApnsVoipChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApnsVoipChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApnsVoipChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateApnsVoipChannelAsync(const UpdateApnsVoipChannelRequest& request, const UpdateApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApnsVoipChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateApnsVoipChannelAsyncHelper(const UpdateApnsVoipChannelRequest& request, const UpdateApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApnsVoipChannel(request), context);
+}
+
+UpdateApnsVoipSandboxChannelOutcome PinpointClient::UpdateApnsVoipSandboxChannel(const UpdateApnsVoipSandboxChannelRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/apps/{application-id}/channels/apns_voip_sandbox";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateApnsVoipSandboxChannelOutcome(UpdateApnsVoipSandboxChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateApnsVoipSandboxChannelOutcome(outcome.GetError());
+  }
+}
+
+UpdateApnsVoipSandboxChannelOutcomeCallable PinpointClient::UpdateApnsVoipSandboxChannelCallable(const UpdateApnsVoipSandboxChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApnsVoipSandboxChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApnsVoipSandboxChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateApnsVoipSandboxChannelAsync(const UpdateApnsVoipSandboxChannelRequest& request, const UpdateApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApnsVoipSandboxChannelAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateApnsVoipSandboxChannelAsyncHelper(const UpdateApnsVoipSandboxChannelRequest& request, const UpdateApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApnsVoipSandboxChannel(request), context);
 }
 
 UpdateApplicationSettingsOutcome PinpointClient::UpdateApplicationSettings(const UpdateApplicationSettingsRequest& request) const

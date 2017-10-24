@@ -71,6 +71,7 @@ namespace Aws
         static const int AWS_AutoScaling_LaunchConfiguration_HASH = HashingUtils::HashString("AWS::AutoScaling::LaunchConfiguration");
         static const int AWS_AutoScaling_ScalingPolicy_HASH = HashingUtils::HashString("AWS::AutoScaling::ScalingPolicy");
         static const int AWS_AutoScaling_ScheduledAction_HASH = HashingUtils::HashString("AWS::AutoScaling::ScheduledAction");
+        static const int AWS_CodeBuild_Project_HASH = HashingUtils::HashString("AWS::CodeBuild::Project");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -240,6 +241,10 @@ namespace Aws
           {
             return ResourceType::AWS_AutoScaling_ScheduledAction;
           }
+          else if (hashCode == AWS_CodeBuild_Project_HASH)
+          {
+            return ResourceType::AWS_CodeBuild_Project;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -336,6 +341,8 @@ namespace Aws
             return "AWS::AutoScaling::ScalingPolicy";
           case ResourceType::AWS_AutoScaling_ScheduledAction:
             return "AWS::AutoScaling::ScheduledAction";
+          case ResourceType::AWS_CodeBuild_Project:
+            return "AWS::CodeBuild::Project";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

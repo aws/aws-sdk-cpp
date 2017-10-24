@@ -193,29 +193,36 @@ namespace Model
 
     /**
      * <p>The name of the compute and memory capacity node type for the cache
-     * cluster.</p> <p>Valid node types are as follows:</p> <ul> <li> <p>General
-     * purpose:</p> <ul> <li> <p>Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>,
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
+     * speaking, the current generation types provide more memory and computational
+     * power at lower cost when compared to their equivalent previous generation
+     * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
+     * generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node
+     * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node
+     * types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation:
-     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
-     * <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:
-     * <code>cache.c1.xlarge</code> </p> </li> <li> <p>Memory optimized:</p> <ul> <li>
-     * <p>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+     * <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
+     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+     * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
-     * <p>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul>
-     * </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All T2 instances are created in
-     * an Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li> <p>Redis
-     * backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
-     * instances. Backup/restore is supported on Redis (cluster mode enabled) T2
-     * instances.</p> </li> <li> <p>Redis Append-only files (AOF) functionality is not
-     * supported for T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of
+     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+     * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+     * Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis
+     * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
+     * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
+     * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
+     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
+     * regions except as noted in the following table.</p> <p>For a complete listing of
      * node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
      * Features and Details</a> and either <a
@@ -228,29 +235,36 @@ namespace Model
 
     /**
      * <p>The name of the compute and memory capacity node type for the cache
-     * cluster.</p> <p>Valid node types are as follows:</p> <ul> <li> <p>General
-     * purpose:</p> <ul> <li> <p>Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>,
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
+     * speaking, the current generation types provide more memory and computational
+     * power at lower cost when compared to their equivalent previous generation
+     * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
+     * generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node
+     * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node
+     * types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation:
-     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
-     * <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:
-     * <code>cache.c1.xlarge</code> </p> </li> <li> <p>Memory optimized:</p> <ul> <li>
-     * <p>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+     * <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
+     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+     * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
-     * <p>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul>
-     * </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All T2 instances are created in
-     * an Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li> <p>Redis
-     * backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
-     * instances. Backup/restore is supported on Redis (cluster mode enabled) T2
-     * instances.</p> </li> <li> <p>Redis Append-only files (AOF) functionality is not
-     * supported for T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of
+     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+     * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+     * Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis
+     * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
+     * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
+     * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
+     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
+     * regions except as noted in the following table.</p> <p>For a complete listing of
      * node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
      * Features and Details</a> and either <a
@@ -263,29 +277,36 @@ namespace Model
 
     /**
      * <p>The name of the compute and memory capacity node type for the cache
-     * cluster.</p> <p>Valid node types are as follows:</p> <ul> <li> <p>General
-     * purpose:</p> <ul> <li> <p>Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>,
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
+     * speaking, the current generation types provide more memory and computational
+     * power at lower cost when compared to their equivalent previous generation
+     * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
+     * generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node
+     * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node
+     * types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation:
-     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
-     * <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:
-     * <code>cache.c1.xlarge</code> </p> </li> <li> <p>Memory optimized:</p> <ul> <li>
-     * <p>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+     * <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
+     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+     * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
-     * <p>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul>
-     * </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All T2 instances are created in
-     * an Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li> <p>Redis
-     * backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
-     * instances. Backup/restore is supported on Redis (cluster mode enabled) T2
-     * instances.</p> </li> <li> <p>Redis Append-only files (AOF) functionality is not
-     * supported for T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of
+     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+     * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+     * Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis
+     * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
+     * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
+     * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
+     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
+     * regions except as noted in the following table.</p> <p>For a complete listing of
      * node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
      * Features and Details</a> and either <a
@@ -298,29 +319,36 @@ namespace Model
 
     /**
      * <p>The name of the compute and memory capacity node type for the cache
-     * cluster.</p> <p>Valid node types are as follows:</p> <ul> <li> <p>General
-     * purpose:</p> <ul> <li> <p>Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>,
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
+     * speaking, the current generation types provide more memory and computational
+     * power at lower cost when compared to their equivalent previous generation
+     * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
+     * generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node
+     * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node
+     * types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation:
-     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
-     * <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:
-     * <code>cache.c1.xlarge</code> </p> </li> <li> <p>Memory optimized:</p> <ul> <li>
-     * <p>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+     * <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
+     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+     * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
-     * <p>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul>
-     * </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All T2 instances are created in
-     * an Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li> <p>Redis
-     * backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
-     * instances. Backup/restore is supported on Redis (cluster mode enabled) T2
-     * instances.</p> </li> <li> <p>Redis Append-only files (AOF) functionality is not
-     * supported for T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of
+     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+     * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+     * Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis
+     * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
+     * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
+     * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
+     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
+     * regions except as noted in the following table.</p> <p>For a complete listing of
      * node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
      * Features and Details</a> and either <a
@@ -333,29 +361,36 @@ namespace Model
 
     /**
      * <p>The name of the compute and memory capacity node type for the cache
-     * cluster.</p> <p>Valid node types are as follows:</p> <ul> <li> <p>General
-     * purpose:</p> <ul> <li> <p>Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>,
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
+     * speaking, the current generation types provide more memory and computational
+     * power at lower cost when compared to their equivalent previous generation
+     * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
+     * generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node
+     * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node
+     * types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation:
-     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
-     * <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:
-     * <code>cache.c1.xlarge</code> </p> </li> <li> <p>Memory optimized:</p> <ul> <li>
-     * <p>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+     * <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
+     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+     * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
-     * <p>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul>
-     * </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All T2 instances are created in
-     * an Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li> <p>Redis
-     * backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
-     * instances. Backup/restore is supported on Redis (cluster mode enabled) T2
-     * instances.</p> </li> <li> <p>Redis Append-only files (AOF) functionality is not
-     * supported for T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of
+     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+     * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+     * Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis
+     * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
+     * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
+     * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
+     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
+     * regions except as noted in the following table.</p> <p>For a complete listing of
      * node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
      * Features and Details</a> and either <a
@@ -368,29 +403,36 @@ namespace Model
 
     /**
      * <p>The name of the compute and memory capacity node type for the cache
-     * cluster.</p> <p>Valid node types are as follows:</p> <ul> <li> <p>General
-     * purpose:</p> <ul> <li> <p>Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>,
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
+     * speaking, the current generation types provide more memory and computational
+     * power at lower cost when compared to their equivalent previous generation
+     * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
+     * generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node
+     * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node
+     * types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation:
-     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
-     * <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:
-     * <code>cache.c1.xlarge</code> </p> </li> <li> <p>Memory optimized:</p> <ul> <li>
-     * <p>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+     * <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
+     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+     * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
-     * <p>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul>
-     * </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All T2 instances are created in
-     * an Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li> <p>Redis
-     * backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
-     * instances. Backup/restore is supported on Redis (cluster mode enabled) T2
-     * instances.</p> </li> <li> <p>Redis Append-only files (AOF) functionality is not
-     * supported for T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of
+     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+     * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+     * Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis
+     * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
+     * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
+     * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
+     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
+     * regions except as noted in the following table.</p> <p>For a complete listing of
      * node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
      * Features and Details</a> and either <a
@@ -403,29 +445,36 @@ namespace Model
 
     /**
      * <p>The name of the compute and memory capacity node type for the cache
-     * cluster.</p> <p>Valid node types are as follows:</p> <ul> <li> <p>General
-     * purpose:</p> <ul> <li> <p>Current generation: <code>cache.t2.micro</code>,
-     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>,
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
+     * speaking, the current generation types provide more memory and computational
+     * power at lower cost when compared to their equivalent previous generation
+     * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
+     * generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node
+     * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node
+     * types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation:
-     * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
-     * <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:
-     * <code>cache.c1.xlarge</code> </p> </li> <li> <p>Memory optimized:</p> <ul> <li>
-     * <p>Current generation: <code>cache.r3.large</code>,
+     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+     * <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
+     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+     * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
-     * <p>Previous generation: <code>cache.m2.xlarge</code>,
-     * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul>
-     * </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All T2 instances are created in
-     * an Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li> <p>Redis
-     * backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
-     * instances. Backup/restore is supported on Redis (cluster mode enabled) T2
-     * instances.</p> </li> <li> <p>Redis Append-only files (AOF) functionality is not
-     * supported for T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of
+     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+     * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+     * Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis
+     * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
+     * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
+     * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
+     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
+     * regions except as noted in the following table.</p> <p>For a complete listing of
      * node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
      * Features and Details</a> and either <a
@@ -772,19 +821,39 @@ namespace Model
     inline CacheCluster& WithPendingModifiedValues(PendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Describes a notification topic and its status. Notification topics are used
+     * for publishing ElastiCache events to subscribers using Amazon Simple
+     * Notification Service (SNS). </p>
+     */
     inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
 
-    
+    /**
+     * <p>Describes a notification topic and its status. Notification topics are used
+     * for publishing ElastiCache events to subscribers using Amazon Simple
+     * Notification Service (SNS). </p>
+     */
     inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
 
-    
+    /**
+     * <p>Describes a notification topic and its status. Notification topics are used
+     * for publishing ElastiCache events to subscribers using Amazon Simple
+     * Notification Service (SNS). </p>
+     */
     inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Describes a notification topic and its status. Notification topics are used
+     * for publishing ElastiCache events to subscribers using Amazon Simple
+     * Notification Service (SNS). </p>
+     */
     inline CacheCluster& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Describes a notification topic and its status. Notification topics are used
+     * for publishing ElastiCache events to subscribers using Amazon Simple
+     * Notification Service (SNS). </p>
+     */
     inline CacheCluster& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
 
 
@@ -831,19 +900,29 @@ namespace Model
     inline CacheCluster& AddCacheSecurityGroups(CacheSecurityGroupMembership&& value) { m_cacheSecurityGroupsHasBeenSet = true; m_cacheSecurityGroups.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>Status of the cache parameter group.</p>
+     */
     inline const CacheParameterGroupStatus& GetCacheParameterGroup() const{ return m_cacheParameterGroup; }
 
-    
+    /**
+     * <p>Status of the cache parameter group.</p>
+     */
     inline void SetCacheParameterGroup(const CacheParameterGroupStatus& value) { m_cacheParameterGroupHasBeenSet = true; m_cacheParameterGroup = value; }
 
-    
+    /**
+     * <p>Status of the cache parameter group.</p>
+     */
     inline void SetCacheParameterGroup(CacheParameterGroupStatus&& value) { m_cacheParameterGroupHasBeenSet = true; m_cacheParameterGroup = std::move(value); }
 
-    
+    /**
+     * <p>Status of the cache parameter group.</p>
+     */
     inline CacheCluster& WithCacheParameterGroup(const CacheParameterGroupStatus& value) { SetCacheParameterGroup(value); return *this;}
 
-    
+    /**
+     * <p>Status of the cache parameter group.</p>
+     */
     inline CacheCluster& WithCacheParameterGroup(CacheParameterGroupStatus&& value) { SetCacheParameterGroup(std::move(value)); return *this;}
 
 
@@ -1087,6 +1166,81 @@ namespace Model
      */
     inline CacheCluster& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
+
+    /**
+     * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
+     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetAuthTokenEnabled() const{ return m_authTokenEnabled; }
+
+    /**
+     * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
+     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetAuthTokenEnabled(bool value) { m_authTokenEnabledHasBeenSet = true; m_authTokenEnabled = value; }
+
+    /**
+     * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
+     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     */
+    inline CacheCluster& WithAuthTokenEnabled(bool value) { SetAuthTokenEnabled(value); return *this;}
+
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
+     * the cluster is created. To enable in-transit encryption on a cluster you must
+     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
+     * the cluster is created. To enable in-transit encryption on a cluster you must
+     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
+     * the cluster is created. To enable in-transit encryption on a cluster you must
+     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline CacheCluster& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
+
+
+    /**
+     * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
+     * cluster is created. To enable at-rest encryption on a cluster you must set
+     * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
+     * cluster is created. To enable at-rest encryption on a cluster you must set
+     * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
+
+    /**
+     * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
+     * cluster is created. To enable at-rest encryption on a cluster you must set
+     * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline CacheCluster& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_cacheClusterId;
@@ -1154,6 +1308,15 @@ namespace Model
 
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;
+
+    bool m_authTokenEnabled;
+    bool m_authTokenEnabledHasBeenSet;
+
+    bool m_transitEncryptionEnabled;
+    bool m_transitEncryptionEnabledHasBeenSet;
+
+    bool m_atRestEncryptionEnabled;
+    bool m_atRestEncryptionEnabledHasBeenSet;
   };
 
 } // namespace Model

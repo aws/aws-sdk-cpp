@@ -239,60 +239,91 @@ namespace Model
 
 
     /**
-     * <p>The number of nodes to use.</p>
+     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * DevEndpoint.</p>
      */
     inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
-     * <p>The number of nodes to use.</p>
+     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * DevEndpoint.</p>
      */
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
-     * <p>The number of nodes to use.</p>
+     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * DevEndpoint.</p>
      */
     inline CreateDevEndpointRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline const Aws::String& GetExtraPythonLibsS3Path() const{ return m_extraPythonLibsS3Path; }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline void SetExtraPythonLibsS3Path(const Aws::String& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = value; }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline void SetExtraPythonLibsS3Path(Aws::String&& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = std::move(value); }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline void SetExtraPythonLibsS3Path(const char* value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path.assign(value); }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(const Aws::String& value) { SetExtraPythonLibsS3Path(value); return *this;}
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(Aws::String&& value) { SetExtraPythonLibsS3Path(std::move(value)); return *this;}
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
 

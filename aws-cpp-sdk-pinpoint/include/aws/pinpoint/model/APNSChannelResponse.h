@@ -120,6 +120,42 @@ namespace Model
 
 
     /**
+     * The default authentication method used for APNs.
+     */
+    inline const Aws::String& GetDefaultAuthenticationMethod() const{ return m_defaultAuthenticationMethod; }
+
+    /**
+     * The default authentication method used for APNs.
+     */
+    inline void SetDefaultAuthenticationMethod(const Aws::String& value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod = value; }
+
+    /**
+     * The default authentication method used for APNs.
+     */
+    inline void SetDefaultAuthenticationMethod(Aws::String&& value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod = std::move(value); }
+
+    /**
+     * The default authentication method used for APNs.
+     */
+    inline void SetDefaultAuthenticationMethod(const char* value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod.assign(value); }
+
+    /**
+     * The default authentication method used for APNs.
+     */
+    inline APNSChannelResponse& WithDefaultAuthenticationMethod(const Aws::String& value) { SetDefaultAuthenticationMethod(value); return *this;}
+
+    /**
+     * The default authentication method used for APNs.
+     */
+    inline APNSChannelResponse& WithDefaultAuthenticationMethod(Aws::String&& value) { SetDefaultAuthenticationMethod(std::move(value)); return *this;}
+
+    /**
+     * The default authentication method used for APNs.
+     */
+    inline APNSChannelResponse& WithDefaultAuthenticationMethod(const char* value) { SetDefaultAuthenticationMethod(value); return *this;}
+
+
+    /**
      * If the channel is enabled for sending messages.
      */
     inline bool GetEnabled() const{ return m_enabled; }
@@ -133,6 +169,38 @@ namespace Model
      * If the channel is enabled for sending messages.
      */
     inline APNSChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     */
+    inline bool GetHasCredential() const{ return m_hasCredential; }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     */
+    inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     */
+    inline APNSChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
+
+
+    /**
+     * If the channel is registered with a token key for authentication.
+     */
+    inline bool GetHasTokenKey() const{ return m_hasTokenKey; }
+
+    /**
+     * If the channel is registered with a token key for authentication.
+     */
+    inline void SetHasTokenKey(bool value) { m_hasTokenKeyHasBeenSet = true; m_hasTokenKey = value; }
+
+    /**
+     * If the channel is registered with a token key for authentication.
+     */
+    inline APNSChannelResponse& WithHasTokenKey(bool value) { SetHasTokenKey(value); return *this;}
 
 
     /**
@@ -318,8 +386,17 @@ namespace Model
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
 
+    Aws::String m_defaultAuthenticationMethod;
+    bool m_defaultAuthenticationMethodHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
+    bool m_hasCredential;
+    bool m_hasCredentialHasBeenSet;
+
+    bool m_hasTokenKey;
+    bool m_hasTokenKeyHasBeenSet;
 
     Aws::String m_id;
     bool m_idHasBeenSet;

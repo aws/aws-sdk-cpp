@@ -215,49 +215,6 @@ namespace Model
 
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline const Aws::String& GetJsonData() const{ return m_jsonData; }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline void SetJsonData(const Aws::String& value) { m_jsonDataHasBeenSet = true; m_jsonData = value; }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline void SetJsonData(Aws::String&& value) { m_jsonDataHasBeenSet = true; m_jsonData = std::move(value); }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline void SetJsonData(const char* value) { m_jsonDataHasBeenSet = true; m_jsonData.assign(value); }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline DefaultPushNotificationMessage& WithJsonData(const Aws::String& value) { SetJsonData(value); return *this;}
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline DefaultPushNotificationMessage& WithJsonData(Aws::String&& value) { SetJsonData(std::move(value)); return *this;}
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline DefaultPushNotificationMessage& WithJsonData(const char* value) { SetJsonData(value); return *this;}
-
-
-    /**
      * Indicates if the message should display on the users device. Silent pushes can
      * be used for Remote Configuration and Phone Home use cases.
      */
@@ -431,9 +388,6 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_data;
     bool m_dataHasBeenSet;
-
-    Aws::String m_jsonData;
-    bool m_jsonDataHasBeenSet;
 
     bool m_silentPush;
     bool m_silentPushHasBeenSet;

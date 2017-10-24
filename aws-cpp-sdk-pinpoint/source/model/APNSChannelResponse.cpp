@@ -31,8 +31,13 @@ namespace Model
 APNSChannelResponse::APNSChannelResponse() : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_defaultAuthenticationMethodHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
+    m_hasCredential(false),
+    m_hasCredentialHasBeenSet(false),
+    m_hasTokenKey(false),
+    m_hasTokenKeyHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
@@ -47,8 +52,13 @@ APNSChannelResponse::APNSChannelResponse() :
 APNSChannelResponse::APNSChannelResponse(const JsonValue& jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_defaultAuthenticationMethodHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
+    m_hasCredential(false),
+    m_hasCredentialHasBeenSet(false),
+    m_hasTokenKey(false),
+    m_hasTokenKeyHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
@@ -77,11 +87,32 @@ APNSChannelResponse& APNSChannelResponse::operator =(const JsonValue& jsonValue)
     m_creationDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultAuthenticationMethod"))
+  {
+    m_defaultAuthenticationMethod = jsonValue.GetString("DefaultAuthenticationMethod");
+
+    m_defaultAuthenticationMethodHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
 
     m_enabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HasCredential"))
+  {
+    m_hasCredential = jsonValue.GetBool("HasCredential");
+
+    m_hasCredentialHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HasTokenKey"))
+  {
+    m_hasTokenKey = jsonValue.GetBool("HasTokenKey");
+
+    m_hasTokenKeyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Id"))
@@ -145,9 +176,27 @@ JsonValue APNSChannelResponse::Jsonize() const
 
   }
 
+  if(m_defaultAuthenticationMethodHasBeenSet)
+  {
+   payload.WithString("DefaultAuthenticationMethod", m_defaultAuthenticationMethod);
+
+  }
+
   if(m_enabledHasBeenSet)
   {
    payload.WithBool("Enabled", m_enabled);
+
+  }
+
+  if(m_hasCredentialHasBeenSet)
+  {
+   payload.WithBool("HasCredential", m_hasCredential);
+
+  }
+
+  if(m_hasTokenKeyHasBeenSet)
+  {
+   payload.WithBool("HasTokenKey", m_hasTokenKey);
 
   }
 

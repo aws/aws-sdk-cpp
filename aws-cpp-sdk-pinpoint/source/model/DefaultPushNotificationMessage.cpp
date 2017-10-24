@@ -33,7 +33,6 @@ DefaultPushNotificationMessage::DefaultPushNotificationMessage() :
     m_actionHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_jsonDataHasBeenSet(false),
     m_silentPush(false),
     m_silentPushHasBeenSet(false),
     m_substitutionsHasBeenSet(false),
@@ -47,7 +46,6 @@ DefaultPushNotificationMessage::DefaultPushNotificationMessage(const JsonValue& 
     m_actionHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_jsonDataHasBeenSet(false),
     m_silentPush(false),
     m_silentPushHasBeenSet(false),
     m_substitutionsHasBeenSet(false),
@@ -81,13 +79,6 @@ DefaultPushNotificationMessage& DefaultPushNotificationMessage::operator =(const
       m_data[dataItem.first] = dataItem.second.AsString();
     }
     m_dataHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("JsonData"))
-  {
-    m_jsonData = jsonValue.GetString("JsonData");
-
-    m_jsonDataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SilentPush"))
@@ -154,12 +145,6 @@ JsonValue DefaultPushNotificationMessage::Jsonize() const
      dataJsonMap.WithString(dataItem.first, dataItem.second);
    }
    payload.WithObject("Data", std::move(dataJsonMap));
-
-  }
-
-  if(m_jsonDataHasBeenSet)
-  {
-   payload.WithString("JsonData", m_jsonData);
 
   }
 

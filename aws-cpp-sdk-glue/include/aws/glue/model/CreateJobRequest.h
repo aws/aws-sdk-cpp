@@ -121,37 +121,37 @@ namespace Model
 
 
     /**
-     * <p>Location of the logs for this job.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline const Aws::String& GetLogUri() const{ return m_logUri; }
 
     /**
-     * <p>Location of the logs for this job.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline void SetLogUri(const Aws::String& value) { m_logUriHasBeenSet = true; m_logUri = value; }
 
     /**
-     * <p>Location of the logs for this job.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = std::move(value); }
 
     /**
-     * <p>Location of the logs for this job.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline void SetLogUri(const char* value) { m_logUriHasBeenSet = true; m_logUri.assign(value); }
 
     /**
-     * <p>Location of the logs for this job.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline CreateJobRequest& WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>Location of the logs for this job.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline CreateJobRequest& WithLogUri(Aws::String&& value) { SetLogUri(std::move(value)); return *this;}
 
     /**
-     * <p>Location of the logs for this job.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline CreateJobRequest& WithLogUri(const char* value) { SetLogUri(value); return *this;}
 

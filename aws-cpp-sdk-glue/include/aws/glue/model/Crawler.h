@@ -41,8 +41,8 @@ namespace Model
 
   /**
    * <p>Specifies a crawler program that examines a data source and uses classifiers
-   * to try to its schema. If successful, the crawler records metatdata concerning
-   * the data source in the Data Catalog.</p><p><h3>See Also:</h3>   <a
+   * to try to determine its schema. If successful, the crawler records metatdata
+   * concerning the data source in the Data Catalog.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Crawler">AWS API
    * Reference</a></p>
    */
@@ -92,44 +92,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an IAM role used to access customer resources such as data in
-     * S3.</p>
+     * <p>The IAM role (or ARN of an IAM role) used to access customer resources such
+     * as data in S3.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The ARN of an IAM role used to access customer resources such as data in
-     * S3.</p>
+     * <p>The IAM role (or ARN of an IAM role) used to access customer resources such
+     * as data in S3.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The ARN of an IAM role used to access customer resources such as data in
-     * S3.</p>
+     * <p>The IAM role (or ARN of an IAM role) used to access customer resources such
+     * as data in S3.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The ARN of an IAM role used to access customer resources such as data in
-     * S3.</p>
+     * <p>The IAM role (or ARN of an IAM role) used to access customer resources such
+     * as data in S3.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The ARN of an IAM role used to access customer resources such as data in
-     * S3.</p>
+     * <p>The IAM role (or ARN of an IAM role) used to access customer resources such
+     * as data in S3.</p>
      */
     inline Crawler& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role used to access customer resources such as data in
-     * S3.</p>
+     * <p>The IAM role (or ARN of an IAM role) used to access customer resources such
+     * as data in S3.</p>
      */
     inline Crawler& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an IAM role used to access customer resources such as data in
-     * S3.</p>
+     * <p>The IAM role (or ARN of an IAM role) used to access customer resources such
+     * as data in S3.</p>
      */
     inline Crawler& WithRole(const char* value) { SetRole(value); return *this;}
 

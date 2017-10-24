@@ -31,7 +31,6 @@ namespace Model
 SendUsersMessageRequest::SendUsersMessageRequest() : 
     m_contextHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
     m_usersHasBeenSet(false)
 {
 }
@@ -39,7 +38,6 @@ SendUsersMessageRequest::SendUsersMessageRequest() :
 SendUsersMessageRequest::SendUsersMessageRequest(const JsonValue& jsonValue) : 
     m_contextHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
     m_usersHasBeenSet(false)
 {
   *this = jsonValue;
@@ -62,13 +60,6 @@ SendUsersMessageRequest& SendUsersMessageRequest::operator =(const JsonValue& js
     m_messageConfiguration = jsonValue.GetObject("MessageConfiguration");
 
     m_messageConfigurationHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("RequestId"))
-  {
-    m_requestId = jsonValue.GetString("RequestId");
-
-    m_requestIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Users"))
@@ -102,12 +93,6 @@ JsonValue SendUsersMessageRequest::Jsonize() const
   if(m_messageConfigurationHasBeenSet)
   {
    payload.WithObject("MessageConfiguration", m_messageConfiguration.Jsonize());
-
-  }
-
-  if(m_requestIdHasBeenSet)
-  {
-   payload.WithString("RequestId", m_requestId);
 
   }
 

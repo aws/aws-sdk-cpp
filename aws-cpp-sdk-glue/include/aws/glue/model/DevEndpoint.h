@@ -235,6 +235,22 @@ namespace Model
 
 
     /**
+     * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+     */
+    inline int GetZeppelinRemoteSparkInterpreterPort() const{ return m_zeppelinRemoteSparkInterpreterPort; }
+
+    /**
+     * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+     */
+    inline void SetZeppelinRemoteSparkInterpreterPort(int value) { m_zeppelinRemoteSparkInterpreterPortHasBeenSet = true; m_zeppelinRemoteSparkInterpreterPort = value; }
+
+    /**
+     * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+     */
+    inline DevEndpoint& WithZeppelinRemoteSparkInterpreterPort(int value) { SetZeppelinRemoteSparkInterpreterPort(value); return *this;}
+
+
+    /**
      * <p>The public address used by this DevEndpoint.</p>
      */
     inline const Aws::String& GetPublicAddress() const{ return m_publicAddress; }
@@ -307,17 +323,20 @@ namespace Model
 
 
     /**
-     * <p>The number of nodes used by this DevEndpoint.</p>
+     * <p>The number of AWS Glue Data Processing Units (DPUs) allocated to this
+     * DevEndpoint.</p>
      */
     inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
-     * <p>The number of nodes used by this DevEndpoint.</p>
+     * <p>The number of AWS Glue Data Processing Units (DPUs) allocated to this
+     * DevEndpoint.</p>
      */
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
-     * <p>The number of nodes used by this DevEndpoint.</p>
+     * <p>The number of AWS Glue Data Processing Units (DPUs) allocated to this
+     * DevEndpoint.</p>
      */
     inline DevEndpoint& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
@@ -395,87 +414,122 @@ namespace Model
 
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline const Aws::String& GetExtraPythonLibsS3Path() const{ return m_extraPythonLibsS3Path; }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline void SetExtraPythonLibsS3Path(const Aws::String& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = value; }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline void SetExtraPythonLibsS3Path(Aws::String&& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = std::move(value); }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline void SetExtraPythonLibsS3Path(const char* value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path.assign(value); }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline DevEndpoint& WithExtraPythonLibsS3Path(const Aws::String& value) { SetExtraPythonLibsS3Path(value); return *this;}
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline DevEndpoint& WithExtraPythonLibsS3Path(Aws::String&& value) { SetExtraPythonLibsS3Path(std::move(value)); return *this;}
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
      */
     inline DevEndpoint& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
 
 
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
-     * DevEndpoint.</p>
+     * DevEndpoint.</p> <p>Please note that only pure Java/Scala libraries can
+     * currently be used on a DevEndpoint.</p>
      */
     inline const Aws::String& GetExtraJarsS3Path() const{ return m_extraJarsS3Path; }
 
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
-     * DevEndpoint.</p>
+     * DevEndpoint.</p> <p>Please note that only pure Java/Scala libraries can
+     * currently be used on a DevEndpoint.</p>
      */
     inline void SetExtraJarsS3Path(const Aws::String& value) { m_extraJarsS3PathHasBeenSet = true; m_extraJarsS3Path = value; }
 
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
-     * DevEndpoint.</p>
+     * DevEndpoint.</p> <p>Please note that only pure Java/Scala libraries can
+     * currently be used on a DevEndpoint.</p>
      */
     inline void SetExtraJarsS3Path(Aws::String&& value) { m_extraJarsS3PathHasBeenSet = true; m_extraJarsS3Path = std::move(value); }
 
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
-     * DevEndpoint.</p>
+     * DevEndpoint.</p> <p>Please note that only pure Java/Scala libraries can
+     * currently be used on a DevEndpoint.</p>
      */
     inline void SetExtraJarsS3Path(const char* value) { m_extraJarsS3PathHasBeenSet = true; m_extraJarsS3Path.assign(value); }
 
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
-     * DevEndpoint.</p>
+     * DevEndpoint.</p> <p>Please note that only pure Java/Scala libraries can
+     * currently be used on a DevEndpoint.</p>
      */
     inline DevEndpoint& WithExtraJarsS3Path(const Aws::String& value) { SetExtraJarsS3Path(value); return *this;}
 
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
-     * DevEndpoint.</p>
+     * DevEndpoint.</p> <p>Please note that only pure Java/Scala libraries can
+     * currently be used on a DevEndpoint.</p>
      */
     inline DevEndpoint& WithExtraJarsS3Path(Aws::String&& value) { SetExtraJarsS3Path(std::move(value)); return *this;}
 
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
-     * DevEndpoint.</p>
+     * DevEndpoint.</p> <p>Please note that only pure Java/Scala libraries can
+     * currently be used on a DevEndpoint.</p>
      */
     inline DevEndpoint& WithExtraJarsS3Path(const char* value) { SetExtraJarsS3Path(value); return *this;}
 
@@ -655,6 +709,9 @@ namespace Model
 
     Aws::String m_yarnEndpointAddress;
     bool m_yarnEndpointAddressHasBeenSet;
+
+    int m_zeppelinRemoteSparkInterpreterPort;
+    bool m_zeppelinRemoteSparkInterpreterPortHasBeenSet;
 
     Aws::String m_publicAddress;
     bool m_publicAddressHasBeenSet;

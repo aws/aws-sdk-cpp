@@ -118,29 +118,48 @@ namespace Model
 
 
     /**
-     * <p>Custom Python or Java custom libraries to be loaded in the DevEndpoint.</p>
+     * <p>Custom Python or Java libraries to be loaded in the DevEndpoint.</p>
      */
     inline const DevEndpointCustomLibraries& GetCustomLibraries() const{ return m_customLibraries; }
 
     /**
-     * <p>Custom Python or Java custom libraries to be loaded in the DevEndpoint.</p>
+     * <p>Custom Python or Java libraries to be loaded in the DevEndpoint.</p>
      */
     inline void SetCustomLibraries(const DevEndpointCustomLibraries& value) { m_customLibrariesHasBeenSet = true; m_customLibraries = value; }
 
     /**
-     * <p>Custom Python or Java custom libraries to be loaded in the DevEndpoint.</p>
+     * <p>Custom Python or Java libraries to be loaded in the DevEndpoint.</p>
      */
     inline void SetCustomLibraries(DevEndpointCustomLibraries&& value) { m_customLibrariesHasBeenSet = true; m_customLibraries = std::move(value); }
 
     /**
-     * <p>Custom Python or Java custom libraries to be loaded in the DevEndpoint.</p>
+     * <p>Custom Python or Java libraries to be loaded in the DevEndpoint.</p>
      */
     inline UpdateDevEndpointRequest& WithCustomLibraries(const DevEndpointCustomLibraries& value) { SetCustomLibraries(value); return *this;}
 
     /**
-     * <p>Custom Python or Java custom libraries to be loaded in the DevEndpoint.</p>
+     * <p>Custom Python or Java libraries to be loaded in the DevEndpoint.</p>
      */
     inline UpdateDevEndpointRequest& WithCustomLibraries(DevEndpointCustomLibraries&& value) { SetCustomLibraries(std::move(value)); return *this;}
+
+
+    /**
+     * <p>True if the list of custom libraries to be loaded in the development endpoint
+     * needs to be updated, or False otherwise.</p>
+     */
+    inline bool GetUpdateEtlLibraries() const{ return m_updateEtlLibraries; }
+
+    /**
+     * <p>True if the list of custom libraries to be loaded in the development endpoint
+     * needs to be updated, or False otherwise.</p>
+     */
+    inline void SetUpdateEtlLibraries(bool value) { m_updateEtlLibrariesHasBeenSet = true; m_updateEtlLibraries = value; }
+
+    /**
+     * <p>True if the list of custom libraries to be loaded in the development endpoint
+     * needs to be updated, or False otherwise.</p>
+     */
+    inline UpdateDevEndpointRequest& WithUpdateEtlLibraries(bool value) { SetUpdateEtlLibraries(value); return *this;}
 
   private:
 
@@ -152,6 +171,9 @@ namespace Model
 
     DevEndpointCustomLibraries m_customLibraries;
     bool m_customLibrariesHasBeenSet;
+
+    bool m_updateEtlLibraries;
+    bool m_updateEtlLibrariesHasBeenSet;
   };
 
 } // namespace Model

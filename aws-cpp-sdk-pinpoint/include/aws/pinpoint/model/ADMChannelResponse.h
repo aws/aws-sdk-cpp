@@ -135,6 +135,22 @@ namespace Model
 
 
     /**
+     * If the channel is registered with a credential for authentication.
+     */
+    inline bool GetHasCredential() const{ return m_hasCredential; }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     */
+    inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     */
+    inline ADMChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
+
+
+    /**
      * Channel ID. Not used, only for backwards compatibility.
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -319,6 +335,9 @@ namespace Model
 
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
+    bool m_hasCredential;
+    bool m_hasCredentialHasBeenSet;
 
     Aws::String m_id;
     bool m_idHasBeenSet;

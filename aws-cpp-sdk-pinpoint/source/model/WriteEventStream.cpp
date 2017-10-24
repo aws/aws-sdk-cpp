@@ -30,14 +30,12 @@ namespace Model
 
 WriteEventStream::WriteEventStream() : 
     m_destinationStreamArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
 }
 
 WriteEventStream::WriteEventStream(const JsonValue& jsonValue) : 
     m_destinationStreamArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -50,13 +48,6 @@ WriteEventStream& WriteEventStream::operator =(const JsonValue& jsonValue)
     m_destinationStreamArn = jsonValue.GetString("DestinationStreamArn");
 
     m_destinationStreamArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("ExternalId"))
-  {
-    m_externalId = jsonValue.GetString("ExternalId");
-
-    m_externalIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RoleArn"))
@@ -76,12 +67,6 @@ JsonValue WriteEventStream::Jsonize() const
   if(m_destinationStreamArnHasBeenSet)
   {
    payload.WithString("DestinationStreamArn", m_destinationStreamArn);
-
-  }
-
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("ExternalId", m_externalId);
 
   }
 

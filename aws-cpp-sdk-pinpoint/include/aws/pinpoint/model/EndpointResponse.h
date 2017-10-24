@@ -664,42 +664,6 @@ NONE - Users has
 
 
     /**
-     * The ShardId of endpoint.
-     */
-    inline const Aws::String& GetShardId() const{ return m_shardId; }
-
-    /**
-     * The ShardId of endpoint.
-     */
-    inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
-
-    /**
-     * The ShardId of endpoint.
-     */
-    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
-
-    /**
-     * The ShardId of endpoint.
-     */
-    inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
-
-    /**
-     * The ShardId of endpoint.
-     */
-    inline EndpointResponse& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
-
-    /**
-     * The ShardId of endpoint.
-     */
-    inline EndpointResponse& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
-
-    /**
-     * The ShardId of endpoint.
-     */
-    inline EndpointResponse& WithShardId(const char* value) { SetShardId(value); return *this;}
-
-
-    /**
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.
      */
     inline const EndpointUser& GetUser() const{ return m_user; }
@@ -767,9 +731,6 @@ NONE - Users has
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
-
-    Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
 
     EndpointUser m_user;
     bool m_userHasBeenSet;

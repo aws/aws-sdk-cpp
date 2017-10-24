@@ -266,17 +266,36 @@ namespace Model
 
 
     /**
-     * <p>The number of nodes in this DevEndpoint.</p>
+     * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+     */
+    inline int GetZeppelinRemoteSparkInterpreterPort() const{ return m_zeppelinRemoteSparkInterpreterPort; }
+
+    /**
+     * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+     */
+    inline void SetZeppelinRemoteSparkInterpreterPort(int value) { m_zeppelinRemoteSparkInterpreterPort = value; }
+
+    /**
+     * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+     */
+    inline CreateDevEndpointResult& WithZeppelinRemoteSparkInterpreterPort(int value) { SetZeppelinRemoteSparkInterpreterPort(value); return *this;}
+
+
+    /**
+     * <p>The number of AWS Glue Data Processing Units (DPUs) allocated to this
+     * DevEndpoint.</p>
      */
     inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
-     * <p>The number of nodes in this DevEndpoint.</p>
+     * <p>The number of AWS Glue Data Processing Units (DPUs) allocated to this
+     * DevEndpoint.</p>
      */
     inline void SetNumberOfNodes(int value) { m_numberOfNodes = value; }
 
     /**
-     * <p>The number of nodes in this DevEndpoint.</p>
+     * <p>The number of AWS Glue Data Processing Units (DPUs) allocated to this
+     * DevEndpoint.</p>
      */
     inline CreateDevEndpointResult& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
@@ -354,44 +373,44 @@ namespace Model
 
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that will be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that will be loaded
+     * in your DevEndpoint.</p>
      */
     inline const Aws::String& GetExtraPythonLibsS3Path() const{ return m_extraPythonLibsS3Path; }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that will be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that will be loaded
+     * in your DevEndpoint.</p>
      */
     inline void SetExtraPythonLibsS3Path(const Aws::String& value) { m_extraPythonLibsS3Path = value; }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that will be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that will be loaded
+     * in your DevEndpoint.</p>
      */
     inline void SetExtraPythonLibsS3Path(Aws::String&& value) { m_extraPythonLibsS3Path = std::move(value); }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that will be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that will be loaded
+     * in your DevEndpoint.</p>
      */
     inline void SetExtraPythonLibsS3Path(const char* value) { m_extraPythonLibsS3Path.assign(value); }
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that will be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that will be loaded
+     * in your DevEndpoint.</p>
      */
     inline CreateDevEndpointResult& WithExtraPythonLibsS3Path(const Aws::String& value) { SetExtraPythonLibsS3Path(value); return *this;}
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that will be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that will be loaded
+     * in your DevEndpoint.</p>
      */
     inline CreateDevEndpointResult& WithExtraPythonLibsS3Path(Aws::String&& value) { SetExtraPythonLibsS3Path(std::move(value)); return *this;}
 
     /**
-     * <p>Path to one or more Python libraries in an S3 bucket that will be loaded in
-     * your DevEndpoint.</p>
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that will be loaded
+     * in your DevEndpoint.</p>
      */
     inline CreateDevEndpointResult& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
 
@@ -513,6 +532,8 @@ namespace Model
     Aws::String m_roleArn;
 
     Aws::String m_yarnEndpointAddress;
+
+    int m_zeppelinRemoteSparkInterpreterPort;
 
     int m_numberOfNodes;
 

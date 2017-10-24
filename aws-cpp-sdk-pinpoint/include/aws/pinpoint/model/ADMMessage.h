@@ -423,49 +423,6 @@ namespace Model
 
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline const Aws::String& GetJsonData() const{ return m_jsonData; }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline void SetJsonData(const Aws::String& value) { m_jsonDataHasBeenSet = true; m_jsonData = value; }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline void SetJsonData(Aws::String&& value) { m_jsonDataHasBeenSet = true; m_jsonData = std::move(value); }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline void SetJsonData(const char* value) { m_jsonDataHasBeenSet = true; m_jsonData.assign(value); }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline ADMMessage& WithJsonData(const Aws::String& value) { SetJsonData(value); return *this;}
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline ADMMessage& WithJsonData(Aws::String&& value) { SetJsonData(std::move(value)); return *this;}
-
-    /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
-     */
-    inline ADMMessage& WithJsonData(const char* value) { SetJsonData(value); return *this;}
-
-
-    /**
      * Optional. Base-64-encoded MD5 checksum of the data parameter. Used to verify
      * data integrity
      */
@@ -840,9 +797,6 @@ namespace Model
 
     Aws::String m_imageUrl;
     bool m_imageUrlHasBeenSet;
-
-    Aws::String m_jsonData;
-    bool m_jsonDataHasBeenSet;
 
     Aws::String m_mD5;
     bool m_mD5HasBeenSet;

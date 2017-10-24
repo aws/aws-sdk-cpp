@@ -27,11 +27,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateDevEndpointResult::CreateDevEndpointResult() : 
+    m_zeppelinRemoteSparkInterpreterPort(0),
     m_numberOfNodes(0)
 {
 }
 
 CreateDevEndpointResult::CreateDevEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_zeppelinRemoteSparkInterpreterPort(0),
     m_numberOfNodes(0)
 {
   *this = result;
@@ -76,6 +78,12 @@ CreateDevEndpointResult& CreateDevEndpointResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("YarnEndpointAddress"))
   {
     m_yarnEndpointAddress = jsonValue.GetString("YarnEndpointAddress");
+
+  }
+
+  if(jsonValue.ValueExists("ZeppelinRemoteSparkInterpreterPort"))
+  {
+    m_zeppelinRemoteSparkInterpreterPort = jsonValue.GetInteger("ZeppelinRemoteSparkInterpreterPort");
 
   }
 

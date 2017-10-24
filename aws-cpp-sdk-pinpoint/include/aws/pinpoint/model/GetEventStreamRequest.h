@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * GetEventStream Request<p><h3>See Also:</h3>   <a
+   * GetEventStreamRequest<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStreamRequest">AWS
    * API Reference</a></p>
    */

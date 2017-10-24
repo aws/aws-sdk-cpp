@@ -49,6 +49,37 @@ namespace Model
 
 
     /**
+     * The message that the campaign delivers to ADM channels. Overrides the default
+     * message.
+     */
+    inline const Message& GetADMMessage() const{ return m_aDMMessage; }
+
+    /**
+     * The message that the campaign delivers to ADM channels. Overrides the default
+     * message.
+     */
+    inline void SetADMMessage(const Message& value) { m_aDMMessageHasBeenSet = true; m_aDMMessage = value; }
+
+    /**
+     * The message that the campaign delivers to ADM channels. Overrides the default
+     * message.
+     */
+    inline void SetADMMessage(Message&& value) { m_aDMMessageHasBeenSet = true; m_aDMMessage = std::move(value); }
+
+    /**
+     * The message that the campaign delivers to ADM channels. Overrides the default
+     * message.
+     */
+    inline MessageConfiguration& WithADMMessage(const Message& value) { SetADMMessage(value); return *this;}
+
+    /**
+     * The message that the campaign delivers to ADM channels. Overrides the default
+     * message.
+     */
+    inline MessageConfiguration& WithADMMessage(Message&& value) { SetADMMessage(std::move(value)); return *this;}
+
+
+    /**
      * The message that the campaign delivers to APNS channels. Overrides the default
      * message.
      */
@@ -77,6 +108,37 @@ namespace Model
      * message.
      */
     inline MessageConfiguration& WithAPNSMessage(Message&& value) { SetAPNSMessage(std::move(value)); return *this;}
+
+
+    /**
+     * The message that the campaign delivers to Baidu channels. Overrides the default
+     * message.
+     */
+    inline const Message& GetBaiduMessage() const{ return m_baiduMessage; }
+
+    /**
+     * The message that the campaign delivers to Baidu channels. Overrides the default
+     * message.
+     */
+    inline void SetBaiduMessage(const Message& value) { m_baiduMessageHasBeenSet = true; m_baiduMessage = value; }
+
+    /**
+     * The message that the campaign delivers to Baidu channels. Overrides the default
+     * message.
+     */
+    inline void SetBaiduMessage(Message&& value) { m_baiduMessageHasBeenSet = true; m_baiduMessage = std::move(value); }
+
+    /**
+     * The message that the campaign delivers to Baidu channels. Overrides the default
+     * message.
+     */
+    inline MessageConfiguration& WithBaiduMessage(const Message& value) { SetBaiduMessage(value); return *this;}
+
+    /**
+     * The message that the campaign delivers to Baidu channels. Overrides the default
+     * message.
+     */
+    inline MessageConfiguration& WithBaiduMessage(Message&& value) { SetBaiduMessage(std::move(value)); return *this;}
 
 
     /**
@@ -189,8 +251,14 @@ namespace Model
 
   private:
 
+    Message m_aDMMessage;
+    bool m_aDMMessageHasBeenSet;
+
     Message m_aPNSMessage;
     bool m_aPNSMessageHasBeenSet;
+
+    Message m_baiduMessage;
+    bool m_baiduMessageHasBeenSet;
 
     Message m_defaultMessage;
     bool m_defaultMessageHasBeenSet;

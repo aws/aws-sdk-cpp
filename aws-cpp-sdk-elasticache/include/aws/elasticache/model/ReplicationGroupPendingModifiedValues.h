@@ -102,47 +102,52 @@ namespace Model
 
 
     /**
-     * <p>Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
-     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul> </note>
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline const PendingAutomaticFailoverStatus& GetAutomaticFailoverStatus() const{ return m_automaticFailoverStatus; }
 
     /**
-     * <p>Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
-     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul> </note>
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline void SetAutomaticFailoverStatus(const PendingAutomaticFailoverStatus& value) { m_automaticFailoverStatusHasBeenSet = true; m_automaticFailoverStatus = value; }
 
     /**
-     * <p>Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
-     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul> </note>
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline void SetAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { m_automaticFailoverStatusHasBeenSet = true; m_automaticFailoverStatus = std::move(value); }
 
     /**
-     * <p>Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
-     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul> </note>
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(const PendingAutomaticFailoverStatus& value) { SetAutomaticFailoverStatus(value); return *this;}
 
     /**
-     * <p>Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
-     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul> </note>
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { SetAutomaticFailoverStatus(std::move(value)); return *this;}
 

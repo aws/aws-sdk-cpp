@@ -66,7 +66,8 @@ namespace Model
     AWS_AutoScaling_AutoScalingGroup,
     AWS_AutoScaling_LaunchConfiguration,
     AWS_AutoScaling_ScalingPolicy,
-    AWS_AutoScaling_ScheduledAction
+    AWS_AutoScaling_ScheduledAction,
+    AWS_CodeBuild_Project
   };
 
 namespace ResourceTypeMapper

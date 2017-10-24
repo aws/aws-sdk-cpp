@@ -34,6 +34,8 @@ EmailChannelResponse::EmailChannelResponse() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_fromAddressHasBeenSet(false),
+    m_hasCredential(false),
+    m_hasCredentialHasBeenSet(false),
     m_idHasBeenSet(false),
     m_identityHasBeenSet(false),
     m_isArchived(false),
@@ -53,6 +55,8 @@ EmailChannelResponse::EmailChannelResponse(const JsonValue& jsonValue) :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_fromAddressHasBeenSet(false),
+    m_hasCredential(false),
+    m_hasCredentialHasBeenSet(false),
     m_idHasBeenSet(false),
     m_identityHasBeenSet(false),
     m_isArchived(false),
@@ -95,6 +99,13 @@ EmailChannelResponse& EmailChannelResponse::operator =(const JsonValue& jsonValu
     m_fromAddress = jsonValue.GetString("FromAddress");
 
     m_fromAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HasCredential"))
+  {
+    m_hasCredential = jsonValue.GetBool("HasCredential");
+
+    m_hasCredentialHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Id"))
@@ -181,6 +192,12 @@ JsonValue EmailChannelResponse::Jsonize() const
   if(m_fromAddressHasBeenSet)
   {
    payload.WithString("FromAddress", m_fromAddress);
+
+  }
+
+  if(m_hasCredentialHasBeenSet)
+  {
+   payload.WithBool("HasCredential", m_hasCredential);
 
   }
 

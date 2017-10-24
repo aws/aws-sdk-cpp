@@ -161,42 +161,6 @@ namespace Model
 
 
     /**
-     * Original request Id for which this message is delivered.
-     */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * Original request Id for which this message is delivered.
-     */
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-
-    /**
-     * Original request Id for which this message is delivered.
-     */
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-
-    /**
-     * Original request Id for which this message is delivered.
-     */
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-
-    /**
-     * Original request Id for which this message is delivered.
-     */
-    inline SendUsersMessageRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * Original request Id for which this message is delivered.
-     */
-    inline SendUsersMessageRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * Original request Id for which this message is delivered.
-     */
-    inline SendUsersMessageRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
-
-    /**
      * A map of destination endpoints, with the EndpointId as the key Endpoint Message
      * Configuration as the value.
      */
@@ -269,9 +233,6 @@ namespace Model
 
     DirectMessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
 
     Aws::Map<Aws::String, EndpointSendConfiguration> m_users;
     bool m_usersHasBeenSet;

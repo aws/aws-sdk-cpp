@@ -46,7 +46,13 @@ ReplicationGroup::ReplicationGroup() :
     m_snapshotWindowHasBeenSet(false),
     m_clusterEnabled(false),
     m_clusterEnabledHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false)
+    m_cacheNodeTypeHasBeenSet(false),
+    m_authTokenEnabled(false),
+    m_authTokenEnabledHasBeenSet(false),
+    m_transitEncryptionEnabled(false),
+    m_transitEncryptionEnabledHasBeenSet(false),
+    m_atRestEncryptionEnabled(false),
+    m_atRestEncryptionEnabledHasBeenSet(false)
 {
 }
 
@@ -66,7 +72,13 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_snapshotWindowHasBeenSet(false),
     m_clusterEnabled(false),
     m_clusterEnabledHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false)
+    m_cacheNodeTypeHasBeenSet(false),
+    m_authTokenEnabled(false),
+    m_authTokenEnabledHasBeenSet(false),
+    m_transitEncryptionEnabled(false),
+    m_transitEncryptionEnabledHasBeenSet(false),
+    m_atRestEncryptionEnabled(false),
+    m_atRestEncryptionEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -167,6 +179,24 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_cacheNodeType = StringUtils::Trim(cacheNodeTypeNode.GetText().c_str());
       m_cacheNodeTypeHasBeenSet = true;
     }
+    XmlNode authTokenEnabledNode = resultNode.FirstChild("AuthTokenEnabled");
+    if(!authTokenEnabledNode.IsNull())
+    {
+      m_authTokenEnabled = StringUtils::ConvertToBool(StringUtils::Trim(authTokenEnabledNode.GetText().c_str()).c_str());
+      m_authTokenEnabledHasBeenSet = true;
+    }
+    XmlNode transitEncryptionEnabledNode = resultNode.FirstChild("TransitEncryptionEnabled");
+    if(!transitEncryptionEnabledNode.IsNull())
+    {
+      m_transitEncryptionEnabled = StringUtils::ConvertToBool(StringUtils::Trim(transitEncryptionEnabledNode.GetText().c_str()).c_str());
+      m_transitEncryptionEnabledHasBeenSet = true;
+    }
+    XmlNode atRestEncryptionEnabledNode = resultNode.FirstChild("AtRestEncryptionEnabled");
+    if(!atRestEncryptionEnabledNode.IsNull())
+    {
+      m_atRestEncryptionEnabled = StringUtils::ConvertToBool(StringUtils::Trim(atRestEncryptionEnabledNode.GetText().c_str()).c_str());
+      m_atRestEncryptionEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -253,6 +283,21 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
   }
 
+  if(m_authTokenEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AuthTokenEnabled=" << std::boolalpha << m_authTokenEnabled << "&";
+  }
+
+  if(m_transitEncryptionEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
+  }
+
+  if(m_atRestEncryptionEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
+  }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -322,6 +367,18 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_cacheNodeTypeHasBeenSet)
   {
       oStream << location << ".CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
+  }
+  if(m_authTokenEnabledHasBeenSet)
+  {
+      oStream << location << ".AuthTokenEnabled=" << std::boolalpha << m_authTokenEnabled << "&";
+  }
+  if(m_transitEncryptionEnabledHasBeenSet)
+  {
+      oStream << location << ".TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
+  }
+  if(m_atRestEncryptionEnabledHasBeenSet)
+  {
+      oStream << location << ".AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
   }
 }
 

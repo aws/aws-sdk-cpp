@@ -33,6 +33,8 @@ namespace Aws
         static const int GCM_HASH = HashingUtils::HashString("GCM");
         static const int APNS_HASH = HashingUtils::HashString("APNS");
         static const int APNS_SANDBOX_HASH = HashingUtils::HashString("APNS_SANDBOX");
+        static const int APNS_VOIP_HASH = HashingUtils::HashString("APNS_VOIP");
+        static const int APNS_VOIP_SANDBOX_HASH = HashingUtils::HashString("APNS_VOIP_SANDBOX");
         static const int ADM_HASH = HashingUtils::HashString("ADM");
         static const int SMS_HASH = HashingUtils::HashString("SMS");
         static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
@@ -53,6 +55,14 @@ namespace Aws
           else if (hashCode == APNS_SANDBOX_HASH)
           {
             return ChannelType::APNS_SANDBOX;
+          }
+          else if (hashCode == APNS_VOIP_HASH)
+          {
+            return ChannelType::APNS_VOIP;
+          }
+          else if (hashCode == APNS_VOIP_SANDBOX_HASH)
+          {
+            return ChannelType::APNS_VOIP_SANDBOX;
           }
           else if (hashCode == ADM_HASH)
           {
@@ -90,6 +100,10 @@ namespace Aws
             return "APNS";
           case ChannelType::APNS_SANDBOX:
             return "APNS_SANDBOX";
+          case ChannelType::APNS_VOIP:
+            return "APNS_VOIP";
+          case ChannelType::APNS_VOIP_SANDBOX:
+            return "APNS_VOIP_SANDBOX";
           case ChannelType::ADM:
             return "ADM";
           case ChannelType::SMS:

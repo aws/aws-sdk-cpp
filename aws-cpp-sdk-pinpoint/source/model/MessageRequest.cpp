@@ -30,21 +30,17 @@ namespace Model
 
 MessageRequest::MessageRequest() : 
     m_addressesHasBeenSet(false),
-    m_campaignHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_endpointsHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_messageConfigurationHasBeenSet(false)
 {
 }
 
 MessageRequest::MessageRequest(const JsonValue& jsonValue) : 
     m_addressesHasBeenSet(false),
-    m_campaignHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_endpointsHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_messageConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,16 +55,6 @@ MessageRequest& MessageRequest::operator =(const JsonValue& jsonValue)
       m_addresses[addressesItem.first] = addressesItem.second.AsObject();
     }
     m_addressesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Campaign"))
-  {
-    Aws::Map<Aws::String, JsonValue> campaignJsonMap = jsonValue.GetObject("Campaign").GetAllObjects();
-    for(auto& campaignItem : campaignJsonMap)
-    {
-      m_campaign[campaignItem.first] = campaignItem.second.AsString();
-    }
-    m_campaignHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Context"))
@@ -98,13 +84,6 @@ MessageRequest& MessageRequest::operator =(const JsonValue& jsonValue)
     m_messageConfigurationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("RequestId"))
-  {
-    m_requestId = jsonValue.GetString("RequestId");
-
-    m_requestIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -120,17 +99,6 @@ JsonValue MessageRequest::Jsonize() const
      addressesJsonMap.WithObject(addressesItem.first, addressesItem.second.Jsonize());
    }
    payload.WithObject("Addresses", std::move(addressesJsonMap));
-
-  }
-
-  if(m_campaignHasBeenSet)
-  {
-   JsonValue campaignJsonMap;
-   for(auto& campaignItem : m_campaign)
-   {
-     campaignJsonMap.WithString(campaignItem.first, campaignItem.second);
-   }
-   payload.WithObject("Campaign", std::move(campaignJsonMap));
 
   }
 
@@ -159,12 +127,6 @@ JsonValue MessageRequest::Jsonize() const
   if(m_messageConfigurationHasBeenSet)
   {
    payload.WithObject("MessageConfiguration", m_messageConfiguration.Jsonize());
-
-  }
-
-  if(m_requestIdHasBeenSet)
-  {
-   payload.WithString("RequestId", m_requestId);
 
   }
 

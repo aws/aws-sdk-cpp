@@ -99,27 +99,32 @@ namespace Model
 
 
     /**
-     * <p>The type of connections to return.</p>
+     * <p>The type of connections to return. Currently, only JDBC is supported; SFTP is
+     * not supported.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
 
     /**
-     * <p>The type of connections to return.</p>
+     * <p>The type of connections to return. Currently, only JDBC is supported; SFTP is
+     * not supported.</p>
      */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
     /**
-     * <p>The type of connections to return.</p>
+     * <p>The type of connections to return. Currently, only JDBC is supported; SFTP is
+     * not supported.</p>
      */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
 
     /**
-     * <p>The type of connections to return.</p>
+     * <p>The type of connections to return. Currently, only JDBC is supported; SFTP is
+     * not supported.</p>
      */
     inline GetConnectionsFilter& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
 
     /**
-     * <p>The type of connections to return.</p>
+     * <p>The type of connections to return. Currently, only JDBC is supported; SFTP is
+     * not supported.</p>
      */
     inline GetConnectionsFilter& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
 

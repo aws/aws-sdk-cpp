@@ -118,49 +118,6 @@ namespace Model
 
 
     /**
-     * The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish
-     * to the stream.
-     */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
-
-    /**
-     * The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish
-     * to the stream.
-     */
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-
-    /**
-     * The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish
-     * to the stream.
-     */
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-
-    /**
-     * The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish
-     * to the stream.
-     */
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-
-    /**
-     * The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish
-     * to the stream.
-     */
-    inline WriteEventStream& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-
-    /**
-     * The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish
-     * to the stream.
-     */
-    inline WriteEventStream& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-
-    /**
-     * The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish
-     * to the stream.
-     */
-    inline WriteEventStream& WithExternalId(const char* value) { SetExternalId(value); return *this;}
-
-
-    /**
      * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
      * your account.
      */
@@ -206,9 +163,6 @@ namespace Model
 
     Aws::String m_destinationStreamArn;
     bool m_destinationStreamArnHasBeenSet;
-
-    Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

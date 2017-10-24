@@ -84,44 +84,44 @@ namespace Model
 
 
     /**
-     * <p>The AWS ARN of the IAM role used by the new <code>Crawler</code> to access
-     * customer resources.</p>
+     * <p>The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to
+     * access customer resources.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The AWS ARN of the IAM role used by the new <code>Crawler</code> to access
-     * customer resources.</p>
+     * <p>The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to
+     * access customer resources.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The AWS ARN of the IAM role used by the new <code>Crawler</code> to access
-     * customer resources.</p>
+     * <p>The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to
+     * access customer resources.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The AWS ARN of the IAM role used by the new <code>Crawler</code> to access
-     * customer resources.</p>
+     * <p>The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to
+     * access customer resources.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The AWS ARN of the IAM role used by the new <code>Crawler</code> to access
-     * customer resources.</p>
+     * <p>The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to
+     * access customer resources.</p>
      */
     inline UpdateCrawlerRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The AWS ARN of the IAM role used by the new <code>Crawler</code> to access
-     * customer resources.</p>
+     * <p>The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to
+     * access customer resources.</p>
      */
     inline UpdateCrawlerRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS ARN of the IAM role used by the new <code>Crawler</code> to access
-     * customer resources.</p>
+     * <p>The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to
+     * access customer resources.</p>
      */
     inline UpdateCrawlerRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
@@ -232,58 +232,58 @@ namespace Model
 
 
     /**
-     * <p>A cron expression that can be used as a Cloudwatch event (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch
-     * Schedule Expression Syntax</a>. For example, to run every day at 12:15 UTC,
-     * specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>A cron expression that can be used as a Cloudwatch event (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch
-     * Schedule Expression Syntax</a>. For example, to run every day at 12:15 UTC,
-     * specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * <p>A cron expression that can be used as a Cloudwatch event (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch
-     * Schedule Expression Syntax</a>. For example, to run every day at 12:15 UTC,
-     * specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * <p>A cron expression that can be used as a Cloudwatch event (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch
-     * Schedule Expression Syntax</a>. For example, to run every day at 12:15 UTC,
-     * specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
 
     /**
-     * <p>A cron expression that can be used as a Cloudwatch event (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch
-     * Schedule Expression Syntax</a>. For example, to run every day at 12:15 UTC,
-     * specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline UpdateCrawlerRequest& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>A cron expression that can be used as a Cloudwatch event (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch
-     * Schedule Expression Syntax</a>. For example, to run every day at 12:15 UTC,
-     * specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline UpdateCrawlerRequest& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
     /**
-     * <p>A cron expression that can be used as a Cloudwatch event (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch
-     * Schedule Expression Syntax</a>. For example, to run every day at 12:15 UTC,
-     * specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline UpdateCrawlerRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 

@@ -37,7 +37,7 @@ GCMMessage::GCMMessage() :
     m_iconReferenceHasBeenSet(false),
     m_imageIconUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_jsonDataHasBeenSet(false),
+    m_priorityHasBeenSet(false),
     m_rawContentHasBeenSet(false),
     m_restrictedPackageNameHasBeenSet(false),
     m_silentPush(false),
@@ -45,6 +45,8 @@ GCMMessage::GCMMessage() :
     m_smallImageIconUrlHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_substitutionsHasBeenSet(false),
+    m_timeToLive(0),
+    m_timeToLiveHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
@@ -59,7 +61,7 @@ GCMMessage::GCMMessage(const JsonValue& jsonValue) :
     m_iconReferenceHasBeenSet(false),
     m_imageIconUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_jsonDataHasBeenSet(false),
+    m_priorityHasBeenSet(false),
     m_rawContentHasBeenSet(false),
     m_restrictedPackageNameHasBeenSet(false),
     m_silentPush(false),
@@ -67,6 +69,8 @@ GCMMessage::GCMMessage(const JsonValue& jsonValue) :
     m_smallImageIconUrlHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_substitutionsHasBeenSet(false),
+    m_timeToLive(0),
+    m_timeToLiveHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
@@ -127,11 +131,11 @@ GCMMessage& GCMMessage::operator =(const JsonValue& jsonValue)
     m_imageUrlHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("JsonData"))
+  if(jsonValue.ValueExists("Priority"))
   {
-    m_jsonData = jsonValue.GetString("JsonData");
+    m_priority = jsonValue.GetString("Priority");
 
-    m_jsonDataHasBeenSet = true;
+    m_priorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RawContent"))
@@ -184,6 +188,13 @@ GCMMessage& GCMMessage::operator =(const JsonValue& jsonValue)
       m_substitutions[substitutionsItem.first] = std::move(listOf__stringList);
     }
     m_substitutionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TimeToLive"))
+  {
+    m_timeToLive = jsonValue.GetInteger("TimeToLive");
+
+    m_timeToLiveHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Title"))
@@ -253,9 +264,9 @@ JsonValue GCMMessage::Jsonize() const
 
   }
 
-  if(m_jsonDataHasBeenSet)
+  if(m_priorityHasBeenSet)
   {
-   payload.WithString("JsonData", m_jsonData);
+   payload.WithString("Priority", m_priority);
 
   }
 
@@ -302,6 +313,12 @@ JsonValue GCMMessage::Jsonize() const
      substitutionsJsonMap.WithArray(substitutionsItem.first, std::move(listOf__stringJsonList));
    }
    payload.WithObject("Substitutions", std::move(substitutionsJsonMap));
+
+  }
+
+  if(m_timeToLiveHasBeenSet)
+  {
+   payload.WithInteger("TimeToLive", m_timeToLive);
 
   }
 

@@ -29,6 +29,8 @@ namespace Model
     GCM,
     APNS,
     APNS_SANDBOX,
+    APNS_VOIP,
+    APNS_VOIP_SANDBOX,
     ADM,
     SMS,
     EMAIL,

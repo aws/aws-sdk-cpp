@@ -387,46 +387,39 @@ namespace Model
 
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * Is this a transaction priority message or lower priority.
      */
-    inline const Aws::String& GetJsonData() const{ return m_jsonData; }
+    inline const Aws::String& GetPriority() const{ return m_priority; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * Is this a transaction priority message or lower priority.
      */
-    inline void SetJsonData(const Aws::String& value) { m_jsonDataHasBeenSet = true; m_jsonData = value; }
+    inline void SetPriority(const Aws::String& value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * Is this a transaction priority message or lower priority.
      */
-    inline void SetJsonData(Aws::String&& value) { m_jsonDataHasBeenSet = true; m_jsonData = std::move(value); }
+    inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * Is this a transaction priority message or lower priority.
      */
-    inline void SetJsonData(const char* value) { m_jsonDataHasBeenSet = true; m_jsonData.assign(value); }
+    inline void SetPriority(const char* value) { m_priorityHasBeenSet = true; m_priority.assign(value); }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * Is this a transaction priority message or lower priority.
      */
-    inline GCMMessage& WithJsonData(const Aws::String& value) { SetJsonData(value); return *this;}
+    inline GCMMessage& WithPriority(const Aws::String& value) { SetPriority(value); return *this;}
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * Is this a transaction priority message or lower priority.
      */
-    inline GCMMessage& WithJsonData(Aws::String&& value) { SetJsonData(std::move(value)); return *this;}
+    inline GCMMessage& WithPriority(Aws::String&& value) { SetPriority(std::move(value)); return *this;}
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * Is this a transaction priority message or lower priority.
      */
-    inline GCMMessage& WithJsonData(const char* value) { SetJsonData(value); return *this;}
+    inline GCMMessage& WithPriority(const char* value) { SetPriority(value); return *this;}
 
 
     /**
@@ -702,6 +695,28 @@ namespace Model
 
 
     /**
+     * This parameter specifies how long (in seconds) the message should be kept in GCM
+     * storage if the device is offline. The maximum time to live supported is 4 weeks,
+     * and the default value is 4 weeks.
+     */
+    inline int GetTimeToLive() const{ return m_timeToLive; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in GCM
+     * storage if the device is offline. The maximum time to live supported is 4 weeks,
+     * and the default value is 4 weeks.
+     */
+    inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in GCM
+     * storage if the device is offline. The maximum time to live supported is 4 weeks,
+     * and the default value is 4 weeks.
+     */
+    inline GCMMessage& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
+
+
+    /**
      * The message title that displays above the message on the user's device.
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
@@ -802,8 +817,8 @@ namespace Model
     Aws::String m_imageUrl;
     bool m_imageUrlHasBeenSet;
 
-    Aws::String m_jsonData;
-    bool m_jsonDataHasBeenSet;
+    Aws::String m_priority;
+    bool m_priorityHasBeenSet;
 
     Aws::String m_rawContent;
     bool m_rawContentHasBeenSet;
@@ -822,6 +837,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
     bool m_substitutionsHasBeenSet;
+
+    int m_timeToLive;
+    bool m_timeToLiveHasBeenSet;
 
     Aws::String m_title;
     bool m_titleHasBeenSet;

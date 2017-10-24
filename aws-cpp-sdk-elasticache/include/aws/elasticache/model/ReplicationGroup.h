@@ -344,47 +344,52 @@ namespace Model
 
 
     /**
-     * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
-     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul> </note>
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
 
     /**
-     * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
-     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul> </note>
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline void SetAutomaticFailover(const AutomaticFailoverStatus& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
 
     /**
-     * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
-     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul> </note>
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = std::move(value); }
 
     /**
-     * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
-     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul> </note>
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline ReplicationGroup& WithAutomaticFailover(const AutomaticFailoverStatus& value) { SetAutomaticFailover(value); return *this;}
 
     /**
-     * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
-     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul> </note>
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline ReplicationGroup& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(std::move(value)); return *this;}
 
@@ -455,8 +460,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
 
@@ -464,8 +469,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline void SetSnapshotWindow(const Aws::String& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
 
@@ -473,8 +478,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
 
@@ -482,8 +487,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline void SetSnapshotWindow(const char* value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow.assign(value); }
 
@@ -491,8 +496,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline ReplicationGroup& WithSnapshotWindow(const Aws::String& value) { SetSnapshotWindow(value); return *this;}
 
@@ -500,8 +505,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline ReplicationGroup& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
 
@@ -509,8 +514,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline ReplicationGroup& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
@@ -579,6 +584,81 @@ namespace Model
      */
     inline ReplicationGroup& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
+
+    /**
+     * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
+     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetAuthTokenEnabled() const{ return m_authTokenEnabled; }
+
+    /**
+     * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
+     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetAuthTokenEnabled(bool value) { m_authTokenEnabledHasBeenSet = true; m_authTokenEnabled = value; }
+
+    /**
+     * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
+     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     */
+    inline ReplicationGroup& WithAuthTokenEnabled(bool value) { SetAuthTokenEnabled(value); return *this;}
+
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
+     * the cluster is created. To enable in-transit encryption on a cluster you must
+     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
+     * the cluster is created. To enable in-transit encryption on a cluster you must
+     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
+     * the cluster is created. To enable in-transit encryption on a cluster you must
+     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline ReplicationGroup& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
+
+
+    /**
+     * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
+     * cluster is created. To enable encryption at-rest on a cluster you must set
+     * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
+     * cluster is created. To enable encryption at-rest on a cluster you must set
+     * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
+
+    /**
+     * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
+     * cluster is created. To enable encryption at-rest on a cluster you must set
+     * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>Default: <code>false</code> </p>
+     */
+    inline ReplicationGroup& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -619,6 +699,15 @@ namespace Model
 
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
+    bool m_authTokenEnabled;
+    bool m_authTokenEnabledHasBeenSet;
+
+    bool m_transitEncryptionEnabled;
+    bool m_transitEncryptionEnabledHasBeenSet;
+
+    bool m_atRestEncryptionEnabled;
+    bool m_atRestEncryptionEnabledHasBeenSet;
   };
 
 } // namespace Model
