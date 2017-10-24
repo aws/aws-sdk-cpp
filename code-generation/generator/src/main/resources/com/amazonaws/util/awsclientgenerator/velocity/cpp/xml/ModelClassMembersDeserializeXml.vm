@@ -10,6 +10,10 @@
 #set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
+#if($memberName == $shape.payload)##member is the whole payload (not wrapped)
+    $memberVarName = resultNode;
+#break
+#end
 #if($member.shape.list)##member is list
 #if($member.shape.flattened || $member.flattened)##list member uses flattened serialization
 #if($member.locationName)

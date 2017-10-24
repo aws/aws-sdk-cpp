@@ -10,6 +10,10 @@
 #set($lowerCaseVarName = $CppViewHelper.computeVariableName($entry.key))
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($entry.key))
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
+#if($memberName == $shape.payload)##member is the whole payload (not wrapped)
+  ${spaces}${memberVarName} = jsonValue;
+#break
+#end
 #if(!$member.required)
   if(jsonValue.ValueExists("${memberName}"))
   {
