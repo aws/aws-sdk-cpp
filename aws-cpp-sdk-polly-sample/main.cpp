@@ -23,7 +23,7 @@ using namespace Aws::TextToSpeech;
 static const char* ALLOCATION_TAG = "PollySample::Main";
 
 void DriveProgram();
-void SelectVoiceAndOutputSound(Aws::TextToSpeech::TextToSpeechManager& manager);
+void SelectVoiceAndOutputSound(const std::shared_ptr<Aws::TextToSpeech::TextToSpeechManager>& manager);
 
 int main()
 {
@@ -34,10 +34,10 @@ int main()
 	return 0;
 }
 
-void SelectVoiceAndOutputSound(Aws::TextToSpeech::TextToSpeechManager& manager)
+void SelectVoiceAndOutputSound(const std::shared_ptr<Aws::TextToSpeech::TextToSpeechManager>& manager)
 {
 	std::cout << "available voices are: " << std::endl;
-	for (auto& voice : manager.ListAvailableVoices())
+	for (auto& voice : manager->ListAvailableVoices())
 	{
 		std::cout << voice.first << "    language: " << voice.second << std::endl;
 	}
@@ -46,7 +46,7 @@ void SelectVoiceAndOutputSound(Aws::TextToSpeech::TextToSpeechManager& manager)
 
 	Aws::String voice;
 	std::getline(std::cin, voice);
-	manager.SetActiveVoice(voice);
+	manager->SetActiveVoice(voice);
 
 	SendTextCompletedHandler handler;
 
@@ -64,7 +64,7 @@ void SelectVoiceAndOutputSound(Aws::TextToSpeech::TextToSpeechManager& manager)
 			return;
 		}
 
-		manager.SendTextToOutputDevice(line.c_str(), handler);
+		manager->SendTextToOutputDevice(line.c_str(), handler);
 		std::cout << "Anything else?" << std::endl;
 	}
 }
@@ -72,10 +72,10 @@ void SelectVoiceAndOutputSound(Aws::TextToSpeech::TextToSpeechManager& manager)
 void DriveProgram()
 {
 	auto client = Aws::MakeShared<PollyClient>(ALLOCATION_TAG);
-	TextToSpeechManager manager(client);
+	auto manager = TextToSpeechManager::Create(client);
 
 	std::cout << "available devices are: " << std::endl;
-	auto devices = manager.EnumerateDevices();
+	auto devices = manager->EnumerateDevices();
 
 	for (auto& device : devices)
 	{
