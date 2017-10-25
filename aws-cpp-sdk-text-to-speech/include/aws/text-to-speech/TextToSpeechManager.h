@@ -42,7 +42,7 @@ namespace Aws
          * Maximum bytes size of audio to be sent to PCM drivers by TextToSpeechManager in one operation
          * with PCMOutputDriver::WriteBufferToDevice()
          */
-        constexpr size_t BUFF_SIZE = 8192;
+        static const size_t BUFF_SIZE = 8192;
 
         /**
          * Manager for rendering text to the Polly service and then sending directly to an audio driver.
