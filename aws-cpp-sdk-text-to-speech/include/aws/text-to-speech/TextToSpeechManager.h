@@ -39,6 +39,12 @@ namespace Aws
         typedef Aws::Vector<OutputDevicePair> OutputDeviceList;
 
         /**
+         * Maximum bytes size of audio to be sent to PCM drivers by TextToSpeechManager in one operation
+         * with PCMOutputDriver::WriteBufferToDevice()
+         */
+        constexpr size_t BUFF_SIZE = 8192;
+
+        /**
          * Manager for rendering text to the Polly service and then sending directly to an audio driver.
          * By default this uses our best guess at the correct drivers for you operating system.
          * On windows, this is the WaveOut API.
