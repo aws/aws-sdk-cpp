@@ -38,12 +38,7 @@ DeleteApnsChannelResult::DeleteApnsChannelResult(const Aws::AmazonWebServiceResu
 DeleteApnsChannelResult& DeleteApnsChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("APNSChannelResponse"))
-  {
-    m_aPNSChannelResponse = jsonValue.GetObject("APNSChannelResponse");
-
-  }
-
+  m_aPNSChannelResponse = jsonValue;
 
 
   return *this;

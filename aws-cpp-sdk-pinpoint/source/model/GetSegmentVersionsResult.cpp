@@ -38,12 +38,7 @@ GetSegmentVersionsResult::GetSegmentVersionsResult(const Aws::AmazonWebServiceRe
 GetSegmentVersionsResult& GetSegmentVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("SegmentsResponse"))
-  {
-    m_segmentsResponse = jsonValue.GetObject("SegmentsResponse");
-
-  }
-
+  m_segmentsResponse = jsonValue;
 
 
   return *this;

@@ -38,12 +38,7 @@ GetCampaignResult::GetCampaignResult(const Aws::AmazonWebServiceResult<JsonValue
 GetCampaignResult& GetCampaignResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("CampaignResponse"))
-  {
-    m_campaignResponse = jsonValue.GetObject("CampaignResponse");
-
-  }
-
+  m_campaignResponse = jsonValue;
 
 
   return *this;

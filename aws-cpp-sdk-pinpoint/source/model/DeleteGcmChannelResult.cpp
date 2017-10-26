@@ -38,12 +38,7 @@ DeleteGcmChannelResult::DeleteGcmChannelResult(const Aws::AmazonWebServiceResult
 DeleteGcmChannelResult& DeleteGcmChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("GCMChannelResponse"))
-  {
-    m_gCMChannelResponse = jsonValue.GetObject("GCMChannelResponse");
-
-  }
-
+  m_gCMChannelResponse = jsonValue;
 
 
   return *this;

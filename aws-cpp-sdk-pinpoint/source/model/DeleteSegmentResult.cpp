@@ -38,12 +38,7 @@ DeleteSegmentResult::DeleteSegmentResult(const Aws::AmazonWebServiceResult<JsonV
 DeleteSegmentResult& DeleteSegmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("SegmentResponse"))
-  {
-    m_segmentResponse = jsonValue.GetObject("SegmentResponse");
-
-  }
-
+  m_segmentResponse = jsonValue;
 
 
   return *this;

@@ -38,12 +38,7 @@ GetApnsVoipSandboxChannelResult::GetApnsVoipSandboxChannelResult(const Aws::Amaz
 GetApnsVoipSandboxChannelResult& GetApnsVoipSandboxChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("APNSVoipSandboxChannelResponse"))
-  {
-    m_aPNSVoipSandboxChannelResponse = jsonValue.GetObject("APNSVoipSandboxChannelResponse");
-
-  }
-
+  m_aPNSVoipSandboxChannelResponse = jsonValue;
 
 
   return *this;

@@ -38,12 +38,7 @@ PutEventStreamResult::PutEventStreamResult(const Aws::AmazonWebServiceResult<Jso
 PutEventStreamResult& PutEventStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("EventStream"))
-  {
-    m_eventStream = jsonValue.GetObject("EventStream");
-
-  }
-
+  m_eventStream = jsonValue;
 
 
   return *this;

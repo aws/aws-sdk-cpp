@@ -38,12 +38,7 @@ UpdateAdmChannelResult::UpdateAdmChannelResult(const Aws::AmazonWebServiceResult
 UpdateAdmChannelResult& UpdateAdmChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("ADMChannelResponse"))
-  {
-    m_aDMChannelResponse = jsonValue.GetObject("ADMChannelResponse");
-
-  }
-
+  m_aDMChannelResponse = jsonValue;
 
 
   return *this;

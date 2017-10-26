@@ -41,11 +41,7 @@ GetBucketMetricsConfigurationResult& GetBucketMetricsConfigurationResult::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode metricsConfigurationNode = resultNode.FirstChild("MetricsConfiguration");
-    if(!metricsConfigurationNode.IsNull())
-    {
-      m_metricsConfiguration = metricsConfigurationNode;
-    }
+    m_metricsConfiguration = resultNode;
   }
 
   return *this;

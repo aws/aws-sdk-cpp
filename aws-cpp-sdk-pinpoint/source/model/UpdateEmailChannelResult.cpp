@@ -38,12 +38,7 @@ UpdateEmailChannelResult::UpdateEmailChannelResult(const Aws::AmazonWebServiceRe
 UpdateEmailChannelResult& UpdateEmailChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("EmailChannelResponse"))
-  {
-    m_emailChannelResponse = jsonValue.GetObject("EmailChannelResponse");
-
-  }
-
+  m_emailChannelResponse = jsonValue;
 
 
   return *this;

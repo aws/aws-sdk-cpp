@@ -38,12 +38,7 @@ UpdateBaiduChannelResult::UpdateBaiduChannelResult(const Aws::AmazonWebServiceRe
 UpdateBaiduChannelResult& UpdateBaiduChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("BaiduChannelResponse"))
-  {
-    m_baiduChannelResponse = jsonValue.GetObject("BaiduChannelResponse");
-
-  }
-
+  m_baiduChannelResponse = jsonValue;
 
 
   return *this;

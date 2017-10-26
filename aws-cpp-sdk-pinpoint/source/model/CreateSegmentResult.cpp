@@ -38,12 +38,7 @@ CreateSegmentResult::CreateSegmentResult(const Aws::AmazonWebServiceResult<JsonV
 CreateSegmentResult& CreateSegmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("SegmentResponse"))
-  {
-    m_segmentResponse = jsonValue.GetObject("SegmentResponse");
-
-  }
-
+  m_segmentResponse = jsonValue;
 
 
   return *this;

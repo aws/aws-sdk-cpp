@@ -38,12 +38,7 @@ UpdateEndpointResult::UpdateEndpointResult(const Aws::AmazonWebServiceResult<Jso
 UpdateEndpointResult& UpdateEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("MessageBody"))
-  {
-    m_messageBody = jsonValue.GetObject("MessageBody");
-
-  }
-
+  m_messageBody = jsonValue;
 
 
   return *this;

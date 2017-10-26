@@ -38,12 +38,7 @@ SendUsersMessagesResult::SendUsersMessagesResult(const Aws::AmazonWebServiceResu
 SendUsersMessagesResult& SendUsersMessagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("SendUsersMessageResponse"))
-  {
-    m_sendUsersMessageResponse = jsonValue.GetObject("SendUsersMessageResponse");
-
-  }
-
+  m_sendUsersMessageResponse = jsonValue;
 
 
   return *this;

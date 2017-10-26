@@ -38,12 +38,7 @@ GetApplicationSettingsResult::GetApplicationSettingsResult(const Aws::AmazonWebS
 GetApplicationSettingsResult& GetApplicationSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("ApplicationSettingsResource"))
-  {
-    m_applicationSettingsResource = jsonValue.GetObject("ApplicationSettingsResource");
-
-  }
-
+  m_applicationSettingsResource = jsonValue;
 
 
   return *this;

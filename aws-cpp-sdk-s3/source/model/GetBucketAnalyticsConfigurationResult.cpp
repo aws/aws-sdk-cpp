@@ -41,11 +41,7 @@ GetBucketAnalyticsConfigurationResult& GetBucketAnalyticsConfigurationResult::op
 
   if(!resultNode.IsNull())
   {
-    XmlNode analyticsConfigurationNode = resultNode.FirstChild("AnalyticsConfiguration");
-    if(!analyticsConfigurationNode.IsNull())
-    {
-      m_analyticsConfiguration = analyticsConfigurationNode;
-    }
+    m_analyticsConfiguration = resultNode;
   }
 
   return *this;

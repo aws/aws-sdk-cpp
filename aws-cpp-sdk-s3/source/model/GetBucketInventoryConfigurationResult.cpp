@@ -41,11 +41,7 @@ GetBucketInventoryConfigurationResult& GetBucketInventoryConfigurationResult::op
 
   if(!resultNode.IsNull())
   {
-    XmlNode inventoryConfigurationNode = resultNode.FirstChild("InventoryConfiguration");
-    if(!inventoryConfigurationNode.IsNull())
-    {
-      m_inventoryConfiguration = inventoryConfigurationNode;
-    }
+    m_inventoryConfiguration = resultNode;
   }
 
   return *this;

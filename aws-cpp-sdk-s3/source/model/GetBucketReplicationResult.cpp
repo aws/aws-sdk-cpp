@@ -41,11 +41,7 @@ GetBucketReplicationResult& GetBucketReplicationResult::operator =(const Aws::Am
 
   if(!resultNode.IsNull())
   {
-    XmlNode replicationConfigurationNode = resultNode.FirstChild("ReplicationConfiguration");
-    if(!replicationConfigurationNode.IsNull())
-    {
-      m_replicationConfiguration = replicationConfigurationNode;
-    }
+    m_replicationConfiguration = resultNode;
   }
 
   return *this;

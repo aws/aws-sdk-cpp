@@ -38,12 +38,7 @@ GetEndpointResult::GetEndpointResult(const Aws::AmazonWebServiceResult<JsonValue
 GetEndpointResult& GetEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("EndpointResponse"))
-  {
-    m_endpointResponse = jsonValue.GetObject("EndpointResponse");
-
-  }
-
+  m_endpointResponse = jsonValue;
 
 
   return *this;

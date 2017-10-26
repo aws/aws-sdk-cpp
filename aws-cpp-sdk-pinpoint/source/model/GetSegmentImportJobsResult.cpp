@@ -38,12 +38,7 @@ GetSegmentImportJobsResult::GetSegmentImportJobsResult(const Aws::AmazonWebServi
 GetSegmentImportJobsResult& GetSegmentImportJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("ImportJobsResponse"))
-  {
-    m_importJobsResponse = jsonValue.GetObject("ImportJobsResponse");
-
-  }
-
+  m_importJobsResponse = jsonValue;
 
 
   return *this;

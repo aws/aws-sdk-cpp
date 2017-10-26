@@ -38,12 +38,7 @@ GetCampaignVersionsResult::GetCampaignVersionsResult(const Aws::AmazonWebService
 GetCampaignVersionsResult& GetCampaignVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("CampaignsResponse"))
-  {
-    m_campaignsResponse = jsonValue.GetObject("CampaignsResponse");
-
-  }
-
+  m_campaignsResponse = jsonValue;
 
 
   return *this;

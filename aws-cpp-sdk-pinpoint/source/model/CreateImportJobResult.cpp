@@ -38,12 +38,7 @@ CreateImportJobResult::CreateImportJobResult(const Aws::AmazonWebServiceResult<J
 CreateImportJobResult& CreateImportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("ImportJobResponse"))
-  {
-    m_importJobResponse = jsonValue.GetObject("ImportJobResponse");
-
-  }
-
+  m_importJobResponse = jsonValue;
 
 
   return *this;
