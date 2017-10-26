@@ -19,10 +19,11 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <cctype>
 #include <cassert>
 #include <algorithm>
+#include <iomanip>
 
 using namespace Aws::Http;
 using namespace Aws::Utils;
@@ -107,6 +108,55 @@ void URI::SetScheme(Scheme value)
         m_port = m_port == HTTP_DEFAULT_PORT || m_port == 0 ? HTTPS_DEFAULT_PORT : m_port;
         m_scheme = value;
     }
+}
+
+Aws::String URI::URLEncodePathRFC3986(const Aws::String& path)
+{
+    if(path.empty())
+    {
+        return path;
+    }
+
+    const Aws::Vector<Aws::String> pathParts = StringUtils::Split(path, '/');
+    Aws::StringStream ss;
+    ss << std::hex << std::uppercase;
+
+    // escape characters appearing in a URL path according to RFC 3986
+    for (const auto& segment : pathParts)
+    {
+        ss << '/';
+        for(unsigned char c : segment) // alnum results in UB if the value of c is not unsigned char & is not EOF
+        {
+            if(std::isalnum(c)) // §2.3 unreserved characters
+            {
+                ss << c;
+                continue;
+            }
+            switch(c)
+            {
+                // §2.3 unreserved characters
+                case '-': case '_': case '.': case '~':
+                // The path section of the URL allow reserved characters to appear unescaped
+                // RFC 3986 §2.2 Reserved characters
+                // NOTE: this implementation does not accurately implement the RFC on purpose to accommodate for
+                // discrepancies in the implementations of URL encoding between AWS services for legacy reasons.
+                case '$': case '&': case ',': case '/':
+                case ':': case ';': case '=': case '@':
+                    ss << c;
+                    break;
+                default:
+                    ss << '%' << std::setw(2) << (int)((unsigned char)c) << std::setw(0);
+            }
+        }
+    }
+
+    //if the last character was also a slash, then add that back here.
+    if (path.back() == '/')
+    {
+        ss << '/';
+    }
+
+    return ss.str();
 }
 
 Aws::String URI::URLEncodePath(const Aws::String& path)
@@ -279,7 +329,7 @@ Aws::String URI::GetURIString(bool includeQueryString) const
 
     if(m_path != "/")
     {
-        ss << m_path;
+        ss << URLEncodePathRFC3986(m_path);
     }
 
     if(includeQueryString)

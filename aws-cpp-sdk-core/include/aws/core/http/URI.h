@@ -149,6 +149,11 @@ namespace Aws
              */
             static Aws::String URLEncodePath(const Aws::String& path);
 
+            /**
+             * URLEncodes the path portion of the URI according to RFC3986
+             */
+            static Aws::String URLEncodePathRFC3986(const Aws::String& path);
+
         private:
             void ParseURIParts(const Aws::String& uri);
             void ExtractAndSetScheme(const Aws::String& uri);

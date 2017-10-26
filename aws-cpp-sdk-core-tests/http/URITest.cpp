@@ -198,3 +198,23 @@ TEST(URITest, TestParseWithColon)
     
 }
 
+TEST(URITest, TestGetRFC3986URLEncodedPath)
+{
+    URI uri = "https://test.com/path/1234/";
+    EXPECT_STREQ("/path/1234/", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/path/$omething";
+    EXPECT_STREQ("/path/$omething", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/path/$omethingel$e";
+    EXPECT_STREQ("/path/$omethingel$e", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/path/~something.an0ther";
+    EXPECT_STREQ("/path/~something.an0ther", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/path/~something?an0ther";
+    EXPECT_STREQ("/path/~something", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/ሴ";
+    EXPECT_STREQ("/%E1%88%B4", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+}

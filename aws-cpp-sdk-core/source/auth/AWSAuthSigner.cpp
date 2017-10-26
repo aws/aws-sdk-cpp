@@ -74,11 +74,24 @@ static Aws::String CanonicalizeRequestSigningString(HttpRequest& request, bool u
     Aws::StringStream signingStringStream;
     signingStringStream << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod());
 
-    //double encode paths unless explicitly stated otherwise (for s3 compatibility)
     URI uriCpy = request.GetUri();
-    uriCpy.SetPath(uriCpy.GetURLEncodedPath());
-
-    signingStringStream << NEWLINE << (urlEscapePath ? uriCpy.GetURLEncodedPath() : uriCpy.GetPath()) << NEWLINE;
+    // Many AWS services do not decode the URL before calculating SignatureV4 on their end.
+    // This results in the signature getting calculated with a double encoded URL.
+    // That means we have to double encode it here for the signature to match on the service side.
+    if(urlEscapePath)
+    {
+        // RFC3986 is how we encode the URL before sending it on the wire.
+        auto rfc3986EncodedPath = URI::URLEncodePathRFC3986(uriCpy.GetPath());
+        uriCpy.SetPath(rfc3986EncodedPath);
+        // However, SignatureV4 uses this URL encoding scheme
+        signingStringStream << NEWLINE << uriCpy.GetURLEncodedPath() << NEWLINE;
+    }
+    else
+    {
+        // For the services that DO decode the URL first; we don't need to double encode it.
+        uriCpy.SetPath(uriCpy.GetURLEncodedPath());
+        signingStringStream << NEWLINE << uriCpy.GetPath() << NEWLINE;
+    }
 
     if (request.GetQueryString().size() > 1 && request.GetQueryString().find("=") != std::string::npos)
     {

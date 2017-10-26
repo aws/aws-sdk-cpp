@@ -321,7 +321,6 @@ namespace Aws
                                         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
         {
             auto uri = request.GetUri();
-            uri.SetPath(URI::URLEncodePath(uri.GetPath()));
             auto fullUriString = uri.GetURIString();
             AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Making " << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()) 
                         << " request to url: " << fullUriString);
