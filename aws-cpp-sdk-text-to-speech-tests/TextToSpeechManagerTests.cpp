@@ -322,13 +322,13 @@ TEST(TextToSpeechManagerTests, TestTextToSpeechManagerLifetime)
             // scopeExitsemaphore is used to ensure the handler is executed after the manager is "out of scope",
             // so that the use_count of the manager is 1 in the handler.
             scopeExitSemaphore.WaitOne();
-            ASSERT_EQ(1u, manager.use_count());
+            ASSERT_EQ(1, manager.use_count());
             // handlerExitSemaphore is used to ensure the main thread is waiting for the async handler thread.
             handlerExitSemaphore.Release();
         };
         manager->SendTextToOutputDevice(REQUEST_TEXT, handler);
         // use_count for manager should be 2, one in this scope, another in SendTextToOutputDevice calling shared_from_this.
-        ASSERT_EQ(2u, manager.use_count());
+        ASSERT_EQ(2, manager.use_count());
     }
     scopeExitSemaphore.Release();
     handlerExitSemaphore.WaitOne();
