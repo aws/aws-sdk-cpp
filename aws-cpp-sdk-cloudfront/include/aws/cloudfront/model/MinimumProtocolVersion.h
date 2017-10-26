@@ -27,7 +27,10 @@ namespace Model
   {
     NOT_SET,
     SSLv3,
-    TLSv1
+    TLSv1,
+    TLSv1_2016,
+    TLSv1_1_2016,
+    TLSv1_2_2018
   };
 
 namespace MinimumProtocolVersionMapper

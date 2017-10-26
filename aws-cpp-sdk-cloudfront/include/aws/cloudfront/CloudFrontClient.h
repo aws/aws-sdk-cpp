@@ -98,6 +98,7 @@ namespace Model
         class CreateStreamingDistributionWithTags2017_03_25Request;
         class DeleteCloudFrontOriginAccessIdentity2017_03_25Request;
         class DeleteDistribution2017_03_25Request;
+        class DeleteServiceLinkedRole2017_03_25Request;
         class DeleteStreamingDistribution2017_03_25Request;
         class GetCloudFrontOriginAccessIdentity2017_03_25Request;
         class GetCloudFrontOriginAccessIdentityConfig2017_03_25Request;
@@ -126,6 +127,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateStreamingDistributionWithTags2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> CreateStreamingDistributionWithTags2017_03_25Outcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFrontErrors>> DeleteCloudFrontOriginAccessIdentity2017_03_25Outcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFrontErrors>> DeleteDistribution2017_03_25Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFrontErrors>> DeleteServiceLinkedRole2017_03_25Outcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFrontErrors>> DeleteStreamingDistribution2017_03_25Outcome;
         typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentity2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> GetCloudFrontOriginAccessIdentity2017_03_25Outcome;
         typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentityConfig2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> GetCloudFrontOriginAccessIdentityConfig2017_03_25Outcome;
@@ -154,6 +156,7 @@ namespace Model
         typedef std::future<CreateStreamingDistributionWithTags2017_03_25Outcome> CreateStreamingDistributionWithTags2017_03_25OutcomeCallable;
         typedef std::future<DeleteCloudFrontOriginAccessIdentity2017_03_25Outcome> DeleteCloudFrontOriginAccessIdentity2017_03_25OutcomeCallable;
         typedef std::future<DeleteDistribution2017_03_25Outcome> DeleteDistribution2017_03_25OutcomeCallable;
+        typedef std::future<DeleteServiceLinkedRole2017_03_25Outcome> DeleteServiceLinkedRole2017_03_25OutcomeCallable;
         typedef std::future<DeleteStreamingDistribution2017_03_25Outcome> DeleteStreamingDistribution2017_03_25OutcomeCallable;
         typedef std::future<GetCloudFrontOriginAccessIdentity2017_03_25Outcome> GetCloudFrontOriginAccessIdentity2017_03_25OutcomeCallable;
         typedef std::future<GetCloudFrontOriginAccessIdentityConfig2017_03_25Outcome> GetCloudFrontOriginAccessIdentityConfig2017_03_25OutcomeCallable;
@@ -185,6 +188,7 @@ namespace Model
     typedef std::function<void(const CloudFrontClient*, const Model::CreateStreamingDistributionWithTags2017_03_25Request&, const Model::CreateStreamingDistributionWithTags2017_03_25Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingDistributionWithTags2017_03_25ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteCloudFrontOriginAccessIdentity2017_03_25Request&, const Model::DeleteCloudFrontOriginAccessIdentity2017_03_25Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCloudFrontOriginAccessIdentity2017_03_25ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteDistribution2017_03_25Request&, const Model::DeleteDistribution2017_03_25Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDistribution2017_03_25ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeleteServiceLinkedRole2017_03_25Request&, const Model::DeleteServiceLinkedRole2017_03_25Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceLinkedRole2017_03_25ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::DeleteStreamingDistribution2017_03_25Request&, const Model::DeleteStreamingDistribution2017_03_25Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamingDistribution2017_03_25ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::GetCloudFrontOriginAccessIdentity2017_03_25Request&, const Model::GetCloudFrontOriginAccessIdentity2017_03_25Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFrontOriginAccessIdentity2017_03_25ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::GetCloudFrontOriginAccessIdentityConfig2017_03_25Request&, const Model::GetCloudFrontOriginAccessIdentityConfig2017_03_25Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFrontOriginAccessIdentityConfig2017_03_25ResponseReceivedHandler;
@@ -208,9 +212,8 @@ namespace Model
   /**
    * <fullname>Amazon CloudFront</fullname> <p>This is the <i>Amazon CloudFront API
    * Reference</i>. This guide is for developers who need detailed information about
-   * the CloudFront API actions, data types, and errors. For detailed information
-   * about CloudFront features and their associated API calls, see the <i>Amazon
-   * CloudFront Developer Guide</i>.</p>
+   * CloudFront API actions, data types, and errors. For detailed information about
+   * CloudFront features, see the <i>Amazon CloudFront Developer Guide</i>.</p>
    */
   class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient
   {
@@ -536,6 +539,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDistribution2017_03_25Async(const Model::DeleteDistribution2017_03_25Request& request, const DeleteDistribution2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::DeleteServiceLinkedRole2017_03_25Outcome DeleteServiceLinkedRole2017_03_25(const Model::DeleteServiceLinkedRole2017_03_25Request& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteServiceLinkedRole2017_03_25OutcomeCallable DeleteServiceLinkedRole2017_03_25Callable(const Model::DeleteServiceLinkedRole2017_03_25Request& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteServiceLinkedRole2017_03_25Async(const Model::DeleteServiceLinkedRole2017_03_25Request& request, const DeleteServiceLinkedRole2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a streaming distribution. To delete an RTMP distribution using the
@@ -1250,6 +1272,7 @@ namespace Model
         void CreateStreamingDistributionWithTags2017_03_25AsyncHelper(const Model::CreateStreamingDistributionWithTags2017_03_25Request& request, const CreateStreamingDistributionWithTags2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCloudFrontOriginAccessIdentity2017_03_25AsyncHelper(const Model::DeleteCloudFrontOriginAccessIdentity2017_03_25Request& request, const DeleteCloudFrontOriginAccessIdentity2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDistribution2017_03_25AsyncHelper(const Model::DeleteDistribution2017_03_25Request& request, const DeleteDistribution2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteServiceLinkedRole2017_03_25AsyncHelper(const Model::DeleteServiceLinkedRole2017_03_25Request& request, const DeleteServiceLinkedRole2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStreamingDistribution2017_03_25AsyncHelper(const Model::DeleteStreamingDistribution2017_03_25Request& request, const DeleteStreamingDistribution2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCloudFrontOriginAccessIdentity2017_03_25AsyncHelper(const Model::GetCloudFrontOriginAccessIdentity2017_03_25Request& request, const GetCloudFrontOriginAccessIdentity2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCloudFrontOriginAccessIdentityConfig2017_03_25AsyncHelper(const Model::GetCloudFrontOriginAccessIdentityConfig2017_03_25Request& request, const GetCloudFrontOriginAccessIdentityConfig2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

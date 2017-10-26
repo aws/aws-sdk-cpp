@@ -173,31 +173,31 @@ namespace Model
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to vary upon for this cache behavior. </p>
+     * CloudFront to base caching on for this cache behavior. </p>
      */
     inline const Headers& GetHeaders() const{ return m_headers; }
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to vary upon for this cache behavior. </p>
+     * CloudFront to base caching on for this cache behavior. </p>
      */
     inline void SetHeaders(const Headers& value) { m_headersHasBeenSet = true; m_headers = value; }
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to vary upon for this cache behavior. </p>
+     * CloudFront to base caching on for this cache behavior. </p>
      */
     inline void SetHeaders(Headers&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to vary upon for this cache behavior. </p>
+     * CloudFront to base caching on for this cache behavior. </p>
      */
     inline ForwardedValues& WithHeaders(const Headers& value) { SetHeaders(value); return *this;}
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to vary upon for this cache behavior. </p>
+     * CloudFront to base caching on for this cache behavior. </p>
      */
     inline ForwardedValues& WithHeaders(Headers&& value) { SetHeaders(std::move(value)); return *this;}
 

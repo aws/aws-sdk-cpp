@@ -153,7 +153,7 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
      * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, do not specify the <code>s3-accelerate</code> endpoint for
+     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
      * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
      * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
      * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
@@ -172,7 +172,7 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
      * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, do not specify the <code>s3-accelerate</code> endpoint for
+     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
      * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
      * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
      * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
@@ -191,7 +191,7 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
      * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, do not specify the <code>s3-accelerate</code> endpoint for
+     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
      * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
      * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
      * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
@@ -210,7 +210,7 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
      * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, do not specify the <code>s3-accelerate</code> endpoint for
+     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
      * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
      * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
      * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
@@ -229,7 +229,7 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
      * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, do not specify the <code>s3-accelerate</code> endpoint for
+     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
      * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
      * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
      * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
@@ -248,7 +248,7 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
      * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, do not specify the <code>s3-accelerate</code> endpoint for
+     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
      * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
      * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
      * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
@@ -267,7 +267,7 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
      * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, do not specify the <code>s3-accelerate</code> endpoint for
+     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
      * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
      * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
      * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>

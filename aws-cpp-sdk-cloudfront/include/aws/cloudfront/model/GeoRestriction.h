@@ -56,7 +56,7 @@ namespace Model
      * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
      * meaning access to content is not restricted by client geo location.</p> </li>
      * <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the
-     * countries in which you do not want CloudFront to distribute your content.</p>
+     * countries in which you don't want CloudFront to distribute your content.</p>
      * </li> <li> <p> <code>whitelist</code>: The <code>Location</code> elements
      * specify the countries in which you want CloudFront to distribute your
      * content.</p> </li> </ul>
@@ -68,7 +68,7 @@ namespace Model
      * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
      * meaning access to content is not restricted by client geo location.</p> </li>
      * <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the
-     * countries in which you do not want CloudFront to distribute your content.</p>
+     * countries in which you don't want CloudFront to distribute your content.</p>
      * </li> <li> <p> <code>whitelist</code>: The <code>Location</code> elements
      * specify the countries in which you want CloudFront to distribute your
      * content.</p> </li> </ul>
@@ -80,7 +80,7 @@ namespace Model
      * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
      * meaning access to content is not restricted by client geo location.</p> </li>
      * <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the
-     * countries in which you do not want CloudFront to distribute your content.</p>
+     * countries in which you don't want CloudFront to distribute your content.</p>
      * </li> <li> <p> <code>whitelist</code>: The <code>Location</code> elements
      * specify the countries in which you want CloudFront to distribute your
      * content.</p> </li> </ul>
@@ -92,7 +92,7 @@ namespace Model
      * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
      * meaning access to content is not restricted by client geo location.</p> </li>
      * <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the
-     * countries in which you do not want CloudFront to distribute your content.</p>
+     * countries in which you don't want CloudFront to distribute your content.</p>
      * </li> <li> <p> <code>whitelist</code>: The <code>Location</code> elements
      * specify the countries in which you want CloudFront to distribute your
      * content.</p> </li> </ul>
@@ -104,7 +104,7 @@ namespace Model
      * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
      * meaning access to content is not restricted by client geo location.</p> </li>
      * <li> <p> <code>blacklist</code>: The <code>Location</code> elements specify the
-     * countries in which you do not want CloudFront to distribute your content.</p>
+     * countries in which you don't want CloudFront to distribute your content.</p>
      * </li> <li> <p> <code>whitelist</code>: The <code>Location</code> elements
      * specify the countries in which you want CloudFront to distribute your
      * content.</p> </li> </ul>
@@ -148,7 +148,7 @@ namespace Model
      * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
      * current list of countries and the corresponding codes, see <code>ISO
      * 3166-1-alpha-2</code> code on the <i>International Organization for
-     * Standardization</i> website. You can also refer to the country list in the
+     * Standardization</i> website. You can also refer to the country list on the
      * CloudFront console, which includes both country names and codes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
@@ -164,7 +164,7 @@ namespace Model
      * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
      * current list of countries and the corresponding codes, see <code>ISO
      * 3166-1-alpha-2</code> code on the <i>International Organization for
-     * Standardization</i> website. You can also refer to the country list in the
+     * Standardization</i> website. You can also refer to the country list on the
      * CloudFront console, which includes both country names and codes.</p>
      */
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
@@ -180,7 +180,7 @@ namespace Model
      * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
      * current list of countries and the corresponding codes, see <code>ISO
      * 3166-1-alpha-2</code> code on the <i>International Organization for
-     * Standardization</i> website. You can also refer to the country list in the
+     * Standardization</i> website. You can also refer to the country list on the
      * CloudFront console, which includes both country names and codes.</p>
      */
     inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
@@ -196,7 +196,7 @@ namespace Model
      * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
      * current list of countries and the corresponding codes, see <code>ISO
      * 3166-1-alpha-2</code> code on the <i>International Organization for
-     * Standardization</i> website. You can also refer to the country list in the
+     * Standardization</i> website. You can also refer to the country list on the
      * CloudFront console, which includes both country names and codes.</p>
      */
     inline GeoRestriction& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
@@ -212,7 +212,7 @@ namespace Model
      * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
      * current list of countries and the corresponding codes, see <code>ISO
      * 3166-1-alpha-2</code> code on the <i>International Organization for
-     * Standardization</i> website. You can also refer to the country list in the
+     * Standardization</i> website. You can also refer to the country list on the
      * CloudFront console, which includes both country names and codes.</p>
      */
     inline GeoRestriction& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
@@ -228,7 +228,7 @@ namespace Model
      * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
      * current list of countries and the corresponding codes, see <code>ISO
      * 3166-1-alpha-2</code> code on the <i>International Organization for
-     * Standardization</i> website. You can also refer to the country list in the
+     * Standardization</i> website. You can also refer to the country list on the
      * CloudFront console, which includes both country names and codes.</p>
      */
     inline GeoRestriction& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
@@ -244,7 +244,7 @@ namespace Model
      * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
      * current list of countries and the corresponding codes, see <code>ISO
      * 3166-1-alpha-2</code> code on the <i>International Organization for
-     * Standardization</i> website. You can also refer to the country list in the
+     * Standardization</i> website. You can also refer to the country list on the
      * CloudFront console, which includes both country names and codes.</p>
      */
     inline GeoRestriction& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
@@ -260,7 +260,7 @@ namespace Model
      * <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
      * current list of countries and the corresponding codes, see <code>ISO
      * 3166-1-alpha-2</code> code on the <i>International Organization for
-     * Standardization</i> website. You can also refer to the country list in the
+     * Standardization</i> website. You can also refer to the country list on the
      * CloudFront console, which includes both country names and codes.</p>
      */
     inline GeoRestriction& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }

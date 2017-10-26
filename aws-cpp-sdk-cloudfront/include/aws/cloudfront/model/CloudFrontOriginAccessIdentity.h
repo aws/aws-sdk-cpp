@@ -49,43 +49,43 @@ namespace Model
 
 
     /**
-     * <p>The ID for the origin access identity. For example:
+     * <p>The ID for the origin access identity, for example,
      * <code>E74FTE3AJFJ256A</code>. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID for the origin access identity. For example:
+     * <p>The ID for the origin access identity, for example,
      * <code>E74FTE3AJFJ256A</code>. </p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID for the origin access identity. For example:
+     * <p>The ID for the origin access identity, for example,
      * <code>E74FTE3AJFJ256A</code>. </p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID for the origin access identity. For example:
+     * <p>The ID for the origin access identity, for example,
      * <code>E74FTE3AJFJ256A</code>. </p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID for the origin access identity. For example:
+     * <p>The ID for the origin access identity, for example,
      * <code>E74FTE3AJFJ256A</code>. </p>
      */
     inline CloudFrontOriginAccessIdentity& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID for the origin access identity. For example:
+     * <p>The ID for the origin access identity, for example,
      * <code>E74FTE3AJFJ256A</code>. </p>
      */
     inline CloudFrontOriginAccessIdentity& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the origin access identity. For example:
+     * <p>The ID for the origin access identity, for example,
      * <code>E74FTE3AJFJ256A</code>. </p>
      */
     inline CloudFrontOriginAccessIdentity& WithId(const char* value) { SetId(value); return *this;}

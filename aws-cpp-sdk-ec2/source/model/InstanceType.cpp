@@ -105,6 +105,9 @@ namespace Aws
         static const int p2_xlarge_HASH = HashingUtils::HashString("p2.xlarge");
         static const int p2_8xlarge_HASH = HashingUtils::HashString("p2.8xlarge");
         static const int p2_16xlarge_HASH = HashingUtils::HashString("p2.16xlarge");
+        static const int p3_2xlarge_HASH = HashingUtils::HashString("p3.2xlarge");
+        static const int p3_8xlarge_HASH = HashingUtils::HashString("p3.8xlarge");
+        static const int p3_16xlarge_HASH = HashingUtils::HashString("p3.16xlarge");
         static const int d2_xlarge_HASH = HashingUtils::HashString("d2.xlarge");
         static const int d2_2xlarge_HASH = HashingUtils::HashString("d2.2xlarge");
         static const int d2_4xlarge_HASH = HashingUtils::HashString("d2.4xlarge");
@@ -416,6 +419,18 @@ namespace Aws
           {
             return InstanceType::p2_16xlarge;
           }
+          else if (hashCode == p3_2xlarge_HASH)
+          {
+            return InstanceType::p3_2xlarge;
+          }
+          else if (hashCode == p3_8xlarge_HASH)
+          {
+            return InstanceType::p3_8xlarge;
+          }
+          else if (hashCode == p3_16xlarge_HASH)
+          {
+            return InstanceType::p3_16xlarge;
+          }
           else if (hashCode == d2_xlarge_HASH)
           {
             return InstanceType::d2_xlarge;
@@ -604,6 +619,12 @@ namespace Aws
             return "p2.8xlarge";
           case InstanceType::p2_16xlarge:
             return "p2.16xlarge";
+          case InstanceType::p3_2xlarge:
+            return "p3.2xlarge";
+          case InstanceType::p3_8xlarge:
+            return "p3.8xlarge";
+          case InstanceType::p3_16xlarge:
+            return "p3.16xlarge";
           case InstanceType::d2_xlarge:
             return "d2.xlarge";
           case InstanceType::d2_2xlarge:

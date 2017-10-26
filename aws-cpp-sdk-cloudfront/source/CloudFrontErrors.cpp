@@ -80,6 +80,7 @@ static const int INCONSISTENT_QUANTITIES_HASH = HashingUtils::HashString("Incons
 static const int TOO_MANY_LAMBDA_FUNCTION_ASSOCIATIONS_HASH = HashingUtils::HashString("TooManyLambdaFunctionAssociations");
 static const int INVALID_MINIMUM_PROTOCOL_VERSION_HASH = HashingUtils::HashString("InvalidMinimumProtocolVersion");
 static const int INVALID_TAGGING_HASH = HashingUtils::HashString("InvalidTagging");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUse");
 static const int ILLEGAL_UPDATE_HASH = HashingUtils::HashString("IllegalUpdate");
 static const int INVALID_ORIGIN_ACCESS_IDENTITY_HASH = HashingUtils::HashString("InvalidOriginAccessIdentity");
 static const int INVALID_QUERY_STRING_PARAMETERS_HASH = HashingUtils::HashString("InvalidQueryStringParameters");
@@ -299,6 +300,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TAGGING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_TAGGING), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::RESOURCE_IN_USE), false);
   }
   else if (hashCode == ILLEGAL_UPDATE_HASH)
   {

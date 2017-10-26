@@ -201,7 +201,7 @@ namespace Model
      * distribution (<code>http://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
-     * <code>index.html</code>. Do not add a <code>/</code> before the object name.</p>
+     * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
      * <p>If you don't want to specify a default root object when you create a
      * distribution, include an empty <code>DefaultRootObject</code> element.</p> <p>To
      * delete the default root object from an existing distribution, update the
@@ -221,7 +221,7 @@ namespace Model
      * distribution (<code>http://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
-     * <code>index.html</code>. Do not add a <code>/</code> before the object name.</p>
+     * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
      * <p>If you don't want to specify a default root object when you create a
      * distribution, include an empty <code>DefaultRootObject</code> element.</p> <p>To
      * delete the default root object from an existing distribution, update the
@@ -241,7 +241,7 @@ namespace Model
      * distribution (<code>http://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
-     * <code>index.html</code>. Do not add a <code>/</code> before the object name.</p>
+     * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
      * <p>If you don't want to specify a default root object when you create a
      * distribution, include an empty <code>DefaultRootObject</code> element.</p> <p>To
      * delete the default root object from an existing distribution, update the
@@ -261,7 +261,7 @@ namespace Model
      * distribution (<code>http://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
-     * <code>index.html</code>. Do not add a <code>/</code> before the object name.</p>
+     * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
      * <p>If you don't want to specify a default root object when you create a
      * distribution, include an empty <code>DefaultRootObject</code> element.</p> <p>To
      * delete the default root object from an existing distribution, update the
@@ -281,7 +281,7 @@ namespace Model
      * distribution (<code>http://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
-     * <code>index.html</code>. Do not add a <code>/</code> before the object name.</p>
+     * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
      * <p>If you don't want to specify a default root object when you create a
      * distribution, include an empty <code>DefaultRootObject</code> element.</p> <p>To
      * delete the default root object from an existing distribution, update the
@@ -301,7 +301,7 @@ namespace Model
      * distribution (<code>http://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
-     * <code>index.html</code>. Do not add a <code>/</code> before the object name.</p>
+     * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
      * <p>If you don't want to specify a default root object when you create a
      * distribution, include an empty <code>DefaultRootObject</code> element.</p> <p>To
      * delete the default root object from an existing distribution, update the
@@ -321,7 +321,7 @@ namespace Model
      * distribution (<code>http://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
-     * <code>index.html</code>. Do not add a <code>/</code> before the object name.</p>
+     * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
      * <p>If you don't want to specify a default root object when you create a
      * distribution, include an empty <code>DefaultRootObject</code> element.</p> <p>To
      * delete the default root object from an existing distribution, update the
@@ -367,42 +367,42 @@ namespace Model
 
 
     /**
-     * <p>A complex type that describes the default cache behavior if you do not
-     * specify a <code>CacheBehavior</code> element or if files don't match any of the
-     * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
-     * must create exactly one default cache behavior.</p>
+     * <p>A complex type that describes the default cache behavior if you don't specify
+     * a <code>CacheBehavior</code> element or if files don't match any of the values
+     * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
+     * create exactly one default cache behavior.</p>
      */
     inline const DefaultCacheBehavior& GetDefaultCacheBehavior() const{ return m_defaultCacheBehavior; }
 
     /**
-     * <p>A complex type that describes the default cache behavior if you do not
-     * specify a <code>CacheBehavior</code> element or if files don't match any of the
-     * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
-     * must create exactly one default cache behavior.</p>
+     * <p>A complex type that describes the default cache behavior if you don't specify
+     * a <code>CacheBehavior</code> element or if files don't match any of the values
+     * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
+     * create exactly one default cache behavior.</p>
      */
     inline void SetDefaultCacheBehavior(const DefaultCacheBehavior& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = value; }
 
     /**
-     * <p>A complex type that describes the default cache behavior if you do not
-     * specify a <code>CacheBehavior</code> element or if files don't match any of the
-     * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
-     * must create exactly one default cache behavior.</p>
+     * <p>A complex type that describes the default cache behavior if you don't specify
+     * a <code>CacheBehavior</code> element or if files don't match any of the values
+     * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
+     * create exactly one default cache behavior.</p>
      */
     inline void SetDefaultCacheBehavior(DefaultCacheBehavior&& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = std::move(value); }
 
     /**
-     * <p>A complex type that describes the default cache behavior if you do not
-     * specify a <code>CacheBehavior</code> element or if files don't match any of the
-     * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
-     * must create exactly one default cache behavior.</p>
+     * <p>A complex type that describes the default cache behavior if you don't specify
+     * a <code>CacheBehavior</code> element or if files don't match any of the values
+     * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
+     * create exactly one default cache behavior.</p>
      */
     inline DistributionConfig& WithDefaultCacheBehavior(const DefaultCacheBehavior& value) { SetDefaultCacheBehavior(value); return *this;}
 
     /**
-     * <p>A complex type that describes the default cache behavior if you do not
-     * specify a <code>CacheBehavior</code> element or if files don't match any of the
-     * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
-     * must create exactly one default cache behavior.</p>
+     * <p>A complex type that describes the default cache behavior if you don't specify
+     * a <code>CacheBehavior</code> element or if files don't match any of the values
+     * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
+     * create exactly one default cache behavior.</p>
      */
     inline DistributionConfig& WithDefaultCacheBehavior(DefaultCacheBehavior&& value) { SetDefaultCacheBehavior(std::move(value)); return *this;}
 
@@ -924,7 +924,7 @@ namespace Model
      * want to access your content. However, if you're using signed URLs or signed
      * cookies to restrict access to your content, and if you're using a custom policy
      * that includes the <code>IpAddress</code> parameter to restrict the IP addresses
-     * that can access your content, do not enable IPv6. If you want to restrict access
+     * that can access your content, don't enable IPv6. If you want to restrict access
      * to some content by IP address and not restrict access to other content (or
      * restrict access but not by IP address), you can create two distributions. For
      * more information, see <a
@@ -955,7 +955,7 @@ namespace Model
      * want to access your content. However, if you're using signed URLs or signed
      * cookies to restrict access to your content, and if you're using a custom policy
      * that includes the <code>IpAddress</code> parameter to restrict the IP addresses
-     * that can access your content, do not enable IPv6. If you want to restrict access
+     * that can access your content, don't enable IPv6. If you want to restrict access
      * to some content by IP address and not restrict access to other content (or
      * restrict access but not by IP address), you can create two distributions. For
      * more information, see <a
@@ -986,7 +986,7 @@ namespace Model
      * want to access your content. However, if you're using signed URLs or signed
      * cookies to restrict access to your content, and if you're using a custom policy
      * that includes the <code>IpAddress</code> parameter to restrict the IP addresses
-     * that can access your content, do not enable IPv6. If you want to restrict access
+     * that can access your content, don't enable IPv6. If you want to restrict access
      * to some content by IP address and not restrict access to other content (or
      * restrict access but not by IP address), you can create two distributions. For
      * more information, see <a

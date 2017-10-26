@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>Specifies whether you want CloudFront to save access logs to an Amazon S3
-     * bucket. If you do not want to enable logging when you create a streaming
+     * bucket. If you don't want to enable logging when you create a streaming
      * distribution or if you want to disable logging for an existing streaming
      * distribution, specify <code>false</code> for <code>Enabled</code>, and specify
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
@@ -62,7 +62,7 @@ namespace Model
 
     /**
      * <p>Specifies whether you want CloudFront to save access logs to an Amazon S3
-     * bucket. If you do not want to enable logging when you create a streaming
+     * bucket. If you don't want to enable logging when you create a streaming
      * distribution or if you want to disable logging for an existing streaming
      * distribution, specify <code>false</code> for <code>Enabled</code>, and specify
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>Specifies whether you want CloudFront to save access logs to an Amazon S3
-     * bucket. If you do not want to enable logging when you create a streaming
+     * bucket. If you don't want to enable logging when you create a streaming
      * distribution or if you want to disable logging for an existing streaming
      * distribution, specify <code>false</code> for <code>Enabled</code>, and specify
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
@@ -130,64 +130,64 @@ namespace Model
 
     /**
      * <p>An optional string that you want CloudFront to prefix to the access log
-     * <code>filenames</code> for this streaming distribution, for example,
-     * <code>myprefix/</code>. If you want to enable logging, but you do not want to
-     * specify a prefix, you still must include an empty <code>Prefix</code> element in
-     * the <code>Logging</code> element.</p>
+     * filenames for this streaming distribution, for example, <code>myprefix/</code>.
+     * If you want to enable logging, but you don't want to specify a prefix, you still
+     * must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     * element.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
      * <p>An optional string that you want CloudFront to prefix to the access log
-     * <code>filenames</code> for this streaming distribution, for example,
-     * <code>myprefix/</code>. If you want to enable logging, but you do not want to
-     * specify a prefix, you still must include an empty <code>Prefix</code> element in
-     * the <code>Logging</code> element.</p>
+     * filenames for this streaming distribution, for example, <code>myprefix/</code>.
+     * If you want to enable logging, but you don't want to specify a prefix, you still
+     * must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     * element.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
      * <p>An optional string that you want CloudFront to prefix to the access log
-     * <code>filenames</code> for this streaming distribution, for example,
-     * <code>myprefix/</code>. If you want to enable logging, but you do not want to
-     * specify a prefix, you still must include an empty <code>Prefix</code> element in
-     * the <code>Logging</code> element.</p>
+     * filenames for this streaming distribution, for example, <code>myprefix/</code>.
+     * If you want to enable logging, but you don't want to specify a prefix, you still
+     * must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     * element.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>An optional string that you want CloudFront to prefix to the access log
-     * <code>filenames</code> for this streaming distribution, for example,
-     * <code>myprefix/</code>. If you want to enable logging, but you do not want to
-     * specify a prefix, you still must include an empty <code>Prefix</code> element in
-     * the <code>Logging</code> element.</p>
+     * filenames for this streaming distribution, for example, <code>myprefix/</code>.
+     * If you want to enable logging, but you don't want to specify a prefix, you still
+     * must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     * element.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
      * <p>An optional string that you want CloudFront to prefix to the access log
-     * <code>filenames</code> for this streaming distribution, for example,
-     * <code>myprefix/</code>. If you want to enable logging, but you do not want to
-     * specify a prefix, you still must include an empty <code>Prefix</code> element in
-     * the <code>Logging</code> element.</p>
+     * filenames for this streaming distribution, for example, <code>myprefix/</code>.
+     * If you want to enable logging, but you don't want to specify a prefix, you still
+     * must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     * element.</p>
      */
     inline StreamingLoggingConfig& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
      * <p>An optional string that you want CloudFront to prefix to the access log
-     * <code>filenames</code> for this streaming distribution, for example,
-     * <code>myprefix/</code>. If you want to enable logging, but you do not want to
-     * specify a prefix, you still must include an empty <code>Prefix</code> element in
-     * the <code>Logging</code> element.</p>
+     * filenames for this streaming distribution, for example, <code>myprefix/</code>.
+     * If you want to enable logging, but you don't want to specify a prefix, you still
+     * must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     * element.</p>
      */
     inline StreamingLoggingConfig& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>An optional string that you want CloudFront to prefix to the access log
-     * <code>filenames</code> for this streaming distribution, for example,
-     * <code>myprefix/</code>. If you want to enable logging, but you do not want to
-     * specify a prefix, you still must include an empty <code>Prefix</code> element in
-     * the <code>Logging</code> element.</p>
+     * filenames for this streaming distribution, for example, <code>myprefix/</code>.
+     * If you want to enable logging, but you don't want to specify a prefix, you still
+     * must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     * element.</p>
      */
     inline StreamingLoggingConfig& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
