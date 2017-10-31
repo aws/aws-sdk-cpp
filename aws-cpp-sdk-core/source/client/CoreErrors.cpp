@@ -29,6 +29,7 @@ static const int INVALID_SIGNATURE_EXCEPTION_HASH = HashingUtils::HashString("In
 static const int INVALID_SIGNATURE_HASH = HashingUtils::HashString("InvalidSignature");
 static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("InternalFailure");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerError");
+static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
 static const int INVALID_ACTION_HASH = HashingUtils::HashString("InvalidAction");
 static const int INVALID_CLIENT_TOKEN_ID_HASH = HashingUtils::HashString("InvalidClientTokenId");
 static const int INVALID_CLIENT_TOKEN_ID_EXCEPTION_HASH = HashingUtils::HashString("InvalidClientTokenIdException");
@@ -67,6 +68,7 @@ static const int INVALID_ACCESS_KEY_ID_HASH = HashingUtils::HashString("InvalidA
 static const int INVALID_ACCESS_KEY_ID_EXCEPTION_HASH = HashingUtils::HashString("InvalidAccessKeyIdException");
 static const int REQUEST_TIME_TOO_SKEWED_HASH = HashingUtils::HashString("RequestTimeTooSkewed");
 static const int REQUEST_TIME_TOO_SKEWED_EXCEPTION_HASH = HashingUtils::HashString("RequestTimeTooSkewedException");
+static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeout");
 
 AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
 {
@@ -80,7 +82,7 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   {
       return AWSError<CoreErrors>(CoreErrors::INVALID_SIGNATURE, false);
   }
-  else if (errorHash == INTERNAL_FAILURE_HASH || errorHash == INTERNAL_SERVER_ERROR_HASH)
+  else if (errorHash == INTERNAL_FAILURE_HASH || errorHash == INTERNAL_SERVER_ERROR_HASH || errorHash == INTERNAL_ERROR_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, true);
   }
@@ -164,6 +166,10 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(CoreErrors::REQUEST_TIME_TOO_SKEWED, true);
   }
+  else if (errorHash == REQUEST_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true);
+  }
 
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
@@ -186,6 +192,8 @@ AWS_CORE_API AWSError<CoreErrors> CoreErrorsMapper::GetErrorForHttpResponseCode(
             return AWSError<CoreErrors>(CoreErrors::THROTTLING, true/*retry*/);
         case HttpResponseCode::SERVICE_UNAVAILABLE:
             return AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, true/*retry*/);
+        case HttpResponseCode::REQUEST_TIMEOUT:
+            return AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true/*retry*/);
         default:
             int codeValue = static_cast<int>(code);
             return AWSError<CoreErrors>(CoreErrors::UNKNOWN, codeValue >= 500 && codeValue < 600);

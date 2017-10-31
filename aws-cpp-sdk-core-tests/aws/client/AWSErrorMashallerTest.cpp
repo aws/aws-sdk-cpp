@@ -194,6 +194,12 @@ TEST(JsonErrorMashallerTest, TestErrorsWithPrefixParse)
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_TRUE(error.ShouldRetry());
 
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "InternalError", message));
+    ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
+    ASSERT_EQ("InternalError", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_TRUE(error.ShouldRetry());
+
     error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "InvalidAction", message));
     ASSERT_EQ(CoreErrors::INVALID_ACTION, error.GetErrorType());
     ASSERT_EQ("InvalidAction", error.GetExceptionName());
@@ -355,6 +361,12 @@ TEST(JsonErrorMashallerTest, TestErrorsWithPrefixParse)
     ASSERT_EQ("UnrecognizedClientException", error.GetExceptionName());
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "RequestTimeout", message));
+    ASSERT_EQ(CoreErrors::REQUEST_TIMEOUT, error.GetErrorType());
+    ASSERT_EQ("RequestTimeout", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_TRUE(error.ShouldRetry());
 
     error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "IDon'tExist", "JunkMessage"));
     ASSERT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
@@ -392,6 +404,12 @@ TEST(AWSErrorMashallerTest, TestErrorsWithoutPrefixParse)
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_TRUE(error.ShouldRetry());
 
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "InternalError", message));
+    ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
+    ASSERT_EQ("InternalError", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_TRUE(error.ShouldRetry());
+
     error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "InvalidAction", message));
     ASSERT_EQ(CoreErrors::INVALID_ACTION, error.GetErrorType());
     ASSERT_EQ("InvalidAction", error.GetExceptionName());
@@ -553,6 +571,12 @@ TEST(AWSErrorMashallerTest, TestErrorsWithoutPrefixParse)
     ASSERT_EQ("UnrecognizedClientException", error.GetExceptionName());
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "RequestTimeout", message));
+    ASSERT_EQ(CoreErrors::REQUEST_TIMEOUT, error.GetErrorType());
+    ASSERT_EQ("RequestTimeout", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_TRUE(error.ShouldRetry());
 
     error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "IDon'tExist", "JunkMessage"));
     ASSERT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
