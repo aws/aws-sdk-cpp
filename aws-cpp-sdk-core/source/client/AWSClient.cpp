@@ -118,7 +118,8 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_writeRateLimiter(configuration.writeRateLimiter),
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
-    m_hash(Aws::Utils::Crypto::CreateMD5Implementation())
+    m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
+    m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
     if (signer) 
     {
@@ -138,7 +139,8 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_writeRateLimiter(configuration.writeRateLimiter),
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
-    m_hash(Aws::Utils::Crypto::CreateMD5Implementation())
+    m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
+    m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
     InitializeGlobalStatics();
 }
@@ -195,50 +197,52 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         else
         {
             long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
-            auto signer = GetSignerByName(signerName);
-
-            //detect clock skew and try to correct.            
-            AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "If the signature check failed. This could be because of a time skew. Attempting to adjust the signer.");
-            const Http::HeaderValueCollection& headers = outcome.GetError().GetResponseHeaders();
-            auto awsDateHeaderIter = headers.find(StringUtils::ToLower(Http::AWS_DATE_HEADER));
-            auto dateHeaderIter = headers.find(StringUtils::ToLower(Http::DATE_HEADER));
-
-            DateTime serverTime;
-            if (awsDateHeaderIter != headers.end())
+            if (m_enableClockSkewAdjustment)
             {
-                serverTime = DateTime(awsDateHeaderIter->second.c_str(), DateFormat::AutoDetect);
-            }
-            else if (dateHeaderIter != headers.end())
-            {
-                serverTime = DateTime(dateHeaderIter->second.c_str(), DateFormat::AutoDetect);
-            }
+                auto signer = GetSignerByName(signerName);
+                //detect clock skew and try to correct.            
+                AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "If the signature check failed. This could be because of a time skew. Attempting to adjust the signer.");
+                const Http::HeaderValueCollection& headers = outcome.GetError().GetResponseHeaders();
+                auto awsDateHeaderIter = headers.find(StringUtils::ToLower(Http::AWS_DATE_HEADER));
+                auto dateHeaderIter = headers.find(StringUtils::ToLower(Http::DATE_HEADER));
 
-            const auto signingTimestamp = signer->GetSigningTimestamp();
-            if (!serverTime.WasParseSuccessful() || serverTime == DateTime())
-            {
-               AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Date header was not found in the response, can't attempt to detect clock skew");
-               serverTime = signingTimestamp;
-            }
+                DateTime serverTime;
+                if (awsDateHeaderIter != headers.end())
+                {
+                    serverTime = DateTime(awsDateHeaderIter->second.c_str(), DateFormat::AutoDetect);
+                }
+                else if (dateHeaderIter != headers.end())
+                {
+                    serverTime = DateTime(dateHeaderIter->second.c_str(), DateFormat::AutoDetect);
+                }
 
-            AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
-            auto diff = DateTime::Diff(serverTime, signingTimestamp);
-            //only try again if clock skew was the cause of the error.
-            if(diff >= TIME_DIFF_MAX || diff <= TIME_DIFF_MIN)
-            {
-                diff = DateTime::Diff(serverTime, DateTime::Now());
-                AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. Adjusting signer with the skew.");
-                signer->SetClockSkew(diff);
-                auto newError = AWSError<CoreErrors>(
-                        outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
-                newError.SetResponseHeaders(outcome.GetError().GetResponseHeaders());
-                newError.SetResponseCode(outcome.GetError().GetResponseCode());
-                outcome = newError;
-                //don't sleep at all if clock skew was the problem.
-                sleepMillis = 0;
+                const auto signingTimestamp = signer->GetSigningTimestamp();
+                if (!serverTime.WasParseSuccessful() || serverTime == DateTime())
+                {
+                    AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Date header was not found in the response, can't attempt to detect clock skew");
+                    serverTime = signingTimestamp;
+                }
+
+                AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
+                auto diff = DateTime::Diff(serverTime, signingTimestamp);
+                //only try again if clock skew was the cause of the error.
+                if(diff >= TIME_DIFF_MAX || diff <= TIME_DIFF_MIN)
+                {
+                    diff = DateTime::Diff(serverTime, DateTime::Now());
+                    AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. Adjusting signer with the skew.");
+                    signer->SetClockSkew(diff);
+                    auto newError = AWSError<CoreErrors>(
+                            outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
+                    newError.SetResponseHeaders(outcome.GetError().GetResponseHeaders());
+                    newError.SetResponseCode(outcome.GetError().GetResponseCode());
+                    outcome = newError;
+                    //don't sleep at all if clock skew was the problem.
+                    sleepMillis = 0;
+                }
             }
 
             if (!m_retryStrategy->ShouldRetry(outcome.GetError(), retries)) return outcome;
-
+        
             AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Request failed, now waiting " << sleepMillis << " ms before attempting again.");
             if(request.GetBody())
             {

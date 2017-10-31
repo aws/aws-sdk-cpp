@@ -250,6 +250,7 @@ namespace Aws
             Aws::String m_userAgent;
             std::shared_ptr<Aws::Utils::Crypto::Hash> m_hash;
             static std::atomic<int> s_refCount;
+            bool m_enableClockSkewAdjustment;
         };
 
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Json::JsonValue>, AWSError<CoreErrors>> JsonOutcome;
