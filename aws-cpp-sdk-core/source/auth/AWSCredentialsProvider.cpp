@@ -81,7 +81,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
     {
         credentials.SetAWSAccessKeyId(accessKey);
 
-        AWS_LOGSTREAM_INFO(ENVIRONMENT_LOG_TAG, "Found credential in environment with access key id " << accessKey);
+        AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found credential in environment with access key id " << accessKey);
         auto secretKey = Aws::Environment::GetEnv(SECRET_KEY_ENV_VAR);
 
         if (!secretKey.empty())
@@ -304,7 +304,7 @@ void TaskRoleCredentialsProvider::RefreshIfExpired()
     accessKey = credentialsDoc.GetString("AccessKeyId");
     secretKey = credentialsDoc.GetString("SecretAccessKey");
     token = credentialsDoc.GetString("Token");
-    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Successfully pulled credentials from metadata service with access key " << accessKey);
+    AWS_LOGSTREAM_DEBUG(TASK_ROLE_LOG_TAG, "Successfully pulled credentials from metadata service with access key " << accessKey);
 
     m_credentials.SetAWSAccessKeyId(accessKey);
     m_credentials.SetAWSSecretKey(secretKey);

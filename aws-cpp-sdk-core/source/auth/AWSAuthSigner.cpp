@@ -239,7 +239,8 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool signBody
     auto hashResult = m_hash->Calculate(canonicalRequestString);
     if (!hashResult.IsSuccess())
     {
-        AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hash (sha256) request string \"" << canonicalRequestString << "\"");
+        AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hash (sha256) request string");
+        AWS_LOGSTREAM_DEBUG(v4LogTag, "The request string is: \"" << canonicalRequestString << "\"");
         return false;
     }
 
@@ -332,7 +333,8 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     auto hashResult = m_hash->Calculate(canonicalRequestString);
     if (!hashResult.IsSuccess())
     {
-        AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hash (sha256) request string \"" << canonicalRequestString << "\"");
+        AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hash (sha256) request string");
+        AWS_LOGSTREAM_DEBUG(v4LogTag, "The request string is: \"" << canonicalRequestString << "\"");
         return false;
     }
 
@@ -364,7 +366,8 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials
     auto hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)stringToSign.c_str(), stringToSign.length()), partialSignature);
     if (!hashResult.IsSuccess())
     {
-        AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hmac (sha256) final string \"" << stringToSign << "\"");
+        AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hmac (sha256) final string");
+        AWS_LOGSTREAM_DEBUG(v4LogTag, "The final string is: \"" << stringToSign << "\"");
         return "";
     }
 
@@ -467,7 +470,8 @@ const Aws::Utils::Array<unsigned char>& AWSAuthV4Signer::ComputeLongLivedHash(co
             hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)AWS4_REQUEST, strlen(AWS4_REQUEST)), kService);
             if (!hashResult.IsSuccess())
             {
-                AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hmac (sha256) request string \"" << AWS4_REQUEST << "\"");
+                AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hmac (sha256) request string");
+                AWS_LOGSTREAM_DEBUG(v4LogTag, "The request string is: \"" << AWS4_REQUEST << "\"");
                 m_partialSignature = ByteBuffer();
                 return m_partialSignature;
             }
