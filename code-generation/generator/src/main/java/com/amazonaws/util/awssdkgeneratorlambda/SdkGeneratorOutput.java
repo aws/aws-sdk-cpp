@@ -18,7 +18,7 @@ package com.amazonaws.util.awssdkgeneratorlambda;
 import lombok.Data;
 
 /**
- * POJO representing the output of the GenerateJavaSDK lambda function.
+ * POJO representing the output of the C++ SDK Generator lambda function.
  */
 @Data
 public class SdkGeneratorOutput {

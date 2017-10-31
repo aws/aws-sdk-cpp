@@ -59,7 +59,7 @@ public class ServiceModelLoaderTest {
         assertTrue(new File(workspace.getUnzippedModelDirectory(), MODEL_FILENAME).exists());
         assertEquals(SERVICE_NAME, c2jServiceModel.getServiceName());
 
-        // workspace.delete();
+        workspace.delete();
     }
 
     @Test(expected = ModelLoadException.class)
@@ -77,7 +77,7 @@ public class ServiceModelLoaderTest {
             assertTrue(workspace.getUnzippedModelDirectory().exists());
             assertFalse(new File(workspace.getUnzippedModelDirectory(), MODEL_FILENAME).exists());
 
-            // workspace.delete();
+            workspace.delete();
         }
     }
 
@@ -96,7 +96,7 @@ public class ServiceModelLoaderTest {
             assertTrue(workspace.getUnzippedModelDirectory().exists());
             assertFalse(new File(workspace.getUnzippedModelDirectory(), MODEL_FILENAME).exists());
 
-            // workspace.delete();
+            workspace.delete();
         }
     }
 

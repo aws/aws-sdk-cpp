@@ -82,9 +82,8 @@ public class ServiceModelLoader {
      * @return File that was created.
      */
     private File writeModelZip() throws SdkGenerationException {
-        try {
-            final File outputFile = workspace.getModelZipFile();
-            OutputStream out = new FileOutputStream(outputFile);
+        final File outputFile = workspace.getModelZipFile();
+        try (OutputStream out = new FileOutputStream(outputFile)) {
             out.write(input.getBase64DecodedModelZip());
             return outputFile;
         } catch (Exception e) {

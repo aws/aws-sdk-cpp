@@ -13,20 +13,20 @@
 * permissions and limitations under the License.
 */
 
-
 package com.amazonaws.util.awssdkgeneratorlambda.exceptions;
 
 import com.amazonaws.util.awssdkgeneratorlambda.GenerationStage;
 
 /**
- * Thrown if model is invalid, non-existent, or otherwise can't be loaded from input.
+ * Thrown if we can't upload the artifact to S3.
  */
-public class ModelLoadException extends ApiGatewayCausedException {
-    public ModelLoadException(String message) {
-        super(GenerationStage.MODEL_LOAD, message);
+public class SdkArtifactUploadException extends InternalGenerationException {
+
+    public SdkArtifactUploadException(String message) {
+        this(message, null);
     }
 
-    public ModelLoadException(String message, Throwable cause) {
-        super(GenerationStage.MODEL_LOAD, message, cause);
+    public SdkArtifactUploadException(String message, Throwable cause) {
+        super(GenerationStage.UPLOAD, message, cause);
     }
 }
