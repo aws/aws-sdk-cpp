@@ -193,6 +193,28 @@ namespace Model
     
     inline NewPrivateVirtualInterface& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
+
+    
+    inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
+
+    
+    inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
+
+    
+    inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
+
+    
+    inline NewPrivateVirtualInterface& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
+
+    
+    inline NewPrivateVirtualInterface& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
+
+    
+    inline NewPrivateVirtualInterface& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
+
   private:
 
     Aws::String m_virtualInterfaceName;
@@ -218,6 +240,9 @@ namespace Model
 
     Aws::String m_virtualGatewayId;
     bool m_virtualGatewayIdHasBeenSet;
+
+    Aws::String m_directConnectGatewayId;
+    bool m_directConnectGatewayIdHasBeenSet;
   };
 
 } // namespace Model

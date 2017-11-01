@@ -39,7 +39,8 @@ NewPrivateVirtualInterface::NewPrivateVirtualInterface() :
     m_customerAddressHasBeenSet(false),
     m_addressFamily(AddressFamily::NOT_SET),
     m_addressFamilyHasBeenSet(false),
-    m_virtualGatewayIdHasBeenSet(false)
+    m_virtualGatewayIdHasBeenSet(false),
+    m_directConnectGatewayIdHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ NewPrivateVirtualInterface::NewPrivateVirtualInterface(const JsonValue& jsonValu
     m_customerAddressHasBeenSet(false),
     m_addressFamily(AddressFamily::NOT_SET),
     m_addressFamilyHasBeenSet(false),
-    m_virtualGatewayIdHasBeenSet(false)
+    m_virtualGatewayIdHasBeenSet(false),
+    m_directConnectGatewayIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +119,13 @@ NewPrivateVirtualInterface& NewPrivateVirtualInterface::operator =(const JsonVal
     m_virtualGatewayIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("directConnectGatewayId"))
+  {
+    m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
+
+    m_directConnectGatewayIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue NewPrivateVirtualInterface::Jsonize() const
   if(m_virtualGatewayIdHasBeenSet)
   {
    payload.WithString("virtualGatewayId", m_virtualGatewayId);
+
+  }
+
+  if(m_directConnectGatewayIdHasBeenSet)
+  {
+   payload.WithString("directConnectGatewayId", m_directConnectGatewayId);
 
   }
 

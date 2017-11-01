@@ -133,6 +133,63 @@ namespace Model
      */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
 
+
+    /**
+     * <p>ID of the direct connect gateway that will be attached to the virtual
+     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
+     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
+     * None</p>
+     */
+    inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
+
+    /**
+     * <p>ID of the direct connect gateway that will be attached to the virtual
+     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
+     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
+     * None</p>
+     */
+    inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
+
+    /**
+     * <p>ID of the direct connect gateway that will be attached to the virtual
+     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
+     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
+     * None</p>
+     */
+    inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
+
+    /**
+     * <p>ID of the direct connect gateway that will be attached to the virtual
+     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
+     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
+     * None</p>
+     */
+    inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
+
+    /**
+     * <p>ID of the direct connect gateway that will be attached to the virtual
+     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
+     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
+     * None</p>
+     */
+    inline ConfirmPrivateVirtualInterfaceRequest& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
+
+    /**
+     * <p>ID of the direct connect gateway that will be attached to the virtual
+     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
+     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
+     * None</p>
+     */
+    inline ConfirmPrivateVirtualInterfaceRequest& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>ID of the direct connect gateway that will be attached to the virtual
+     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
+     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
+     * None</p>
+     */
+    inline ConfirmPrivateVirtualInterfaceRequest& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
+
   private:
 
     Aws::String m_virtualInterfaceId;
@@ -140,6 +197,9 @@ namespace Model
 
     Aws::String m_virtualGatewayId;
     bool m_virtualGatewayIdHasBeenSet;
+
+    Aws::String m_directConnectGatewayId;
+    bool m_directConnectGatewayIdHasBeenSet;
   };
 
 } // namespace Model

@@ -89,43 +89,50 @@ namespace Model
 
     /**
      * <p>The cluster certificate issued (signed) by your issuing certificate authority
-     * (CA). The certificate must be in PEM format.</p>
+     * (CA). The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.</p>
      */
     inline const Aws::String& GetSignedCert() const{ return m_signedCert; }
 
     /**
      * <p>The cluster certificate issued (signed) by your issuing certificate authority
-     * (CA). The certificate must be in PEM format.</p>
+     * (CA). The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.</p>
      */
     inline void SetSignedCert(const Aws::String& value) { m_signedCertHasBeenSet = true; m_signedCert = value; }
 
     /**
      * <p>The cluster certificate issued (signed) by your issuing certificate authority
-     * (CA). The certificate must be in PEM format.</p>
+     * (CA). The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.</p>
      */
     inline void SetSignedCert(Aws::String&& value) { m_signedCertHasBeenSet = true; m_signedCert = std::move(value); }
 
     /**
      * <p>The cluster certificate issued (signed) by your issuing certificate authority
-     * (CA). The certificate must be in PEM format.</p>
+     * (CA). The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.</p>
      */
     inline void SetSignedCert(const char* value) { m_signedCertHasBeenSet = true; m_signedCert.assign(value); }
 
     /**
      * <p>The cluster certificate issued (signed) by your issuing certificate authority
-     * (CA). The certificate must be in PEM format.</p>
+     * (CA). The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.</p>
      */
     inline InitializeClusterRequest& WithSignedCert(const Aws::String& value) { SetSignedCert(value); return *this;}
 
     /**
      * <p>The cluster certificate issued (signed) by your issuing certificate authority
-     * (CA). The certificate must be in PEM format.</p>
+     * (CA). The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.</p>
      */
     inline InitializeClusterRequest& WithSignedCert(Aws::String&& value) { SetSignedCert(std::move(value)); return *this;}
 
     /**
      * <p>The cluster certificate issued (signed) by your issuing certificate authority
-     * (CA). The certificate must be in PEM format.</p>
+     * (CA). The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.</p>
      */
     inline InitializeClusterRequest& WithSignedCert(const char* value) { SetSignedCert(value); return *this;}
 
@@ -135,7 +142,7 @@ namespace Model
      * (signed) the cluster certificate. This can be a root (self-signed) certificate
      * or a certificate chain that begins with the certificate that issued the cluster
      * certificate and ends with a root certificate. The certificate or certificate
-     * chain must be in PEM format.</p>
+     * chain must be in PEM format and can contain a maximum of 5000 characters.</p>
      */
     inline const Aws::String& GetTrustAnchor() const{ return m_trustAnchor; }
 
@@ -144,7 +151,7 @@ namespace Model
      * (signed) the cluster certificate. This can be a root (self-signed) certificate
      * or a certificate chain that begins with the certificate that issued the cluster
      * certificate and ends with a root certificate. The certificate or certificate
-     * chain must be in PEM format.</p>
+     * chain must be in PEM format and can contain a maximum of 5000 characters.</p>
      */
     inline void SetTrustAnchor(const Aws::String& value) { m_trustAnchorHasBeenSet = true; m_trustAnchor = value; }
 
@@ -153,7 +160,7 @@ namespace Model
      * (signed) the cluster certificate. This can be a root (self-signed) certificate
      * or a certificate chain that begins with the certificate that issued the cluster
      * certificate and ends with a root certificate. The certificate or certificate
-     * chain must be in PEM format.</p>
+     * chain must be in PEM format and can contain a maximum of 5000 characters.</p>
      */
     inline void SetTrustAnchor(Aws::String&& value) { m_trustAnchorHasBeenSet = true; m_trustAnchor = std::move(value); }
 
@@ -162,7 +169,7 @@ namespace Model
      * (signed) the cluster certificate. This can be a root (self-signed) certificate
      * or a certificate chain that begins with the certificate that issued the cluster
      * certificate and ends with a root certificate. The certificate or certificate
-     * chain must be in PEM format.</p>
+     * chain must be in PEM format and can contain a maximum of 5000 characters.</p>
      */
     inline void SetTrustAnchor(const char* value) { m_trustAnchorHasBeenSet = true; m_trustAnchor.assign(value); }
 
@@ -171,7 +178,7 @@ namespace Model
      * (signed) the cluster certificate. This can be a root (self-signed) certificate
      * or a certificate chain that begins with the certificate that issued the cluster
      * certificate and ends with a root certificate. The certificate or certificate
-     * chain must be in PEM format.</p>
+     * chain must be in PEM format and can contain a maximum of 5000 characters.</p>
      */
     inline InitializeClusterRequest& WithTrustAnchor(const Aws::String& value) { SetTrustAnchor(value); return *this;}
 
@@ -180,7 +187,7 @@ namespace Model
      * (signed) the cluster certificate. This can be a root (self-signed) certificate
      * or a certificate chain that begins with the certificate that issued the cluster
      * certificate and ends with a root certificate. The certificate or certificate
-     * chain must be in PEM format.</p>
+     * chain must be in PEM format and can contain a maximum of 5000 characters.</p>
      */
     inline InitializeClusterRequest& WithTrustAnchor(Aws::String&& value) { SetTrustAnchor(std::move(value)); return *this;}
 
@@ -189,7 +196,7 @@ namespace Model
      * (signed) the cluster certificate. This can be a root (self-signed) certificate
      * or a certificate chain that begins with the certificate that issued the cluster
      * certificate and ends with a root certificate. The certificate or certificate
-     * chain must be in PEM format.</p>
+     * chain must be in PEM format and can contain a maximum of 5000 characters.</p>
      */
     inline InitializeClusterRequest& WithTrustAnchor(const char* value) { SetTrustAnchor(value); return *this;}
 

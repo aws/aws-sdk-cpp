@@ -235,7 +235,7 @@ namespace Model
          * succeeds, the certificate no longer appears in the list of ACM Certificates that
          * can be displayed by calling the <a>ListCertificates</a> action or be retrieved
          * by calling the <a>GetCertificate</a> action. The certificate will not be
-         * available for use by other AWS services.</p> <note> <p>You cannot delete an ACM
+         * available for use by other AWS services. </p> <note> <p>You cannot delete an ACM
          * Certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -249,7 +249,7 @@ namespace Model
          * succeeds, the certificate no longer appears in the list of ACM Certificates that
          * can be displayed by calling the <a>ListCertificates</a> action or be retrieved
          * by calling the <a>GetCertificate</a> action. The certificate will not be
-         * available for use by other AWS services.</p> <note> <p>You cannot delete an ACM
+         * available for use by other AWS services. </p> <note> <p>You cannot delete an ACM
          * Certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -265,7 +265,7 @@ namespace Model
          * succeeds, the certificate no longer appears in the list of ACM Certificates that
          * can be displayed by calling the <a>ListCertificates</a> action or be retrieved
          * by calling the <a>GetCertificate</a> action. The certificate will not be
-         * available for use by other AWS services.</p> <note> <p>You cannot delete an ACM
+         * available for use by other AWS services. </p> <note> <p>You cannot delete an ACM
          * Certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -307,12 +307,10 @@ namespace Model
         /**
          * <p>Retrieves an ACM Certificate and certificate chain for the certificate
          * specified by an ARN. The chain is an ordered list of certificates that contains
-         * the root certificate, intermediate certificates of subordinate CAs, and the ACM
-         * Certificate. The certificate and certificate chain are base64 encoded. If you
-         * want to decode the certificate chain to see the individual certificate fields,
-         * you can use OpenSSL.</p> <note> <p>Currently, ACM Certificates can be used only
-         * with Elastic Load Balancing and Amazon CloudFront.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * the ACM Certificate, intermediate certificates of subordinate CAs, and the root
+         * certificate in that order. The certificate and certificate chain are base64
+         * encoded. If you want to decode the certificate chain to see the individual
+         * certificate fields, you can use OpenSSL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">AWS
          * API Reference</a></p>
          */
@@ -321,12 +319,10 @@ namespace Model
         /**
          * <p>Retrieves an ACM Certificate and certificate chain for the certificate
          * specified by an ARN. The chain is an ordered list of certificates that contains
-         * the root certificate, intermediate certificates of subordinate CAs, and the ACM
-         * Certificate. The certificate and certificate chain are base64 encoded. If you
-         * want to decode the certificate chain to see the individual certificate fields,
-         * you can use OpenSSL.</p> <note> <p>Currently, ACM Certificates can be used only
-         * with Elastic Load Balancing and Amazon CloudFront.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * the ACM Certificate, intermediate certificates of subordinate CAs, and the root
+         * certificate in that order. The certificate and certificate chain are base64
+         * encoded. If you want to decode the certificate chain to see the individual
+         * certificate fields, you can use OpenSSL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">AWS
          * API Reference</a></p>
          *
@@ -337,12 +333,10 @@ namespace Model
         /**
          * <p>Retrieves an ACM Certificate and certificate chain for the certificate
          * specified by an ARN. The chain is an ordered list of certificates that contains
-         * the root certificate, intermediate certificates of subordinate CAs, and the ACM
-         * Certificate. The certificate and certificate chain are base64 encoded. If you
-         * want to decode the certificate chain to see the individual certificate fields,
-         * you can use OpenSSL.</p> <note> <p>Currently, ACM Certificates can be used only
-         * with Elastic Load Balancing and Amazon CloudFront.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * the ACM Certificate, intermediate certificates of subordinate CAs, and the root
+         * certificate in that order. The certificate and certificate chain are base64
+         * encoded. If you want to decode the certificate chain to see the individual
+         * certificate fields, you can use OpenSSL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">AWS
          * API Reference</a></p>
          *
@@ -359,10 +353,10 @@ namespace Model
          * renewal</a> for certificates that you import.</p> </note> <p>For more
          * information about importing certificates into ACM, including the differences
          * between certificates that you import and those that ACM provides, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p> <p>To
-         * import a certificate, you must provide the certificate and the matching private
-         * key. When the certificate is not self-signed, you must also provide a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">
+         * Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+         * <p>To import a certificate, you must provide the certificate and the matching
+         * private key. When the certificate is not self-signed, you must also provide a
          * certificate chain. You can omit the certificate chain when importing a
          * self-signed certificate.</p> <p>The certificate, private key, and certificate
          * chain must be PEM-encoded. For more information about converting these items to
@@ -371,7 +365,13 @@ namespace Model
          * Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User
          * Guide</i>.</p> <p>To import a new certificate, omit the
          * <code>CertificateArn</code> field. Include this field only when you want to
-         * replace a previously imported certificate.</p> <p>This operation returns the <a
+         * replace a previously imported certificate.</p> <p>When you import a certificate
+         * by using the CLI or one of the SDKs, you must specify the certificate, chain,
+         * and private key parameters as file names preceded by <code>file://</code>. For
+         * example, you can specify a certificate saved in the <code>C:\temp</code> folder
+         * as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or
+         * HTTPS Query request, include these parameters as BLOBs. </p> <p>This operation
+         * returns the <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
          * Resource Name (ARN)</a> of the imported certificate.</p><p><h3>See Also:</h3>  
          * <a
@@ -389,10 +389,10 @@ namespace Model
          * renewal</a> for certificates that you import.</p> </note> <p>For more
          * information about importing certificates into ACM, including the differences
          * between certificates that you import and those that ACM provides, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p> <p>To
-         * import a certificate, you must provide the certificate and the matching private
-         * key. When the certificate is not self-signed, you must also provide a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">
+         * Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+         * <p>To import a certificate, you must provide the certificate and the matching
+         * private key. When the certificate is not self-signed, you must also provide a
          * certificate chain. You can omit the certificate chain when importing a
          * self-signed certificate.</p> <p>The certificate, private key, and certificate
          * chain must be PEM-encoded. For more information about converting these items to
@@ -401,7 +401,13 @@ namespace Model
          * Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User
          * Guide</i>.</p> <p>To import a new certificate, omit the
          * <code>CertificateArn</code> field. Include this field only when you want to
-         * replace a previously imported certificate.</p> <p>This operation returns the <a
+         * replace a previously imported certificate.</p> <p>When you import a certificate
+         * by using the CLI or one of the SDKs, you must specify the certificate, chain,
+         * and private key parameters as file names preceded by <code>file://</code>. For
+         * example, you can specify a certificate saved in the <code>C:\temp</code> folder
+         * as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or
+         * HTTPS Query request, include these parameters as BLOBs. </p> <p>This operation
+         * returns the <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
          * Resource Name (ARN)</a> of the imported certificate.</p><p><h3>See Also:</h3>  
          * <a
@@ -421,10 +427,10 @@ namespace Model
          * renewal</a> for certificates that you import.</p> </note> <p>For more
          * information about importing certificates into ACM, including the differences
          * between certificates that you import and those that ACM provides, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p> <p>To
-         * import a certificate, you must provide the certificate and the matching private
-         * key. When the certificate is not self-signed, you must also provide a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">
+         * Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+         * <p>To import a certificate, you must provide the certificate and the matching
+         * private key. When the certificate is not self-signed, you must also provide a
          * certificate chain. You can omit the certificate chain when importing a
          * self-signed certificate.</p> <p>The certificate, private key, and certificate
          * chain must be PEM-encoded. For more information about converting these items to
@@ -433,7 +439,13 @@ namespace Model
          * Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User
          * Guide</i>.</p> <p>To import a new certificate, omit the
          * <code>CertificateArn</code> field. Include this field only when you want to
-         * replace a previously imported certificate.</p> <p>This operation returns the <a
+         * replace a previously imported certificate.</p> <p>When you import a certificate
+         * by using the CLI or one of the SDKs, you must specify the certificate, chain,
+         * and private key parameters as file names preceded by <code>file://</code>. For
+         * example, you can specify a certificate saved in the <code>C:\temp</code> folder
+         * as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or
+         * HTTPS Query request, include these parameters as BLOBs. </p> <p>This operation
+         * returns the <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
          * Resource Name (ARN)</a> of the imported certificate.</p><p><h3>See Also:</h3>  
          * <a
@@ -558,12 +570,19 @@ namespace Model
         /**
          * <p>Requests an ACM Certificate for use with other AWS services. To request an
          * ACM Certificate, you must specify the fully qualified domain name (FQDN) for
-         * your site. You can also specify additional FQDNs if users can reach your site by
-         * using other names. For each domain name you specify, email is sent to the domain
-         * owner to request approval to issue the certificate. After receiving approval
-         * from the domain owner, the ACM Certificate is issued. For more information, see
-         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
-         * Manager User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * your site in the <code>DomainName</code> parameter. You can also specify
+         * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter if users
+         * can reach your site by using other names. </p> <p>For each domain name you
+         * specify, email is sent to the domain owner to request approval to issue the
+         * certificate. Email is sent to three registered contact addresses in the WHOIS
+         * database and to five common system administration addresses formed from the
+         * <code>DomainName</code> you enter or the optional <code>ValidationDomain</code>
+         * parameter. For more information, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate
+         * Domain Ownership</a>. </p> <p>After receiving approval from the domain owner,
+         * the ACM Certificate is issued. For more information, see the <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+         * User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
          * API Reference</a></p>
          */
@@ -572,12 +591,19 @@ namespace Model
         /**
          * <p>Requests an ACM Certificate for use with other AWS services. To request an
          * ACM Certificate, you must specify the fully qualified domain name (FQDN) for
-         * your site. You can also specify additional FQDNs if users can reach your site by
-         * using other names. For each domain name you specify, email is sent to the domain
-         * owner to request approval to issue the certificate. After receiving approval
-         * from the domain owner, the ACM Certificate is issued. For more information, see
-         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
-         * Manager User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * your site in the <code>DomainName</code> parameter. You can also specify
+         * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter if users
+         * can reach your site by using other names. </p> <p>For each domain name you
+         * specify, email is sent to the domain owner to request approval to issue the
+         * certificate. Email is sent to three registered contact addresses in the WHOIS
+         * database and to five common system administration addresses formed from the
+         * <code>DomainName</code> you enter or the optional <code>ValidationDomain</code>
+         * parameter. For more information, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate
+         * Domain Ownership</a>. </p> <p>After receiving approval from the domain owner,
+         * the ACM Certificate is issued. For more information, see the <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+         * User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
          * API Reference</a></p>
          *
@@ -588,12 +614,19 @@ namespace Model
         /**
          * <p>Requests an ACM Certificate for use with other AWS services. To request an
          * ACM Certificate, you must specify the fully qualified domain name (FQDN) for
-         * your site. You can also specify additional FQDNs if users can reach your site by
-         * using other names. For each domain name you specify, email is sent to the domain
-         * owner to request approval to issue the certificate. After receiving approval
-         * from the domain owner, the ACM Certificate is issued. For more information, see
-         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
-         * Manager User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * your site in the <code>DomainName</code> parameter. You can also specify
+         * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter if users
+         * can reach your site by using other names. </p> <p>For each domain name you
+         * specify, email is sent to the domain owner to request approval to issue the
+         * certificate. Email is sent to three registered contact addresses in the WHOIS
+         * database and to five common system administration addresses formed from the
+         * <code>DomainName</code> you enter or the optional <code>ValidationDomain</code>
+         * parameter. For more information, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate
+         * Domain Ownership</a>. </p> <p>After receiving approval from the domain owner,
+         * the ACM Certificate is issued. For more information, see the <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+         * User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
          * API Reference</a></p>
          *

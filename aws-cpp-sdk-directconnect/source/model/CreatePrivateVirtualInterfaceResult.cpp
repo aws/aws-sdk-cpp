@@ -29,6 +29,7 @@ using namespace Aws;
 CreatePrivateVirtualInterfaceResult::CreatePrivateVirtualInterfaceResult() : 
     m_vlan(0),
     m_asn(0),
+    m_amazonSideAsn(0),
     m_addressFamily(AddressFamily::NOT_SET),
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
@@ -37,6 +38,7 @@ CreatePrivateVirtualInterfaceResult::CreatePrivateVirtualInterfaceResult() :
 CreatePrivateVirtualInterfaceResult::CreatePrivateVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_vlan(0),
     m_asn(0),
+    m_amazonSideAsn(0),
     m_addressFamily(AddressFamily::NOT_SET),
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
@@ -94,6 +96,12 @@ CreatePrivateVirtualInterfaceResult& CreatePrivateVirtualInterfaceResult::operat
 
   }
 
+  if(jsonValue.ValueExists("amazonSideAsn"))
+  {
+    m_amazonSideAsn = jsonValue.GetInt64("amazonSideAsn");
+
+  }
+
   if(jsonValue.ValueExists("authKey"))
   {
     m_authKey = jsonValue.GetString("authKey");
@@ -133,6 +141,12 @@ CreatePrivateVirtualInterfaceResult& CreatePrivateVirtualInterfaceResult::operat
   if(jsonValue.ValueExists("virtualGatewayId"))
   {
     m_virtualGatewayId = jsonValue.GetString("virtualGatewayId");
+
+  }
+
+  if(jsonValue.ValueExists("directConnectGatewayId"))
+  {
+    m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
 
   }
 

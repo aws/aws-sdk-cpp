@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 ConfirmPrivateVirtualInterfaceRequest::ConfirmPrivateVirtualInterfaceRequest() : 
     m_virtualInterfaceIdHasBeenSet(false),
-    m_virtualGatewayIdHasBeenSet(false)
+    m_virtualGatewayIdHasBeenSet(false),
+    m_directConnectGatewayIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,12 @@ Aws::String ConfirmPrivateVirtualInterfaceRequest::SerializePayload() const
   if(m_virtualGatewayIdHasBeenSet)
   {
    payload.WithString("virtualGatewayId", m_virtualGatewayId);
+
+  }
+
+  if(m_directConnectGatewayIdHasBeenSet)
+  {
+   payload.WithString("directConnectGatewayId", m_directConnectGatewayId);
 
   }
 

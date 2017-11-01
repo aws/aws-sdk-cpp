@@ -38,16 +38,23 @@
 #include <aws/directconnect/model/ConfirmPublicVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/CreateBGPPeerRequest.h>
 #include <aws/directconnect/model/CreateConnectionRequest.h>
+#include <aws/directconnect/model/CreateDirectConnectGatewayRequest.h>
+#include <aws/directconnect/model/CreateDirectConnectGatewayAssociationRequest.h>
 #include <aws/directconnect/model/CreateInterconnectRequest.h>
 #include <aws/directconnect/model/CreateLagRequest.h>
 #include <aws/directconnect/model/CreatePrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/CreatePublicVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/DeleteBGPPeerRequest.h>
 #include <aws/directconnect/model/DeleteConnectionRequest.h>
+#include <aws/directconnect/model/DeleteDirectConnectGatewayRequest.h>
+#include <aws/directconnect/model/DeleteDirectConnectGatewayAssociationRequest.h>
 #include <aws/directconnect/model/DeleteInterconnectRequest.h>
 #include <aws/directconnect/model/DeleteLagRequest.h>
 #include <aws/directconnect/model/DeleteVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/DescribeConnectionsRequest.h>
+#include <aws/directconnect/model/DescribeDirectConnectGatewayAssociationsRequest.h>
+#include <aws/directconnect/model/DescribeDirectConnectGatewayAttachmentsRequest.h>
+#include <aws/directconnect/model/DescribeDirectConnectGatewaysRequest.h>
 #include <aws/directconnect/model/DescribeHostedConnectionsRequest.h>
 #include <aws/directconnect/model/DescribeInterconnectsRequest.h>
 #include <aws/directconnect/model/DescribeLagsRequest.h>
@@ -508,6 +515,76 @@ void DirectConnectClient::CreateConnectionAsyncHelper(const CreateConnectionRequ
   handler(this, request, CreateConnection(request), context);
 }
 
+CreateDirectConnectGatewayOutcome DirectConnectClient::CreateDirectConnectGateway(const CreateDirectConnectGatewayRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateDirectConnectGatewayOutcome(CreateDirectConnectGatewayResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDirectConnectGatewayOutcome(outcome.GetError());
+  }
+}
+
+CreateDirectConnectGatewayOutcomeCallable DirectConnectClient::CreateDirectConnectGatewayCallable(const CreateDirectConnectGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDirectConnectGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDirectConnectGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::CreateDirectConnectGatewayAsync(const CreateDirectConnectGatewayRequest& request, const CreateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDirectConnectGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::CreateDirectConnectGatewayAsyncHelper(const CreateDirectConnectGatewayRequest& request, const CreateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDirectConnectGateway(request), context);
+}
+
+CreateDirectConnectGatewayAssociationOutcome DirectConnectClient::CreateDirectConnectGatewayAssociation(const CreateDirectConnectGatewayAssociationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateDirectConnectGatewayAssociationOutcome(CreateDirectConnectGatewayAssociationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDirectConnectGatewayAssociationOutcome(outcome.GetError());
+  }
+}
+
+CreateDirectConnectGatewayAssociationOutcomeCallable DirectConnectClient::CreateDirectConnectGatewayAssociationCallable(const CreateDirectConnectGatewayAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDirectConnectGatewayAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDirectConnectGatewayAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::CreateDirectConnectGatewayAssociationAsync(const CreateDirectConnectGatewayAssociationRequest& request, const CreateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDirectConnectGatewayAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::CreateDirectConnectGatewayAssociationAsyncHelper(const CreateDirectConnectGatewayAssociationRequest& request, const CreateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDirectConnectGatewayAssociation(request), context);
+}
+
 CreateInterconnectOutcome DirectConnectClient::CreateInterconnect(const CreateInterconnectRequest& request) const
 {
   Aws::StringStream ss;
@@ -718,6 +795,76 @@ void DirectConnectClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequ
   handler(this, request, DeleteConnection(request), context);
 }
 
+DeleteDirectConnectGatewayOutcome DirectConnectClient::DeleteDirectConnectGateway(const DeleteDirectConnectGatewayRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDirectConnectGatewayOutcome(DeleteDirectConnectGatewayResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDirectConnectGatewayOutcome(outcome.GetError());
+  }
+}
+
+DeleteDirectConnectGatewayOutcomeCallable DirectConnectClient::DeleteDirectConnectGatewayCallable(const DeleteDirectConnectGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDirectConnectGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDirectConnectGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DeleteDirectConnectGatewayAsync(const DeleteDirectConnectGatewayRequest& request, const DeleteDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDirectConnectGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DeleteDirectConnectGatewayAsyncHelper(const DeleteDirectConnectGatewayRequest& request, const DeleteDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDirectConnectGateway(request), context);
+}
+
+DeleteDirectConnectGatewayAssociationOutcome DirectConnectClient::DeleteDirectConnectGatewayAssociation(const DeleteDirectConnectGatewayAssociationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDirectConnectGatewayAssociationOutcome(DeleteDirectConnectGatewayAssociationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDirectConnectGatewayAssociationOutcome(outcome.GetError());
+  }
+}
+
+DeleteDirectConnectGatewayAssociationOutcomeCallable DirectConnectClient::DeleteDirectConnectGatewayAssociationCallable(const DeleteDirectConnectGatewayAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDirectConnectGatewayAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDirectConnectGatewayAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DeleteDirectConnectGatewayAssociationAsync(const DeleteDirectConnectGatewayAssociationRequest& request, const DeleteDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDirectConnectGatewayAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DeleteDirectConnectGatewayAssociationAsyncHelper(const DeleteDirectConnectGatewayAssociationRequest& request, const DeleteDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDirectConnectGatewayAssociation(request), context);
+}
+
 DeleteInterconnectOutcome DirectConnectClient::DeleteInterconnect(const DeleteInterconnectRequest& request) const
 {
   Aws::StringStream ss;
@@ -856,6 +1003,111 @@ void DirectConnectClient::DescribeConnectionsAsync(const DescribeConnectionsRequ
 void DirectConnectClient::DescribeConnectionsAsyncHelper(const DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeConnections(request), context);
+}
+
+DescribeDirectConnectGatewayAssociationsOutcome DirectConnectClient::DescribeDirectConnectGatewayAssociations(const DescribeDirectConnectGatewayAssociationsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDirectConnectGatewayAssociationsOutcome(DescribeDirectConnectGatewayAssociationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDirectConnectGatewayAssociationsOutcome(outcome.GetError());
+  }
+}
+
+DescribeDirectConnectGatewayAssociationsOutcomeCallable DirectConnectClient::DescribeDirectConnectGatewayAssociationsCallable(const DescribeDirectConnectGatewayAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDirectConnectGatewayAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDirectConnectGatewayAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DescribeDirectConnectGatewayAssociationsAsync(const DescribeDirectConnectGatewayAssociationsRequest& request, const DescribeDirectConnectGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDirectConnectGatewayAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DescribeDirectConnectGatewayAssociationsAsyncHelper(const DescribeDirectConnectGatewayAssociationsRequest& request, const DescribeDirectConnectGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDirectConnectGatewayAssociations(request), context);
+}
+
+DescribeDirectConnectGatewayAttachmentsOutcome DirectConnectClient::DescribeDirectConnectGatewayAttachments(const DescribeDirectConnectGatewayAttachmentsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDirectConnectGatewayAttachmentsOutcome(DescribeDirectConnectGatewayAttachmentsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDirectConnectGatewayAttachmentsOutcome(outcome.GetError());
+  }
+}
+
+DescribeDirectConnectGatewayAttachmentsOutcomeCallable DirectConnectClient::DescribeDirectConnectGatewayAttachmentsCallable(const DescribeDirectConnectGatewayAttachmentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDirectConnectGatewayAttachmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDirectConnectGatewayAttachments(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DescribeDirectConnectGatewayAttachmentsAsync(const DescribeDirectConnectGatewayAttachmentsRequest& request, const DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDirectConnectGatewayAttachmentsAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DescribeDirectConnectGatewayAttachmentsAsyncHelper(const DescribeDirectConnectGatewayAttachmentsRequest& request, const DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDirectConnectGatewayAttachments(request), context);
+}
+
+DescribeDirectConnectGatewaysOutcome DirectConnectClient::DescribeDirectConnectGateways(const DescribeDirectConnectGatewaysRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDirectConnectGatewaysOutcome(DescribeDirectConnectGatewaysResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDirectConnectGatewaysOutcome(outcome.GetError());
+  }
+}
+
+DescribeDirectConnectGatewaysOutcomeCallable DirectConnectClient::DescribeDirectConnectGatewaysCallable(const DescribeDirectConnectGatewaysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDirectConnectGatewaysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDirectConnectGateways(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DescribeDirectConnectGatewaysAsync(const DescribeDirectConnectGatewaysRequest& request, const DescribeDirectConnectGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDirectConnectGatewaysAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DescribeDirectConnectGatewaysAsyncHelper(const DescribeDirectConnectGatewaysRequest& request, const DescribeDirectConnectGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDirectConnectGateways(request), context);
 }
 
 DescribeHostedConnectionsOutcome DirectConnectClient::DescribeHostedConnections(const DescribeHostedConnectionsRequest& request) const

@@ -218,6 +218,22 @@ namespace Model
     inline VirtualInterface& WithAsn(int value) { SetAsn(value); return *this;}
 
 
+    /**
+     * <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+     */
+    inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
+
+    /**
+     * <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+     */
+    inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
+
+    /**
+     * <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+     */
+    inline VirtualInterface& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
+
+
     
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
 
@@ -375,6 +391,28 @@ namespace Model
 
 
     
+    inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
+
+    
+    inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
+
+    
+    inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
+
+    
+    inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
+
+    
+    inline VirtualInterface& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
+
+    
+    inline VirtualInterface& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
+
+    
+    inline VirtualInterface& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
+
+
+    
     inline const Aws::Vector<RouteFilterPrefix>& GetRouteFilterPrefixes() const{ return m_routeFilterPrefixes; }
 
     
@@ -443,6 +481,9 @@ namespace Model
     int m_asn;
     bool m_asnHasBeenSet;
 
+    long long m_amazonSideAsn;
+    bool m_amazonSideAsnHasBeenSet;
+
     Aws::String m_authKey;
     bool m_authKeyHasBeenSet;
 
@@ -463,6 +504,9 @@ namespace Model
 
     Aws::String m_virtualGatewayId;
     bool m_virtualGatewayIdHasBeenSet;
+
+    Aws::String m_directConnectGatewayId;
+    bool m_directConnectGatewayIdHasBeenSet;
 
     Aws::Vector<RouteFilterPrefix> m_routeFilterPrefixes;
     bool m_routeFilterPrefixesHasBeenSet;

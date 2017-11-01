@@ -39,6 +39,8 @@ VirtualInterface::VirtualInterface() :
     m_vlanHasBeenSet(false),
     m_asn(0),
     m_asnHasBeenSet(false),
+    m_amazonSideAsn(0),
+    m_amazonSideAsnHasBeenSet(false),
     m_authKeyHasBeenSet(false),
     m_amazonAddressHasBeenSet(false),
     m_customerAddressHasBeenSet(false),
@@ -48,6 +50,7 @@ VirtualInterface::VirtualInterface() :
     m_virtualInterfaceStateHasBeenSet(false),
     m_customerRouterConfigHasBeenSet(false),
     m_virtualGatewayIdHasBeenSet(false),
+    m_directConnectGatewayIdHasBeenSet(false),
     m_routeFilterPrefixesHasBeenSet(false),
     m_bgpPeersHasBeenSet(false)
 {
@@ -64,6 +67,8 @@ VirtualInterface::VirtualInterface(const JsonValue& jsonValue) :
     m_vlanHasBeenSet(false),
     m_asn(0),
     m_asnHasBeenSet(false),
+    m_amazonSideAsn(0),
+    m_amazonSideAsnHasBeenSet(false),
     m_authKeyHasBeenSet(false),
     m_amazonAddressHasBeenSet(false),
     m_customerAddressHasBeenSet(false),
@@ -73,6 +78,7 @@ VirtualInterface::VirtualInterface(const JsonValue& jsonValue) :
     m_virtualInterfaceStateHasBeenSet(false),
     m_customerRouterConfigHasBeenSet(false),
     m_virtualGatewayIdHasBeenSet(false),
+    m_directConnectGatewayIdHasBeenSet(false),
     m_routeFilterPrefixesHasBeenSet(false),
     m_bgpPeersHasBeenSet(false)
 {
@@ -137,6 +143,13 @@ VirtualInterface& VirtualInterface::operator =(const JsonValue& jsonValue)
     m_asnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("amazonSideAsn"))
+  {
+    m_amazonSideAsn = jsonValue.GetInt64("amazonSideAsn");
+
+    m_amazonSideAsnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("authKey"))
   {
     m_authKey = jsonValue.GetString("authKey");
@@ -184,6 +197,13 @@ VirtualInterface& VirtualInterface::operator =(const JsonValue& jsonValue)
     m_virtualGatewayId = jsonValue.GetString("virtualGatewayId");
 
     m_virtualGatewayIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("directConnectGatewayId"))
+  {
+    m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
+
+    m_directConnectGatewayIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("routeFilterPrefixes"))
@@ -261,6 +281,12 @@ JsonValue VirtualInterface::Jsonize() const
 
   }
 
+  if(m_amazonSideAsnHasBeenSet)
+  {
+   payload.WithInt64("amazonSideAsn", m_amazonSideAsn);
+
+  }
+
   if(m_authKeyHasBeenSet)
   {
    payload.WithString("authKey", m_authKey);
@@ -298,6 +324,12 @@ JsonValue VirtualInterface::Jsonize() const
   if(m_virtualGatewayIdHasBeenSet)
   {
    payload.WithString("virtualGatewayId", m_virtualGatewayId);
+
+  }
+
+  if(m_directConnectGatewayIdHasBeenSet)
+  {
+   payload.WithString("directConnectGatewayId", m_directConnectGatewayId);
 
   }
 
