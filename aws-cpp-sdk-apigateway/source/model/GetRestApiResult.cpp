@@ -86,6 +86,12 @@ GetRestApiResult& GetRestApiResult::operator =(const Aws::AmazonWebServiceResult
     }
   }
 
+  if(jsonValue.ValueExists("endpointConfiguration"))
+  {
+    m_endpointConfiguration = jsonValue.GetObject("endpointConfiguration");
+
+  }
+
 
 
   return *this;

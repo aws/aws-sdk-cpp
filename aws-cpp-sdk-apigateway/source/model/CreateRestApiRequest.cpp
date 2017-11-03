@@ -27,7 +27,8 @@ CreateRestApiRequest::CreateRestApiRequest() :
     m_descriptionHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_cloneFromHasBeenSet(false),
-    m_binaryMediaTypesHasBeenSet(false)
+    m_binaryMediaTypesHasBeenSet(false),
+    m_endpointConfigurationHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,12 @@ Aws::String CreateRestApiRequest::SerializePayload() const
      binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString(m_binaryMediaTypes[binaryMediaTypesIndex]);
    }
    payload.WithArray("binaryMediaTypes", std::move(binaryMediaTypesJsonList));
+
+  }
+
+  if(m_endpointConfigurationHasBeenSet)
+  {
+   payload.WithObject("endpointConfiguration", m_endpointConfiguration.Jsonize());
 
   }
 

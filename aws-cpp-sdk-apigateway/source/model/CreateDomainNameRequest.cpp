@@ -28,7 +28,10 @@ CreateDomainNameRequest::CreateDomainNameRequest() :
     m_certificateBodyHasBeenSet(false),
     m_certificatePrivateKeyHasBeenSet(false),
     m_certificateChainHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
+    m_certificateArnHasBeenSet(false),
+    m_regionalCertificateNameHasBeenSet(false),
+    m_regionalCertificateArnHasBeenSet(false),
+    m_endpointConfigurationHasBeenSet(false)
 {
 }
 
@@ -69,6 +72,24 @@ Aws::String CreateDomainNameRequest::SerializePayload() const
   if(m_certificateArnHasBeenSet)
   {
    payload.WithString("certificateArn", m_certificateArn);
+
+  }
+
+  if(m_regionalCertificateNameHasBeenSet)
+  {
+   payload.WithString("regionalCertificateName", m_regionalCertificateName);
+
+  }
+
+  if(m_regionalCertificateArnHasBeenSet)
+  {
+   payload.WithString("regionalCertificateArn", m_regionalCertificateArn);
+
+  }
+
+  if(m_endpointConfigurationHasBeenSet)
+  {
+   payload.WithObject("endpointConfiguration", m_endpointConfiguration.Jsonize());
 
   }
 

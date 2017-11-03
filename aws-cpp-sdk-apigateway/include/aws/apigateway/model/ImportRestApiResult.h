@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/apigateway/model/EndpointConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -325,6 +326,37 @@ namespace Model
      */
     inline ImportRestApiResult& AddBinaryMediaTypes(const char* value) { m_binaryMediaTypes.push_back(value); return *this; }
 
+
+    /**
+     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
+     * of the API. </p>
+     */
+    inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
+
+    /**
+     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
+     * of the API. </p>
+     */
+    inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfiguration = value; }
+
+    /**
+     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
+     * of the API. </p>
+     */
+    inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfiguration = std::move(value); }
+
+    /**
+     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
+     * of the API. </p>
+     */
+    inline ImportRestApiResult& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
+
+    /**
+     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
+     * of the API. </p>
+     */
+    inline ImportRestApiResult& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -340,6 +372,8 @@ namespace Model
     Aws::Vector<Aws::String> m_warnings;
 
     Aws::Vector<Aws::String> m_binaryMediaTypes;
+
+    EndpointConfiguration m_endpointConfiguration;
   };
 
 } // namespace Model

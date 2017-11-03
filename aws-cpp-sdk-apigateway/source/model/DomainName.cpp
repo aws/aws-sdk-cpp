@@ -33,7 +33,11 @@ DomainName::DomainName() :
     m_certificateNameHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
     m_certificateUploadDateHasBeenSet(false),
-    m_distributionDomainNameHasBeenSet(false)
+    m_regionalDomainNameHasBeenSet(false),
+    m_regionalCertificateNameHasBeenSet(false),
+    m_regionalCertificateArnHasBeenSet(false),
+    m_distributionDomainNameHasBeenSet(false),
+    m_endpointConfigurationHasBeenSet(false)
 {
 }
 
@@ -42,7 +46,11 @@ DomainName::DomainName(const JsonValue& jsonValue) :
     m_certificateNameHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
     m_certificateUploadDateHasBeenSet(false),
-    m_distributionDomainNameHasBeenSet(false)
+    m_regionalDomainNameHasBeenSet(false),
+    m_regionalCertificateNameHasBeenSet(false),
+    m_regionalCertificateArnHasBeenSet(false),
+    m_distributionDomainNameHasBeenSet(false),
+    m_endpointConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,11 +85,39 @@ DomainName& DomainName::operator =(const JsonValue& jsonValue)
     m_certificateUploadDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("regionalDomainName"))
+  {
+    m_regionalDomainName = jsonValue.GetString("regionalDomainName");
+
+    m_regionalDomainNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("regionalCertificateName"))
+  {
+    m_regionalCertificateName = jsonValue.GetString("regionalCertificateName");
+
+    m_regionalCertificateNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("regionalCertificateArn"))
+  {
+    m_regionalCertificateArn = jsonValue.GetString("regionalCertificateArn");
+
+    m_regionalCertificateArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("distributionDomainName"))
   {
     m_distributionDomainName = jsonValue.GetString("distributionDomainName");
 
     m_distributionDomainNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endpointConfiguration"))
+  {
+    m_endpointConfiguration = jsonValue.GetObject("endpointConfiguration");
+
+    m_endpointConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -114,9 +150,33 @@ JsonValue DomainName::Jsonize() const
    payload.WithDouble("certificateUploadDate", m_certificateUploadDate.SecondsWithMSPrecision());
   }
 
+  if(m_regionalDomainNameHasBeenSet)
+  {
+   payload.WithString("regionalDomainName", m_regionalDomainName);
+
+  }
+
+  if(m_regionalCertificateNameHasBeenSet)
+  {
+   payload.WithString("regionalCertificateName", m_regionalCertificateName);
+
+  }
+
+  if(m_regionalCertificateArnHasBeenSet)
+  {
+   payload.WithString("regionalCertificateArn", m_regionalCertificateArn);
+
+  }
+
   if(m_distributionDomainNameHasBeenSet)
   {
    payload.WithString("distributionDomainName", m_distributionDomainName);
+
+  }
+
+  if(m_endpointConfigurationHasBeenSet)
+  {
+   payload.WithObject("endpointConfiguration", m_endpointConfiguration.Jsonize());
 
   }
 

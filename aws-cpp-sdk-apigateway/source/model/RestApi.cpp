@@ -35,7 +35,8 @@ RestApi::RestApi() :
     m_createdDateHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_warningsHasBeenSet(false),
-    m_binaryMediaTypesHasBeenSet(false)
+    m_binaryMediaTypesHasBeenSet(false),
+    m_endpointConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ RestApi::RestApi(const JsonValue& jsonValue) :
     m_createdDateHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_warningsHasBeenSet(false),
-    m_binaryMediaTypesHasBeenSet(false)
+    m_binaryMediaTypesHasBeenSet(false),
+    m_endpointConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +110,13 @@ RestApi& RestApi::operator =(const JsonValue& jsonValue)
     m_binaryMediaTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("endpointConfiguration"))
+  {
+    m_endpointConfiguration = jsonValue.GetObject("endpointConfiguration");
+
+    m_endpointConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +172,12 @@ JsonValue RestApi::Jsonize() const
      binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString(m_binaryMediaTypes[binaryMediaTypesIndex]);
    }
    payload.WithArray("binaryMediaTypes", std::move(binaryMediaTypesJsonList));
+
+  }
+
+  if(m_endpointConfigurationHasBeenSet)
+  {
+   payload.WithObject("endpointConfiguration", m_endpointConfiguration.Jsonize());
 
   }
 

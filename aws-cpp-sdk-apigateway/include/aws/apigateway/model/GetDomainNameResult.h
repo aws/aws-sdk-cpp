@@ -17,6 +17,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/apigateway/model/EndpointConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -36,10 +37,20 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents a domain name that is contained in a simpler, more intuitive URL
-   * that can be called.</p> <div class="seeAlso"> <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
-   * Client-Side Certificate</a> </div><p><h3>See Also:</h3>   <a
+   * <p>Represents a custom domain name as a user-friendly host name of an API
+   * (<a>RestApi</a>).</p> <div class="Remarks"> <p>When you deploy an API, Amazon
+   * API Gateway creates a default host name for the API. This default API host name
+   * is of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format.
+   * With the default host name, you can access the API's root resource with the URL
+   * of
+   * <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>.
+   * When you set up a custom domain name of <code>apis.example.com</code> for this
+   * API, you can then access the same resource using the URL of the
+   * <code>https://apis.examples.com/myApi</code>, where <code>myApi</code> is the
+   * base path mapping (<a>BasePathMapping</a>) of your API under the custom domain
+   * name. </p> </div> <div class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set
+   * a Custom Host Name for an API</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DomainName">AWS
    * API Reference</a></p>
    */
@@ -88,158 +99,379 @@ namespace Model
 
 
     /**
-     * <p>The name of the certificate.</p>
+     * <p>The name of the certificate that will be used by edge-optimized endpoint for
+     * this domain name.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
 
     /**
-     * <p>The name of the certificate.</p>
+     * <p>The name of the certificate that will be used by edge-optimized endpoint for
+     * this domain name.</p>
      */
     inline void SetCertificateName(const Aws::String& value) { m_certificateName = value; }
 
     /**
-     * <p>The name of the certificate.</p>
+     * <p>The name of the certificate that will be used by edge-optimized endpoint for
+     * this domain name.</p>
      */
     inline void SetCertificateName(Aws::String&& value) { m_certificateName = std::move(value); }
 
     /**
-     * <p>The name of the certificate.</p>
+     * <p>The name of the certificate that will be used by edge-optimized endpoint for
+     * this domain name.</p>
      */
     inline void SetCertificateName(const char* value) { m_certificateName.assign(value); }
 
     /**
-     * <p>The name of the certificate.</p>
+     * <p>The name of the certificate that will be used by edge-optimized endpoint for
+     * this domain name.</p>
      */
     inline GetDomainNameResult& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
 
     /**
-     * <p>The name of the certificate.</p>
+     * <p>The name of the certificate that will be used by edge-optimized endpoint for
+     * this domain name.</p>
      */
     inline GetDomainNameResult& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the certificate.</p>
+     * <p>The name of the certificate that will be used by edge-optimized endpoint for
+     * this domain name.</p>
      */
     inline GetDomainNameResult& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
 
 
     /**
-     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * <p>The reference to an AWS-managed certificate that will be used by
+     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
      * only supported source.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
     /**
-     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * <p>The reference to an AWS-managed certificate that will be used by
+     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
      * only supported source.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArn = value; }
 
     /**
-     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * <p>The reference to an AWS-managed certificate that will be used by
+     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
      * only supported source.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = std::move(value); }
 
     /**
-     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * <p>The reference to an AWS-managed certificate that will be used by
+     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
      * only supported source.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArn.assign(value); }
 
     /**
-     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * <p>The reference to an AWS-managed certificate that will be used by
+     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
      * only supported source.</p>
      */
     inline GetDomainNameResult& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * <p>The reference to an AWS-managed certificate that will be used by
+     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
      * only supported source.</p>
      */
     inline GetDomainNameResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
-     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * <p>The reference to an AWS-managed certificate that will be used by
+     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
      * only supported source.</p>
      */
     inline GetDomainNameResult& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
 
     /**
-     * <p>The timestamp when the certificate was uploaded.</p>
+     * <p>The timestamp when the certificate that was used by edge-optimized endpoint
+     * for this domain name was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetCertificateUploadDate() const{ return m_certificateUploadDate; }
 
     /**
-     * <p>The timestamp when the certificate was uploaded.</p>
+     * <p>The timestamp when the certificate that was used by edge-optimized endpoint
+     * for this domain name was uploaded.</p>
      */
     inline void SetCertificateUploadDate(const Aws::Utils::DateTime& value) { m_certificateUploadDate = value; }
 
     /**
-     * <p>The timestamp when the certificate was uploaded.</p>
+     * <p>The timestamp when the certificate that was used by edge-optimized endpoint
+     * for this domain name was uploaded.</p>
      */
     inline void SetCertificateUploadDate(Aws::Utils::DateTime&& value) { m_certificateUploadDate = std::move(value); }
 
     /**
-     * <p>The timestamp when the certificate was uploaded.</p>
+     * <p>The timestamp when the certificate that was used by edge-optimized endpoint
+     * for this domain name was uploaded.</p>
      */
     inline GetDomainNameResult& WithCertificateUploadDate(const Aws::Utils::DateTime& value) { SetCertificateUploadDate(value); return *this;}
 
     /**
-     * <p>The timestamp when the certificate was uploaded.</p>
+     * <p>The timestamp when the certificate that was used by edge-optimized endpoint
+     * for this domain name was uploaded.</p>
      */
     inline GetDomainNameResult& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The domain name of the Amazon CloudFront distribution. For more information,
-     * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
-     * target="_blank">Amazon CloudFront documentation</a>.</p>
+     * <p>The domain name associated with the regional endpoint for this custom domain
+     * name. You set up this association by adding a DNS record that points the custom
+     * domain name to this regional domain name. The regional domain name is returned
+     * by Amazon API Gateway when you create a regional endpoint.</p>
+     */
+    inline const Aws::String& GetRegionalDomainName() const{ return m_regionalDomainName; }
+
+    /**
+     * <p>The domain name associated with the regional endpoint for this custom domain
+     * name. You set up this association by adding a DNS record that points the custom
+     * domain name to this regional domain name. The regional domain name is returned
+     * by Amazon API Gateway when you create a regional endpoint.</p>
+     */
+    inline void SetRegionalDomainName(const Aws::String& value) { m_regionalDomainName = value; }
+
+    /**
+     * <p>The domain name associated with the regional endpoint for this custom domain
+     * name. You set up this association by adding a DNS record that points the custom
+     * domain name to this regional domain name. The regional domain name is returned
+     * by Amazon API Gateway when you create a regional endpoint.</p>
+     */
+    inline void SetRegionalDomainName(Aws::String&& value) { m_regionalDomainName = std::move(value); }
+
+    /**
+     * <p>The domain name associated with the regional endpoint for this custom domain
+     * name. You set up this association by adding a DNS record that points the custom
+     * domain name to this regional domain name. The regional domain name is returned
+     * by Amazon API Gateway when you create a regional endpoint.</p>
+     */
+    inline void SetRegionalDomainName(const char* value) { m_regionalDomainName.assign(value); }
+
+    /**
+     * <p>The domain name associated with the regional endpoint for this custom domain
+     * name. You set up this association by adding a DNS record that points the custom
+     * domain name to this regional domain name. The regional domain name is returned
+     * by Amazon API Gateway when you create a regional endpoint.</p>
+     */
+    inline GetDomainNameResult& WithRegionalDomainName(const Aws::String& value) { SetRegionalDomainName(value); return *this;}
+
+    /**
+     * <p>The domain name associated with the regional endpoint for this custom domain
+     * name. You set up this association by adding a DNS record that points the custom
+     * domain name to this regional domain name. The regional domain name is returned
+     * by Amazon API Gateway when you create a regional endpoint.</p>
+     */
+    inline GetDomainNameResult& WithRegionalDomainName(Aws::String&& value) { SetRegionalDomainName(std::move(value)); return *this;}
+
+    /**
+     * <p>The domain name associated with the regional endpoint for this custom domain
+     * name. You set up this association by adding a DNS record that points the custom
+     * domain name to this regional domain name. The regional domain name is returned
+     * by Amazon API Gateway when you create a regional endpoint.</p>
+     */
+    inline GetDomainNameResult& WithRegionalDomainName(const char* value) { SetRegionalDomainName(value); return *this;}
+
+
+    /**
+     * <p>The name of the certificate that will be used for validating the regional
+     * domain name.</p>
+     */
+    inline const Aws::String& GetRegionalCertificateName() const{ return m_regionalCertificateName; }
+
+    /**
+     * <p>The name of the certificate that will be used for validating the regional
+     * domain name.</p>
+     */
+    inline void SetRegionalCertificateName(const Aws::String& value) { m_regionalCertificateName = value; }
+
+    /**
+     * <p>The name of the certificate that will be used for validating the regional
+     * domain name.</p>
+     */
+    inline void SetRegionalCertificateName(Aws::String&& value) { m_regionalCertificateName = std::move(value); }
+
+    /**
+     * <p>The name of the certificate that will be used for validating the regional
+     * domain name.</p>
+     */
+    inline void SetRegionalCertificateName(const char* value) { m_regionalCertificateName.assign(value); }
+
+    /**
+     * <p>The name of the certificate that will be used for validating the regional
+     * domain name.</p>
+     */
+    inline GetDomainNameResult& WithRegionalCertificateName(const Aws::String& value) { SetRegionalCertificateName(value); return *this;}
+
+    /**
+     * <p>The name of the certificate that will be used for validating the regional
+     * domain name.</p>
+     */
+    inline GetDomainNameResult& WithRegionalCertificateName(Aws::String&& value) { SetRegionalCertificateName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the certificate that will be used for validating the regional
+     * domain name.</p>
+     */
+    inline GetDomainNameResult& WithRegionalCertificateName(const char* value) { SetRegionalCertificateName(value); return *this;}
+
+
+    /**
+     * <p>The reference to an AWS-managed certificate that will be used for validating
+     * the regional domain name. AWS Certificate Manager is the only supported
+     * source.</p>
+     */
+    inline const Aws::String& GetRegionalCertificateArn() const{ return m_regionalCertificateArn; }
+
+    /**
+     * <p>The reference to an AWS-managed certificate that will be used for validating
+     * the regional domain name. AWS Certificate Manager is the only supported
+     * source.</p>
+     */
+    inline void SetRegionalCertificateArn(const Aws::String& value) { m_regionalCertificateArn = value; }
+
+    /**
+     * <p>The reference to an AWS-managed certificate that will be used for validating
+     * the regional domain name. AWS Certificate Manager is the only supported
+     * source.</p>
+     */
+    inline void SetRegionalCertificateArn(Aws::String&& value) { m_regionalCertificateArn = std::move(value); }
+
+    /**
+     * <p>The reference to an AWS-managed certificate that will be used for validating
+     * the regional domain name. AWS Certificate Manager is the only supported
+     * source.</p>
+     */
+    inline void SetRegionalCertificateArn(const char* value) { m_regionalCertificateArn.assign(value); }
+
+    /**
+     * <p>The reference to an AWS-managed certificate that will be used for validating
+     * the regional domain name. AWS Certificate Manager is the only supported
+     * source.</p>
+     */
+    inline GetDomainNameResult& WithRegionalCertificateArn(const Aws::String& value) { SetRegionalCertificateArn(value); return *this;}
+
+    /**
+     * <p>The reference to an AWS-managed certificate that will be used for validating
+     * the regional domain name. AWS Certificate Manager is the only supported
+     * source.</p>
+     */
+    inline GetDomainNameResult& WithRegionalCertificateArn(Aws::String&& value) { SetRegionalCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The reference to an AWS-managed certificate that will be used for validating
+     * the regional domain name. AWS Certificate Manager is the only supported
+     * source.</p>
+     */
+    inline GetDomainNameResult& WithRegionalCertificateArn(const char* value) { SetRegionalCertificateArn(value); return *this;}
+
+
+    /**
+     * <p>The domain name of the Amazon CloudFront distribution associated with this
+     * custom domain name for an edge-optimized endpoint. You set up this association
+     * when adding a DNS record pointing the custom domain name to this distribution
+     * name. For more information about CloudFront distributions, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * CloudFront documentation</a>.</p>
      */
     inline const Aws::String& GetDistributionDomainName() const{ return m_distributionDomainName; }
 
     /**
-     * <p>The domain name of the Amazon CloudFront distribution. For more information,
-     * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
-     * target="_blank">Amazon CloudFront documentation</a>.</p>
+     * <p>The domain name of the Amazon CloudFront distribution associated with this
+     * custom domain name for an edge-optimized endpoint. You set up this association
+     * when adding a DNS record pointing the custom domain name to this distribution
+     * name. For more information about CloudFront distributions, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * CloudFront documentation</a>.</p>
      */
     inline void SetDistributionDomainName(const Aws::String& value) { m_distributionDomainName = value; }
 
     /**
-     * <p>The domain name of the Amazon CloudFront distribution. For more information,
-     * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
-     * target="_blank">Amazon CloudFront documentation</a>.</p>
+     * <p>The domain name of the Amazon CloudFront distribution associated with this
+     * custom domain name for an edge-optimized endpoint. You set up this association
+     * when adding a DNS record pointing the custom domain name to this distribution
+     * name. For more information about CloudFront distributions, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * CloudFront documentation</a>.</p>
      */
     inline void SetDistributionDomainName(Aws::String&& value) { m_distributionDomainName = std::move(value); }
 
     /**
-     * <p>The domain name of the Amazon CloudFront distribution. For more information,
-     * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
-     * target="_blank">Amazon CloudFront documentation</a>.</p>
+     * <p>The domain name of the Amazon CloudFront distribution associated with this
+     * custom domain name for an edge-optimized endpoint. You set up this association
+     * when adding a DNS record pointing the custom domain name to this distribution
+     * name. For more information about CloudFront distributions, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * CloudFront documentation</a>.</p>
      */
     inline void SetDistributionDomainName(const char* value) { m_distributionDomainName.assign(value); }
 
     /**
-     * <p>The domain name of the Amazon CloudFront distribution. For more information,
-     * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
-     * target="_blank">Amazon CloudFront documentation</a>.</p>
+     * <p>The domain name of the Amazon CloudFront distribution associated with this
+     * custom domain name for an edge-optimized endpoint. You set up this association
+     * when adding a DNS record pointing the custom domain name to this distribution
+     * name. For more information about CloudFront distributions, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * CloudFront documentation</a>.</p>
      */
     inline GetDomainNameResult& WithDistributionDomainName(const Aws::String& value) { SetDistributionDomainName(value); return *this;}
 
     /**
-     * <p>The domain name of the Amazon CloudFront distribution. For more information,
-     * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
-     * target="_blank">Amazon CloudFront documentation</a>.</p>
+     * <p>The domain name of the Amazon CloudFront distribution associated with this
+     * custom domain name for an edge-optimized endpoint. You set up this association
+     * when adding a DNS record pointing the custom domain name to this distribution
+     * name. For more information about CloudFront distributions, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * CloudFront documentation</a>.</p>
      */
     inline GetDomainNameResult& WithDistributionDomainName(Aws::String&& value) { SetDistributionDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The domain name of the Amazon CloudFront distribution. For more information,
-     * see the <a href="http://aws.amazon.com/documentation/cloudfront/"
-     * target="_blank">Amazon CloudFront documentation</a>.</p>
+     * <p>The domain name of the Amazon CloudFront distribution associated with this
+     * custom domain name for an edge-optimized endpoint. You set up this association
+     * when adding a DNS record pointing the custom domain name to this distribution
+     * name. For more information about CloudFront distributions, see the <a
+     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * CloudFront documentation</a>.</p>
      */
     inline GetDomainNameResult& WithDistributionDomainName(const char* value) { SetDistributionDomainName(value); return *this;}
+
+
+    /**
+     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
+     * types of the domain name. </p>
+     */
+    inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
+
+    /**
+     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
+     * types of the domain name. </p>
+     */
+    inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfiguration = value; }
+
+    /**
+     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
+     * types of the domain name. </p>
+     */
+    inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfiguration = std::move(value); }
+
+    /**
+     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
+     * types of the domain name. </p>
+     */
+    inline GetDomainNameResult& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
+
+    /**
+     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
+     * types of the domain name. </p>
+     */
+    inline GetDomainNameResult& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -251,7 +483,15 @@ namespace Model
 
     Aws::Utils::DateTime m_certificateUploadDate;
 
+    Aws::String m_regionalDomainName;
+
+    Aws::String m_regionalCertificateName;
+
+    Aws::String m_regionalCertificateArn;
+
     Aws::String m_distributionDomainName;
+
+    EndpointConfiguration m_endpointConfiguration;
   };
 
 } // namespace Model
