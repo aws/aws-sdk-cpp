@@ -63,9 +63,9 @@ namespace Model
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. This parameter maps to <code>name</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
      */
@@ -77,9 +77,9 @@ namespace Model
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. This parameter maps to <code>name</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
      */
@@ -91,9 +91,9 @@ namespace Model
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. This parameter maps to <code>name</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
      */
@@ -105,9 +105,9 @@ namespace Model
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. This parameter maps to <code>name</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
      */
@@ -119,9 +119,9 @@ namespace Model
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. This parameter maps to <code>name</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
      */
@@ -133,9 +133,9 @@ namespace Model
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. This parameter maps to <code>name</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
      */
@@ -147,9 +147,9 @@ namespace Model
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. This parameter maps to <code>name</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. </p>
      */
@@ -165,9 +165,9 @@ namespace Model
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
      * <li> <p>Images in Amazon ECR repositories can be specified by either using the
@@ -194,9 +194,9 @@ namespace Model
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
      * <li> <p>Images in Amazon ECR repositories can be specified by either using the
@@ -223,9 +223,9 @@ namespace Model
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
      * <li> <p>Images in Amazon ECR repositories can be specified by either using the
@@ -252,9 +252,9 @@ namespace Model
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
      * <li> <p>Images in Amazon ECR repositories can be specified by either using the
@@ -281,9 +281,9 @@ namespace Model
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
      * <li> <p>Images in Amazon ECR repositories can be specified by either using the
@@ -310,9 +310,9 @@ namespace Model
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
      * <li> <p>Images in Amazon ECR repositories can be specified by either using the
@@ -339,9 +339,9 @@ namespace Model
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
      * <li> <p>Images in Amazon ECR repositories can be specified by either using the
@@ -367,9 +367,9 @@ namespace Model
      * share unallocated CPU units with other containers on the instance with the same
      * ratio as their allocated amount. This parameter maps to <code>CpuShares</code>
      * in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>You can determine the number of CPU units that are available per EC2 instance
@@ -407,9 +407,9 @@ namespace Model
      * share unallocated CPU units with other containers on the instance with the same
      * ratio as their allocated amount. This parameter maps to <code>CpuShares</code>
      * in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>You can determine the number of CPU units that are available per EC2 instance
@@ -447,9 +447,9 @@ namespace Model
      * share unallocated CPU units with other containers on the instance with the same
      * ratio as their allocated amount. This parameter maps to <code>CpuShares</code>
      * in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>You can determine the number of CPU units that are available per EC2 instance
@@ -485,9 +485,9 @@ namespace Model
      * <p>The hard limit (in MiB) of memory to present to the container. If your
      * container attempts to exceed the memory specified here, the container is killed.
      * This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
      * must specify a non-zero integer for one or both of <code>memory</code> or
@@ -505,9 +505,9 @@ namespace Model
      * <p>The hard limit (in MiB) of memory to present to the container. If your
      * container attempts to exceed the memory specified here, the container is killed.
      * This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
      * must specify a non-zero integer for one or both of <code>memory</code> or
@@ -525,9 +525,9 @@ namespace Model
      * <p>The hard limit (in MiB) of memory to present to the container. If your
      * container attempts to exceed the memory specified here, the container is killed.
      * This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
      * must specify a non-zero integer for one or both of <code>memory</code> or
@@ -550,9 +550,9 @@ namespace Model
      * parameter (if applicable), or all of the available memory on the container
      * instance, whichever comes first. This parameter maps to
      * <code>MemoryReservation</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--memory-reservation</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
      * must specify a non-zero integer for one or both of <code>memory</code> or
@@ -578,9 +578,9 @@ namespace Model
      * parameter (if applicable), or all of the available memory on the container
      * instance, whichever comes first. This parameter maps to
      * <code>MemoryReservation</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--memory-reservation</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
      * must specify a non-zero integer for one or both of <code>memory</code> or
@@ -606,9 +606,9 @@ namespace Model
      * parameter (if applicable), or all of the available memory on the container
      * instance, whichever comes first. This parameter maps to
      * <code>MemoryReservation</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--memory-reservation</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
      * must specify a non-zero integer for one or both of <code>memory</code> or
@@ -637,9 +637,9 @@ namespace Model
      * containers, see <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
@@ -659,9 +659,9 @@ namespace Model
      * containers, see <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
@@ -681,9 +681,9 @@ namespace Model
      * containers, see <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
@@ -703,9 +703,9 @@ namespace Model
      * containers, see <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
@@ -725,9 +725,9 @@ namespace Model
      * containers, see <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
@@ -747,9 +747,9 @@ namespace Model
      * containers, see <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
@@ -769,9 +769,9 @@ namespace Model
      * containers, see <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
@@ -791,9 +791,9 @@ namespace Model
      * containers, see <a
      * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
      * This parameter maps to <code>Links</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
@@ -808,9 +808,9 @@ namespace Model
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic. This
      * parameter maps to <code>PortBindings</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
      * network mode of a task definition is set to <code>none</code>, then you cannot
@@ -828,9 +828,9 @@ namespace Model
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic. This
      * parameter maps to <code>PortBindings</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
      * network mode of a task definition is set to <code>none</code>, then you cannot
@@ -848,9 +848,9 @@ namespace Model
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic. This
      * parameter maps to <code>PortBindings</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
      * network mode of a task definition is set to <code>none</code>, then you cannot
@@ -868,9 +868,9 @@ namespace Model
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic. This
      * parameter maps to <code>PortBindings</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
      * network mode of a task definition is set to <code>none</code>, then you cannot
@@ -888,9 +888,9 @@ namespace Model
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic. This
      * parameter maps to <code>PortBindings</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
      * network mode of a task definition is set to <code>none</code>, then you cannot
@@ -908,9 +908,9 @@ namespace Model
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic. This
      * parameter maps to <code>PortBindings</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
      * network mode of a task definition is set to <code>none</code>, then you cannot
@@ -928,9 +928,9 @@ namespace Model
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic. This
      * parameter maps to <code>PortBindings</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
      * network mode of a task definition is set to <code>none</code>, then you cannot
@@ -1001,9 +1001,9 @@ namespace Model
      * arguments as <code>command</code> array items instead.</p> </important> <p>The
      * entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1018,9 +1018,9 @@ namespace Model
      * arguments as <code>command</code> array items instead.</p> </important> <p>The
      * entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1035,9 +1035,9 @@ namespace Model
      * arguments as <code>command</code> array items instead.</p> </important> <p>The
      * entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1052,9 +1052,9 @@ namespace Model
      * arguments as <code>command</code> array items instead.</p> </important> <p>The
      * entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1069,9 +1069,9 @@ namespace Model
      * arguments as <code>command</code> array items instead.</p> </important> <p>The
      * entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1086,9 +1086,9 @@ namespace Model
      * arguments as <code>command</code> array items instead.</p> </important> <p>The
      * entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1103,9 +1103,9 @@ namespace Model
      * arguments as <code>command</code> array items instead.</p> </important> <p>The
      * entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1120,9 +1120,9 @@ namespace Model
      * arguments as <code>command</code> array items instead.</p> </important> <p>The
      * entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1134,9 +1134,9 @@ namespace Model
     /**
      * <p>The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1147,9 +1147,9 @@ namespace Model
     /**
      * <p>The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1160,9 +1160,9 @@ namespace Model
     /**
      * <p>The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1173,9 +1173,9 @@ namespace Model
     /**
      * <p>The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1186,9 +1186,9 @@ namespace Model
     /**
      * <p>The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1199,9 +1199,9 @@ namespace Model
     /**
      * <p>The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1212,9 +1212,9 @@ namespace Model
     /**
      * <p>The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1225,9 +1225,9 @@ namespace Model
     /**
      * <p>The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
@@ -1239,9 +1239,9 @@ namespace Model
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
@@ -1252,9 +1252,9 @@ namespace Model
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
@@ -1265,9 +1265,9 @@ namespace Model
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
@@ -1278,9 +1278,9 @@ namespace Model
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
@@ -1291,9 +1291,9 @@ namespace Model
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
@@ -1304,9 +1304,9 @@ namespace Model
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
@@ -1317,9 +1317,9 @@ namespace Model
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
@@ -1331,9 +1331,9 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
      * <code>Volumes</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1342,9 +1342,9 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
      * <code>Volumes</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1353,9 +1353,9 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
      * <code>Volumes</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1364,9 +1364,9 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
      * <code>Volumes</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1375,9 +1375,9 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
      * <code>Volumes</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1386,9 +1386,9 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
      * <code>Volumes</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1397,9 +1397,9 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container. This parameter maps to
      * <code>Volumes</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1409,9 +1409,9 @@ namespace Model
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1420,9 +1420,9 @@ namespace Model
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1431,9 +1431,9 @@ namespace Model
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1442,9 +1442,9 @@ namespace Model
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1453,9 +1453,9 @@ namespace Model
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1464,9 +1464,9 @@ namespace Model
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1475,9 +1475,9 @@ namespace Model
     /**
      * <p>Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1518,9 +1518,9 @@ namespace Model
     /**
      * <p>The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1529,9 +1529,9 @@ namespace Model
     /**
      * <p>The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1540,9 +1540,9 @@ namespace Model
     /**
      * <p>The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1551,9 +1551,9 @@ namespace Model
     /**
      * <p>The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1562,9 +1562,9 @@ namespace Model
     /**
      * <p>The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1573,9 +1573,9 @@ namespace Model
     /**
      * <p>The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1584,9 +1584,9 @@ namespace Model
     /**
      * <p>The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1596,9 +1596,9 @@ namespace Model
     /**
      * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1607,9 +1607,9 @@ namespace Model
     /**
      * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1618,9 +1618,9 @@ namespace Model
     /**
      * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1629,9 +1629,9 @@ namespace Model
     /**
      * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1640,9 +1640,9 @@ namespace Model
     /**
      * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1651,9 +1651,9 @@ namespace Model
     /**
      * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1662,9 +1662,9 @@ namespace Model
     /**
      * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1674,9 +1674,9 @@ namespace Model
     /**
      * <p>The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1685,9 +1685,9 @@ namespace Model
     /**
      * <p>The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1696,9 +1696,9 @@ namespace Model
     /**
      * <p>The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1707,9 +1707,9 @@ namespace Model
     /**
      * <p>The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1718,9 +1718,9 @@ namespace Model
     /**
      * <p>The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1729,9 +1729,9 @@ namespace Model
     /**
      * <p>The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1740,9 +1740,9 @@ namespace Model
     /**
      * <p>The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1752,9 +1752,9 @@ namespace Model
     /**
      * <p>When this parameter is true, networking is disabled within the container.
      * This parameter maps to <code>NetworkDisabled</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a>.</p>
      */
     inline bool GetDisableNetworking() const{ return m_disableNetworking; }
@@ -1762,9 +1762,9 @@ namespace Model
     /**
      * <p>When this parameter is true, networking is disabled within the container.
      * This parameter maps to <code>NetworkDisabled</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a>.</p>
      */
     inline void SetDisableNetworking(bool value) { m_disableNetworkingHasBeenSet = true; m_disableNetworking = value; }
@@ -1772,9 +1772,9 @@ namespace Model
     /**
      * <p>When this parameter is true, networking is disabled within the container.
      * This parameter maps to <code>NetworkDisabled</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a>.</p>
      */
     inline ContainerDefinition& WithDisableNetworking(bool value) { SetDisableNetworking(value); return *this;}
@@ -1784,9 +1784,9 @@ namespace Model
      * <p>When this parameter is true, the container is given elevated privileges on
      * the host container instance (similar to the <code>root</code> user). This
      * parameter maps to <code>Privileged</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1796,9 +1796,9 @@ namespace Model
      * <p>When this parameter is true, the container is given elevated privileges on
      * the host container instance (similar to the <code>root</code> user). This
      * parameter maps to <code>Privileged</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1808,9 +1808,9 @@ namespace Model
      * <p>When this parameter is true, the container is given elevated privileges on
      * the host container instance (similar to the <code>root</code> user). This
      * parameter maps to <code>Privileged</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1820,9 +1820,9 @@ namespace Model
     /**
      * <p>When this parameter is true, the container is given read-only access to its
      * root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--read-only</code> option to <code>docker
      * run</code>.</p>
      */
@@ -1831,9 +1831,9 @@ namespace Model
     /**
      * <p>When this parameter is true, the container is given read-only access to its
      * root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--read-only</code> option to <code>docker
      * run</code>.</p>
      */
@@ -1842,9 +1842,9 @@ namespace Model
     /**
      * <p>When this parameter is true, the container is given read-only access to its
      * root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--read-only</code> option to <code>docker
      * run</code>.</p>
      */
@@ -1854,9 +1854,9 @@ namespace Model
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1865,9 +1865,9 @@ namespace Model
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1876,9 +1876,9 @@ namespace Model
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1887,9 +1887,9 @@ namespace Model
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1898,9 +1898,9 @@ namespace Model
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1909,9 +1909,9 @@ namespace Model
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1920,9 +1920,9 @@ namespace Model
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1931,9 +1931,9 @@ namespace Model
     /**
      * <p>A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1943,9 +1943,9 @@ namespace Model
     /**
      * <p>A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1954,9 +1954,9 @@ namespace Model
     /**
      * <p>A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1965,9 +1965,9 @@ namespace Model
     /**
      * <p>A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1976,9 +1976,9 @@ namespace Model
     /**
      * <p>A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1987,9 +1987,9 @@ namespace Model
     /**
      * <p>A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -1998,9 +1998,9 @@ namespace Model
     /**
      * <p>A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -2009,9 +2009,9 @@ namespace Model
     /**
      * <p>A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -2020,9 +2020,9 @@ namespace Model
     /**
      * <p>A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -2033,9 +2033,9 @@ namespace Model
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -2045,9 +2045,9 @@ namespace Model
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -2057,9 +2057,9 @@ namespace Model
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -2069,9 +2069,9 @@ namespace Model
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -2081,9 +2081,9 @@ namespace Model
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -2093,9 +2093,9 @@ namespace Model
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -2105,9 +2105,9 @@ namespace Model
      * <p>A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
@@ -2118,9 +2118,9 @@ namespace Model
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to <code>SecurityOpt</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>The Amazon ECS container agent running on a container instance must register
@@ -2138,9 +2138,9 @@ namespace Model
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to <code>SecurityOpt</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>The Amazon ECS container agent running on a container instance must register
@@ -2158,9 +2158,9 @@ namespace Model
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to <code>SecurityOpt</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>The Amazon ECS container agent running on a container instance must register
@@ -2178,9 +2178,9 @@ namespace Model
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to <code>SecurityOpt</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>The Amazon ECS container agent running on a container instance must register
@@ -2198,9 +2198,9 @@ namespace Model
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to <code>SecurityOpt</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>The Amazon ECS container agent running on a container instance must register
@@ -2218,9 +2218,9 @@ namespace Model
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to <code>SecurityOpt</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>The Amazon ECS container agent running on a container instance must register
@@ -2238,9 +2238,9 @@ namespace Model
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to <code>SecurityOpt</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>The Amazon ECS container agent running on a container instance must register
@@ -2258,9 +2258,9 @@ namespace Model
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to <code>SecurityOpt</code> in
      * the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      * <p>The Amazon ECS container agent running on a container instance must register
@@ -2278,9 +2278,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2293,9 +2293,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2308,9 +2308,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2323,9 +2323,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2338,9 +2338,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2353,9 +2353,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2368,9 +2368,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2383,9 +2383,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2398,9 +2398,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2413,9 +2413,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2428,9 +2428,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2443,9 +2443,9 @@ namespace Model
     /**
      * <p>A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your
@@ -2459,9 +2459,9 @@ namespace Model
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
      * to <code>Ulimits</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter
@@ -2475,9 +2475,9 @@ namespace Model
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
      * to <code>Ulimits</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter
@@ -2491,9 +2491,9 @@ namespace Model
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
      * to <code>Ulimits</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter
@@ -2507,9 +2507,9 @@ namespace Model
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
      * to <code>Ulimits</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter
@@ -2523,9 +2523,9 @@ namespace Model
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
      * to <code>Ulimits</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter
@@ -2539,9 +2539,9 @@ namespace Model
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
      * to <code>Ulimits</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter
@@ -2555,9 +2555,9 @@ namespace Model
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
      * to <code>Ulimits</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter
@@ -2572,9 +2572,9 @@ namespace Model
     /**
      * <p>The log configuration specification for the container. This parameter maps to
      * <code>LogConfig</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses; however the
@@ -2607,9 +2607,9 @@ namespace Model
     /**
      * <p>The log configuration specification for the container. This parameter maps to
      * <code>LogConfig</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses; however the
@@ -2642,9 +2642,9 @@ namespace Model
     /**
      * <p>The log configuration specification for the container. This parameter maps to
      * <code>LogConfig</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses; however the
@@ -2677,9 +2677,9 @@ namespace Model
     /**
      * <p>The log configuration specification for the container. This parameter maps to
      * <code>LogConfig</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses; however the
@@ -2712,9 +2712,9 @@ namespace Model
     /**
      * <p>The log configuration specification for the container. This parameter maps to
      * <code>LogConfig</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
      * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
      * Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default,
      * containers use the same logging driver that the Docker daemon uses; however the

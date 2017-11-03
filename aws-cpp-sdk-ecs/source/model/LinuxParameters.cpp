@@ -29,12 +29,18 @@ namespace Model
 {
 
 LinuxParameters::LinuxParameters() : 
-    m_capabilitiesHasBeenSet(false)
+    m_capabilitiesHasBeenSet(false),
+    m_devicesHasBeenSet(false),
+    m_initProcessEnabled(false),
+    m_initProcessEnabledHasBeenSet(false)
 {
 }
 
 LinuxParameters::LinuxParameters(const JsonValue& jsonValue) : 
-    m_capabilitiesHasBeenSet(false)
+    m_capabilitiesHasBeenSet(false),
+    m_devicesHasBeenSet(false),
+    m_initProcessEnabled(false),
+    m_initProcessEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +54,23 @@ LinuxParameters& LinuxParameters::operator =(const JsonValue& jsonValue)
     m_capabilitiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("devices"))
+  {
+    Array<JsonValue> devicesJsonList = jsonValue.GetArray("devices");
+    for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
+    {
+      m_devices.push_back(devicesJsonList[devicesIndex].AsObject());
+    }
+    m_devicesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("initProcessEnabled"))
+  {
+    m_initProcessEnabled = jsonValue.GetBool("initProcessEnabled");
+
+    m_initProcessEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +81,23 @@ JsonValue LinuxParameters::Jsonize() const
   if(m_capabilitiesHasBeenSet)
   {
    payload.WithObject("capabilities", m_capabilities.Jsonize());
+
+  }
+
+  if(m_devicesHasBeenSet)
+  {
+   Array<JsonValue> devicesJsonList(m_devices.size());
+   for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
+   {
+     devicesJsonList[devicesIndex].AsObject(m_devices[devicesIndex].Jsonize());
+   }
+   payload.WithArray("devices", std::move(devicesJsonList));
+
+  }
+
+  if(m_initProcessEnabledHasBeenSet)
+  {
+   payload.WithBool("initProcessEnabled", m_initProcessEnabled);
 
   }
 
