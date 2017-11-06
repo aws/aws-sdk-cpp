@@ -82,7 +82,7 @@ namespace Aws
              */
             std::shared_ptr<RetryStrategy> retryStrategy;
             /**
-             * override the http endpoint used to talk to a service. Use this in conjunction with authenticationRegion.
+             * Override the http endpoint used to talk to a service.
              */
             Aws::String endpointOverride;
             /**
