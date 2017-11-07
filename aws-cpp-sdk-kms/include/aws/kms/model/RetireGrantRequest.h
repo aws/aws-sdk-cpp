@@ -81,58 +81,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
-     * <ul> <li>
-     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
+     * <p>For example:
+     * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
-     * <ul> <li>
-     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
+     * <p>For example:
+     * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
-     * <ul> <li>
-     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
+     * <p>For example:
+     * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
-     * <ul> <li>
-     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
+     * <p>For example:
+     * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
-     * <ul> <li>
-     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
+     * <p>For example:
+     * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
      */
     inline RetireGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
-     * <ul> <li>
-     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
+     * <p>For example:
+     * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
      */
     inline RetireGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
-     * <ul> <li>
-     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
+     * <p>For example:
+     * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
      */
     inline RetireGrantRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

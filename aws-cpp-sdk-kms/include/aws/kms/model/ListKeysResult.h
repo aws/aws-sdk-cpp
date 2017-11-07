@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>A list of keys.</p>
+     * <p>A list of customer master keys (CMKs).</p>
      */
     inline const Aws::Vector<KeyListEntry>& GetKeys() const{ return m_keys; }
 
     /**
-     * <p>A list of keys.</p>
+     * <p>A list of customer master keys (CMKs).</p>
      */
     inline void SetKeys(const Aws::Vector<KeyListEntry>& value) { m_keys = value; }
 
     /**
-     * <p>A list of keys.</p>
+     * <p>A list of customer master keys (CMKs).</p>
      */
     inline void SetKeys(Aws::Vector<KeyListEntry>&& value) { m_keys = std::move(value); }
 
     /**
-     * <p>A list of keys.</p>
+     * <p>A list of customer master keys (CMKs).</p>
      */
     inline ListKeysResult& WithKeys(const Aws::Vector<KeyListEntry>& value) { SetKeys(value); return *this;}
 
     /**
-     * <p>A list of keys.</p>
+     * <p>A list of customer master keys (CMKs).</p>
      */
     inline ListKeysResult& WithKeys(Aws::Vector<KeyListEntry>&& value) { SetKeys(std::move(value)); return *this;}
 
     /**
-     * <p>A list of keys.</p>
+     * <p>A list of customer master keys (CMKs).</p>
      */
     inline ListKeysResult& AddKeys(const KeyListEntry& value) { m_keys.push_back(value); return *this; }
 
     /**
-     * <p>A list of keys.</p>
+     * <p>A list of customer master keys (CMKs).</p>
      */
     inline ListKeysResult& AddKeys(KeyListEntry&& value) { m_keys.push_back(std::move(value)); return *this; }
 
@@ -125,24 +125,24 @@ namespace Model
 
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
-     * value is true, the list in this response is truncated. To retrieve more items,
-     * pass the value of the <code>NextMarker</code> element in this response to the
+     * value is true, the list in this response is truncated. To get more items, pass
+     * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline bool GetTruncated() const{ return m_truncated; }
 
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
-     * value is true, the list in this response is truncated. To retrieve more items,
-     * pass the value of the <code>NextMarker</code> element in this response to the
+     * value is true, the list in this response is truncated. To get more items, pass
+     * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline void SetTruncated(bool value) { m_truncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
-     * value is true, the list in this response is truncated. To retrieve more items,
-     * pass the value of the <code>NextMarker</code> element in this response to the
+     * value is true, the list in this response is truncated. To get more items, pass
+     * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline ListKeysResult& WithTruncated(bool value) { SetTruncated(value); return *this;}

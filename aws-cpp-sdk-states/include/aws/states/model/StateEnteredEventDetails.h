@@ -32,6 +32,12 @@ namespace SFN
 namespace Model
 {
 
+  /**
+   * <p>Contains details about a state entered during an execution.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StateEnteredEventDetails">AWS
+   * API Reference</a></p>
+   */
   class AWS_SFN_API StateEnteredEventDetails
   {
   public:
@@ -78,37 +84,37 @@ namespace Model
 
 
     /**
-     * <p>The JSON input data to the state.</p>
+     * <p>The string that contains the JSON input data for the state.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>The JSON input data to the state.</p>
+     * <p>The string that contains the JSON input data for the state.</p>
      */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p>The JSON input data to the state.</p>
+     * <p>The string that contains the JSON input data for the state.</p>
      */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p>The JSON input data to the state.</p>
+     * <p>The string that contains the JSON input data for the state.</p>
      */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
     /**
-     * <p>The JSON input data to the state.</p>
+     * <p>The string that contains the JSON input data for the state.</p>
      */
     inline StateEnteredEventDetails& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>The JSON input data to the state.</p>
+     * <p>The string that contains the JSON input data for the state.</p>
      */
     inline StateEnteredEventDetails& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON input data to the state.</p>
+     * <p>The string that contains the JSON input data for the state.</p>
      */
     inline StateEnteredEventDetails& WithInput(const char* value) { SetInput(value); return *this;}
 

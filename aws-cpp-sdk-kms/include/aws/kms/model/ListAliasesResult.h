@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>A list of key aliases in the user's account.</p>
+     * <p>A list of aliases.</p>
      */
     inline const Aws::Vector<AliasListEntry>& GetAliases() const{ return m_aliases; }
 
     /**
-     * <p>A list of key aliases in the user's account.</p>
+     * <p>A list of aliases.</p>
      */
     inline void SetAliases(const Aws::Vector<AliasListEntry>& value) { m_aliases = value; }
 
     /**
-     * <p>A list of key aliases in the user's account.</p>
+     * <p>A list of aliases.</p>
      */
     inline void SetAliases(Aws::Vector<AliasListEntry>&& value) { m_aliases = std::move(value); }
 
     /**
-     * <p>A list of key aliases in the user's account.</p>
+     * <p>A list of aliases.</p>
      */
     inline ListAliasesResult& WithAliases(const Aws::Vector<AliasListEntry>& value) { SetAliases(value); return *this;}
 
     /**
-     * <p>A list of key aliases in the user's account.</p>
+     * <p>A list of aliases.</p>
      */
     inline ListAliasesResult& WithAliases(Aws::Vector<AliasListEntry>&& value) { SetAliases(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key aliases in the user's account.</p>
+     * <p>A list of aliases.</p>
      */
     inline ListAliasesResult& AddAliases(const AliasListEntry& value) { m_aliases.push_back(value); return *this; }
 
     /**
-     * <p>A list of key aliases in the user's account.</p>
+     * <p>A list of aliases.</p>
      */
     inline ListAliasesResult& AddAliases(AliasListEntry&& value) { m_aliases.push_back(std::move(value)); return *this; }
 
@@ -125,24 +125,24 @@ namespace Model
 
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
-     * value is true, the list in this response is truncated. To retrieve more items,
-     * pass the value of the <code>NextMarker</code> element in this response to the
+     * value is true, the list in this response is truncated. To get more items, pass
+     * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline bool GetTruncated() const{ return m_truncated; }
 
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
-     * value is true, the list in this response is truncated. To retrieve more items,
-     * pass the value of the <code>NextMarker</code> element in this response to the
+     * value is true, the list in this response is truncated. To get more items, pass
+     * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline void SetTruncated(bool value) { m_truncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
-     * value is true, the list in this response is truncated. To retrieve more items,
-     * pass the value of the <code>NextMarker</code> element in this response to the
+     * value is true, the list in this response is truncated. To get more items, pass
+     * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline ListAliasesResult& WithTruncated(bool value) { SetTruncated(value); return *this;}

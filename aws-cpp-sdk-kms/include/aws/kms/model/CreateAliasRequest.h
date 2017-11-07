@@ -95,72 +95,79 @@ namespace Model
 
 
     /**
-     * <p>An identifier of the key for which you are creating the alias. This value
-     * cannot be another alias but can be a globally unique identifier or a fully
-     * specified ARN to a key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
+     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
+     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline const Aws::String& GetTargetKeyId() const{ return m_targetKeyId; }
 
     /**
-     * <p>An identifier of the key for which you are creating the alias. This value
-     * cannot be another alias but can be a globally unique identifier or a fully
-     * specified ARN to a key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
+     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
+     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline void SetTargetKeyId(const Aws::String& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
 
     /**
-     * <p>An identifier of the key for which you are creating the alias. This value
-     * cannot be another alias but can be a globally unique identifier or a fully
-     * specified ARN to a key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
+     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
+     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline void SetTargetKeyId(Aws::String&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = std::move(value); }
 
     /**
-     * <p>An identifier of the key for which you are creating the alias. This value
-     * cannot be another alias but can be a globally unique identifier or a fully
-     * specified ARN to a key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
+     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
+     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline void SetTargetKeyId(const char* value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId.assign(value); }
 
     /**
-     * <p>An identifier of the key for which you are creating the alias. This value
-     * cannot be another alias but can be a globally unique identifier or a fully
-     * specified ARN to a key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
+     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
+     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline CreateAliasRequest& WithTargetKeyId(const Aws::String& value) { SetTargetKeyId(value); return *this;}
 
     /**
-     * <p>An identifier of the key for which you are creating the alias. This value
-     * cannot be another alias but can be a globally unique identifier or a fully
-     * specified ARN to a key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
+     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
+     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline CreateAliasRequest& WithTargetKeyId(Aws::String&& value) { SetTargetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier of the key for which you are creating the alias. This value
-     * cannot be another alias but can be a globally unique identifier or a fully
-     * specified ARN to a key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
+     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
+     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline CreateAliasRequest& WithTargetKeyId(const char* value) { SetTargetKeyId(value); return *this;}
 

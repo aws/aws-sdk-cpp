@@ -68,7 +68,7 @@ namespace Model
      * default key policy to the CMK. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
      * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * <p>The policy size limit is 32 kilobytes (32768 bytes).</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -92,7 +92,7 @@ namespace Model
      * default key policy to the CMK. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
      * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * <p>The policy size limit is 32 kilobytes (32768 bytes).</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -116,7 +116,7 @@ namespace Model
      * default key policy to the CMK. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
      * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * <p>The policy size limit is 32 kilobytes (32768 bytes).</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -140,7 +140,7 @@ namespace Model
      * default key policy to the CMK. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
      * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * <p>The policy size limit is 32 kilobytes (32768 bytes).</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -164,7 +164,7 @@ namespace Model
      * default key policy to the CMK. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
      * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * <p>The policy size limit is 32 kilobytes (32768 bytes).</p>
      */
     inline CreateKeyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -188,7 +188,7 @@ namespace Model
      * default key policy to the CMK. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
      * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * <p>The policy size limit is 32 kilobytes (32768 bytes).</p>
      */
     inline CreateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -212,7 +212,7 @@ namespace Model
      * default key policy to the CMK. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
      * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * <p>The policy size limit is 32 kilobytes (32768 bytes).</p>
      */
     inline CreateKeyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

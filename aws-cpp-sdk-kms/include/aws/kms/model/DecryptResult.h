@@ -87,32 +87,32 @@ namespace Model
 
 
     /**
-     * <p>Decrypted plaintext data. This value may not be returned if the customer
-     * master key is not available or if you didn't have permission to use it.</p>
+     * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPlaintext() const{ return m_plaintext; }
 
     /**
-     * <p>Decrypted plaintext data. This value may not be returned if the customer
-     * master key is not available or if you didn't have permission to use it.</p>
+     * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline void SetPlaintext(const Aws::Utils::ByteBuffer& value) { m_plaintext = value; }
 
     /**
-     * <p>Decrypted plaintext data. This value may not be returned if the customer
-     * master key is not available or if you didn't have permission to use it.</p>
+     * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = std::move(value); }
 
     /**
-     * <p>Decrypted plaintext data. This value may not be returned if the customer
-     * master key is not available or if you didn't have permission to use it.</p>
+     * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline DecryptResult& WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
 
     /**
-     * <p>Decrypted plaintext data. This value may not be returned if the customer
-     * master key is not available or if you didn't have permission to use it.</p>
+     * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline DecryptResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 

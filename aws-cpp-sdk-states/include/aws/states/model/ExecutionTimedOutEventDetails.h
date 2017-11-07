@@ -32,6 +32,12 @@ namespace SFN
 namespace Model
 {
 
+  /**
+   * <p>Contains details about the execution timeout which occurred during the
+   * execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionTimedOutEventDetails">AWS
+   * API Reference</a></p>
+   */
   class AWS_SFN_API ExecutionTimedOutEventDetails
   {
   public:

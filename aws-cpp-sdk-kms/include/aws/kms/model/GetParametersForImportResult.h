@@ -159,40 +159,40 @@ namespace Model
     /**
      * <p>The time at which the import token and public key are no longer valid. After
      * this time, you cannot use them to make an <a>ImportKeyMaterial</a> request and
-     * you must send another <code>GetParametersForImport</code> request to retrieve
-     * new ones.</p>
+     * you must send another <code>GetParametersForImport</code> request to get new
+     * ones.</p>
      */
     inline const Aws::Utils::DateTime& GetParametersValidTo() const{ return m_parametersValidTo; }
 
     /**
      * <p>The time at which the import token and public key are no longer valid. After
      * this time, you cannot use them to make an <a>ImportKeyMaterial</a> request and
-     * you must send another <code>GetParametersForImport</code> request to retrieve
-     * new ones.</p>
+     * you must send another <code>GetParametersForImport</code> request to get new
+     * ones.</p>
      */
     inline void SetParametersValidTo(const Aws::Utils::DateTime& value) { m_parametersValidTo = value; }
 
     /**
      * <p>The time at which the import token and public key are no longer valid. After
      * this time, you cannot use them to make an <a>ImportKeyMaterial</a> request and
-     * you must send another <code>GetParametersForImport</code> request to retrieve
-     * new ones.</p>
+     * you must send another <code>GetParametersForImport</code> request to get new
+     * ones.</p>
      */
     inline void SetParametersValidTo(Aws::Utils::DateTime&& value) { m_parametersValidTo = std::move(value); }
 
     /**
      * <p>The time at which the import token and public key are no longer valid. After
      * this time, you cannot use them to make an <a>ImportKeyMaterial</a> request and
-     * you must send another <code>GetParametersForImport</code> request to retrieve
-     * new ones.</p>
+     * you must send another <code>GetParametersForImport</code> request to get new
+     * ones.</p>
      */
     inline GetParametersForImportResult& WithParametersValidTo(const Aws::Utils::DateTime& value) { SetParametersValidTo(value); return *this;}
 
     /**
      * <p>The time at which the import token and public key are no longer valid. After
      * this time, you cannot use them to make an <a>ImportKeyMaterial</a> request and
-     * you must send another <code>GetParametersForImport</code> request to retrieve
-     * new ones.</p>
+     * you must send another <code>GetParametersForImport</code> request to get new
+     * ones.</p>
      */
     inline GetParametersForImportResult& WithParametersValidTo(Aws::Utils::DateTime&& value) { SetParametersValidTo(std::move(value)); return *this;}
 

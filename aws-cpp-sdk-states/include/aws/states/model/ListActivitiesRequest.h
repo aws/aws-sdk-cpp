@@ -47,27 +47,27 @@ namespace Model
     /**
      * <p>The maximum number of results that will be returned per call.
      * <code>nextToken</code> can be used to obtain further pages of results. The
-     * default is 100 and the maximum allowed page size is 1000.</p> <p>This is an
-     * upper limit only; the actual number of results returned per call may be fewer
-     * than the specified maximum.</p>
+     * default is 100 and the maximum allowed page size is 100. A value of 0 means to
+     * use the default.</p> <p>This is an upper limit only; the actual number of
+     * results returned per call may be fewer than the specified maximum.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results that will be returned per call.
      * <code>nextToken</code> can be used to obtain further pages of results. The
-     * default is 100 and the maximum allowed page size is 1000.</p> <p>This is an
-     * upper limit only; the actual number of results returned per call may be fewer
-     * than the specified maximum.</p>
+     * default is 100 and the maximum allowed page size is 100. A value of 0 means to
+     * use the default.</p> <p>This is an upper limit only; the actual number of
+     * results returned per call may be fewer than the specified maximum.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results that will be returned per call.
      * <code>nextToken</code> can be used to obtain further pages of results. The
-     * default is 100 and the maximum allowed page size is 1000.</p> <p>This is an
-     * upper limit only; the actual number of results returned per call may be fewer
-     * than the specified maximum.</p>
+     * default is 100 and the maximum allowed page size is 100. A value of 0 means to
+     * use the default.</p> <p>This is an upper limit only; the actual number of
+     * results returned per call may be fewer than the specified maximum.</p>
      */
     inline ListActivitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

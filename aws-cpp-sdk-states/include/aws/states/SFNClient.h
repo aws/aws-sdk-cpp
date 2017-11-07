@@ -159,21 +159,23 @@ namespace Model
     typedef std::function<void(const SFNClient*, const Model::StopExecutionRequest&, const Model::StopExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopExecutionResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Step Functions</fullname> <p>AWS Step Functions is a web service
-   * that enables you to coordinate the components of distributed applications and
-   * microservices using visual workflows. You build applications from individual
-   * components that each perform a discrete function, or <i>task</i>, allowing you
-   * to scale and change applications quickly. Step Functions provides a graphical
-   * console to visualize the components of your application as a series of steps. It
-   * automatically triggers and tracks each step, and retries when there are errors,
-   * so your application executes in order and as expected, every time. Step
-   * Functions logs the state of each step, so when things do go wrong, you can
-   * diagnose and debug problems quickly.</p> <p>Step Functions manages the
-   * operations and underlying infrastructure for you to ensure your application is
-   * available at any scale. You can run tasks on the AWS cloud, on your own servers,
-   * or an any system that has access to AWS. Step Functions can be accessed and used
-   * with the Step Functions console, the AWS SDKs (included with your Beta release
-   * invitation email), or an HTTP API (the subject of this document).</p>
+   * <fullname>AWS Step Functions</fullname> <p>AWS Step Functions is a service that
+   * lets you coordinate the components of distributed applications and microservices
+   * using visual workflows.</p> <p>You can use Step Functions to build applications
+   * from individual components, each of which performs a discrete function, or
+   * <i>task</i>, allowing you to scale and change applications quickly. Step
+   * Functions provides a console that helps visualize the components of your
+   * application as a series of steps. Step Functions automatically triggers and
+   * tracks each step, and retries steps when there are errors, so your application
+   * executes in order and as expected, every time. Step Functions logs the state of
+   * each step, so you can diagnose and debug problems quickly.</p> <p>Step Functions
+   * manages operations and underlying infrastructure to ensure your application is
+   * available at any scale. You can run tasks on AWS, your own servers, or any
+   * system that has access to AWS. You can access and use Step Functions using the
+   * console, the AWS SDKs, or an HTTP API. For more information about Step
+   * Functions, see the <i> <a
+   * href="http://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step
+   * Functions Developer Guide</a> </i>.</p>
    */
   class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient
   {
@@ -205,14 +207,24 @@ namespace Model
 
 
         /**
-         * <p>Creates an activity.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an activity. An Activity is a task which you write, in any language
+         * and hosted on any machine which has access to AWS Step Functions. Activities
+         * must poll Step Functions using the <code>GetActivityTask</code> and respond
+         * using <code>SendTask*</code> API calls. This function lets Step Functions know
+         * the existence of your activity and returns an identifier for use in a state
+         * machine and when polling from the activity.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateActivityOutcome CreateActivity(const Model::CreateActivityRequest& request) const;
 
         /**
-         * <p>Creates an activity.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an activity. An Activity is a task which you write, in any language
+         * and hosted on any machine which has access to AWS Step Functions. Activities
+         * must poll Step Functions using the <code>GetActivityTask</code> and respond
+         * using <code>SendTask*</code> API calls. This function lets Step Functions know
+         * the existence of your activity and returns an identifier for use in a state
+         * machine and when polling from the activity.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
          * API Reference</a></p>
          *
@@ -221,7 +233,12 @@ namespace Model
         virtual Model::CreateActivityOutcomeCallable CreateActivityCallable(const Model::CreateActivityRequest& request) const;
 
         /**
-         * <p>Creates an activity.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an activity. An Activity is a task which you write, in any language
+         * and hosted on any machine which has access to AWS Step Functions. Activities
+         * must poll Step Functions using the <code>GetActivityTask</code> and respond
+         * using <code>SendTask*</code> API calls. This function lets Step Functions know
+         * the existence of your activity and returns an identifier for use in a state
+         * machine and when polling from the activity.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
          * API Reference</a></p>
          *
@@ -230,14 +247,22 @@ namespace Model
         virtual void CreateActivityAsync(const Model::CreateActivityRequest& request, const CreateActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a state machine.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a state machine. A state machine consists of a collection of states
+         * that can do work (<code>Task</code> states), determine which states to
+         * transition to next (<code>Choice</code> states), stop an execution with an error
+         * (<code>Fail</code> states), and so on. State machines are specified using a
+         * JSON-based, structured language.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateStateMachineOutcome CreateStateMachine(const Model::CreateStateMachineRequest& request) const;
 
         /**
-         * <p>Creates a state machine.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a state machine. A state machine consists of a collection of states
+         * that can do work (<code>Task</code> states), determine which states to
+         * transition to next (<code>Choice</code> states), stop an execution with an error
+         * (<code>Fail</code> states), and so on. State machines are specified using a
+         * JSON-based, structured language.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          *
@@ -246,7 +271,11 @@ namespace Model
         virtual Model::CreateStateMachineOutcomeCallable CreateStateMachineCallable(const Model::CreateStateMachineRequest& request) const;
 
         /**
-         * <p>Creates a state machine.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a state machine. A state machine consists of a collection of states
+         * that can do work (<code>Task</code> states), determine which states to
+         * transition to next (<code>Choice</code> states), stop an execution with an error
+         * (<code>Fail</code> states), and so on. State machines are specified using a
+         * JSON-based, structured language.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          *
@@ -281,8 +310,10 @@ namespace Model
 
         /**
          * <p>Deletes a state machine. This is an asynchronous operation-- it sets the
-         * state machine's status to "DELETING" and begins the delete
-         * process.</p><p><h3>See Also:</h3>   <a
+         * state machine's status to "DELETING" and begins the delete process. Each state
+         * machine execution will be deleted the next time it makes a state transition.
+         * After all executions have completed or been deleted, the state machine itself
+         * will be deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
          * API Reference</a></p>
          */
@@ -290,8 +321,10 @@ namespace Model
 
         /**
          * <p>Deletes a state machine. This is an asynchronous operation-- it sets the
-         * state machine's status to "DELETING" and begins the delete
-         * process.</p><p><h3>See Also:</h3>   <a
+         * state machine's status to "DELETING" and begins the delete process. Each state
+         * machine execution will be deleted the next time it makes a state transition.
+         * After all executions have completed or been deleted, the state machine itself
+         * will be deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
          * API Reference</a></p>
          *
@@ -301,8 +334,10 @@ namespace Model
 
         /**
          * <p>Deletes a state machine. This is an asynchronous operation-- it sets the
-         * state machine's status to "DELETING" and begins the delete
-         * process.</p><p><h3>See Also:</h3>   <a
+         * state machine's status to "DELETING" and begins the delete process. Each state
+         * machine execution will be deleted the next time it makes a state transition.
+         * After all executions have completed or been deleted, the state machine itself
+         * will be deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
          * API Reference</a></p>
          *
@@ -386,32 +421,32 @@ namespace Model
         virtual void DescribeStateMachineAsync(const Model::DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used by workers to retrieve a task (with the specified activity ARN)
-         * scheduled for execution by a running state machine. This initiates a long poll,
-         * where the service holds the HTTP connection open and responds as soon as a task
-         * becomes available (i.e. an execution of a task of this type is needed.) The
-         * maximum time the service holds on to the request before responding is 60
-         * seconds. If no task is available within 60 seconds, the poll will return an
-         * empty result, that is, the <code>taskToken</code> returned is an empty
-         * string.</p> <important> <p>Workers should set their client side socket timeout
-         * to at least 65 seconds (5 seconds higher than the maximum time the service may
-         * hold the poll request).</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Used by workers to retrieve a task (with the specified activity ARN) which
+         * has been scheduled for execution by a running state machine. This initiates a
+         * long poll, where the service holds the HTTP connection open and responds as soon
+         * as a task becomes available (i.e. an execution of a task of this type is
+         * needed.) The maximum time the service holds on to the request before responding
+         * is 60 seconds. If no task is available within 60 seconds, the poll will return a
+         * <code>taskToken</code> with a null string.</p> <important> <p>Workers should set
+         * their client side socket timeout to at least 65 seconds (5 seconds higher than
+         * the maximum time the service may hold the poll request).</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">AWS
          * API Reference</a></p>
          */
         virtual Model::GetActivityTaskOutcome GetActivityTask(const Model::GetActivityTaskRequest& request) const;
 
         /**
-         * <p>Used by workers to retrieve a task (with the specified activity ARN)
-         * scheduled for execution by a running state machine. This initiates a long poll,
-         * where the service holds the HTTP connection open and responds as soon as a task
-         * becomes available (i.e. an execution of a task of this type is needed.) The
-         * maximum time the service holds on to the request before responding is 60
-         * seconds. If no task is available within 60 seconds, the poll will return an
-         * empty result, that is, the <code>taskToken</code> returned is an empty
-         * string.</p> <important> <p>Workers should set their client side socket timeout
-         * to at least 65 seconds (5 seconds higher than the maximum time the service may
-         * hold the poll request).</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Used by workers to retrieve a task (with the specified activity ARN) which
+         * has been scheduled for execution by a running state machine. This initiates a
+         * long poll, where the service holds the HTTP connection open and responds as soon
+         * as a task becomes available (i.e. an execution of a task of this type is
+         * needed.) The maximum time the service holds on to the request before responding
+         * is 60 seconds. If no task is available within 60 seconds, the poll will return a
+         * <code>taskToken</code> with a null string.</p> <important> <p>Workers should set
+         * their client side socket timeout to at least 65 seconds (5 seconds higher than
+         * the maximum time the service may hold the poll request).</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">AWS
          * API Reference</a></p>
          *
@@ -420,16 +455,16 @@ namespace Model
         virtual Model::GetActivityTaskOutcomeCallable GetActivityTaskCallable(const Model::GetActivityTaskRequest& request) const;
 
         /**
-         * <p>Used by workers to retrieve a task (with the specified activity ARN)
-         * scheduled for execution by a running state machine. This initiates a long poll,
-         * where the service holds the HTTP connection open and responds as soon as a task
-         * becomes available (i.e. an execution of a task of this type is needed.) The
-         * maximum time the service holds on to the request before responding is 60
-         * seconds. If no task is available within 60 seconds, the poll will return an
-         * empty result, that is, the <code>taskToken</code> returned is an empty
-         * string.</p> <important> <p>Workers should set their client side socket timeout
-         * to at least 65 seconds (5 seconds higher than the maximum time the service may
-         * hold the poll request).</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Used by workers to retrieve a task (with the specified activity ARN) which
+         * has been scheduled for execution by a running state machine. This initiates a
+         * long poll, where the service holds the HTTP connection open and responds as soon
+         * as a task becomes available (i.e. an execution of a task of this type is
+         * needed.) The maximum time the service holds on to the request before responding
+         * is 60 seconds. If no task is available within 60 seconds, the poll will return a
+         * <code>taskToken</code> with a null string.</p> <important> <p>Workers should set
+         * their client side socket timeout to at least 65 seconds (5 seconds higher than
+         * the maximum time the service may hold the poll request).</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">AWS
          * API Reference</a></p>
          *

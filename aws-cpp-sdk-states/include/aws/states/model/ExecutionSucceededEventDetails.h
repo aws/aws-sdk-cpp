@@ -32,6 +32,12 @@ namespace SFN
 namespace Model
 {
 
+  /**
+   * <p>Contains details about the successful termination of the
+   * execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionSucceededEventDetails">AWS
+   * API Reference</a></p>
+   */
   class AWS_SFN_API ExecutionSucceededEventDetails
   {
   public:

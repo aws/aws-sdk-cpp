@@ -45,85 +45,92 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
+     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from
+     * (assigned when you create the task using <a>CreateActivity</a>.)</p>
      */
     inline const Aws::String& GetActivityArn() const{ return m_activityArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
+     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from
+     * (assigned when you create the task using <a>CreateActivity</a>.)</p>
      */
     inline void SetActivityArn(const Aws::String& value) { m_activityArnHasBeenSet = true; m_activityArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
+     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from
+     * (assigned when you create the task using <a>CreateActivity</a>.)</p>
      */
     inline void SetActivityArn(Aws::String&& value) { m_activityArnHasBeenSet = true; m_activityArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
+     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from
+     * (assigned when you create the task using <a>CreateActivity</a>.)</p>
      */
     inline void SetActivityArn(const char* value) { m_activityArnHasBeenSet = true; m_activityArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
+     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from
+     * (assigned when you create the task using <a>CreateActivity</a>.)</p>
      */
     inline GetActivityTaskRequest& WithActivityArn(const Aws::String& value) { SetActivityArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
+     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from
+     * (assigned when you create the task using <a>CreateActivity</a>.)</p>
      */
     inline GetActivityTaskRequest& WithActivityArn(Aws::String&& value) { SetActivityArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
+     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from
+     * (assigned when you create the task using <a>CreateActivity</a>.)</p>
      */
     inline GetActivityTaskRequest& WithActivityArn(const char* value) { SetActivityArn(value); return *this;}
 
 
     /**
-     * <p>An arbitrary name may be provided in order to identify the worker that the
+     * <p>You can provide an arbitrary name in order to identify the worker that the
      * task is assigned to. This name will be used when it is logged in the execution
      * history.</p>
      */
     inline const Aws::String& GetWorkerName() const{ return m_workerName; }
 
     /**
-     * <p>An arbitrary name may be provided in order to identify the worker that the
+     * <p>You can provide an arbitrary name in order to identify the worker that the
      * task is assigned to. This name will be used when it is logged in the execution
      * history.</p>
      */
     inline void SetWorkerName(const Aws::String& value) { m_workerNameHasBeenSet = true; m_workerName = value; }
 
     /**
-     * <p>An arbitrary name may be provided in order to identify the worker that the
+     * <p>You can provide an arbitrary name in order to identify the worker that the
      * task is assigned to. This name will be used when it is logged in the execution
      * history.</p>
      */
     inline void SetWorkerName(Aws::String&& value) { m_workerNameHasBeenSet = true; m_workerName = std::move(value); }
 
     /**
-     * <p>An arbitrary name may be provided in order to identify the worker that the
+     * <p>You can provide an arbitrary name in order to identify the worker that the
      * task is assigned to. This name will be used when it is logged in the execution
      * history.</p>
      */
     inline void SetWorkerName(const char* value) { m_workerNameHasBeenSet = true; m_workerName.assign(value); }
 
     /**
-     * <p>An arbitrary name may be provided in order to identify the worker that the
+     * <p>You can provide an arbitrary name in order to identify the worker that the
      * task is assigned to. This name will be used when it is logged in the execution
      * history.</p>
      */
     inline GetActivityTaskRequest& WithWorkerName(const Aws::String& value) { SetWorkerName(value); return *this;}
 
     /**
-     * <p>An arbitrary name may be provided in order to identify the worker that the
+     * <p>You can provide an arbitrary name in order to identify the worker that the
      * task is assigned to. This name will be used when it is logged in the execution
      * history.</p>
      */
     inline GetActivityTaskRequest& WithWorkerName(Aws::String&& value) { SetWorkerName(std::move(value)); return *this;}
 
     /**
-     * <p>An arbitrary name may be provided in order to identify the worker that the
+     * <p>You can provide an arbitrary name in order to identify the worker that the
      * task is assigned to. This name will be used when it is logged in the execution
      * history.</p>
      */

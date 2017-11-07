@@ -49,12 +49,18 @@ namespace Model
     LambdaFunctionTimedOut,
     SucceedStateEntered,
     SucceedStateExited,
+    TaskStateAborted,
     TaskStateEntered,
     TaskStateExited,
     PassStateEntered,
     PassStateExited,
+    ParallelStateAborted,
     ParallelStateEntered,
     ParallelStateExited,
+    ParallelStateFailed,
+    ParallelStateStarted,
+    ParallelStateSucceeded,
+    WaitStateAborted,
     WaitStateEntered,
     WaitStateExited
   };

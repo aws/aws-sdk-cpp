@@ -100,37 +100,37 @@ namespace Model
 
 
     /**
-     * <p>The JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>The JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task.</p>
      */
     inline void SetInput(const Aws::String& value) { m_input = value; }
 
     /**
-     * <p>The JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task.</p>
      */
     inline void SetInput(Aws::String&& value) { m_input = std::move(value); }
 
     /**
-     * <p>The JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task.</p>
      */
     inline void SetInput(const char* value) { m_input.assign(value); }
 
     /**
-     * <p>The JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task.</p>
      */
     inline GetActivityTaskResult& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>The JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task.</p>
      */
     inline GetActivityTaskResult& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON input data for the task.</p>
+     * <p>The string that contains the JSON input data for the task.</p>
      */
     inline GetActivityTaskResult& WithInput(const char* value) { SetInput(value); return *this;}
 

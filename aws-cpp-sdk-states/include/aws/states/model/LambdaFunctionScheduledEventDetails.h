@@ -32,6 +32,12 @@ namespace SFN
 namespace Model
 {
 
+  /**
+   * <p>Contains details about a lambda function scheduled during an
+   * execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionScheduledEventDetails">AWS
+   * API Reference</a></p>
+   */
   class AWS_SFN_API LambdaFunctionScheduledEventDetails
   {
   public:

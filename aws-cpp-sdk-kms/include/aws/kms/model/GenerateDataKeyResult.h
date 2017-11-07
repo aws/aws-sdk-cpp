@@ -44,58 +44,68 @@ namespace Model
 
 
     /**
-     * <p>The encrypted data encryption key.</p>
+     * <p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI,
+     * the value is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
     /**
-     * <p>The encrypted data encryption key.</p>
+     * <p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI,
+     * the value is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
     /**
-     * <p>The encrypted data encryption key.</p>
+     * <p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI,
+     * the value is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = std::move(value); }
 
     /**
-     * <p>The encrypted data encryption key.</p>
+     * <p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI,
+     * the value is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline GenerateDataKeyResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
     /**
-     * <p>The encrypted data encryption key.</p>
+     * <p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI,
+     * the value is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline GenerateDataKeyResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
 
 
     /**
-     * <p>The data encryption key. Use this data key for local encryption and
-     * decryption, then remove it from memory as soon as possible.</p>
+     * <p>The data encryption key. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded. Use this data key for local
+     * encryption and decryption, then remove it from memory as soon as possible.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPlaintext() const{ return m_plaintext; }
 
     /**
-     * <p>The data encryption key. Use this data key for local encryption and
-     * decryption, then remove it from memory as soon as possible.</p>
+     * <p>The data encryption key. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded. Use this data key for local
+     * encryption and decryption, then remove it from memory as soon as possible.</p>
      */
     inline void SetPlaintext(const Aws::Utils::ByteBuffer& value) { m_plaintext = value; }
 
     /**
-     * <p>The data encryption key. Use this data key for local encryption and
-     * decryption, then remove it from memory as soon as possible.</p>
+     * <p>The data encryption key. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded. Use this data key for local
+     * encryption and decryption, then remove it from memory as soon as possible.</p>
      */
     inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = std::move(value); }
 
     /**
-     * <p>The data encryption key. Use this data key for local encryption and
-     * decryption, then remove it from memory as soon as possible.</p>
+     * <p>The data encryption key. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded. Use this data key for local
+     * encryption and decryption, then remove it from memory as soon as possible.</p>
      */
     inline GenerateDataKeyResult& WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
 
     /**
-     * <p>The data encryption key. Use this data key for local encryption and
-     * decryption, then remove it from memory as soon as possible.</p>
+     * <p>The data encryption key. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded. Use this data key for local
+     * encryption and decryption, then remove it from memory as soon as possible.</p>
      */
     inline GenerateDataKeyResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 

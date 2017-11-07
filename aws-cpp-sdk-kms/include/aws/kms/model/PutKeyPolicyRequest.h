@@ -45,108 +45,115 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
-     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
-     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
+     * ID or the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
-     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
-     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
+     * ID or the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
-     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
-     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
+     * ID or the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
-     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
-     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
+     * ID or the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
-     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
-     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
+     * ID or the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline PutKeyPolicyRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
-     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
-     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
+     * ID or the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline PutKeyPolicyRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
-     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
-     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
-     * </li> </ul>
+     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
+     * ID or the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
      */
     inline PutKeyPolicyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
 
     /**
-     * <p>The name of the key policy.</p> <p>This value must be
-     * <code>default</code>.</p>
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The name of the key policy.</p> <p>This value must be
-     * <code>default</code>.</p>
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the key policy.</p> <p>This value must be
-     * <code>default</code>.</p>
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
-     * <p>The name of the key policy.</p> <p>This value must be
-     * <code>default</code>.</p>
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The name of the key policy.</p> <p>This value must be
-     * <code>default</code>.</p>
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the key policy.</p> <p>This value must be
-     * <code>default</code>.</p>
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the key policy.</p> <p>This value must be
-     * <code>default</code>.</p>
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
@@ -168,7 +175,8 @@ namespace Model
      * immediately be visible to AWS KMS. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>IAM User
-     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 kilobytes (32768
+     * bytes).</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -189,7 +197,8 @@ namespace Model
      * immediately be visible to AWS KMS. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>IAM User
-     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 kilobytes (32768
+     * bytes).</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -210,7 +219,8 @@ namespace Model
      * immediately be visible to AWS KMS. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>IAM User
-     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 kilobytes (32768
+     * bytes).</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -231,7 +241,8 @@ namespace Model
      * immediately be visible to AWS KMS. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>IAM User
-     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 kilobytes (32768
+     * bytes).</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -252,7 +263,8 @@ namespace Model
      * immediately be visible to AWS KMS. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>IAM User
-     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 kilobytes (32768
+     * bytes).</p>
      */
     inline PutKeyPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -273,7 +285,8 @@ namespace Model
      * immediately be visible to AWS KMS. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>IAM User
-     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 kilobytes (32768
+     * bytes).</p>
      */
     inline PutKeyPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -294,7 +307,8 @@ namespace Model
      * immediately be visible to AWS KMS. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>IAM User
-     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 kilobytes (32768
+     * bytes).</p>
      */
     inline PutKeyPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

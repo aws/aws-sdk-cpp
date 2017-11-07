@@ -52,6 +52,12 @@ namespace SFN
 namespace Model
 {
 
+  /**
+   * <p>Contains details about the events of an execution.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/HistoryEvent">AWS
+   * API Reference</a></p>
+   */
   class AWS_SFN_API HistoryEvent
   {
   public:
@@ -62,27 +68,27 @@ namespace Model
 
 
     /**
-     * <p>The date the event occured.</p>
+     * <p>The date the event occurred.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The date the event occured.</p>
+     * <p>The date the event occurred.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The date the event occured.</p>
+     * <p>The date the event occurred.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p>The date the event occured.</p>
+     * <p>The date the event occurred.</p>
      */
     inline HistoryEvent& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>The date the event occured.</p>
+     * <p>The date the event occurred.</p>
      */
     inline HistoryEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
@@ -161,19 +167,34 @@ namespace Model
     inline HistoryEvent& WithActivityFailedEventDetails(ActivityFailedEventDetails&& value) { SetActivityFailedEventDetails(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Contains details about an activity schedule event which failed during an
+     * execution.</p>
+     */
     inline const ActivityScheduleFailedEventDetails& GetActivityScheduleFailedEventDetails() const{ return m_activityScheduleFailedEventDetails; }
 
-    
+    /**
+     * <p>Contains details about an activity schedule event which failed during an
+     * execution.</p>
+     */
     inline void SetActivityScheduleFailedEventDetails(const ActivityScheduleFailedEventDetails& value) { m_activityScheduleFailedEventDetailsHasBeenSet = true; m_activityScheduleFailedEventDetails = value; }
 
-    
+    /**
+     * <p>Contains details about an activity schedule event which failed during an
+     * execution.</p>
+     */
     inline void SetActivityScheduleFailedEventDetails(ActivityScheduleFailedEventDetails&& value) { m_activityScheduleFailedEventDetailsHasBeenSet = true; m_activityScheduleFailedEventDetails = std::move(value); }
 
-    
+    /**
+     * <p>Contains details about an activity schedule event which failed during an
+     * execution.</p>
+     */
     inline HistoryEvent& WithActivityScheduleFailedEventDetails(const ActivityScheduleFailedEventDetails& value) { SetActivityScheduleFailedEventDetails(value); return *this;}
 
-    
+    /**
+     * <p>Contains details about an activity schedule event which failed during an
+     * execution.</p>
+     */
     inline HistoryEvent& WithActivityScheduleFailedEventDetails(ActivityScheduleFailedEventDetails&& value) { SetActivityScheduleFailedEventDetails(std::move(value)); return *this;}
 
 
@@ -369,35 +390,65 @@ namespace Model
     inline HistoryEvent& WithLambdaFunctionScheduledEventDetails(LambdaFunctionScheduledEventDetails&& value) { SetLambdaFunctionScheduledEventDetails(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Contains details about a lambda function which failed to start during an
+     * execution.</p>
+     */
     inline const LambdaFunctionStartFailedEventDetails& GetLambdaFunctionStartFailedEventDetails() const{ return m_lambdaFunctionStartFailedEventDetails; }
 
-    
+    /**
+     * <p>Contains details about a lambda function which failed to start during an
+     * execution.</p>
+     */
     inline void SetLambdaFunctionStartFailedEventDetails(const LambdaFunctionStartFailedEventDetails& value) { m_lambdaFunctionStartFailedEventDetailsHasBeenSet = true; m_lambdaFunctionStartFailedEventDetails = value; }
 
-    
+    /**
+     * <p>Contains details about a lambda function which failed to start during an
+     * execution.</p>
+     */
     inline void SetLambdaFunctionStartFailedEventDetails(LambdaFunctionStartFailedEventDetails&& value) { m_lambdaFunctionStartFailedEventDetailsHasBeenSet = true; m_lambdaFunctionStartFailedEventDetails = std::move(value); }
 
-    
+    /**
+     * <p>Contains details about a lambda function which failed to start during an
+     * execution.</p>
+     */
     inline HistoryEvent& WithLambdaFunctionStartFailedEventDetails(const LambdaFunctionStartFailedEventDetails& value) { SetLambdaFunctionStartFailedEventDetails(value); return *this;}
 
-    
+    /**
+     * <p>Contains details about a lambda function which failed to start during an
+     * execution.</p>
+     */
     inline HistoryEvent& WithLambdaFunctionStartFailedEventDetails(LambdaFunctionStartFailedEventDetails&& value) { SetLambdaFunctionStartFailedEventDetails(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Contains details about a lambda function which terminated successfully during
+     * an execution.</p>
+     */
     inline const LambdaFunctionSucceededEventDetails& GetLambdaFunctionSucceededEventDetails() const{ return m_lambdaFunctionSucceededEventDetails; }
 
-    
+    /**
+     * <p>Contains details about a lambda function which terminated successfully during
+     * an execution.</p>
+     */
     inline void SetLambdaFunctionSucceededEventDetails(const LambdaFunctionSucceededEventDetails& value) { m_lambdaFunctionSucceededEventDetailsHasBeenSet = true; m_lambdaFunctionSucceededEventDetails = value; }
 
-    
+    /**
+     * <p>Contains details about a lambda function which terminated successfully during
+     * an execution.</p>
+     */
     inline void SetLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails&& value) { m_lambdaFunctionSucceededEventDetailsHasBeenSet = true; m_lambdaFunctionSucceededEventDetails = std::move(value); }
 
-    
+    /**
+     * <p>Contains details about a lambda function which terminated successfully during
+     * an execution.</p>
+     */
     inline HistoryEvent& WithLambdaFunctionSucceededEventDetails(const LambdaFunctionSucceededEventDetails& value) { SetLambdaFunctionSucceededEventDetails(value); return *this;}
 
-    
+    /**
+     * <p>Contains details about a lambda function which terminated successfully during
+     * an execution.</p>
+     */
     inline HistoryEvent& WithLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails&& value) { SetLambdaFunctionSucceededEventDetails(std::move(value)); return *this;}
 
 

@@ -53,12 +53,18 @@ namespace Aws
         static const int LambdaFunctionTimedOut_HASH = HashingUtils::HashString("LambdaFunctionTimedOut");
         static const int SucceedStateEntered_HASH = HashingUtils::HashString("SucceedStateEntered");
         static const int SucceedStateExited_HASH = HashingUtils::HashString("SucceedStateExited");
+        static const int TaskStateAborted_HASH = HashingUtils::HashString("TaskStateAborted");
         static const int TaskStateEntered_HASH = HashingUtils::HashString("TaskStateEntered");
         static const int TaskStateExited_HASH = HashingUtils::HashString("TaskStateExited");
         static const int PassStateEntered_HASH = HashingUtils::HashString("PassStateEntered");
         static const int PassStateExited_HASH = HashingUtils::HashString("PassStateExited");
+        static const int ParallelStateAborted_HASH = HashingUtils::HashString("ParallelStateAborted");
         static const int ParallelStateEntered_HASH = HashingUtils::HashString("ParallelStateEntered");
         static const int ParallelStateExited_HASH = HashingUtils::HashString("ParallelStateExited");
+        static const int ParallelStateFailed_HASH = HashingUtils::HashString("ParallelStateFailed");
+        static const int ParallelStateStarted_HASH = HashingUtils::HashString("ParallelStateStarted");
+        static const int ParallelStateSucceeded_HASH = HashingUtils::HashString("ParallelStateSucceeded");
+        static const int WaitStateAborted_HASH = HashingUtils::HashString("WaitStateAborted");
         static const int WaitStateEntered_HASH = HashingUtils::HashString("WaitStateEntered");
         static const int WaitStateExited_HASH = HashingUtils::HashString("WaitStateExited");
 
@@ -158,6 +164,10 @@ namespace Aws
           {
             return HistoryEventType::SucceedStateExited;
           }
+          else if (hashCode == TaskStateAborted_HASH)
+          {
+            return HistoryEventType::TaskStateAborted;
+          }
           else if (hashCode == TaskStateEntered_HASH)
           {
             return HistoryEventType::TaskStateEntered;
@@ -174,6 +184,10 @@ namespace Aws
           {
             return HistoryEventType::PassStateExited;
           }
+          else if (hashCode == ParallelStateAborted_HASH)
+          {
+            return HistoryEventType::ParallelStateAborted;
+          }
           else if (hashCode == ParallelStateEntered_HASH)
           {
             return HistoryEventType::ParallelStateEntered;
@@ -181,6 +195,22 @@ namespace Aws
           else if (hashCode == ParallelStateExited_HASH)
           {
             return HistoryEventType::ParallelStateExited;
+          }
+          else if (hashCode == ParallelStateFailed_HASH)
+          {
+            return HistoryEventType::ParallelStateFailed;
+          }
+          else if (hashCode == ParallelStateStarted_HASH)
+          {
+            return HistoryEventType::ParallelStateStarted;
+          }
+          else if (hashCode == ParallelStateSucceeded_HASH)
+          {
+            return HistoryEventType::ParallelStateSucceeded;
+          }
+          else if (hashCode == WaitStateAborted_HASH)
+          {
+            return HistoryEventType::WaitStateAborted;
           }
           else if (hashCode == WaitStateEntered_HASH)
           {
@@ -250,6 +280,8 @@ namespace Aws
             return "SucceedStateEntered";
           case HistoryEventType::SucceedStateExited:
             return "SucceedStateExited";
+          case HistoryEventType::TaskStateAborted:
+            return "TaskStateAborted";
           case HistoryEventType::TaskStateEntered:
             return "TaskStateEntered";
           case HistoryEventType::TaskStateExited:
@@ -258,10 +290,20 @@ namespace Aws
             return "PassStateEntered";
           case HistoryEventType::PassStateExited:
             return "PassStateExited";
+          case HistoryEventType::ParallelStateAborted:
+            return "ParallelStateAborted";
           case HistoryEventType::ParallelStateEntered:
             return "ParallelStateEntered";
           case HistoryEventType::ParallelStateExited:
             return "ParallelStateExited";
+          case HistoryEventType::ParallelStateFailed:
+            return "ParallelStateFailed";
+          case HistoryEventType::ParallelStateStarted:
+            return "ParallelStateStarted";
+          case HistoryEventType::ParallelStateSucceeded:
+            return "ParallelStateSucceeded";
+          case HistoryEventType::WaitStateAborted:
+            return "WaitStateAborted";
           case HistoryEventType::WaitStateEntered:
             return "WaitStateEntered";
           case HistoryEventType::WaitStateExited:

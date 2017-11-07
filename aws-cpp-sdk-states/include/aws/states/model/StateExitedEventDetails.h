@@ -32,6 +32,12 @@ namespace SFN
 namespace Model
 {
 
+  /**
+   * <p>Contains details about an exit from a state during an
+   * execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StateExitedEventDetails">AWS
+   * API Reference</a></p>
+   */
   class AWS_SFN_API StateExitedEventDetails
   {
   public:
@@ -42,37 +48,72 @@ namespace Model
 
 
     /**
-     * <p>The name of the state.</p>
+     * <p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the state.</p>
+     * <p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the state.</p>
+     * <p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the state.</p>
+     * <p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the state.</p>
+     * <p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline StateExitedEventDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the state.</p>
+     * <p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline StateExitedEventDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the state.</p>
+     * <p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline StateExitedEventDetails& WithName(const char* value) { SetName(value); return *this;}
 

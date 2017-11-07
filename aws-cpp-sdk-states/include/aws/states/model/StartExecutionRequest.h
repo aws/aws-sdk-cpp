@@ -82,79 +82,156 @@ namespace Model
 
     /**
      * <p>The name of the execution. This name must be unique for your AWS account and
-     * region.</p>
+     * region for 90 days. For more information, see <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the execution. This name must be unique for your AWS account and
-     * region.</p>
+     * region for 90 days. For more information, see <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the execution. This name must be unique for your AWS account and
-     * region.</p>
+     * region for 90 days. For more information, see <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the execution. This name must be unique for your AWS account and
-     * region.</p>
+     * region for 90 days. For more information, see <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the execution. This name must be unique for your AWS account and
-     * region.</p>
+     * region for 90 days. For more information, see <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline StartExecutionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the execution. This name must be unique for your AWS account and
-     * region.</p>
+     * region for 90 days. For more information, see <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline StartExecutionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the execution. This name must be unique for your AWS account and
-     * region.</p>
+     * region for 90 days. For more information, see <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
      */
     inline StartExecutionRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The JSON input data for the execution.</p>
+     * <p>The string that contains the JSON input data for the execution, for
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * <p>If you don't include any JSON input data, you still must include the two
+     * braces, for example: <code>"input": "{}"</code> </p> </note>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>The JSON input data for the execution.</p>
+     * <p>The string that contains the JSON input data for the execution, for
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * <p>If you don't include any JSON input data, you still must include the two
+     * braces, for example: <code>"input": "{}"</code> </p> </note>
      */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p>The JSON input data for the execution.</p>
+     * <p>The string that contains the JSON input data for the execution, for
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * <p>If you don't include any JSON input data, you still must include the two
+     * braces, for example: <code>"input": "{}"</code> </p> </note>
      */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p>The JSON input data for the execution.</p>
+     * <p>The string that contains the JSON input data for the execution, for
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * <p>If you don't include any JSON input data, you still must include the two
+     * braces, for example: <code>"input": "{}"</code> </p> </note>
      */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
     /**
-     * <p>The JSON input data for the execution.</p>
+     * <p>The string that contains the JSON input data for the execution, for
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * <p>If you don't include any JSON input data, you still must include the two
+     * braces, for example: <code>"input": "{}"</code> </p> </note>
      */
     inline StartExecutionRequest& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>The JSON input data for the execution.</p>
+     * <p>The string that contains the JSON input data for the execution, for
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * <p>If you don't include any JSON input data, you still must include the two
+     * braces, for example: <code>"input": "{}"</code> </p> </note>
      */
     inline StartExecutionRequest& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON input data for the execution.</p>
+     * <p>The string that contains the JSON input data for the execution, for
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * <p>If you don't include any JSON input data, you still must include the two
+     * braces, for example: <code>"input": "{}"</code> </p> </note>
      */
     inline StartExecutionRequest& WithInput(const char* value) { SetInput(value); return *this;}
 
