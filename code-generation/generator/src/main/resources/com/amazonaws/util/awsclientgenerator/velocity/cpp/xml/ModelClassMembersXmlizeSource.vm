@@ -1,4 +1,7 @@
   Aws::StringStream ss;
+#if($shape.members.entrySet().size() == 0)
+  AWS_UNREFERENCED_PARAM(parentNode);
+#end
 #foreach($entry in $shape.members.entrySet())
 #if($entry.value.usedForPayload)
 #set($spaces = '')
