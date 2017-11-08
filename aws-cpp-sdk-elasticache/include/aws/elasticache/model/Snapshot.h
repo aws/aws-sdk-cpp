@@ -38,8 +38,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a copy of an entire Redis cache cluster as of the time when the
-   * snapshot was taken.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a copy of an entire Redis cluster as of the time when the snapshot
+   * was taken.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Snapshot">AWS
    * API Reference</a></p>
    */
@@ -170,37 +170,37 @@ namespace Model
 
 
     /**
-     * <p>The user-supplied identifier of the source cache cluster.</p>
+     * <p>The user-supplied identifier of the source cluster.</p>
      */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
 
     /**
-     * <p>The user-supplied identifier of the source cache cluster.</p>
+     * <p>The user-supplied identifier of the source cluster.</p>
      */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
-     * <p>The user-supplied identifier of the source cache cluster.</p>
+     * <p>The user-supplied identifier of the source cluster.</p>
      */
     inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
-     * <p>The user-supplied identifier of the source cache cluster.</p>
+     * <p>The user-supplied identifier of the source cluster.</p>
      */
     inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /**
-     * <p>The user-supplied identifier of the source cache cluster.</p>
+     * <p>The user-supplied identifier of the source cluster.</p>
      */
     inline Snapshot& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
 
     /**
-     * <p>The user-supplied identifier of the source cache cluster.</p>
+     * <p>The user-supplied identifier of the source cluster.</p>
      */
     inline Snapshot& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
-     * <p>The user-supplied identifier of the source cache cluster.</p>
+     * <p>The user-supplied identifier of the source cluster.</p>
      */
     inline Snapshot& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 
@@ -299,7 +299,7 @@ namespace Model
 
 
     /**
-     * <p>The name of the compute and memory capacity node type for the source cache
+     * <p>The name of the compute and memory capacity node type for the source
      * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
@@ -328,11 +328,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -341,7 +339,7 @@ namespace Model
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
 
     /**
-     * <p>The name of the compute and memory capacity node type for the source cache
+     * <p>The name of the compute and memory capacity node type for the source
      * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
@@ -370,11 +368,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -383,7 +379,7 @@ namespace Model
     inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
     /**
-     * <p>The name of the compute and memory capacity node type for the source cache
+     * <p>The name of the compute and memory capacity node type for the source
      * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
@@ -412,11 +408,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -425,7 +419,7 @@ namespace Model
     inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
-     * <p>The name of the compute and memory capacity node type for the source cache
+     * <p>The name of the compute and memory capacity node type for the source
      * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
@@ -454,11 +448,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -467,7 +459,7 @@ namespace Model
     inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
 
     /**
-     * <p>The name of the compute and memory capacity node type for the source cache
+     * <p>The name of the compute and memory capacity node type for the source
      * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
@@ -496,11 +488,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -509,7 +499,7 @@ namespace Model
     inline Snapshot& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
 
     /**
-     * <p>The name of the compute and memory capacity node type for the source cache
+     * <p>The name of the compute and memory capacity node type for the source
      * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
@@ -538,11 +528,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -551,7 +539,7 @@ namespace Model
     inline Snapshot& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the compute and memory capacity node type for the source cache
+     * <p>The name of the compute and memory capacity node type for the source
      * cluster.</p> <p>The following node types are supported by ElastiCache. Generally
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
@@ -580,11 +568,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -595,177 +581,170 @@ namespace Model
 
     /**
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
-     * used by the source cache cluster.</p>
+     * used by the source cluster.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
-     * used by the source cache cluster.</p>
+     * used by the source cluster.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
-     * used by the source cache cluster.</p>
+     * used by the source cluster.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
-     * used by the source cache cluster.</p>
+     * used by the source cluster.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
-     * used by the source cache cluster.</p>
+     * used by the source cluster.</p>
      */
     inline Snapshot& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
-     * used by the source cache cluster.</p>
+     * used by the source cluster.</p>
      */
     inline Snapshot& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
-     * used by the source cache cluster.</p>
+     * used by the source cluster.</p>
      */
     inline Snapshot& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p>The version of the cache engine version that is used by the source cache
+     * <p>The version of the cache engine version that is used by the source
      * cluster.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version of the cache engine version that is used by the source cache
+     * <p>The version of the cache engine version that is used by the source
      * cluster.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version of the cache engine version that is used by the source cache
+     * <p>The version of the cache engine version that is used by the source
      * cluster.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version of the cache engine version that is used by the source cache
+     * <p>The version of the cache engine version that is used by the source
      * cluster.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version of the cache engine version that is used by the source cache
+     * <p>The version of the cache engine version that is used by the source
      * cluster.</p>
      */
     inline Snapshot& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version of the cache engine version that is used by the source cache
+     * <p>The version of the cache engine version that is used by the source
      * cluster.</p>
      */
     inline Snapshot& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the cache engine version that is used by the source cache
+     * <p>The version of the cache engine version that is used by the source
      * cluster.</p>
      */
     inline Snapshot& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
 
     /**
-     * <p>The number of cache nodes in the source cache cluster.</p> <p>For clusters
-     * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p>
+     * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
+     * Redis, this value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 20.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
-     * <p>The number of cache nodes in the source cache cluster.</p> <p>For clusters
-     * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p>
+     * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
+     * Redis, this value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 20.</p>
      */
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
-     * <p>The number of cache nodes in the source cache cluster.</p> <p>For clusters
-     * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p>
+     * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
+     * Redis, this value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 20.</p>
      */
     inline Snapshot& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
 
     /**
-     * <p>The name of the Availability Zone in which the source cache cluster is
-     * located.</p>
+     * <p>The name of the Availability Zone in which the source cluster is located.</p>
      */
     inline const Aws::String& GetPreferredAvailabilityZone() const{ return m_preferredAvailabilityZone; }
 
     /**
-     * <p>The name of the Availability Zone in which the source cache cluster is
-     * located.</p>
+     * <p>The name of the Availability Zone in which the source cluster is located.</p>
      */
     inline void SetPreferredAvailabilityZone(const Aws::String& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = value; }
 
     /**
-     * <p>The name of the Availability Zone in which the source cache cluster is
-     * located.</p>
+     * <p>The name of the Availability Zone in which the source cluster is located.</p>
      */
     inline void SetPreferredAvailabilityZone(Aws::String&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = std::move(value); }
 
     /**
-     * <p>The name of the Availability Zone in which the source cache cluster is
-     * located.</p>
+     * <p>The name of the Availability Zone in which the source cluster is located.</p>
      */
     inline void SetPreferredAvailabilityZone(const char* value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone.assign(value); }
 
     /**
-     * <p>The name of the Availability Zone in which the source cache cluster is
-     * located.</p>
+     * <p>The name of the Availability Zone in which the source cluster is located.</p>
      */
     inline Snapshot& WithPreferredAvailabilityZone(const Aws::String& value) { SetPreferredAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The name of the Availability Zone in which the source cache cluster is
-     * located.</p>
+     * <p>The name of the Availability Zone in which the source cluster is located.</p>
      */
     inline Snapshot& WithPreferredAvailabilityZone(Aws::String&& value) { SetPreferredAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Availability Zone in which the source cache cluster is
-     * located.</p>
+     * <p>The name of the Availability Zone in which the source cluster is located.</p>
      */
     inline Snapshot& WithPreferredAvailabilityZone(const char* value) { SetPreferredAvailabilityZone(value); return *this;}
 
 
     /**
-     * <p>The date and time when the source cache cluster was created.</p>
+     * <p>The date and time when the source cluster was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCacheClusterCreateTime() const{ return m_cacheClusterCreateTime; }
 
     /**
-     * <p>The date and time when the source cache cluster was created.</p>
+     * <p>The date and time when the source cluster was created.</p>
      */
     inline void SetCacheClusterCreateTime(const Aws::Utils::DateTime& value) { m_cacheClusterCreateTimeHasBeenSet = true; m_cacheClusterCreateTime = value; }
 
     /**
-     * <p>The date and time when the source cache cluster was created.</p>
+     * <p>The date and time when the source cluster was created.</p>
      */
     inline void SetCacheClusterCreateTime(Aws::Utils::DateTime&& value) { m_cacheClusterCreateTimeHasBeenSet = true; m_cacheClusterCreateTime = std::move(value); }
 
     /**
-     * <p>The date and time when the source cache cluster was created.</p>
+     * <p>The date and time when the source cluster was created.</p>
      */
     inline Snapshot& WithCacheClusterCreateTime(const Aws::Utils::DateTime& value) { SetCacheClusterCreateTime(value); return *this;}
 
     /**
-     * <p>The date and time when the source cache cluster was created.</p>
+     * <p>The date and time when the source cluster was created.</p>
      */
     inline Snapshot& WithCacheClusterCreateTime(Aws::Utils::DateTime&& value) { SetCacheClusterCreateTime(std::move(value)); return *this;}
 
@@ -856,189 +835,175 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
-     * for publishing notifications.</p>
+     * <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for
+     * publishing notifications.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
-     * for publishing notifications.</p>
+     * <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for
+     * publishing notifications.</p>
      */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
-     * for publishing notifications.</p>
+     * <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for
+     * publishing notifications.</p>
      */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
-     * for publishing notifications.</p>
+     * <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for
+     * publishing notifications.</p>
      */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
-     * for publishing notifications.</p>
+     * <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for
+     * publishing notifications.</p>
      */
     inline Snapshot& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
-     * for publishing notifications.</p>
+     * <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for
+     * publishing notifications.</p>
      */
     inline Snapshot& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the topic used by the source cache cluster
-     * for publishing notifications.</p>
+     * <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for
+     * publishing notifications.</p>
      */
     inline Snapshot& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
 
     /**
-     * <p>The port number used by each cache nodes in the source cache cluster.</p>
+     * <p>The port number used by each cache nodes in the source cluster.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port number used by each cache nodes in the source cache cluster.</p>
+     * <p>The port number used by each cache nodes in the source cluster.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port number used by each cache nodes in the source cache cluster.</p>
+     * <p>The port number used by each cache nodes in the source cluster.</p>
      */
     inline Snapshot& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
-     * <p>The cache parameter group that is associated with the source cache
-     * cluster.</p>
+     * <p>The cache parameter group that is associated with the source cluster.</p>
      */
     inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
 
     /**
-     * <p>The cache parameter group that is associated with the source cache
-     * cluster.</p>
+     * <p>The cache parameter group that is associated with the source cluster.</p>
      */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /**
-     * <p>The cache parameter group that is associated with the source cache
-     * cluster.</p>
+     * <p>The cache parameter group that is associated with the source cluster.</p>
      */
     inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
 
     /**
-     * <p>The cache parameter group that is associated with the source cache
-     * cluster.</p>
+     * <p>The cache parameter group that is associated with the source cluster.</p>
      */
     inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
 
     /**
-     * <p>The cache parameter group that is associated with the source cache
-     * cluster.</p>
+     * <p>The cache parameter group that is associated with the source cluster.</p>
      */
     inline Snapshot& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
 
     /**
-     * <p>The cache parameter group that is associated with the source cache
-     * cluster.</p>
+     * <p>The cache parameter group that is associated with the source cluster.</p>
      */
     inline Snapshot& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The cache parameter group that is associated with the source cache
-     * cluster.</p>
+     * <p>The cache parameter group that is associated with the source cluster.</p>
      */
     inline Snapshot& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
 
 
     /**
-     * <p>The name of the cache subnet group associated with the source cache
-     * cluster.</p>
+     * <p>The name of the cache subnet group associated with the source cluster.</p>
      */
     inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
 
     /**
-     * <p>The name of the cache subnet group associated with the source cache
-     * cluster.</p>
+     * <p>The name of the cache subnet group associated with the source cluster.</p>
      */
     inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /**
-     * <p>The name of the cache subnet group associated with the source cache
-     * cluster.</p>
+     * <p>The name of the cache subnet group associated with the source cluster.</p>
      */
     inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::move(value); }
 
     /**
-     * <p>The name of the cache subnet group associated with the source cache
-     * cluster.</p>
+     * <p>The name of the cache subnet group associated with the source cluster.</p>
      */
     inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
 
     /**
-     * <p>The name of the cache subnet group associated with the source cache
-     * cluster.</p>
+     * <p>The name of the cache subnet group associated with the source cluster.</p>
      */
     inline Snapshot& WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the cache subnet group associated with the source cache
-     * cluster.</p>
+     * <p>The name of the cache subnet group associated with the source cluster.</p>
      */
     inline Snapshot& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the cache subnet group associated with the source cache
-     * cluster.</p>
+     * <p>The name of the cache subnet group associated with the source cluster.</p>
      */
     inline Snapshot& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
-     * group for the source cache cluster.</p>
+     * group for the source cluster.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
-     * group for the source cache cluster.</p>
+     * group for the source cluster.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
-     * group for the source cache cluster.</p>
+     * group for the source cluster.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
-     * group for the source cache cluster.</p>
+     * group for the source cluster.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
-     * group for the source cache cluster.</p>
+     * group for the source cluster.</p>
      */
     inline Snapshot& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
-     * group for the source cache cluster.</p>
+     * group for the source cluster.</p>
      */
     inline Snapshot& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet
-     * group for the source cache cluster.</p>
+     * group for the source cluster.</p>
      */
     inline Snapshot& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
@@ -1062,76 +1027,76 @@ namespace Model
     /**
      * <p>For an automatic snapshot, the number of days for which ElastiCache retains
      * the snapshot before deleting it.</p> <p>For manual snapshots, this field
-     * reflects the <code>SnapshotRetentionLimit</code> for the source cache cluster
-     * when the snapshot was created. This field is otherwise ignored: Manual snapshots
-     * do not expire, and can only be deleted using the <code>DeleteSnapshot</code>
-     * operation. </p> <p> <b>Important</b> If the value of SnapshotRetentionLimit is
-     * set to zero (0), backups are turned off.</p>
+     * reflects the <code>SnapshotRetentionLimit</code> for the source cluster when the
+     * snapshot was created. This field is otherwise ignored: Manual snapshots do not
+     * expire, and can only be deleted using the <code>DeleteSnapshot</code> operation.
+     * </p> <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero
+     * (0), backups are turned off.</p>
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
     /**
      * <p>For an automatic snapshot, the number of days for which ElastiCache retains
      * the snapshot before deleting it.</p> <p>For manual snapshots, this field
-     * reflects the <code>SnapshotRetentionLimit</code> for the source cache cluster
-     * when the snapshot was created. This field is otherwise ignored: Manual snapshots
-     * do not expire, and can only be deleted using the <code>DeleteSnapshot</code>
-     * operation. </p> <p> <b>Important</b> If the value of SnapshotRetentionLimit is
-     * set to zero (0), backups are turned off.</p>
+     * reflects the <code>SnapshotRetentionLimit</code> for the source cluster when the
+     * snapshot was created. This field is otherwise ignored: Manual snapshots do not
+     * expire, and can only be deleted using the <code>DeleteSnapshot</code> operation.
+     * </p> <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero
+     * (0), backups are turned off.</p>
      */
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
      * <p>For an automatic snapshot, the number of days for which ElastiCache retains
      * the snapshot before deleting it.</p> <p>For manual snapshots, this field
-     * reflects the <code>SnapshotRetentionLimit</code> for the source cache cluster
-     * when the snapshot was created. This field is otherwise ignored: Manual snapshots
-     * do not expire, and can only be deleted using the <code>DeleteSnapshot</code>
-     * operation. </p> <p> <b>Important</b> If the value of SnapshotRetentionLimit is
-     * set to zero (0), backups are turned off.</p>
+     * reflects the <code>SnapshotRetentionLimit</code> for the source cluster when the
+     * snapshot was created. This field is otherwise ignored: Manual snapshots do not
+     * expire, and can only be deleted using the <code>DeleteSnapshot</code> operation.
+     * </p> <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero
+     * (0), backups are turned off.</p>
      */
     inline Snapshot& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
 
     /**
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
-     * source cache cluster.</p>
+     * source cluster.</p>
      */
     inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
 
     /**
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
-     * source cache cluster.</p>
+     * source cluster.</p>
      */
     inline void SetSnapshotWindow(const Aws::String& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
 
     /**
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
-     * source cache cluster.</p>
+     * source cluster.</p>
      */
     inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
 
     /**
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
-     * source cache cluster.</p>
+     * source cluster.</p>
      */
     inline void SetSnapshotWindow(const char* value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow.assign(value); }
 
     /**
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
-     * source cache cluster.</p>
+     * source cluster.</p>
      */
     inline Snapshot& WithSnapshotWindow(const Aws::String& value) { SetSnapshotWindow(value); return *this;}
 
     /**
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
-     * source cache cluster.</p>
+     * source cluster.</p>
      */
     inline Snapshot& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
 
     /**
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
-     * source cache cluster.</p>
+     * source cluster.</p>
      */
     inline Snapshot& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
@@ -1210,37 +1175,37 @@ namespace Model
 
 
     /**
-     * <p>A list of the cache nodes in the source cache cluster.</p>
+     * <p>A list of the cache nodes in the source cluster.</p>
      */
     inline const Aws::Vector<NodeSnapshot>& GetNodeSnapshots() const{ return m_nodeSnapshots; }
 
     /**
-     * <p>A list of the cache nodes in the source cache cluster.</p>
+     * <p>A list of the cache nodes in the source cluster.</p>
      */
     inline void SetNodeSnapshots(const Aws::Vector<NodeSnapshot>& value) { m_nodeSnapshotsHasBeenSet = true; m_nodeSnapshots = value; }
 
     /**
-     * <p>A list of the cache nodes in the source cache cluster.</p>
+     * <p>A list of the cache nodes in the source cluster.</p>
      */
     inline void SetNodeSnapshots(Aws::Vector<NodeSnapshot>&& value) { m_nodeSnapshotsHasBeenSet = true; m_nodeSnapshots = std::move(value); }
 
     /**
-     * <p>A list of the cache nodes in the source cache cluster.</p>
+     * <p>A list of the cache nodes in the source cluster.</p>
      */
     inline Snapshot& WithNodeSnapshots(const Aws::Vector<NodeSnapshot>& value) { SetNodeSnapshots(value); return *this;}
 
     /**
-     * <p>A list of the cache nodes in the source cache cluster.</p>
+     * <p>A list of the cache nodes in the source cluster.</p>
      */
     inline Snapshot& WithNodeSnapshots(Aws::Vector<NodeSnapshot>&& value) { SetNodeSnapshots(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the cache nodes in the source cache cluster.</p>
+     * <p>A list of the cache nodes in the source cluster.</p>
      */
     inline Snapshot& AddNodeSnapshots(const NodeSnapshot& value) { m_nodeSnapshotsHasBeenSet = true; m_nodeSnapshots.push_back(value); return *this; }
 
     /**
-     * <p>A list of the cache nodes in the source cache cluster.</p>
+     * <p>A list of the cache nodes in the source cluster.</p>
      */
     inline Snapshot& AddNodeSnapshots(NodeSnapshot&& value) { m_nodeSnapshotsHasBeenSet = true; m_nodeSnapshots.push_back(std::move(value)); return *this; }
 

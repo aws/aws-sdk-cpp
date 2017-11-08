@@ -88,44 +88,44 @@ namespace Model
 
 
     /**
-     * <p>A list of cache clusters. Each item in the list contains detailed information
-     * about one cache cluster.</p>
+     * <p>A list of clusters. Each item in the list contains detailed information about
+     * one cluster.</p>
      */
     inline const Aws::Vector<CacheCluster>& GetCacheClusters() const{ return m_cacheClusters; }
 
     /**
-     * <p>A list of cache clusters. Each item in the list contains detailed information
-     * about one cache cluster.</p>
+     * <p>A list of clusters. Each item in the list contains detailed information about
+     * one cluster.</p>
      */
     inline void SetCacheClusters(const Aws::Vector<CacheCluster>& value) { m_cacheClusters = value; }
 
     /**
-     * <p>A list of cache clusters. Each item in the list contains detailed information
-     * about one cache cluster.</p>
+     * <p>A list of clusters. Each item in the list contains detailed information about
+     * one cluster.</p>
      */
     inline void SetCacheClusters(Aws::Vector<CacheCluster>&& value) { m_cacheClusters = std::move(value); }
 
     /**
-     * <p>A list of cache clusters. Each item in the list contains detailed information
-     * about one cache cluster.</p>
+     * <p>A list of clusters. Each item in the list contains detailed information about
+     * one cluster.</p>
      */
     inline DescribeCacheClustersResult& WithCacheClusters(const Aws::Vector<CacheCluster>& value) { SetCacheClusters(value); return *this;}
 
     /**
-     * <p>A list of cache clusters. Each item in the list contains detailed information
-     * about one cache cluster.</p>
+     * <p>A list of clusters. Each item in the list contains detailed information about
+     * one cluster.</p>
      */
     inline DescribeCacheClustersResult& WithCacheClusters(Aws::Vector<CacheCluster>&& value) { SetCacheClusters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of cache clusters. Each item in the list contains detailed information
-     * about one cache cluster.</p>
+     * <p>A list of clusters. Each item in the list contains detailed information about
+     * one cluster.</p>
      */
     inline DescribeCacheClustersResult& AddCacheClusters(const CacheCluster& value) { m_cacheClusters.push_back(value); return *this; }
 
     /**
-     * <p>A list of cache clusters. Each item in the list contains detailed information
-     * about one cache cluster.</p>
+     * <p>A list of clusters. Each item in the list contains detailed information about
+     * one cluster.</p>
      */
     inline DescribeCacheClustersResult& AddCacheClusters(CacheCluster&& value) { m_cacheClusters.push_back(std::move(value)); return *this; }
 

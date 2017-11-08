@@ -22,11 +22,14 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/application-autoscaling/model/DeleteScalingPolicyResult.h>
+#include <aws/application-autoscaling/model/DeleteScheduledActionResult.h>
 #include <aws/application-autoscaling/model/DeregisterScalableTargetResult.h>
 #include <aws/application-autoscaling/model/DescribeScalableTargetsResult.h>
 #include <aws/application-autoscaling/model/DescribeScalingActivitiesResult.h>
 #include <aws/application-autoscaling/model/DescribeScalingPoliciesResult.h>
+#include <aws/application-autoscaling/model/DescribeScheduledActionsResult.h>
 #include <aws/application-autoscaling/model/PutScalingPolicyResult.h>
+#include <aws/application-autoscaling/model/PutScheduledActionResult.h>
 #include <aws/application-autoscaling/model/RegisterScalableTargetResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -74,43 +77,55 @@ namespace ApplicationAutoScaling
 namespace Model
 {
         class DeleteScalingPolicyRequest;
+        class DeleteScheduledActionRequest;
         class DeregisterScalableTargetRequest;
         class DescribeScalableTargetsRequest;
         class DescribeScalingActivitiesRequest;
         class DescribeScalingPoliciesRequest;
+        class DescribeScheduledActionsRequest;
         class PutScalingPolicyRequest;
+        class PutScheduledActionRequest;
         class RegisterScalableTargetRequest;
 
         typedef Aws::Utils::Outcome<DeleteScalingPolicyResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DeleteScalingPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteScheduledActionResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DeleteScheduledActionOutcome;
         typedef Aws::Utils::Outcome<DeregisterScalableTargetResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DeregisterScalableTargetOutcome;
         typedef Aws::Utils::Outcome<DescribeScalableTargetsResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DescribeScalableTargetsOutcome;
         typedef Aws::Utils::Outcome<DescribeScalingActivitiesResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DescribeScalingActivitiesOutcome;
         typedef Aws::Utils::Outcome<DescribeScalingPoliciesResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DescribeScalingPoliciesOutcome;
+        typedef Aws::Utils::Outcome<DescribeScheduledActionsResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DescribeScheduledActionsOutcome;
         typedef Aws::Utils::Outcome<PutScalingPolicyResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> PutScalingPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutScheduledActionResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> PutScheduledActionOutcome;
         typedef Aws::Utils::Outcome<RegisterScalableTargetResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> RegisterScalableTargetOutcome;
 
         typedef std::future<DeleteScalingPolicyOutcome> DeleteScalingPolicyOutcomeCallable;
+        typedef std::future<DeleteScheduledActionOutcome> DeleteScheduledActionOutcomeCallable;
         typedef std::future<DeregisterScalableTargetOutcome> DeregisterScalableTargetOutcomeCallable;
         typedef std::future<DescribeScalableTargetsOutcome> DescribeScalableTargetsOutcomeCallable;
         typedef std::future<DescribeScalingActivitiesOutcome> DescribeScalingActivitiesOutcomeCallable;
         typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
+        typedef std::future<DescribeScheduledActionsOutcome> DescribeScheduledActionsOutcomeCallable;
         typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
+        typedef std::future<PutScheduledActionOutcome> PutScheduledActionOutcomeCallable;
         typedef std::future<RegisterScalableTargetOutcome> RegisterScalableTargetOutcomeCallable;
 } // namespace Model
 
   class ApplicationAutoScalingClient;
 
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DeleteScalingPolicyRequest&, const Model::DeleteScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScalingPolicyResponseReceivedHandler;
+    typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DeleteScheduledActionRequest&, const Model::DeleteScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScheduledActionResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DeregisterScalableTargetRequest&, const Model::DeregisterScalableTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterScalableTargetResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DescribeScalableTargetsRequest&, const Model::DescribeScalableTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalableTargetsResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DescribeScalingActivitiesRequest&, const Model::DescribeScalingActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingActivitiesResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DescribeScalingPoliciesRequest&, const Model::DescribeScalingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPoliciesResponseReceivedHandler;
+    typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DescribeScheduledActionsRequest&, const Model::DescribeScheduledActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduledActionsResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScalingPolicyResponseReceivedHandler;
+    typedef std::function<void(const ApplicationAutoScalingClient*, const Model::PutScheduledActionRequest&, const Model::PutScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScheduledActionResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::RegisterScalableTargetRequest&, const Model::RegisterScalableTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterScalableTargetResponseReceivedHandler;
 
   /**
    * <p>With Application Auto Scaling, you can automatically scale your AWS
-   * resources. The experience similar to that of <a
+   * resources. The experience is similar to that of <a
    * href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use
    * Application Auto Scaling to accomplish the following tasks:</p> <ul> <li>
    * <p>Define scaling policies to automatically scale your AWS resources</p> </li>
@@ -205,6 +220,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteScalingPolicyAsync(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified Application Auto Scaling scheduled
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteScheduledActionOutcome DeleteScheduledAction(const Model::DeleteScheduledActionRequest& request) const;
+
+        /**
+         * <p>Deletes the specified Application Auto Scaling scheduled
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteScheduledActionOutcomeCallable DeleteScheduledActionCallable(const Model::DeleteScheduledActionRequest& request) const;
+
+        /**
+         * <p>Deletes the specified Application Auto Scaling scheduled
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteScheduledActionAsync(const Model::DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters a scalable target.</p> <p>Deregistering a scalable target deletes
@@ -327,8 +370,8 @@ namespace Model
         virtual void DescribeScalingActivitiesAsync(const Model::DescribeScalingActivitiesRequest& request, const DescribeScalingActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides descriptive information about the scaling policies in the specified
-         * namespace.</p> <p>You can filter the results using the <code>ResourceId</code>,
+         * <p>Describes the scaling policies for the specified service namespace.</p>
+         * <p>You can filter the results using the <code>ResourceId</code>,
          * <code>ScalableDimension</code>, and <code>PolicyNames</code> parameters.</p>
          * <p>To create a scaling policy or update an existing one, see
          * <a>PutScalingPolicy</a>. If you are no longer using a scaling policy, you can
@@ -339,8 +382,8 @@ namespace Model
         virtual Model::DescribeScalingPoliciesOutcome DescribeScalingPolicies(const Model::DescribeScalingPoliciesRequest& request) const;
 
         /**
-         * <p>Provides descriptive information about the scaling policies in the specified
-         * namespace.</p> <p>You can filter the results using the <code>ResourceId</code>,
+         * <p>Describes the scaling policies for the specified service namespace.</p>
+         * <p>You can filter the results using the <code>ResourceId</code>,
          * <code>ScalableDimension</code>, and <code>PolicyNames</code> parameters.</p>
          * <p>To create a scaling policy or update an existing one, see
          * <a>PutScalingPolicy</a>. If you are no longer using a scaling policy, you can
@@ -353,8 +396,8 @@ namespace Model
         virtual Model::DescribeScalingPoliciesOutcomeCallable DescribeScalingPoliciesCallable(const Model::DescribeScalingPoliciesRequest& request) const;
 
         /**
-         * <p>Provides descriptive information about the scaling policies in the specified
-         * namespace.</p> <p>You can filter the results using the <code>ResourceId</code>,
+         * <p>Describes the scaling policies for the specified service namespace.</p>
+         * <p>You can filter the results using the <code>ResourceId</code>,
          * <code>ScalableDimension</code>, and <code>PolicyNames</code> parameters.</p>
          * <p>To create a scaling policy or update an existing one, see
          * <a>PutScalingPolicy</a>. If you are no longer using a scaling policy, you can
@@ -365,6 +408,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeScalingPoliciesAsync(const Model::DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the scheduled actions for the specified service namespace.</p>
+         * <p>You can filter the results using the <code>ResourceId</code>,
+         * <code>ScalableDimension</code>, and <code>ScheduledActionNames</code>
+         * parameters.</p> <p>To create a scheduled action or update an existing one, see
+         * <a>PutScheduledAction</a>. If you are no longer using a scheduled action, you
+         * can delete it using <a>DeleteScheduledAction</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeScheduledActionsOutcome DescribeScheduledActions(const Model::DescribeScheduledActionsRequest& request) const;
+
+        /**
+         * <p>Describes the scheduled actions for the specified service namespace.</p>
+         * <p>You can filter the results using the <code>ResourceId</code>,
+         * <code>ScalableDimension</code>, and <code>ScheduledActionNames</code>
+         * parameters.</p> <p>To create a scheduled action or update an existing one, see
+         * <a>PutScheduledAction</a>. If you are no longer using a scheduled action, you
+         * can delete it using <a>DeleteScheduledAction</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeScheduledActionsOutcomeCallable DescribeScheduledActionsCallable(const Model::DescribeScheduledActionsRequest& request) const;
+
+        /**
+         * <p>Describes the scheduled actions for the specified service namespace.</p>
+         * <p>You can filter the results using the <code>ResourceId</code>,
+         * <code>ScalableDimension</code>, and <code>ScheduledActionNames</code>
+         * parameters.</p> <p>To create a scheduled action or update an existing one, see
+         * <a>PutScheduledAction</a>. If you are no longer using a scheduled action, you
+         * can delete it using <a>DeleteScheduledAction</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeScheduledActionsAsync(const Model::DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a policy for an Application Auto Scaling scalable
@@ -422,6 +505,64 @@ namespace Model
         virtual void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or updates a scheduled action for an Application Auto Scaling
+         * scalable target.</p> <p>Each scalable target is identified by a service
+         * namespace, resource ID, and scalable dimension. A scheduled action applies to
+         * the scalable target identified by those three attributes. You cannot create a
+         * scheduled action without first registering a scalable target using
+         * <a>RegisterScalableTarget</a>.</p> <p>To update an action, specify its name and
+         * the parameters that you want to change. If you don't specify start and end
+         * times, the old values are deleted. Any other parameters that you don't specify
+         * are not changed by this update request.</p> <p>You can view the scheduled
+         * actions using <a>DescribeScheduledActions</a>. If you are no longer using a
+         * scheduled action, you can delete it using
+         * <a>DeleteScheduledAction</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScheduledAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutScheduledActionOutcome PutScheduledAction(const Model::PutScheduledActionRequest& request) const;
+
+        /**
+         * <p>Creates or updates a scheduled action for an Application Auto Scaling
+         * scalable target.</p> <p>Each scalable target is identified by a service
+         * namespace, resource ID, and scalable dimension. A scheduled action applies to
+         * the scalable target identified by those three attributes. You cannot create a
+         * scheduled action without first registering a scalable target using
+         * <a>RegisterScalableTarget</a>.</p> <p>To update an action, specify its name and
+         * the parameters that you want to change. If you don't specify start and end
+         * times, the old values are deleted. Any other parameters that you don't specify
+         * are not changed by this update request.</p> <p>You can view the scheduled
+         * actions using <a>DescribeScheduledActions</a>. If you are no longer using a
+         * scheduled action, you can delete it using
+         * <a>DeleteScheduledAction</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScheduledAction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutScheduledActionOutcomeCallable PutScheduledActionCallable(const Model::PutScheduledActionRequest& request) const;
+
+        /**
+         * <p>Creates or updates a scheduled action for an Application Auto Scaling
+         * scalable target.</p> <p>Each scalable target is identified by a service
+         * namespace, resource ID, and scalable dimension. A scheduled action applies to
+         * the scalable target identified by those three attributes. You cannot create a
+         * scheduled action without first registering a scalable target using
+         * <a>RegisterScalableTarget</a>.</p> <p>To update an action, specify its name and
+         * the parameters that you want to change. If you don't specify start and end
+         * times, the old values are deleted. Any other parameters that you don't specify
+         * are not changed by this update request.</p> <p>You can view the scheduled
+         * actions using <a>DescribeScheduledActions</a>. If you are no longer using a
+         * scheduled action, you can delete it using
+         * <a>DeleteScheduledAction</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScheduledAction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutScheduledActionAsync(const Model::PutScheduledActionRequest& request, const PutScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Registers or updates a scalable target. A scalable target is a resource that
          * Application Auto Scaling can scale out or scale in. After you have registered a
          * scalable target, you can use this operation to update the minimum and maximum
@@ -476,11 +617,14 @@ namespace Model
 
         /**Async helpers**/
         void DeleteScalingPolicyAsyncHelper(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteScheduledActionAsyncHelper(const Model::DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterScalableTargetAsyncHelper(const Model::DeregisterScalableTargetRequest& request, const DeregisterScalableTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScalableTargetsAsyncHelper(const Model::DescribeScalableTargetsRequest& request, const DescribeScalableTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScalingActivitiesAsyncHelper(const Model::DescribeScalingActivitiesRequest& request, const DescribeScalingActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScalingPoliciesAsyncHelper(const Model::DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeScheduledActionsAsyncHelper(const Model::DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutScalingPolicyAsyncHelper(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutScheduledActionAsyncHelper(const Model::PutScheduledActionRequest& request, const PutScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterScalableTargetAsyncHelper(const Model::RegisterScalableTargetRequest& request, const RegisterScalableTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

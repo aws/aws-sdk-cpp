@@ -188,51 +188,51 @@ namespace Model
 
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group. This parameter cannot be set for Redis (cluster mode enabled)
-     * replication groups.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group. This parameter cannot be set for Redis (cluster mode enabled) replication
+     * groups.</p>
      */
     inline const Aws::String& GetSnapshottingClusterId() const{ return m_snapshottingClusterId; }
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group. This parameter cannot be set for Redis (cluster mode enabled)
-     * replication groups.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group. This parameter cannot be set for Redis (cluster mode enabled) replication
+     * groups.</p>
      */
     inline void SetSnapshottingClusterId(const Aws::String& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = value; }
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group. This parameter cannot be set for Redis (cluster mode enabled)
-     * replication groups.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group. This parameter cannot be set for Redis (cluster mode enabled) replication
+     * groups.</p>
      */
     inline void SetSnapshottingClusterId(Aws::String&& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = std::move(value); }
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group. This parameter cannot be set for Redis (cluster mode enabled)
-     * replication groups.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group. This parameter cannot be set for Redis (cluster mode enabled) replication
+     * groups.</p>
      */
     inline void SetSnapshottingClusterId(const char* value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId.assign(value); }
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group. This parameter cannot be set for Redis (cluster mode enabled)
-     * replication groups.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group. This parameter cannot be set for Redis (cluster mode enabled) replication
+     * groups.</p>
      */
     inline ModifyReplicationGroupRequest& WithSnapshottingClusterId(const Aws::String& value) { SetSnapshottingClusterId(value); return *this;}
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group. This parameter cannot be set for Redis (cluster mode enabled)
-     * replication groups.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group. This parameter cannot be set for Redis (cluster mode enabled) replication
+     * groups.</p>
      */
     inline ModifyReplicationGroupRequest& WithSnapshottingClusterId(Aws::String&& value) { SetSnapshottingClusterId(std::move(value)); return *this;}
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group. This parameter cannot be set for Redis (cluster mode enabled)
-     * replication groups.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group. This parameter cannot be set for Redis (cluster mode enabled) replication
+     * groups.</p>
      */
     inline ModifyReplicationGroupRequest& WithSnapshottingClusterId(const char* value) { SetSnapshottingClusterId(value); return *this;}
 
@@ -275,9 +275,9 @@ namespace Model
      * <p>A list of cache security group names to authorize for the clusters in this
      * replication group. This change is asynchronously applied as soon as
      * possible.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private Cloud
-     * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be <code>Default</code>.</p>
+     * containing clusters running outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric characters.
+     * Must not be <code>Default</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheSecurityGroupNames() const{ return m_cacheSecurityGroupNames; }
 
@@ -285,9 +285,9 @@ namespace Model
      * <p>A list of cache security group names to authorize for the clusters in this
      * replication group. This change is asynchronously applied as soon as
      * possible.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private Cloud
-     * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be <code>Default</code>.</p>
+     * containing clusters running outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric characters.
+     * Must not be <code>Default</code>.</p>
      */
     inline void SetCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
 
@@ -295,9 +295,9 @@ namespace Model
      * <p>A list of cache security group names to authorize for the clusters in this
      * replication group. This change is asynchronously applied as soon as
      * possible.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private Cloud
-     * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be <code>Default</code>.</p>
+     * containing clusters running outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric characters.
+     * Must not be <code>Default</code>.</p>
      */
     inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = std::move(value); }
 
@@ -305,9 +305,9 @@ namespace Model
      * <p>A list of cache security group names to authorize for the clusters in this
      * replication group. This change is asynchronously applied as soon as
      * possible.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private Cloud
-     * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be <code>Default</code>.</p>
+     * containing clusters running outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric characters.
+     * Must not be <code>Default</code>.</p>
      */
     inline ModifyReplicationGroupRequest& WithCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { SetCacheSecurityGroupNames(value); return *this;}
 
@@ -315,9 +315,9 @@ namespace Model
      * <p>A list of cache security group names to authorize for the clusters in this
      * replication group. This change is asynchronously applied as soon as
      * possible.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private Cloud
-     * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be <code>Default</code>.</p>
+     * containing clusters running outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric characters.
+     * Must not be <code>Default</code>.</p>
      */
     inline ModifyReplicationGroupRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(std::move(value)); return *this;}
 
@@ -325,9 +325,9 @@ namespace Model
      * <p>A list of cache security group names to authorize for the clusters in this
      * replication group. This change is asynchronously applied as soon as
      * possible.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private Cloud
-     * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be <code>Default</code>.</p>
+     * containing clusters running outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric characters.
+     * Must not be <code>Default</code>.</p>
      */
     inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(const Aws::String& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
@@ -335,9 +335,9 @@ namespace Model
      * <p>A list of cache security group names to authorize for the clusters in this
      * replication group. This change is asynchronously applied as soon as
      * possible.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private Cloud
-     * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be <code>Default</code>.</p>
+     * containing clusters running outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric characters.
+     * Must not be <code>Default</code>.</p>
      */
     inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(std::move(value)); return *this; }
 
@@ -345,74 +345,66 @@ namespace Model
      * <p>A list of cache security group names to authorize for the clusters in this
      * replication group. This change is asynchronously applied as soon as
      * possible.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running outside of an Amazon Virtual Private Cloud
-     * (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be <code>Default</code>.</p>
+     * containing clusters running outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric characters.
+     * Must not be <code>Default</code>.</p>
      */
     inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(const char* value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache clusters in the
+     * <p>Specifies the VPC Security Groups associated with the clusters in the
      * replication group.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
-     * VPC).</p>
+     * containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache clusters in the
+     * <p>Specifies the VPC Security Groups associated with the clusters in the
      * replication group.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
-     * VPC).</p>
+     * containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache clusters in the
+     * <p>Specifies the VPC Security Groups associated with the clusters in the
      * replication group.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
-     * VPC).</p>
+     * containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache clusters in the
+     * <p>Specifies the VPC Security Groups associated with the clusters in the
      * replication group.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
-     * VPC).</p>
+     * containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
     inline ModifyReplicationGroupRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache clusters in the
+     * <p>Specifies the VPC Security Groups associated with the clusters in the
      * replication group.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
-     * VPC).</p>
+     * containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
     inline ModifyReplicationGroupRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache clusters in the
+     * <p>Specifies the VPC Security Groups associated with the clusters in the
      * replication group.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
-     * VPC).</p>
+     * containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
     inline ModifyReplicationGroupRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache clusters in the
+     * <p>Specifies the VPC Security Groups associated with the clusters in the
      * replication group.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
-     * VPC).</p>
+     * containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
     inline ModifyReplicationGroupRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache clusters in the
+     * <p>Specifies the VPC Security Groups associated with the clusters in the
      * replication group.</p> <p>This parameter can be used only with replication group
-     * containing cache clusters running in an Amazon Virtual Private Cloud (Amazon
-     * VPC).</p>
+     * containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
     inline ModifyReplicationGroupRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -694,9 +686,9 @@ namespace Model
 
 
     /**
-     * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
-     * engine version (see <a
+     * <p>The upgraded version of the cache engine to be run on the clusters in the
+     * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
+     * version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
@@ -706,9 +698,9 @@ namespace Model
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
-     * engine version (see <a
+     * <p>The upgraded version of the cache engine to be run on the clusters in the
+     * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
+     * version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
@@ -718,9 +710,9 @@ namespace Model
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
-     * engine version (see <a
+     * <p>The upgraded version of the cache engine to be run on the clusters in the
+     * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
+     * version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
@@ -730,9 +722,9 @@ namespace Model
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
-     * engine version (see <a
+     * <p>The upgraded version of the cache engine to be run on the clusters in the
+     * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
+     * version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
@@ -742,9 +734,9 @@ namespace Model
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
-     * engine version (see <a
+     * <p>The upgraded version of the cache engine to be run on the clusters in the
+     * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
+     * version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
@@ -754,9 +746,9 @@ namespace Model
     inline ModifyReplicationGroupRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
-     * engine version (see <a
+     * <p>The upgraded version of the cache engine to be run on the clusters in the
+     * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
+     * version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
@@ -766,9 +758,9 @@ namespace Model
     inline ModifyReplicationGroupRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
-     * engine version (see <a
+     * <p>The upgraded version of the cache engine to be run on the clusters in the
+     * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
+     * version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the

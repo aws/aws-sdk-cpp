@@ -92,43 +92,50 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the job attempt.</p>
+     * the job attempt. Each container attempt receives a task ARN when they reach the
+     * <code>STARTING</code> status.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the job attempt.</p>
+     * the job attempt. Each container attempt receives a task ARN when they reach the
+     * <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the job attempt.</p>
+     * the job attempt. Each container attempt receives a task ARN when they reach the
+     * <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the job attempt.</p>
+     * the job attempt. Each container attempt receives a task ARN when they reach the
+     * <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the job attempt.</p>
+     * the job attempt. Each container attempt receives a task ARN when they reach the
+     * <code>STARTING</code> status.</p>
      */
     inline AttemptContainerDetail& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the job attempt.</p>
+     * the job attempt. Each container attempt receives a task ARN when they reach the
+     * <code>STARTING</code> status.</p>
      */
     inline AttemptContainerDetail& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the job attempt.</p>
+     * the job attempt. Each container attempt receives a task ARN when they reach the
+     * <code>STARTING</code> status.</p>
      */
     inline AttemptContainerDetail& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 

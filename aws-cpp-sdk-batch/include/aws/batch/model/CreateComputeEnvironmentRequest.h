@@ -47,43 +47,43 @@ namespace Model
 
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, and underscores are allowed.</p>
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline const Aws::String& GetComputeEnvironmentName() const{ return m_computeEnvironmentName; }
 
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, and underscores are allowed.</p>
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline void SetComputeEnvironmentName(const Aws::String& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = value; }
 
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, and underscores are allowed.</p>
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = std::move(value); }
 
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, and underscores are allowed.</p>
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline void SetComputeEnvironmentName(const char* value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName.assign(value); }
 
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, and underscores are allowed.</p>
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(const Aws::String& value) { SetComputeEnvironmentName(value); return *this;}
 
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, and underscores are allowed.</p>
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
-     * lowercase), numbers, and underscores are allowed.</p>
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
 

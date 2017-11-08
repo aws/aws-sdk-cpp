@@ -131,11 +131,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -174,11 +172,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -217,11 +213,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -260,11 +254,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -303,11 +295,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -346,11 +336,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
@@ -389,11 +377,9 @@ namespace Model
      * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
-     * T1 or T2 instances.</p> </li> </ul> <p>Supported node types are available in all
-     * regions except as noted in the following table.</p> <p>For a complete listing of
-     * node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-     * Features and Details</a> and either <a
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+     * ElastiCache Product Features and Details</a> and either <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache

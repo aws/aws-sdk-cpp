@@ -23,11 +23,11 @@ using namespace Aws::Utils;
 DescribeVpcEndpointsRequest::DescribeVpcEndpointsRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_vpcEndpointIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_vpcEndpointIdsHasBeenSet(false)
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -38,6 +38,17 @@ Aws::String DescribeVpcEndpointsRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_vpcEndpointIdsHasBeenSet)
+  {
+    unsigned vpcEndpointIdsCount = 1;
+    for(auto& item : m_vpcEndpointIds)
+    {
+      ss << "VpcEndpointId." << vpcEndpointIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      vpcEndpointIdsCount++;
+    }
   }
 
   if(m_filtersHasBeenSet)
@@ -58,17 +69,6 @@ Aws::String DescribeVpcEndpointsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
-  }
-
-  if(m_vpcEndpointIdsHasBeenSet)
-  {
-    unsigned vpcEndpointIdsCount = 1;
-    for(auto& item : m_vpcEndpointIds)
-    {
-      ss << "VpcEndpointId." << vpcEndpointIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      vpcEndpointIdsCount++;
-    }
   }
 
   ss << "Version=2016-11-15";

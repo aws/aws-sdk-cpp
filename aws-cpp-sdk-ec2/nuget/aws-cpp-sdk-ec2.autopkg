@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-EC2;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.2.20161115.32;
+        version : 1.2.20161115.33;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Elastic Compute Cloud);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.2.32
+            AWSSDKCPP-Core/1.2.33
        }
     }
 

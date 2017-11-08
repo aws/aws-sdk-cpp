@@ -201,11 +201,11 @@ namespace Model
 
 
         /**
-         * <p>Cancels jobs in an AWS Batch job queue. Jobs that are in the
+         * <p>Cancels a job in an AWS Batch job queue. Jobs that are in the
          * <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are
          * cancelled. Jobs that have progressed to <code>STARTING</code> or
          * <code>RUNNING</code> are not cancelled (but the API operation still succeeds,
-         * even if no jobs are cancelled); these jobs must be terminated with the
+         * even if no job is cancelled); these jobs must be terminated with the
          * <a>TerminateJob</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">AWS API
          * Reference</a></p>
@@ -213,11 +213,11 @@ namespace Model
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
         /**
-         * <p>Cancels jobs in an AWS Batch job queue. Jobs that are in the
+         * <p>Cancels a job in an AWS Batch job queue. Jobs that are in the
          * <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are
          * cancelled. Jobs that have progressed to <code>STARTING</code> or
          * <code>RUNNING</code> are not cancelled (but the API operation still succeeds,
-         * even if no jobs are cancelled); these jobs must be terminated with the
+         * even if no job is cancelled); these jobs must be terminated with the
          * <a>TerminateJob</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">AWS API
          * Reference</a></p>
@@ -227,11 +227,11 @@ namespace Model
         virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
 
         /**
-         * <p>Cancels jobs in an AWS Batch job queue. Jobs that are in the
+         * <p>Cancels a job in an AWS Batch job queue. Jobs that are in the
          * <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are
          * cancelled. Jobs that have progressed to <code>STARTING</code> or
          * <code>RUNNING</code> are not cancelled (but the API operation still succeeds,
-         * even if no jobs are cancelled); these jobs must be terminated with the
+         * even if no job is cancelled); these jobs must be terminated with the
          * <a>TerminateJob</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">AWS API
          * Reference</a></p>
@@ -679,8 +679,8 @@ namespace Model
         virtual void SubmitJobAsync(const Model::SubmitJobRequest& request, const SubmitJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Terminates jobs in a job queue. Jobs that are in the <code>STARTING</code> or
-         * <code>RUNNING</code> state are terminated, which causes them to transition to
+         * <p>Terminates a job in a job queue. Jobs that are in the <code>STARTING</code>
+         * or <code>RUNNING</code> state are terminated, which causes them to transition to
          * <code>FAILED</code>. Jobs that have not progressed to the <code>STARTING</code>
          * state are cancelled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">AWS
@@ -689,8 +689,8 @@ namespace Model
         virtual Model::TerminateJobOutcome TerminateJob(const Model::TerminateJobRequest& request) const;
 
         /**
-         * <p>Terminates jobs in a job queue. Jobs that are in the <code>STARTING</code> or
-         * <code>RUNNING</code> state are terminated, which causes them to transition to
+         * <p>Terminates a job in a job queue. Jobs that are in the <code>STARTING</code>
+         * or <code>RUNNING</code> state are terminated, which causes them to transition to
          * <code>FAILED</code>. Jobs that have not progressed to the <code>STARTING</code>
          * state are cancelled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">AWS
@@ -701,8 +701,8 @@ namespace Model
         virtual Model::TerminateJobOutcomeCallable TerminateJobCallable(const Model::TerminateJobRequest& request) const;
 
         /**
-         * <p>Terminates jobs in a job queue. Jobs that are in the <code>STARTING</code> or
-         * <code>RUNNING</code> state are terminated, which causes them to transition to
+         * <p>Terminates a job in a job queue. Jobs that are in the <code>STARTING</code>
+         * or <code>RUNNING</code> state are terminated, which causes them to transition to
          * <code>FAILED</code>. Jobs that have not progressed to the <code>STARTING</code>
          * state are cancelled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">AWS

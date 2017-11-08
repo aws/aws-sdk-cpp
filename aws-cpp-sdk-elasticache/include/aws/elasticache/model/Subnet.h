@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the subnet associated with a cache cluster. This parameter refers
-   * to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with
+   * <p>Represents the subnet associated with a cluster. This parameter refers to
+   * subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with
    * ElastiCache.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Subnet">AWS
    * API Reference</a></p>

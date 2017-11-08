@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Availability Zone in which the cache cluster is
+   * <p>Describes an Availability Zone in which the cluster is
    * launched.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AvailabilityZone">AWS
    * API Reference</a></p>

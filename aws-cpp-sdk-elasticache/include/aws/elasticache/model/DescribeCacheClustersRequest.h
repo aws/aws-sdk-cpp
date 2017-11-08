@@ -52,50 +52,50 @@ namespace Model
 
     /**
      * <p>The user-supplied cluster identifier. If this parameter is specified, only
-     * information about that specific cache cluster is returned. This parameter isn't
-     * case sensitive.</p>
+     * information about that specific cluster is returned. This parameter isn't case
+     * sensitive.</p>
      */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
 
     /**
      * <p>The user-supplied cluster identifier. If this parameter is specified, only
-     * information about that specific cache cluster is returned. This parameter isn't
-     * case sensitive.</p>
+     * information about that specific cluster is returned. This parameter isn't case
+     * sensitive.</p>
      */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
      * <p>The user-supplied cluster identifier. If this parameter is specified, only
-     * information about that specific cache cluster is returned. This parameter isn't
-     * case sensitive.</p>
+     * information about that specific cluster is returned. This parameter isn't case
+     * sensitive.</p>
      */
     inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
      * <p>The user-supplied cluster identifier. If this parameter is specified, only
-     * information about that specific cache cluster is returned. This parameter isn't
-     * case sensitive.</p>
+     * information about that specific cluster is returned. This parameter isn't case
+     * sensitive.</p>
      */
     inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /**
      * <p>The user-supplied cluster identifier. If this parameter is specified, only
-     * information about that specific cache cluster is returned. This parameter isn't
-     * case sensitive.</p>
+     * information about that specific cluster is returned. This parameter isn't case
+     * sensitive.</p>
      */
     inline DescribeCacheClustersRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
 
     /**
      * <p>The user-supplied cluster identifier. If this parameter is specified, only
-     * information about that specific cache cluster is returned. This parameter isn't
-     * case sensitive.</p>
+     * information about that specific cluster is returned. This parameter isn't case
+     * sensitive.</p>
      */
     inline DescribeCacheClustersRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The user-supplied cluster identifier. If this parameter is specified, only
-     * information about that specific cache cluster is returned. This parameter isn't
-     * case sensitive.</p>
+     * information about that specific cluster is returned. This parameter isn't case
+     * sensitive.</p>
      */
     inline DescribeCacheClustersRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 

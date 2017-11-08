@@ -52,43 +52,43 @@ namespace Model
 
     /**
      * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
-     * cache security group must not be associated with any cache clusters.</p> </note>
+     * cache security group must not be associated with any clusters.</p> </note>
      */
     inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
 
     /**
      * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
-     * cache security group must not be associated with any cache clusters.</p> </note>
+     * cache security group must not be associated with any clusters.</p> </note>
      */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /**
      * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
-     * cache security group must not be associated with any cache clusters.</p> </note>
+     * cache security group must not be associated with any clusters.</p> </note>
      */
     inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
-     * cache security group must not be associated with any cache clusters.</p> </note>
+     * cache security group must not be associated with any clusters.</p> </note>
      */
     inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
-     * cache security group must not be associated with any cache clusters.</p> </note>
+     * cache security group must not be associated with any clusters.</p> </note>
      */
     inline DeleteCacheParameterGroupRequest& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
-     * cache security group must not be associated with any cache clusters.</p> </note>
+     * cache security group must not be associated with any clusters.</p> </note>
      */
     inline DeleteCacheParameterGroupRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
-     * cache security group must not be associated with any cache clusters.</p> </note>
+     * cache security group must not be associated with any clusters.</p> </note>
      */
     inline DeleteCacheParameterGroupRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
 

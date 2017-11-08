@@ -48,15 +48,15 @@ CreateVpcEndpointResponse& CreateVpcEndpointResponse::operator =(const Aws::Amaz
 
   if(!resultNode.IsNull())
   {
-    XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
-    if(!clientTokenNode.IsNull())
-    {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
-    }
     XmlNode vpcEndpointNode = resultNode.FirstChild("vpcEndpoint");
     if(!vpcEndpointNode.IsNull())
     {
       m_vpcEndpoint = vpcEndpointNode;
+    }
+    XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
+    if(!clientTokenNode.IsNull())
+    {
+      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
     }
   }
 

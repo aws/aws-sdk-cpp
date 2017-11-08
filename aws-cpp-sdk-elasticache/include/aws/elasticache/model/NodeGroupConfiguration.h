@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>node group (shard) configuration options. Each node group (shard)
+   * <p>Node group (shard) configuration options. Each node group (shard)
    * configuration has the following: <code>Slots</code>,
    * <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>,
    * <code>ReplicaCount</code>.</p><p><h3>See Also:</h3>   <a

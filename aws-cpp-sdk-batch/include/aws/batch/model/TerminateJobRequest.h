@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
+     * <p>The AWS Batch job ID of the job to terminate.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
+     * <p>The AWS Batch job ID of the job to terminate.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
+     * <p>The AWS Batch job ID of the job to terminate.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
+     * <p>The AWS Batch job ID of the job to terminate.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
+     * <p>The AWS Batch job ID of the job to terminate.</p>
      */
     inline TerminateJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
+     * <p>The AWS Batch job ID of the job to terminate.</p>
      */
     inline TerminateJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
+     * <p>The AWS Batch job ID of the job to terminate.</p>
      */
     inline TerminateJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 

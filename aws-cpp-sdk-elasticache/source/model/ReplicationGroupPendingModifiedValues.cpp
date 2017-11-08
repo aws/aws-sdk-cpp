@@ -33,14 +33,16 @@ namespace Model
 ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() : 
     m_primaryClusterIdHasBeenSet(false),
     m_automaticFailoverStatus(PendingAutomaticFailoverStatus::NOT_SET),
-    m_automaticFailoverStatusHasBeenSet(false)
+    m_automaticFailoverStatusHasBeenSet(false),
+    m_reshardingHasBeenSet(false)
 {
 }
 
 ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(const XmlNode& xmlNode) : 
     m_primaryClusterIdHasBeenSet(false),
     m_automaticFailoverStatus(PendingAutomaticFailoverStatus::NOT_SET),
-    m_automaticFailoverStatusHasBeenSet(false)
+    m_automaticFailoverStatusHasBeenSet(false),
+    m_reshardingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -63,6 +65,12 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
       m_automaticFailoverStatus = PendingAutomaticFailoverStatusMapper::GetPendingAutomaticFailoverStatusForName(StringUtils::Trim(automaticFailoverStatusNode.GetText().c_str()).c_str());
       m_automaticFailoverStatusHasBeenSet = true;
     }
+    XmlNode reshardingNode = resultNode.FirstChild("Resharding");
+    if(!reshardingNode.IsNull())
+    {
+      m_resharding = reshardingNode;
+      m_reshardingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -80,6 +88,13 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".AutomaticFailoverStatus=" << PendingAutomaticFailoverStatusMapper::GetNameForPendingAutomaticFailoverStatus(m_automaticFailoverStatus) << "&";
   }
 
+  if(m_reshardingHasBeenSet)
+  {
+      Aws::StringStream reshardingLocationAndMemberSs;
+      reshardingLocationAndMemberSs << location << index << locationValue << ".Resharding";
+      m_resharding.OutputToStream(oStream, reshardingLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -91,6 +106,12 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
   if(m_automaticFailoverStatusHasBeenSet)
   {
       oStream << location << ".AutomaticFailoverStatus=" << PendingAutomaticFailoverStatusMapper::GetNameForPendingAutomaticFailoverStatus(m_automaticFailoverStatus) << "&";
+  }
+  if(m_reshardingHasBeenSet)
+  {
+      Aws::String reshardingLocationAndMember(location);
+      reshardingLocationAndMember += ".Resharding";
+      m_resharding.OutputToStream(oStream, reshardingLocationAndMember.c_str());
   }
 }
 

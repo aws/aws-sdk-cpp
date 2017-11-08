@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/VpcEndpoint.h>
 #include <utility>
@@ -48,6 +48,42 @@ namespace Model
     DescribeVpcEndpointsResponse();
     DescribeVpcEndpointsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeVpcEndpointsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+
+    /**
+     * <p>Information about the endpoints.</p>
+     */
+    inline const Aws::Vector<VpcEndpoint>& GetVpcEndpoints() const{ return m_vpcEndpoints; }
+
+    /**
+     * <p>Information about the endpoints.</p>
+     */
+    inline void SetVpcEndpoints(const Aws::Vector<VpcEndpoint>& value) { m_vpcEndpoints = value; }
+
+    /**
+     * <p>Information about the endpoints.</p>
+     */
+    inline void SetVpcEndpoints(Aws::Vector<VpcEndpoint>&& value) { m_vpcEndpoints = std::move(value); }
+
+    /**
+     * <p>Information about the endpoints.</p>
+     */
+    inline DescribeVpcEndpointsResponse& WithVpcEndpoints(const Aws::Vector<VpcEndpoint>& value) { SetVpcEndpoints(value); return *this;}
+
+    /**
+     * <p>Information about the endpoints.</p>
+     */
+    inline DescribeVpcEndpointsResponse& WithVpcEndpoints(Aws::Vector<VpcEndpoint>&& value) { SetVpcEndpoints(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the endpoints.</p>
+     */
+    inline DescribeVpcEndpointsResponse& AddVpcEndpoints(const VpcEndpoint& value) { m_vpcEndpoints.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the endpoints.</p>
+     */
+    inline DescribeVpcEndpointsResponse& AddVpcEndpoints(VpcEndpoint&& value) { m_vpcEndpoints.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -93,42 +129,6 @@ namespace Model
     inline DescribeVpcEndpointsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
-    /**
-     * <p>Information about the endpoints.</p>
-     */
-    inline const Aws::Vector<VpcEndpoint>& GetVpcEndpoints() const{ return m_vpcEndpoints; }
-
-    /**
-     * <p>Information about the endpoints.</p>
-     */
-    inline void SetVpcEndpoints(const Aws::Vector<VpcEndpoint>& value) { m_vpcEndpoints = value; }
-
-    /**
-     * <p>Information about the endpoints.</p>
-     */
-    inline void SetVpcEndpoints(Aws::Vector<VpcEndpoint>&& value) { m_vpcEndpoints = std::move(value); }
-
-    /**
-     * <p>Information about the endpoints.</p>
-     */
-    inline DescribeVpcEndpointsResponse& WithVpcEndpoints(const Aws::Vector<VpcEndpoint>& value) { SetVpcEndpoints(value); return *this;}
-
-    /**
-     * <p>Information about the endpoints.</p>
-     */
-    inline DescribeVpcEndpointsResponse& WithVpcEndpoints(Aws::Vector<VpcEndpoint>&& value) { SetVpcEndpoints(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the endpoints.</p>
-     */
-    inline DescribeVpcEndpointsResponse& AddVpcEndpoints(const VpcEndpoint& value) { m_vpcEndpoints.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the endpoints.</p>
-     */
-    inline DescribeVpcEndpointsResponse& AddVpcEndpoints(VpcEndpoint&& value) { m_vpcEndpoints.push_back(std::move(value)); return *this; }
-
-
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -146,9 +146,9 @@ namespace Model
 
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<VpcEndpoint> m_vpcEndpoints;
+
+    Aws::String m_nextToken;
 
     ResponseMetadata m_responseMetadata;
   };

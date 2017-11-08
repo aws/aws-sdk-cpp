@@ -60,6 +60,7 @@
 #include <aws/elasticache/model/ModifyCacheParameterGroupRequest.h>
 #include <aws/elasticache/model/ModifyCacheSubnetGroupRequest.h>
 #include <aws/elasticache/model/ModifyReplicationGroupRequest.h>
+#include <aws/elasticache/model/ModifyReplicationGroupShardConfigurationRequest.h>
 #include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingRequest.h>
 #include <aws/elasticache/model/RebootCacheClusterRequest.h>
 #include <aws/elasticache/model/RemoveTagsFromResourceRequest.h>
@@ -1295,6 +1296,41 @@ void ElastiCacheClient::ModifyReplicationGroupAsync(const ModifyReplicationGroup
 void ElastiCacheClient::ModifyReplicationGroupAsyncHelper(const ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyReplicationGroup(request), context);
+}
+
+ModifyReplicationGroupShardConfigurationOutcome ElastiCacheClient::ModifyReplicationGroupShardConfiguration(const ModifyReplicationGroupShardConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyReplicationGroupShardConfigurationOutcome(ModifyReplicationGroupShardConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyReplicationGroupShardConfigurationOutcome(outcome.GetError());
+  }
+}
+
+ModifyReplicationGroupShardConfigurationOutcomeCallable ElastiCacheClient::ModifyReplicationGroupShardConfigurationCallable(const ModifyReplicationGroupShardConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyReplicationGroupShardConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyReplicationGroupShardConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::ModifyReplicationGroupShardConfigurationAsync(const ModifyReplicationGroupShardConfigurationRequest& request, const ModifyReplicationGroupShardConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyReplicationGroupShardConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::ModifyReplicationGroupShardConfigurationAsyncHelper(const ModifyReplicationGroupShardConfigurationRequest& request, const ModifyReplicationGroupShardConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyReplicationGroupShardConfiguration(request), context);
 }
 
 PurchaseReservedCacheNodesOfferingOutcome ElastiCacheClient::PurchaseReservedCacheNodesOffering(const PurchaseReservedCacheNodesOfferingRequest& request) const

@@ -94,44 +94,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier of an existing cache cluster. The snapshot is created from
-     * this cache cluster.</p>
+     * <p>The identifier of an existing cluster. The snapshot is created from this
+     * cluster.</p>
      */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
 
     /**
-     * <p>The identifier of an existing cache cluster. The snapshot is created from
-     * this cache cluster.</p>
+     * <p>The identifier of an existing cluster. The snapshot is created from this
+     * cluster.</p>
      */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
-     * <p>The identifier of an existing cache cluster. The snapshot is created from
-     * this cache cluster.</p>
+     * <p>The identifier of an existing cluster. The snapshot is created from this
+     * cluster.</p>
      */
     inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
-     * <p>The identifier of an existing cache cluster. The snapshot is created from
-     * this cache cluster.</p>
+     * <p>The identifier of an existing cluster. The snapshot is created from this
+     * cluster.</p>
      */
     inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /**
-     * <p>The identifier of an existing cache cluster. The snapshot is created from
-     * this cache cluster.</p>
+     * <p>The identifier of an existing cluster. The snapshot is created from this
+     * cluster.</p>
      */
     inline CreateSnapshotRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
 
     /**
-     * <p>The identifier of an existing cache cluster. The snapshot is created from
-     * this cache cluster.</p>
+     * <p>The identifier of an existing cluster. The snapshot is created from this
+     * cluster.</p>
      */
     inline CreateSnapshotRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of an existing cache cluster. The snapshot is created from
-     * this cache cluster.</p>
+     * <p>The identifier of an existing cluster. The snapshot is created from this
+     * cluster.</p>
      */
     inline CreateSnapshotRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 

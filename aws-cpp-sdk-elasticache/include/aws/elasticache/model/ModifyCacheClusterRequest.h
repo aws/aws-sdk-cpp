@@ -53,44 +53,44 @@ namespace Model
   public:
 
     /**
-     * <p>The cache cluster identifier. This value is stored as a lowercase string.</p>
+     * <p>The cluster identifier. This value is stored as a lowercase string.</p>
      */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
 
     /**
-     * <p>The cache cluster identifier. This value is stored as a lowercase string.</p>
+     * <p>The cluster identifier. This value is stored as a lowercase string.</p>
      */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
-     * <p>The cache cluster identifier. This value is stored as a lowercase string.</p>
+     * <p>The cluster identifier. This value is stored as a lowercase string.</p>
      */
     inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
-     * <p>The cache cluster identifier. This value is stored as a lowercase string.</p>
+     * <p>The cluster identifier. This value is stored as a lowercase string.</p>
      */
     inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /**
-     * <p>The cache cluster identifier. This value is stored as a lowercase string.</p>
+     * <p>The cluster identifier. This value is stored as a lowercase string.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
 
     /**
-     * <p>The cache cluster identifier. This value is stored as a lowercase string.</p>
+     * <p>The cluster identifier. This value is stored as a lowercase string.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
-     * <p>The cache cluster identifier. This value is stored as a lowercase string.</p>
+     * <p>The cluster identifier. This value is stored as a lowercase string.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 
 
     /**
-     * <p>The number of cache nodes that the cache cluster should have. If the value
-     * for <code>NumCacheNodes</code> is greater than the sum of the number of current
+     * <p>The number of cache nodes that the cluster should have. If the value for
+     * <code>NumCacheNodes</code> is greater than the sum of the number of current
      * cache nodes and the number of cache nodes pending creation (which may be zero),
      * more nodes are added. If the value is less than the number of existing cache
      * nodes, nodes are removed. If the value is equal to the number of current cache
@@ -115,13 +115,13 @@ namespace Model
      * retry the new request. To cancel pending operations to modify the number of
      * cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and
      * set <code>NumCacheNodes</code> equal to the number of cache nodes currently in
-     * the cache cluster.</p> </note>
+     * the cluster.</p> </note>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
-     * <p>The number of cache nodes that the cache cluster should have. If the value
-     * for <code>NumCacheNodes</code> is greater than the sum of the number of current
+     * <p>The number of cache nodes that the cluster should have. If the value for
+     * <code>NumCacheNodes</code> is greater than the sum of the number of current
      * cache nodes and the number of cache nodes pending creation (which may be zero),
      * more nodes are added. If the value is less than the number of existing cache
      * nodes, nodes are removed. If the value is equal to the number of current cache
@@ -146,13 +146,13 @@ namespace Model
      * retry the new request. To cancel pending operations to modify the number of
      * cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and
      * set <code>NumCacheNodes</code> equal to the number of cache nodes currently in
-     * the cache cluster.</p> </note>
+     * the cluster.</p> </note>
      */
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
-     * <p>The number of cache nodes that the cache cluster should have. If the value
-     * for <code>NumCacheNodes</code> is greater than the sum of the number of current
+     * <p>The number of cache nodes that the cluster should have. If the value for
+     * <code>NumCacheNodes</code> is greater than the sum of the number of current
      * cache nodes and the number of cache nodes pending creation (which may be zero),
      * more nodes are added. If the value is less than the number of existing cache
      * nodes, nodes are removed. If the value is equal to the number of current cache
@@ -177,7 +177,7 @@ namespace Model
      * retry the new request. To cancel pending operations to modify the number of
      * cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and
      * set <code>NumCacheNodes</code> equal to the number of cache nodes currently in
-     * the cache cluster.</p> </note>
+     * the cluster.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
@@ -288,85 +288,80 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the new nodes in this Memcached cache cluster are all
-     * created in a single Availability Zone or created across multiple Availability
-     * Zones.</p> <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
-     * <p>This option is only supported for Memcached cache clusters.</p> <note> <p>You
-     * cannot specify <code>single-az</code> if the Memcached cache cluster already has
-     * cache nodes in different Availability Zones. If <code>cross-az</code> is
-     * specified, existing Memcached nodes remain in their current Availability
-     * Zone.</p> <p>Only newly created nodes are located in different Availability
-     * Zones. For instructions on how to move existing Memcached nodes to different
-     * Availability Zones, see the <b>Availability Zone Considerations</b> section of
-     * <a
+     * <p>Specifies whether the new nodes in this Memcached cluster are all created in
+     * a single Availability Zone or created across multiple Availability Zones.</p>
+     * <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p> <p>This
+     * option is only supported for Memcached clusters.</p> <note> <p>You cannot
+     * specify <code>single-az</code> if the Memcached cluster already has cache nodes
+     * in different Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
+     * created nodes are located in different Availability Zones. For instructions on
+     * how to move existing Memcached nodes to different Availability Zones, see the
+     * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> </note>
      */
     inline const AZMode& GetAZMode() const{ return m_aZMode; }
 
     /**
-     * <p>Specifies whether the new nodes in this Memcached cache cluster are all
-     * created in a single Availability Zone or created across multiple Availability
-     * Zones.</p> <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
-     * <p>This option is only supported for Memcached cache clusters.</p> <note> <p>You
-     * cannot specify <code>single-az</code> if the Memcached cache cluster already has
-     * cache nodes in different Availability Zones. If <code>cross-az</code> is
-     * specified, existing Memcached nodes remain in their current Availability
-     * Zone.</p> <p>Only newly created nodes are located in different Availability
-     * Zones. For instructions on how to move existing Memcached nodes to different
-     * Availability Zones, see the <b>Availability Zone Considerations</b> section of
-     * <a
+     * <p>Specifies whether the new nodes in this Memcached cluster are all created in
+     * a single Availability Zone or created across multiple Availability Zones.</p>
+     * <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p> <p>This
+     * option is only supported for Memcached clusters.</p> <note> <p>You cannot
+     * specify <code>single-az</code> if the Memcached cluster already has cache nodes
+     * in different Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
+     * created nodes are located in different Availability Zones. For instructions on
+     * how to move existing Memcached nodes to different Availability Zones, see the
+     * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> </note>
      */
     inline void SetAZMode(const AZMode& value) { m_aZModeHasBeenSet = true; m_aZMode = value; }
 
     /**
-     * <p>Specifies whether the new nodes in this Memcached cache cluster are all
-     * created in a single Availability Zone or created across multiple Availability
-     * Zones.</p> <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
-     * <p>This option is only supported for Memcached cache clusters.</p> <note> <p>You
-     * cannot specify <code>single-az</code> if the Memcached cache cluster already has
-     * cache nodes in different Availability Zones. If <code>cross-az</code> is
-     * specified, existing Memcached nodes remain in their current Availability
-     * Zone.</p> <p>Only newly created nodes are located in different Availability
-     * Zones. For instructions on how to move existing Memcached nodes to different
-     * Availability Zones, see the <b>Availability Zone Considerations</b> section of
-     * <a
+     * <p>Specifies whether the new nodes in this Memcached cluster are all created in
+     * a single Availability Zone or created across multiple Availability Zones.</p>
+     * <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p> <p>This
+     * option is only supported for Memcached clusters.</p> <note> <p>You cannot
+     * specify <code>single-az</code> if the Memcached cluster already has cache nodes
+     * in different Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
+     * created nodes are located in different Availability Zones. For instructions on
+     * how to move existing Memcached nodes to different Availability Zones, see the
+     * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> </note>
      */
     inline void SetAZMode(AZMode&& value) { m_aZModeHasBeenSet = true; m_aZMode = std::move(value); }
 
     /**
-     * <p>Specifies whether the new nodes in this Memcached cache cluster are all
-     * created in a single Availability Zone or created across multiple Availability
-     * Zones.</p> <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
-     * <p>This option is only supported for Memcached cache clusters.</p> <note> <p>You
-     * cannot specify <code>single-az</code> if the Memcached cache cluster already has
-     * cache nodes in different Availability Zones. If <code>cross-az</code> is
-     * specified, existing Memcached nodes remain in their current Availability
-     * Zone.</p> <p>Only newly created nodes are located in different Availability
-     * Zones. For instructions on how to move existing Memcached nodes to different
-     * Availability Zones, see the <b>Availability Zone Considerations</b> section of
-     * <a
+     * <p>Specifies whether the new nodes in this Memcached cluster are all created in
+     * a single Availability Zone or created across multiple Availability Zones.</p>
+     * <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p> <p>This
+     * option is only supported for Memcached clusters.</p> <note> <p>You cannot
+     * specify <code>single-az</code> if the Memcached cluster already has cache nodes
+     * in different Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
+     * created nodes are located in different Availability Zones. For instructions on
+     * how to move existing Memcached nodes to different Availability Zones, see the
+     * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithAZMode(const AZMode& value) { SetAZMode(value); return *this;}
 
     /**
-     * <p>Specifies whether the new nodes in this Memcached cache cluster are all
-     * created in a single Availability Zone or created across multiple Availability
-     * Zones.</p> <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
-     * <p>This option is only supported for Memcached cache clusters.</p> <note> <p>You
-     * cannot specify <code>single-az</code> if the Memcached cache cluster already has
-     * cache nodes in different Availability Zones. If <code>cross-az</code> is
-     * specified, existing Memcached nodes remain in their current Availability
-     * Zone.</p> <p>Only newly created nodes are located in different Availability
-     * Zones. For instructions on how to move existing Memcached nodes to different
-     * Availability Zones, see the <b>Availability Zone Considerations</b> section of
-     * <a
+     * <p>Specifies whether the new nodes in this Memcached cluster are all created in
+     * a single Availability Zone or created across multiple Availability Zones.</p>
+     * <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p> <p>This
+     * option is only supported for Memcached clusters.</p> <note> <p>You cannot
+     * specify <code>single-az</code> if the Memcached cluster already has cache nodes
+     * in different Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
+     * created nodes are located in different Availability Zones. For instructions on
+     * how to move existing Memcached nodes to different Availability Zones, see the
+     * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> </note>
      */
@@ -719,7 +714,7 @@ namespace Model
 
 
     /**
-     * <p>A list of cache security group names to authorize on this cache cluster. This
+     * <p>A list of cache security group names to authorize on this cluster. This
      * change is asynchronously applied as soon as possible.</p> <p>You can use this
      * parameter only with clusters that are created outside of an Amazon Virtual
      * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
@@ -728,7 +723,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetCacheSecurityGroupNames() const{ return m_cacheSecurityGroupNames; }
 
     /**
-     * <p>A list of cache security group names to authorize on this cache cluster. This
+     * <p>A list of cache security group names to authorize on this cluster. This
      * change is asynchronously applied as soon as possible.</p> <p>You can use this
      * parameter only with clusters that are created outside of an Amazon Virtual
      * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
@@ -737,7 +732,7 @@ namespace Model
     inline void SetCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
 
     /**
-     * <p>A list of cache security group names to authorize on this cache cluster. This
+     * <p>A list of cache security group names to authorize on this cluster. This
      * change is asynchronously applied as soon as possible.</p> <p>You can use this
      * parameter only with clusters that are created outside of an Amazon Virtual
      * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
@@ -746,7 +741,7 @@ namespace Model
     inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = std::move(value); }
 
     /**
-     * <p>A list of cache security group names to authorize on this cache cluster. This
+     * <p>A list of cache security group names to authorize on this cluster. This
      * change is asynchronously applied as soon as possible.</p> <p>You can use this
      * parameter only with clusters that are created outside of an Amazon Virtual
      * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
@@ -755,7 +750,7 @@ namespace Model
     inline ModifyCacheClusterRequest& WithCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { SetCacheSecurityGroupNames(value); return *this;}
 
     /**
-     * <p>A list of cache security group names to authorize on this cache cluster. This
+     * <p>A list of cache security group names to authorize on this cluster. This
      * change is asynchronously applied as soon as possible.</p> <p>You can use this
      * parameter only with clusters that are created outside of an Amazon Virtual
      * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
@@ -764,7 +759,7 @@ namespace Model
     inline ModifyCacheClusterRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(std::move(value)); return *this;}
 
     /**
-     * <p>A list of cache security group names to authorize on this cache cluster. This
+     * <p>A list of cache security group names to authorize on this cluster. This
      * change is asynchronously applied as soon as possible.</p> <p>You can use this
      * parameter only with clusters that are created outside of an Amazon Virtual
      * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
@@ -773,7 +768,7 @@ namespace Model
     inline ModifyCacheClusterRequest& AddCacheSecurityGroupNames(const Aws::String& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of cache security group names to authorize on this cache cluster. This
+     * <p>A list of cache security group names to authorize on this cluster. This
      * change is asynchronously applied as soon as possible.</p> <p>You can use this
      * parameter only with clusters that are created outside of an Amazon Virtual
      * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
@@ -782,7 +777,7 @@ namespace Model
     inline ModifyCacheClusterRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of cache security group names to authorize on this cache cluster. This
+     * <p>A list of cache security group names to authorize on this cluster. This
      * change is asynchronously applied as soon as possible.</p> <p>You can use this
      * parameter only with clusters that are created outside of an Amazon Virtual
      * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
@@ -792,58 +787,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
-     * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (Amazon VPC).</p>
+     * <p>Specifies the VPC Security Groups associated with the cluster.</p> <p>This
+     * parameter can be used only with clusters that are created in an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
-     * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (Amazon VPC).</p>
+     * <p>Specifies the VPC Security Groups associated with the cluster.</p> <p>This
+     * parameter can be used only with clusters that are created in an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
-     * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (Amazon VPC).</p>
+     * <p>Specifies the VPC Security Groups associated with the cluster.</p> <p>This
+     * parameter can be used only with clusters that are created in an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
-     * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (Amazon VPC).</p>
+     * <p>Specifies the VPC Security Groups associated with the cluster.</p> <p>This
+     * parameter can be used only with clusters that are created in an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p>
      */
     inline ModifyCacheClusterRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
-     * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (Amazon VPC).</p>
+     * <p>Specifies the VPC Security Groups associated with the cluster.</p> <p>This
+     * parameter can be used only with clusters that are created in an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p>
      */
     inline ModifyCacheClusterRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
-     * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (Amazon VPC).</p>
+     * <p>Specifies the VPC Security Groups associated with the cluster.</p> <p>This
+     * parameter can be used only with clusters that are created in an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p>
      */
     inline ModifyCacheClusterRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
-     * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (Amazon VPC).</p>
+     * <p>Specifies the VPC Security Groups associated with the cluster.</p> <p>This
+     * parameter can be used only with clusters that are created in an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p>
      */
     inline ModifyCacheClusterRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
-     * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (Amazon VPC).</p>
+     * <p>Specifies the VPC Security Groups associated with the cluster.</p> <p>This
+     * parameter can be used only with clusters that are created in an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p>
      */
     inline ModifyCacheClusterRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -935,105 +930,105 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
-     * cluster owner.</p> </note>
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cluster
+     * owner.</p> </note>
      */
     inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
-     * cluster owner.</p> </note>
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cluster
+     * owner.</p> </note>
      */
     inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
-     * cluster owner.</p> </note>
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cluster
+     * owner.</p> </note>
      */
     inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
-     * cluster owner.</p> </note>
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cluster
+     * owner.</p> </note>
      */
     inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
-     * cluster owner.</p> </note>
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cluster
+     * owner.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
-     * cluster owner.</p> </note>
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cluster
+     * owner.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
-     * cluster owner.</p> </note>
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cluster
+     * owner.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
 
 
     /**
-     * <p>The name of the cache parameter group to apply to this cache cluster. This
-     * change is asynchronously applied as soon as possible for parameters when the
+     * <p>The name of the cache parameter group to apply to this cluster. This change
+     * is asynchronously applied as soon as possible for parameters when the
      * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
      * this request.</p>
      */
     inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
 
     /**
-     * <p>The name of the cache parameter group to apply to this cache cluster. This
-     * change is asynchronously applied as soon as possible for parameters when the
+     * <p>The name of the cache parameter group to apply to this cluster. This change
+     * is asynchronously applied as soon as possible for parameters when the
      * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
      * this request.</p>
      */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /**
-     * <p>The name of the cache parameter group to apply to this cache cluster. This
-     * change is asynchronously applied as soon as possible for parameters when the
+     * <p>The name of the cache parameter group to apply to this cluster. This change
+     * is asynchronously applied as soon as possible for parameters when the
      * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
      * this request.</p>
      */
     inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
 
     /**
-     * <p>The name of the cache parameter group to apply to this cache cluster. This
-     * change is asynchronously applied as soon as possible for parameters when the
+     * <p>The name of the cache parameter group to apply to this cluster. This change
+     * is asynchronously applied as soon as possible for parameters when the
      * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
      * this request.</p>
      */
     inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
 
     /**
-     * <p>The name of the cache parameter group to apply to this cache cluster. This
-     * change is asynchronously applied as soon as possible for parameters when the
+     * <p>The name of the cache parameter group to apply to this cluster. This change
+     * is asynchronously applied as soon as possible for parameters when the
      * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
      * this request.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
 
     /**
-     * <p>The name of the cache parameter group to apply to this cache cluster. This
-     * change is asynchronously applied as soon as possible for parameters when the
+     * <p>The name of the cache parameter group to apply to this cluster. This change
+     * is asynchronously applied as soon as possible for parameters when the
      * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
      * this request.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the cache parameter group to apply to this cache cluster. This
-     * change is asynchronously applied as soon as possible for parameters when the
+     * <p>The name of the cache parameter group to apply to this cluster. This change
+     * is asynchronously applied as soon as possible for parameters when the
      * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
      * this request.</p>
      */
@@ -1094,13 +1089,12 @@ namespace Model
      * <p>If <code>true</code>, this parameter causes the modifications in this request
      * and any pending modifications to be applied, asynchronously and as soon as
      * possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the cache cluster.</p> <p>If <code>false</code>, changes to the cache cluster
-     * are applied on the next maintenance reboot, or the next failure reboot,
-     * whichever occurs first.</p> <important> <p>If you perform a
-     * <code>ModifyCacheCluster</code> before a pending modification is applied, the
-     * pending modification is replaced by the newer modification.</p> </important>
-     * <p>Valid values: <code>true</code> | <code>false</code> </p> <p>Default:
-     * <code>false</code> </p>
+     * the cluster.</p> <p>If <code>false</code>, changes to the cluster are applied on
+     * the next maintenance reboot, or the next failure reboot, whichever occurs
+     * first.</p> <important> <p>If you perform a <code>ModifyCacheCluster</code>
+     * before a pending modification is applied, the pending modification is replaced
+     * by the newer modification.</p> </important> <p>Valid values: <code>true</code> |
+     * <code>false</code> </p> <p>Default: <code>false</code> </p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
@@ -1108,13 +1102,12 @@ namespace Model
      * <p>If <code>true</code>, this parameter causes the modifications in this request
      * and any pending modifications to be applied, asynchronously and as soon as
      * possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the cache cluster.</p> <p>If <code>false</code>, changes to the cache cluster
-     * are applied on the next maintenance reboot, or the next failure reboot,
-     * whichever occurs first.</p> <important> <p>If you perform a
-     * <code>ModifyCacheCluster</code> before a pending modification is applied, the
-     * pending modification is replaced by the newer modification.</p> </important>
-     * <p>Valid values: <code>true</code> | <code>false</code> </p> <p>Default:
-     * <code>false</code> </p>
+     * the cluster.</p> <p>If <code>false</code>, changes to the cluster are applied on
+     * the next maintenance reboot, or the next failure reboot, whichever occurs
+     * first.</p> <important> <p>If you perform a <code>ModifyCacheCluster</code>
+     * before a pending modification is applied, the pending modification is replaced
+     * by the newer modification.</p> </important> <p>Valid values: <code>true</code> |
+     * <code>false</code> </p> <p>Default: <code>false</code> </p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
@@ -1122,13 +1115,12 @@ namespace Model
      * <p>If <code>true</code>, this parameter causes the modifications in this request
      * and any pending modifications to be applied, asynchronously and as soon as
      * possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the cache cluster.</p> <p>If <code>false</code>, changes to the cache cluster
-     * are applied on the next maintenance reboot, or the next failure reboot,
-     * whichever occurs first.</p> <important> <p>If you perform a
-     * <code>ModifyCacheCluster</code> before a pending modification is applied, the
-     * pending modification is replaced by the newer modification.</p> </important>
-     * <p>Valid values: <code>true</code> | <code>false</code> </p> <p>Default:
-     * <code>false</code> </p>
+     * the cluster.</p> <p>If <code>false</code>, changes to the cluster are applied on
+     * the next maintenance reboot, or the next failure reboot, whichever occurs
+     * first.</p> <important> <p>If you perform a <code>ModifyCacheCluster</code>
+     * before a pending modification is applied, the pending modification is replaced
+     * by the newer modification.</p> </important> <p>Valid values: <code>true</code> |
+     * <code>false</code> </p> <p>Default: <code>false</code> </p>
      */
     inline ModifyCacheClusterRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
@@ -1139,7 +1131,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
-     * existing cache cluster and create it anew with the earlier engine version. </p>
+     * existing cluster and create it anew with the earlier engine version. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1149,7 +1141,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
-     * existing cache cluster and create it anew with the earlier engine version. </p>
+     * existing cluster and create it anew with the earlier engine version. </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1159,7 +1151,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
-     * existing cache cluster and create it anew with the earlier engine version. </p>
+     * existing cluster and create it anew with the earlier engine version. </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -1169,7 +1161,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
-     * existing cache cluster and create it anew with the earlier engine version. </p>
+     * existing cluster and create it anew with the earlier engine version. </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -1179,7 +1171,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
-     * existing cache cluster and create it anew with the earlier engine version. </p>
+     * existing cluster and create it anew with the earlier engine version. </p>
      */
     inline ModifyCacheClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -1189,7 +1181,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
-     * existing cache cluster and create it anew with the earlier engine version. </p>
+     * existing cluster and create it anew with the earlier engine version. </p>
      */
     inline ModifyCacheClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -1199,7 +1191,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
-     * existing cache cluster and create it anew with the earlier engine version. </p>
+     * existing cluster and create it anew with the earlier engine version. </p>
      */
     inline ModifyCacheClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1221,8 +1213,8 @@ namespace Model
 
 
     /**
-     * <p>The number of days for which ElastiCache retains automatic cache cluster
-     * snapshots before deleting them. For example, if you set
+     * <p>The number of days for which ElastiCache retains automatic cluster snapshots
+     * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
      * retained for 5 days before being deleted.</p> <note> <p>If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
@@ -1231,8 +1223,8 @@ namespace Model
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
     /**
-     * <p>The number of days for which ElastiCache retains automatic cache cluster
-     * snapshots before deleting them. For example, if you set
+     * <p>The number of days for which ElastiCache retains automatic cluster snapshots
+     * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
      * retained for 5 days before being deleted.</p> <note> <p>If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
@@ -1241,8 +1233,8 @@ namespace Model
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
-     * <p>The number of days for which ElastiCache retains automatic cache cluster
-     * snapshots before deleting them. For example, if you set
+     * <p>The number of days for which ElastiCache retains automatic cluster snapshots
+     * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
      * retained for 5 days before being deleted.</p> <note> <p>If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
@@ -1253,79 +1245,79 @@ namespace Model
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
-     * snapshot of your cache cluster. </p>
+     * snapshot of your cluster. </p>
      */
     inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
-     * snapshot of your cache cluster. </p>
+     * snapshot of your cluster. </p>
      */
     inline void SetSnapshotWindow(const Aws::String& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
-     * snapshot of your cache cluster. </p>
+     * snapshot of your cluster. </p>
      */
     inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
-     * snapshot of your cache cluster. </p>
+     * snapshot of your cluster. </p>
      */
     inline void SetSnapshotWindow(const char* value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow.assign(value); }
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
-     * snapshot of your cache cluster. </p>
+     * snapshot of your cluster. </p>
      */
     inline ModifyCacheClusterRequest& WithSnapshotWindow(const Aws::String& value) { SetSnapshotWindow(value); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
-     * snapshot of your cache cluster. </p>
+     * snapshot of your cluster. </p>
      */
     inline ModifyCacheClusterRequest& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
-     * snapshot of your cache cluster. </p>
+     * snapshot of your cluster. </p>
      */
     inline ModifyCacheClusterRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
+     * <p>A valid cache node type that you want to scale this cluster up to.</p>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
+     * <p>A valid cache node type that you want to scale this cluster up to.</p>
      */
     inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
+     * <p>A valid cache node type that you want to scale this cluster up to.</p>
      */
     inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
+     * <p>A valid cache node type that you want to scale this cluster up to.</p>
      */
     inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
+     * <p>A valid cache node type that you want to scale this cluster up to.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
+     * <p>A valid cache node type that you want to scale this cluster up to.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
+     * <p>A valid cache node type that you want to scale this cluster up to.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 

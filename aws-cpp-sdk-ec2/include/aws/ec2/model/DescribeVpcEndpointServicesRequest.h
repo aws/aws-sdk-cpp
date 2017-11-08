@@ -16,7 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +75,90 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeVpcEndpointServicesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+
+    /**
+     * <p>One or more service names.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetServiceNames() const{ return m_serviceNames; }
+
+    /**
+     * <p>One or more service names.</p>
+     */
+    inline void SetServiceNames(const Aws::Vector<Aws::String>& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = value; }
+
+    /**
+     * <p>One or more service names.</p>
+     */
+    inline void SetServiceNames(Aws::Vector<Aws::String>&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = std::move(value); }
+
+    /**
+     * <p>One or more service names.</p>
+     */
+    inline DescribeVpcEndpointServicesRequest& WithServiceNames(const Aws::Vector<Aws::String>& value) { SetServiceNames(value); return *this;}
+
+    /**
+     * <p>One or more service names.</p>
+     */
+    inline DescribeVpcEndpointServicesRequest& WithServiceNames(Aws::Vector<Aws::String>&& value) { SetServiceNames(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more service names.</p>
+     */
+    inline DescribeVpcEndpointServicesRequest& AddServiceNames(const Aws::String& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(value); return *this; }
+
+    /**
+     * <p>One or more service names.</p>
+     */
+    inline DescribeVpcEndpointServicesRequest& AddServiceNames(Aws::String&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more service names.</p>
+     */
+    inline DescribeVpcEndpointServicesRequest& AddServiceNames(const char* value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(value); return *this; }
+
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
+     * the service.</p> </li> </ul>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
+     * the service.</p> </li> </ul>
+     */
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
+     * the service.</p> </li> </ul>
+     */
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
+     * the service.</p> </li> </ul>
+     */
+    inline DescribeVpcEndpointServicesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
+     * the service.</p> </li> </ul>
+     */
+    inline DescribeVpcEndpointServicesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
+     * the service.</p> </li> </ul>
+     */
+    inline DescribeVpcEndpointServicesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
+     * the service.</p> </li> </ul>
+     */
+    inline DescribeVpcEndpointServicesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -146,6 +232,12 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::Vector<Aws::String> m_serviceNames;
+    bool m_serviceNamesHasBeenSet;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

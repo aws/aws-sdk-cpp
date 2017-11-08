@@ -92,37 +92,37 @@ namespace Model
 
 
     /**
-     * <p>The description of the replication group.</p>
+     * <p>The user supplied description of the replication group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the replication group.</p>
+     * <p>The user supplied description of the replication group.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the replication group.</p>
+     * <p>The user supplied description of the replication group.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the replication group.</p>
+     * <p>The user supplied description of the replication group.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the replication group.</p>
+     * <p>The user supplied description of the replication group.</p>
      */
     inline ReplicationGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the replication group.</p>
+     * <p>The user supplied description of the replication group.</p>
      */
     inline ReplicationGroup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the replication group.</p>
+     * <p>The user supplied description of the replication group.</p>
      */
     inline ReplicationGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -209,136 +209,142 @@ namespace Model
 
 
     /**
-     * <p>The names of all the cache clusters that are part of this replication
-     * group.</p>
+     * <p>The identifiers of all the nodes that are part of this replication group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMemberClusters() const{ return m_memberClusters; }
 
     /**
-     * <p>The names of all the cache clusters that are part of this replication
-     * group.</p>
+     * <p>The identifiers of all the nodes that are part of this replication group.</p>
      */
     inline void SetMemberClusters(const Aws::Vector<Aws::String>& value) { m_memberClustersHasBeenSet = true; m_memberClusters = value; }
 
     /**
-     * <p>The names of all the cache clusters that are part of this replication
-     * group.</p>
+     * <p>The identifiers of all the nodes that are part of this replication group.</p>
      */
     inline void SetMemberClusters(Aws::Vector<Aws::String>&& value) { m_memberClustersHasBeenSet = true; m_memberClusters = std::move(value); }
 
     /**
-     * <p>The names of all the cache clusters that are part of this replication
-     * group.</p>
+     * <p>The identifiers of all the nodes that are part of this replication group.</p>
      */
     inline ReplicationGroup& WithMemberClusters(const Aws::Vector<Aws::String>& value) { SetMemberClusters(value); return *this;}
 
     /**
-     * <p>The names of all the cache clusters that are part of this replication
-     * group.</p>
+     * <p>The identifiers of all the nodes that are part of this replication group.</p>
      */
     inline ReplicationGroup& WithMemberClusters(Aws::Vector<Aws::String>&& value) { SetMemberClusters(std::move(value)); return *this;}
 
     /**
-     * <p>The names of all the cache clusters that are part of this replication
-     * group.</p>
+     * <p>The identifiers of all the nodes that are part of this replication group.</p>
      */
     inline ReplicationGroup& AddMemberClusters(const Aws::String& value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(value); return *this; }
 
     /**
-     * <p>The names of all the cache clusters that are part of this replication
-     * group.</p>
+     * <p>The identifiers of all the nodes that are part of this replication group.</p>
      */
     inline ReplicationGroup& AddMemberClusters(Aws::String&& value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of all the cache clusters that are part of this replication
-     * group.</p>
+     * <p>The identifiers of all the nodes that are part of this replication group.</p>
      */
     inline ReplicationGroup& AddMemberClusters(const char* value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(value); return *this; }
 
 
     /**
-     * <p>A single element list with information about the nodes in the replication
-     * group.</p>
+     * <p>A list of node groups in this replication group. For Redis (cluster mode
+     * disabled) replication groups, this is a single-element list. For Redis (cluster
+     * mode enabled) replication groups, the list contains an entry for each node group
+     * (shard).</p>
      */
     inline const Aws::Vector<NodeGroup>& GetNodeGroups() const{ return m_nodeGroups; }
 
     /**
-     * <p>A single element list with information about the nodes in the replication
-     * group.</p>
+     * <p>A list of node groups in this replication group. For Redis (cluster mode
+     * disabled) replication groups, this is a single-element list. For Redis (cluster
+     * mode enabled) replication groups, the list contains an entry for each node group
+     * (shard).</p>
      */
     inline void SetNodeGroups(const Aws::Vector<NodeGroup>& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups = value; }
 
     /**
-     * <p>A single element list with information about the nodes in the replication
-     * group.</p>
+     * <p>A list of node groups in this replication group. For Redis (cluster mode
+     * disabled) replication groups, this is a single-element list. For Redis (cluster
+     * mode enabled) replication groups, the list contains an entry for each node group
+     * (shard).</p>
      */
     inline void SetNodeGroups(Aws::Vector<NodeGroup>&& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups = std::move(value); }
 
     /**
-     * <p>A single element list with information about the nodes in the replication
-     * group.</p>
+     * <p>A list of node groups in this replication group. For Redis (cluster mode
+     * disabled) replication groups, this is a single-element list. For Redis (cluster
+     * mode enabled) replication groups, the list contains an entry for each node group
+     * (shard).</p>
      */
     inline ReplicationGroup& WithNodeGroups(const Aws::Vector<NodeGroup>& value) { SetNodeGroups(value); return *this;}
 
     /**
-     * <p>A single element list with information about the nodes in the replication
-     * group.</p>
+     * <p>A list of node groups in this replication group. For Redis (cluster mode
+     * disabled) replication groups, this is a single-element list. For Redis (cluster
+     * mode enabled) replication groups, the list contains an entry for each node group
+     * (shard).</p>
      */
     inline ReplicationGroup& WithNodeGroups(Aws::Vector<NodeGroup>&& value) { SetNodeGroups(std::move(value)); return *this;}
 
     /**
-     * <p>A single element list with information about the nodes in the replication
-     * group.</p>
+     * <p>A list of node groups in this replication group. For Redis (cluster mode
+     * disabled) replication groups, this is a single-element list. For Redis (cluster
+     * mode enabled) replication groups, the list contains an entry for each node group
+     * (shard).</p>
      */
     inline ReplicationGroup& AddNodeGroups(const NodeGroup& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups.push_back(value); return *this; }
 
     /**
-     * <p>A single element list with information about the nodes in the replication
-     * group.</p>
+     * <p>A list of node groups in this replication group. For Redis (cluster mode
+     * disabled) replication groups, this is a single-element list. For Redis (cluster
+     * mode enabled) replication groups, the list contains an entry for each node group
+     * (shard).</p>
      */
     inline ReplicationGroup& AddNodeGroups(NodeGroup&& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group.</p>
      */
     inline const Aws::String& GetSnapshottingClusterId() const{ return m_snapshottingClusterId; }
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group.</p>
      */
     inline void SetSnapshottingClusterId(const Aws::String& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = value; }
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group.</p>
      */
     inline void SetSnapshottingClusterId(Aws::String&& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = std::move(value); }
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group.</p>
      */
     inline void SetSnapshottingClusterId(const char* value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId.assign(value); }
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group.</p>
      */
     inline ReplicationGroup& WithSnapshottingClusterId(const Aws::String& value) { SetSnapshottingClusterId(value); return *this;}
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group.</p>
      */
     inline ReplicationGroup& WithSnapshottingClusterId(Aws::String&& value) { SetSnapshottingClusterId(std::move(value)); return *this;}
 
     /**
-     * <p>The cache cluster ID that is used as the daily snapshot source for the
-     * replication group.</p>
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group.</p>
      */
     inline ReplicationGroup& WithSnapshottingClusterId(const char* value) { SetSnapshottingClusterId(value); return *this;}
 
@@ -395,39 +401,39 @@ namespace Model
 
 
     /**
-     * <p>The configuration endpoint for this replicaiton group. Use the configuration
+     * <p>The configuration endpoint for this replication group. Use the configuration
      * endpoint to connect to this replication group.</p>
      */
     inline const Endpoint& GetConfigurationEndpoint() const{ return m_configurationEndpoint; }
 
     /**
-     * <p>The configuration endpoint for this replicaiton group. Use the configuration
+     * <p>The configuration endpoint for this replication group. Use the configuration
      * endpoint to connect to this replication group.</p>
      */
     inline void SetConfigurationEndpoint(const Endpoint& value) { m_configurationEndpointHasBeenSet = true; m_configurationEndpoint = value; }
 
     /**
-     * <p>The configuration endpoint for this replicaiton group. Use the configuration
+     * <p>The configuration endpoint for this replication group. Use the configuration
      * endpoint to connect to this replication group.</p>
      */
     inline void SetConfigurationEndpoint(Endpoint&& value) { m_configurationEndpointHasBeenSet = true; m_configurationEndpoint = std::move(value); }
 
     /**
-     * <p>The configuration endpoint for this replicaiton group. Use the configuration
+     * <p>The configuration endpoint for this replication group. Use the configuration
      * endpoint to connect to this replication group.</p>
      */
     inline ReplicationGroup& WithConfigurationEndpoint(const Endpoint& value) { SetConfigurationEndpoint(value); return *this;}
 
     /**
-     * <p>The configuration endpoint for this replicaiton group. Use the configuration
+     * <p>The configuration endpoint for this replication group. Use the configuration
      * endpoint to connect to this replication group.</p>
      */
     inline ReplicationGroup& WithConfigurationEndpoint(Endpoint&& value) { SetConfigurationEndpoint(std::move(value)); return *this;}
 
 
     /**
-     * <p>The number of days for which ElastiCache retains automatic cache cluster
-     * snapshots before deleting them. For example, if you set
+     * <p>The number of days for which ElastiCache retains automatic cluster snapshots
+     * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
      * retained for 5 days before being deleted.</p> <important> <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
@@ -436,8 +442,8 @@ namespace Model
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
     /**
-     * <p>The number of days for which ElastiCache retains automatic cache cluster
-     * snapshots before deleting them. For example, if you set
+     * <p>The number of days for which ElastiCache retains automatic cluster snapshots
+     * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
      * retained for 5 days before being deleted.</p> <important> <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
@@ -446,8 +452,8 @@ namespace Model
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
-     * <p>The number of days for which ElastiCache retains automatic cache cluster
-     * snapshots before deleting them. For example, if you set
+     * <p>The number of days for which ElastiCache retains automatic cluster snapshots
+     * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
      * retained for 5 days before being deleted.</p> <important> <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned

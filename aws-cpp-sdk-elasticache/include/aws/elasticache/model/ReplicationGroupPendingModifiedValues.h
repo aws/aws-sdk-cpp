@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/PendingAutomaticFailoverStatus.h>
+#include <aws/elasticache/model/ReshardingStatus.h>
 #include <utility>
 
 namespace Aws
@@ -151,6 +152,32 @@ namespace Model
      */
     inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { SetAutomaticFailoverStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of an online resharding operation.</p>
+     */
+    inline const ReshardingStatus& GetResharding() const{ return m_resharding; }
+
+    /**
+     * <p>The status of an online resharding operation.</p>
+     */
+    inline void SetResharding(const ReshardingStatus& value) { m_reshardingHasBeenSet = true; m_resharding = value; }
+
+    /**
+     * <p>The status of an online resharding operation.</p>
+     */
+    inline void SetResharding(ReshardingStatus&& value) { m_reshardingHasBeenSet = true; m_resharding = std::move(value); }
+
+    /**
+     * <p>The status of an online resharding operation.</p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithResharding(const ReshardingStatus& value) { SetResharding(value); return *this;}
+
+    /**
+     * <p>The status of an online resharding operation.</p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithResharding(ReshardingStatus&& value) { SetResharding(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_primaryClusterId;
@@ -158,6 +185,9 @@ namespace Model
 
     PendingAutomaticFailoverStatus m_automaticFailoverStatus;
     bool m_automaticFailoverStatusHasBeenSet;
+
+    ReshardingStatus m_resharding;
+    bool m_reshardingHasBeenSet;
   };
 
 } // namespace Model

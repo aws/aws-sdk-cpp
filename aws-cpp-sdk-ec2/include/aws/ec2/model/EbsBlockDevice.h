@@ -51,20 +51,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
-     * may only be attached to instances that support Amazon EBS encryption.</p>
+     * <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be
+     * attached to instances that support Amazon EBS encryption. If you are creating a
+     * volume from a snapshot, you can't specify an encryption value. This is because
+     * only blank volumes can be encrypted on creation.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
-     * may only be attached to instances that support Amazon EBS encryption.</p>
+     * <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be
+     * attached to instances that support Amazon EBS encryption. If you are creating a
+     * volume from a snapshot, you can't specify an encryption value. This is because
+     * only blank volumes can be encrypted on creation.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
-     * may only be attached to instances that support Amazon EBS encryption.</p>
+     * <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be
+     * attached to instances that support Amazon EBS encryption. If you are creating a
+     * volume from a snapshot, you can't specify an encryption value. This is because
+     * only blank volumes can be encrypted on creation.</p>
      */
     inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

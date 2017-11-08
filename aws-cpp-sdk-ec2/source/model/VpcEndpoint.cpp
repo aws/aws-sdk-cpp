@@ -31,26 +31,42 @@ namespace Model
 {
 
 VpcEndpoint::VpcEndpoint() : 
-    m_creationTimestampHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false),
+    m_vpcEndpointIdHasBeenSet(false),
+    m_vpcEndpointType(VpcEndpointType::NOT_SET),
+    m_vpcEndpointTypeHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_policyDocumentHasBeenSet(false),
+    m_routeTableIdsHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false),
+    m_groupsHasBeenSet(false),
+    m_privateDnsEnabled(false),
+    m_privateDnsEnabledHasBeenSet(false),
+    m_networkInterfaceIdsHasBeenSet(false),
+    m_dnsEntriesHasBeenSet(false),
+    m_creationTimestampHasBeenSet(false)
 {
 }
 
 VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode) : 
-    m_creationTimestampHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false),
+    m_vpcEndpointIdHasBeenSet(false),
+    m_vpcEndpointType(VpcEndpointType::NOT_SET),
+    m_vpcEndpointTypeHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_policyDocumentHasBeenSet(false),
+    m_routeTableIdsHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false),
+    m_groupsHasBeenSet(false),
+    m_privateDnsEnabled(false),
+    m_privateDnsEnabledHasBeenSet(false),
+    m_networkInterfaceIdsHasBeenSet(false),
+    m_dnsEntriesHasBeenSet(false),
+    m_creationTimestampHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,11 +77,35 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode creationTimestampNode = resultNode.FirstChild("creationTimestamp");
-    if(!creationTimestampNode.IsNull())
+    XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
+    if(!vpcEndpointIdNode.IsNull())
     {
-      m_creationTimestamp = DateTime(StringUtils::Trim(creationTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
-      m_creationTimestampHasBeenSet = true;
+      m_vpcEndpointId = StringUtils::Trim(vpcEndpointIdNode.GetText().c_str());
+      m_vpcEndpointIdHasBeenSet = true;
+    }
+    XmlNode vpcEndpointTypeNode = resultNode.FirstChild("vpcEndpointType");
+    if(!vpcEndpointTypeNode.IsNull())
+    {
+      m_vpcEndpointType = VpcEndpointTypeMapper::GetVpcEndpointTypeForName(StringUtils::Trim(vpcEndpointTypeNode.GetText().c_str()).c_str());
+      m_vpcEndpointTypeHasBeenSet = true;
+    }
+    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcIdHasBeenSet = true;
+    }
+    XmlNode serviceNameNode = resultNode.FirstChild("serviceName");
+    if(!serviceNameNode.IsNull())
+    {
+      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+      m_serviceNameHasBeenSet = true;
+    }
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if(!stateNode.IsNull())
+    {
+      m_state = StateMapper::GetStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_stateHasBeenSet = true;
     }
     XmlNode policyDocumentNode = resultNode.FirstChild("policyDocument");
     if(!policyDocumentNode.IsNull())
@@ -85,29 +125,65 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
 
       m_routeTableIdsHasBeenSet = true;
     }
-    XmlNode serviceNameNode = resultNode.FirstChild("serviceName");
-    if(!serviceNameNode.IsNull())
+    XmlNode subnetIdsNode = resultNode.FirstChild("subnetIdSet");
+    if(!subnetIdsNode.IsNull())
     {
-      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
-      m_serviceNameHasBeenSet = true;
+      XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      while(!subnetIdsMember.IsNull())
+      {
+        m_subnetIds.push_back(StringUtils::Trim(subnetIdsMember.GetText().c_str()));
+        subnetIdsMember = subnetIdsMember.NextNode("item");
+      }
+
+      m_subnetIdsHasBeenSet = true;
     }
-    XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
+    XmlNode groupsNode = resultNode.FirstChild("groupSet");
+    if(!groupsNode.IsNull())
     {
-      m_state = StateMapper::GetStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
-      m_stateHasBeenSet = true;
+      XmlNode groupsMember = groupsNode.FirstChild("item");
+      while(!groupsMember.IsNull())
+      {
+        m_groups.push_back(groupsMember);
+        groupsMember = groupsMember.NextNode("item");
+      }
+
+      m_groupsHasBeenSet = true;
     }
-    XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
-    if(!vpcEndpointIdNode.IsNull())
+    XmlNode privateDnsEnabledNode = resultNode.FirstChild("privateDnsEnabled");
+    if(!privateDnsEnabledNode.IsNull())
     {
-      m_vpcEndpointId = StringUtils::Trim(vpcEndpointIdNode.GetText().c_str());
-      m_vpcEndpointIdHasBeenSet = true;
+      m_privateDnsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(privateDnsEnabledNode.GetText().c_str()).c_str());
+      m_privateDnsEnabledHasBeenSet = true;
     }
-    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
-    if(!vpcIdNode.IsNull())
+    XmlNode networkInterfaceIdsNode = resultNode.FirstChild("networkInterfaceIdSet");
+    if(!networkInterfaceIdsNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
-      m_vpcIdHasBeenSet = true;
+      XmlNode networkInterfaceIdsMember = networkInterfaceIdsNode.FirstChild("item");
+      while(!networkInterfaceIdsMember.IsNull())
+      {
+        m_networkInterfaceIds.push_back(StringUtils::Trim(networkInterfaceIdsMember.GetText().c_str()));
+        networkInterfaceIdsMember = networkInterfaceIdsMember.NextNode("item");
+      }
+
+      m_networkInterfaceIdsHasBeenSet = true;
+    }
+    XmlNode dnsEntriesNode = resultNode.FirstChild("dnsEntrySet");
+    if(!dnsEntriesNode.IsNull())
+    {
+      XmlNode dnsEntriesMember = dnsEntriesNode.FirstChild("item");
+      while(!dnsEntriesMember.IsNull())
+      {
+        m_dnsEntries.push_back(dnsEntriesMember);
+        dnsEntriesMember = dnsEntriesMember.NextNode("item");
+      }
+
+      m_dnsEntriesHasBeenSet = true;
+    }
+    XmlNode creationTimestampNode = resultNode.FirstChild("creationTimestamp");
+    if(!creationTimestampNode.IsNull())
+    {
+      m_creationTimestamp = DateTime(StringUtils::Trim(creationTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTimestampHasBeenSet = true;
     }
   }
 
@@ -116,9 +192,29 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
 
 void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_creationTimestampHasBeenSet)
+  if(m_vpcEndpointIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
+  }
+
+  if(m_vpcEndpointTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcEndpointType=" << VpcEndpointTypeMapper::GetNameForVpcEndpointType(m_vpcEndpointType) << "&";
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if(m_serviceNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+  }
+
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".State=" << StateMapper::GetNameForState(m_state) << "&";
   }
 
   if(m_policyDocumentHasBeenSet)
@@ -135,33 +231,79 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
       }
   }
 
-  if(m_serviceNameHasBeenSet)
+  if(m_subnetIdsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+      unsigned subnetIdsIdx = 1;
+      for(auto& item : m_subnetIds)
+      {
+        oStream << location << index << locationValue << ".SubnetIdSet." << subnetIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 
-  if(m_stateHasBeenSet)
+  if(m_groupsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << StateMapper::GetNameForState(m_state) << "&";
+      unsigned groupsIdx = 1;
+      for(auto& item : m_groups)
+      {
+        Aws::StringStream groupsSs;
+        groupsSs << location << index << locationValue << ".GroupSet." << groupsIdx++;
+        item.OutputToStream(oStream, groupsSs.str().c_str());
+      }
   }
 
-  if(m_vpcEndpointIdHasBeenSet)
+  if(m_privateDnsEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
+      oStream << location << index << locationValue << ".PrivateDnsEnabled=" << std::boolalpha << m_privateDnsEnabled << "&";
   }
 
-  if(m_vpcIdHasBeenSet)
+  if(m_networkInterfaceIdsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+      unsigned networkInterfaceIdsIdx = 1;
+      for(auto& item : m_networkInterfaceIds)
+      {
+        oStream << location << index << locationValue << ".NetworkInterfaceIdSet." << networkInterfaceIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_dnsEntriesHasBeenSet)
+  {
+      unsigned dnsEntriesIdx = 1;
+      for(auto& item : m_dnsEntries)
+      {
+        Aws::StringStream dnsEntriesSs;
+        dnsEntriesSs << location << index << locationValue << ".DnsEntrySet." << dnsEntriesIdx++;
+        item.OutputToStream(oStream, dnsEntriesSs.str().c_str());
+      }
+  }
+
+  if(m_creationTimestampHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
 
 void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_creationTimestampHasBeenSet)
+  if(m_vpcEndpointIdHasBeenSet)
   {
-      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
+  }
+  if(m_vpcEndpointTypeHasBeenSet)
+  {
+      oStream << location << ".VpcEndpointType=" << VpcEndpointTypeMapper::GetNameForVpcEndpointType(m_vpcEndpointType) << "&";
+  }
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_serviceNameHasBeenSet)
+  {
+      oStream << location << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+  }
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << ".State=" << StateMapper::GetNameForState(m_state) << "&";
   }
   if(m_policyDocumentHasBeenSet)
   {
@@ -175,21 +317,49 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
         oStream << location << ".RouteTableIdSet." << routeTableIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
-  if(m_serviceNameHasBeenSet)
+  if(m_subnetIdsHasBeenSet)
   {
-      oStream << location << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+      unsigned subnetIdsIdx = 1;
+      for(auto& item : m_subnetIds)
+      {
+        oStream << location << ".SubnetIdSet." << subnetIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
-  if(m_stateHasBeenSet)
+  if(m_groupsHasBeenSet)
   {
-      oStream << location << ".State=" << StateMapper::GetNameForState(m_state) << "&";
+      unsigned groupsIdx = 1;
+      for(auto& item : m_groups)
+      {
+        Aws::StringStream groupsSs;
+        groupsSs << location <<  ".GroupSet." << groupsIdx++;
+        item.OutputToStream(oStream, groupsSs.str().c_str());
+      }
   }
-  if(m_vpcEndpointIdHasBeenSet)
+  if(m_privateDnsEnabledHasBeenSet)
   {
-      oStream << location << ".VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
+      oStream << location << ".PrivateDnsEnabled=" << std::boolalpha << m_privateDnsEnabled << "&";
   }
-  if(m_vpcIdHasBeenSet)
+  if(m_networkInterfaceIdsHasBeenSet)
   {
-      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+      unsigned networkInterfaceIdsIdx = 1;
+      for(auto& item : m_networkInterfaceIds)
+      {
+        oStream << location << ".NetworkInterfaceIdSet." << networkInterfaceIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_dnsEntriesHasBeenSet)
+  {
+      unsigned dnsEntriesIdx = 1;
+      for(auto& item : m_dnsEntries)
+      {
+        Aws::StringStream dnsEntriesSs;
+        dnsEntriesSs << location <<  ".DnsEntrySet." << dnsEntriesIdx++;
+        item.OutputToStream(oStream, dnsEntriesSs.str().c_str());
+      }
+  }
+  if(m_creationTimestampHasBeenSet)
+  {
+      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

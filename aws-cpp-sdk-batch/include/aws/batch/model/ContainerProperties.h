@@ -498,7 +498,10 @@ namespace Model
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
-     * sensitive information, such as credential data.</p> </important>
+     * sensitive information, such as credential data.</p> </important> <note>
+     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+     * convention is reserved for variables that are set by the AWS Batch service.</p>
+     * </note>
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
 
@@ -511,7 +514,10 @@ namespace Model
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
-     * sensitive information, such as credential data.</p> </important>
+     * sensitive information, such as credential data.</p> </important> <note>
+     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+     * convention is reserved for variables that are set by the AWS Batch service.</p>
+     * </note>
      */
     inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
@@ -524,7 +530,10 @@ namespace Model
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
-     * sensitive information, such as credential data.</p> </important>
+     * sensitive information, such as credential data.</p> </important> <note>
+     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+     * convention is reserved for variables that are set by the AWS Batch service.</p>
+     * </note>
      */
     inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
@@ -537,7 +546,10 @@ namespace Model
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
-     * sensitive information, such as credential data.</p> </important>
+     * sensitive information, such as credential data.</p> </important> <note>
+     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+     * convention is reserved for variables that are set by the AWS Batch service.</p>
+     * </note>
      */
     inline ContainerProperties& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
 
@@ -550,7 +562,10 @@ namespace Model
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
-     * sensitive information, such as credential data.</p> </important>
+     * sensitive information, such as credential data.</p> </important> <note>
+     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+     * convention is reserved for variables that are set by the AWS Batch service.</p>
+     * </note>
      */
     inline ContainerProperties& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
@@ -563,7 +578,10 @@ namespace Model
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
-     * sensitive information, such as credential data.</p> </important>
+     * sensitive information, such as credential data.</p> </important> <note>
+     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+     * convention is reserved for variables that are set by the AWS Batch service.</p>
+     * </note>
      */
     inline ContainerProperties& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
@@ -576,7 +594,10 @@ namespace Model
      * Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      * <important> <p>We do not recommend using plain text environment variables for
-     * sensitive information, such as credential data.</p> </important>
+     * sensitive information, such as credential data.</p> </important> <note>
+     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+     * convention is reserved for variables that are set by the AWS Batch service.</p>
+     * </note>
      */
     inline ContainerProperties& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 

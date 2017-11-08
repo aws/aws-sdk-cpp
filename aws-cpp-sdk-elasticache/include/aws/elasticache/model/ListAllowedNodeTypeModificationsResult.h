@@ -37,7 +37,7 @@ namespace ElastiCache
 namespace Model
 {
   /**
-   * <p>Represents the allowed node types you can use to modify your cache cluster or
+   * <p>Represents the allowed node types you can use to modify your cluster or
    * replication group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AllowedNodeTypeModificationsMessage">AWS
    * API Reference</a></p>
@@ -52,8 +52,8 @@ namespace Model
 
     /**
      * <p>A string list, each element of which specifies a cache node type which you
-     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
-     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * can use to scale your cluster or replication group.</p> <p>When scaling up a
+     * Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      * <code>ModifyReplicationGroup</code>, use a value from this list for the
      * <code>CacheNodeType</code> parameter.</p>
      */
@@ -61,8 +61,8 @@ namespace Model
 
     /**
      * <p>A string list, each element of which specifies a cache node type which you
-     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
-     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * can use to scale your cluster or replication group.</p> <p>When scaling up a
+     * Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      * <code>ModifyReplicationGroup</code>, use a value from this list for the
      * <code>CacheNodeType</code> parameter.</p>
      */
@@ -70,8 +70,8 @@ namespace Model
 
     /**
      * <p>A string list, each element of which specifies a cache node type which you
-     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
-     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * can use to scale your cluster or replication group.</p> <p>When scaling up a
+     * Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      * <code>ModifyReplicationGroup</code>, use a value from this list for the
      * <code>CacheNodeType</code> parameter.</p>
      */
@@ -79,8 +79,8 @@ namespace Model
 
     /**
      * <p>A string list, each element of which specifies a cache node type which you
-     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
-     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * can use to scale your cluster or replication group.</p> <p>When scaling up a
+     * Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      * <code>ModifyReplicationGroup</code>, use a value from this list for the
      * <code>CacheNodeType</code> parameter.</p>
      */
@@ -88,8 +88,8 @@ namespace Model
 
     /**
      * <p>A string list, each element of which specifies a cache node type which you
-     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
-     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * can use to scale your cluster or replication group.</p> <p>When scaling up a
+     * Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      * <code>ModifyReplicationGroup</code>, use a value from this list for the
      * <code>CacheNodeType</code> parameter.</p>
      */
@@ -97,8 +97,8 @@ namespace Model
 
     /**
      * <p>A string list, each element of which specifies a cache node type which you
-     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
-     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * can use to scale your cluster or replication group.</p> <p>When scaling up a
+     * Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      * <code>ModifyReplicationGroup</code>, use a value from this list for the
      * <code>CacheNodeType</code> parameter.</p>
      */
@@ -106,8 +106,8 @@ namespace Model
 
     /**
      * <p>A string list, each element of which specifies a cache node type which you
-     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
-     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * can use to scale your cluster or replication group.</p> <p>When scaling up a
+     * Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      * <code>ModifyReplicationGroup</code>, use a value from this list for the
      * <code>CacheNodeType</code> parameter.</p>
      */
@@ -115,8 +115,8 @@ namespace Model
 
     /**
      * <p>A string list, each element of which specifies a cache node type which you
-     * can use to scale your cache cluster or replication group.</p> <p>When scaling up
-     * a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
+     * can use to scale your cluster or replication group.</p> <p>When scaling up a
+     * Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      * <code>ModifyReplicationGroup</code>, use a value from this list for the
      * <code>CacheNodeType</code> parameter.</p>
      */

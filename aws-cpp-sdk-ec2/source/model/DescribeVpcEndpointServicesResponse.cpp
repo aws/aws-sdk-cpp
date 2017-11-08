@@ -48,11 +48,6 @@ DescribeVpcEndpointServicesResponse& DescribeVpcEndpointServicesResponse::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
-    }
     XmlNode serviceNamesNode = resultNode.FirstChild("serviceNameSet");
     if(!serviceNamesNode.IsNull())
     {
@@ -63,6 +58,22 @@ DescribeVpcEndpointServicesResponse& DescribeVpcEndpointServicesResponse::operat
         serviceNamesMember = serviceNamesMember.NextNode("item");
       }
 
+    }
+    XmlNode serviceDetailsNode = resultNode.FirstChild("serviceDetailSet");
+    if(!serviceDetailsNode.IsNull())
+    {
+      XmlNode serviceDetailsMember = serviceDetailsNode.FirstChild("item");
+      while(!serviceDetailsMember.IsNull())
+      {
+        m_serviceDetails.push_back(serviceDetailsMember);
+        serviceDetailsMember = serviceDetailsMember.NextNode("item");
+      }
+
+    }
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
     }
   }
 

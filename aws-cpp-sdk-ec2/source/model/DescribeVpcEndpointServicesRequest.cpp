@@ -23,6 +23,8 @@ using namespace Aws::Utils;
 DescribeVpcEndpointServicesRequest::DescribeVpcEndpointServicesRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_serviceNamesHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -36,6 +38,27 @@ Aws::String DescribeVpcEndpointServicesRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_serviceNamesHasBeenSet)
+  {
+    unsigned serviceNamesCount = 1;
+    for(auto& item : m_serviceNames)
+    {
+      ss << "ServiceName." << serviceNamesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      serviceNamesCount++;
+    }
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   if(m_maxResultsHasBeenSet)

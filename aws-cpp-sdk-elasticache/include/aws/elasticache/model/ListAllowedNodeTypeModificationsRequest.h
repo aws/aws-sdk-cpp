@@ -51,8 +51,8 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the cache cluster you want to scale up to a larger node instanced
-     * type. ElastiCache uses the cluster id to identify the current node type of this
+     * <p>The name of the cluster you want to scale up to a larger node instanced type.
+     * ElastiCache uses the cluster id to identify the current node type of this
      * cluster and from that to create a list of node types you can scale up to.</p>
      * <important> <p>You must provide a value for either the
      * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
@@ -61,8 +61,8 @@ namespace Model
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
 
     /**
-     * <p>The name of the cache cluster you want to scale up to a larger node instanced
-     * type. ElastiCache uses the cluster id to identify the current node type of this
+     * <p>The name of the cluster you want to scale up to a larger node instanced type.
+     * ElastiCache uses the cluster id to identify the current node type of this
      * cluster and from that to create a list of node types you can scale up to.</p>
      * <important> <p>You must provide a value for either the
      * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
@@ -71,8 +71,8 @@ namespace Model
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
-     * <p>The name of the cache cluster you want to scale up to a larger node instanced
-     * type. ElastiCache uses the cluster id to identify the current node type of this
+     * <p>The name of the cluster you want to scale up to a larger node instanced type.
+     * ElastiCache uses the cluster id to identify the current node type of this
      * cluster and from that to create a list of node types you can scale up to.</p>
      * <important> <p>You must provide a value for either the
      * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
@@ -81,8 +81,8 @@ namespace Model
     inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
-     * <p>The name of the cache cluster you want to scale up to a larger node instanced
-     * type. ElastiCache uses the cluster id to identify the current node type of this
+     * <p>The name of the cluster you want to scale up to a larger node instanced type.
+     * ElastiCache uses the cluster id to identify the current node type of this
      * cluster and from that to create a list of node types you can scale up to.</p>
      * <important> <p>You must provide a value for either the
      * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
@@ -91,8 +91,8 @@ namespace Model
     inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /**
-     * <p>The name of the cache cluster you want to scale up to a larger node instanced
-     * type. ElastiCache uses the cluster id to identify the current node type of this
+     * <p>The name of the cluster you want to scale up to a larger node instanced type.
+     * ElastiCache uses the cluster id to identify the current node type of this
      * cluster and from that to create a list of node types you can scale up to.</p>
      * <important> <p>You must provide a value for either the
      * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
@@ -101,8 +101,8 @@ namespace Model
     inline ListAllowedNodeTypeModificationsRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
 
     /**
-     * <p>The name of the cache cluster you want to scale up to a larger node instanced
-     * type. ElastiCache uses the cluster id to identify the current node type of this
+     * <p>The name of the cluster you want to scale up to a larger node instanced type.
+     * ElastiCache uses the cluster id to identify the current node type of this
      * cluster and from that to create a list of node types you can scale up to.</p>
      * <important> <p>You must provide a value for either the
      * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
@@ -111,8 +111,8 @@ namespace Model
     inline ListAllowedNodeTypeModificationsRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the cache cluster you want to scale up to a larger node instanced
-     * type. ElastiCache uses the cluster id to identify the current node type of this
+     * <p>The name of the cluster you want to scale up to a larger node instanced type.
+     * ElastiCache uses the cluster id to identify the current node type of this
      * cluster and from that to create a list of node types you can scale up to.</p>
      * <important> <p>You must provide a value for either the
      * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>

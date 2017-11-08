@@ -234,37 +234,51 @@ namespace Model
 
 
     /**
-     * <p>The environment variables to pass to a container.</p>
+     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
+     * reserved for variables that are set by the AWS Batch service.</p> </note>
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p>The environment variables to pass to a container.</p>
+     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
+     * reserved for variables that are set by the AWS Batch service.</p> </note>
      */
     inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
-     * <p>The environment variables to pass to a container.</p>
+     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
+     * reserved for variables that are set by the AWS Batch service.</p> </note>
      */
     inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
-     * <p>The environment variables to pass to a container.</p>
+     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
+     * reserved for variables that are set by the AWS Batch service.</p> </note>
      */
     inline ContainerDetail& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>The environment variables to pass to a container.</p>
+     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
+     * reserved for variables that are set by the AWS Batch service.</p> </note>
      */
     inline ContainerDetail& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
-     * <p>The environment variables to pass to a container.</p>
+     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
+     * reserved for variables that are set by the AWS Batch service.</p> </note>
      */
     inline ContainerDetail& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
     /**
-     * <p>The environment variables to pass to a container.</p>
+     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
+     * reserved for variables that are set by the AWS Batch service.</p> </note>
      */
     inline ContainerDetail& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
@@ -519,43 +533,50 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the container job.</p>
+     * the container job. Each container attempt receives a task ARN when they reach
+     * the <code>STARTING</code> status.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the container job.</p>
+     * the container job. Each container attempt receives a task ARN when they reach
+     * the <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the container job.</p>
+     * the container job. Each container attempt receives a task ARN when they reach
+     * the <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the container job.</p>
+     * the container job. Each container attempt receives a task ARN when they reach
+     * the <code>STARTING</code> status.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the container job.</p>
+     * the container job. Each container attempt receives a task ARN when they reach
+     * the <code>STARTING</code> status.</p>
      */
     inline ContainerDetail& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the container job.</p>
+     * the container job. Each container attempt receives a task ARN when they reach
+     * the <code>STARTING</code> status.</p>
      */
     inline ContainerDetail& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
-     * the container job.</p>
+     * the container job. Each container attempt receives a task ARN when they reach
+     * the <code>STARTING</code> status.</p>
      */
     inline ContainerDetail& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 

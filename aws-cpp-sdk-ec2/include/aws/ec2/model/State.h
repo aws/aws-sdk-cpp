@@ -26,10 +26,14 @@ namespace Model
   enum class State
   {
     NOT_SET,
+    PendingAcceptance,
     Pending,
     Available,
     Deleting,
-    Deleted
+    Deleted,
+    Rejected,
+    Failed,
+    Expired
   };
 
 namespace StateMapper

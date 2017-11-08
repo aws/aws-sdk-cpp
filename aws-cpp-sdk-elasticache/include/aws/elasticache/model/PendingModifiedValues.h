@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>A group of settings that are applied to the cache cluster in the future, or
-   * that are currently being applied.</p><p><h3>See Also:</h3>   <a
+   * <p>A group of settings that are applied to the cluster in the future, or that
+   * are currently being applied.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PendingModifiedValues">AWS
    * API Reference</a></p>
    */
@@ -52,151 +52,144 @@ namespace Model
 
 
     /**
-     * <p>The new number of cache nodes for the cache cluster.</p> <p>For clusters
-     * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p>
+     * <p>The new number of cache nodes for the cluster.</p> <p>For clusters running
+     * Redis, this value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 20.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
-     * <p>The new number of cache nodes for the cache cluster.</p> <p>For clusters
-     * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p>
+     * <p>The new number of cache nodes for the cluster.</p> <p>For clusters running
+     * Redis, this value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 20.</p>
      */
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
-     * <p>The new number of cache nodes for the cache cluster.</p> <p>For clusters
-     * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p>
+     * <p>The new number of cache nodes for the cluster.</p> <p>For clusters running
+     * Redis, this value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 20.</p>
      */
     inline PendingModifiedValues& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheNodeIdsToRemove() const{ return m_cacheNodeIdsToRemove; }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
     inline void SetCacheNodeIdsToRemove(const Aws::Vector<Aws::String>& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove = value; }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
     inline void SetCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove = std::move(value); }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
     inline PendingModifiedValues& WithCacheNodeIdsToRemove(const Aws::Vector<Aws::String>& value) { SetCacheNodeIdsToRemove(value); return *this;}
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
     inline PendingModifiedValues& WithCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { SetCacheNodeIdsToRemove(std::move(value)); return *this;}
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
     inline PendingModifiedValues& AddCacheNodeIdsToRemove(const Aws::String& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
     inline PendingModifiedValues& AddCacheNodeIdsToRemove(Aws::String&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
-     * cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     * cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
     inline PendingModifiedValues& AddCacheNodeIdsToRemove(const char* value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
 
 
     /**
-     * <p>The new cache engine version that the cache cluster runs.</p>
+     * <p>The new cache engine version that the cluster runs.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The new cache engine version that the cache cluster runs.</p>
+     * <p>The new cache engine version that the cluster runs.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The new cache engine version that the cache cluster runs.</p>
+     * <p>The new cache engine version that the cluster runs.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The new cache engine version that the cache cluster runs.</p>
+     * <p>The new cache engine version that the cluster runs.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The new cache engine version that the cache cluster runs.</p>
+     * <p>The new cache engine version that the cluster runs.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The new cache engine version that the cache cluster runs.</p>
+     * <p>The new cache engine version that the cluster runs.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The new cache engine version that the cache cluster runs.</p>
+     * <p>The new cache engine version that the cluster runs.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
 
     /**
-     * <p>The cache node type that this cache cluster or replication group is scaled
-     * to.</p>
+     * <p>The cache node type that this cluster or replication group is scaled to.</p>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
 
     /**
-     * <p>The cache node type that this cache cluster or replication group is scaled
-     * to.</p>
+     * <p>The cache node type that this cluster or replication group is scaled to.</p>
      */
     inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
     /**
-     * <p>The cache node type that this cache cluster or replication group is scaled
-     * to.</p>
+     * <p>The cache node type that this cluster or replication group is scaled to.</p>
      */
     inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
     /**
-     * <p>The cache node type that this cache cluster or replication group is scaled
-     * to.</p>
+     * <p>The cache node type that this cluster or replication group is scaled to.</p>
      */
     inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
 
     /**
-     * <p>The cache node type that this cache cluster or replication group is scaled
-     * to.</p>
+     * <p>The cache node type that this cluster or replication group is scaled to.</p>
      */
     inline PendingModifiedValues& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
 
     /**
-     * <p>The cache node type that this cache cluster or replication group is scaled
-     * to.</p>
+     * <p>The cache node type that this cluster or replication group is scaled to.</p>
      */
     inline PendingModifiedValues& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
     /**
-     * <p>The cache node type that this cache cluster or replication group is scaled
-     * to.</p>
+     * <p>The cache node type that this cluster or replication group is scaled to.</p>
      */
     inline PendingModifiedValues& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 

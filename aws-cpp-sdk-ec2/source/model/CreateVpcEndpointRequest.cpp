@@ -21,13 +21,19 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateVpcEndpointRequest::CreateVpcEndpointRequest() : 
-    m_clientTokenHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_vpcEndpointType(VpcEndpointType::NOT_SET),
+    m_vpcEndpointTypeHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_serviceNameHasBeenSet(false),
     m_policyDocumentHasBeenSet(false),
     m_routeTableIdsHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_subnetIdsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_privateDnsEnabled(false),
+    m_privateDnsEnabledHasBeenSet(false)
 {
 }
 
@@ -35,14 +41,24 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateVpcEndpoint&";
-  if(m_clientTokenHasBeenSet)
-  {
-    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
-  }
-
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_vpcEndpointTypeHasBeenSet)
+  {
+    ss << "VpcEndpointType=" << VpcEndpointTypeMapper::GetNameForVpcEndpointType(m_vpcEndpointType) << "&";
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if(m_serviceNameHasBeenSet)
+  {
+    ss << "ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
   }
 
   if(m_policyDocumentHasBeenSet)
@@ -61,14 +77,36 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
     }
   }
 
-  if(m_serviceNameHasBeenSet)
+  if(m_subnetIdsHasBeenSet)
   {
-    ss << "ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+    unsigned subnetIdsCount = 1;
+    for(auto& item : m_subnetIds)
+    {
+      ss << "SubnetId." << subnetIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      subnetIdsCount++;
+    }
   }
 
-  if(m_vpcIdHasBeenSet)
+  if(m_securityGroupIdsHasBeenSet)
   {
-    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+    unsigned securityGroupIdsCount = 1;
+    for(auto& item : m_securityGroupIds)
+    {
+      ss << "SecurityGroupId." << securityGroupIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      securityGroupIdsCount++;
+    }
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
+  if(m_privateDnsEnabledHasBeenSet)
+  {
+    ss << "PrivateDnsEnabled=" << std::boolalpha << m_privateDnsEnabled << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -28,11 +28,14 @@
 #include <aws/application-autoscaling/ApplicationAutoScalingEndpoint.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingErrorMarshaller.h>
 #include <aws/application-autoscaling/model/DeleteScalingPolicyRequest.h>
+#include <aws/application-autoscaling/model/DeleteScheduledActionRequest.h>
 #include <aws/application-autoscaling/model/DeregisterScalableTargetRequest.h>
 #include <aws/application-autoscaling/model/DescribeScalableTargetsRequest.h>
 #include <aws/application-autoscaling/model/DescribeScalingActivitiesRequest.h>
 #include <aws/application-autoscaling/model/DescribeScalingPoliciesRequest.h>
+#include <aws/application-autoscaling/model/DescribeScheduledActionsRequest.h>
 #include <aws/application-autoscaling/model/PutScalingPolicyRequest.h>
+#include <aws/application-autoscaling/model/PutScheduledActionRequest.h>
 #include <aws/application-autoscaling/model/RegisterScalableTargetRequest.h>
 
 using namespace Aws;
@@ -132,6 +135,41 @@ void ApplicationAutoScalingClient::DeleteScalingPolicyAsync(const DeleteScalingP
 void ApplicationAutoScalingClient::DeleteScalingPolicyAsyncHelper(const DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteScalingPolicy(request), context);
+}
+
+DeleteScheduledActionOutcome ApplicationAutoScalingClient::DeleteScheduledAction(const DeleteScheduledActionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteScheduledActionOutcome(DeleteScheduledActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteScheduledActionOutcome(outcome.GetError());
+  }
+}
+
+DeleteScheduledActionOutcomeCallable ApplicationAutoScalingClient::DeleteScheduledActionCallable(const DeleteScheduledActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteScheduledActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteScheduledAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApplicationAutoScalingClient::DeleteScheduledActionAsync(const DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteScheduledActionAsyncHelper( request, handler, context ); } );
+}
+
+void ApplicationAutoScalingClient::DeleteScheduledActionAsyncHelper(const DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteScheduledAction(request), context);
 }
 
 DeregisterScalableTargetOutcome ApplicationAutoScalingClient::DeregisterScalableTarget(const DeregisterScalableTargetRequest& request) const
@@ -274,6 +312,41 @@ void ApplicationAutoScalingClient::DescribeScalingPoliciesAsyncHelper(const Desc
   handler(this, request, DescribeScalingPolicies(request), context);
 }
 
+DescribeScheduledActionsOutcome ApplicationAutoScalingClient::DescribeScheduledActions(const DescribeScheduledActionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeScheduledActionsOutcome(DescribeScheduledActionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeScheduledActionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeScheduledActionsOutcomeCallable ApplicationAutoScalingClient::DescribeScheduledActionsCallable(const DescribeScheduledActionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeScheduledActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeScheduledActions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApplicationAutoScalingClient::DescribeScheduledActionsAsync(const DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeScheduledActionsAsyncHelper( request, handler, context ); } );
+}
+
+void ApplicationAutoScalingClient::DescribeScheduledActionsAsyncHelper(const DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeScheduledActions(request), context);
+}
+
 PutScalingPolicyOutcome ApplicationAutoScalingClient::PutScalingPolicy(const PutScalingPolicyRequest& request) const
 {
   Aws::StringStream ss;
@@ -307,6 +380,41 @@ void ApplicationAutoScalingClient::PutScalingPolicyAsync(const PutScalingPolicyR
 void ApplicationAutoScalingClient::PutScalingPolicyAsyncHelper(const PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutScalingPolicy(request), context);
+}
+
+PutScheduledActionOutcome ApplicationAutoScalingClient::PutScheduledAction(const PutScheduledActionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutScheduledActionOutcome(PutScheduledActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutScheduledActionOutcome(outcome.GetError());
+  }
+}
+
+PutScheduledActionOutcomeCallable ApplicationAutoScalingClient::PutScheduledActionCallable(const PutScheduledActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutScheduledActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutScheduledAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApplicationAutoScalingClient::PutScheduledActionAsync(const PutScheduledActionRequest& request, const PutScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutScheduledActionAsyncHelper( request, handler, context ); } );
+}
+
+void ApplicationAutoScalingClient::PutScheduledActionAsyncHelper(const PutScheduledActionRequest& request, const PutScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutScheduledAction(request), context);
 }
 
 RegisterScalableTargetOutcome ApplicationAutoScalingClient::RegisterScalableTarget(const RegisterScalableTargetRequest& request) const

@@ -15,9 +15,10 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/ServiceDetail.h>
 #include <utility>
 
 namespace Aws
@@ -48,6 +49,83 @@ namespace Model
     DescribeVpcEndpointServicesResponse();
     DescribeVpcEndpointServicesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeVpcEndpointServicesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+
+    /**
+     * <p>A list of supported AWS services.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetServiceNames() const{ return m_serviceNames; }
+
+    /**
+     * <p>A list of supported AWS services.</p>
+     */
+    inline void SetServiceNames(const Aws::Vector<Aws::String>& value) { m_serviceNames = value; }
+
+    /**
+     * <p>A list of supported AWS services.</p>
+     */
+    inline void SetServiceNames(Aws::Vector<Aws::String>&& value) { m_serviceNames = std::move(value); }
+
+    /**
+     * <p>A list of supported AWS services.</p>
+     */
+    inline DescribeVpcEndpointServicesResponse& WithServiceNames(const Aws::Vector<Aws::String>& value) { SetServiceNames(value); return *this;}
+
+    /**
+     * <p>A list of supported AWS services.</p>
+     */
+    inline DescribeVpcEndpointServicesResponse& WithServiceNames(Aws::Vector<Aws::String>&& value) { SetServiceNames(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of supported AWS services.</p>
+     */
+    inline DescribeVpcEndpointServicesResponse& AddServiceNames(const Aws::String& value) { m_serviceNames.push_back(value); return *this; }
+
+    /**
+     * <p>A list of supported AWS services.</p>
+     */
+    inline DescribeVpcEndpointServicesResponse& AddServiceNames(Aws::String&& value) { m_serviceNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of supported AWS services.</p>
+     */
+    inline DescribeVpcEndpointServicesResponse& AddServiceNames(const char* value) { m_serviceNames.push_back(value); return *this; }
+
+
+    /**
+     * <p>Information about the service.</p>
+     */
+    inline const Aws::Vector<ServiceDetail>& GetServiceDetails() const{ return m_serviceDetails; }
+
+    /**
+     * <p>Information about the service.</p>
+     */
+    inline void SetServiceDetails(const Aws::Vector<ServiceDetail>& value) { m_serviceDetails = value; }
+
+    /**
+     * <p>Information about the service.</p>
+     */
+    inline void SetServiceDetails(Aws::Vector<ServiceDetail>&& value) { m_serviceDetails = std::move(value); }
+
+    /**
+     * <p>Information about the service.</p>
+     */
+    inline DescribeVpcEndpointServicesResponse& WithServiceDetails(const Aws::Vector<ServiceDetail>& value) { SetServiceDetails(value); return *this;}
+
+    /**
+     * <p>Information about the service.</p>
+     */
+    inline DescribeVpcEndpointServicesResponse& WithServiceDetails(Aws::Vector<ServiceDetail>&& value) { SetServiceDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the service.</p>
+     */
+    inline DescribeVpcEndpointServicesResponse& AddServiceDetails(const ServiceDetail& value) { m_serviceDetails.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the service.</p>
+     */
+    inline DescribeVpcEndpointServicesResponse& AddServiceDetails(ServiceDetail&& value) { m_serviceDetails.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -93,47 +171,6 @@ namespace Model
     inline DescribeVpcEndpointServicesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
-    /**
-     * <p>A list of supported AWS services.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetServiceNames() const{ return m_serviceNames; }
-
-    /**
-     * <p>A list of supported AWS services.</p>
-     */
-    inline void SetServiceNames(const Aws::Vector<Aws::String>& value) { m_serviceNames = value; }
-
-    /**
-     * <p>A list of supported AWS services.</p>
-     */
-    inline void SetServiceNames(Aws::Vector<Aws::String>&& value) { m_serviceNames = std::move(value); }
-
-    /**
-     * <p>A list of supported AWS services.</p>
-     */
-    inline DescribeVpcEndpointServicesResponse& WithServiceNames(const Aws::Vector<Aws::String>& value) { SetServiceNames(value); return *this;}
-
-    /**
-     * <p>A list of supported AWS services.</p>
-     */
-    inline DescribeVpcEndpointServicesResponse& WithServiceNames(Aws::Vector<Aws::String>&& value) { SetServiceNames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of supported AWS services.</p>
-     */
-    inline DescribeVpcEndpointServicesResponse& AddServiceNames(const Aws::String& value) { m_serviceNames.push_back(value); return *this; }
-
-    /**
-     * <p>A list of supported AWS services.</p>
-     */
-    inline DescribeVpcEndpointServicesResponse& AddServiceNames(Aws::String&& value) { m_serviceNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of supported AWS services.</p>
-     */
-    inline DescribeVpcEndpointServicesResponse& AddServiceNames(const char* value) { m_serviceNames.push_back(value); return *this; }
-
-
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -151,9 +188,11 @@ namespace Model
 
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<Aws::String> m_serviceNames;
+
+    Aws::Vector<ServiceDetail> m_serviceDetails;
+
+    Aws::String m_nextToken;
 
     ResponseMetadata m_responseMetadata;
   };

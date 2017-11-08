@@ -52,80 +52,80 @@ namespace Model
 
 
     /**
-     * <p>The ID of the cache cluster to which the node belongs.</p>
+     * <p>The ID of the cluster to which the node belongs.</p>
      */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
 
     /**
-     * <p>The ID of the cache cluster to which the node belongs.</p>
+     * <p>The ID of the cluster to which the node belongs.</p>
      */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
-     * <p>The ID of the cache cluster to which the node belongs.</p>
+     * <p>The ID of the cluster to which the node belongs.</p>
      */
     inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
-     * <p>The ID of the cache cluster to which the node belongs.</p>
+     * <p>The ID of the cluster to which the node belongs.</p>
      */
     inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /**
-     * <p>The ID of the cache cluster to which the node belongs.</p>
+     * <p>The ID of the cluster to which the node belongs.</p>
      */
     inline NodeGroupMember& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
 
     /**
-     * <p>The ID of the cache cluster to which the node belongs.</p>
+     * <p>The ID of the cluster to which the node belongs.</p>
      */
     inline NodeGroupMember& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the cache cluster to which the node belongs.</p>
+     * <p>The ID of the cluster to which the node belongs.</p>
      */
     inline NodeGroupMember& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 
 
     /**
-     * <p>The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).</p>
+     * <p>The ID of the node within its cluster. A node ID is a numeric identifier
+     * (0001, 0002, etc.).</p>
      */
     inline const Aws::String& GetCacheNodeId() const{ return m_cacheNodeId; }
 
     /**
-     * <p>The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).</p>
+     * <p>The ID of the node within its cluster. A node ID is a numeric identifier
+     * (0001, 0002, etc.).</p>
      */
     inline void SetCacheNodeId(const Aws::String& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = value; }
 
     /**
-     * <p>The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).</p>
+     * <p>The ID of the node within its cluster. A node ID is a numeric identifier
+     * (0001, 0002, etc.).</p>
      */
     inline void SetCacheNodeId(Aws::String&& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = std::move(value); }
 
     /**
-     * <p>The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).</p>
+     * <p>The ID of the node within its cluster. A node ID is a numeric identifier
+     * (0001, 0002, etc.).</p>
      */
     inline void SetCacheNodeId(const char* value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId.assign(value); }
 
     /**
-     * <p>The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).</p>
+     * <p>The ID of the node within its cluster. A node ID is a numeric identifier
+     * (0001, 0002, etc.).</p>
      */
     inline NodeGroupMember& WithCacheNodeId(const Aws::String& value) { SetCacheNodeId(value); return *this;}
 
     /**
-     * <p>The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).</p>
+     * <p>The ID of the node within its cluster. A node ID is a numeric identifier
+     * (0001, 0002, etc.).</p>
      */
     inline NodeGroupMember& WithCacheNodeId(Aws::String&& value) { SetCacheNodeId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the node within its cache cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).</p>
+     * <p>The ID of the node within its cluster. A node ID is a numeric identifier
+     * (0001, 0002, etc.).</p>
      */
     inline NodeGroupMember& WithCacheNodeId(const char* value) { SetCacheNodeId(value); return *this;}
 

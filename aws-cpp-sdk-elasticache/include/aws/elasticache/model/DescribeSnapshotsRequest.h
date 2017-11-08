@@ -102,43 +102,43 @@ namespace Model
 
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
-     * snapshots associated with that specific cache cluster are described.</p>
+     * snapshots associated with that specific cluster are described.</p>
      */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
 
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
-     * snapshots associated with that specific cache cluster are described.</p>
+     * snapshots associated with that specific cluster are described.</p>
      */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
-     * snapshots associated with that specific cache cluster are described.</p>
+     * snapshots associated with that specific cluster are described.</p>
      */
     inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
-     * snapshots associated with that specific cache cluster are described.</p>
+     * snapshots associated with that specific cluster are described.</p>
      */
     inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
-     * snapshots associated with that specific cache cluster are described.</p>
+     * snapshots associated with that specific cluster are described.</p>
      */
     inline DescribeSnapshotsRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
 
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
-     * snapshots associated with that specific cache cluster are described.</p>
+     * snapshots associated with that specific cluster are described.</p>
      */
     inline DescribeSnapshotsRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
-     * snapshots associated with that specific cache cluster are described.</p>
+     * snapshots associated with that specific cluster are described.</p>
      */
     inline DescribeSnapshotsRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 

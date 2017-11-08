@@ -61,72 +61,58 @@ namespace Model
   public:
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>One or more block device mapping entries. You can't specify both a snapshot
+     * ID and an encryption value. This is because only blank volumes can be encrypted
+     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>One or more block device mapping entries. You can't specify both a snapshot
+     * ID and an encryption value. This is because only blank volumes can be encrypted
+     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>One or more block device mapping entries. You can't specify both a snapshot
+     * ID and an encryption value. This is because only blank volumes can be encrypted
+     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>One or more block device mapping entries. You can't specify both a snapshot
+     * ID and an encryption value. This is because only blank volumes can be encrypted
+     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.</p>
      */
     inline RunInstancesRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>One or more block device mapping entries. You can't specify both a snapshot
+     * ID and an encryption value. This is because only blank volumes can be encrypted
+     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.</p>
      */
     inline RunInstancesRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>One or more block device mapping entries. You can't specify both a snapshot
+     * ID and an encryption value. This is because only blank volumes can be encrypted
+     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.</p>
      */
     inline RunInstancesRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>One or more block device mapping entries. You can't specify both a snapshot
+     * ID and an encryption value. This is because only blank volumes can be encrypted
+     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.</p>
      */
     inline RunInstancesRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 

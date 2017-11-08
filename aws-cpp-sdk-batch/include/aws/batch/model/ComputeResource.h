@@ -125,42 +125,82 @@ namespace Model
 
 
     /**
-     * <p>The instances types that may launched.</p>
+     * <p>The instances types that may be launched. You can specify instance families
+     * to launch any instance type within those families (for example, <code>c4</code>
+     * or <code>p3</code>), or you can specify specific sizes within a family (such as
+     * <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     * instance types (from the latest C, M, and R instance families) on the fly that
+     * match the demand of your job queues.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
-     * <p>The instances types that may launched.</p>
+     * <p>The instances types that may be launched. You can specify instance families
+     * to launch any instance type within those families (for example, <code>c4</code>
+     * or <code>p3</code>), or you can specify specific sizes within a family (such as
+     * <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     * instance types (from the latest C, M, and R instance families) on the fly that
+     * match the demand of your job queues.</p>
      */
     inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
-     * <p>The instances types that may launched.</p>
+     * <p>The instances types that may be launched. You can specify instance families
+     * to launch any instance type within those families (for example, <code>c4</code>
+     * or <code>p3</code>), or you can specify specific sizes within a family (such as
+     * <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     * instance types (from the latest C, M, and R instance families) on the fly that
+     * match the demand of your job queues.</p>
      */
     inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
-     * <p>The instances types that may launched.</p>
+     * <p>The instances types that may be launched. You can specify instance families
+     * to launch any instance type within those families (for example, <code>c4</code>
+     * or <code>p3</code>), or you can specify specific sizes within a family (such as
+     * <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     * instance types (from the latest C, M, and R instance families) on the fly that
+     * match the demand of your job queues.</p>
      */
     inline ComputeResource& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p>The instances types that may launched.</p>
+     * <p>The instances types that may be launched. You can specify instance families
+     * to launch any instance type within those families (for example, <code>c4</code>
+     * or <code>p3</code>), or you can specify specific sizes within a family (such as
+     * <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     * instance types (from the latest C, M, and R instance families) on the fly that
+     * match the demand of your job queues.</p>
      */
     inline ComputeResource& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The instances types that may launched.</p>
+     * <p>The instances types that may be launched. You can specify instance families
+     * to launch any instance type within those families (for example, <code>c4</code>
+     * or <code>p3</code>), or you can specify specific sizes within a family (such as
+     * <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     * instance types (from the latest C, M, and R instance families) on the fly that
+     * match the demand of your job queues.</p>
      */
     inline ComputeResource& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The instances types that may launched.</p>
+     * <p>The instances types that may be launched. You can specify instance families
+     * to launch any instance type within those families (for example, <code>c4</code>
+     * or <code>p3</code>), or you can specify specific sizes within a family (such as
+     * <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     * instance types (from the latest C, M, and R instance families) on the fly that
+     * match the demand of your job queues.</p>
      */
     inline ComputeResource& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The instances types that may launched.</p>
+     * <p>The instances types that may be launched. You can specify instance families
+     * to launch any instance type within those families (for example, <code>c4</code>
+     * or <code>p3</code>), or you can specify specific sizes within a family (such as
+     * <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     * instance types (from the latest C, M, and R instance families) on the fly that
+     * match the demand of your job queues.</p>
      */
     inline ComputeResource& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 

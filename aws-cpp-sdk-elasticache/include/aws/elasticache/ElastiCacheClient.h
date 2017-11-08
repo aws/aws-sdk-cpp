@@ -52,6 +52,7 @@
 #include <aws/elasticache/model/ModifyCacheParameterGroupResult.h>
 #include <aws/elasticache/model/ModifyCacheSubnetGroupResult.h>
 #include <aws/elasticache/model/ModifyReplicationGroupResult.h>
+#include <aws/elasticache/model/ModifyReplicationGroupShardConfigurationResult.h>
 #include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingResult.h>
 #include <aws/elasticache/model/RebootCacheClusterResult.h>
 #include <aws/elasticache/model/RemoveTagsFromResourceResult.h>
@@ -137,6 +138,7 @@ namespace Model
         class ModifyCacheParameterGroupRequest;
         class ModifyCacheSubnetGroupRequest;
         class ModifyReplicationGroupRequest;
+        class ModifyReplicationGroupShardConfigurationRequest;
         class PurchaseReservedCacheNodesOfferingRequest;
         class RebootCacheClusterRequest;
         class RemoveTagsFromResourceRequest;
@@ -177,6 +179,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyCacheParameterGroupResult, Aws::Client::AWSError<ElastiCacheErrors>> ModifyCacheParameterGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyCacheSubnetGroupResult, Aws::Client::AWSError<ElastiCacheErrors>> ModifyCacheSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyReplicationGroupResult, Aws::Client::AWSError<ElastiCacheErrors>> ModifyReplicationGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyReplicationGroupShardConfigurationResult, Aws::Client::AWSError<ElastiCacheErrors>> ModifyReplicationGroupShardConfigurationOutcome;
         typedef Aws::Utils::Outcome<PurchaseReservedCacheNodesOfferingResult, Aws::Client::AWSError<ElastiCacheErrors>> PurchaseReservedCacheNodesOfferingOutcome;
         typedef Aws::Utils::Outcome<RebootCacheClusterResult, Aws::Client::AWSError<ElastiCacheErrors>> RebootCacheClusterOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<ElastiCacheErrors>> RemoveTagsFromResourceOutcome;
@@ -217,6 +220,7 @@ namespace Model
         typedef std::future<ModifyCacheParameterGroupOutcome> ModifyCacheParameterGroupOutcomeCallable;
         typedef std::future<ModifyCacheSubnetGroupOutcome> ModifyCacheSubnetGroupOutcomeCallable;
         typedef std::future<ModifyReplicationGroupOutcome> ModifyReplicationGroupOutcomeCallable;
+        typedef std::future<ModifyReplicationGroupShardConfigurationOutcome> ModifyReplicationGroupShardConfigurationOutcomeCallable;
         typedef std::future<PurchaseReservedCacheNodesOfferingOutcome> PurchaseReservedCacheNodesOfferingOutcomeCallable;
         typedef std::future<RebootCacheClusterOutcome> RebootCacheClusterOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
@@ -260,6 +264,7 @@ namespace Model
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyCacheParameterGroupRequest&, const Model::ModifyCacheParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCacheParameterGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyCacheSubnetGroupRequest&, const Model::ModifyCacheSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCacheSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyReplicationGroupRequest&, const Model::ModifyReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationGroupResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::ModifyReplicationGroupShardConfigurationRequest&, const Model::ModifyReplicationGroupShardConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationGroupShardConfigurationResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::PurchaseReservedCacheNodesOfferingRequest&, const Model::PurchaseReservedCacheNodesOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedCacheNodesOfferingResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::RebootCacheClusterRequest&, const Model::RebootCacheClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootCacheClusterResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
@@ -581,22 +586,22 @@ namespace Model
         virtual void CopySnapshotAsync(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a cache cluster. All nodes in the cache cluster run the same
-         * protocol-compliant cache engine software, either Memcached or Redis.</p>
-         * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-         * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant
+         * cache engine software, either Memcached or Redis.</p> <important> <p>Due to
+         * current limitations on Redis (cluster mode disabled), this operation or
+         * parameter is not supported on Redis (cluster mode enabled) replication
+         * groups.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateCacheClusterOutcome CreateCacheCluster(const Model::CreateCacheClusterRequest& request) const;
 
         /**
-         * <p>Creates a cache cluster. All nodes in the cache cluster run the same
-         * protocol-compliant cache engine software, either Memcached or Redis.</p>
-         * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-         * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant
+         * cache engine software, either Memcached or Redis.</p> <important> <p>Due to
+         * current limitations on Redis (cluster mode disabled), this operation or
+         * parameter is not supported on Redis (cluster mode enabled) replication
+         * groups.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">AWS
          * API Reference</a></p>
          *
@@ -605,11 +610,11 @@ namespace Model
         virtual Model::CreateCacheClusterOutcomeCallable CreateCacheClusterCallable(const Model::CreateCacheClusterRequest& request) const;
 
         /**
-         * <p>Creates a cache cluster. All nodes in the cache cluster run the same
-         * protocol-compliant cache engine software, either Memcached or Redis.</p>
-         * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-         * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant
+         * cache engine software, either Memcached or Redis.</p> <important> <p>Due to
+         * current limitations on Redis (cluster mode disabled), this operation or
+         * parameter is not supported on Redis (cluster mode enabled) replication
+         * groups.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">AWS
          * API Reference</a></p>
          *
@@ -620,7 +625,7 @@ namespace Model
         /**
          * <p>Creates a new Amazon ElastiCache cache parameter group. An ElastiCache cache
          * parameter group is a collection of parameters and their values that are applied
-         * to all of the nodes in any cache cluster or replication group using the
+         * to all of the nodes in any cluster or replication group using the
          * CacheParameterGroup.</p> <p>A newly created CacheParameterGroup is an exact
          * duplicate of the default parameter group for the CacheParameterGroupFamily. To
          * customize the newly created CacheParameterGroup you can change the values of
@@ -638,7 +643,7 @@ namespace Model
         /**
          * <p>Creates a new Amazon ElastiCache cache parameter group. An ElastiCache cache
          * parameter group is a collection of parameters and their values that are applied
-         * to all of the nodes in any cache cluster or replication group using the
+         * to all of the nodes in any cluster or replication group using the
          * CacheParameterGroup.</p> <p>A newly created CacheParameterGroup is an exact
          * duplicate of the default parameter group for the CacheParameterGroupFamily. To
          * customize the newly created CacheParameterGroup you can change the values of
@@ -658,7 +663,7 @@ namespace Model
         /**
          * <p>Creates a new Amazon ElastiCache cache parameter group. An ElastiCache cache
          * parameter group is a collection of parameters and their values that are applied
-         * to all of the nodes in any cache cluster or replication group using the
+         * to all of the nodes in any cluster or replication group using the
          * CacheParameterGroup.</p> <p>A newly created CacheParameterGroup is an exact
          * duplicate of the default parameter group for the CacheParameterGroupFamily. To
          * customize the newly created CacheParameterGroup you can change the values of
@@ -677,10 +682,10 @@ namespace Model
 
         /**
          * <p>Creates a new cache security group. Use a cache security group to control
-         * access to one or more cache clusters.</p> <p>Cache security groups are only used
-         * when you are creating a cache cluster outside of an Amazon Virtual Private Cloud
-         * (Amazon VPC). If you are creating a cache cluster inside of a VPC, use a cache
-         * subnet group instead. For more information, see <a
+         * access to one or more clusters.</p> <p>Cache security groups are only used when
+         * you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon
+         * VPC). If you are creating a cluster inside of a VPC, use a cache subnet group
+         * instead. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">AWS
@@ -690,10 +695,10 @@ namespace Model
 
         /**
          * <p>Creates a new cache security group. Use a cache security group to control
-         * access to one or more cache clusters.</p> <p>Cache security groups are only used
-         * when you are creating a cache cluster outside of an Amazon Virtual Private Cloud
-         * (Amazon VPC). If you are creating a cache cluster inside of a VPC, use a cache
-         * subnet group instead. For more information, see <a
+         * access to one or more clusters.</p> <p>Cache security groups are only used when
+         * you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon
+         * VPC). If you are creating a cluster inside of a VPC, use a cache subnet group
+         * instead. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">AWS
@@ -705,10 +710,10 @@ namespace Model
 
         /**
          * <p>Creates a new cache security group. Use a cache security group to control
-         * access to one or more cache clusters.</p> <p>Cache security groups are only used
-         * when you are creating a cache cluster outside of an Amazon Virtual Private Cloud
-         * (Amazon VPC). If you are creating a cache cluster inside of a VPC, use a cache
-         * subnet group instead. For more information, see <a
+         * access to one or more clusters.</p> <p>Cache security groups are only used when
+         * you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon
+         * VPC). If you are creating a cluster inside of a VPC, use a cache subnet group
+         * instead. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">AWS
@@ -752,19 +757,19 @@ namespace Model
         /**
          * <p>Creates a Redis (cluster mode disabled) or a Redis (cluster mode enabled)
          * replication group.</p> <p>A Redis (cluster mode disabled) replication group is a
-         * collection of cache clusters, where one of the cache clusters is a read/write
-         * primary and the others are read-only replicas. Writes to the primary are
-         * asynchronously propagated to the replicas.</p> <p>A Redis (cluster mode enabled)
-         * replication group is a collection of 1 to 15 node groups (shards). Each node
-         * group (shard) has one read/write primary node and up to 5 read-only replica
-         * nodes. Writes to the primary are asynchronously propagated to the replicas.
-         * Redis (cluster mode enabled) replication groups partition the data across node
-         * groups (shards).</p> <p>When a Redis (cluster mode disabled) replication group
-         * has been successfully created, you can add one or more read replicas to it, up
-         * to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
-         * replication group after it has been created. However, if you need to increase or
-         * decrease the number of node groups (console: shards), you can avail yourself of
-         * ElastiCache for Redis' enhanced backup and restore. For more information, see <a
+         * collection of clusters, where one of the clusters is a read/write primary and
+         * the others are read-only replicas. Writes to the primary are asynchronously
+         * propagated to the replicas.</p> <p>A Redis (cluster mode enabled) replication
+         * group is a collection of 1 to 15 node groups (shards). Each node group (shard)
+         * has one read/write primary node and up to 5 read-only replica nodes. Writes to
+         * the primary are asynchronously propagated to the replicas. Redis (cluster mode
+         * enabled) replication groups partition the data across node groups (shards).</p>
+         * <p>When a Redis (cluster mode disabled) replication group has been successfully
+         * created, you can add one or more read replicas to it, up to a total of 5 read
+         * replicas. You cannot alter a Redis (cluster mode enabled) replication group
+         * after it has been created. However, if you need to increase or decrease the
+         * number of node groups (console: shards), you can avail yourself of ElastiCache
+         * for Redis' enhanced backup and restore. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/backups-restoring.html">Restoring
          * From a Backup with Cluster Resizing</a> in the <i>ElastiCache User
          * Guide</i>.</p> <note> <p>This operation is valid for Redis only.</p>
@@ -777,19 +782,19 @@ namespace Model
         /**
          * <p>Creates a Redis (cluster mode disabled) or a Redis (cluster mode enabled)
          * replication group.</p> <p>A Redis (cluster mode disabled) replication group is a
-         * collection of cache clusters, where one of the cache clusters is a read/write
-         * primary and the others are read-only replicas. Writes to the primary are
-         * asynchronously propagated to the replicas.</p> <p>A Redis (cluster mode enabled)
-         * replication group is a collection of 1 to 15 node groups (shards). Each node
-         * group (shard) has one read/write primary node and up to 5 read-only replica
-         * nodes. Writes to the primary are asynchronously propagated to the replicas.
-         * Redis (cluster mode enabled) replication groups partition the data across node
-         * groups (shards).</p> <p>When a Redis (cluster mode disabled) replication group
-         * has been successfully created, you can add one or more read replicas to it, up
-         * to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
-         * replication group after it has been created. However, if you need to increase or
-         * decrease the number of node groups (console: shards), you can avail yourself of
-         * ElastiCache for Redis' enhanced backup and restore. For more information, see <a
+         * collection of clusters, where one of the clusters is a read/write primary and
+         * the others are read-only replicas. Writes to the primary are asynchronously
+         * propagated to the replicas.</p> <p>A Redis (cluster mode enabled) replication
+         * group is a collection of 1 to 15 node groups (shards). Each node group (shard)
+         * has one read/write primary node and up to 5 read-only replica nodes. Writes to
+         * the primary are asynchronously propagated to the replicas. Redis (cluster mode
+         * enabled) replication groups partition the data across node groups (shards).</p>
+         * <p>When a Redis (cluster mode disabled) replication group has been successfully
+         * created, you can add one or more read replicas to it, up to a total of 5 read
+         * replicas. You cannot alter a Redis (cluster mode enabled) replication group
+         * after it has been created. However, if you need to increase or decrease the
+         * number of node groups (console: shards), you can avail yourself of ElastiCache
+         * for Redis' enhanced backup and restore. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/backups-restoring.html">Restoring
          * From a Backup with Cluster Resizing</a> in the <i>ElastiCache User
          * Guide</i>.</p> <note> <p>This operation is valid for Redis only.</p>
@@ -804,19 +809,19 @@ namespace Model
         /**
          * <p>Creates a Redis (cluster mode disabled) or a Redis (cluster mode enabled)
          * replication group.</p> <p>A Redis (cluster mode disabled) replication group is a
-         * collection of cache clusters, where one of the cache clusters is a read/write
-         * primary and the others are read-only replicas. Writes to the primary are
-         * asynchronously propagated to the replicas.</p> <p>A Redis (cluster mode enabled)
-         * replication group is a collection of 1 to 15 node groups (shards). Each node
-         * group (shard) has one read/write primary node and up to 5 read-only replica
-         * nodes. Writes to the primary are asynchronously propagated to the replicas.
-         * Redis (cluster mode enabled) replication groups partition the data across node
-         * groups (shards).</p> <p>When a Redis (cluster mode disabled) replication group
-         * has been successfully created, you can add one or more read replicas to it, up
-         * to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
-         * replication group after it has been created. However, if you need to increase or
-         * decrease the number of node groups (console: shards), you can avail yourself of
-         * ElastiCache for Redis' enhanced backup and restore. For more information, see <a
+         * collection of clusters, where one of the clusters is a read/write primary and
+         * the others are read-only replicas. Writes to the primary are asynchronously
+         * propagated to the replicas.</p> <p>A Redis (cluster mode enabled) replication
+         * group is a collection of 1 to 15 node groups (shards). Each node group (shard)
+         * has one read/write primary node and up to 5 read-only replica nodes. Writes to
+         * the primary are asynchronously propagated to the replicas. Redis (cluster mode
+         * enabled) replication groups partition the data across node groups (shards).</p>
+         * <p>When a Redis (cluster mode disabled) replication group has been successfully
+         * created, you can add one or more read replicas to it, up to a total of 5 read
+         * replicas. You cannot alter a Redis (cluster mode enabled) replication group
+         * after it has been created. However, if you need to increase or decrease the
+         * number of node groups (console: shards), you can avail yourself of ElastiCache
+         * for Redis' enhanced backup and restore. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/backups-restoring.html">Restoring
          * From a Backup with Cluster Resizing</a> in the <i>ElastiCache User
          * Guide</i>.</p> <note> <p>This operation is valid for Redis only.</p>
@@ -829,8 +834,8 @@ namespace Model
         virtual void CreateReplicationGroupAsync(const Model::CreateReplicationGroupRequest& request, const CreateReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a copy of an entire cache cluster or replication group at a specific
-         * moment in time.</p> <note> <p>This operation is valid for Redis only.</p>
+         * <p>Creates a copy of an entire cluster or replication group at a specific moment
+         * in time.</p> <note> <p>This operation is valid for Redis only.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">AWS
          * API Reference</a></p>
@@ -838,8 +843,8 @@ namespace Model
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a copy of an entire cache cluster or replication group at a specific
-         * moment in time.</p> <note> <p>This operation is valid for Redis only.</p>
+         * <p>Creates a copy of an entire cluster or replication group at a specific moment
+         * in time.</p> <note> <p>This operation is valid for Redis only.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">AWS
          * API Reference</a></p>
@@ -849,8 +854,8 @@ namespace Model
         virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a copy of an entire cache cluster or replication group at a specific
-         * moment in time.</p> <note> <p>This operation is valid for Redis only.</p>
+         * <p>Creates a copy of an entire cluster or replication group at a specific moment
+         * in time.</p> <note> <p>This operation is valid for Redis only.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">AWS
          * API Reference</a></p>
@@ -860,34 +865,32 @@ namespace Model
         virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a previously provisioned cache cluster.
-         * <code>DeleteCacheCluster</code> deletes all associated cache nodes, node
-         * endpoints and the cache cluster itself. When you receive a successful response
-         * from this operation, Amazon ElastiCache immediately begins deleting the cache
-         * cluster; you cannot cancel or revert this operation.</p> <p>This operation
-         * cannot be used to delete a cache cluster that is the last read replica of a
-         * replication group or node group (shard) that has Multi-AZ mode enabled or a
-         * cache cluster from a Redis (cluster mode enabled) replication group.</p>
-         * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-         * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned cluster. <code>DeleteCacheCluster</code>
+         * deletes all associated cache nodes, node endpoints and the cluster itself. When
+         * you receive a successful response from this operation, Amazon ElastiCache
+         * immediately begins deleting the cluster; you cannot cancel or revert this
+         * operation.</p> <p>This operation cannot be used to delete a cluster that is the
+         * last read replica of a replication group or node group (shard) that has Multi-AZ
+         * mode enabled or a cluster from a Redis (cluster mode enabled) replication
+         * group.</p> <important> <p>Due to current limitations on Redis (cluster mode
+         * disabled), this operation or parameter is not supported on Redis (cluster mode
+         * enabled) replication groups.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCacheClusterOutcome DeleteCacheCluster(const Model::DeleteCacheClusterRequest& request) const;
 
         /**
-         * <p>Deletes a previously provisioned cache cluster.
-         * <code>DeleteCacheCluster</code> deletes all associated cache nodes, node
-         * endpoints and the cache cluster itself. When you receive a successful response
-         * from this operation, Amazon ElastiCache immediately begins deleting the cache
-         * cluster; you cannot cancel or revert this operation.</p> <p>This operation
-         * cannot be used to delete a cache cluster that is the last read replica of a
-         * replication group or node group (shard) that has Multi-AZ mode enabled or a
-         * cache cluster from a Redis (cluster mode enabled) replication group.</p>
-         * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-         * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned cluster. <code>DeleteCacheCluster</code>
+         * deletes all associated cache nodes, node endpoints and the cluster itself. When
+         * you receive a successful response from this operation, Amazon ElastiCache
+         * immediately begins deleting the cluster; you cannot cancel or revert this
+         * operation.</p> <p>This operation cannot be used to delete a cluster that is the
+         * last read replica of a replication group or node group (shard) that has Multi-AZ
+         * mode enabled or a cluster from a Redis (cluster mode enabled) replication
+         * group.</p> <important> <p>Due to current limitations on Redis (cluster mode
+         * disabled), this operation or parameter is not supported on Redis (cluster mode
+         * enabled) replication groups.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
          * API Reference</a></p>
          *
@@ -896,17 +899,16 @@ namespace Model
         virtual Model::DeleteCacheClusterOutcomeCallable DeleteCacheClusterCallable(const Model::DeleteCacheClusterRequest& request) const;
 
         /**
-         * <p>Deletes a previously provisioned cache cluster.
-         * <code>DeleteCacheCluster</code> deletes all associated cache nodes, node
-         * endpoints and the cache cluster itself. When you receive a successful response
-         * from this operation, Amazon ElastiCache immediately begins deleting the cache
-         * cluster; you cannot cancel or revert this operation.</p> <p>This operation
-         * cannot be used to delete a cache cluster that is the last read replica of a
-         * replication group or node group (shard) that has Multi-AZ mode enabled or a
-         * cache cluster from a Redis (cluster mode enabled) replication group.</p>
-         * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-         * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned cluster. <code>DeleteCacheCluster</code>
+         * deletes all associated cache nodes, node endpoints and the cluster itself. When
+         * you receive a successful response from this operation, Amazon ElastiCache
+         * immediately begins deleting the cluster; you cannot cancel or revert this
+         * operation.</p> <p>This operation cannot be used to delete a cluster that is the
+         * last read replica of a replication group or node group (shard) that has Multi-AZ
+         * mode enabled or a cluster from a Redis (cluster mode enabled) replication
+         * group.</p> <important> <p>Due to current limitations on Redis (cluster mode
+         * disabled), this operation or parameter is not supported on Redis (cluster mode
+         * enabled) replication groups.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
          * API Reference</a></p>
          *
@@ -947,8 +949,8 @@ namespace Model
 
         /**
          * <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache
-         * security group if it is associated with any cache clusters.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * security group if it is associated with any clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">AWS
          * API Reference</a></p>
          */
@@ -956,8 +958,8 @@ namespace Model
 
         /**
          * <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache
-         * security group if it is associated with any cache clusters.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * security group if it is associated with any clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">AWS
          * API Reference</a></p>
          *
@@ -967,8 +969,8 @@ namespace Model
 
         /**
          * <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache
-         * security group if it is associated with any cache clusters.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * security group if it is associated with any clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">AWS
          * API Reference</a></p>
          *
@@ -978,8 +980,8 @@ namespace Model
 
         /**
          * <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet
-         * group if it is associated with any cache clusters.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * group if it is associated with any clusters.</p> </note><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
          * API Reference</a></p>
          */
@@ -987,8 +989,8 @@ namespace Model
 
         /**
          * <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet
-         * group if it is associated with any cache clusters.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * group if it is associated with any clusters.</p> </note><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -998,8 +1000,8 @@ namespace Model
 
         /**
          * <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet
-         * group if it is associated with any cache clusters.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * group if it is associated with any clusters.</p> </note><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -1088,44 +1090,42 @@ namespace Model
         virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about all provisioned cache clusters if no cache cluster
-         * identifier is specified, or about a specific cache cluster if a cache cluster
-         * identifier is supplied.</p> <p>By default, abbreviated information about the
-         * cache clusters is returned. You can use the optional <i>ShowCacheNodeInfo</i>
-         * flag to retrieve detailed information about the cache nodes associated with the
-         * cache clusters. These details include the DNS address and port for the cache
-         * node endpoint.</p> <p>If the cluster is in the <i>creating</i> state, only
-         * cluster-level information is displayed until all of the nodes are successfully
-         * provisioned.</p> <p>If the cluster is in the <i>deleting</i> state, only
-         * cluster-level information is displayed.</p> <p>If cache nodes are currently
-         * being added to the cache cluster, node endpoint information and creation time
-         * for the additional nodes are not displayed until they are completely
-         * provisioned. When the cache cluster state is <i>available</i>, the cluster is
-         * ready for use.</p> <p>If cache nodes are currently being removed from the cache
-         * cluster, no endpoint information for the removed nodes is
-         * displayed.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about all provisioned clusters if no cluster identifier
+         * is specified, or about a specific cache cluster if a cluster identifier is
+         * supplied.</p> <p>By default, abbreviated information about the clusters is
+         * returned. You can use the optional <i>ShowCacheNodeInfo</i> flag to retrieve
+         * detailed information about the cache nodes associated with the clusters. These
+         * details include the DNS address and port for the cache node endpoint.</p> <p>If
+         * the cluster is in the <i>creating</i> state, only cluster-level information is
+         * displayed until all of the nodes are successfully provisioned.</p> <p>If the
+         * cluster is in the <i>deleting</i> state, only cluster-level information is
+         * displayed.</p> <p>If cache nodes are currently being added to the cluster, node
+         * endpoint information and creation time for the additional nodes are not
+         * displayed until they are completely provisioned. When the cluster state is
+         * <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are
+         * currently being removed from the cluster, no endpoint information for the
+         * removed nodes is displayed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeCacheClustersOutcome DescribeCacheClusters(const Model::DescribeCacheClustersRequest& request) const;
 
         /**
-         * <p>Returns information about all provisioned cache clusters if no cache cluster
-         * identifier is specified, or about a specific cache cluster if a cache cluster
-         * identifier is supplied.</p> <p>By default, abbreviated information about the
-         * cache clusters is returned. You can use the optional <i>ShowCacheNodeInfo</i>
-         * flag to retrieve detailed information about the cache nodes associated with the
-         * cache clusters. These details include the DNS address and port for the cache
-         * node endpoint.</p> <p>If the cluster is in the <i>creating</i> state, only
-         * cluster-level information is displayed until all of the nodes are successfully
-         * provisioned.</p> <p>If the cluster is in the <i>deleting</i> state, only
-         * cluster-level information is displayed.</p> <p>If cache nodes are currently
-         * being added to the cache cluster, node endpoint information and creation time
-         * for the additional nodes are not displayed until they are completely
-         * provisioned. When the cache cluster state is <i>available</i>, the cluster is
-         * ready for use.</p> <p>If cache nodes are currently being removed from the cache
-         * cluster, no endpoint information for the removed nodes is
-         * displayed.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about all provisioned clusters if no cluster identifier
+         * is specified, or about a specific cache cluster if a cluster identifier is
+         * supplied.</p> <p>By default, abbreviated information about the clusters is
+         * returned. You can use the optional <i>ShowCacheNodeInfo</i> flag to retrieve
+         * detailed information about the cache nodes associated with the clusters. These
+         * details include the DNS address and port for the cache node endpoint.</p> <p>If
+         * the cluster is in the <i>creating</i> state, only cluster-level information is
+         * displayed until all of the nodes are successfully provisioned.</p> <p>If the
+         * cluster is in the <i>deleting</i> state, only cluster-level information is
+         * displayed.</p> <p>If cache nodes are currently being added to the cluster, node
+         * endpoint information and creation time for the additional nodes are not
+         * displayed until they are completely provisioned. When the cluster state is
+         * <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are
+         * currently being removed from the cluster, no endpoint information for the
+         * removed nodes is displayed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">AWS
          * API Reference</a></p>
          *
@@ -1134,22 +1134,21 @@ namespace Model
         virtual Model::DescribeCacheClustersOutcomeCallable DescribeCacheClustersCallable(const Model::DescribeCacheClustersRequest& request) const;
 
         /**
-         * <p>Returns information about all provisioned cache clusters if no cache cluster
-         * identifier is specified, or about a specific cache cluster if a cache cluster
-         * identifier is supplied.</p> <p>By default, abbreviated information about the
-         * cache clusters is returned. You can use the optional <i>ShowCacheNodeInfo</i>
-         * flag to retrieve detailed information about the cache nodes associated with the
-         * cache clusters. These details include the DNS address and port for the cache
-         * node endpoint.</p> <p>If the cluster is in the <i>creating</i> state, only
-         * cluster-level information is displayed until all of the nodes are successfully
-         * provisioned.</p> <p>If the cluster is in the <i>deleting</i> state, only
-         * cluster-level information is displayed.</p> <p>If cache nodes are currently
-         * being added to the cache cluster, node endpoint information and creation time
-         * for the additional nodes are not displayed until they are completely
-         * provisioned. When the cache cluster state is <i>available</i>, the cluster is
-         * ready for use.</p> <p>If cache nodes are currently being removed from the cache
-         * cluster, no endpoint information for the removed nodes is
-         * displayed.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about all provisioned clusters if no cluster identifier
+         * is specified, or about a specific cache cluster if a cluster identifier is
+         * supplied.</p> <p>By default, abbreviated information about the clusters is
+         * returned. You can use the optional <i>ShowCacheNodeInfo</i> flag to retrieve
+         * detailed information about the cache nodes associated with the clusters. These
+         * details include the DNS address and port for the cache node endpoint.</p> <p>If
+         * the cluster is in the <i>creating</i> state, only cluster-level information is
+         * displayed until all of the nodes are successfully provisioned.</p> <p>If the
+         * cluster is in the <i>deleting</i> state, only cluster-level information is
+         * displayed.</p> <p>If cache nodes are currently being added to the cluster, node
+         * endpoint information and creation time for the additional nodes are not
+         * displayed until they are completely provisioned. When the cluster state is
+         * <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are
+         * currently being removed from the cluster, no endpoint information for the
+         * removed nodes is displayed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">AWS
          * API Reference</a></p>
          *
@@ -1335,9 +1334,9 @@ namespace Model
         virtual void DescribeEngineDefaultParametersAsync(const Model::DescribeEngineDefaultParametersRequest& request, const DescribeEngineDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns events related to cache clusters, cache security groups, and cache
-         * parameter groups. You can obtain events specific to a particular cache cluster,
-         * cache security group, or cache parameter group by providing the name as a
+         * <p>Returns events related to clusters, cache security groups, and cache
+         * parameter groups. You can obtain events specific to a particular cluster, cache
+         * security group, or cache parameter group by providing the name as a
          * parameter.</p> <p>By default, only the events occurring within the last hour are
          * returned; however, you can retrieve up to 14 days' worth of events if
          * necessary.</p><p><h3>See Also:</h3>   <a
@@ -1347,9 +1346,9 @@ namespace Model
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
         /**
-         * <p>Returns events related to cache clusters, cache security groups, and cache
-         * parameter groups. You can obtain events specific to a particular cache cluster,
-         * cache security group, or cache parameter group by providing the name as a
+         * <p>Returns events related to clusters, cache security groups, and cache
+         * parameter groups. You can obtain events specific to a particular cluster, cache
+         * security group, or cache parameter group by providing the name as a
          * parameter.</p> <p>By default, only the events occurring within the last hour are
          * returned; however, you can retrieve up to 14 days' worth of events if
          * necessary.</p><p><h3>See Also:</h3>   <a
@@ -1361,9 +1360,9 @@ namespace Model
         virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
 
         /**
-         * <p>Returns events related to cache clusters, cache security groups, and cache
-         * parameter groups. You can obtain events specific to a particular cache cluster,
-         * cache security group, or cache parameter group by providing the name as a
+         * <p>Returns events related to clusters, cache security groups, and cache
+         * parameter groups. You can obtain events specific to a particular cluster, cache
+         * security group, or cache parameter group by providing the name as a
          * parameter.</p> <p>By default, only the events occurring within the last hour are
          * returned; however, you can retrieve up to 14 days' worth of events if
          * necessary.</p><p><h3>See Also:</h3>   <a
@@ -1462,22 +1461,22 @@ namespace Model
         virtual void DescribeReservedCacheNodesOfferingsAsync(const Model::DescribeReservedCacheNodesOfferingsRequest& request, const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about cache cluster or replication group snapshots. By
-         * default, <code>DescribeSnapshots</code> lists all of your snapshots; it can
-         * optionally describe a single snapshot, or just the snapshots associated with a
-         * particular cache cluster.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Returns information about cluster or replication group snapshots. By default,
+         * <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally
+         * describe a single snapshot, or just the snapshots associated with a particular
+         * cache cluster.</p> <note> <p>This operation is valid for Redis only.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
 
         /**
-         * <p>Returns information about cache cluster or replication group snapshots. By
-         * default, <code>DescribeSnapshots</code> lists all of your snapshots; it can
-         * optionally describe a single snapshot, or just the snapshots associated with a
-         * particular cache cluster.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Returns information about cluster or replication group snapshots. By default,
+         * <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally
+         * describe a single snapshot, or just the snapshots associated with a particular
+         * cache cluster.</p> <note> <p>This operation is valid for Redis only.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
          * API Reference</a></p>
          *
@@ -1486,11 +1485,11 @@ namespace Model
         virtual Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request) const;
 
         /**
-         * <p>Returns information about cache cluster or replication group snapshots. By
-         * default, <code>DescribeSnapshots</code> lists all of your snapshots; it can
-         * optionally describe a single snapshot, or just the snapshots associated with a
-         * particular cache cluster.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Returns information about cluster or replication group snapshots. By default,
+         * <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally
+         * describe a single snapshot, or just the snapshots associated with a particular
+         * cache cluster.</p> <note> <p>This operation is valid for Redis only.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
          * API Reference</a></p>
          *
@@ -1582,18 +1581,18 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the settings for a cache cluster. You can use this operation to
-         * change one or more cluster configuration parameters by specifying the parameters
-         * and the new values.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the settings for a cluster. You can use this operation to change one
+         * or more cluster configuration parameters by specifying the parameters and the
+         * new values.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyCacheClusterOutcome ModifyCacheCluster(const Model::ModifyCacheClusterRequest& request) const;
 
         /**
-         * <p>Modifies the settings for a cache cluster. You can use this operation to
-         * change one or more cluster configuration parameters by specifying the parameters
-         * and the new values.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the settings for a cluster. You can use this operation to change one
+         * or more cluster configuration parameters by specifying the parameters and the
+         * new values.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">AWS
          * API Reference</a></p>
          *
@@ -1602,9 +1601,9 @@ namespace Model
         virtual Model::ModifyCacheClusterOutcomeCallable ModifyCacheClusterCallable(const Model::ModifyCacheClusterRequest& request) const;
 
         /**
-         * <p>Modifies the settings for a cache cluster. You can use this operation to
-         * change one or more cluster configuration parameters by specifying the parameters
-         * and the new values.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the settings for a cluster. You can use this operation to change one
+         * or more cluster configuration parameters by specifying the parameters and the
+         * new values.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">AWS
          * API Reference</a></p>
          *
@@ -1706,6 +1705,52 @@ namespace Model
         virtual void ModifyReplicationGroupAsync(const Model::ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Performs horizontal scaling on a Redis (cluster mode enabled) cluster with no
+         * downtime. Requires Redis engine version 3.2.10 or newer. For information on
+         * upgrading your engine to a newer version, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/VersionManagement.html">Upgrading
+         * Engine Versions</a> in the Amazon ElastiCache User Guide.</p> <p>For more
+         * information on ElastiCache for Redis online horizontal scaling, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/redis-cluster-resharding-online.html">ElastiCache
+         * for Redis Horizontal Scaling</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyReplicationGroupShardConfigurationOutcome ModifyReplicationGroupShardConfiguration(const Model::ModifyReplicationGroupShardConfigurationRequest& request) const;
+
+        /**
+         * <p>Performs horizontal scaling on a Redis (cluster mode enabled) cluster with no
+         * downtime. Requires Redis engine version 3.2.10 or newer. For information on
+         * upgrading your engine to a newer version, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/VersionManagement.html">Upgrading
+         * Engine Versions</a> in the Amazon ElastiCache User Guide.</p> <p>For more
+         * information on ElastiCache for Redis online horizontal scaling, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/redis-cluster-resharding-online.html">ElastiCache
+         * for Redis Horizontal Scaling</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyReplicationGroupShardConfigurationOutcomeCallable ModifyReplicationGroupShardConfigurationCallable(const Model::ModifyReplicationGroupShardConfigurationRequest& request) const;
+
+        /**
+         * <p>Performs horizontal scaling on a Redis (cluster mode enabled) cluster with no
+         * downtime. Requires Redis engine version 3.2.10 or newer. For information on
+         * upgrading your engine to a newer version, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/VersionManagement.html">Upgrading
+         * Engine Versions</a> in the Amazon ElastiCache User Guide.</p> <p>For more
+         * information on ElastiCache for Redis online horizontal scaling, see <a
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/redis-cluster-resharding-online.html">ElastiCache
+         * for Redis Horizontal Scaling</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyReplicationGroupShardConfigurationAsync(const Model::ModifyReplicationGroupShardConfigurationRequest& request, const ModifyReplicationGroupShardConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Allows you to purchase a reserved cache node offering.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">AWS
@@ -1734,17 +1779,17 @@ namespace Model
         virtual void PurchaseReservedCacheNodesOfferingAsync(const Model::PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Reboots some, or all, of the cache nodes within a provisioned cache cluster.
-         * This operation applies any modified cache parameter groups to the cache cluster.
-         * The reboot operation takes place as soon as possible, and results in a momentary
-         * outage to the cache cluster. During the reboot, the cache cluster status is set
-         * to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache
-         * node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache
-         * cluster event is created.</p> <p>Rebooting a cluster is currently supported on
-         * Memcached and Redis (cluster mode disabled) clusters. Rebooting is not supported
-         * on Redis (cluster mode enabled) clusters.</p> <p>If you make changes to
-         * parameters that require a Redis (cluster mode enabled) cluster reboot for the
-         * changes to be applied, see <a
+         * <p>Reboots some, or all, of the cache nodes within a provisioned cluster. This
+         * operation applies any modified cache parameter groups to the cluster. The reboot
+         * operation takes place as soon as possible, and results in a momentary outage to
+         * the cluster. During the reboot, the cluster status is set to REBOOTING.</p>
+         * <p>The reboot causes the contents of the cache (for each cache node being
+         * rebooted) to be lost.</p> <p>When the reboot is complete, a cluster event is
+         * created.</p> <p>Rebooting a cluster is currently supported on Memcached and
+         * Redis (cluster mode disabled) clusters. Rebooting is not supported on Redis
+         * (cluster mode enabled) clusters.</p> <p>If you make changes to parameters that
+         * require a Redis (cluster mode enabled) cluster reboot for the changes to be
+         * applied, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.htm">Rebooting
          * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
@@ -1753,17 +1798,17 @@ namespace Model
         virtual Model::RebootCacheClusterOutcome RebootCacheCluster(const Model::RebootCacheClusterRequest& request) const;
 
         /**
-         * <p>Reboots some, or all, of the cache nodes within a provisioned cache cluster.
-         * This operation applies any modified cache parameter groups to the cache cluster.
-         * The reboot operation takes place as soon as possible, and results in a momentary
-         * outage to the cache cluster. During the reboot, the cache cluster status is set
-         * to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache
-         * node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache
-         * cluster event is created.</p> <p>Rebooting a cluster is currently supported on
-         * Memcached and Redis (cluster mode disabled) clusters. Rebooting is not supported
-         * on Redis (cluster mode enabled) clusters.</p> <p>If you make changes to
-         * parameters that require a Redis (cluster mode enabled) cluster reboot for the
-         * changes to be applied, see <a
+         * <p>Reboots some, or all, of the cache nodes within a provisioned cluster. This
+         * operation applies any modified cache parameter groups to the cluster. The reboot
+         * operation takes place as soon as possible, and results in a momentary outage to
+         * the cluster. During the reboot, the cluster status is set to REBOOTING.</p>
+         * <p>The reboot causes the contents of the cache (for each cache node being
+         * rebooted) to be lost.</p> <p>When the reboot is complete, a cluster event is
+         * created.</p> <p>Rebooting a cluster is currently supported on Memcached and
+         * Redis (cluster mode disabled) clusters. Rebooting is not supported on Redis
+         * (cluster mode enabled) clusters.</p> <p>If you make changes to parameters that
+         * require a Redis (cluster mode enabled) cluster reboot for the changes to be
+         * applied, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.htm">Rebooting
          * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
@@ -1774,17 +1819,17 @@ namespace Model
         virtual Model::RebootCacheClusterOutcomeCallable RebootCacheClusterCallable(const Model::RebootCacheClusterRequest& request) const;
 
         /**
-         * <p>Reboots some, or all, of the cache nodes within a provisioned cache cluster.
-         * This operation applies any modified cache parameter groups to the cache cluster.
-         * The reboot operation takes place as soon as possible, and results in a momentary
-         * outage to the cache cluster. During the reboot, the cache cluster status is set
-         * to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache
-         * node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache
-         * cluster event is created.</p> <p>Rebooting a cluster is currently supported on
-         * Memcached and Redis (cluster mode disabled) clusters. Rebooting is not supported
-         * on Redis (cluster mode enabled) clusters.</p> <p>If you make changes to
-         * parameters that require a Redis (cluster mode enabled) cluster reboot for the
-         * changes to be applied, see <a
+         * <p>Reboots some, or all, of the cache nodes within a provisioned cluster. This
+         * operation applies any modified cache parameter groups to the cluster. The reboot
+         * operation takes place as soon as possible, and results in a momentary outage to
+         * the cluster. During the reboot, the cluster status is set to REBOOTING.</p>
+         * <p>The reboot causes the contents of the cache (for each cache node being
+         * rebooted) to be lost.</p> <p>When the reboot is complete, a cluster event is
+         * created.</p> <p>Rebooting a cluster is currently supported on Memcached and
+         * Redis (cluster mode disabled) clusters. Rebooting is not supported on Redis
+         * (cluster mode enabled) clusters.</p> <p>If you make changes to parameters that
+         * require a Redis (cluster mode enabled) cluster reboot for the changes to be
+         * applied, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.htm">Rebooting
          * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
@@ -2043,6 +2088,7 @@ namespace Model
         void ModifyCacheParameterGroupAsyncHelper(const Model::ModifyCacheParameterGroupRequest& request, const ModifyCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCacheSubnetGroupAsyncHelper(const Model::ModifyCacheSubnetGroupRequest& request, const ModifyCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReplicationGroupAsyncHelper(const Model::ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyReplicationGroupShardConfigurationAsyncHelper(const Model::ModifyReplicationGroupShardConfigurationRequest& request, const ModifyReplicationGroupShardConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseReservedCacheNodesOfferingAsyncHelper(const Model::PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootCacheClusterAsyncHelper(const Model::RebootCacheClusterRequest& request, const RebootCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
