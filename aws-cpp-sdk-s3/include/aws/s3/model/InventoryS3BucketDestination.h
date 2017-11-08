@@ -17,6 +17,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/InventoryFormat.h>
+#include <aws/s3/model/InventoryEncryption.h>
 #include <utility>
 
 namespace Aws
@@ -183,6 +184,37 @@ namespace Model
      */
     inline InventoryS3BucketDestination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
+    /**
+     * Contains the type of server-side encryption used to encrypt the inventory
+     * results.
+     */
+    inline const InventoryEncryption& GetEncryption() const{ return m_encryption; }
+
+    /**
+     * Contains the type of server-side encryption used to encrypt the inventory
+     * results.
+     */
+    inline void SetEncryption(const InventoryEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
+
+    /**
+     * Contains the type of server-side encryption used to encrypt the inventory
+     * results.
+     */
+    inline void SetEncryption(InventoryEncryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
+
+    /**
+     * Contains the type of server-side encryption used to encrypt the inventory
+     * results.
+     */
+    inline InventoryS3BucketDestination& WithEncryption(const InventoryEncryption& value) { SetEncryption(value); return *this;}
+
+    /**
+     * Contains the type of server-side encryption used to encrypt the inventory
+     * results.
+     */
+    inline InventoryS3BucketDestination& WithEncryption(InventoryEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -196,6 +228,9 @@ namespace Model
 
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
+    InventoryEncryption m_encryption;
+    bool m_encryptionHasBeenSet;
   };
 
 } // namespace Model

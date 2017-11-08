@@ -52,43 +52,43 @@ namespace Model
   public:
 
     /**
-     * <p>A required parameter. Options available for the given engine name will be
+     * <p>A required parameter. Options available for the given engine name are
      * described.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p>A required parameter. Options available for the given engine name will be
+     * <p>A required parameter. Options available for the given engine name are
      * described.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p>A required parameter. Options available for the given engine name will be
+     * <p>A required parameter. Options available for the given engine name are
      * described.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
-     * <p>A required parameter. Options available for the given engine name will be
+     * <p>A required parameter. Options available for the given engine name are
      * described.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p>A required parameter. Options available for the given engine name will be
+     * <p>A required parameter. Options available for the given engine name are
      * described.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p>A required parameter. Options available for the given engine name will be
+     * <p>A required parameter. Options available for the given engine name are
      * described.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
-     * <p>A required parameter. Options available for the given engine name will be
+     * <p>A required parameter. Options available for the given engine name are
      * described.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}

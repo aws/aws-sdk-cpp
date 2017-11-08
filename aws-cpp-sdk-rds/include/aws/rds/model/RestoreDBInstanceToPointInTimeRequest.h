@@ -231,86 +231,79 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: The same DBInstanceClass as the original DB
-     * instance.</p>
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
+     * DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -338,7 +331,7 @@ namespace Model
 
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -346,7 +339,7 @@ namespace Model
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -354,7 +347,7 @@ namespace Model
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -362,7 +355,7 @@ namespace Model
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -370,7 +363,7 @@ namespace Model
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -378,7 +371,7 @@ namespace Model
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -386,7 +379,7 @@ namespace Model
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 Availability Zone that the database instance will be created in.</p>
+     * <p>The EC2 Availability Zone that the database instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * true.</p> <p>Example: <code>us-east-1a</code> </p>
@@ -475,10 +468,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -491,10 +484,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -507,28 +500,28 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
 
     /**
-     * <p>Indicates that minor version upgrades will be applied automatically to the DB
+     * <p>Indicates that minor version upgrades are applied automatically to the DB
      * instance during the maintenance window.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor version upgrades will be applied automatically to the DB
+     * <p>Indicates that minor version upgrades are applied automatically to the DB
      * instance during the maintenance window.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor version upgrades will be applied automatically to the DB
+     * <p>Indicates that minor version upgrades are applied automatically to the DB
      * instance during the maintenance window.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}

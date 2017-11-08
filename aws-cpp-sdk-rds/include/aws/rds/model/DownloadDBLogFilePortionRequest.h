@@ -187,9 +187,9 @@ namespace Model
 
     /**
      * <p>The number of lines to download. If the number of lines specified results in
-     * a file over 1 MB in size, the file will be truncated at 1 MB in size.</p> <p>If
-     * the NumberOfLines parameter is specified, then the block of lines returned can
-     * be from the beginning or the end of the log file, depending on the value of the
+     * a file over 1 MB in size, the file is truncated at 1 MB in size.</p> <p>If the
+     * NumberOfLines parameter is specified, then the block of lines returned can be
+     * from the beginning or the end of the log file, depending on the value of the
      * Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are
      * specified, the entire log file is returned up to a maximum of 10000 lines,
      * starting with the most recent log entries first.</p> </li> <li> <p>If
@@ -207,9 +207,9 @@ namespace Model
 
     /**
      * <p>The number of lines to download. If the number of lines specified results in
-     * a file over 1 MB in size, the file will be truncated at 1 MB in size.</p> <p>If
-     * the NumberOfLines parameter is specified, then the block of lines returned can
-     * be from the beginning or the end of the log file, depending on the value of the
+     * a file over 1 MB in size, the file is truncated at 1 MB in size.</p> <p>If the
+     * NumberOfLines parameter is specified, then the block of lines returned can be
+     * from the beginning or the end of the log file, depending on the value of the
      * Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are
      * specified, the entire log file is returned up to a maximum of 10000 lines,
      * starting with the most recent log entries first.</p> </li> <li> <p>If
@@ -227,9 +227,9 @@ namespace Model
 
     /**
      * <p>The number of lines to download. If the number of lines specified results in
-     * a file over 1 MB in size, the file will be truncated at 1 MB in size.</p> <p>If
-     * the NumberOfLines parameter is specified, then the block of lines returned can
-     * be from the beginning or the end of the log file, depending on the value of the
+     * a file over 1 MB in size, the file is truncated at 1 MB in size.</p> <p>If the
+     * NumberOfLines parameter is specified, then the block of lines returned can be
+     * from the beginning or the end of the log file, depending on the value of the
      * Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are
      * specified, the entire log file is returned up to a maximum of 10000 lines,
      * starting with the most recent log entries first.</p> </li> <li> <p>If

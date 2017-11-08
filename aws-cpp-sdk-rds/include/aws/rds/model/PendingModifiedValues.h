@@ -52,105 +52,105 @@ namespace Model
 
     /**
      * <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will
-     * be applied or is in progress. </p>
+     * be applied or is currently being applied. </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
      * <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will
-     * be applied or is in progress. </p>
+     * be applied or is currently being applied. </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
      * <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will
-     * be applied or is in progress. </p>
+     * be applied or is currently being applied. </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will
-     * be applied or is in progress. </p>
+     * be applied or is currently being applied. </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
      * <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will
-     * be applied or is in progress. </p>
+     * be applied or is currently being applied. </p>
      */
     inline PendingModifiedValues& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
      * <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will
-     * be applied or is in progress. </p>
+     * be applied or is currently being applied. </p>
      */
     inline PendingModifiedValues& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will
-     * be applied or is in progress. </p>
+     * be applied or is currently being applied. </p>
      */
     inline PendingModifiedValues& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
 
     /**
      * <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that
-     * will be applied or is in progress. </p>
+     * will be applied or is currently being applied. </p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that
-     * will be applied or is in progress. </p>
+     * will be applied or is currently being applied. </p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that
-     * will be applied or is in progress. </p>
+     * will be applied or is currently being applied. </p>
      */
     inline PendingModifiedValues& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
 
     /**
-     * <p>Contains the pending or in-progress change of the master credentials for the
-     * DB instance.</p>
+     * <p>Contains the pending or currently-in-progress change of the master
+     * credentials for the DB instance.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>Contains the pending or in-progress change of the master credentials for the
-     * DB instance.</p>
+     * <p>Contains the pending or currently-in-progress change of the master
+     * credentials for the DB instance.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>Contains the pending or in-progress change of the master credentials for the
-     * DB instance.</p>
+     * <p>Contains the pending or currently-in-progress change of the master
+     * credentials for the DB instance.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>Contains the pending or in-progress change of the master credentials for the
-     * DB instance.</p>
+     * <p>Contains the pending or currently-in-progress change of the master
+     * credentials for the DB instance.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>Contains the pending or in-progress change of the master credentials for the
-     * DB instance.</p>
+     * <p>Contains the pending or currently-in-progress change of the master
+     * credentials for the DB instance.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>Contains the pending or in-progress change of the master credentials for the
-     * DB instance.</p>
+     * <p>Contains the pending or currently-in-progress change of the master
+     * credentials for the DB instance.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the pending or in-progress change of the master credentials for the
-     * DB instance.</p>
+     * <p>Contains the pending or currently-in-progress change of the master
+     * credentials for the DB instance.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -297,62 +297,62 @@ namespace Model
 
     /**
      * <p>Specifies the new Provisioned IOPS value for the DB instance that will be
-     * applied or is being applied.</p>
+     * applied or is currently being applied.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>Specifies the new Provisioned IOPS value for the DB instance that will be
-     * applied or is being applied.</p>
+     * applied or is currently being applied.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>Specifies the new Provisioned IOPS value for the DB instance that will be
-     * applied or is being applied.</p>
+     * applied or is currently being applied.</p>
      */
     inline PendingModifiedValues& WithIops(int value) { SetIops(value); return *this;}
 
 
     /**
      * <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that
-     * will be applied or is in progress. </p>
+     * will be applied or is currently being applied. </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
      * <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that
-     * will be applied or is in progress. </p>
+     * will be applied or is currently being applied. </p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
      * <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that
-     * will be applied or is in progress. </p>
+     * will be applied or is currently being applied. </p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that
-     * will be applied or is in progress. </p>
+     * will be applied or is currently being applied. </p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
      * <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that
-     * will be applied or is in progress. </p>
+     * will be applied or is currently being applied. </p>
      */
     inline PendingModifiedValues& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that
-     * will be applied or is in progress. </p>
+     * will be applied or is currently being applied. </p>
      */
     inline PendingModifiedValues& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that
-     * will be applied or is in progress. </p>
+     * will be applied or is currently being applied. </p>
      */
     inline PendingModifiedValues& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 

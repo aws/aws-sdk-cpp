@@ -52,7 +52,19 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_supportsIAMDatabaseAuthentication(false),
     m_supportsIAMDatabaseAuthenticationHasBeenSet(false),
     m_supportsPerformanceInsights(false),
-    m_supportsPerformanceInsightsHasBeenSet(false)
+    m_supportsPerformanceInsightsHasBeenSet(false),
+    m_minStorageSize(0),
+    m_minStorageSizeHasBeenSet(false),
+    m_maxStorageSize(0),
+    m_maxStorageSizeHasBeenSet(false),
+    m_minIopsPerDbInstance(0),
+    m_minIopsPerDbInstanceHasBeenSet(false),
+    m_maxIopsPerDbInstance(0),
+    m_maxIopsPerDbInstanceHasBeenSet(false),
+    m_minIopsPerGib(0.0),
+    m_minIopsPerGibHasBeenSet(false),
+    m_maxIopsPerGib(0.0),
+    m_maxIopsPerGibHasBeenSet(false)
 {
 }
 
@@ -78,7 +90,19 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_supportsIAMDatabaseAuthentication(false),
     m_supportsIAMDatabaseAuthenticationHasBeenSet(false),
     m_supportsPerformanceInsights(false),
-    m_supportsPerformanceInsightsHasBeenSet(false)
+    m_supportsPerformanceInsightsHasBeenSet(false),
+    m_minStorageSize(0),
+    m_minStorageSizeHasBeenSet(false),
+    m_maxStorageSize(0),
+    m_maxStorageSizeHasBeenSet(false),
+    m_minIopsPerDbInstance(0),
+    m_minIopsPerDbInstanceHasBeenSet(false),
+    m_maxIopsPerDbInstance(0),
+    m_maxIopsPerDbInstanceHasBeenSet(false),
+    m_minIopsPerGib(0.0),
+    m_minIopsPerGibHasBeenSet(false),
+    m_maxIopsPerGib(0.0),
+    m_maxIopsPerGibHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -179,6 +203,42 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_supportsPerformanceInsights = StringUtils::ConvertToBool(StringUtils::Trim(supportsPerformanceInsightsNode.GetText().c_str()).c_str());
       m_supportsPerformanceInsightsHasBeenSet = true;
     }
+    XmlNode minStorageSizeNode = resultNode.FirstChild("MinStorageSize");
+    if(!minStorageSizeNode.IsNull())
+    {
+      m_minStorageSize = StringUtils::ConvertToInt32(StringUtils::Trim(minStorageSizeNode.GetText().c_str()).c_str());
+      m_minStorageSizeHasBeenSet = true;
+    }
+    XmlNode maxStorageSizeNode = resultNode.FirstChild("MaxStorageSize");
+    if(!maxStorageSizeNode.IsNull())
+    {
+      m_maxStorageSize = StringUtils::ConvertToInt32(StringUtils::Trim(maxStorageSizeNode.GetText().c_str()).c_str());
+      m_maxStorageSizeHasBeenSet = true;
+    }
+    XmlNode minIopsPerDbInstanceNode = resultNode.FirstChild("MinIopsPerDbInstance");
+    if(!minIopsPerDbInstanceNode.IsNull())
+    {
+      m_minIopsPerDbInstance = StringUtils::ConvertToInt32(StringUtils::Trim(minIopsPerDbInstanceNode.GetText().c_str()).c_str());
+      m_minIopsPerDbInstanceHasBeenSet = true;
+    }
+    XmlNode maxIopsPerDbInstanceNode = resultNode.FirstChild("MaxIopsPerDbInstance");
+    if(!maxIopsPerDbInstanceNode.IsNull())
+    {
+      m_maxIopsPerDbInstance = StringUtils::ConvertToInt32(StringUtils::Trim(maxIopsPerDbInstanceNode.GetText().c_str()).c_str());
+      m_maxIopsPerDbInstanceHasBeenSet = true;
+    }
+    XmlNode minIopsPerGibNode = resultNode.FirstChild("MinIopsPerGib");
+    if(!minIopsPerGibNode.IsNull())
+    {
+      m_minIopsPerGib = StringUtils::ConvertToDouble(StringUtils::Trim(minIopsPerGibNode.GetText().c_str()).c_str());
+      m_minIopsPerGibHasBeenSet = true;
+    }
+    XmlNode maxIopsPerGibNode = resultNode.FirstChild("MaxIopsPerGib");
+    if(!maxIopsPerGibNode.IsNull())
+    {
+      m_maxIopsPerGib = StringUtils::ConvertToDouble(StringUtils::Trim(maxIopsPerGibNode.GetText().c_str()).c_str());
+      m_maxIopsPerGibHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -262,6 +322,36 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".SupportsPerformanceInsights=" << std::boolalpha << m_supportsPerformanceInsights << "&";
   }
 
+  if(m_minStorageSizeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinStorageSize=" << m_minStorageSize << "&";
+  }
+
+  if(m_maxStorageSizeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxStorageSize=" << m_maxStorageSize << "&";
+  }
+
+  if(m_minIopsPerDbInstanceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinIopsPerDbInstance=" << m_minIopsPerDbInstance << "&";
+  }
+
+  if(m_maxIopsPerDbInstanceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxIopsPerDbInstance=" << m_maxIopsPerDbInstance << "&";
+  }
+
+  if(m_minIopsPerGibHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".MinIopsPerGib=" << StringUtils::URLEncode(m_minIopsPerGib) << "&";
+  }
+
+  if(m_maxIopsPerGibHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".MaxIopsPerGib=" << StringUtils::URLEncode(m_maxIopsPerGib) << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -327,6 +417,30 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_supportsPerformanceInsightsHasBeenSet)
   {
       oStream << location << ".SupportsPerformanceInsights=" << std::boolalpha << m_supportsPerformanceInsights << "&";
+  }
+  if(m_minStorageSizeHasBeenSet)
+  {
+      oStream << location << ".MinStorageSize=" << m_minStorageSize << "&";
+  }
+  if(m_maxStorageSizeHasBeenSet)
+  {
+      oStream << location << ".MaxStorageSize=" << m_maxStorageSize << "&";
+  }
+  if(m_minIopsPerDbInstanceHasBeenSet)
+  {
+      oStream << location << ".MinIopsPerDbInstance=" << m_minIopsPerDbInstance << "&";
+  }
+  if(m_maxIopsPerDbInstanceHasBeenSet)
+  {
+      oStream << location << ".MaxIopsPerDbInstance=" << m_maxIopsPerDbInstance << "&";
+  }
+  if(m_minIopsPerGibHasBeenSet)
+  {
+        oStream << location << ".MinIopsPerGib=" << StringUtils::URLEncode(m_minIopsPerGib) << "&";
+  }
+  if(m_maxIopsPerGibHasBeenSet)
+  {
+        oStream << location << ".MaxIopsPerGib=" << StringUtils::URLEncode(m_maxIopsPerGib) << "&";
   }
 }
 

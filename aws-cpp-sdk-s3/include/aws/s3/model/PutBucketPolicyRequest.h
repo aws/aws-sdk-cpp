@@ -87,6 +87,25 @@ namespace Model
     
     inline PutBucketPolicyRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
+
+    /**
+     * Set this parameter to true to confirm that you want to remove your permissions
+     * to change this bucket policy in the future.
+     */
+    inline bool GetConfirmRemoveSelfBucketAccess() const{ return m_confirmRemoveSelfBucketAccess; }
+
+    /**
+     * Set this parameter to true to confirm that you want to remove your permissions
+     * to change this bucket policy in the future.
+     */
+    inline void SetConfirmRemoveSelfBucketAccess(bool value) { m_confirmRemoveSelfBucketAccessHasBeenSet = true; m_confirmRemoveSelfBucketAccess = value; }
+
+    /**
+     * Set this parameter to true to confirm that you want to remove your permissions
+     * to change this bucket policy in the future.
+     */
+    inline PutBucketPolicyRequest& WithConfirmRemoveSelfBucketAccess(bool value) { SetConfirmRemoveSelfBucketAccess(value); return *this;}
+
   private:
 
     Aws::String m_bucket;
@@ -94,6 +113,9 @@ namespace Model
 
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
+
+    bool m_confirmRemoveSelfBucketAccess;
+    bool m_confirmRemoveSelfBucketAccessHasBeenSet;
 
   };
 

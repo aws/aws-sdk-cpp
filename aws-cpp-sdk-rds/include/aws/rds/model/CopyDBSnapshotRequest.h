@@ -421,8 +421,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -459,8 +459,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -497,8 +497,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -535,8 +535,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -573,8 +573,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -611,8 +611,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
@@ -649,8 +649,8 @@ namespace Model
      * API action that can be executed in the source AWS Region that contains the
      * encrypted DB snapshot to be copied. The presigned URL request must contain the
      * following parameter values: </p> <ul> <li> <p> <code>DestinationRegion</code> -
-     * The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that
+     * The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that
      * contains this presigned URL. </p> <p>For example, if you copy an encrypted DB
      * snapshot from the us-west-2 region to the us-east-1 region, then you call the
      * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a

@@ -159,38 +159,38 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the target version will be applied to any
-     * source DB instances that have AutoMinorVersionUpgrade set to true.</p>
+     * <p>A value that indicates whether the target version is applied to any source DB
+     * instances that have AutoMinorVersionUpgrade set to true.</p>
      */
     inline bool GetAutoUpgrade() const{ return m_autoUpgrade; }
 
     /**
-     * <p>A value that indicates whether the target version will be applied to any
-     * source DB instances that have AutoMinorVersionUpgrade set to true.</p>
+     * <p>A value that indicates whether the target version is applied to any source DB
+     * instances that have AutoMinorVersionUpgrade set to true.</p>
      */
     inline void SetAutoUpgrade(bool value) { m_autoUpgradeHasBeenSet = true; m_autoUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether the target version will be applied to any
-     * source DB instances that have AutoMinorVersionUpgrade set to true.</p>
+     * <p>A value that indicates whether the target version is applied to any source DB
+     * instances that have AutoMinorVersionUpgrade set to true.</p>
      */
     inline UpgradeTarget& WithAutoUpgrade(bool value) { SetAutoUpgrade(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether a database engine will be upgraded to a major
+     * <p>A value that indicates whether a database engine is upgraded to a major
      * version.</p>
      */
     inline bool GetIsMajorVersionUpgrade() const{ return m_isMajorVersionUpgrade; }
 
     /**
-     * <p>A value that indicates whether a database engine will be upgraded to a major
+     * <p>A value that indicates whether a database engine is upgraded to a major
      * version.</p>
      */
     inline void SetIsMajorVersionUpgrade(bool value) { m_isMajorVersionUpgradeHasBeenSet = true; m_isMajorVersionUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether a database engine will be upgraded to a major
+     * <p>A value that indicates whether a database engine is upgraded to a major
      * version.</p>
      */
     inline UpgradeTarget& WithIsMajorVersionUpgrade(bool value) { SetIsMajorVersionUpgrade(value); return *this;}

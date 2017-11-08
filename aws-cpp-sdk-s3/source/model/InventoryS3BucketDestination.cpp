@@ -35,7 +35,8 @@ InventoryS3BucketDestination::InventoryS3BucketDestination() :
     m_bucketHasBeenSet(false),
     m_format(InventoryFormat::NOT_SET),
     m_formatHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+    m_prefixHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ InventoryS3BucketDestination::InventoryS3BucketDestination(const XmlNode& xmlNod
     m_bucketHasBeenSet(false),
     m_format(InventoryFormat::NOT_SET),
     m_formatHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+    m_prefixHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +81,12 @@ InventoryS3BucketDestination& InventoryS3BucketDestination::operator =(const Xml
       m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
       m_prefixHasBeenSet = true;
     }
+    XmlNode encryptionNode = resultNode.FirstChild("Encryption");
+    if(!encryptionNode.IsNull())
+    {
+      m_encryption = encryptionNode;
+      m_encryptionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -109,6 +117,12 @@ void InventoryS3BucketDestination::AddToNode(XmlNode& parentNode) const
   {
    XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
    prefixNode.SetText(m_prefix);
+  }
+
+  if(m_encryptionHasBeenSet)
+  {
+   XmlNode encryptionNode = parentNode.CreateChildElement("Encryption");
+   m_encryption.AddToNode(encryptionNode);
   }
 
 }

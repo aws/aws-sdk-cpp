@@ -8,6 +8,7 @@
     "protocol":"rest-xml",
     "serviceAbbreviation":"Amazon S3",
     "serviceFullName":"Amazon Simple Storage Service",
+    "serviceId":"S3",
     "signatureVersion":"s3",
     "timestampFormat":"rfc822",
     "uid":"s3-2006-03-01"
@@ -109,6 +110,15 @@
       "input":{"shape":"DeleteBucketCorsRequest"},
       "documentationUrl":"http://docs.amazonwebservices.com/AmazonS3/latest/API/RESTBucketDELETEcors.html",
       "documentation":"Deletes the cors configuration information set for the bucket."
+    },
+    "DeleteBucketEncryption":{
+      "name":"DeleteBucketEncryption",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/{Bucket}?encryption"
+      },
+      "input":{"shape":"DeleteBucketEncryptionRequest"},
+      "documentation":"Deletes the server-side encryption configuration from the bucket."
     },
     "DeleteBucketInventoryConfiguration":{
       "name":"DeleteBucketInventoryConfiguration",
@@ -251,6 +261,16 @@
       "output":{"shape":"GetBucketCorsOutput"},
       "documentationUrl":"http://docs.amazonwebservices.com/AmazonS3/latest/API/RESTBucketGETcors.html",
       "documentation":"Returns the cors configuration for the bucket."
+    },
+    "GetBucketEncryption":{
+      "name":"GetBucketEncryption",
+      "http":{
+        "method":"GET",
+        "requestUri":"/{Bucket}?encryption"
+      },
+      "input":{"shape":"GetBucketEncryptionRequest"},
+      "output":{"shape":"GetBucketEncryptionOutput"},
+      "documentation":"Returns the server-side encryption configuration of a bucket."
     },
     "GetBucketInventoryConfiguration":{
       "name":"GetBucketInventoryConfiguration",
@@ -620,6 +640,15 @@
       "documentationUrl":"http://docs.amazonwebservices.com/AmazonS3/latest/API/RESTBucketPUTcors.html",
       "documentation":"Sets the cors configuration for a bucket."
     },
+    "PutBucketEncryption":{
+      "name":"PutBucketEncryption",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/{Bucket}?encryption"
+      },
+      "input":{"shape":"PutBucketEncryptionRequest"},
+      "documentation":"Creates a new server-side encryption configuration (or replaces an existing one, if present)."
+    },
     "PutBucketInventoryConfiguration":{
       "name":"PutBucketInventoryConfiguration",
       "http":{
@@ -893,6 +922,17 @@
         },
         "Owner":{"shape":"Owner"}
       }
+    },
+    "AccessControlTranslation":{
+      "type":"structure",
+      "required":["Owner"],
+      "members":{
+        "Owner":{
+          "shape":"OwnerOverride",
+          "documentation":"The override value for the owner of the replica object."
+        }
+      },
+      "documentation":"Container for information regarding the access control for replicas."
     },
     "AccountId":{"type":"string"},
     "AllowedHeader":{"type":"string"},
@@ -1305,6 +1345,7 @@
         }
       }
     },
+    "ConfirmRemoveSelfBucketAccess":{"type":"boolean"},
     "ContentDisposition":{"type":"string"},
     "ContentEncoding":{"type":"string"},
     "ContentLanguage":{"type":"string"},
@@ -1934,6 +1975,18 @@
         }
       }
     },
+    "DeleteBucketEncryptionRequest":{
+      "type":"structure",
+      "required":["Bucket"],
+      "members":{
+        "Bucket":{
+          "shape":"BucketName",
+          "documentation":"The name of the bucket containing the server-side encryption configuration to delete.",
+          "location":"uri",
+          "locationName":"Bucket"
+        }
+      }
+    },
     "DeleteBucketInventoryConfigurationRequest":{
       "type":"structure",
       "required":[
@@ -2234,11 +2287,24 @@
           "shape":"BucketName",
           "documentation":"Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule."
         },
+        "Account":{
+          "shape":"AccountId",
+          "documentation":"Account ID of the destination bucket. Currently this is only being verified if Access Control Translation is enabled"
+        },
         "StorageClass":{
           "shape":"StorageClass",
           "documentation":"The class of storage used to store the object."
+        },
+        "AccessControlTranslation":{
+          "shape":"AccessControlTranslation",
+          "documentation":"Container for information regarding the access control for replicas."
+        },
+        "EncryptionConfiguration":{
+          "shape":"EncryptionConfiguration",
+          "documentation":"Container for information regarding encryption based configuration for replicas."
         }
-      }
+      },
+      "documentation":"Container for replication destination information."
     },
     "DisplayName":{"type":"string"},
     "ETag":{"type":"string"},
@@ -2247,6 +2313,16 @@
       "type":"string",
       "documentation":"Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.",
       "enum":["url"]
+    },
+    "EncryptionConfiguration":{
+      "type":"structure",
+      "members":{
+        "ReplicaKmsKeyID":{
+          "shape":"ReplicaKmsKeyID",
+          "documentation":"The id of the KMS key used to encrypt the replica object."
+        }
+      },
+      "documentation":"Container for information regarding encryption based configuration for replicas."
     },
     "Error":{
       "type":"structure",
@@ -2423,6 +2499,25 @@
       "members":{
         "Bucket":{
           "shape":"BucketName",
+          "location":"uri",
+          "locationName":"Bucket"
+        }
+      }
+    },
+    "GetBucketEncryptionOutput":{
+      "type":"structure",
+      "members":{
+        "ServerSideEncryptionConfiguration":{"shape":"ServerSideEncryptionConfiguration"}
+      },
+      "payload":"ServerSideEncryptionConfiguration"
+    },
+    "GetBucketEncryptionRequest":{
+      "type":"structure",
+      "required":["Bucket"],
+      "members":{
+        "Bucket":{
+          "shape":"BucketName",
+          "documentation":"The name of the bucket from which the server-side encryption configuration is retrieved.",
           "location":"uri",
           "locationName":"Bucket"
         }
@@ -3505,6 +3600,22 @@
         }
       }
     },
+    "InventoryEncryption":{
+      "type":"structure",
+      "members":{
+        "SSES3":{
+          "shape":"SSES3",
+          "documentation":"Specifies the use of SSE-S3 to encrypt delievered Inventory reports.",
+          "locationName":"SSE-S3"
+        },
+        "SSEKMS":{
+          "shape":"SSEKMS",
+          "documentation":"Specifies the use of SSE-KMS to encrypt delievered Inventory reports.",
+          "locationName":"SSE-KMS"
+        }
+      },
+      "documentation":"Contains the type of server-side encryption used to encrypt the inventory results."
+    },
     "InventoryFilter":{
       "type":"structure",
       "required":["Prefix"],
@@ -3542,7 +3653,8 @@
         "StorageClass",
         "ETag",
         "IsMultipartUploaded",
-        "ReplicationStatus"
+        "ReplicationStatus",
+        "EncryptionStatus"
       ]
     },
     "InventoryOptionalFields":{
@@ -3574,6 +3686,10 @@
         "Prefix":{
           "shape":"Prefix",
           "documentation":"The prefix that is prepended to all inventory results."
+        },
+        "Encryption":{
+          "shape":"InventoryEncryption",
+          "documentation":"Contains the type of server-side encryption used to encrypt the inventory results."
         }
       }
     },
@@ -4661,6 +4777,10 @@
         "ID":{"shape":"ID"}
       }
     },
+    "OwnerOverride":{
+      "type":"string",
+      "enum":["Destination"]
+    },
     "Part":{
       "type":"structure",
       "members":{
@@ -4850,6 +4970,33 @@
       },
       "payload":"CORSConfiguration"
     },
+    "PutBucketEncryptionRequest":{
+      "type":"structure",
+      "required":[
+        "Bucket",
+        "ServerSideEncryptionConfiguration"
+      ],
+      "members":{
+        "Bucket":{
+          "shape":"BucketName",
+          "documentation":"The name of the bucket for which the server-side encryption configuration is set.",
+          "location":"uri",
+          "locationName":"Bucket"
+        },
+        "ContentMD5":{
+          "shape":"ContentMD5",
+          "documentation":"The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.",
+          "location":"header",
+          "locationName":"Content-MD5"
+        },
+        "ServerSideEncryptionConfiguration":{
+          "shape":"ServerSideEncryptionConfiguration",
+          "locationName":"ServerSideEncryptionConfiguration",
+          "xmlNamespace":{"uri":"http://s3.amazonaws.com/doc/2006-03-01/"}
+        }
+      },
+      "payload":"ServerSideEncryptionConfiguration"
+    },
     "PutBucketInventoryConfigurationRequest":{
       "type":"structure",
       "required":[
@@ -5033,6 +5180,12 @@
           "shape":"ContentMD5",
           "location":"header",
           "locationName":"Content-MD5"
+        },
+        "ConfirmRemoveSelfBucketAccess":{
+          "shape":"ConfirmRemoveSelfBucketAccess",
+          "documentation":"Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.",
+          "location":"header",
+          "locationName":"x-amz-confirm-remove-self-bucket-access"
         },
         "Policy":{
           "shape":"Policy",
@@ -5606,6 +5759,7 @@
     },
     "ReplaceKeyPrefixWith":{"type":"string"},
     "ReplaceKeyWith":{"type":"string"},
+    "ReplicaKmsKeyID":{"type":"string"},
     "ReplicationConfiguration":{
       "type":"structure",
       "required":[
@@ -5645,8 +5799,16 @@
           "shape":"ReplicationRuleStatus",
           "documentation":"The rule is ignored if status is not Enabled."
         },
-        "Destination":{"shape":"Destination"}
-      }
+        "SourceSelectionCriteria":{
+          "shape":"SourceSelectionCriteria",
+          "documentation":"Container for filters that define which source objects should be replicated."
+        },
+        "Destination":{
+          "shape":"Destination",
+          "documentation":"Container for replication destination information."
+        }
+      },
+      "documentation":"Container for information about a particular replication rule."
     },
     "ReplicationRuleStatus":{
       "type":"string",
@@ -5824,9 +5986,28 @@
       "sensitive":true
     },
     "SSECustomerKeyMD5":{"type":"string"},
+    "SSEKMS":{
+      "type":"structure",
+      "required":["KeyId"],
+      "members":{
+        "KeyId":{
+          "shape":"SSEKMSKeyId",
+          "documentation":"Specifies the ID of the AWS Key Management Service (KMS) master encryption key to use for encrypting Inventory reports."
+        }
+      },
+      "documentation":"Specifies the use of SSE-KMS to encrypt delievered Inventory reports.",
+      "locationName":"SSE-KMS"
+    },
     "SSEKMSKeyId":{
       "type":"string",
       "sensitive":true
+    },
+    "SSES3":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"Specifies the use of SSE-S3 to encrypt delievered Inventory reports.",
+      "locationName":"SSE-S3"
     },
     "ServerSideEncryption":{
       "type":"string",
@@ -5835,7 +6016,77 @@
         "aws:kms"
       ]
     },
+    "ServerSideEncryptionByDefault":{
+      "type":"structure",
+      "required":["SSEAlgorithm"],
+      "members":{
+        "SSEAlgorithm":{
+          "shape":"ServerSideEncryption",
+          "documentation":"Server-side encryption algorithm to use for the default encryption."
+        },
+        "KMSMasterKeyID":{
+          "shape":"SSEKMSKeyId",
+          "documentation":"KMS master key ID to use for the default encryption. This parameter is allowed if SSEAlgorithm is aws:kms."
+        }
+      },
+      "documentation":"Describes the default server-side encryption to apply to new objects in the bucket. If Put Object request does not specify any server-side encryption, this default encryption will be applied."
+    },
+    "ServerSideEncryptionConfiguration":{
+      "type":"structure",
+      "required":["Rules"],
+      "members":{
+        "Rules":{
+          "shape":"ServerSideEncryptionRules",
+          "documentation":"Container for information about a particular server-side encryption configuration rule.",
+          "locationName":"Rule"
+        }
+      },
+      "documentation":"Container for server-side encryption configuration rules. Currently S3 supports one rule only."
+    },
+    "ServerSideEncryptionRule":{
+      "type":"structure",
+      "members":{
+        "ApplyServerSideEncryptionByDefault":{
+          "shape":"ServerSideEncryptionByDefault",
+          "documentation":"Describes the default server-side encryption to apply to new objects in the bucket. If Put Object request does not specify any server-side encryption, this default encryption will be applied."
+        }
+      },
+      "documentation":"Container for information about a particular server-side encryption configuration rule."
+    },
+    "ServerSideEncryptionRules":{
+      "type":"list",
+      "member":{"shape":"ServerSideEncryptionRule"},
+      "flattened":true
+    },
     "Size":{"type":"integer"},
+    "SourceSelectionCriteria":{
+      "type":"structure",
+      "members":{
+        "SseKmsEncryptedObjects":{
+          "shape":"SseKmsEncryptedObjects",
+          "documentation":"Container for filter information of selection of KMS Encrypted S3 objects."
+        }
+      },
+      "documentation":"Container for filters that define which source objects should be replicated."
+    },
+    "SseKmsEncryptedObjects":{
+      "type":"structure",
+      "required":["Status"],
+      "members":{
+        "Status":{
+          "shape":"SseKmsEncryptedObjectsStatus",
+          "documentation":"The replication for KMS encrypted S3 objects is disabled if status is not Enabled."
+        }
+      },
+      "documentation":"Container for filter information of selection of KMS Encrypted S3 objects."
+    },
+    "SseKmsEncryptedObjectsStatus":{
+      "type":"string",
+      "enum":[
+        "Enabled",
+        "Disabled"
+      ]
+    },
     "StartAfter":{"type":"string"},
     "StorageClass":{
       "type":"string",

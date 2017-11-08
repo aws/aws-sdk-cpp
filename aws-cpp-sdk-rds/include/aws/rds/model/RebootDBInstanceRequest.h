@@ -100,23 +100,23 @@ namespace Model
 
 
     /**
-     * <p> When <code>true</code>, the reboot will be conducted through a MultiAZ
-     * failover. </p> <p>Constraint: You cannot specify <code>true</code> if the
-     * instance is not configured for MultiAZ.</p>
+     * <p> When <code>true</code>, the reboot is conducted through a MultiAZ failover.
+     * </p> <p>Constraint: You cannot specify <code>true</code> if the instance is not
+     * configured for MultiAZ.</p>
      */
     inline bool GetForceFailover() const{ return m_forceFailover; }
 
     /**
-     * <p> When <code>true</code>, the reboot will be conducted through a MultiAZ
-     * failover. </p> <p>Constraint: You cannot specify <code>true</code> if the
-     * instance is not configured for MultiAZ.</p>
+     * <p> When <code>true</code>, the reboot is conducted through a MultiAZ failover.
+     * </p> <p>Constraint: You cannot specify <code>true</code> if the instance is not
+     * configured for MultiAZ.</p>
      */
     inline void SetForceFailover(bool value) { m_forceFailoverHasBeenSet = true; m_forceFailover = value; }
 
     /**
-     * <p> When <code>true</code>, the reboot will be conducted through a MultiAZ
-     * failover. </p> <p>Constraint: You cannot specify <code>true</code> if the
-     * instance is not configured for MultiAZ.</p>
+     * <p> When <code>true</code>, the reboot is conducted through a MultiAZ failover.
+     * </p> <p>Constraint: You cannot specify <code>true</code> if the instance is not
+     * configured for MultiAZ.</p>
      */
     inline RebootDBInstanceRequest& WithForceFailover(bool value) { SetForceFailover(value); return *this;}
 

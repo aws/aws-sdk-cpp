@@ -54,7 +54,7 @@ namespace Model
   public:
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
+     * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
      * must also be provided.</p> </li> <li> <p>If the source type is
@@ -70,7 +70,7 @@ namespace Model
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
+     * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
      * must also be provided.</p> </li> <li> <p>If the source type is
@@ -86,7 +86,7 @@ namespace Model
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
+     * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
      * must also be provided.</p> </li> <li> <p>If the source type is
@@ -102,7 +102,7 @@ namespace Model
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
+     * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
      * must also be provided.</p> </li> <li> <p>If the source type is
@@ -118,7 +118,7 @@ namespace Model
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
+     * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
      * must also be provided.</p> </li> <li> <p>If the source type is
@@ -134,7 +134,7 @@ namespace Model
     inline DescribeEventsRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
+     * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
      * must also be provided.</p> </li> <li> <p>If the source type is
@@ -150,7 +150,7 @@ namespace Model
     inline DescribeEventsRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
+     * <p>The identifier of the event source for which events are returned. If not
      * specified, then all sources are included in the response.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
      * must also be provided.</p> </li> <li> <p>If the source type is

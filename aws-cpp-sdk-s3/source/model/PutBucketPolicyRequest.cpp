@@ -26,7 +26,9 @@ using namespace Aws;
 
 PutBucketPolicyRequest::PutBucketPolicyRequest() : 
     m_bucketHasBeenSet(false),
-    m_contentMD5HasBeenSet(false)
+    m_contentMD5HasBeenSet(false),
+    m_confirmRemoveSelfBucketAccess(false),
+    m_confirmRemoveSelfBucketAccessHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,13 @@ Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeade
   {
     ss << m_contentMD5;
     headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
+    ss.str("");
+  }
+
+  if(m_confirmRemoveSelfBucketAccessHasBeenSet)
+  {
+    ss << m_confirmRemoveSelfBucketAccess;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-confirm-remove-self-bucket-access", ss.str()));
     ss.str("");
   }
 

@@ -129,11 +129,11 @@ namespace Model
      * IOPS), amount of IOPS provisioned (if any), and the number of prior scale
      * storage operations. Typical migration times are under 24 hours, but the process
      * can take up to several days in some cases. During the migration, the DB instance
-     * will be available for use, but might experience performance degradation. While
-     * the migration takes place, nightly backups for the instance will be suspended.
-     * No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
+     * is available for use, but might experience performance degradation. While the
+     * migration takes place, nightly backups for the instance are suspended. No other
+     * Amazon RDS operations can take place for the instance, including modifying the
+     * instance, rebooting the instance, deleting the instance, creating a Read Replica
+     * for the instance, and creating a DB snapshot of the instance.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
@@ -166,11 +166,11 @@ namespace Model
      * IOPS), amount of IOPS provisioned (if any), and the number of prior scale
      * storage operations. Typical migration times are under 24 hours, but the process
      * can take up to several days in some cases. During the migration, the DB instance
-     * will be available for use, but might experience performance degradation. While
-     * the migration takes place, nightly backups for the instance will be suspended.
-     * No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
+     * is available for use, but might experience performance degradation. While the
+     * migration takes place, nightly backups for the instance are suspended. No other
+     * Amazon RDS operations can take place for the instance, including modifying the
+     * instance, rebooting the instance, deleting the instance, creating a Read Replica
+     * for the instance, and creating a DB snapshot of the instance.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
@@ -203,131 +203,110 @@ namespace Model
      * IOPS), amount of IOPS provisioned (if any), and the number of prior scale
      * storage operations. Typical migration times are under 24 hours, but the process
      * can take up to several days in some cases. During the migration, the DB instance
-     * will be available for use, but might experience performance degradation. While
-     * the migration takes place, nightly backups for the instance will be suspended.
-     * No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
+     * is available for use, but might experience performance degradation. While the
+     * migration takes place, nightly backups for the instance are suspended. No other
+     * Amazon RDS operations can take place for the instance, including modifying the
+     * instance, rebooting the instance, deleting the instance, creating a Read Replica
+     * for the instance, and creating a DB snapshot of the instance.</p>
      */
     inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p> The new compute and memory capacity of the DB instance. To determine the
-     * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
-     * classes are available in all regions for all DB engines. </p> <p> Passing a
-     * value for this setting causes an outage during the change and is applied during
+     * <p>The new compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
+     * instance class, an outage occurs during the change. The change is applied during
      * the next maintenance window, unless <code>ApplyImmediately</code> is specified
      * as <code>true</code> for this request. </p> <p>Default: Uses existing
-     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
-     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
-     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
-     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
+     * setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -590,13 +569,13 @@ namespace Model
      * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
-     * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
-     * next failure reboot. Review the table of parameters in <a
+     * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
+     * failure reboot. Review the table of parameters in <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the impact
      * that setting <code>ApplyImmediately</code> to <code>true</code> or
      * <code>false</code> has for each modified parameter and to determine when the
-     * changes will be applied. </p> <p>Default: <code>false</code> </p>
+     * changes are applied. </p> <p>Default: <code>false</code> </p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
@@ -606,13 +585,13 @@ namespace Model
      * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
-     * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
-     * next failure reboot. Review the table of parameters in <a
+     * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
+     * failure reboot. Review the table of parameters in <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the impact
      * that setting <code>ApplyImmediately</code> to <code>true</code> or
      * <code>false</code> has for each modified parameter and to determine when the
-     * changes will be applied. </p> <p>Default: <code>false</code> </p>
+     * changes are applied. </p> <p>Default: <code>false</code> </p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
@@ -622,13 +601,13 @@ namespace Model
      * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
-     * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
-     * next failure reboot. Review the table of parameters in <a
+     * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
+     * failure reboot. Review the table of parameters in <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> to see the impact
      * that setting <code>ApplyImmediately</code> to <code>true</code> or
      * <code>false</code> has for each modified parameter and to determine when the
-     * changes will be applied. </p> <p>Default: <code>false</code> </p>
+     * changes are applied. </p> <p>Default: <code>false</code> </p>
      */
     inline ModifyDBInstanceRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
@@ -1288,35 +1267,32 @@ namespace Model
 
 
     /**
-     * <p> Indicates that minor version upgrades will be applied automatically to the
-     * DB instance during the maintenance window. Changing this parameter does not
-     * result in an outage except in the following case and the change is
-     * asynchronously applied as soon as possible. An outage will result if this
-     * parameter is set to <code>true</code> during the maintenance window, and a newer
-     * minor version is available, and RDS has enabled auto patching for that engine
-     * version. </p>
+     * <p> Indicates that minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window. Changing this parameter does not result
+     * in an outage except in the following case and the change is asynchronously
+     * applied as soon as possible. An outage will result if this parameter is set to
+     * <code>true</code> during the maintenance window, and a newer minor version is
+     * available, and RDS has enabled auto patching for that engine version. </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p> Indicates that minor version upgrades will be applied automatically to the
-     * DB instance during the maintenance window. Changing this parameter does not
-     * result in an outage except in the following case and the change is
-     * asynchronously applied as soon as possible. An outage will result if this
-     * parameter is set to <code>true</code> during the maintenance window, and a newer
-     * minor version is available, and RDS has enabled auto patching for that engine
-     * version. </p>
+     * <p> Indicates that minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window. Changing this parameter does not result
+     * in an outage except in the following case and the change is asynchronously
+     * applied as soon as possible. An outage will result if this parameter is set to
+     * <code>true</code> during the maintenance window, and a newer minor version is
+     * available, and RDS has enabled auto patching for that engine version. </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p> Indicates that minor version upgrades will be applied automatically to the
-     * DB instance during the maintenance window. Changing this parameter does not
-     * result in an outage except in the following case and the change is
-     * asynchronously applied as soon as possible. An outage will result if this
-     * parameter is set to <code>true</code> during the maintenance window, and a newer
-     * minor version is available, and RDS has enabled auto patching for that engine
-     * version. </p>
+     * <p> Indicates that minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window. Changing this parameter does not result
+     * in an outage except in the following case and the change is asynchronously
+     * applied as soon as possible. An outage will result if this parameter is set to
+     * <code>true</code> during the maintenance window, and a newer minor version is
+     * available, and RDS has enabled auto patching for that engine version. </p>
      */
     inline ModifyDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -1390,12 +1366,12 @@ namespace Model
      * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
      * any), and the number of prior scale storage operations. Typical migration times
      * are under 24 hours, but the process can take up to several days in some cases.
-     * During the migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place, nightly
-     * backups for the instance will be suspended. No other Amazon RDS operations can
-     * take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
-     * creating a DB snapshot of the instance.</p>
+     * During the migration, the DB instance is available for use, but might experience
+     * performance degradation. While the migration takes place, nightly backups for
+     * the instance are suspended. No other Amazon RDS operations can take place for
+     * the instance, including modifying the instance, rebooting the instance, deleting
+     * the instance, creating a Read Replica for the instance, and creating a DB
+     * snapshot of the instance.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -1418,12 +1394,12 @@ namespace Model
      * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
      * any), and the number of prior scale storage operations. Typical migration times
      * are under 24 hours, but the process can take up to several days in some cases.
-     * During the migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place, nightly
-     * backups for the instance will be suspended. No other Amazon RDS operations can
-     * take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
-     * creating a DB snapshot of the instance.</p>
+     * During the migration, the DB instance is available for use, but might experience
+     * performance degradation. While the migration takes place, nightly backups for
+     * the instance are suspended. No other Amazon RDS operations can take place for
+     * the instance, including modifying the instance, rebooting the instance, deleting
+     * the instance, creating a Read Replica for the instance, and creating a DB
+     * snapshot of the instance.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -1446,12 +1422,12 @@ namespace Model
      * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
      * any), and the number of prior scale storage operations. Typical migration times
      * are under 24 hours, but the process can take up to several days in some cases.
-     * During the migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place, nightly
-     * backups for the instance will be suspended. No other Amazon RDS operations can
-     * take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
-     * creating a DB snapshot of the instance.</p>
+     * During the migration, the DB instance is available for use, but might experience
+     * performance degradation. While the migration takes place, nightly backups for
+     * the instance are suspended. No other Amazon RDS operations can take place for
+     * the instance, including modifying the instance, rebooting the instance, deleting
+     * the instance, creating a Read Replica for the instance, and creating a DB
+     * snapshot of the instance.</p>
      */
     inline ModifyDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -2237,35 +2213,69 @@ namespace Model
     inline ModifyDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
 
-    
+    /**
+     * <p>True to enable Performance Insights for the DB instance; otherwise false.</p>
+     */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
-    
+    /**
+     * <p>True to enable Performance Insights for the DB instance; otherwise false.</p>
+     */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
-    
+    /**
+     * <p>True to enable Performance Insights for the DB instance; otherwise false.</p>
+     */
     inline ModifyDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
   private:

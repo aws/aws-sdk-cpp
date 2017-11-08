@@ -1200,10 +1200,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -1216,10 +1216,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -1232,53 +1232,53 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline DBInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this
-     * will be blank.</p>
+     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * blank.</p>
      */
     inline const Aws::Vector<DBInstanceStatusInfo>& GetStatusInfos() const{ return m_statusInfos; }
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this
-     * will be blank.</p>
+     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * blank.</p>
      */
     inline void SetStatusInfos(const Aws::Vector<DBInstanceStatusInfo>& value) { m_statusInfosHasBeenSet = true; m_statusInfos = value; }
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this
-     * will be blank.</p>
+     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * blank.</p>
      */
     inline void SetStatusInfos(Aws::Vector<DBInstanceStatusInfo>&& value) { m_statusInfosHasBeenSet = true; m_statusInfos = std::move(value); }
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this
-     * will be blank.</p>
+     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * blank.</p>
      */
     inline DBInstance& WithStatusInfos(const Aws::Vector<DBInstanceStatusInfo>& value) { SetStatusInfos(value); return *this;}
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this
-     * will be blank.</p>
+     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * blank.</p>
      */
     inline DBInstance& WithStatusInfos(Aws::Vector<DBInstanceStatusInfo>&& value) { SetStatusInfos(std::move(value)); return *this;}
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this
-     * will be blank.</p>
+     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * blank.</p>
      */
     inline DBInstance& AddStatusInfos(const DBInstanceStatusInfo& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(value); return *this; }
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this
-     * will be blank.</p>
+     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * blank.</p>
      */
     inline DBInstance& AddStatusInfos(DBInstanceStatusInfo&& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(std::move(value)); return *this; }
 
@@ -1884,35 +1884,72 @@ namespace Model
     inline DBInstance& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
 
-    
+    /**
+     * <p>True if Performance Insights is enabled for the DB instance; otherwise
+     * false.</p>
+     */
     inline bool GetPerformanceInsightsEnabled() const{ return m_performanceInsightsEnabled; }
 
-    
+    /**
+     * <p>True if Performance Insights is enabled for the DB instance; otherwise
+     * false.</p>
+     */
     inline void SetPerformanceInsightsEnabled(bool value) { m_performanceInsightsEnabledHasBeenSet = true; m_performanceInsightsEnabled = value; }
 
-    
+    /**
+     * <p>True if Performance Insights is enabled for the DB instance; otherwise
+     * false.</p>
+     */
     inline DBInstance& WithPerformanceInsightsEnabled(bool value) { SetPerformanceInsightsEnabled(value); return *this;}
 
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
   private:

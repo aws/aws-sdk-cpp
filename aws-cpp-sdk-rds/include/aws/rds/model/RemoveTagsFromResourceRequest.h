@@ -51,7 +51,7 @@ namespace Model
   public:
 
     /**
-     * <p>The Amazon RDS resource the tags will be removed from. This value is an
+     * <p>The Amazon RDS resource that the tags are removed from. This value is an
      * Amazon Resource Name (ARN). For information about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
@@ -59,7 +59,7 @@ namespace Model
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p>The Amazon RDS resource the tags will be removed from. This value is an
+     * <p>The Amazon RDS resource that the tags are removed from. This value is an
      * Amazon Resource Name (ARN). For information about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
@@ -67,7 +67,7 @@ namespace Model
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>The Amazon RDS resource the tags will be removed from. This value is an
+     * <p>The Amazon RDS resource that the tags are removed from. This value is an
      * Amazon Resource Name (ARN). For information about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
@@ -75,7 +75,7 @@ namespace Model
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
-     * <p>The Amazon RDS resource the tags will be removed from. This value is an
+     * <p>The Amazon RDS resource that the tags are removed from. This value is an
      * Amazon Resource Name (ARN). For information about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
@@ -83,7 +83,7 @@ namespace Model
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p>The Amazon RDS resource the tags will be removed from. This value is an
+     * <p>The Amazon RDS resource that the tags are removed from. This value is an
      * Amazon Resource Name (ARN). For information about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
@@ -91,7 +91,7 @@ namespace Model
     inline RemoveTagsFromResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>The Amazon RDS resource the tags will be removed from. This value is an
+     * <p>The Amazon RDS resource that the tags are removed from. This value is an
      * Amazon Resource Name (ARN). For information about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
@@ -99,7 +99,7 @@ namespace Model
     inline RemoveTagsFromResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon RDS resource the tags will be removed from. This value is an
+     * <p>The Amazon RDS resource that the tags are removed from. This value is an
      * Amazon Resource Name (ARN). For information about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>

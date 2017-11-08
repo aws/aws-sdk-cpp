@@ -35,6 +35,7 @@
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/DeleteBucketAnalyticsConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketCorsRequest.h>
+#include <aws/s3/model/DeleteBucketEncryptionRequest.h>
 #include <aws/s3/model/DeleteBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketLifecycleRequest.h>
 #include <aws/s3/model/DeleteBucketMetricsConfigurationRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/s3/model/GetBucketAclRequest.h>
 #include <aws/s3/model/GetBucketAnalyticsConfigurationRequest.h>
 #include <aws/s3/model/GetBucketCorsRequest.h>
+#include <aws/s3/model/GetBucketEncryptionRequest.h>
 #include <aws/s3/model/GetBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/GetBucketLifecycleConfigurationRequest.h>
 #include <aws/s3/model/GetBucketLocationRequest.h>
@@ -79,6 +81,7 @@
 #include <aws/s3/model/PutBucketAclRequest.h>
 #include <aws/s3/model/PutBucketAnalyticsConfigurationRequest.h>
 #include <aws/s3/model/PutBucketCorsRequest.h>
+#include <aws/s3/model/PutBucketEncryptionRequest.h>
 #include <aws/s3/model/PutBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/PutBucketLifecycleConfigurationRequest.h>
 #include <aws/s3/model/PutBucketLoggingRequest.h>
@@ -442,6 +445,41 @@ void S3Client::DeleteBucketCorsAsync(const DeleteBucketCorsRequest& request, con
 void S3Client::DeleteBucketCorsAsyncHelper(const DeleteBucketCorsRequest& request, const DeleteBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteBucketCors(request), context);
+}
+
+DeleteBucketEncryptionOutcome S3Client::DeleteBucketEncryption(const DeleteBucketEncryptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss.str("?encryption");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketEncryptionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketEncryptionOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketEncryptionOutcomeCallable S3Client::DeleteBucketEncryptionCallable(const DeleteBucketEncryptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketEncryptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucketEncryption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::DeleteBucketEncryptionAsync(const DeleteBucketEncryptionRequest& request, const DeleteBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketEncryptionAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::DeleteBucketEncryptionAsyncHelper(const DeleteBucketEncryptionRequest& request, const DeleteBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBucketEncryption(request), context);
 }
 
 DeleteBucketInventoryConfigurationOutcome S3Client::DeleteBucketInventoryConfiguration(const DeleteBucketInventoryConfigurationRequest& request) const
@@ -936,6 +974,41 @@ void S3Client::GetBucketCorsAsync(const GetBucketCorsRequest& request, const Get
 void S3Client::GetBucketCorsAsyncHelper(const GetBucketCorsRequest& request, const GetBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBucketCors(request), context);
+}
+
+GetBucketEncryptionOutcome S3Client::GetBucketEncryption(const GetBucketEncryptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss.str("?encryption");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketEncryptionOutcome(GetBucketEncryptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketEncryptionOutcome(outcome.GetError());
+  }
+}
+
+GetBucketEncryptionOutcomeCallable S3Client::GetBucketEncryptionCallable(const GetBucketEncryptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketEncryptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketEncryption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetBucketEncryptionAsync(const GetBucketEncryptionRequest& request, const GetBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketEncryptionAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetBucketEncryptionAsyncHelper(const GetBucketEncryptionRequest& request, const GetBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketEncryption(request), context);
 }
 
 GetBucketInventoryConfigurationOutcome S3Client::GetBucketInventoryConfiguration(const GetBucketInventoryConfigurationRequest& request) const
@@ -2029,6 +2102,41 @@ void S3Client::PutBucketCorsAsync(const PutBucketCorsRequest& request, const Put
 void S3Client::PutBucketCorsAsyncHelper(const PutBucketCorsRequest& request, const PutBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutBucketCors(request), context);
+}
+
+PutBucketEncryptionOutcome S3Client::PutBucketEncryption(const PutBucketEncryptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss.str("?encryption");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketEncryptionOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketEncryptionOutcome(outcome.GetError());
+  }
+}
+
+PutBucketEncryptionOutcomeCallable S3Client::PutBucketEncryptionCallable(const PutBucketEncryptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBucketEncryptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketEncryption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutBucketEncryptionAsync(const PutBucketEncryptionRequest& request, const PutBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketEncryptionAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutBucketEncryptionAsyncHelper(const PutBucketEncryptionRequest& request, const PutBucketEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutBucketEncryption(request), context);
 }
 
 PutBucketInventoryConfigurationOutcome S3Client::PutBucketInventoryConfiguration(const PutBucketInventoryConfigurationRequest& request) const

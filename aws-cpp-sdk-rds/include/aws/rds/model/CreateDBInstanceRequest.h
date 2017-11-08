@@ -459,86 +459,72 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the DB instance. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <p>The compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <p>The compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <p>The compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the DB instance. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <p>The compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the DB instance. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <p>The compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the DB instance. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <p>The compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the DB instance. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <p>The compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -1026,7 +1012,7 @@ namespace Model
 
 
     /**
-     * <p> The EC2 Availability Zone that the database instance will be created in. For
+     * <p> The EC2 Availability Zone that the database instance is created in. For
      * information on regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
@@ -1039,7 +1025,7 @@ namespace Model
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p> The EC2 Availability Zone that the database instance will be created in. For
+     * <p> The EC2 Availability Zone that the database instance is created in. For
      * information on regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
@@ -1052,7 +1038,7 @@ namespace Model
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p> The EC2 Availability Zone that the database instance will be created in. For
+     * <p> The EC2 Availability Zone that the database instance is created in. For
      * information on regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
@@ -1065,7 +1051,7 @@ namespace Model
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p> The EC2 Availability Zone that the database instance will be created in. For
+     * <p> The EC2 Availability Zone that the database instance is created in. For
      * information on regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
@@ -1078,7 +1064,7 @@ namespace Model
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p> The EC2 Availability Zone that the database instance will be created in. For
+     * <p> The EC2 Availability Zone that the database instance is created in. For
      * information on regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
@@ -1091,7 +1077,7 @@ namespace Model
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p> The EC2 Availability Zone that the database instance will be created in. For
+     * <p> The EC2 Availability Zone that the database instance is created in. For
      * information on regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
@@ -1104,7 +1090,7 @@ namespace Model
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p> The EC2 Availability Zone that the database instance will be created in. For
+     * <p> The EC2 Availability Zone that the database instance is created in. For
      * information on regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
@@ -1269,70 +1255,63 @@ namespace Model
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
      * this argument is omitted, the default DBParameterGroup for the specified engine
-     * will be used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
+     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
      * this argument is omitted, the default DBParameterGroup for the specified engine
-     * will be used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
+     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
      * this argument is omitted, the default DBParameterGroup for the specified engine
-     * will be used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
+     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
      * this argument is omitted, the default DBParameterGroup for the specified engine
-     * will be used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
+     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
      * this argument is omitted, the default DBParameterGroup for the specified engine
-     * will be used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
+     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
      * this argument is omitted, the default DBParameterGroup for the specified engine
-     * will be used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
+     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
      * this argument is omitted, the default DBParameterGroup for the specified engine
-     * will be used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
+     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
@@ -1623,50 +1602,57 @@ namespace Model
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
      * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.54</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
+     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
+     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
      * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
      * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v6</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v4</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code>
+     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v2</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v10</code>
+     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
+     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
+     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
+     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v6</code>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
+     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
+     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
+     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
+     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
+     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v5</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v4</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
-     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
-     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
-     * 9.3.12</code> </p> </li> </ul>
+     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
+     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
+     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
+     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
+     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1707,50 +1693,57 @@ namespace Model
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
      * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.54</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
+     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
+     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
      * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
      * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v6</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v4</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code>
+     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v2</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v10</code>
+     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
+     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
+     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
+     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v6</code>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
+     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
+     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
+     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
+     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
+     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v5</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v4</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
-     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
-     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
-     * 9.3.12</code> </p> </li> </ul>
+     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
+     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
+     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
+     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
+     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1791,50 +1784,57 @@ namespace Model
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
      * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.54</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
+     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
+     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
      * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
      * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v6</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v4</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code>
+     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v2</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v10</code>
+     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
+     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
+     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
+     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v6</code>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
+     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
+     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
+     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
+     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
+     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v5</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v4</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
-     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
-     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
-     * 9.3.12</code> </p> </li> </ul>
+     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
+     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
+     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
+     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
+     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -1875,50 +1875,57 @@ namespace Model
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
      * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.54</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
+     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
+     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
      * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
      * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v6</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v4</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code>
+     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v2</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v10</code>
+     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
+     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
+     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
+     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v6</code>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
+     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
+     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
+     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
+     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
+     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v5</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v4</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
-     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
-     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
-     * 9.3.12</code> </p> </li> </ul>
+     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
+     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
+     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
+     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
+     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -1959,50 +1966,57 @@ namespace Model
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
      * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.54</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
+     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
+     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
      * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
      * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v6</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v4</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code>
+     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v2</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v10</code>
+     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
+     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
+     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
+     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v6</code>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
+     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
+     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
+     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
+     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
+     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v5</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v4</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
-     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
-     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
-     * 9.3.12</code> </p> </li> </ul>
+     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
+     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
+     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
+     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
+     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -2043,50 +2057,57 @@ namespace Model
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
      * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.54</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
+     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
+     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
      * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
      * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v6</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v4</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code>
+     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v2</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v10</code>
+     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
+     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
+     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
+     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v6</code>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
+     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
+     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
+     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
+     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
+     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v5</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v4</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
-     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
-     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
-     * 9.3.12</code> </p> </li> </ul>
+     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
+     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
+     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
+     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
+     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -2127,68 +2148,75 @@ namespace Model
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
      * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
-     * </p> <ul> <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
+     * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
      * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.54</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
+     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
+     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
      * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
      * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v6</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v4</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code>
+     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v2</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in
-     * all AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
-     * <ul> <li> <p> <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for EE,
-     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v10</code>
+     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
+     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p>
+     * <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE,
+     * SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v6</code>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS
+     * regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and
+     * SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported
+     * for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
+     * <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1,
+     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code>
      * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
-     * <code>11.2.0.4.v5</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
-     * </li> <li> <p> <code>11.2.0.4.v4</code> (supported for EE, SE1, and SE, in all
-     * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1,
-     * and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code>
-     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2
-     * | 9.6.3</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 |
-     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 |
-     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 |
-     * 9.3.12</code> </p> </li> </ul>
+     * <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
+     * </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all
+     * AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version
+     * 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p>
+     * </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 |
+     * 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 |
+     * 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
 
     /**
-     * <p>Indicates that minor engine upgrades will be applied automatically to the DB
+     * <p>Indicates that minor engine upgrades are applied automatically to the DB
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor engine upgrades will be applied automatically to the DB
+     * <p>Indicates that minor engine upgrades are applied automatically to the DB
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor engine upgrades will be applied automatically to the DB
+     * <p>Indicates that minor engine upgrades are applied automatically to the DB
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
     inline CreateDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
@@ -2402,10 +2430,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b> true</p> </li> <li> <p> <b>VPC:</b> false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -2418,10 +2446,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b> true</p> </li> <li> <p> <b>VPC:</b> false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -2434,10 +2462,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b> true</p> </li> <li> <p> <b>VPC:</b> false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline CreateDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -3131,35 +3159,72 @@ namespace Model
     inline CreateDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
 
-    
+    /**
+     * <p> True to enable Performance Insights for the DB instance; otherwise false.
+     * </p>
+     */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
-    
+    /**
+     * <p> True to enable Performance Insights for the DB instance; otherwise false.
+     * </p>
+     */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
-    
+    /**
+     * <p> True to enable Performance Insights for the DB instance; otherwise false.
+     * </p>
+     */
     inline CreateDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
   private:

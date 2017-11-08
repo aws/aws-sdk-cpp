@@ -17,6 +17,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/ReplicationRuleStatus.h>
+#include <aws/s3/model/SourceSelectionCriteria.h>
 #include <aws/s3/model/Destination.h>
 #include <utility>
 
@@ -34,6 +35,12 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * Container for information about a particular replication rule.<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationRule">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API ReplicationRule
   {
   public:
@@ -156,19 +163,55 @@ namespace Model
     inline ReplicationRule& WithStatus(ReplicationRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Container for filters that define which source objects should be replicated.
+     */
+    inline const SourceSelectionCriteria& GetSourceSelectionCriteria() const{ return m_sourceSelectionCriteria; }
+
+    /**
+     * Container for filters that define which source objects should be replicated.
+     */
+    inline void SetSourceSelectionCriteria(const SourceSelectionCriteria& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = value; }
+
+    /**
+     * Container for filters that define which source objects should be replicated.
+     */
+    inline void SetSourceSelectionCriteria(SourceSelectionCriteria&& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = std::move(value); }
+
+    /**
+     * Container for filters that define which source objects should be replicated.
+     */
+    inline ReplicationRule& WithSourceSelectionCriteria(const SourceSelectionCriteria& value) { SetSourceSelectionCriteria(value); return *this;}
+
+    /**
+     * Container for filters that define which source objects should be replicated.
+     */
+    inline ReplicationRule& WithSourceSelectionCriteria(SourceSelectionCriteria&& value) { SetSourceSelectionCriteria(std::move(value)); return *this;}
+
+
+    /**
+     * Container for replication destination information.
+     */
     inline const Destination& GetDestination() const{ return m_destination; }
 
-    
+    /**
+     * Container for replication destination information.
+     */
     inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
-    
+    /**
+     * Container for replication destination information.
+     */
     inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
-    
+    /**
+     * Container for replication destination information.
+     */
     inline ReplicationRule& WithDestination(const Destination& value) { SetDestination(value); return *this;}
 
-    
+    /**
+     * Container for replication destination information.
+     */
     inline ReplicationRule& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 
   private:
@@ -181,6 +224,9 @@ namespace Model
 
     ReplicationRuleStatus m_status;
     bool m_statusHasBeenSet;
+
+    SourceSelectionCriteria m_sourceSelectionCriteria;
+    bool m_sourceSelectionCriteriaHasBeenSet;
 
     Destination m_destination;
     bool m_destinationHasBeenSet;

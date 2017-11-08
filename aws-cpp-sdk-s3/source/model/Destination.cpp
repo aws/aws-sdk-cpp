@@ -32,15 +32,21 @@ namespace Model
 
 Destination::Destination() : 
     m_bucketHasBeenSet(false),
+    m_accountHasBeenSet(false),
     m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
+    m_storageClassHasBeenSet(false),
+    m_accessControlTranslationHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
 Destination::Destination(const XmlNode& xmlNode) : 
     m_bucketHasBeenSet(false),
+    m_accountHasBeenSet(false),
     m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
+    m_storageClassHasBeenSet(false),
+    m_accessControlTranslationHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -57,11 +63,29 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
       m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
       m_bucketHasBeenSet = true;
     }
+    XmlNode accountNode = resultNode.FirstChild("Account");
+    if(!accountNode.IsNull())
+    {
+      m_account = StringUtils::Trim(accountNode.GetText().c_str());
+      m_accountHasBeenSet = true;
+    }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
     if(!storageClassNode.IsNull())
     {
       m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());
       m_storageClassHasBeenSet = true;
+    }
+    XmlNode accessControlTranslationNode = resultNode.FirstChild("AccessControlTranslation");
+    if(!accessControlTranslationNode.IsNull())
+    {
+      m_accessControlTranslation = accessControlTranslationNode;
+      m_accessControlTranslationHasBeenSet = true;
+    }
+    XmlNode encryptionConfigurationNode = resultNode.FirstChild("EncryptionConfiguration");
+    if(!encryptionConfigurationNode.IsNull())
+    {
+      m_encryptionConfiguration = encryptionConfigurationNode;
+      m_encryptionConfigurationHasBeenSet = true;
     }
   }
 
@@ -77,10 +101,28 @@ void Destination::AddToNode(XmlNode& parentNode) const
    bucketNode.SetText(m_bucket);
   }
 
+  if(m_accountHasBeenSet)
+  {
+   XmlNode accountNode = parentNode.CreateChildElement("Account");
+   accountNode.SetText(m_account);
+  }
+
   if(m_storageClassHasBeenSet)
   {
    XmlNode storageClassNode = parentNode.CreateChildElement("StorageClass");
    storageClassNode.SetText(StorageClassMapper::GetNameForStorageClass(m_storageClass));
+  }
+
+  if(m_accessControlTranslationHasBeenSet)
+  {
+   XmlNode accessControlTranslationNode = parentNode.CreateChildElement("AccessControlTranslation");
+   m_accessControlTranslation.AddToNode(accessControlTranslationNode);
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   XmlNode encryptionConfigurationNode = parentNode.CreateChildElement("EncryptionConfiguration");
+   m_encryptionConfiguration.AddToNode(encryptionConfigurationNode);
   }
 
 }

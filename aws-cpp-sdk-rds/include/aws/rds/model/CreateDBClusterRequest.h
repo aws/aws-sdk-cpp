@@ -297,57 +297,57 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
+     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
+     * existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
+     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
+     * existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
+     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
+     * existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
+     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
+     * existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
+     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
+     * existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
+     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
+     * existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
-     * used. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
+     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
+     * existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -1142,7 +1142,7 @@ namespace Model
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
      * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster will be replicated from. You only need to specify
+     * the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from
      * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
      * the <code>CreateDBCluster</code> API action that can be executed in the source
@@ -1173,7 +1173,7 @@ namespace Model
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
      * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster will be replicated from. You only need to specify
+     * the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from
      * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
      * the <code>CreateDBCluster</code> API action that can be executed in the source
@@ -1204,7 +1204,7 @@ namespace Model
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
      * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster will be replicated from. You only need to specify
+     * the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from
      * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
      * the <code>CreateDBCluster</code> API action that can be executed in the source
@@ -1235,7 +1235,7 @@ namespace Model
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
      * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster will be replicated from. You only need to specify
+     * the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from
      * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
      * the <code>CreateDBCluster</code> API action that can be executed in the source
@@ -1266,7 +1266,7 @@ namespace Model
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
      * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster will be replicated from. You only need to specify
+     * the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from
      * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
      * the <code>CreateDBCluster</code> API action that can be executed in the source
@@ -1297,7 +1297,7 @@ namespace Model
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
      * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster will be replicated from. You only need to specify
+     * the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from
      * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
      * the <code>CreateDBCluster</code> API action that can be executed in the source
@@ -1328,7 +1328,7 @@ namespace Model
     /**
      * <p>A URL that contains a Signature Version 4 signed request for the
      * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster will be replicated from. You only need to specify
+     * the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from
      * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
      * the <code>CreateDBCluster</code> API action that can be executed in the source

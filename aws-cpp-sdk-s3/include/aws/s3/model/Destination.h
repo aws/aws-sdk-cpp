@@ -17,6 +17,8 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/StorageClass.h>
+#include <aws/s3/model/AccessControlTranslation.h>
+#include <aws/s3/model/EncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +35,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * Container for replication destination information.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Destination">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API Destination
   {
   public:
@@ -87,6 +94,49 @@ namespace Model
 
 
     /**
+     * Account ID of the destination bucket. Currently this is only being verified if
+     * Access Control Translation is enabled
+     */
+    inline const Aws::String& GetAccount() const{ return m_account; }
+
+    /**
+     * Account ID of the destination bucket. Currently this is only being verified if
+     * Access Control Translation is enabled
+     */
+    inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
+
+    /**
+     * Account ID of the destination bucket. Currently this is only being verified if
+     * Access Control Translation is enabled
+     */
+    inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
+
+    /**
+     * Account ID of the destination bucket. Currently this is only being verified if
+     * Access Control Translation is enabled
+     */
+    inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
+
+    /**
+     * Account ID of the destination bucket. Currently this is only being verified if
+     * Access Control Translation is enabled
+     */
+    inline Destination& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
+
+    /**
+     * Account ID of the destination bucket. Currently this is only being verified if
+     * Access Control Translation is enabled
+     */
+    inline Destination& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
+
+    /**
+     * Account ID of the destination bucket. Currently this is only being verified if
+     * Access Control Translation is enabled
+     */
+    inline Destination& WithAccount(const char* value) { SetAccount(value); return *this;}
+
+
+    /**
      * The class of storage used to store the object.
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
@@ -111,13 +161,74 @@ namespace Model
      */
     inline Destination& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
+
+    /**
+     * Container for information regarding the access control for replicas.
+     */
+    inline const AccessControlTranslation& GetAccessControlTranslation() const{ return m_accessControlTranslation; }
+
+    /**
+     * Container for information regarding the access control for replicas.
+     */
+    inline void SetAccessControlTranslation(const AccessControlTranslation& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = value; }
+
+    /**
+     * Container for information regarding the access control for replicas.
+     */
+    inline void SetAccessControlTranslation(AccessControlTranslation&& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = std::move(value); }
+
+    /**
+     * Container for information regarding the access control for replicas.
+     */
+    inline Destination& WithAccessControlTranslation(const AccessControlTranslation& value) { SetAccessControlTranslation(value); return *this;}
+
+    /**
+     * Container for information regarding the access control for replicas.
+     */
+    inline Destination& WithAccessControlTranslation(AccessControlTranslation&& value) { SetAccessControlTranslation(std::move(value)); return *this;}
+
+
+    /**
+     * Container for information regarding encryption based configuration for replicas.
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * Container for information regarding encryption based configuration for replicas.
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * Container for information regarding encryption based configuration for replicas.
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * Container for information regarding encryption based configuration for replicas.
+     */
+    inline Destination& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * Container for information regarding encryption based configuration for replicas.
+     */
+    inline Destination& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
 
+    Aws::String m_account;
+    bool m_accountHasBeenSet;
+
     StorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
+
+    AccessControlTranslation m_accessControlTranslation;
+    bool m_accessControlTranslationHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
   };
 
 } // namespace Model

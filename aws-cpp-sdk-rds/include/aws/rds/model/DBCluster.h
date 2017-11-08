@@ -523,9 +523,8 @@ namespace Model
      * This functionality can help balance your read workload across multiple Aurora
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
-     * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then reconnect to the reader
-     * endpoint.</p>
+     * connection is dropped. To continue sending your read workload to other Aurora
+     * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
     inline const Aws::String& GetReaderEndpoint() const{ return m_readerEndpoint; }
 
@@ -537,9 +536,8 @@ namespace Model
      * This functionality can help balance your read workload across multiple Aurora
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
-     * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then reconnect to the reader
-     * endpoint.</p>
+     * connection is dropped. To continue sending your read workload to other Aurora
+     * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
     inline void SetReaderEndpoint(const Aws::String& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = value; }
 
@@ -551,9 +549,8 @@ namespace Model
      * This functionality can help balance your read workload across multiple Aurora
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
-     * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then reconnect to the reader
-     * endpoint.</p>
+     * connection is dropped. To continue sending your read workload to other Aurora
+     * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
     inline void SetReaderEndpoint(Aws::String&& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = std::move(value); }
 
@@ -565,9 +562,8 @@ namespace Model
      * This functionality can help balance your read workload across multiple Aurora
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
-     * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then reconnect to the reader
-     * endpoint.</p>
+     * connection is dropped. To continue sending your read workload to other Aurora
+     * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
     inline void SetReaderEndpoint(const char* value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint.assign(value); }
 
@@ -579,9 +575,8 @@ namespace Model
      * This functionality can help balance your read workload across multiple Aurora
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
-     * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then reconnect to the reader
-     * endpoint.</p>
+     * connection is dropped. To continue sending your read workload to other Aurora
+     * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
     inline DBCluster& WithReaderEndpoint(const Aws::String& value) { SetReaderEndpoint(value); return *this;}
 
@@ -593,9 +588,8 @@ namespace Model
      * This functionality can help balance your read workload across multiple Aurora
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
-     * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then reconnect to the reader
-     * endpoint.</p>
+     * connection is dropped. To continue sending your read workload to other Aurora
+     * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
     inline DBCluster& WithReaderEndpoint(Aws::String&& value) { SetReaderEndpoint(std::move(value)); return *this;}
 
@@ -607,9 +601,8 @@ namespace Model
      * This functionality can help balance your read workload across multiple Aurora
      * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
      * Replica that you are connected to is promoted to be the primary instance, your
-     * connection will be dropped. To continue sending your read workload to other
-     * Aurora Replicas in the cluster, you can then reconnect to the reader
-     * endpoint.</p>
+     * connection is dropped. To continue sending your read workload to other Aurora
+     * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
     inline DBCluster& WithReaderEndpoint(const char* value) { SetReaderEndpoint(value); return *this;}
 

@@ -31,7 +31,8 @@ namespace Model
     StorageClass,
     ETag,
     IsMultipartUploaded,
-    ReplicationStatus
+    ReplicationStatus,
+    EncryptionStatus
   };
 
 namespace InventoryOptionalFieldMapper

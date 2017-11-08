@@ -95,40 +95,40 @@ namespace Model
 
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
     inline const Aws::Utils::DateTime& GetAutoAppliedAfterDate() const{ return m_autoAppliedAfterDate; }
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
     inline void SetAutoAppliedAfterDate(const Aws::Utils::DateTime& value) { m_autoAppliedAfterDateHasBeenSet = true; m_autoAppliedAfterDate = value; }
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
     inline void SetAutoAppliedAfterDate(Aws::Utils::DateTime&& value) { m_autoAppliedAfterDateHasBeenSet = true; m_autoAppliedAfterDate = std::move(value); }
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
     inline PendingMaintenanceAction& WithAutoAppliedAfterDate(const Aws::Utils::DateTime& value) { SetAutoAppliedAfterDate(value); return *this;}
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
@@ -136,41 +136,41 @@ namespace Model
 
 
     /**
-     * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * <p>The date when the maintenance action is automatically applied. The
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline const Aws::Utils::DateTime& GetForcedApplyDate() const{ return m_forcedApplyDate; }
 
     /**
-     * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * <p>The date when the maintenance action is automatically applied. The
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline void SetForcedApplyDate(const Aws::Utils::DateTime& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = value; }
 
     /**
-     * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * <p>The date when the maintenance action is automatically applied. The
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline void SetForcedApplyDate(Aws::Utils::DateTime&& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = std::move(value); }
 
     /**
-     * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * <p>The date when the maintenance action is automatically applied. The
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline PendingMaintenanceAction& WithForcedApplyDate(const Aws::Utils::DateTime& value) { SetForcedApplyDate(value); return *this;}
 
     /**
-     * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * <p>The date when the maintenance action is automatically applied. The
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline PendingMaintenanceAction& WithForcedApplyDate(Aws::Utils::DateTime&& value) { SetForcedApplyDate(std::move(value)); return *this;}
@@ -220,7 +220,7 @@ namespace Model
 
 
     /**
-     * <p>The effective date when the pending maintenance action will be applied to the
+     * <p>The effective date when the pending maintenance action is applied to the
      * resource. This date takes into account opt-in requests received from the
      * <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>,
      * and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request
@@ -230,7 +230,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetCurrentApplyDate() const{ return m_currentApplyDate; }
 
     /**
-     * <p>The effective date when the pending maintenance action will be applied to the
+     * <p>The effective date when the pending maintenance action is applied to the
      * resource. This date takes into account opt-in requests received from the
      * <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>,
      * and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request
@@ -240,7 +240,7 @@ namespace Model
     inline void SetCurrentApplyDate(const Aws::Utils::DateTime& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = value; }
 
     /**
-     * <p>The effective date when the pending maintenance action will be applied to the
+     * <p>The effective date when the pending maintenance action is applied to the
      * resource. This date takes into account opt-in requests received from the
      * <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>,
      * and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request
@@ -250,7 +250,7 @@ namespace Model
     inline void SetCurrentApplyDate(Aws::Utils::DateTime&& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = std::move(value); }
 
     /**
-     * <p>The effective date when the pending maintenance action will be applied to the
+     * <p>The effective date when the pending maintenance action is applied to the
      * resource. This date takes into account opt-in requests received from the
      * <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>,
      * and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request
@@ -260,7 +260,7 @@ namespace Model
     inline PendingMaintenanceAction& WithCurrentApplyDate(const Aws::Utils::DateTime& value) { SetCurrentApplyDate(value); return *this;}
 
     /**
-     * <p>The effective date when the pending maintenance action will be applied to the
+     * <p>The effective date when the pending maintenance action is applied to the
      * resource. This date takes into account opt-in requests received from the
      * <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>,
      * and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request

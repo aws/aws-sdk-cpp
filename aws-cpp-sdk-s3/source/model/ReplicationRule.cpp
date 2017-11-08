@@ -35,6 +35,7 @@ ReplicationRule::ReplicationRule() :
     m_prefixHasBeenSet(false),
     m_status(ReplicationRuleStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_sourceSelectionCriteriaHasBeenSet(false),
     m_destinationHasBeenSet(false)
 {
 }
@@ -44,6 +45,7 @@ ReplicationRule::ReplicationRule(const XmlNode& xmlNode) :
     m_prefixHasBeenSet(false),
     m_status(ReplicationRuleStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_sourceSelectionCriteriaHasBeenSet(false),
     m_destinationHasBeenSet(false)
 {
   *this = xmlNode;
@@ -72,6 +74,12 @@ ReplicationRule& ReplicationRule::operator =(const XmlNode& xmlNode)
     {
       m_status = ReplicationRuleStatusMapper::GetReplicationRuleStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
+    }
+    XmlNode sourceSelectionCriteriaNode = resultNode.FirstChild("SourceSelectionCriteria");
+    if(!sourceSelectionCriteriaNode.IsNull())
+    {
+      m_sourceSelectionCriteria = sourceSelectionCriteriaNode;
+      m_sourceSelectionCriteriaHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("Destination");
     if(!destinationNode.IsNull())
@@ -103,6 +111,12 @@ void ReplicationRule::AddToNode(XmlNode& parentNode) const
   {
    XmlNode statusNode = parentNode.CreateChildElement("Status");
    statusNode.SetText(ReplicationRuleStatusMapper::GetNameForReplicationRuleStatus(m_status));
+  }
+
+  if(m_sourceSelectionCriteriaHasBeenSet)
+  {
+   XmlNode sourceSelectionCriteriaNode = parentNode.CreateChildElement("SourceSelectionCriteria");
+   m_sourceSelectionCriteria.AddToNode(sourceSelectionCriteriaNode);
   }
 
   if(m_destinationHasBeenSet)

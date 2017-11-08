@@ -36,6 +36,7 @@ namespace Aws
         static const int ETag_HASH = HashingUtils::HashString("ETag");
         static const int IsMultipartUploaded_HASH = HashingUtils::HashString("IsMultipartUploaded");
         static const int ReplicationStatus_HASH = HashingUtils::HashString("ReplicationStatus");
+        static const int EncryptionStatus_HASH = HashingUtils::HashString("EncryptionStatus");
 
 
         InventoryOptionalField GetInventoryOptionalFieldForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return InventoryOptionalField::ReplicationStatus;
           }
+          else if (hashCode == EncryptionStatus_HASH)
+          {
+            return InventoryOptionalField::EncryptionStatus;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "IsMultipartUploaded";
           case InventoryOptionalField::ReplicationStatus:
             return "ReplicationStatus";
+          case InventoryOptionalField::EncryptionStatus:
+            return "EncryptionStatus";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

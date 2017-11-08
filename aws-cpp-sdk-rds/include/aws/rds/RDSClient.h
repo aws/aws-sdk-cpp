@@ -830,23 +830,23 @@ namespace Aws
          * snapshot in the destination AWS Region.</p> </li> <li> <p>
          * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed
          * request for the <code>CopyDBClusterSnapshot</code> action to be called in the
-         * source AWS Region where the DB cluster snapshot will be copied from. The
-         * pre-signed URL must be a valid request for the
-         * <code>CopyDBClusterSnapshot</code> API action that can be executed in the source
-         * AWS Region that contains the encrypted DB cluster snapshot to be copied.</p>
-         * <p>The pre-signed URL request must contain the following parameter values:</p>
-         * <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use
-         * to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
-         * This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
-         * action that is called in the destination AWS Region, and the action contained in
-         * the pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name
-         * of the AWS Region that the DB cluster snapshot will be created in.</p> </li>
-         * <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster
-         * snapshot identifier for the encrypted DB cluster snapshot to be copied. This
-         * identifier must be in the Amazon Resource Name (ARN) format for the source AWS
-         * Region. For example, if you are copying an encrypted DB cluster snapshot from
-         * the us-west-2 region, then your <code>SourceDBClusterSnapshotIdentifier</code>
-         * looks like the following example:
+         * source AWS Region where the DB cluster snapshot is copied from. The pre-signed
+         * URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API
+         * action that can be executed in the source AWS Region that contains the encrypted
+         * DB cluster snapshot to be copied.</p> <p>The pre-signed URL request must contain
+         * the following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The
+         * KMS key identifier for the key to use to encrypt the copy of the DB cluster
+         * snapshot in the destination AWS Region. This is the same identifier for both the
+         * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
+         * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
+         * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
+         * snapshot will be created in.</p> </li> <li> <p>
+         * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
+         * identifier for the encrypted DB cluster snapshot to be copied. This identifier
+         * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
+         * example, if you are copying an encrypted DB cluster snapshot from the us-west-2
+         * region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the
+         * following example:
          * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
          * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
          * see <a
@@ -892,23 +892,23 @@ namespace Aws
          * snapshot in the destination AWS Region.</p> </li> <li> <p>
          * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed
          * request for the <code>CopyDBClusterSnapshot</code> action to be called in the
-         * source AWS Region where the DB cluster snapshot will be copied from. The
-         * pre-signed URL must be a valid request for the
-         * <code>CopyDBClusterSnapshot</code> API action that can be executed in the source
-         * AWS Region that contains the encrypted DB cluster snapshot to be copied.</p>
-         * <p>The pre-signed URL request must contain the following parameter values:</p>
-         * <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use
-         * to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
-         * This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
-         * action that is called in the destination AWS Region, and the action contained in
-         * the pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name
-         * of the AWS Region that the DB cluster snapshot will be created in.</p> </li>
-         * <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster
-         * snapshot identifier for the encrypted DB cluster snapshot to be copied. This
-         * identifier must be in the Amazon Resource Name (ARN) format for the source AWS
-         * Region. For example, if you are copying an encrypted DB cluster snapshot from
-         * the us-west-2 region, then your <code>SourceDBClusterSnapshotIdentifier</code>
-         * looks like the following example:
+         * source AWS Region where the DB cluster snapshot is copied from. The pre-signed
+         * URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API
+         * action that can be executed in the source AWS Region that contains the encrypted
+         * DB cluster snapshot to be copied.</p> <p>The pre-signed URL request must contain
+         * the following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The
+         * KMS key identifier for the key to use to encrypt the copy of the DB cluster
+         * snapshot in the destination AWS Region. This is the same identifier for both the
+         * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
+         * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
+         * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
+         * snapshot will be created in.</p> </li> <li> <p>
+         * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
+         * identifier for the encrypted DB cluster snapshot to be copied. This identifier
+         * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
+         * example, if you are copying an encrypted DB cluster snapshot from the us-west-2
+         * region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the
+         * following example:
          * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
          * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
          * see <a
@@ -956,23 +956,23 @@ namespace Aws
          * snapshot in the destination AWS Region.</p> </li> <li> <p>
          * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed
          * request for the <code>CopyDBClusterSnapshot</code> action to be called in the
-         * source AWS Region where the DB cluster snapshot will be copied from. The
-         * pre-signed URL must be a valid request for the
-         * <code>CopyDBClusterSnapshot</code> API action that can be executed in the source
-         * AWS Region that contains the encrypted DB cluster snapshot to be copied.</p>
-         * <p>The pre-signed URL request must contain the following parameter values:</p>
-         * <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use
-         * to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
-         * This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
-         * action that is called in the destination AWS Region, and the action contained in
-         * the pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name
-         * of the AWS Region that the DB cluster snapshot will be created in.</p> </li>
-         * <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster
-         * snapshot identifier for the encrypted DB cluster snapshot to be copied. This
-         * identifier must be in the Amazon Resource Name (ARN) format for the source AWS
-         * Region. For example, if you are copying an encrypted DB cluster snapshot from
-         * the us-west-2 region, then your <code>SourceDBClusterSnapshotIdentifier</code>
-         * looks like the following example:
+         * source AWS Region where the DB cluster snapshot is copied from. The pre-signed
+         * URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API
+         * action that can be executed in the source AWS Region that contains the encrypted
+         * DB cluster snapshot to be copied.</p> <p>The pre-signed URL request must contain
+         * the following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The
+         * KMS key identifier for the key to use to encrypt the copy of the DB cluster
+         * snapshot in the destination AWS Region. This is the same identifier for both the
+         * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
+         * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
+         * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
+         * snapshot will be created in.</p> </li> <li> <p>
+         * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
+         * identifier for the encrypted DB cluster snapshot to be copied. This identifier
+         * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
+         * example, if you are copying an encrypted DB cluster snapshot from the us-west-2
+         * region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the
+         * following example:
          * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
          * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
          * see <a
@@ -1551,11 +1551,11 @@ namespace Aws
          * example, you can specify SourceType = db-instance, SourceIds = mydbinstance1,
          * mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify
          * both the SourceType and SourceIds, such as SourceType = db-instance and
-         * SourceIdentifier = myDBInstance1, you will be notified of all the db-instance
-         * events for the specified source. If you specify a SourceType but do not specify
-         * a SourceIdentifier, you will receive notice of the events for that source type
-         * for all your RDS sources. If you do not specify either the SourceType nor the
-         * SourceIdentifier, you will be notified of events generated from all RDS sources
+         * SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
+         * for the specified source. If you specify a SourceType but do not specify a
+         * SourceIdentifier, you receive notice of the events for that source type for all
+         * your RDS sources. If you do not specify either the SourceType nor the
+         * SourceIdentifier, you are notified of events generated from all RDS sources
          * belonging to your customer account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">AWS
          * API Reference</a></p>
@@ -1573,11 +1573,11 @@ namespace Aws
          * example, you can specify SourceType = db-instance, SourceIds = mydbinstance1,
          * mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify
          * both the SourceType and SourceIds, such as SourceType = db-instance and
-         * SourceIdentifier = myDBInstance1, you will be notified of all the db-instance
-         * events for the specified source. If you specify a SourceType but do not specify
-         * a SourceIdentifier, you will receive notice of the events for that source type
-         * for all your RDS sources. If you do not specify either the SourceType nor the
-         * SourceIdentifier, you will be notified of events generated from all RDS sources
+         * SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
+         * for the specified source. If you specify a SourceType but do not specify a
+         * SourceIdentifier, you receive notice of the events for that source type for all
+         * your RDS sources. If you do not specify either the SourceType nor the
+         * SourceIdentifier, you are notified of events generated from all RDS sources
          * belonging to your customer account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">AWS
          * API Reference</a></p>
@@ -1597,11 +1597,11 @@ namespace Aws
          * example, you can specify SourceType = db-instance, SourceIds = mydbinstance1,
          * mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify
          * both the SourceType and SourceIds, such as SourceType = db-instance and
-         * SourceIdentifier = myDBInstance1, you will be notified of all the db-instance
-         * events for the specified source. If you specify a SourceType but do not specify
-         * a SourceIdentifier, you will receive notice of the events for that source type
-         * for all your RDS sources. If you do not specify either the SourceType nor the
-         * SourceIdentifier, you will be notified of events generated from all RDS sources
+         * SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
+         * for the specified source. If you specify a SourceType but do not specify a
+         * SourceIdentifier, you receive notice of the events for that source type for all
+         * your RDS sources. If you do not specify either the SourceType nor the
+         * SourceIdentifier, you are notified of events generated from all RDS sources
          * belonging to your customer account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">AWS
          * API Reference</a></p>
@@ -3705,7 +3705,7 @@ namespace Aws
          * applies to the DB instance any modifications to the associated DB parameter
          * group that were pending. Rebooting a DB instance results in a momentary outage
          * of the instance, during which the DB instance status is set to rebooting. If the
-         * RDS instance is configured for MultiAZ, it is possible that the reboot will be
+         * RDS instance is configured for MultiAZ, it is possible that the reboot is
          * conducted through a failover. An Amazon RDS event is created when the reboot is
          * completed.</p> <p>If your DB instance is deployed in multiple Availability
          * Zones, you can force a failover from one AZ to the other during the reboot. You
@@ -3725,7 +3725,7 @@ namespace Aws
          * applies to the DB instance any modifications to the associated DB parameter
          * group that were pending. Rebooting a DB instance results in a momentary outage
          * of the instance, during which the DB instance status is set to rebooting. If the
-         * RDS instance is configured for MultiAZ, it is possible that the reboot will be
+         * RDS instance is configured for MultiAZ, it is possible that the reboot is
          * conducted through a failover. An Amazon RDS event is created when the reboot is
          * completed.</p> <p>If your DB instance is deployed in multiple Availability
          * Zones, you can force a failover from one AZ to the other during the reboot. You
@@ -3747,7 +3747,7 @@ namespace Aws
          * applies to the DB instance any modifications to the associated DB parameter
          * group that were pending. Rebooting a DB instance results in a momentary outage
          * of the instance, during which the DB instance status is set to rebooting. If the
-         * RDS instance is configured for MultiAZ, it is possible that the reboot will be
+         * RDS instance is configured for MultiAZ, it is possible that the reboot is
          * conducted through a failover. An Amazon RDS event is created when the reboot is
          * completed.</p> <p>If your DB instance is deployed in multiple Availability
          * Zones, you can force a failover from one AZ to the other during the reboot. You

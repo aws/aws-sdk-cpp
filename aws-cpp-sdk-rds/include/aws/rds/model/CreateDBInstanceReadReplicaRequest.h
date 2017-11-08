@@ -233,136 +233,129 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the Read Replica. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: Inherits from the source DB instance.</p>
+     * <p>The compute and memory capacity of the Read Replica, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
+     * the source DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the Read Replica. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: Inherits from the source DB instance.</p>
+     * <p>The compute and memory capacity of the Read Replica, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
+     * the source DB instance.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the Read Replica. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: Inherits from the source DB instance.</p>
+     * <p>The compute and memory capacity of the Read Replica, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
+     * the source DB instance.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the Read Replica. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: Inherits from the source DB instance.</p>
+     * <p>The compute and memory capacity of the Read Replica, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
+     * the source DB instance.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the Read Replica. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: Inherits from the source DB instance.</p>
+     * <p>The compute and memory capacity of the Read Replica, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
+     * the source DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the Read Replica. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: Inherits from the source DB instance.</p>
+     * <p>The compute and memory capacity of the Read Replica, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
+     * the source DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the Read Replica. Note that not all
-     * instance classes are available in all regions for all DB engines.</p> <p> Valid
-     * Values: <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
-     * db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge |
-     * db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge |
-     * db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium |
-     * db.t2.large</code> </p> <p>Default: Inherits from the source DB instance.</p>
+     * <p>The compute and memory capacity of the Read Replica, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from
+     * the source DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
 
     /**
-     * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The Amazon EC2 Availability Zone that the Read Replica is created in.</p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The Amazon EC2 Availability Zone that the Read Replica is created in.</p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The Amazon EC2 Availability Zone that the Read Replica is created in.</p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The Amazon EC2 Availability Zone that the Read Replica is created in.</p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The Amazon EC2 Availability Zone that the Read Replica is created in.</p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The Amazon EC2 Availability Zone that the Read Replica is created in.</p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * AWS Region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The Amazon EC2 Availability Zone that the Read Replica is created in.</p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -390,23 +383,23 @@ namespace Model
 
 
     /**
-     * <p>Indicates that minor engine upgrades will be applied automatically to the
-     * Read Replica during the maintenance window.</p> <p>Default: Inherits from the
-     * source DB instance</p>
+     * <p>Indicates that minor engine upgrades are applied automatically to the Read
+     * Replica during the maintenance window.</p> <p>Default: Inherits from the source
+     * DB instance</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor engine upgrades will be applied automatically to the
-     * Read Replica during the maintenance window.</p> <p>Default: Inherits from the
-     * source DB instance</p>
+     * <p>Indicates that minor engine upgrades are applied automatically to the Read
+     * Replica during the maintenance window.</p> <p>Default: Inherits from the source
+     * DB instance</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor engine upgrades will be applied automatically to the
-     * Read Replica during the maintenance window.</p> <p>Default: Inherits from the
-     * source DB instance</p>
+     * <p>Indicates that minor engine upgrades are applied automatically to the Read
+     * Replica during the maintenance window.</p> <p>Default: Inherits from the source
+     * DB instance</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -431,44 +424,44 @@ namespace Model
 
 
     /**
-     * <p>The option group the DB instance will be associated with. If omitted, the
-     * default option group for the engine specified will be used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the default
+     * option group for the engine specified is used.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p>The option group the DB instance will be associated with. If omitted, the
-     * default option group for the engine specified will be used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the default
+     * option group for the engine specified is used.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p>The option group the DB instance will be associated with. If omitted, the
-     * default option group for the engine specified will be used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the default
+     * option group for the engine specified is used.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p>The option group the DB instance will be associated with. If omitted, the
-     * default option group for the engine specified will be used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the default
+     * option group for the engine specified is used.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p>The option group the DB instance will be associated with. If omitted, the
-     * default option group for the engine specified will be used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the default
+     * option group for the engine specified is used.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>The option group the DB instance will be associated with. If omitted, the
-     * default option group for the engine specified will be used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the default
+     * option group for the engine specified is used.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The option group the DB instance will be associated with. If omitted, the
-     * default option group for the engine specified will be used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the default
+     * option group for the engine specified is used.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -482,10 +475,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -498,10 +491,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -514,10 +507,10 @@ namespace Model
      * The following list shows the default behavior in each case.</p> <ul> <li> <p>
      * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
      * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance will be publicly
+     * PubliclyAccessible value has not been set, the DB instance is publicly
      * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will
-     * be private.</p>
+     * request and the PubliclyAccessible value has not been set, the DB instance is
+     * private.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -545,7 +538,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance will be
+     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
@@ -554,15 +547,15 @@ namespace Model
      * <p>The specified DB subnet group must be in the same AWS Region in which the
      * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
      * are created from the same source DB instance must either:&gt;</p> <ul> <li>
-     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas are
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
-     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * these Read Replicas are created outside of any VPC.</p> </li> </ul> </li> </ul>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance will be
+     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
@@ -571,15 +564,15 @@ namespace Model
      * <p>The specified DB subnet group must be in the same AWS Region in which the
      * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
      * are created from the same source DB instance must either:&gt;</p> <ul> <li>
-     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas are
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
-     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * these Read Replicas are created outside of any VPC.</p> </li> </ul> </li> </ul>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance will be
+     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
@@ -588,15 +581,15 @@ namespace Model
      * <p>The specified DB subnet group must be in the same AWS Region in which the
      * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
      * are created from the same source DB instance must either:&gt;</p> <ul> <li>
-     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas are
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
-     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * these Read Replicas are created outside of any VPC.</p> </li> </ul> </li> </ul>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance will be
+     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
@@ -605,15 +598,15 @@ namespace Model
      * <p>The specified DB subnet group must be in the same AWS Region in which the
      * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
      * are created from the same source DB instance must either:&gt;</p> <ul> <li>
-     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas are
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
-     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * these Read Replicas are created outside of any VPC.</p> </li> </ul> </li> </ul>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance will be
+     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
@@ -622,15 +615,15 @@ namespace Model
      * <p>The specified DB subnet group must be in the same AWS Region in which the
      * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
      * are created from the same source DB instance must either:&gt;</p> <ul> <li>
-     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas are
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
-     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * these Read Replicas are created outside of any VPC.</p> </li> </ul> </li> </ul>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance will be
+     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
@@ -639,15 +632,15 @@ namespace Model
      * <p>The specified DB subnet group must be in the same AWS Region in which the
      * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
      * are created from the same source DB instance must either:&gt;</p> <ul> <li>
-     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas are
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
-     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * these Read Replicas are created outside of any VPC.</p> </li> </ul> </li> </ul>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance will be
+     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
      * specified, then the new DB instance is not created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
@@ -656,10 +649,10 @@ namespace Model
      * <p>The specified DB subnet group must be in the same AWS Region in which the
      * operation is running.</p> </li> <li> <p>All Read Replicas in one AWS Region that
      * are created from the same source DB instance must either:&gt;</p> <ul> <li>
-     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas will be
+     * <p>Specify DB subnet groups from the same VPC. All these Read Replicas are
      * created in the same VPC.</p> </li> <li> <p>Not specify a DB subnet group. All
-     * these Read Replicas will be created outside of any VPC.</p> </li> </ul> </li>
-     * </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * these Read Replicas are created outside of any VPC.</p> </li> </ul> </li> </ul>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -978,7 +971,7 @@ namespace Model
      * source AWS Region that contains the encrypted source DB instance. The presigned
      * URL request must contain the following parameter values: </p> <ul> <li> <p>
      * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
-     * will be created in. This AWS Region is the same one where the
+     * is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 region, from a source DB instance in the us-east-2 region, then
@@ -1019,7 +1012,7 @@ namespace Model
      * source AWS Region that contains the encrypted source DB instance. The presigned
      * URL request must contain the following parameter values: </p> <ul> <li> <p>
      * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
-     * will be created in. This AWS Region is the same one where the
+     * is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 region, from a source DB instance in the us-east-2 region, then
@@ -1060,7 +1053,7 @@ namespace Model
      * source AWS Region that contains the encrypted source DB instance. The presigned
      * URL request must contain the following parameter values: </p> <ul> <li> <p>
      * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
-     * will be created in. This AWS Region is the same one where the
+     * is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 region, from a source DB instance in the us-east-2 region, then
@@ -1101,7 +1094,7 @@ namespace Model
      * source AWS Region that contains the encrypted source DB instance. The presigned
      * URL request must contain the following parameter values: </p> <ul> <li> <p>
      * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
-     * will be created in. This AWS Region is the same one where the
+     * is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 region, from a source DB instance in the us-east-2 region, then
@@ -1142,7 +1135,7 @@ namespace Model
      * source AWS Region that contains the encrypted source DB instance. The presigned
      * URL request must contain the following parameter values: </p> <ul> <li> <p>
      * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
-     * will be created in. This AWS Region is the same one where the
+     * is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 region, from a source DB instance in the us-east-2 region, then
@@ -1183,7 +1176,7 @@ namespace Model
      * source AWS Region that contains the encrypted source DB instance. The presigned
      * URL request must contain the following parameter values: </p> <ul> <li> <p>
      * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
-     * will be created in. This AWS Region is the same one where the
+     * is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 region, from a source DB instance in the us-east-2 region, then
@@ -1224,7 +1217,7 @@ namespace Model
      * source AWS Region that contains the encrypted source DB instance. The presigned
      * URL request must contain the following parameter values: </p> <ul> <li> <p>
      * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica
-     * will be created in. This AWS Region is the same one where the
+     * is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 region, from a source DB instance in the us-east-2 region, then
@@ -1285,35 +1278,72 @@ namespace Model
     inline CreateDBInstanceReadReplicaRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
 
-    
+    /**
+     * <p> True to enable Performance Insights for the read replica; otherwise false.
+     * </p>
+     */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
-    
+    /**
+     * <p> True to enable Performance Insights for the read replica; otherwise false.
+     * </p>
+     */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
-    
+    /**
+     * <p> True to enable Performance Insights for the read replica; otherwise false.
+     * </p>
+     */
     inline CreateDBInstanceReadReplicaRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
   private:
