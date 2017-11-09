@@ -186,18 +186,6 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
         Map<String, String> endpoints = new LinkedHashMap<>();
         endpoints.put("us-east-1", serviceModel.getMetadata().getGlobalEndpoint());
-        endpoints.put("us-east-2", "s3.us-east-2.amazonaws.com");
-        endpoints.put("us-west-1", "s3-us-west-1.amazonaws.com");
-        endpoints.put("us-west-2", "s3-us-west-2.amazonaws.com");
-        endpoints.put("ca-central-1", "s3.ca-central-1.amazonaws.com");
-        endpoints.put("ap-south-1", "s3.ap-south-1.amazonaws.com");
-        endpoints.put("ap-northeast-1", "s3-ap-northeast-1.amazonaws.com");
-        endpoints.put("ap-northeast-2", "s3.ap-northeast-2.amazonaws.com");
-        endpoints.put("ap-southeast-1", "s3-ap-southeast-1.amazonaws.com");
-        endpoints.put("ap-southeast-2", "s3-ap-southeast-2.amazonaws.com");
-        endpoints.put("eu-west-1", "s3-eu-west-1.amazonaws.com");
-        endpoints.put("eu-west-2", "s3.eu-west-2.amazonaws.com");
-        endpoints.put("sa-east-1", "s3-sa-east-1.amazonaws.com");
         endpoints.put("us-gov-west-1", "s3-us-gov-west-1.amazonaws.com");
         endpoints.put("fips-us-gov-west-1", "s3-fips-us-gov-west-1.amazonaws.com");
 
