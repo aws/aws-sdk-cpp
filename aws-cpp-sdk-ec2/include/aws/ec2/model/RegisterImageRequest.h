@@ -426,44 +426,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline const Aws::String& GetRootDeviceName() const{ return m_rootDeviceName; }
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline void SetRootDeviceName(const Aws::String& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = value; }
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline void SetRootDeviceName(Aws::String&& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = std::move(value); }
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline void SetRootDeviceName(const char* value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName.assign(value); }
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline RegisterImageRequest& WithRootDeviceName(const Aws::String& value) { SetRootDeviceName(value); return *this;}
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline RegisterImageRequest& WithRootDeviceName(Aws::String&& value) { SetRootDeviceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline RegisterImageRequest& WithRootDeviceName(const char* value) { SetRootDeviceName(value); return *this;}
 

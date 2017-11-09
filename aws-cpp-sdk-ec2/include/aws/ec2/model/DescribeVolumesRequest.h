@@ -56,7 +56,7 @@ namespace Model
      * The time stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
-     * device name that is exposed to the instance (for example,
+     * device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
@@ -96,7 +96,7 @@ namespace Model
      * The time stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
-     * device name that is exposed to the instance (for example,
+     * device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
@@ -136,7 +136,7 @@ namespace Model
      * The time stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
-     * device name that is exposed to the instance (for example,
+     * device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
@@ -176,7 +176,7 @@ namespace Model
      * The time stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
-     * device name that is exposed to the instance (for example,
+     * device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
@@ -216,7 +216,7 @@ namespace Model
      * The time stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
-     * device name that is exposed to the instance (for example,
+     * device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
@@ -256,7 +256,7 @@ namespace Model
      * The time stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
-     * device name that is exposed to the instance (for example,
+     * device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |
@@ -296,7 +296,7 @@ namespace Model
      * The time stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
-     * device name that is exposed to the instance (for example,
+     * device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).</p> </li> <li> <p> <code>attachment.instance-id</code>
      * - The ID of the instance the volume is attached to.</p> </li> <li> <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> |

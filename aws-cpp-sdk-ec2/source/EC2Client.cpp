@@ -59,6 +59,7 @@
 #include <aws/ec2/model/CopyImageRequest.h>
 #include <aws/ec2/model/CopySnapshotRequest.h>
 #include <aws/ec2/model/CreateCustomerGatewayRequest.h>
+#include <aws/ec2/model/CreateDefaultSubnetRequest.h>
 #include <aws/ec2/model/CreateDefaultVpcRequest.h>
 #include <aws/ec2/model/CreateDhcpOptionsRequest.h>
 #include <aws/ec2/model/CreateEgressOnlyInternetGatewayRequest.h>
@@ -1453,6 +1454,41 @@ void EC2Client::CreateCustomerGatewayAsync(const CreateCustomerGatewayRequest& r
 void EC2Client::CreateCustomerGatewayAsyncHelper(const CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateCustomerGateway(request), context);
+}
+
+CreateDefaultSubnetOutcome EC2Client::CreateDefaultSubnet(const CreateDefaultSubnetRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateDefaultSubnetOutcome(CreateDefaultSubnetResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDefaultSubnetOutcome(outcome.GetError());
+  }
+}
+
+CreateDefaultSubnetOutcomeCallable EC2Client::CreateDefaultSubnetCallable(const CreateDefaultSubnetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDefaultSubnetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDefaultSubnet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateDefaultSubnetAsync(const CreateDefaultSubnetRequest& request, const CreateDefaultSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDefaultSubnetAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateDefaultSubnetAsyncHelper(const CreateDefaultSubnetRequest& request, const CreateDefaultSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDefaultSubnet(request), context);
 }
 
 CreateDefaultVpcOutcome EC2Client::CreateDefaultVpc(const CreateDefaultVpcRequest& request) const

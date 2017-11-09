@@ -391,32 +391,32 @@ namespace Model
 
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline const AttributeValue& GetRootDeviceName() const{ return m_rootDeviceName; }
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline void SetRootDeviceName(const AttributeValue& value) { m_rootDeviceName = value; }
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline void SetRootDeviceName(AttributeValue&& value) { m_rootDeviceName = std::move(value); }
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline DescribeInstanceAttributeResponse& WithRootDeviceName(const AttributeValue& value) { SetRootDeviceName(value); return *this;}
 
     /**
-     * <p>The name of the root device (for example, <code>/dev/sda1</code> or
-     * <code>/dev/xvda</code>).</p>
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
      */
     inline DescribeInstanceAttributeResponse& WithRootDeviceName(AttributeValue&& value) { SetRootDeviceName(std::move(value)); return *this;}
 
