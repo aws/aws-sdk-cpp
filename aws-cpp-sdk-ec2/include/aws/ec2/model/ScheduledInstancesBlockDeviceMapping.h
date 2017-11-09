@@ -52,44 +52,44 @@ namespace Model
 
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline ScheduledInstancesBlockDeviceMapping& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline ScheduledInstancesBlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline ScheduledInstancesBlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
@@ -172,7 +172,7 @@ namespace Model
      * <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are
      * numbered starting from 0. An instance type with two available instance store
      * volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends
+     * <code>ephemeral1</code>. The number of available instance store volumes depends
      * on the instance type. After you connect to the instance, you must mount the
      * volume.</p> <p>Constraints: For M3 instances, you must specify instance store
      * volumes in the block device mapping for the instance. When you launch an M3
@@ -185,7 +185,7 @@ namespace Model
      * <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are
      * numbered starting from 0. An instance type with two available instance store
      * volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends
+     * <code>ephemeral1</code>. The number of available instance store volumes depends
      * on the instance type. After you connect to the instance, you must mount the
      * volume.</p> <p>Constraints: For M3 instances, you must specify instance store
      * volumes in the block device mapping for the instance. When you launch an M3
@@ -198,7 +198,7 @@ namespace Model
      * <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are
      * numbered starting from 0. An instance type with two available instance store
      * volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends
+     * <code>ephemeral1</code>. The number of available instance store volumes depends
      * on the instance type. After you connect to the instance, you must mount the
      * volume.</p> <p>Constraints: For M3 instances, you must specify instance store
      * volumes in the block device mapping for the instance. When you launch an M3
@@ -211,7 +211,7 @@ namespace Model
      * <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are
      * numbered starting from 0. An instance type with two available instance store
      * volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends
+     * <code>ephemeral1</code>. The number of available instance store volumes depends
      * on the instance type. After you connect to the instance, you must mount the
      * volume.</p> <p>Constraints: For M3 instances, you must specify instance store
      * volumes in the block device mapping for the instance. When you launch an M3
@@ -224,7 +224,7 @@ namespace Model
      * <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are
      * numbered starting from 0. An instance type with two available instance store
      * volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends
+     * <code>ephemeral1</code>. The number of available instance store volumes depends
      * on the instance type. After you connect to the instance, you must mount the
      * volume.</p> <p>Constraints: For M3 instances, you must specify instance store
      * volumes in the block device mapping for the instance. When you launch an M3
@@ -237,7 +237,7 @@ namespace Model
      * <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are
      * numbered starting from 0. An instance type with two available instance store
      * volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends
+     * <code>ephemeral1</code>. The number of available instance store volumes depends
      * on the instance type. After you connect to the instance, you must mount the
      * volume.</p> <p>Constraints: For M3 instances, you must specify instance store
      * volumes in the block device mapping for the instance. When you launch an M3
@@ -250,7 +250,7 @@ namespace Model
      * <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are
      * numbered starting from 0. An instance type with two available instance store
      * volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends
+     * <code>ephemeral1</code>. The number of available instance store volumes depends
      * on the instance type. After you connect to the instance, you must mount the
      * volume.</p> <p>Constraints: For M3 instances, you must specify instance store
      * volumes in the block device mapping for the instance. When you launch an M3

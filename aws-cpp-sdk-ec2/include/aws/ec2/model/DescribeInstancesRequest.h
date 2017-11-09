@@ -62,11 +62,11 @@ namespace Model
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean that
      * indicates whether the EBS volume is deleted on instance termination.</p> </li>
-     * <li> <p> <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
-     * <li> <p> <code>block-device-mapping.status</code> - The status for the EBS
-     * volume (<code>attaching</code> | <code>attached</code> | <code>detaching</code>
-     * | <code>detached</code>).</p> </li> <li> <p>
+     * <li> <p> <code>block-device-mapping.device-name</code> - The device name
+     * specified in the block device mapping (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p> </li> <li> <p> <code>block-device-mapping.status</code>
+     * - The status for the EBS volume (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.volume-id</code> - The volume ID of the EBS
      * volume.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
      * provided when you launched the instance.</p> </li> <li> <p>
@@ -189,10 +189,10 @@ namespace Model
      * instances using the same launch request. For example, if you launch one
      * instance, you get one reservation ID. If you launch ten instances using the same
      * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The name of the root device for the instance
-     * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
-     * <p> <code>root-device-type</code> - The type of root device that the instance
-     * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>root-device-name</code> - The device name of the root device volume (for
+     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * <code>root-device-type</code> - The type of the root device volume
+     * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must
@@ -235,11 +235,11 @@ namespace Model
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean that
      * indicates whether the EBS volume is deleted on instance termination.</p> </li>
-     * <li> <p> <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
-     * <li> <p> <code>block-device-mapping.status</code> - The status for the EBS
-     * volume (<code>attaching</code> | <code>attached</code> | <code>detaching</code>
-     * | <code>detached</code>).</p> </li> <li> <p>
+     * <li> <p> <code>block-device-mapping.device-name</code> - The device name
+     * specified in the block device mapping (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p> </li> <li> <p> <code>block-device-mapping.status</code>
+     * - The status for the EBS volume (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.volume-id</code> - The volume ID of the EBS
      * volume.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
      * provided when you launched the instance.</p> </li> <li> <p>
@@ -362,10 +362,10 @@ namespace Model
      * instances using the same launch request. For example, if you launch one
      * instance, you get one reservation ID. If you launch ten instances using the same
      * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The name of the root device for the instance
-     * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
-     * <p> <code>root-device-type</code> - The type of root device that the instance
-     * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>root-device-name</code> - The device name of the root device volume (for
+     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * <code>root-device-type</code> - The type of the root device volume
+     * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must
@@ -408,11 +408,11 @@ namespace Model
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean that
      * indicates whether the EBS volume is deleted on instance termination.</p> </li>
-     * <li> <p> <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
-     * <li> <p> <code>block-device-mapping.status</code> - The status for the EBS
-     * volume (<code>attaching</code> | <code>attached</code> | <code>detaching</code>
-     * | <code>detached</code>).</p> </li> <li> <p>
+     * <li> <p> <code>block-device-mapping.device-name</code> - The device name
+     * specified in the block device mapping (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p> </li> <li> <p> <code>block-device-mapping.status</code>
+     * - The status for the EBS volume (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.volume-id</code> - The volume ID of the EBS
      * volume.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
      * provided when you launched the instance.</p> </li> <li> <p>
@@ -535,10 +535,10 @@ namespace Model
      * instances using the same launch request. For example, if you launch one
      * instance, you get one reservation ID. If you launch ten instances using the same
      * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The name of the root device for the instance
-     * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
-     * <p> <code>root-device-type</code> - The type of root device that the instance
-     * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>root-device-name</code> - The device name of the root device volume (for
+     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * <code>root-device-type</code> - The type of the root device volume
+     * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must
@@ -581,11 +581,11 @@ namespace Model
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean that
      * indicates whether the EBS volume is deleted on instance termination.</p> </li>
-     * <li> <p> <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
-     * <li> <p> <code>block-device-mapping.status</code> - The status for the EBS
-     * volume (<code>attaching</code> | <code>attached</code> | <code>detaching</code>
-     * | <code>detached</code>).</p> </li> <li> <p>
+     * <li> <p> <code>block-device-mapping.device-name</code> - The device name
+     * specified in the block device mapping (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p> </li> <li> <p> <code>block-device-mapping.status</code>
+     * - The status for the EBS volume (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.volume-id</code> - The volume ID of the EBS
      * volume.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
      * provided when you launched the instance.</p> </li> <li> <p>
@@ -708,10 +708,10 @@ namespace Model
      * instances using the same launch request. For example, if you launch one
      * instance, you get one reservation ID. If you launch ten instances using the same
      * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The name of the root device for the instance
-     * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
-     * <p> <code>root-device-type</code> - The type of root device that the instance
-     * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>root-device-name</code> - The device name of the root device volume (for
+     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * <code>root-device-type</code> - The type of the root device volume
+     * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must
@@ -754,11 +754,11 @@ namespace Model
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean that
      * indicates whether the EBS volume is deleted on instance termination.</p> </li>
-     * <li> <p> <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
-     * <li> <p> <code>block-device-mapping.status</code> - The status for the EBS
-     * volume (<code>attaching</code> | <code>attached</code> | <code>detaching</code>
-     * | <code>detached</code>).</p> </li> <li> <p>
+     * <li> <p> <code>block-device-mapping.device-name</code> - The device name
+     * specified in the block device mapping (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p> </li> <li> <p> <code>block-device-mapping.status</code>
+     * - The status for the EBS volume (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.volume-id</code> - The volume ID of the EBS
      * volume.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
      * provided when you launched the instance.</p> </li> <li> <p>
@@ -881,10 +881,10 @@ namespace Model
      * instances using the same launch request. For example, if you launch one
      * instance, you get one reservation ID. If you launch ten instances using the same
      * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The name of the root device for the instance
-     * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
-     * <p> <code>root-device-type</code> - The type of root device that the instance
-     * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>root-device-name</code> - The device name of the root device volume (for
+     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * <code>root-device-type</code> - The type of the root device volume
+     * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must
@@ -927,11 +927,11 @@ namespace Model
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean that
      * indicates whether the EBS volume is deleted on instance termination.</p> </li>
-     * <li> <p> <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
-     * <li> <p> <code>block-device-mapping.status</code> - The status for the EBS
-     * volume (<code>attaching</code> | <code>attached</code> | <code>detaching</code>
-     * | <code>detached</code>).</p> </li> <li> <p>
+     * <li> <p> <code>block-device-mapping.device-name</code> - The device name
+     * specified in the block device mapping (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p> </li> <li> <p> <code>block-device-mapping.status</code>
+     * - The status for the EBS volume (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.volume-id</code> - The volume ID of the EBS
      * volume.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
      * provided when you launched the instance.</p> </li> <li> <p>
@@ -1054,10 +1054,10 @@ namespace Model
      * instances using the same launch request. For example, if you launch one
      * instance, you get one reservation ID. If you launch ten instances using the same
      * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The name of the root device for the instance
-     * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
-     * <p> <code>root-device-type</code> - The type of root device that the instance
-     * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>root-device-name</code> - The device name of the root device volume (for
+     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * <code>root-device-type</code> - The type of the root device volume
+     * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must
@@ -1100,11 +1100,11 @@ namespace Model
      * <code>2010-09-15T17:15:20.000Z</code>.</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean that
      * indicates whether the EBS volume is deleted on instance termination.</p> </li>
-     * <li> <p> <code>block-device-mapping.device-name</code> - The device name for the
-     * EBS volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
-     * <li> <p> <code>block-device-mapping.status</code> - The status for the EBS
-     * volume (<code>attaching</code> | <code>attached</code> | <code>detaching</code>
-     * | <code>detached</code>).</p> </li> <li> <p>
+     * <li> <p> <code>block-device-mapping.device-name</code> - The device name
+     * specified in the block device mapping (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p> </li> <li> <p> <code>block-device-mapping.status</code>
+     * - The status for the EBS volume (<code>attaching</code> | <code>attached</code>
+     * | <code>detaching</code> | <code>detached</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.volume-id</code> - The volume ID of the EBS
      * volume.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
      * provided when you launched the instance.</p> </li> <li> <p>
@@ -1227,10 +1227,10 @@ namespace Model
      * instances using the same launch request. For example, if you launch one
      * instance, you get one reservation ID. If you launch ten instances using the same
      * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The name of the root device for the instance
-     * (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).</p> </li> <li>
-     * <p> <code>root-device-type</code> - The type of root device that the instance
-     * uses (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>root-device-name</code> - The device name of the root device volume (for
+     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * <code>root-device-type</code> - The type of the root device volume
+     * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
      * source/destination checking. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must

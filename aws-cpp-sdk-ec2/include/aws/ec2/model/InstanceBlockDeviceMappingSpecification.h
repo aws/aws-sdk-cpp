@@ -51,44 +51,44 @@ namespace Model
 
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline InstanceBlockDeviceMappingSpecification& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline InstanceBlockDeviceMappingSpecification& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
-     * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline InstanceBlockDeviceMappingSpecification& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 

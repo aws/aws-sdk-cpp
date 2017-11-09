@@ -52,7 +52,8 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_replaceUnhealthyInstances(false),
     m_replaceUnhealthyInstancesHasBeenSet(false),
     m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false)
+    m_instanceInterruptionBehaviorHasBeenSet(false),
+    m_loadBalancersConfigHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_replaceUnhealthyInstances(false),
     m_replaceUnhealthyInstancesHasBeenSet(false),
     m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false)
+    m_instanceInterruptionBehaviorHasBeenSet(false),
+    m_loadBalancersConfigHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -179,6 +181,12 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
       m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(instanceInterruptionBehaviorNode.GetText().c_str()).c_str());
       m_instanceInterruptionBehaviorHasBeenSet = true;
     }
+    XmlNode loadBalancersConfigNode = resultNode.FirstChild("loadBalancersConfig");
+    if(!loadBalancersConfigNode.IsNull())
+    {
+      m_loadBalancersConfig = loadBalancersConfigNode;
+      m_loadBalancersConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -262,6 +270,13 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
   }
 
+  if(m_loadBalancersConfigHasBeenSet)
+  {
+      Aws::StringStream loadBalancersConfigLocationAndMemberSs;
+      loadBalancersConfigLocationAndMemberSs << location << index << locationValue << ".LoadBalancersConfig";
+      m_loadBalancersConfig.OutputToStream(oStream, loadBalancersConfigLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -327,6 +342,12 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
       oStream << location << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+  }
+  if(m_loadBalancersConfigHasBeenSet)
+  {
+      Aws::String loadBalancersConfigLocationAndMember(location);
+      loadBalancersConfigLocationAndMember += ".LoadBalancersConfig";
+      m_loadBalancersConfig.OutputToStream(oStream, loadBalancersConfigLocationAndMember.c_str());
   }
 }
 

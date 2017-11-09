@@ -23,6 +23,7 @@
 #include <aws/ec2/model/FleetType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/InstanceInterruptionBehavior.h>
+#include <aws/ec2/model/LoadBalancersConfig.h>
 #include <aws/ec2/model/SpotFleetLaunchSpecification.h>
 #include <utility>
 
@@ -554,6 +555,57 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
 
+
+    /**
+     * <p>One or more Classic Load Balancers and target groups to attach to the Spot
+     * fleet request. Spot fleet registers the running Spot instances with the
+     * specified Classic Load Balancers and target groups.</p> <p>With Network Load
+     * Balancers, Spot fleet cannot register instances that have the following instance
+     * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and
+     * T1.</p>
+     */
+    inline const LoadBalancersConfig& GetLoadBalancersConfig() const{ return m_loadBalancersConfig; }
+
+    /**
+     * <p>One or more Classic Load Balancers and target groups to attach to the Spot
+     * fleet request. Spot fleet registers the running Spot instances with the
+     * specified Classic Load Balancers and target groups.</p> <p>With Network Load
+     * Balancers, Spot fleet cannot register instances that have the following instance
+     * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and
+     * T1.</p>
+     */
+    inline void SetLoadBalancersConfig(const LoadBalancersConfig& value) { m_loadBalancersConfigHasBeenSet = true; m_loadBalancersConfig = value; }
+
+    /**
+     * <p>One or more Classic Load Balancers and target groups to attach to the Spot
+     * fleet request. Spot fleet registers the running Spot instances with the
+     * specified Classic Load Balancers and target groups.</p> <p>With Network Load
+     * Balancers, Spot fleet cannot register instances that have the following instance
+     * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and
+     * T1.</p>
+     */
+    inline void SetLoadBalancersConfig(LoadBalancersConfig&& value) { m_loadBalancersConfigHasBeenSet = true; m_loadBalancersConfig = std::move(value); }
+
+    /**
+     * <p>One or more Classic Load Balancers and target groups to attach to the Spot
+     * fleet request. Spot fleet registers the running Spot instances with the
+     * specified Classic Load Balancers and target groups.</p> <p>With Network Load
+     * Balancers, Spot fleet cannot register instances that have the following instance
+     * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and
+     * T1.</p>
+     */
+    inline SpotFleetRequestConfigData& WithLoadBalancersConfig(const LoadBalancersConfig& value) { SetLoadBalancersConfig(value); return *this;}
+
+    /**
+     * <p>One or more Classic Load Balancers and target groups to attach to the Spot
+     * fleet request. Spot fleet registers the running Spot instances with the
+     * specified Classic Load Balancers and target groups.</p> <p>With Network Load
+     * Balancers, Spot fleet cannot register instances that have the following instance
+     * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and
+     * T1.</p>
+     */
+    inline SpotFleetRequestConfigData& WithLoadBalancersConfig(LoadBalancersConfig&& value) { SetLoadBalancersConfig(std::move(value)); return *this;}
+
   private:
 
     AllocationStrategy m_allocationStrategy;
@@ -597,6 +649,9 @@ namespace Model
 
     InstanceInterruptionBehavior m_instanceInterruptionBehavior;
     bool m_instanceInterruptionBehaviorHasBeenSet;
+
+    LoadBalancersConfig m_loadBalancersConfig;
+    bool m_loadBalancersConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -50,44 +50,44 @@ namespace Model
   public:
 
     /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline const Aws::String& GetDevice() const{ return m_device; }
 
     /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
 
     /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
 
     /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline void SetDevice(const char* value) { m_deviceHasBeenSet = true; m_device.assign(value); }
 
     /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline AttachVolumeRequest& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
 
     /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline AttachVolumeRequest& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
 
     /**
-     * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
-     * or <code>xvdh</code>).</p>
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
      */
     inline AttachVolumeRequest& WithDevice(const char* value) { SetDevice(value); return *this;}
 
