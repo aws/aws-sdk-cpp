@@ -276,7 +276,7 @@ protected:
         config.connectTimeoutMs = 3000;
         config.requestTimeoutMs = 60000;
 
-        m_s3Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, config, false);       
+        m_s3Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, config);       
 
         DeleteBucket(GetTestBucketName());
         

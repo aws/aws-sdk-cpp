@@ -144,7 +144,7 @@ static Http::HeaderValueCollection CanonicalizeHeaders(Http::HeaderValueCollecti
 }
 
 AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-    const char* serviceName, const Aws::String& region, bool signPayloads, bool urlEscapePath) :
+    const char* serviceName, const Aws::String& region, PayloadSigningPolicy signingPolicy, bool urlEscapePath) :
     m_includeSha256HashHeader(true),
     m_credentialsProvider(credentialsProvider),
     m_serviceName(serviceName),
@@ -152,7 +152,7 @@ AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvi
     m_hash(Aws::MakeUnique<Aws::Utils::Crypto::Sha256>(v4LogTag)),
     m_HMAC(Aws::MakeUnique<Aws::Utils::Crypto::Sha256HMAC>(v4LogTag)),
     m_unsignedHeaders({"user-agent", "x-amzn-trace-id"}),
-    m_signPayloads(signPayloads),
+    m_payloadSigningPolicy(signingPolicy),
     m_urlEscapePath(urlEscapePath)
 {
     //go ahead and warm up the signing cache.
@@ -172,7 +172,7 @@ bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header) const
 
 bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 {
-    return SignRequest(request, m_signPayloads);
+    return SignRequest(request, true/*signBody*/);
 }
 
 bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool signBody) const
@@ -191,6 +191,20 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool signBody
     }
 
     Aws::String payloadHash(UNSIGNED_PAYLOAD);
+    switch(m_payloadSigningPolicy)
+    {
+        case PayloadSigningPolicy::Always:
+            signBody = true;
+            break;
+        case PayloadSigningPolicy::Never:
+            signBody = false;
+            break;
+        case PayloadSigningPolicy::RequestDependent:
+            // respect the request setting
+        default:
+            break;
+    }
+
     if(signBody || request.GetUri().GetScheme() != Http::Scheme::HTTPS)
     {
         payloadHash.assign(ComputePayloadHash(request));
@@ -201,7 +215,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool signBody
     }
     else
     {
-        AWS_LOGSTREAM_DEBUG(v4LogTag, "Note: Http payloads are not being signed. signPayloads=" << m_signPayloads
+        AWS_LOGSTREAM_DEBUG(v4LogTag, "Note: Http payloads are not being signed. signPayloads=" << signBody
                 << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
     }
 

@@ -1,5 +1,5 @@
 #if($signPayloadsOptional)
-#set($signPayloads = ", bool signPayloads")
+#set($signPayloads = ", Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads")
 #set($signPayloadsParam = ", signPayloads")
 #else
 #set($signPayloads = "")

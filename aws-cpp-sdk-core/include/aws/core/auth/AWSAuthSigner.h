@@ -127,15 +127,35 @@ namespace Aws
 
         public:
             /**
+             * Even though different payload signing polices, HTTP will force payload signing to be on.
+             */
+            enum class PayloadSigningPolicy
+            {
+                /**
+                 * Sign the request based on the value returned by AmazonWebServiceRequest::SignBody()
+                 */
+                RequestDependent,
+                /**
+                 * Always sign the body of the request.
+                 */
+                Always,
+                /**
+                 * Never sign the body of the request
+                 */
+                Never
+            };
+            /**
              * credentialsProvider, source of AWS Credentials to sign requests with
              * serviceName,  canonical service name to sign with
              * region, region string to use in signature
-             * signPayloads, if true, the payload will have a sha256 computed on the body of the request. If this is set
-             *    to false, the sha256 will not be computed on the body. This is only useful for Amazon S3 over Https. If
-             *    Https is not used then this flag will be ignored.
+             * signPayloads, if Always, the payload will have a sha256 computed on the body of the request. If this is set
+             *    to Never, the sha256 will not be computed on the body. This is only useful for Amazon S3 over Https. If
+             *    Https is not used then this flag will be ignored. If set to RequestDependent, compute or not is based on
+             *    the value from AmazonWebServiceRequest::SignBody()
              */
             AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-                            const char* serviceName, const Aws::String& region, bool signPayloads = true, bool urlEscapePath = true);
+                            const char* serviceName, const Aws::String& region, PayloadSigningPolicy signingPolicy = PayloadSigningPolicy::RequestDependent,
+                            bool urlEscapePath = true);
 
             virtual ~AWSAuthV4Signer();
 
@@ -209,7 +229,7 @@ namespace Aws
             mutable Aws::String m_currentDateStr;
             mutable Aws::String m_currentSecretKey;
             mutable std::mutex m_partialSignatureLock;
-            bool m_signPayloads;
+            PayloadSigningPolicy m_payloadSigningPolicy;
             bool m_urlEscapePath;
         };
 
