@@ -189,7 +189,6 @@ endmacro(AWSSDK_CPY_DYN_LIBS)
 
 # output link libs command to OUTPUT_VAR which required by all services from SERVCE_LIST
 macro(AWSSDK_DETERMINE_LIBS_TO_LINK SERVICE_LIST OUTPUT_VAR)
-    set(ALL_SERVICES "core")
 
     foreach(SVC IN LISTS ${SERVICE_LIST})
         list(APPEND ALL_SERVICES ${SVC})
@@ -201,6 +200,49 @@ macro(AWSSDK_DETERMINE_LIBS_TO_LINK SERVICE_LIST OUTPUT_VAR)
         unset(DEPENDENCY_LIST CACHE)
     endforeach()
     list(REMOVE_DUPLICATES ALL_SERVICES)
+
+    # Order the dependencies correctly
+    # Change order from e.g. "core;transfer;s3;s3-encryption;kms" to "transfer;s3-encryption;kms;s3;core".
+    # This is important for static linked user application.
+    # They way of doing this is to keep checking libs after current lib till the end, if current lib is a dependency of checking lib,
+    # then move current lib to the end of list, after moving, current index stay and start another round of checking. If no libs after
+    # current lib is a dependency of current lib, move current index to next and start anohter round of checking.
+    # Example: "s3;core;transfer"
+    #-> s3(cur);core(checking);transfer  s3 is not a dependency of core
+    #-> s3(cur);core;transfer(checking)  s3 is a dependency of transfer
+    #-> core(cur);transfer(checking);s3  core is a dependency of transfer
+    #-> transfer(cur);s3(checking);core  transfer is not a dependency of s3
+    #-> transfer(cur);s3;core(checking)  transfer is not a dependency of core
+    #-> transfer;s3(cur);core(checking)  s3 is not a dependency of core
+    #-> transfer;s3;core(cur)            end of checking
+
+    list(LENGTH ALL_SERVICES length)
+    math(EXPR length ${length}-1) # Get index of last element.
+    if (length GREATER 0) # If more than 1 element.
+        set(i 0)
+        while (i LESS length) # No need to process last element
+            list(GET ALL_SERVICES ${i} SVC)
+            math(EXPR j ${i}+1)
+            math(EXPR jEnd ${length}+1)
+            while (j LESS jEnd)
+                list(GET ALL_SERVICES ${j} NEXT_SVC)
+                get_dependencies_for_sdk(${NEXT_SVC} DEPENDING_SDKS)
+                if (DEPENDING_SDKS)
+                    string(REPLACE "," ";" DEPENDING_SDKS ${DEPENDING_SDKS})
+                endif()
+                list(FIND DEPENDING_SDKS ${SVC} index)
+                if (NOT ${index} EQUAL -1) # NEXT_SVC depend on SVC
+                    list(REMOVE_AT ALL_SERVICES ${i}) # Move SVC to end
+                    list(APPEND ALL_SERVICES ${SVC})
+                    math(EXPR i ${i}-1) # make index point to new element but with the same index.
+                    break() # as long as we moved SVC to end, the inner loop can be broke.
+                endif()
+                math(EXPR j ${j}+1)
+            endwhile()
+            math(EXPR i ${i}+1)
+        endwhile()
+    endif()
+
     set(${OUTPUT_VAR} "")
     foreach(DEP IN LISTS ALL_SERVICES)
         list(APPEND ${OUTPUT_VAR} "aws-cpp-sdk-${DEP}")
