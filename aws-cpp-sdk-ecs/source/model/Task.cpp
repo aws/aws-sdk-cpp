@@ -44,7 +44,8 @@ Task::Task() :
     m_createdAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
     m_stoppedAtHasBeenSet(false),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ Task::Task(const JsonValue& jsonValue) :
     m_createdAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
     m_stoppedAtHasBeenSet(false),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -179,6 +181,16 @@ Task& Task::operator =(const JsonValue& jsonValue)
     m_groupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("attachments"))
+  {
+    Array<JsonValue> attachmentsJsonList = jsonValue.GetArray("attachments");
+    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+    {
+      m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
+    }
+    m_attachmentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -275,6 +287,17 @@ JsonValue Task::Jsonize() const
   if(m_groupHasBeenSet)
   {
    payload.WithString("group", m_group);
+
+  }
+
+  if(m_attachmentsHasBeenSet)
+  {
+   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+   {
+     attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+   }
+   payload.WithArray("attachments", std::move(attachmentsJsonList));
 
   }
 

@@ -1360,9 +1360,9 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains one <code>ResetElement</code> element for each
-     * element that you want to reset to the default value. Valid values for
-     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <p>A complex type that contains one <code>ResettableElementName</code> element
+     * for each element that you want to reset to the default value. Valid values for
+     * <code>ResettableElementName</code> include the following:</p> <ul> <li> <p>
      * <code>ChildHealthChecks</code>: Amazon Route 53 resets
      * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
      * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
@@ -1375,9 +1375,9 @@ namespace Model
     inline const Aws::Vector<ResettableElementName>& GetResetElements() const{ return m_resetElements; }
 
     /**
-     * <p>A complex type that contains one <code>ResetElement</code> element for each
-     * element that you want to reset to the default value. Valid values for
-     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <p>A complex type that contains one <code>ResettableElementName</code> element
+     * for each element that you want to reset to the default value. Valid values for
+     * <code>ResettableElementName</code> include the following:</p> <ul> <li> <p>
      * <code>ChildHealthChecks</code>: Amazon Route 53 resets
      * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
      * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
@@ -1390,9 +1390,9 @@ namespace Model
     inline void SetResetElements(const Aws::Vector<ResettableElementName>& value) { m_resetElementsHasBeenSet = true; m_resetElements = value; }
 
     /**
-     * <p>A complex type that contains one <code>ResetElement</code> element for each
-     * element that you want to reset to the default value. Valid values for
-     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <p>A complex type that contains one <code>ResettableElementName</code> element
+     * for each element that you want to reset to the default value. Valid values for
+     * <code>ResettableElementName</code> include the following:</p> <ul> <li> <p>
      * <code>ChildHealthChecks</code>: Amazon Route 53 resets
      * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
      * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
@@ -1405,9 +1405,9 @@ namespace Model
     inline void SetResetElements(Aws::Vector<ResettableElementName>&& value) { m_resetElementsHasBeenSet = true; m_resetElements = std::move(value); }
 
     /**
-     * <p>A complex type that contains one <code>ResetElement</code> element for each
-     * element that you want to reset to the default value. Valid values for
-     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <p>A complex type that contains one <code>ResettableElementName</code> element
+     * for each element that you want to reset to the default value. Valid values for
+     * <code>ResettableElementName</code> include the following:</p> <ul> <li> <p>
      * <code>ChildHealthChecks</code>: Amazon Route 53 resets
      * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
      * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
@@ -1420,9 +1420,9 @@ namespace Model
     inline UpdateHealthCheckRequest& WithResetElements(const Aws::Vector<ResettableElementName>& value) { SetResetElements(value); return *this;}
 
     /**
-     * <p>A complex type that contains one <code>ResetElement</code> element for each
-     * element that you want to reset to the default value. Valid values for
-     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <p>A complex type that contains one <code>ResettableElementName</code> element
+     * for each element that you want to reset to the default value. Valid values for
+     * <code>ResettableElementName</code> include the following:</p> <ul> <li> <p>
      * <code>ChildHealthChecks</code>: Amazon Route 53 resets
      * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
      * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
@@ -1435,9 +1435,9 @@ namespace Model
     inline UpdateHealthCheckRequest& WithResetElements(Aws::Vector<ResettableElementName>&& value) { SetResetElements(std::move(value)); return *this;}
 
     /**
-     * <p>A complex type that contains one <code>ResetElement</code> element for each
-     * element that you want to reset to the default value. Valid values for
-     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <p>A complex type that contains one <code>ResettableElementName</code> element
+     * for each element that you want to reset to the default value. Valid values for
+     * <code>ResettableElementName</code> include the following:</p> <ul> <li> <p>
      * <code>ChildHealthChecks</code>: Amazon Route 53 resets
      * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
      * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
@@ -1450,9 +1450,9 @@ namespace Model
     inline UpdateHealthCheckRequest& AddResetElements(const ResettableElementName& value) { m_resetElementsHasBeenSet = true; m_resetElements.push_back(value); return *this; }
 
     /**
-     * <p>A complex type that contains one <code>ResetElement</code> element for each
-     * element that you want to reset to the default value. Valid values for
-     * <code>ResetElement</code> include the following:</p> <ul> <li> <p>
+     * <p>A complex type that contains one <code>ResettableElementName</code> element
+     * for each element that you want to reset to the default value. Valid values for
+     * <code>ResettableElementName</code> include the following:</p> <ul> <li> <p>
      * <code>ChildHealthChecks</code>: Amazon Route 53 resets
      * <a>HealthCheckConfig$ChildHealthChecks</a> to null.</p> </li> <li> <p>
      * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets

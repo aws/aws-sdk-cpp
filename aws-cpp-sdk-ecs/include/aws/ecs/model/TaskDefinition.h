@@ -248,11 +248,13 @@ namespace Model
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
-     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
-     * <p>If the network mode is <code>none</code>, the containers do not have external
-     * connectivity. The default Docker network mode is <code>bridge</code>. The
-     * <code>host</code> network mode offers the highest networking performance for
-     * containers because it uses the host network stack instead of the virtualized
+     * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
+     * <code>host</code>. </p> <p>If the network mode is <code>none</code>, the
+     * containers do not have external connectivity. The default Docker network mode is
+     * <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is
+     * allocated an Elastic Network Interface. The <code>host</code> and
+     * <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized
      * network stack provided by the <code>bridge</code> mode.</p> <p>For more
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -262,11 +264,13 @@ namespace Model
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
-     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
-     * <p>If the network mode is <code>none</code>, the containers do not have external
-     * connectivity. The default Docker network mode is <code>bridge</code>. The
-     * <code>host</code> network mode offers the highest networking performance for
-     * containers because it uses the host network stack instead of the virtualized
+     * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
+     * <code>host</code>. </p> <p>If the network mode is <code>none</code>, the
+     * containers do not have external connectivity. The default Docker network mode is
+     * <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is
+     * allocated an Elastic Network Interface. The <code>host</code> and
+     * <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized
      * network stack provided by the <code>bridge</code> mode.</p> <p>For more
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -276,11 +280,13 @@ namespace Model
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
-     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
-     * <p>If the network mode is <code>none</code>, the containers do not have external
-     * connectivity. The default Docker network mode is <code>bridge</code>. The
-     * <code>host</code> network mode offers the highest networking performance for
-     * containers because it uses the host network stack instead of the virtualized
+     * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
+     * <code>host</code>. </p> <p>If the network mode is <code>none</code>, the
+     * containers do not have external connectivity. The default Docker network mode is
+     * <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is
+     * allocated an Elastic Network Interface. The <code>host</code> and
+     * <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized
      * network stack provided by the <code>bridge</code> mode.</p> <p>For more
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -290,11 +296,13 @@ namespace Model
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
-     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
-     * <p>If the network mode is <code>none</code>, the containers do not have external
-     * connectivity. The default Docker network mode is <code>bridge</code>. The
-     * <code>host</code> network mode offers the highest networking performance for
-     * containers because it uses the host network stack instead of the virtualized
+     * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
+     * <code>host</code>. </p> <p>If the network mode is <code>none</code>, the
+     * containers do not have external connectivity. The default Docker network mode is
+     * <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is
+     * allocated an Elastic Network Interface. The <code>host</code> and
+     * <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized
      * network stack provided by the <code>bridge</code> mode.</p> <p>For more
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -304,11 +312,13 @@ namespace Model
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
-     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
-     * <p>If the network mode is <code>none</code>, the containers do not have external
-     * connectivity. The default Docker network mode is <code>bridge</code>. The
-     * <code>host</code> network mode offers the highest networking performance for
-     * containers because it uses the host network stack instead of the virtualized
+     * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
+     * <code>host</code>. </p> <p>If the network mode is <code>none</code>, the
+     * containers do not have external connectivity. The default Docker network mode is
+     * <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is
+     * allocated an Elastic Network Interface. The <code>host</code> and
+     * <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized
      * network stack provided by the <code>bridge</code> mode.</p> <p>For more
      * information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network

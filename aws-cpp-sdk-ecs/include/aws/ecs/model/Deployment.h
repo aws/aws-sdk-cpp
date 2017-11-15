@@ -17,6 +17,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ecs/model/NetworkConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -298,6 +299,42 @@ namespace Model
      */
     inline Deployment& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline Deployment& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline Deployment& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -323,6 +360,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -921,13 +921,12 @@ namespace Model
          * <p>Creates a resource data sync configuration to a single bucket in Amazon S3.
          * This is an asynchronous operation that returns immediately. After a successful
          * initial sync is completed, the system continuously syncs data to the Amazon S3
-         * bucket. To check the status of the sync, use the <a
-         * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.</p>
-         * <p>By default, data is not encrypted in Amazon S3. We strongly recommend that
-         * you enable encryption in Amazon S3 to ensure secure data storage. We also
-         * recommend that you secure access to the Amazon S3 bucket by creating a
-         * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket
-         * policy for Resource Data Sync, see <a
+         * bucket. To check the status of the sync, use the
+         * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
+         * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
+         * secure data storage. We also recommend that you secure access to the Amazon S3
+         * bucket by creating a restrictive bucket policy. To view an example of a
+         * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
          * Resource Data Sync for Inventory</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
@@ -939,13 +938,12 @@ namespace Model
          * <p>Creates a resource data sync configuration to a single bucket in Amazon S3.
          * This is an asynchronous operation that returns immediately. After a successful
          * initial sync is completed, the system continuously syncs data to the Amazon S3
-         * bucket. To check the status of the sync, use the <a
-         * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.</p>
-         * <p>By default, data is not encrypted in Amazon S3. We strongly recommend that
-         * you enable encryption in Amazon S3 to ensure secure data storage. We also
-         * recommend that you secure access to the Amazon S3 bucket by creating a
-         * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket
-         * policy for Resource Data Sync, see <a
+         * bucket. To check the status of the sync, use the
+         * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
+         * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
+         * secure data storage. We also recommend that you secure access to the Amazon S3
+         * bucket by creating a restrictive bucket policy. To view an example of a
+         * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
          * Resource Data Sync for Inventory</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
@@ -959,13 +957,12 @@ namespace Model
          * <p>Creates a resource data sync configuration to a single bucket in Amazon S3.
          * This is an asynchronous operation that returns immediately. After a successful
          * initial sync is completed, the system continuously syncs data to the Amazon S3
-         * bucket. To check the status of the sync, use the <a
-         * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.</p>
-         * <p>By default, data is not encrypted in Amazon S3. We strongly recommend that
-         * you enable encryption in Amazon S3 to ensure secure data storage. We also
-         * recommend that you secure access to the Amazon S3 bucket by creating a
-         * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket
-         * policy for Resource Data Sync, see <a
+         * bucket. To check the status of the sync, use the
+         * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
+         * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
+         * secure data storage. We also recommend that you secure access to the Amazon S3
+         * bucket by creating a restrictive bucket policy. To view an example of a
+         * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
          * Resource Data Sync for Inventory</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
@@ -1364,16 +1361,24 @@ namespace Model
         virtual void DescribeActivationsAsync(const Model::DescribeActivationsRequest& request, const DescribeActivationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the associations for the specified Systems Manager document or
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the association for the specified target or instance. If you
+         * created the association by using the <code>Targets</code> parameter, then you
+         * must retrieve the association by using the association ID. If you created the
+         * association by specifying an instance ID and a Systems Manager document, then
+         * you retrieve the association by specifying the document name and the instance
+         * ID. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAssociationOutcome DescribeAssociation(const Model::DescribeAssociationRequest& request) const;
 
         /**
-         * <p>Describes the associations for the specified Systems Manager document or
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the association for the specified target or instance. If you
+         * created the association by using the <code>Targets</code> parameter, then you
+         * must retrieve the association by using the association ID. If you created the
+         * association by specifying an instance ID and a Systems Manager document, then
+         * you retrieve the association by specifying the document name and the instance
+         * ID. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
          * API Reference</a></p>
          *
@@ -1382,8 +1387,12 @@ namespace Model
         virtual Model::DescribeAssociationOutcomeCallable DescribeAssociationCallable(const Model::DescribeAssociationRequest& request) const;
 
         /**
-         * <p>Describes the associations for the specified Systems Manager document or
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the association for the specified target or instance. If you
+         * created the association by using the <code>Targets</code> parameter, then you
+         * must retrieve the association by using the association ID. If you created the
+         * association by specifying an instance ID and a Systems Manager document, then
+         * you retrieve the association by specifying the document name and the instance
+         * ID. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
          * API Reference</a></p>
          *

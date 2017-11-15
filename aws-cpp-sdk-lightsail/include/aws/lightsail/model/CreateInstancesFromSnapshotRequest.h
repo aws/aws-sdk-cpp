@@ -17,7 +17,9 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/model/DiskMap.h>
 #include <utility>
 
 namespace Aws
@@ -87,8 +89,64 @@ namespace Model
 
 
     /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<DiskMap>>& GetAttachedDiskMapping() const{ return m_attachedDiskMapping; }
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline void SetAttachedDiskMapping(const Aws::Map<Aws::String, Aws::Vector<DiskMap>>& value) { m_attachedDiskMappingHasBeenSet = true; m_attachedDiskMapping = value; }
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline void SetAttachedDiskMapping(Aws::Map<Aws::String, Aws::Vector<DiskMap>>&& value) { m_attachedDiskMappingHasBeenSet = true; m_attachedDiskMapping = std::move(value); }
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline CreateInstancesFromSnapshotRequest& WithAttachedDiskMapping(const Aws::Map<Aws::String, Aws::Vector<DiskMap>>& value) { SetAttachedDiskMapping(value); return *this;}
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline CreateInstancesFromSnapshotRequest& WithAttachedDiskMapping(Aws::Map<Aws::String, Aws::Vector<DiskMap>>&& value) { SetAttachedDiskMapping(std::move(value)); return *this;}
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline CreateInstancesFromSnapshotRequest& AddAttachedDiskMapping(const Aws::String& key, const Aws::Vector<DiskMap>& value) { m_attachedDiskMappingHasBeenSet = true; m_attachedDiskMapping.emplace(key, value); return *this; }
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline CreateInstancesFromSnapshotRequest& AddAttachedDiskMapping(Aws::String&& key, const Aws::Vector<DiskMap>& value) { m_attachedDiskMappingHasBeenSet = true; m_attachedDiskMapping.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline CreateInstancesFromSnapshotRequest& AddAttachedDiskMapping(const Aws::String& key, Aws::Vector<DiskMap>&& value) { m_attachedDiskMappingHasBeenSet = true; m_attachedDiskMapping.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline CreateInstancesFromSnapshotRequest& AddAttachedDiskMapping(Aws::String&& key, Aws::Vector<DiskMap>&& value) { m_attachedDiskMappingHasBeenSet = true; m_attachedDiskMapping.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline CreateInstancesFromSnapshotRequest& AddAttachedDiskMapping(const char* key, Aws::Vector<DiskMap>&& value) { m_attachedDiskMappingHasBeenSet = true; m_attachedDiskMapping.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline CreateInstancesFromSnapshotRequest& AddAttachedDiskMapping(const char* key, const Aws::Vector<DiskMap>& value) { m_attachedDiskMappingHasBeenSet = true; m_attachedDiskMapping.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
      * list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
      * regions</a> operation. Be sure to add the <code>include availability
@@ -98,7 +156,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
      * list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
      * regions</a> operation. Be sure to add the <code>include availability
@@ -108,7 +166,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
      * list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
      * regions</a> operation. Be sure to add the <code>include availability
@@ -118,7 +176,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
      * list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
      * regions</a> operation. Be sure to add the <code>include availability
@@ -128,7 +186,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
      * list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
      * regions</a> operation. Be sure to add the <code>include availability
@@ -138,7 +196,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
      * list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
      * regions</a> operation. Be sure to add the <code>include availability
@@ -148,7 +206,7 @@ namespace Model
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
-     * following formatting: <code>us-east-1a</code> (case sensitive). You can get a
+     * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
      * list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
      * regions</a> operation. Be sure to add the <code>include availability
@@ -374,6 +432,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_instanceNames;
     bool m_instanceNamesHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::Vector<DiskMap>> m_attachedDiskMapping;
+    bool m_attachedDiskMappingHasBeenSet;
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;

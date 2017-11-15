@@ -36,7 +36,8 @@ Container::Container() :
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false),
-    m_networkBindingsHasBeenSet(false)
+    m_networkBindingsHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Container::Container(const JsonValue& jsonValue) :
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false),
-    m_networkBindingsHasBeenSet(false)
+    m_networkBindingsHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +109,16 @@ Container& Container::operator =(const JsonValue& jsonValue)
     m_networkBindingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("networkInterfaces"))
+  {
+    Array<JsonValue> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
+    {
+      m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
+    }
+    m_networkInterfacesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -158,6 +170,17 @@ JsonValue Container::Jsonize() const
      networkBindingsJsonList[networkBindingsIndex].AsObject(m_networkBindings[networkBindingsIndex].Jsonize());
    }
    payload.WithArray("networkBindings", std::move(networkBindingsJsonList));
+
+  }
+
+  if(m_networkInterfacesHasBeenSet)
+  {
+   Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+   for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
+   {
+     networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
+   }
+   payload.WithArray("networkInterfaces", std::move(networkInterfacesJsonList));
 
   }
 

@@ -38,17 +38,16 @@ Disk::Disk() :
     m_resourceTypeHasBeenSet(false),
     m_sizeInGb(0),
     m_sizeInGbHasBeenSet(false),
-    m_gbInUse(0),
-    m_gbInUseHasBeenSet(false),
     m_isSystemDisk(false),
     m_isSystemDiskHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_pathHasBeenSet(false),
+    m_state(DiskState::NOT_SET),
+    m_stateHasBeenSet(false),
     m_attachedToHasBeenSet(false),
     m_isAttached(false),
-    m_isAttachedHasBeenSet(false),
-    m_attachmentStateHasBeenSet(false)
+    m_isAttachedHasBeenSet(false)
 {
 }
 
@@ -62,17 +61,16 @@ Disk::Disk(const JsonValue& jsonValue) :
     m_resourceTypeHasBeenSet(false),
     m_sizeInGb(0),
     m_sizeInGbHasBeenSet(false),
-    m_gbInUse(0),
-    m_gbInUseHasBeenSet(false),
     m_isSystemDisk(false),
     m_isSystemDiskHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_pathHasBeenSet(false),
+    m_state(DiskState::NOT_SET),
+    m_stateHasBeenSet(false),
     m_attachedToHasBeenSet(false),
     m_isAttached(false),
-    m_isAttachedHasBeenSet(false),
-    m_attachmentStateHasBeenSet(false)
+    m_isAttachedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,13 +126,6 @@ Disk& Disk::operator =(const JsonValue& jsonValue)
     m_sizeInGbHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("gbInUse"))
-  {
-    m_gbInUse = jsonValue.GetInteger("gbInUse");
-
-    m_gbInUseHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("isSystemDisk"))
   {
     m_isSystemDisk = jsonValue.GetBool("isSystemDisk");
@@ -156,6 +147,13 @@ Disk& Disk::operator =(const JsonValue& jsonValue)
     m_pathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = DiskStateMapper::GetDiskStateForName(jsonValue.GetString("state"));
+
+    m_stateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("attachedTo"))
   {
     m_attachedTo = jsonValue.GetString("attachedTo");
@@ -168,13 +166,6 @@ Disk& Disk::operator =(const JsonValue& jsonValue)
     m_isAttached = jsonValue.GetBool("isAttached");
 
     m_isAttachedHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("attachmentState"))
-  {
-    m_attachmentState = jsonValue.GetString("attachmentState");
-
-    m_attachmentStateHasBeenSet = true;
   }
 
   return *this;
@@ -224,12 +215,6 @@ JsonValue Disk::Jsonize() const
 
   }
 
-  if(m_gbInUseHasBeenSet)
-  {
-   payload.WithInteger("gbInUse", m_gbInUse);
-
-  }
-
   if(m_isSystemDiskHasBeenSet)
   {
    payload.WithBool("isSystemDisk", m_isSystemDisk);
@@ -248,6 +233,11 @@ JsonValue Disk::Jsonize() const
 
   }
 
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", DiskStateMapper::GetNameForDiskState(m_state));
+  }
+
   if(m_attachedToHasBeenSet)
   {
    payload.WithString("attachedTo", m_attachedTo);
@@ -257,12 +247,6 @@ JsonValue Disk::Jsonize() const
   if(m_isAttachedHasBeenSet)
   {
    payload.WithBool("isAttached", m_isAttached);
-
-  }
-
-  if(m_attachmentStateHasBeenSet)
-  {
-   payload.WithString("attachmentState", m_attachmentState);
 
   }
 

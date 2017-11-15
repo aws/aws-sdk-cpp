@@ -39,6 +39,7 @@ InstanceSnapshot::InstanceSnapshot() :
     m_state(InstanceSnapshotState::NOT_SET),
     m_stateHasBeenSet(false),
     m_progressHasBeenSet(false),
+    m_fromAttachedDisksHasBeenSet(false),
     m_fromInstanceNameHasBeenSet(false),
     m_fromInstanceArnHasBeenSet(false),
     m_fromBlueprintIdHasBeenSet(false),
@@ -59,6 +60,7 @@ InstanceSnapshot::InstanceSnapshot(const JsonValue& jsonValue) :
     m_state(InstanceSnapshotState::NOT_SET),
     m_stateHasBeenSet(false),
     m_progressHasBeenSet(false),
+    m_fromAttachedDisksHasBeenSet(false),
     m_fromInstanceNameHasBeenSet(false),
     m_fromInstanceArnHasBeenSet(false),
     m_fromBlueprintIdHasBeenSet(false),
@@ -125,6 +127,16 @@ InstanceSnapshot& InstanceSnapshot::operator =(const JsonValue& jsonValue)
     m_progress = jsonValue.GetString("progress");
 
     m_progressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fromAttachedDisks"))
+  {
+    Array<JsonValue> fromAttachedDisksJsonList = jsonValue.GetArray("fromAttachedDisks");
+    for(unsigned fromAttachedDisksIndex = 0; fromAttachedDisksIndex < fromAttachedDisksJsonList.GetLength(); ++fromAttachedDisksIndex)
+    {
+      m_fromAttachedDisks.push_back(fromAttachedDisksJsonList[fromAttachedDisksIndex].AsObject());
+    }
+    m_fromAttachedDisksHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fromInstanceName"))
@@ -211,6 +223,17 @@ JsonValue InstanceSnapshot::Jsonize() const
   if(m_progressHasBeenSet)
   {
    payload.WithString("progress", m_progress);
+
+  }
+
+  if(m_fromAttachedDisksHasBeenSet)
+  {
+   Array<JsonValue> fromAttachedDisksJsonList(m_fromAttachedDisks.size());
+   for(unsigned fromAttachedDisksIndex = 0; fromAttachedDisksIndex < fromAttachedDisksJsonList.GetLength(); ++fromAttachedDisksIndex)
+   {
+     fromAttachedDisksJsonList[fromAttachedDisksIndex].AsObject(m_fromAttachedDisks[fromAttachedDisksIndex].Jsonize());
+   }
+   payload.WithArray("fromAttachedDisks", std::move(fromAttachedDisksJsonList));
 
   }
 

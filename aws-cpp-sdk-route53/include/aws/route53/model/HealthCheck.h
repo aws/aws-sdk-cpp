@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53/model/LinkedService.h>
 #include <aws/route53/model/HealthCheckConfig.h>
 #include <aws/route53/model/CloudWatchAlarmConfiguration.h>
 #include <utility>
@@ -144,6 +145,42 @@ namespace Model
 
 
     /**
+     * <p>If the health check was created by another service, the service that created
+     * the health check. When a health check is created by another service, you can't
+     * edit or delete it using Amazon Route 53. </p>
+     */
+    inline const LinkedService& GetLinkedService() const{ return m_linkedService; }
+
+    /**
+     * <p>If the health check was created by another service, the service that created
+     * the health check. When a health check is created by another service, you can't
+     * edit or delete it using Amazon Route 53. </p>
+     */
+    inline void SetLinkedService(const LinkedService& value) { m_linkedServiceHasBeenSet = true; m_linkedService = value; }
+
+    /**
+     * <p>If the health check was created by another service, the service that created
+     * the health check. When a health check is created by another service, you can't
+     * edit or delete it using Amazon Route 53. </p>
+     */
+    inline void SetLinkedService(LinkedService&& value) { m_linkedServiceHasBeenSet = true; m_linkedService = std::move(value); }
+
+    /**
+     * <p>If the health check was created by another service, the service that created
+     * the health check. When a health check is created by another service, you can't
+     * edit or delete it using Amazon Route 53. </p>
+     */
+    inline HealthCheck& WithLinkedService(const LinkedService& value) { SetLinkedService(value); return *this;}
+
+    /**
+     * <p>If the health check was created by another service, the service that created
+     * the health check. When a health check is created by another service, you can't
+     * edit or delete it using Amazon Route 53. </p>
+     */
+    inline HealthCheck& WithLinkedService(LinkedService&& value) { SetLinkedService(std::move(value)); return *this;}
+
+
+    /**
      * <p>A complex type that contains detailed information about one health check.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
@@ -228,6 +265,9 @@ namespace Model
 
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
+
+    LinkedService m_linkedService;
+    bool m_linkedServiceHasBeenSet;
 
     HealthCheckConfig m_healthCheckConfig;
     bool m_healthCheckConfigHasBeenSet;

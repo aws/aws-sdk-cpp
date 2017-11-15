@@ -31,7 +31,9 @@ namespace Model
     KeyPair,
     InstanceSnapshot,
     Domain,
-    PeeredVpc
+    PeeredVpc,
+    Disk,
+    DiskSnapshot
   };
 
 namespace ResourceTypeMapper

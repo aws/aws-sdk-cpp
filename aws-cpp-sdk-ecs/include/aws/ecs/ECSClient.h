@@ -274,7 +274,15 @@ namespace Model
          * <p>Creates a new Amazon ECS cluster. By default, your account receives a
          * <code>default</code> cluster when you launch your first container instance.
          * However, you can create your own cluster with a unique name with the
-         * <code>CreateCluster</code> action.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateCluster</code> action.</p> <note> <p>When you call the
+         * <a>CreateCluster</a> API operation, Amazon ECS attempts to create the
+         * service-linked role for your account so that required resources in other AWS
+         * services can be managed on your behalf. However, if the IAM user that makes the
+         * call does not have permissions to create the service-linked role, it is not
+         * created. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
+         * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
          * API Reference</a></p>
          */
@@ -284,7 +292,15 @@ namespace Model
          * <p>Creates a new Amazon ECS cluster. By default, your account receives a
          * <code>default</code> cluster when you launch your first container instance.
          * However, you can create your own cluster with a unique name with the
-         * <code>CreateCluster</code> action.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateCluster</code> action.</p> <note> <p>When you call the
+         * <a>CreateCluster</a> API operation, Amazon ECS attempts to create the
+         * service-linked role for your account so that required resources in other AWS
+         * services can be managed on your behalf. However, if the IAM user that makes the
+         * call does not have permissions to create the service-linked role, it is not
+         * created. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
+         * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
          * API Reference</a></p>
          *
@@ -296,7 +312,15 @@ namespace Model
          * <p>Creates a new Amazon ECS cluster. By default, your account receives a
          * <code>default</code> cluster when you launch your first container instance.
          * However, you can create your own cluster with a unique name with the
-         * <code>CreateCluster</code> action.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateCluster</code> action.</p> <note> <p>When you call the
+         * <a>CreateCluster</a> API operation, Amazon ECS attempts to create the
+         * service-linked role for your account so that required resources in other AWS
+         * services can be managed on your behalf. However, if the IAM user that makes the
+         * call does not have permissions to create the service-linked role, it is not
+         * created. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
+         * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
          * API Reference</a></p>
          *
@@ -1732,17 +1756,17 @@ namespace Model
         virtual void UpdateContainerInstancesStateAsync(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the desired count, deployment configuration, or task definition used
-         * in a service.</p> <p>You can add to or subtract from the number of
-         * instantiations of a task definition in a service by specifying the cluster that
-         * the service is running in and a new <code>desiredCount</code> parameter.</p>
-         * <p>You can use <a>UpdateService</a> to modify your task definition and deploy a
-         * new version of your service.</p> <p>You can also update the deployment
-         * configuration of a service. When a deployment is triggered by updating the task
-         * definition of a service, the service scheduler uses the deployment configuration
-         * parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>,
-         * to determine the deployment strategy.</p> <ul> <li> <p>If
-         * <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
+         * <p>Modifies the desired count, deployment configuration, network configuration,
+         * or task definition used in a service.</p> <p>You can add to or subtract from the
+         * number of instantiations of a task definition in a service by specifying the
+         * cluster that the service is running in and a new <code>desiredCount</code>
+         * parameter.</p> <p>You can use <a>UpdateService</a> to modify your task
+         * definition and deploy a new version of your service.</p> <p>You can also update
+         * the deployment configuration of a service. When a deployment is triggered by
+         * updating the task definition of a service, the service scheduler uses the
+         * deployment configuration parameters, <code>minimumHealthyPercent</code> and
+         * <code>maximumPercent</code>, to determine the deployment strategy.</p> <ul> <li>
+         * <p>If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
          * <code>desiredCount</code> temporarily during a deployment. For example, if
          * <code>desiredCount</code> is four tasks, a minimum of 50% allows the scheduler
          * to stop two existing tasks before starting two new tasks. Tasks for services
@@ -1791,17 +1815,17 @@ namespace Model
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Modifies the desired count, deployment configuration, or task definition used
-         * in a service.</p> <p>You can add to or subtract from the number of
-         * instantiations of a task definition in a service by specifying the cluster that
-         * the service is running in and a new <code>desiredCount</code> parameter.</p>
-         * <p>You can use <a>UpdateService</a> to modify your task definition and deploy a
-         * new version of your service.</p> <p>You can also update the deployment
-         * configuration of a service. When a deployment is triggered by updating the task
-         * definition of a service, the service scheduler uses the deployment configuration
-         * parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>,
-         * to determine the deployment strategy.</p> <ul> <li> <p>If
-         * <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
+         * <p>Modifies the desired count, deployment configuration, network configuration,
+         * or task definition used in a service.</p> <p>You can add to or subtract from the
+         * number of instantiations of a task definition in a service by specifying the
+         * cluster that the service is running in and a new <code>desiredCount</code>
+         * parameter.</p> <p>You can use <a>UpdateService</a> to modify your task
+         * definition and deploy a new version of your service.</p> <p>You can also update
+         * the deployment configuration of a service. When a deployment is triggered by
+         * updating the task definition of a service, the service scheduler uses the
+         * deployment configuration parameters, <code>minimumHealthyPercent</code> and
+         * <code>maximumPercent</code>, to determine the deployment strategy.</p> <ul> <li>
+         * <p>If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
          * <code>desiredCount</code> temporarily during a deployment. For example, if
          * <code>desiredCount</code> is four tasks, a minimum of 50% allows the scheduler
          * to stop two existing tasks before starting two new tasks. Tasks for services
@@ -1852,17 +1876,17 @@ namespace Model
         virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Modifies the desired count, deployment configuration, or task definition used
-         * in a service.</p> <p>You can add to or subtract from the number of
-         * instantiations of a task definition in a service by specifying the cluster that
-         * the service is running in and a new <code>desiredCount</code> parameter.</p>
-         * <p>You can use <a>UpdateService</a> to modify your task definition and deploy a
-         * new version of your service.</p> <p>You can also update the deployment
-         * configuration of a service. When a deployment is triggered by updating the task
-         * definition of a service, the service scheduler uses the deployment configuration
-         * parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>,
-         * to determine the deployment strategy.</p> <ul> <li> <p>If
-         * <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
+         * <p>Modifies the desired count, deployment configuration, network configuration,
+         * or task definition used in a service.</p> <p>You can add to or subtract from the
+         * number of instantiations of a task definition in a service by specifying the
+         * cluster that the service is running in and a new <code>desiredCount</code>
+         * parameter.</p> <p>You can use <a>UpdateService</a> to modify your task
+         * definition and deploy a new version of your service.</p> <p>You can also update
+         * the deployment configuration of a service. When a deployment is triggered by
+         * updating the task definition of a service, the service scheduler uses the
+         * deployment configuration parameters, <code>minimumHealthyPercent</code> and
+         * <code>maximumPercent</code>, to determine the deployment strategy.</p> <ul> <li>
+         * <p>If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
          * <code>desiredCount</code> temporarily during a deployment. For example, if
          * <code>desiredCount</code> is four tasks, a minimum of 50% allows the scheduler
          * to stop two existing tasks before starting two new tasks. Tasks for services

@@ -32,6 +32,7 @@ namespace Aws
 
         static const int bridge_HASH = HashingUtils::HashString("bridge");
         static const int host_HASH = HashingUtils::HashString("host");
+        static const int awsvpc_HASH = HashingUtils::HashString("awsvpc");
         static const int none_HASH = HashingUtils::HashString("none");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == host_HASH)
           {
             return NetworkMode::host;
+          }
+          else if (hashCode == awsvpc_HASH)
+          {
+            return NetworkMode::awsvpc;
           }
           else if (hashCode == none_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return "bridge";
           case NetworkMode::host:
             return "host";
+          case NetworkMode::awsvpc:
+            return "awsvpc";
           case NetworkMode::none:
             return "none";
           default:

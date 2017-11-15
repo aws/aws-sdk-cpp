@@ -46,7 +46,8 @@ ContainerInstance::ContainerInstance() :
     m_agentUpdateStatus(AgentUpdateStatus::NOT_SET),
     m_agentUpdateStatusHasBeenSet(false),
     m_attributesHasBeenSet(false),
-    m_registeredAtHasBeenSet(false)
+    m_registeredAtHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ ContainerInstance::ContainerInstance(const JsonValue& jsonValue) :
     m_agentUpdateStatus(AgentUpdateStatus::NOT_SET),
     m_agentUpdateStatusHasBeenSet(false),
     m_attributesHasBeenSet(false),
-    m_registeredAtHasBeenSet(false)
+    m_registeredAtHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -175,6 +177,16 @@ ContainerInstance& ContainerInstance::operator =(const JsonValue& jsonValue)
     m_registeredAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("attachments"))
+  {
+    Array<JsonValue> attachmentsJsonList = jsonValue.GetArray("attachments");
+    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+    {
+      m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
+    }
+    m_attachmentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -271,6 +283,17 @@ JsonValue ContainerInstance::Jsonize() const
   if(m_registeredAtHasBeenSet)
   {
    payload.WithDouble("registeredAt", m_registeredAt.SecondsWithMSPrecision());
+  }
+
+  if(m_attachmentsHasBeenSet)
+  {
+   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+   {
+     attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+   }
+   payload.WithArray("attachments", std::move(attachmentsJsonList));
+
   }
 
   return payload;

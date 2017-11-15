@@ -873,7 +873,7 @@ namespace Model
          * create, so we recommend that you use a consistent prefix so you can use the same
          * resource policy for all the log groups that you create for query logging.</p>
          * </li> </ul> </li> <li> <p>Create a CloudWatch Logs resource policy, and give it
-         * the permissions that Amazon Route 53 needs to create log streams and to to send
+         * the permissions that Amazon Route 53 needs to create log streams and to send
          * query logs to log streams. For the value of <code>Resource</code>, specify the
          * ARN for the log group that you created in the previous step. To use the same
          * resource policy for all the CloudWatch Logs log groups that you created for
@@ -950,7 +950,7 @@ namespace Model
          * create, so we recommend that you use a consistent prefix so you can use the same
          * resource policy for all the log groups that you create for query logging.</p>
          * </li> </ul> </li> <li> <p>Create a CloudWatch Logs resource policy, and give it
-         * the permissions that Amazon Route 53 needs to create log streams and to to send
+         * the permissions that Amazon Route 53 needs to create log streams and to send
          * query logs to log streams. For the value of <code>Resource</code>, specify the
          * ARN for the log group that you created in the previous step. To use the same
          * resource policy for all the CloudWatch Logs log groups that you created for
@@ -1029,7 +1029,7 @@ namespace Model
          * create, so we recommend that you use a consistent prefix so you can use the same
          * resource policy for all the log groups that you create for query logging.</p>
          * </li> </ul> </li> <li> <p>Create a CloudWatch Logs resource policy, and give it
-         * the permissions that Amazon Route 53 needs to create log streams and to to send
+         * the permissions that Amazon Route 53 needs to create log streams and to send
          * query logs to log streams. For the value of <code>Resource</code>, specify the
          * ARN for the log group that you created in the previous step. To use the same
          * resource policy for all the CloudWatch Logs log groups that you created for

@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
+#include <aws/lightsail/model/DiskState.h>
 #include <utility>
 
 namespace Aws
@@ -36,9 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the hard disk (an SSD).</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Disk">AWS API
-   * Reference</a></p>
+   * <p>Describes a system disk or an block storage disk.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Disk">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API Disk
   {
@@ -50,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the disk.</p>
+     * <p>The unique name of the disk.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the disk.</p>
+     * <p>The unique name of the disk.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the disk.</p>
+     * <p>The unique name of the disk.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the disk.</p>
+     * <p>The unique name of the disk.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the disk.</p>
+     * <p>The unique name of the disk.</p>
      */
     inline Disk& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the disk.</p>
+     * <p>The unique name of the disk.</p>
      */
     inline Disk& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the disk.</p>
+     * <p>The unique name of the disk.</p>
      */
     inline Disk& WithName(const char* value) { SetName(value); return *this;}
 
@@ -198,53 +199,53 @@ namespace Model
 
 
     /**
-     * <p>The region and Availability Zone where the disk is located.</p>
+     * <p>The AWS Region and Availability Zone where the disk is located.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The region and Availability Zone where the disk is located.</p>
+     * <p>The AWS Region and Availability Zone where the disk is located.</p>
      */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The region and Availability Zone where the disk is located.</p>
+     * <p>The AWS Region and Availability Zone where the disk is located.</p>
      */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The region and Availability Zone where the disk is located.</p>
+     * <p>The AWS Region and Availability Zone where the disk is located.</p>
      */
     inline Disk& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The region and Availability Zone where the disk is located.</p>
+     * <p>The AWS Region and Availability Zone where the disk is located.</p>
      */
     inline Disk& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
 
     /**
-     * <p>The resource type of the disk. </p>
+     * <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type of the disk. </p>
+     * <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type of the disk. </p>
+     * <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type of the disk. </p>
+     * <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
      */
     inline Disk& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type of the disk. </p>
+     * <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
      */
     inline Disk& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -263,22 +264,6 @@ namespace Model
      * <p>The size of the disk in GB.</p>
      */
     inline Disk& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
-
-
-    /**
-     * <p>The number of GB in use by the disk.</p>
-     */
-    inline int GetGbInUse() const{ return m_gbInUse; }
-
-    /**
-     * <p>The number of GB in use by the disk.</p>
-     */
-    inline void SetGbInUse(int value) { m_gbInUseHasBeenSet = true; m_gbInUse = value; }
-
-    /**
-     * <p>The number of GB in use by the disk.</p>
-     */
-    inline Disk& WithGbInUse(int value) { SetGbInUse(value); return *this;}
 
 
     /**
@@ -353,6 +338,32 @@ namespace Model
 
 
     /**
+     * <p>Describes the status of the disk.</p>
+     */
+    inline const DiskState& GetState() const{ return m_state; }
+
+    /**
+     * <p>Describes the status of the disk.</p>
+     */
+    inline void SetState(const DiskState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>Describes the status of the disk.</p>
+     */
+    inline void SetState(DiskState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>Describes the status of the disk.</p>
+     */
+    inline Disk& WithState(const DiskState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>Describes the status of the disk.</p>
+     */
+    inline Disk& WithState(DiskState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
      * <p>The resources to which the disk is attached.</p>
      */
     inline const Aws::String& GetAttachedTo() const{ return m_attachedTo; }
@@ -403,42 +414,6 @@ namespace Model
      */
     inline Disk& WithIsAttached(bool value) { SetIsAttached(value); return *this;}
 
-
-    /**
-     * <p>The attachment state of the disk.</p>
-     */
-    inline const Aws::String& GetAttachmentState() const{ return m_attachmentState; }
-
-    /**
-     * <p>The attachment state of the disk.</p>
-     */
-    inline void SetAttachmentState(const Aws::String& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = value; }
-
-    /**
-     * <p>The attachment state of the disk.</p>
-     */
-    inline void SetAttachmentState(Aws::String&& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = std::move(value); }
-
-    /**
-     * <p>The attachment state of the disk.</p>
-     */
-    inline void SetAttachmentState(const char* value) { m_attachmentStateHasBeenSet = true; m_attachmentState.assign(value); }
-
-    /**
-     * <p>The attachment state of the disk.</p>
-     */
-    inline Disk& WithAttachmentState(const Aws::String& value) { SetAttachmentState(value); return *this;}
-
-    /**
-     * <p>The attachment state of the disk.</p>
-     */
-    inline Disk& WithAttachmentState(Aws::String&& value) { SetAttachmentState(std::move(value)); return *this;}
-
-    /**
-     * <p>The attachment state of the disk.</p>
-     */
-    inline Disk& WithAttachmentState(const char* value) { SetAttachmentState(value); return *this;}
-
   private:
 
     Aws::String m_name;
@@ -462,9 +437,6 @@ namespace Model
     int m_sizeInGb;
     bool m_sizeInGbHasBeenSet;
 
-    int m_gbInUse;
-    bool m_gbInUseHasBeenSet;
-
     bool m_isSystemDisk;
     bool m_isSystemDiskHasBeenSet;
 
@@ -474,14 +446,14 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet;
 
+    DiskState m_state;
+    bool m_stateHasBeenSet;
+
     Aws::String m_attachedTo;
     bool m_attachedToHasBeenSet;
 
     bool m_isAttached;
     bool m_isAttachedHasBeenSet;
-
-    Aws::String m_attachmentState;
-    bool m_attachmentStateHasBeenSet;
   };
 
 } // namespace Model

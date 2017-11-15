@@ -44,7 +44,14 @@ namespace Model
     DeleteDomain,
     CreateInstanceSnapshot,
     DeleteInstanceSnapshot,
-    CreateInstancesFromSnapshot
+    CreateInstancesFromSnapshot,
+    CreateDisk,
+    DeleteDisk,
+    AttachDisk,
+    DetachDisk,
+    CreateDiskSnapshot,
+    DeleteDiskSnapshot,
+    CreateDiskFromSnapshot
   };
 
 namespace OperationTypeMapper

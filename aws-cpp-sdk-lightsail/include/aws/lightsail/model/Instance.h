@@ -55,86 +55,86 @@ namespace Model
 
     /**
      * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
+     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
+     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
+     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
+     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
+     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline Instance& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
+     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline Instance& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
+     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline Instance& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline Instance& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline Instance& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline Instance& WithArn(const char* value) { SetArn(value); return *this;}
 

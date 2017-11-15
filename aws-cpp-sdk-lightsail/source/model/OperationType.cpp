@@ -49,6 +49,13 @@ namespace Aws
         static const int CreateInstanceSnapshot_HASH = HashingUtils::HashString("CreateInstanceSnapshot");
         static const int DeleteInstanceSnapshot_HASH = HashingUtils::HashString("DeleteInstanceSnapshot");
         static const int CreateInstancesFromSnapshot_HASH = HashingUtils::HashString("CreateInstancesFromSnapshot");
+        static const int CreateDisk_HASH = HashingUtils::HashString("CreateDisk");
+        static const int DeleteDisk_HASH = HashingUtils::HashString("DeleteDisk");
+        static const int AttachDisk_HASH = HashingUtils::HashString("AttachDisk");
+        static const int DetachDisk_HASH = HashingUtils::HashString("DetachDisk");
+        static const int CreateDiskSnapshot_HASH = HashingUtils::HashString("CreateDiskSnapshot");
+        static const int DeleteDiskSnapshot_HASH = HashingUtils::HashString("DeleteDiskSnapshot");
+        static const int CreateDiskFromSnapshot_HASH = HashingUtils::HashString("CreateDiskFromSnapshot");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -130,6 +137,34 @@ namespace Aws
           {
             return OperationType::CreateInstancesFromSnapshot;
           }
+          else if (hashCode == CreateDisk_HASH)
+          {
+            return OperationType::CreateDisk;
+          }
+          else if (hashCode == DeleteDisk_HASH)
+          {
+            return OperationType::DeleteDisk;
+          }
+          else if (hashCode == AttachDisk_HASH)
+          {
+            return OperationType::AttachDisk;
+          }
+          else if (hashCode == DetachDisk_HASH)
+          {
+            return OperationType::DetachDisk;
+          }
+          else if (hashCode == CreateDiskSnapshot_HASH)
+          {
+            return OperationType::CreateDiskSnapshot;
+          }
+          else if (hashCode == DeleteDiskSnapshot_HASH)
+          {
+            return OperationType::DeleteDiskSnapshot;
+          }
+          else if (hashCode == CreateDiskFromSnapshot_HASH)
+          {
+            return OperationType::CreateDiskFromSnapshot;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -182,6 +217,20 @@ namespace Aws
             return "DeleteInstanceSnapshot";
           case OperationType::CreateInstancesFromSnapshot:
             return "CreateInstancesFromSnapshot";
+          case OperationType::CreateDisk:
+            return "CreateDisk";
+          case OperationType::DeleteDisk:
+            return "DeleteDisk";
+          case OperationType::AttachDisk:
+            return "AttachDisk";
+          case OperationType::DetachDisk:
+            return "DetachDisk";
+          case OperationType::CreateDiskSnapshot:
+            return "CreateDiskSnapshot";
+          case OperationType::DeleteDiskSnapshot:
+            return "DeleteDiskSnapshot";
+          case OperationType::CreateDiskFromSnapshot:
+            return "CreateDiskFromSnapshot";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

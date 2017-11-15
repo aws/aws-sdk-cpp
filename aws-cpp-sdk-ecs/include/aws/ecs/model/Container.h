@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/NetworkBinding.h>
+#include <aws/ecs/model/NetworkInterface.h>
 #include <utility>
 
 namespace Aws
@@ -286,6 +287,42 @@ namespace Model
      */
     inline Container& AddNetworkBindings(NetworkBinding&& value) { m_networkBindingsHasBeenSet = true; m_networkBindings.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The network interfaces associated with the container.</p>
+     */
+    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>The network interfaces associated with the container.</p>
+     */
+    inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+
+    /**
+     * <p>The network interfaces associated with the container.</p>
+     */
+    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
+
+    /**
+     * <p>The network interfaces associated with the container.</p>
+     */
+    inline Container& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
+
+    /**
+     * <p>The network interfaces associated with the container.</p>
+     */
+    inline Container& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
+
+    /**
+     * <p>The network interfaces associated with the container.</p>
+     */
+    inline Container& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+
+    /**
+     * <p>The network interfaces associated with the container.</p>
+     */
+    inline Container& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_containerArn;
@@ -308,6 +345,9 @@ namespace Model
 
     Aws::Vector<NetworkBinding> m_networkBindings;
     bool m_networkBindingsHasBeenSet;
+
+    Aws::Vector<NetworkInterface> m_networkInterfaces;
+    bool m_networkInterfacesHasBeenSet;
   };
 
 } // namespace Model

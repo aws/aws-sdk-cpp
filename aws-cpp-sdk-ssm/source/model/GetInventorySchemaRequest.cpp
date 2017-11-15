@@ -27,6 +27,8 @@ GetInventorySchemaRequest::GetInventorySchemaRequest() :
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
+    m_aggregator(false),
+    m_aggregatorHasBeenSet(false),
     m_subType(false),
     m_subTypeHasBeenSet(false)
 {
@@ -51,6 +53,12 @@ Aws::String GetInventorySchemaRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_aggregatorHasBeenSet)
+  {
+   payload.WithBool("Aggregator", m_aggregator);
 
   }
 

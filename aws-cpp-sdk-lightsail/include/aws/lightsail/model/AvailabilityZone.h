@@ -47,43 +47,43 @@ namespace Model
 
 
     /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-1a</code>
+     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline const Aws::String& GetZoneName() const{ return m_zoneName; }
 
     /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-1a</code>
+     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline void SetZoneName(const Aws::String& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
 
     /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-1a</code>
+     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = std::move(value); }
 
     /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-1a</code>
+     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline void SetZoneName(const char* value) { m_zoneNameHasBeenSet = true; m_zoneName.assign(value); }
 
     /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-1a</code>
+     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline AvailabilityZone& WithZoneName(const Aws::String& value) { SetZoneName(value); return *this;}
 
     /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-1a</code>
+     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Availability Zone. The format is <code>us-east-1a</code>
+     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}

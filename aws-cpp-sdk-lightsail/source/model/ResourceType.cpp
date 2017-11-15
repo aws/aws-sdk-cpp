@@ -36,6 +36,8 @@ namespace Aws
         static const int InstanceSnapshot_HASH = HashingUtils::HashString("InstanceSnapshot");
         static const int Domain_HASH = HashingUtils::HashString("Domain");
         static const int PeeredVpc_HASH = HashingUtils::HashString("PeeredVpc");
+        static const int Disk_HASH = HashingUtils::HashString("Disk");
+        static const int DiskSnapshot_HASH = HashingUtils::HashString("DiskSnapshot");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return ResourceType::PeeredVpc;
           }
+          else if (hashCode == Disk_HASH)
+          {
+            return ResourceType::Disk;
+          }
+          else if (hashCode == DiskSnapshot_HASH)
+          {
+            return ResourceType::DiskSnapshot;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +101,10 @@ namespace Aws
             return "Domain";
           case ResourceType::PeeredVpc:
             return "PeeredVpc";
+          case ResourceType::Disk:
+            return "Disk";
+          case ResourceType::DiskSnapshot:
+            return "DiskSnapshot";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

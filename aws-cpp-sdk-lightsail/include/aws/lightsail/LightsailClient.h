@@ -22,24 +22,35 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lightsail/model/AllocateStaticIpResult.h>
+#include <aws/lightsail/model/AttachDiskResult.h>
 #include <aws/lightsail/model/AttachStaticIpResult.h>
 #include <aws/lightsail/model/CloseInstancePublicPortsResult.h>
+#include <aws/lightsail/model/CreateDiskResult.h>
+#include <aws/lightsail/model/CreateDiskFromSnapshotResult.h>
+#include <aws/lightsail/model/CreateDiskSnapshotResult.h>
 #include <aws/lightsail/model/CreateDomainResult.h>
 #include <aws/lightsail/model/CreateDomainEntryResult.h>
 #include <aws/lightsail/model/CreateInstanceSnapshotResult.h>
 #include <aws/lightsail/model/CreateInstancesResult.h>
 #include <aws/lightsail/model/CreateInstancesFromSnapshotResult.h>
 #include <aws/lightsail/model/CreateKeyPairResult.h>
+#include <aws/lightsail/model/DeleteDiskResult.h>
+#include <aws/lightsail/model/DeleteDiskSnapshotResult.h>
 #include <aws/lightsail/model/DeleteDomainResult.h>
 #include <aws/lightsail/model/DeleteDomainEntryResult.h>
 #include <aws/lightsail/model/DeleteInstanceResult.h>
 #include <aws/lightsail/model/DeleteInstanceSnapshotResult.h>
 #include <aws/lightsail/model/DeleteKeyPairResult.h>
+#include <aws/lightsail/model/DetachDiskResult.h>
 #include <aws/lightsail/model/DetachStaticIpResult.h>
 #include <aws/lightsail/model/DownloadDefaultKeyPairResult.h>
 #include <aws/lightsail/model/GetActiveNamesResult.h>
 #include <aws/lightsail/model/GetBlueprintsResult.h>
 #include <aws/lightsail/model/GetBundlesResult.h>
+#include <aws/lightsail/model/GetDiskResult.h>
+#include <aws/lightsail/model/GetDiskSnapshotResult.h>
+#include <aws/lightsail/model/GetDiskSnapshotsResult.h>
+#include <aws/lightsail/model/GetDisksResult.h>
 #include <aws/lightsail/model/GetDomainResult.h>
 #include <aws/lightsail/model/GetDomainsResult.h>
 #include <aws/lightsail/model/GetInstanceResult.h>
@@ -115,24 +126,35 @@ namespace Lightsail
 namespace Model
 {
         class AllocateStaticIpRequest;
+        class AttachDiskRequest;
         class AttachStaticIpRequest;
         class CloseInstancePublicPortsRequest;
+        class CreateDiskRequest;
+        class CreateDiskFromSnapshotRequest;
+        class CreateDiskSnapshotRequest;
         class CreateDomainRequest;
         class CreateDomainEntryRequest;
         class CreateInstanceSnapshotRequest;
         class CreateInstancesRequest;
         class CreateInstancesFromSnapshotRequest;
         class CreateKeyPairRequest;
+        class DeleteDiskRequest;
+        class DeleteDiskSnapshotRequest;
         class DeleteDomainRequest;
         class DeleteDomainEntryRequest;
         class DeleteInstanceRequest;
         class DeleteInstanceSnapshotRequest;
         class DeleteKeyPairRequest;
+        class DetachDiskRequest;
         class DetachStaticIpRequest;
         class DownloadDefaultKeyPairRequest;
         class GetActiveNamesRequest;
         class GetBlueprintsRequest;
         class GetBundlesRequest;
+        class GetDiskRequest;
+        class GetDiskSnapshotRequest;
+        class GetDiskSnapshotsRequest;
+        class GetDisksRequest;
         class GetDomainRequest;
         class GetDomainsRequest;
         class GetInstanceRequest;
@@ -164,24 +186,35 @@ namespace Model
         class UpdateDomainEntryRequest;
 
         typedef Aws::Utils::Outcome<AllocateStaticIpResult, Aws::Client::AWSError<LightsailErrors>> AllocateStaticIpOutcome;
+        typedef Aws::Utils::Outcome<AttachDiskResult, Aws::Client::AWSError<LightsailErrors>> AttachDiskOutcome;
         typedef Aws::Utils::Outcome<AttachStaticIpResult, Aws::Client::AWSError<LightsailErrors>> AttachStaticIpOutcome;
         typedef Aws::Utils::Outcome<CloseInstancePublicPortsResult, Aws::Client::AWSError<LightsailErrors>> CloseInstancePublicPortsOutcome;
+        typedef Aws::Utils::Outcome<CreateDiskResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskOutcome;
+        typedef Aws::Utils::Outcome<CreateDiskFromSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskFromSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateDomainResult, Aws::Client::AWSError<LightsailErrors>> CreateDomainOutcome;
         typedef Aws::Utils::Outcome<CreateDomainEntryResult, Aws::Client::AWSError<LightsailErrors>> CreateDomainEntryOutcome;
         typedef Aws::Utils::Outcome<CreateInstanceSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateInstanceSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateInstancesResult, Aws::Client::AWSError<LightsailErrors>> CreateInstancesOutcome;
         typedef Aws::Utils::Outcome<CreateInstancesFromSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateInstancesFromSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateKeyPairResult, Aws::Client::AWSError<LightsailErrors>> CreateKeyPairOutcome;
+        typedef Aws::Utils::Outcome<DeleteDiskResult, Aws::Client::AWSError<LightsailErrors>> DeleteDiskOutcome;
+        typedef Aws::Utils::Outcome<DeleteDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> DeleteDiskSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteDomainResult, Aws::Client::AWSError<LightsailErrors>> DeleteDomainOutcome;
         typedef Aws::Utils::Outcome<DeleteDomainEntryResult, Aws::Client::AWSError<LightsailErrors>> DeleteDomainEntryOutcome;
         typedef Aws::Utils::Outcome<DeleteInstanceResult, Aws::Client::AWSError<LightsailErrors>> DeleteInstanceOutcome;
         typedef Aws::Utils::Outcome<DeleteInstanceSnapshotResult, Aws::Client::AWSError<LightsailErrors>> DeleteInstanceSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteKeyPairResult, Aws::Client::AWSError<LightsailErrors>> DeleteKeyPairOutcome;
+        typedef Aws::Utils::Outcome<DetachDiskResult, Aws::Client::AWSError<LightsailErrors>> DetachDiskOutcome;
         typedef Aws::Utils::Outcome<DetachStaticIpResult, Aws::Client::AWSError<LightsailErrors>> DetachStaticIpOutcome;
         typedef Aws::Utils::Outcome<DownloadDefaultKeyPairResult, Aws::Client::AWSError<LightsailErrors>> DownloadDefaultKeyPairOutcome;
         typedef Aws::Utils::Outcome<GetActiveNamesResult, Aws::Client::AWSError<LightsailErrors>> GetActiveNamesOutcome;
         typedef Aws::Utils::Outcome<GetBlueprintsResult, Aws::Client::AWSError<LightsailErrors>> GetBlueprintsOutcome;
         typedef Aws::Utils::Outcome<GetBundlesResult, Aws::Client::AWSError<LightsailErrors>> GetBundlesOutcome;
+        typedef Aws::Utils::Outcome<GetDiskResult, Aws::Client::AWSError<LightsailErrors>> GetDiskOutcome;
+        typedef Aws::Utils::Outcome<GetDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> GetDiskSnapshotOutcome;
+        typedef Aws::Utils::Outcome<GetDiskSnapshotsResult, Aws::Client::AWSError<LightsailErrors>> GetDiskSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<GetDisksResult, Aws::Client::AWSError<LightsailErrors>> GetDisksOutcome;
         typedef Aws::Utils::Outcome<GetDomainResult, Aws::Client::AWSError<LightsailErrors>> GetDomainOutcome;
         typedef Aws::Utils::Outcome<GetDomainsResult, Aws::Client::AWSError<LightsailErrors>> GetDomainsOutcome;
         typedef Aws::Utils::Outcome<GetInstanceResult, Aws::Client::AWSError<LightsailErrors>> GetInstanceOutcome;
@@ -213,24 +246,35 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateDomainEntryResult, Aws::Client::AWSError<LightsailErrors>> UpdateDomainEntryOutcome;
 
         typedef std::future<AllocateStaticIpOutcome> AllocateStaticIpOutcomeCallable;
+        typedef std::future<AttachDiskOutcome> AttachDiskOutcomeCallable;
         typedef std::future<AttachStaticIpOutcome> AttachStaticIpOutcomeCallable;
         typedef std::future<CloseInstancePublicPortsOutcome> CloseInstancePublicPortsOutcomeCallable;
+        typedef std::future<CreateDiskOutcome> CreateDiskOutcomeCallable;
+        typedef std::future<CreateDiskFromSnapshotOutcome> CreateDiskFromSnapshotOutcomeCallable;
+        typedef std::future<CreateDiskSnapshotOutcome> CreateDiskSnapshotOutcomeCallable;
         typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
         typedef std::future<CreateDomainEntryOutcome> CreateDomainEntryOutcomeCallable;
         typedef std::future<CreateInstanceSnapshotOutcome> CreateInstanceSnapshotOutcomeCallable;
         typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
         typedef std::future<CreateInstancesFromSnapshotOutcome> CreateInstancesFromSnapshotOutcomeCallable;
         typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
+        typedef std::future<DeleteDiskOutcome> DeleteDiskOutcomeCallable;
+        typedef std::future<DeleteDiskSnapshotOutcome> DeleteDiskSnapshotOutcomeCallable;
         typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
         typedef std::future<DeleteDomainEntryOutcome> DeleteDomainEntryOutcomeCallable;
         typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
         typedef std::future<DeleteInstanceSnapshotOutcome> DeleteInstanceSnapshotOutcomeCallable;
         typedef std::future<DeleteKeyPairOutcome> DeleteKeyPairOutcomeCallable;
+        typedef std::future<DetachDiskOutcome> DetachDiskOutcomeCallable;
         typedef std::future<DetachStaticIpOutcome> DetachStaticIpOutcomeCallable;
         typedef std::future<DownloadDefaultKeyPairOutcome> DownloadDefaultKeyPairOutcomeCallable;
         typedef std::future<GetActiveNamesOutcome> GetActiveNamesOutcomeCallable;
         typedef std::future<GetBlueprintsOutcome> GetBlueprintsOutcomeCallable;
         typedef std::future<GetBundlesOutcome> GetBundlesOutcomeCallable;
+        typedef std::future<GetDiskOutcome> GetDiskOutcomeCallable;
+        typedef std::future<GetDiskSnapshotOutcome> GetDiskSnapshotOutcomeCallable;
+        typedef std::future<GetDiskSnapshotsOutcome> GetDiskSnapshotsOutcomeCallable;
+        typedef std::future<GetDisksOutcome> GetDisksOutcomeCallable;
         typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
         typedef std::future<GetDomainsOutcome> GetDomainsOutcomeCallable;
         typedef std::future<GetInstanceOutcome> GetInstanceOutcomeCallable;
@@ -265,24 +309,35 @@ namespace Model
   class LightsailClient;
 
     typedef std::function<void(const LightsailClient*, const Model::AllocateStaticIpRequest&, const Model::AllocateStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateStaticIpResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::AttachDiskRequest&, const Model::AttachDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::AttachStaticIpRequest&, const Model::AttachStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachStaticIpResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CloseInstancePublicPortsRequest&, const Model::CloseInstancePublicPortsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CloseInstancePublicPortsResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateDiskRequest&, const Model::CreateDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateDiskFromSnapshotRequest&, const Model::CreateDiskFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskFromSnapshotResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateDiskSnapshotRequest&, const Model::CreateDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDomainEntryRequest&, const Model::CreateDomainEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainEntryResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateInstanceSnapshotRequest&, const Model::CreateInstanceSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateInstancesRequest&, const Model::CreateInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstancesResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateInstancesFromSnapshotRequest&, const Model::CreateInstancesFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstancesFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateKeyPairRequest&, const Model::CreateKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeyPairResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DeleteDiskRequest&, const Model::DeleteDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDiskResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DeleteDiskSnapshotRequest&, const Model::DeleteDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDiskSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteDomainEntryRequest&, const Model::DeleteDomainEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainEntryResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteInstanceSnapshotRequest&, const Model::DeleteInstanceSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteKeyPairRequest&, const Model::DeleteKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeyPairResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DetachDiskRequest&, const Model::DetachDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DetachStaticIpRequest&, const Model::DetachStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachStaticIpResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DownloadDefaultKeyPairRequest&, const Model::DownloadDefaultKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DownloadDefaultKeyPairResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetActiveNamesRequest&, const Model::GetActiveNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetActiveNamesResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetBlueprintsRequest&, const Model::GetBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlueprintsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetBundlesRequest&, const Model::GetBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBundlesResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetDiskRequest&, const Model::GetDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetDiskSnapshotRequest&, const Model::GetDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskSnapshotResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetDiskSnapshotsRequest&, const Model::GetDiskSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskSnapshotsResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetDisksRequest&, const Model::GetDisksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDisksResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDomainsRequest&, const Model::GetDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetInstanceRequest&, const Model::GetInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceResponseReceivedHandler;
@@ -383,6 +438,37 @@ namespace Model
         virtual void AllocateStaticIpAsync(const Model::AllocateStaticIpRequest& request, const AllocateStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Attaches a block storage disk to a running or stopped Lightsail instance and
+         * exposes it to the instance with the specified disk name.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AttachDiskOutcome AttachDisk(const Model::AttachDiskRequest& request) const;
+
+        /**
+         * <p>Attaches a block storage disk to a running or stopped Lightsail instance and
+         * exposes it to the instance with the specified disk name.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AttachDiskOutcomeCallable AttachDiskCallable(const Model::AttachDiskRequest& request) const;
+
+        /**
+         * <p>Attaches a block storage disk to a running or stopped Lightsail instance and
+         * exposes it to the instance with the specified disk name.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AttachDiskAsync(const Model::AttachDiskRequest& request, const AttachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Attaches a static IP address to a specific Amazon Lightsail
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">AWS
@@ -437,6 +523,144 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CloseInstancePublicPortsAsync(const Model::CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a block storage disk that can be attached to a Lightsail instance in
+         * the same Availability Zone (e.g., <code>us-east-2a</code>). The disk is created
+         * in the regional endpoint that you send the HTTP request to. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
+         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDiskOutcome CreateDisk(const Model::CreateDiskRequest& request) const;
+
+        /**
+         * <p>Creates a block storage disk that can be attached to a Lightsail instance in
+         * the same Availability Zone (e.g., <code>us-east-2a</code>). The disk is created
+         * in the regional endpoint that you send the HTTP request to. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
+         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDiskOutcomeCallable CreateDiskCallable(const Model::CreateDiskRequest& request) const;
+
+        /**
+         * <p>Creates a block storage disk that can be attached to a Lightsail instance in
+         * the same Availability Zone (e.g., <code>us-east-2a</code>). The disk is created
+         * in the regional endpoint that you send the HTTP request to. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
+         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDiskAsync(const Model::CreateDiskRequest& request, const CreateDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a block storage disk from a disk snapshot that can be attached to a
+         * Lightsail instance in the same Availability Zone (e.g.,
+         * <code>us-east-2a</code>). The disk is created in the regional endpoint that you
+         * send the HTTP request to. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
+         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDiskFromSnapshotOutcome CreateDiskFromSnapshot(const Model::CreateDiskFromSnapshotRequest& request) const;
+
+        /**
+         * <p>Creates a block storage disk from a disk snapshot that can be attached to a
+         * Lightsail instance in the same Availability Zone (e.g.,
+         * <code>us-east-2a</code>). The disk is created in the regional endpoint that you
+         * send the HTTP request to. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
+         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDiskFromSnapshotOutcomeCallable CreateDiskFromSnapshotCallable(const Model::CreateDiskFromSnapshotRequest& request) const;
+
+        /**
+         * <p>Creates a block storage disk from a disk snapshot that can be attached to a
+         * Lightsail instance in the same Availability Zone (e.g.,
+         * <code>us-east-2a</code>). The disk is created in the regional endpoint that you
+         * send the HTTP request to. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
+         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDiskFromSnapshotAsync(const Model::CreateDiskFromSnapshotRequest& request, const CreateDiskFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a snapshot of a block storage disk. You can use snapshots for
+         * backups, to make copies of disks, and to save data before shutting down a
+         * Lightsail instance.</p> <p>You can take a snapshot of an attached disk that is
+         * in use; however, snapshots only capture data that has been written to your disk
+         * at the time the snapshot command is issued. This may exclude any data that has
+         * been cached by any applications or the operating system. If you can pause any
+         * file systems on the disk long enough to take a snapshot, your snapshot should be
+         * complete. Nevertheless, if you cannot pause all file writes to the disk, you
+         * should unmount the disk from within the Lightsail instance, issue the create
+         * disk snapshot command, and then remount the disk to ensure a consistent and
+         * complete snapshot. You may remount and use your disk while the snapshot status
+         * is pending.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDiskSnapshotOutcome CreateDiskSnapshot(const Model::CreateDiskSnapshotRequest& request) const;
+
+        /**
+         * <p>Creates a snapshot of a block storage disk. You can use snapshots for
+         * backups, to make copies of disks, and to save data before shutting down a
+         * Lightsail instance.</p> <p>You can take a snapshot of an attached disk that is
+         * in use; however, snapshots only capture data that has been written to your disk
+         * at the time the snapshot command is issued. This may exclude any data that has
+         * been cached by any applications or the operating system. If you can pause any
+         * file systems on the disk long enough to take a snapshot, your snapshot should be
+         * complete. Nevertheless, if you cannot pause all file writes to the disk, you
+         * should unmount the disk from within the Lightsail instance, issue the create
+         * disk snapshot command, and then remount the disk to ensure a consistent and
+         * complete snapshot. You may remount and use your disk while the snapshot status
+         * is pending.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDiskSnapshotOutcomeCallable CreateDiskSnapshotCallable(const Model::CreateDiskSnapshotRequest& request) const;
+
+        /**
+         * <p>Creates a snapshot of a block storage disk. You can use snapshots for
+         * backups, to make copies of disks, and to save data before shutting down a
+         * Lightsail instance.</p> <p>You can take a snapshot of an attached disk that is
+         * in use; however, snapshots only capture data that has been written to your disk
+         * at the time the snapshot command is issued. This may exclude any data that has
+         * been cached by any applications or the operating system. If you can pause any
+         * file systems on the disk long enough to take a snapshot, your snapshot should be
+         * complete. Nevertheless, if you cannot pause all file writes to the disk, you
+         * should unmount the disk from within the Lightsail instance, issue the create
+         * disk snapshot command, and then remount the disk to ensure a consistent and
+         * complete snapshot. You may remount and use your disk while the snapshot status
+         * is pending.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDiskSnapshotAsync(const Model::CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a domain resource for the specified domain (e.g.,
@@ -610,6 +834,83 @@ namespace Model
         virtual void CreateKeyPairAsync(const Model::CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified block storage disk. The disk must be in the
+         * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
+         * <p>The disk may remain in the <code>deleting</code> state for several
+         * minutes.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDiskOutcome DeleteDisk(const Model::DeleteDiskRequest& request) const;
+
+        /**
+         * <p>Deletes the specified block storage disk. The disk must be in the
+         * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
+         * <p>The disk may remain in the <code>deleting</code> state for several
+         * minutes.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDiskOutcomeCallable DeleteDiskCallable(const Model::DeleteDiskRequest& request) const;
+
+        /**
+         * <p>Deletes the specified block storage disk. The disk must be in the
+         * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
+         * <p>The disk may remain in the <code>deleting</code> state for several
+         * minutes.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDiskAsync(const Model::DeleteDiskRequest& request, const DeleteDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified disk snapshot.</p> <p>When you make periodic snapshots
+         * of a disk, the snapshots are incremental, and only the blocks on the device that
+         * have changed since your last snapshot are saved in the new snapshot. When you
+         * delete a snapshot, only the data not needed for any other snapshot is removed.
+         * So regardless of which prior snapshots have been deleted, all active snapshots
+         * will have access to all the information needed to restore the
+         * disk.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDiskSnapshotOutcome DeleteDiskSnapshot(const Model::DeleteDiskSnapshotRequest& request) const;
+
+        /**
+         * <p>Deletes the specified disk snapshot.</p> <p>When you make periodic snapshots
+         * of a disk, the snapshots are incremental, and only the blocks on the device that
+         * have changed since your last snapshot are saved in the new snapshot. When you
+         * delete a snapshot, only the data not needed for any other snapshot is removed.
+         * So regardless of which prior snapshots have been deleted, all active snapshots
+         * will have access to all the information needed to restore the
+         * disk.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDiskSnapshotOutcomeCallable DeleteDiskSnapshotCallable(const Model::DeleteDiskSnapshotRequest& request) const;
+
+        /**
+         * <p>Deletes the specified disk snapshot.</p> <p>When you make periodic snapshots
+         * of a disk, the snapshots are incremental, and only the blocks on the device that
+         * have changed since your last snapshot are saved in the new snapshot. When you
+         * delete a snapshot, only the data not needed for any other snapshot is removed.
+         * So regardless of which prior snapshots have been deleted, all active snapshots
+         * will have access to all the information needed to restore the
+         * disk.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDiskSnapshotAsync(const Model::DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified domain recordset and all of its domain
          * records.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">AWS
@@ -742,6 +1043,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteKeyPairAsync(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to
+         * unmount any file systems on the device within your operating system before
+         * stopping the instance and detaching the disk.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetachDiskOutcome DetachDisk(const Model::DetachDiskRequest& request) const;
+
+        /**
+         * <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to
+         * unmount any file systems on the device within your operating system before
+         * stopping the instance and detaching the disk.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetachDiskOutcomeCallable DetachDiskCallable(const Model::DetachDiskRequest& request) const;
+
+        /**
+         * <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to
+         * unmount any file systems on the device within your operating system before
+         * stopping the instance and detaching the disk.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetachDiskAsync(const Model::DetachDiskRequest& request, const DetachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches a static IP from the Amazon Lightsail instance to which it is
@@ -894,6 +1226,136 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBundlesAsync(const Model::GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about a specific block storage disk.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDiskOutcome GetDisk(const Model::GetDiskRequest& request) const;
+
+        /**
+         * <p>Returns information about a specific block storage disk.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDiskOutcomeCallable GetDiskCallable(const Model::GetDiskRequest& request) const;
+
+        /**
+         * <p>Returns information about a specific block storage disk.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDiskAsync(const Model::GetDiskRequest& request, const GetDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about a specific block storage disk
+         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDiskSnapshotOutcome GetDiskSnapshot(const Model::GetDiskSnapshotRequest& request) const;
+
+        /**
+         * <p>Returns information about a specific block storage disk
+         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshot">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDiskSnapshotOutcomeCallable GetDiskSnapshotCallable(const Model::GetDiskSnapshotRequest& request) const;
+
+        /**
+         * <p>Returns information about a specific block storage disk
+         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshot">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDiskSnapshotAsync(const Model::GetDiskSnapshotRequest& request, const GetDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about all block storage disk snapshots in your AWS
+         * account and region.</p> <p>If you are describing a long list of disk snapshots,
+         * you can paginate the output to make the list more manageable. You can use the
+         * pageToken and nextPageToken values to retrieve the next items in the
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDiskSnapshotsOutcome GetDiskSnapshots(const Model::GetDiskSnapshotsRequest& request) const;
+
+        /**
+         * <p>Returns information about all block storage disk snapshots in your AWS
+         * account and region.</p> <p>If you are describing a long list of disk snapshots,
+         * you can paginate the output to make the list more manageable. You can use the
+         * pageToken and nextPageToken values to retrieve the next items in the
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDiskSnapshotsOutcomeCallable GetDiskSnapshotsCallable(const Model::GetDiskSnapshotsRequest& request) const;
+
+        /**
+         * <p>Returns information about all block storage disk snapshots in your AWS
+         * account and region.</p> <p>If you are describing a long list of disk snapshots,
+         * you can paginate the output to make the list more manageable. You can use the
+         * pageToken and nextPageToken values to retrieve the next items in the
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDiskSnapshotsAsync(const Model::GetDiskSnapshotsRequest& request, const GetDiskSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about all block storage disks in your AWS account and
+         * region.</p> <p>If you are describing a long list of disks, you can paginate the
+         * output to make the list more manageable. You can use the pageToken and
+         * nextPageToken values to retrieve the next items in the list.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDisksOutcome GetDisks(const Model::GetDisksRequest& request) const;
+
+        /**
+         * <p>Returns information about all block storage disks in your AWS account and
+         * region.</p> <p>If you are describing a long list of disks, you can paginate the
+         * output to make the list more manageable. You can use the pageToken and
+         * nextPageToken values to retrieve the next items in the list.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDisksOutcomeCallable GetDisksCallable(const Model::GetDisksRequest& request) const;
+
+        /**
+         * <p>Returns information about all block storage disks in your AWS account and
+         * region.</p> <p>If you are describing a long list of disks, you can paginate the
+         * output to make the list more manageable. You can use the pageToken and
+         * nextPageToken values to retrieve the next items in the list.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDisksAsync(const Model::GetDisksRequest& request, const GetDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific domain recordset.</p><p><h3>See
@@ -1725,24 +2187,35 @@ namespace Model
 
         /**Async helpers**/
         void AllocateStaticIpAsyncHelper(const Model::AllocateStaticIpRequest& request, const AllocateStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AttachDiskAsyncHelper(const Model::AttachDiskRequest& request, const AttachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachStaticIpAsyncHelper(const Model::AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CloseInstancePublicPortsAsyncHelper(const Model::CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDiskAsyncHelper(const Model::CreateDiskRequest& request, const CreateDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDiskFromSnapshotAsyncHelper(const Model::CreateDiskFromSnapshotRequest& request, const CreateDiskFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDiskSnapshotAsyncHelper(const Model::CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDomainEntryAsyncHelper(const Model::CreateDomainEntryRequest& request, const CreateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceSnapshotAsyncHelper(const Model::CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstancesAsyncHelper(const Model::CreateInstancesRequest& request, const CreateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstancesFromSnapshotAsyncHelper(const Model::CreateInstancesFromSnapshotRequest& request, const CreateInstancesFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateKeyPairAsyncHelper(const Model::CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDiskAsyncHelper(const Model::DeleteDiskRequest& request, const DeleteDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDiskSnapshotAsyncHelper(const Model::DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainEntryAsyncHelper(const Model::DeleteDomainEntryRequest& request, const DeleteDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInstanceAsyncHelper(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInstanceSnapshotAsyncHelper(const Model::DeleteInstanceSnapshotRequest& request, const DeleteInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteKeyPairAsyncHelper(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetachDiskAsyncHelper(const Model::DetachDiskRequest& request, const DetachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachStaticIpAsyncHelper(const Model::DetachStaticIpRequest& request, const DetachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DownloadDefaultKeyPairAsyncHelper(const Model::DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetActiveNamesAsyncHelper(const Model::GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBlueprintsAsyncHelper(const Model::GetBlueprintsRequest& request, const GetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBundlesAsyncHelper(const Model::GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDiskAsyncHelper(const Model::GetDiskRequest& request, const GetDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDiskSnapshotAsyncHelper(const Model::GetDiskSnapshotRequest& request, const GetDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDiskSnapshotsAsyncHelper(const Model::GetDiskSnapshotsRequest& request, const GetDiskSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDisksAsyncHelper(const Model::GetDisksRequest& request, const GetDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainAsyncHelper(const Model::GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainsAsyncHelper(const Model::GetDomainsRequest& request, const GetDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInstanceAsyncHelper(const Model::GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

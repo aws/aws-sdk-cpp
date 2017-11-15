@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/Deployment.h>
 #include <aws/ecs/model/ServiceEvent.h>
@@ -685,6 +686,42 @@ namespace Model
      */
     inline Service& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline Service& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline Service& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceArn;
@@ -734,6 +771,9 @@ namespace Model
 
     Aws::Vector<PlacementStrategy> m_placementStrategy;
     bool m_placementStrategyHasBeenSet;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet;
   };
 
 } // namespace Model

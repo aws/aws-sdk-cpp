@@ -28,7 +28,8 @@ StartTaskRequest::StartTaskRequest() :
     m_overridesHasBeenSet(false),
     m_containerInstancesHasBeenSet(false),
     m_startedByHasBeenSet(false),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,12 @@ Aws::String StartTaskRequest::SerializePayload() const
   if(m_groupHasBeenSet)
   {
    payload.WithString("group", m_group);
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
 
   }
 

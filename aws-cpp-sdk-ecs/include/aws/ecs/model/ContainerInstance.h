@@ -22,6 +22,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/Resource.h>
 #include <aws/ecs/model/Attribute.h>
+#include <aws/ecs/model/Attachment.h>
 #include <utility>
 
 namespace Aws
@@ -614,6 +615,42 @@ namespace Model
      */
     inline ContainerInstance& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     */
+    inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
+
+    /**
+     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     */
+    inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
+
+    /**
+     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     */
+    inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
+
+    /**
+     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     */
+    inline ContainerInstance& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
+
+    /**
+     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     */
+    inline ContainerInstance& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     */
+    inline ContainerInstance& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
+
+    /**
+     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     */
+    inline ContainerInstance& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_containerInstanceArn;
@@ -654,6 +691,9 @@ namespace Model
 
     Aws::Utils::DateTime m_registeredAt;
     bool m_registeredAtHasBeenSet;
+
+    Aws::Vector<Attachment> m_attachments;
+    bool m_attachmentsHasBeenSet;
   };
 
 } // namespace Model

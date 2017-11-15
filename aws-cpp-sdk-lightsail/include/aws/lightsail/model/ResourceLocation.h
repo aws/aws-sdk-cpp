@@ -48,43 +48,43 @@ namespace Model
 
 
     /**
-     * <p>The Availability Zone. Follows the format <code>us-east-1a</code>
+     * <p>The Availability Zone. Follows the format <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Availability Zone. Follows the format <code>us-east-1a</code>
+     * <p>The Availability Zone. Follows the format <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone. Follows the format <code>us-east-1a</code>
+     * <p>The Availability Zone. Follows the format <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The Availability Zone. Follows the format <code>us-east-1a</code>
+     * <p>The Availability Zone. Follows the format <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone. Follows the format <code>us-east-1a</code>
+     * <p>The Availability Zone. Follows the format <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline ResourceLocation& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone. Follows the format <code>us-east-1a</code>
+     * <p>The Availability Zone. Follows the format <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline ResourceLocation& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zone. Follows the format <code>us-east-1a</code>
+     * <p>The Availability Zone. Follows the format <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
     inline ResourceLocation& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}

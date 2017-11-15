@@ -223,37 +223,37 @@ namespace Model
 
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).</p>
+     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline const Aws::String& GetOperationDetails() const{ return m_operationDetails; }
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).</p>
+     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline void SetOperationDetails(const Aws::String& value) { m_operationDetailsHasBeenSet = true; m_operationDetails = value; }
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).</p>
+     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline void SetOperationDetails(Aws::String&& value) { m_operationDetailsHasBeenSet = true; m_operationDetails = std::move(value); }
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).</p>
+     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline void SetOperationDetails(const char* value) { m_operationDetailsHasBeenSet = true; m_operationDetails.assign(value); }
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).</p>
+     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline Operation& WithOperationDetails(const Aws::String& value) { SetOperationDetails(value); return *this;}
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).</p>
+     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline Operation& WithOperationDetails(Aws::String&& value) { SetOperationDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).</p>
+     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline Operation& WithOperationDetails(const char* value) { SetOperationDetails(value); return *this;}
 

@@ -26,7 +26,9 @@ SubmitTaskStateChangeRequest::SubmitTaskStateChangeRequest() :
     m_clusterHasBeenSet(false),
     m_taskHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_containersHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,28 @@ Aws::String SubmitTaskStateChangeRequest::SerializePayload() const
   if(m_reasonHasBeenSet)
   {
    payload.WithString("reason", m_reason);
+
+  }
+
+  if(m_containersHasBeenSet)
+  {
+   Array<JsonValue> containersJsonList(m_containers.size());
+   for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
+   {
+     containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
+   }
+   payload.WithArray("containers", std::move(containersJsonList));
+
+  }
+
+  if(m_attachmentsHasBeenSet)
+  {
+   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+   {
+     attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+   }
+   payload.WithArray("attachments", std::move(attachmentsJsonList));
 
   }
 

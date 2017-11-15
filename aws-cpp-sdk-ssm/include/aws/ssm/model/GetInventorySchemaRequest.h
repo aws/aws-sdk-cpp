@@ -146,6 +146,31 @@ namespace Model
 
 
     /**
+     * <p>Returns inventory schemas that support aggregation. For example, this call
+     * returns the <code>AWS:InstanceInformation</code> type, because it supports
+     * aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>,
+     * and <code>PlatformVersion</code> attributes.</p>
+     */
+    inline bool GetAggregator() const{ return m_aggregator; }
+
+    /**
+     * <p>Returns inventory schemas that support aggregation. For example, this call
+     * returns the <code>AWS:InstanceInformation</code> type, because it supports
+     * aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>,
+     * and <code>PlatformVersion</code> attributes.</p>
+     */
+    inline void SetAggregator(bool value) { m_aggregatorHasBeenSet = true; m_aggregator = value; }
+
+    /**
+     * <p>Returns inventory schemas that support aggregation. For example, this call
+     * returns the <code>AWS:InstanceInformation</code> type, because it supports
+     * aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>,
+     * and <code>PlatformVersion</code> attributes.</p>
+     */
+    inline GetInventorySchemaRequest& WithAggregator(bool value) { SetAggregator(value); return *this;}
+
+
+    /**
      * <p>Returns the sub-type schema for a specified inventory type.</p>
      */
     inline bool GetSubType() const{ return m_subType; }
@@ -170,6 +195,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    bool m_aggregator;
+    bool m_aggregatorHasBeenSet;
 
     bool m_subType;
     bool m_subTypeHasBeenSet;
