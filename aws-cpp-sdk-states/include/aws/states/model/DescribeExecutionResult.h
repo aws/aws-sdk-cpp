@@ -214,27 +214,27 @@ namespace Model
 
 
     /**
-     * <p>The date the execution was started.</p>
+     * <p>The date the execution is started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
 
     /**
-     * <p>The date the execution was started.</p>
+     * <p>The date the execution is started.</p>
      */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDate = value; }
 
     /**
-     * <p>The date the execution was started.</p>
+     * <p>The date the execution is started.</p>
      */
     inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDate = std::move(value); }
 
     /**
-     * <p>The date the execution was started.</p>
+     * <p>The date the execution is started.</p>
      */
     inline DescribeExecutionResult& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
 
     /**
-     * <p>The date the execution was started.</p>
+     * <p>The date the execution is started.</p>
      */
     inline DescribeExecutionResult& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
@@ -302,37 +302,51 @@ namespace Model
 
 
     /**
-     * <p>The JSON output data of the execution.</p>
+     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * if the execution succeeds. If the execution fails, this field is null.</p>
+     * </note>
      */
     inline const Aws::String& GetOutput() const{ return m_output; }
 
     /**
-     * <p>The JSON output data of the execution.</p>
+     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * if the execution succeeds. If the execution fails, this field is null.</p>
+     * </note>
      */
     inline void SetOutput(const Aws::String& value) { m_output = value; }
 
     /**
-     * <p>The JSON output data of the execution.</p>
+     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * if the execution succeeds. If the execution fails, this field is null.</p>
+     * </note>
      */
     inline void SetOutput(Aws::String&& value) { m_output = std::move(value); }
 
     /**
-     * <p>The JSON output data of the execution.</p>
+     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * if the execution succeeds. If the execution fails, this field is null.</p>
+     * </note>
      */
     inline void SetOutput(const char* value) { m_output.assign(value); }
 
     /**
-     * <p>The JSON output data of the execution.</p>
+     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * if the execution succeeds. If the execution fails, this field is null.</p>
+     * </note>
      */
     inline DescribeExecutionResult& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
 
     /**
-     * <p>The JSON output data of the execution.</p>
+     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * if the execution succeeds. If the execution fails, this field is null.</p>
+     * </note>
      */
     inline DescribeExecutionResult& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON output data of the execution.</p>
+     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * if the execution succeeds. If the execution fails, this field is null.</p>
+     * </note>
      */
     inline DescribeExecutionResult& WithOutput(const char* value) { SetOutput(value); return *this;}
 

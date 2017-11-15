@@ -34,9 +34,11 @@ DomainName::DomainName() :
     m_certificateArnHasBeenSet(false),
     m_certificateUploadDateHasBeenSet(false),
     m_regionalDomainNameHasBeenSet(false),
+    m_regionalHostedZoneIdHasBeenSet(false),
     m_regionalCertificateNameHasBeenSet(false),
     m_regionalCertificateArnHasBeenSet(false),
     m_distributionDomainNameHasBeenSet(false),
+    m_distributionHostedZoneIdHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false)
 {
 }
@@ -47,9 +49,11 @@ DomainName::DomainName(const JsonValue& jsonValue) :
     m_certificateArnHasBeenSet(false),
     m_certificateUploadDateHasBeenSet(false),
     m_regionalDomainNameHasBeenSet(false),
+    m_regionalHostedZoneIdHasBeenSet(false),
     m_regionalCertificateNameHasBeenSet(false),
     m_regionalCertificateArnHasBeenSet(false),
     m_distributionDomainNameHasBeenSet(false),
+    m_distributionHostedZoneIdHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
@@ -92,6 +96,13 @@ DomainName& DomainName::operator =(const JsonValue& jsonValue)
     m_regionalDomainNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("regionalHostedZoneId"))
+  {
+    m_regionalHostedZoneId = jsonValue.GetString("regionalHostedZoneId");
+
+    m_regionalHostedZoneIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("regionalCertificateName"))
   {
     m_regionalCertificateName = jsonValue.GetString("regionalCertificateName");
@@ -111,6 +122,13 @@ DomainName& DomainName::operator =(const JsonValue& jsonValue)
     m_distributionDomainName = jsonValue.GetString("distributionDomainName");
 
     m_distributionDomainNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("distributionHostedZoneId"))
+  {
+    m_distributionHostedZoneId = jsonValue.GetString("distributionHostedZoneId");
+
+    m_distributionHostedZoneIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("endpointConfiguration"))
@@ -156,6 +174,12 @@ JsonValue DomainName::Jsonize() const
 
   }
 
+  if(m_regionalHostedZoneIdHasBeenSet)
+  {
+   payload.WithString("regionalHostedZoneId", m_regionalHostedZoneId);
+
+  }
+
   if(m_regionalCertificateNameHasBeenSet)
   {
    payload.WithString("regionalCertificateName", m_regionalCertificateName);
@@ -171,6 +195,12 @@ JsonValue DomainName::Jsonize() const
   if(m_distributionDomainNameHasBeenSet)
   {
    payload.WithString("distributionDomainName", m_distributionDomainName);
+
+  }
+
+  if(m_distributionHostedZoneIdHasBeenSet)
+  {
+   payload.WithString("distributionHostedZoneId", m_distributionHostedZoneId);
 
   }
 

@@ -34,6 +34,7 @@
 #include <aws/states/model/DescribeActivityRequest.h>
 #include <aws/states/model/DescribeExecutionRequest.h>
 #include <aws/states/model/DescribeStateMachineRequest.h>
+#include <aws/states/model/DescribeStateMachineForExecutionRequest.h>
 #include <aws/states/model/GetActivityTaskRequest.h>
 #include <aws/states/model/GetExecutionHistoryRequest.h>
 #include <aws/states/model/ListActivitiesRequest.h>
@@ -44,6 +45,7 @@
 #include <aws/states/model/SendTaskSuccessRequest.h>
 #include <aws/states/model/StartExecutionRequest.h>
 #include <aws/states/model/StopExecutionRequest.h>
+#include <aws/states/model/UpdateStateMachineRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -352,6 +354,41 @@ void SFNClient::DescribeStateMachineAsync(const DescribeStateMachineRequest& req
 void SFNClient::DescribeStateMachineAsyncHelper(const DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeStateMachine(request), context);
+}
+
+DescribeStateMachineForExecutionOutcome SFNClient::DescribeStateMachineForExecution(const DescribeStateMachineForExecutionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeStateMachineForExecutionOutcome(DescribeStateMachineForExecutionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeStateMachineForExecutionOutcome(outcome.GetError());
+  }
+}
+
+DescribeStateMachineForExecutionOutcomeCallable SFNClient::DescribeStateMachineForExecutionCallable(const DescribeStateMachineForExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStateMachineForExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStateMachineForExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SFNClient::DescribeStateMachineForExecutionAsync(const DescribeStateMachineForExecutionRequest& request, const DescribeStateMachineForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStateMachineForExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void SFNClient::DescribeStateMachineForExecutionAsyncHelper(const DescribeStateMachineForExecutionRequest& request, const DescribeStateMachineForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStateMachineForExecution(request), context);
 }
 
 GetActivityTaskOutcome SFNClient::GetActivityTask(const GetActivityTaskRequest& request) const
@@ -702,5 +739,40 @@ void SFNClient::StopExecutionAsync(const StopExecutionRequest& request, const St
 void SFNClient::StopExecutionAsyncHelper(const StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopExecution(request), context);
+}
+
+UpdateStateMachineOutcome SFNClient::UpdateStateMachine(const UpdateStateMachineRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateStateMachineOutcome(UpdateStateMachineResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateStateMachineOutcome(outcome.GetError());
+  }
+}
+
+UpdateStateMachineOutcomeCallable SFNClient::UpdateStateMachineCallable(const UpdateStateMachineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStateMachineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStateMachine(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SFNClient::UpdateStateMachineAsync(const UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateStateMachineAsyncHelper( request, handler, context ); } );
+}
+
+void SFNClient::UpdateStateMachineAsyncHelper(const UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateStateMachine(request), context);
 }
 

@@ -89,49 +89,49 @@ namespace Model
 
     /**
      * <p>You can provide an arbitrary name in order to identify the worker that the
-     * task is assigned to. This name will be used when it is logged in the execution
+     * task is assigned to. This name is used when it is logged in the execution
      * history.</p>
      */
     inline const Aws::String& GetWorkerName() const{ return m_workerName; }
 
     /**
      * <p>You can provide an arbitrary name in order to identify the worker that the
-     * task is assigned to. This name will be used when it is logged in the execution
+     * task is assigned to. This name is used when it is logged in the execution
      * history.</p>
      */
     inline void SetWorkerName(const Aws::String& value) { m_workerNameHasBeenSet = true; m_workerName = value; }
 
     /**
      * <p>You can provide an arbitrary name in order to identify the worker that the
-     * task is assigned to. This name will be used when it is logged in the execution
+     * task is assigned to. This name is used when it is logged in the execution
      * history.</p>
      */
     inline void SetWorkerName(Aws::String&& value) { m_workerNameHasBeenSet = true; m_workerName = std::move(value); }
 
     /**
      * <p>You can provide an arbitrary name in order to identify the worker that the
-     * task is assigned to. This name will be used when it is logged in the execution
+     * task is assigned to. This name is used when it is logged in the execution
      * history.</p>
      */
     inline void SetWorkerName(const char* value) { m_workerNameHasBeenSet = true; m_workerName.assign(value); }
 
     /**
      * <p>You can provide an arbitrary name in order to identify the worker that the
-     * task is assigned to. This name will be used when it is logged in the execution
+     * task is assigned to. This name is used when it is logged in the execution
      * history.</p>
      */
     inline GetActivityTaskRequest& WithWorkerName(const Aws::String& value) { SetWorkerName(value); return *this;}
 
     /**
      * <p>You can provide an arbitrary name in order to identify the worker that the
-     * task is assigned to. This name will be used when it is logged in the execution
+     * task is assigned to. This name is used when it is logged in the execution
      * history.</p>
      */
     inline GetActivityTaskRequest& WithWorkerName(Aws::String&& value) { SetWorkerName(std::move(value)); return *this;}
 
     /**
      * <p>You can provide an arbitrary name in order to identify the worker that the
-     * task is assigned to. This name will be used when it is logged in the execution
+     * task is assigned to. This name is used when it is logged in the execution
      * history.</p>
      */
     inline GetActivityTaskRequest& WithWorkerName(const char* value) { SetWorkerName(value); return *this;}

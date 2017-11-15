@@ -35,6 +35,8 @@ namespace Model
     AccountThrottled,
     AccountDailyQuotaExceeded,
     InvalidSendingPoolName,
+    AccountSendingPaused,
+    ConfigurationSetSendingPaused,
     InvalidParameterValue,
     TransientFailure,
     Failed

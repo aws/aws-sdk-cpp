@@ -81,29 +81,29 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results that will be returned per call.
-     * <code>nextToken</code> can be used to obtain further pages of results. The
-     * default is 100 and the maximum allowed page size is 100. A value of 0 means to
-     * use the default.</p> <p>This is an upper limit only; the actual number of
-     * results returned per call may be fewer than the specified maximum.</p>
+     * <p>The maximum number of results that are returned per call. You can use
+     * <code>nextToken</code> to obtain further pages of results. The default is 100
+     * and the maximum allowed page size is 100. A value of 0 uses the default.</p>
+     * <p>This is only an upper limit. The actual number of results returned per call
+     * might be fewer than the specified maximum.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results that will be returned per call.
-     * <code>nextToken</code> can be used to obtain further pages of results. The
-     * default is 100 and the maximum allowed page size is 100. A value of 0 means to
-     * use the default.</p> <p>This is an upper limit only; the actual number of
-     * results returned per call may be fewer than the specified maximum.</p>
+     * <p>The maximum number of results that are returned per call. You can use
+     * <code>nextToken</code> to obtain further pages of results. The default is 100
+     * and the maximum allowed page size is 100. A value of 0 uses the default.</p>
+     * <p>This is only an upper limit. The actual number of results returned per call
+     * might be fewer than the specified maximum.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results that will be returned per call.
-     * <code>nextToken</code> can be used to obtain further pages of results. The
-     * default is 100 and the maximum allowed page size is 100. A value of 0 means to
-     * use the default.</p> <p>This is an upper limit only; the actual number of
-     * results returned per call may be fewer than the specified maximum.</p>
+     * <p>The maximum number of results that are returned per call. You can use
+     * <code>nextToken</code> to obtain further pages of results. The default is 100
+     * and the maximum allowed page size is 100. A value of 0 uses the default.</p>
+     * <p>This is only an upper limit. The actual number of results returned per call
+     * might be fewer than the specified maximum.</p>
      */
     inline GetExecutionHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -125,7 +125,7 @@ namespace Model
 
 
     /**
-     * <p>If a <code>nextToken</code> was returned by a previous call, there are more
+     * <p>If a <code>nextToken</code> is returned by a previous call, there are more
      * results available. To retrieve the next page of results, make the call again
      * using the returned token in <code>nextToken</code>. Keep all other arguments
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many
@@ -134,7 +134,7 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If a <code>nextToken</code> was returned by a previous call, there are more
+     * <p>If a <code>nextToken</code> is returned by a previous call, there are more
      * results available. To retrieve the next page of results, make the call again
      * using the returned token in <code>nextToken</code>. Keep all other arguments
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many
@@ -143,7 +143,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If a <code>nextToken</code> was returned by a previous call, there are more
+     * <p>If a <code>nextToken</code> is returned by a previous call, there are more
      * results available. To retrieve the next page of results, make the call again
      * using the returned token in <code>nextToken</code>. Keep all other arguments
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many
@@ -152,7 +152,7 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If a <code>nextToken</code> was returned by a previous call, there are more
+     * <p>If a <code>nextToken</code> is returned by a previous call, there are more
      * results available. To retrieve the next page of results, make the call again
      * using the returned token in <code>nextToken</code>. Keep all other arguments
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many
@@ -161,7 +161,7 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If a <code>nextToken</code> was returned by a previous call, there are more
+     * <p>If a <code>nextToken</code> is returned by a previous call, there are more
      * results available. To retrieve the next page of results, make the call again
      * using the returned token in <code>nextToken</code>. Keep all other arguments
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many
@@ -170,7 +170,7 @@ namespace Model
     inline GetExecutionHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If a <code>nextToken</code> was returned by a previous call, there are more
+     * <p>If a <code>nextToken</code> is returned by a previous call, there are more
      * results available. To retrieve the next page of results, make the call again
      * using the returned token in <code>nextToken</code>. Keep all other arguments
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many
@@ -179,7 +179,7 @@ namespace Model
     inline GetExecutionHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If a <code>nextToken</code> was returned by a previous call, there are more
+     * <p>If a <code>nextToken</code> is returned by a previous call, there are more
      * results available. To retrieve the next page of results, make the call again
      * using the returned token in <code>nextToken</code>. Keep all other arguments
      * unchanged.</p> <p>The configured <code>maxResults</code> determines how many

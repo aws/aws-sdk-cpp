@@ -39,9 +39,11 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded")
 static const int RULE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleDoesNotExist");
 static const int INVALID_FIREHOSE_DESTINATION_HASH = HashingUtils::HashString("InvalidFirehoseDestination");
 static const int CANNOT_DELETE_HASH = HashingUtils::HashString("CannotDelete");
+static const int ACCOUNT_SENDING_PAUSED_HASH = HashingUtils::HashString("AccountSendingPausedException");
 static const int INVALID_CLOUD_WATCH_DESTINATION_HASH = HashingUtils::HashString("InvalidCloudWatchDestination");
 static const int CONFIGURATION_SET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ConfigurationSetDoesNotExist");
 static const int INVALID_TRACKING_OPTIONS_HASH = HashingUtils::HashString("InvalidTrackingOptions");
+static const int CONFIGURATION_SET_SENDING_PAUSED_HASH = HashingUtils::HashString("ConfigurationSetSendingPausedException");
 static const int INVALID_S3_CONFIGURATION_HASH = HashingUtils::HashString("InvalidS3Configuration");
 static const int INVALID_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("InvalidLambdaFunction");
 static const int EVENT_DESTINATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("EventDestinationDoesNotExist");
@@ -104,6 +106,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CANNOT_DELETE), false);
   }
+  else if (hashCode == ACCOUNT_SENDING_PAUSED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::ACCOUNT_SENDING_PAUSED), false);
+  }
   else if (hashCode == INVALID_CLOUD_WATCH_DESTINATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_CLOUD_WATCH_DESTINATION), false);
@@ -115,6 +121,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TRACKING_OPTIONS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_TRACKING_OPTIONS), false);
+  }
+  else if (hashCode == CONFIGURATION_SET_SENDING_PAUSED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CONFIGURATION_SET_SENDING_PAUSED), false);
   }
   else if (hashCode == INVALID_S3_CONFIGURATION_HASH)
   {

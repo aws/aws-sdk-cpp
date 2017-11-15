@@ -75,7 +75,9 @@ namespace Model
     Astrid,
     Filiz,
     Vicki,
-    Takumi
+    Takumi,
+    Seoyeon,
+    Aditi
   };
 
 namespace VoiceIdMapper

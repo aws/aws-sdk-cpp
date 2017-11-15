@@ -279,6 +279,77 @@ namespace Model
 
 
     /**
+     * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline const Aws::String& GetRegionalHostedZoneId() const{ return m_regionalHostedZoneId; }
+
+    /**
+     * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline void SetRegionalHostedZoneId(const Aws::String& value) { m_regionalHostedZoneIdHasBeenSet = true; m_regionalHostedZoneId = value; }
+
+    /**
+     * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline void SetRegionalHostedZoneId(Aws::String&& value) { m_regionalHostedZoneIdHasBeenSet = true; m_regionalHostedZoneId = std::move(value); }
+
+    /**
+     * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline void SetRegionalHostedZoneId(const char* value) { m_regionalHostedZoneIdHasBeenSet = true; m_regionalHostedZoneId.assign(value); }
+
+    /**
+     * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline DomainName& WithRegionalHostedZoneId(const Aws::String& value) { SetRegionalHostedZoneId(value); return *this;}
+
+    /**
+     * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline DomainName& WithRegionalHostedZoneId(Aws::String&& value) { SetRegionalHostedZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline DomainName& WithRegionalHostedZoneId(const char* value) { SetRegionalHostedZoneId(value); return *this;}
+
+
+    /**
      * <p>The name of the certificate that will be used for validating the regional
      * domain name.</p>
      */
@@ -443,6 +514,84 @@ namespace Model
 
 
     /**
+     * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
+     * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline const Aws::String& GetDistributionHostedZoneId() const{ return m_distributionHostedZoneId; }
+
+    /**
+     * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
+     * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline void SetDistributionHostedZoneId(const Aws::String& value) { m_distributionHostedZoneIdHasBeenSet = true; m_distributionHostedZoneId = value; }
+
+    /**
+     * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
+     * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline void SetDistributionHostedZoneId(Aws::String&& value) { m_distributionHostedZoneIdHasBeenSet = true; m_distributionHostedZoneId = std::move(value); }
+
+    /**
+     * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
+     * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline void SetDistributionHostedZoneId(const char* value) { m_distributionHostedZoneIdHasBeenSet = true; m_distributionHostedZoneId.assign(value); }
+
+    /**
+     * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
+     * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline DomainName& WithDistributionHostedZoneId(const Aws::String& value) { SetDistributionHostedZoneId(value); return *this;}
+
+    /**
+     * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
+     * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline DomainName& WithDistributionHostedZoneId(Aws::String&& value) { SetDistributionHostedZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
+     * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline DomainName& WithDistributionHostedZoneId(const char* value) { SetDistributionHostedZoneId(value); return *this;}
+
+
+    /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
      * types of the domain name. </p>
      */
@@ -489,6 +638,9 @@ namespace Model
     Aws::String m_regionalDomainName;
     bool m_regionalDomainNameHasBeenSet;
 
+    Aws::String m_regionalHostedZoneId;
+    bool m_regionalHostedZoneIdHasBeenSet;
+
     Aws::String m_regionalCertificateName;
     bool m_regionalCertificateNameHasBeenSet;
 
@@ -497,6 +649,9 @@ namespace Model
 
     Aws::String m_distributionDomainName;
     bool m_distributionDomainNameHasBeenSet;
+
+    Aws::String m_distributionHostedZoneId;
+    bool m_distributionHostedZoneIdHasBeenSet;
 
     EndpointConfiguration m_endpointConfiguration;
     bool m_endpointConfigurationHasBeenSet;

@@ -40,6 +40,7 @@ namespace Model
     fr_FR,
     is_IS,
     it_IT,
+    ko_KR,
     ja_JP,
     nb_NO,
     nl_NL,

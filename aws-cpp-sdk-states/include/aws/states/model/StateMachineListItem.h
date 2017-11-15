@@ -155,27 +155,27 @@ namespace Model
 
 
     /**
-     * <p>The date the state machine was created.</p>
+     * <p>The date the state machine is created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date the state machine was created.</p>
+     * <p>The date the state machine is created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date the state machine was created.</p>
+     * <p>The date the state machine is created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The date the state machine was created.</p>
+     * <p>The date the state machine is created.</p>
      */
     inline StateMachineListItem& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date the state machine was created.</p>
+     * <p>The date the state machine is created.</p>
      */
     inline StateMachineListItem& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 

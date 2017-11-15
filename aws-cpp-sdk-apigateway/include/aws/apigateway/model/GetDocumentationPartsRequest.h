@@ -18,6 +18,7 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/DocumentationPartType.h>
+#include <aws/apigateway/model/LocationStatusType.h>
 #include <utility>
 
 namespace Aws
@@ -238,6 +239,47 @@ namespace Model
      */
     inline GetDocumentationPartsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
+
+    /**
+     * <p>The status of the API documentation parts to retrieve. Valid values are
+     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
+     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
+     * without content.</p>
+     */
+    inline const LocationStatusType& GetLocationStatus() const{ return m_locationStatus; }
+
+    /**
+     * <p>The status of the API documentation parts to retrieve. Valid values are
+     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
+     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
+     * without content.</p>
+     */
+    inline void SetLocationStatus(const LocationStatusType& value) { m_locationStatusHasBeenSet = true; m_locationStatus = value; }
+
+    /**
+     * <p>The status of the API documentation parts to retrieve. Valid values are
+     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
+     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
+     * without content.</p>
+     */
+    inline void SetLocationStatus(LocationStatusType&& value) { m_locationStatusHasBeenSet = true; m_locationStatus = std::move(value); }
+
+    /**
+     * <p>The status of the API documentation parts to retrieve. Valid values are
+     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
+     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
+     * without content.</p>
+     */
+    inline GetDocumentationPartsRequest& WithLocationStatus(const LocationStatusType& value) { SetLocationStatus(value); return *this;}
+
+    /**
+     * <p>The status of the API documentation parts to retrieve. Valid values are
+     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
+     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
+     * without content.</p>
+     */
+    inline GetDocumentationPartsRequest& WithLocationStatus(LocationStatusType&& value) { SetLocationStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_restApiId;
@@ -257,6 +299,9 @@ namespace Model
 
     int m_limit;
     bool m_limitHasBeenSet;
+
+    LocationStatusType m_locationStatus;
+    bool m_locationStatusHasBeenSet;
   };
 
 } // namespace Model

@@ -32,6 +32,7 @@ namespace Aws
 
         static const int eventDestinations_HASH = HashingUtils::HashString("eventDestinations");
         static const int trackingOptions_HASH = HashingUtils::HashString("trackingOptions");
+        static const int reputationOptions_HASH = HashingUtils::HashString("reputationOptions");
 
 
         ConfigurationSetAttribute GetConfigurationSetAttributeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == trackingOptions_HASH)
           {
             return ConfigurationSetAttribute::trackingOptions;
+          }
+          else if (hashCode == reputationOptions_HASH)
+          {
+            return ConfigurationSetAttribute::reputationOptions;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "eventDestinations";
           case ConfigurationSetAttribute::trackingOptions:
             return "trackingOptions";
+          case ConfigurationSetAttribute::reputationOptions:
+            return "reputationOptions";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     eventDestinations,
-    trackingOptions
+    trackingOptions,
+    reputationOptions
   };
 
 namespace ConfigurationSetAttributeMapper

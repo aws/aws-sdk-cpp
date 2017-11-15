@@ -43,6 +43,7 @@
 #include <aws/email/model/DescribeConfigurationSetResult.h>
 #include <aws/email/model/DescribeReceiptRuleResult.h>
 #include <aws/email/model/DescribeReceiptRuleSetResult.h>
+#include <aws/email/model/GetAccountSendingEnabledResult.h>
 #include <aws/email/model/GetIdentityDkimAttributesResult.h>
 #include <aws/email/model/GetIdentityMailFromDomainAttributesResult.h>
 #include <aws/email/model/GetIdentityNotificationAttributesResult.h>
@@ -148,6 +149,7 @@ namespace Model
         class DescribeConfigurationSetRequest;
         class DescribeReceiptRuleRequest;
         class DescribeReceiptRuleSetRequest;
+        class GetAccountSendingEnabledRequest;
         class GetIdentityDkimAttributesRequest;
         class GetIdentityMailFromDomainAttributesRequest;
         class GetIdentityNotificationAttributesRequest;
@@ -178,7 +180,10 @@ namespace Model
         class SetIdentityNotificationTopicRequest;
         class SetReceiptRulePositionRequest;
         class TestRenderTemplateRequest;
+        class UpdateAccountSendingEnabledRequest;
         class UpdateConfigurationSetEventDestinationRequest;
+        class UpdateConfigurationSetReputationMetricsEnabledRequest;
+        class UpdateConfigurationSetSendingEnabledRequest;
         class UpdateConfigurationSetTrackingOptionsRequest;
         class UpdateReceiptRuleRequest;
         class UpdateTemplateRequest;
@@ -209,6 +214,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeConfigurationSetResult, Aws::Client::AWSError<SESErrors>> DescribeConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<DescribeReceiptRuleResult, Aws::Client::AWSError<SESErrors>> DescribeReceiptRuleOutcome;
         typedef Aws::Utils::Outcome<DescribeReceiptRuleSetResult, Aws::Client::AWSError<SESErrors>> DescribeReceiptRuleSetOutcome;
+        typedef Aws::Utils::Outcome<GetAccountSendingEnabledResult, Aws::Client::AWSError<SESErrors>> GetAccountSendingEnabledOutcome;
         typedef Aws::Utils::Outcome<GetIdentityDkimAttributesResult, Aws::Client::AWSError<SESErrors>> GetIdentityDkimAttributesOutcome;
         typedef Aws::Utils::Outcome<GetIdentityMailFromDomainAttributesResult, Aws::Client::AWSError<SESErrors>> GetIdentityMailFromDomainAttributesOutcome;
         typedef Aws::Utils::Outcome<GetIdentityNotificationAttributesResult, Aws::Client::AWSError<SESErrors>> GetIdentityNotificationAttributesOutcome;
@@ -239,7 +245,10 @@ namespace Model
         typedef Aws::Utils::Outcome<SetIdentityNotificationTopicResult, Aws::Client::AWSError<SESErrors>> SetIdentityNotificationTopicOutcome;
         typedef Aws::Utils::Outcome<SetReceiptRulePositionResult, Aws::Client::AWSError<SESErrors>> SetReceiptRulePositionOutcome;
         typedef Aws::Utils::Outcome<TestRenderTemplateResult, Aws::Client::AWSError<SESErrors>> TestRenderTemplateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SESErrors>> UpdateAccountSendingEnabledOutcome;
         typedef Aws::Utils::Outcome<UpdateConfigurationSetEventDestinationResult, Aws::Client::AWSError<SESErrors>> UpdateConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SESErrors>> UpdateConfigurationSetReputationMetricsEnabledOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SESErrors>> UpdateConfigurationSetSendingEnabledOutcome;
         typedef Aws::Utils::Outcome<UpdateConfigurationSetTrackingOptionsResult, Aws::Client::AWSError<SESErrors>> UpdateConfigurationSetTrackingOptionsOutcome;
         typedef Aws::Utils::Outcome<UpdateReceiptRuleResult, Aws::Client::AWSError<SESErrors>> UpdateReceiptRuleOutcome;
         typedef Aws::Utils::Outcome<UpdateTemplateResult, Aws::Client::AWSError<SESErrors>> UpdateTemplateOutcome;
@@ -270,6 +279,7 @@ namespace Model
         typedef std::future<DescribeConfigurationSetOutcome> DescribeConfigurationSetOutcomeCallable;
         typedef std::future<DescribeReceiptRuleOutcome> DescribeReceiptRuleOutcomeCallable;
         typedef std::future<DescribeReceiptRuleSetOutcome> DescribeReceiptRuleSetOutcomeCallable;
+        typedef std::future<GetAccountSendingEnabledOutcome> GetAccountSendingEnabledOutcomeCallable;
         typedef std::future<GetIdentityDkimAttributesOutcome> GetIdentityDkimAttributesOutcomeCallable;
         typedef std::future<GetIdentityMailFromDomainAttributesOutcome> GetIdentityMailFromDomainAttributesOutcomeCallable;
         typedef std::future<GetIdentityNotificationAttributesOutcome> GetIdentityNotificationAttributesOutcomeCallable;
@@ -300,7 +310,10 @@ namespace Model
         typedef std::future<SetIdentityNotificationTopicOutcome> SetIdentityNotificationTopicOutcomeCallable;
         typedef std::future<SetReceiptRulePositionOutcome> SetReceiptRulePositionOutcomeCallable;
         typedef std::future<TestRenderTemplateOutcome> TestRenderTemplateOutcomeCallable;
+        typedef std::future<UpdateAccountSendingEnabledOutcome> UpdateAccountSendingEnabledOutcomeCallable;
         typedef std::future<UpdateConfigurationSetEventDestinationOutcome> UpdateConfigurationSetEventDestinationOutcomeCallable;
+        typedef std::future<UpdateConfigurationSetReputationMetricsEnabledOutcome> UpdateConfigurationSetReputationMetricsEnabledOutcomeCallable;
+        typedef std::future<UpdateConfigurationSetSendingEnabledOutcome> UpdateConfigurationSetSendingEnabledOutcomeCallable;
         typedef std::future<UpdateConfigurationSetTrackingOptionsOutcome> UpdateConfigurationSetTrackingOptionsOutcomeCallable;
         typedef std::future<UpdateReceiptRuleOutcome> UpdateReceiptRuleOutcomeCallable;
         typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
@@ -334,6 +347,7 @@ namespace Model
     typedef std::function<void(const SESClient*, const Model::DescribeConfigurationSetRequest&, const Model::DescribeConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DescribeReceiptRuleRequest&, const Model::DescribeReceiptRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReceiptRuleResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DescribeReceiptRuleSetRequest&, const Model::DescribeReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReceiptRuleSetResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::GetAccountSendingEnabledRequest&, const Model::GetAccountSendingEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSendingEnabledResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::GetIdentityDkimAttributesRequest&, const Model::GetIdentityDkimAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityDkimAttributesResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::GetIdentityMailFromDomainAttributesRequest&, const Model::GetIdentityMailFromDomainAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityMailFromDomainAttributesResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::GetIdentityNotificationAttributesRequest&, const Model::GetIdentityNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityNotificationAttributesResponseReceivedHandler;
@@ -364,7 +378,10 @@ namespace Model
     typedef std::function<void(const SESClient*, const Model::SetIdentityNotificationTopicRequest&, const Model::SetIdentityNotificationTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityNotificationTopicResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetReceiptRulePositionRequest&, const Model::SetReceiptRulePositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetReceiptRulePositionResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::TestRenderTemplateRequest&, const Model::TestRenderTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestRenderTemplateResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::UpdateAccountSendingEnabledRequest&, const Model::UpdateAccountSendingEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountSendingEnabledResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::UpdateConfigurationSetEventDestinationRequest&, const Model::UpdateConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationSetEventDestinationResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::UpdateConfigurationSetReputationMetricsEnabledRequest&, const Model::UpdateConfigurationSetReputationMetricsEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationSetReputationMetricsEnabledResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::UpdateConfigurationSetSendingEnabledRequest&, const Model::UpdateConfigurationSetSendingEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationSetSendingEnabledResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::UpdateConfigurationSetTrackingOptionsRequest&, const Model::UpdateConfigurationSetTrackingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationSetTrackingOptionsResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::UpdateReceiptRuleRequest&, const Model::UpdateReceiptRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReceiptRuleResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::UpdateTemplateRequest&, const Model::UpdateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateResponseReceivedHandler;
@@ -1291,6 +1308,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeReceiptRuleSetAsync(const Model::DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the email sending status of the Amazon SES account.</p> <p>You can
+         * execute this operation no more than once per second.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountSendingEnabledOutcome GetAccountSendingEnabled(const Model::GetAccountSendingEnabledRequest& request) const;
+
+        /**
+         * <p>Returns the email sending status of the Amazon SES account.</p> <p>You can
+         * execute this operation no more than once per second.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccountSendingEnabledOutcomeCallable GetAccountSendingEnabledCallable(const Model::GetAccountSendingEnabledRequest& request) const;
+
+        /**
+         * <p>Returns the email sending status of the Amazon SES account.</p> <p>You can
+         * execute this operation no more than once per second.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccountSendingEnabledAsync(const Model::GetAccountSendingEnabledRequest& request, const GetAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current status of Easy DKIM signing for an entity. For domain
@@ -2949,6 +2997,46 @@ namespace Model
         virtual void TestRenderTemplateAsync(const Model::TestRenderTemplateRequest& request, const TestRenderTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables or disables email sending across your entire Amazon SES account. You
+         * can use this operation in conjunction with Amazon CloudWatch alarms to
+         * temporarily pause email sending across your Amazon SES account when reputation
+         * metrics (such as your bounce on complaint rate) reach certain thresholds.</p>
+         * <p>You can execute this operation no more than once per second.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAccountSendingEnabledOutcome UpdateAccountSendingEnabled(const Model::UpdateAccountSendingEnabledRequest& request) const;
+
+        /**
+         * <p>Enables or disables email sending across your entire Amazon SES account. You
+         * can use this operation in conjunction with Amazon CloudWatch alarms to
+         * temporarily pause email sending across your Amazon SES account when reputation
+         * metrics (such as your bounce on complaint rate) reach certain thresholds.</p>
+         * <p>You can execute this operation no more than once per second.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAccountSendingEnabledOutcomeCallable UpdateAccountSendingEnabledCallable(const Model::UpdateAccountSendingEnabledRequest& request) const;
+
+        /**
+         * <p>Enables or disables email sending across your entire Amazon SES account. You
+         * can use this operation in conjunction with Amazon CloudWatch alarms to
+         * temporarily pause email sending across your Amazon SES account when reputation
+         * metrics (such as your bounce on complaint rate) reach certain thresholds.</p>
+         * <p>You can execute this operation no more than once per second.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAccountSendingEnabledAsync(const Model::UpdateAccountSendingEnabledRequest& request, const UpdateAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the event destination of a configuration set. Event destinations are
          * associated with configuration sets, which enable you to publish email sending
          * events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
@@ -3005,6 +3093,86 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateConfigurationSetEventDestinationAsync(const Model::UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enables or disables the publishing of reputation metrics for emails sent
+         * using a specific configuration set. Reputation metrics include bounce and
+         * complaint rates. These metrics are published to Amazon CloudWatch. By using
+         * Amazon CloudWatch, you can create alarms when bounce or complaint rates exceed a
+         * certain threshold.</p> <p>You can execute this operation no more than once per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConfigurationSetReputationMetricsEnabledOutcome UpdateConfigurationSetReputationMetricsEnabled(const Model::UpdateConfigurationSetReputationMetricsEnabledRequest& request) const;
+
+        /**
+         * <p>Enables or disables the publishing of reputation metrics for emails sent
+         * using a specific configuration set. Reputation metrics include bounce and
+         * complaint rates. These metrics are published to Amazon CloudWatch. By using
+         * Amazon CloudWatch, you can create alarms when bounce or complaint rates exceed a
+         * certain threshold.</p> <p>You can execute this operation no more than once per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateConfigurationSetReputationMetricsEnabledOutcomeCallable UpdateConfigurationSetReputationMetricsEnabledCallable(const Model::UpdateConfigurationSetReputationMetricsEnabledRequest& request) const;
+
+        /**
+         * <p>Enables or disables the publishing of reputation metrics for emails sent
+         * using a specific configuration set. Reputation metrics include bounce and
+         * complaint rates. These metrics are published to Amazon CloudWatch. By using
+         * Amazon CloudWatch, you can create alarms when bounce or complaint rates exceed a
+         * certain threshold.</p> <p>You can execute this operation no more than once per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateConfigurationSetReputationMetricsEnabledAsync(const Model::UpdateConfigurationSetReputationMetricsEnabledRequest& request, const UpdateConfigurationSetReputationMetricsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enables or disables email sending for messages sent using a specific
+         * configuration set. You can use this operation in conjunction with Amazon
+         * CloudWatch alarms to temporarily pause email sending for a configuration set
+         * when the reputation metrics for that configuration set (such as your bounce on
+         * complaint rate) reach certain thresholds.</p> <p>You can execute this operation
+         * no more than once per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConfigurationSetSendingEnabledOutcome UpdateConfigurationSetSendingEnabled(const Model::UpdateConfigurationSetSendingEnabledRequest& request) const;
+
+        /**
+         * <p>Enables or disables email sending for messages sent using a specific
+         * configuration set. You can use this operation in conjunction with Amazon
+         * CloudWatch alarms to temporarily pause email sending for a configuration set
+         * when the reputation metrics for that configuration set (such as your bounce on
+         * complaint rate) reach certain thresholds.</p> <p>You can execute this operation
+         * no more than once per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateConfigurationSetSendingEnabledOutcomeCallable UpdateConfigurationSetSendingEnabledCallable(const Model::UpdateConfigurationSetSendingEnabledRequest& request) const;
+
+        /**
+         * <p>Enables or disables email sending for messages sent using a specific
+         * configuration set. You can use this operation in conjunction with Amazon
+         * CloudWatch alarms to temporarily pause email sending for a configuration set
+         * when the reputation metrics for that configuration set (such as your bounce on
+         * complaint rate) reach certain thresholds.</p> <p>You can execute this operation
+         * no more than once per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateConfigurationSetSendingEnabledAsync(const Model::UpdateConfigurationSetSendingEnabledRequest& request, const UpdateConfigurationSetSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an association between a configuration set and a custom domain for
@@ -3319,6 +3487,7 @@ namespace Model
         void DescribeConfigurationSetAsyncHelper(const Model::DescribeConfigurationSetRequest& request, const DescribeConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReceiptRuleAsyncHelper(const Model::DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReceiptRuleSetAsyncHelper(const Model::DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccountSendingEnabledAsyncHelper(const Model::GetAccountSendingEnabledRequest& request, const GetAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityDkimAttributesAsyncHelper(const Model::GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityMailFromDomainAttributesAsyncHelper(const Model::GetIdentityMailFromDomainAttributesRequest& request, const GetIdentityMailFromDomainAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityNotificationAttributesAsyncHelper(const Model::GetIdentityNotificationAttributesRequest& request, const GetIdentityNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3349,7 +3518,10 @@ namespace Model
         void SetIdentityNotificationTopicAsyncHelper(const Model::SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetReceiptRulePositionAsyncHelper(const Model::SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestRenderTemplateAsyncHelper(const Model::TestRenderTemplateRequest& request, const TestRenderTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAccountSendingEnabledAsyncHelper(const Model::UpdateAccountSendingEnabledRequest& request, const UpdateAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConfigurationSetEventDestinationAsyncHelper(const Model::UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateConfigurationSetReputationMetricsEnabledAsyncHelper(const Model::UpdateConfigurationSetReputationMetricsEnabledRequest& request, const UpdateConfigurationSetReputationMetricsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateConfigurationSetSendingEnabledAsyncHelper(const Model::UpdateConfigurationSetSendingEnabledRequest& request, const UpdateConfigurationSetSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConfigurationSetTrackingOptionsAsyncHelper(const Model::UpdateConfigurationSetTrackingOptionsRequest& request, const UpdateConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateReceiptRuleAsyncHelper(const Model::UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTemplateAsyncHelper(const Model::UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

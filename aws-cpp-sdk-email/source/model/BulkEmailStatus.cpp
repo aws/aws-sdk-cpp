@@ -39,6 +39,8 @@ namespace Aws
         static const int AccountThrottled_HASH = HashingUtils::HashString("AccountThrottled");
         static const int AccountDailyQuotaExceeded_HASH = HashingUtils::HashString("AccountDailyQuotaExceeded");
         static const int InvalidSendingPoolName_HASH = HashingUtils::HashString("InvalidSendingPoolName");
+        static const int AccountSendingPaused_HASH = HashingUtils::HashString("AccountSendingPaused");
+        static const int ConfigurationSetSendingPaused_HASH = HashingUtils::HashString("ConfigurationSetSendingPaused");
         static const int InvalidParameterValue_HASH = HashingUtils::HashString("InvalidParameterValue");
         static const int TransientFailure_HASH = HashingUtils::HashString("TransientFailure");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
@@ -82,6 +84,14 @@ namespace Aws
           else if (hashCode == InvalidSendingPoolName_HASH)
           {
             return BulkEmailStatus::InvalidSendingPoolName;
+          }
+          else if (hashCode == AccountSendingPaused_HASH)
+          {
+            return BulkEmailStatus::AccountSendingPaused;
+          }
+          else if (hashCode == ConfigurationSetSendingPaused_HASH)
+          {
+            return BulkEmailStatus::ConfigurationSetSendingPaused;
           }
           else if (hashCode == InvalidParameterValue_HASH)
           {
@@ -127,6 +137,10 @@ namespace Aws
             return "AccountDailyQuotaExceeded";
           case BulkEmailStatus::InvalidSendingPoolName:
             return "InvalidSendingPoolName";
+          case BulkEmailStatus::AccountSendingPaused:
+            return "AccountSendingPaused";
+          case BulkEmailStatus::ConfigurationSetSendingPaused:
+            return "ConfigurationSetSendingPaused";
           case BulkEmailStatus::InvalidParameterValue:
             return "InvalidParameterValue";
           case BulkEmailStatus::TransientFailure:

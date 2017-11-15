@@ -44,6 +44,7 @@ namespace Aws
         static const int fr_FR_HASH = HashingUtils::HashString("fr-FR");
         static const int is_IS_HASH = HashingUtils::HashString("is-IS");
         static const int it_IT_HASH = HashingUtils::HashString("it-IT");
+        static const int ko_KR_HASH = HashingUtils::HashString("ko-KR");
         static const int ja_JP_HASH = HashingUtils::HashString("ja-JP");
         static const int nb_NO_HASH = HashingUtils::HashString("nb-NO");
         static const int nl_NL_HASH = HashingUtils::HashString("nl-NL");
@@ -114,6 +115,10 @@ namespace Aws
           else if (hashCode == it_IT_HASH)
           {
             return LanguageCode::it_IT;
+          }
+          else if (hashCode == ko_KR_HASH)
+          {
+            return LanguageCode::ko_KR;
           }
           else if (hashCode == ja_JP_HASH)
           {
@@ -197,6 +202,8 @@ namespace Aws
             return "is-IS";
           case LanguageCode::it_IT:
             return "it-IT";
+          case LanguageCode::ko_KR:
+            return "ko-KR";
           case LanguageCode::ja_JP:
             return "ja-JP";
           case LanguageCode::nb_NO:

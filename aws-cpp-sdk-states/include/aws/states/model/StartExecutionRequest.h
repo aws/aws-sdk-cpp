@@ -85,7 +85,17 @@ namespace Model
      * region for 90 days. For more information, see <a
      * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * Developer Guide</i>.</p> <important> <p>An execution can't use the name of
+     * another execution for 90 days.</p> <p>When you make multiple
+     * <code>StartExecution</code> calls with the same name, the new execution doesn't
+     * run and the following rules apply:</p> <ul> <li> <p>When the original execution
+     * is open and the execution input from the new call is <i>different</i>, the
+     * <code>ExecutionAlreadyExists</code> message is returned.</p> </li> <li> <p>When
+     * the original execution is open and the execution input from the new call is
+     * <i>identical</i>, the <code>Success</code> message is returned.</p> </li> <li>
+     * <p>When the original execution is closed, the
+     * <code>ExecutionAlreadyExists</code> message is returned regardless of input.</p>
+     * </li> </ul> </important> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
@@ -99,7 +109,17 @@ namespace Model
      * region for 90 days. For more information, see <a
      * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * Developer Guide</i>.</p> <important> <p>An execution can't use the name of
+     * another execution for 90 days.</p> <p>When you make multiple
+     * <code>StartExecution</code> calls with the same name, the new execution doesn't
+     * run and the following rules apply:</p> <ul> <li> <p>When the original execution
+     * is open and the execution input from the new call is <i>different</i>, the
+     * <code>ExecutionAlreadyExists</code> message is returned.</p> </li> <li> <p>When
+     * the original execution is open and the execution input from the new call is
+     * <i>identical</i>, the <code>Success</code> message is returned.</p> </li> <li>
+     * <p>When the original execution is closed, the
+     * <code>ExecutionAlreadyExists</code> message is returned regardless of input.</p>
+     * </li> </ul> </important> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
@@ -113,7 +133,17 @@ namespace Model
      * region for 90 days. For more information, see <a
      * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * Developer Guide</i>.</p> <important> <p>An execution can't use the name of
+     * another execution for 90 days.</p> <p>When you make multiple
+     * <code>StartExecution</code> calls with the same name, the new execution doesn't
+     * run and the following rules apply:</p> <ul> <li> <p>When the original execution
+     * is open and the execution input from the new call is <i>different</i>, the
+     * <code>ExecutionAlreadyExists</code> message is returned.</p> </li> <li> <p>When
+     * the original execution is open and the execution input from the new call is
+     * <i>identical</i>, the <code>Success</code> message is returned.</p> </li> <li>
+     * <p>When the original execution is closed, the
+     * <code>ExecutionAlreadyExists</code> message is returned regardless of input.</p>
+     * </li> </ul> </important> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
@@ -127,7 +157,17 @@ namespace Model
      * region for 90 days. For more information, see <a
      * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * Developer Guide</i>.</p> <important> <p>An execution can't use the name of
+     * another execution for 90 days.</p> <p>When you make multiple
+     * <code>StartExecution</code> calls with the same name, the new execution doesn't
+     * run and the following rules apply:</p> <ul> <li> <p>When the original execution
+     * is open and the execution input from the new call is <i>different</i>, the
+     * <code>ExecutionAlreadyExists</code> message is returned.</p> </li> <li> <p>When
+     * the original execution is open and the execution input from the new call is
+     * <i>identical</i>, the <code>Success</code> message is returned.</p> </li> <li>
+     * <p>When the original execution is closed, the
+     * <code>ExecutionAlreadyExists</code> message is returned regardless of input.</p>
+     * </li> </ul> </important> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
@@ -141,7 +181,17 @@ namespace Model
      * region for 90 days. For more information, see <a
      * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * Developer Guide</i>.</p> <important> <p>An execution can't use the name of
+     * another execution for 90 days.</p> <p>When you make multiple
+     * <code>StartExecution</code> calls with the same name, the new execution doesn't
+     * run and the following rules apply:</p> <ul> <li> <p>When the original execution
+     * is open and the execution input from the new call is <i>different</i>, the
+     * <code>ExecutionAlreadyExists</code> message is returned.</p> </li> <li> <p>When
+     * the original execution is open and the execution input from the new call is
+     * <i>identical</i>, the <code>Success</code> message is returned.</p> </li> <li>
+     * <p>When the original execution is closed, the
+     * <code>ExecutionAlreadyExists</code> message is returned regardless of input.</p>
+     * </li> </ul> </important> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
@@ -155,7 +205,17 @@ namespace Model
      * region for 90 days. For more information, see <a
      * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * Developer Guide</i>.</p> <important> <p>An execution can't use the name of
+     * another execution for 90 days.</p> <p>When you make multiple
+     * <code>StartExecution</code> calls with the same name, the new execution doesn't
+     * run and the following rules apply:</p> <ul> <li> <p>When the original execution
+     * is open and the execution input from the new call is <i>different</i>, the
+     * <code>ExecutionAlreadyExists</code> message is returned.</p> </li> <li> <p>When
+     * the original execution is open and the execution input from the new call is
+     * <i>identical</i>, the <code>Success</code> message is returned.</p> </li> <li>
+     * <p>When the original execution is closed, the
+     * <code>ExecutionAlreadyExists</code> message is returned regardless of input.</p>
+     * </li> </ul> </important> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
@@ -169,7 +229,17 @@ namespace Model
      * region for 90 days. For more information, see <a
      * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * Developer Guide</i>.</p> <important> <p>An execution can't use the name of
+     * another execution for 90 days.</p> <p>When you make multiple
+     * <code>StartExecution</code> calls with the same name, the new execution doesn't
+     * run and the following rules apply:</p> <ul> <li> <p>When the original execution
+     * is open and the execution input from the new call is <i>different</i>, the
+     * <code>ExecutionAlreadyExists</code> message is returned.</p> </li> <li> <p>When
+     * the original execution is open and the execution input from the new call is
+     * <i>identical</i>, the <code>Success</code> message is returned.</p> </li> <li>
+     * <p>When the original execution is closed, the
+     * <code>ExecutionAlreadyExists</code> message is returned regardless of input.</p>
+     * </li> </ul> </important> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>

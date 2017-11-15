@@ -49,6 +49,7 @@
 #include <aws/email/model/DescribeConfigurationSetRequest.h>
 #include <aws/email/model/DescribeReceiptRuleRequest.h>
 #include <aws/email/model/DescribeReceiptRuleSetRequest.h>
+#include <aws/email/model/GetAccountSendingEnabledRequest.h>
 #include <aws/email/model/GetIdentityDkimAttributesRequest.h>
 #include <aws/email/model/GetIdentityMailFromDomainAttributesRequest.h>
 #include <aws/email/model/GetIdentityNotificationAttributesRequest.h>
@@ -79,7 +80,10 @@
 #include <aws/email/model/SetIdentityNotificationTopicRequest.h>
 #include <aws/email/model/SetReceiptRulePositionRequest.h>
 #include <aws/email/model/TestRenderTemplateRequest.h>
+#include <aws/email/model/UpdateAccountSendingEnabledRequest.h>
 #include <aws/email/model/UpdateConfigurationSetEventDestinationRequest.h>
+#include <aws/email/model/UpdateConfigurationSetReputationMetricsEnabledRequest.h>
+#include <aws/email/model/UpdateConfigurationSetSendingEnabledRequest.h>
 #include <aws/email/model/UpdateConfigurationSetTrackingOptionsRequest.h>
 #include <aws/email/model/UpdateReceiptRuleRequest.h>
 #include <aws/email/model/UpdateTemplateRequest.h>
@@ -931,6 +935,41 @@ void SESClient::DescribeReceiptRuleSetAsync(const DescribeReceiptRuleSetRequest&
 void SESClient::DescribeReceiptRuleSetAsyncHelper(const DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeReceiptRuleSet(request), context);
+}
+
+GetAccountSendingEnabledOutcome SESClient::GetAccountSendingEnabled(const GetAccountSendingEnabledRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetAccountSendingEnabledOutcome(GetAccountSendingEnabledResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAccountSendingEnabledOutcome(outcome.GetError());
+  }
+}
+
+GetAccountSendingEnabledOutcomeCallable SESClient::GetAccountSendingEnabledCallable(const GetAccountSendingEnabledRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccountSendingEnabledOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccountSendingEnabled(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::GetAccountSendingEnabledAsync(const GetAccountSendingEnabledRequest& request, const GetAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccountSendingEnabledAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::GetAccountSendingEnabledAsyncHelper(const GetAccountSendingEnabledRequest& request, const GetAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAccountSendingEnabled(request), context);
 }
 
 GetIdentityDkimAttributesOutcome SESClient::GetIdentityDkimAttributes(const GetIdentityDkimAttributesRequest& request) const
@@ -1983,6 +2022,41 @@ void SESClient::TestRenderTemplateAsyncHelper(const TestRenderTemplateRequest& r
   handler(this, request, TestRenderTemplate(request), context);
 }
 
+UpdateAccountSendingEnabledOutcome SESClient::UpdateAccountSendingEnabled(const UpdateAccountSendingEnabledRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateAccountSendingEnabledOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateAccountSendingEnabledOutcome(outcome.GetError());
+  }
+}
+
+UpdateAccountSendingEnabledOutcomeCallable SESClient::UpdateAccountSendingEnabledCallable(const UpdateAccountSendingEnabledRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAccountSendingEnabledOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAccountSendingEnabled(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::UpdateAccountSendingEnabledAsync(const UpdateAccountSendingEnabledRequest& request, const UpdateAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccountSendingEnabledAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::UpdateAccountSendingEnabledAsyncHelper(const UpdateAccountSendingEnabledRequest& request, const UpdateAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAccountSendingEnabled(request), context);
+}
+
 UpdateConfigurationSetEventDestinationOutcome SESClient::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
 {
   Aws::StringStream ss;
@@ -2016,6 +2090,76 @@ void SESClient::UpdateConfigurationSetEventDestinationAsync(const UpdateConfigur
 void SESClient::UpdateConfigurationSetEventDestinationAsyncHelper(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateConfigurationSetEventDestination(request), context);
+}
+
+UpdateConfigurationSetReputationMetricsEnabledOutcome SESClient::UpdateConfigurationSetReputationMetricsEnabled(const UpdateConfigurationSetReputationMetricsEnabledRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateConfigurationSetReputationMetricsEnabledOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateConfigurationSetReputationMetricsEnabledOutcome(outcome.GetError());
+  }
+}
+
+UpdateConfigurationSetReputationMetricsEnabledOutcomeCallable SESClient::UpdateConfigurationSetReputationMetricsEnabledCallable(const UpdateConfigurationSetReputationMetricsEnabledRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigurationSetReputationMetricsEnabledOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConfigurationSetReputationMetricsEnabled(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::UpdateConfigurationSetReputationMetricsEnabledAsync(const UpdateConfigurationSetReputationMetricsEnabledRequest& request, const UpdateConfigurationSetReputationMetricsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationSetReputationMetricsEnabledAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::UpdateConfigurationSetReputationMetricsEnabledAsyncHelper(const UpdateConfigurationSetReputationMetricsEnabledRequest& request, const UpdateConfigurationSetReputationMetricsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConfigurationSetReputationMetricsEnabled(request), context);
+}
+
+UpdateConfigurationSetSendingEnabledOutcome SESClient::UpdateConfigurationSetSendingEnabled(const UpdateConfigurationSetSendingEnabledRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateConfigurationSetSendingEnabledOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateConfigurationSetSendingEnabledOutcome(outcome.GetError());
+  }
+}
+
+UpdateConfigurationSetSendingEnabledOutcomeCallable SESClient::UpdateConfigurationSetSendingEnabledCallable(const UpdateConfigurationSetSendingEnabledRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigurationSetSendingEnabledOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConfigurationSetSendingEnabled(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::UpdateConfigurationSetSendingEnabledAsync(const UpdateConfigurationSetSendingEnabledRequest& request, const UpdateConfigurationSetSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationSetSendingEnabledAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::UpdateConfigurationSetSendingEnabledAsyncHelper(const UpdateConfigurationSetSendingEnabledRequest& request, const UpdateConfigurationSetSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConfigurationSetSendingEnabled(request), context);
 }
 
 UpdateConfigurationSetTrackingOptionsOutcome SESClient::UpdateConfigurationSetTrackingOptions(const UpdateConfigurationSetTrackingOptionsRequest& request) const

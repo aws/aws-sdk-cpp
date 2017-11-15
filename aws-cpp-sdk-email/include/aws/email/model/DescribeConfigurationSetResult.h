@@ -18,6 +18,7 @@
 #include <aws/email/model/ConfigurationSet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/TrackingOptions.h>
+#include <aws/email/model/ReputationOptions.h>
 #include <aws/email/model/ResponseMetadata.h>
 #include <aws/email/model/EventDestination.h>
 #include <utility>
@@ -153,6 +154,37 @@ namespace Model
     inline DescribeConfigurationSetResult& WithTrackingOptions(TrackingOptions&& value) { SetTrackingOptions(std::move(value)); return *this;}
 
 
+    /**
+     * <p>An object that represents the reputation settings for the configuration set.
+     * </p>
+     */
+    inline const ReputationOptions& GetReputationOptions() const{ return m_reputationOptions; }
+
+    /**
+     * <p>An object that represents the reputation settings for the configuration set.
+     * </p>
+     */
+    inline void SetReputationOptions(const ReputationOptions& value) { m_reputationOptions = value; }
+
+    /**
+     * <p>An object that represents the reputation settings for the configuration set.
+     * </p>
+     */
+    inline void SetReputationOptions(ReputationOptions&& value) { m_reputationOptions = std::move(value); }
+
+    /**
+     * <p>An object that represents the reputation settings for the configuration set.
+     * </p>
+     */
+    inline DescribeConfigurationSetResult& WithReputationOptions(const ReputationOptions& value) { SetReputationOptions(value); return *this;}
+
+    /**
+     * <p>An object that represents the reputation settings for the configuration set.
+     * </p>
+     */
+    inline DescribeConfigurationSetResult& WithReputationOptions(ReputationOptions&& value) { SetReputationOptions(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -175,6 +207,8 @@ namespace Model
     Aws::Vector<EventDestination> m_eventDestinations;
 
     TrackingOptions m_trackingOptions;
+
+    ReputationOptions m_reputationOptions;
 
     ResponseMetadata m_responseMetadata;
   };

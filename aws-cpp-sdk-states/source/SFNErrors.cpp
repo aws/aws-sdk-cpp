@@ -28,6 +28,7 @@ namespace SFN
 namespace SFNErrorMapper
 {
 
+static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingRequiredParameter");
 static const int EXECUTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ExecutionLimitExceeded");
 static const int TASK_TIMED_OUT_HASH = HashingUtils::HashString("TaskTimedOut");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArn");
@@ -52,7 +53,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == EXECUTION_LIMIT_EXCEEDED_HASH)
+  if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::MISSING_REQUIRED_PARAMETER), false);
+  }
+  else if (hashCode == EXECUTION_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::EXECUTION_LIMIT_EXCEEDED), false);
   }

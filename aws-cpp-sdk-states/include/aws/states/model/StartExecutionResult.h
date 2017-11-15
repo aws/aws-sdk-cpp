@@ -80,27 +80,27 @@ namespace Model
 
 
     /**
-     * <p>The date the execution was started.</p>
+     * <p>The date the execution is started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
 
     /**
-     * <p>The date the execution was started.</p>
+     * <p>The date the execution is started.</p>
      */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDate = value; }
 
     /**
-     * <p>The date the execution was started.</p>
+     * <p>The date the execution is started.</p>
      */
     inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDate = std::move(value); }
 
     /**
-     * <p>The date the execution was started.</p>
+     * <p>The date the execution is started.</p>
      */
     inline StartExecutionResult& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
 
     /**
-     * <p>The date the execution was started.</p>
+     * <p>The date the execution is started.</p>
      */
     inline StartExecutionResult& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 

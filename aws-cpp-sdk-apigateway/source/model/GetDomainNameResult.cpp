@@ -68,6 +68,12 @@ GetDomainNameResult& GetDomainNameResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("regionalHostedZoneId"))
+  {
+    m_regionalHostedZoneId = jsonValue.GetString("regionalHostedZoneId");
+
+  }
+
   if(jsonValue.ValueExists("regionalCertificateName"))
   {
     m_regionalCertificateName = jsonValue.GetString("regionalCertificateName");
@@ -83,6 +89,12 @@ GetDomainNameResult& GetDomainNameResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("distributionDomainName"))
   {
     m_distributionDomainName = jsonValue.GetString("distributionDomainName");
+
+  }
+
+  if(jsonValue.ValueExists("distributionHostedZoneId"))
+  {
+    m_distributionHostedZoneId = jsonValue.GetString("distributionHostedZoneId");
 
   }
 

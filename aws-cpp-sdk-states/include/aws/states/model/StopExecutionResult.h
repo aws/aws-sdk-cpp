@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The date the execution was stopped.</p>
+     * <p>The date the execution is stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetStopDate() const{ return m_stopDate; }
 
     /**
-     * <p>The date the execution was stopped.</p>
+     * <p>The date the execution is stopped.</p>
      */
     inline void SetStopDate(const Aws::Utils::DateTime& value) { m_stopDate = value; }
 
     /**
-     * <p>The date the execution was stopped.</p>
+     * <p>The date the execution is stopped.</p>
      */
     inline void SetStopDate(Aws::Utils::DateTime&& value) { m_stopDate = std::move(value); }
 
     /**
-     * <p>The date the execution was stopped.</p>
+     * <p>The date the execution is stopped.</p>
      */
     inline StopExecutionResult& WithStopDate(const Aws::Utils::DateTime& value) { SetStopDate(value); return *this;}
 
     /**
-     * <p>The date the execution was stopped.</p>
+     * <p>The date the execution is stopped.</p>
      */
     inline StopExecutionResult& WithStopDate(Aws::Utils::DateTime&& value) { SetStopDate(std::move(value)); return *this;}
 

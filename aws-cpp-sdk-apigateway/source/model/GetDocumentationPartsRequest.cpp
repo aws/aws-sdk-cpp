@@ -33,7 +33,9 @@ GetDocumentationPartsRequest::GetDocumentationPartsRequest() :
     m_pathHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_locationStatus(LocationStatusType::NOT_SET),
+    m_locationStatusHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,13 @@ void GetDocumentationPartsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_limit;
       uri.AddQueryStringParameter("limit", ss.str());
+      ss.str("");
+    }
+
+    if(m_locationStatusHasBeenSet)
+    {
+      ss << LocationStatusTypeMapper::GetNameForLocationStatusType(m_locationStatus);
+      uri.AddQueryStringParameter("locationStatus", ss.str());
       ss.str("");
     }
 

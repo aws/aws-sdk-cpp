@@ -69,12 +69,17 @@ namespace Model
      * exceeded the maximum number of emails you can send from your account in a
      * 24-hour period.</p> </li> <li> <p> <code>InvalidSendingPoolName</code>: The
      * configuration set you specified refers to an IP pool that does not exist.</p>
-     * </li> <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters
-     * you specified when calling this operation was invalid. See the error message for
-     * additional information.</p> </li> <li> <p> <code>TransientFailure</code>: Amazon
-     * SES was unable to process your request because of a temporary issue.</p> </li>
-     * <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See
-     * the error message for additional information.</p> </li> </ul>
+     * </li> <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon
+     * SES account was disabled using the <a>UpdateAccountSendingEnabled</a>
+     * operation.</p> </li> <li> <p> <code>ConfigurationSetSendingPaused</code>: Email
+     * sending for this configuration set was disabled using the
+     * <a>UpdateConfigurationSetSendingEnabled</a> operation.</p> </li> <li> <p>
+     * <code>InvalidParameterValue</code>: One or more of the parameters you specified
+     * when calling this operation was invalid. See the error message for additional
+     * information.</p> </li> <li> <p> <code>TransientFailure</code>: Amazon SES was
+     * unable to process your request because of a temporary issue.</p> </li> <li> <p>
+     * <code>Failed</code>: Amazon SES was unable to process your request. See the
+     * error message for additional information.</p> </li> </ul>
      */
     inline const BulkEmailStatus& GetStatus() const{ return m_status; }
 
@@ -96,12 +101,17 @@ namespace Model
      * exceeded the maximum number of emails you can send from your account in a
      * 24-hour period.</p> </li> <li> <p> <code>InvalidSendingPoolName</code>: The
      * configuration set you specified refers to an IP pool that does not exist.</p>
-     * </li> <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters
-     * you specified when calling this operation was invalid. See the error message for
-     * additional information.</p> </li> <li> <p> <code>TransientFailure</code>: Amazon
-     * SES was unable to process your request because of a temporary issue.</p> </li>
-     * <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See
-     * the error message for additional information.</p> </li> </ul>
+     * </li> <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon
+     * SES account was disabled using the <a>UpdateAccountSendingEnabled</a>
+     * operation.</p> </li> <li> <p> <code>ConfigurationSetSendingPaused</code>: Email
+     * sending for this configuration set was disabled using the
+     * <a>UpdateConfigurationSetSendingEnabled</a> operation.</p> </li> <li> <p>
+     * <code>InvalidParameterValue</code>: One or more of the parameters you specified
+     * when calling this operation was invalid. See the error message for additional
+     * information.</p> </li> <li> <p> <code>TransientFailure</code>: Amazon SES was
+     * unable to process your request because of a temporary issue.</p> </li> <li> <p>
+     * <code>Failed</code>: Amazon SES was unable to process your request. See the
+     * error message for additional information.</p> </li> </ul>
      */
     inline void SetStatus(const BulkEmailStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -123,12 +133,17 @@ namespace Model
      * exceeded the maximum number of emails you can send from your account in a
      * 24-hour period.</p> </li> <li> <p> <code>InvalidSendingPoolName</code>: The
      * configuration set you specified refers to an IP pool that does not exist.</p>
-     * </li> <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters
-     * you specified when calling this operation was invalid. See the error message for
-     * additional information.</p> </li> <li> <p> <code>TransientFailure</code>: Amazon
-     * SES was unable to process your request because of a temporary issue.</p> </li>
-     * <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See
-     * the error message for additional information.</p> </li> </ul>
+     * </li> <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon
+     * SES account was disabled using the <a>UpdateAccountSendingEnabled</a>
+     * operation.</p> </li> <li> <p> <code>ConfigurationSetSendingPaused</code>: Email
+     * sending for this configuration set was disabled using the
+     * <a>UpdateConfigurationSetSendingEnabled</a> operation.</p> </li> <li> <p>
+     * <code>InvalidParameterValue</code>: One or more of the parameters you specified
+     * when calling this operation was invalid. See the error message for additional
+     * information.</p> </li> <li> <p> <code>TransientFailure</code>: Amazon SES was
+     * unable to process your request because of a temporary issue.</p> </li> <li> <p>
+     * <code>Failed</code>: Amazon SES was unable to process your request. See the
+     * error message for additional information.</p> </li> </ul>
      */
     inline void SetStatus(BulkEmailStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -150,12 +165,17 @@ namespace Model
      * exceeded the maximum number of emails you can send from your account in a
      * 24-hour period.</p> </li> <li> <p> <code>InvalidSendingPoolName</code>: The
      * configuration set you specified refers to an IP pool that does not exist.</p>
-     * </li> <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters
-     * you specified when calling this operation was invalid. See the error message for
-     * additional information.</p> </li> <li> <p> <code>TransientFailure</code>: Amazon
-     * SES was unable to process your request because of a temporary issue.</p> </li>
-     * <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See
-     * the error message for additional information.</p> </li> </ul>
+     * </li> <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon
+     * SES account was disabled using the <a>UpdateAccountSendingEnabled</a>
+     * operation.</p> </li> <li> <p> <code>ConfigurationSetSendingPaused</code>: Email
+     * sending for this configuration set was disabled using the
+     * <a>UpdateConfigurationSetSendingEnabled</a> operation.</p> </li> <li> <p>
+     * <code>InvalidParameterValue</code>: One or more of the parameters you specified
+     * when calling this operation was invalid. See the error message for additional
+     * information.</p> </li> <li> <p> <code>TransientFailure</code>: Amazon SES was
+     * unable to process your request because of a temporary issue.</p> </li> <li> <p>
+     * <code>Failed</code>: Amazon SES was unable to process your request. See the
+     * error message for additional information.</p> </li> </ul>
      */
     inline BulkEmailDestinationStatus& WithStatus(const BulkEmailStatus& value) { SetStatus(value); return *this;}
 
@@ -177,12 +197,17 @@ namespace Model
      * exceeded the maximum number of emails you can send from your account in a
      * 24-hour period.</p> </li> <li> <p> <code>InvalidSendingPoolName</code>: The
      * configuration set you specified refers to an IP pool that does not exist.</p>
-     * </li> <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters
-     * you specified when calling this operation was invalid. See the error message for
-     * additional information.</p> </li> <li> <p> <code>TransientFailure</code>: Amazon
-     * SES was unable to process your request because of a temporary issue.</p> </li>
-     * <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See
-     * the error message for additional information.</p> </li> </ul>
+     * </li> <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon
+     * SES account was disabled using the <a>UpdateAccountSendingEnabled</a>
+     * operation.</p> </li> <li> <p> <code>ConfigurationSetSendingPaused</code>: Email
+     * sending for this configuration set was disabled using the
+     * <a>UpdateConfigurationSetSendingEnabled</a> operation.</p> </li> <li> <p>
+     * <code>InvalidParameterValue</code>: One or more of the parameters you specified
+     * when calling this operation was invalid. See the error message for additional
+     * information.</p> </li> <li> <p> <code>TransientFailure</code>: Amazon SES was
+     * unable to process your request because of a temporary issue.</p> </li> <li> <p>
+     * <code>Failed</code>: Amazon SES was unable to process your request. See the
+     * error message for additional information.</p> </li> </ul>
      */
     inline BulkEmailDestinationStatus& WithStatus(BulkEmailStatus&& value) { SetStatus(std::move(value)); return *this;}
 
