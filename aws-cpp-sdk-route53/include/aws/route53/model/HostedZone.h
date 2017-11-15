@@ -17,6 +17,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/HostedZoneConfig.h>
+#include <aws/route53/model/LinkedService.h>
 #include <utility>
 
 namespace Aws
@@ -260,6 +261,42 @@ namespace Model
      */
     inline HostedZone& WithResourceRecordSetCount(long long value) { SetResourceRecordSetCount(value); return *this;}
 
+
+    /**
+     * <p>If the hosted zone was created by another service, the service that created
+     * the hosted zone. When a hosted zone is created by another service, you can't
+     * edit or delete it using Amazon Route 53. </p>
+     */
+    inline const LinkedService& GetLinkedService() const{ return m_linkedService; }
+
+    /**
+     * <p>If the hosted zone was created by another service, the service that created
+     * the hosted zone. When a hosted zone is created by another service, you can't
+     * edit or delete it using Amazon Route 53. </p>
+     */
+    inline void SetLinkedService(const LinkedService& value) { m_linkedServiceHasBeenSet = true; m_linkedService = value; }
+
+    /**
+     * <p>If the hosted zone was created by another service, the service that created
+     * the hosted zone. When a hosted zone is created by another service, you can't
+     * edit or delete it using Amazon Route 53. </p>
+     */
+    inline void SetLinkedService(LinkedService&& value) { m_linkedServiceHasBeenSet = true; m_linkedService = std::move(value); }
+
+    /**
+     * <p>If the hosted zone was created by another service, the service that created
+     * the hosted zone. When a hosted zone is created by another service, you can't
+     * edit or delete it using Amazon Route 53. </p>
+     */
+    inline HostedZone& WithLinkedService(const LinkedService& value) { SetLinkedService(value); return *this;}
+
+    /**
+     * <p>If the hosted zone was created by another service, the service that created
+     * the hosted zone. When a hosted zone is created by another service, you can't
+     * edit or delete it using Amazon Route 53. </p>
+     */
+    inline HostedZone& WithLinkedService(LinkedService&& value) { SetLinkedService(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -276,6 +313,9 @@ namespace Model
 
     long long m_resourceRecordSetCount;
     bool m_resourceRecordSetCountHasBeenSet;
+
+    LinkedService m_linkedService;
+    bool m_linkedServiceHasBeenSet;
   };
 
 } // namespace Model

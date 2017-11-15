@@ -47,7 +47,8 @@ Service::Service() :
     m_eventsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
-    m_placementStrategyHasBeenSet(false)
+    m_placementStrategyHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ Service::Service(const JsonValue& jsonValue) :
     m_eventsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
-    m_placementStrategyHasBeenSet(false)
+    m_placementStrategyHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -204,6 +206,13 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_placementStrategyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("networkConfiguration"))
+  {
+    m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
+
+    m_networkConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -328,6 +337,12 @@ JsonValue Service::Jsonize() const
      placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
    }
    payload.WithArray("placementStrategy", std::move(placementStrategyJsonList));
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
 
   }
 

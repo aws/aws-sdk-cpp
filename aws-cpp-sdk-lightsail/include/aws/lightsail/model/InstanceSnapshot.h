@@ -20,6 +20,8 @@
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
 #include <aws/lightsail/model/InstanceSnapshotState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/Disk.h>
 #include <utility>
 
 namespace Aws
@@ -89,43 +91,43 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -326,6 +328,49 @@ namespace Model
 
 
     /**
+     * <p>An array of disk objects containing information about all block storage
+     * disks.</p>
+     */
+    inline const Aws::Vector<Disk>& GetFromAttachedDisks() const{ return m_fromAttachedDisks; }
+
+    /**
+     * <p>An array of disk objects containing information about all block storage
+     * disks.</p>
+     */
+    inline void SetFromAttachedDisks(const Aws::Vector<Disk>& value) { m_fromAttachedDisksHasBeenSet = true; m_fromAttachedDisks = value; }
+
+    /**
+     * <p>An array of disk objects containing information about all block storage
+     * disks.</p>
+     */
+    inline void SetFromAttachedDisks(Aws::Vector<Disk>&& value) { m_fromAttachedDisksHasBeenSet = true; m_fromAttachedDisks = std::move(value); }
+
+    /**
+     * <p>An array of disk objects containing information about all block storage
+     * disks.</p>
+     */
+    inline InstanceSnapshot& WithFromAttachedDisks(const Aws::Vector<Disk>& value) { SetFromAttachedDisks(value); return *this;}
+
+    /**
+     * <p>An array of disk objects containing information about all block storage
+     * disks.</p>
+     */
+    inline InstanceSnapshot& WithFromAttachedDisks(Aws::Vector<Disk>&& value) { SetFromAttachedDisks(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of disk objects containing information about all block storage
+     * disks.</p>
+     */
+    inline InstanceSnapshot& AddFromAttachedDisks(const Disk& value) { m_fromAttachedDisksHasBeenSet = true; m_fromAttachedDisks.push_back(value); return *this; }
+
+    /**
+     * <p>An array of disk objects containing information about all block storage
+     * disks.</p>
+     */
+    inline InstanceSnapshot& AddFromAttachedDisks(Disk&& value) { m_fromAttachedDisksHasBeenSet = true; m_fromAttachedDisks.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The instance from which the snapshot was created.</p>
      */
     inline const Aws::String& GetFromInstanceName() const{ return m_fromInstanceName; }
@@ -364,49 +409,49 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
      * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetFromInstanceArn() const{ return m_fromInstanceArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
      * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline void SetFromInstanceArn(const Aws::String& value) { m_fromInstanceArnHasBeenSet = true; m_fromInstanceArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
      * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline void SetFromInstanceArn(Aws::String&& value) { m_fromInstanceArnHasBeenSet = true; m_fromInstanceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
      * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline void SetFromInstanceArn(const char* value) { m_fromInstanceArnHasBeenSet = true; m_fromInstanceArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
      * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithFromInstanceArn(const Aws::String& value) { SetFromInstanceArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
      * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithFromInstanceArn(Aws::String&& value) { SetFromInstanceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
      * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithFromInstanceArn(const char* value) { SetFromInstanceArn(value); return *this;}
 
@@ -544,6 +589,9 @@ namespace Model
 
     Aws::String m_progress;
     bool m_progressHasBeenSet;
+
+    Aws::Vector<Disk> m_fromAttachedDisks;
+    bool m_fromAttachedDisksHasBeenSet;
 
     Aws::String m_fromInstanceName;
     bool m_fromInstanceNameHasBeenSet;

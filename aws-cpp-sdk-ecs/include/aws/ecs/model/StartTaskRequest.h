@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/TaskOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/NetworkConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -410,6 +411,42 @@ namespace Model
      */
     inline StartTaskRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
 
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline StartTaskRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline StartTaskRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_cluster;
@@ -429,6 +466,9 @@ namespace Model
 
     Aws::String m_group;
     bool m_groupHasBeenSet;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet;
   };
 
 } // namespace Model

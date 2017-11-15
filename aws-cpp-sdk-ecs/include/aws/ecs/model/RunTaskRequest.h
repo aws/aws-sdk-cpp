@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/TaskOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <utility>
@@ -467,6 +468,57 @@ namespace Model
      */
     inline RunTaskRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The network configuration for the task. This parameter is required for task
+     * definitions that use the <code>awsvpc</code> network mode to receive their own
+     * Elastic Network Interface, and it is not supported for other network modes. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>The network configuration for the task. This parameter is required for task
+     * definitions that use the <code>awsvpc</code> network mode to receive their own
+     * Elastic Network Interface, and it is not supported for other network modes. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>The network configuration for the task. This parameter is required for task
+     * definitions that use the <code>awsvpc</code> network mode to receive their own
+     * Elastic Network Interface, and it is not supported for other network modes. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>The network configuration for the task. This parameter is required for task
+     * definitions that use the <code>awsvpc</code> network mode to receive their own
+     * Elastic Network Interface, and it is not supported for other network modes. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline RunTaskRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>The network configuration for the task. This parameter is required for task
+     * definitions that use the <code>awsvpc</code> network mode to receive their own
+     * Elastic Network Interface, and it is not supported for other network modes. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline RunTaskRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_cluster;
@@ -492,6 +544,9 @@ namespace Model
 
     Aws::Vector<PlacementStrategy> m_placementStrategy;
     bool m_placementStrategyHasBeenSet;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet;
   };
 
 } // namespace Model

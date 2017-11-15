@@ -33,6 +33,7 @@ namespace Model
 HealthCheck::HealthCheck() : 
     m_idHasBeenSet(false),
     m_callerReferenceHasBeenSet(false),
+    m_linkedServiceHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
     m_healthCheckVersion(0),
     m_healthCheckVersionHasBeenSet(false),
@@ -43,6 +44,7 @@ HealthCheck::HealthCheck() :
 HealthCheck::HealthCheck(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_callerReferenceHasBeenSet(false),
+    m_linkedServiceHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
     m_healthCheckVersion(0),
     m_healthCheckVersionHasBeenSet(false),
@@ -68,6 +70,12 @@ HealthCheck& HealthCheck::operator =(const XmlNode& xmlNode)
     {
       m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
       m_callerReferenceHasBeenSet = true;
+    }
+    XmlNode linkedServiceNode = resultNode.FirstChild("LinkedService");
+    if(!linkedServiceNode.IsNull())
+    {
+      m_linkedService = linkedServiceNode;
+      m_linkedServiceHasBeenSet = true;
     }
     XmlNode healthCheckConfigNode = resultNode.FirstChild("HealthCheckConfig");
     if(!healthCheckConfigNode.IsNull())
@@ -105,6 +113,12 @@ void HealthCheck::AddToNode(XmlNode& parentNode) const
   {
    XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
    callerReferenceNode.SetText(m_callerReference);
+  }
+
+  if(m_linkedServiceHasBeenSet)
+  {
+   XmlNode linkedServiceNode = parentNode.CreateChildElement("LinkedService");
+   m_linkedService.AddToNode(linkedServiceNode);
   }
 
   if(m_healthCheckConfigHasBeenSet)

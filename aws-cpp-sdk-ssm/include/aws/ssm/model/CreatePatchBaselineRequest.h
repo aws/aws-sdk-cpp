@@ -51,37 +51,32 @@ namespace Model
 
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. Supported
-     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
-     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
+     * <p>Defines the operating system the patch baseline applies to. The Default value
+     * is WINDOWS.</p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. Supported
-     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
-     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
+     * <p>Defines the operating system the patch baseline applies to. The Default value
+     * is WINDOWS.</p>
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. Supported
-     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
-     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
+     * <p>Defines the operating system the patch baseline applies to. The Default value
+     * is WINDOWS.</p>
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. Supported
-     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
-     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
+     * <p>Defines the operating system the patch baseline applies to. The Default value
+     * is WINDOWS.</p>
      */
     inline CreatePatchBaselineRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. Supported
-     * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
-     * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.</p>
+     * <p>Defines the operating system the patch baseline applies to. The Default value
+     * is WINDOWS.</p>
      */
     inline CreatePatchBaselineRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 

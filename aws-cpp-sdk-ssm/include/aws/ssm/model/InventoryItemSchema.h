@@ -184,6 +184,49 @@ namespace Model
      */
     inline InventoryItemSchema& AddAttributes(InventoryItemAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The alias name of the inventory type. The alias name is used for display
+     * purposes.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The alias name of the inventory type. The alias name is used for display
+     * purposes.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>The alias name of the inventory type. The alias name is used for display
+     * purposes.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>The alias name of the inventory type. The alias name is used for display
+     * purposes.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>The alias name of the inventory type. The alias name is used for display
+     * purposes.</p>
+     */
+    inline InventoryItemSchema& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The alias name of the inventory type. The alias name is used for display
+     * purposes.</p>
+     */
+    inline InventoryItemSchema& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The alias name of the inventory type. The alias name is used for display
+     * purposes.</p>
+     */
+    inline InventoryItemSchema& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
   private:
 
     Aws::String m_typeName;
@@ -194,6 +237,9 @@ namespace Model
 
     Aws::Vector<InventoryItemAttribute> m_attributes;
     bool m_attributesHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
   };
 
 } // namespace Model

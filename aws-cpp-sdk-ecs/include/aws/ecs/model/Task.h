@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/Container.h>
+#include <aws/ecs/model/Attachment.h>
 #include <utility>
 
 namespace Aws
@@ -587,6 +588,49 @@ namespace Model
      */
     inline Task& WithGroup(const char* value) { SetGroup(value); return *this;}
 
+
+    /**
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <code>awsvpc</code> network mode.</p>
+     */
+    inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
+
+    /**
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <code>awsvpc</code> network mode.</p>
+     */
+    inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
+
+    /**
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <code>awsvpc</code> network mode.</p>
+     */
+    inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
+
+    /**
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <code>awsvpc</code> network mode.</p>
+     */
+    inline Task& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
+
+    /**
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <code>awsvpc</code> network mode.</p>
+     */
+    inline Task& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <code>awsvpc</code> network mode.</p>
+     */
+    inline Task& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
+
+    /**
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <code>awsvpc</code> network mode.</p>
+     */
+    inline Task& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_taskArn;
@@ -633,6 +677,9 @@ namespace Model
 
     Aws::String m_group;
     bool m_groupHasBeenSet;
+
+    Aws::Vector<Attachment> m_attachments;
+    bool m_attachmentsHasBeenSet;
   };
 
 } // namespace Model

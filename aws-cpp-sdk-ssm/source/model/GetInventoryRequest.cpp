@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 GetInventoryRequest::GetInventoryRequest() : 
     m_filtersHasBeenSet(false),
+    m_aggregatorsHasBeenSet(false),
     m_resultAttributesHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
@@ -43,6 +44,17 @@ Aws::String GetInventoryRequest::SerializePayload() const
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
    }
    payload.WithArray("Filters", std::move(filtersJsonList));
+
+  }
+
+  if(m_aggregatorsHasBeenSet)
+  {
+   Array<JsonValue> aggregatorsJsonList(m_aggregators.size());
+   for(unsigned aggregatorsIndex = 0; aggregatorsIndex < aggregatorsJsonList.GetLength(); ++aggregatorsIndex)
+   {
+     aggregatorsJsonList[aggregatorsIndex].AsObject(m_aggregators[aggregatorsIndex].Jsonize());
+   }
+   payload.WithArray("Aggregators", std::move(aggregatorsJsonList));
 
   }
 

@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     bridge,
     host,
+    awsvpc,
     none
   };
 

@@ -45,21 +45,21 @@ namespace Model
     /**
      * <p>A Boolean value indicating whether to also include Availability Zones in your
      * get regions request. Availability Zones are indicated with a letter: e.g.,
-     * <code>us-east-1a</code>.</p>
+     * <code>us-east-2a</code>.</p>
      */
     inline bool GetIncludeAvailabilityZones() const{ return m_includeAvailabilityZones; }
 
     /**
      * <p>A Boolean value indicating whether to also include Availability Zones in your
      * get regions request. Availability Zones are indicated with a letter: e.g.,
-     * <code>us-east-1a</code>.</p>
+     * <code>us-east-2a</code>.</p>
      */
     inline void SetIncludeAvailabilityZones(bool value) { m_includeAvailabilityZonesHasBeenSet = true; m_includeAvailabilityZones = value; }
 
     /**
      * <p>A Boolean value indicating whether to also include Availability Zones in your
      * get regions request. Availability Zones are indicated with a letter: e.g.,
-     * <code>us-east-1a</code>.</p>
+     * <code>us-east-2a</code>.</p>
      */
     inline GetRegionsRequest& WithIncludeAvailabilityZones(bool value) { SetIncludeAvailabilityZones(value); return *this;}
 

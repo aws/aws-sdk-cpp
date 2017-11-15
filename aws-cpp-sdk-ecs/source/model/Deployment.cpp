@@ -39,7 +39,8 @@ Deployment::Deployment() :
     m_runningCount(0),
     m_runningCountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ Deployment::Deployment(const JsonValue& jsonValue) :
     m_runningCount(0),
     m_runningCountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +119,13 @@ Deployment& Deployment::operator =(const JsonValue& jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("networkConfiguration"))
+  {
+    m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
+
+    m_networkConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue Deployment::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
   }
 
   return payload;

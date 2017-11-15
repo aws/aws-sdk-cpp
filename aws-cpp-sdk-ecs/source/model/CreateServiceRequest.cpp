@@ -33,7 +33,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_roleHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
-    m_placementStrategyHasBeenSet(false)
+    m_placementStrategyHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
      placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
    }
    payload.WithArray("placementStrategy", std::move(placementStrategyJsonList));
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
 
   }
 

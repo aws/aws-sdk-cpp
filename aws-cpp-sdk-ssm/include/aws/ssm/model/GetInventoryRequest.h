@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/InventoryFilter.h>
+#include <aws/ssm/model/InventoryAggregator.h>
 #include <aws/ssm/model/ResultAttribute.h>
 #include <utility>
 
@@ -88,6 +89,63 @@ namespace Model
      * results.</p>
      */
     inline GetInventoryRequest& AddFilters(InventoryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Returns counts of inventory types based on one or more expressions. For
+     * example, if you aggregate by using an expression that uses the
+     * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
+     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     */
+    inline const Aws::Vector<InventoryAggregator>& GetAggregators() const{ return m_aggregators; }
+
+    /**
+     * <p>Returns counts of inventory types based on one or more expressions. For
+     * example, if you aggregate by using an expression that uses the
+     * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
+     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     */
+    inline void SetAggregators(const Aws::Vector<InventoryAggregator>& value) { m_aggregatorsHasBeenSet = true; m_aggregators = value; }
+
+    /**
+     * <p>Returns counts of inventory types based on one or more expressions. For
+     * example, if you aggregate by using an expression that uses the
+     * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
+     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     */
+    inline void SetAggregators(Aws::Vector<InventoryAggregator>&& value) { m_aggregatorsHasBeenSet = true; m_aggregators = std::move(value); }
+
+    /**
+     * <p>Returns counts of inventory types based on one or more expressions. For
+     * example, if you aggregate by using an expression that uses the
+     * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
+     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     */
+    inline GetInventoryRequest& WithAggregators(const Aws::Vector<InventoryAggregator>& value) { SetAggregators(value); return *this;}
+
+    /**
+     * <p>Returns counts of inventory types based on one or more expressions. For
+     * example, if you aggregate by using an expression that uses the
+     * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
+     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     */
+    inline GetInventoryRequest& WithAggregators(Aws::Vector<InventoryAggregator>&& value) { SetAggregators(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns counts of inventory types based on one or more expressions. For
+     * example, if you aggregate by using an expression that uses the
+     * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
+     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     */
+    inline GetInventoryRequest& AddAggregators(const InventoryAggregator& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(value); return *this; }
+
+    /**
+     * <p>Returns counts of inventory types based on one or more expressions. For
+     * example, if you aggregate by using an expression that uses the
+     * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
+     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     */
+    inline GetInventoryRequest& AddAggregators(InventoryAggregator&& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -194,6 +252,9 @@ namespace Model
 
     Aws::Vector<InventoryFilter> m_filters;
     bool m_filtersHasBeenSet;
+
+    Aws::Vector<InventoryAggregator> m_aggregators;
+    bool m_aggregatorsHasBeenSet;
 
     Aws::Vector<ResultAttribute> m_resultAttributes;
     bool m_resultAttributesHasBeenSet;

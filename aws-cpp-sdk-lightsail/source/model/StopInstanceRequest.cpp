@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StopInstanceRequest::StopInstanceRequest() : 
-    m_instanceNameHasBeenSet(false)
+    m_instanceNameHasBeenSet(false),
+    m_force(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,12 @@ Aws::String StopInstanceRequest::SerializePayload() const
   if(m_instanceNameHasBeenSet)
   {
    payload.WithString("instanceName", m_instanceName);
+
+  }
+
+  if(m_forceHasBeenSet)
+  {
+   payload.WithBool("force", m_force);
 
   }
 

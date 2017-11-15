@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
+#include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
@@ -405,14 +406,21 @@ namespace Model
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
      * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
-     * required if you are using a load balancer with your service. If you specify the
+     * only permitted if you are using a load balancer with your service and your task
+     * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
-     * path other than <code>/</code>, then you must either specify the full role ARN
-     * (this is recommended) or prefix the role name with the path. For example, if a
-     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
-     * would specify <code>/foo/bar</code> as the role name. For more information, see
-     * <a
+     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * already created the Amazon ECS service-linked role, that role is used by default
+     * for your service unless you specify a role here. The service-linked role is
+     * required if your task definition uses the <code>awsvpc</code> network mode, in
+     * which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
+     * than <code>/</code>, then you must either specify the full role ARN (this is
+     * recommended) or prefix the role name with the path. For example, if a role with
+     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -421,14 +429,21 @@ namespace Model
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
      * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
-     * required if you are using a load balancer with your service. If you specify the
+     * only permitted if you are using a load balancer with your service and your task
+     * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
-     * path other than <code>/</code>, then you must either specify the full role ARN
-     * (this is recommended) or prefix the role name with the path. For example, if a
-     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
-     * would specify <code>/foo/bar</code> as the role name. For more information, see
-     * <a
+     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * already created the Amazon ECS service-linked role, that role is used by default
+     * for your service unless you specify a role here. The service-linked role is
+     * required if your task definition uses the <code>awsvpc</code> network mode, in
+     * which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
+     * than <code>/</code>, then you must either specify the full role ARN (this is
+     * recommended) or prefix the role name with the path. For example, if a role with
+     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -437,14 +452,21 @@ namespace Model
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
      * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
-     * required if you are using a load balancer with your service. If you specify the
+     * only permitted if you are using a load balancer with your service and your task
+     * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
-     * path other than <code>/</code>, then you must either specify the full role ARN
-     * (this is recommended) or prefix the role name with the path. For example, if a
-     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
-     * would specify <code>/foo/bar</code> as the role name. For more information, see
-     * <a
+     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * already created the Amazon ECS service-linked role, that role is used by default
+     * for your service unless you specify a role here. The service-linked role is
+     * required if your task definition uses the <code>awsvpc</code> network mode, in
+     * which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
+     * than <code>/</code>, then you must either specify the full role ARN (this is
+     * recommended) or prefix the role name with the path. For example, if a role with
+     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -453,14 +475,21 @@ namespace Model
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
      * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
-     * required if you are using a load balancer with your service. If you specify the
+     * only permitted if you are using a load balancer with your service and your task
+     * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
-     * path other than <code>/</code>, then you must either specify the full role ARN
-     * (this is recommended) or prefix the role name with the path. For example, if a
-     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
-     * would specify <code>/foo/bar</code> as the role name. For more information, see
-     * <a
+     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * already created the Amazon ECS service-linked role, that role is used by default
+     * for your service unless you specify a role here. The service-linked role is
+     * required if your task definition uses the <code>awsvpc</code> network mode, in
+     * which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
+     * than <code>/</code>, then you must either specify the full role ARN (this is
+     * recommended) or prefix the role name with the path. For example, if a role with
+     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -469,14 +498,21 @@ namespace Model
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
      * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
-     * required if you are using a load balancer with your service. If you specify the
+     * only permitted if you are using a load balancer with your service and your task
+     * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
-     * path other than <code>/</code>, then you must either specify the full role ARN
-     * (this is recommended) or prefix the role name with the path. For example, if a
-     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
-     * would specify <code>/foo/bar</code> as the role name. For more information, see
-     * <a
+     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * already created the Amazon ECS service-linked role, that role is used by default
+     * for your service unless you specify a role here. The service-linked role is
+     * required if your task definition uses the <code>awsvpc</code> network mode, in
+     * which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
+     * than <code>/</code>, then you must either specify the full role ARN (this is
+     * recommended) or prefix the role name with the path. For example, if a role with
+     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -485,14 +521,21 @@ namespace Model
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
      * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
-     * required if you are using a load balancer with your service. If you specify the
+     * only permitted if you are using a load balancer with your service and your task
+     * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
-     * path other than <code>/</code>, then you must either specify the full role ARN
-     * (this is recommended) or prefix the role name with the path. For example, if a
-     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
-     * would specify <code>/foo/bar</code> as the role name. For more information, see
-     * <a
+     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * already created the Amazon ECS service-linked role, that role is used by default
+     * for your service unless you specify a role here. The service-linked role is
+     * required if your task definition uses the <code>awsvpc</code> network mode, in
+     * which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
+     * than <code>/</code>, then you must either specify the full role ARN (this is
+     * recommended) or prefix the role name with the path. For example, if a role with
+     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -501,14 +544,21 @@ namespace Model
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
      * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
-     * required if you are using a load balancer with your service. If you specify the
+     * only permitted if you are using a load balancer with your service and your task
+     * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
-     * path other than <code>/</code>, then you must either specify the full role ARN
-     * (this is recommended) or prefix the role name with the path. For example, if a
-     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
-     * would specify <code>/foo/bar</code> as the role name. For more information, see
-     * <a
+     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * already created the Amazon ECS service-linked role, that role is used by default
+     * for your service unless you specify a role here. The service-linked role is
+     * required if your task definition uses the <code>awsvpc</code> network mode, in
+     * which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.</p> </important> <p>If your specified role has a path other
+     * than <code>/</code>, then you must either specify the full role ARN (this is
+     * recommended) or prefix the role name with the path. For example, if a role with
+     * the name <code>bar</code> has a path of <code>/foo/</code> then you would
+     * specify <code>/foo/bar</code> as the role name. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -638,6 +688,57 @@ namespace Model
      */
     inline CreateServiceRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The network configuration for the service. This parameter is required for
+     * task definitions that use the <code>awsvpc</code> network mode to receive their
+     * own Elastic Network Interface, and it is not supported for other network modes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>The network configuration for the service. This parameter is required for
+     * task definitions that use the <code>awsvpc</code> network mode to receive their
+     * own Elastic Network Interface, and it is not supported for other network modes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>The network configuration for the service. This parameter is required for
+     * task definitions that use the <code>awsvpc</code> network mode to receive their
+     * own Elastic Network Interface, and it is not supported for other network modes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>The network configuration for the service. This parameter is required for
+     * task definitions that use the <code>awsvpc</code> network mode to receive their
+     * own Elastic Network Interface, and it is not supported for other network modes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline CreateServiceRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>The network configuration for the service. This parameter is required for
+     * task definitions that use the <code>awsvpc</code> network mode to receive their
+     * own Elastic Network Interface, and it is not supported for other network modes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline CreateServiceRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_cluster;
@@ -669,6 +770,9 @@ namespace Model
 
     Aws::Vector<PlacementStrategy> m_placementStrategy;
     bool m_placementStrategyHasBeenSet;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet;
   };
 
 } // namespace Model

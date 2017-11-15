@@ -186,17 +186,26 @@ namespace Model
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
-     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
-     * <p>The default Docker network mode is <code>bridge</code>. If the network mode
-     * is set to <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the task's containers do not have external connectivity. The
-     * <code>host</code> network mode offers the highest networking performance for
-     * containers because they use the host network stack instead of the virtualized
-     * network stack provided by the <code>bridge</code> mode; however, exposed
-     * container ports are mapped directly to the corresponding host port, so you
-     * cannot take advantage of dynamic host port mappings or run multiple
-     * instantiations of the same task on a single container instance if port mappings
-     * are used.</p> <p>For more information, see <a
+     * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
+     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
+     * the network mode is set to <code>none</code>, you cannot specify port mappings
+     * in your container definitions, and the task's containers do not have external
+     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
+     * the highest networking performance for containers because they use the EC2
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached ENI port (for the <code>awsvpc</code> network mode), so you cannot take
+     * advantage of dynamic host port mappings. </p> <p>If the network mode is
+     * <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     * must specify a <a>NetworkConfiguration</a> when you create a service or run a
+     * task with the task definition. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * <p>If the network mode is <code>host</code>, you can not run multiple
+     * instantiations of the same task on a single container instance when port
+     * mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -204,17 +213,26 @@ namespace Model
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
-     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
-     * <p>The default Docker network mode is <code>bridge</code>. If the network mode
-     * is set to <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the task's containers do not have external connectivity. The
-     * <code>host</code> network mode offers the highest networking performance for
-     * containers because they use the host network stack instead of the virtualized
-     * network stack provided by the <code>bridge</code> mode; however, exposed
-     * container ports are mapped directly to the corresponding host port, so you
-     * cannot take advantage of dynamic host port mappings or run multiple
-     * instantiations of the same task on a single container instance if port mappings
-     * are used.</p> <p>For more information, see <a
+     * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
+     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
+     * the network mode is set to <code>none</code>, you cannot specify port mappings
+     * in your container definitions, and the task's containers do not have external
+     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
+     * the highest networking performance for containers because they use the EC2
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached ENI port (for the <code>awsvpc</code> network mode), so you cannot take
+     * advantage of dynamic host port mappings. </p> <p>If the network mode is
+     * <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     * must specify a <a>NetworkConfiguration</a> when you create a service or run a
+     * task with the task definition. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * <p>If the network mode is <code>host</code>, you can not run multiple
+     * instantiations of the same task on a single container instance when port
+     * mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -222,17 +240,26 @@ namespace Model
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
-     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
-     * <p>The default Docker network mode is <code>bridge</code>. If the network mode
-     * is set to <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the task's containers do not have external connectivity. The
-     * <code>host</code> network mode offers the highest networking performance for
-     * containers because they use the host network stack instead of the virtualized
-     * network stack provided by the <code>bridge</code> mode; however, exposed
-     * container ports are mapped directly to the corresponding host port, so you
-     * cannot take advantage of dynamic host port mappings or run multiple
-     * instantiations of the same task on a single container instance if port mappings
-     * are used.</p> <p>For more information, see <a
+     * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
+     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
+     * the network mode is set to <code>none</code>, you cannot specify port mappings
+     * in your container definitions, and the task's containers do not have external
+     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
+     * the highest networking performance for containers because they use the EC2
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached ENI port (for the <code>awsvpc</code> network mode), so you cannot take
+     * advantage of dynamic host port mappings. </p> <p>If the network mode is
+     * <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     * must specify a <a>NetworkConfiguration</a> when you create a service or run a
+     * task with the task definition. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * <p>If the network mode is <code>host</code>, you can not run multiple
+     * instantiations of the same task on a single container instance when port
+     * mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -240,17 +267,26 @@ namespace Model
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
-     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
-     * <p>The default Docker network mode is <code>bridge</code>. If the network mode
-     * is set to <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the task's containers do not have external connectivity. The
-     * <code>host</code> network mode offers the highest networking performance for
-     * containers because they use the host network stack instead of the virtualized
-     * network stack provided by the <code>bridge</code> mode; however, exposed
-     * container ports are mapped directly to the corresponding host port, so you
-     * cannot take advantage of dynamic host port mappings or run multiple
-     * instantiations of the same task on a single container instance if port mappings
-     * are used.</p> <p>For more information, see <a
+     * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
+     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
+     * the network mode is set to <code>none</code>, you cannot specify port mappings
+     * in your container definitions, and the task's containers do not have external
+     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
+     * the highest networking performance for containers because they use the EC2
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached ENI port (for the <code>awsvpc</code> network mode), so you cannot take
+     * advantage of dynamic host port mappings. </p> <p>If the network mode is
+     * <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     * must specify a <a>NetworkConfiguration</a> when you create a service or run a
+     * task with the task definition. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * <p>If the network mode is <code>host</code>, you can not run multiple
+     * instantiations of the same task on a single container instance when port
+     * mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -258,17 +294,26 @@ namespace Model
 
     /**
      * <p>The Docker networking mode to use for the containers in the task. The valid
-     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
-     * <p>The default Docker network mode is <code>bridge</code>. If the network mode
-     * is set to <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the task's containers do not have external connectivity. The
-     * <code>host</code> network mode offers the highest networking performance for
-     * containers because they use the host network stack instead of the virtualized
-     * network stack provided by the <code>bridge</code> mode; however, exposed
-     * container ports are mapped directly to the corresponding host port, so you
-     * cannot take advantage of dynamic host port mappings or run multiple
-     * instantiations of the same task on a single container instance if port mappings
-     * are used.</p> <p>For more information, see <a
+     * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
+     * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
+     * the network mode is set to <code>none</code>, you cannot specify port mappings
+     * in your container definitions, and the task's containers do not have external
+     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
+     * the highest networking performance for containers because they use the EC2
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached ENI port (for the <code>awsvpc</code> network mode), so you cannot take
+     * advantage of dynamic host port mappings. </p> <p>If the network mode is
+     * <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     * must specify a <a>NetworkConfiguration</a> when you create a service or run a
+     * task with the task definition. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * <p>If the network mode is <code>host</code>, you can not run multiple
+     * instantiations of the same task on a single container instance when port
+     * mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */

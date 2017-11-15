@@ -18,6 +18,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
+#include <aws/ecs/model/NetworkConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -258,6 +259,82 @@ namespace Model
      */
     inline UpdateServiceRequest& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The network configuration for the service. This parameter is required for
+     * task definitions that use the <code>awsvpc</code> network mode to receive their
+     * own Elastic Network Interface, and it is not supported for other network modes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * <note> <p>Updating a service to add a subnet to a list of existing subnets does
+     * not trigger a service deployment. For example, if your network configuration
+     * change is to keep the existing subnets and simply add another subnet to the
+     * network configuration, this does not trigger a new service deployment.</p>
+     * </note>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>The network configuration for the service. This parameter is required for
+     * task definitions that use the <code>awsvpc</code> network mode to receive their
+     * own Elastic Network Interface, and it is not supported for other network modes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * <note> <p>Updating a service to add a subnet to a list of existing subnets does
+     * not trigger a service deployment. For example, if your network configuration
+     * change is to keep the existing subnets and simply add another subnet to the
+     * network configuration, this does not trigger a new service deployment.</p>
+     * </note>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>The network configuration for the service. This parameter is required for
+     * task definitions that use the <code>awsvpc</code> network mode to receive their
+     * own Elastic Network Interface, and it is not supported for other network modes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * <note> <p>Updating a service to add a subnet to a list of existing subnets does
+     * not trigger a service deployment. For example, if your network configuration
+     * change is to keep the existing subnets and simply add another subnet to the
+     * network configuration, this does not trigger a new service deployment.</p>
+     * </note>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>The network configuration for the service. This parameter is required for
+     * task definitions that use the <code>awsvpc</code> network mode to receive their
+     * own Elastic Network Interface, and it is not supported for other network modes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * <note> <p>Updating a service to add a subnet to a list of existing subnets does
+     * not trigger a service deployment. For example, if your network configuration
+     * change is to keep the existing subnets and simply add another subnet to the
+     * network configuration, this does not trigger a new service deployment.</p>
+     * </note>
+     */
+    inline UpdateServiceRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>The network configuration for the service. This parameter is required for
+     * task definitions that use the <code>awsvpc</code> network mode to receive their
+     * own Elastic Network Interface, and it is not supported for other network modes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     * <note> <p>Updating a service to add a subnet to a list of existing subnets does
+     * not trigger a service deployment. For example, if your network configuration
+     * change is to keep the existing subnets and simply add another subnet to the
+     * network configuration, this does not trigger a new service deployment.</p>
+     * </note>
+     */
+    inline UpdateServiceRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_cluster;
@@ -274,6 +351,9 @@ namespace Model
 
     DeploymentConfiguration m_deploymentConfiguration;
     bool m_deploymentConfigurationHasBeenSet;
+
+    NetworkConfiguration m_networkConfiguration;
+    bool m_networkConfigurationHasBeenSet;
   };
 
 } // namespace Model

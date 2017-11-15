@@ -31,7 +31,8 @@ RunTaskRequest::RunTaskRequest() :
     m_startedByHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
-    m_placementStrategyHasBeenSet(false)
+    m_placementStrategyHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,12 @@ Aws::String RunTaskRequest::SerializePayload() const
      placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
    }
    payload.WithArray("placementStrategy", std::move(placementStrategyJsonList));
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
 
   }
 

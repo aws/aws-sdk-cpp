@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateInstancesFromSnapshotRequest::CreateInstancesFromSnapshotRequest() : 
     m_instanceNamesHasBeenSet(false),
+    m_attachedDiskMappingHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_instanceSnapshotNameHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
@@ -44,6 +45,22 @@ Aws::String CreateInstancesFromSnapshotRequest::SerializePayload() const
      instanceNamesJsonList[instanceNamesIndex].AsString(m_instanceNames[instanceNamesIndex]);
    }
    payload.WithArray("instanceNames", std::move(instanceNamesJsonList));
+
+  }
+
+  if(m_attachedDiskMappingHasBeenSet)
+  {
+   JsonValue attachedDiskMappingJsonMap;
+   for(auto& attachedDiskMappingItem : m_attachedDiskMapping)
+   {
+     Array<JsonValue> diskMapListJsonList(attachedDiskMappingItem.second.size());
+     for(unsigned diskMapListIndex = 0; diskMapListIndex < diskMapListJsonList.GetLength(); ++diskMapListIndex)
+     {
+       diskMapListJsonList[diskMapListIndex].AsObject(attachedDiskMappingItem.second[diskMapListIndex].Jsonize());
+     }
+     attachedDiskMappingJsonMap.WithArray(attachedDiskMappingItem.first, std::move(diskMapListJsonList));
+   }
+   payload.WithObject("attachedDiskMapping", std::move(attachedDiskMappingJsonMap));
 
   }
 

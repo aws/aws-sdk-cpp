@@ -79,10 +79,41 @@ namespace Model
      */
     inline StopInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
+
+    /**
+     * <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
+     * <code>stopping</code> state to stop.</p> <important> <p>Only use the
+     * <code>force</code> parameter if your instance is stuck in the
+     * <code>stopping</code> state. In any other state, your instance should stop
+     * normally without adding this parameter to your API request.</p> </important>
+     */
+    inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
+     * <code>stopping</code> state to stop.</p> <important> <p>Only use the
+     * <code>force</code> parameter if your instance is stuck in the
+     * <code>stopping</code> state. In any other state, your instance should stop
+     * normally without adding this parameter to your API request.</p> </important>
+     */
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+
+    /**
+     * <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
+     * <code>stopping</code> state to stop.</p> <important> <p>Only use the
+     * <code>force</code> parameter if your instance is stuck in the
+     * <code>stopping</code> state. In any other state, your instance should stop
+     * normally without adding this parameter to your API request.</p> </important>
+     */
+    inline StopInstanceRequest& WithForce(bool value) { SetForce(value); return *this;}
+
   private:
 
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
+
+    bool m_force;
+    bool m_forceHasBeenSet;
   };
 
 } // namespace Model

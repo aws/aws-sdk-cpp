@@ -36,7 +36,8 @@ HostedZone::HostedZone() :
     m_callerReferenceHasBeenSet(false),
     m_configHasBeenSet(false),
     m_resourceRecordSetCount(0),
-    m_resourceRecordSetCountHasBeenSet(false)
+    m_resourceRecordSetCountHasBeenSet(false),
+    m_linkedServiceHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ HostedZone::HostedZone(const XmlNode& xmlNode) :
     m_callerReferenceHasBeenSet(false),
     m_configHasBeenSet(false),
     m_resourceRecordSetCount(0),
-    m_resourceRecordSetCountHasBeenSet(false)
+    m_resourceRecordSetCountHasBeenSet(false),
+    m_linkedServiceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -87,6 +89,12 @@ HostedZone& HostedZone::operator =(const XmlNode& xmlNode)
       m_resourceRecordSetCount = StringUtils::ConvertToInt64(StringUtils::Trim(resourceRecordSetCountNode.GetText().c_str()).c_str());
       m_resourceRecordSetCountHasBeenSet = true;
     }
+    XmlNode linkedServiceNode = resultNode.FirstChild("LinkedService");
+    if(!linkedServiceNode.IsNull())
+    {
+      m_linkedService = linkedServiceNode;
+      m_linkedServiceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -125,6 +133,12 @@ void HostedZone::AddToNode(XmlNode& parentNode) const
    ss << m_resourceRecordSetCount;
    resourceRecordSetCountNode.SetText(ss.str());
    ss.str("");
+  }
+
+  if(m_linkedServiceHasBeenSet)
+  {
+   XmlNode linkedServiceNode = parentNode.CreateChildElement("LinkedService");
+   m_linkedService.AddToNode(linkedServiceNode);
   }
 
 }

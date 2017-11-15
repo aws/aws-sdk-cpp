@@ -46,73 +46,108 @@ namespace Model
 
 
     /**
-     * <p>The name of the parameter that you want to add to the system.</p>
+     * <p>The fully qualified name of the parameter that you want to add to the system.
+     * The fully qualified name includes the complete hierarchy of the parameter path
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
+     * <p>The maximum length constraint listed below includes capacity for additional
+     * system attributes that are not part of the name. The maximum length for the
+     * fully qualified parameter name is 1011 characters. </p> </note>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the parameter that you want to add to the system.</p>
+     * <p>The fully qualified name of the parameter that you want to add to the system.
+     * The fully qualified name includes the complete hierarchy of the parameter path
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
+     * <p>The maximum length constraint listed below includes capacity for additional
+     * system attributes that are not part of the name. The maximum length for the
+     * fully qualified parameter name is 1011 characters. </p> </note>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the parameter that you want to add to the system.</p>
+     * <p>The fully qualified name of the parameter that you want to add to the system.
+     * The fully qualified name includes the complete hierarchy of the parameter path
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
+     * <p>The maximum length constraint listed below includes capacity for additional
+     * system attributes that are not part of the name. The maximum length for the
+     * fully qualified parameter name is 1011 characters. </p> </note>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the parameter that you want to add to the system.</p>
+     * <p>The fully qualified name of the parameter that you want to add to the system.
+     * The fully qualified name includes the complete hierarchy of the parameter path
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
+     * <p>The maximum length constraint listed below includes capacity for additional
+     * system attributes that are not part of the name. The maximum length for the
+     * fully qualified parameter name is 1011 characters. </p> </note>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the parameter that you want to add to the system.</p>
+     * <p>The fully qualified name of the parameter that you want to add to the system.
+     * The fully qualified name includes the complete hierarchy of the parameter path
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
+     * <p>The maximum length constraint listed below includes capacity for additional
+     * system attributes that are not part of the name. The maximum length for the
+     * fully qualified parameter name is 1011 characters. </p> </note>
      */
     inline PutParameterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the parameter that you want to add to the system.</p>
+     * <p>The fully qualified name of the parameter that you want to add to the system.
+     * The fully qualified name includes the complete hierarchy of the parameter path
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
+     * <p>The maximum length constraint listed below includes capacity for additional
+     * system attributes that are not part of the name. The maximum length for the
+     * fully qualified parameter name is 1011 characters. </p> </note>
      */
     inline PutParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the parameter that you want to add to the system.</p>
+     * <p>The fully qualified name of the parameter that you want to add to the system.
+     * The fully qualified name includes the complete hierarchy of the parameter path
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
+     * <p>The maximum length constraint listed below includes capacity for additional
+     * system attributes that are not part of the name. The maximum length for the
+     * fully qualified parameter name is 1011 characters. </p> </note>
      */
     inline PutParameterRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Information about the parameter that you want to add to the system</p>
+     * <p>Information about the parameter that you want to add to the system.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Information about the parameter that you want to add to the system</p>
+     * <p>Information about the parameter that you want to add to the system.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Information about the parameter that you want to add to the system</p>
+     * <p>Information about the parameter that you want to add to the system.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Information about the parameter that you want to add to the system</p>
+     * <p>Information about the parameter that you want to add to the system.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Information about the parameter that you want to add to the system</p>
+     * <p>Information about the parameter that you want to add to the system.</p>
      */
     inline PutParameterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Information about the parameter that you want to add to the system</p>
+     * <p>Information about the parameter that you want to add to the system.</p>
      */
     inline PutParameterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the parameter that you want to add to the system</p>
+     * <p>Information about the parameter that you want to add to the system.</p>
      */
     inline PutParameterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

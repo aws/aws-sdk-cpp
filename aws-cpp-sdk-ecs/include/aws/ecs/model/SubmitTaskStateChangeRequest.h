@@ -17,6 +17,9 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/ContainerStateChange.h>
+#include <aws/ecs/model/AttachmentStateChange.h>
 #include <utility>
 
 namespace Aws
@@ -201,6 +204,78 @@ namespace Model
      */
     inline SubmitTaskStateChangeRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
+
+    /**
+     * <p>Any containers associated with the state change request.</p>
+     */
+    inline const Aws::Vector<ContainerStateChange>& GetContainers() const{ return m_containers; }
+
+    /**
+     * <p>Any containers associated with the state change request.</p>
+     */
+    inline void SetContainers(const Aws::Vector<ContainerStateChange>& value) { m_containersHasBeenSet = true; m_containers = value; }
+
+    /**
+     * <p>Any containers associated with the state change request.</p>
+     */
+    inline void SetContainers(Aws::Vector<ContainerStateChange>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
+
+    /**
+     * <p>Any containers associated with the state change request.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithContainers(const Aws::Vector<ContainerStateChange>& value) { SetContainers(value); return *this;}
+
+    /**
+     * <p>Any containers associated with the state change request.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithContainers(Aws::Vector<ContainerStateChange>&& value) { SetContainers(std::move(value)); return *this;}
+
+    /**
+     * <p>Any containers associated with the state change request.</p>
+     */
+    inline SubmitTaskStateChangeRequest& AddContainers(const ContainerStateChange& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
+
+    /**
+     * <p>Any containers associated with the state change request.</p>
+     */
+    inline SubmitTaskStateChangeRequest& AddContainers(ContainerStateChange&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Any attachments associated with the state change request.</p>
+     */
+    inline const Aws::Vector<AttachmentStateChange>& GetAttachments() const{ return m_attachments; }
+
+    /**
+     * <p>Any attachments associated with the state change request.</p>
+     */
+    inline void SetAttachments(const Aws::Vector<AttachmentStateChange>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
+
+    /**
+     * <p>Any attachments associated with the state change request.</p>
+     */
+    inline void SetAttachments(Aws::Vector<AttachmentStateChange>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
+
+    /**
+     * <p>Any attachments associated with the state change request.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithAttachments(const Aws::Vector<AttachmentStateChange>& value) { SetAttachments(value); return *this;}
+
+    /**
+     * <p>Any attachments associated with the state change request.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithAttachments(Aws::Vector<AttachmentStateChange>&& value) { SetAttachments(std::move(value)); return *this;}
+
+    /**
+     * <p>Any attachments associated with the state change request.</p>
+     */
+    inline SubmitTaskStateChangeRequest& AddAttachments(const AttachmentStateChange& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
+
+    /**
+     * <p>Any attachments associated with the state change request.</p>
+     */
+    inline SubmitTaskStateChangeRequest& AddAttachments(AttachmentStateChange&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cluster;
@@ -214,6 +289,12 @@ namespace Model
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
+    Aws::Vector<ContainerStateChange> m_containers;
+    bool m_containersHasBeenSet;
+
+    Aws::Vector<AttachmentStateChange> m_attachments;
+    bool m_attachmentsHasBeenSet;
   };
 
 } // namespace Model

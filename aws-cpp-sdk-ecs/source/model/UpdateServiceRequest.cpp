@@ -28,7 +28,8 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
-    m_deploymentConfigurationHasBeenSet(false)
+    m_deploymentConfigurationHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,12 @@ Aws::String UpdateServiceRequest::SerializePayload() const
   if(m_deploymentConfigurationHasBeenSet)
   {
    payload.WithObject("deploymentConfiguration", m_deploymentConfiguration.Jsonize());
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
 
   }
 

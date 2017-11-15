@@ -31,14 +31,16 @@ namespace Model
 InventoryItemSchema::InventoryItemSchema() : 
     m_typeNameHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
 }
 
 InventoryItemSchema::InventoryItemSchema(const JsonValue& jsonValue) : 
     m_typeNameHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +71,13 @@ InventoryItemSchema& InventoryItemSchema::operator =(const JsonValue& jsonValue)
     m_attributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DisplayName"))
+  {
+    m_displayName = jsonValue.GetString("DisplayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,6 +105,12 @@ JsonValue InventoryItemSchema::Jsonize() const
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
    }
    payload.WithArray("Attributes", std::move(attributesJsonList));
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("DisplayName", m_displayName);
 
   }
 
