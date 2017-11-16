@@ -119,7 +119,7 @@ static Http::HeaderValueCollection CanonicalizeHeaders(Http::HeaderValueCollecti
 
         //multiline gets converted to line1,line2,etc...
         auto headerMultiLine = StringUtils::SplitOnLine(trimmedHeaderValue);
-        Aws::String headerValue = headerMultiLine[0];
+        Aws::String headerValue = headerMultiLine.size() == 0 ? "" : headerMultiLine[0];
 
         if (headerMultiLine.size() > 1)
         {

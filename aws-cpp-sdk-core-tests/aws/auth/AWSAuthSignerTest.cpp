@@ -284,6 +284,22 @@ static void RunV4TestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy po
     ASSERT_STREQ(signPayload ? EMPTY_STRING_SHA256 : UNSIGNED_PAYLOAD, request.GetHeaderValue("x-amz-content-sha256").c_str());
 }
 
+TEST(AWSAuthV4SignerTest, HeadersWithEmptyValues)
+{
+    auto request = Standard::StandardHttpRequest("https://test.com/query?key=val", Aws::Http::HttpMethod::HTTP_GET);
+    request.SetHeaderValue("same_key", "    ");
+    request.SetHeaderValue("same_key", "");
+    request.SetHeaderValue("another", "");
+    request.SetHeaderValue("yet_another", " \t\n ");
+    request.SetHeaderValue("   ", " ");
+
+    std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credProvider = Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>(ALLOC_TAG, "AKIDEXAMPLE", "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY");
+    AWSAuthV4Signer signer(credProvider, "service", "us-east-1", AWSAuthV4Signer::PayloadSigningPolicy::Never, false);
+
+    ASSERT_TRUE(signer.SignRequest(request, false/*signPayload*/));
+    ASSERT_STREQ(UNSIGNED_PAYLOAD, request.GetHeaderValue("x-amz-content-sha256").c_str());
+}
+
 TEST(AWSAuthV4SignerTest, PayloadSigningPolicyNever)
 {
     // Test without payload(empty body)
