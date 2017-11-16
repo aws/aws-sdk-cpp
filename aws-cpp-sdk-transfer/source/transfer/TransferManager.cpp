@@ -205,8 +205,7 @@ namespace Aws
 
             Aws::S3::Model::ListObjectsV2Request request;
             request.WithBucket(bucketName)
-                .WithPrefix(prefix)
-                .WithDelimiter("/");
+                .WithPrefix(prefix);
 
             auto context = Aws::MakeShared<DownloadDirectoryContext>(CLASS_TAG);
             context->rootDirectory = directory;
@@ -862,14 +861,6 @@ namespace Aws
                         Aws::String fileName = DetermineFilePath(downloadContext->rootDirectory, downloadContext->prefix, content.GetKey());
                         m_transferConfig.transferInitiatedCallback(this, DownloadFile(request.GetBucket(), content.GetKey(), fileName));
                     }
-                }
-
-                //Take the common prefix and list with it, keep doing this until we start getting objects back. Go ahead and create the directories though.
-                for (auto& commonPrefix : result.GetCommonPrefixes())
-                {
-                    Aws::FileSystem::CreateDirectoryIfNotExists(DetermineFilePath(directory, prefix, commonPrefix.GetPrefix()).c_str());
-                    requestCpy.SetPrefix(commonPrefix.GetPrefix());
-                    m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
                 }
             }
             else
