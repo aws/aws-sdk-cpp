@@ -152,6 +152,7 @@ namespace Aws
 
             retryHandle->UpdateStatus(TransferStatus::NOT_STARTED);
             retryHandle->Restart();
+            TriggerTransferStatusUpdatedCallback(retryHandle);
 
             SubmitUpload(retryHandle, hasFileName ? nullptr : stream);
             return retryHandle;
@@ -228,7 +229,6 @@ namespace Aws
 
         void TransferManager::DoMultiPartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)
         {
-            handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             handle->SetIsMultipart(true);
 
             bool isRetry = !handle->GetMultiPartId().empty();
@@ -262,6 +262,7 @@ namespace Aws
                     handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
 
                     TriggerErrorCallback(handle, createMultipartResponse.GetError());
+                    TriggerTransferStatusUpdatedCallback(handle);
                     return;
                 }
             }
@@ -282,6 +283,7 @@ namespace Aws
             PartStateMap queuedParts = handle->GetQueuedParts();
             auto partsIter = queuedParts.begin();
 
+            handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             TriggerTransferStatusUpdatedCallback(handle);
 
             while (sentBytes < handle->GetBytesTotalSize() && handle->ShouldContinue() && partsIter != queuedParts.end())
@@ -360,6 +362,7 @@ namespace Aws
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             handle->SetIsMultipart(false);
             handle->AddPendingPart(partState);
+            TriggerTransferStatusUpdatedCallback(handle);
 
             auto putObjectRequest = m_transferConfig.putObjectTemplate;
             putObjectRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
@@ -369,7 +372,6 @@ namespace Aws
                 .WithMetadata(handle->GetMetadata());
 
             putObjectRequest.SetContentType(handle->GetContentType());
-            TriggerTransferStatusUpdatedCallback(handle);
 
             auto buffer = m_bufferManager.Acquire();
 
@@ -520,6 +522,7 @@ namespace Aws
 
             retryHandle->UpdateStatus(TransferStatus::NOT_STARTED);
             retryHandle->Restart();
+            TriggerTransferStatusUpdatedCallback(retryHandle);
             
             auto self = shared_from_this();
             m_transferConfig.transferExecutor->Submit([self, retryHandle] 
@@ -611,8 +614,6 @@ namespace Aws
                     return false;
                 }
 
-                TriggerTransferStatusUpdatedCallback(handle);
-
                 std::size_t downloadSize = static_cast<size_t>(headObjectOutcome.GetResult().GetContentLength());
                 handle->SetBytesTotalSize(downloadSize);
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
@@ -647,11 +648,12 @@ namespace Aws
 
         void TransferManager::DoDownload(const std::shared_ptr<TransferHandle>& handle)
         {
-            handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             if (!InitializePartsForDownload(handle))
             {
                 return;
             }
+            handle->UpdateStatus(TransferStatus::IN_PROGRESS);
+            TriggerTransferStatusUpdatedCallback(handle);
 
             bool isMultipart = handle->IsMultipart();
             size_t bufferSize = static_cast<size_t>(m_transferConfig.bufferSize);
@@ -948,6 +950,7 @@ namespace Aws
             {
                 handle->SetError(Aws::Client::AWSError<Aws::Client::CoreErrors>(static_cast<Aws::Client::CoreErrors>(Aws::S3::S3Errors::NO_SUCH_UPLOAD), "NoSuchUpload", "The requested file could not be opened.", false));
                 handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
+                TriggerTransferStatusUpdatedCallback(handle);
                 return handle;
             }
 

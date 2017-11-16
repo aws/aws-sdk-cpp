@@ -558,7 +558,6 @@ TEST_F(TransferTests, TransferManager_SmallTest)
 
     TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
-    transferManagerConfig.maxParallelTransfers = 1;
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
     std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(smallTestFileName, GetTestBucketName(), SMALL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
@@ -1109,21 +1108,21 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.transferStatusUpdatedCallback =
         [&](const TransferManager* manager, const std::shared_ptr<const TransferHandle>& handle)
-    {
-        if (!retryInProgress && handle->GetCompletedParts().size() >= 15 && handle->GetStatus() != TransferStatus::CANCELED)
         {
-            const_cast<TransferManager*>(manager)->AbortMultipartUpload(std::const_pointer_cast<TransferHandle>(handle));
-        }
-        else if (retryInProgress)
-        {
-            if (handle->GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
+            if (!retryInProgress && handle->GetCompletedParts().size() >= 15 && handle->GetStatus() != TransferStatus::CANCELED)
             {
-                completionCheckDone = true;
-                //this should NEVER rise above 15 or we had some completed parts get retried too.
-                completedPartsStayedCompletedDuringRetry = handle->GetPendingParts().size() <= 15 && handle->GetQueuedParts().size() <= 15;
+                const_cast<TransferManager*>(manager)->AbortMultipartUpload(std::const_pointer_cast<TransferHandle>(handle));
             }
-        }
-    };
+            else if (retryInProgress)
+            {
+                if (handle->GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
+                {
+                    completionCheckDone = true;
+                    //this should NEVER rise above 15 or we had some completed parts get retried too.
+                    completedPartsStayedCompletedDuringRetry = handle->GetPendingParts().size() <= 15 && handle->GetQueuedParts().size() <= 15;
+                }
+            }
+        };
 
     transferManagerConfig.s3Client = m_s3Client;
     auto transferManager = TransferManager::Create(transferManagerConfig);
@@ -1360,6 +1359,20 @@ TEST_F(TransferTests, BadFileTest)
 {
     TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
+    transferManagerConfig.transferStatusUpdatedCallback =
+        [&](const TransferManager*, const std::shared_ptr<const TransferHandle>& handle)
+        {
+            ASSERT_EQ(TransferDirection::UPLOAD, handle->GetTransferDirection());
+            ASSERT_STREQ(MakeFilePath(NONSENSE_FILE_NAME).c_str(), handle->GetTargetFilePath().c_str());
+            ASSERT_STREQ("text/plain", handle->GetContentType().c_str());
+
+            ASSERT_EQ(TransferStatus::FAILED, handle->GetStatus());
+            ASSERT_EQ(0u, handle->GetCompletedParts().size());
+            ASSERT_EQ(0u, handle->GetFailedParts().size());
+            ASSERT_EQ(0u, handle->GetPendingParts().size());
+            ASSERT_EQ(0u, handle->GetQueuedParts().size());
+        };
+
     auto transferManager = TransferManager::Create(transferManagerConfig);
 
     std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(MakeFilePath( NONSENSE_FILE_NAME ), GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());

@@ -46,12 +46,8 @@ namespace Aws
          */
         struct TransferManagerConfiguration
         {
-            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor) : s3Client(nullptr), transferExecutor(executor), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5), maxParallelTransfers(1)
+            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor) : s3Client(nullptr), transferExecutor(executor), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5)
             {
-                //let the programmer know if they've created two useless values here.
-                //you need at least bufferSize * maxParallelTransfers for the  max heap size.
-                assert(transferBufferMaxHeapSize > bufferSize * maxParallelTransfers);
-                assert(bufferSize >= MB5);
             }
 
             /**
@@ -62,7 +58,6 @@ namespace Aws
              * Executor to use for the transfer manager threads. This probably shouldn't be the same executor
              * you are using for your client configuration. This executor will be used in a different context than the s3 client is used.
              * It is not a bug to use the same executor, but at least be aware that this is how the manager will be used.
-             *
              */
             Aws::Utils::Threading::Executor* transferExecutor;
             /**
@@ -76,14 +71,14 @@ namespace Aws
              */
             Aws::S3::Model::CreateMultipartUploadRequest createMultipartUploadTemplate;
             /**
-             *
              * If you have special arguments you want passed to our upload part calls, put them here. We will copy the template for each call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
              */             
             Aws::S3::Model::UploadPartRequest uploadPartTemplate;
             /**
              * Maximum size of the working buffers to use. This is not the same thing as max heap size for your process. This is the maximum amount of memory we will
-             *  allocate for all transfer buffers. default is 50MB
+             * allocate for all transfer buffers. default is 50MB.
+             * If you are using Aws::Utils::Threading::PooledThreadExecutor for transferExecutor, this size should be greater than bufferSize * poolSize.
              */
             uint64_t transferBufferMaxHeapSize;
             /**
@@ -91,10 +86,6 @@ namespace Aws
              * to increase your max heap size if this is something you plan on increasing.
              */
             uint64_t bufferSize;
-            /**
-             * Maximum number of file transfers to run in parallel. The default is 1. This is only enforced if the executor is a thread pool.
-             */
-            size_t maxParallelTransfers;
 
             /**
              * Callback to receive progress updates for uploads.
