@@ -30,7 +30,8 @@ namespace Model
     elasticmapreduce,
     ec2,
     appstream,
-    dynamodb
+    dynamodb,
+    rds
   };
 
 namespace ServiceNamespaceMapper

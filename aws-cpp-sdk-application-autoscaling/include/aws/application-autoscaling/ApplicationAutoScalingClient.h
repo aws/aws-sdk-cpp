@@ -149,8 +149,11 @@ namespace Model
    * <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html">Managing
    * Throughput Capacity Automatically with DynamoDB Auto Scaling</a> in the
-   * <i>Amazon DynamoDB Developer Guide</i>.</p> </li> </ul> <p>For a list of
-   * supported regions, see <a
+   * <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li> <p>Amazon Aurora
+   * Replicas. For more information, see <a
+   * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using
+   * Application Auto Scaling with an Amazon Aurora DB Cluster</a>.</p> </li> </ul>
+   * <p>For a list of supported regions, see <a
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS
    * Regions and Endpoints: Application Auto Scaling</a> in the <i>AWS General
    * Reference</i>.</p>

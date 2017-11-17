@@ -17,6 +17,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/model/CreateGrokClassifierRequest.h>
+#include <aws/glue/model/CreateXMLClassifierRequest.h>
 #include <utility>
 
 namespace Aws
@@ -45,34 +46,63 @@ namespace Model
 
 
     /**
-     * <p>A grok classifier to create.</p>
+     * <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
      */
     inline const CreateGrokClassifierRequest& GetGrokClassifier() const{ return m_grokClassifier; }
 
     /**
-     * <p>A grok classifier to create.</p>
+     * <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
      */
     inline void SetGrokClassifier(const CreateGrokClassifierRequest& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = value; }
 
     /**
-     * <p>A grok classifier to create.</p>
+     * <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
      */
     inline void SetGrokClassifier(CreateGrokClassifierRequest&& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = std::move(value); }
 
     /**
-     * <p>A grok classifier to create.</p>
+     * <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
      */
     inline CreateClassifierRequest& WithGrokClassifier(const CreateGrokClassifierRequest& value) { SetGrokClassifier(value); return *this;}
 
     /**
-     * <p>A grok classifier to create.</p>
+     * <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
      */
     inline CreateClassifierRequest& WithGrokClassifier(CreateGrokClassifierRequest&& value) { SetGrokClassifier(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline const CreateXMLClassifierRequest& GetXMLClassifier() const{ return m_xMLClassifier; }
+
+    /**
+     * <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline void SetXMLClassifier(const CreateXMLClassifierRequest& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = value; }
+
+    /**
+     * <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline void SetXMLClassifier(CreateXMLClassifierRequest&& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = std::move(value); }
+
+    /**
+     * <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline CreateClassifierRequest& WithXMLClassifier(const CreateXMLClassifierRequest& value) { SetXMLClassifier(value); return *this;}
+
+    /**
+     * <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline CreateClassifierRequest& WithXMLClassifier(CreateXMLClassifierRequest&& value) { SetXMLClassifier(std::move(value)); return *this;}
 
   private:
 
     CreateGrokClassifierRequest m_grokClassifier;
     bool m_grokClassifierHasBeenSet;
+
+    CreateXMLClassifierRequest m_xMLClassifier;
+    bool m_xMLClassifierHasBeenSet;
   };
 
 } // namespace Model

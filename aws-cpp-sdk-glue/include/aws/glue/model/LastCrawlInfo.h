@@ -76,37 +76,37 @@ namespace Model
 
 
     /**
-     * <p>Error information about the last crawl, if an error occurred.</p>
+     * <p>If an error occurred, the error information about the last crawl.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>Error information about the last crawl, if an error occurred.</p>
+     * <p>If an error occurred, the error information about the last crawl.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <p>Error information about the last crawl, if an error occurred.</p>
+     * <p>If an error occurred, the error information about the last crawl.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
-     * <p>Error information about the last crawl, if an error occurred.</p>
+     * <p>If an error occurred, the error information about the last crawl.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
-     * <p>Error information about the last crawl, if an error occurred.</p>
+     * <p>If an error occurred, the error information about the last crawl.</p>
      */
     inline LastCrawlInfo& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>Error information about the last crawl, if an error occurred.</p>
+     * <p>If an error occurred, the error information about the last crawl.</p>
      */
     inline LastCrawlInfo& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Error information about the last crawl, if an error occurred.</p>
+     * <p>If an error occurred, the error information about the last crawl.</p>
      */
     inline LastCrawlInfo& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

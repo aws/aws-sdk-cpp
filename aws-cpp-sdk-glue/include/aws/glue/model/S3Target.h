@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a crawler target in AWS S3.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a data store in Amazon S3.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3Target">AWS API
    * Reference</a></p>
    */
@@ -48,78 +48,94 @@ namespace Model
 
 
     /**
-     * <p>The path to the S3 target.</p>
+     * <p>The path to the Amazon S3 target.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>The path to the S3 target.</p>
+     * <p>The path to the Amazon S3 target.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>The path to the S3 target.</p>
+     * <p>The path to the Amazon S3 target.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
-     * <p>The path to the S3 target.</p>
+     * <p>The path to the Amazon S3 target.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>The path to the S3 target.</p>
+     * <p>The path to the Amazon S3 target.</p>
      */
     inline S3Target& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>The path to the S3 target.</p>
+     * <p>The path to the Amazon S3 target.</p>
      */
     inline S3Target& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the S3 target.</p>
+     * <p>The path to the Amazon S3 target.</p>
      */
     inline S3Target& WithPath(const char* value) { SetPath(value); return *this;}
 
 
     /**
-     * <p>A list of S3 objects to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusions() const{ return m_exclusions; }
 
     /**
-     * <p>A list of S3 objects to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline void SetExclusions(const Aws::Vector<Aws::String>& value) { m_exclusionsHasBeenSet = true; m_exclusions = value; }
 
     /**
-     * <p>A list of S3 objects to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline void SetExclusions(Aws::Vector<Aws::String>&& value) { m_exclusionsHasBeenSet = true; m_exclusions = std::move(value); }
 
     /**
-     * <p>A list of S3 objects to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline S3Target& WithExclusions(const Aws::Vector<Aws::String>& value) { SetExclusions(value); return *this;}
 
     /**
-     * <p>A list of S3 objects to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline S3Target& WithExclusions(Aws::Vector<Aws::String>&& value) { SetExclusions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of S3 objects to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline S3Target& AddExclusions(const Aws::String& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
 
     /**
-     * <p>A list of S3 objects to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline S3Target& AddExclusions(Aws::String&& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of S3 objects to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline S3Target& AddExclusions(const char* value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
 

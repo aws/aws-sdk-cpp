@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>A python script to perform the mapping.</p>
+     * <p>A Python script to perform the mapping.</p>
      */
     inline const Aws::String& GetPythonScript() const{ return m_pythonScript; }
 
     /**
-     * <p>A python script to perform the mapping.</p>
+     * <p>A Python script to perform the mapping.</p>
      */
     inline void SetPythonScript(const Aws::String& value) { m_pythonScript = value; }
 
     /**
-     * <p>A python script to perform the mapping.</p>
+     * <p>A Python script to perform the mapping.</p>
      */
     inline void SetPythonScript(Aws::String&& value) { m_pythonScript = std::move(value); }
 
     /**
-     * <p>A python script to perform the mapping.</p>
+     * <p>A Python script to perform the mapping.</p>
      */
     inline void SetPythonScript(const char* value) { m_pythonScript.assign(value); }
 
     /**
-     * <p>A python script to perform the mapping.</p>
+     * <p>A Python script to perform the mapping.</p>
      */
     inline GetPlanResult& WithPythonScript(const Aws::String& value) { SetPythonScript(value); return *this;}
 
     /**
-     * <p>A python script to perform the mapping.</p>
+     * <p>A Python script to perform the mapping.</p>
      */
     inline GetPlanResult& WithPythonScript(Aws::String&& value) { SetPythonScript(std::move(value)); return *this;}
 
     /**
-     * <p>A python script to perform the mapping.</p>
+     * <p>A Python script to perform the mapping.</p>
      */
     inline GetPlanResult& WithPythonScript(const char* value) { SetPythonScript(value); return *this;}
 

@@ -861,44 +861,44 @@ namespace Model
 
 
     /**
-     * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
-     * obtained from the server when the backup is created. </p>
+     * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
+     * server when the backup is created. </p>
      */
     inline const Aws::String& GetToolsVersion() const{ return m_toolsVersion; }
 
     /**
-     * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
-     * obtained from the server when the backup is created. </p>
+     * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
+     * server when the backup is created. </p>
      */
     inline void SetToolsVersion(const Aws::String& value) { m_toolsVersionHasBeenSet = true; m_toolsVersion = value; }
 
     /**
-     * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
-     * obtained from the server when the backup is created. </p>
+     * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
+     * server when the backup is created. </p>
      */
     inline void SetToolsVersion(Aws::String&& value) { m_toolsVersionHasBeenSet = true; m_toolsVersion = std::move(value); }
 
     /**
-     * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
-     * obtained from the server when the backup is created. </p>
+     * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
+     * server when the backup is created. </p>
      */
     inline void SetToolsVersion(const char* value) { m_toolsVersionHasBeenSet = true; m_toolsVersion.assign(value); }
 
     /**
-     * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
-     * obtained from the server when the backup is created. </p>
+     * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
+     * server when the backup is created. </p>
      */
     inline Backup& WithToolsVersion(const Aws::String& value) { SetToolsVersion(value); return *this;}
 
     /**
-     * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
-     * obtained from the server when the backup is created. </p>
+     * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
+     * server when the backup is created. </p>
      */
     inline Backup& WithToolsVersion(Aws::String&& value) { SetToolsVersion(std::move(value)); return *this;}
 
     /**
-     * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
-     * obtained from the server when the backup is created. </p>
+     * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
+     * server when the backup is created. </p>
      */
     inline Backup& WithToolsVersion(const char* value) { SetToolsVersion(value); return *this;}
 

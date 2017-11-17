@@ -43,10 +43,13 @@
 #include <aws/organizations/model/DescribeOrganizationalUnitRequest.h>
 #include <aws/organizations/model/DescribePolicyRequest.h>
 #include <aws/organizations/model/DetachPolicyRequest.h>
+#include <aws/organizations/model/DisableAWSServiceAccessRequest.h>
 #include <aws/organizations/model/DisablePolicyTypeRequest.h>
+#include <aws/organizations/model/EnableAWSServiceAccessRequest.h>
 #include <aws/organizations/model/EnableAllFeaturesRequest.h>
 #include <aws/organizations/model/EnablePolicyTypeRequest.h>
 #include <aws/organizations/model/InviteAccountToOrganizationRequest.h>
+#include <aws/organizations/model/ListAWSServiceAccessForOrganizationRequest.h>
 #include <aws/organizations/model/ListAccountsRequest.h>
 #include <aws/organizations/model/ListAccountsForParentRequest.h>
 #include <aws/organizations/model/ListChildrenRequest.h>
@@ -756,6 +759,41 @@ void OrganizationsClient::DetachPolicyAsyncHelper(const DetachPolicyRequest& req
   handler(this, request, DetachPolicy(request), context);
 }
 
+DisableAWSServiceAccessOutcome OrganizationsClient::DisableAWSServiceAccess(const DisableAWSServiceAccessRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisableAWSServiceAccessOutcome(NoResult());
+  }
+  else
+  {
+    return DisableAWSServiceAccessOutcome(outcome.GetError());
+  }
+}
+
+DisableAWSServiceAccessOutcomeCallable OrganizationsClient::DisableAWSServiceAccessCallable(const DisableAWSServiceAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableAWSServiceAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableAWSServiceAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OrganizationsClient::DisableAWSServiceAccessAsync(const DisableAWSServiceAccessRequest& request, const DisableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableAWSServiceAccessAsyncHelper( request, handler, context ); } );
+}
+
+void OrganizationsClient::DisableAWSServiceAccessAsyncHelper(const DisableAWSServiceAccessRequest& request, const DisableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableAWSServiceAccess(request), context);
+}
+
 DisablePolicyTypeOutcome OrganizationsClient::DisablePolicyType(const DisablePolicyTypeRequest& request) const
 {
   Aws::StringStream ss;
@@ -789,6 +827,41 @@ void OrganizationsClient::DisablePolicyTypeAsync(const DisablePolicyTypeRequest&
 void OrganizationsClient::DisablePolicyTypeAsyncHelper(const DisablePolicyTypeRequest& request, const DisablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisablePolicyType(request), context);
+}
+
+EnableAWSServiceAccessOutcome OrganizationsClient::EnableAWSServiceAccess(const EnableAWSServiceAccessRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return EnableAWSServiceAccessOutcome(NoResult());
+  }
+  else
+  {
+    return EnableAWSServiceAccessOutcome(outcome.GetError());
+  }
+}
+
+EnableAWSServiceAccessOutcomeCallable OrganizationsClient::EnableAWSServiceAccessCallable(const EnableAWSServiceAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableAWSServiceAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableAWSServiceAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OrganizationsClient::EnableAWSServiceAccessAsync(const EnableAWSServiceAccessRequest& request, const EnableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableAWSServiceAccessAsyncHelper( request, handler, context ); } );
+}
+
+void OrganizationsClient::EnableAWSServiceAccessAsyncHelper(const EnableAWSServiceAccessRequest& request, const EnableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableAWSServiceAccess(request), context);
 }
 
 EnableAllFeaturesOutcome OrganizationsClient::EnableAllFeatures(const EnableAllFeaturesRequest& request) const
@@ -928,6 +1001,41 @@ void OrganizationsClient::LeaveOrganizationAsync(const LeaveOrganizationResponse
 void OrganizationsClient::LeaveOrganizationAsyncHelper(const LeaveOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, LeaveOrganization(), context);
+}
+
+ListAWSServiceAccessForOrganizationOutcome OrganizationsClient::ListAWSServiceAccessForOrganization(const ListAWSServiceAccessForOrganizationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListAWSServiceAccessForOrganizationOutcome(ListAWSServiceAccessForOrganizationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAWSServiceAccessForOrganizationOutcome(outcome.GetError());
+  }
+}
+
+ListAWSServiceAccessForOrganizationOutcomeCallable OrganizationsClient::ListAWSServiceAccessForOrganizationCallable(const ListAWSServiceAccessForOrganizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAWSServiceAccessForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAWSServiceAccessForOrganization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OrganizationsClient::ListAWSServiceAccessForOrganizationAsync(const ListAWSServiceAccessForOrganizationRequest& request, const ListAWSServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAWSServiceAccessForOrganizationAsyncHelper( request, handler, context ); } );
+}
+
+void OrganizationsClient::ListAWSServiceAccessForOrganizationAsyncHelper(const ListAWSServiceAccessForOrganizationRequest& request, const ListAWSServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAWSServiceAccessForOrganization(request), context);
 }
 
 ListAccountsOutcome OrganizationsClient::ListAccounts(const ListAccountsRequest& request) const

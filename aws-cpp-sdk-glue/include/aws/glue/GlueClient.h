@@ -641,7 +641,8 @@ namespace Model
         virtual void BatchStopJobRunAsync(const Model::BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a <code>Classifier</code> in the user's account.</p><p><h3>See
+         * <p>Creates a classifier in the user's account. This may be either a
+         * <code>GrokClassifier</code> or an <code>XMLClassifier</code>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">AWS
          * API Reference</a></p>
@@ -649,7 +650,8 @@ namespace Model
         virtual Model::CreateClassifierOutcome CreateClassifier(const Model::CreateClassifierRequest& request) const;
 
         /**
-         * <p>Creates a <code>Classifier</code> in the user's account.</p><p><h3>See
+         * <p>Creates a classifier in the user's account. This may be either a
+         * <code>GrokClassifier</code> or an <code>XMLClassifier</code>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">AWS
          * API Reference</a></p>
@@ -659,7 +661,8 @@ namespace Model
         virtual Model::CreateClassifierOutcomeCallable CreateClassifierCallable(const Model::CreateClassifierRequest& request) const;
 
         /**
-         * <p>Creates a <code>Classifier</code> in the user's account.</p><p><h3>See
+         * <p>Creates a classifier in the user's account. This may be either a
+         * <code>GrokClassifier</code> or an <code>XMLClassifier</code>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">AWS
          * API Reference</a></p>
@@ -697,20 +700,18 @@ namespace Model
         virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new <code>Crawler</code> with specified targets, role,
-         * configuration, and optional schedule. At least one crawl target must be
-         * specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i>
-         * field.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new crawler with specified targets, role, configuration, and
+         * optional schedule. At least one crawl target must be specified, in either the
+         * <i>s3Targets</i> or the <i>jdbcTargets</i> field.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateCrawlerOutcome CreateCrawler(const Model::CreateCrawlerRequest& request) const;
 
         /**
-         * <p>Creates a new <code>Crawler</code> with specified targets, role,
-         * configuration, and optional schedule. At least one crawl target must be
-         * specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i>
-         * field.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new crawler with specified targets, role, configuration, and
+         * optional schedule. At least one crawl target must be specified, in either the
+         * <i>s3Targets</i> or the <i>jdbcTargets</i> field.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">AWS
          * API Reference</a></p>
          *
@@ -719,10 +720,9 @@ namespace Model
         virtual Model::CreateCrawlerOutcomeCallable CreateCrawlerCallable(const Model::CreateCrawlerRequest& request) const;
 
         /**
-         * <p>Creates a new <code>Crawler</code> with specified targets, role,
-         * configuration, and optional schedule. At least one crawl target must be
-         * specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i>
-         * field.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new crawler with specified targets, role, configuration, and
+         * optional schedule. At least one crawl target must be specified, in either the
+         * <i>s3Targets</i> or the <i>jdbcTargets</i> field.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">AWS
          * API Reference</a></p>
          *
@@ -937,16 +937,14 @@ namespace Model
         virtual void CreateUserDefinedFunctionAsync(const Model::CreateUserDefinedFunctionRequest& request, const CreateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a <code>Classifier</code> from the metadata store.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes a classifier from the Data Catalog.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteClassifier">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteClassifierOutcome DeleteClassifier(const Model::DeleteClassifierRequest& request) const;
 
         /**
-         * <p>Removes a <code>Classifier</code> from the metadata store.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes a classifier from the Data Catalog.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteClassifier">AWS
          * API Reference</a></p>
          *
@@ -955,8 +953,7 @@ namespace Model
         virtual Model::DeleteClassifierOutcomeCallable DeleteClassifierCallable(const Model::DeleteClassifierRequest& request) const;
 
         /**
-         * <p>Removes a <code>Classifier</code> from the metadata store.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes a classifier from the Data Catalog.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteClassifier">AWS
          * API Reference</a></p>
          *
@@ -990,18 +987,16 @@ namespace Model
         virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a specified <code>Crawler</code> from the metadata store, unless the
-         * <code>Crawler</code> state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes a specified crawler from the Data Catalog, unless the crawler state
+         * is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCrawlerOutcome DeleteCrawler(const Model::DeleteCrawlerRequest& request) const;
 
         /**
-         * <p>Removes a specified <code>Crawler</code> from the metadata store, unless the
-         * <code>Crawler</code> state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes a specified crawler from the Data Catalog, unless the crawler state
+         * is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">AWS
          * API Reference</a></p>
          *
@@ -1010,9 +1005,8 @@ namespace Model
         virtual Model::DeleteCrawlerOutcomeCallable DeleteCrawlerCallable(const Model::DeleteCrawlerRequest& request) const;
 
         /**
-         * <p>Removes a specified <code>Crawler</code> from the metadata store, unless the
-         * <code>Crawler</code> state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes a specified crawler from the Data Catalog, unless the crawler state
+         * is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">AWS
          * API Reference</a></p>
          *
@@ -1227,14 +1221,14 @@ namespace Model
         virtual void GetCatalogImportStatusAsync(const Model::GetCatalogImportStatusRequest& request, const GetCatalogImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve a <code>Classifier</code> by name.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieve a classifier by name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifier">AWS
          * API Reference</a></p>
          */
         virtual Model::GetClassifierOutcome GetClassifier(const Model::GetClassifierRequest& request) const;
 
         /**
-         * <p>Retrieve a <code>Classifier</code> by name.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieve a classifier by name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifier">AWS
          * API Reference</a></p>
          *
@@ -1243,7 +1237,7 @@ namespace Model
         virtual Model::GetClassifierOutcomeCallable GetClassifierCallable(const Model::GetClassifierRequest& request) const;
 
         /**
-         * <p>Retrieve a <code>Classifier</code> by name.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieve a classifier by name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifier">AWS
          * API Reference</a></p>
          *
@@ -1252,7 +1246,7 @@ namespace Model
         virtual void GetClassifierAsync(const Model::GetClassifierRequest& request, const GetClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all Classifier objects in the metadata store.</p><p><h3>See Also:</h3> 
+         * <p>Lists all classifier objects in the Data Catalog.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifiers">AWS
          * API Reference</a></p>
@@ -1260,7 +1254,7 @@ namespace Model
         virtual Model::GetClassifiersOutcome GetClassifiers(const Model::GetClassifiersRequest& request) const;
 
         /**
-         * <p>Lists all Classifier objects in the metadata store.</p><p><h3>See Also:</h3> 
+         * <p>Lists all classifier objects in the Data Catalog.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifiers">AWS
          * API Reference</a></p>
@@ -1270,7 +1264,7 @@ namespace Model
         virtual Model::GetClassifiersOutcomeCallable GetClassifiersCallable(const Model::GetClassifiersRequest& request) const;
 
         /**
-         * <p>Lists all Classifier objects in the metadata store.</p><p><h3>See Also:</h3> 
+         * <p>Lists all classifier objects in the Data Catalog.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifiers">AWS
          * API Reference</a></p>
@@ -1336,16 +1330,14 @@ namespace Model
         virtual void GetConnectionsAsync(const Model::GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves metadata for a specified <code>Crawler</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves metadata for a specified crawler.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawler">AWS API
          * Reference</a></p>
          */
         virtual Model::GetCrawlerOutcome GetCrawler(const Model::GetCrawlerRequest& request) const;
 
         /**
-         * <p>Retrieves metadata for a specified <code>Crawler</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves metadata for a specified crawler.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawler">AWS API
          * Reference</a></p>
          *
@@ -1354,8 +1346,7 @@ namespace Model
         virtual Model::GetCrawlerOutcomeCallable GetCrawlerCallable(const Model::GetCrawlerRequest& request) const;
 
         /**
-         * <p>Retrieves metadata for a specified <code>Crawler</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves metadata for a specified crawler.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawler">AWS API
          * Reference</a></p>
          *
@@ -1389,7 +1380,7 @@ namespace Model
         virtual void GetCrawlerMetricsAsync(const Model::GetCrawlerMetricsRequest& request, const GetCrawlerMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves metadata for all <code>Crawlers</code> defined in the customer
+         * <p>Retrieves metadata for all crawlers defined in the customer
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlers">AWS
          * API Reference</a></p>
@@ -1397,7 +1388,7 @@ namespace Model
         virtual Model::GetCrawlersOutcome GetCrawlers(const Model::GetCrawlersRequest& request) const;
 
         /**
-         * <p>Retrieves metadata for all <code>Crawlers</code> defined in the customer
+         * <p>Retrieves metadata for all crawlers defined in the customer
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlers">AWS
          * API Reference</a></p>
@@ -1407,7 +1398,7 @@ namespace Model
         virtual Model::GetCrawlersOutcomeCallable GetCrawlersCallable(const Model::GetCrawlersRequest& request) const;
 
         /**
-         * <p>Retrieves metadata for all <code>Crawlers</code> defined in the customer
+         * <p>Retrieves metadata for all crawlers defined in the customer
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlers">AWS
          * API Reference</a></p>
@@ -2003,18 +1994,16 @@ namespace Model
         virtual void ResetJobBookmarkAsync(const Model::ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a crawl using the specified <code>Crawler</code>, regardless of what
-         * is scheduled. If the <code>Crawler</code> is already running, does
-         * nothing.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a crawl using the specified crawler, regardless of what is scheduled.
+         * If the crawler is already running, does nothing.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">AWS
          * API Reference</a></p>
          */
         virtual Model::StartCrawlerOutcome StartCrawler(const Model::StartCrawlerRequest& request) const;
 
         /**
-         * <p>Starts a crawl using the specified <code>Crawler</code>, regardless of what
-         * is scheduled. If the <code>Crawler</code> is already running, does
-         * nothing.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a crawl using the specified crawler, regardless of what is scheduled.
+         * If the crawler is already running, does nothing.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">AWS
          * API Reference</a></p>
          *
@@ -2023,9 +2012,8 @@ namespace Model
         virtual Model::StartCrawlerOutcomeCallable StartCrawlerCallable(const Model::StartCrawlerRequest& request) const;
 
         /**
-         * <p>Starts a crawl using the specified <code>Crawler</code>, regardless of what
-         * is scheduled. If the <code>Crawler</code> is already running, does
-         * nothing.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a crawl using the specified crawler, regardless of what is scheduled.
+         * If the crawler is already running, does nothing.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">AWS
          * API Reference</a></p>
          *
@@ -2115,16 +2103,16 @@ namespace Model
         virtual void StartTriggerAsync(const Model::StartTriggerRequest& request, const StartTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>If the specified <code>Crawler</code> is running, stops the
-         * crawl.</p><p><h3>See Also:</h3>   <a
+         * <p>If the specified crawler is running, stops the crawl.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawler">AWS
          * API Reference</a></p>
          */
         virtual Model::StopCrawlerOutcome StopCrawler(const Model::StopCrawlerRequest& request) const;
 
         /**
-         * <p>If the specified <code>Crawler</code> is running, stops the
-         * crawl.</p><p><h3>See Also:</h3>   <a
+         * <p>If the specified crawler is running, stops the crawl.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawler">AWS
          * API Reference</a></p>
          *
@@ -2133,8 +2121,8 @@ namespace Model
         virtual Model::StopCrawlerOutcomeCallable StopCrawlerCallable(const Model::StopCrawlerRequest& request) const;
 
         /**
-         * <p>If the specified <code>Crawler</code> is running, stops the
-         * crawl.</p><p><h3>See Also:</h3>   <a
+         * <p>If the specified crawler is running, stops the crawl.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawler">AWS
          * API Reference</a></p>
          *
@@ -2199,14 +2187,16 @@ namespace Model
         virtual void StopTriggerAsync(const Model::StopTriggerRequest& request, const StopTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an existing <code>Classifier</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an existing classifier (either a <code>GrokClassifier</code> or an
+         * <code>XMLClassifier</code>).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateClassifierOutcome UpdateClassifier(const Model::UpdateClassifierRequest& request) const;
 
         /**
-         * <p>Modifies an existing <code>Classifier</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an existing classifier (either a <code>GrokClassifier</code> or an
+         * <code>XMLClassifier</code>).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">AWS
          * API Reference</a></p>
          *
@@ -2215,7 +2205,8 @@ namespace Model
         virtual Model::UpdateClassifierOutcomeCallable UpdateClassifierCallable(const Model::UpdateClassifierRequest& request) const;
 
         /**
-         * <p>Modifies an existing <code>Classifier</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an existing classifier (either a <code>GrokClassifier</code> or an
+         * <code>XMLClassifier</code>).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">AWS
          * API Reference</a></p>
          *
@@ -2252,18 +2243,16 @@ namespace Model
         virtual void UpdateConnectionAsync(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a <code>Crawler</code>. If a <code>Crawler</code> is running, you
-         * must stop it using <code>StopCrawler</code> before updating it.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a crawler. If a crawler is running, you must stop it using
+         * <code>StopCrawler</code> before updating it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawler">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateCrawlerOutcome UpdateCrawler(const Model::UpdateCrawlerRequest& request) const;
 
         /**
-         * <p>Updates a <code>Crawler</code>. If a <code>Crawler</code> is running, you
-         * must stop it using <code>StopCrawler</code> before updating it.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a crawler. If a crawler is running, you must stop it using
+         * <code>StopCrawler</code> before updating it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawler">AWS
          * API Reference</a></p>
          *
@@ -2272,9 +2261,8 @@ namespace Model
         virtual Model::UpdateCrawlerOutcomeCallable UpdateCrawlerCallable(const Model::UpdateCrawlerRequest& request) const;
 
         /**
-         * <p>Updates a <code>Crawler</code>. If a <code>Crawler</code> is running, you
-         * must stop it using <code>StopCrawler</code> before updating it.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a crawler. If a crawler is running, you must stop it using
+         * <code>StopCrawler</code> before updating it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawler">AWS
          * API Reference</a></p>
          *
@@ -2283,16 +2271,16 @@ namespace Model
         virtual void UpdateCrawlerAsync(const Model::UpdateCrawlerRequest& request, const UpdateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the schedule of a crawler using a Cron expression. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the schedule of a crawler using a <code>cron</code> expression.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawlerSchedule">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateCrawlerScheduleOutcome UpdateCrawlerSchedule(const Model::UpdateCrawlerScheduleRequest& request) const;
 
         /**
-         * <p>Updates the schedule of a crawler using a Cron expression. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the schedule of a crawler using a <code>cron</code> expression.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawlerSchedule">AWS
          * API Reference</a></p>
          *
@@ -2301,8 +2289,8 @@ namespace Model
         virtual Model::UpdateCrawlerScheduleOutcomeCallable UpdateCrawlerScheduleCallable(const Model::UpdateCrawlerScheduleRequest& request) const;
 
         /**
-         * <p>Updates the schedule of a crawler using a Cron expression. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the schedule of a crawler using a <code>cron</code> expression.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawlerSchedule">AWS
          * API Reference</a></p>
          *

@@ -45,17 +45,17 @@ namespace Model
 
 
     /**
-     * <p>The number of Crawlers to return on each call.</p>
+     * <p>The number of crawlers to return on each call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The number of Crawlers to return on each call.</p>
+     * <p>The number of crawlers to return on each call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The number of Crawlers to return on each call.</p>
+     * <p>The number of crawlers to return on each call.</p>
      */
     inline GetCrawlersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

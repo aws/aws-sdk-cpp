@@ -45,37 +45,72 @@ namespace Model
 
 
     /**
-     * <p>Contains the response to a <code>DescribeServers</code> request. </p>
+     * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Puppet Server:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
+     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
+     * node certificates.</p>
      */
     inline const Aws::Vector<Server>& GetServers() const{ return m_servers; }
 
     /**
-     * <p>Contains the response to a <code>DescribeServers</code> request. </p>
+     * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Puppet Server:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
+     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
+     * node certificates.</p>
      */
     inline void SetServers(const Aws::Vector<Server>& value) { m_servers = value; }
 
     /**
-     * <p>Contains the response to a <code>DescribeServers</code> request. </p>
+     * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Puppet Server:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
+     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
+     * node certificates.</p>
      */
     inline void SetServers(Aws::Vector<Server>&& value) { m_servers = std::move(value); }
 
     /**
-     * <p>Contains the response to a <code>DescribeServers</code> request. </p>
+     * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Puppet Server:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
+     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
+     * node certificates.</p>
      */
     inline DescribeServersResult& WithServers(const Aws::Vector<Server>& value) { SetServers(value); return *this;}
 
     /**
-     * <p>Contains the response to a <code>DescribeServers</code> request. </p>
+     * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Puppet Server:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
+     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
+     * node certificates.</p>
      */
     inline DescribeServersResult& WithServers(Aws::Vector<Server>&& value) { SetServers(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the response to a <code>DescribeServers</code> request. </p>
+     * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Puppet Server:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
+     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
+     * node certificates.</p>
      */
     inline DescribeServersResult& AddServers(const Server& value) { m_servers.push_back(value); return *this; }
 
     /**
-     * <p>Contains the response to a <code>DescribeServers</code> request. </p>
+     * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Puppet Server:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
+     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
+     * node certificates.</p>
      */
     inline DescribeServersResult& AddServers(Server&& value) { m_servers.push_back(std::move(value)); return *this; }
 

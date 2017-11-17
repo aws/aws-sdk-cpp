@@ -69,6 +69,11 @@ namespace Aws
         static const int r4_16xlarge_HASH = HashingUtils::HashString("r4.16xlarge");
         static const int x1_16xlarge_HASH = HashingUtils::HashString("x1.16xlarge");
         static const int x1_32xlarge_HASH = HashingUtils::HashString("x1.32xlarge");
+        static const int x1e_xlarge_HASH = HashingUtils::HashString("x1e.xlarge");
+        static const int x1e_2xlarge_HASH = HashingUtils::HashString("x1e.2xlarge");
+        static const int x1e_4xlarge_HASH = HashingUtils::HashString("x1e.4xlarge");
+        static const int x1e_8xlarge_HASH = HashingUtils::HashString("x1e.8xlarge");
+        static const int x1e_16xlarge_HASH = HashingUtils::HashString("x1e.16xlarge");
         static const int x1e_32xlarge_HASH = HashingUtils::HashString("x1e.32xlarge");
         static const int i2_xlarge_HASH = HashingUtils::HashString("i2.xlarge");
         static const int i2_2xlarge_HASH = HashingUtils::HashString("i2.2xlarge");
@@ -280,6 +285,26 @@ namespace Aws
           else if (hashCode == x1_32xlarge_HASH)
           {
             return InstanceType::x1_32xlarge;
+          }
+          else if (hashCode == x1e_xlarge_HASH)
+          {
+            return InstanceType::x1e_xlarge;
+          }
+          else if (hashCode == x1e_2xlarge_HASH)
+          {
+            return InstanceType::x1e_2xlarge;
+          }
+          else if (hashCode == x1e_4xlarge_HASH)
+          {
+            return InstanceType::x1e_4xlarge;
+          }
+          else if (hashCode == x1e_8xlarge_HASH)
+          {
+            return InstanceType::x1e_8xlarge;
+          }
+          else if (hashCode == x1e_16xlarge_HASH)
+          {
+            return InstanceType::x1e_16xlarge;
           }
           else if (hashCode == x1e_32xlarge_HASH)
           {
@@ -577,6 +602,16 @@ namespace Aws
             return "x1.16xlarge";
           case InstanceType::x1_32xlarge:
             return "x1.32xlarge";
+          case InstanceType::x1e_xlarge:
+            return "x1e.xlarge";
+          case InstanceType::x1e_2xlarge:
+            return "x1e.2xlarge";
+          case InstanceType::x1e_4xlarge:
+            return "x1e.4xlarge";
+          case InstanceType::x1e_8xlarge:
+            return "x1e.8xlarge";
+          case InstanceType::x1e_16xlarge:
+            return "x1e.16xlarge";
           case InstanceType::x1e_32xlarge:
             return "x1e.32xlarge";
           case InstanceType::i2_xlarge:

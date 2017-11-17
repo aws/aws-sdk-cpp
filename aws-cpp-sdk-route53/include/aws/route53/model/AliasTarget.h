@@ -81,24 +81,25 @@ namespace Model
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load
      * balancer, and get the value of the <b>Hosted zone</b> field on the
      * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable
-     * guide:</p> <ul> <li> <p>Classic Load Balancers: <a
+     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
+     * Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> </ul> </li> <li> <p> <b>AWS CLI</b>: Use
-     * <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     * <code>CanonicalHostedZoneNameID</code> (for Application and Network Load
-     * Balancers). For more information, see the applicable guide:</p> <ul> <li>
-     * <p>Classic Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * <li> <p> <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the
+     * applicable value. For more information, see the applicable guide:</p> <ul> <li>
+     * <p>Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> </ul> </li> </ul> </dd> <dt>An Amazon S3 bucket configured as a
-     * static website</dt> <dd> <p>Specify the hosted zone ID for the region that you
-     * created the bucket in. For more information about valid values, see the <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * </ul> </dd> <dt>An Amazon S3 bucket configured as a static website</dt> <dd>
+     * <p>Specify the hosted zone ID for the region that you created the bucket in. For
+     * more information about valid values, see the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service Website Endpoints</a> table in the "AWS Regions and
      * Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.</p>
@@ -132,24 +133,25 @@ namespace Model
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load
      * balancer, and get the value of the <b>Hosted zone</b> field on the
      * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable
-     * guide:</p> <ul> <li> <p>Classic Load Balancers: <a
+     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
+     * Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> </ul> </li> <li> <p> <b>AWS CLI</b>: Use
-     * <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     * <code>CanonicalHostedZoneNameID</code> (for Application and Network Load
-     * Balancers). For more information, see the applicable guide:</p> <ul> <li>
-     * <p>Classic Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * <li> <p> <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the
+     * applicable value. For more information, see the applicable guide:</p> <ul> <li>
+     * <p>Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> </ul> </li> </ul> </dd> <dt>An Amazon S3 bucket configured as a
-     * static website</dt> <dd> <p>Specify the hosted zone ID for the region that you
-     * created the bucket in. For more information about valid values, see the <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * </ul> </dd> <dt>An Amazon S3 bucket configured as a static website</dt> <dd>
+     * <p>Specify the hosted zone ID for the region that you created the bucket in. For
+     * more information about valid values, see the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service Website Endpoints</a> table in the "AWS Regions and
      * Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.</p>
@@ -183,24 +185,25 @@ namespace Model
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load
      * balancer, and get the value of the <b>Hosted zone</b> field on the
      * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable
-     * guide:</p> <ul> <li> <p>Classic Load Balancers: <a
+     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
+     * Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> </ul> </li> <li> <p> <b>AWS CLI</b>: Use
-     * <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     * <code>CanonicalHostedZoneNameID</code> (for Application and Network Load
-     * Balancers). For more information, see the applicable guide:</p> <ul> <li>
-     * <p>Classic Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * <li> <p> <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the
+     * applicable value. For more information, see the applicable guide:</p> <ul> <li>
+     * <p>Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> </ul> </li> </ul> </dd> <dt>An Amazon S3 bucket configured as a
-     * static website</dt> <dd> <p>Specify the hosted zone ID for the region that you
-     * created the bucket in. For more information about valid values, see the <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * </ul> </dd> <dt>An Amazon S3 bucket configured as a static website</dt> <dd>
+     * <p>Specify the hosted zone ID for the region that you created the bucket in. For
+     * more information about valid values, see the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service Website Endpoints</a> table in the "AWS Regions and
      * Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.</p>
@@ -234,24 +237,25 @@ namespace Model
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load
      * balancer, and get the value of the <b>Hosted zone</b> field on the
      * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable
-     * guide:</p> <ul> <li> <p>Classic Load Balancers: <a
+     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
+     * Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> </ul> </li> <li> <p> <b>AWS CLI</b>: Use
-     * <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     * <code>CanonicalHostedZoneNameID</code> (for Application and Network Load
-     * Balancers). For more information, see the applicable guide:</p> <ul> <li>
-     * <p>Classic Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * <li> <p> <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the
+     * applicable value. For more information, see the applicable guide:</p> <ul> <li>
+     * <p>Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> </ul> </li> </ul> </dd> <dt>An Amazon S3 bucket configured as a
-     * static website</dt> <dd> <p>Specify the hosted zone ID for the region that you
-     * created the bucket in. For more information about valid values, see the <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * </ul> </dd> <dt>An Amazon S3 bucket configured as a static website</dt> <dd>
+     * <p>Specify the hosted zone ID for the region that you created the bucket in. For
+     * more information about valid values, see the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service Website Endpoints</a> table in the "AWS Regions and
      * Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.</p>
@@ -285,24 +289,25 @@ namespace Model
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load
      * balancer, and get the value of the <b>Hosted zone</b> field on the
      * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable
-     * guide:</p> <ul> <li> <p>Classic Load Balancers: <a
+     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
+     * Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> </ul> </li> <li> <p> <b>AWS CLI</b>: Use
-     * <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     * <code>CanonicalHostedZoneNameID</code> (for Application and Network Load
-     * Balancers). For more information, see the applicable guide:</p> <ul> <li>
-     * <p>Classic Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * <li> <p> <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the
+     * applicable value. For more information, see the applicable guide:</p> <ul> <li>
+     * <p>Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> </ul> </li> </ul> </dd> <dt>An Amazon S3 bucket configured as a
-     * static website</dt> <dd> <p>Specify the hosted zone ID for the region that you
-     * created the bucket in. For more information about valid values, see the <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * </ul> </dd> <dt>An Amazon S3 bucket configured as a static website</dt> <dd>
+     * <p>Specify the hosted zone ID for the region that you created the bucket in. For
+     * more information about valid values, see the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service Website Endpoints</a> table in the "AWS Regions and
      * Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.</p>
@@ -336,24 +341,25 @@ namespace Model
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load
      * balancer, and get the value of the <b>Hosted zone</b> field on the
      * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable
-     * guide:</p> <ul> <li> <p>Classic Load Balancers: <a
+     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
+     * Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> </ul> </li> <li> <p> <b>AWS CLI</b>: Use
-     * <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     * <code>CanonicalHostedZoneNameID</code> (for Application and Network Load
-     * Balancers). For more information, see the applicable guide:</p> <ul> <li>
-     * <p>Classic Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * <li> <p> <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the
+     * applicable value. For more information, see the applicable guide:</p> <ul> <li>
+     * <p>Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> </ul> </li> </ul> </dd> <dt>An Amazon S3 bucket configured as a
-     * static website</dt> <dd> <p>Specify the hosted zone ID for the region that you
-     * created the bucket in. For more information about valid values, see the <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * </ul> </dd> <dt>An Amazon S3 bucket configured as a static website</dt> <dd>
+     * <p>Specify the hosted zone ID for the region that you created the bucket in. For
+     * more information about valid values, see the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service Website Endpoints</a> table in the "AWS Regions and
      * Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.</p>
@@ -387,24 +393,25 @@ namespace Model
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load
      * balancer, and get the value of the <b>Hosted zone</b> field on the
      * <b>Description</b> tab.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>:
-     * Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameId</code>. For more information, see the applicable
-     * guide:</p> <ul> <li> <p>Classic Load Balancers: <a
+     * Use <code>DescribeLoadBalancers</code> to get the applicable value. For more
+     * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
+     * Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-     * </p> </li> </ul> </li> <li> <p> <b>AWS CLI</b>: Use
-     * <code>describe-load-balancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code> (for Classic Load Balancers) or
-     * <code>CanonicalHostedZoneNameID</code> (for Application and Network Load
-     * Balancers). For more information, see the applicable guide:</p> <ul> <li>
-     * <p>Classic Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * <li> <p> <b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the
+     * applicable value. For more information, see the applicable guide:</p> <ul> <li>
+     * <p>Classic Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> <li> <p>Application and Network Load Balancers: <a
+     * to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> <li>
+     * <p>Application and Network Load Balancers: Use <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a>
-     * </p> </li> </ul> </li> </ul> </dd> <dt>An Amazon S3 bucket configured as a
-     * static website</dt> <dd> <p>Specify the hosted zone ID for the region that you
-     * created the bucket in. For more information about valid values, see the <a
+     * to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> </ul> </li>
+     * </ul> </dd> <dt>An Amazon S3 bucket configured as a static website</dt> <dd>
+     * <p>Specify the hosted zone ID for the region that you created the bucket in. For
+     * more information about valid values, see the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service Website Endpoints</a> table in the "AWS Regions and
      * Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.</p>

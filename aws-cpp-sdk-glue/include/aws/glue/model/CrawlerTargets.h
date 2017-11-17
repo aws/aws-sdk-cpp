@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies crawler targets.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies data stores to crawl.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CrawlerTargets">AWS
    * API Reference</a></p>
    */
@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>Specifies targets in AWS S3.</p>
+     * <p>Specifies Amazon S3 targets.</p>
      */
     inline const Aws::Vector<S3Target>& GetS3Targets() const{ return m_s3Targets; }
 
     /**
-     * <p>Specifies targets in AWS S3.</p>
+     * <p>Specifies Amazon S3 targets.</p>
      */
     inline void SetS3Targets(const Aws::Vector<S3Target>& value) { m_s3TargetsHasBeenSet = true; m_s3Targets = value; }
 
     /**
-     * <p>Specifies targets in AWS S3.</p>
+     * <p>Specifies Amazon S3 targets.</p>
      */
     inline void SetS3Targets(Aws::Vector<S3Target>&& value) { m_s3TargetsHasBeenSet = true; m_s3Targets = std::move(value); }
 
     /**
-     * <p>Specifies targets in AWS S3.</p>
+     * <p>Specifies Amazon S3 targets.</p>
      */
     inline CrawlerTargets& WithS3Targets(const Aws::Vector<S3Target>& value) { SetS3Targets(value); return *this;}
 
     /**
-     * <p>Specifies targets in AWS S3.</p>
+     * <p>Specifies Amazon S3 targets.</p>
      */
     inline CrawlerTargets& WithS3Targets(Aws::Vector<S3Target>&& value) { SetS3Targets(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies targets in AWS S3.</p>
+     * <p>Specifies Amazon S3 targets.</p>
      */
     inline CrawlerTargets& AddS3Targets(const S3Target& value) { m_s3TargetsHasBeenSet = true; m_s3Targets.push_back(value); return *this; }
 
     /**
-     * <p>Specifies targets in AWS S3.</p>
+     * <p>Specifies Amazon S3 targets.</p>
      */
     inline CrawlerTargets& AddS3Targets(S3Target&& value) { m_s3TargetsHasBeenSet = true; m_s3Targets.push_back(std::move(value)); return *this; }
 

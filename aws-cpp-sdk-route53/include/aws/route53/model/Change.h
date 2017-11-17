@@ -61,23 +61,7 @@ namespace Model
      * be charged for it even though it's no longer in use. </p> </important> </li>
      * <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist,
      * Amazon Route 53 creates it. If a resource record set does exist, Amazon Route 53
-     * updates it with the values in the request.</p> </li> </ul> <p>The values that
-     * you need to include in the request depend on the type of resource record set
-     * that you're creating, deleting, or updating:</p> <p> <b>Basic resource record
-     * sets (excluding alias, failover, geolocation, latency, and weighted resource
-     * record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p>
-     * <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> </ul> <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding
-     * alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li>
-     * <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> <li>
-     * <p> <code>SetIdentifier</code> </p> </li> </ul> <p> <b>Alias resource record
-     * sets (including failover alias, geolocation alias, latency alias, and weighted
-     * alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li>
-     * <li> <p> <code>Type</code> </p> </li> <li> <p> <code>AliasTarget</code>
-     * (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)</p> </li> <li> <p> <code>SetIdentifier</code> (for
-     * failover, geolocation, latency, and weighted resource record sets)</p> </li>
-     * </ul>
+     * updates it with the values in the request.</p> </li> </ul>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
 
@@ -93,23 +77,7 @@ namespace Model
      * be charged for it even though it's no longer in use. </p> </important> </li>
      * <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist,
      * Amazon Route 53 creates it. If a resource record set does exist, Amazon Route 53
-     * updates it with the values in the request.</p> </li> </ul> <p>The values that
-     * you need to include in the request depend on the type of resource record set
-     * that you're creating, deleting, or updating:</p> <p> <b>Basic resource record
-     * sets (excluding alias, failover, geolocation, latency, and weighted resource
-     * record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p>
-     * <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> </ul> <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding
-     * alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li>
-     * <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> <li>
-     * <p> <code>SetIdentifier</code> </p> </li> </ul> <p> <b>Alias resource record
-     * sets (including failover alias, geolocation alias, latency alias, and weighted
-     * alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li>
-     * <li> <p> <code>Type</code> </p> </li> <li> <p> <code>AliasTarget</code>
-     * (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)</p> </li> <li> <p> <code>SetIdentifier</code> (for
-     * failover, geolocation, latency, and weighted resource record sets)</p> </li>
-     * </ul>
+     * updates it with the values in the request.</p> </li> </ul>
      */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
@@ -125,23 +93,7 @@ namespace Model
      * be charged for it even though it's no longer in use. </p> </important> </li>
      * <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist,
      * Amazon Route 53 creates it. If a resource record set does exist, Amazon Route 53
-     * updates it with the values in the request.</p> </li> </ul> <p>The values that
-     * you need to include in the request depend on the type of resource record set
-     * that you're creating, deleting, or updating:</p> <p> <b>Basic resource record
-     * sets (excluding alias, failover, geolocation, latency, and weighted resource
-     * record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p>
-     * <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> </ul> <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding
-     * alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li>
-     * <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> <li>
-     * <p> <code>SetIdentifier</code> </p> </li> </ul> <p> <b>Alias resource record
-     * sets (including failover alias, geolocation alias, latency alias, and weighted
-     * alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li>
-     * <li> <p> <code>Type</code> </p> </li> <li> <p> <code>AliasTarget</code>
-     * (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)</p> </li> <li> <p> <code>SetIdentifier</code> (for
-     * failover, geolocation, latency, and weighted resource record sets)</p> </li>
-     * </ul>
+     * updates it with the values in the request.</p> </li> </ul>
      */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
@@ -157,23 +109,7 @@ namespace Model
      * be charged for it even though it's no longer in use. </p> </important> </li>
      * <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist,
      * Amazon Route 53 creates it. If a resource record set does exist, Amazon Route 53
-     * updates it with the values in the request.</p> </li> </ul> <p>The values that
-     * you need to include in the request depend on the type of resource record set
-     * that you're creating, deleting, or updating:</p> <p> <b>Basic resource record
-     * sets (excluding alias, failover, geolocation, latency, and weighted resource
-     * record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p>
-     * <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> </ul> <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding
-     * alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li>
-     * <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> <li>
-     * <p> <code>SetIdentifier</code> </p> </li> </ul> <p> <b>Alias resource record
-     * sets (including failover alias, geolocation alias, latency alias, and weighted
-     * alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li>
-     * <li> <p> <code>Type</code> </p> </li> <li> <p> <code>AliasTarget</code>
-     * (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)</p> </li> <li> <p> <code>SetIdentifier</code> (for
-     * failover, geolocation, latency, and weighted resource record sets)</p> </li>
-     * </ul>
+     * updates it with the values in the request.</p> </li> </ul>
      */
     inline Change& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
 
@@ -189,23 +125,7 @@ namespace Model
      * be charged for it even though it's no longer in use. </p> </important> </li>
      * <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist,
      * Amazon Route 53 creates it. If a resource record set does exist, Amazon Route 53
-     * updates it with the values in the request.</p> </li> </ul> <p>The values that
-     * you need to include in the request depend on the type of resource record set
-     * that you're creating, deleting, or updating:</p> <p> <b>Basic resource record
-     * sets (excluding alias, failover, geolocation, latency, and weighted resource
-     * record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p>
-     * <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> </ul> <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding
-     * alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li>
-     * <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> <li>
-     * <p> <code>SetIdentifier</code> </p> </li> </ul> <p> <b>Alias resource record
-     * sets (including failover alias, geolocation alias, latency alias, and weighted
-     * alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li>
-     * <li> <p> <code>Type</code> </p> </li> <li> <p> <code>AliasTarget</code>
-     * (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)</p> </li> <li> <p> <code>SetIdentifier</code> (for
-     * failover, geolocation, latency, and weighted resource record sets)</p> </li>
-     * </ul>
+     * updates it with the values in the request.</p> </li> </ul>
      */
     inline Change& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 

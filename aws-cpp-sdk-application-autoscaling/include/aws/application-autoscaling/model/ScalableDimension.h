@@ -33,7 +33,8 @@ namespace Model
     dynamodb_table_ReadCapacityUnits,
     dynamodb_table_WriteCapacityUnits,
     dynamodb_index_ReadCapacityUnits,
-    dynamodb_index_WriteCapacityUnits
+    dynamodb_index_WriteCapacityUnits,
+    rds_cluster_ReadReplicaCount
   };
 
 namespace ScalableDimensionMapper

@@ -249,87 +249,87 @@ namespace Model
 
 
     /**
-     * <p>The engine type of the server. The valid value in this release is
-     * <code>Chef</code>. </p>
+     * <p>The engine type of the server. Valid values in this release include
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The engine type of the server. The valid value in this release is
-     * <code>Chef</code>. </p>
+     * <p>The engine type of the server. Valid values in this release include
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The engine type of the server. The valid value in this release is
-     * <code>Chef</code>. </p>
+     * <p>The engine type of the server. Valid values in this release include
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The engine type of the server. The valid value in this release is
-     * <code>Chef</code>. </p>
+     * <p>The engine type of the server. Valid values in this release include
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The engine type of the server. The valid value in this release is
-     * <code>Chef</code>. </p>
+     * <p>The engine type of the server. Valid values in this release include
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline Server& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The engine type of the server. The valid value in this release is
-     * <code>Chef</code>. </p>
+     * <p>The engine type of the server. Valid values in this release include
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline Server& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The engine type of the server. The valid value in this release is
-     * <code>Chef</code>. </p>
+     * <p>The engine type of the server. Valid values in this release include
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline Server& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p>The engine model of the server. The valid value in this release is
-     * <code>Single</code>. </p>
+     * <p>The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline const Aws::String& GetEngineModel() const{ return m_engineModel; }
 
     /**
-     * <p>The engine model of the server. The valid value in this release is
-     * <code>Single</code>. </p>
+     * <p>The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline void SetEngineModel(const Aws::String& value) { m_engineModelHasBeenSet = true; m_engineModel = value; }
 
     /**
-     * <p>The engine model of the server. The valid value in this release is
-     * <code>Single</code>. </p>
+     * <p>The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline void SetEngineModel(Aws::String&& value) { m_engineModelHasBeenSet = true; m_engineModel = std::move(value); }
 
     /**
-     * <p>The engine model of the server. The valid value in this release is
-     * <code>Single</code>. </p>
+     * <p>The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline void SetEngineModel(const char* value) { m_engineModelHasBeenSet = true; m_engineModel.assign(value); }
 
     /**
-     * <p>The engine model of the server. The valid value in this release is
-     * <code>Single</code>. </p>
+     * <p>The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline Server& WithEngineModel(const Aws::String& value) { SetEngineModel(value); return *this;}
 
     /**
-     * <p>The engine model of the server. The valid value in this release is
-     * <code>Single</code>. </p>
+     * <p>The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline Server& WithEngineModel(Aws::String&& value) { SetEngineModel(std::move(value)); return *this;}
 
     /**
-     * <p>The engine model of the server. The valid value in this release is
-     * <code>Single</code>. </p>
+     * <p>The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline Server& WithEngineModel(const char* value) { SetEngineModel(value); return *this;}
 
@@ -337,155 +337,211 @@ namespace Model
     /**
      * <p>The response of a createServer() request returns the master credential to
      * access the server in EngineAttributes. These credentials are not stored by AWS
-     * OpsWorks for Chef Automate; they are returned only as part of the result of
-     * createServer(). </p> <p class="title"> <b>Attributes returned in a createServer
-     * response:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded
-     * RSA private key that is generated by AWS OpsWorks for Chef Automate. This
-     * private key is required to access the Chef API.</p> </li> <li> <p>
+     * OpsWorks CM; they are returned only as part of the result of createServer().
+     * </p> <p class="title"> <b>Attributes returned in a createServer response for
+     * Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA
+     * private key that is generated by AWS OpsWorks for Chef Automate. This private
+     * key is required to access the Chef API.</p> </li> <li> <p>
      * <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains
      * a Chef starter kit, which includes a README, a configuration file, and the
      * required RSA private key. Save this file, unzip it, and then change to the
      * directory where you've unzipped the file contents. From this directory, you can
-     * run Knife commands.</p> </li> </ul>
+     * run Knife commands.</p> </li> </ul> <p class="title"> <b>Attributes returned in
+     * a createServer response for Puppet</b> </p> <ul> <li> <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file
+     * contains a Puppet starter kit, including a README and a required private key.
+     * Save this file, unzip it, and then change to the directory where you've unzipped
+     * the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An
+     * administrator password that you can use to sign in to the Puppet Enterprise
+     * console after the server is online.</p> </li> </ul>
      */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
 
     /**
      * <p>The response of a createServer() request returns the master credential to
      * access the server in EngineAttributes. These credentials are not stored by AWS
-     * OpsWorks for Chef Automate; they are returned only as part of the result of
-     * createServer(). </p> <p class="title"> <b>Attributes returned in a createServer
-     * response:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded
-     * RSA private key that is generated by AWS OpsWorks for Chef Automate. This
-     * private key is required to access the Chef API.</p> </li> <li> <p>
+     * OpsWorks CM; they are returned only as part of the result of createServer().
+     * </p> <p class="title"> <b>Attributes returned in a createServer response for
+     * Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA
+     * private key that is generated by AWS OpsWorks for Chef Automate. This private
+     * key is required to access the Chef API.</p> </li> <li> <p>
      * <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains
      * a Chef starter kit, which includes a README, a configuration file, and the
      * required RSA private key. Save this file, unzip it, and then change to the
      * directory where you've unzipped the file contents. From this directory, you can
-     * run Knife commands.</p> </li> </ul>
+     * run Knife commands.</p> </li> </ul> <p class="title"> <b>Attributes returned in
+     * a createServer response for Puppet</b> </p> <ul> <li> <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file
+     * contains a Puppet starter kit, including a README and a required private key.
+     * Save this file, unzip it, and then change to the directory where you've unzipped
+     * the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An
+     * administrator password that you can use to sign in to the Puppet Enterprise
+     * console after the server is online.</p> </li> </ul>
      */
     inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
 
     /**
      * <p>The response of a createServer() request returns the master credential to
      * access the server in EngineAttributes. These credentials are not stored by AWS
-     * OpsWorks for Chef Automate; they are returned only as part of the result of
-     * createServer(). </p> <p class="title"> <b>Attributes returned in a createServer
-     * response:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded
-     * RSA private key that is generated by AWS OpsWorks for Chef Automate. This
-     * private key is required to access the Chef API.</p> </li> <li> <p>
+     * OpsWorks CM; they are returned only as part of the result of createServer().
+     * </p> <p class="title"> <b>Attributes returned in a createServer response for
+     * Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA
+     * private key that is generated by AWS OpsWorks for Chef Automate. This private
+     * key is required to access the Chef API.</p> </li> <li> <p>
      * <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains
      * a Chef starter kit, which includes a README, a configuration file, and the
      * required RSA private key. Save this file, unzip it, and then change to the
      * directory where you've unzipped the file contents. From this directory, you can
-     * run Knife commands.</p> </li> </ul>
+     * run Knife commands.</p> </li> </ul> <p class="title"> <b>Attributes returned in
+     * a createServer response for Puppet</b> </p> <ul> <li> <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file
+     * contains a Puppet starter kit, including a README and a required private key.
+     * Save this file, unzip it, and then change to the directory where you've unzipped
+     * the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An
+     * administrator password that you can use to sign in to the Puppet Enterprise
+     * console after the server is online.</p> </li> </ul>
      */
     inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::move(value); }
 
     /**
      * <p>The response of a createServer() request returns the master credential to
      * access the server in EngineAttributes. These credentials are not stored by AWS
-     * OpsWorks for Chef Automate; they are returned only as part of the result of
-     * createServer(). </p> <p class="title"> <b>Attributes returned in a createServer
-     * response:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded
-     * RSA private key that is generated by AWS OpsWorks for Chef Automate. This
-     * private key is required to access the Chef API.</p> </li> <li> <p>
+     * OpsWorks CM; they are returned only as part of the result of createServer().
+     * </p> <p class="title"> <b>Attributes returned in a createServer response for
+     * Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA
+     * private key that is generated by AWS OpsWorks for Chef Automate. This private
+     * key is required to access the Chef API.</p> </li> <li> <p>
      * <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains
      * a Chef starter kit, which includes a README, a configuration file, and the
      * required RSA private key. Save this file, unzip it, and then change to the
      * directory where you've unzipped the file contents. From this directory, you can
-     * run Knife commands.</p> </li> </ul>
+     * run Knife commands.</p> </li> </ul> <p class="title"> <b>Attributes returned in
+     * a createServer response for Puppet</b> </p> <ul> <li> <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file
+     * contains a Puppet starter kit, including a README and a required private key.
+     * Save this file, unzip it, and then change to the directory where you've unzipped
+     * the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An
+     * administrator password that you can use to sign in to the Puppet Enterprise
+     * console after the server is online.</p> </li> </ul>
      */
     inline Server& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
 
     /**
      * <p>The response of a createServer() request returns the master credential to
      * access the server in EngineAttributes. These credentials are not stored by AWS
-     * OpsWorks for Chef Automate; they are returned only as part of the result of
-     * createServer(). </p> <p class="title"> <b>Attributes returned in a createServer
-     * response:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded
-     * RSA private key that is generated by AWS OpsWorks for Chef Automate. This
-     * private key is required to access the Chef API.</p> </li> <li> <p>
+     * OpsWorks CM; they are returned only as part of the result of createServer().
+     * </p> <p class="title"> <b>Attributes returned in a createServer response for
+     * Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA
+     * private key that is generated by AWS OpsWorks for Chef Automate. This private
+     * key is required to access the Chef API.</p> </li> <li> <p>
      * <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains
      * a Chef starter kit, which includes a README, a configuration file, and the
      * required RSA private key. Save this file, unzip it, and then change to the
      * directory where you've unzipped the file contents. From this directory, you can
-     * run Knife commands.</p> </li> </ul>
+     * run Knife commands.</p> </li> </ul> <p class="title"> <b>Attributes returned in
+     * a createServer response for Puppet</b> </p> <ul> <li> <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file
+     * contains a Puppet starter kit, including a README and a required private key.
+     * Save this file, unzip it, and then change to the directory where you've unzipped
+     * the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An
+     * administrator password that you can use to sign in to the Puppet Enterprise
+     * console after the server is online.</p> </li> </ul>
      */
     inline Server& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The response of a createServer() request returns the master credential to
      * access the server in EngineAttributes. These credentials are not stored by AWS
-     * OpsWorks for Chef Automate; they are returned only as part of the result of
-     * createServer(). </p> <p class="title"> <b>Attributes returned in a createServer
-     * response:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded
-     * RSA private key that is generated by AWS OpsWorks for Chef Automate. This
-     * private key is required to access the Chef API.</p> </li> <li> <p>
+     * OpsWorks CM; they are returned only as part of the result of createServer().
+     * </p> <p class="title"> <b>Attributes returned in a createServer response for
+     * Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA
+     * private key that is generated by AWS OpsWorks for Chef Automate. This private
+     * key is required to access the Chef API.</p> </li> <li> <p>
      * <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains
      * a Chef starter kit, which includes a README, a configuration file, and the
      * required RSA private key. Save this file, unzip it, and then change to the
      * directory where you've unzipped the file contents. From this directory, you can
-     * run Knife commands.</p> </li> </ul>
+     * run Knife commands.</p> </li> </ul> <p class="title"> <b>Attributes returned in
+     * a createServer response for Puppet</b> </p> <ul> <li> <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file
+     * contains a Puppet starter kit, including a README and a required private key.
+     * Save this file, unzip it, and then change to the directory where you've unzipped
+     * the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An
+     * administrator password that you can use to sign in to the Puppet Enterprise
+     * console after the server is online.</p> </li> </ul>
      */
     inline Server& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
 
     /**
      * <p>The response of a createServer() request returns the master credential to
      * access the server in EngineAttributes. These credentials are not stored by AWS
-     * OpsWorks for Chef Automate; they are returned only as part of the result of
-     * createServer(). </p> <p class="title"> <b>Attributes returned in a createServer
-     * response:</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded
-     * RSA private key that is generated by AWS OpsWorks for Chef Automate. This
-     * private key is required to access the Chef API.</p> </li> <li> <p>
+     * OpsWorks CM; they are returned only as part of the result of createServer().
+     * </p> <p class="title"> <b>Attributes returned in a createServer response for
+     * Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA
+     * private key that is generated by AWS OpsWorks for Chef Automate. This private
+     * key is required to access the Chef API.</p> </li> <li> <p>
      * <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains
      * a Chef starter kit, which includes a README, a configuration file, and the
      * required RSA private key. Save this file, unzip it, and then change to the
      * directory where you've unzipped the file contents. From this directory, you can
-     * run Knife commands.</p> </li> </ul>
+     * run Knife commands.</p> </li> </ul> <p class="title"> <b>Attributes returned in
+     * a createServer response for Puppet</b> </p> <ul> <li> <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file
+     * contains a Puppet starter kit, including a README and a required private key.
+     * Save this file, unzip it, and then change to the directory where you've unzipped
+     * the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An
+     * administrator password that you can use to sign in to the Puppet Enterprise
+     * console after the server is online.</p> </li> </ul>
      */
     inline Server& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The engine version of the server. Because Chef is the engine available in
-     * this release, the valid value for EngineVersion is <code>12</code>. </p>
+     * <p>The engine version of the server. For a Chef server, the valid value for
+     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value
+     * is <code>2017</code>. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The engine version of the server. Because Chef is the engine available in
-     * this release, the valid value for EngineVersion is <code>12</code>. </p>
+     * <p>The engine version of the server. For a Chef server, the valid value for
+     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value
+     * is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The engine version of the server. Because Chef is the engine available in
-     * this release, the valid value for EngineVersion is <code>12</code>. </p>
+     * <p>The engine version of the server. For a Chef server, the valid value for
+     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value
+     * is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The engine version of the server. Because Chef is the engine available in
-     * this release, the valid value for EngineVersion is <code>12</code>. </p>
+     * <p>The engine version of the server. For a Chef server, the valid value for
+     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value
+     * is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The engine version of the server. Because Chef is the engine available in
-     * this release, the valid value for EngineVersion is <code>12</code>. </p>
+     * <p>The engine version of the server. For a Chef server, the valid value for
+     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value
+     * is <code>2017</code>. </p>
      */
     inline Server& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The engine version of the server. Because Chef is the engine available in
-     * this release, the valid value for EngineVersion is <code>12</code>. </p>
+     * <p>The engine version of the server. For a Chef server, the valid value for
+     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value
+     * is <code>2017</code>. </p>
      */
     inline Server& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The engine version of the server. Because Chef is the engine available in
-     * this release, the valid value for EngineVersion is <code>12</code>. </p>
+     * <p>The engine version of the server. For a Chef server, the valid value for
+     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value
+     * is <code>2017</code>. </p>
      */
     inline Server& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

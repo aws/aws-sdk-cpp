@@ -41,6 +41,7 @@
 #include <aws/route53/model/DeleteTrafficPolicyInstanceResult.h>
 #include <aws/route53/model/DeleteVPCAssociationAuthorizationResult.h>
 #include <aws/route53/model/DisassociateVPCFromHostedZoneResult.h>
+#include <aws/route53/model/GetAccountLimitResult.h>
 #include <aws/route53/model/GetChangeResult.h>
 #include <aws/route53/model/GetCheckerIpRangesResult.h>
 #include <aws/route53/model/GetGeoLocationResult.h>
@@ -50,8 +51,10 @@
 #include <aws/route53/model/GetHealthCheckStatusResult.h>
 #include <aws/route53/model/GetHostedZoneResult.h>
 #include <aws/route53/model/GetHostedZoneCountResult.h>
+#include <aws/route53/model/GetHostedZoneLimitResult.h>
 #include <aws/route53/model/GetQueryLoggingConfigResult.h>
 #include <aws/route53/model/GetReusableDelegationSetResult.h>
+#include <aws/route53/model/GetReusableDelegationSetLimitResult.h>
 #include <aws/route53/model/GetTrafficPolicyResult.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceResult.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceCountResult.h>
@@ -139,6 +142,7 @@ namespace Model
         class DeleteTrafficPolicyInstanceRequest;
         class DeleteVPCAssociationAuthorizationRequest;
         class DisassociateVPCFromHostedZoneRequest;
+        class GetAccountLimitRequest;
         class GetChangeRequest;
         class GetCheckerIpRangesRequest;
         class GetGeoLocationRequest;
@@ -148,8 +152,10 @@ namespace Model
         class GetHealthCheckStatusRequest;
         class GetHostedZoneRequest;
         class GetHostedZoneCountRequest;
+        class GetHostedZoneLimitRequest;
         class GetQueryLoggingConfigRequest;
         class GetReusableDelegationSetRequest;
+        class GetReusableDelegationSetLimitRequest;
         class GetTrafficPolicyRequest;
         class GetTrafficPolicyInstanceRequest;
         class GetTrafficPolicyInstanceCountRequest;
@@ -193,6 +199,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> DeleteTrafficPolicyInstanceOutcome;
         typedef Aws::Utils::Outcome<DeleteVPCAssociationAuthorizationResult, Aws::Client::AWSError<Route53Errors>> DeleteVPCAssociationAuthorizationOutcome;
         typedef Aws::Utils::Outcome<DisassociateVPCFromHostedZoneResult, Aws::Client::AWSError<Route53Errors>> DisassociateVPCFromHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<GetAccountLimitResult, Aws::Client::AWSError<Route53Errors>> GetAccountLimitOutcome;
         typedef Aws::Utils::Outcome<GetChangeResult, Aws::Client::AWSError<Route53Errors>> GetChangeOutcome;
         typedef Aws::Utils::Outcome<GetCheckerIpRangesResult, Aws::Client::AWSError<Route53Errors>> GetCheckerIpRangesOutcome;
         typedef Aws::Utils::Outcome<GetGeoLocationResult, Aws::Client::AWSError<Route53Errors>> GetGeoLocationOutcome;
@@ -202,8 +209,10 @@ namespace Model
         typedef Aws::Utils::Outcome<GetHealthCheckStatusResult, Aws::Client::AWSError<Route53Errors>> GetHealthCheckStatusOutcome;
         typedef Aws::Utils::Outcome<GetHostedZoneResult, Aws::Client::AWSError<Route53Errors>> GetHostedZoneOutcome;
         typedef Aws::Utils::Outcome<GetHostedZoneCountResult, Aws::Client::AWSError<Route53Errors>> GetHostedZoneCountOutcome;
+        typedef Aws::Utils::Outcome<GetHostedZoneLimitResult, Aws::Client::AWSError<Route53Errors>> GetHostedZoneLimitOutcome;
         typedef Aws::Utils::Outcome<GetQueryLoggingConfigResult, Aws::Client::AWSError<Route53Errors>> GetQueryLoggingConfigOutcome;
         typedef Aws::Utils::Outcome<GetReusableDelegationSetResult, Aws::Client::AWSError<Route53Errors>> GetReusableDelegationSetOutcome;
+        typedef Aws::Utils::Outcome<GetReusableDelegationSetLimitResult, Aws::Client::AWSError<Route53Errors>> GetReusableDelegationSetLimitOutcome;
         typedef Aws::Utils::Outcome<GetTrafficPolicyResult, Aws::Client::AWSError<Route53Errors>> GetTrafficPolicyOutcome;
         typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> GetTrafficPolicyInstanceOutcome;
         typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceCountResult, Aws::Client::AWSError<Route53Errors>> GetTrafficPolicyInstanceCountOutcome;
@@ -247,6 +256,7 @@ namespace Model
         typedef std::future<DeleteTrafficPolicyInstanceOutcome> DeleteTrafficPolicyInstanceOutcomeCallable;
         typedef std::future<DeleteVPCAssociationAuthorizationOutcome> DeleteVPCAssociationAuthorizationOutcomeCallable;
         typedef std::future<DisassociateVPCFromHostedZoneOutcome> DisassociateVPCFromHostedZoneOutcomeCallable;
+        typedef std::future<GetAccountLimitOutcome> GetAccountLimitOutcomeCallable;
         typedef std::future<GetChangeOutcome> GetChangeOutcomeCallable;
         typedef std::future<GetCheckerIpRangesOutcome> GetCheckerIpRangesOutcomeCallable;
         typedef std::future<GetGeoLocationOutcome> GetGeoLocationOutcomeCallable;
@@ -256,8 +266,10 @@ namespace Model
         typedef std::future<GetHealthCheckStatusOutcome> GetHealthCheckStatusOutcomeCallable;
         typedef std::future<GetHostedZoneOutcome> GetHostedZoneOutcomeCallable;
         typedef std::future<GetHostedZoneCountOutcome> GetHostedZoneCountOutcomeCallable;
+        typedef std::future<GetHostedZoneLimitOutcome> GetHostedZoneLimitOutcomeCallable;
         typedef std::future<GetQueryLoggingConfigOutcome> GetQueryLoggingConfigOutcomeCallable;
         typedef std::future<GetReusableDelegationSetOutcome> GetReusableDelegationSetOutcomeCallable;
+        typedef std::future<GetReusableDelegationSetLimitOutcome> GetReusableDelegationSetLimitOutcomeCallable;
         typedef std::future<GetTrafficPolicyOutcome> GetTrafficPolicyOutcomeCallable;
         typedef std::future<GetTrafficPolicyInstanceOutcome> GetTrafficPolicyInstanceOutcomeCallable;
         typedef std::future<GetTrafficPolicyInstanceCountOutcome> GetTrafficPolicyInstanceCountOutcomeCallable;
@@ -304,6 +316,7 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyInstanceRequest&, const Model::DeleteTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyInstanceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteVPCAssociationAuthorizationRequest&, const Model::DeleteVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVPCAssociationAuthorizationResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DisassociateVPCFromHostedZoneRequest&, const Model::DisassociateVPCFromHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVPCFromHostedZoneResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::GetAccountLimitRequest&, const Model::GetAccountLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountLimitResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetChangeRequest&, const Model::GetChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetCheckerIpRangesRequest&, const Model::GetCheckerIpRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCheckerIpRangesResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetGeoLocationRequest&, const Model::GetGeoLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeoLocationResponseReceivedHandler;
@@ -313,8 +326,10 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::GetHealthCheckStatusRequest&, const Model::GetHealthCheckStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthCheckStatusResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetHostedZoneRequest&, const Model::GetHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostedZoneResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetHostedZoneCountRequest&, const Model::GetHostedZoneCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostedZoneCountResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::GetHostedZoneLimitRequest&, const Model::GetHostedZoneLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostedZoneLimitResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetQueryLoggingConfigRequest&, const Model::GetQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryLoggingConfigResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetReusableDelegationSetRequest&, const Model::GetReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReusableDelegationSetResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::GetReusableDelegationSetLimitRequest&, const Model::GetReusableDelegationSetLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReusableDelegationSetLimitResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyRequest&, const Model::GetTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyInstanceRequest&, const Model::GetTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyInstanceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyInstanceCountRequest&, const Model::GetTrafficPolicyInstanceCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyInstanceCountResponseReceivedHandler;
@@ -1672,6 +1687,49 @@ namespace Model
         virtual void DisassociateVPCFromHostedZoneAsync(const Model::DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the specified limit for the current account, for example, the maximum
+         * number of health checks that you can create using the account.</p> <p>For the
+         * default limit, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountLimitOutcome GetAccountLimit(const Model::GetAccountLimitRequest& request) const;
+
+        /**
+         * <p>Gets the specified limit for the current account, for example, the maximum
+         * number of health checks that you can create using the account.</p> <p>For the
+         * default limit, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccountLimitOutcomeCallable GetAccountLimitCallable(const Model::GetAccountLimitRequest& request) const;
+
+        /**
+         * <p>Gets the specified limit for the current account, for example, the maximum
+         * number of health checks that you can create using the account.</p> <p>For the
+         * default limit, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccountLimitAsync(const Model::GetAccountLimitRequest& request, const GetAccountLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the current status of a change batch request. The status is one of
          * the following values:</p> <ul> <li> <p> <code>PENDING</code> indicates that the
          * changes in this request have not propagated to all Amazon Route 53 DNS servers.
@@ -1975,6 +2033,49 @@ namespace Model
         virtual void GetHostedZoneCountAsync(const Model::GetHostedZoneCountRequest& request, const GetHostedZoneCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the specified limit for a specified hosted zone, for example, the
+         * maximum number of records that you can create in the hosted zone. </p> <p>For
+         * the default limit, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetHostedZoneLimitOutcome GetHostedZoneLimit(const Model::GetHostedZoneLimitRequest& request) const;
+
+        /**
+         * <p>Gets the specified limit for a specified hosted zone, for example, the
+         * maximum number of records that you can create in the hosted zone. </p> <p>For
+         * the default limit, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetHostedZoneLimitOutcomeCallable GetHostedZoneLimitCallable(const Model::GetHostedZoneLimitRequest& request) const;
+
+        /**
+         * <p>Gets the specified limit for a specified hosted zone, for example, the
+         * maximum number of records that you can create in the hosted zone. </p> <p>For
+         * the default limit, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetHostedZoneLimitAsync(const Model::GetHostedZoneLimitRequest& request, const GetHostedZoneLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about a specified configuration for DNS query logging.</p>
          * <p>For more information about DNS query logs, see
          * <a>CreateQueryLoggingConfig</a> and <a
@@ -2041,6 +2142,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetReusableDelegationSetAsync(const Model::GetReusableDelegationSetRequest& request, const GetReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the maximum number of hosted zones that you can associate with the
+         * specified reusable delegation set.</p> <p>For the default limit, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetReusableDelegationSetLimitOutcome GetReusableDelegationSetLimit(const Model::GetReusableDelegationSetLimitRequest& request) const;
+
+        /**
+         * <p>Gets the maximum number of hosted zones that you can associate with the
+         * specified reusable delegation set.</p> <p>For the default limit, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetReusableDelegationSetLimitOutcomeCallable GetReusableDelegationSetLimitCallable(const Model::GetReusableDelegationSetLimitRequest& request) const;
+
+        /**
+         * <p>Gets the maximum number of hosted zones that you can associate with the
+         * specified reusable delegation set.</p> <p>For the default limit, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
+         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetReusableDelegationSetLimitAsync(const Model::GetReusableDelegationSetLimitRequest& request, const GetReusableDelegationSetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specific traffic policy version.</p><p><h3>See
@@ -3109,6 +3250,7 @@ namespace Model
         void DeleteTrafficPolicyInstanceAsyncHelper(const Model::DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVPCAssociationAuthorizationAsyncHelper(const Model::DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateVPCFromHostedZoneAsyncHelper(const Model::DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccountLimitAsyncHelper(const Model::GetAccountLimitRequest& request, const GetAccountLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChangeAsyncHelper(const Model::GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCheckerIpRangesAsyncHelper(const Model::GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGeoLocationAsyncHelper(const Model::GetGeoLocationRequest& request, const GetGeoLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3118,8 +3260,10 @@ namespace Model
         void GetHealthCheckStatusAsyncHelper(const Model::GetHealthCheckStatusRequest& request, const GetHealthCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostedZoneAsyncHelper(const Model::GetHostedZoneRequest& request, const GetHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostedZoneCountAsyncHelper(const Model::GetHostedZoneCountRequest& request, const GetHostedZoneCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetHostedZoneLimitAsyncHelper(const Model::GetHostedZoneLimitRequest& request, const GetHostedZoneLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetQueryLoggingConfigAsyncHelper(const Model::GetQueryLoggingConfigRequest& request, const GetQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReusableDelegationSetAsyncHelper(const Model::GetReusableDelegationSetRequest& request, const GetReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetReusableDelegationSetLimitAsyncHelper(const Model::GetReusableDelegationSetLimitRequest& request, const GetReusableDelegationSetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTrafficPolicyAsyncHelper(const Model::GetTrafficPolicyRequest& request, const GetTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTrafficPolicyInstanceAsyncHelper(const Model::GetTrafficPolicyInstanceRequest& request, const GetTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTrafficPolicyInstanceCountAsyncHelper(const Model::GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The requested <code>Classifier</code>.</p>
+     * <p>The requested classifier.</p>
      */
     inline const Classifier& GetClassifier() const{ return m_classifier; }
 
     /**
-     * <p>The requested <code>Classifier</code>.</p>
+     * <p>The requested classifier.</p>
      */
     inline void SetClassifier(const Classifier& value) { m_classifier = value; }
 
     /**
-     * <p>The requested <code>Classifier</code>.</p>
+     * <p>The requested classifier.</p>
      */
     inline void SetClassifier(Classifier&& value) { m_classifier = std::move(value); }
 
     /**
-     * <p>The requested <code>Classifier</code>.</p>
+     * <p>The requested classifier.</p>
      */
     inline GetClassifierResult& WithClassifier(const Classifier& value) { SetClassifier(value); return *this;}
 
     /**
-     * <p>The requested <code>Classifier</code>.</p>
+     * <p>The requested classifier.</p>
      */
     inline GetClassifierResult& WithClassifier(Classifier&& value) { SetClassifier(std::move(value)); return *this;}
 

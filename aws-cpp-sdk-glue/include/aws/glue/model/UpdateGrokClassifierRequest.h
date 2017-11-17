@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a Grok classifier to update when passed to
-   * UpdateClassifier.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a grok classifier to update when passed to
+   * <code>UpdateClassifier</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateGrokClassifierRequest">AWS
    * API Reference</a></p>
    */
@@ -84,44 +84,44 @@ namespace Model
 
 
     /**
-     * <p>The type of result that the classifier matches, such as Twitter Json,
-     * Omniture logs, Cloudwatch logs, and so forth.</p>
+     * <p>An identifier of the data format that the classifier matches, such as
+     * Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
      */
     inline const Aws::String& GetClassification() const{ return m_classification; }
 
     /**
-     * <p>The type of result that the classifier matches, such as Twitter Json,
-     * Omniture logs, Cloudwatch logs, and so forth.</p>
+     * <p>An identifier of the data format that the classifier matches, such as
+     * Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
      */
     inline void SetClassification(const Aws::String& value) { m_classificationHasBeenSet = true; m_classification = value; }
 
     /**
-     * <p>The type of result that the classifier matches, such as Twitter Json,
-     * Omniture logs, Cloudwatch logs, and so forth.</p>
+     * <p>An identifier of the data format that the classifier matches, such as
+     * Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
      */
     inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = std::move(value); }
 
     /**
-     * <p>The type of result that the classifier matches, such as Twitter Json,
-     * Omniture logs, Cloudwatch logs, and so forth.</p>
+     * <p>An identifier of the data format that the classifier matches, such as
+     * Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
      */
     inline void SetClassification(const char* value) { m_classificationHasBeenSet = true; m_classification.assign(value); }
 
     /**
-     * <p>The type of result that the classifier matches, such as Twitter Json,
-     * Omniture logs, Cloudwatch logs, and so forth.</p>
+     * <p>An identifier of the data format that the classifier matches, such as
+     * Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
      */
     inline UpdateGrokClassifierRequest& WithClassification(const Aws::String& value) { SetClassification(value); return *this;}
 
     /**
-     * <p>The type of result that the classifier matches, such as Twitter Json,
-     * Omniture logs, Cloudwatch logs, and so forth.</p>
+     * <p>An identifier of the data format that the classifier matches, such as
+     * Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
      */
     inline UpdateGrokClassifierRequest& WithClassification(Aws::String&& value) { SetClassification(std::move(value)); return *this;}
 
     /**
-     * <p>The type of result that the classifier matches, such as Twitter Json,
-     * Omniture logs, Cloudwatch logs, and so forth.</p>
+     * <p>An identifier of the data format that the classifier matches, such as
+     * Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
      */
     inline UpdateGrokClassifierRequest& WithClassification(const char* value) { SetClassification(value); return *this;}
 
@@ -163,37 +163,37 @@ namespace Model
 
 
     /**
-     * <p>Custom grok patterns used by this classifier.</p>
+     * <p>Optional custom grok patterns used by this classifier.</p>
      */
     inline const Aws::String& GetCustomPatterns() const{ return m_customPatterns; }
 
     /**
-     * <p>Custom grok patterns used by this classifier.</p>
+     * <p>Optional custom grok patterns used by this classifier.</p>
      */
     inline void SetCustomPatterns(const Aws::String& value) { m_customPatternsHasBeenSet = true; m_customPatterns = value; }
 
     /**
-     * <p>Custom grok patterns used by this classifier.</p>
+     * <p>Optional custom grok patterns used by this classifier.</p>
      */
     inline void SetCustomPatterns(Aws::String&& value) { m_customPatternsHasBeenSet = true; m_customPatterns = std::move(value); }
 
     /**
-     * <p>Custom grok patterns used by this classifier.</p>
+     * <p>Optional custom grok patterns used by this classifier.</p>
      */
     inline void SetCustomPatterns(const char* value) { m_customPatternsHasBeenSet = true; m_customPatterns.assign(value); }
 
     /**
-     * <p>Custom grok patterns used by this classifier.</p>
+     * <p>Optional custom grok patterns used by this classifier.</p>
      */
     inline UpdateGrokClassifierRequest& WithCustomPatterns(const Aws::String& value) { SetCustomPatterns(value); return *this;}
 
     /**
-     * <p>Custom grok patterns used by this classifier.</p>
+     * <p>Optional custom grok patterns used by this classifier.</p>
      */
     inline UpdateGrokClassifierRequest& WithCustomPatterns(Aws::String&& value) { SetCustomPatterns(std::move(value)); return *this;}
 
     /**
-     * <p>Custom grok patterns used by this classifier.</p>
+     * <p>Optional custom grok patterns used by this classifier.</p>
      */
     inline UpdateGrokClassifierRequest& WithCustomPatterns(const char* value) { SetCustomPatterns(value); return *this;}
 

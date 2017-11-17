@@ -46,7 +46,8 @@ Crawler::Crawler() :
     m_lastUpdatedHasBeenSet(false),
     m_lastCrawlHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_configurationHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ Crawler::Crawler(const JsonValue& jsonValue) :
     m_lastUpdatedHasBeenSet(false),
     m_lastCrawlHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_configurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -183,6 +185,13 @@ Crawler& Crawler::operator =(const JsonValue& jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Configuration"))
+  {
+    m_configuration = jsonValue.GetString("Configuration");
+
+    m_configurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -279,6 +288,12 @@ JsonValue Crawler::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithInt64("Version", m_version);
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithString("Configuration", m_configuration);
 
   }
 

@@ -46,6 +46,7 @@
 #include <aws/route53/model/DeleteTrafficPolicyInstanceRequest.h>
 #include <aws/route53/model/DeleteVPCAssociationAuthorizationRequest.h>
 #include <aws/route53/model/DisassociateVPCFromHostedZoneRequest.h>
+#include <aws/route53/model/GetAccountLimitRequest.h>
 #include <aws/route53/model/GetChangeRequest.h>
 #include <aws/route53/model/GetCheckerIpRangesRequest.h>
 #include <aws/route53/model/GetGeoLocationRequest.h>
@@ -55,8 +56,10 @@
 #include <aws/route53/model/GetHealthCheckStatusRequest.h>
 #include <aws/route53/model/GetHostedZoneRequest.h>
 #include <aws/route53/model/GetHostedZoneCountRequest.h>
+#include <aws/route53/model/GetHostedZoneLimitRequest.h>
 #include <aws/route53/model/GetQueryLoggingConfigRequest.h>
 #include <aws/route53/model/GetReusableDelegationSetRequest.h>
+#include <aws/route53/model/GetReusableDelegationSetLimitRequest.h>
 #include <aws/route53/model/GetTrafficPolicyRequest.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceRequest.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceCountRequest.h>
@@ -833,6 +836,42 @@ void Route53Client::DisassociateVPCFromHostedZoneAsyncHelper(const DisassociateV
   handler(this, request, DisassociateVPCFromHostedZone(request), context);
 }
 
+GetAccountLimitOutcome Route53Client::GetAccountLimit(const GetAccountLimitRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2013-04-01/accountlimit/";
+  ss << AccountLimitTypeMapper::GetNameForAccountLimitType(request.GetType());
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetAccountLimitOutcome(GetAccountLimitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAccountLimitOutcome(outcome.GetError());
+  }
+}
+
+GetAccountLimitOutcomeCallable Route53Client::GetAccountLimitCallable(const GetAccountLimitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccountLimitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccountLimit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::GetAccountLimitAsync(const GetAccountLimitRequest& request, const GetAccountLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccountLimitAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::GetAccountLimitAsyncHelper(const GetAccountLimitRequest& request, const GetAccountLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAccountLimit(request), context);
+}
+
 GetChangeOutcome Route53Client::GetChange(const GetChangeRequest& request) const
 {
   Aws::StringStream ss;
@@ -1155,6 +1194,44 @@ void Route53Client::GetHostedZoneCountAsyncHelper(const GetHostedZoneCountReques
   handler(this, request, GetHostedZoneCount(request), context);
 }
 
+GetHostedZoneLimitOutcome Route53Client::GetHostedZoneLimit(const GetHostedZoneLimitRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2013-04-01/hostedzonelimit/";
+  ss << request.GetHostedZoneId();
+  ss << "/";
+  ss << HostedZoneLimitTypeMapper::GetNameForHostedZoneLimitType(request.GetType());
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetHostedZoneLimitOutcome(GetHostedZoneLimitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetHostedZoneLimitOutcome(outcome.GetError());
+  }
+}
+
+GetHostedZoneLimitOutcomeCallable Route53Client::GetHostedZoneLimitCallable(const GetHostedZoneLimitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetHostedZoneLimitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHostedZoneLimit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::GetHostedZoneLimitAsync(const GetHostedZoneLimitRequest& request, const GetHostedZoneLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetHostedZoneLimitAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::GetHostedZoneLimitAsyncHelper(const GetHostedZoneLimitRequest& request, const GetHostedZoneLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetHostedZoneLimit(request), context);
+}
+
 GetQueryLoggingConfigOutcome Route53Client::GetQueryLoggingConfig(const GetQueryLoggingConfigRequest& request) const
 {
   Aws::StringStream ss;
@@ -1225,6 +1302,44 @@ void Route53Client::GetReusableDelegationSetAsync(const GetReusableDelegationSet
 void Route53Client::GetReusableDelegationSetAsyncHelper(const GetReusableDelegationSetRequest& request, const GetReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetReusableDelegationSet(request), context);
+}
+
+GetReusableDelegationSetLimitOutcome Route53Client::GetReusableDelegationSetLimit(const GetReusableDelegationSetLimitRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2013-04-01/reusabledelegationsetlimit/";
+  ss << request.GetDelegationSetId();
+  ss << "/";
+  ss << ReusableDelegationSetLimitTypeMapper::GetNameForReusableDelegationSetLimitType(request.GetType());
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetReusableDelegationSetLimitOutcome(GetReusableDelegationSetLimitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetReusableDelegationSetLimitOutcome(outcome.GetError());
+  }
+}
+
+GetReusableDelegationSetLimitOutcomeCallable Route53Client::GetReusableDelegationSetLimitCallable(const GetReusableDelegationSetLimitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetReusableDelegationSetLimitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetReusableDelegationSetLimit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::GetReusableDelegationSetLimitAsync(const GetReusableDelegationSetLimitRequest& request, const GetReusableDelegationSetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetReusableDelegationSetLimitAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::GetReusableDelegationSetLimitAsyncHelper(const GetReusableDelegationSetLimitRequest& request, const GetReusableDelegationSetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetReusableDelegationSetLimit(request), context);
 }
 
 GetTrafficPolicyOutcome Route53Client::GetTrafficPolicy(const GetTrafficPolicyRequest& request) const

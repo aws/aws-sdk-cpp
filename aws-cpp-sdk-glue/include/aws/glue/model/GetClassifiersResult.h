@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The requested list of <code>Classifier</code> objects.</p>
+     * <p>The requested list of classifier objects.</p>
      */
     inline const Aws::Vector<Classifier>& GetClassifiers() const{ return m_classifiers; }
 
     /**
-     * <p>The requested list of <code>Classifier</code> objects.</p>
+     * <p>The requested list of classifier objects.</p>
      */
     inline void SetClassifiers(const Aws::Vector<Classifier>& value) { m_classifiers = value; }
 
     /**
-     * <p>The requested list of <code>Classifier</code> objects.</p>
+     * <p>The requested list of classifier objects.</p>
      */
     inline void SetClassifiers(Aws::Vector<Classifier>&& value) { m_classifiers = std::move(value); }
 
     /**
-     * <p>The requested list of <code>Classifier</code> objects.</p>
+     * <p>The requested list of classifier objects.</p>
      */
     inline GetClassifiersResult& WithClassifiers(const Aws::Vector<Classifier>& value) { SetClassifiers(value); return *this;}
 
     /**
-     * <p>The requested list of <code>Classifier</code> objects.</p>
+     * <p>The requested list of classifier objects.</p>
      */
     inline GetClassifiersResult& WithClassifiers(Aws::Vector<Classifier>&& value) { SetClassifiers(std::move(value)); return *this;}
 
     /**
-     * <p>The requested list of <code>Classifier</code> objects.</p>
+     * <p>The requested list of classifier objects.</p>
      */
     inline GetClassifiersResult& AddClassifiers(const Classifier& value) { m_classifiers.push_back(value); return *this; }
 
     /**
-     * <p>The requested list of <code>Classifier</code> objects.</p>
+     * <p>The requested list of classifier objects.</p>
      */
     inline GetClassifiersResult& AddClassifiers(Classifier&& value) { m_classifiers.push_back(std::move(value)); return *this; }
 

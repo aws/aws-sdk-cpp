@@ -89,257 +89,292 @@ namespace Model
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code>. </p>
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code>. </p>
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code>. </p>
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code>. </p>
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code>. </p>
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline CreateServerRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code>. </p>
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline CreateServerRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code>. </p>
+     * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline CreateServerRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
+     * <p> The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline const Aws::String& GetEngineModel() const{ return m_engineModel; }
 
     /**
-     * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
+     * <p> The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline void SetEngineModel(const Aws::String& value) { m_engineModelHasBeenSet = true; m_engineModel = value; }
 
     /**
-     * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
+     * <p> The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline void SetEngineModel(Aws::String&& value) { m_engineModelHasBeenSet = true; m_engineModel = std::move(value); }
 
     /**
-     * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
+     * <p> The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline void SetEngineModel(const char* value) { m_engineModelHasBeenSet = true; m_engineModel.assign(value); }
 
     /**
-     * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
+     * <p> The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline CreateServerRequest& WithEngineModel(const Aws::String& value) { SetEngineModel(value); return *this;}
 
     /**
-     * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
+     * <p> The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline CreateServerRequest& WithEngineModel(Aws::String&& value) { SetEngineModel(std::move(value)); return *this;}
 
     /**
-     * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
+     * <p> The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline CreateServerRequest& WithEngineModel(const char* value) { SetEngineModel(value); return *this;}
 
 
     /**
-     * <p> The major release version of the engine that you want to use. Values depend
-     * on the engine that you choose. </p>
+     * <p> The major release version of the engine that you want to use. For a Chef
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p> The major release version of the engine that you want to use. Values depend
-     * on the engine that you choose. </p>
+     * <p> The major release version of the engine that you want to use. For a Chef
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The major release version of the engine that you want to use. Values depend
-     * on the engine that you choose. </p>
+     * <p> The major release version of the engine that you want to use. For a Chef
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p> The major release version of the engine that you want to use. Values depend
-     * on the engine that you choose. </p>
+     * <p> The major release version of the engine that you want to use. For a Chef
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p> The major release version of the engine that you want to use. Values depend
-     * on the engine that you choose. </p>
+     * <p> The major release version of the engine that you want to use. For a Chef
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline CreateServerRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The major release version of the engine that you want to use. Values depend
-     * on the engine that you choose. </p>
+     * <p> The major release version of the engine that you want to use. For a Chef
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline CreateServerRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p> The major release version of the engine that you want to use. Values depend
-     * on the engine that you choose. </p>
+     * <p> The major release version of the engine that you want to use. For a Chef
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline CreateServerRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
-     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
-     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
+     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
      * must contain at least one lower case letter, one upper case letter, one number,
      * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul>
+     * generated and returned in the response.</p> </li> </ul> <p class="title">
+     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
+     * a password must use ASCII characters.</p> </li> </ul>
      */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
-     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
-     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
+     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
      * must contain at least one lower case letter, one upper case letter, one number,
      * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul>
+     * generated and returned in the response.</p> </li> </ul> <p class="title">
+     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
+     * a password must use ASCII characters.</p> </li> </ul>
      */
     inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
-     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
-     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
+     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
      * must contain at least one lower case letter, one upper case letter, one number,
      * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul>
+     * generated and returned in the response.</p> </li> </ul> <p class="title">
+     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
+     * a password must use ASCII characters.</p> </li> </ul>
      */
     inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::move(value); }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
-     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
-     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
+     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
      * must contain at least one lower case letter, one upper case letter, one number,
      * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul>
+     * generated and returned in the response.</p> </li> </ul> <p class="title">
+     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
+     * a password must use ASCII characters.</p> </li> </ul>
      */
     inline CreateServerRequest& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
-     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
-     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
+     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
      * must contain at least one lower case letter, one upper case letter, one number,
      * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul>
+     * generated and returned in the response.</p> </li> </ul> <p class="title">
+     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
+     * a password must use ASCII characters.</p> </li> </ul>
      */
     inline CreateServerRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
-     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
-     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
+     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
      * must contain at least one lower case letter, one upper case letter, one number,
      * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul>
+     * generated and returned in the response.</p> </li> </ul> <p class="title">
+     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
+     * a password must use ASCII characters.</p> </li> </ul>
      */
     inline CreateServerRequest& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
-     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
-     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
+     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
+     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
      * must contain at least one lower case letter, one upper case letter, one number,
      * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul>
+     * generated and returned in the response.</p> </li> </ul> <p class="title">
+     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
+     * a password must use ASCII characters.</p> </li> </ul>
      */
     inline CreateServerRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p> The number of automated backups that you want to keep. Whenever a new backup
-     * is created, AWS OpsWorks for Chef Automate deletes the oldest backups if this
-     * number is exceeded. The default value is <code>1</code>. </p>
+     * is created, AWS OpsWorks CM deletes the oldest backups if this number is
+     * exceeded. The default value is <code>1</code>. </p>
      */
     inline int GetBackupRetentionCount() const{ return m_backupRetentionCount; }
 
     /**
      * <p> The number of automated backups that you want to keep. Whenever a new backup
-     * is created, AWS OpsWorks for Chef Automate deletes the oldest backups if this
-     * number is exceeded. The default value is <code>1</code>. </p>
+     * is created, AWS OpsWorks CM deletes the oldest backups if this number is
+     * exceeded. The default value is <code>1</code>. </p>
      */
     inline void SetBackupRetentionCount(int value) { m_backupRetentionCountHasBeenSet = true; m_backupRetentionCount = value; }
 
     /**
      * <p> The number of automated backups that you want to keep. Whenever a new backup
-     * is created, AWS OpsWorks for Chef Automate deletes the oldest backups if this
-     * number is exceeded. The default value is <code>1</code>. </p>
+     * is created, AWS OpsWorks CM deletes the oldest backups if this number is
+     * exceeded. The default value is <code>1</code>. </p>
      */
     inline CreateServerRequest& WithBackupRetentionCount(int value) { SetBackupRetentionCount(value); return *this;}
 
@@ -480,58 +515,51 @@ namespace Model
 
 
     /**
-     * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
-     * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
+     * Recommended instance types include <code>t2.medium</code> and greater,
+     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
-     * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
+     * Recommended instance types include <code>t2.medium</code> and greater,
+     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
-     * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
+     * Recommended instance types include <code>t2.medium</code> and greater,
+     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
-     * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
+     * Recommended instance types include <code>t2.medium</code> and greater,
+     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
-     * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
+     * Recommended instance types include <code>t2.medium</code> and greater,
+     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
      */
     inline CreateServerRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
-     * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
+     * Recommended instance types include <code>t2.medium</code> and greater,
+     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
      */
     inline CreateServerRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
-     * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
+     * Recommended instance types include <code>t2.medium</code> and greater,
+     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
      */
     inline CreateServerRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -587,171 +615,171 @@ namespace Model
 
 
     /**
-     * <p> The start time for a one-hour period each week during which AWS OpsWorks for
-     * Chef Automate performs maintenance on the instance. Valid values must be
-     * specified in the following format: <code>DDD:HH:MM</code>. The specified time is
-     * in coordinated universal time (UTC). The default value is a random one-hour
-     * period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code>
-     * for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
+     * performs maintenance on the instance. Valid values must be specified in the
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
-     * <p> The start time for a one-hour period each week during which AWS OpsWorks for
-     * Chef Automate performs maintenance on the instance. Valid values must be
-     * specified in the following format: <code>DDD:HH:MM</code>. The specified time is
-     * in coordinated universal time (UTC). The default value is a random one-hour
-     * period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code>
-     * for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
+     * performs maintenance on the instance. Valid values must be specified in the
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
-     * <p> The start time for a one-hour period each week during which AWS OpsWorks for
-     * Chef Automate performs maintenance on the instance. Valid values must be
-     * specified in the following format: <code>DDD:HH:MM</code>. The specified time is
-     * in coordinated universal time (UTC). The default value is a random one-hour
-     * period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code>
-     * for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
+     * performs maintenance on the instance. Valid values must be specified in the
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
-     * <p> The start time for a one-hour period each week during which AWS OpsWorks for
-     * Chef Automate performs maintenance on the instance. Valid values must be
-     * specified in the following format: <code>DDD:HH:MM</code>. The specified time is
-     * in coordinated universal time (UTC). The default value is a random one-hour
-     * period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code>
-     * for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
+     * performs maintenance on the instance. Valid values must be specified in the
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
-     * <p> The start time for a one-hour period each week during which AWS OpsWorks for
-     * Chef Automate performs maintenance on the instance. Valid values must be
-     * specified in the following format: <code>DDD:HH:MM</code>. The specified time is
-     * in coordinated universal time (UTC). The default value is a random one-hour
-     * period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code>
-     * for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
+     * performs maintenance on the instance. Valid values must be specified in the
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline CreateServerRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p> The start time for a one-hour period each week during which AWS OpsWorks for
-     * Chef Automate performs maintenance on the instance. Valid values must be
-     * specified in the following format: <code>DDD:HH:MM</code>. The specified time is
-     * in coordinated universal time (UTC). The default value is a random one-hour
-     * period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code>
-     * for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
+     * performs maintenance on the instance. Valid values must be specified in the
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline CreateServerRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
-     * <p> The start time for a one-hour period each week during which AWS OpsWorks for
-     * Chef Automate performs maintenance on the instance. Valid values must be
-     * specified in the following format: <code>DDD:HH:MM</code>. The specified time is
-     * in coordinated universal time (UTC). The default value is a random one-hour
-     * period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code>
-     * for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
+     * performs maintenance on the instance. Valid values must be specified in the
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline CreateServerRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
 
     /**
-     * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if automated backups are
-     * enabled. Valid values must be specified in one of the following formats: </p>
-     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
-     * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
-     * is in coordinated universal time (UTC). The default value is a random, daily
-     * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
-     * start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * <p> The start time for a one-hour period during which AWS OpsWorks CM backs up
+     * application-level data on your server if automated backups are enabled. Valid
+     * values must be specified in one of the following formats: </p> <ul> <li> <p>
+     * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
-     * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if automated backups are
-     * enabled. Valid values must be specified in one of the following formats: </p>
-     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
-     * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
-     * is in coordinated universal time (UTC). The default value is a random, daily
-     * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
-     * start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * <p> The start time for a one-hour period during which AWS OpsWorks CM backs up
+     * application-level data on your server if automated backups are enabled. Valid
+     * values must be specified in one of the following formats: </p> <ul> <li> <p>
+     * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
-     * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if automated backups are
-     * enabled. Valid values must be specified in one of the following formats: </p>
-     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
-     * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
-     * is in coordinated universal time (UTC). The default value is a random, daily
-     * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
-     * start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * <p> The start time for a one-hour period during which AWS OpsWorks CM backs up
+     * application-level data on your server if automated backups are enabled. Valid
+     * values must be specified in one of the following formats: </p> <ul> <li> <p>
+     * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
-     * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if automated backups are
-     * enabled. Valid values must be specified in one of the following formats: </p>
-     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
-     * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
-     * is in coordinated universal time (UTC). The default value is a random, daily
-     * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
-     * start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * <p> The start time for a one-hour period during which AWS OpsWorks CM backs up
+     * application-level data on your server if automated backups are enabled. Valid
+     * values must be specified in one of the following formats: </p> <ul> <li> <p>
+     * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
-     * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if automated backups are
-     * enabled. Valid values must be specified in one of the following formats: </p>
-     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
-     * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
-     * is in coordinated universal time (UTC). The default value is a random, daily
-     * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
-     * start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * <p> The start time for a one-hour period during which AWS OpsWorks CM backs up
+     * application-level data on your server if automated backups are enabled. Valid
+     * values must be specified in one of the following formats: </p> <ul> <li> <p>
+     * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline CreateServerRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
-     * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if automated backups are
-     * enabled. Valid values must be specified in one of the following formats: </p>
-     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
-     * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
-     * is in coordinated universal time (UTC). The default value is a random, daily
-     * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
-     * start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * <p> The start time for a one-hour period during which AWS OpsWorks CM backs up
+     * application-level data on your server if automated backups are enabled. Valid
+     * values must be specified in one of the following formats: </p> <ul> <li> <p>
+     * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline CreateServerRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
-     * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if automated backups are
-     * enabled. Valid values must be specified in one of the following formats: </p>
-     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
-     * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
-     * is in coordinated universal time (UTC). The default value is a random, daily
-     * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
-     * start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
-     * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * <p> The start time for a one-hour period during which AWS OpsWorks CM backs up
+     * application-level data on your server if automated backups are enabled. Valid
+     * values must be specified in one of the following formats: </p> <ul> <li> <p>
+     * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline CreateServerRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -760,8 +788,8 @@ namespace Model
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
      * add this parameter, the specified security groups must be within the VPC that is
      * specified by <code>SubnetIds</code>. </p> <p> If you do not specify this
-     * parameter, AWS OpsWorks for Chef Automate creates one new security group that
-     * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
+     * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
+     * and 443, open to 0.0.0.0/0 (everyone). </p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
@@ -769,8 +797,8 @@ namespace Model
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
      * add this parameter, the specified security groups must be within the VPC that is
      * specified by <code>SubnetIds</code>. </p> <p> If you do not specify this
-     * parameter, AWS OpsWorks for Chef Automate creates one new security group that
-     * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
+     * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
+     * and 443, open to 0.0.0.0/0 (everyone). </p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
@@ -778,8 +806,8 @@ namespace Model
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
      * add this parameter, the specified security groups must be within the VPC that is
      * specified by <code>SubnetIds</code>. </p> <p> If you do not specify this
-     * parameter, AWS OpsWorks for Chef Automate creates one new security group that
-     * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
+     * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
+     * and 443, open to 0.0.0.0/0 (everyone). </p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
@@ -787,8 +815,8 @@ namespace Model
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
      * add this parameter, the specified security groups must be within the VPC that is
      * specified by <code>SubnetIds</code>. </p> <p> If you do not specify this
-     * parameter, AWS OpsWorks for Chef Automate creates one new security group that
-     * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
+     * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
+     * and 443, open to 0.0.0.0/0 (everyone). </p>
      */
     inline CreateServerRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
@@ -796,8 +824,8 @@ namespace Model
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
      * add this parameter, the specified security groups must be within the VPC that is
      * specified by <code>SubnetIds</code>. </p> <p> If you do not specify this
-     * parameter, AWS OpsWorks for Chef Automate creates one new security group that
-     * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
+     * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
+     * and 443, open to 0.0.0.0/0 (everyone). </p>
      */
     inline CreateServerRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
@@ -805,8 +833,8 @@ namespace Model
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
      * add this parameter, the specified security groups must be within the VPC that is
      * specified by <code>SubnetIds</code>. </p> <p> If you do not specify this
-     * parameter, AWS OpsWorks for Chef Automate creates one new security group that
-     * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
+     * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
+     * and 443, open to 0.0.0.0/0 (everyone). </p>
      */
     inline CreateServerRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -814,8 +842,8 @@ namespace Model
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
      * add this parameter, the specified security groups must be within the VPC that is
      * specified by <code>SubnetIds</code>. </p> <p> If you do not specify this
-     * parameter, AWS OpsWorks for Chef Automate creates one new security group that
-     * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
+     * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
+     * and 443, open to 0.0.0.0/0 (everyone). </p>
      */
     inline CreateServerRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
@@ -823,93 +851,86 @@ namespace Model
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
      * add this parameter, the specified security groups must be within the VPC that is
      * specified by <code>SubnetIds</code>. </p> <p> If you do not specify this
-     * parameter, AWS OpsWorks for Chef Automate creates one new security group that
-     * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
+     * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
+     * and 443, open to 0.0.0.0/0 (everyone). </p>
      */
     inline CreateServerRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks management console
-     * typically creates the service role for you, if you are using the AWS CLI or API
-     * commands, run the service-role-creation.yaml AWS CloudFormation template,
-     * located at
+     * <p> The service role that the AWS OpsWorks CM service backend uses to work with
+     * your account. Although the AWS OpsWorks management console typically creates the
+     * service role for you, if you are using the AWS CLI or API commands, run the
+     * service-role-creation.yaml AWS CloudFormation template, located at
      * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-     * This template creates a CloudFormation stack that includes the service role that
-     * you need. </p>
+     * This template creates a CloudFormation stack that includes the service role and
+     * instance profile that you need. </p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks management console
-     * typically creates the service role for you, if you are using the AWS CLI or API
-     * commands, run the service-role-creation.yaml AWS CloudFormation template,
-     * located at
+     * <p> The service role that the AWS OpsWorks CM service backend uses to work with
+     * your account. Although the AWS OpsWorks management console typically creates the
+     * service role for you, if you are using the AWS CLI or API commands, run the
+     * service-role-creation.yaml AWS CloudFormation template, located at
      * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-     * This template creates a CloudFormation stack that includes the service role that
-     * you need. </p>
+     * This template creates a CloudFormation stack that includes the service role and
+     * instance profile that you need. </p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks management console
-     * typically creates the service role for you, if you are using the AWS CLI or API
-     * commands, run the service-role-creation.yaml AWS CloudFormation template,
-     * located at
+     * <p> The service role that the AWS OpsWorks CM service backend uses to work with
+     * your account. Although the AWS OpsWorks management console typically creates the
+     * service role for you, if you are using the AWS CLI or API commands, run the
+     * service-role-creation.yaml AWS CloudFormation template, located at
      * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-     * This template creates a CloudFormation stack that includes the service role that
-     * you need. </p>
+     * This template creates a CloudFormation stack that includes the service role and
+     * instance profile that you need. </p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks management console
-     * typically creates the service role for you, if you are using the AWS CLI or API
-     * commands, run the service-role-creation.yaml AWS CloudFormation template,
-     * located at
+     * <p> The service role that the AWS OpsWorks CM service backend uses to work with
+     * your account. Although the AWS OpsWorks management console typically creates the
+     * service role for you, if you are using the AWS CLI or API commands, run the
+     * service-role-creation.yaml AWS CloudFormation template, located at
      * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-     * This template creates a CloudFormation stack that includes the service role that
-     * you need. </p>
+     * This template creates a CloudFormation stack that includes the service role and
+     * instance profile that you need. </p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks management console
-     * typically creates the service role for you, if you are using the AWS CLI or API
-     * commands, run the service-role-creation.yaml AWS CloudFormation template,
-     * located at
+     * <p> The service role that the AWS OpsWorks CM service backend uses to work with
+     * your account. Although the AWS OpsWorks management console typically creates the
+     * service role for you, if you are using the AWS CLI or API commands, run the
+     * service-role-creation.yaml AWS CloudFormation template, located at
      * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-     * This template creates a CloudFormation stack that includes the service role that
-     * you need. </p>
+     * This template creates a CloudFormation stack that includes the service role and
+     * instance profile that you need. </p>
      */
     inline CreateServerRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks management console
-     * typically creates the service role for you, if you are using the AWS CLI or API
-     * commands, run the service-role-creation.yaml AWS CloudFormation template,
-     * located at
+     * <p> The service role that the AWS OpsWorks CM service backend uses to work with
+     * your account. Although the AWS OpsWorks management console typically creates the
+     * service role for you, if you are using the AWS CLI or API commands, run the
+     * service-role-creation.yaml AWS CloudFormation template, located at
      * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-     * This template creates a CloudFormation stack that includes the service role that
-     * you need. </p>
+     * This template creates a CloudFormation stack that includes the service role and
+     * instance profile that you need. </p>
      */
     inline CreateServerRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks management console
-     * typically creates the service role for you, if you are using the AWS CLI or API
-     * commands, run the service-role-creation.yaml AWS CloudFormation template,
-     * located at
+     * <p> The service role that the AWS OpsWorks CM service backend uses to work with
+     * your account. Although the AWS OpsWorks management console typically creates the
+     * service role for you, if you are using the AWS CLI or API commands, run the
+     * service-role-creation.yaml AWS CloudFormation template, located at
      * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-     * This template creates a CloudFormation stack that includes the service role that
-     * you need. </p>
+     * This template creates a CloudFormation stack that includes the service role and
+     * instance profile that you need. </p>
      */
     inline CreateServerRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -1028,44 +1049,44 @@ namespace Model
 
 
     /**
-     * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
-     * by using the backup represented by BackupId. </p>
+     * <p> If you specify this field, AWS OpsWorks CM creates the server by using the
+     * backup represented by BackupId. </p>
      */
     inline const Aws::String& GetBackupId() const{ return m_backupId; }
 
     /**
-     * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
-     * by using the backup represented by BackupId. </p>
+     * <p> If you specify this field, AWS OpsWorks CM creates the server by using the
+     * backup represented by BackupId. </p>
      */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
 
     /**
-     * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
-     * by using the backup represented by BackupId. </p>
+     * <p> If you specify this field, AWS OpsWorks CM creates the server by using the
+     * backup represented by BackupId. </p>
      */
     inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
 
     /**
-     * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
-     * by using the backup represented by BackupId. </p>
+     * <p> If you specify this field, AWS OpsWorks CM creates the server by using the
+     * backup represented by BackupId. </p>
      */
     inline void SetBackupId(const char* value) { m_backupIdHasBeenSet = true; m_backupId.assign(value); }
 
     /**
-     * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
-     * by using the backup represented by BackupId. </p>
+     * <p> If you specify this field, AWS OpsWorks CM creates the server by using the
+     * backup represented by BackupId. </p>
      */
     inline CreateServerRequest& WithBackupId(const Aws::String& value) { SetBackupId(value); return *this;}
 
     /**
-     * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
-     * by using the backup represented by BackupId. </p>
+     * <p> If you specify this field, AWS OpsWorks CM creates the server by using the
+     * backup represented by BackupId. </p>
      */
     inline CreateServerRequest& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
 
     /**
-     * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
-     * by using the backup represented by BackupId. </p>
+     * <p> If you specify this field, AWS OpsWorks CM creates the server by using the
+     * backup represented by BackupId. </p>
      */
     inline CreateServerRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 

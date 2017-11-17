@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a JDBC target for a crawl.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a JDBC data store to crawl.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JdbcTarget">AWS API
    * Reference</a></p>
    */
@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the connection to use for the JDBC target.</p>
+     * <p>The name of the connection to use to connect to the JDBC target.</p>
      */
     inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
 
     /**
-     * <p>The name of the connection to use for the JDBC target.</p>
+     * <p>The name of the connection to use to connect to the JDBC target.</p>
      */
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
 
     /**
-     * <p>The name of the connection to use for the JDBC target.</p>
+     * <p>The name of the connection to use to connect to the JDBC target.</p>
      */
     inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
 
     /**
-     * <p>The name of the connection to use for the JDBC target.</p>
+     * <p>The name of the connection to use to connect to the JDBC target.</p>
      */
     inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
 
     /**
-     * <p>The name of the connection to use for the JDBC target.</p>
+     * <p>The name of the connection to use to connect to the JDBC target.</p>
      */
     inline JdbcTarget& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
 
     /**
-     * <p>The name of the connection to use for the JDBC target.</p>
+     * <p>The name of the connection to use to connect to the JDBC target.</p>
      */
     inline JdbcTarget& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the connection to use for the JDBC target.</p>
+     * <p>The name of the connection to use to connect to the JDBC target.</p>
      */
     inline JdbcTarget& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
@@ -120,42 +120,58 @@ namespace Model
 
 
     /**
-     * <p>A list of items to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusions() const{ return m_exclusions; }
 
     /**
-     * <p>A list of items to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline void SetExclusions(const Aws::Vector<Aws::String>& value) { m_exclusionsHasBeenSet = true; m_exclusions = value; }
 
     /**
-     * <p>A list of items to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline void SetExclusions(Aws::Vector<Aws::String>&& value) { m_exclusionsHasBeenSet = true; m_exclusions = std::move(value); }
 
     /**
-     * <p>A list of items to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline JdbcTarget& WithExclusions(const Aws::Vector<Aws::String>& value) { SetExclusions(value); return *this;}
 
     /**
-     * <p>A list of items to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline JdbcTarget& WithExclusions(Aws::Vector<Aws::String>&& value) { SetExclusions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of items to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline JdbcTarget& AddExclusions(const Aws::String& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
 
     /**
-     * <p>A list of items to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline JdbcTarget& AddExclusions(Aws::String&& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of items to exclude from the crawl.</p>
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
      */
     inline JdbcTarget& AddExclusions(const char* value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
 

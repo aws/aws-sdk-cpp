@@ -27,7 +27,9 @@ namespace Model
   {
     NOT_SET,
     DynamoDBReadCapacityUtilization,
-    DynamoDBWriteCapacityUtilization
+    DynamoDBWriteCapacityUtilization,
+    RDSReaderAverageCPUUtilization,
+    RDSReaderAverageDatabaseConnections
   };
 
 namespace MetricTypeMapper

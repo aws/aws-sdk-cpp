@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateClassifierRequest::UpdateClassifierRequest() : 
-    m_grokClassifierHasBeenSet(false)
+    m_grokClassifierHasBeenSet(false),
+    m_xMLClassifierHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String UpdateClassifierRequest::SerializePayload() const
   if(m_grokClassifierHasBeenSet)
   {
    payload.WithObject("GrokClassifier", m_grokClassifier.Jsonize());
+
+  }
+
+  if(m_xMLClassifierHasBeenSet)
+  {
+   payload.WithObject("XMLClassifier", m_xMLClassifier.Jsonize());
 
   }
 

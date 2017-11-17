@@ -99,17 +99,20 @@ namespace Model
 
 
     /**
-     * <p>True if the crawler is estimating its </p>
+     * <p>True if the crawler is still estimating how long it will take to complete
+     * this run.</p>
      */
     inline bool GetStillEstimating() const{ return m_stillEstimating; }
 
     /**
-     * <p>True if the crawler is estimating its </p>
+     * <p>True if the crawler is still estimating how long it will take to complete
+     * this run.</p>
      */
     inline void SetStillEstimating(bool value) { m_stillEstimatingHasBeenSet = true; m_stillEstimating = value; }
 
     /**
-     * <p>True if the crawler is estimating its </p>
+     * <p>True if the crawler is still estimating how long it will take to complete
+     * this run.</p>
      */
     inline CrawlerMetrics& WithStillEstimating(bool value) { SetStillEstimating(value); return *this;}
 
@@ -147,49 +150,49 @@ namespace Model
 
 
     /**
-     * <p>A list of the tables created by this crawler.</p>
+     * <p>The number of tables created by this crawler.</p>
      */
     inline int GetTablesCreated() const{ return m_tablesCreated; }
 
     /**
-     * <p>A list of the tables created by this crawler.</p>
+     * <p>The number of tables created by this crawler.</p>
      */
     inline void SetTablesCreated(int value) { m_tablesCreatedHasBeenSet = true; m_tablesCreated = value; }
 
     /**
-     * <p>A list of the tables created by this crawler.</p>
+     * <p>The number of tables created by this crawler.</p>
      */
     inline CrawlerMetrics& WithTablesCreated(int value) { SetTablesCreated(value); return *this;}
 
 
     /**
-     * <p>A list of the tables created by this crawler.</p>
+     * <p>The number of tables updated by this crawler.</p>
      */
     inline int GetTablesUpdated() const{ return m_tablesUpdated; }
 
     /**
-     * <p>A list of the tables created by this crawler.</p>
+     * <p>The number of tables updated by this crawler.</p>
      */
     inline void SetTablesUpdated(int value) { m_tablesUpdatedHasBeenSet = true; m_tablesUpdated = value; }
 
     /**
-     * <p>A list of the tables created by this crawler.</p>
+     * <p>The number of tables updated by this crawler.</p>
      */
     inline CrawlerMetrics& WithTablesUpdated(int value) { SetTablesUpdated(value); return *this;}
 
 
     /**
-     * <p>A list of the tables deleted by this crawler.</p>
+     * <p>The number of tables deleted by this crawler.</p>
      */
     inline int GetTablesDeleted() const{ return m_tablesDeleted; }
 
     /**
-     * <p>A list of the tables deleted by this crawler.</p>
+     * <p>The number of tables deleted by this crawler.</p>
      */
     inline void SetTablesDeleted(int value) { m_tablesDeletedHasBeenSet = true; m_tablesDeleted = value; }
 
     /**
-     * <p>A list of the tables deleted by this crawler.</p>
+     * <p>The number of tables deleted by this crawler.</p>
      */
     inline CrawlerMetrics& WithTablesDeleted(int value) { SetTablesDeleted(value); return *this;}
 

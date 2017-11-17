@@ -32,6 +32,8 @@ namespace Aws
 
         static const int DynamoDBReadCapacityUtilization_HASH = HashingUtils::HashString("DynamoDBReadCapacityUtilization");
         static const int DynamoDBWriteCapacityUtilization_HASH = HashingUtils::HashString("DynamoDBWriteCapacityUtilization");
+        static const int RDSReaderAverageCPUUtilization_HASH = HashingUtils::HashString("RDSReaderAverageCPUUtilization");
+        static const int RDSReaderAverageDatabaseConnections_HASH = HashingUtils::HashString("RDSReaderAverageDatabaseConnections");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == DynamoDBWriteCapacityUtilization_HASH)
           {
             return MetricType::DynamoDBWriteCapacityUtilization;
+          }
+          else if (hashCode == RDSReaderAverageCPUUtilization_HASH)
+          {
+            return MetricType::RDSReaderAverageCPUUtilization;
+          }
+          else if (hashCode == RDSReaderAverageDatabaseConnections_HASH)
+          {
+            return MetricType::RDSReaderAverageDatabaseConnections;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +73,10 @@ namespace Aws
             return "DynamoDBReadCapacityUtilization";
           case MetricType::DynamoDBWriteCapacityUtilization:
             return "DynamoDBWriteCapacityUtilization";
+          case MetricType::RDSReaderAverageCPUUtilization:
+            return "RDSReaderAverageCPUUtilization";
+          case MetricType::RDSReaderAverageDatabaseConnections:
+            return "RDSReaderAverageDatabaseConnections";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

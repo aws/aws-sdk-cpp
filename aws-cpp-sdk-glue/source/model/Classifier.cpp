@@ -29,12 +29,14 @@ namespace Model
 {
 
 Classifier::Classifier() : 
-    m_grokClassifierHasBeenSet(false)
+    m_grokClassifierHasBeenSet(false),
+    m_xMLClassifierHasBeenSet(false)
 {
 }
 
 Classifier::Classifier(const JsonValue& jsonValue) : 
-    m_grokClassifierHasBeenSet(false)
+    m_grokClassifierHasBeenSet(false),
+    m_xMLClassifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ Classifier& Classifier::operator =(const JsonValue& jsonValue)
     m_grokClassifierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("XMLClassifier"))
+  {
+    m_xMLClassifier = jsonValue.GetObject("XMLClassifier");
+
+    m_xMLClassifierHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue Classifier::Jsonize() const
   if(m_grokClassifierHasBeenSet)
   {
    payload.WithObject("GrokClassifier", m_grokClassifier.Jsonize());
+
+  }
+
+  if(m_xMLClassifierHasBeenSet)
+  {
+   payload.WithObject("XMLClassifier", m_xMLClassifier.Jsonize());
 
   }
 

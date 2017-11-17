@@ -17,6 +17,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/model/UpdateGrokClassifierRequest.h>
+#include <aws/glue/model/UpdateXMLClassifierRequest.h>
 #include <utility>
 
 namespace Aws
@@ -69,10 +70,39 @@ namespace Model
      */
     inline UpdateClassifierRequest& WithGrokClassifier(UpdateGrokClassifierRequest&& value) { SetGrokClassifier(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
+     */
+    inline const UpdateXMLClassifierRequest& GetXMLClassifier() const{ return m_xMLClassifier; }
+
+    /**
+     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
+     */
+    inline void SetXMLClassifier(const UpdateXMLClassifierRequest& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = value; }
+
+    /**
+     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
+     */
+    inline void SetXMLClassifier(UpdateXMLClassifierRequest&& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = std::move(value); }
+
+    /**
+     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
+     */
+    inline UpdateClassifierRequest& WithXMLClassifier(const UpdateXMLClassifierRequest& value) { SetXMLClassifier(value); return *this;}
+
+    /**
+     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
+     */
+    inline UpdateClassifierRequest& WithXMLClassifier(UpdateXMLClassifierRequest&& value) { SetXMLClassifier(std::move(value)); return *this;}
+
   private:
 
     UpdateGrokClassifierRequest m_grokClassifier;
     bool m_grokClassifierHasBeenSet;
+
+    UpdateXMLClassifierRequest m_xMLClassifier;
+    bool m_xMLClassifierHasBeenSet;
   };
 
 } // namespace Model

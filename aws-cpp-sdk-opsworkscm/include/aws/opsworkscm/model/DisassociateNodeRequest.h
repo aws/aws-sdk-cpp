@@ -83,44 +83,45 @@ namespace Model
 
 
     /**
-     * <p>The name of the Chef client node. </p>
+     * <p>The name of the client node. </p>
      */
     inline const Aws::String& GetNodeName() const{ return m_nodeName; }
 
     /**
-     * <p>The name of the Chef client node. </p>
+     * <p>The name of the client node. </p>
      */
     inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
 
     /**
-     * <p>The name of the Chef client node. </p>
+     * <p>The name of the client node. </p>
      */
     inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
 
     /**
-     * <p>The name of the Chef client node. </p>
+     * <p>The name of the client node. </p>
      */
     inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
 
     /**
-     * <p>The name of the Chef client node. </p>
+     * <p>The name of the client node. </p>
      */
     inline DisassociateNodeRequest& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
 
     /**
-     * <p>The name of the Chef client node. </p>
+     * <p>The name of the client node. </p>
      */
     inline DisassociateNodeRequest& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Chef client node. </p>
+     * <p>The name of the client node. </p>
      */
     inline DisassociateNodeRequest& WithNodeName(const char* value) { SetNodeName(value); return *this;}
 
 
     /**
-     * <p>Engine attributes used for disassociating the node. </p> <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b> </p> <ul> <li> <p>
+     * <p>Engine attributes that are used for disassociating the node. No attributes
+     * are required for Puppet. </p> <p class="title"> <b>Attributes required in a
+     * DisassociateNode request for Chef</b> </p> <ul> <li> <p>
      * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was
      * associated. By default only one organization named <code>default</code> can
      * exist. </p> </li> </ul>
@@ -128,8 +129,9 @@ namespace Model
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
 
     /**
-     * <p>Engine attributes used for disassociating the node. </p> <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b> </p> <ul> <li> <p>
+     * <p>Engine attributes that are used for disassociating the node. No attributes
+     * are required for Puppet. </p> <p class="title"> <b>Attributes required in a
+     * DisassociateNode request for Chef</b> </p> <ul> <li> <p>
      * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was
      * associated. By default only one organization named <code>default</code> can
      * exist. </p> </li> </ul>
@@ -137,8 +139,9 @@ namespace Model
     inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
 
     /**
-     * <p>Engine attributes used for disassociating the node. </p> <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b> </p> <ul> <li> <p>
+     * <p>Engine attributes that are used for disassociating the node. No attributes
+     * are required for Puppet. </p> <p class="title"> <b>Attributes required in a
+     * DisassociateNode request for Chef</b> </p> <ul> <li> <p>
      * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was
      * associated. By default only one organization named <code>default</code> can
      * exist. </p> </li> </ul>
@@ -146,8 +149,9 @@ namespace Model
     inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::move(value); }
 
     /**
-     * <p>Engine attributes used for disassociating the node. </p> <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b> </p> <ul> <li> <p>
+     * <p>Engine attributes that are used for disassociating the node. No attributes
+     * are required for Puppet. </p> <p class="title"> <b>Attributes required in a
+     * DisassociateNode request for Chef</b> </p> <ul> <li> <p>
      * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was
      * associated. By default only one organization named <code>default</code> can
      * exist. </p> </li> </ul>
@@ -155,8 +159,9 @@ namespace Model
     inline DisassociateNodeRequest& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
 
     /**
-     * <p>Engine attributes used for disassociating the node. </p> <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b> </p> <ul> <li> <p>
+     * <p>Engine attributes that are used for disassociating the node. No attributes
+     * are required for Puppet. </p> <p class="title"> <b>Attributes required in a
+     * DisassociateNode request for Chef</b> </p> <ul> <li> <p>
      * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was
      * associated. By default only one organization named <code>default</code> can
      * exist. </p> </li> </ul>
@@ -164,8 +169,9 @@ namespace Model
     inline DisassociateNodeRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Engine attributes used for disassociating the node. </p> <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b> </p> <ul> <li> <p>
+     * <p>Engine attributes that are used for disassociating the node. No attributes
+     * are required for Puppet. </p> <p class="title"> <b>Attributes required in a
+     * DisassociateNode request for Chef</b> </p> <ul> <li> <p>
      * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was
      * associated. By default only one organization named <code>default</code> can
      * exist. </p> </li> </ul>
@@ -173,8 +179,9 @@ namespace Model
     inline DisassociateNodeRequest& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
 
     /**
-     * <p>Engine attributes used for disassociating the node. </p> <p class="title">
-     * <b>Attributes accepted in a DisassociateNode request:</b> </p> <ul> <li> <p>
+     * <p>Engine attributes that are used for disassociating the node. No attributes
+     * are required for Puppet. </p> <p class="title"> <b>Attributes required in a
+     * DisassociateNode request for Chef</b> </p> <ul> <li> <p>
      * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was
      * associated. By default only one organization named <code>default</code> can
      * exist. </p> </li> </ul>

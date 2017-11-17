@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The metadata for the specified <code>Crawler</code>.</p>
+     * <p>The metadata for the specified crawler.</p>
      */
     inline const Crawler& GetCrawler() const{ return m_crawler; }
 
     /**
-     * <p>The metadata for the specified <code>Crawler</code>.</p>
+     * <p>The metadata for the specified crawler.</p>
      */
     inline void SetCrawler(const Crawler& value) { m_crawler = value; }
 
     /**
-     * <p>The metadata for the specified <code>Crawler</code>.</p>
+     * <p>The metadata for the specified crawler.</p>
      */
     inline void SetCrawler(Crawler&& value) { m_crawler = std::move(value); }
 
     /**
-     * <p>The metadata for the specified <code>Crawler</code>.</p>
+     * <p>The metadata for the specified crawler.</p>
      */
     inline GetCrawlerResult& WithCrawler(const Crawler& value) { SetCrawler(value); return *this;}
 
     /**
-     * <p>The metadata for the specified <code>Crawler</code>.</p>
+     * <p>The metadata for the specified crawler.</p>
      */
     inline GetCrawlerResult& WithCrawler(Crawler&& value) { SetCrawler(std::move(value)); return *this;}
 

@@ -84,37 +84,37 @@ namespace Model
 
 
     /**
-     * <p>An AWS S3 location.</p>
+     * <p>An Amazon S3 location.</p>
      */
     inline const Aws::Vector<CodeGenNodeArg>& GetS3() const{ return m_s3; }
 
     /**
-     * <p>An AWS S3 location.</p>
+     * <p>An Amazon S3 location.</p>
      */
     inline void SetS3(const Aws::Vector<CodeGenNodeArg>& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
     /**
-     * <p>An AWS S3 location.</p>
+     * <p>An Amazon S3 location.</p>
      */
     inline void SetS3(Aws::Vector<CodeGenNodeArg>&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
 
     /**
-     * <p>An AWS S3 location.</p>
+     * <p>An Amazon S3 location.</p>
      */
     inline Location& WithS3(const Aws::Vector<CodeGenNodeArg>& value) { SetS3(value); return *this;}
 
     /**
-     * <p>An AWS S3 location.</p>
+     * <p>An Amazon S3 location.</p>
      */
     inline Location& WithS3(Aws::Vector<CodeGenNodeArg>&& value) { SetS3(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS S3 location.</p>
+     * <p>An Amazon S3 location.</p>
      */
     inline Location& AddS3(const CodeGenNodeArg& value) { m_s3HasBeenSet = true; m_s3.push_back(value); return *this; }
 
     /**
-     * <p>An AWS S3 location.</p>
+     * <p>An Amazon S3 location.</p>
      */
     inline Location& AddS3(CodeGenNodeArg&& value) { m_s3HasBeenSet = true; m_s3.push_back(std::move(value)); return *this; }
 
