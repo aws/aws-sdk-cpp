@@ -30,15 +30,18 @@ namespace Aws
 
             if (label.empty())
                 return false;
+
             if (label.size() > 63)
                 return false;
 
             if (!isalnum(label.front()))
                 return false; // '-' is not acceptable as the first character
+
             if (!isalnum(label.back()))
                 return false; // '-' is not acceptable as the last  character
 
-            for (int i = 1, e = label.size() - 1; i < e; ++i) {
+            for (size_t i = 1, e = label.size() - 1; i < e; ++i)
+            {
                 auto c = label[i];
                 if (c != '-' && !isalnum(c))
                     return false;
