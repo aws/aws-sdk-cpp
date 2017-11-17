@@ -40,13 +40,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the result of a successful invocation of the following actions:</p>
-   * <ul> <li> <p> <a>CreateDBCluster</a> </p> </li> <li> <p> <a>DeleteDBCluster</a>
-   * </p> </li> <li> <p> <a>FailoverDBCluster</a> </p> </li> <li> <p>
-   * <a>ModifyDBCluster</a> </p> </li> <li> <p> <a>RestoreDBClusterFromSnapshot</a>
-   * </p> </li> <li> <p> <a>RestoreDBClusterToPointInTime</a> </p> </li> </ul>
-   * <p>This data type is used as a response element in the <a>DescribeDBClusters</a>
-   * action.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an Amazon RDS DB cluster. </p> <p>This data type is
+   * used as a response element in the <a>DescribeDBClusters</a> action.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster">AWS API
    * Reference</a></p>
    */
@@ -1134,94 +1130,94 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The region-unique, immutable identifier for the DB cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the KMS key for the DB cluster
-     * is accessed.</p>
+     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * the DB cluster is accessed.</p>
      */
     inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
 
     /**
-     * <p>The region-unique, immutable identifier for the DB cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the KMS key for the DB cluster
-     * is accessed.</p>
+     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
 
     /**
-     * <p>The region-unique, immutable identifier for the DB cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the KMS key for the DB cluster
-     * is accessed.</p>
+     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
 
     /**
-     * <p>The region-unique, immutable identifier for the DB cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the KMS key for the DB cluster
-     * is accessed.</p>
+     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
 
     /**
-     * <p>The region-unique, immutable identifier for the DB cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the KMS key for the DB cluster
-     * is accessed.</p>
+     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
 
     /**
-     * <p>The region-unique, immutable identifier for the DB cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the KMS key for the DB cluster
-     * is accessed.</p>
+     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The region-unique, immutable identifier for the DB cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the KMS key for the DB cluster
-     * is accessed.</p>
+     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
@@ -1321,19 +1317,19 @@ namespace Model
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled; otherwise false.</p>
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled; otherwise false.</p>
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled; otherwise false.</p>
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline DBCluster& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 

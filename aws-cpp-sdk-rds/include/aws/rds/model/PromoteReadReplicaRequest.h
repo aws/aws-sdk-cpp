@@ -127,105 +127,98 @@ namespace Model
     /**
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region. To see the time blocks available, see <a
+     * </p> <p> The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region. To see the time blocks available, see <a
+     * </p> <p> The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region. To see the time blocks available, see <a
+     * </p> <p> The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region. To see the time blocks available, see <a
+     * </p> <p> The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region. To see the time blocks available, see <a
+     * </p> <p> The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline PromoteReadReplicaRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region. To see the time blocks available, see <a
+     * </p> <p> The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline PromoteReadReplicaRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region. To see the time blocks available, see <a
+     * </p> <p> The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline PromoteReadReplicaRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 

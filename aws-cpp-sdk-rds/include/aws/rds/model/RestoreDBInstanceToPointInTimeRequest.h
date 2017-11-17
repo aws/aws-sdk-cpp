@@ -103,58 +103,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetTargetDBInstanceIdentifier() const{ return m_targetDBInstanceIdentifier; }
 
     /**
-     * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
 
     /**
-     * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = std::move(value); }
 
     /**
-     * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(const char* value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier.assign(value); }
 
     /**
-     * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const Aws::String& value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the new database instance to be created.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
-     * <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with a
-     * hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const char* value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
@@ -232,8 +232,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
@@ -243,8 +243,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
@@ -254,8 +254,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
@@ -265,8 +265,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
@@ -276,8 +276,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
@@ -287,8 +287,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
@@ -298,8 +298,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
@@ -331,58 +331,58 @@ namespace Model
 
 
     /**
-     * <p>The EC2 Availability Zone that the database instance is created in.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
+     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     * <p>Example: <code>us-east-1a</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance is created in.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
+     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     * <p>Example: <code>us-east-1a</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance is created in.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
+     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     * <p>Example: <code>us-east-1a</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance is created in.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
+     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     * <p>Example: <code>us-east-1a</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The EC2 Availability Zone that the database instance is created in.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
+     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     * <p>Example: <code>us-east-1a</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The EC2 Availability Zone that the database instance is created in.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
+     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     * <p>Example: <code>us-east-1a</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 Availability Zone that the database instance is created in.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
+     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     * <p>Example: <code>us-east-1a</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -439,21 +439,21 @@ namespace Model
 
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment.</p> <p>Constraint: You
-     * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * <code>true</code>.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment.</p> <p>Constraint: You
-     * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * <code>true</code>.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment.</p> <p>Constraint: You
-     * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * <code>true</code>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -624,13 +624,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
      * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
@@ -638,13 +639,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
      * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
@@ -652,13 +654,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
      * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
@@ -666,13 +669,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
      * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
@@ -680,13 +684,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
      * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
@@ -694,13 +699,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
      * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
@@ -708,13 +714,14 @@ namespace Model
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
      * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -747,7 +754,7 @@ namespace Model
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
@@ -755,7 +762,7 @@ namespace Model
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
@@ -763,7 +770,7 @@ namespace Model
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
@@ -771,7 +778,7 @@ namespace Model
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
@@ -779,7 +786,7 @@ namespace Model
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
@@ -787,7 +794,7 @@ namespace Model
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
@@ -795,7 +802,7 @@ namespace Model
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
@@ -803,19 +810,19 @@ namespace Model
 
     /**
      * <p>True to copy all tags from the restored DB instance to snapshots of the DB
-     * instance; otherwise false. The default is false.</p>
+     * instance, and otherwise false. The default is false.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
      * <p>True to copy all tags from the restored DB instance to snapshots of the DB
-     * instance; otherwise false. The default is false.</p>
+     * instance, and otherwise false. The default is false.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
      * <p>True to copy all tags from the restored DB instance to snapshots of the DB
-     * instance; otherwise false. The default is false.</p>
+     * instance, and otherwise false. The default is false.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -847,7 +854,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -856,7 +863,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -865,7 +872,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -874,7 +881,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -883,7 +890,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -892,7 +899,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -901,92 +908,92 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::move(value); }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(const char* value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn.assign(value); }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
 
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline const Aws::String& GetTdeCredentialPassword() const{ return m_tdeCredentialPassword; }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline void SetTdeCredentialPassword(const Aws::String& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::move(value); }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline void SetTdeCredentialPassword(const char* value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword.assign(value); }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialPassword(const Aws::String& value) { SetTdeCredentialPassword(value); return *this;}
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
@@ -1073,7 +1080,7 @@ namespace Model
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts; otherwise false.</p> <p> You can enable IAM database
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
      * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
@@ -1083,7 +1090,7 @@ namespace Model
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts; otherwise false.</p> <p> You can enable IAM database
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
      * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
@@ -1093,7 +1100,7 @@ namespace Model
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts; otherwise false.</p> <p> You can enable IAM database
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
      * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>

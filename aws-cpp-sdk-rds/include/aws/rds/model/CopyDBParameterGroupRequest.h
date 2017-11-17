@@ -56,7 +56,7 @@ namespace Model
      * about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p> Must
+     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must
      * specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
      */
@@ -67,7 +67,7 @@ namespace Model
      * about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p> Must
+     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must
      * specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
      */
@@ -78,7 +78,7 @@ namespace Model
      * about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p> Must
+     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must
      * specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
      */
@@ -89,7 +89,7 @@ namespace Model
      * about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p> Must
+     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must
      * specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
      */
@@ -100,7 +100,7 @@ namespace Model
      * about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p> Must
+     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must
      * specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
      */
@@ -111,7 +111,7 @@ namespace Model
      * about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p> Must
+     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must
      * specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
      */
@@ -122,7 +122,7 @@ namespace Model
      * about creating an ARN, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p> Must
+     * <ul> <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must
      * specify a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
      */

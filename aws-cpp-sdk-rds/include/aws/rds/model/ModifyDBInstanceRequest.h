@@ -214,8 +214,8 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
@@ -228,8 +228,8 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
@@ -242,8 +242,8 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
@@ -256,8 +256,8 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
@@ -270,8 +270,8 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
@@ -284,8 +284,8 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
@@ -298,8 +298,8 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB
@@ -613,10 +613,10 @@ namespace Model
 
 
     /**
-     * <p>The new password for the master user. Can be any printable ASCII character
-     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
-     * outage and the change is asynchronously applied as soon as possible. Between the
-     * time of the request and the completion of the request, the
+     * <p>The new password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter does
+     * not result in an outage and the change is asynchronously applied as soon as
+     * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
@@ -635,10 +635,10 @@ namespace Model
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The new password for the master user. Can be any printable ASCII character
-     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
-     * outage and the change is asynchronously applied as soon as possible. Between the
-     * time of the request and the completion of the request, the
+     * <p>The new password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter does
+     * not result in an outage and the change is asynchronously applied as soon as
+     * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
@@ -657,10 +657,10 @@ namespace Model
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The new password for the master user. Can be any printable ASCII character
-     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
-     * outage and the change is asynchronously applied as soon as possible. Between the
-     * time of the request and the completion of the request, the
+     * <p>The new password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter does
+     * not result in an outage and the change is asynchronously applied as soon as
+     * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
@@ -679,10 +679,10 @@ namespace Model
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The new password for the master user. Can be any printable ASCII character
-     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
-     * outage and the change is asynchronously applied as soon as possible. Between the
-     * time of the request and the completion of the request, the
+     * <p>The new password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter does
+     * not result in an outage and the change is asynchronously applied as soon as
+     * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
@@ -701,10 +701,10 @@ namespace Model
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The new password for the master user. Can be any printable ASCII character
-     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
-     * outage and the change is asynchronously applied as soon as possible. Between the
-     * time of the request and the completion of the request, the
+     * <p>The new password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter does
+     * not result in an outage and the change is asynchronously applied as soon as
+     * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
@@ -723,10 +723,10 @@ namespace Model
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The new password for the master user. Can be any printable ASCII character
-     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
-     * outage and the change is asynchronously applied as soon as possible. Between the
-     * time of the request and the completion of the request, the
+     * <p>The new password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter does
+     * not result in an outage and the change is asynchronously applied as soon as
+     * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
@@ -745,10 +745,10 @@ namespace Model
     inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The new password for the master user. Can be any printable ASCII character
-     * except "/", """, or "@".</p> <p> Changing this parameter does not result in an
-     * outage and the change is asynchronously applied as soon as possible. Between the
-     * time of the request and the completion of the request, the
+     * <p>The new password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> Changing this parameter does
+     * not result in an outage and the change is asynchronously applied as soon as
+     * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p> <p>
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The password for the master user is
@@ -921,9 +921,9 @@ namespace Model
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
-     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
-     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
-     * <p>Must be at least 30 minutes</p> </li> </ul>
+     * <li> <p>Must be in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window</p> </li> <li> <p>Must be at
+     * least 30 minutes</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
@@ -935,9 +935,9 @@ namespace Model
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
-     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
-     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
-     * <p>Must be at least 30 minutes</p> </li> </ul>
+     * <li> <p>Must be in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window</p> </li> <li> <p>Must be at
+     * least 30 minutes</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -949,9 +949,9 @@ namespace Model
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
-     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
-     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
-     * <p>Must be at least 30 minutes</p> </li> </ul>
+     * <li> <p>Must be in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window</p> </li> <li> <p>Must be at
+     * least 30 minutes</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
@@ -963,9 +963,9 @@ namespace Model
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
-     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
-     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
-     * <p>Must be at least 30 minutes</p> </li> </ul>
+     * <li> <p>Must be in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window</p> </li> <li> <p>Must be at
+     * least 30 minutes</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
@@ -977,9 +977,9 @@ namespace Model
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
-     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
-     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
-     * <p>Must be at least 30 minutes</p> </li> </ul>
+     * <li> <p>Must be in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window</p> </li> <li> <p>Must be at
+     * least 30 minutes</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -991,9 +991,9 @@ namespace Model
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
-     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
-     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
-     * <p>Must be at least 30 minutes</p> </li> </ul>
+     * <li> <p>Must be in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window</p> </li> <li> <p>Must be at
+     * least 30 minutes</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
@@ -1005,9 +1005,9 @@ namespace Model
      * </p> <p>Not applicable. The daily time range for creating automated backups is
      * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>
-     * <li> <p>Times should be in Universal Time Coordinated (UTC)</p> </li> <li>
-     * <p>Must not conflict with the preferred maintenance window</p> </li> <li>
-     * <p>Must be at least 30 minutes</p> </li> </ul>
+     * <li> <p>Must be in Universal Time Coordinated (UTC)</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window</p> </li> <li> <p>Must be at
+     * least 30 minutes</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1441,7 +1441,7 @@ namespace Model
      * enables OEM, this change can cause a brief (sub-second) period during which new
      * connections are rejected but existing connections are not interrupted. </p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
@@ -1455,7 +1455,7 @@ namespace Model
      * enables OEM, this change can cause a brief (sub-second) period during which new
      * connections are rejected but existing connections are not interrupted. </p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
@@ -1469,7 +1469,7 @@ namespace Model
      * enables OEM, this change can cause a brief (sub-second) period during which new
      * connections are rejected but existing connections are not interrupted. </p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
@@ -1483,7 +1483,7 @@ namespace Model
      * enables OEM, this change can cause a brief (sub-second) period during which new
      * connections are rejected but existing connections are not interrupted. </p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
@@ -1497,7 +1497,7 @@ namespace Model
      * enables OEM, this change can cause a brief (sub-second) period during which new
      * connections are rejected but existing connections are not interrupted. </p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline ModifyDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
@@ -1511,7 +1511,7 @@ namespace Model
      * enables OEM, this change can cause a brief (sub-second) period during which new
      * connections are rejected but existing connections are not interrupted. </p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline ModifyDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
@@ -1525,7 +1525,7 @@ namespace Model
      * enables OEM, this change can cause a brief (sub-second) period during which new
      * connections are rejected but existing connections are not interrupted. </p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * cannot be removed from an option group, and that option group cannot be removed
+     * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline ModifyDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
@@ -1628,7 +1628,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -1637,7 +1637,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -1646,7 +1646,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -1655,7 +1655,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -1664,7 +1664,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -1673,7 +1673,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -1682,92 +1682,92 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::move(value); }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(const char* value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn.assign(value); }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline ModifyDBInstanceRequest& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline ModifyDBInstanceRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline ModifyDBInstanceRequest& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
 
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline const Aws::String& GetTdeCredentialPassword() const{ return m_tdeCredentialPassword; }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline void SetTdeCredentialPassword(const Aws::String& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::move(value); }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline void SetTdeCredentialPassword(const char* value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword.assign(value); }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline ModifyDBInstanceRequest& WithTdeCredentialPassword(const Aws::String& value) { SetTdeCredentialPassword(value); return *this;}
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline ModifyDBInstanceRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline ModifyDBInstanceRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
@@ -1867,20 +1867,20 @@ namespace Model
 
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance;
-     * otherwise false. The default is false.</p>
+     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
+     * and otherwise false. The default is false.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance;
-     * otherwise false. The default is false.</p>
+     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
+     * and otherwise false. The default is false.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance;
-     * otherwise false. The default is false.</p>
+     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
+     * and otherwise false. The default is false.</p>
      */
     inline ModifyDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -2019,7 +2019,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
@@ -2031,7 +2031,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
@@ -2043,7 +2043,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
@@ -2055,7 +2055,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
@@ -2067,7 +2067,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
@@ -2079,7 +2079,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
@@ -2091,7 +2091,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
@@ -2178,7 +2178,7 @@ namespace Model
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts; otherwise false.</p> <p> You can enable IAM database
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
      * by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>
@@ -2190,7 +2190,7 @@ namespace Model
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts; otherwise false.</p> <p> You can enable IAM database
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
      * by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>
@@ -2202,7 +2202,7 @@ namespace Model
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts; otherwise false.</p> <p> You can enable IAM database
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
      * by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>
@@ -2214,66 +2214,69 @@ namespace Model
 
 
     /**
-     * <p>True to enable Performance Insights for the DB instance; otherwise false.</p>
+     * <p>True to enable Performance Insights for the DB instance, and otherwise
+     * false.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance; otherwise false.</p>
+     * <p>True to enable Performance Insights for the DB instance, and otherwise
+     * false.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance; otherwise false.</p>
+     * <p>True to enable Performance Insights for the DB instance, and otherwise
+     * false.</p>
      */
     inline ModifyDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}

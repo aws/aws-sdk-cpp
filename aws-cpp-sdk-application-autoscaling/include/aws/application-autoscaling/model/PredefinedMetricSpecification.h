@@ -49,63 +49,124 @@ namespace Model
 
 
     /**
-     * <p>The metric type.</p>
+     * <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type
+     * applies only to Spot fleet requests.</p>
      */
     inline const MetricType& GetPredefinedMetricType() const{ return m_predefinedMetricType; }
 
     /**
-     * <p>The metric type.</p>
+     * <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type
+     * applies only to Spot fleet requests.</p>
      */
     inline void SetPredefinedMetricType(const MetricType& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = value; }
 
     /**
-     * <p>The metric type.</p>
+     * <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type
+     * applies only to Spot fleet requests.</p>
      */
     inline void SetPredefinedMetricType(MetricType&& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = std::move(value); }
 
     /**
-     * <p>The metric type.</p>
+     * <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type
+     * applies only to Spot fleet requests.</p>
      */
     inline PredefinedMetricSpecification& WithPredefinedMetricType(const MetricType& value) { SetPredefinedMetricType(value); return *this;}
 
     /**
-     * <p>The metric type.</p>
+     * <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type
+     * applies only to Spot fleet requests.</p>
      */
     inline PredefinedMetricSpecification& WithPredefinedMetricType(MetricType&& value) { SetPredefinedMetricType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Identifies the resource associated with the metric type. You can't specify a
+     * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
+     * and there is a target group attached to the Spot fleet request.</p> <p>The
+     * format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceLabel() const{ return m_resourceLabel; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Identifies the resource associated with the metric type. You can't specify a
+     * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
+     * and there is a target group attached to the Spot fleet request.</p> <p>The
+     * format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul>
      */
     inline void SetResourceLabel(const Aws::String& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Identifies the resource associated with the metric type. You can't specify a
+     * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
+     * and there is a target group attached to the Spot fleet request.</p> <p>The
+     * format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul>
      */
     inline void SetResourceLabel(Aws::String&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Identifies the resource associated with the metric type. You can't specify a
+     * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
+     * and there is a target group attached to the Spot fleet request.</p> <p>The
+     * format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul>
      */
     inline void SetResourceLabel(const char* value) { m_resourceLabelHasBeenSet = true; m_resourceLabel.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Identifies the resource associated with the metric type. You can't specify a
+     * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
+     * and there is a target group attached to the Spot fleet request.</p> <p>The
+     * format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul>
      */
     inline PredefinedMetricSpecification& WithResourceLabel(const Aws::String& value) { SetResourceLabel(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Identifies the resource associated with the metric type. You can't specify a
+     * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
+     * and there is a target group attached to the Spot fleet request.</p> <p>The
+     * format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul>
      */
     inline PredefinedMetricSpecification& WithResourceLabel(Aws::String&& value) { SetResourceLabel(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>Identifies the resource associated with the metric type. You can't specify a
+     * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
+     * and there is a target group attached to the Spot fleet request.</p> <p>The
+     * format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul>
      */
     inline PredefinedMetricSpecification& WithResourceLabel(const char* value) { SetResourceLabel(value); return *this;}
 

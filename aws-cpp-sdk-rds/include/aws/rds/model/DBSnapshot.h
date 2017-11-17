@@ -35,10 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the result of a successful invocation of the following actions:</p>
-   * <ul> <li> <p> <a>CreateDBSnapshot</a> </p> </li> <li> <p>
-   * <a>DeleteDBSnapshot</a> </p> </li> </ul> <p>This data type is used as a response
-   * element in the <a>DescribeDBSnapshots</a> action.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an Amazon RDS DB snapshot. </p> <p>This data type is
+   * used as a response element in the <a>DescribeDBSnapshots</a> action.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshot">AWS API
    * Reference</a></p>
    */
@@ -770,44 +769,44 @@ namespace Model
 
 
     /**
-     * <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted
-     * DB snapshot. </p>
+     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB snapshot. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted
-     * DB snapshot. </p>
+     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB snapshot. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted
-     * DB snapshot. </p>
+     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB snapshot. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted
-     * DB snapshot. </p>
+     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB snapshot. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted
-     * DB snapshot. </p>
+     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB snapshot. </p>
      */
     inline DBSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted
-     * DB snapshot. </p>
+     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB snapshot. </p>
      */
     inline DBSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted
-     * DB snapshot. </p>
+     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB snapshot. </p>
      */
     inline DBSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -907,19 +906,19 @@ namespace Model
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled; otherwise false.</p>
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled; otherwise false.</p>
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled; otherwise false.</p>
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline DBSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 

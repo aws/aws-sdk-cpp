@@ -26,7 +26,8 @@ namespace Model
   enum class InventoryFormat
   {
     NOT_SET,
-    CSV
+    CSV,
+    ORC
   };
 
 namespace InventoryFormatMapper

@@ -51,6 +51,7 @@
 #include <aws/dms/model/DescribeRefreshSchemasStatusRequest.h>
 #include <aws/dms/model/DescribeReplicationInstancesRequest.h>
 #include <aws/dms/model/DescribeReplicationSubnetGroupsRequest.h>
+#include <aws/dms/model/DescribeReplicationTaskAssessmentResultsRequest.h>
 #include <aws/dms/model/DescribeReplicationTasksRequest.h>
 #include <aws/dms/model/DescribeSchemasRequest.h>
 #include <aws/dms/model/DescribeTableStatisticsRequest.h>
@@ -65,6 +66,7 @@
 #include <aws/dms/model/ReloadTablesRequest.h>
 #include <aws/dms/model/RemoveTagsFromResourceRequest.h>
 #include <aws/dms/model/StartReplicationTaskRequest.h>
+#include <aws/dms/model/StartReplicationTaskAssessmentRequest.h>
 #include <aws/dms/model/StopReplicationTaskRequest.h>
 #include <aws/dms/model/TestConnectionRequest.h>
 
@@ -972,6 +974,41 @@ void DatabaseMigrationServiceClient::DescribeReplicationSubnetGroupsAsyncHelper(
   handler(this, request, DescribeReplicationSubnetGroups(request), context);
 }
 
+DescribeReplicationTaskAssessmentResultsOutcome DatabaseMigrationServiceClient::DescribeReplicationTaskAssessmentResults(const DescribeReplicationTaskAssessmentResultsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeReplicationTaskAssessmentResultsOutcome(DescribeReplicationTaskAssessmentResultsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeReplicationTaskAssessmentResultsOutcome(outcome.GetError());
+  }
+}
+
+DescribeReplicationTaskAssessmentResultsOutcomeCallable DatabaseMigrationServiceClient::DescribeReplicationTaskAssessmentResultsCallable(const DescribeReplicationTaskAssessmentResultsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReplicationTaskAssessmentResultsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReplicationTaskAssessmentResults(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DescribeReplicationTaskAssessmentResultsAsync(const DescribeReplicationTaskAssessmentResultsRequest& request, const DescribeReplicationTaskAssessmentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplicationTaskAssessmentResultsAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DescribeReplicationTaskAssessmentResultsAsyncHelper(const DescribeReplicationTaskAssessmentResultsRequest& request, const DescribeReplicationTaskAssessmentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReplicationTaskAssessmentResults(request), context);
+}
+
 DescribeReplicationTasksOutcome DatabaseMigrationServiceClient::DescribeReplicationTasks(const DescribeReplicationTasksRequest& request) const
 {
   Aws::StringStream ss;
@@ -1460,6 +1497,41 @@ void DatabaseMigrationServiceClient::StartReplicationTaskAsync(const StartReplic
 void DatabaseMigrationServiceClient::StartReplicationTaskAsyncHelper(const StartReplicationTaskRequest& request, const StartReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartReplicationTask(request), context);
+}
+
+StartReplicationTaskAssessmentOutcome DatabaseMigrationServiceClient::StartReplicationTaskAssessment(const StartReplicationTaskAssessmentRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartReplicationTaskAssessmentOutcome(StartReplicationTaskAssessmentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartReplicationTaskAssessmentOutcome(outcome.GetError());
+  }
+}
+
+StartReplicationTaskAssessmentOutcomeCallable DatabaseMigrationServiceClient::StartReplicationTaskAssessmentCallable(const StartReplicationTaskAssessmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartReplicationTaskAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartReplicationTaskAssessment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::StartReplicationTaskAssessmentAsync(const StartReplicationTaskAssessmentRequest& request, const StartReplicationTaskAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartReplicationTaskAssessmentAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::StartReplicationTaskAssessmentAsyncHelper(const StartReplicationTaskAssessmentRequest& request, const StartReplicationTaskAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartReplicationTaskAssessment(request), context);
 }
 
 StopReplicationTaskOutcome DatabaseMigrationServiceClient::StopReplicationTask(const StopReplicationTaskRequest& request) const

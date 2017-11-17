@@ -151,7 +151,7 @@ namespace Model
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
-     * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
+     * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
      * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
@@ -162,7 +162,7 @@ namespace Model
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
-     * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
+     * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
      * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
@@ -173,7 +173,7 @@ namespace Model
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
-     * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
+     * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
      * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
@@ -184,7 +184,7 @@ namespace Model
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
-     * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
+     * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
      * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
@@ -195,7 +195,7 @@ namespace Model
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
-     * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
+     * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
      * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
@@ -206,7 +206,7 @@ namespace Model
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
-     * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
+     * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
      * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
@@ -217,7 +217,7 @@ namespace Model
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
-     * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
+     * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
      * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the

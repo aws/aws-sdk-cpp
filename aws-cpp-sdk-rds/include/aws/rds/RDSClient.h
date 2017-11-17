@@ -99,6 +99,7 @@
 #include <aws/rds/model/RestoreDBClusterFromSnapshotResult.h>
 #include <aws/rds/model/RestoreDBClusterToPointInTimeResult.h>
 #include <aws/rds/model/RestoreDBInstanceFromDBSnapshotResult.h>
+#include <aws/rds/model/RestoreDBInstanceFromS3Result.h>
 #include <aws/rds/model/RestoreDBInstanceToPointInTimeResult.h>
 #include <aws/rds/model/RevokeDBSecurityGroupIngressResult.h>
 #include <aws/rds/model/StartDBInstanceResult.h>
@@ -233,6 +234,7 @@ namespace Aws
         class RestoreDBClusterFromSnapshotRequest;
         class RestoreDBClusterToPointInTimeRequest;
         class RestoreDBInstanceFromDBSnapshotRequest;
+        class RestoreDBInstanceFromS3Request;
         class RestoreDBInstanceToPointInTimeRequest;
         class RevokeDBSecurityGroupIngressRequest;
         class StartDBInstanceRequest;
@@ -324,6 +326,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<RestoreDBClusterFromSnapshotResult, Aws::Client::AWSError<RDSErrors>> RestoreDBClusterFromSnapshotOutcome;
         typedef Aws::Utils::Outcome<RestoreDBClusterToPointInTimeResult, Aws::Client::AWSError<RDSErrors>> RestoreDBClusterToPointInTimeOutcome;
         typedef Aws::Utils::Outcome<RestoreDBInstanceFromDBSnapshotResult, Aws::Client::AWSError<RDSErrors>> RestoreDBInstanceFromDBSnapshotOutcome;
+        typedef Aws::Utils::Outcome<RestoreDBInstanceFromS3Result, Aws::Client::AWSError<RDSErrors>> RestoreDBInstanceFromS3Outcome;
         typedef Aws::Utils::Outcome<RestoreDBInstanceToPointInTimeResult, Aws::Client::AWSError<RDSErrors>> RestoreDBInstanceToPointInTimeOutcome;
         typedef Aws::Utils::Outcome<RevokeDBSecurityGroupIngressResult, Aws::Client::AWSError<RDSErrors>> RevokeDBSecurityGroupIngressOutcome;
         typedef Aws::Utils::Outcome<StartDBInstanceResult, Aws::Client::AWSError<RDSErrors>> StartDBInstanceOutcome;
@@ -415,6 +418,7 @@ namespace Aws
         typedef std::future<RestoreDBClusterFromSnapshotOutcome> RestoreDBClusterFromSnapshotOutcomeCallable;
         typedef std::future<RestoreDBClusterToPointInTimeOutcome> RestoreDBClusterToPointInTimeOutcomeCallable;
         typedef std::future<RestoreDBInstanceFromDBSnapshotOutcome> RestoreDBInstanceFromDBSnapshotOutcomeCallable;
+        typedef std::future<RestoreDBInstanceFromS3Outcome> RestoreDBInstanceFromS3OutcomeCallable;
         typedef std::future<RestoreDBInstanceToPointInTimeOutcome> RestoreDBInstanceToPointInTimeOutcomeCallable;
         typedef std::future<RevokeDBSecurityGroupIngressOutcome> RevokeDBSecurityGroupIngressOutcomeCallable;
         typedef std::future<StartDBInstanceOutcome> StartDBInstanceOutcomeCallable;
@@ -509,6 +513,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::RestoreDBClusterFromSnapshotRequest&, const Model::RestoreDBClusterFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBClusterFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::RestoreDBClusterToPointInTimeRequest&, const Model::RestoreDBClusterToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBClusterToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::RestoreDBInstanceFromDBSnapshotRequest&, const Model::RestoreDBInstanceFromDBSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBInstanceFromDBSnapshotResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::RestoreDBInstanceFromS3Request&, const Model::RestoreDBInstanceFromS3Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBInstanceFromS3ResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::RestoreDBInstanceToPointInTimeRequest&, const Model::RestoreDBInstanceToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBInstanceToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::RevokeDBSecurityGroupIngressRequest&, const Model::RevokeDBSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeDBSecurityGroupIngressResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StartDBInstanceRequest&, const Model::StartDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDBInstanceResponseReceivedHandler;
@@ -526,7 +531,7 @@ namespace Aws
    * the code, applications, and tools you already use today with your existing
    * databases work with Amazon RDS without modification. Amazon RDS automatically
    * backs up your database and maintains the database software that powers your DB
-   * instance. Amazon RDS is flexible: you can scale your database instance's compute
+   * instance. Amazon RDS is flexible: you can scale your DB instance's compute
    * resources and storage capacity to meet your application's demand. As with all
    * Amazon Web Services, there are no up-front investments, and you pay only for the
    * resources you use.</p> <p>This interface reference for Amazon RDS contains
@@ -734,11 +739,11 @@ namespace Aws
          * ranges are available if the application accessing your database is running on
          * the Internet. Required parameters for this API are one of CIDR range,
          * EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
-         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).</p> <note> <p>You
-         * cannot authorize ingress from an EC2 security group in one AWS Region to an
-         * Amazon RDS DB instance in another. You cannot authorize ingress from a VPC
-         * security group in one VPC to an Amazon RDS DB instance in another.</p> </note>
-         * <p>For an overview of CIDR ranges, go to the <a
+         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).</p> <note> <p>You can't
+         * authorize ingress from an EC2 security group in one AWS Region to an Amazon RDS
+         * DB instance in another. You can't authorize ingress from a VPC security group in
+         * one VPC to an Amazon RDS DB instance in another.</p> </note> <p>For an overview
+         * of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
          * Tutorial</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">AWS
@@ -753,11 +758,11 @@ namespace Aws
          * ranges are available if the application accessing your database is running on
          * the Internet. Required parameters for this API are one of CIDR range,
          * EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
-         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).</p> <note> <p>You
-         * cannot authorize ingress from an EC2 security group in one AWS Region to an
-         * Amazon RDS DB instance in another. You cannot authorize ingress from a VPC
-         * security group in one VPC to an Amazon RDS DB instance in another.</p> </note>
-         * <p>For an overview of CIDR ranges, go to the <a
+         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).</p> <note> <p>You can't
+         * authorize ingress from an EC2 security group in one AWS Region to an Amazon RDS
+         * DB instance in another. You can't authorize ingress from a VPC security group in
+         * one VPC to an Amazon RDS DB instance in another.</p> </note> <p>For an overview
+         * of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
          * Tutorial</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">AWS
@@ -774,11 +779,11 @@ namespace Aws
          * ranges are available if the application accessing your database is running on
          * the Internet. Required parameters for this API are one of CIDR range,
          * EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
-         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).</p> <note> <p>You
-         * cannot authorize ingress from an EC2 security group in one AWS Region to an
-         * Amazon RDS DB instance in another. You cannot authorize ingress from a VPC
-         * security group in one VPC to an Amazon RDS DB instance in another.</p> </note>
-         * <p>For an overview of CIDR ranges, go to the <a
+         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).</p> <note> <p>You can't
+         * authorize ingress from an EC2 security group in one AWS Region to an Amazon RDS
+         * DB instance in another. You can't authorize ingress from a VPC security group in
+         * one VPC to an Amazon RDS DB instance in another.</p> </note> <p>For an overview
+         * of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
          * Tutorial</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">AWS
@@ -826,8 +831,8 @@ namespace Aws
          * for the encrypted DB cluster snapshot to be copied to. To copy an encrypted DB
          * cluster snapshot from another AWS Region, you must provide the following
          * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS Key Management System
-         * (KMS) key identifier for the key to use to encrypt the copy of the DB cluster
-         * snapshot in the destination AWS Region.</p> </li> <li> <p>
+         * (AWS KMS) key identifier for the key to use to encrypt the copy of the DB
+         * cluster snapshot in the destination AWS Region.</p> </li> <li> <p>
          * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed
          * request for the <code>CopyDBClusterSnapshot</code> action to be called in the
          * source AWS Region where the DB cluster snapshot is copied from. The pre-signed
@@ -845,8 +850,8 @@ namespace Aws
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
          * example, if you are copying an encrypted DB cluster snapshot from the us-west-2
-         * region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the
-         * following example:
+         * AWS Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like
+         * the following example:
          * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
          * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
          * see <a
@@ -888,8 +893,8 @@ namespace Aws
          * for the encrypted DB cluster snapshot to be copied to. To copy an encrypted DB
          * cluster snapshot from another AWS Region, you must provide the following
          * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS Key Management System
-         * (KMS) key identifier for the key to use to encrypt the copy of the DB cluster
-         * snapshot in the destination AWS Region.</p> </li> <li> <p>
+         * (AWS KMS) key identifier for the key to use to encrypt the copy of the DB
+         * cluster snapshot in the destination AWS Region.</p> </li> <li> <p>
          * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed
          * request for the <code>CopyDBClusterSnapshot</code> action to be called in the
          * source AWS Region where the DB cluster snapshot is copied from. The pre-signed
@@ -907,8 +912,8 @@ namespace Aws
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
          * example, if you are copying an encrypted DB cluster snapshot from the us-west-2
-         * region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the
-         * following example:
+         * AWS Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like
+         * the following example:
          * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
          * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
          * see <a
@@ -952,8 +957,8 @@ namespace Aws
          * for the encrypted DB cluster snapshot to be copied to. To copy an encrypted DB
          * cluster snapshot from another AWS Region, you must provide the following
          * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS Key Management System
-         * (KMS) key identifier for the key to use to encrypt the copy of the DB cluster
-         * snapshot in the destination AWS Region.</p> </li> <li> <p>
+         * (AWS KMS) key identifier for the key to use to encrypt the copy of the DB
+         * cluster snapshot in the destination AWS Region.</p> </li> <li> <p>
          * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed
          * request for the <code>CopyDBClusterSnapshot</code> action to be called in the
          * source AWS Region where the DB cluster snapshot is copied from. The pre-signed
@@ -971,8 +976,8 @@ namespace Aws
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
          * example, if you are copying an encrypted DB cluster snapshot from the us-west-2
-         * region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the
-         * following example:
+         * AWS Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like
+         * the following example:
          * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
          * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
          * see <a
@@ -1036,7 +1041,7 @@ namespace Aws
          * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>You cannot copy an encrypted, shared DB snapshot from one
+         * snapshot copy. </p> <p>You can't copy an encrypted, shared DB snapshot from one
          * AWS Region to another.</p> <p>For more information about copying snapshots, see
          * <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
@@ -1051,7 +1056,7 @@ namespace Aws
          * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>You cannot copy an encrypted, shared DB snapshot from one
+         * snapshot copy. </p> <p>You can't copy an encrypted, shared DB snapshot from one
          * AWS Region to another.</p> <p>For more information about copying snapshots, see
          * <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
@@ -1068,7 +1073,7 @@ namespace Aws
          * "available" state.</p> <p>You can copy a snapshot from one AWS Region to
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
-         * snapshot copy. </p> <p>You cannot copy an encrypted, shared DB snapshot from one
+         * snapshot copy. </p> <p>You can't copy an encrypted, shared DB snapshot from one
          * AWS Region to another.</p> <p>For more information about copying snapshots, see
          * <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
@@ -1641,7 +1646,7 @@ namespace Aws
         /**
          * <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When
          * you delete a DB cluster, all automated backups for that DB cluster are deleted
-         * and cannot be recovered. Manual DB cluster snapshots of the specified DB cluster
+         * and can't be recovered. Manual DB cluster snapshots of the specified DB cluster
          * are not deleted.</p> <p/> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
@@ -1654,7 +1659,7 @@ namespace Aws
         /**
          * <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When
          * you delete a DB cluster, all automated backups for that DB cluster are deleted
-         * and cannot be recovered. Manual DB cluster snapshots of the specified DB cluster
+         * and can't be recovered. Manual DB cluster snapshots of the specified DB cluster
          * are not deleted.</p> <p/> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
@@ -1669,7 +1674,7 @@ namespace Aws
         /**
          * <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When
          * you delete a DB cluster, all automated backups for that DB cluster are deleted
-         * and cannot be recovered. Manual DB cluster snapshots of the specified DB cluster
+         * and can't be recovered. Manual DB cluster snapshots of the specified DB cluster
          * are not deleted.</p> <p/> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
@@ -1683,7 +1688,7 @@ namespace Aws
 
         /**
          * <p>Deletes a specified DB cluster parameter group. The DB cluster parameter
-         * group to be deleted cannot be associated with any DB clusters.</p> <p>For more
+         * group to be deleted can't be associated with any DB clusters.</p> <p>For more
          * information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
@@ -1695,7 +1700,7 @@ namespace Aws
 
         /**
          * <p>Deletes a specified DB cluster parameter group. The DB cluster parameter
-         * group to be deleted cannot be associated with any DB clusters.</p> <p>For more
+         * group to be deleted can't be associated with any DB clusters.</p> <p>For more
          * information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
@@ -1709,7 +1714,7 @@ namespace Aws
 
         /**
          * <p>Deletes a specified DB cluster parameter group. The DB cluster parameter
-         * group to be deleted cannot be associated with any DB clusters.</p> <p>For more
+         * group to be deleted can't be associated with any DB clusters.</p> <p>For more
          * information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
@@ -1767,17 +1772,17 @@ namespace Aws
         /**
          * <p>The DeleteDBInstance action deletes a previously provisioned DB instance.
          * When you delete a DB instance, all automated backups for that instance are
-         * deleted and cannot be recovered. Manual DB snapshots of the DB instance to be
+         * deleted and can't be recovered. Manual DB snapshots of the DB instance to be
          * deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p> If you request
          * a final DB snapshot the status of the Amazon RDS DB instance is
          * <code>deleting</code> until the DB snapshot is created. The API action
          * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
-         * The action cannot be canceled or reverted once submitted. </p> <p>Note that when
+         * The action can't be canceled or reverted once submitted. </p> <p>Note that when
          * a DB instance is in a failure state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
          * <code>true</code>.</p> <p>If the specified DB instance is part of an Amazon
-         * Aurora DB cluster, you cannot delete the DB instance if both of the following
+         * Aurora DB cluster, you can't delete the DB instance if both of the following
          * conditions are true:</p> <ul> <li> <p>The DB cluster is a Read Replica of
          * another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance is the only
          * instance in the DB cluster.</p> </li> </ul> <p>To delete a DB instance in this
@@ -1793,17 +1798,17 @@ namespace Aws
         /**
          * <p>The DeleteDBInstance action deletes a previously provisioned DB instance.
          * When you delete a DB instance, all automated backups for that instance are
-         * deleted and cannot be recovered. Manual DB snapshots of the DB instance to be
+         * deleted and can't be recovered. Manual DB snapshots of the DB instance to be
          * deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p> If you request
          * a final DB snapshot the status of the Amazon RDS DB instance is
          * <code>deleting</code> until the DB snapshot is created. The API action
          * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
-         * The action cannot be canceled or reverted once submitted. </p> <p>Note that when
+         * The action can't be canceled or reverted once submitted. </p> <p>Note that when
          * a DB instance is in a failure state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
          * <code>true</code>.</p> <p>If the specified DB instance is part of an Amazon
-         * Aurora DB cluster, you cannot delete the DB instance if both of the following
+         * Aurora DB cluster, you can't delete the DB instance if both of the following
          * conditions are true:</p> <ul> <li> <p>The DB cluster is a Read Replica of
          * another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance is the only
          * instance in the DB cluster.</p> </li> </ul> <p>To delete a DB instance in this
@@ -1821,17 +1826,17 @@ namespace Aws
         /**
          * <p>The DeleteDBInstance action deletes a previously provisioned DB instance.
          * When you delete a DB instance, all automated backups for that instance are
-         * deleted and cannot be recovered. Manual DB snapshots of the DB instance to be
+         * deleted and can't be recovered. Manual DB snapshots of the DB instance to be
          * deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p> If you request
          * a final DB snapshot the status of the Amazon RDS DB instance is
          * <code>deleting</code> until the DB snapshot is created. The API action
          * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
-         * The action cannot be canceled or reverted once submitted. </p> <p>Note that when
+         * The action can't be canceled or reverted once submitted. </p> <p>Note that when
          * a DB instance is in a failure state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
          * <code>true</code>.</p> <p>If the specified DB instance is part of an Amazon
-         * Aurora DB cluster, you cannot delete the DB instance if both of the following
+         * Aurora DB cluster, you can't delete the DB instance if both of the following
          * conditions are true:</p> <ul> <li> <p>The DB cluster is a Read Replica of
          * another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance is the only
          * instance in the DB cluster.</p> </li> </ul> <p>To delete a DB instance in this
@@ -1848,7 +1853,7 @@ namespace Aws
 
         /**
          * <p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted
-         * cannot be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
+         * can't be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -1856,7 +1861,7 @@ namespace Aws
 
         /**
          * <p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted
-         * cannot be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
+         * can't be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -1866,7 +1871,7 @@ namespace Aws
 
         /**
          * <p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted
-         * cannot be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
+         * can't be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -2921,7 +2926,7 @@ namespace Aws
         virtual void DescribeReservedDBInstancesOfferingsAsync(const Model::DescribeReservedDBInstancesOfferingsRequest& request, const DescribeReservedDBInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the source AWS regions where the current AWS Region can
+         * <p>Returns a list of the source AWS Regions where the current AWS Region can
          * create a Read Replica or copy a DB snapshot from. This API action supports
          * pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
@@ -2930,7 +2935,7 @@ namespace Aws
         virtual Model::DescribeSourceRegionsOutcome DescribeSourceRegions(const Model::DescribeSourceRegionsRequest& request) const;
 
         /**
-         * <p>Returns a list of the source AWS regions where the current AWS Region can
+         * <p>Returns a list of the source AWS Regions where the current AWS Region can
          * create a Read Replica or copy a DB snapshot from. This API action supports
          * pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
@@ -2941,7 +2946,7 @@ namespace Aws
         virtual Model::DescribeSourceRegionsOutcomeCallable DescribeSourceRegionsCallable(const Model::DescribeSourceRegionsRequest& request) const;
 
         /**
-         * <p>Returns a list of the source AWS regions where the current AWS Region can
+         * <p>Returns a list of the source AWS Regions where the current AWS Region can
          * create a Read Replica or copy a DB snapshot from. This API action supports
          * pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
@@ -3540,11 +3545,11 @@ namespace Aws
         virtual void ModifyDBSubnetGroupAsync(const Model::ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an existing RDS event notification subscription. Note that you
-         * cannot modify the source identifiers using this call; to change source
-         * identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a>
-         * and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a
-         * list of the event categories for a given SourceType in the <a
+         * <p>Modifies an existing RDS event notification subscription. Note that you can't
+         * modify the source identifiers using this call; to change source identifiers for
+         * a subscription, use the <a>AddSourceIdentifierToSubscription</a> and
+         * <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a list
+         * of the event categories for a given SourceType in the <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
          * topic in the Amazon RDS User Guide or by using the
          * <b>DescribeEventCategories</b> action.</p><p><h3>See Also:</h3>   <a
@@ -3554,11 +3559,11 @@ namespace Aws
         virtual Model::ModifyEventSubscriptionOutcome ModifyEventSubscription(const Model::ModifyEventSubscriptionRequest& request) const;
 
         /**
-         * <p>Modifies an existing RDS event notification subscription. Note that you
-         * cannot modify the source identifiers using this call; to change source
-         * identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a>
-         * and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a
-         * list of the event categories for a given SourceType in the <a
+         * <p>Modifies an existing RDS event notification subscription. Note that you can't
+         * modify the source identifiers using this call; to change source identifiers for
+         * a subscription, use the <a>AddSourceIdentifierToSubscription</a> and
+         * <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a list
+         * of the event categories for a given SourceType in the <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
          * topic in the Amazon RDS User Guide or by using the
          * <b>DescribeEventCategories</b> action.</p><p><h3>See Also:</h3>   <a
@@ -3570,11 +3575,11 @@ namespace Aws
         virtual Model::ModifyEventSubscriptionOutcomeCallable ModifyEventSubscriptionCallable(const Model::ModifyEventSubscriptionRequest& request) const;
 
         /**
-         * <p>Modifies an existing RDS event notification subscription. Note that you
-         * cannot modify the source identifiers using this call; to change source
-         * identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a>
-         * and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a
-         * list of the event categories for a given SourceType in the <a
+         * <p>Modifies an existing RDS event notification subscription. Note that you can't
+         * modify the source identifiers using this call; to change source identifiers for
+         * a subscription, use the <a>AddSourceIdentifierToSubscription</a> and
+         * <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a list
+         * of the event categories for a given SourceType in the <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
          * topic in the Amazon RDS User Guide or by using the
          * <b>DescribeEventCategories</b> action.</p><p><h3>See Also:</h3>   <a
@@ -3928,7 +3933,7 @@ namespace Aws
         virtual void ResetDBClusterParameterGroupAsync(const Model::ResetDBClusterParameterGroupRequest& request, const ResetDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Modifies the parameters of a DB parameter group to the engine/system default
+         * <p>Modifies the parameters of a DB parameter group to the engine/system default
          * value. To reset specific parameters, provide a list of the following:
          * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
          * parameter group, specify the <code>DBParameterGroup</code> name and
@@ -3942,7 +3947,7 @@ namespace Aws
         virtual Model::ResetDBParameterGroupOutcome ResetDBParameterGroup(const Model::ResetDBParameterGroupRequest& request) const;
 
         /**
-         * <p> Modifies the parameters of a DB parameter group to the engine/system default
+         * <p>Modifies the parameters of a DB parameter group to the engine/system default
          * value. To reset specific parameters, provide a list of the following:
          * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
          * parameter group, specify the <code>DBParameterGroup</code> name and
@@ -3958,7 +3963,7 @@ namespace Aws
         virtual Model::ResetDBParameterGroupOutcomeCallable ResetDBParameterGroupCallable(const Model::ResetDBParameterGroupRequest& request) const;
 
         /**
-         * <p> Modifies the parameters of a DB parameter group to the engine/system default
+         * <p>Modifies the parameters of a DB parameter group to the engine/system default
          * value. To reset specific parameters, provide a list of the following:
          * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
          * parameter group, specify the <code>DBParameterGroup</code> name and
@@ -4201,6 +4206,49 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RestoreDBInstanceFromDBSnapshotAsync(const Model::RestoreDBInstanceFromDBSnapshotRequest& request, const RestoreDBInstanceFromDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Amazon Relational Database Service (Amazon RDS) supports importing MySQL
+         * databases by using backup files. You can create a backup of your on-premises
+         * database, store it on Amazon Simple Storage Service (Amazon S3), and then
+         * restore the backup file onto a new Amazon RDS DB instance running MySQL. For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
+         * Data into an Amazon RDS MySQL DB Instance</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RestoreDBInstanceFromS3Outcome RestoreDBInstanceFromS3(const Model::RestoreDBInstanceFromS3Request& request) const;
+
+        /**
+         * <p>Amazon Relational Database Service (Amazon RDS) supports importing MySQL
+         * databases by using backup files. You can create a backup of your on-premises
+         * database, store it on Amazon Simple Storage Service (Amazon S3), and then
+         * restore the backup file onto a new Amazon RDS DB instance running MySQL. For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
+         * Data into an Amazon RDS MySQL DB Instance</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RestoreDBInstanceFromS3OutcomeCallable RestoreDBInstanceFromS3Callable(const Model::RestoreDBInstanceFromS3Request& request) const;
+
+        /**
+         * <p>Amazon Relational Database Service (Amazon RDS) supports importing MySQL
+         * databases by using backup files. You can create a backup of your on-premises
+         * database, store it on Amazon Simple Storage Service (Amazon S3), and then
+         * restore the backup file onto a new Amazon RDS DB instance running MySQL. For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
+         * Data into an Amazon RDS MySQL DB Instance</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RestoreDBInstanceFromS3Async(const Model::RestoreDBInstanceFromS3Request& request, const RestoreDBInstanceFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores a DB instance to an arbitrary point in time. You can restore to any
@@ -4453,6 +4501,7 @@ namespace Aws
         void RestoreDBClusterFromSnapshotAsyncHelper(const Model::RestoreDBClusterFromSnapshotRequest& request, const RestoreDBClusterFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreDBClusterToPointInTimeAsyncHelper(const Model::RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreDBInstanceFromDBSnapshotAsyncHelper(const Model::RestoreDBInstanceFromDBSnapshotRequest& request, const RestoreDBInstanceFromDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RestoreDBInstanceFromS3AsyncHelper(const Model::RestoreDBInstanceFromS3Request& request, const RestoreDBInstanceFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreDBInstanceToPointInTimeAsyncHelper(const Model::RestoreDBInstanceToPointInTimeRequest& request, const RestoreDBInstanceToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeDBSecurityGroupIngressAsyncHelper(const Model::RevokeDBSecurityGroupIngressRequest& request, const RevokeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDBInstanceAsyncHelper(const Model::StartDBInstanceRequest& request, const StartDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

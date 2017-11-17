@@ -341,8 +341,8 @@ namespace Model
 
 
     /**
-     * <p>The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * <p>The amount of storage (in gigabytes) to be initially allocated for the DB
+     * instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. Aurora cluster volumes automatically grow as the amount of data in
      * your database increases, though you are only charged for the space that you use
      * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the
@@ -380,8 +380,8 @@ namespace Model
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * <p>The amount of storage (in gigabytes) to be initially allocated for the DB
+     * instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. Aurora cluster volumes automatically grow as the amount of data in
      * your database increases, though you are only charged for the space that you use
      * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the
@@ -419,8 +419,8 @@ namespace Model
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * <p>The amount of storage (in gigabytes) to be initially allocated for the DB
+     * instance.</p> <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. Aurora cluster volumes automatically grow as the amount of data in
      * your database increases, though you are only charged for the space that you use
      * in an Aurora cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the
@@ -460,8 +460,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p>
@@ -470,8 +470,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p>
@@ -480,8 +480,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p>
@@ -490,8 +490,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p>
@@ -500,8 +500,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p>
@@ -510,8 +510,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p>
@@ -520,8 +520,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * regions, or for all database engines. For the full list of DB instance classes,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the Amazon RDS User Guide. </p>
@@ -532,98 +532,105 @@ namespace Model
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
      * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
      * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
      * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
      * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
      * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
      * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
      * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p> <code>mariadb</code>
-     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -798,93 +805,100 @@ namespace Model
 
 
     /**
-     * <p>The password for the master user. Can be any printable ASCII character except
-     * "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * password for the master user is managed by the DB cluster. For more information,
-     * see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
-     * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
-     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
-     * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
-     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The password for the master user is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Microsoft SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
+     * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
+     * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
+     * to 128 characters.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The password for the master user. Can be any printable ASCII character except
-     * "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * password for the master user is managed by the DB cluster. For more information,
-     * see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
-     * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
-     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
-     * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
-     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The password for the master user is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Microsoft SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
+     * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
+     * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
+     * to 128 characters.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The password for the master user. Can be any printable ASCII character except
-     * "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * password for the master user is managed by the DB cluster. For more information,
-     * see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
-     * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
-     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
-     * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
-     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The password for the master user is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Microsoft SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
+     * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
+     * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
+     * to 128 characters.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The password for the master user. Can be any printable ASCII character except
-     * "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * password for the master user is managed by the DB cluster. For more information,
-     * see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
-     * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
-     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
-     * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
-     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The password for the master user is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Microsoft SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
+     * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
+     * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
+     * to 128 characters.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The password for the master user. Can be any printable ASCII character except
-     * "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * password for the master user is managed by the DB cluster. For more information,
-     * see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
-     * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
-     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
-     * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
-     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The password for the master user is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Microsoft SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
+     * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
+     * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
+     * to 128 characters.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The password for the master user. Can be any printable ASCII character except
-     * "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * password for the master user is managed by the DB cluster. For more information,
-     * see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
-     * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
-     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
-     * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
-     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The password for the master user is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Microsoft SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
+     * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
+     * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
+     * to 128 characters.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the master user. Can be any printable ASCII character except
-     * "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * password for the master user is managed by the DB cluster. For more information,
-     * see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p> <p> <b>Microsoft SQL Server</b> </p>
-     * <p>Constraints: Must contain from 8 to 128 characters.</p> <p> <b>MySQL</b> </p>
-     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
-     * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
-     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The password for the master user is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Microsoft SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
+     * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
+     * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
+     * to 128 characters.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -1012,91 +1026,91 @@ namespace Model
 
 
     /**
-     * <p> The EC2 Availability Zone that the database instance is created in. For
-     * information on regions and Availability Zones, see <a
+     * <p> The EC2 Availability Zone that the DB instance is created in. For
+     * information on AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * cannot be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p> The EC2 Availability Zone that the database instance is created in. For
-     * information on regions and Availability Zones, see <a
+     * <p> The EC2 Availability Zone that the DB instance is created in. For
+     * information on AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * cannot be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p> The EC2 Availability Zone that the database instance is created in. For
-     * information on regions and Availability Zones, see <a
+     * <p> The EC2 Availability Zone that the DB instance is created in. For
+     * information on AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * cannot be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p> The EC2 Availability Zone that the database instance is created in. For
-     * information on regions and Availability Zones, see <a
+     * <p> The EC2 Availability Zone that the DB instance is created in. For
+     * information on AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * cannot be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p> The EC2 Availability Zone that the database instance is created in. For
-     * information on regions and Availability Zones, see <a
+     * <p> The EC2 Availability Zone that the DB instance is created in. For
+     * information on AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * cannot be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p> The EC2 Availability Zone that the database instance is created in. For
-     * information on regions and Availability Zones, see <a
+     * <p> The EC2 Availability Zone that the DB instance is created in. For
+     * information on AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * cannot be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p> The EC2 Availability Zone that the database instance is created in. For
-     * information on regions and Availability Zones, see <a
+     * <p> The EC2 Availability Zone that the DB instance is created in. For
+     * information on AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * cannot be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
@@ -1147,107 +1161,86 @@ namespace Model
 
 
     /**
-     * <p> The weekly time range during which system maintenance can occur, in
+     * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * RDS Maintenance Window</a>. </p> <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
+     * selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
-     * <p> The weekly time range during which system maintenance can occur, in
+     * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * RDS Maintenance Window</a>. </p> <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
+     * selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
-     * <p> The weekly time range during which system maintenance can occur, in
+     * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * RDS Maintenance Window</a>. </p> <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
+     * selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
-     * <p> The weekly time range during which system maintenance can occur, in
+     * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * RDS Maintenance Window</a>. </p> <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
+     * selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
-     * <p> The weekly time range during which system maintenance can occur, in
+     * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * RDS Maintenance Window</a>. </p> <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
+     * selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p> The weekly time range during which system maintenance can occur, in
+     * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * RDS Maintenance Window</a>. </p> <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
+     * selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
-     * <p> The weekly time range during which system maintenance can occur, in
+     * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB
-     * Instance Maintenance</a>. </p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-     * </p> <p> Default: A 30-minute window selected at random from an 8-hour block of
-     * time per AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * RDS Maintenance Window</a>. </p> <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
+     * selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1357,19 +1350,18 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per AWS Region. To see
-     * the time blocks available, see <a
+     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
+     * 30-minute window selected at random from an 8-hour block of time for each AWS
+     * Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
@@ -1377,19 +1369,18 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per AWS Region. To see
-     * the time blocks available, see <a
+     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
+     * 30-minute window selected at random from an 8-hour block of time for each AWS
+     * Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -1397,19 +1388,18 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per AWS Region. To see
-     * the time blocks available, see <a
+     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
+     * 30-minute window selected at random from an 8-hour block of time for each AWS
+     * Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
@@ -1417,19 +1407,18 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per AWS Region. To see
-     * the time blocks available, see <a
+     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
+     * 30-minute window selected at random from an 8-hour block of time for each AWS
+     * Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
@@ -1437,19 +1426,18 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per AWS Region. To see
-     * the time blocks available, see <a
+     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
+     * 30-minute window selected at random from an 8-hour block of time for each AWS
+     * Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1457,19 +1445,18 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per AWS Region. To see
-     * the time blocks available, see <a
+     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
+     * 30-minute window selected at random from an 8-hour block of time for each AWS
+     * Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
@@ -1477,19 +1464,18 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB
-     * Instance Backups</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * Backup Window</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * daily time range for creating automated backups is managed by the DB cluster.
-     * For more information, see <a>CreateDBCluster</a>.</p> <p> Default: A 30-minute
-     * window selected at random from an 8-hour block of time per AWS Region. To see
-     * the time blocks available, see <a
+     * For more information, see <a>CreateDBCluster</a>.</p> <p> The default is a
+     * 30-minute window selected at random from an 8-hour block of time for each AWS
+     * Region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1547,19 +1533,19 @@ namespace Model
 
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the
      * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the
      * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the
      * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
     inline CreateDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -1572,50 +1558,49 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
-     * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
+     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
+     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
+     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
+     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
      * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
-     * (supported for all editions, and all AWS regions)</p> </li> <li> <p>
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS regions except ca-central-1 and eu-west-2)</p> </li> </ul>
+     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
      * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
      * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
+     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
      * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions
+     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
      * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
      * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code>
+     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported
+     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
+     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
      * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
      * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
@@ -1663,50 +1648,49 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
-     * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
+     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
+     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
+     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
+     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
      * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
-     * (supported for all editions, and all AWS regions)</p> </li> <li> <p>
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS regions except ca-central-1 and eu-west-2)</p> </li> </ul>
+     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
      * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
      * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
+     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
      * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions
+     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
      * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
      * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code>
+     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported
+     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
+     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
      * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
      * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
@@ -1754,50 +1738,49 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
-     * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
+     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
+     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
+     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
+     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
      * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
-     * (supported for all editions, and all AWS regions)</p> </li> <li> <p>
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS regions except ca-central-1 and eu-west-2)</p> </li> </ul>
+     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
      * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
      * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
+     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
      * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions
+     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
      * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
      * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code>
+     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported
+     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
+     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
      * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
      * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
@@ -1845,50 +1828,49 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
-     * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
+     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
+     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
+     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
+     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
      * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
-     * (supported for all editions, and all AWS regions)</p> </li> <li> <p>
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS regions except ca-central-1 and eu-west-2)</p> </li> </ul>
+     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
      * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
      * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
+     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
      * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions
+     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
      * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
      * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code>
+     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported
+     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
+     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
      * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
      * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
@@ -1936,50 +1918,49 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
-     * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
+     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
+     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
+     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
+     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
      * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
-     * (supported for all editions, and all AWS regions)</p> </li> <li> <p>
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS regions except ca-central-1 and eu-west-2)</p> </li> </ul>
+     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
      * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
      * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
+     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
      * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions
+     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
      * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
      * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code>
+     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported
+     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
+     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
      * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
      * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
@@ -2027,50 +2008,49 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
-     * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
+     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
+     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
+     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
+     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
      * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
-     * (supported for all editions, and all AWS regions)</p> </li> <li> <p>
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS regions except ca-central-1 and eu-west-2)</p> </li> </ul>
+     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
      * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
      * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
+     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
      * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions
+     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
      * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
      * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code>
+     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported
+     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
+     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
      * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
      * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
@@ -2118,50 +2098,49 @@ namespace Model
      * <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database
      * engine to be used by the DB instance is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li>
-     * <p> <code>10.1.23</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.19</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.1.14</code> (supported in all regions except us-east-2)</p> </li> </ul>
-     * <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS regions)</p> </li>
-     * <li> <p> <code>10.0.28</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.24</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li>
-     * <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
+     * <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li>
+     * </ul> <p/> <ul> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p>
+     * </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li>
+     * <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>10.0.17</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b>
+     * </p> <ul> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and
+     * all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for
+     * all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server
      * 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
-     * (supported for all editions, and all AWS regions)</p> </li> <li> <p>
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code>
+     * (supported for all editions, and all AWS Regions)</p> </li> <li> <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise
-     * Edition, and all AWS regions except ca-central-1 and eu-west-2)</p> </li> </ul>
+     * Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul>
      * <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p>
      * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS
-     * regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
-     * editions, and all AWS regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
-     * (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all
+     * editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code>
+     * (supported for all editions, and all AWS Regions except us-east-2, ca-central-1,
      * and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for
-     * all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * all editions, and all AWS Regions except us-east-2, ca-central-1, and
      * eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul>
      * <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS
-     * regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions
+     * Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions
      * except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b>
      * </p> <ul> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li>
      * <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.7.11</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
-     * <li> <p> <code>5.6.37</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.35</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.34</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.29</code> (supported in all AWS regions)</p> </li> <li> <p>
-     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1,
-     * eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code> (supported in
-     * all AWS regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
-     * regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
-     * regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
+     * <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul>
+     * <li> <p> <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p>
+     * <code>5.6.27</code> (supported in all AWS Regions except us-east-2,
+     * ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.57</code>
+     * (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported
+     * in all AWS Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS
+     * Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS
+     * Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
      * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all
      * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
@@ -2274,28 +2253,40 @@ namespace Model
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p> <p>Constraints: Must be a multiple
-     * between 3 and 10 of the storage amount for the DB instance. Must also be an
-     * integer multiple of 1000. For example, if the size of your DB instance is 500
-     * GB, then your <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
+     * initially allocated for the DB instance. For information about valid Iops
+     * values, see see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * RDS Provisioned IOPS Storage to Improve Performance</a>. </p> <p>Constraints:
+     * Must be a multiple between 3 and 10 of the storage amount for the DB instance.
+     * Must also be an integer multiple of 1000. For example, if the size of your DB
+     * instance is 500 GB, then your <code>Iops</code> value can be 2000, 3000, 4000,
+     * or 5000. </p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p> <p>Constraints: Must be a multiple
-     * between 3 and 10 of the storage amount for the DB instance. Must also be an
-     * integer multiple of 1000. For example, if the size of your DB instance is 500
-     * GB, then your <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
+     * initially allocated for the DB instance. For information about valid Iops
+     * values, see see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * RDS Provisioned IOPS Storage to Improve Performance</a>. </p> <p>Constraints:
+     * Must be a multiple between 3 and 10 of the storage amount for the DB instance.
+     * Must also be an integer multiple of 1000. For example, if the size of your DB
+     * instance is 500 GB, then your <code>Iops</code> value can be 2000, 3000, 4000,
+     * or 5000. </p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p> <p>Constraints: Must be a multiple
-     * between 3 and 10 of the storage amount for the DB instance. Must also be an
-     * integer multiple of 1000. For example, if the size of your DB instance is 500
-     * GB, then your <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
+     * initially allocated for the DB instance. For information about valid Iops
+     * values, see see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * RDS Provisioned IOPS Storage to Improve Performance</a>. </p> <p>Constraints:
+     * Must be a multiple between 3 and 10 of the storage amount for the DB instance.
+     * Must also be an integer multiple of 1000. For example, if the size of your DB
+     * instance is 500 GB, then your <code>Iops</code> value can be 2000, 3000, 4000,
+     * or 5000. </p>
      */
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -2303,63 +2294,56 @@ namespace Model
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * Security TDE, can't be removed from an option group, and that option group can't
+     * be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * Security TDE, can't be removed from an option group, and that option group can't
+     * be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * Security TDE, can't be removed from an option group, and that option group can't
+     * be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * Security TDE, can't be removed from an option group, and that option group can't
+     * be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * Security TDE, can't be removed from an option group, and that option group can't
+     * be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * Security TDE, can't be removed from an option group, and that option group can't
+     * be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, cannot be removed from an option group, and that option group
-     * cannot be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * Security TDE, can't be removed from an option group, and that option group can't
+     * be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -2547,7 +2531,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -2556,7 +2540,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -2565,7 +2549,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -2574,7 +2558,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -2583,7 +2567,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline CreateDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -2592,7 +2576,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline CreateDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -2601,92 +2585,92 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified; otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline CreateDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::move(value); }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(const char* value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn.assign(value); }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
 
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline const Aws::String& GetTdeCredentialPassword() const{ return m_tdeCredentialPassword; }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline void SetTdeCredentialPassword(const Aws::String& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::move(value); }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline void SetTdeCredentialPassword(const char* value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword.assign(value); }
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialPassword(const Aws::String& value) { SetTdeCredentialPassword(value); return *this;}
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the given ARN from the Key Store in order to access the
+     * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
@@ -2718,7 +2702,7 @@ namespace Model
 
 
     /**
-     * <p>The KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
@@ -2733,7 +2717,7 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
@@ -2748,7 +2732,7 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
@@ -2763,7 +2747,7 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
@@ -2778,7 +2762,7 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
@@ -2793,7 +2777,7 @@ namespace Model
     inline CreateDBInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
@@ -2808,7 +2792,7 @@ namespace Model
     inline CreateDBInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
@@ -2860,20 +2844,20 @@ namespace Model
 
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance;
-     * otherwise false. The default is false.</p>
+     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
+     * and otherwise false. The default is false.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance;
-     * otherwise false. The default is false.</p>
+     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
+     * and otherwise false. The default is false.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance;
-     * otherwise false. The default is false.</p>
+     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
+     * and otherwise false. The default is false.</p>
      */
     inline CreateDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -2908,7 +2892,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
@@ -2920,7 +2904,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
@@ -2932,7 +2916,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
@@ -2944,7 +2928,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
@@ -2956,7 +2940,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
@@ -2968,7 +2952,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
@@ -2980,7 +2964,7 @@ namespace Model
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
-     * to CloudWatch Logs. For example,
+     * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
@@ -3124,7 +3108,7 @@ namespace Model
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts; otherwise false. </p> <p> You can enable IAM database
+     * to database accounts, and otherwise false. </p> <p>You can enable IAM database
      * authentication for the following database engines:</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
      * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
@@ -3136,7 +3120,7 @@ namespace Model
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts; otherwise false. </p> <p> You can enable IAM database
+     * to database accounts, and otherwise false. </p> <p>You can enable IAM database
      * authentication for the following database engines:</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
      * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
@@ -3148,7 +3132,7 @@ namespace Model
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts; otherwise false. </p> <p> You can enable IAM database
+     * to database accounts, and otherwise false. </p> <p>You can enable IAM database
      * authentication for the following database engines:</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
      * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
@@ -3160,69 +3144,69 @@ namespace Model
 
 
     /**
-     * <p> True to enable Performance Insights for the DB instance; otherwise false.
+     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p> True to enable Performance Insights for the DB instance; otherwise false.
+     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p> True to enable Performance Insights for the DB instance; otherwise false.
+     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      */
     inline CreateDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
-     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
      * alias for the KMS encryption key.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}

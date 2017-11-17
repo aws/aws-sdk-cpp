@@ -53,7 +53,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
-     * This parameter cannot be used in conjunction with the
+     * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
      * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBCluster.</p> </li> </ul>
@@ -62,7 +62,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
-     * This parameter cannot be used in conjunction with the
+     * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
      * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBCluster.</p> </li> </ul>
@@ -71,7 +71,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
-     * This parameter cannot be used in conjunction with the
+     * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
      * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBCluster.</p> </li> </ul>
@@ -80,7 +80,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
-     * This parameter cannot be used in conjunction with the
+     * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
      * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBCluster.</p> </li> </ul>
@@ -89,7 +89,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
-     * This parameter cannot be used in conjunction with the
+     * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
      * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBCluster.</p> </li> </ul>
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
-     * This parameter cannot be used in conjunction with the
+     * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
      * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBCluster.</p> </li> </ul>
@@ -107,7 +107,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
-     * This parameter cannot be used in conjunction with the
+     * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
      * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBCluster.</p> </li> </ul>
@@ -116,7 +116,7 @@ namespace Model
 
 
     /**
-     * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
+     * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
      * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
@@ -126,7 +126,7 @@ namespace Model
     inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
 
     /**
-     * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
+     * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
      * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
@@ -136,7 +136,7 @@ namespace Model
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**
-     * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
+     * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
      * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
@@ -146,7 +146,7 @@ namespace Model
     inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
+     * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
      * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
@@ -156,7 +156,7 @@ namespace Model
     inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
 
     /**
-     * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
+     * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
      * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
@@ -166,7 +166,7 @@ namespace Model
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
+     * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
      * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
@@ -176,7 +176,7 @@ namespace Model
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
+     * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
      * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
@@ -474,60 +474,57 @@ namespace Model
 
 
     /**
-     * <p>Set this value to <code>true</code> to include shared manual DB cluster
-     * snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, otherwise set this value to <code>false</code>.
-     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
-     * to restore a manual DB cluster snapshot from another AWS account by the
-     * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * <p>True to include shared manual DB cluster snapshots from other AWS accounts
+     * that this AWS account has been given permission to copy or restore, and
+     * otherwise false. The default is <code>false</code>.</p> <p>You can give an AWS
+     * account permission to restore a manual DB cluster snapshot from another AWS
+     * account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
      */
     inline bool GetIncludeShared() const{ return m_includeShared; }
 
     /**
-     * <p>Set this value to <code>true</code> to include shared manual DB cluster
-     * snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, otherwise set this value to <code>false</code>.
-     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
-     * to restore a manual DB cluster snapshot from another AWS account by the
-     * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * <p>True to include shared manual DB cluster snapshots from other AWS accounts
+     * that this AWS account has been given permission to copy or restore, and
+     * otherwise false. The default is <code>false</code>.</p> <p>You can give an AWS
+     * account permission to restore a manual DB cluster snapshot from another AWS
+     * account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
      */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
 
     /**
-     * <p>Set this value to <code>true</code> to include shared manual DB cluster
-     * snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, otherwise set this value to <code>false</code>.
-     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
-     * to restore a manual DB cluster snapshot from another AWS account by the
-     * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * <p>True to include shared manual DB cluster snapshots from other AWS accounts
+     * that this AWS account has been given permission to copy or restore, and
+     * otherwise false. The default is <code>false</code>.</p> <p>You can give an AWS
+     * account permission to restore a manual DB cluster snapshot from another AWS
+     * account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
 
 
     /**
-     * <p>Set this value to <code>true</code> to include manual DB cluster snapshots
-     * that are public and can be copied or restored by any AWS account, otherwise set
-     * this value to <code>false</code>. The default is <code>false</code>. The default
-     * is false.</p> <p>You can share a manual DB cluster snapshot as public by using
-     * the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * <p>True to include manual DB cluster snapshots that are public and can be copied
+     * or restored by any AWS account, and otherwise false. The default is
+     * <code>false</code>. The default is false.</p> <p>You can share a manual DB
+     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
+     * API action.</p>
      */
     inline bool GetIncludePublic() const{ return m_includePublic; }
 
     /**
-     * <p>Set this value to <code>true</code> to include manual DB cluster snapshots
-     * that are public and can be copied or restored by any AWS account, otherwise set
-     * this value to <code>false</code>. The default is <code>false</code>. The default
-     * is false.</p> <p>You can share a manual DB cluster snapshot as public by using
-     * the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * <p>True to include manual DB cluster snapshots that are public and can be copied
+     * or restored by any AWS account, and otherwise false. The default is
+     * <code>false</code>. The default is false.</p> <p>You can share a manual DB
+     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
+     * API action.</p>
      */
     inline void SetIncludePublic(bool value) { m_includePublicHasBeenSet = true; m_includePublic = value; }
 
     /**
-     * <p>Set this value to <code>true</code> to include manual DB cluster snapshots
-     * that are public and can be copied or restored by any AWS account, otherwise set
-     * this value to <code>false</code>. The default is <code>false</code>. The default
-     * is false.</p> <p>You can share a manual DB cluster snapshot as public by using
-     * the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * <p>True to include manual DB cluster snapshots that are public and can be copied
+     * or restored by any AWS account, and otherwise false. The default is
+     * <code>false</code>. The default is false.</p> <p>You can share a manual DB
+     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
+     * API action.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}
 

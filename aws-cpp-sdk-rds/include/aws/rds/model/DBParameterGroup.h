@@ -34,11 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the result of a successful invocation of the
-   * <a>CreateDBParameterGroup</a> action. </p> <p>This data type is used as a
-   * request parameter in the <a>DeleteDBParameterGroup</a> action, and as a response
-   * element in the <a>DescribeDBParameterGroups</a> action. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains the details of an Amazon RDS DB parameter group. </p> <p>This data
+   * type is used as a response element in the <a>DescribeDBParameterGroups</a>
+   * action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBParameterGroup">AWS
    * API Reference</a></p>
    */

@@ -292,7 +292,7 @@ namespace Model
      * <p>The list of identifiers of the event sources for which events are returned.
      * If not specified, then all sources are included in the response. An identifier
      * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
      * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
      * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
@@ -308,7 +308,7 @@ namespace Model
      * <p>The list of identifiers of the event sources for which events are returned.
      * If not specified, then all sources are included in the response. An identifier
      * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
      * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
      * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
@@ -324,7 +324,7 @@ namespace Model
      * <p>The list of identifiers of the event sources for which events are returned.
      * If not specified, then all sources are included in the response. An identifier
      * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
      * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
      * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
@@ -340,7 +340,7 @@ namespace Model
      * <p>The list of identifiers of the event sources for which events are returned.
      * If not specified, then all sources are included in the response. An identifier
      * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
      * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
      * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
@@ -356,7 +356,7 @@ namespace Model
      * <p>The list of identifiers of the event sources for which events are returned.
      * If not specified, then all sources are included in the response. An identifier
      * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
      * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
      * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
@@ -372,7 +372,7 @@ namespace Model
      * <p>The list of identifiers of the event sources for which events are returned.
      * If not specified, then all sources are included in the response. An identifier
      * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
      * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
      * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
@@ -388,7 +388,7 @@ namespace Model
      * <p>The list of identifiers of the event sources for which events are returned.
      * If not specified, then all sources are included in the response. An identifier
      * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
      * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
      * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
@@ -404,7 +404,7 @@ namespace Model
      * <p>The list of identifiers of the event sources for which events are returned.
      * If not specified, then all sources are included in the response. An identifier
      * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
      * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
      * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
      * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the

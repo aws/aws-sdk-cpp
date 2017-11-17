@@ -53,7 +53,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
-     * parameter cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
+     * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
      * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
@@ -61,7 +61,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
-     * parameter cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
+     * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
      * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
@@ -69,7 +69,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
-     * parameter cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
+     * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
      * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
@@ -77,7 +77,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
-     * parameter cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
+     * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
      * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
@@ -85,7 +85,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
-     * parameter cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
+     * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
      * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
-     * parameter cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
+     * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
      * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
-     * parameter cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.
+     * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
      * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
@@ -109,7 +109,7 @@ namespace Model
 
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter cannot be used
+     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
      * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
@@ -119,7 +119,7 @@ namespace Model
     inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter cannot be used
+     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
      * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
@@ -129,7 +129,7 @@ namespace Model
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter cannot be used
+     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
      * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
@@ -139,7 +139,7 @@ namespace Model
     inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter cannot be used
+     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
      * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
@@ -149,7 +149,7 @@ namespace Model
     inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier.assign(value); }
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter cannot be used
+     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
      * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
@@ -159,7 +159,7 @@ namespace Model
     inline DescribeDBSnapshotsRequest& WithDBSnapshotIdentifier(const Aws::String& value) { SetDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter cannot be used
+     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
      * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
@@ -169,7 +169,7 @@ namespace Model
     inline DescribeDBSnapshotsRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> A specific DB snapshot identifier to describe. This parameter cannot be used
+     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
      * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
      * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
@@ -460,59 +460,53 @@ namespace Model
 
 
     /**
-     * <p>Set this value to <code>true</code> to include shared manual DB snapshots
-     * from other AWS accounts that this AWS account has been given permission to copy
-     * or restore, otherwise set this value to <code>false</code>. The default is
-     * <code>false</code>.</p> <p>You can give an AWS account permission to restore a
-     * manual DB snapshot from another AWS account by using the
+     * <p>True to include shared manual DB snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore, and otherwise false.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB snapshot from another AWS account by using the
      * <a>ModifyDBSnapshotAttribute</a> API action.</p>
      */
     inline bool GetIncludeShared() const{ return m_includeShared; }
 
     /**
-     * <p>Set this value to <code>true</code> to include shared manual DB snapshots
-     * from other AWS accounts that this AWS account has been given permission to copy
-     * or restore, otherwise set this value to <code>false</code>. The default is
-     * <code>false</code>.</p> <p>You can give an AWS account permission to restore a
-     * manual DB snapshot from another AWS account by using the
+     * <p>True to include shared manual DB snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore, and otherwise false.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB snapshot from another AWS account by using the
      * <a>ModifyDBSnapshotAttribute</a> API action.</p>
      */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
 
     /**
-     * <p>Set this value to <code>true</code> to include shared manual DB snapshots
-     * from other AWS accounts that this AWS account has been given permission to copy
-     * or restore, otherwise set this value to <code>false</code>. The default is
-     * <code>false</code>.</p> <p>You can give an AWS account permission to restore a
-     * manual DB snapshot from another AWS account by using the
+     * <p>True to include shared manual DB snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore, and otherwise false.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB snapshot from another AWS account by using the
      * <a>ModifyDBSnapshotAttribute</a> API action.</p>
      */
     inline DescribeDBSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
 
 
     /**
-     * <p>Set this value to <code>true</code> to include manual DB snapshots that are
-     * public and can be copied or restored by any AWS account, otherwise set this
-     * value to <code>false</code>. The default is <code>false</code>.</p> <p>You can
-     * share a manual DB snapshot as public by using the
+     * <p>True to include manual DB snapshots that are public and can be copied or
+     * restored by any AWS account, and otherwise false. The default is false.</p>
+     * <p>You can share a manual DB snapshot as public by using the
      * <a>ModifyDBSnapshotAttribute</a> API.</p>
      */
     inline bool GetIncludePublic() const{ return m_includePublic; }
 
     /**
-     * <p>Set this value to <code>true</code> to include manual DB snapshots that are
-     * public and can be copied or restored by any AWS account, otherwise set this
-     * value to <code>false</code>. The default is <code>false</code>.</p> <p>You can
-     * share a manual DB snapshot as public by using the
+     * <p>True to include manual DB snapshots that are public and can be copied or
+     * restored by any AWS account, and otherwise false. The default is false.</p>
+     * <p>You can share a manual DB snapshot as public by using the
      * <a>ModifyDBSnapshotAttribute</a> API.</p>
      */
     inline void SetIncludePublic(bool value) { m_includePublicHasBeenSet = true; m_includePublic = value; }
 
     /**
-     * <p>Set this value to <code>true</code> to include manual DB snapshots that are
-     * public and can be copied or restored by any AWS account, otherwise set this
-     * value to <code>false</code>. The default is <code>false</code>.</p> <p>You can
-     * share a manual DB snapshot as public by using the
+     * <p>True to include manual DB snapshots that are public and can be copied or
+     * restored by any AWS account, and otherwise false. The default is false.</p>
+     * <p>You can share a manual DB snapshot as public by using the
      * <a>ModifyDBSnapshotAttribute</a> API.</p>
      */
     inline DescribeDBSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}

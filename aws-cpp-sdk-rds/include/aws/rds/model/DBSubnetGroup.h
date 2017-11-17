@@ -36,12 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the result of a successful invocation of the following actions:</p>
-   * <ul> <li> <p> <a>CreateDBSubnetGroup</a> </p> </li> <li> <p>
-   * <a>ModifyDBSubnetGroup</a> </p> </li> <li> <p> <a>DescribeDBSubnetGroups</a>
-   * </p> </li> <li> <p> <a>DeleteDBSubnetGroup</a> </p> </li> </ul> <p>This data
-   * type is used as a response element in the <a>DescribeDBSubnetGroups</a>
-   * action.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an Amazon RDS DB subnet group. </p> <p>This data type
+   * is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSubnetGroup">AWS
    * API Reference</a></p>
    */

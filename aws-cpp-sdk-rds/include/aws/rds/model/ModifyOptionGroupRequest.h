@@ -53,56 +53,56 @@ namespace Model
 
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
-     * as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     * option group, and that option group cannot be removed from a DB instance once it
+     * as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     * option group, and that option group can't be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
-     * as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     * option group, and that option group cannot be removed from a DB instance once it
+     * as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     * option group, and that option group can't be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
-     * as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     * option group, and that option group cannot be removed from a DB instance once it
+     * as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     * option group, and that option group can't be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
-     * as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     * option group, and that option group cannot be removed from a DB instance once it
+     * as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     * option group, and that option group can't be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
-     * as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     * option group, and that option group cannot be removed from a DB instance once it
+     * as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     * option group, and that option group can't be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
     inline ModifyOptionGroupRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
-     * as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     * option group, and that option group cannot be removed from a DB instance once it
+     * as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     * option group, and that option group can't be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
     inline ModifyOptionGroupRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
-     * as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     * option group, and that option group cannot be removed from a DB instance once it
+     * as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     * option group, and that option group can't be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
     inline ModifyOptionGroupRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}

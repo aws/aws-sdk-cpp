@@ -113,7 +113,7 @@ namespace Model
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list will only include information about the DB instances associated with the DB
-     * Clusters identified by these ARNs.</p> </li> <li> <p>
+     * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
      * Amazon Resource Names (ARNs). The results list will only include information
      * about the DB instances identified by these ARNs.</p> </li> </ul>
@@ -125,7 +125,7 @@ namespace Model
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list will only include information about the DB instances associated with the DB
-     * Clusters identified by these ARNs.</p> </li> <li> <p>
+     * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
      * Amazon Resource Names (ARNs). The results list will only include information
      * about the DB instances identified by these ARNs.</p> </li> </ul>
@@ -137,7 +137,7 @@ namespace Model
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list will only include information about the DB instances associated with the DB
-     * Clusters identified by these ARNs.</p> </li> <li> <p>
+     * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
      * Amazon Resource Names (ARNs). The results list will only include information
      * about the DB instances identified by these ARNs.</p> </li> </ul>
@@ -149,7 +149,7 @@ namespace Model
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list will only include information about the DB instances associated with the DB
-     * Clusters identified by these ARNs.</p> </li> <li> <p>
+     * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
      * Amazon Resource Names (ARNs). The results list will only include information
      * about the DB instances identified by these ARNs.</p> </li> </ul>
@@ -161,7 +161,7 @@ namespace Model
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list will only include information about the DB instances associated with the DB
-     * Clusters identified by these ARNs.</p> </li> <li> <p>
+     * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
      * Amazon Resource Names (ARNs). The results list will only include information
      * about the DB instances identified by these ARNs.</p> </li> </ul>
@@ -173,7 +173,7 @@ namespace Model
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list will only include information about the DB instances associated with the DB
-     * Clusters identified by these ARNs.</p> </li> <li> <p>
+     * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
      * Amazon Resource Names (ARNs). The results list will only include information
      * about the DB instances identified by these ARNs.</p> </li> </ul>
@@ -185,7 +185,7 @@ namespace Model
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list will only include information about the DB instances associated with the DB
-     * Clusters identified by these ARNs.</p> </li> <li> <p>
+     * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
      * Amazon Resource Names (ARNs). The results list will only include information
      * about the DB instances identified by these ARNs.</p> </li> </ul>

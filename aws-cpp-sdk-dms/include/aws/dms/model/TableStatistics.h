@@ -315,6 +315,167 @@ namespace Model
      */
     inline TableStatistics& WithTableState(const char* value) { SetTableState(value); return *this;}
 
+
+    /**
+     * <p>The number of records that have yet to be validated.</p>
+     */
+    inline long long GetValidationPendingRecords() const{ return m_validationPendingRecords; }
+
+    /**
+     * <p>The number of records that have yet to be validated.</p>
+     */
+    inline void SetValidationPendingRecords(long long value) { m_validationPendingRecordsHasBeenSet = true; m_validationPendingRecords = value; }
+
+    /**
+     * <p>The number of records that have yet to be validated.</p>
+     */
+    inline TableStatistics& WithValidationPendingRecords(long long value) { SetValidationPendingRecords(value); return *this;}
+
+
+    /**
+     * <p>The number of records that failed validation.</p>
+     */
+    inline long long GetValidationFailedRecords() const{ return m_validationFailedRecords; }
+
+    /**
+     * <p>The number of records that failed validation.</p>
+     */
+    inline void SetValidationFailedRecords(long long value) { m_validationFailedRecordsHasBeenSet = true; m_validationFailedRecords = value; }
+
+    /**
+     * <p>The number of records that failed validation.</p>
+     */
+    inline TableStatistics& WithValidationFailedRecords(long long value) { SetValidationFailedRecords(value); return *this;}
+
+
+    /**
+     * <p>The number of records that could not be validated.</p>
+     */
+    inline long long GetValidationSuspendedRecords() const{ return m_validationSuspendedRecords; }
+
+    /**
+     * <p>The number of records that could not be validated.</p>
+     */
+    inline void SetValidationSuspendedRecords(long long value) { m_validationSuspendedRecordsHasBeenSet = true; m_validationSuspendedRecords = value; }
+
+    /**
+     * <p>The number of records that could not be validated.</p>
+     */
+    inline TableStatistics& WithValidationSuspendedRecords(long long value) { SetValidationSuspendedRecords(value); return *this;}
+
+
+    /**
+     * <p>The validation state of the table.</p> <p>The parameter can have the
+     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
+     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
+     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
+     * records in the table do not match between the source and target.</p> </li> <li>
+     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
+     * <li> <p>No primary key—The table could not be validated because it had no
+     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
+     * it was in an error state and some data was not migrated.</p> </li> <li>
+     * <p>Validated—All rows in the table were validated. If the table is updated, the
+     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
+     * validated because of an unexpected error.</p> </li> </ul>
+     */
+    inline const Aws::String& GetValidationState() const{ return m_validationState; }
+
+    /**
+     * <p>The validation state of the table.</p> <p>The parameter can have the
+     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
+     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
+     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
+     * records in the table do not match between the source and target.</p> </li> <li>
+     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
+     * <li> <p>No primary key—The table could not be validated because it had no
+     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
+     * it was in an error state and some data was not migrated.</p> </li> <li>
+     * <p>Validated—All rows in the table were validated. If the table is updated, the
+     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
+     * validated because of an unexpected error.</p> </li> </ul>
+     */
+    inline void SetValidationState(const Aws::String& value) { m_validationStateHasBeenSet = true; m_validationState = value; }
+
+    /**
+     * <p>The validation state of the table.</p> <p>The parameter can have the
+     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
+     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
+     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
+     * records in the table do not match between the source and target.</p> </li> <li>
+     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
+     * <li> <p>No primary key—The table could not be validated because it had no
+     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
+     * it was in an error state and some data was not migrated.</p> </li> <li>
+     * <p>Validated—All rows in the table were validated. If the table is updated, the
+     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
+     * validated because of an unexpected error.</p> </li> </ul>
+     */
+    inline void SetValidationState(Aws::String&& value) { m_validationStateHasBeenSet = true; m_validationState = std::move(value); }
+
+    /**
+     * <p>The validation state of the table.</p> <p>The parameter can have the
+     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
+     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
+     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
+     * records in the table do not match between the source and target.</p> </li> <li>
+     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
+     * <li> <p>No primary key—The table could not be validated because it had no
+     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
+     * it was in an error state and some data was not migrated.</p> </li> <li>
+     * <p>Validated—All rows in the table were validated. If the table is updated, the
+     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
+     * validated because of an unexpected error.</p> </li> </ul>
+     */
+    inline void SetValidationState(const char* value) { m_validationStateHasBeenSet = true; m_validationState.assign(value); }
+
+    /**
+     * <p>The validation state of the table.</p> <p>The parameter can have the
+     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
+     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
+     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
+     * records in the table do not match between the source and target.</p> </li> <li>
+     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
+     * <li> <p>No primary key—The table could not be validated because it had no
+     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
+     * it was in an error state and some data was not migrated.</p> </li> <li>
+     * <p>Validated—All rows in the table were validated. If the table is updated, the
+     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
+     * validated because of an unexpected error.</p> </li> </ul>
+     */
+    inline TableStatistics& WithValidationState(const Aws::String& value) { SetValidationState(value); return *this;}
+
+    /**
+     * <p>The validation state of the table.</p> <p>The parameter can have the
+     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
+     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
+     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
+     * records in the table do not match between the source and target.</p> </li> <li>
+     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
+     * <li> <p>No primary key—The table could not be validated because it had no
+     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
+     * it was in an error state and some data was not migrated.</p> </li> <li>
+     * <p>Validated—All rows in the table were validated. If the table is updated, the
+     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
+     * validated because of an unexpected error.</p> </li> </ul>
+     */
+    inline TableStatistics& WithValidationState(Aws::String&& value) { SetValidationState(std::move(value)); return *this;}
+
+    /**
+     * <p>The validation state of the table.</p> <p>The parameter can have the
+     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
+     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
+     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
+     * records in the table do not match between the source and target.</p> </li> <li>
+     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
+     * <li> <p>No primary key—The table could not be validated because it had no
+     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
+     * it was in an error state and some data was not migrated.</p> </li> <li>
+     * <p>Validated—All rows in the table were validated. If the table is updated, the
+     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
+     * validated because of an unexpected error.</p> </li> </ul>
+     */
+    inline TableStatistics& WithValidationState(const char* value) { SetValidationState(value); return *this;}
+
   private:
 
     Aws::String m_schemaName;
@@ -349,6 +510,18 @@ namespace Model
 
     Aws::String m_tableState;
     bool m_tableStateHasBeenSet;
+
+    long long m_validationPendingRecords;
+    bool m_validationPendingRecordsHasBeenSet;
+
+    long long m_validationFailedRecords;
+    bool m_validationFailedRecordsHasBeenSet;
+
+    long long m_validationSuspendedRecords;
+    bool m_validationSuspendedRecordsHasBeenSet;
+
+    Aws::String m_validationState;
+    bool m_validationStateHasBeenSet;
   };
 
 } // namespace Model

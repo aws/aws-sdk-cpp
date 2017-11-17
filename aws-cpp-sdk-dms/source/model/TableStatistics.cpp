@@ -46,7 +46,14 @@ TableStatistics::TableStatistics() :
     m_fullLoadErrorRows(0),
     m_fullLoadErrorRowsHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_tableStateHasBeenSet(false)
+    m_tableStateHasBeenSet(false),
+    m_validationPendingRecords(0),
+    m_validationPendingRecordsHasBeenSet(false),
+    m_validationFailedRecords(0),
+    m_validationFailedRecordsHasBeenSet(false),
+    m_validationSuspendedRecords(0),
+    m_validationSuspendedRecordsHasBeenSet(false),
+    m_validationStateHasBeenSet(false)
 {
 }
 
@@ -68,7 +75,14 @@ TableStatistics::TableStatistics(const JsonValue& jsonValue) :
     m_fullLoadErrorRows(0),
     m_fullLoadErrorRowsHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_tableStateHasBeenSet(false)
+    m_tableStateHasBeenSet(false),
+    m_validationPendingRecords(0),
+    m_validationPendingRecordsHasBeenSet(false),
+    m_validationFailedRecords(0),
+    m_validationFailedRecordsHasBeenSet(false),
+    m_validationSuspendedRecords(0),
+    m_validationSuspendedRecordsHasBeenSet(false),
+    m_validationStateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -152,6 +166,34 @@ TableStatistics& TableStatistics::operator =(const JsonValue& jsonValue)
     m_tableStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ValidationPendingRecords"))
+  {
+    m_validationPendingRecords = jsonValue.GetInt64("ValidationPendingRecords");
+
+    m_validationPendingRecordsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ValidationFailedRecords"))
+  {
+    m_validationFailedRecords = jsonValue.GetInt64("ValidationFailedRecords");
+
+    m_validationFailedRecordsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ValidationSuspendedRecords"))
+  {
+    m_validationSuspendedRecords = jsonValue.GetInt64("ValidationSuspendedRecords");
+
+    m_validationSuspendedRecordsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ValidationState"))
+  {
+    m_validationState = jsonValue.GetString("ValidationState");
+
+    m_validationStateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -221,6 +263,30 @@ JsonValue TableStatistics::Jsonize() const
   if(m_tableStateHasBeenSet)
   {
    payload.WithString("TableState", m_tableState);
+
+  }
+
+  if(m_validationPendingRecordsHasBeenSet)
+  {
+   payload.WithInt64("ValidationPendingRecords", m_validationPendingRecords);
+
+  }
+
+  if(m_validationFailedRecordsHasBeenSet)
+  {
+   payload.WithInt64("ValidationFailedRecords", m_validationFailedRecords);
+
+  }
+
+  if(m_validationSuspendedRecordsHasBeenSet)
+  {
+   payload.WithInt64("ValidationSuspendedRecords", m_validationSuspendedRecords);
+
+  }
+
+  if(m_validationStateHasBeenSet)
+  {
+   payload.WithString("ValidationState", m_validationState);
 
   }
 

@@ -87,19 +87,19 @@ namespace Model
 
 
     /**
-     * <p>True if the version is the default version of the option; otherwise,
+     * <p>True if the version is the default version of the option, and otherwise
      * false.</p>
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
 
     /**
-     * <p>True if the version is the default version of the option; otherwise,
+     * <p>True if the version is the default version of the option, and otherwise
      * false.</p>
      */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
-     * <p>True if the version is the default version of the option; otherwise,
+     * <p>True if the version is the default version of the option, and otherwise
      * false.</p>
      */
     inline OptionVersion& WithIsDefault(bool value) { SetIsDefault(value); return *this;}

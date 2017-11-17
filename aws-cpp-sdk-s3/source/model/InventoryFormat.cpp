@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int CSV_HASH = HashingUtils::HashString("CSV");
+        static const int ORC_HASH = HashingUtils::HashString("ORC");
 
 
         InventoryFormat GetInventoryFormatForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == CSV_HASH)
           {
             return InventoryFormat::CSV;
+          }
+          else if (hashCode == ORC_HASH)
+          {
+            return InventoryFormat::ORC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case InventoryFormat::CSV:
             return "CSV";
+          case InventoryFormat::ORC:
+            return "ORC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

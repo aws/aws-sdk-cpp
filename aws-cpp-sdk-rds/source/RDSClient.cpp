@@ -113,6 +113,7 @@
 #include <aws/rds/model/RestoreDBClusterFromSnapshotRequest.h>
 #include <aws/rds/model/RestoreDBClusterToPointInTimeRequest.h>
 #include <aws/rds/model/RestoreDBInstanceFromDBSnapshotRequest.h>
+#include <aws/rds/model/RestoreDBInstanceFromS3Request.h>
 #include <aws/rds/model/RestoreDBInstanceToPointInTimeRequest.h>
 #include <aws/rds/model/RevokeDBSecurityGroupIngressRequest.h>
 #include <aws/rds/model/StartDBInstanceRequest.h>
@@ -3201,6 +3202,41 @@ void RDSClient::RestoreDBInstanceFromDBSnapshotAsync(const RestoreDBInstanceFrom
 void RDSClient::RestoreDBInstanceFromDBSnapshotAsyncHelper(const RestoreDBInstanceFromDBSnapshotRequest& request, const RestoreDBInstanceFromDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RestoreDBInstanceFromDBSnapshot(request), context);
+}
+
+RestoreDBInstanceFromS3Outcome RDSClient::RestoreDBInstanceFromS3(const RestoreDBInstanceFromS3Request& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RestoreDBInstanceFromS3Outcome(RestoreDBInstanceFromS3Result(outcome.GetResult()));
+  }
+  else
+  {
+    return RestoreDBInstanceFromS3Outcome(outcome.GetError());
+  }
+}
+
+RestoreDBInstanceFromS3OutcomeCallable RDSClient::RestoreDBInstanceFromS3Callable(const RestoreDBInstanceFromS3Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RestoreDBInstanceFromS3Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreDBInstanceFromS3(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::RestoreDBInstanceFromS3Async(const RestoreDBInstanceFromS3Request& request, const RestoreDBInstanceFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreDBInstanceFromS3AsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::RestoreDBInstanceFromS3AsyncHelper(const RestoreDBInstanceFromS3Request& request, const RestoreDBInstanceFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreDBInstanceFromS3(request), context);
 }
 
 RestoreDBInstanceToPointInTimeOutcome RDSClient::RestoreDBInstanceToPointInTime(const RestoreDBInstanceToPointInTimeRequest& request) const

@@ -88,7 +88,7 @@ namespace Model
     /**
      * <p> The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
-     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> cannot
+     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
      * be provided. </p>
      */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
@@ -96,7 +96,7 @@ namespace Model
     /**
      * <p> The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
-     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> cannot
+     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
      * be provided. </p>
      */
     inline void SetCIDRIP(const Aws::String& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p> The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
-     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> cannot
+     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
      * be provided. </p>
      */
     inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = std::move(value); }
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p> The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
-     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> cannot
+     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
      * be provided. </p>
      */
     inline void SetCIDRIP(const char* value) { m_cIDRIPHasBeenSet = true; m_cIDRIP.assign(value); }
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p> The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
-     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> cannot
+     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
      * be provided. </p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithCIDRIP(const Aws::String& value) { SetCIDRIP(value); return *this;}
@@ -128,7 +128,7 @@ namespace Model
     /**
      * <p> The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
-     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> cannot
+     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
      * be provided. </p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithCIDRIP(Aws::String&& value) { SetCIDRIP(std::move(value)); return *this;}
@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p> The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
-     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> cannot
+     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
      * be provided. </p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}

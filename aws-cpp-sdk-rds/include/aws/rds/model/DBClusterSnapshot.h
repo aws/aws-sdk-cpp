@@ -36,11 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the result of a successful invocation of the following actions:</p>
-   * <ul> <li> <p> <a>CreateDBClusterSnapshot</a> </p> </li> <li> <p>
-   * <a>DeleteDBClusterSnapshot</a> </p> </li> </ul> <p>This data type is used as a
-   * response element in the <a>DescribeDBClusterSnapshots</a> action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains the details for an Amazon RDS DB cluster snapshot </p> <p>This data
+   * type is used as a response element in the <a>DescribeDBClusterSnapshots</a>
+   * action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterSnapshot">AWS
    * API Reference</a></p>
    */
@@ -565,43 +563,43 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster snapshot.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster snapshot.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster snapshot.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster snapshot.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
      * encrypted DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
@@ -645,49 +643,49 @@ namespace Model
 
     /**
      * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
-     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null
      * value.</p>
      */
     inline const Aws::String& GetSourceDBClusterSnapshotArn() const{ return m_sourceDBClusterSnapshotArn; }
 
     /**
      * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
-     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null
      * value.</p>
      */
     inline void SetSourceDBClusterSnapshotArn(const Aws::String& value) { m_sourceDBClusterSnapshotArnHasBeenSet = true; m_sourceDBClusterSnapshotArn = value; }
 
     /**
      * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
-     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null
      * value.</p>
      */
     inline void SetSourceDBClusterSnapshotArn(Aws::String&& value) { m_sourceDBClusterSnapshotArnHasBeenSet = true; m_sourceDBClusterSnapshotArn = std::move(value); }
 
     /**
      * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
-     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null
      * value.</p>
      */
     inline void SetSourceDBClusterSnapshotArn(const char* value) { m_sourceDBClusterSnapshotArnHasBeenSet = true; m_sourceDBClusterSnapshotArn.assign(value); }
 
     /**
      * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
-     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null
      * value.</p>
      */
     inline DBClusterSnapshot& WithSourceDBClusterSnapshotArn(const Aws::String& value) { SetSourceDBClusterSnapshotArn(value); return *this;}
 
     /**
      * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
-     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null
      * value.</p>
      */
     inline DBClusterSnapshot& WithSourceDBClusterSnapshotArn(Aws::String&& value) { SetSourceDBClusterSnapshotArn(std::move(value)); return *this;}
 
     /**
      * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
-     * Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null
      * value.</p>
      */
     inline DBClusterSnapshot& WithSourceDBClusterSnapshotArn(const char* value) { SetSourceDBClusterSnapshotArn(value); return *this;}
@@ -695,19 +693,19 @@ namespace Model
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled; otherwise false.</p>
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled; otherwise false.</p>
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled; otherwise false.</p>
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline DBClusterSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 

@@ -45,6 +45,7 @@
 #include <aws/dms/model/DescribeRefreshSchemasStatusResult.h>
 #include <aws/dms/model/DescribeReplicationInstancesResult.h>
 #include <aws/dms/model/DescribeReplicationSubnetGroupsResult.h>
+#include <aws/dms/model/DescribeReplicationTaskAssessmentResultsResult.h>
 #include <aws/dms/model/DescribeReplicationTasksResult.h>
 #include <aws/dms/model/DescribeSchemasResult.h>
 #include <aws/dms/model/DescribeTableStatisticsResult.h>
@@ -59,6 +60,7 @@
 #include <aws/dms/model/ReloadTablesResult.h>
 #include <aws/dms/model/RemoveTagsFromResourceResult.h>
 #include <aws/dms/model/StartReplicationTaskResult.h>
+#include <aws/dms/model/StartReplicationTaskAssessmentResult.h>
 #include <aws/dms/model/StopReplicationTaskResult.h>
 #include <aws/dms/model/TestConnectionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -130,6 +132,7 @@ namespace Model
         class DescribeRefreshSchemasStatusRequest;
         class DescribeReplicationInstancesRequest;
         class DescribeReplicationSubnetGroupsRequest;
+        class DescribeReplicationTaskAssessmentResultsRequest;
         class DescribeReplicationTasksRequest;
         class DescribeSchemasRequest;
         class DescribeTableStatisticsRequest;
@@ -144,6 +147,7 @@ namespace Model
         class ReloadTablesRequest;
         class RemoveTagsFromResourceRequest;
         class StartReplicationTaskRequest;
+        class StartReplicationTaskAssessmentRequest;
         class StopReplicationTaskRequest;
         class TestConnectionRequest;
 
@@ -171,6 +175,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeRefreshSchemasStatusResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeRefreshSchemasStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeReplicationInstancesResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeReplicationInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeReplicationSubnetGroupsResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeReplicationSubnetGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeReplicationTaskAssessmentResultsResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeReplicationTaskAssessmentResultsOutcome;
         typedef Aws::Utils::Outcome<DescribeReplicationTasksResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeReplicationTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeSchemasResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeSchemasOutcome;
         typedef Aws::Utils::Outcome<DescribeTableStatisticsResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DescribeTableStatisticsOutcome;
@@ -185,6 +190,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ReloadTablesResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ReloadTablesOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> RemoveTagsFromResourceOutcome;
         typedef Aws::Utils::Outcome<StartReplicationTaskResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> StartReplicationTaskOutcome;
+        typedef Aws::Utils::Outcome<StartReplicationTaskAssessmentResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> StartReplicationTaskAssessmentOutcome;
         typedef Aws::Utils::Outcome<StopReplicationTaskResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> StopReplicationTaskOutcome;
         typedef Aws::Utils::Outcome<TestConnectionResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> TestConnectionOutcome;
 
@@ -212,6 +218,7 @@ namespace Model
         typedef std::future<DescribeRefreshSchemasStatusOutcome> DescribeRefreshSchemasStatusOutcomeCallable;
         typedef std::future<DescribeReplicationInstancesOutcome> DescribeReplicationInstancesOutcomeCallable;
         typedef std::future<DescribeReplicationSubnetGroupsOutcome> DescribeReplicationSubnetGroupsOutcomeCallable;
+        typedef std::future<DescribeReplicationTaskAssessmentResultsOutcome> DescribeReplicationTaskAssessmentResultsOutcomeCallable;
         typedef std::future<DescribeReplicationTasksOutcome> DescribeReplicationTasksOutcomeCallable;
         typedef std::future<DescribeSchemasOutcome> DescribeSchemasOutcomeCallable;
         typedef std::future<DescribeTableStatisticsOutcome> DescribeTableStatisticsOutcomeCallable;
@@ -226,6 +233,7 @@ namespace Model
         typedef std::future<ReloadTablesOutcome> ReloadTablesOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
         typedef std::future<StartReplicationTaskOutcome> StartReplicationTaskOutcomeCallable;
+        typedef std::future<StartReplicationTaskAssessmentOutcome> StartReplicationTaskAssessmentOutcomeCallable;
         typedef std::future<StopReplicationTaskOutcome> StopReplicationTaskOutcomeCallable;
         typedef std::future<TestConnectionOutcome> TestConnectionOutcomeCallable;
 } // namespace Model
@@ -256,6 +264,7 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeRefreshSchemasStatusRequest&, const Model::DescribeRefreshSchemasStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRefreshSchemasStatusResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeReplicationInstancesRequest&, const Model::DescribeReplicationInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationInstancesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeReplicationSubnetGroupsRequest&, const Model::DescribeReplicationSubnetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationSubnetGroupsResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeReplicationTaskAssessmentResultsRequest&, const Model::DescribeReplicationTaskAssessmentResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationTaskAssessmentResultsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeReplicationTasksRequest&, const Model::DescribeReplicationTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationTasksResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeSchemasRequest&, const Model::DescribeSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSchemasResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeTableStatisticsRequest&, const Model::DescribeTableStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableStatisticsResponseReceivedHandler;
@@ -270,6 +279,7 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ReloadTablesRequest&, const Model::ReloadTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReloadTablesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskRequest&, const Model::StartReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskAssessmentRequest&, const Model::StartReplicationTaskAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskAssessmentResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StopReplicationTaskRequest&, const Model::StopReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::TestConnectionRequest&, const Model::TestConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestConnectionResponseReceivedHandler;
 
@@ -1071,6 +1081,34 @@ namespace Model
         virtual void DescribeReplicationSubnetGroupsAsync(const Model::DescribeReplicationSubnetGroupsRequest& request, const DescribeReplicationSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the task assessment results from Amazon S3. This action always
+         * returns the latest results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplicationTaskAssessmentResultsOutcome DescribeReplicationTaskAssessmentResults(const Model::DescribeReplicationTaskAssessmentResultsRequest& request) const;
+
+        /**
+         * <p>Returns the task assessment results from Amazon S3. This action always
+         * returns the latest results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeReplicationTaskAssessmentResultsOutcomeCallable DescribeReplicationTaskAssessmentResultsCallable(const Model::DescribeReplicationTaskAssessmentResultsRequest& request) const;
+
+        /**
+         * <p>Returns the task assessment results from Amazon S3. This action always
+         * returns the latest results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeReplicationTaskAssessmentResultsAsync(const Model::DescribeReplicationTaskAssessmentResultsRequest& request, const DescribeReplicationTaskAssessmentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about replication tasks for your account in the current
          * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">AWS
@@ -1487,6 +1525,34 @@ namespace Model
         virtual void StartReplicationTaskAsync(const Model::StartReplicationTaskRequest& request, const StartReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Starts the replication task assessment for unsupported data types in the
+         * source database. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartReplicationTaskAssessmentOutcome StartReplicationTaskAssessment(const Model::StartReplicationTaskAssessmentRequest& request) const;
+
+        /**
+         * <p> Starts the replication task assessment for unsupported data types in the
+         * source database. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartReplicationTaskAssessmentOutcomeCallable StartReplicationTaskAssessmentCallable(const Model::StartReplicationTaskAssessmentRequest& request) const;
+
+        /**
+         * <p> Starts the replication task assessment for unsupported data types in the
+         * source database. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartReplicationTaskAssessmentAsync(const Model::StartReplicationTaskAssessmentRequest& request, const StartReplicationTaskAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stops the replication task.</p> <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">AWS
          * API Reference</a></p>
@@ -1568,6 +1634,7 @@ namespace Model
         void DescribeRefreshSchemasStatusAsyncHelper(const Model::DescribeRefreshSchemasStatusRequest& request, const DescribeRefreshSchemasStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReplicationInstancesAsyncHelper(const Model::DescribeReplicationInstancesRequest& request, const DescribeReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReplicationSubnetGroupsAsyncHelper(const Model::DescribeReplicationSubnetGroupsRequest& request, const DescribeReplicationSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeReplicationTaskAssessmentResultsAsyncHelper(const Model::DescribeReplicationTaskAssessmentResultsRequest& request, const DescribeReplicationTaskAssessmentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReplicationTasksAsyncHelper(const Model::DescribeReplicationTasksRequest& request, const DescribeReplicationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSchemasAsyncHelper(const Model::DescribeSchemasRequest& request, const DescribeSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableStatisticsAsyncHelper(const Model::DescribeTableStatisticsRequest& request, const DescribeTableStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1582,6 +1649,7 @@ namespace Model
         void ReloadTablesAsyncHelper(const Model::ReloadTablesRequest& request, const ReloadTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartReplicationTaskAsyncHelper(const Model::StartReplicationTaskRequest& request, const StartReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartReplicationTaskAssessmentAsyncHelper(const Model::StartReplicationTaskAssessmentRequest& request, const StartReplicationTaskAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopReplicationTaskAsyncHelper(const Model::StopReplicationTaskRequest& request, const StopReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestConnectionAsyncHelper(const Model::TestConnectionRequest& request, const TestConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

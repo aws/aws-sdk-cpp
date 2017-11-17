@@ -114,7 +114,7 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
      * <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
      * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
@@ -126,7 +126,7 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
      * <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
      * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
@@ -138,7 +138,7 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
      * <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
      * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
@@ -150,7 +150,7 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
      * <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
      * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
@@ -162,7 +162,7 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
      * <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
      * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
@@ -174,7 +174,7 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
      * <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
      * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
@@ -186,7 +186,7 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You cannot specify
+     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
      * <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
      * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
@@ -507,10 +507,10 @@ namespace Model
 
 
     /**
-     * <p>The KMS key identifier to use when restoring an encrypted DB cluster from an
-     * encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
+     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
+     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
+     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
+     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
      * cluster, then you can use the KMS key alias instead of the ARN for the KMS
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
@@ -526,10 +526,10 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The KMS key identifier to use when restoring an encrypted DB cluster from an
-     * encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
+     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
+     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
+     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
+     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
      * cluster, then you can use the KMS key alias instead of the ARN for the KMS
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
@@ -545,10 +545,10 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The KMS key identifier to use when restoring an encrypted DB cluster from an
-     * encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
+     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
+     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
+     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
+     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
      * cluster, then you can use the KMS key alias instead of the ARN for the KMS
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
@@ -564,10 +564,10 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The KMS key identifier to use when restoring an encrypted DB cluster from an
-     * encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
+     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
+     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
+     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
+     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
      * cluster, then you can use the KMS key alias instead of the ARN for the KMS
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
@@ -583,10 +583,10 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The KMS key identifier to use when restoring an encrypted DB cluster from an
-     * encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
+     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
+     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
+     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
+     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
      * cluster, then you can use the KMS key alias instead of the ARN for the KMS
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
@@ -602,10 +602,10 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The KMS key identifier to use when restoring an encrypted DB cluster from an
-     * encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
+     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
+     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
+     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
+     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
      * cluster, then you can use the KMS key alias instead of the ARN for the KMS
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
@@ -621,10 +621,10 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key identifier to use when restoring an encrypted DB cluster from an
-     * encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource Name
-     * (ARN) for the KMS encryption key. If you are restoring a DB cluster with the
-     * same AWS account that owns the KMS encryption key used to encrypt the new DB
+     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
+     * an encrypted DB cluster.</p> <p>The KMS key identifier is the Amazon Resource
+     * Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with
+     * the same AWS account that owns the KMS encryption key used to encrypt the new DB
      * cluster, then you can use the KMS key alias instead of the ARN for the KMS
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
@@ -641,23 +641,23 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts, and otherwise false.</p>
-     * <p>Default: <code>false</code> </p>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
+     * </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts, and otherwise false.</p>
-     * <p>Default: <code>false</code> </p>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
+     * </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts, and otherwise false.</p>
-     * <p>Default: <code>false</code> </p>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
+     * </p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
