@@ -44,7 +44,11 @@ namespace Model
     Datum(const Aws::Utils::Json::JsonValue& jsonValue);
     Datum& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
+    
+    /**
+     * <p>The flag indicating null record.</p> 
+     */
+    inline bool CharValueHasBeenSet() const { return m_varCharValueHasBeenSet; }
 
     /**
      * <p>The value of the datum.</p>
