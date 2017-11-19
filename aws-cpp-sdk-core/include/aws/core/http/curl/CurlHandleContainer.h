@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include <aws/core/utils/ResourceManager.h>
+#include <aws/core/utils/ResourcePool.h>
 
 #include <utility>
 #include <curl/curl.h>
@@ -39,7 +39,6 @@ public:
       * then a small size is best. For async support, a good value would be 6 * number of Processors.   *
       */
     CurlHandleContainer(unsigned maxSize = 50, long requestTimeout = 3000, long connectTimeout = 1000);
-    ~CurlHandleContainer();
 
     /**
       * Blocks until a curl handle from the pool is available for use.
@@ -52,20 +51,26 @@ public:
     void ReleaseCurlHandle(CURL* handle);
 
 private:
+    struct CurlEasyHandleManager
+    {
+        CurlEasyHandleManager(unsigned long requestTimeout, unsigned long connectTimeout);
+
+        CURL *Create() const;
+        void Reset(CURL *handle) const;
+        void Destroy(CURL *handle) const;
+
+        void SetDefaultOptionsOnHandle(CURL *handle) const;
+
+        unsigned long m_requestTimeout;
+        unsigned long m_connectTimeout;
+    };
+
     CurlHandleContainer(const CurlHandleContainer&) = delete;
     const CurlHandleContainer& operator = (const CurlHandleContainer&) = delete;
     CurlHandleContainer(const CurlHandleContainer&&) = delete;
     const CurlHandleContainer& operator = (const CurlHandleContainer&&) = delete;
 
-    bool CheckAndGrowPool();
-    void SetDefaultOptionsOnHandle(CURL* handle);
-
-    Aws::Utils::ExclusiveOwnershipResourceManager<CURL*> m_handleContainer;
-    unsigned m_maxPoolSize;
-    unsigned long m_requestTimeout;
-    unsigned long m_connectTimeout;
-    unsigned m_poolSize;
-    std::mutex m_containerLock;
+    Aws::Utils::ResourcePool<CURL*, CurlEasyHandleManager> m_handleContainer;
 };
 
 } // namespace Http

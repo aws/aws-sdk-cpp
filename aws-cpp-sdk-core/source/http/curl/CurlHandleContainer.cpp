@@ -16,7 +16,6 @@
 #include <aws/core/http/curl/CurlHandleContainer.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
-#include <algorithm>
 
 using namespace Aws::Utils::Logging;
 using namespace Aws::Http;
@@ -24,91 +23,40 @@ using namespace Aws::Http;
 static const char* CURL_HANDLE_CONTAINER_TAG = "CurlHandleContainer";
 
 
-CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long requestTimeout, long connectTimeout) :
-                m_maxPoolSize(maxSize), m_requestTimeout(requestTimeout), m_connectTimeout(connectTimeout),
-                m_poolSize(0)
-{
-    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Initializing CurlHandleContainer with size " << maxSize);
-}
+CurlHandleContainer::CurlEasyHandleManager::CurlEasyHandleManager(unsigned long requestTimeout, unsigned long connectTimeout)
+: m_requestTimeout(requestTimeout), m_connectTimeout(connectTimeout)
+{}
 
-CurlHandleContainer::~CurlHandleContainer()
+CURL *CurlHandleContainer::CurlEasyHandleManager::Create() const
 {
-    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Cleaning up CurlHandleContainer.");
-    for (CURL* handle : m_handleContainer.ShutdownAndWait(m_poolSize))
+    CURL *handle = curl_easy_init();
+    if (!handle)
     {
-        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Cleaning up " << handle);
-        curl_easy_cleanup(handle);
-    }
-}
-
-CURL* CurlHandleContainer::AcquireCurlHandle()
-{
-    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Attempting to acquire curl connection.");
-
-    if(!m_handleContainer.HasResourcesAvailable())
-    {
-        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "No current connections available in pool. Attempting to create new connections.");
-        CheckAndGrowPool();
+        AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_easy_init failed to allocate.");
+        return nullptr;
     }
 
-    CURL* handle = m_handleContainer.Acquire();
-    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
-    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle);
+    SetDefaultOptionsOnHandle(handle);
     return handle;
 }
 
-void CurlHandleContainer::ReleaseCurlHandle(CURL* handle)
+void CurlHandleContainer::CurlEasyHandleManager::Reset(CURL *handle) const
 {
-    if (handle)
-    {
-        curl_easy_reset(handle);
-        SetDefaultOptionsOnHandle(handle);
-        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Releasing curl handle " << handle);
-        m_handleContainer.Release(handle);
-        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Notified waiting threads.");
-    }
+    assert(handle);
+    curl_easy_reset(handle);
+    SetDefaultOptionsOnHandle(handle);
 }
 
-bool CurlHandleContainer::CheckAndGrowPool()
+void CurlHandleContainer::CurlEasyHandleManager::Destroy(CURL *handle) const
 {
-    std::lock_guard<std::mutex> locker(m_containerLock);
-    if (m_poolSize < m_maxPoolSize)
-    {
-        unsigned multiplier = m_poolSize > 0 ? m_poolSize : 1;
-        unsigned amountToAdd = (std::min)(multiplier * 2, m_maxPoolSize - m_poolSize);
-        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "attempting to grow pool size by " << amountToAdd);
-
-        unsigned actuallyAdded = 0;
-        for (unsigned i = 0; i < amountToAdd; ++i)
-        {
-            CURL* curlHandle = curl_easy_init();
-
-            if (curlHandle)
-            {
-                SetDefaultOptionsOnHandle(curlHandle);
-                m_handleContainer.Release(curlHandle);
-                ++actuallyAdded;
-            }
-            else
-            {
-                AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_easy_init failed to allocate.");
-                break;
-            }
-        }
-
-        AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Pool grown by " << actuallyAdded);
-        m_poolSize += actuallyAdded;
-
-        return actuallyAdded > 0;
-    }
-
-    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Pool cannot be grown any further, already at max size.");
-
-    return false;
+    assert(handle);
+    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Cleaning up " << handle);
+    curl_easy_cleanup(handle);
 }
 
-void CurlHandleContainer::SetDefaultOptionsOnHandle(CURL* handle)
+void CurlHandleContainer::CurlEasyHandleManager::SetDefaultOptionsOnHandle(CURL *handle) const
 {
+    assert(handle);
     //for timeouts to work in a multi-threaded context,
     //always turn signals off. This also forces dns queries to
     //not be included in the timeout calculations.
@@ -117,4 +65,28 @@ void CurlHandleContainer::SetDefaultOptionsOnHandle(CURL* handle)
     curl_easy_setopt(handle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
     curl_easy_setopt(handle, CURLOPT_LOW_SPEED_LIMIT, 1L);
     curl_easy_setopt(handle, CURLOPT_LOW_SPEED_TIME, m_requestTimeout / 1000);
+}
+
+CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long requestTimeout, long connectTimeout)
+: m_handleContainer(maxSize, requestTimeout, connectTimeout)
+{
+    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Initializing CurlHandleContainer with size " << maxSize);
+}
+
+CURL* CurlHandleContainer::AcquireCurlHandle()
+{
+    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Attempting to acquire curl connection.");
+    auto handle = m_handleContainer.Acquire();
+    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle);
+    return handle;
+}
+
+void CurlHandleContainer::ReleaseCurlHandle(CURL* handle)
+{
+    if (!handle)
+        return;
+
+    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Releasing curl handle " << handle);
+    m_handleContainer.Release(handle);
+    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Notified waiting threads.");
 }
