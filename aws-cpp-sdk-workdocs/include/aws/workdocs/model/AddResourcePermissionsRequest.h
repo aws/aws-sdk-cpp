@@ -18,6 +18,7 @@
 #include <aws/workdocs/WorkDocsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workdocs/model/NotificationOptions.h>
 #include <aws/workdocs/model/SharePrincipal.h>
 #include <utility>
 
@@ -47,43 +48,43 @@ namespace Model
 
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline AddResourcePermissionsRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline AddResourcePermissionsRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline AddResourcePermissionsRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
@@ -160,6 +161,32 @@ namespace Model
      */
     inline AddResourcePermissionsRequest& AddPrincipals(SharePrincipal&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The notification options.</p>
+     */
+    inline const NotificationOptions& GetNotificationOptions() const{ return m_notificationOptions; }
+
+    /**
+     * <p>The notification options.</p>
+     */
+    inline void SetNotificationOptions(const NotificationOptions& value) { m_notificationOptionsHasBeenSet = true; m_notificationOptions = value; }
+
+    /**
+     * <p>The notification options.</p>
+     */
+    inline void SetNotificationOptions(NotificationOptions&& value) { m_notificationOptionsHasBeenSet = true; m_notificationOptions = std::move(value); }
+
+    /**
+     * <p>The notification options.</p>
+     */
+    inline AddResourcePermissionsRequest& WithNotificationOptions(const NotificationOptions& value) { SetNotificationOptions(value); return *this;}
+
+    /**
+     * <p>The notification options.</p>
+     */
+    inline AddResourcePermissionsRequest& WithNotificationOptions(NotificationOptions&& value) { SetNotificationOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_authenticationToken;
@@ -170,6 +197,9 @@ namespace Model
 
     Aws::Vector<SharePrincipal> m_principals;
     bool m_principalsHasBeenSet;
+
+    NotificationOptions m_notificationOptions;
+    bool m_notificationOptionsHasBeenSet;
   };
 
 } // namespace Model

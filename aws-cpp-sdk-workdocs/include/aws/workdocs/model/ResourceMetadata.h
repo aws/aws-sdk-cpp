@@ -111,37 +111,37 @@ namespace Model
 
 
     /**
-     * <p>The original name of the resource prior to a rename operation.</p>
+     * <p>The original name of the resource before a rename operation.</p>
      */
     inline const Aws::String& GetOriginalName() const{ return m_originalName; }
 
     /**
-     * <p>The original name of the resource prior to a rename operation.</p>
+     * <p>The original name of the resource before a rename operation.</p>
      */
     inline void SetOriginalName(const Aws::String& value) { m_originalNameHasBeenSet = true; m_originalName = value; }
 
     /**
-     * <p>The original name of the resource prior to a rename operation.</p>
+     * <p>The original name of the resource before a rename operation.</p>
      */
     inline void SetOriginalName(Aws::String&& value) { m_originalNameHasBeenSet = true; m_originalName = std::move(value); }
 
     /**
-     * <p>The original name of the resource prior to a rename operation.</p>
+     * <p>The original name of the resource before a rename operation.</p>
      */
     inline void SetOriginalName(const char* value) { m_originalNameHasBeenSet = true; m_originalName.assign(value); }
 
     /**
-     * <p>The original name of the resource prior to a rename operation.</p>
+     * <p>The original name of the resource before a rename operation.</p>
      */
     inline ResourceMetadata& WithOriginalName(const Aws::String& value) { SetOriginalName(value); return *this;}
 
     /**
-     * <p>The original name of the resource prior to a rename operation.</p>
+     * <p>The original name of the resource before a rename operation.</p>
      */
     inline ResourceMetadata& WithOriginalName(Aws::String&& value) { SetOriginalName(std::move(value)); return *this;}
 
     /**
-     * <p>The original name of the resource prior to a rename operation.</p>
+     * <p>The original name of the resource before a rename operation.</p>
      */
     inline ResourceMetadata& WithOriginalName(const char* value) { SetOriginalName(value); return *this;}
 

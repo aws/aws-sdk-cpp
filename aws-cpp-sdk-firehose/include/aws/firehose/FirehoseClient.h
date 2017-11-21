@@ -24,7 +24,6 @@
 #include <aws/firehose/model/CreateDeliveryStreamResult.h>
 #include <aws/firehose/model/DeleteDeliveryStreamResult.h>
 #include <aws/firehose/model/DescribeDeliveryStreamResult.h>
-#include <aws/firehose/model/GetKinesisStreamResult.h>
 #include <aws/firehose/model/ListDeliveryStreamsResult.h>
 #include <aws/firehose/model/PutRecordResult.h>
 #include <aws/firehose/model/PutRecordBatchResult.h>
@@ -77,7 +76,6 @@ namespace Model
         class CreateDeliveryStreamRequest;
         class DeleteDeliveryStreamRequest;
         class DescribeDeliveryStreamRequest;
-        class GetKinesisStreamRequest;
         class ListDeliveryStreamsRequest;
         class PutRecordRequest;
         class PutRecordBatchRequest;
@@ -86,7 +84,6 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> CreateDeliveryStreamOutcome;
         typedef Aws::Utils::Outcome<DeleteDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> DeleteDeliveryStreamOutcome;
         typedef Aws::Utils::Outcome<DescribeDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> DescribeDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<GetKinesisStreamResult, Aws::Client::AWSError<FirehoseErrors>> GetKinesisStreamOutcome;
         typedef Aws::Utils::Outcome<ListDeliveryStreamsResult, Aws::Client::AWSError<FirehoseErrors>> ListDeliveryStreamsOutcome;
         typedef Aws::Utils::Outcome<PutRecordResult, Aws::Client::AWSError<FirehoseErrors>> PutRecordOutcome;
         typedef Aws::Utils::Outcome<PutRecordBatchResult, Aws::Client::AWSError<FirehoseErrors>> PutRecordBatchOutcome;
@@ -95,7 +92,6 @@ namespace Model
         typedef std::future<CreateDeliveryStreamOutcome> CreateDeliveryStreamOutcomeCallable;
         typedef std::future<DeleteDeliveryStreamOutcome> DeleteDeliveryStreamOutcomeCallable;
         typedef std::future<DescribeDeliveryStreamOutcome> DescribeDeliveryStreamOutcomeCallable;
-        typedef std::future<GetKinesisStreamOutcome> GetKinesisStreamOutcomeCallable;
         typedef std::future<ListDeliveryStreamsOutcome> ListDeliveryStreamsOutcomeCallable;
         typedef std::future<PutRecordOutcome> PutRecordOutcomeCallable;
         typedef std::future<PutRecordBatchOutcome> PutRecordBatchOutcomeCallable;
@@ -107,7 +103,6 @@ namespace Model
     typedef std::function<void(const FirehoseClient*, const Model::CreateDeliveryStreamRequest&, const Model::CreateDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeliveryStreamResponseReceivedHandler;
     typedef std::function<void(const FirehoseClient*, const Model::DeleteDeliveryStreamRequest&, const Model::DeleteDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeliveryStreamResponseReceivedHandler;
     typedef std::function<void(const FirehoseClient*, const Model::DescribeDeliveryStreamRequest&, const Model::DescribeDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeliveryStreamResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::GetKinesisStreamRequest&, const Model::GetKinesisStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKinesisStreamResponseReceivedHandler;
     typedef std::function<void(const FirehoseClient*, const Model::ListDeliveryStreamsRequest&, const Model::ListDeliveryStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeliveryStreamsResponseReceivedHandler;
     typedef std::function<void(const FirehoseClient*, const Model::PutRecordRequest&, const Model::PutRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordResponseReceivedHandler;
     typedef std::function<void(const FirehoseClient*, const Model::PutRecordBatchRequest&, const Model::PutRecordBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordBatchResponseReceivedHandler;
@@ -396,25 +391,6 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDeliveryStreamAsync(const Model::DescribeDeliveryStreamRequest& request, const DescribeDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::GetKinesisStreamOutcome GetKinesisStream(const Model::GetKinesisStreamRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetKinesisStreamOutcomeCallable GetKinesisStreamCallable(const Model::GetKinesisStreamRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetKinesisStreamAsync(const Model::GetKinesisStreamRequest& request, const GetKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your delivery streams.</p> <p>The number of delivery streams might be
@@ -845,7 +821,6 @@ namespace Model
         void CreateDeliveryStreamAsyncHelper(const Model::CreateDeliveryStreamRequest& request, const CreateDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeliveryStreamAsyncHelper(const Model::DeleteDeliveryStreamRequest& request, const DeleteDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDeliveryStreamAsyncHelper(const Model::DescribeDeliveryStreamRequest& request, const DescribeDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetKinesisStreamAsyncHelper(const Model::GetKinesisStreamRequest& request, const GetKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeliveryStreamsAsyncHelper(const Model::ListDeliveryStreamsRequest& request, const ListDeliveryStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRecordAsyncHelper(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRecordBatchAsyncHelper(const Model::PutRecordBatchRequest& request, const PutRecordBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -46,17 +46,17 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of delivery streams to list.</p>
+     * <p>The maximum number of delivery streams to list. The default value is 10.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of delivery streams to list.</p>
+     * <p>The maximum number of delivery streams to list. The default value is 10.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of delivery streams to list.</p>
+     * <p>The maximum number of delivery streams to list. The default value is 10.</p>
      */
     inline ListDeliveryStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

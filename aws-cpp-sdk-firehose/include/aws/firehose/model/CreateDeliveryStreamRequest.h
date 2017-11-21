@@ -22,6 +22,7 @@
 #include <aws/firehose/model/ExtendedS3DestinationConfiguration.h>
 #include <aws/firehose/model/RedshiftDestinationConfiguration.h>
 #include <aws/firehose/model/ElasticsearchDestinationConfiguration.h>
+#include <aws/firehose/model/SplunkDestinationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -258,6 +259,32 @@ namespace Model
      */
     inline CreateDeliveryStreamRequest& WithElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration&& value) { SetElasticsearchDestinationConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The destination in Splunk. You can specify only one destination.</p>
+     */
+    inline const SplunkDestinationConfiguration& GetSplunkDestinationConfiguration() const{ return m_splunkDestinationConfiguration; }
+
+    /**
+     * <p>The destination in Splunk. You can specify only one destination.</p>
+     */
+    inline void SetSplunkDestinationConfiguration(const SplunkDestinationConfiguration& value) { m_splunkDestinationConfigurationHasBeenSet = true; m_splunkDestinationConfiguration = value; }
+
+    /**
+     * <p>The destination in Splunk. You can specify only one destination.</p>
+     */
+    inline void SetSplunkDestinationConfiguration(SplunkDestinationConfiguration&& value) { m_splunkDestinationConfigurationHasBeenSet = true; m_splunkDestinationConfiguration = std::move(value); }
+
+    /**
+     * <p>The destination in Splunk. You can specify only one destination.</p>
+     */
+    inline CreateDeliveryStreamRequest& WithSplunkDestinationConfiguration(const SplunkDestinationConfiguration& value) { SetSplunkDestinationConfiguration(value); return *this;}
+
+    /**
+     * <p>The destination in Splunk. You can specify only one destination.</p>
+     */
+    inline CreateDeliveryStreamRequest& WithSplunkDestinationConfiguration(SplunkDestinationConfiguration&& value) { SetSplunkDestinationConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deliveryStreamName;
@@ -277,6 +304,9 @@ namespace Model
 
     ElasticsearchDestinationConfiguration m_elasticsearchDestinationConfiguration;
     bool m_elasticsearchDestinationConfigurationHasBeenSet;
+
+    SplunkDestinationConfiguration m_splunkDestinationConfiguration;
+    bool m_splunkDestinationConfigurationHasBeenSet;
   };
 
 } // namespace Model

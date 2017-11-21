@@ -28,6 +28,7 @@ using namespace Aws::Http;
 DescribeResourcePermissionsRequest::DescribeResourcePermissionsRequest() : 
     m_authenticationTokenHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_principalIdHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
     m_markerHasBeenSet(false)
@@ -57,6 +58,13 @@ Aws::Http::HeaderValueCollection DescribeResourcePermissionsRequest::GetRequestS
 void DescribeResourcePermissionsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_principalIdHasBeenSet)
+    {
+      ss << m_principalId;
+      uri.AddQueryStringParameter("principalId", ss.str());
+      ss.str("");
+    }
+
     if(m_limitHasBeenSet)
     {
       ss << m_limit;

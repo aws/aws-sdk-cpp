@@ -82,97 +82,140 @@ namespace Model
 
 
     /**
-     * <p>The encryption type to use. This parameter can be one of the following
-     * values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An
-     * <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using
-     * a customer-managed KMS key.</p> </li> </ul>
+     * <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
 
     /**
-     * <p>The encryption type to use. This parameter can be one of the following
-     * values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An
-     * <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using
-     * a customer-managed KMS key.</p> </li> </ul>
+     * <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
      */
     inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
     /**
-     * <p>The encryption type to use. This parameter can be one of the following
-     * values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An
-     * <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using
-     * a customer-managed KMS key.</p> </li> </ul>
+     * <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
      */
     inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
 
     /**
-     * <p>The encryption type to use. This parameter can be one of the following
-     * values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An
-     * <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using
-     * a customer-managed KMS key.</p> </li> </ul>
+     * <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
      */
     inline StartStreamEncryptionRequest& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
 
     /**
-     * <p>The encryption type to use. This parameter can be one of the following
-     * values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An
-     * <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using
-     * a customer-managed KMS key.</p> </li> </ul>
+     * <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
      */
     inline StartStreamEncryptionRequest& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. You can also
-     * use a Kinesis-owned master key by specifying the alias
-     * <code>aws/kinesis</code>.</p>
+     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
+     * can be a globally unique identifier, a fully specified ARN to either an alias or
+     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
+     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
+     * <li> <p>Key ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p>Alias ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>Globally unique key ID example:
+     * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
+     * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
+     * Kinesis Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. You can also
-     * use a Kinesis-owned master key by specifying the alias
-     * <code>aws/kinesis</code>.</p>
+     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
+     * can be a globally unique identifier, a fully specified ARN to either an alias or
+     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
+     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
+     * <li> <p>Key ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p>Alias ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>Globally unique key ID example:
+     * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
+     * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
+     * Kinesis Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. You can also
-     * use a Kinesis-owned master key by specifying the alias
-     * <code>aws/kinesis</code>.</p>
+     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
+     * can be a globally unique identifier, a fully specified ARN to either an alias or
+     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
+     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
+     * <li> <p>Key ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p>Alias ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>Globally unique key ID example:
+     * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
+     * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
+     * Kinesis Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. You can also
-     * use a Kinesis-owned master key by specifying the alias
-     * <code>aws/kinesis</code>.</p>
+     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
+     * can be a globally unique identifier, a fully specified ARN to either an alias or
+     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
+     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
+     * <li> <p>Key ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p>Alias ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>Globally unique key ID example:
+     * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
+     * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
+     * Kinesis Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. You can also
-     * use a Kinesis-owned master key by specifying the alias
-     * <code>aws/kinesis</code>.</p>
+     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
+     * can be a globally unique identifier, a fully specified ARN to either an alias or
+     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
+     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
+     * <li> <p>Key ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p>Alias ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>Globally unique key ID example:
+     * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
+     * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
+     * Kinesis Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline StartStreamEncryptionRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. You can also
-     * use a Kinesis-owned master key by specifying the alias
-     * <code>aws/kinesis</code>.</p>
+     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
+     * can be a globally unique identifier, a fully specified ARN to either an alias or
+     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
+     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
+     * <li> <p>Key ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p>Alias ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>Globally unique key ID example:
+     * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
+     * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
+     * Kinesis Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline StartStreamEncryptionRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The GUID for the customer-managed KMS key to use for encryption. You can also
-     * use a Kinesis-owned master key by specifying the alias
-     * <code>aws/kinesis</code>.</p>
+     * <p>The GUID for the customer-managed KMS key to use for encryption. This value
+     * can be a globally unique identifier, a fully specified ARN to either an alias or
+     * a key, or an alias name prefixed by "alias/".You can also use a master key owned
+     * by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p> <ul>
+     * <li> <p>Key ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p>Alias ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>Globally unique key ID example:
+     * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
+     * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
+     * Kinesis Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline StartStreamEncryptionRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

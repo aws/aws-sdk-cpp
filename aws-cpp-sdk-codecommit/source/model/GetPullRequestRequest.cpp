@@ -13,37 +13,37 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/firehose/model/GetKinesisStreamRequest.h>
+#include <aws/codecommit/model/GetPullRequestRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
-using namespace Aws::Firehose::Model;
+using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKinesisStreamRequest::GetKinesisStreamRequest() : 
-    m_deliveryStreamARNHasBeenSet(false)
+GetPullRequestRequest::GetPullRequestRequest() : 
+    m_pullRequestIdHasBeenSet(false)
 {
 }
 
-Aws::String GetKinesisStreamRequest::SerializePayload() const
+Aws::String GetPullRequestRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_deliveryStreamARNHasBeenSet)
+  if(m_pullRequestIdHasBeenSet)
   {
-   payload.WithString("DeliveryStreamARN", m_deliveryStreamARN);
+   payload.WithString("pullRequestId", m_pullRequestId);
 
   }
 
   return payload.WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetKinesisStreamRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection GetPullRequestRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Firehose_20150804.GetKinesisStream"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.GetPullRequest"));
   return headers;
 
 }

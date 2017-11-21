@@ -52,105 +52,105 @@ namespace Model
 
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline DescribeActivitiesRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline DescribeActivitiesRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline DescribeActivitiesRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
 
     /**
-     * <p>The timestamp that determines the starting time of the activities; the
+     * <p>The timestamp that determines the starting time of the activities. The
      * response includes the activities performed after the specified timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The timestamp that determines the starting time of the activities; the
+     * <p>The timestamp that determines the starting time of the activities. The
      * response includes the activities performed after the specified timestamp.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The timestamp that determines the starting time of the activities; the
+     * <p>The timestamp that determines the starting time of the activities. The
      * response includes the activities performed after the specified timestamp.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The timestamp that determines the starting time of the activities; the
+     * <p>The timestamp that determines the starting time of the activities. The
      * response includes the activities performed after the specified timestamp.</p>
      */
     inline DescribeActivitiesRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The timestamp that determines the starting time of the activities; the
+     * <p>The timestamp that determines the starting time of the activities. The
      * response includes the activities performed after the specified timestamp.</p>
      */
     inline DescribeActivitiesRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The timestamp that determines the end time of the activities; the response
+     * <p>The timestamp that determines the end time of the activities. The response
      * includes the activities performed before the specified timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The timestamp that determines the end time of the activities; the response
+     * <p>The timestamp that determines the end time of the activities. The response
      * includes the activities performed before the specified timestamp.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The timestamp that determines the end time of the activities; the response
+     * <p>The timestamp that determines the end time of the activities. The response
      * includes the activities performed before the specified timestamp.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The timestamp that determines the end time of the activities; the response
+     * <p>The timestamp that determines the end time of the activities. The response
      * includes the activities performed before the specified timestamp.</p>
      */
     inline DescribeActivitiesRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The timestamp that determines the end time of the activities; the response
+     * <p>The timestamp that determines the end time of the activities. The response
      * includes the activities performed before the specified timestamp.</p>
      */
     inline DescribeActivitiesRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
@@ -266,44 +266,37 @@ namespace Model
 
 
     /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
+     * <p>The marker for the next set of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
+     * <p>The marker for the next set of results.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
+     * <p>The marker for the next set of results.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
+     * <p>The marker for the next set of results.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
+     * <p>The marker for the next set of results.</p>
      */
     inline DescribeActivitiesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
+     * <p>The marker for the next set of results.</p>
      */
     inline DescribeActivitiesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
+     * <p>The marker for the next set of results.</p>
      */
     inline DescribeActivitiesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

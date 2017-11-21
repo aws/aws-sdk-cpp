@@ -29,20 +29,37 @@
 #include <aws/codecommit/CodeCommitErrorMarshaller.h>
 #include <aws/codecommit/model/BatchGetRepositoriesRequest.h>
 #include <aws/codecommit/model/CreateBranchRequest.h>
+#include <aws/codecommit/model/CreatePullRequestRequest.h>
 #include <aws/codecommit/model/CreateRepositoryRequest.h>
 #include <aws/codecommit/model/DeleteBranchRequest.h>
+#include <aws/codecommit/model/DeleteCommentContentRequest.h>
 #include <aws/codecommit/model/DeleteRepositoryRequest.h>
+#include <aws/codecommit/model/DescribePullRequestEventsRequest.h>
 #include <aws/codecommit/model/GetBlobRequest.h>
 #include <aws/codecommit/model/GetBranchRequest.h>
+#include <aws/codecommit/model/GetCommentRequest.h>
+#include <aws/codecommit/model/GetCommentsForComparedCommitRequest.h>
+#include <aws/codecommit/model/GetCommentsForPullRequestRequest.h>
 #include <aws/codecommit/model/GetCommitRequest.h>
 #include <aws/codecommit/model/GetDifferencesRequest.h>
+#include <aws/codecommit/model/GetMergeConflictsRequest.h>
+#include <aws/codecommit/model/GetPullRequestRequest.h>
 #include <aws/codecommit/model/GetRepositoryRequest.h>
 #include <aws/codecommit/model/GetRepositoryTriggersRequest.h>
 #include <aws/codecommit/model/ListBranchesRequest.h>
+#include <aws/codecommit/model/ListPullRequestsRequest.h>
 #include <aws/codecommit/model/ListRepositoriesRequest.h>
+#include <aws/codecommit/model/MergePullRequestByFastForwardRequest.h>
+#include <aws/codecommit/model/PostCommentForComparedCommitRequest.h>
+#include <aws/codecommit/model/PostCommentForPullRequestRequest.h>
+#include <aws/codecommit/model/PostCommentReplyRequest.h>
 #include <aws/codecommit/model/PutRepositoryTriggersRequest.h>
 #include <aws/codecommit/model/TestRepositoryTriggersRequest.h>
+#include <aws/codecommit/model/UpdateCommentRequest.h>
 #include <aws/codecommit/model/UpdateDefaultBranchRequest.h>
+#include <aws/codecommit/model/UpdatePullRequestDescriptionRequest.h>
+#include <aws/codecommit/model/UpdatePullRequestStatusRequest.h>
+#include <aws/codecommit/model/UpdatePullRequestTitleRequest.h>
 #include <aws/codecommit/model/UpdateRepositoryDescriptionRequest.h>
 #include <aws/codecommit/model/UpdateRepositoryNameRequest.h>
 
@@ -180,6 +197,41 @@ void CodeCommitClient::CreateBranchAsyncHelper(const CreateBranchRequest& reques
   handler(this, request, CreateBranch(request), context);
 }
 
+CreatePullRequestOutcome CodeCommitClient::CreatePullRequest(const CreatePullRequestRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreatePullRequestOutcome(CreatePullRequestResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreatePullRequestOutcome(outcome.GetError());
+  }
+}
+
+CreatePullRequestOutcomeCallable CodeCommitClient::CreatePullRequestCallable(const CreatePullRequestRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePullRequestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePullRequest(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::CreatePullRequestAsync(const CreatePullRequestRequest& request, const CreatePullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePullRequestAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::CreatePullRequestAsyncHelper(const CreatePullRequestRequest& request, const CreatePullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePullRequest(request), context);
+}
+
 CreateRepositoryOutcome CodeCommitClient::CreateRepository(const CreateRepositoryRequest& request) const
 {
   Aws::StringStream ss;
@@ -250,6 +302,41 @@ void CodeCommitClient::DeleteBranchAsyncHelper(const DeleteBranchRequest& reques
   handler(this, request, DeleteBranch(request), context);
 }
 
+DeleteCommentContentOutcome CodeCommitClient::DeleteCommentContent(const DeleteCommentContentRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteCommentContentOutcome(DeleteCommentContentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteCommentContentOutcome(outcome.GetError());
+  }
+}
+
+DeleteCommentContentOutcomeCallable CodeCommitClient::DeleteCommentContentCallable(const DeleteCommentContentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCommentContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCommentContent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::DeleteCommentContentAsync(const DeleteCommentContentRequest& request, const DeleteCommentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCommentContentAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::DeleteCommentContentAsyncHelper(const DeleteCommentContentRequest& request, const DeleteCommentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCommentContent(request), context);
+}
+
 DeleteRepositoryOutcome CodeCommitClient::DeleteRepository(const DeleteRepositoryRequest& request) const
 {
   Aws::StringStream ss;
@@ -283,6 +370,41 @@ void CodeCommitClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& requ
 void CodeCommitClient::DeleteRepositoryAsyncHelper(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRepository(request), context);
+}
+
+DescribePullRequestEventsOutcome CodeCommitClient::DescribePullRequestEvents(const DescribePullRequestEventsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribePullRequestEventsOutcome(DescribePullRequestEventsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePullRequestEventsOutcome(outcome.GetError());
+  }
+}
+
+DescribePullRequestEventsOutcomeCallable CodeCommitClient::DescribePullRequestEventsCallable(const DescribePullRequestEventsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePullRequestEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePullRequestEvents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::DescribePullRequestEventsAsync(const DescribePullRequestEventsRequest& request, const DescribePullRequestEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePullRequestEventsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::DescribePullRequestEventsAsyncHelper(const DescribePullRequestEventsRequest& request, const DescribePullRequestEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePullRequestEvents(request), context);
 }
 
 GetBlobOutcome CodeCommitClient::GetBlob(const GetBlobRequest& request) const
@@ -355,6 +477,111 @@ void CodeCommitClient::GetBranchAsyncHelper(const GetBranchRequest& request, con
   handler(this, request, GetBranch(request), context);
 }
 
+GetCommentOutcome CodeCommitClient::GetComment(const GetCommentRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCommentOutcome(GetCommentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCommentOutcome(outcome.GetError());
+  }
+}
+
+GetCommentOutcomeCallable CodeCommitClient::GetCommentCallable(const GetCommentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCommentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetCommentAsync(const GetCommentRequest& request, const GetCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCommentAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetCommentAsyncHelper(const GetCommentRequest& request, const GetCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetComment(request), context);
+}
+
+GetCommentsForComparedCommitOutcome CodeCommitClient::GetCommentsForComparedCommit(const GetCommentsForComparedCommitRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCommentsForComparedCommitOutcome(GetCommentsForComparedCommitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCommentsForComparedCommitOutcome(outcome.GetError());
+  }
+}
+
+GetCommentsForComparedCommitOutcomeCallable CodeCommitClient::GetCommentsForComparedCommitCallable(const GetCommentsForComparedCommitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCommentsForComparedCommitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCommentsForComparedCommit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetCommentsForComparedCommitAsync(const GetCommentsForComparedCommitRequest& request, const GetCommentsForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCommentsForComparedCommitAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetCommentsForComparedCommitAsyncHelper(const GetCommentsForComparedCommitRequest& request, const GetCommentsForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCommentsForComparedCommit(request), context);
+}
+
+GetCommentsForPullRequestOutcome CodeCommitClient::GetCommentsForPullRequest(const GetCommentsForPullRequestRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCommentsForPullRequestOutcome(GetCommentsForPullRequestResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCommentsForPullRequestOutcome(outcome.GetError());
+  }
+}
+
+GetCommentsForPullRequestOutcomeCallable CodeCommitClient::GetCommentsForPullRequestCallable(const GetCommentsForPullRequestRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCommentsForPullRequestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCommentsForPullRequest(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetCommentsForPullRequestAsync(const GetCommentsForPullRequestRequest& request, const GetCommentsForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCommentsForPullRequestAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetCommentsForPullRequestAsyncHelper(const GetCommentsForPullRequestRequest& request, const GetCommentsForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCommentsForPullRequest(request), context);
+}
+
 GetCommitOutcome CodeCommitClient::GetCommit(const GetCommitRequest& request) const
 {
   Aws::StringStream ss;
@@ -423,6 +650,76 @@ void CodeCommitClient::GetDifferencesAsync(const GetDifferencesRequest& request,
 void CodeCommitClient::GetDifferencesAsyncHelper(const GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDifferences(request), context);
+}
+
+GetMergeConflictsOutcome CodeCommitClient::GetMergeConflicts(const GetMergeConflictsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetMergeConflictsOutcome(GetMergeConflictsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMergeConflictsOutcome(outcome.GetError());
+  }
+}
+
+GetMergeConflictsOutcomeCallable CodeCommitClient::GetMergeConflictsCallable(const GetMergeConflictsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMergeConflictsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMergeConflicts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetMergeConflictsAsync(const GetMergeConflictsRequest& request, const GetMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMergeConflictsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetMergeConflictsAsyncHelper(const GetMergeConflictsRequest& request, const GetMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMergeConflicts(request), context);
+}
+
+GetPullRequestOutcome CodeCommitClient::GetPullRequest(const GetPullRequestRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetPullRequestOutcome(GetPullRequestResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPullRequestOutcome(outcome.GetError());
+  }
+}
+
+GetPullRequestOutcomeCallable CodeCommitClient::GetPullRequestCallable(const GetPullRequestRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPullRequestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPullRequest(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetPullRequestAsync(const GetPullRequestRequest& request, const GetPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPullRequestAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetPullRequestAsyncHelper(const GetPullRequestRequest& request, const GetPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPullRequest(request), context);
 }
 
 GetRepositoryOutcome CodeCommitClient::GetRepository(const GetRepositoryRequest& request) const
@@ -530,6 +827,41 @@ void CodeCommitClient::ListBranchesAsyncHelper(const ListBranchesRequest& reques
   handler(this, request, ListBranches(request), context);
 }
 
+ListPullRequestsOutcome CodeCommitClient::ListPullRequests(const ListPullRequestsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListPullRequestsOutcome(ListPullRequestsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPullRequestsOutcome(outcome.GetError());
+  }
+}
+
+ListPullRequestsOutcomeCallable CodeCommitClient::ListPullRequestsCallable(const ListPullRequestsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPullRequestsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPullRequests(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::ListPullRequestsAsync(const ListPullRequestsRequest& request, const ListPullRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPullRequestsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::ListPullRequestsAsyncHelper(const ListPullRequestsRequest& request, const ListPullRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPullRequests(request), context);
+}
+
 ListRepositoriesOutcome CodeCommitClient::ListRepositories(const ListRepositoriesRequest& request) const
 {
   Aws::StringStream ss;
@@ -563,6 +895,146 @@ void CodeCommitClient::ListRepositoriesAsync(const ListRepositoriesRequest& requ
 void CodeCommitClient::ListRepositoriesAsyncHelper(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRepositories(request), context);
+}
+
+MergePullRequestByFastForwardOutcome CodeCommitClient::MergePullRequestByFastForward(const MergePullRequestByFastForwardRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return MergePullRequestByFastForwardOutcome(MergePullRequestByFastForwardResult(outcome.GetResult()));
+  }
+  else
+  {
+    return MergePullRequestByFastForwardOutcome(outcome.GetError());
+  }
+}
+
+MergePullRequestByFastForwardOutcomeCallable CodeCommitClient::MergePullRequestByFastForwardCallable(const MergePullRequestByFastForwardRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< MergePullRequestByFastForwardOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MergePullRequestByFastForward(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::MergePullRequestByFastForwardAsync(const MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->MergePullRequestByFastForwardAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::MergePullRequestByFastForwardAsyncHelper(const MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, MergePullRequestByFastForward(request), context);
+}
+
+PostCommentForComparedCommitOutcome CodeCommitClient::PostCommentForComparedCommit(const PostCommentForComparedCommitRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PostCommentForComparedCommitOutcome(PostCommentForComparedCommitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PostCommentForComparedCommitOutcome(outcome.GetError());
+  }
+}
+
+PostCommentForComparedCommitOutcomeCallable CodeCommitClient::PostCommentForComparedCommitCallable(const PostCommentForComparedCommitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PostCommentForComparedCommitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PostCommentForComparedCommit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::PostCommentForComparedCommitAsync(const PostCommentForComparedCommitRequest& request, const PostCommentForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PostCommentForComparedCommitAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::PostCommentForComparedCommitAsyncHelper(const PostCommentForComparedCommitRequest& request, const PostCommentForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PostCommentForComparedCommit(request), context);
+}
+
+PostCommentForPullRequestOutcome CodeCommitClient::PostCommentForPullRequest(const PostCommentForPullRequestRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PostCommentForPullRequestOutcome(PostCommentForPullRequestResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PostCommentForPullRequestOutcome(outcome.GetError());
+  }
+}
+
+PostCommentForPullRequestOutcomeCallable CodeCommitClient::PostCommentForPullRequestCallable(const PostCommentForPullRequestRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PostCommentForPullRequestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PostCommentForPullRequest(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::PostCommentForPullRequestAsync(const PostCommentForPullRequestRequest& request, const PostCommentForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PostCommentForPullRequestAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::PostCommentForPullRequestAsyncHelper(const PostCommentForPullRequestRequest& request, const PostCommentForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PostCommentForPullRequest(request), context);
+}
+
+PostCommentReplyOutcome CodeCommitClient::PostCommentReply(const PostCommentReplyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PostCommentReplyOutcome(PostCommentReplyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PostCommentReplyOutcome(outcome.GetError());
+  }
+}
+
+PostCommentReplyOutcomeCallable CodeCommitClient::PostCommentReplyCallable(const PostCommentReplyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PostCommentReplyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PostCommentReply(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::PostCommentReplyAsync(const PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PostCommentReplyAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::PostCommentReplyAsyncHelper(const PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PostCommentReply(request), context);
 }
 
 PutRepositoryTriggersOutcome CodeCommitClient::PutRepositoryTriggers(const PutRepositoryTriggersRequest& request) const
@@ -635,6 +1107,41 @@ void CodeCommitClient::TestRepositoryTriggersAsyncHelper(const TestRepositoryTri
   handler(this, request, TestRepositoryTriggers(request), context);
 }
 
+UpdateCommentOutcome CodeCommitClient::UpdateComment(const UpdateCommentRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateCommentOutcome(UpdateCommentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateCommentOutcome(outcome.GetError());
+  }
+}
+
+UpdateCommentOutcomeCallable CodeCommitClient::UpdateCommentCallable(const UpdateCommentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCommentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateComment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::UpdateCommentAsync(const UpdateCommentRequest& request, const UpdateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateCommentAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::UpdateCommentAsyncHelper(const UpdateCommentRequest& request, const UpdateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateComment(request), context);
+}
+
 UpdateDefaultBranchOutcome CodeCommitClient::UpdateDefaultBranch(const UpdateDefaultBranchRequest& request) const
 {
   Aws::StringStream ss;
@@ -668,6 +1175,111 @@ void CodeCommitClient::UpdateDefaultBranchAsync(const UpdateDefaultBranchRequest
 void CodeCommitClient::UpdateDefaultBranchAsyncHelper(const UpdateDefaultBranchRequest& request, const UpdateDefaultBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDefaultBranch(request), context);
+}
+
+UpdatePullRequestDescriptionOutcome CodeCommitClient::UpdatePullRequestDescription(const UpdatePullRequestDescriptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdatePullRequestDescriptionOutcome(UpdatePullRequestDescriptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdatePullRequestDescriptionOutcome(outcome.GetError());
+  }
+}
+
+UpdatePullRequestDescriptionOutcomeCallable CodeCommitClient::UpdatePullRequestDescriptionCallable(const UpdatePullRequestDescriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePullRequestDescriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePullRequestDescription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::UpdatePullRequestDescriptionAsync(const UpdatePullRequestDescriptionRequest& request, const UpdatePullRequestDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePullRequestDescriptionAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::UpdatePullRequestDescriptionAsyncHelper(const UpdatePullRequestDescriptionRequest& request, const UpdatePullRequestDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePullRequestDescription(request), context);
+}
+
+UpdatePullRequestStatusOutcome CodeCommitClient::UpdatePullRequestStatus(const UpdatePullRequestStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdatePullRequestStatusOutcome(UpdatePullRequestStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdatePullRequestStatusOutcome(outcome.GetError());
+  }
+}
+
+UpdatePullRequestStatusOutcomeCallable CodeCommitClient::UpdatePullRequestStatusCallable(const UpdatePullRequestStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePullRequestStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePullRequestStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::UpdatePullRequestStatusAsync(const UpdatePullRequestStatusRequest& request, const UpdatePullRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePullRequestStatusAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::UpdatePullRequestStatusAsyncHelper(const UpdatePullRequestStatusRequest& request, const UpdatePullRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePullRequestStatus(request), context);
+}
+
+UpdatePullRequestTitleOutcome CodeCommitClient::UpdatePullRequestTitle(const UpdatePullRequestTitleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdatePullRequestTitleOutcome(UpdatePullRequestTitleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdatePullRequestTitleOutcome(outcome.GetError());
+  }
+}
+
+UpdatePullRequestTitleOutcomeCallable CodeCommitClient::UpdatePullRequestTitleCallable(const UpdatePullRequestTitleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePullRequestTitleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePullRequestTitle(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::UpdatePullRequestTitleAsync(const UpdatePullRequestTitleRequest& request, const UpdatePullRequestTitleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePullRequestTitleAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::UpdatePullRequestTitleAsyncHelper(const UpdatePullRequestTitleRequest& request, const UpdatePullRequestTitleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePullRequestTitle(request), context);
 }
 
 UpdateRepositoryDescriptionOutcome CodeCommitClient::UpdateRepositoryDescription(const UpdateRepositoryDescriptionRequest& request) const

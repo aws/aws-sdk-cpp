@@ -238,105 +238,105 @@ namespace Model
 
 
     /**
-     * <p>The time stamp when the document was first uploaded.</p>
+     * <p>The timestamp when the document was first uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
     /**
-     * <p>The time stamp when the document was first uploaded.</p>
+     * <p>The timestamp when the document was first uploaded.</p>
      */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
-     * <p>The time stamp when the document was first uploaded.</p>
+     * <p>The timestamp when the document was first uploaded.</p>
      */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp when the document was first uploaded.</p>
+     * <p>The timestamp when the document was first uploaded.</p>
      */
     inline DocumentVersionMetadata& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp when the document was first uploaded.</p>
+     * <p>The timestamp when the document was first uploaded.</p>
      */
     inline DocumentVersionMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time stamp when the document was last uploaded.</p>
+     * <p>The timestamp when the document was last uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetModifiedTimestamp() const{ return m_modifiedTimestamp; }
 
     /**
-     * <p>The time stamp when the document was last uploaded.</p>
+     * <p>The timestamp when the document was last uploaded.</p>
      */
     inline void SetModifiedTimestamp(const Aws::Utils::DateTime& value) { m_modifiedTimestampHasBeenSet = true; m_modifiedTimestamp = value; }
 
     /**
-     * <p>The time stamp when the document was last uploaded.</p>
+     * <p>The timestamp when the document was last uploaded.</p>
      */
     inline void SetModifiedTimestamp(Aws::Utils::DateTime&& value) { m_modifiedTimestampHasBeenSet = true; m_modifiedTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp when the document was last uploaded.</p>
+     * <p>The timestamp when the document was last uploaded.</p>
      */
     inline DocumentVersionMetadata& WithModifiedTimestamp(const Aws::Utils::DateTime& value) { SetModifiedTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp when the document was last uploaded.</p>
+     * <p>The timestamp when the document was last uploaded.</p>
      */
     inline DocumentVersionMetadata& WithModifiedTimestamp(Aws::Utils::DateTime&& value) { SetModifiedTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time stamp when the content of the document was originally created.</p>
+     * <p>The timestamp when the content of the document was originally created.</p>
      */
     inline const Aws::Utils::DateTime& GetContentCreatedTimestamp() const{ return m_contentCreatedTimestamp; }
 
     /**
-     * <p>The time stamp when the content of the document was originally created.</p>
+     * <p>The timestamp when the content of the document was originally created.</p>
      */
     inline void SetContentCreatedTimestamp(const Aws::Utils::DateTime& value) { m_contentCreatedTimestampHasBeenSet = true; m_contentCreatedTimestamp = value; }
 
     /**
-     * <p>The time stamp when the content of the document was originally created.</p>
+     * <p>The timestamp when the content of the document was originally created.</p>
      */
     inline void SetContentCreatedTimestamp(Aws::Utils::DateTime&& value) { m_contentCreatedTimestampHasBeenSet = true; m_contentCreatedTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp when the content of the document was originally created.</p>
+     * <p>The timestamp when the content of the document was originally created.</p>
      */
     inline DocumentVersionMetadata& WithContentCreatedTimestamp(const Aws::Utils::DateTime& value) { SetContentCreatedTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp when the content of the document was originally created.</p>
+     * <p>The timestamp when the content of the document was originally created.</p>
      */
     inline DocumentVersionMetadata& WithContentCreatedTimestamp(Aws::Utils::DateTime&& value) { SetContentCreatedTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time stamp when the content of the document was modified.</p>
+     * <p>The timestamp when the content of the document was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetContentModifiedTimestamp() const{ return m_contentModifiedTimestamp; }
 
     /**
-     * <p>The time stamp when the content of the document was modified.</p>
+     * <p>The timestamp when the content of the document was modified.</p>
      */
     inline void SetContentModifiedTimestamp(const Aws::Utils::DateTime& value) { m_contentModifiedTimestampHasBeenSet = true; m_contentModifiedTimestamp = value; }
 
     /**
-     * <p>The time stamp when the content of the document was modified.</p>
+     * <p>The timestamp when the content of the document was modified.</p>
      */
     inline void SetContentModifiedTimestamp(Aws::Utils::DateTime&& value) { m_contentModifiedTimestampHasBeenSet = true; m_contentModifiedTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp when the content of the document was modified.</p>
+     * <p>The timestamp when the content of the document was modified.</p>
      */
     inline DocumentVersionMetadata& WithContentModifiedTimestamp(const Aws::Utils::DateTime& value) { SetContentModifiedTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp when the content of the document was modified.</p>
+     * <p>The timestamp when the content of the document was modified.</p>
      */
     inline DocumentVersionMetadata& WithContentModifiedTimestamp(Aws::Utils::DateTime&& value) { SetContentModifiedTimestamp(std::move(value)); return *this;}
 

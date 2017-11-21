@@ -32,6 +32,9 @@ namespace Aws
 
         static const int LambdaArn_HASH = HashingUtils::HashString("LambdaArn");
         static const int NumberOfRetries_HASH = HashingUtils::HashString("NumberOfRetries");
+        static const int RoleArn_HASH = HashingUtils::HashString("RoleArn");
+        static const int BufferSizeInMBs_HASH = HashingUtils::HashString("BufferSizeInMBs");
+        static const int BufferIntervalInSeconds_HASH = HashingUtils::HashString("BufferIntervalInSeconds");
 
 
         ProcessorParameterName GetProcessorParameterNameForName(const Aws::String& name)
@@ -44,6 +47,18 @@ namespace Aws
           else if (hashCode == NumberOfRetries_HASH)
           {
             return ProcessorParameterName::NumberOfRetries;
+          }
+          else if (hashCode == RoleArn_HASH)
+          {
+            return ProcessorParameterName::RoleArn;
+          }
+          else if (hashCode == BufferSizeInMBs_HASH)
+          {
+            return ProcessorParameterName::BufferSizeInMBs;
+          }
+          else if (hashCode == BufferIntervalInSeconds_HASH)
+          {
+            return ProcessorParameterName::BufferIntervalInSeconds;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +78,12 @@ namespace Aws
             return "LambdaArn";
           case ProcessorParameterName::NumberOfRetries:
             return "NumberOfRetries";
+          case ProcessorParameterName::RoleArn:
+            return "RoleArn";
+          case ProcessorParameterName::BufferSizeInMBs:
+            return "BufferSizeInMBs";
+          case ProcessorParameterName::BufferIntervalInSeconds:
+            return "BufferIntervalInSeconds";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

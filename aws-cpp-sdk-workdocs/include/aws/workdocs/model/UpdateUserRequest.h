@@ -20,6 +20,7 @@
 #include <aws/workdocs/model/UserType.h>
 #include <aws/workdocs/model/StorageRuleType.h>
 #include <aws/workdocs/model/LocaleType.h>
+#include <aws/workdocs/model/BooleanEnumType.h>
 #include <utility>
 
 namespace Aws
@@ -48,43 +49,43 @@ namespace Model
 
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline UpdateUserRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline UpdateUserRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline UpdateUserRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
@@ -311,6 +312,37 @@ namespace Model
      */
     inline UpdateUserRequest& WithLocale(LocaleType&& value) { SetLocale(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Boolean value to determine whether the user is granted Poweruser
+     * privileges.</p>
+     */
+    inline const BooleanEnumType& GetGrantPoweruserPrivileges() const{ return m_grantPoweruserPrivileges; }
+
+    /**
+     * <p>Boolean value to determine whether the user is granted Poweruser
+     * privileges.</p>
+     */
+    inline void SetGrantPoweruserPrivileges(const BooleanEnumType& value) { m_grantPoweruserPrivilegesHasBeenSet = true; m_grantPoweruserPrivileges = value; }
+
+    /**
+     * <p>Boolean value to determine whether the user is granted Poweruser
+     * privileges.</p>
+     */
+    inline void SetGrantPoweruserPrivileges(BooleanEnumType&& value) { m_grantPoweruserPrivilegesHasBeenSet = true; m_grantPoweruserPrivileges = std::move(value); }
+
+    /**
+     * <p>Boolean value to determine whether the user is granted Poweruser
+     * privileges.</p>
+     */
+    inline UpdateUserRequest& WithGrantPoweruserPrivileges(const BooleanEnumType& value) { SetGrantPoweruserPrivileges(value); return *this;}
+
+    /**
+     * <p>Boolean value to determine whether the user is granted Poweruser
+     * privileges.</p>
+     */
+    inline UpdateUserRequest& WithGrantPoweruserPrivileges(BooleanEnumType&& value) { SetGrantPoweruserPrivileges(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_authenticationToken;
@@ -336,6 +368,9 @@ namespace Model
 
     LocaleType m_locale;
     bool m_localeHasBeenSet;
+
+    BooleanEnumType m_grantPoweruserPrivileges;
+    bool m_grantPoweruserPrivilegesHasBeenSet;
   };
 
 } // namespace Model

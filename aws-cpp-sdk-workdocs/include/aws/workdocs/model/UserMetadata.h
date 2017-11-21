@@ -83,37 +83,37 @@ namespace Model
 
 
     /**
-     * <p>The username of the user.</p>
+     * <p>The name of the user.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The username of the user.</p>
+     * <p>The name of the user.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The username of the user.</p>
+     * <p>The name of the user.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The username of the user.</p>
+     * <p>The name of the user.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The username of the user.</p>
+     * <p>The name of the user.</p>
      */
     inline UserMetadata& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The username of the user.</p>
+     * <p>The name of the user.</p>
      */
     inline UserMetadata& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The username of the user.</p>
+     * <p>The name of the user.</p>
      */
     inline UserMetadata& WithUsername(const char* value) { SetUsername(value); return *this;}
 

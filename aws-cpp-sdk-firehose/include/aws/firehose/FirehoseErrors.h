@@ -57,7 +57,6 @@ enum class FirehoseErrors
 
   CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_ARGUMENT,
-  INVALID_STREAM_TYPE,
   LIMIT_EXCEEDED,
   RESOURCE_IN_USE
 };

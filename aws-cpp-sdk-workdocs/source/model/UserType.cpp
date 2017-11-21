@@ -32,6 +32,9 @@ namespace Aws
 
         static const int USER_HASH = HashingUtils::HashString("USER");
         static const int ADMIN_HASH = HashingUtils::HashString("ADMIN");
+        static const int POWERUSER_HASH = HashingUtils::HashString("POWERUSER");
+        static const int MINIMALUSER_HASH = HashingUtils::HashString("MINIMALUSER");
+        static const int WORKSPACESUSER_HASH = HashingUtils::HashString("WORKSPACESUSER");
 
 
         UserType GetUserTypeForName(const Aws::String& name)
@@ -44,6 +47,18 @@ namespace Aws
           else if (hashCode == ADMIN_HASH)
           {
             return UserType::ADMIN;
+          }
+          else if (hashCode == POWERUSER_HASH)
+          {
+            return UserType::POWERUSER;
+          }
+          else if (hashCode == MINIMALUSER_HASH)
+          {
+            return UserType::MINIMALUSER;
+          }
+          else if (hashCode == WORKSPACESUSER_HASH)
+          {
+            return UserType::WORKSPACESUSER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +78,12 @@ namespace Aws
             return "USER";
           case UserType::ADMIN:
             return "ADMIN";
+          case UserType::POWERUSER:
+            return "POWERUSER";
+          case UserType::MINIMALUSER:
+            return "MINIMALUSER";
+          case UserType::WORKSPACESUSER:
+            return "WORKSPACESUSER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

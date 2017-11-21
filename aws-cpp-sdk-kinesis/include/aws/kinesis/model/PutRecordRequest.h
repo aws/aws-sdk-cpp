@@ -259,7 +259,7 @@ namespace Model
      * client and to the same partition key. Usage: set the
      * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number
      * of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>).
-     * If this parameter is not set, records will be coarsely ordered based on arrival
+     * If this parameter is not set, records are coarsely ordered based on arrival
      * time.</p>
      */
     inline const Aws::String& GetSequenceNumberForOrdering() const{ return m_sequenceNumberForOrdering; }
@@ -269,7 +269,7 @@ namespace Model
      * client and to the same partition key. Usage: set the
      * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number
      * of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>).
-     * If this parameter is not set, records will be coarsely ordered based on arrival
+     * If this parameter is not set, records are coarsely ordered based on arrival
      * time.</p>
      */
     inline void SetSequenceNumberForOrdering(const Aws::String& value) { m_sequenceNumberForOrderingHasBeenSet = true; m_sequenceNumberForOrdering = value; }
@@ -279,7 +279,7 @@ namespace Model
      * client and to the same partition key. Usage: set the
      * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number
      * of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>).
-     * If this parameter is not set, records will be coarsely ordered based on arrival
+     * If this parameter is not set, records are coarsely ordered based on arrival
      * time.</p>
      */
     inline void SetSequenceNumberForOrdering(Aws::String&& value) { m_sequenceNumberForOrderingHasBeenSet = true; m_sequenceNumberForOrdering = std::move(value); }
@@ -289,7 +289,7 @@ namespace Model
      * client and to the same partition key. Usage: set the
      * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number
      * of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>).
-     * If this parameter is not set, records will be coarsely ordered based on arrival
+     * If this parameter is not set, records are coarsely ordered based on arrival
      * time.</p>
      */
     inline void SetSequenceNumberForOrdering(const char* value) { m_sequenceNumberForOrderingHasBeenSet = true; m_sequenceNumberForOrdering.assign(value); }
@@ -299,7 +299,7 @@ namespace Model
      * client and to the same partition key. Usage: set the
      * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number
      * of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>).
-     * If this parameter is not set, records will be coarsely ordered based on arrival
+     * If this parameter is not set, records are coarsely ordered based on arrival
      * time.</p>
      */
     inline PutRecordRequest& WithSequenceNumberForOrdering(const Aws::String& value) { SetSequenceNumberForOrdering(value); return *this;}
@@ -309,7 +309,7 @@ namespace Model
      * client and to the same partition key. Usage: set the
      * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number
      * of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>).
-     * If this parameter is not set, records will be coarsely ordered based on arrival
+     * If this parameter is not set, records are coarsely ordered based on arrival
      * time.</p>
      */
     inline PutRecordRequest& WithSequenceNumberForOrdering(Aws::String&& value) { SetSequenceNumberForOrdering(std::move(value)); return *this;}
@@ -319,7 +319,7 @@ namespace Model
      * client and to the same partition key. Usage: set the
      * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number
      * of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>).
-     * If this parameter is not set, records will be coarsely ordered based on arrival
+     * If this parameter is not set, records are coarsely ordered based on arrival
      * time.</p>
      */
     inline PutRecordRequest& WithSequenceNumberForOrdering(const char* value) { SetSequenceNumberForOrdering(value); return *this;}

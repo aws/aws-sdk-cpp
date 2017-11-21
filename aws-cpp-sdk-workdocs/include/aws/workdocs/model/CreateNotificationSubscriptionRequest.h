@@ -125,31 +125,31 @@ namespace Model
 
     /**
      * <p>The protocol to use. The supported value is https, which delivers
-     * JSON-encoded messasges using HTTPS POST.</p>
+     * JSON-encoded messages using HTTPS POST.</p>
      */
     inline const SubscriptionProtocolType& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol to use. The supported value is https, which delivers
-     * JSON-encoded messasges using HTTPS POST.</p>
+     * JSON-encoded messages using HTTPS POST.</p>
      */
     inline void SetProtocol(const SubscriptionProtocolType& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol to use. The supported value is https, which delivers
-     * JSON-encoded messasges using HTTPS POST.</p>
+     * JSON-encoded messages using HTTPS POST.</p>
      */
     inline void SetProtocol(SubscriptionProtocolType&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol to use. The supported value is https, which delivers
-     * JSON-encoded messasges using HTTPS POST.</p>
+     * JSON-encoded messages using HTTPS POST.</p>
      */
     inline CreateNotificationSubscriptionRequest& WithProtocol(const SubscriptionProtocolType& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol to use. The supported value is https, which delivers
-     * JSON-encoded messasges using HTTPS POST.</p>
+     * JSON-encoded messages using HTTPS POST.</p>
      */
     inline CreateNotificationSubscriptionRequest& WithProtocol(SubscriptionProtocolType&& value) { SetProtocol(std::move(value)); return *this;}
 

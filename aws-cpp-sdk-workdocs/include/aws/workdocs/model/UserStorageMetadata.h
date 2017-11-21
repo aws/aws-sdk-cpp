@@ -47,17 +47,17 @@ namespace Model
 
 
     /**
-     * <p>The amount of storage utilized, in bytes.</p>
+     * <p>The amount of storage used, in bytes.</p>
      */
     inline long long GetStorageUtilizedInBytes() const{ return m_storageUtilizedInBytes; }
 
     /**
-     * <p>The amount of storage utilized, in bytes.</p>
+     * <p>The amount of storage used, in bytes.</p>
      */
     inline void SetStorageUtilizedInBytes(long long value) { m_storageUtilizedInBytesHasBeenSet = true; m_storageUtilizedInBytes = value; }
 
     /**
-     * <p>The amount of storage utilized, in bytes.</p>
+     * <p>The amount of storage used, in bytes.</p>
      */
     inline UserStorageMetadata& WithStorageUtilizedInBytes(long long value) { SetStorageUtilizedInBytes(value); return *this;}
 

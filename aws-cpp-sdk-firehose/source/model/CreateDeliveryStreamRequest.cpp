@@ -29,7 +29,8 @@ CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() :
     m_kinesisStreamSourceConfigurationHasBeenSet(false),
     m_extendedS3DestinationConfigurationHasBeenSet(false),
     m_redshiftDestinationConfigurationHasBeenSet(false),
-    m_elasticsearchDestinationConfigurationHasBeenSet(false)
+    m_elasticsearchDestinationConfigurationHasBeenSet(false),
+    m_splunkDestinationConfigurationHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,12 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
   if(m_elasticsearchDestinationConfigurationHasBeenSet)
   {
    payload.WithObject("ElasticsearchDestinationConfiguration", m_elasticsearchDestinationConfiguration.Jsonize());
+
+  }
+
+  if(m_splunkDestinationConfigurationHasBeenSet)
+  {
+   payload.WithObject("SplunkDestinationConfiguration", m_splunkDestinationConfiguration.Jsonize());
 
   }
 

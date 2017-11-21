@@ -111,35 +111,55 @@ namespace Model
     inline CommentMetadata& WithContributor(User&& value) { SetContributor(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The timestamp that the comment was created.</p>
+     */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
-    
+    /**
+     * <p>The timestamp that the comment was created.</p>
+     */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
-    
+    /**
+     * <p>The timestamp that the comment was created.</p>
+     */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
 
-    
+    /**
+     * <p>The timestamp that the comment was created.</p>
+     */
     inline CommentMetadata& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
 
-    
+    /**
+     * <p>The timestamp that the comment was created.</p>
+     */
     inline CommentMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The status of the comment.</p>
+     */
     inline const CommentStatusType& GetCommentStatus() const{ return m_commentStatus; }
 
-    
+    /**
+     * <p>The status of the comment.</p>
+     */
     inline void SetCommentStatus(const CommentStatusType& value) { m_commentStatusHasBeenSet = true; m_commentStatus = value; }
 
-    
+    /**
+     * <p>The status of the comment.</p>
+     */
     inline void SetCommentStatus(CommentStatusType&& value) { m_commentStatusHasBeenSet = true; m_commentStatus = std::move(value); }
 
-    
+    /**
+     * <p>The status of the comment.</p>
+     */
     inline CommentMetadata& WithCommentStatus(const CommentStatusType& value) { SetCommentStatus(value); return *this;}
 
-    
+    /**
+     * <p>The status of the comment.</p>
+     */
     inline CommentMetadata& WithCommentStatus(CommentStatusType&& value) { SetCommentStatus(std::move(value)); return *this;}
 
 

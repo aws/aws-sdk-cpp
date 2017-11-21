@@ -28,7 +28,8 @@ UpdateDestinationRequest::UpdateDestinationRequest() :
     m_destinationIdHasBeenSet(false),
     m_extendedS3DestinationUpdateHasBeenSet(false),
     m_redshiftDestinationUpdateHasBeenSet(false),
-    m_elasticsearchDestinationUpdateHasBeenSet(false)
+    m_elasticsearchDestinationUpdateHasBeenSet(false),
+    m_splunkDestinationUpdateHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,12 @@ Aws::String UpdateDestinationRequest::SerializePayload() const
   if(m_elasticsearchDestinationUpdateHasBeenSet)
   {
    payload.WithObject("ElasticsearchDestinationUpdate", m_elasticsearchDestinationUpdate.Jsonize());
+
+  }
+
+  if(m_splunkDestinationUpdateHasBeenSet)
+  {
+   payload.WithObject("SplunkDestinationUpdate", m_splunkDestinationUpdate.Jsonize());
 
   }
 

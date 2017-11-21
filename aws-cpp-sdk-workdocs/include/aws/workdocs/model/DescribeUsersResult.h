@@ -81,22 +81,6 @@ namespace Model
 
 
     /**
-     * <p>The total number of users included in the results.</p>
-     */
-    inline long long GetTotalNumberOfUsers() const{ return m_totalNumberOfUsers; }
-
-    /**
-     * <p>The total number of users included in the results.</p>
-     */
-    inline void SetTotalNumberOfUsers(long long value) { m_totalNumberOfUsers = value; }
-
-    /**
-     * <p>The total number of users included in the results.</p>
-     */
-    inline DescribeUsersResult& WithTotalNumberOfUsers(long long value) { SetTotalNumberOfUsers(value); return *this;}
-
-
-    /**
      * <p>The marker to use when requesting the next set of results. If there are no
      * additional results, the string is empty.</p>
      */
@@ -141,8 +125,6 @@ namespace Model
   private:
 
     Aws::Vector<User> m_users;
-
-    long long m_totalNumberOfUsers;
 
     Aws::String m_marker;
   };

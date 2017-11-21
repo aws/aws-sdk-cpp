@@ -35,6 +35,7 @@
 #include <aws/workdocs/model/DescribeCommentsResult.h>
 #include <aws/workdocs/model/DescribeDocumentVersionsResult.h>
 #include <aws/workdocs/model/DescribeFolderContentsResult.h>
+#include <aws/workdocs/model/DescribeGroupsResult.h>
 #include <aws/workdocs/model/DescribeNotificationSubscriptionsResult.h>
 #include <aws/workdocs/model/DescribeResourcePermissionsResult.h>
 #include <aws/workdocs/model/DescribeRootFoldersResult.h>
@@ -115,6 +116,7 @@ namespace Model
         class DescribeCommentsRequest;
         class DescribeDocumentVersionsRequest;
         class DescribeFolderContentsRequest;
+        class DescribeGroupsRequest;
         class DescribeNotificationSubscriptionsRequest;
         class DescribeResourcePermissionsRequest;
         class DescribeRootFoldersRequest;
@@ -155,6 +157,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeCommentsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeCommentsOutcome;
         typedef Aws::Utils::Outcome<DescribeDocumentVersionsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeDocumentVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeFolderContentsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeFolderContentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeGroupsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeNotificationSubscriptionsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeNotificationSubscriptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeResourcePermissionsResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeResourcePermissionsOutcome;
         typedef Aws::Utils::Outcome<DescribeRootFoldersResult, Aws::Client::AWSError<WorkDocsErrors>> DescribeRootFoldersOutcome;
@@ -195,6 +198,7 @@ namespace Model
         typedef std::future<DescribeCommentsOutcome> DescribeCommentsOutcomeCallable;
         typedef std::future<DescribeDocumentVersionsOutcome> DescribeDocumentVersionsOutcomeCallable;
         typedef std::future<DescribeFolderContentsOutcome> DescribeFolderContentsOutcomeCallable;
+        typedef std::future<DescribeGroupsOutcome> DescribeGroupsOutcomeCallable;
         typedef std::future<DescribeNotificationSubscriptionsOutcome> DescribeNotificationSubscriptionsOutcomeCallable;
         typedef std::future<DescribeResourcePermissionsOutcome> DescribeResourcePermissionsOutcomeCallable;
         typedef std::future<DescribeRootFoldersOutcome> DescribeRootFoldersOutcomeCallable;
@@ -238,6 +242,7 @@ namespace Model
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeCommentsRequest&, const Model::DescribeCommentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCommentsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeDocumentVersionsRequest&, const Model::DescribeDocumentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDocumentVersionsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeFolderContentsRequest&, const Model::DescribeFolderContentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFolderContentsResponseReceivedHandler;
+    typedef std::function<void(const WorkDocsClient*, const Model::DescribeGroupsRequest&, const Model::DescribeGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGroupsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeNotificationSubscriptionsRequest&, const Model::DescribeNotificationSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotificationSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeResourcePermissionsRequest&, const Model::DescribeResourcePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::DescribeRootFoldersRequest&, const Model::DescribeRootFoldersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRootFoldersResponseReceivedHandler;
@@ -259,29 +264,29 @@ namespace Model
   /**
    * <p>The WorkDocs API is designed for the following use cases:</p> <ul> <li>
    * <p>File Migration: File migration applications are supported for users who want
-   * to migrate their files from an on-premise or off-premise file system or service.
-   * Users can insert files into a user directory structure, as well as allow for
-   * basic metadata changes, such as modifications to the permissions of files.</p>
-   * </li> <li> <p>Security: Support security applications are supported for users
-   * who have additional security needs, such as anti-virus or data loss prevention.
-   * The APIs, in conjunction with Amazon CloudTrail, allow these applications to
-   * detect when changes occur in Amazon WorkDocs, so the application can take the
-   * necessary actions and replace the target file. The application can also choose
-   * to email the user if the target file violates the policy.</p> </li> <li>
+   * to migrate their files from an on-premises or off-premises file system or
+   * service. Users can insert files into a user directory structure, as well as
+   * allow for basic metadata changes, such as modifications to the permissions of
+   * files.</p> </li> <li> <p>Security: Support security applications are supported
+   * for users who have additional security needs, such as antivirus or data loss
+   * prevention. The API actions, along with AWS CloudTrail, allow these applications
+   * to detect when changes occur in Amazon WorkDocs. Then, the application can take
+   * the necessary actions and replace the target file. If the target file violates
+   * the policy, the application can also choose to email the user.</p> </li> <li>
    * <p>eDiscovery/Analytics: General administrative applications are supported, such
-   * as eDiscovery and analytics. These applications can choose to mimic and/or
-   * record the actions in an Amazon WorkDocs site, in conjunction with Amazon
-   * CloudTrails, to replicate data for eDiscovery, backup, or analytical
-   * applications.</p> </li> </ul> <p>All Amazon WorkDocs APIs are Amazon
-   * authenticated, certificate-signed APIs. They not only require the use of the AWS
-   * SDK, but also allow for the exclusive use of IAM users and roles to help
-   * facilitate access, trust, and permission policies. By creating a role and
-   * allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full
-   * administrative visibility into the entire Amazon WorkDocs site (or as set in the
-   * IAM policy). This includes, but is not limited to, the ability to modify file
-   * permissions and upload any file to any user. This allows developers to perform
-   * the three use cases above, as well as give users the ability to grant access on
-   * a selective basis using the IAM model.</p>
+   * as eDiscovery and analytics. These applications can choose to mimic or record
+   * the actions in an Amazon WorkDocs site, along with AWS CloudTrail, to replicate
+   * data for eDiscovery, backup, or analytical applications.</p> </li> </ul> <p>All
+   * Amazon WorkDocs API actions are Amazon authenticated and certificate-signed.
+   * They not only require the use of the AWS SDK, but also allow for the exclusive
+   * use of IAM users and roles to help facilitate access, trust, and permission
+   * policies. By creating a role and allowing an IAM user to access the Amazon
+   * WorkDocs site, the IAM user gains full administrative visibility into the entire
+   * Amazon WorkDocs site (or as set in the IAM policy). This includes, but is not
+   * limited to, the ability to modify file permissions and upload any file to any
+   * user. This allows developers to perform the three use cases above, as well as
+   * give users the ability to grant access on a selective basis using the IAM
+   * model.</p>
    */
   class AWS_WORKDOCS_API WorkDocsClient : public Aws::Client::AWSJsonClient
   {
@@ -959,6 +964,31 @@ namespace Model
         virtual void DescribeFolderContentsAsync(const Model::DescribeFolderContentsRequest& request, const DescribeFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the groups specified by query.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeGroupsOutcome DescribeGroups(const Model::DescribeGroupsRequest& request) const;
+
+        /**
+         * <p>Describes the groups specified by query.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeGroupsOutcomeCallable DescribeGroupsCallable(const Model::DescribeGroupsRequest& request) const;
+
+        /**
+         * <p>Describes the groups specified by query.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeGroupsAsync(const Model::DescribeGroupsRequest& request, const DescribeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the specified notification subscriptions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeNotificationSubscriptions">AWS
          * API Reference</a></p>
@@ -1013,8 +1043,8 @@ namespace Model
 
         /**
          * <p>Describes the current user's special folders; the <code>RootFolder</code> and
-         * the <code>RecyleBin</code>. <code>RootFolder</code> is the root of user's files
-         * and folders and <code>RecyleBin</code> is the root of recycled items. This is
+         * the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files
+         * and folders and <code>RecycleBin</code> is the root of recycled items. This is
          * not a valid action for SigV4 (administrative API) clients.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
@@ -1024,8 +1054,8 @@ namespace Model
 
         /**
          * <p>Describes the current user's special folders; the <code>RootFolder</code> and
-         * the <code>RecyleBin</code>. <code>RootFolder</code> is the root of user's files
-         * and folders and <code>RecyleBin</code> is the root of recycled items. This is
+         * the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files
+         * and folders and <code>RecycleBin</code> is the root of recycled items. This is
          * not a valid action for SigV4 (administrative API) clients.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
@@ -1037,8 +1067,8 @@ namespace Model
 
         /**
          * <p>Describes the current user's special folders; the <code>RootFolder</code> and
-         * the <code>RecyleBin</code>. <code>RootFolder</code> is the root of user's files
-         * and folders and <code>RecyleBin</code> is the root of recycled items. This is
+         * the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files
+         * and folders and <code>RecycleBin</code> is the root of recycled items. This is
          * not a valid action for SigV4 (administrative API) clients.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
@@ -1521,6 +1551,7 @@ namespace Model
         void DescribeCommentsAsyncHelper(const Model::DescribeCommentsRequest& request, const DescribeCommentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDocumentVersionsAsyncHelper(const Model::DescribeDocumentVersionsRequest& request, const DescribeDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFolderContentsAsyncHelper(const Model::DescribeFolderContentsRequest& request, const DescribeFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeGroupsAsyncHelper(const Model::DescribeGroupsRequest& request, const DescribeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNotificationSubscriptionsAsyncHelper(const Model::DescribeNotificationSubscriptionsRequest& request, const DescribeNotificationSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResourcePermissionsAsyncHelper(const Model::DescribeResourcePermissionsRequest& request, const DescribeResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRootFoldersAsyncHelper(const Model::DescribeRootFoldersRequest& request, const DescribeRootFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

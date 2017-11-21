@@ -20,6 +20,7 @@
 #include <aws/firehose/model/ExtendedS3DestinationUpdate.h>
 #include <aws/firehose/model/RedshiftDestinationUpdate.h>
 #include <aws/firehose/model/ElasticsearchDestinationUpdate.h>
+#include <aws/firehose/model/SplunkDestinationUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -267,6 +268,32 @@ namespace Model
      */
     inline UpdateDestinationRequest& WithElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { SetElasticsearchDestinationUpdate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes an update for a destination in Splunk.</p>
+     */
+    inline const SplunkDestinationUpdate& GetSplunkDestinationUpdate() const{ return m_splunkDestinationUpdate; }
+
+    /**
+     * <p>Describes an update for a destination in Splunk.</p>
+     */
+    inline void SetSplunkDestinationUpdate(const SplunkDestinationUpdate& value) { m_splunkDestinationUpdateHasBeenSet = true; m_splunkDestinationUpdate = value; }
+
+    /**
+     * <p>Describes an update for a destination in Splunk.</p>
+     */
+    inline void SetSplunkDestinationUpdate(SplunkDestinationUpdate&& value) { m_splunkDestinationUpdateHasBeenSet = true; m_splunkDestinationUpdate = std::move(value); }
+
+    /**
+     * <p>Describes an update for a destination in Splunk.</p>
+     */
+    inline UpdateDestinationRequest& WithSplunkDestinationUpdate(const SplunkDestinationUpdate& value) { SetSplunkDestinationUpdate(value); return *this;}
+
+    /**
+     * <p>Describes an update for a destination in Splunk.</p>
+     */
+    inline UpdateDestinationRequest& WithSplunkDestinationUpdate(SplunkDestinationUpdate&& value) { SetSplunkDestinationUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deliveryStreamName;
@@ -286,6 +313,9 @@ namespace Model
 
     ElasticsearchDestinationUpdate m_elasticsearchDestinationUpdate;
     bool m_elasticsearchDestinationUpdateHasBeenSet;
+
+    SplunkDestinationUpdate m_splunkDestinationUpdate;
+    bool m_splunkDestinationUpdateHasBeenSet;
   };
 
 } // namespace Model

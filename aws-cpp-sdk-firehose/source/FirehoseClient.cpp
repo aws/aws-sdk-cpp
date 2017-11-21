@@ -30,7 +30,6 @@
 #include <aws/firehose/model/CreateDeliveryStreamRequest.h>
 #include <aws/firehose/model/DeleteDeliveryStreamRequest.h>
 #include <aws/firehose/model/DescribeDeliveryStreamRequest.h>
-#include <aws/firehose/model/GetKinesisStreamRequest.h>
 #include <aws/firehose/model/ListDeliveryStreamsRequest.h>
 #include <aws/firehose/model/PutRecordRequest.h>
 #include <aws/firehose/model/PutRecordBatchRequest.h>
@@ -203,41 +202,6 @@ void FirehoseClient::DescribeDeliveryStreamAsync(const DescribeDeliveryStreamReq
 void FirehoseClient::DescribeDeliveryStreamAsyncHelper(const DescribeDeliveryStreamRequest& request, const DescribeDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDeliveryStream(request), context);
-}
-
-GetKinesisStreamOutcome FirehoseClient::GetKinesisStream(const GetKinesisStreamRequest& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetKinesisStreamOutcome(GetKinesisStreamResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetKinesisStreamOutcome(outcome.GetError());
-  }
-}
-
-GetKinesisStreamOutcomeCallable FirehoseClient::GetKinesisStreamCallable(const GetKinesisStreamRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetKinesisStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetKinesisStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void FirehoseClient::GetKinesisStreamAsync(const GetKinesisStreamRequest& request, const GetKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->GetKinesisStreamAsyncHelper( request, handler, context ); } );
-}
-
-void FirehoseClient::GetKinesisStreamAsyncHelper(const GetKinesisStreamRequest& request, const GetKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetKinesisStream(request), context);
 }
 
 ListDeliveryStreamsOutcome FirehoseClient::ListDeliveryStreams(const ListDeliveryStreamsRequest& request) const

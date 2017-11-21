@@ -33,7 +33,9 @@ UpdateUserRequest::UpdateUserRequest() :
     m_storageRuleHasBeenSet(false),
     m_timeZoneIdHasBeenSet(false),
     m_locale(LocaleType::NOT_SET),
-    m_localeHasBeenSet(false)
+    m_localeHasBeenSet(false),
+    m_grantPoweruserPrivileges(BooleanEnumType::NOT_SET),
+    m_grantPoweruserPrivilegesHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,11 @@ Aws::String UpdateUserRequest::SerializePayload() const
   if(m_localeHasBeenSet)
   {
    payload.WithString("Locale", LocaleTypeMapper::GetNameForLocaleType(m_locale));
+  }
+
+  if(m_grantPoweruserPrivilegesHasBeenSet)
+  {
+   payload.WithString("GrantPoweruserPrivileges", BooleanEnumTypeMapper::GetNameForBooleanEnumType(m_grantPoweruserPrivileges));
   }
 
   return payload.WriteReadable();

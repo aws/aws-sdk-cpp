@@ -127,50 +127,50 @@ namespace Model
 
     /**
      * <p>The language for the generated SDK. Currently <code>java</code>,
-     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> and
-     * <code>swift</code> (for iOS) are supported.</p>
+     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
+     * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline const Aws::String& GetSdkType() const{ return m_sdkType; }
 
     /**
      * <p>The language for the generated SDK. Currently <code>java</code>,
-     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> and
-     * <code>swift</code> (for iOS) are supported.</p>
+     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
+     * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline void SetSdkType(const Aws::String& value) { m_sdkTypeHasBeenSet = true; m_sdkType = value; }
 
     /**
      * <p>The language for the generated SDK. Currently <code>java</code>,
-     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> and
-     * <code>swift</code> (for iOS) are supported.</p>
+     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
+     * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline void SetSdkType(Aws::String&& value) { m_sdkTypeHasBeenSet = true; m_sdkType = std::move(value); }
 
     /**
      * <p>The language for the generated SDK. Currently <code>java</code>,
-     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> and
-     * <code>swift</code> (for iOS) are supported.</p>
+     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
+     * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline void SetSdkType(const char* value) { m_sdkTypeHasBeenSet = true; m_sdkType.assign(value); }
 
     /**
      * <p>The language for the generated SDK. Currently <code>java</code>,
-     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> and
-     * <code>swift</code> (for iOS) are supported.</p>
+     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
+     * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline GetSdkRequest& WithSdkType(const Aws::String& value) { SetSdkType(value); return *this;}
 
     /**
      * <p>The language for the generated SDK. Currently <code>java</code>,
-     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> and
-     * <code>swift</code> (for iOS) are supported.</p>
+     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
+     * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline GetSdkRequest& WithSdkType(Aws::String&& value) { SetSdkType(std::move(value)); return *this;}
 
     /**
      * <p>The language for the generated SDK. Currently <code>java</code>,
-     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> and
-     * <code>swift</code> (for iOS) are supported.</p>
+     * <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for
+     * iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
      */
     inline GetSdkRequest& WithSdkType(const char* value) { SetSdkType(value); return *this;}
 

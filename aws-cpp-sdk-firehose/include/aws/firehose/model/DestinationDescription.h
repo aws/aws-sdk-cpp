@@ -20,6 +20,7 @@
 #include <aws/firehose/model/ExtendedS3DestinationDescription.h>
 #include <aws/firehose/model/RedshiftDestinationDescription.h>
 #include <aws/firehose/model/ElasticsearchDestinationDescription.h>
+#include <aws/firehose/model/SplunkDestinationDescription.h>
 #include <utility>
 
 namespace Aws
@@ -190,6 +191,32 @@ namespace Model
      */
     inline DestinationDescription& WithElasticsearchDestinationDescription(ElasticsearchDestinationDescription&& value) { SetElasticsearchDestinationDescription(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The destination in Splunk.</p>
+     */
+    inline const SplunkDestinationDescription& GetSplunkDestinationDescription() const{ return m_splunkDestinationDescription; }
+
+    /**
+     * <p>The destination in Splunk.</p>
+     */
+    inline void SetSplunkDestinationDescription(const SplunkDestinationDescription& value) { m_splunkDestinationDescriptionHasBeenSet = true; m_splunkDestinationDescription = value; }
+
+    /**
+     * <p>The destination in Splunk.</p>
+     */
+    inline void SetSplunkDestinationDescription(SplunkDestinationDescription&& value) { m_splunkDestinationDescriptionHasBeenSet = true; m_splunkDestinationDescription = std::move(value); }
+
+    /**
+     * <p>The destination in Splunk.</p>
+     */
+    inline DestinationDescription& WithSplunkDestinationDescription(const SplunkDestinationDescription& value) { SetSplunkDestinationDescription(value); return *this;}
+
+    /**
+     * <p>The destination in Splunk.</p>
+     */
+    inline DestinationDescription& WithSplunkDestinationDescription(SplunkDestinationDescription&& value) { SetSplunkDestinationDescription(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_destinationId;
@@ -206,6 +233,9 @@ namespace Model
 
     ElasticsearchDestinationDescription m_elasticsearchDestinationDescription;
     bool m_elasticsearchDestinationDescriptionHasBeenSet;
+
+    SplunkDestinationDescription m_splunkDestinationDescription;
+    bool m_splunkDestinationDescriptionHasBeenSet;
   };
 
 } // namespace Model

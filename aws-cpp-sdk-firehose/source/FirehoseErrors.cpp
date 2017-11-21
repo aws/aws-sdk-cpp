@@ -32,7 +32,6 @@ static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgume
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_STREAM_TYPE_HASH = HashingUtils::HashString("InvalidStreamTypeException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -54,10 +53,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FirehoseErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == INVALID_STREAM_TYPE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FirehoseErrors::INVALID_STREAM_TYPE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

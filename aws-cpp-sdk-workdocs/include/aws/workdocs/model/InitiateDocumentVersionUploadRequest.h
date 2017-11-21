@@ -46,43 +46,43 @@ namespace Model
 
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline InitiateDocumentVersionUploadRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline InitiateDocumentVersionUploadRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline InitiateDocumentVersionUploadRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
@@ -161,53 +161,53 @@ namespace Model
 
 
     /**
-     * <p>The time stamp when the content of the document was originally created.</p>
+     * <p>The timestamp when the content of the document was originally created.</p>
      */
     inline const Aws::Utils::DateTime& GetContentCreatedTimestamp() const{ return m_contentCreatedTimestamp; }
 
     /**
-     * <p>The time stamp when the content of the document was originally created.</p>
+     * <p>The timestamp when the content of the document was originally created.</p>
      */
     inline void SetContentCreatedTimestamp(const Aws::Utils::DateTime& value) { m_contentCreatedTimestampHasBeenSet = true; m_contentCreatedTimestamp = value; }
 
     /**
-     * <p>The time stamp when the content of the document was originally created.</p>
+     * <p>The timestamp when the content of the document was originally created.</p>
      */
     inline void SetContentCreatedTimestamp(Aws::Utils::DateTime&& value) { m_contentCreatedTimestampHasBeenSet = true; m_contentCreatedTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp when the content of the document was originally created.</p>
+     * <p>The timestamp when the content of the document was originally created.</p>
      */
     inline InitiateDocumentVersionUploadRequest& WithContentCreatedTimestamp(const Aws::Utils::DateTime& value) { SetContentCreatedTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp when the content of the document was originally created.</p>
+     * <p>The timestamp when the content of the document was originally created.</p>
      */
     inline InitiateDocumentVersionUploadRequest& WithContentCreatedTimestamp(Aws::Utils::DateTime&& value) { SetContentCreatedTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time stamp when the content of the document was modified.</p>
+     * <p>The timestamp when the content of the document was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetContentModifiedTimestamp() const{ return m_contentModifiedTimestamp; }
 
     /**
-     * <p>The time stamp when the content of the document was modified.</p>
+     * <p>The timestamp when the content of the document was modified.</p>
      */
     inline void SetContentModifiedTimestamp(const Aws::Utils::DateTime& value) { m_contentModifiedTimestampHasBeenSet = true; m_contentModifiedTimestamp = value; }
 
     /**
-     * <p>The time stamp when the content of the document was modified.</p>
+     * <p>The timestamp when the content of the document was modified.</p>
      */
     inline void SetContentModifiedTimestamp(Aws::Utils::DateTime&& value) { m_contentModifiedTimestampHasBeenSet = true; m_contentModifiedTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp when the content of the document was modified.</p>
+     * <p>The timestamp when the content of the document was modified.</p>
      */
     inline InitiateDocumentVersionUploadRequest& WithContentModifiedTimestamp(const Aws::Utils::DateTime& value) { SetContentModifiedTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp when the content of the document was modified.</p>
+     * <p>The timestamp when the content of the document was modified.</p>
      */
     inline InitiateDocumentVersionUploadRequest& WithContentModifiedTimestamp(Aws::Utils::DateTime&& value) { SetContentModifiedTimestamp(std::move(value)); return *this;}
 

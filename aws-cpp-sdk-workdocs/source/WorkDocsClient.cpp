@@ -49,6 +49,7 @@
 #include <aws/workdocs/model/DescribeCommentsRequest.h>
 #include <aws/workdocs/model/DescribeDocumentVersionsRequest.h>
 #include <aws/workdocs/model/DescribeFolderContentsRequest.h>
+#include <aws/workdocs/model/DescribeGroupsRequest.h>
 #include <aws/workdocs/model/DescribeNotificationSubscriptionsRequest.h>
 #include <aws/workdocs/model/DescribeResourcePermissionsRequest.h>
 #include <aws/workdocs/model/DescribeRootFoldersRequest.h>
@@ -943,6 +944,41 @@ void WorkDocsClient::DescribeFolderContentsAsync(const DescribeFolderContentsReq
 void WorkDocsClient::DescribeFolderContentsAsyncHelper(const DescribeFolderContentsRequest& request, const DescribeFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeFolderContents(request), context);
+}
+
+DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/api/v1/groups";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeGroupsOutcome(DescribeGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeGroupsOutcome(outcome.GetError());
+  }
+}
+
+DescribeGroupsOutcomeCallable WorkDocsClient::DescribeGroupsCallable(const DescribeGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkDocsClient::DescribeGroupsAsync(const DescribeGroupsRequest& request, const DescribeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkDocsClient::DescribeGroupsAsyncHelper(const DescribeGroupsRequest& request, const DescribeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGroups(request), context);
 }
 
 DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSubscriptions(const DescribeNotificationSubscriptionsRequest& request) const

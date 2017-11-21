@@ -26,7 +26,8 @@ using namespace Aws::Utils;
 AddResourcePermissionsRequest::AddResourcePermissionsRequest() : 
     m_authenticationTokenHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_principalsHasBeenSet(false)
+    m_principalsHasBeenSet(false),
+    m_notificationOptionsHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,12 @@ Aws::String AddResourcePermissionsRequest::SerializePayload() const
      principalsJsonList[principalsIndex].AsObject(m_principals[principalsIndex].Jsonize());
    }
    payload.WithArray("Principals", std::move(principalsJsonList));
+
+  }
+
+  if(m_notificationOptionsHasBeenSet)
+  {
+   payload.WithObject("NotificationOptions", m_notificationOptions.Jsonize());
 
   }
 

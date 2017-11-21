@@ -51,44 +51,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.</p>
+     * <p>The name of the Kinesis stream for which to disable enhanced monitoring.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
     /**
-     * <p>The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.</p>
+     * <p>The name of the Kinesis stream for which to disable enhanced monitoring.</p>
      */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
-     * <p>The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.</p>
+     * <p>The name of the Kinesis stream for which to disable enhanced monitoring.</p>
      */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.</p>
+     * <p>The name of the Kinesis stream for which to disable enhanced monitoring.</p>
      */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /**
-     * <p>The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.</p>
+     * <p>The name of the Kinesis stream for which to disable enhanced monitoring.</p>
      */
     inline DisableEnhancedMonitoringRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.</p>
+     * <p>The name of the Kinesis stream for which to disable enhanced monitoring.</p>
      */
     inline DisableEnhancedMonitoringRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon Kinesis stream for which to disable enhanced
-     * monitoring.</p>
+     * <p>The name of the Kinesis stream for which to disable enhanced monitoring.</p>
      */
     inline DisableEnhancedMonitoringRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 

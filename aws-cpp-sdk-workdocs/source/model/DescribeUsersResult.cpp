@@ -26,13 +26,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeUsersResult::DescribeUsersResult() : 
-    m_totalNumberOfUsers(0)
+DescribeUsersResult::DescribeUsersResult()
 {
 }
 
-DescribeUsersResult::DescribeUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalNumberOfUsers(0)
+DescribeUsersResult::DescribeUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
@@ -47,12 +45,6 @@ DescribeUsersResult& DescribeUsersResult::operator =(const Aws::AmazonWebService
     {
       m_users.push_back(usersJsonList[usersIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("TotalNumberOfUsers"))
-  {
-    m_totalNumberOfUsers = jsonValue.GetInt64("TotalNumberOfUsers");
-
   }
 
   if(jsonValue.ValueExists("Marker"))

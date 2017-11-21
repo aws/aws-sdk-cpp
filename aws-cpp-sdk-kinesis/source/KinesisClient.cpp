@@ -33,6 +33,7 @@
 #include <aws/kinesis/model/DeleteStreamRequest.h>
 #include <aws/kinesis/model/DescribeLimitsRequest.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
+#include <aws/kinesis/model/DescribeStreamSummaryRequest.h>
 #include <aws/kinesis/model/DisableEnhancedMonitoringRequest.h>
 #include <aws/kinesis/model/EnableEnhancedMonitoringRequest.h>
 #include <aws/kinesis/model/GetRecordsRequest.h>
@@ -321,6 +322,41 @@ void KinesisClient::DescribeStreamAsync(const DescribeStreamRequest& request, co
 void KinesisClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeStream(request), context);
+}
+
+DescribeStreamSummaryOutcome KinesisClient::DescribeStreamSummary(const DescribeStreamSummaryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeStreamSummaryOutcome(DescribeStreamSummaryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeStreamSummaryOutcome(outcome.GetError());
+  }
+}
+
+DescribeStreamSummaryOutcomeCallable KinesisClient::DescribeStreamSummaryCallable(const DescribeStreamSummaryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStreamSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStreamSummary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisClient::DescribeStreamSummaryAsync(const DescribeStreamSummaryRequest& request, const DescribeStreamSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStreamSummaryAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisClient::DescribeStreamSummaryAsyncHelper(const DescribeStreamSummaryRequest& request, const DescribeStreamSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStreamSummary(request), context);
 }
 
 DisableEnhancedMonitoringOutcome KinesisClient::DisableEnhancedMonitoring(const DisableEnhancedMonitoringRequest& request) const

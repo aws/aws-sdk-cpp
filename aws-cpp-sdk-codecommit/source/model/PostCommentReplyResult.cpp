@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/firehose/model/GetKinesisStreamResult.h>
+#include <aws/codecommit/model/PostCommentReplyResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -21,32 +21,26 @@
 
 #include <utility>
 
-using namespace Aws::Firehose::Model;
+using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetKinesisStreamResult::GetKinesisStreamResult()
+PostCommentReplyResult::PostCommentReplyResult()
 {
 }
 
-GetKinesisStreamResult::GetKinesisStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+PostCommentReplyResult::PostCommentReplyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetKinesisStreamResult& GetKinesisStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+PostCommentReplyResult& PostCommentReplyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("KinesisStreamARN"))
+  if(jsonValue.ValueExists("comment"))
   {
-    m_kinesisStreamARN = jsonValue.GetString("KinesisStreamARN");
-
-  }
-
-  if(jsonValue.ValueExists("CredentialsForReadingKinesisStream"))
-  {
-    m_credentialsForReadingKinesisStream = jsonValue.GetObject("CredentialsForReadingKinesisStream");
+    m_comment = jsonValue.GetObject("comment");
 
   }
 

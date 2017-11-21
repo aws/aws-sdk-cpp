@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the users and/or user groups.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the users or user groups.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/Participants">AWS
    * API Reference</a></p>
    */

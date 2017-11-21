@@ -27,7 +27,10 @@ namespace Model
   {
     NOT_SET,
     USER,
-    ADMIN
+    ADMIN,
+    POWERUSER,
+    MINIMALUSER,
+    WORKSPACESUSER
   };
 
 namespace UserTypeMapper

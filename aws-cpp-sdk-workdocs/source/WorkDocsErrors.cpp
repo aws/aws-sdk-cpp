@@ -42,6 +42,7 @@ static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgume
 static const int DEACTIVATING_LAST_SYSTEM_USER_HASH = HashingUtils::HashString("DeactivatingLastSystemUserException");
 static const int UNAUTHORIZED_OPERATION_HASH = HashingUtils::HashString("UnauthorizedOperationException");
 static const int TOO_MANY_SUBSCRIPTIONS_HASH = HashingUtils::HashString("TooManySubscriptionsException");
+static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
 static const int DRAFT_UPLOAD_OUT_OF_SYNC_HASH = HashingUtils::HashString("DraftUploadOutOfSyncException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 static const int UNAUTHORIZED_RESOURCE_ACCESS_HASH = HashingUtils::HashString("UnauthorizedResourceAccessException");
@@ -109,6 +110,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_SUBSCRIPTIONS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkDocsErrors::TOO_MANY_SUBSCRIPTIONS), false);
+  }
+  else if (hashCode == INVALID_PASSWORD_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkDocsErrors::INVALID_PASSWORD), false);
   }
   else if (hashCode == DRAFT_UPLOAD_OUT_OF_SYNC_HASH)
   {

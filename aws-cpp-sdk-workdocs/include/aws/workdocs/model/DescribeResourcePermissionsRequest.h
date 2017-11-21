@@ -51,43 +51,43 @@ namespace Model
 
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline DescribeResourcePermissionsRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline DescribeResourcePermissionsRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon WorkDocs authentication token. This field should not be set when using
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline DescribeResourcePermissionsRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
@@ -127,6 +127,42 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline DescribeResourcePermissionsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the principal to filter permissions by.</p>
+     */
+    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+
+    /**
+     * <p>The ID of the principal to filter permissions by.</p>
+     */
+    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
+
+    /**
+     * <p>The ID of the principal to filter permissions by.</p>
+     */
+    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
+
+    /**
+     * <p>The ID of the principal to filter permissions by.</p>
+     */
+    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
+
+    /**
+     * <p>The ID of the principal to filter permissions by.</p>
+     */
+    inline DescribeResourcePermissionsRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
+
+    /**
+     * <p>The ID of the principal to filter permissions by.</p>
+     */
+    inline DescribeResourcePermissionsRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the principal to filter permissions by.</p>
+     */
+    inline DescribeResourcePermissionsRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
 
     /**
@@ -194,6 +230,9 @@ namespace Model
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
+    Aws::String m_principalId;
+    bool m_principalIdHasBeenSet;
 
     int m_limit;
     bool m_limitHasBeenSet;

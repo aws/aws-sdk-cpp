@@ -27,7 +27,10 @@ namespace Model
   {
     NOT_SET,
     LambdaArn,
-    NumberOfRetries
+    NumberOfRetries,
+    RoleArn,
+    BufferSizeInMBs,
+    BufferIntervalInSeconds
   };
 
 namespace ProcessorParameterNameMapper
