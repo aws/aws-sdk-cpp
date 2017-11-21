@@ -244,11 +244,6 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             if (!m_retryStrategy->ShouldRetry(outcome.GetError(), retries)) return outcome;
         
             AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Request failed, now waiting " << sleepMillis << " ms before attempting again.");
-            if(request.GetBody())
-            {
-                request.GetBody()->clear();
-                request.GetBody()->seekg(0);
-            }
 
             if (request.GetRequestRetryHandler())
             {
@@ -303,6 +298,12 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::Http::URI& uri,
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
     std::shared_ptr<HttpResponse> httpResponse(
         m_httpClient->MakeRequest(*httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
+
+    if(request.GetBody())
+    {
+        request.GetBody()->clear();
+        request.GetBody()->seekg(0);
+    }
 
     if (DoesResponseGenerateError(httpResponse))
     {
