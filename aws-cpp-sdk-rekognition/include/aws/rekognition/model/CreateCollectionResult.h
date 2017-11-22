@@ -100,11 +100,56 @@ namespace Model
      */
     inline CreateCollectionResult& WithCollectionArn(const char* value) { SetCollectionArn(value); return *this;}
 
+
+    /**
+     * <p>Version number of the face detection model associated with the collection you
+     * are creating.</p>
+     */
+    inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
+
+    /**
+     * <p>Version number of the face detection model associated with the collection you
+     * are creating.</p>
+     */
+    inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
+
+    /**
+     * <p>Version number of the face detection model associated with the collection you
+     * are creating.</p>
+     */
+    inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
+
+    /**
+     * <p>Version number of the face detection model associated with the collection you
+     * are creating.</p>
+     */
+    inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
+
+    /**
+     * <p>Version number of the face detection model associated with the collection you
+     * are creating.</p>
+     */
+    inline CreateCollectionResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
+
+    /**
+     * <p>Version number of the face detection model associated with the collection you
+     * are creating.</p>
+     */
+    inline CreateCollectionResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version number of the face detection model associated with the collection you
+     * are creating.</p>
+     */
+    inline CreateCollectionResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
+
   private:
 
     int m_statusCode;
 
     Aws::String m_collectionArn;
+
+    Aws::String m_faceModelVersion;
   };
 
 } // namespace Model

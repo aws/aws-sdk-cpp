@@ -73,6 +73,7 @@
 #include <aws/storagegateway/model/ListVolumeInitiatorsRequest.h>
 #include <aws/storagegateway/model/ListVolumeRecoveryPointsRequest.h>
 #include <aws/storagegateway/model/ListVolumesRequest.h>
+#include <aws/storagegateway/model/NotifyWhenUploadedRequest.h>
 #include <aws/storagegateway/model/RefreshCacheRequest.h>
 #include <aws/storagegateway/model/RemoveTagsFromResourceRequest.h>
 #include <aws/storagegateway/model/ResetCacheRequest.h>
@@ -1762,6 +1763,41 @@ void StorageGatewayClient::ListVolumesAsync(const ListVolumesRequest& request, c
 void StorageGatewayClient::ListVolumesAsyncHelper(const ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListVolumes(request), context);
+}
+
+NotifyWhenUploadedOutcome StorageGatewayClient::NotifyWhenUploaded(const NotifyWhenUploadedRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return NotifyWhenUploadedOutcome(NotifyWhenUploadedResult(outcome.GetResult()));
+  }
+  else
+  {
+    return NotifyWhenUploadedOutcome(outcome.GetError());
+  }
+}
+
+NotifyWhenUploadedOutcomeCallable StorageGatewayClient::NotifyWhenUploadedCallable(const NotifyWhenUploadedRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< NotifyWhenUploadedOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->NotifyWhenUploaded(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::NotifyWhenUploadedAsync(const NotifyWhenUploadedRequest& request, const NotifyWhenUploadedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->NotifyWhenUploadedAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::NotifyWhenUploadedAsyncHelper(const NotifyWhenUploadedRequest& request, const NotifyWhenUploadedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, NotifyWhenUploaded(request), context);
 }
 
 RefreshCacheOutcome StorageGatewayClient::RefreshCache(const RefreshCacheRequest& request) const

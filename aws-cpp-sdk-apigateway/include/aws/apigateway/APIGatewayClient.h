@@ -2146,14 +2146,14 @@ namespace Model
         virtual void GetGatewayResponsesAsync(const Model::GetGatewayResponsesRequest& request, const GetGatewayResponsesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a get integration.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the integration settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetIntegrationOutcome GetIntegration(const Model::GetIntegrationRequest& request) const;
 
         /**
-         * <p>Represents a get integration.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the integration settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">AWS
          * API Reference</a></p>
          *
@@ -2162,7 +2162,7 @@ namespace Model
         virtual Model::GetIntegrationOutcomeCallable GetIntegrationCallable(const Model::GetIntegrationRequest& request) const;
 
         /**
-         * <p>Represents a get integration.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the integration settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">AWS
          * API Reference</a></p>
          *

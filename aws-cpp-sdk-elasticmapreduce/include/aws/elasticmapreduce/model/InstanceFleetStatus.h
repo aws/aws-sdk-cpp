@@ -51,27 +51,92 @@ namespace Model
 
 
     /**
-     * <p>A code representing the instance fleet status.</p>
+     * <p>A code representing the instance fleet status.</p> <ul> <li> <p>
+     * <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and
+     * is not yet ready to run jobs.</p> </li> <li> <p> <code>BOOTSTRAPPING</code>—EC2
+     * instances and other resources have been provisioned and the bootstrap actions
+     * specified for the instances are underway.</p> </li> <li> <p>
+     * <code>RUNNING</code>—EC2 instances and other resources are running. They are
+     * either executing jobs or waiting to execute jobs.</p> </li> <li> <p>
+     * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
+     * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
+     * operation could not complete. Existing EC2 instances are running, but instances
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
+     * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
+     * instances have been terminated.</p> </li> </ul>
      */
     inline const InstanceFleetState& GetState() const{ return m_state; }
 
     /**
-     * <p>A code representing the instance fleet status.</p>
+     * <p>A code representing the instance fleet status.</p> <ul> <li> <p>
+     * <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and
+     * is not yet ready to run jobs.</p> </li> <li> <p> <code>BOOTSTRAPPING</code>—EC2
+     * instances and other resources have been provisioned and the bootstrap actions
+     * specified for the instances are underway.</p> </li> <li> <p>
+     * <code>RUNNING</code>—EC2 instances and other resources are running. They are
+     * either executing jobs or waiting to execute jobs.</p> </li> <li> <p>
+     * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
+     * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
+     * operation could not complete. Existing EC2 instances are running, but instances
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
+     * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
+     * instances have been terminated.</p> </li> </ul>
      */
     inline void SetState(const InstanceFleetState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>A code representing the instance fleet status.</p>
+     * <p>A code representing the instance fleet status.</p> <ul> <li> <p>
+     * <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and
+     * is not yet ready to run jobs.</p> </li> <li> <p> <code>BOOTSTRAPPING</code>—EC2
+     * instances and other resources have been provisioned and the bootstrap actions
+     * specified for the instances are underway.</p> </li> <li> <p>
+     * <code>RUNNING</code>—EC2 instances and other resources are running. They are
+     * either executing jobs or waiting to execute jobs.</p> </li> <li> <p>
+     * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
+     * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
+     * operation could not complete. Existing EC2 instances are running, but instances
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
+     * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
+     * instances have been terminated.</p> </li> </ul>
      */
     inline void SetState(InstanceFleetState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>A code representing the instance fleet status.</p>
+     * <p>A code representing the instance fleet status.</p> <ul> <li> <p>
+     * <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and
+     * is not yet ready to run jobs.</p> </li> <li> <p> <code>BOOTSTRAPPING</code>—EC2
+     * instances and other resources have been provisioned and the bootstrap actions
+     * specified for the instances are underway.</p> </li> <li> <p>
+     * <code>RUNNING</code>—EC2 instances and other resources are running. They are
+     * either executing jobs or waiting to execute jobs.</p> </li> <li> <p>
+     * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
+     * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
+     * operation could not complete. Existing EC2 instances are running, but instances
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
+     * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
+     * instances have been terminated.</p> </li> </ul>
      */
     inline InstanceFleetStatus& WithState(const InstanceFleetState& value) { SetState(value); return *this;}
 
     /**
-     * <p>A code representing the instance fleet status.</p>
+     * <p>A code representing the instance fleet status.</p> <ul> <li> <p>
+     * <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and
+     * is not yet ready to run jobs.</p> </li> <li> <p> <code>BOOTSTRAPPING</code>—EC2
+     * instances and other resources have been provisioned and the bootstrap actions
+     * specified for the instances are underway.</p> </li> <li> <p>
+     * <code>RUNNING</code>—EC2 instances and other resources are running. They are
+     * either executing jobs or waiting to execute jobs.</p> </li> <li> <p>
+     * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
+     * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
+     * operation could not complete. Existing EC2 instances are running, but instances
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
+     * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
+     * instances have been terminated.</p> </li> </ul>
      */
     inline InstanceFleetStatus& WithState(InstanceFleetState&& value) { SetState(std::move(value)); return *this;}
 

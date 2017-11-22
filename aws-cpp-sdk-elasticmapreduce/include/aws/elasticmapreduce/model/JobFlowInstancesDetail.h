@@ -87,37 +87,44 @@ namespace Model
 
 
     /**
-     * <p>The DNS name of the master node.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline const Aws::String& GetMasterPublicDnsName() const{ return m_masterPublicDnsName; }
 
     /**
-     * <p>The DNS name of the master node.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline void SetMasterPublicDnsName(const Aws::String& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = value; }
 
     /**
-     * <p>The DNS name of the master node.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline void SetMasterPublicDnsName(Aws::String&& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = std::move(value); }
 
     /**
-     * <p>The DNS name of the master node.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline void SetMasterPublicDnsName(const char* value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName.assign(value); }
 
     /**
-     * <p>The DNS name of the master node.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline JobFlowInstancesDetail& WithMasterPublicDnsName(const Aws::String& value) { SetMasterPublicDnsName(value); return *this;}
 
     /**
-     * <p>The DNS name of the master node.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline JobFlowInstancesDetail& WithMasterPublicDnsName(Aws::String&& value) { SetMasterPublicDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS name of the master node.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline JobFlowInstancesDetail& WithMasterPublicDnsName(const char* value) { SetMasterPublicDnsName(value); return *this;}
 

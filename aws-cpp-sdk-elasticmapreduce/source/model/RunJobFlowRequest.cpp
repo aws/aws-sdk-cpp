@@ -48,7 +48,8 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_ebsRootVolumeSize(0),
     m_ebsRootVolumeSizeHasBeenSet(false),
     m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
-    m_repoUpgradeOnBootHasBeenSet(false)
+    m_repoUpgradeOnBootHasBeenSet(false),
+    m_kerberosAttributesHasBeenSet(false)
 {
 }
 
@@ -219,6 +220,12 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   if(m_repoUpgradeOnBootHasBeenSet)
   {
    payload.WithString("RepoUpgradeOnBoot", RepoUpgradeOnBootMapper::GetNameForRepoUpgradeOnBoot(m_repoUpgradeOnBoot));
+  }
+
+  if(m_kerberosAttributesHasBeenSet)
+  {
+   payload.WithObject("KerberosAttributes", m_kerberosAttributes.Jsonize());
+
   }
 
   return payload.WriteReadable();

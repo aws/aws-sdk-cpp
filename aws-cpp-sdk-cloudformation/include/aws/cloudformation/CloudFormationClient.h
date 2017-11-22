@@ -55,6 +55,7 @@
 #include <aws/cloudformation/model/ListStacksResult.h>
 #include <aws/cloudformation/model/StopStackSetOperationResult.h>
 #include <aws/cloudformation/model/UpdateStackResult.h>
+#include <aws/cloudformation/model/UpdateStackInstancesResult.h>
 #include <aws/cloudformation/model/UpdateStackSetResult.h>
 #include <aws/cloudformation/model/UpdateTerminationProtectionResult.h>
 #include <aws/cloudformation/model/ValidateTemplateResult.h>
@@ -141,6 +142,7 @@ namespace Model
         class SignalResourceRequest;
         class StopStackSetOperationRequest;
         class UpdateStackRequest;
+        class UpdateStackInstancesRequest;
         class UpdateStackSetRequest;
         class UpdateTerminationProtectionRequest;
         class ValidateTemplateRequest;
@@ -182,6 +184,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> SignalResourceOutcome;
         typedef Aws::Utils::Outcome<StopStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> StopStackSetOperationOutcome;
         typedef Aws::Utils::Outcome<UpdateStackResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackOutcome;
+        typedef Aws::Utils::Outcome<UpdateStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackInstancesOutcome;
         typedef Aws::Utils::Outcome<UpdateStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackSetOutcome;
         typedef Aws::Utils::Outcome<UpdateTerminationProtectionResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateTerminationProtectionOutcome;
         typedef Aws::Utils::Outcome<ValidateTemplateResult, Aws::Client::AWSError<CloudFormationErrors>> ValidateTemplateOutcome;
@@ -223,6 +226,7 @@ namespace Model
         typedef std::future<SignalResourceOutcome> SignalResourceOutcomeCallable;
         typedef std::future<StopStackSetOperationOutcome> StopStackSetOperationOutcomeCallable;
         typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
+        typedef std::future<UpdateStackInstancesOutcome> UpdateStackInstancesOutcomeCallable;
         typedef std::future<UpdateStackSetOutcome> UpdateStackSetOutcomeCallable;
         typedef std::future<UpdateTerminationProtectionOutcome> UpdateTerminationProtectionOutcomeCallable;
         typedef std::future<ValidateTemplateOutcome> ValidateTemplateOutcomeCallable;
@@ -267,6 +271,7 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::SignalResourceRequest&, const Model::SignalResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignalResourceResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::StopStackSetOperationRequest&, const Model::StopStackSetOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStackSetOperationResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackInstancesRequest&, const Model::UpdateStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackInstancesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackSetRequest&, const Model::UpdateStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateTerminationProtectionRequest&, const Model::UpdateTerminationProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTerminationProtectionResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ValidateTemplateRequest&, const Model::ValidateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateTemplateResponseReceivedHandler;
@@ -1703,6 +1708,82 @@ namespace Model
         virtual void UpdateStackAsync(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the parameter values for stack instances for the specified accounts,
+         * within the specified regions. A stack instance refers to a stack in a specific
+         * account and region. </p> <p>You can only update stack instances in regions and
+         * accounts where they already exist; to create additional stack instances, use <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
+         * </p> <p>During stack set updates, any parameters overridden for a stack instance
+         * are not updated, but retain their overridden value.</p> <p>You can only update
+         * the parameter <i>values</i> that are specified in the stack set; to add or
+         * delete a parameter itself, use <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+         * to update the stack set template. If you add a parameter to a template, before
+         * you can override the parameter value specified in the stack set you must first
+         * use <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+         * to update all stack instances with the updated template and parameter value
+         * specified in the stack set. Once a stack instance has been updated with the new
+         * parameter, you can then override the parameter value using
+         * <code>UpdateStackInstances</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateStackInstancesOutcome UpdateStackInstances(const Model::UpdateStackInstancesRequest& request) const;
+
+        /**
+         * <p>Updates the parameter values for stack instances for the specified accounts,
+         * within the specified regions. A stack instance refers to a stack in a specific
+         * account and region. </p> <p>You can only update stack instances in regions and
+         * accounts where they already exist; to create additional stack instances, use <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
+         * </p> <p>During stack set updates, any parameters overridden for a stack instance
+         * are not updated, but retain their overridden value.</p> <p>You can only update
+         * the parameter <i>values</i> that are specified in the stack set; to add or
+         * delete a parameter itself, use <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+         * to update the stack set template. If you add a parameter to a template, before
+         * you can override the parameter value specified in the stack set you must first
+         * use <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+         * to update all stack instances with the updated template and parameter value
+         * specified in the stack set. Once a stack instance has been updated with the new
+         * parameter, you can then override the parameter value using
+         * <code>UpdateStackInstances</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateStackInstancesOutcomeCallable UpdateStackInstancesCallable(const Model::UpdateStackInstancesRequest& request) const;
+
+        /**
+         * <p>Updates the parameter values for stack instances for the specified accounts,
+         * within the specified regions. A stack instance refers to a stack in a specific
+         * account and region. </p> <p>You can only update stack instances in regions and
+         * accounts where they already exist; to create additional stack instances, use <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
+         * </p> <p>During stack set updates, any parameters overridden for a stack instance
+         * are not updated, but retain their overridden value.</p> <p>You can only update
+         * the parameter <i>values</i> that are specified in the stack set; to add or
+         * delete a parameter itself, use <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+         * to update the stack set template. If you add a parameter to a template, before
+         * you can override the parameter value specified in the stack set you must first
+         * use <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+         * to update all stack instances with the updated template and parameter value
+         * specified in the stack set. Once a stack instance has been updated with the new
+         * parameter, you can then override the parameter value using
+         * <code>UpdateStackInstances</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateStackInstancesAsync(const Model::UpdateStackInstancesRequest& request, const UpdateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the stack set and <i>all</i> associated stack instances.</p> <p>Even
          * if the stack set operation created by updating the stack set fails (completely
          * or partially, below or above a specified failure tolerance), the stack set is
@@ -1864,6 +1945,7 @@ namespace Model
         void SignalResourceAsyncHelper(const Model::SignalResourceRequest& request, const SignalResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopStackSetOperationAsyncHelper(const Model::StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateStackInstancesAsyncHelper(const Model::UpdateStackInstancesRequest& request, const UpdateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackSetAsyncHelper(const Model::UpdateStackSetRequest& request, const UpdateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTerminationProtectionAsyncHelper(const Model::UpdateTerminationProtectionRequest& request, const UpdateTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ValidateTemplateAsyncHelper(const Model::ValidateTemplateRequest& request, const ValidateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

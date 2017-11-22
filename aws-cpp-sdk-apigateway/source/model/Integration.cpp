@@ -39,6 +39,8 @@ Integration::Integration() :
     m_passthroughBehaviorHasBeenSet(false),
     m_contentHandling(ContentHandlingStrategy::NOT_SET),
     m_contentHandlingHasBeenSet(false),
+    m_timeoutInMillis(0),
+    m_timeoutInMillisHasBeenSet(false),
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
     m_integrationResponsesHasBeenSet(false)
@@ -56,6 +58,8 @@ Integration::Integration(const JsonValue& jsonValue) :
     m_passthroughBehaviorHasBeenSet(false),
     m_contentHandling(ContentHandlingStrategy::NOT_SET),
     m_contentHandlingHasBeenSet(false),
+    m_timeoutInMillis(0),
+    m_timeoutInMillisHasBeenSet(false),
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
     m_integrationResponsesHasBeenSet(false)
@@ -125,6 +129,13 @@ Integration& Integration::operator =(const JsonValue& jsonValue)
     m_contentHandling = ContentHandlingStrategyMapper::GetContentHandlingStrategyForName(jsonValue.GetString("contentHandling"));
 
     m_contentHandlingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timeoutInMillis"))
+  {
+    m_timeoutInMillis = jsonValue.GetInteger("timeoutInMillis");
+
+    m_timeoutInMillisHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("cacheNamespace"))
@@ -215,6 +226,12 @@ JsonValue Integration::Jsonize() const
   if(m_contentHandlingHasBeenSet)
   {
    payload.WithString("contentHandling", ContentHandlingStrategyMapper::GetNameForContentHandlingStrategy(m_contentHandling));
+  }
+
+  if(m_timeoutInMillisHasBeenSet)
+  {
+   payload.WithInteger("timeoutInMillis", m_timeoutInMillis);
+
   }
 
   if(m_cacheNamespaceHasBeenSet)

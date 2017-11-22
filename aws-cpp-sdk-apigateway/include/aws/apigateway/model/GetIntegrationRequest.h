@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a get integration request.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a request to get the integration configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationRequest">AWS
    * API Reference</a></p>
    */

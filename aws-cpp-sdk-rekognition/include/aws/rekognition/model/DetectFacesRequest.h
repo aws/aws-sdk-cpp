@@ -47,32 +47,37 @@ namespace Model
 
 
     /**
-     * <p>The image in which you want to detect faces. You can specify a blob or an S3
-     * object. </p>
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p>
      */
     inline const Image& GetImage() const{ return m_image; }
 
     /**
-     * <p>The image in which you want to detect faces. You can specify a blob or an S3
-     * object. </p>
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p>
      */
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
-     * <p>The image in which you want to detect faces. You can specify a blob or an S3
-     * object. </p>
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p>
      */
     inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
-     * <p>The image in which you want to detect faces. You can specify a blob or an S3
-     * object. </p>
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p>
      */
     inline DetectFacesRequest& WithImage(const Image& value) { SetImage(value); return *this;}
 
     /**
-     * <p>The image in which you want to detect faces. You can specify a blob or an S3
-     * object. </p>
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p>
      */
     inline DetectFacesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 

@@ -28,6 +28,7 @@
 #include <aws/shield/model/DescribeAttackResult.h>
 #include <aws/shield/model/DescribeProtectionResult.h>
 #include <aws/shield/model/DescribeSubscriptionResult.h>
+#include <aws/shield/model/GetSubscriptionStateResult.h>
 #include <aws/shield/model/ListAttacksResult.h>
 #include <aws/shield/model/ListProtectionsResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -82,6 +83,7 @@ namespace Model
         class DescribeAttackRequest;
         class DescribeProtectionRequest;
         class DescribeSubscriptionRequest;
+        class GetSubscriptionStateRequest;
         class ListAttacksRequest;
         class ListProtectionsRequest;
 
@@ -92,6 +94,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAttackResult, Aws::Client::AWSError<ShieldErrors>> DescribeAttackOutcome;
         typedef Aws::Utils::Outcome<DescribeProtectionResult, Aws::Client::AWSError<ShieldErrors>> DescribeProtectionOutcome;
         typedef Aws::Utils::Outcome<DescribeSubscriptionResult, Aws::Client::AWSError<ShieldErrors>> DescribeSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<GetSubscriptionStateResult, Aws::Client::AWSError<ShieldErrors>> GetSubscriptionStateOutcome;
         typedef Aws::Utils::Outcome<ListAttacksResult, Aws::Client::AWSError<ShieldErrors>> ListAttacksOutcome;
         typedef Aws::Utils::Outcome<ListProtectionsResult, Aws::Client::AWSError<ShieldErrors>> ListProtectionsOutcome;
 
@@ -102,6 +105,7 @@ namespace Model
         typedef std::future<DescribeAttackOutcome> DescribeAttackOutcomeCallable;
         typedef std::future<DescribeProtectionOutcome> DescribeProtectionOutcomeCallable;
         typedef std::future<DescribeSubscriptionOutcome> DescribeSubscriptionOutcomeCallable;
+        typedef std::future<GetSubscriptionStateOutcome> GetSubscriptionStateOutcomeCallable;
         typedef std::future<ListAttacksOutcome> ListAttacksOutcomeCallable;
         typedef std::future<ListProtectionsOutcome> ListProtectionsOutcomeCallable;
 } // namespace Model
@@ -115,6 +119,7 @@ namespace Model
     typedef std::function<void(const ShieldClient*, const Model::DescribeAttackRequest&, const Model::DescribeAttackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAttackResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeProtectionRequest&, const Model::DescribeProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProtectionResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeSubscriptionRequest&, const Model::DescribeSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::GetSubscriptionStateRequest&, const Model::GetSubscriptionStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionStateResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::ListAttacksRequest&, const Model::ListAttacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttacksResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::ListProtectionsRequest&, const Model::ListProtectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectionsResponseReceivedHandler;
 
@@ -158,8 +163,8 @@ namespace Model
 
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
-         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, or an
-         * Amazon Route 53 hosted zone.</p><p><h3>See Also:</h3>   <a
+         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Elastic
+         * IP Address, or an Amazon Route 53 hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">AWS
          * API Reference</a></p>
          */
@@ -167,8 +172,8 @@ namespace Model
 
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
-         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, or an
-         * Amazon Route 53 hosted zone.</p><p><h3>See Also:</h3>   <a
+         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Elastic
+         * IP Address, or an Amazon Route 53 hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">AWS
          * API Reference</a></p>
          *
@@ -178,8 +183,8 @@ namespace Model
 
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
-         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, or an
-         * Amazon Route 53 hosted zone.</p><p><h3>See Also:</h3>   <a
+         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Elastic
+         * IP Address, or an Amazon Route 53 hosted zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">AWS
          * API Reference</a></p>
          *
@@ -241,14 +246,18 @@ namespace Model
         virtual void DeleteProtectionAsync(const Model::DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes AWS Shield Advanced from an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a
+         * 1-year subscription commitment. You cannot delete a subscription prior to the
+         * completion of that commitment. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSubscriptionOutcome DeleteSubscription(const Model::DeleteSubscriptionRequest& request) const;
 
         /**
-         * <p>Removes AWS Shield Advanced from an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a
+         * 1-year subscription commitment. You cannot delete a subscription prior to the
+         * completion of that commitment. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">AWS
          * API Reference</a></p>
          *
@@ -257,7 +266,9 @@ namespace Model
         virtual Model::DeleteSubscriptionOutcomeCallable DeleteSubscriptionCallable(const Model::DeleteSubscriptionRequest& request) const;
 
         /**
-         * <p>Removes AWS Shield Advanced from an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a
+         * 1-year subscription commitment. You cannot delete a subscription prior to the
+         * completion of that commitment. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">AWS
          * API Reference</a></p>
          *
@@ -347,6 +358,34 @@ namespace Model
         virtual void DescribeSubscriptionAsync(const Model::DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the <code>SubscriptionState</code>, either <code>Active</code> or
+         * <code>Inactive</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSubscriptionStateOutcome GetSubscriptionState(const Model::GetSubscriptionStateRequest& request) const;
+
+        /**
+         * <p>Returns the <code>SubscriptionState</code>, either <code>Active</code> or
+         * <code>Inactive</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSubscriptionStateOutcomeCallable GetSubscriptionStateCallable(const Model::GetSubscriptionStateRequest& request) const;
+
+        /**
+         * <p>Returns the <code>SubscriptionState</code>, either <code>Active</code> or
+         * <code>Inactive</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSubscriptionStateAsync(const Model::GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time
          * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">AWS
@@ -414,6 +453,7 @@ namespace Model
         void DescribeAttackAsyncHelper(const Model::DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProtectionAsyncHelper(const Model::DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSubscriptionAsyncHelper(const Model::DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSubscriptionStateAsyncHelper(const Model::GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttacksAsyncHelper(const Model::ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProtectionsAsyncHelper(const Model::ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

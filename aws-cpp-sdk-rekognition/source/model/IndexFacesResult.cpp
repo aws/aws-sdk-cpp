@@ -55,6 +55,12 @@ IndexFacesResult& IndexFacesResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("FaceModelVersion"))
+  {
+    m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
+
+  }
+
 
 
   return *this;

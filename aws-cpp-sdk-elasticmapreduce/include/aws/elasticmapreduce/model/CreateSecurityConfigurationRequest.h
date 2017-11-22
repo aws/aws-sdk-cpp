@@ -81,37 +81,65 @@ namespace Model
 
 
     /**
-     * <p>The security configuration details in JSON format.</p>
+     * <p>The security configuration details in JSON format. For JSON parameters and
+     * examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     * Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR
+     * Management Guide</i>.</p>
      */
     inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
 
     /**
-     * <p>The security configuration details in JSON format.</p>
+     * <p>The security configuration details in JSON format. For JSON parameters and
+     * examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     * Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR
+     * Management Guide</i>.</p>
      */
     inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
 
     /**
-     * <p>The security configuration details in JSON format.</p>
+     * <p>The security configuration details in JSON format. For JSON parameters and
+     * examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     * Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR
+     * Management Guide</i>.</p>
      */
     inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
 
     /**
-     * <p>The security configuration details in JSON format.</p>
+     * <p>The security configuration details in JSON format. For JSON parameters and
+     * examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     * Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR
+     * Management Guide</i>.</p>
      */
     inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
 
     /**
-     * <p>The security configuration details in JSON format.</p>
+     * <p>The security configuration details in JSON format. For JSON parameters and
+     * examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     * Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR
+     * Management Guide</i>.</p>
      */
     inline CreateSecurityConfigurationRequest& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
 
     /**
-     * <p>The security configuration details in JSON format.</p>
+     * <p>The security configuration details in JSON format. For JSON parameters and
+     * examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     * Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR
+     * Management Guide</i>.</p>
      */
     inline CreateSecurityConfigurationRequest& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>The security configuration details in JSON format.</p>
+     * <p>The security configuration details in JSON format. For JSON parameters and
+     * examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     * Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR
+     * Management Guide</i>.</p>
      */
     inline CreateSecurityConfigurationRequest& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 

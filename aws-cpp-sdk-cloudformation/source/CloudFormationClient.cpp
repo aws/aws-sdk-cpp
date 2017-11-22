@@ -64,6 +64,7 @@
 #include <aws/cloudformation/model/SignalResourceRequest.h>
 #include <aws/cloudformation/model/StopStackSetOperationRequest.h>
 #include <aws/cloudformation/model/UpdateStackRequest.h>
+#include <aws/cloudformation/model/UpdateStackInstancesRequest.h>
 #include <aws/cloudformation/model/UpdateStackSetRequest.h>
 #include <aws/cloudformation/model/UpdateTerminationProtectionRequest.h>
 #include <aws/cloudformation/model/ValidateTemplateRequest.h>
@@ -1436,6 +1437,41 @@ void CloudFormationClient::UpdateStackAsync(const UpdateStackRequest& request, c
 void CloudFormationClient::UpdateStackAsyncHelper(const UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateStack(request), context);
+}
+
+UpdateStackInstancesOutcome CloudFormationClient::UpdateStackInstances(const UpdateStackInstancesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateStackInstancesOutcome(UpdateStackInstancesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateStackInstancesOutcome(outcome.GetError());
+  }
+}
+
+UpdateStackInstancesOutcomeCallable CloudFormationClient::UpdateStackInstancesCallable(const UpdateStackInstancesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStackInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStackInstances(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::UpdateStackInstancesAsync(const UpdateStackInstancesRequest& request, const UpdateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateStackInstancesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::UpdateStackInstancesAsyncHelper(const UpdateStackInstancesRequest& request, const UpdateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateStackInstances(request), context);
 }
 
 UpdateStackSetOutcome CloudFormationClient::UpdateStackSet(const UpdateStackSetRequest& request) const

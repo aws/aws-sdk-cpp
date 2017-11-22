@@ -42,7 +42,9 @@ StorediSCSIVolume::StorediSCSIVolume() :
     m_preservedExistingData(false),
     m_preservedExistingDataHasBeenSet(false),
     m_volumeiSCSIAttributesHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_volumeUsedInBytes(0),
+    m_volumeUsedInBytesHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ StorediSCSIVolume::StorediSCSIVolume(const JsonValue& jsonValue) :
     m_preservedExistingData(false),
     m_preservedExistingDataHasBeenSet(false),
     m_volumeiSCSIAttributesHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_volumeUsedInBytes(0),
+    m_volumeUsedInBytesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +148,13 @@ StorediSCSIVolume& StorediSCSIVolume::operator =(const JsonValue& jsonValue)
     m_createdDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VolumeUsedInBytes"))
+  {
+    m_volumeUsedInBytes = jsonValue.GetInt64("VolumeUsedInBytes");
+
+    m_volumeUsedInBytesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -214,6 +225,12 @@ JsonValue StorediSCSIVolume::Jsonize() const
   if(m_createdDateHasBeenSet)
   {
    payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if(m_volumeUsedInBytesHasBeenSet)
+  {
+   payload.WithInt64("VolumeUsedInBytes", m_volumeUsedInBytes);
+
   }
 
   return payload;

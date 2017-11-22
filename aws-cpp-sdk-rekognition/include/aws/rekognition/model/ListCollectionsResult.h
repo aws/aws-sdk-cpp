@@ -133,11 +133,78 @@ namespace Model
      */
     inline ListCollectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Version numbers of the face detection models associated with the collections
+     * in the array <code>CollectionIds</code>. For example, the value of
+     * <code>FaceModelVersions[2]</code> is the version number for the face detection
+     * model used by the collection in <code>CollectionId[2]</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFaceModelVersions() const{ return m_faceModelVersions; }
+
+    /**
+     * <p>Version numbers of the face detection models associated with the collections
+     * in the array <code>CollectionIds</code>. For example, the value of
+     * <code>FaceModelVersions[2]</code> is the version number for the face detection
+     * model used by the collection in <code>CollectionId[2]</code>.</p>
+     */
+    inline void SetFaceModelVersions(const Aws::Vector<Aws::String>& value) { m_faceModelVersions = value; }
+
+    /**
+     * <p>Version numbers of the face detection models associated with the collections
+     * in the array <code>CollectionIds</code>. For example, the value of
+     * <code>FaceModelVersions[2]</code> is the version number for the face detection
+     * model used by the collection in <code>CollectionId[2]</code>.</p>
+     */
+    inline void SetFaceModelVersions(Aws::Vector<Aws::String>&& value) { m_faceModelVersions = std::move(value); }
+
+    /**
+     * <p>Version numbers of the face detection models associated with the collections
+     * in the array <code>CollectionIds</code>. For example, the value of
+     * <code>FaceModelVersions[2]</code> is the version number for the face detection
+     * model used by the collection in <code>CollectionId[2]</code>.</p>
+     */
+    inline ListCollectionsResult& WithFaceModelVersions(const Aws::Vector<Aws::String>& value) { SetFaceModelVersions(value); return *this;}
+
+    /**
+     * <p>Version numbers of the face detection models associated with the collections
+     * in the array <code>CollectionIds</code>. For example, the value of
+     * <code>FaceModelVersions[2]</code> is the version number for the face detection
+     * model used by the collection in <code>CollectionId[2]</code>.</p>
+     */
+    inline ListCollectionsResult& WithFaceModelVersions(Aws::Vector<Aws::String>&& value) { SetFaceModelVersions(std::move(value)); return *this;}
+
+    /**
+     * <p>Version numbers of the face detection models associated with the collections
+     * in the array <code>CollectionIds</code>. For example, the value of
+     * <code>FaceModelVersions[2]</code> is the version number for the face detection
+     * model used by the collection in <code>CollectionId[2]</code>.</p>
+     */
+    inline ListCollectionsResult& AddFaceModelVersions(const Aws::String& value) { m_faceModelVersions.push_back(value); return *this; }
+
+    /**
+     * <p>Version numbers of the face detection models associated with the collections
+     * in the array <code>CollectionIds</code>. For example, the value of
+     * <code>FaceModelVersions[2]</code> is the version number for the face detection
+     * model used by the collection in <code>CollectionId[2]</code>.</p>
+     */
+    inline ListCollectionsResult& AddFaceModelVersions(Aws::String&& value) { m_faceModelVersions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Version numbers of the face detection models associated with the collections
+     * in the array <code>CollectionIds</code>. For example, the value of
+     * <code>FaceModelVersions[2]</code> is the version number for the face detection
+     * model used by the collection in <code>CollectionId[2]</code>.</p>
+     */
+    inline ListCollectionsResult& AddFaceModelVersions(const char* value) { m_faceModelVersions.push_back(value); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_collectionIds;
 
     Aws::String m_nextToken;
+
+    Aws::Vector<Aws::String> m_faceModelVersions;
   };
 
 } // namespace Model

@@ -34,6 +34,7 @@
 #include <aws/shield/model/DescribeAttackRequest.h>
 #include <aws/shield/model/DescribeProtectionRequest.h>
 #include <aws/shield/model/DescribeSubscriptionRequest.h>
+#include <aws/shield/model/GetSubscriptionStateRequest.h>
 #include <aws/shield/model/ListAttacksRequest.h>
 #include <aws/shield/model/ListProtectionsRequest.h>
 
@@ -344,6 +345,41 @@ void ShieldClient::DescribeSubscriptionAsync(const DescribeSubscriptionRequest& 
 void ShieldClient::DescribeSubscriptionAsyncHelper(const DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSubscription(request), context);
+}
+
+GetSubscriptionStateOutcome ShieldClient::GetSubscriptionState(const GetSubscriptionStateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetSubscriptionStateOutcome(GetSubscriptionStateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSubscriptionStateOutcome(outcome.GetError());
+  }
+}
+
+GetSubscriptionStateOutcomeCallable ShieldClient::GetSubscriptionStateCallable(const GetSubscriptionStateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSubscriptionStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSubscriptionState(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::GetSubscriptionStateAsync(const GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSubscriptionStateAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::GetSubscriptionStateAsyncHelper(const GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSubscriptionState(request), context);
 }
 
 ListAttacksOutcome ShieldClient::ListAttacks(const ListAttacksRequest& request) const

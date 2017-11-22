@@ -53,6 +53,12 @@ ListFacesResult& ListFacesResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("FaceModelVersion"))
+  {
+    m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
+
+  }
+
 
 
   return *this;

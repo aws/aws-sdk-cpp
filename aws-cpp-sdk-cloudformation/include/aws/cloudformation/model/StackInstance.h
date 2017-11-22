@@ -17,7 +17,9 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/StackInstanceStatus.h>
+#include <aws/cloudformation/model/Parameter.h>
 #include <utility>
 
 namespace Aws
@@ -208,6 +210,49 @@ namespace Model
 
 
     /**
+     * <p>A list of parameters from the stack set template whose values have been
+     * overridden in this stack instance.</p>
+     */
+    inline const Aws::Vector<Parameter>& GetParameterOverrides() const{ return m_parameterOverrides; }
+
+    /**
+     * <p>A list of parameters from the stack set template whose values have been
+     * overridden in this stack instance.</p>
+     */
+    inline void SetParameterOverrides(const Aws::Vector<Parameter>& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = value; }
+
+    /**
+     * <p>A list of parameters from the stack set template whose values have been
+     * overridden in this stack instance.</p>
+     */
+    inline void SetParameterOverrides(Aws::Vector<Parameter>&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = std::move(value); }
+
+    /**
+     * <p>A list of parameters from the stack set template whose values have been
+     * overridden in this stack instance.</p>
+     */
+    inline StackInstance& WithParameterOverrides(const Aws::Vector<Parameter>& value) { SetParameterOverrides(value); return *this;}
+
+    /**
+     * <p>A list of parameters from the stack set template whose values have been
+     * overridden in this stack instance.</p>
+     */
+    inline StackInstance& WithParameterOverrides(Aws::Vector<Parameter>&& value) { SetParameterOverrides(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of parameters from the stack set template whose values have been
+     * overridden in this stack instance.</p>
+     */
+    inline StackInstance& AddParameterOverrides(const Parameter& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(value); return *this; }
+
+    /**
+     * <p>A list of parameters from the stack set template whose values have been
+     * overridden in this stack instance.</p>
+     */
+    inline StackInstance& AddParameterOverrides(Parameter&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The status of the stack instance, in terms of its synchronization with its
      * associated stack set.</p> <ul> <li> <p> <code>INOPERABLE</code>: A
      * <code>DeleteStackInstances</code> operation has failed and left the stack in an
@@ -358,6 +403,9 @@ namespace Model
 
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
+    Aws::Vector<Parameter> m_parameterOverrides;
+    bool m_parameterOverridesHasBeenSet;
 
     StackInstanceStatus m_status;
     bool m_statusHasBeenSet;

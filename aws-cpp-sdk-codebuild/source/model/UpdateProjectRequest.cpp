@@ -27,12 +27,16 @@ UpdateProjectRequest::UpdateProjectRequest() :
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_artifactsHasBeenSet(false),
+    m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
     m_encryptionKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_badgeEnabled(false),
+    m_badgeEnabledHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,12 @@ Aws::String UpdateProjectRequest::SerializePayload() const
   if(m_artifactsHasBeenSet)
   {
    payload.WithObject("artifacts", m_artifacts.Jsonize());
+
+  }
+
+  if(m_cacheHasBeenSet)
+  {
+   payload.WithObject("cache", m_cache.Jsonize());
 
   }
 
@@ -96,6 +106,18 @@ Aws::String UpdateProjectRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_badgeEnabledHasBeenSet)
+  {
+   payload.WithBool("badgeEnabled", m_badgeEnabled);
 
   }
 

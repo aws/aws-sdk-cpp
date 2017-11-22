@@ -48,27 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The start time of the subscription, in the format "2016-12-16T13:50Z".</p>
+     * <p>The start time of the subscription, in Unix time in seconds. For more
+     * information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The start time of the subscription, in the format "2016-12-16T13:50Z".</p>
+     * <p>The start time of the subscription, in Unix time in seconds. For more
+     * information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The start time of the subscription, in the format "2016-12-16T13:50Z".</p>
+     * <p>The start time of the subscription, in Unix time in seconds. For more
+     * information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The start time of the subscription, in the format "2016-12-16T13:50Z".</p>
+     * <p>The start time of the subscription, in Unix time in seconds. For more
+     * information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline Subscription& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The start time of the subscription, in the format "2016-12-16T13:50Z".</p>
+     * <p>The start time of the subscription, in Unix time in seconds. For more
+     * information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline Subscription& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

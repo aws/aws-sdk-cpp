@@ -28,13 +28,15 @@ using namespace Aws;
 
 UpdateIntegrationResult::UpdateIntegrationResult() : 
     m_type(IntegrationType::NOT_SET),
-    m_contentHandling(ContentHandlingStrategy::NOT_SET)
+    m_contentHandling(ContentHandlingStrategy::NOT_SET),
+    m_timeoutInMillis(0)
 {
 }
 
 UpdateIntegrationResult::UpdateIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_type(IntegrationType::NOT_SET),
-    m_contentHandling(ContentHandlingStrategy::NOT_SET)
+    m_contentHandling(ContentHandlingStrategy::NOT_SET),
+    m_timeoutInMillis(0)
 {
   *this = result;
 }
@@ -93,6 +95,12 @@ UpdateIntegrationResult& UpdateIntegrationResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("contentHandling"))
   {
     m_contentHandling = ContentHandlingStrategyMapper::GetContentHandlingStrategyForName(jsonValue.GetString("contentHandling"));
+
+  }
+
+  if(jsonValue.ValueExists("timeoutInMillis"))
+  {
+    m_timeoutInMillis = jsonValue.GetInteger("timeoutInMillis");
 
   }
 

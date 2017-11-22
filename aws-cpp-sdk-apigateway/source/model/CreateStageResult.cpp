@@ -110,6 +110,12 @@ CreateStageResult& CreateStageResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("accessLogSettings"))
+  {
+    m_accessLogSettings = jsonValue.GetObject("accessLogSettings");
+
+  }
+
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");

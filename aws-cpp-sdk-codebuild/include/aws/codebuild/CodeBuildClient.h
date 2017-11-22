@@ -28,6 +28,7 @@
 #include <aws/codebuild/model/CreateWebhookResult.h>
 #include <aws/codebuild/model/DeleteProjectResult.h>
 #include <aws/codebuild/model/DeleteWebhookResult.h>
+#include <aws/codebuild/model/InvalidateProjectCacheResult.h>
 #include <aws/codebuild/model/ListBuildsResult.h>
 #include <aws/codebuild/model/ListBuildsForProjectResult.h>
 #include <aws/codebuild/model/ListCuratedEnvironmentImagesResult.h>
@@ -87,6 +88,7 @@ namespace Model
         class CreateWebhookRequest;
         class DeleteProjectRequest;
         class DeleteWebhookRequest;
+        class InvalidateProjectCacheRequest;
         class ListBuildsRequest;
         class ListBuildsForProjectRequest;
         class ListCuratedEnvironmentImagesRequest;
@@ -102,6 +104,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateWebhookResult, Aws::Client::AWSError<CodeBuildErrors>> CreateWebhookOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteProjectOutcome;
         typedef Aws::Utils::Outcome<DeleteWebhookResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteWebhookOutcome;
+        typedef Aws::Utils::Outcome<InvalidateProjectCacheResult, Aws::Client::AWSError<CodeBuildErrors>> InvalidateProjectCacheOutcome;
         typedef Aws::Utils::Outcome<ListBuildsResult, Aws::Client::AWSError<CodeBuildErrors>> ListBuildsOutcome;
         typedef Aws::Utils::Outcome<ListBuildsForProjectResult, Aws::Client::AWSError<CodeBuildErrors>> ListBuildsForProjectOutcome;
         typedef Aws::Utils::Outcome<ListCuratedEnvironmentImagesResult, Aws::Client::AWSError<CodeBuildErrors>> ListCuratedEnvironmentImagesOutcome;
@@ -117,6 +120,7 @@ namespace Model
         typedef std::future<CreateWebhookOutcome> CreateWebhookOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
         typedef std::future<DeleteWebhookOutcome> DeleteWebhookOutcomeCallable;
+        typedef std::future<InvalidateProjectCacheOutcome> InvalidateProjectCacheOutcomeCallable;
         typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
         typedef std::future<ListBuildsForProjectOutcome> ListBuildsForProjectOutcomeCallable;
         typedef std::future<ListCuratedEnvironmentImagesOutcome> ListCuratedEnvironmentImagesOutcomeCallable;
@@ -135,6 +139,7 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::CreateWebhookRequest&, const Model::CreateWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebhookResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteWebhookRequest&, const Model::DeleteWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebhookResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::InvalidateProjectCacheRequest&, const Model::InvalidateProjectCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvalidateProjectCacheResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsForProjectRequest&, const Model::ListBuildsForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsForProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListCuratedEnvironmentImagesRequest&, const Model::ListCuratedEnvironmentImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCuratedEnvironmentImagesResponseReceivedHandler;
@@ -432,6 +437,31 @@ namespace Model
         virtual void DeleteWebhookAsync(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Resets the cache for a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::InvalidateProjectCacheOutcome InvalidateProjectCache(const Model::InvalidateProjectCacheRequest& request) const;
+
+        /**
+         * <p>Resets the cache for a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::InvalidateProjectCacheOutcomeCallable InvalidateProjectCacheCallable(const Model::InvalidateProjectCacheRequest& request) const;
+
+        /**
+         * <p>Resets the cache for a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void InvalidateProjectCacheAsync(const Model::InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of build IDs, with each build ID representing a single
          * build.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">AWS
@@ -630,6 +660,7 @@ namespace Model
         void CreateWebhookAsyncHelper(const Model::CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWebhookAsyncHelper(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void InvalidateProjectCacheAsyncHelper(const Model::InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsAsyncHelper(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsForProjectAsyncHelper(const Model::ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCuratedEnvironmentImagesAsyncHelper(const Model::ListCuratedEnvironmentImagesRequest& request, const ListCuratedEnvironmentImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

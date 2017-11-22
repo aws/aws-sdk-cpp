@@ -40,7 +40,7 @@ namespace Model
    * to use with the cluster and accepts a user argument list. Amazon EMR accepts and
    * forwards the argument list to the corresponding installation script as bootstrap
    * action argument. For more information, see <a
-   * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-mapr.html">Using
+   * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-mapr.html">Using
    * the MapR Distribution for Hadoop</a>. Currently supported values are:</p> <ul>
    * <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li> <li>
    * <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li> <li>

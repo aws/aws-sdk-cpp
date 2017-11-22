@@ -35,6 +35,7 @@ AttackDetail::AttackDetail() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_attackCountersHasBeenSet(false),
+    m_attackPropertiesHasBeenSet(false),
     m_mitigationsHasBeenSet(false)
 {
 }
@@ -46,6 +47,7 @@ AttackDetail::AttackDetail(const JsonValue& jsonValue) :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_attackCountersHasBeenSet(false),
+    m_attackPropertiesHasBeenSet(false),
     m_mitigationsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -99,6 +101,16 @@ AttackDetail& AttackDetail::operator =(const JsonValue& jsonValue)
       m_attackCounters.push_back(attackCountersJsonList[attackCountersIndex].AsObject());
     }
     m_attackCountersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AttackProperties"))
+  {
+    Array<JsonValue> attackPropertiesJsonList = jsonValue.GetArray("AttackProperties");
+    for(unsigned attackPropertiesIndex = 0; attackPropertiesIndex < attackPropertiesJsonList.GetLength(); ++attackPropertiesIndex)
+    {
+      m_attackProperties.push_back(attackPropertiesJsonList[attackPropertiesIndex].AsObject());
+    }
+    m_attackPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Mitigations"))
@@ -159,6 +171,17 @@ JsonValue AttackDetail::Jsonize() const
      attackCountersJsonList[attackCountersIndex].AsObject(m_attackCounters[attackCountersIndex].Jsonize());
    }
    payload.WithArray("AttackCounters", std::move(attackCountersJsonList));
+
+  }
+
+  if(m_attackPropertiesHasBeenSet)
+  {
+   Array<JsonValue> attackPropertiesJsonList(m_attackProperties.size());
+   for(unsigned attackPropertiesIndex = 0; attackPropertiesIndex < attackPropertiesJsonList.GetLength(); ++attackPropertiesIndex)
+   {
+     attackPropertiesJsonList[attackPropertiesIndex].AsObject(m_attackProperties[attackPropertiesIndex].Jsonize());
+   }
+   payload.WithArray("AttackProperties", std::move(attackPropertiesJsonList));
 
   }
 

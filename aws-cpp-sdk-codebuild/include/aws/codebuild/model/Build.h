@@ -21,8 +21,11 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/ProjectSource.h>
 #include <aws/codebuild/model/BuildArtifacts.h>
+#include <aws/codebuild/model/ProjectCache.h>
 #include <aws/codebuild/model/ProjectEnvironment.h>
 #include <aws/codebuild/model/LogsLocation.h>
+#include <aws/codebuild/model/VpcConfig.h>
+#include <aws/codebuild/model/NetworkInterface.h>
 #include <aws/codebuild/model/BuildPhase.h>
 #include <utility>
 
@@ -433,6 +436,32 @@ namespace Model
 
 
     /**
+     * <p>Information about the cache for the build.</p>
+     */
+    inline const ProjectCache& GetCache() const{ return m_cache; }
+
+    /**
+     * <p>Information about the cache for the build.</p>
+     */
+    inline void SetCache(const ProjectCache& value) { m_cacheHasBeenSet = true; m_cache = value; }
+
+    /**
+     * <p>Information about the cache for the build.</p>
+     */
+    inline void SetCache(ProjectCache&& value) { m_cacheHasBeenSet = true; m_cache = std::move(value); }
+
+    /**
+     * <p>Information about the cache for the build.</p>
+     */
+    inline Build& WithCache(const ProjectCache& value) { SetCache(value); return *this;}
+
+    /**
+     * <p>Information about the cache for the build.</p>
+     */
+    inline Build& WithCache(ProjectCache&& value) { SetCache(std::move(value)); return *this;}
+
+
+    /**
      * <p>Information about the build environment for this build.</p>
      */
     inline const ProjectEnvironment& GetEnvironment() const{ return m_environment; }
@@ -596,6 +625,73 @@ namespace Model
      */
     inline Build& WithInitiator(const char* value) { SetInitiator(value); return *this;}
 
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
+    inline Build& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
+    inline Build& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes a network interface.</p>
+     */
+    inline const NetworkInterface& GetNetworkInterface() const{ return m_networkInterface; }
+
+    /**
+     * <p>Describes a network interface.</p>
+     */
+    inline void SetNetworkInterface(const NetworkInterface& value) { m_networkInterfaceHasBeenSet = true; m_networkInterface = value; }
+
+    /**
+     * <p>Describes a network interface.</p>
+     */
+    inline void SetNetworkInterface(NetworkInterface&& value) { m_networkInterfaceHasBeenSet = true; m_networkInterface = std::move(value); }
+
+    /**
+     * <p>Describes a network interface.</p>
+     */
+    inline Build& WithNetworkInterface(const NetworkInterface& value) { SetNetworkInterface(value); return *this;}
+
+    /**
+     * <p>Describes a network interface.</p>
+     */
+    inline Build& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -631,6 +727,9 @@ namespace Model
     BuildArtifacts m_artifacts;
     bool m_artifactsHasBeenSet;
 
+    ProjectCache m_cache;
+    bool m_cacheHasBeenSet;
+
     ProjectEnvironment m_environment;
     bool m_environmentHasBeenSet;
 
@@ -645,6 +744,12 @@ namespace Model
 
     Aws::String m_initiator;
     bool m_initiatorHasBeenSet;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
+
+    NetworkInterface m_networkInterface;
+    bool m_networkInterfaceHasBeenSet;
   };
 
 } // namespace Model

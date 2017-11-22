@@ -17,6 +17,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/BoundingBox.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/FaceMatch.h>
 #include <utility>
 
@@ -136,6 +137,49 @@ namespace Model
      */
     inline SearchFacesByImageResult& AddFaceMatches(FaceMatch&& value) { m_faceMatches.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline SearchFacesByImageResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline SearchFacesByImageResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline SearchFacesByImageResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
+
   private:
 
     BoundingBox m_searchedFaceBoundingBox;
@@ -143,6 +187,8 @@ namespace Model
     double m_searchedFaceConfidence;
 
     Aws::Vector<FaceMatch> m_faceMatches;
+
+    Aws::String m_faceModelVersion;
   };
 
 } // namespace Model

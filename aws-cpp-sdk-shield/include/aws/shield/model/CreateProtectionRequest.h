@@ -81,37 +81,121 @@ namespace Model
 
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
+     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The
+     * ARN should be in one of the following formats:</p> <ul> <li> <p>For an
+     * Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
+     * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
+     * </code> </p> </li> </ul>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
+     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The
+     * ARN should be in one of the following formats:</p> <ul> <li> <p>For an
+     * Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
+     * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
+     * </code> </p> </li> </ul>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
+     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The
+     * ARN should be in one of the following formats:</p> <ul> <li> <p>For an
+     * Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
+     * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
+     * </code> </p> </li> </ul>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
+     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The
+     * ARN should be in one of the following formats:</p> <ul> <li> <p>For an
+     * Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
+     * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
+     * </code> </p> </li> </ul>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
+     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The
+     * ARN should be in one of the following formats:</p> <ul> <li> <p>For an
+     * Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
+     * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
+     * </code> </p> </li> </ul>
      */
     inline CreateProtectionRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
+     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The
+     * ARN should be in one of the following formats:</p> <ul> <li> <p>For an
+     * Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
+     * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
+     * </code> </p> </li> </ul>
      */
     inline CreateProtectionRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
+     * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p> <p>The
+     * ARN should be in one of the following formats:</p> <ul> <li> <p>For an
+     * Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
+     * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
+     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
+     * </code> </p> </li> </ul>
      */
     inline CreateProtectionRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

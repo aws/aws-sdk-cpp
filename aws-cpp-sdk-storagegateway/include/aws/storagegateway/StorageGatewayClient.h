@@ -67,6 +67,7 @@
 #include <aws/storagegateway/model/ListVolumeInitiatorsResult.h>
 #include <aws/storagegateway/model/ListVolumeRecoveryPointsResult.h>
 #include <aws/storagegateway/model/ListVolumesResult.h>
+#include <aws/storagegateway/model/NotifyWhenUploadedResult.h>
 #include <aws/storagegateway/model/RefreshCacheResult.h>
 #include <aws/storagegateway/model/RemoveTagsFromResourceResult.h>
 #include <aws/storagegateway/model/ResetCacheResult.h>
@@ -174,6 +175,7 @@ namespace Model
         class ListVolumeInitiatorsRequest;
         class ListVolumeRecoveryPointsRequest;
         class ListVolumesRequest;
+        class NotifyWhenUploadedRequest;
         class RefreshCacheRequest;
         class RemoveTagsFromResourceRequest;
         class ResetCacheRequest;
@@ -237,6 +239,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListVolumeInitiatorsResult, Aws::Client::AWSError<StorageGatewayErrors>> ListVolumeInitiatorsOutcome;
         typedef Aws::Utils::Outcome<ListVolumeRecoveryPointsResult, Aws::Client::AWSError<StorageGatewayErrors>> ListVolumeRecoveryPointsOutcome;
         typedef Aws::Utils::Outcome<ListVolumesResult, Aws::Client::AWSError<StorageGatewayErrors>> ListVolumesOutcome;
+        typedef Aws::Utils::Outcome<NotifyWhenUploadedResult, Aws::Client::AWSError<StorageGatewayErrors>> NotifyWhenUploadedOutcome;
         typedef Aws::Utils::Outcome<RefreshCacheResult, Aws::Client::AWSError<StorageGatewayErrors>> RefreshCacheOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<StorageGatewayErrors>> RemoveTagsFromResourceOutcome;
         typedef Aws::Utils::Outcome<ResetCacheResult, Aws::Client::AWSError<StorageGatewayErrors>> ResetCacheOutcome;
@@ -300,6 +303,7 @@ namespace Model
         typedef std::future<ListVolumeInitiatorsOutcome> ListVolumeInitiatorsOutcomeCallable;
         typedef std::future<ListVolumeRecoveryPointsOutcome> ListVolumeRecoveryPointsOutcomeCallable;
         typedef std::future<ListVolumesOutcome> ListVolumesOutcomeCallable;
+        typedef std::future<NotifyWhenUploadedOutcome> NotifyWhenUploadedOutcomeCallable;
         typedef std::future<RefreshCacheOutcome> RefreshCacheOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
         typedef std::future<ResetCacheOutcome> ResetCacheOutcomeCallable;
@@ -366,6 +370,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::ListVolumeInitiatorsRequest&, const Model::ListVolumeInitiatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVolumeInitiatorsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListVolumeRecoveryPointsRequest&, const Model::ListVolumeRecoveryPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVolumeRecoveryPointsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListVolumesRequest&, const Model::ListVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVolumesResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::NotifyWhenUploadedRequest&, const Model::NotifyWhenUploadedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyWhenUploadedResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::RefreshCacheRequest&, const Model::RefreshCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RefreshCacheResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ResetCacheRequest&, const Model::ResetCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetCacheResponseReceivedHandler;
@@ -512,8 +517,8 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as cache for a gateway. This
-         * operation is only supported in the cached volume, tape and file gateway
-         * architectures (see <a
+         * operation is only supported in the cached volume, tape and file gateway type
+         * (see <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
          * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
@@ -525,8 +530,8 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as cache for a gateway. This
-         * operation is only supported in the cached volume, tape and file gateway
-         * architectures (see <a
+         * operation is only supported in the cached volume, tape and file gateway type
+         * (see <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
          * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
@@ -540,8 +545,8 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as cache for a gateway. This
-         * operation is only supported in the cached volume, tape and file gateway
-         * architectures (see <a
+         * operation is only supported in the cached volume, tape and file gateway type
+         * (see <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
          * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
@@ -605,10 +610,9 @@ namespace Model
         /**
          * <p>Configures one or more gateway local disks as upload buffer for a specified
          * gateway. This operation is supported for the stored volume, cached volume and
-         * tape gateway architectures.</p> <p>In the request, you specify the gateway
-         * Amazon Resource Name (ARN) to which you want to add upload buffer, and one or
-         * more disk IDs that you want to configure as upload buffer.</p><p><h3>See
-         * Also:</h3>   <a
+         * tape gateway types.</p> <p>In the request, you specify the gateway Amazon
+         * Resource Name (ARN) to which you want to add upload buffer, and one or more disk
+         * IDs that you want to configure as upload buffer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">AWS
          * API Reference</a></p>
          */
@@ -617,10 +621,9 @@ namespace Model
         /**
          * <p>Configures one or more gateway local disks as upload buffer for a specified
          * gateway. This operation is supported for the stored volume, cached volume and
-         * tape gateway architectures.</p> <p>In the request, you specify the gateway
-         * Amazon Resource Name (ARN) to which you want to add upload buffer, and one or
-         * more disk IDs that you want to configure as upload buffer.</p><p><h3>See
-         * Also:</h3>   <a
+         * tape gateway types.</p> <p>In the request, you specify the gateway Amazon
+         * Resource Name (ARN) to which you want to add upload buffer, and one or more disk
+         * IDs that you want to configure as upload buffer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">AWS
          * API Reference</a></p>
          *
@@ -631,10 +634,9 @@ namespace Model
         /**
          * <p>Configures one or more gateway local disks as upload buffer for a specified
          * gateway. This operation is supported for the stored volume, cached volume and
-         * tape gateway architectures.</p> <p>In the request, you specify the gateway
-         * Amazon Resource Name (ARN) to which you want to add upload buffer, and one or
-         * more disk IDs that you want to configure as upload buffer.</p><p><h3>See
-         * Also:</h3>   <a
+         * tape gateway types.</p> <p>In the request, you specify the gateway Amazon
+         * Resource Name (ARN) to which you want to add upload buffer, and one or more disk
+         * IDs that you want to configure as upload buffer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">AWS
          * API Reference</a></p>
          *
@@ -644,7 +646,7 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as working storage for a gateway.
-         * This operation is only supported in the stored volume gateway architecture. This
+         * This operation is only supported in the stored volume gateway type. This
          * operation is deprecated in cached volume API version 20120630. Use
          * <a>AddUploadBuffer</a> instead.</p> <note> <p>Working storage is also referred
          * to as upload buffer. You can also use the <a>AddUploadBuffer</a> operation to
@@ -659,7 +661,7 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as working storage for a gateway.
-         * This operation is only supported in the stored volume gateway architecture. This
+         * This operation is only supported in the stored volume gateway type. This
          * operation is deprecated in cached volume API version 20120630. Use
          * <a>AddUploadBuffer</a> instead.</p> <note> <p>Working storage is also referred
          * to as upload buffer. You can also use the <a>AddUploadBuffer</a> operation to
@@ -676,7 +678,7 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as working storage for a gateway.
-         * This operation is only supported in the stored volume gateway architecture. This
+         * This operation is only supported in the stored volume gateway type. This
          * operation is deprecated in cached volume API version 20120630. Use
          * <a>AddUploadBuffer</a> instead.</p> <note> <p>Working storage is also referred
          * to as upload buffer. You can also use the <a>AddUploadBuffer</a> operation to
@@ -694,7 +696,7 @@ namespace Model
         /**
          * <p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the
          * archiving process is initiated. This operation is only supported in the tape
-         * gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">AWS
          * API Reference</a></p>
          */
@@ -703,7 +705,7 @@ namespace Model
         /**
          * <p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the
          * archiving process is initiated. This operation is only supported in the tape
-         * gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">AWS
          * API Reference</a></p>
          *
@@ -714,7 +716,7 @@ namespace Model
         /**
          * <p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the
          * archiving process is initiated. This operation is only supported in the tape
-         * gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">AWS
          * API Reference</a></p>
          *
@@ -725,7 +727,8 @@ namespace Model
         /**
          * <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a
          * gateway after the retrieval process is initiated. The virtual tape is returned
-         * to the VTS.</p><p><h3>See Also:</h3>   <a
+         * to the VTS. This operation is only supported in the tape gateway
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">AWS
          * API Reference</a></p>
          */
@@ -734,7 +737,8 @@ namespace Model
         /**
          * <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a
          * gateway after the retrieval process is initiated. The virtual tape is returned
-         * to the VTS.</p><p><h3>See Also:</h3>   <a
+         * to the VTS. This operation is only supported in the tape gateway
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">AWS
          * API Reference</a></p>
          *
@@ -745,7 +749,8 @@ namespace Model
         /**
          * <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a
          * gateway after the retrieval process is initiated. The virtual tape is returned
-         * to the VTS.</p><p><h3>See Also:</h3>   <a
+         * to the VTS. This operation is only supported in the tape gateway
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">AWS
          * API Reference</a></p>
          *
@@ -755,12 +760,12 @@ namespace Model
 
         /**
          * <p>Creates a cached volume on a specified cached volume gateway. This operation
-         * is only supported in the cached volume gateway architecture.</p> <note> <p>Cache
-         * storage must be allocated to the gateway before you can create a cached volume.
-         * Use the <a>AddCache</a> operation to add cache storage to a gateway. </p>
-         * </note> <p>In the request, you must specify the gateway, size of the volume in
-         * bytes, the iSCSI target name, an IP address on which to expose the target, and a
-         * unique client token. In response, the gateway creates the volume and returns
+         * is only supported in the cached volume gateway type.</p> <note> <p>Cache storage
+         * must be allocated to the gateway before you can create a cached volume. Use the
+         * <a>AddCache</a> operation to add cache storage to a gateway. </p> </note> <p>In
+         * the request, you must specify the gateway, size of the volume in bytes, the
+         * iSCSI target name, an IP address on which to expose the target, and a unique
+         * client token. In response, the gateway creates the volume and returns
          * information about it. This information includes the volume Amazon Resource Name
          * (ARN), its size, and the iSCSI target ARN that initiators can use to connect to
          * the volume target.</p> <p>Optionally, you can provide the ARN for an existing
@@ -775,12 +780,12 @@ namespace Model
 
         /**
          * <p>Creates a cached volume on a specified cached volume gateway. This operation
-         * is only supported in the cached volume gateway architecture.</p> <note> <p>Cache
-         * storage must be allocated to the gateway before you can create a cached volume.
-         * Use the <a>AddCache</a> operation to add cache storage to a gateway. </p>
-         * </note> <p>In the request, you must specify the gateway, size of the volume in
-         * bytes, the iSCSI target name, an IP address on which to expose the target, and a
-         * unique client token. In response, the gateway creates the volume and returns
+         * is only supported in the cached volume gateway type.</p> <note> <p>Cache storage
+         * must be allocated to the gateway before you can create a cached volume. Use the
+         * <a>AddCache</a> operation to add cache storage to a gateway. </p> </note> <p>In
+         * the request, you must specify the gateway, size of the volume in bytes, the
+         * iSCSI target name, an IP address on which to expose the target, and a unique
+         * client token. In response, the gateway creates the volume and returns
          * information about it. This information includes the volume Amazon Resource Name
          * (ARN), its size, and the iSCSI target ARN that initiators can use to connect to
          * the volume target.</p> <p>Optionally, you can provide the ARN for an existing
@@ -797,12 +802,12 @@ namespace Model
 
         /**
          * <p>Creates a cached volume on a specified cached volume gateway. This operation
-         * is only supported in the cached volume gateway architecture.</p> <note> <p>Cache
-         * storage must be allocated to the gateway before you can create a cached volume.
-         * Use the <a>AddCache</a> operation to add cache storage to a gateway. </p>
-         * </note> <p>In the request, you must specify the gateway, size of the volume in
-         * bytes, the iSCSI target name, an IP address on which to expose the target, and a
-         * unique client token. In response, the gateway creates the volume and returns
+         * is only supported in the cached volume gateway type.</p> <note> <p>Cache storage
+         * must be allocated to the gateway before you can create a cached volume. Use the
+         * <a>AddCache</a> operation to add cache storage to a gateway. </p> </note> <p>In
+         * the request, you must specify the gateway, size of the volume in bytes, the
+         * iSCSI target name, an IP address on which to expose the target, and a unique
+         * client token. In response, the gateway creates the volume and returns
          * information about it. This information includes the volume Amazon Resource Name
          * (ARN), its size, and the iSCSI target ARN that initiators can use to connect to
          * the volume target.</p> <p>Optionally, you can provide the ARN for an existing
@@ -821,10 +826,10 @@ namespace Model
          * <p>Creates a file share on an existing file gateway. In Storage Gateway, a file
          * share is a file system mount point backed by Amazon S3 cloud storage. Storage
          * Gateway exposes file shares using a Network File System (NFS) interface. This
-         * operation is only supported in the file gateway architecture.</p> <important>
-         * <p>File gateway requires AWS Security Token Service (AWS STS) to be activated to
-         * enable you create a file share. Make sure AWS STS is activated in the region you
-         * are creating your file gateway in. If AWS STS is not activated in the region,
+         * operation is only supported in the file gateway type.</p> <important> <p>File
+         * gateway requires AWS Security Token Service (AWS STS) to be activated to enable
+         * you create a file share. Make sure AWS STS is activated in the region you are
+         * creating your file gateway in. If AWS STS is not activated in the region,
          * activate it. For information about how to activate AWS STS, see Activating and
          * Deactivating AWS STS in an AWS Region in the AWS Identity and Access Management
          * User Guide. </p> <p>File gateway does not support creating hard or symbolic
@@ -838,10 +843,10 @@ namespace Model
          * <p>Creates a file share on an existing file gateway. In Storage Gateway, a file
          * share is a file system mount point backed by Amazon S3 cloud storage. Storage
          * Gateway exposes file shares using a Network File System (NFS) interface. This
-         * operation is only supported in the file gateway architecture.</p> <important>
-         * <p>File gateway requires AWS Security Token Service (AWS STS) to be activated to
-         * enable you create a file share. Make sure AWS STS is activated in the region you
-         * are creating your file gateway in. If AWS STS is not activated in the region,
+         * operation is only supported in the file gateway type.</p> <important> <p>File
+         * gateway requires AWS Security Token Service (AWS STS) to be activated to enable
+         * you create a file share. Make sure AWS STS is activated in the region you are
+         * creating your file gateway in. If AWS STS is not activated in the region,
          * activate it. For information about how to activate AWS STS, see Activating and
          * Deactivating AWS STS in an AWS Region in the AWS Identity and Access Management
          * User Guide. </p> <p>File gateway does not support creating hard or symbolic
@@ -857,10 +862,10 @@ namespace Model
          * <p>Creates a file share on an existing file gateway. In Storage Gateway, a file
          * share is a file system mount point backed by Amazon S3 cloud storage. Storage
          * Gateway exposes file shares using a Network File System (NFS) interface. This
-         * operation is only supported in the file gateway architecture.</p> <important>
-         * <p>File gateway requires AWS Security Token Service (AWS STS) to be activated to
-         * enable you create a file share. Make sure AWS STS is activated in the region you
-         * are creating your file gateway in. If AWS STS is not activated in the region,
+         * operation is only supported in the file gateway type.</p> <important> <p>File
+         * gateway requires AWS Security Token Service (AWS STS) to be activated to enable
+         * you create a file share. Make sure AWS STS is activated in the region you are
+         * creating your file gateway in. If AWS STS is not activated in the region,
          * activate it. For information about how to activate AWS STS, see Activating and
          * Deactivating AWS STS in an AWS Region in the AWS Identity and Access Management
          * User Guide. </p> <p>File gateway does not support creating hard or symbolic
@@ -887,7 +892,7 @@ namespace Model
          * Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You
          * can use this snapshot ID to check the snapshot progress or later use it when you
          * want to create a volume from a snapshot. This operation is only supported in
-         * stored and cached volume gateway architecture.</p> <note> <p>To list or delete a
+         * stored and cached volume gateway type.</p> <note> <p>To list or delete a
          * snapshot, you must use the Amazon EC2 API. For more information, see
          * DescribeSnapshots or DeleteSnapshot in the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
@@ -916,7 +921,7 @@ namespace Model
          * Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You
          * can use this snapshot ID to check the snapshot progress or later use it when you
          * want to create a volume from a snapshot. This operation is only supported in
-         * stored and cached volume gateway architecture.</p> <note> <p>To list or delete a
+         * stored and cached volume gateway type.</p> <note> <p>To list or delete a
          * snapshot, you must use the Amazon EC2 API. For more information, see
          * DescribeSnapshots or DeleteSnapshot in the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
@@ -947,7 +952,7 @@ namespace Model
          * Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You
          * can use this snapshot ID to check the snapshot progress or later use it when you
          * want to create a volume from a snapshot. This operation is only supported in
-         * stored and cached volume gateway architecture.</p> <note> <p>To list or delete a
+         * stored and cached volume gateway type.</p> <note> <p>To list or delete a
          * snapshot, you must use the Amazon EC2 API. For more information, see
          * DescribeSnapshots or DeleteSnapshot in the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
@@ -965,11 +970,10 @@ namespace Model
 
         /**
          * <p>Initiates a snapshot of a gateway from a volume recovery point. This
-         * operation is only supported in the cached volume gateway architecture.</p> <p>A
-         * volume recovery point is a point in time at which all data of the volume is
-         * consistent and from which you can create a snapshot. To get a list of volume
-         * recovery point for cached volume gateway, use
-         * <a>ListVolumeRecoveryPoints</a>.</p> <p>In the
+         * operation is only supported in the cached volume gateway type.</p> <p>A volume
+         * recovery point is a point in time at which all data of the volume is consistent
+         * and from which you can create a snapshot. To get a list of volume recovery point
+         * for cached volume gateway, use <a>ListVolumeRecoveryPoints</a>.</p> <p>In the
          * <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the
          * volume by providing its Amazon Resource Name (ARN). You must also provide a
          * description for the snapshot. When the gateway takes a snapshot of the specified
@@ -986,11 +990,10 @@ namespace Model
 
         /**
          * <p>Initiates a snapshot of a gateway from a volume recovery point. This
-         * operation is only supported in the cached volume gateway architecture.</p> <p>A
-         * volume recovery point is a point in time at which all data of the volume is
-         * consistent and from which you can create a snapshot. To get a list of volume
-         * recovery point for cached volume gateway, use
-         * <a>ListVolumeRecoveryPoints</a>.</p> <p>In the
+         * operation is only supported in the cached volume gateway type.</p> <p>A volume
+         * recovery point is a point in time at which all data of the volume is consistent
+         * and from which you can create a snapshot. To get a list of volume recovery point
+         * for cached volume gateway, use <a>ListVolumeRecoveryPoints</a>.</p> <p>In the
          * <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the
          * volume by providing its Amazon Resource Name (ARN). You must also provide a
          * description for the snapshot. When the gateway takes a snapshot of the specified
@@ -1009,11 +1012,10 @@ namespace Model
 
         /**
          * <p>Initiates a snapshot of a gateway from a volume recovery point. This
-         * operation is only supported in the cached volume gateway architecture.</p> <p>A
-         * volume recovery point is a point in time at which all data of the volume is
-         * consistent and from which you can create a snapshot. To get a list of volume
-         * recovery point for cached volume gateway, use
-         * <a>ListVolumeRecoveryPoints</a>.</p> <p>In the
+         * operation is only supported in the cached volume gateway type.</p> <p>A volume
+         * recovery point is a point in time at which all data of the volume is consistent
+         * and from which you can create a snapshot. To get a list of volume recovery point
+         * for cached volume gateway, use <a>ListVolumeRecoveryPoints</a>.</p> <p>In the
          * <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the
          * volume by providing its Amazon Resource Name (ARN). You must also provide a
          * description for the snapshot. When the gateway takes a snapshot of the specified
@@ -1032,8 +1034,8 @@ namespace Model
 
         /**
          * <p>Creates a volume on a specified gateway. This operation is only supported in
-         * the stored volume gateway architecture.</p> <p>The size of the volume to create
-         * is inferred from the disk size. You can choose to preserve existing data on the
+         * the stored volume gateway type.</p> <p>The size of the volume to create is
+         * inferred from the disk size. You can choose to preserve existing data on the
          * disk, create volume from an existing snapshot, or create an empty volume. If you
          * choose to create an empty gateway volume, then any existing data on the disk is
          * erased.</p> <p>In the request you must specify the gateway and the disk
@@ -1048,8 +1050,8 @@ namespace Model
 
         /**
          * <p>Creates a volume on a specified gateway. This operation is only supported in
-         * the stored volume gateway architecture.</p> <p>The size of the volume to create
-         * is inferred from the disk size. You can choose to preserve existing data on the
+         * the stored volume gateway type.</p> <p>The size of the volume to create is
+         * inferred from the disk size. You can choose to preserve existing data on the
          * disk, create volume from an existing snapshot, or create an empty volume. If you
          * choose to create an empty gateway volume, then any existing data on the disk is
          * erased.</p> <p>In the request you must specify the gateway and the disk
@@ -1066,8 +1068,8 @@ namespace Model
 
         /**
          * <p>Creates a volume on a specified gateway. This operation is only supported in
-         * the stored volume gateway architecture.</p> <p>The size of the volume to create
-         * is inferred from the disk size. You can choose to preserve existing data on the
+         * the stored volume gateway type.</p> <p>The size of the volume to create is
+         * inferred from the disk size. You can choose to preserve existing data on the
          * disk, create volume from an existing snapshot, or create an empty volume. If you
          * choose to create an empty gateway volume, then any existing data on the disk is
          * erased.</p> <p>In the request you must specify the gateway and the disk
@@ -1086,10 +1088,10 @@ namespace Model
          * <p>Creates a virtual tape by using your own barcode. You write data to the
          * virtual tape and then archive the tape. A barcode is unique and can not be
          * reused if it has already been used on a tape . This applies to barcodes used on
-         * deleted tapes. This operation is only supported in the tape gateway.
-         * architecture.</p> <note> <p>Cache storage must be allocated to the gateway
-         * before you can create a virtual tape. Use the <a>AddCache</a> operation to add
-         * cache storage to a gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted tapes. This operation is only supported in the tape gateway type.</p>
+         * <note> <p>Cache storage must be allocated to the gateway before you can create a
+         * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
+         * gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
          * API Reference</a></p>
          */
@@ -1099,10 +1101,10 @@ namespace Model
          * <p>Creates a virtual tape by using your own barcode. You write data to the
          * virtual tape and then archive the tape. A barcode is unique and can not be
          * reused if it has already been used on a tape . This applies to barcodes used on
-         * deleted tapes. This operation is only supported in the tape gateway.
-         * architecture.</p> <note> <p>Cache storage must be allocated to the gateway
-         * before you can create a virtual tape. Use the <a>AddCache</a> operation to add
-         * cache storage to a gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted tapes. This operation is only supported in the tape gateway type.</p>
+         * <note> <p>Cache storage must be allocated to the gateway before you can create a
+         * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
+         * gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
          * API Reference</a></p>
          *
@@ -1114,10 +1116,10 @@ namespace Model
          * <p>Creates a virtual tape by using your own barcode. You write data to the
          * virtual tape and then archive the tape. A barcode is unique and can not be
          * reused if it has already been used on a tape . This applies to barcodes used on
-         * deleted tapes. This operation is only supported in the tape gateway.
-         * architecture.</p> <note> <p>Cache storage must be allocated to the gateway
-         * before you can create a virtual tape. Use the <a>AddCache</a> operation to add
-         * cache storage to a gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted tapes. This operation is only supported in the tape gateway type.</p>
+         * <note> <p>Cache storage must be allocated to the gateway before you can create a
+         * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
+         * gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
          * API Reference</a></p>
          *
@@ -1128,9 +1130,9 @@ namespace Model
         /**
          * <p>Creates one or more virtual tapes. You write data to the virtual tapes and
          * then archive the tapes. This operation is only supported in the tape gateway
-         * architecture.</p> <note> <p>Cache storage must be allocated to the gateway
-         * before you can create virtual tapes. Use the <a>AddCache</a> operation to add
-         * cache storage to a gateway. </p> </note><p><h3>See Also:</h3>   <a
+         * type.</p> <note> <p>Cache storage must be allocated to the gateway before you
+         * can create virtual tapes. Use the <a>AddCache</a> operation to add cache storage
+         * to a gateway. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">AWS
          * API Reference</a></p>
          */
@@ -1139,9 +1141,9 @@ namespace Model
         /**
          * <p>Creates one or more virtual tapes. You write data to the virtual tapes and
          * then archive the tapes. This operation is only supported in the tape gateway
-         * architecture.</p> <note> <p>Cache storage must be allocated to the gateway
-         * before you can create virtual tapes. Use the <a>AddCache</a> operation to add
-         * cache storage to a gateway. </p> </note><p><h3>See Also:</h3>   <a
+         * type.</p> <note> <p>Cache storage must be allocated to the gateway before you
+         * can create virtual tapes. Use the <a>AddCache</a> operation to add cache storage
+         * to a gateway. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">AWS
          * API Reference</a></p>
          *
@@ -1152,9 +1154,9 @@ namespace Model
         /**
          * <p>Creates one or more virtual tapes. You write data to the virtual tapes and
          * then archive the tapes. This operation is only supported in the tape gateway
-         * architecture.</p> <note> <p>Cache storage must be allocated to the gateway
-         * before you can create virtual tapes. Use the <a>AddCache</a> operation to add
-         * cache storage to a gateway. </p> </note><p><h3>See Also:</h3>   <a
+         * type.</p> <note> <p>Cache storage must be allocated to the gateway before you
+         * can create virtual tapes. Use the <a>AddCache</a> operation to add cache storage
+         * to a gateway. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">AWS
          * API Reference</a></p>
          *
@@ -1229,7 +1231,7 @@ namespace Model
 
         /**
          * <p>Deletes a file share from a file gateway. This operation is only supported in
-         * the file gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * the file gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">AWS
          * API Reference</a></p>
          */
@@ -1237,7 +1239,7 @@ namespace Model
 
         /**
          * <p>Deletes a file share from a file gateway. This operation is only supported in
-         * the file gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * the file gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">AWS
          * API Reference</a></p>
          *
@@ -1247,7 +1249,7 @@ namespace Model
 
         /**
          * <p>Deletes a file share from a file gateway. This operation is only supported in
-         * the file gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * the file gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">AWS
          * API Reference</a></p>
          *
@@ -1328,9 +1330,10 @@ namespace Model
          * snapshot schedule for a volume. For more information, see <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
          * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
-         * identify the volume by providing its Amazon Resource Name (ARN). </p> <note>
-         * <p>To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon
-         * Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * identify the volume by providing its Amazon Resource Name (ARN). This operation
+         * is only supported in stored and cached volume gateway types.</p> <note> <p>To
+         * list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon Elastic
+         * Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">AWS
          * API Reference</a></p>
          */
@@ -1342,9 +1345,10 @@ namespace Model
          * snapshot schedule for a volume. For more information, see <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
          * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
-         * identify the volume by providing its Amazon Resource Name (ARN). </p> <note>
-         * <p>To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon
-         * Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * identify the volume by providing its Amazon Resource Name (ARN). This operation
+         * is only supported in stored and cached volume gateway types.</p> <note> <p>To
+         * list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon Elastic
+         * Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">AWS
          * API Reference</a></p>
          *
@@ -1358,9 +1362,10 @@ namespace Model
          * snapshot schedule for a volume. For more information, see <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
          * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
-         * identify the volume by providing its Amazon Resource Name (ARN). </p> <note>
-         * <p>To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon
-         * Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * identify the volume by providing its Amazon Resource Name (ARN). This operation
+         * is only supported in stored and cached volume gateway types.</p> <note> <p>To
+         * list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon Elastic
+         * Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">AWS
          * API Reference</a></p>
          *
@@ -1370,7 +1375,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified virtual tape. This operation is only supported in the
-         * tape gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * tape gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">AWS
          * API Reference</a></p>
          */
@@ -1378,7 +1383,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified virtual tape. This operation is only supported in the
-         * tape gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * tape gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">AWS
          * API Reference</a></p>
          *
@@ -1388,7 +1393,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified virtual tape. This operation is only supported in the
-         * tape gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * tape gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">AWS
          * API Reference</a></p>
          *
@@ -1398,8 +1403,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified virtual tape from the virtual tape shelf (VTS). This
-         * operation is only supported in the tape gateway architecture.</p><p><h3>See
-         * Also:</h3>   <a
+         * operation is only supported in the tape gateway type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">AWS
          * API Reference</a></p>
          */
@@ -1407,8 +1412,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified virtual tape from the virtual tape shelf (VTS). This
-         * operation is only supported in the tape gateway architecture.</p><p><h3>See
-         * Also:</h3>   <a
+         * operation is only supported in the tape gateway type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">AWS
          * API Reference</a></p>
          *
@@ -1418,8 +1423,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified virtual tape from the virtual tape shelf (VTS). This
-         * operation is only supported in the tape gateway architecture.</p><p><h3>See
-         * Also:</h3>   <a
+         * operation is only supported in the tape gateway type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">AWS
          * API Reference</a></p>
          *
@@ -1430,14 +1435,14 @@ namespace Model
         /**
          * <p>Deletes the specified storage volume that you previously created using the
          * <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API. This
-         * operation is only supported in the cached volume and stored volume
-         * architectures. For stored volume gateways, the local disk that was configured as
-         * the storage volume is not deleted. You can reuse the local disk to create
-         * another storage volume. </p> <p>Before you delete a volume, make sure there are
-         * no iSCSI connections to the volume you are deleting. You should also make sure
-         * there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud
-         * (Amazon EC2) API to query snapshots on the volume you are deleting and check the
-         * snapshot status. For more information, go to <a
+         * operation is only supported in the cached volume and stored volume types. For
+         * stored volume gateways, the local disk that was configured as the storage volume
+         * is not deleted. You can reuse the local disk to create another storage volume.
+         * </p> <p>Before you delete a volume, make sure there are no iSCSI connections to
+         * the volume you are deleting. You should also make sure there is no snapshot in
+         * progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query
+         * snapshots on the volume you are deleting and check the snapshot status. For more
+         * information, go to <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
@@ -1450,14 +1455,14 @@ namespace Model
         /**
          * <p>Deletes the specified storage volume that you previously created using the
          * <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API. This
-         * operation is only supported in the cached volume and stored volume
-         * architectures. For stored volume gateways, the local disk that was configured as
-         * the storage volume is not deleted. You can reuse the local disk to create
-         * another storage volume. </p> <p>Before you delete a volume, make sure there are
-         * no iSCSI connections to the volume you are deleting. You should also make sure
-         * there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud
-         * (Amazon EC2) API to query snapshots on the volume you are deleting and check the
-         * snapshot status. For more information, go to <a
+         * operation is only supported in the cached volume and stored volume types. For
+         * stored volume gateways, the local disk that was configured as the storage volume
+         * is not deleted. You can reuse the local disk to create another storage volume.
+         * </p> <p>Before you delete a volume, make sure there are no iSCSI connections to
+         * the volume you are deleting. You should also make sure there is no snapshot in
+         * progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query
+         * snapshots on the volume you are deleting and check the snapshot status. For more
+         * information, go to <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
@@ -1472,14 +1477,14 @@ namespace Model
         /**
          * <p>Deletes the specified storage volume that you previously created using the
          * <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API. This
-         * operation is only supported in the cached volume and stored volume
-         * architectures. For stored volume gateways, the local disk that was configured as
-         * the storage volume is not deleted. You can reuse the local disk to create
-         * another storage volume. </p> <p>Before you delete a volume, make sure there are
-         * no iSCSI connections to the volume you are deleting. You should also make sure
-         * there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud
-         * (Amazon EC2) API to query snapshots on the volume you are deleting and check the
-         * snapshot status. For more information, go to <a
+         * operation is only supported in the cached volume and stored volume types. For
+         * stored volume gateways, the local disk that was configured as the storage volume
+         * is not deleted. You can reuse the local disk to create another storage volume.
+         * </p> <p>Before you delete a volume, make sure there are no iSCSI connections to
+         * the volume you are deleting. You should also make sure there is no snapshot in
+         * progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query
+         * snapshots on the volume you are deleting and check the snapshot status. For more
+         * information, go to <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
@@ -1536,9 +1541,9 @@ namespace Model
 
         /**
          * <p>Returns information about the cache of a gateway. This operation is only
-         * supported in the cached volume,tape and file gateway architectures.</p> <p>The
-         * response includes disk IDs that are configured as cache, and it includes the
-         * amount of cache allocated and used.</p><p><h3>See Also:</h3>   <a
+         * supported in the cached volume, tape and file gateway types.</p> <p>The response
+         * includes disk IDs that are configured as cache, and it includes the amount of
+         * cache allocated and used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">AWS
          * API Reference</a></p>
          */
@@ -1546,9 +1551,9 @@ namespace Model
 
         /**
          * <p>Returns information about the cache of a gateway. This operation is only
-         * supported in the cached volume,tape and file gateway architectures.</p> <p>The
-         * response includes disk IDs that are configured as cache, and it includes the
-         * amount of cache allocated and used.</p><p><h3>See Also:</h3>   <a
+         * supported in the cached volume, tape and file gateway types.</p> <p>The response
+         * includes disk IDs that are configured as cache, and it includes the amount of
+         * cache allocated and used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">AWS
          * API Reference</a></p>
          *
@@ -1558,9 +1563,9 @@ namespace Model
 
         /**
          * <p>Returns information about the cache of a gateway. This operation is only
-         * supported in the cached volume,tape and file gateway architectures.</p> <p>The
-         * response includes disk IDs that are configured as cache, and it includes the
-         * amount of cache allocated and used.</p><p><h3>See Also:</h3>   <a
+         * supported in the cached volume, tape and file gateway types.</p> <p>The response
+         * includes disk IDs that are configured as cache, and it includes the amount of
+         * cache allocated and used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">AWS
          * API Reference</a></p>
          *
@@ -1570,10 +1575,10 @@ namespace Model
 
         /**
          * <p>Returns a description of the gateway volumes specified in the request. This
-         * operation is only supported in the cached volume gateway architecture.</p>
-         * <p>The list of gateway volumes in the request must be from one gateway. In the
-         * response Amazon Storage Gateway returns volume information sorted by volume
-         * Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * operation is only supported in the cached volume gateway types.</p> <p>The list
+         * of gateway volumes in the request must be from one gateway. In the response
+         * Amazon Storage Gateway returns volume information sorted by volume Amazon
+         * Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">AWS
          * API Reference</a></p>
          */
@@ -1581,10 +1586,10 @@ namespace Model
 
         /**
          * <p>Returns a description of the gateway volumes specified in the request. This
-         * operation is only supported in the cached volume gateway architecture.</p>
-         * <p>The list of gateway volumes in the request must be from one gateway. In the
-         * response Amazon Storage Gateway returns volume information sorted by volume
-         * Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * operation is only supported in the cached volume gateway types.</p> <p>The list
+         * of gateway volumes in the request must be from one gateway. In the response
+         * Amazon Storage Gateway returns volume information sorted by volume Amazon
+         * Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">AWS
          * API Reference</a></p>
          *
@@ -1594,10 +1599,10 @@ namespace Model
 
         /**
          * <p>Returns a description of the gateway volumes specified in the request. This
-         * operation is only supported in the cached volume gateway architecture.</p>
-         * <p>The list of gateway volumes in the request must be from one gateway. In the
-         * response Amazon Storage Gateway returns volume information sorted by volume
-         * Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * operation is only supported in the cached volume gateway types.</p> <p>The list
+         * of gateway volumes in the request must be from one gateway. In the response
+         * Amazon Storage Gateway returns volume information sorted by volume Amazon
+         * Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">AWS
          * API Reference</a></p>
          *
@@ -1703,7 +1708,8 @@ namespace Model
 
         /**
          * <p>Gets a description for one or more file shares from a file gateway. This
-         * operation is only supported in file gateways.</p><p><h3>See Also:</h3>   <a
+         * operation is only supported in the file gateway type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">AWS
          * API Reference</a></p>
          */
@@ -1711,7 +1717,8 @@ namespace Model
 
         /**
          * <p>Gets a description for one or more file shares from a file gateway. This
-         * operation is only supported in file gateways.</p><p><h3>See Also:</h3>   <a
+         * operation is only supported in the file gateway type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">AWS
          * API Reference</a></p>
          *
@@ -1721,7 +1728,8 @@ namespace Model
 
         /**
          * <p>Gets a description for one or more file shares from a file gateway. This
-         * operation is only supported in file gateways.</p><p><h3>See Also:</h3>   <a
+         * operation is only supported in the file gateway type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">AWS
          * API Reference</a></p>
          *
@@ -1733,7 +1741,7 @@ namespace Model
          * <p>Describes the snapshot schedule for the specified gateway volume. The
          * snapshot schedule information includes intervals at which snapshots are
          * automatically initiated on the volume. This operation is only supported in the
-         * cached volume and stored volume architectures.</p><p><h3>See Also:</h3>   <a
+         * cached volume and stored volume types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">AWS
          * API Reference</a></p>
          */
@@ -1743,7 +1751,7 @@ namespace Model
          * <p>Describes the snapshot schedule for the specified gateway volume. The
          * snapshot schedule information includes intervals at which snapshots are
          * automatically initiated on the volume. This operation is only supported in the
-         * cached volume and stored volume architectures.</p><p><h3>See Also:</h3>   <a
+         * cached volume and stored volume types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">AWS
          * API Reference</a></p>
          *
@@ -1755,7 +1763,7 @@ namespace Model
          * <p>Describes the snapshot schedule for the specified gateway volume. The
          * snapshot schedule information includes intervals at which snapshots are
          * automatically initiated on the volume. This operation is only supported in the
-         * cached volume and stored volume architectures.</p><p><h3>See Also:</h3>   <a
+         * cached volume and stored volume types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">AWS
          * API Reference</a></p>
          *
@@ -1767,7 +1775,7 @@ namespace Model
          * <p>Returns the description of the gateway volumes specified in the request. The
          * list of gateway volumes in the request must be from one gateway. In the response
          * Amazon Storage Gateway returns volume information sorted by volume ARNs. This
-         * operation is only supported in stored volume gateway architecture.</p><p><h3>See
+         * operation is only supported in stored volume gateway type.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">AWS
          * API Reference</a></p>
@@ -1778,7 +1786,7 @@ namespace Model
          * <p>Returns the description of the gateway volumes specified in the request. The
          * list of gateway volumes in the request must be from one gateway. In the response
          * Amazon Storage Gateway returns volume information sorted by volume ARNs. This
-         * operation is only supported in stored volume gateway architecture.</p><p><h3>See
+         * operation is only supported in stored volume gateway type.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">AWS
          * API Reference</a></p>
@@ -1791,7 +1799,7 @@ namespace Model
          * <p>Returns the description of the gateway volumes specified in the request. The
          * list of gateway volumes in the request must be from one gateway. In the response
          * Amazon Storage Gateway returns volume information sorted by volume ARNs. This
-         * operation is only supported in stored volume gateway architecture.</p><p><h3>See
+         * operation is only supported in stored volume gateway type.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">AWS
          * API Reference</a></p>
@@ -1802,9 +1810,9 @@ namespace Model
 
         /**
          * <p>Returns a description of specified virtual tapes in the virtual tape shelf
-         * (VTS). This operation is only supported in the tape gateway architecture.</p>
-         * <p>If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway
-         * returns a description of all virtual tapes found in the VTS associated with your
+         * (VTS). This operation is only supported in the tape gateway type.</p> <p>If a
+         * specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
+         * description of all virtual tapes found in the VTS associated with your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">AWS
          * API Reference</a></p>
@@ -1813,9 +1821,9 @@ namespace Model
 
         /**
          * <p>Returns a description of specified virtual tapes in the virtual tape shelf
-         * (VTS). This operation is only supported in the tape gateway architecture.</p>
-         * <p>If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway
-         * returns a description of all virtual tapes found in the VTS associated with your
+         * (VTS). This operation is only supported in the tape gateway type.</p> <p>If a
+         * specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
+         * description of all virtual tapes found in the VTS associated with your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">AWS
          * API Reference</a></p>
@@ -1826,9 +1834,9 @@ namespace Model
 
         /**
          * <p>Returns a description of specified virtual tapes in the virtual tape shelf
-         * (VTS). This operation is only supported in the tape gateway architecture.</p>
-         * <p>If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway
-         * returns a description of all virtual tapes found in the VTS associated with your
+         * (VTS). This operation is only supported in the tape gateway type.</p> <p>If a
+         * specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
+         * description of all virtual tapes found in the VTS associated with your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">AWS
          * API Reference</a></p>
@@ -1843,7 +1851,7 @@ namespace Model
          * virtual tape at which all the data on the virtual tape is consistent. If your
          * gateway crashes, virtual tapes that have recovery points can be recovered to a
          * new gateway. This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">AWS
          * API Reference</a></p>
          */
@@ -1855,7 +1863,7 @@ namespace Model
          * virtual tape at which all the data on the virtual tape is consistent. If your
          * gateway crashes, virtual tapes that have recovery points can be recovered to a
          * new gateway. This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">AWS
          * API Reference</a></p>
          *
@@ -1869,7 +1877,7 @@ namespace Model
          * virtual tape at which all the data on the virtual tape is consistent. If your
          * gateway crashes, virtual tapes that have recovery points can be recovered to a
          * new gateway. This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">AWS
          * API Reference</a></p>
          *
@@ -1881,7 +1889,7 @@ namespace Model
          * <p>Returns a description of the specified Amazon Resource Name (ARN) of virtual
          * tapes. If a <code>TapeARN</code> is not specified, returns a description of all
          * virtual tapes associated with the specified gateway. This operation is only
-         * supported in the tape gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * supported in the tape gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">AWS
          * API Reference</a></p>
          */
@@ -1891,7 +1899,7 @@ namespace Model
          * <p>Returns a description of the specified Amazon Resource Name (ARN) of virtual
          * tapes. If a <code>TapeARN</code> is not specified, returns a description of all
          * virtual tapes associated with the specified gateway. This operation is only
-         * supported in the tape gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * supported in the tape gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">AWS
          * API Reference</a></p>
          *
@@ -1903,7 +1911,7 @@ namespace Model
          * <p>Returns a description of the specified Amazon Resource Name (ARN) of virtual
          * tapes. If a <code>TapeARN</code> is not specified, returns a description of all
          * virtual tapes associated with the specified gateway. This operation is only
-         * supported in the tape gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * supported in the tape gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">AWS
          * API Reference</a></p>
          *
@@ -1913,10 +1921,10 @@ namespace Model
 
         /**
          * <p>Returns information about the upload buffer of a gateway. This operation is
-         * supported for the stored volume, cached volume and tape gateway
-         * architectures.</p> <p>The response includes disk IDs that are configured as
-         * upload buffer space, and it includes the amount of upload buffer space allocated
-         * and used.</p><p><h3>See Also:</h3>   <a
+         * supported for the stored volume, cached volume and tape gateway types.</p>
+         * <p>The response includes disk IDs that are configured as upload buffer space,
+         * and it includes the amount of upload buffer space allocated and
+         * used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">AWS
          * API Reference</a></p>
          */
@@ -1924,10 +1932,10 @@ namespace Model
 
         /**
          * <p>Returns information about the upload buffer of a gateway. This operation is
-         * supported for the stored volume, cached volume and tape gateway
-         * architectures.</p> <p>The response includes disk IDs that are configured as
-         * upload buffer space, and it includes the amount of upload buffer space allocated
-         * and used.</p><p><h3>See Also:</h3>   <a
+         * supported for the stored volume, cached volume and tape gateway types.</p>
+         * <p>The response includes disk IDs that are configured as upload buffer space,
+         * and it includes the amount of upload buffer space allocated and
+         * used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">AWS
          * API Reference</a></p>
          *
@@ -1937,10 +1945,10 @@ namespace Model
 
         /**
          * <p>Returns information about the upload buffer of a gateway. This operation is
-         * supported for the stored volume, cached volume and tape gateway
-         * architectures.</p> <p>The response includes disk IDs that are configured as
-         * upload buffer space, and it includes the amount of upload buffer space allocated
-         * and used.</p><p><h3>See Also:</h3>   <a
+         * supported for the stored volume, cached volume and tape gateway types.</p>
+         * <p>The response includes disk IDs that are configured as upload buffer space,
+         * and it includes the amount of upload buffer space allocated and
+         * used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">AWS
          * API Reference</a></p>
          *
@@ -1952,7 +1960,7 @@ namespace Model
          * <p>Returns a description of virtual tape library (VTL) devices for the specified
          * tape gateway. In the response, AWS Storage Gateway returns VTL device
          * information.</p> <p>This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">AWS
          * API Reference</a></p>
          */
@@ -1962,7 +1970,7 @@ namespace Model
          * <p>Returns a description of virtual tape library (VTL) devices for the specified
          * tape gateway. In the response, AWS Storage Gateway returns VTL device
          * information.</p> <p>This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">AWS
          * API Reference</a></p>
          *
@@ -1974,7 +1982,7 @@ namespace Model
          * <p>Returns a description of virtual tape library (VTL) devices for the specified
          * tape gateway. In the response, AWS Storage Gateway returns VTL device
          * information.</p> <p>This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">AWS
          * API Reference</a></p>
          *
@@ -1984,13 +1992,13 @@ namespace Model
 
         /**
          * <p>Returns information about the working storage of a gateway. This operation is
-         * only supported in the stored volumes gateway architecture. This operation is
-         * deprecated in cached volumes API version (20120630). Use DescribeUploadBuffer
-         * instead.</p> <note> <p>Working storage is also referred to as upload buffer. You
-         * can also use the DescribeUploadBuffer operation to add upload buffer to a stored
-         * volume gateway.</p> </note> <p>The response includes disk IDs that are
-         * configured as working storage, and it includes the amount of working storage
-         * allocated and used.</p><p><h3>See Also:</h3>   <a
+         * only supported in the stored volumes gateway type. This operation is deprecated
+         * in cached volumes API version (20120630). Use DescribeUploadBuffer instead.</p>
+         * <note> <p>Working storage is also referred to as upload buffer. You can also use
+         * the DescribeUploadBuffer operation to add upload buffer to a stored volume
+         * gateway.</p> </note> <p>The response includes disk IDs that are configured as
+         * working storage, and it includes the amount of working storage allocated and
+         * used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">AWS
          * API Reference</a></p>
          */
@@ -1998,13 +2006,13 @@ namespace Model
 
         /**
          * <p>Returns information about the working storage of a gateway. This operation is
-         * only supported in the stored volumes gateway architecture. This operation is
-         * deprecated in cached volumes API version (20120630). Use DescribeUploadBuffer
-         * instead.</p> <note> <p>Working storage is also referred to as upload buffer. You
-         * can also use the DescribeUploadBuffer operation to add upload buffer to a stored
-         * volume gateway.</p> </note> <p>The response includes disk IDs that are
-         * configured as working storage, and it includes the amount of working storage
-         * allocated and used.</p><p><h3>See Also:</h3>   <a
+         * only supported in the stored volumes gateway type. This operation is deprecated
+         * in cached volumes API version (20120630). Use DescribeUploadBuffer instead.</p>
+         * <note> <p>Working storage is also referred to as upload buffer. You can also use
+         * the DescribeUploadBuffer operation to add upload buffer to a stored volume
+         * gateway.</p> </note> <p>The response includes disk IDs that are configured as
+         * working storage, and it includes the amount of working storage allocated and
+         * used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">AWS
          * API Reference</a></p>
          *
@@ -2014,13 +2022,13 @@ namespace Model
 
         /**
          * <p>Returns information about the working storage of a gateway. This operation is
-         * only supported in the stored volumes gateway architecture. This operation is
-         * deprecated in cached volumes API version (20120630). Use DescribeUploadBuffer
-         * instead.</p> <note> <p>Working storage is also referred to as upload buffer. You
-         * can also use the DescribeUploadBuffer operation to add upload buffer to a stored
-         * volume gateway.</p> </note> <p>The response includes disk IDs that are
-         * configured as working storage, and it includes the amount of working storage
-         * allocated and used.</p><p><h3>See Also:</h3>   <a
+         * only supported in the stored volumes gateway type. This operation is deprecated
+         * in cached volumes API version (20120630). Use DescribeUploadBuffer instead.</p>
+         * <note> <p>Working storage is also referred to as upload buffer. You can also use
+         * the DescribeUploadBuffer operation to add upload buffer to a stored volume
+         * gateway.</p> </note> <p>The response includes disk IDs that are configured as
+         * working storage, and it includes the amount of working storage allocated and
+         * used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">AWS
          * API Reference</a></p>
          *
@@ -2033,8 +2041,8 @@ namespace Model
          * example, if your gateway VM is damaged, you can disable the gateway so you can
          * recover virtual tapes.</p> <p>Use this operation for a tape gateway that is not
          * reachable or not functioning. This operation is only supported in the tape
-         * gateway architectures.</p> <important> <p>Once a gateway is disabled it cannot
-         * be enabled.</p> </important><p><h3>See Also:</h3>   <a
+         * gateway type.</p> <important> <p>Once a gateway is disabled it cannot be
+         * enabled.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">AWS
          * API Reference</a></p>
          */
@@ -2045,8 +2053,8 @@ namespace Model
          * example, if your gateway VM is damaged, you can disable the gateway so you can
          * recover virtual tapes.</p> <p>Use this operation for a tape gateway that is not
          * reachable or not functioning. This operation is only supported in the tape
-         * gateway architectures.</p> <important> <p>Once a gateway is disabled it cannot
-         * be enabled.</p> </important><p><h3>See Also:</h3>   <a
+         * gateway type.</p> <important> <p>Once a gateway is disabled it cannot be
+         * enabled.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">AWS
          * API Reference</a></p>
          *
@@ -2059,8 +2067,8 @@ namespace Model
          * example, if your gateway VM is damaged, you can disable the gateway so you can
          * recover virtual tapes.</p> <p>Use this operation for a tape gateway that is not
          * reachable or not functioning. This operation is only supported in the tape
-         * gateway architectures.</p> <important> <p>Once a gateway is disabled it cannot
-         * be enabled.</p> </important><p><h3>See Also:</h3>   <a
+         * gateway type.</p> <important> <p>Once a gateway is disabled it cannot be
+         * enabled.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">AWS
          * API Reference</a></p>
          *
@@ -2071,7 +2079,7 @@ namespace Model
         /**
          * <p>Gets a list of the file shares for a specific file gateway, or the list of
          * file shares that belong to the calling user account. This operation is only
-         * supported in the file gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * supported in the file gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">AWS
          * API Reference</a></p>
          */
@@ -2080,7 +2088,7 @@ namespace Model
         /**
          * <p>Gets a list of the file shares for a specific file gateway, or the list of
          * file shares that belong to the calling user account. This operation is only
-         * supported in the file gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * supported in the file gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">AWS
          * API Reference</a></p>
          *
@@ -2091,7 +2099,7 @@ namespace Model
         /**
          * <p>Gets a list of the file shares for a specific file gateway, or the list of
          * file shares that belong to the calling user account. This operation is only
-         * supported in the file gateway architecture.</p><p><h3>See Also:</h3>   <a
+         * supported in the file gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">AWS
          * API Reference</a></p>
          *
@@ -2197,7 +2205,7 @@ namespace Model
         /**
          * <p>Lists the tags that have been added to the specified resource. This operation
          * is only supported in the cached volume, stored volume and tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -2206,7 +2214,7 @@ namespace Model
         /**
          * <p>Lists the tags that have been added to the specified resource. This operation
          * is only supported in the cached volume, stored volume and tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -2217,7 +2225,7 @@ namespace Model
         /**
          * <p>Lists the tags that have been added to the specified resource. This operation
          * is only supported in the cached volume, stored volume and tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -2235,8 +2243,7 @@ namespace Model
          * number of tapes in the response. If the number of tapes returned in the response
          * is truncated, the response includes a <code>Marker</code> element that you can
          * use in your subsequent request to retrieve the next set of tapes. This operation
-         * is only supported in the tape gateway architecture.</p><p><h3>See Also:</h3>  
-         * <a
+         * is only supported in the tape gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">AWS
          * API Reference</a></p>
          */
@@ -2252,8 +2259,7 @@ namespace Model
          * number of tapes in the response. If the number of tapes returned in the response
          * is truncated, the response includes a <code>Marker</code> element that you can
          * use in your subsequent request to retrieve the next set of tapes. This operation
-         * is only supported in the tape gateway architecture.</p><p><h3>See Also:</h3>  
-         * <a
+         * is only supported in the tape gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">AWS
          * API Reference</a></p>
          *
@@ -2271,8 +2277,7 @@ namespace Model
          * number of tapes in the response. If the number of tapes returned in the response
          * is truncated, the response includes a <code>Marker</code> element that you can
          * use in your subsequent request to retrieve the next set of tapes. This operation
-         * is only supported in the tape gateway architecture.</p><p><h3>See Also:</h3>  
-         * <a
+         * is only supported in the tape gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">AWS
          * API Reference</a></p>
          *
@@ -2284,7 +2289,7 @@ namespace Model
          * <p>Lists iSCSI initiators that are connected to a volume. You can use this
          * operation to determine whether a volume is being used or not. This operation is
          * only supported in the cached volume and stored volume gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">AWS
          * API Reference</a></p>
          */
@@ -2294,7 +2299,7 @@ namespace Model
          * <p>Lists iSCSI initiators that are connected to a volume. You can use this
          * operation to determine whether a volume is being used or not. This operation is
          * only supported in the cached volume and stored volume gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">AWS
          * API Reference</a></p>
          *
@@ -2306,7 +2311,7 @@ namespace Model
          * <p>Lists iSCSI initiators that are connected to a volume. You can use this
          * operation to determine whether a volume is being used or not. This operation is
          * only supported in the cached volume and stored volume gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">AWS
          * API Reference</a></p>
          *
@@ -2316,11 +2321,11 @@ namespace Model
 
         /**
          * <p>Lists the recovery points for a specified gateway. This operation is only
-         * supported in the cached volume gateway architecture.</p> <p>Each cache volume
-         * has one recovery point. A volume recovery point is a point in time at which all
-         * data of the volume is consistent and from which you can create a snapshot or
-         * clone a new cached volume from a source volume. To create a snapshot from a
-         * volume recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a>
+         * supported in the cached volume gateway type.</p> <p>Each cache volume has one
+         * recovery point. A volume recovery point is a point in time at which all data of
+         * the volume is consistent and from which you can create a snapshot or clone a new
+         * cached volume from a source volume. To create a snapshot from a volume recovery
+         * point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">AWS
          * API Reference</a></p>
@@ -2329,11 +2334,11 @@ namespace Model
 
         /**
          * <p>Lists the recovery points for a specified gateway. This operation is only
-         * supported in the cached volume gateway architecture.</p> <p>Each cache volume
-         * has one recovery point. A volume recovery point is a point in time at which all
-         * data of the volume is consistent and from which you can create a snapshot or
-         * clone a new cached volume from a source volume. To create a snapshot from a
-         * volume recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a>
+         * supported in the cached volume gateway type.</p> <p>Each cache volume has one
+         * recovery point. A volume recovery point is a point in time at which all data of
+         * the volume is consistent and from which you can create a snapshot or clone a new
+         * cached volume from a source volume. To create a snapshot from a volume recovery
+         * point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">AWS
          * API Reference</a></p>
@@ -2344,11 +2349,11 @@ namespace Model
 
         /**
          * <p>Lists the recovery points for a specified gateway. This operation is only
-         * supported in the cached volume gateway architecture.</p> <p>Each cache volume
-         * has one recovery point. A volume recovery point is a point in time at which all
-         * data of the volume is consistent and from which you can create a snapshot or
-         * clone a new cached volume from a source volume. To create a snapshot from a
-         * volume recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a>
+         * supported in the cached volume gateway type.</p> <p>Each cache volume has one
+         * recovery point. A volume recovery point is a point in time at which all data of
+         * the volume is consistent and from which you can create a snapshot or clone a new
+         * cached volume from a source volume. To create a snapshot from a volume recovery
+         * point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">AWS
          * API Reference</a></p>
@@ -2368,7 +2373,7 @@ namespace Model
          * truncated, the response includes a Marker field. You can use this Marker value
          * in your subsequent request to retrieve the next set of volumes. This operation
          * is only supported in the cached volume and stored volume gateway
-         * architectures.</p><p><h3>See Also:</h3>   <a
+         * types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">AWS
          * API Reference</a></p>
          */
@@ -2385,7 +2390,7 @@ namespace Model
          * truncated, the response includes a Marker field. You can use this Marker value
          * in your subsequent request to retrieve the next set of volumes. This operation
          * is only supported in the cached volume and stored volume gateway
-         * architectures.</p><p><h3>See Also:</h3>   <a
+         * types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">AWS
          * API Reference</a></p>
          *
@@ -2404,7 +2409,7 @@ namespace Model
          * truncated, the response includes a Marker field. You can use this Marker value
          * in your subsequent request to retrieve the next set of volumes. This operation
          * is only supported in the cached volume and stored volume gateway
-         * architectures.</p><p><h3>See Also:</h3>   <a
+         * types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">AWS
          * API Reference</a></p>
          *
@@ -2413,10 +2418,62 @@ namespace Model
         virtual void ListVolumesAsync(const Model::ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sends you notification when all file data written to the NFS file share has
+         * been uploaded to Amazon S3.</p> <p>AWS Storage Gateway can send a notification
+         * through Amazon CloudWatch Events when all files written to your file share up to
+         * that point in time have been uploaded to Amazon S3. These files include files
+         * written to the NFS file share up to the time that you make a request for
+         * notification. When the upload is done, Storage Gateway sends you notification
+         * through an Amazon CloudWatch event. You can configure CloudWatch Events to sent
+         * the notification through event targets such as email, SNS or a Lambda function.
+         * text or Lambda functions. This operation is only supported in the file gateway
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::NotifyWhenUploadedOutcome NotifyWhenUploaded(const Model::NotifyWhenUploadedRequest& request) const;
+
+        /**
+         * <p>Sends you notification when all file data written to the NFS file share has
+         * been uploaded to Amazon S3.</p> <p>AWS Storage Gateway can send a notification
+         * through Amazon CloudWatch Events when all files written to your file share up to
+         * that point in time have been uploaded to Amazon S3. These files include files
+         * written to the NFS file share up to the time that you make a request for
+         * notification. When the upload is done, Storage Gateway sends you notification
+         * through an Amazon CloudWatch event. You can configure CloudWatch Events to sent
+         * the notification through event targets such as email, SNS or a Lambda function.
+         * text or Lambda functions. This operation is only supported in the file gateway
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::NotifyWhenUploadedOutcomeCallable NotifyWhenUploadedCallable(const Model::NotifyWhenUploadedRequest& request) const;
+
+        /**
+         * <p>Sends you notification when all file data written to the NFS file share has
+         * been uploaded to Amazon S3.</p> <p>AWS Storage Gateway can send a notification
+         * through Amazon CloudWatch Events when all files written to your file share up to
+         * that point in time have been uploaded to Amazon S3. These files include files
+         * written to the NFS file share up to the time that you make a request for
+         * notification. When the upload is done, Storage Gateway sends you notification
+         * through an Amazon CloudWatch event. You can configure CloudWatch Events to sent
+         * the notification through event targets such as email, SNS or a Lambda function.
+         * text or Lambda functions. This operation is only supported in the file gateway
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void NotifyWhenUploadedAsync(const Model::NotifyWhenUploadedRequest& request, const NotifyWhenUploadedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Refreshes the cache for the specified file share. This operation finds
          * objects in the Amazon S3 bucket that were added, removed or replaced since the
-         * gateway last listed the bucket's contents and cached the results.</p><p><h3>See
-         * Also:</h3>   <a
+         * gateway last listed the bucket's contents and cached the results. This operation
+         * is only supported in the file gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
          */
@@ -2425,8 +2482,8 @@ namespace Model
         /**
          * <p>Refreshes the cache for the specified file share. This operation finds
          * objects in the Amazon S3 bucket that were added, removed or replaced since the
-         * gateway last listed the bucket's contents and cached the results.</p><p><h3>See
-         * Also:</h3>   <a
+         * gateway last listed the bucket's contents and cached the results. This operation
+         * is only supported in the file gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
          *
@@ -2437,8 +2494,8 @@ namespace Model
         /**
          * <p>Refreshes the cache for the specified file share. This operation finds
          * objects in the Amazon S3 bucket that were added, removed or replaced since the
-         * gateway last listed the bucket's contents and cached the results.</p><p><h3>See
-         * Also:</h3>   <a
+         * gateway last listed the bucket's contents and cached the results. This operation
+         * is only supported in the file gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
          *
@@ -2449,7 +2506,7 @@ namespace Model
         /**
          * <p>Removes one or more tags from the specified resource. This operation is only
          * supported in the cached volume, stored volume and tape gateway
-         * architectures.</p><p><h3>See Also:</h3>   <a
+         * types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          */
@@ -2458,7 +2515,7 @@ namespace Model
         /**
          * <p>Removes one or more tags from the specified resource. This operation is only
          * supported in the cached volume, stored volume and tape gateway
-         * architectures.</p><p><h3>See Also:</h3>   <a
+         * types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          *
@@ -2469,7 +2526,7 @@ namespace Model
         /**
          * <p>Removes one or more tags from the specified resource. This operation is only
          * supported in the cached volume, stored volume and tape gateway
-         * architectures.</p><p><h3>See Also:</h3>   <a
+         * types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          *
@@ -2484,11 +2541,11 @@ namespace Model
          * gateway. For example, an error can occur when a disk is corrupted or removed
          * from the gateway. When a cache is reset, the gateway loses its cache storage. At
          * this point you can reconfigure the disks as cache disks. This operation is only
-         * supported in the cached volume,tape and file gateway architectures.</p>
-         * <important> <p>If the cache disk you are resetting contains data that has not
-         * been uploaded to Amazon S3 yet, that data can be lost. After you reset cache
-         * disks, there will be no configured cache disks left in the gateway, so you must
-         * configure at least one new cache disk for your gateway to function properly.</p>
+         * supported in the cached volume, tape and file gateway types.</p> <important>
+         * <p>If the cache disk you are resetting contains data that has not been uploaded
+         * to Amazon S3 yet, that data can be lost. After you reset cache disks, there will
+         * be no configured cache disks left in the gateway, so you must configure at least
+         * one new cache disk for your gateway to function properly.</p>
          * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">AWS
          * API Reference</a></p>
@@ -2502,11 +2559,11 @@ namespace Model
          * gateway. For example, an error can occur when a disk is corrupted or removed
          * from the gateway. When a cache is reset, the gateway loses its cache storage. At
          * this point you can reconfigure the disks as cache disks. This operation is only
-         * supported in the cached volume,tape and file gateway architectures.</p>
-         * <important> <p>If the cache disk you are resetting contains data that has not
-         * been uploaded to Amazon S3 yet, that data can be lost. After you reset cache
-         * disks, there will be no configured cache disks left in the gateway, so you must
-         * configure at least one new cache disk for your gateway to function properly.</p>
+         * supported in the cached volume, tape and file gateway types.</p> <important>
+         * <p>If the cache disk you are resetting contains data that has not been uploaded
+         * to Amazon S3 yet, that data can be lost. After you reset cache disks, there will
+         * be no configured cache disks left in the gateway, so you must configure at least
+         * one new cache disk for your gateway to function properly.</p>
          * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">AWS
          * API Reference</a></p>
@@ -2522,11 +2579,11 @@ namespace Model
          * gateway. For example, an error can occur when a disk is corrupted or removed
          * from the gateway. When a cache is reset, the gateway loses its cache storage. At
          * this point you can reconfigure the disks as cache disks. This operation is only
-         * supported in the cached volume,tape and file gateway architectures.</p>
-         * <important> <p>If the cache disk you are resetting contains data that has not
-         * been uploaded to Amazon S3 yet, that data can be lost. After you reset cache
-         * disks, there will be no configured cache disks left in the gateway, so you must
-         * configure at least one new cache disk for your gateway to function properly.</p>
+         * supported in the cached volume, tape and file gateway types.</p> <important>
+         * <p>If the cache disk you are resetting contains data that has not been uploaded
+         * to Amazon S3 yet, that data can be lost. After you reset cache disks, there will
+         * be no configured cache disks left in the gateway, so you must configure at least
+         * one new cache disk for your gateway to function properly.</p>
          * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">AWS
          * API Reference</a></p>
@@ -2540,11 +2597,11 @@ namespace Model
          * tape gateway. Virtual tapes archived in the VTS are not associated with any
          * gateway. However after a tape is retrieved, it is associated with a gateway,
          * even though it is also listed in the VTS, that is, archive. This operation is
-         * only supported in the tape gateway architecture.</p> <p>Once a tape is
-         * successfully retrieved to a gateway, it cannot be retrieved again to another
-         * gateway. You must archive the tape again before you can retrieve it to another
-         * gateway. This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * only supported in the tape gateway type.</p> <p>Once a tape is successfully
+         * retrieved to a gateway, it cannot be retrieved again to another gateway. You
+         * must archive the tape again before you can retrieve it to another gateway. This
+         * operation is only supported in the tape gateway type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">AWS
          * API Reference</a></p>
          */
@@ -2555,11 +2612,11 @@ namespace Model
          * tape gateway. Virtual tapes archived in the VTS are not associated with any
          * gateway. However after a tape is retrieved, it is associated with a gateway,
          * even though it is also listed in the VTS, that is, archive. This operation is
-         * only supported in the tape gateway architecture.</p> <p>Once a tape is
-         * successfully retrieved to a gateway, it cannot be retrieved again to another
-         * gateway. You must archive the tape again before you can retrieve it to another
-         * gateway. This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * only supported in the tape gateway type.</p> <p>Once a tape is successfully
+         * retrieved to a gateway, it cannot be retrieved again to another gateway. You
+         * must archive the tape again before you can retrieve it to another gateway. This
+         * operation is only supported in the tape gateway type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">AWS
          * API Reference</a></p>
          *
@@ -2572,11 +2629,11 @@ namespace Model
          * tape gateway. Virtual tapes archived in the VTS are not associated with any
          * gateway. However after a tape is retrieved, it is associated with a gateway,
          * even though it is also listed in the VTS, that is, archive. This operation is
-         * only supported in the tape gateway architecture.</p> <p>Once a tape is
-         * successfully retrieved to a gateway, it cannot be retrieved again to another
-         * gateway. You must archive the tape again before you can retrieve it to another
-         * gateway. This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * only supported in the tape gateway type.</p> <p>Once a tape is successfully
+         * retrieved to a gateway, it cannot be retrieved again to another gateway. You
+         * must archive the tape again before you can retrieve it to another gateway. This
+         * operation is only supported in the tape gateway type.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">AWS
          * API Reference</a></p>
          *
@@ -2586,11 +2643,11 @@ namespace Model
 
         /**
          * <p>Retrieves the recovery point for the specified virtual tape. This operation
-         * is only supported in the tape gateway architecture.</p> <p>A recovery point is a
-         * point in time view of a virtual tape at which all the data on the tape is
-         * consistent. If your gateway crashes, virtual tapes that have recovery points can
-         * be recovered to a new gateway.</p> <note> <p>The virtual tape can be retrieved
-         * to only one gateway. The retrieved tape is read-only. The virtual tape can be
+         * is only supported in the tape gateway type.</p> <p>A recovery point is a point
+         * in time view of a virtual tape at which all the data on the tape is consistent.
+         * If your gateway crashes, virtual tapes that have recovery points can be
+         * recovered to a new gateway.</p> <note> <p>The virtual tape can be retrieved to
+         * only one gateway. The retrieved tape is read-only. The virtual tape can be
          * retrieved to only a tape gateway. There is no charge for retrieving recovery
          * points.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">AWS
@@ -2600,11 +2657,11 @@ namespace Model
 
         /**
          * <p>Retrieves the recovery point for the specified virtual tape. This operation
-         * is only supported in the tape gateway architecture.</p> <p>A recovery point is a
-         * point in time view of a virtual tape at which all the data on the tape is
-         * consistent. If your gateway crashes, virtual tapes that have recovery points can
-         * be recovered to a new gateway.</p> <note> <p>The virtual tape can be retrieved
-         * to only one gateway. The retrieved tape is read-only. The virtual tape can be
+         * is only supported in the tape gateway type.</p> <p>A recovery point is a point
+         * in time view of a virtual tape at which all the data on the tape is consistent.
+         * If your gateway crashes, virtual tapes that have recovery points can be
+         * recovered to a new gateway.</p> <note> <p>The virtual tape can be retrieved to
+         * only one gateway. The retrieved tape is read-only. The virtual tape can be
          * retrieved to only a tape gateway. There is no charge for retrieving recovery
          * points.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">AWS
@@ -2616,11 +2673,11 @@ namespace Model
 
         /**
          * <p>Retrieves the recovery point for the specified virtual tape. This operation
-         * is only supported in the tape gateway architecture.</p> <p>A recovery point is a
-         * point in time view of a virtual tape at which all the data on the tape is
-         * consistent. If your gateway crashes, virtual tapes that have recovery points can
-         * be recovered to a new gateway.</p> <note> <p>The virtual tape can be retrieved
-         * to only one gateway. The retrieved tape is read-only. The virtual tape can be
+         * is only supported in the tape gateway type.</p> <p>A recovery point is a point
+         * in time view of a virtual tape at which all the data on the tape is consistent.
+         * If your gateway crashes, virtual tapes that have recovery points can be
+         * recovered to a new gateway.</p> <note> <p>The virtual tape can be retrieved to
+         * only one gateway. The retrieved tape is read-only. The virtual tape can be
          * retrieved to only a tape gateway. There is no charge for retrieving recovery
          * points.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">AWS
@@ -3012,10 +3069,10 @@ namespace Model
 
         /**
          * <p>Updates a file share. This operation is only supported in the file gateway
-         * architecture.</p> <note> <p>To leave a file share field unchanged, set the
-         * corresponding input field to null.</p> </note> <p>Updates the following file
-         * share setting:</p> <ul> <li> <p>Default storage class for your S3 bucket</p>
-         * </li> <li> <p>Metadata defaults for your S3 bucket</p> </li> <li> <p>Allowed NFS
+         * type.</p> <note> <p>To leave a file share field unchanged, set the corresponding
+         * input field to null.</p> </note> <p>Updates the following file share
+         * setting:</p> <ul> <li> <p>Default storage class for your S3 bucket</p> </li>
+         * <li> <p>Metadata defaults for your S3 bucket</p> </li> <li> <p>Allowed NFS
          * clients for your file share</p> </li> <li> <p>Squash settings</p> </li> <li>
          * <p>Write status of your file share</p> </li> </ul> <note> <p>To leave a file
          * share field unchanged, set the corresponding input field to null. This operation
@@ -3027,10 +3084,10 @@ namespace Model
 
         /**
          * <p>Updates a file share. This operation is only supported in the file gateway
-         * architecture.</p> <note> <p>To leave a file share field unchanged, set the
-         * corresponding input field to null.</p> </note> <p>Updates the following file
-         * share setting:</p> <ul> <li> <p>Default storage class for your S3 bucket</p>
-         * </li> <li> <p>Metadata defaults for your S3 bucket</p> </li> <li> <p>Allowed NFS
+         * type.</p> <note> <p>To leave a file share field unchanged, set the corresponding
+         * input field to null.</p> </note> <p>Updates the following file share
+         * setting:</p> <ul> <li> <p>Default storage class for your S3 bucket</p> </li>
+         * <li> <p>Metadata defaults for your S3 bucket</p> </li> <li> <p>Allowed NFS
          * clients for your file share</p> </li> <li> <p>Squash settings</p> </li> <li>
          * <p>Write status of your file share</p> </li> </ul> <note> <p>To leave a file
          * share field unchanged, set the corresponding input field to null. This operation
@@ -3044,10 +3101,10 @@ namespace Model
 
         /**
          * <p>Updates a file share. This operation is only supported in the file gateway
-         * architecture.</p> <note> <p>To leave a file share field unchanged, set the
-         * corresponding input field to null.</p> </note> <p>Updates the following file
-         * share setting:</p> <ul> <li> <p>Default storage class for your S3 bucket</p>
-         * </li> <li> <p>Metadata defaults for your S3 bucket</p> </li> <li> <p>Allowed NFS
+         * type.</p> <note> <p>To leave a file share field unchanged, set the corresponding
+         * input field to null.</p> </note> <p>Updates the following file share
+         * setting:</p> <ul> <li> <p>Default storage class for your S3 bucket</p> </li>
+         * <li> <p>Metadata defaults for your S3 bucket</p> </li> <li> <p>Allowed NFS
          * clients for your file share</p> </li> <li> <p>Squash settings</p> </li> <li>
          * <p>Write status of your file share</p> </li> </ul> <note> <p>To leave a file
          * share field unchanged, set the corresponding input field to null. This operation
@@ -3061,13 +3118,13 @@ namespace Model
 
         /**
          * <p>Updates a snapshot schedule configured for a gateway volume. This operation
-         * is only supported in the cached volume and stored volume gateway
-         * architectures.</p> <p>The default snapshot schedule for volume is once every 24
-         * hours, starting at the creation time of the volume. You can use this API to
-         * change the snapshot schedule configured for the volume.</p> <p>In the request
-         * you must identify the gateway volume whose snapshot schedule you want to update,
-         * and the schedule information, including when you want the snapshot to begin on a
-         * day and the frequency (in hours) of snapshots.</p><p><h3>See Also:</h3>   <a
+         * is only supported in the cached volume and stored volume gateway types.</p>
+         * <p>The default snapshot schedule for volume is once every 24 hours, starting at
+         * the creation time of the volume. You can use this API to change the snapshot
+         * schedule configured for the volume.</p> <p>In the request you must identify the
+         * gateway volume whose snapshot schedule you want to update, and the schedule
+         * information, including when you want the snapshot to begin on a day and the
+         * frequency (in hours) of snapshots.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">AWS
          * API Reference</a></p>
          */
@@ -3075,13 +3132,13 @@ namespace Model
 
         /**
          * <p>Updates a snapshot schedule configured for a gateway volume. This operation
-         * is only supported in the cached volume and stored volume gateway
-         * architectures.</p> <p>The default snapshot schedule for volume is once every 24
-         * hours, starting at the creation time of the volume. You can use this API to
-         * change the snapshot schedule configured for the volume.</p> <p>In the request
-         * you must identify the gateway volume whose snapshot schedule you want to update,
-         * and the schedule information, including when you want the snapshot to begin on a
-         * day and the frequency (in hours) of snapshots.</p><p><h3>See Also:</h3>   <a
+         * is only supported in the cached volume and stored volume gateway types.</p>
+         * <p>The default snapshot schedule for volume is once every 24 hours, starting at
+         * the creation time of the volume. You can use this API to change the snapshot
+         * schedule configured for the volume.</p> <p>In the request you must identify the
+         * gateway volume whose snapshot schedule you want to update, and the schedule
+         * information, including when you want the snapshot to begin on a day and the
+         * frequency (in hours) of snapshots.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">AWS
          * API Reference</a></p>
          *
@@ -3091,13 +3148,13 @@ namespace Model
 
         /**
          * <p>Updates a snapshot schedule configured for a gateway volume. This operation
-         * is only supported in the cached volume and stored volume gateway
-         * architectures.</p> <p>The default snapshot schedule for volume is once every 24
-         * hours, starting at the creation time of the volume. You can use this API to
-         * change the snapshot schedule configured for the volume.</p> <p>In the request
-         * you must identify the gateway volume whose snapshot schedule you want to update,
-         * and the schedule information, including when you want the snapshot to begin on a
-         * day and the frequency (in hours) of snapshots.</p><p><h3>See Also:</h3>   <a
+         * is only supported in the cached volume and stored volume gateway types.</p>
+         * <p>The default snapshot schedule for volume is once every 24 hours, starting at
+         * the creation time of the volume. You can use this API to change the snapshot
+         * schedule configured for the volume.</p> <p>In the request you must identify the
+         * gateway volume whose snapshot schedule you want to update, and the schedule
+         * information, including when you want the snapshot to begin on a day and the
+         * frequency (in hours) of snapshots.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">AWS
          * API Reference</a></p>
          *
@@ -3110,7 +3167,7 @@ namespace Model
          * tape gateway, you select a medium changer type for the tape gateway. This
          * operation enables you to select a different type of medium changer after a tape
          * gateway is activated. This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">AWS
          * API Reference</a></p>
          */
@@ -3121,7 +3178,7 @@ namespace Model
          * tape gateway, you select a medium changer type for the tape gateway. This
          * operation enables you to select a different type of medium changer after a tape
          * gateway is activated. This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">AWS
          * API Reference</a></p>
          *
@@ -3134,7 +3191,7 @@ namespace Model
          * tape gateway, you select a medium changer type for the tape gateway. This
          * operation enables you to select a different type of medium changer after a tape
          * gateway is activated. This operation is only supported in the tape gateway
-         * architecture.</p><p><h3>See Also:</h3>   <a
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">AWS
          * API Reference</a></p>
          *
@@ -3193,6 +3250,7 @@ namespace Model
         void ListVolumeInitiatorsAsyncHelper(const Model::ListVolumeInitiatorsRequest& request, const ListVolumeInitiatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVolumeRecoveryPointsAsyncHelper(const Model::ListVolumeRecoveryPointsRequest& request, const ListVolumeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVolumesAsyncHelper(const Model::ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void NotifyWhenUploadedAsyncHelper(const Model::NotifyWhenUploadedRequest& request, const NotifyWhenUploadedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RefreshCacheAsyncHelper(const Model::RefreshCacheRequest& request, const RefreshCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetCacheAsyncHelper(const Model::ResetCacheRequest& request, const ResetCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

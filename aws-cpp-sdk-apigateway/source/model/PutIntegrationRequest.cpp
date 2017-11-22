@@ -37,7 +37,9 @@ PutIntegrationRequest::PutIntegrationRequest() :
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
     m_contentHandling(ContentHandlingStrategy::NOT_SET),
-    m_contentHandlingHasBeenSet(false)
+    m_contentHandlingHasBeenSet(false),
+    m_timeoutInMillis(0),
+    m_timeoutInMillisHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,12 @@ Aws::String PutIntegrationRequest::SerializePayload() const
   if(m_contentHandlingHasBeenSet)
   {
    payload.WithString("contentHandling", ContentHandlingStrategyMapper::GetNameForContentHandlingStrategy(m_contentHandling));
+  }
+
+  if(m_timeoutInMillisHasBeenSet)
+  {
+   payload.WithInteger("timeoutInMillis", m_timeoutInMillis);
+
   }
 
   return payload.WriteReadable();

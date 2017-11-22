@@ -45,27 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The input image. You can provide a blob of image bytes or an S3 object.</p>
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p>
      */
     inline const Image& GetImage() const{ return m_image; }
 
     /**
-     * <p>The input image. You can provide a blob of image bytes or an S3 object.</p>
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p>
      */
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
-     * <p>The input image. You can provide a blob of image bytes or an S3 object.</p>
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p>
      */
     inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
-     * <p>The input image. You can provide a blob of image bytes or an S3 object.</p>
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p>
      */
     inline DetectLabelsRequest& WithImage(const Image& value) { SetImage(value); return *this;}
 
     /**
-     * <p>The input image. You can provide a blob of image bytes or an S3 object.</p>
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p>
      */
     inline DetectLabelsRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 

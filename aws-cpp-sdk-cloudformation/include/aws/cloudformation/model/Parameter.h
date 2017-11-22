@@ -100,37 +100,37 @@ namespace Model
 
 
     /**
-     * <p>The value associated with the parameter.</p>
+     * <p>The input value associated with the parameter.</p>
      */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
 
     /**
-     * <p>The value associated with the parameter.</p>
+     * <p>The input value associated with the parameter.</p>
      */
     inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
 
     /**
-     * <p>The value associated with the parameter.</p>
+     * <p>The input value associated with the parameter.</p>
      */
     inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
 
     /**
-     * <p>The value associated with the parameter.</p>
+     * <p>The input value associated with the parameter.</p>
      */
     inline void SetParameterValue(const char* value) { m_parameterValueHasBeenSet = true; m_parameterValue.assign(value); }
 
     /**
-     * <p>The value associated with the parameter.</p>
+     * <p>The input value associated with the parameter.</p>
      */
     inline Parameter& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
 
     /**
-     * <p>The value associated with the parameter.</p>
+     * <p>The input value associated with the parameter.</p>
      */
     inline Parameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value associated with the parameter.</p>
+     * <p>The input value associated with the parameter.</p>
      */
     inline Parameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
 
@@ -156,6 +156,63 @@ namespace Model
      */
     inline Parameter& WithUsePreviousValue(bool value) { SetUsePreviousValue(value); return *this;}
 
+
+    /**
+     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
+     * This field is returned only for <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
+     * <code>SSM</code> parameter types</a> in the template.</p>
+     */
+    inline const Aws::String& GetResolvedValue() const{ return m_resolvedValue; }
+
+    /**
+     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
+     * This field is returned only for <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
+     * <code>SSM</code> parameter types</a> in the template.</p>
+     */
+    inline void SetResolvedValue(const Aws::String& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = value; }
+
+    /**
+     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
+     * This field is returned only for <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
+     * <code>SSM</code> parameter types</a> in the template.</p>
+     */
+    inline void SetResolvedValue(Aws::String&& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = std::move(value); }
+
+    /**
+     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
+     * This field is returned only for <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
+     * <code>SSM</code> parameter types</a> in the template.</p>
+     */
+    inline void SetResolvedValue(const char* value) { m_resolvedValueHasBeenSet = true; m_resolvedValue.assign(value); }
+
+    /**
+     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
+     * This field is returned only for <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
+     * <code>SSM</code> parameter types</a> in the template.</p>
+     */
+    inline Parameter& WithResolvedValue(const Aws::String& value) { SetResolvedValue(value); return *this;}
+
+    /**
+     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
+     * This field is returned only for <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
+     * <code>SSM</code> parameter types</a> in the template.</p>
+     */
+    inline Parameter& WithResolvedValue(Aws::String&& value) { SetResolvedValue(std::move(value)); return *this;}
+
+    /**
+     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
+     * This field is returned only for <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
+     * <code>SSM</code> parameter types</a> in the template.</p>
+     */
+    inline Parameter& WithResolvedValue(const char* value) { SetResolvedValue(value); return *this;}
+
   private:
 
     Aws::String m_parameterKey;
@@ -166,6 +223,9 @@ namespace Model
 
     bool m_usePreviousValue;
     bool m_usePreviousValueHasBeenSet;
+
+    Aws::String m_resolvedValue;
+    bool m_resolvedValueHasBeenSet;
   };
 
 } // namespace Model

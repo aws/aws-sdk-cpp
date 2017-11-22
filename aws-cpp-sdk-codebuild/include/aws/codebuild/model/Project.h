@@ -18,10 +18,13 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/ProjectSource.h>
 #include <aws/codebuild/model/ProjectArtifacts.h>
+#include <aws/codebuild/model/ProjectCache.h>
 #include <aws/codebuild/model/ProjectEnvironment.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/codebuild/model/Webhook.h>
+#include <aws/codebuild/model/VpcConfig.h>
+#include <aws/codebuild/model/ProjectBadge.h>
 #include <aws/codebuild/model/Tag.h>
 #include <utility>
 
@@ -211,6 +214,32 @@ namespace Model
      * <p>Information about the build output artifacts for the build project.</p>
      */
     inline Project& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the cache for the build project.</p>
+     */
+    inline const ProjectCache& GetCache() const{ return m_cache; }
+
+    /**
+     * <p>Information about the cache for the build project.</p>
+     */
+    inline void SetCache(const ProjectCache& value) { m_cacheHasBeenSet = true; m_cache = value; }
+
+    /**
+     * <p>Information about the cache for the build project.</p>
+     */
+    inline void SetCache(ProjectCache&& value) { m_cacheHasBeenSet = true; m_cache = std::move(value); }
+
+    /**
+     * <p>Information about the cache for the build project.</p>
+     */
+    inline Project& WithCache(const ProjectCache& value) { SetCache(value); return *this;}
+
+    /**
+     * <p>Information about the cache for the build project.</p>
+     */
+    inline Project& WithCache(ProjectCache&& value) { SetCache(std::move(value)); return *this;}
 
 
     /**
@@ -498,6 +527,73 @@ namespace Model
      */
     inline Project& WithWebhook(Webhook&& value) { SetWebhook(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
+    inline Project& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
+    inline Project& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the build badge for the build project.</p>
+     */
+    inline const ProjectBadge& GetBadge() const{ return m_badge; }
+
+    /**
+     * <p>Information about the build badge for the build project.</p>
+     */
+    inline void SetBadge(const ProjectBadge& value) { m_badgeHasBeenSet = true; m_badge = value; }
+
+    /**
+     * <p>Information about the build badge for the build project.</p>
+     */
+    inline void SetBadge(ProjectBadge&& value) { m_badgeHasBeenSet = true; m_badge = std::move(value); }
+
+    /**
+     * <p>Information about the build badge for the build project.</p>
+     */
+    inline Project& WithBadge(const ProjectBadge& value) { SetBadge(value); return *this;}
+
+    /**
+     * <p>Information about the build badge for the build project.</p>
+     */
+    inline Project& WithBadge(ProjectBadge&& value) { SetBadge(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -514,6 +610,9 @@ namespace Model
 
     ProjectArtifacts m_artifacts;
     bool m_artifactsHasBeenSet;
+
+    ProjectCache m_cache;
+    bool m_cacheHasBeenSet;
 
     ProjectEnvironment m_environment;
     bool m_environmentHasBeenSet;
@@ -538,6 +637,12 @@ namespace Model
 
     Webhook m_webhook;
     bool m_webhookHasBeenSet;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
+
+    ProjectBadge m_badge;
+    bool m_badgeHasBeenSet;
   };
 
 } // namespace Model

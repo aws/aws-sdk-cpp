@@ -884,6 +884,25 @@ namespace Model
      */
     inline PutIntegrationRequest& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
+     * 29,000 milliseconds or 29 seconds.</p>
+     */
+    inline int GetTimeoutInMillis() const{ return m_timeoutInMillis; }
+
+    /**
+     * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
+     * 29,000 milliseconds or 29 seconds.</p>
+     */
+    inline void SetTimeoutInMillis(int value) { m_timeoutInMillisHasBeenSet = true; m_timeoutInMillis = value; }
+
+    /**
+     * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
+     * 29,000 milliseconds or 29 seconds.</p>
+     */
+    inline PutIntegrationRequest& WithTimeoutInMillis(int value) { SetTimeoutInMillis(value); return *this;}
+
   private:
 
     Aws::String m_restApiId;
@@ -924,6 +943,9 @@ namespace Model
 
     ContentHandlingStrategy m_contentHandling;
     bool m_contentHandlingHasBeenSet;
+
+    int m_timeoutInMillis;
+    bool m_timeoutInMillisHasBeenSet;
   };
 
 } // namespace Model

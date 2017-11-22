@@ -24,6 +24,7 @@ CreateStackInstancesRequest::CreateStackInstancesRequest() :
     m_stackSetNameHasBeenSet(false),
     m_accountsHasBeenSet(false),
     m_regionsHasBeenSet(false),
+    m_parameterOverridesHasBeenSet(false),
     m_operationPreferencesHasBeenSet(false),
     m_operationId(Aws::Utils::UUID::RandomUUID()),
     m_operationIdHasBeenSet(true)
@@ -58,6 +59,16 @@ Aws::String CreateStackInstancesRequest::SerializePayload() const
       ss << "Regions.member." << regionsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       regionsCount++;
+    }
+  }
+
+  if(m_parameterOverridesHasBeenSet)
+  {
+    unsigned parameterOverridesCount = 1;
+    for(auto& item : m_parameterOverrides)
+    {
+      item.OutputToStream(ss, "ParameterOverrides.member.", parameterOverridesCount, "");
+      parameterOverridesCount++;
     }
   }
 

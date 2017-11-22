@@ -19,8 +19,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/ProjectSource.h>
 #include <aws/codebuild/model/ProjectArtifacts.h>
+#include <aws/codebuild/model/ProjectCache.h>
 #include <aws/codebuild/model/ProjectEnvironment.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codebuild/model/VpcConfig.h>
 #include <aws/codebuild/model/Tag.h>
 #include <utility>
 
@@ -171,6 +173,37 @@ namespace Model
      * <p>Information about the build output artifacts for the build project.</p>
      */
     inline CreateProjectRequest& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Stores recently used information so that it can be quickly accessed at a
+     * later time.</p>
+     */
+    inline const ProjectCache& GetCache() const{ return m_cache; }
+
+    /**
+     * <p>Stores recently used information so that it can be quickly accessed at a
+     * later time.</p>
+     */
+    inline void SetCache(const ProjectCache& value) { m_cacheHasBeenSet = true; m_cache = value; }
+
+    /**
+     * <p>Stores recently used information so that it can be quickly accessed at a
+     * later time.</p>
+     */
+    inline void SetCache(ProjectCache&& value) { m_cacheHasBeenSet = true; m_cache = std::move(value); }
+
+    /**
+     * <p>Stores recently used information so that it can be quickly accessed at a
+     * later time.</p>
+     */
+    inline CreateProjectRequest& WithCache(const ProjectCache& value) { SetCache(value); return *this;}
+
+    /**
+     * <p>Stores recently used information so that it can be quickly accessed at a
+     * later time.</p>
+     */
+    inline CreateProjectRequest& WithCache(ProjectCache&& value) { SetCache(std::move(value)); return *this;}
 
 
     /**
@@ -370,6 +403,51 @@ namespace Model
      */
     inline CreateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     */
+    inline CreateProjectRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+     */
+    inline CreateProjectRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * build badge.</p>
+     */
+    inline bool GetBadgeEnabled() const{ return m_badgeEnabled; }
+
+    /**
+     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * build badge.</p>
+     */
+    inline void SetBadgeEnabled(bool value) { m_badgeEnabledHasBeenSet = true; m_badgeEnabled = value; }
+
+    /**
+     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * build badge.</p>
+     */
+    inline CreateProjectRequest& WithBadgeEnabled(bool value) { SetBadgeEnabled(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -383,6 +461,9 @@ namespace Model
 
     ProjectArtifacts m_artifacts;
     bool m_artifactsHasBeenSet;
+
+    ProjectCache m_cache;
+    bool m_cacheHasBeenSet;
 
     ProjectEnvironment m_environment;
     bool m_environmentHasBeenSet;
@@ -398,6 +479,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
+
+    bool m_badgeEnabled;
+    bool m_badgeEnabledHasBeenSet;
   };
 
 } // namespace Model

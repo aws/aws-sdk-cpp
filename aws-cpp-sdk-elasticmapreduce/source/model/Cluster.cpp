@@ -60,7 +60,8 @@ Cluster::Cluster() :
     m_ebsRootVolumeSize(0),
     m_ebsRootVolumeSizeHasBeenSet(false),
     m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
-    m_repoUpgradeOnBootHasBeenSet(false)
+    m_repoUpgradeOnBootHasBeenSet(false),
+    m_kerberosAttributesHasBeenSet(false)
 {
 }
 
@@ -96,7 +97,8 @@ Cluster::Cluster(const JsonValue& jsonValue) :
     m_ebsRootVolumeSize(0),
     m_ebsRootVolumeSizeHasBeenSet(false),
     m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
-    m_repoUpgradeOnBootHasBeenSet(false)
+    m_repoUpgradeOnBootHasBeenSet(false),
+    m_kerberosAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -280,6 +282,13 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
     m_repoUpgradeOnBootHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KerberosAttributes"))
+  {
+    m_kerberosAttributes = jsonValue.GetObject("KerberosAttributes");
+
+    m_kerberosAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -441,6 +450,12 @@ JsonValue Cluster::Jsonize() const
   if(m_repoUpgradeOnBootHasBeenSet)
   {
    payload.WithString("RepoUpgradeOnBoot", RepoUpgradeOnBootMapper::GetNameForRepoUpgradeOnBoot(m_repoUpgradeOnBoot));
+  }
+
+  if(m_kerberosAttributesHasBeenSet)
+  {
+   payload.WithObject("KerberosAttributes", m_kerberosAttributes.Jsonize());
+
   }
 
   return payload;

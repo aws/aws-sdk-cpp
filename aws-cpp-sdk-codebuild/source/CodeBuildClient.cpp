@@ -34,6 +34,7 @@
 #include <aws/codebuild/model/CreateWebhookRequest.h>
 #include <aws/codebuild/model/DeleteProjectRequest.h>
 #include <aws/codebuild/model/DeleteWebhookRequest.h>
+#include <aws/codebuild/model/InvalidateProjectCacheRequest.h>
 #include <aws/codebuild/model/ListBuildsRequest.h>
 #include <aws/codebuild/model/ListBuildsForProjectRequest.h>
 #include <aws/codebuild/model/ListCuratedEnvironmentImagesRequest.h>
@@ -349,6 +350,41 @@ void CodeBuildClient::DeleteWebhookAsync(const DeleteWebhookRequest& request, co
 void CodeBuildClient::DeleteWebhookAsyncHelper(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteWebhook(request), context);
+}
+
+InvalidateProjectCacheOutcome CodeBuildClient::InvalidateProjectCache(const InvalidateProjectCacheRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return InvalidateProjectCacheOutcome(InvalidateProjectCacheResult(outcome.GetResult()));
+  }
+  else
+  {
+    return InvalidateProjectCacheOutcome(outcome.GetError());
+  }
+}
+
+InvalidateProjectCacheOutcomeCallable CodeBuildClient::InvalidateProjectCacheCallable(const InvalidateProjectCacheRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< InvalidateProjectCacheOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InvalidateProjectCache(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::InvalidateProjectCacheAsync(const InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->InvalidateProjectCacheAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::InvalidateProjectCacheAsyncHelper(const InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, InvalidateProjectCache(request), context);
 }
 
 ListBuildsOutcome CodeBuildClient::ListBuilds(const ListBuildsRequest& request) const

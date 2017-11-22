@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/shield/model/SubResourceSummary.h>
 #include <aws/shield/model/SummarizedCounter.h>
+#include <aws/shield/model/AttackProperty.h>
 #include <aws/shield/model/Mitigation.h>
 #include <utility>
 
@@ -167,53 +168,73 @@ namespace Model
 
 
     /**
-     * <p>The time the attack started, in the format 2016-12-16T13:50Z.</p>
+     * <p>The time the attack started, in Unix time in seconds. For more information
+     * see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time the attack started, in the format 2016-12-16T13:50Z.</p>
+     * <p>The time the attack started, in Unix time in seconds. For more information
+     * see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The time the attack started, in the format 2016-12-16T13:50Z.</p>
+     * <p>The time the attack started, in Unix time in seconds. For more information
+     * see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The time the attack started, in the format 2016-12-16T13:50Z.</p>
+     * <p>The time the attack started, in Unix time in seconds. For more information
+     * see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline AttackDetail& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time the attack started, in the format 2016-12-16T13:50Z.</p>
+     * <p>The time the attack started, in Unix time in seconds. For more information
+     * see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline AttackDetail& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
+     * <p>The time the attack ended, in Unix time in seconds. For more information see
+     * <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
+     * <p>The time the attack ended, in Unix time in seconds. For more information see
+     * <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
+     * <p>The time the attack ended, in Unix time in seconds. For more information see
+     * <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
+     * <p>The time the attack ended, in Unix time in seconds. For more information see
+     * <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline AttackDetail& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
+     * <p>The time the attack ended, in Unix time in seconds. For more information see
+     * <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline AttackDetail& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -252,6 +273,42 @@ namespace Model
      * <p>List of counters that describe the attack for the specified time period.</p>
      */
     inline AttackDetail& AddAttackCounters(SummarizedCounter&& value) { m_attackCountersHasBeenSet = true; m_attackCounters.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The array of <a>AttackProperty</a> objects.</p>
+     */
+    inline const Aws::Vector<AttackProperty>& GetAttackProperties() const{ return m_attackProperties; }
+
+    /**
+     * <p>The array of <a>AttackProperty</a> objects.</p>
+     */
+    inline void SetAttackProperties(const Aws::Vector<AttackProperty>& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties = value; }
+
+    /**
+     * <p>The array of <a>AttackProperty</a> objects.</p>
+     */
+    inline void SetAttackProperties(Aws::Vector<AttackProperty>&& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties = std::move(value); }
+
+    /**
+     * <p>The array of <a>AttackProperty</a> objects.</p>
+     */
+    inline AttackDetail& WithAttackProperties(const Aws::Vector<AttackProperty>& value) { SetAttackProperties(value); return *this;}
+
+    /**
+     * <p>The array of <a>AttackProperty</a> objects.</p>
+     */
+    inline AttackDetail& WithAttackProperties(Aws::Vector<AttackProperty>&& value) { SetAttackProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The array of <a>AttackProperty</a> objects.</p>
+     */
+    inline AttackDetail& AddAttackProperties(const AttackProperty& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties.push_back(value); return *this; }
+
+    /**
+     * <p>The array of <a>AttackProperty</a> objects.</p>
+     */
+    inline AttackDetail& AddAttackProperties(AttackProperty&& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -308,6 +365,9 @@ namespace Model
 
     Aws::Vector<SummarizedCounter> m_attackCounters;
     bool m_attackCountersHasBeenSet;
+
+    Aws::Vector<AttackProperty> m_attackProperties;
+    bool m_attackPropertiesHasBeenSet;
 
     Aws::Vector<Mitigation> m_mitigations;
     bool m_mitigationsHasBeenSet;

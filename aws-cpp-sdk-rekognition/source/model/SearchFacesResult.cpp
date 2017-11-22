@@ -53,6 +53,12 @@ SearchFacesResult& SearchFacesResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("FaceModelVersion"))
+  {
+    m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
+
+  }
+
 
 
   return *this;

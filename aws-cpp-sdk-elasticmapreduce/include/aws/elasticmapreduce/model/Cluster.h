@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
 #include <aws/elasticmapreduce/model/RepoUpgradeOnBoot.h>
+#include <aws/elasticmapreduce/model/KerberosAttributes.h>
 #include <aws/elasticmapreduce/model/Application.h>
 #include <aws/elasticmapreduce/model/Tag.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
@@ -600,37 +601,44 @@ namespace Model
 
 
     /**
-     * <p>The public DNS name of the master EC2 instance.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline const Aws::String& GetMasterPublicDnsName() const{ return m_masterPublicDnsName; }
 
     /**
-     * <p>The public DNS name of the master EC2 instance.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline void SetMasterPublicDnsName(const Aws::String& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = value; }
 
     /**
-     * <p>The public DNS name of the master EC2 instance.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline void SetMasterPublicDnsName(Aws::String&& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = std::move(value); }
 
     /**
-     * <p>The public DNS name of the master EC2 instance.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline void SetMasterPublicDnsName(const char* value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName.assign(value); }
 
     /**
-     * <p>The public DNS name of the master EC2 instance.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline Cluster& WithMasterPublicDnsName(const Aws::String& value) { SetMasterPublicDnsName(value); return *this;}
 
     /**
-     * <p>The public DNS name of the master EC2 instance.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline Cluster& WithMasterPublicDnsName(Aws::String&& value) { SetMasterPublicDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>The public DNS name of the master EC2 instance.</p>
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline Cluster& WithMasterPublicDnsName(const char* value) { SetMasterPublicDnsName(value); return *this;}
 
@@ -954,6 +962,47 @@ namespace Model
      */
     inline Cluster& WithRepoUpgradeOnBoot(RepoUpgradeOnBoot&& value) { SetRepoUpgradeOnBoot(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline const KerberosAttributes& GetKerberosAttributes() const{ return m_kerberosAttributes; }
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline void SetKerberosAttributes(const KerberosAttributes& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = value; }
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline void SetKerberosAttributes(KerberosAttributes&& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = std::move(value); }
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline Cluster& WithKerberosAttributes(const KerberosAttributes& value) { SetKerberosAttributes(value); return *this;}
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline Cluster& WithKerberosAttributes(KerberosAttributes&& value) { SetKerberosAttributes(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1027,6 +1076,9 @@ namespace Model
 
     RepoUpgradeOnBoot m_repoUpgradeOnBoot;
     bool m_repoUpgradeOnBootHasBeenSet;
+
+    KerberosAttributes m_kerberosAttributes;
+    bool m_kerberosAttributesHasBeenSet;
   };
 
 } // namespace Model

@@ -52,6 +52,12 @@ CreateCollectionResult& CreateCollectionResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("FaceModelVersion"))
+  {
+    m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
+
+  }
+
 
 
   return *this;

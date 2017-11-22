@@ -84,26 +84,26 @@ namespace Model
 
 
     /**
-     * <p>If set to true, deletes a file share immediately and aborts all data uploads
-     * to AWS. Otherwise the file share is not deleted until all data is uploaded to
-     * AWS. This process aborts the data upload process and the file share enters the
-     * FORCE_DELETING status.</p>
+     * <p>If this value is set to true, the operation deletes a file share immediately
+     * and aborts all data uploads to AWS. Otherwise, the file share is not deleted
+     * until all data is uploaded to AWS. This process aborts the data upload process,
+     * and the file share enters the FORCE_DELETING status.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
 
     /**
-     * <p>If set to true, deletes a file share immediately and aborts all data uploads
-     * to AWS. Otherwise the file share is not deleted until all data is uploaded to
-     * AWS. This process aborts the data upload process and the file share enters the
-     * FORCE_DELETING status.</p>
+     * <p>If this value is set to true, the operation deletes a file share immediately
+     * and aborts all data uploads to AWS. Otherwise, the file share is not deleted
+     * until all data is uploaded to AWS. This process aborts the data upload process,
+     * and the file share enters the FORCE_DELETING status.</p>
      */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
 
     /**
-     * <p>If set to true, deletes a file share immediately and aborts all data uploads
-     * to AWS. Otherwise the file share is not deleted until all data is uploaded to
-     * AWS. This process aborts the data upload process and the file share enters the
-     * FORCE_DELETING status.</p>
+     * <p>If this value is set to true, the operation deletes a file share immediately
+     * and aborts all data uploads to AWS. Otherwise, the file share is not deleted
+     * until all data is uploaded to AWS. This process aborts the data upload process,
+     * and the file share enters the FORCE_DELETING status.</p>
      */
     inline DeleteFileShareRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 

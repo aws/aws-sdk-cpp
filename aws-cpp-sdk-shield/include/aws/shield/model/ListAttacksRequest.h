@@ -96,53 +96,98 @@ namespace Model
 
 
     /**
-     * <p>The time period for the attacks.</p>
+     * <p>The start of the time period for the attacks. This is a
+     * <code>timestamp</code> type. The sample request above indicates a
+     * <code>number</code> type because the default used by WAF is Unix time in
+     * seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
      */
     inline const TimeRange& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time period for the attacks.</p>
+     * <p>The start of the time period for the attacks. This is a
+     * <code>timestamp</code> type. The sample request above indicates a
+     * <code>number</code> type because the default used by WAF is Unix time in
+     * seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
      */
     inline void SetStartTime(const TimeRange& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The time period for the attacks.</p>
+     * <p>The start of the time period for the attacks. This is a
+     * <code>timestamp</code> type. The sample request above indicates a
+     * <code>number</code> type because the default used by WAF is Unix time in
+     * seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
      */
     inline void SetStartTime(TimeRange&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The time period for the attacks.</p>
+     * <p>The start of the time period for the attacks. This is a
+     * <code>timestamp</code> type. The sample request above indicates a
+     * <code>number</code> type because the default used by WAF is Unix time in
+     * seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
      */
     inline ListAttacksRequest& WithStartTime(const TimeRange& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time period for the attacks.</p>
+     * <p>The start of the time period for the attacks. This is a
+     * <code>timestamp</code> type. The sample request above indicates a
+     * <code>number</code> type because the default used by WAF is Unix time in
+     * seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
      */
     inline ListAttacksRequest& WithStartTime(TimeRange&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The end of the time period for the attacks.</p>
+     * <p>The end of the time period for the attacks. This is a <code>timestamp</code>
+     * type. The sample request above indicates a <code>number</code> type because the
+     * default used by WAF is Unix time in seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
      */
     inline const TimeRange& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The end of the time period for the attacks.</p>
+     * <p>The end of the time period for the attacks. This is a <code>timestamp</code>
+     * type. The sample request above indicates a <code>number</code> type because the
+     * default used by WAF is Unix time in seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
      */
     inline void SetEndTime(const TimeRange& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The end of the time period for the attacks.</p>
+     * <p>The end of the time period for the attacks. This is a <code>timestamp</code>
+     * type. The sample request above indicates a <code>number</code> type because the
+     * default used by WAF is Unix time in seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
      */
     inline void SetEndTime(TimeRange&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The end of the time period for the attacks.</p>
+     * <p>The end of the time period for the attacks. This is a <code>timestamp</code>
+     * type. The sample request above indicates a <code>number</code> type because the
+     * default used by WAF is Unix time in seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
      */
     inline ListAttacksRequest& WithEndTime(const TimeRange& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The end of the time period for the attacks.</p>
+     * <p>The end of the time period for the attacks. This is a <code>timestamp</code>
+     * type. The sample request above indicates a <code>number</code> type because the
+     * default used by WAF is Unix time in seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
      */
     inline ListAttacksRequest& WithEndTime(TimeRange&& value) { SetEndTime(std::move(value)); return *this;}
 

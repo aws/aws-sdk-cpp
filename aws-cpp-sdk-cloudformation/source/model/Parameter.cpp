@@ -34,7 +34,8 @@ Parameter::Parameter() :
     m_parameterKeyHasBeenSet(false),
     m_parameterValueHasBeenSet(false),
     m_usePreviousValue(false),
-    m_usePreviousValueHasBeenSet(false)
+    m_usePreviousValueHasBeenSet(false),
+    m_resolvedValueHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Parameter::Parameter(const XmlNode& xmlNode) :
     m_parameterKeyHasBeenSet(false),
     m_parameterValueHasBeenSet(false),
     m_usePreviousValue(false),
-    m_usePreviousValueHasBeenSet(false)
+    m_usePreviousValueHasBeenSet(false),
+    m_resolvedValueHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,6 +73,12 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
       m_usePreviousValue = StringUtils::ConvertToBool(StringUtils::Trim(usePreviousValueNode.GetText().c_str()).c_str());
       m_usePreviousValueHasBeenSet = true;
     }
+    XmlNode resolvedValueNode = resultNode.FirstChild("ResolvedValue");
+    if(!resolvedValueNode.IsNull())
+    {
+      m_resolvedValue = StringUtils::Trim(resolvedValueNode.GetText().c_str());
+      m_resolvedValueHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -93,6 +101,11 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".UsePreviousValue=" << std::boolalpha << m_usePreviousValue << "&";
   }
 
+  if(m_resolvedValueHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResolvedValue=" << StringUtils::URLEncode(m_resolvedValue.c_str()) << "&";
+  }
+
 }
 
 void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -108,6 +121,10 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_usePreviousValueHasBeenSet)
   {
       oStream << location << ".UsePreviousValue=" << std::boolalpha << m_usePreviousValue << "&";
+  }
+  if(m_resolvedValueHasBeenSet)
+  {
+      oStream << location << ".ResolvedValue=" << StringUtils::URLEncode(m_resolvedValue.c_str()) << "&";
   }
 }
 

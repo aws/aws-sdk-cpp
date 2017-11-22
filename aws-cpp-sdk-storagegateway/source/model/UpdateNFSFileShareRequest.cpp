@@ -32,7 +32,9 @@ UpdateNFSFileShareRequest::UpdateNFSFileShareRequest() :
     m_clientListHasBeenSet(false),
     m_squashHasBeenSet(false),
     m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
+    m_readOnlyHasBeenSet(false),
+    m_guessMIMETypeEnabled(false),
+    m_guessMIMETypeEnabledHasBeenSet(false)
 {
 }
 
@@ -90,6 +92,12 @@ Aws::String UpdateNFSFileShareRequest::SerializePayload() const
   if(m_readOnlyHasBeenSet)
   {
    payload.WithBool("ReadOnly", m_readOnly);
+
+  }
+
+  if(m_guessMIMETypeEnabledHasBeenSet)
+  {
+   payload.WithBool("GuessMIMETypeEnabled", m_guessMIMETypeEnabled);
 
   }
 

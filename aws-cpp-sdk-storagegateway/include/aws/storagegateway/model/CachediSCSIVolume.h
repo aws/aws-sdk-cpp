@@ -351,6 +351,28 @@ namespace Model
      */
     inline CachediSCSIVolume& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The size of the data stored on the volume in bytes.</p> <note> <p>This value
+     * is not available for volumes created prior to May 13, 2015, until you store data
+     * on the volume.</p> </note>
+     */
+    inline long long GetVolumeUsedInBytes() const{ return m_volumeUsedInBytes; }
+
+    /**
+     * <p>The size of the data stored on the volume in bytes.</p> <note> <p>This value
+     * is not available for volumes created prior to May 13, 2015, until you store data
+     * on the volume.</p> </note>
+     */
+    inline void SetVolumeUsedInBytes(long long value) { m_volumeUsedInBytesHasBeenSet = true; m_volumeUsedInBytes = value; }
+
+    /**
+     * <p>The size of the data stored on the volume in bytes.</p> <note> <p>This value
+     * is not available for volumes created prior to May 13, 2015, until you store data
+     * on the volume.</p> </note>
+     */
+    inline CachediSCSIVolume& WithVolumeUsedInBytes(long long value) { SetVolumeUsedInBytes(value); return *this;}
+
   private:
 
     Aws::String m_volumeARN;
@@ -379,6 +401,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
+    long long m_volumeUsedInBytes;
+    bool m_volumeUsedInBytesHasBeenSet;
   };
 
 } // namespace Model

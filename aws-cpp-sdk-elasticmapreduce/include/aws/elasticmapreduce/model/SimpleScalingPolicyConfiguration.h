@@ -58,7 +58,7 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      * or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-     * which should be expressed as a decimal. For example, 0.20 indicates an increase
+     * which should be expressed as an integer. For example, 20 indicates an increase
      * in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the
      * scaling activity results in an instance group with the number of EC2 instances
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
@@ -75,7 +75,7 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      * or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-     * which should be expressed as a decimal. For example, 0.20 indicates an increase
+     * which should be expressed as an integer. For example, 20 indicates an increase
      * in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the
      * scaling activity results in an instance group with the number of EC2 instances
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
@@ -92,7 +92,7 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      * or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-     * which should be expressed as a decimal. For example, 0.20 indicates an increase
+     * which should be expressed as an integer. For example, 20 indicates an increase
      * in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the
      * scaling activity results in an instance group with the number of EC2 instances
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
@@ -109,7 +109,7 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      * or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-     * which should be expressed as a decimal. For example, 0.20 indicates an increase
+     * which should be expressed as an integer. For example, 20 indicates an increase
      * in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the
      * scaling activity results in an instance group with the number of EC2 instances
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
@@ -126,7 +126,7 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      * or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-     * which should be expressed as a decimal. For example, 0.20 indicates an increase
+     * which should be expressed as an integer. For example, 20 indicates an increase
      * in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the
      * scaling activity results in an instance group with the number of EC2 instances
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
@@ -142,7 +142,7 @@ namespace Model
      * <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number
      * should only be a positive integer. If <code>AdjustmentType</code> is set to
      * <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage
-     * as a decimal. For example, -0.20 indicates a decrease in 20% increments of
+     * as an integer. For example, -20 indicates a decrease in 20% increments of
      * cluster capacity.</p>
      */
     inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
@@ -154,7 +154,7 @@ namespace Model
      * <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number
      * should only be a positive integer. If <code>AdjustmentType</code> is set to
      * <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage
-     * as a decimal. For example, -0.20 indicates a decrease in 20% increments of
+     * as an integer. For example, -20 indicates a decrease in 20% increments of
      * cluster capacity.</p>
      */
     inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
@@ -166,7 +166,7 @@ namespace Model
      * <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number
      * should only be a positive integer. If <code>AdjustmentType</code> is set to
      * <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage
-     * as a decimal. For example, -0.20 indicates a decrease in 20% increments of
+     * as an integer. For example, -20 indicates a decrease in 20% increments of
      * cluster capacity.</p>
      */
     inline SimpleScalingPolicyConfiguration& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}

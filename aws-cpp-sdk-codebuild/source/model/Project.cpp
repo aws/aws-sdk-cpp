@@ -34,6 +34,7 @@ Project::Project() :
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_artifactsHasBeenSet(false),
+    m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_timeoutInMinutes(0),
@@ -42,7 +43,9 @@ Project::Project() :
     m_tagsHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
-    m_webhookHasBeenSet(false)
+    m_webhookHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_badgeHasBeenSet(false)
 {
 }
 
@@ -52,6 +55,7 @@ Project::Project(const JsonValue& jsonValue) :
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_artifactsHasBeenSet(false),
+    m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_timeoutInMinutes(0),
@@ -60,7 +64,9 @@ Project::Project(const JsonValue& jsonValue) :
     m_tagsHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
-    m_webhookHasBeenSet(false)
+    m_webhookHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_badgeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +106,13 @@ Project& Project::operator =(const JsonValue& jsonValue)
     m_artifacts = jsonValue.GetObject("artifacts");
 
     m_artifactsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cache"))
+  {
+    m_cache = jsonValue.GetObject("cache");
+
+    m_cacheHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("environment"))
@@ -161,6 +174,20 @@ Project& Project::operator =(const JsonValue& jsonValue)
     m_webhookHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("badge"))
+  {
+    m_badge = jsonValue.GetObject("badge");
+
+    m_badgeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -195,6 +222,12 @@ JsonValue Project::Jsonize() const
   if(m_artifactsHasBeenSet)
   {
    payload.WithObject("artifacts", m_artifacts.Jsonize());
+
+  }
+
+  if(m_cacheHasBeenSet)
+  {
+   payload.WithObject("cache", m_cache.Jsonize());
 
   }
 
@@ -246,6 +279,18 @@ JsonValue Project::Jsonize() const
   if(m_webhookHasBeenSet)
   {
    payload.WithObject("webhook", m_webhook.Jsonize());
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_badgeHasBeenSet)
+  {
+   payload.WithObject("badge", m_badge.Jsonize());
 
   }
 

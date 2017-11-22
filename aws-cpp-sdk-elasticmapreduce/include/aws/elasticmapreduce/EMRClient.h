@@ -301,7 +301,7 @@ namespace Model
          * using SSH to connect to the master node and submitting queries directly to the
          * software running on the master node, such as Hive and Hadoop. For more
          * information on how to do this, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>A step specifies the location of a JAR file stored either on
          * the master node of the cluster or in Amazon S3. Each step is performed by the
@@ -326,7 +326,7 @@ namespace Model
          * using SSH to connect to the master node and submitting queries directly to the
          * software running on the master node, such as Hive and Hadoop. For more
          * information on how to do this, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>A step specifies the location of a JAR file stored either on
          * the master node of the cluster or in Amazon S3. Each step is performed by the
@@ -353,7 +353,7 @@ namespace Model
          * using SSH to connect to the master node and submitting queries directly to the
          * software running on the master node, such as Hive and Hadoop. For more
          * information on how to do this, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>A step specifies the location of a JAR file stored either on
          * the master node of the cluster or in Amazon S3. Each step is performed by the
@@ -376,8 +376,8 @@ namespace Model
          * <p>Adds tags to an Amazon EMR resource. Tags make it easier to associate
          * clusters in various ways, such as grouping clusters to track your Amazon EMR
          * resource allocation costs. For more information, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
-         * Amazon EMR Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+         * Clusters</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">AWS
          * API Reference</a></p>
          */
@@ -387,8 +387,8 @@ namespace Model
          * <p>Adds tags to an Amazon EMR resource. Tags make it easier to associate
          * clusters in various ways, such as grouping clusters to track your Amazon EMR
          * resource allocation costs. For more information, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
-         * Amazon EMR Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+         * Clusters</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">AWS
          * API Reference</a></p>
          *
@@ -400,8 +400,8 @@ namespace Model
          * <p>Adds tags to an Amazon EMR resource. Tags make it easier to associate
          * clusters in various ways, such as grouping clusters to track your Amazon EMR
          * resource allocation costs. For more information, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
-         * Amazon EMR Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+         * Clusters</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">AWS
          * API Reference</a></p>
          *
@@ -949,9 +949,9 @@ namespace Model
          * <p>Removes tags from an Amazon EMR resource. Tags make it easier to associate
          * clusters in various ways, such as grouping clusters to track your Amazon EMR
          * resource allocation costs. For more information, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
-         * Amazon EMR Resources</a>. </p> <p>The following example removes the stack tag
-         * with value Prod from a cluster:</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+         * Clusters</a>. </p> <p>The following example removes the stack tag with value
+         * Prod from a cluster:</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">AWS
          * API Reference</a></p>
          */
@@ -961,9 +961,9 @@ namespace Model
          * <p>Removes tags from an Amazon EMR resource. Tags make it easier to associate
          * clusters in various ways, such as grouping clusters to track your Amazon EMR
          * resource allocation costs. For more information, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
-         * Amazon EMR Resources</a>. </p> <p>The following example removes the stack tag
-         * with value Prod from a cluster:</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+         * Clusters</a>. </p> <p>The following example removes the stack tag with value
+         * Prod from a cluster:</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">AWS
          * API Reference</a></p>
          *
@@ -975,9 +975,9 @@ namespace Model
          * <p>Removes tags from an Amazon EMR resource. Tags make it easier to associate
          * clusters in various ways, such as grouping clusters to track your Amazon EMR
          * resource allocation costs. For more information, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
-         * Amazon EMR Resources</a>. </p> <p>The following example removes the stack tag
-         * with value Prod from a cluster:</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+         * Clusters</a>. </p> <p>The following example removes the stack tag with value
+         * Prod from a cluster:</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">AWS
          * API Reference</a></p>
          *
@@ -1002,7 +1002,7 @@ namespace Model
          * various ways, including using the SSH shell to connect to the master node and
          * submitting queries directly to the software running on the master node, such as
          * Hive and Hadoop. For more information on how to do this, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>For long running clusters, we recommend that you periodically
          * store your results.</p> <note> <p>The instance fleets configuration is available
@@ -1031,7 +1031,7 @@ namespace Model
          * various ways, including using the SSH shell to connect to the master node and
          * submitting queries directly to the software running on the master node, such as
          * Hive and Hadoop. For more information on how to do this, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>For long running clusters, we recommend that you periodically
          * store your results.</p> <note> <p>The instance fleets configuration is available
@@ -1062,7 +1062,7 @@ namespace Model
          * various ways, including using the SSH shell to connect to the master node and
          * submitting queries directly to the software running on the master node, such as
          * Hive and Hadoop. For more information on how to do this, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>For long running clusters, we recommend that you periodically
          * store your results.</p> <note> <p>The instance fleets configuration is available

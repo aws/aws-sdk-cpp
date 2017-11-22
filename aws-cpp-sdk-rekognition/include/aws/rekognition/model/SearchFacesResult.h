@@ -122,11 +122,56 @@ namespace Model
      */
     inline SearchFacesResult& AddFaceMatches(FaceMatch&& value) { m_faceMatches.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline SearchFacesResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline SearchFacesResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline SearchFacesResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
+
   private:
 
     Aws::String m_searchedFaceId;
 
     Aws::Vector<FaceMatch> m_faceMatches;
+
+    Aws::String m_faceModelVersion;
   };
 
 } // namespace Model

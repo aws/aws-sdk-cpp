@@ -476,6 +476,25 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
+
+    /**
+     * <p>Enables guessing of the MIME type for uploaded objects based on file
+     * extensions: "true" to enable MIME type guessing, and otherwise "false".</p>
+     */
+    inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
+
+    /**
+     * <p>Enables guessing of the MIME type for uploaded objects based on file
+     * extensions: "true" to enable MIME type guessing, and otherwise "false".</p>
+     */
+    inline void SetGuessMIMETypeEnabled(bool value) { m_guessMIMETypeEnabledHasBeenSet = true; m_guessMIMETypeEnabled = value; }
+
+    /**
+     * <p>Enables guessing of the MIME type for uploaded objects based on file
+     * extensions: "true" to enable MIME type guessing, and otherwise "false".</p>
+     */
+    inline CreateNFSFileShareRequest& WithGuessMIMETypeEnabled(bool value) { SetGuessMIMETypeEnabled(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -510,6 +529,9 @@ namespace Model
 
     bool m_readOnly;
     bool m_readOnlyHasBeenSet;
+
+    bool m_guessMIMETypeEnabled;
+    bool m_guessMIMETypeEnabledHasBeenSet;
   };
 
 } // namespace Model

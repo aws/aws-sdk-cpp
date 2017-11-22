@@ -41,13 +41,16 @@ Build::Build() :
     m_phasesHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_artifactsHasBeenSet(false),
+    m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_logsHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
     m_buildComplete(false),
     m_buildCompleteHasBeenSet(false),
-    m_initiatorHasBeenSet(false)
+    m_initiatorHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_networkInterfaceHasBeenSet(false)
 {
 }
 
@@ -64,13 +67,16 @@ Build::Build(const JsonValue& jsonValue) :
     m_phasesHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_artifactsHasBeenSet(false),
+    m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_logsHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
     m_buildComplete(false),
     m_buildCompleteHasBeenSet(false),
-    m_initiatorHasBeenSet(false)
+    m_initiatorHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_networkInterfaceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +163,13 @@ Build& Build::operator =(const JsonValue& jsonValue)
     m_artifactsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cache"))
+  {
+    m_cache = jsonValue.GetObject("cache");
+
+    m_cacheHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("environment"))
   {
     m_environment = jsonValue.GetObject("environment");
@@ -190,6 +203,20 @@ Build& Build::operator =(const JsonValue& jsonValue)
     m_initiator = jsonValue.GetString("initiator");
 
     m_initiatorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkInterface"))
+  {
+    m_networkInterface = jsonValue.GetObject("networkInterface");
+
+    m_networkInterfaceHasBeenSet = true;
   }
 
   return *this;
@@ -267,6 +294,12 @@ JsonValue Build::Jsonize() const
 
   }
 
+  if(m_cacheHasBeenSet)
+  {
+   payload.WithObject("cache", m_cache.Jsonize());
+
+  }
+
   if(m_environmentHasBeenSet)
   {
    payload.WithObject("environment", m_environment.Jsonize());
@@ -294,6 +327,18 @@ JsonValue Build::Jsonize() const
   if(m_initiatorHasBeenSet)
   {
    payload.WithString("initiator", m_initiator);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_networkInterfaceHasBeenSet)
+  {
+   payload.WithObject("networkInterface", m_networkInterface.Jsonize());
 
   }
 

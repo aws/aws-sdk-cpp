@@ -809,6 +809,25 @@ namespace Model
 
 
     /**
+     * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
+     * 29,000 milliseconds or 29 seconds.</p>
+     */
+    inline int GetTimeoutInMillis() const{ return m_timeoutInMillis; }
+
+    /**
+     * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
+     * 29,000 milliseconds or 29 seconds.</p>
+     */
+    inline void SetTimeoutInMillis(int value) { m_timeoutInMillisHasBeenSet = true; m_timeoutInMillis = value; }
+
+    /**
+     * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
+     * 29,000 milliseconds or 29 seconds.</p>
+     */
+    inline Integration& WithTimeoutInMillis(int value) { SetTimeoutInMillis(value); return *this;}
+
+
+    /**
      * <p>Specifies the integration's cache namespace.</p>
      */
     inline const Aws::String& GetCacheNamespace() const{ return m_cacheNamespace; }
@@ -1218,6 +1237,9 @@ namespace Model
 
     ContentHandlingStrategy m_contentHandling;
     bool m_contentHandlingHasBeenSet;
+
+    int m_timeoutInMillis;
+    bool m_timeoutInMillisHasBeenSet;
 
     Aws::String m_cacheNamespace;
     bool m_cacheNamespaceHasBeenSet;

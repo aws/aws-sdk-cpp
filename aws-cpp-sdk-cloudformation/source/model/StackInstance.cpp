@@ -35,6 +35,7 @@ StackInstance::StackInstance() :
     m_regionHasBeenSet(false),
     m_accountHasBeenSet(false),
     m_stackIdHasBeenSet(false),
+    m_parameterOverridesHasBeenSet(false),
     m_status(StackInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false)
@@ -46,6 +47,7 @@ StackInstance::StackInstance(const XmlNode& xmlNode) :
     m_regionHasBeenSet(false),
     m_accountHasBeenSet(false),
     m_stackIdHasBeenSet(false),
+    m_parameterOverridesHasBeenSet(false),
     m_status(StackInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false)
@@ -82,6 +84,18 @@ StackInstance& StackInstance::operator =(const XmlNode& xmlNode)
     {
       m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
       m_stackIdHasBeenSet = true;
+    }
+    XmlNode parameterOverridesNode = resultNode.FirstChild("ParameterOverrides");
+    if(!parameterOverridesNode.IsNull())
+    {
+      XmlNode parameterOverridesMember = parameterOverridesNode.FirstChild("member");
+      while(!parameterOverridesMember.IsNull())
+      {
+        m_parameterOverrides.push_back(parameterOverridesMember);
+        parameterOverridesMember = parameterOverridesMember.NextNode("member");
+      }
+
+      m_parameterOverridesHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
@@ -122,6 +136,17 @@ void StackInstance::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
   }
 
+  if(m_parameterOverridesHasBeenSet)
+  {
+      unsigned parameterOverridesIdx = 1;
+      for(auto& item : m_parameterOverrides)
+      {
+        Aws::StringStream parameterOverridesSs;
+        parameterOverridesSs << location << index << locationValue << ".ParameterOverrides.member." << parameterOverridesIdx++;
+        item.OutputToStream(oStream, parameterOverridesSs.str().c_str());
+      }
+  }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StackInstanceStatusMapper::GetNameForStackInstanceStatus(m_status) << "&";
@@ -151,6 +176,16 @@ void StackInstance::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_stackIdHasBeenSet)
   {
       oStream << location << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
+  }
+  if(m_parameterOverridesHasBeenSet)
+  {
+      unsigned parameterOverridesIdx = 1;
+      for(auto& item : m_parameterOverrides)
+      {
+        Aws::StringStream parameterOverridesSs;
+        parameterOverridesSs << location <<  ".ParameterOverrides.member." << parameterOverridesIdx++;
+        item.OutputToStream(oStream, parameterOverridesSs.str().c_str());
+      }
   }
   if(m_statusHasBeenSet)
   {

@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
 #include <aws/elasticmapreduce/model/RepoUpgradeOnBoot.h>
+#include <aws/elasticmapreduce/model/KerberosAttributes.h>
 #include <aws/elasticmapreduce/model/StepConfig.h>
 #include <aws/elasticmapreduce/model/BootstrapActionConfig.h>
 #include <aws/elasticmapreduce/model/SupportedProductConfig.h>
@@ -178,7 +179,7 @@ namespace Model
      * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
      * use when launching Amazon EC2 instances in the job flow. For details about the
      * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
      * supports both Hadoop 0.18 and 0.20), you can use the
@@ -198,7 +199,7 @@ namespace Model
      * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
      * use when launching Amazon EC2 instances in the job flow. For details about the
      * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
      * supports both Hadoop 0.18 and 0.20), you can use the
@@ -218,7 +219,7 @@ namespace Model
      * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
      * use when launching Amazon EC2 instances in the job flow. For details about the
      * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
      * supports both Hadoop 0.18 and 0.20), you can use the
@@ -238,7 +239,7 @@ namespace Model
      * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
      * use when launching Amazon EC2 instances in the job flow. For details about the
      * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
      * supports both Hadoop 0.18 and 0.20), you can use the
@@ -258,7 +259,7 @@ namespace Model
      * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
      * use when launching Amazon EC2 instances in the job flow. For details about the
      * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
      * supports both Hadoop 0.18 and 0.20), you can use the
@@ -278,7 +279,7 @@ namespace Model
      * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
      * use when launching Amazon EC2 instances in the job flow. For details about the
      * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
      * supports both Hadoop 0.18 and 0.20), you can use the
@@ -298,7 +299,7 @@ namespace Model
      * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
      * use when launching Amazon EC2 instances in the job flow. For details about the
      * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
+     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
      * supports both Hadoop 0.18 and 0.20), you can use the
@@ -464,96 +465,88 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     * Third Party Applications with Amazon EMR</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
-     * </ul>
+     * third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
+     * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
+     * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedProducts() const{ return m_supportedProducts; }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     * Third Party Applications with Amazon EMR</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
-     * </ul>
+     * third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
+     * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
+     * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
      */
     inline void SetSupportedProducts(const Aws::Vector<Aws::String>& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts = value; }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     * Third Party Applications with Amazon EMR</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
-     * </ul>
+     * third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
+     * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
+     * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
      */
     inline void SetSupportedProducts(Aws::Vector<Aws::String>&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts = std::move(value); }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     * Third Party Applications with Amazon EMR</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
-     * </ul>
+     * third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
+     * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
+     * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
      */
     inline RunJobFlowRequest& WithSupportedProducts(const Aws::Vector<Aws::String>& value) { SetSupportedProducts(value); return *this;}
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     * Third Party Applications with Amazon EMR</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
-     * </ul>
+     * third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
+     * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
+     * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
      */
     inline RunJobFlowRequest& WithSupportedProducts(Aws::Vector<Aws::String>&& value) { SetSupportedProducts(std::move(value)); return *this;}
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     * Third Party Applications with Amazon EMR</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
-     * </ul>
+     * third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
+     * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
+     * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
      */
     inline RunJobFlowRequest& AddSupportedProducts(const Aws::String& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(value); return *this; }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     * Third Party Applications with Amazon EMR</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
-     * </ul>
+     * third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
+     * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
+     * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
      */
     inline RunJobFlowRequest& AddSupportedProducts(Aws::String&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(std::move(value)); return *this; }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     * Third Party Applications with Amazon EMR</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
-     * </ul>
+     * third-party software to use. For more information, see the <a
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
+     * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
+     * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
      */
     inline RunJobFlowRequest& AddSupportedProducts(const char* value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(value); return *this; }
 
@@ -565,7 +558,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -586,7 +579,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -607,7 +600,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -628,7 +621,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -649,7 +642,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -670,7 +663,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -691,7 +684,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -1340,6 +1333,47 @@ namespace Model
      */
     inline RunJobFlowRequest& WithRepoUpgradeOnBoot(RepoUpgradeOnBoot&& value) { SetRepoUpgradeOnBoot(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline const KerberosAttributes& GetKerberosAttributes() const{ return m_kerberosAttributes; }
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline void SetKerberosAttributes(const KerberosAttributes& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = value; }
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline void SetKerberosAttributes(KerberosAttributes&& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = std::move(value); }
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline RunJobFlowRequest& WithKerberosAttributes(const KerberosAttributes& value) { SetKerberosAttributes(value); return *this;}
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline RunJobFlowRequest& WithKerberosAttributes(KerberosAttributes&& value) { SetKerberosAttributes(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1407,6 +1441,9 @@ namespace Model
 
     RepoUpgradeOnBoot m_repoUpgradeOnBoot;
     bool m_repoUpgradeOnBootHasBeenSet;
+
+    KerberosAttributes m_kerberosAttributes;
+    bool m_kerberosAttributesHasBeenSet;
   };
 
 } // namespace Model

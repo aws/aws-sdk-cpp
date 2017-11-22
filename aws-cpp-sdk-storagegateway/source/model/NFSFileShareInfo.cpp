@@ -44,7 +44,9 @@ NFSFileShareInfo::NFSFileShareInfo() :
     m_clientListHasBeenSet(false),
     m_squashHasBeenSet(false),
     m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
+    m_readOnlyHasBeenSet(false),
+    m_guessMIMETypeEnabled(false),
+    m_guessMIMETypeEnabledHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ NFSFileShareInfo::NFSFileShareInfo(const JsonValue& jsonValue) :
     m_clientListHasBeenSet(false),
     m_squashHasBeenSet(false),
     m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
+    m_readOnlyHasBeenSet(false),
+    m_guessMIMETypeEnabled(false),
+    m_guessMIMETypeEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -172,6 +176,13 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(const JsonValue& jsonValue)
     m_readOnlyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GuessMIMETypeEnabled"))
+  {
+    m_guessMIMETypeEnabled = jsonValue.GetBool("GuessMIMETypeEnabled");
+
+    m_guessMIMETypeEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -265,6 +276,12 @@ JsonValue NFSFileShareInfo::Jsonize() const
   if(m_readOnlyHasBeenSet)
   {
    payload.WithBool("ReadOnly", m_readOnly);
+
+  }
+
+  if(m_guessMIMETypeEnabledHasBeenSet)
+  {
+   payload.WithBool("GuessMIMETypeEnabled", m_guessMIMETypeEnabled);
 
   }
 

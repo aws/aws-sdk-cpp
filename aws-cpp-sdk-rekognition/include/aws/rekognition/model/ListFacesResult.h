@@ -122,11 +122,56 @@ namespace Model
      */
     inline ListFacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline ListFacesResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline ListFacesResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version number of the face detection model associated with the input
+     * collection (<code>CollectionId</code>).</p>
+     */
+    inline ListFacesResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
+
   private:
 
     Aws::Vector<Face> m_faces;
 
     Aws::String m_nextToken;
+
+    Aws::String m_faceModelVersion;
   };
 
 } // namespace Model

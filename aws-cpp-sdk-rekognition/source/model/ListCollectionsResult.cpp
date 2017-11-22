@@ -53,6 +53,15 @@ ListCollectionsResult& ListCollectionsResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("FaceModelVersions"))
+  {
+    Array<JsonValue> faceModelVersionsJsonList = jsonValue.GetArray("FaceModelVersions");
+    for(unsigned faceModelVersionsIndex = 0; faceModelVersionsIndex < faceModelVersionsJsonList.GetLength(); ++faceModelVersionsIndex)
+    {
+      m_faceModelVersions.push_back(faceModelVersionsJsonList[faceModelVersionsIndex].AsString());
+    }
+  }
+
 
 
   return *this;

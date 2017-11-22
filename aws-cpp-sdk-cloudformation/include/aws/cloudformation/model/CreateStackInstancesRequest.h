@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/StackSetOperationPreferences.h>
+#include <aws/cloudformation/model/Parameter.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -191,6 +192,175 @@ namespace Model
 
 
     /**
+     * <p>A list of stack set parameters whose values you want to override in the
+     * selected stack instances.</p> <p>Any overridden parameter values will be applied
+     * to all stack instances in the specified accounts and regions. When specifying
+     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * values during stack instance operations:</p> <ul> <li> <p>To override the
+     * current value for a parameter, include the parameter and specify its value.</p>
+     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
+     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
+     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
+     * <code>true</code>. (You cannot specify both a value and set
+     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
+     * <p>To set all overridden parameter back to the values specified in the stack
+     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
+     * <p>To leave all parameters set to their present values, do not specify this
+     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
+     * values overridden for a stack instance are not updated, but retain their
+     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
+     * are specified in the stack set; to add or delete a parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * to update the stack set template.</p>
+     */
+    inline const Aws::Vector<Parameter>& GetParameterOverrides() const{ return m_parameterOverrides; }
+
+    /**
+     * <p>A list of stack set parameters whose values you want to override in the
+     * selected stack instances.</p> <p>Any overridden parameter values will be applied
+     * to all stack instances in the specified accounts and regions. When specifying
+     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * values during stack instance operations:</p> <ul> <li> <p>To override the
+     * current value for a parameter, include the parameter and specify its value.</p>
+     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
+     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
+     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
+     * <code>true</code>. (You cannot specify both a value and set
+     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
+     * <p>To set all overridden parameter back to the values specified in the stack
+     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
+     * <p>To leave all parameters set to their present values, do not specify this
+     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
+     * values overridden for a stack instance are not updated, but retain their
+     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
+     * are specified in the stack set; to add or delete a parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * to update the stack set template.</p>
+     */
+    inline void SetParameterOverrides(const Aws::Vector<Parameter>& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = value; }
+
+    /**
+     * <p>A list of stack set parameters whose values you want to override in the
+     * selected stack instances.</p> <p>Any overridden parameter values will be applied
+     * to all stack instances in the specified accounts and regions. When specifying
+     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * values during stack instance operations:</p> <ul> <li> <p>To override the
+     * current value for a parameter, include the parameter and specify its value.</p>
+     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
+     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
+     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
+     * <code>true</code>. (You cannot specify both a value and set
+     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
+     * <p>To set all overridden parameter back to the values specified in the stack
+     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
+     * <p>To leave all parameters set to their present values, do not specify this
+     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
+     * values overridden for a stack instance are not updated, but retain their
+     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
+     * are specified in the stack set; to add or delete a parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * to update the stack set template.</p>
+     */
+    inline void SetParameterOverrides(Aws::Vector<Parameter>&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = std::move(value); }
+
+    /**
+     * <p>A list of stack set parameters whose values you want to override in the
+     * selected stack instances.</p> <p>Any overridden parameter values will be applied
+     * to all stack instances in the specified accounts and regions. When specifying
+     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * values during stack instance operations:</p> <ul> <li> <p>To override the
+     * current value for a parameter, include the parameter and specify its value.</p>
+     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
+     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
+     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
+     * <code>true</code>. (You cannot specify both a value and set
+     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
+     * <p>To set all overridden parameter back to the values specified in the stack
+     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
+     * <p>To leave all parameters set to their present values, do not specify this
+     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
+     * values overridden for a stack instance are not updated, but retain their
+     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
+     * are specified in the stack set; to add or delete a parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * to update the stack set template.</p>
+     */
+    inline CreateStackInstancesRequest& WithParameterOverrides(const Aws::Vector<Parameter>& value) { SetParameterOverrides(value); return *this;}
+
+    /**
+     * <p>A list of stack set parameters whose values you want to override in the
+     * selected stack instances.</p> <p>Any overridden parameter values will be applied
+     * to all stack instances in the specified accounts and regions. When specifying
+     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * values during stack instance operations:</p> <ul> <li> <p>To override the
+     * current value for a parameter, include the parameter and specify its value.</p>
+     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
+     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
+     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
+     * <code>true</code>. (You cannot specify both a value and set
+     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
+     * <p>To set all overridden parameter back to the values specified in the stack
+     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
+     * <p>To leave all parameters set to their present values, do not specify this
+     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
+     * values overridden for a stack instance are not updated, but retain their
+     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
+     * are specified in the stack set; to add or delete a parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * to update the stack set template.</p>
+     */
+    inline CreateStackInstancesRequest& WithParameterOverrides(Aws::Vector<Parameter>&& value) { SetParameterOverrides(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of stack set parameters whose values you want to override in the
+     * selected stack instances.</p> <p>Any overridden parameter values will be applied
+     * to all stack instances in the specified accounts and regions. When specifying
+     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * values during stack instance operations:</p> <ul> <li> <p>To override the
+     * current value for a parameter, include the parameter and specify its value.</p>
+     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
+     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
+     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
+     * <code>true</code>. (You cannot specify both a value and set
+     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
+     * <p>To set all overridden parameter back to the values specified in the stack
+     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
+     * <p>To leave all parameters set to their present values, do not specify this
+     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
+     * values overridden for a stack instance are not updated, but retain their
+     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
+     * are specified in the stack set; to add or delete a parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * to update the stack set template.</p>
+     */
+    inline CreateStackInstancesRequest& AddParameterOverrides(const Parameter& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(value); return *this; }
+
+    /**
+     * <p>A list of stack set parameters whose values you want to override in the
+     * selected stack instances.</p> <p>Any overridden parameter values will be applied
+     * to all stack instances in the specified accounts and regions. When specifying
+     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * values during stack instance operations:</p> <ul> <li> <p>To override the
+     * current value for a parameter, include the parameter and specify its value.</p>
+     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
+     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
+     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
+     * <code>true</code>. (You cannot specify both a value and set
+     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
+     * <p>To set all overridden parameter back to the values specified in the stack
+     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
+     * <p>To leave all parameters set to their present values, do not specify this
+     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
+     * values overridden for a stack instance are not updated, but retain their
+     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
+     * are specified in the stack set; to add or delete a parameter itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * to update the stack set template.</p>
+     */
+    inline CreateStackInstancesRequest& AddParameterOverrides(Parameter&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
      */
     inline const StackSetOperationPreferences& GetOperationPreferences() const{ return m_operationPreferences; }
@@ -310,6 +480,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_regions;
     bool m_regionsHasBeenSet;
+
+    Aws::Vector<Parameter> m_parameterOverrides;
+    bool m_parameterOverridesHasBeenSet;
 
     StackSetOperationPreferences m_operationPreferences;
     bool m_operationPreferencesHasBeenSet;
