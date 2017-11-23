@@ -63,6 +63,9 @@ namespace Model
 
     
     inline CompletedMultipartUpload& AddParts(CompletedPart&& value) { m_partsHasBeenSet = true; m_parts.push_back(std::move(value)); return *this; }
+    
+    
+    inline CompletedMultipartUpload& SortParts() { std::sort(m_parts.begin(), m_parts.end(), [](const CompletedPart& lhs, const CompletedPart& rhs) { return lhs.GetPartNumber() < rhs.GetPartNumber(); }); return *this; }
 
   private:
 
