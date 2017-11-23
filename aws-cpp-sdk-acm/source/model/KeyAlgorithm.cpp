@@ -32,7 +32,10 @@ namespace Aws
 
         static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
         static const int RSA_1024_HASH = HashingUtils::HashString("RSA_1024");
+        static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
         static const int EC_prime256v1_HASH = HashingUtils::HashString("EC_prime256v1");
+        static const int EC_secp384r1_HASH = HashingUtils::HashString("EC_secp384r1");
+        static const int EC_secp521r1_HASH = HashingUtils::HashString("EC_secp521r1");
 
 
         KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
@@ -46,9 +49,21 @@ namespace Aws
           {
             return KeyAlgorithm::RSA_1024;
           }
+          else if (hashCode == RSA_4096_HASH)
+          {
+            return KeyAlgorithm::RSA_4096;
+          }
           else if (hashCode == EC_prime256v1_HASH)
           {
             return KeyAlgorithm::EC_prime256v1;
+          }
+          else if (hashCode == EC_secp384r1_HASH)
+          {
+            return KeyAlgorithm::EC_secp384r1;
+          }
+          else if (hashCode == EC_secp521r1_HASH)
+          {
+            return KeyAlgorithm::EC_secp521r1;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -68,8 +83,14 @@ namespace Aws
             return "RSA_2048";
           case KeyAlgorithm::RSA_1024:
             return "RSA_1024";
+          case KeyAlgorithm::RSA_4096:
+            return "RSA_4096";
           case KeyAlgorithm::EC_prime256v1:
             return "EC_prime256v1";
+          case KeyAlgorithm::EC_secp384r1:
+            return "EC_secp384r1";
+          case KeyAlgorithm::EC_secp521r1:
+            return "EC_secp521r1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

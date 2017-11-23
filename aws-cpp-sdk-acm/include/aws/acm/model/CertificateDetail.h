@@ -25,6 +25,8 @@
 #include <aws/acm/model/CertificateType.h>
 #include <aws/acm/model/RenewalSummary.h>
 #include <aws/acm/model/DomainValidation.h>
+#include <aws/acm/model/KeyUsage.h>
+#include <aws/acm/model/ExtendedKeyUsage.h>
 #include <utility>
 
 namespace Aws
@@ -43,7 +45,7 @@ namespace Model
 
   /**
    * <p>Contains metadata about an ACM certificate. This structure is returned in the
-   * response to a <a>DescribeCertificate</a> request.</p><p><h3>See Also:</h3>   <a
+   * response to a <a>DescribeCertificate</a> request. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CertificateDetail">AWS
    * API Reference</a></p>
    */
@@ -168,7 +170,7 @@ namespace Model
      * certificate. This list contains the domain names that are bound to the public
      * key that is contained in the certificate. The subject alternative names include
      * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * that can be used to connect to the website. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
 
@@ -177,7 +179,7 @@ namespace Model
      * certificate. This list contains the domain names that are bound to the public
      * key that is contained in the certificate. The subject alternative names include
      * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * that can be used to connect to the website. </p>
      */
     inline void SetSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
 
@@ -186,7 +188,7 @@ namespace Model
      * certificate. This list contains the domain names that are bound to the public
      * key that is contained in the certificate. The subject alternative names include
      * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * that can be used to connect to the website. </p>
      */
     inline void SetSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::move(value); }
 
@@ -195,7 +197,7 @@ namespace Model
      * certificate. This list contains the domain names that are bound to the public
      * key that is contained in the certificate. The subject alternative names include
      * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * that can be used to connect to the website. </p>
      */
     inline CertificateDetail& WithSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { SetSubjectAlternativeNames(value); return *this;}
 
@@ -204,7 +206,7 @@ namespace Model
      * certificate. This list contains the domain names that are bound to the public
      * key that is contained in the certificate. The subject alternative names include
      * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * that can be used to connect to the website. </p>
      */
     inline CertificateDetail& WithSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { SetSubjectAlternativeNames(std::move(value)); return *this;}
 
@@ -213,7 +215,7 @@ namespace Model
      * certificate. This list contains the domain names that are bound to the public
      * key that is contained in the certificate. The subject alternative names include
      * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * that can be used to connect to the website. </p>
      */
     inline CertificateDetail& AddSubjectAlternativeNames(const Aws::String& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
@@ -222,7 +224,7 @@ namespace Model
      * certificate. This list contains the domain names that are bound to the public
      * key that is contained in the certificate. The subject alternative names include
      * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * that can be used to connect to the website. </p>
      */
     inline CertificateDetail& AddSubjectAlternativeNames(Aws::String&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(std::move(value)); return *this; }
 
@@ -231,7 +233,7 @@ namespace Model
      * certificate. This list contains the domain names that are bound to the public
      * key that is contained in the certificate. The subject alternative names include
      * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * that can be used to connect to the website. </p>
      */
     inline CertificateDetail& AddSubjectAlternativeNames(const char* value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
@@ -239,49 +241,49 @@ namespace Model
     /**
      * <p>Contains information about the initial validation of each domain name that
      * occurs as a result of the <a>RequestCertificate</a> request. This field exists
-     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline const Aws::Vector<DomainValidation>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
 
     /**
      * <p>Contains information about the initial validation of each domain name that
      * occurs as a result of the <a>RequestCertificate</a> request. This field exists
-     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline void SetDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
     /**
      * <p>Contains information about the initial validation of each domain name that
      * occurs as a result of the <a>RequestCertificate</a> request. This field exists
-     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline void SetDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::move(value); }
 
     /**
      * <p>Contains information about the initial validation of each domain name that
      * occurs as a result of the <a>RequestCertificate</a> request. This field exists
-     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline CertificateDetail& WithDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { SetDomainValidationOptions(value); return *this;}
 
     /**
      * <p>Contains information about the initial validation of each domain name that
      * occurs as a result of the <a>RequestCertificate</a> request. This field exists
-     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline CertificateDetail& WithDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { SetDomainValidationOptions(std::move(value)); return *this;}
 
     /**
      * <p>Contains information about the initial validation of each domain name that
      * occurs as a result of the <a>RequestCertificate</a> request. This field exists
-     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline CertificateDetail& AddDomainValidationOptions(const DomainValidation& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 
     /**
      * <p>Contains information about the initial validation of each domain name that
      * occurs as a result of the <a>RequestCertificate</a> request. This field exists
-     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline CertificateDetail& AddDomainValidationOptions(DomainValidation&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
 
@@ -410,93 +412,93 @@ namespace Model
 
     /**
      * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline CertificateDetail& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The time at which the certificate was requested. This value exists only when
-     * the certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline CertificateDetail& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
      * <p>The time at which the certificate was issued. This value exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetIssuedAt() const{ return m_issuedAt; }
 
     /**
      * <p>The time at which the certificate was issued. This value exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline void SetIssuedAt(const Aws::Utils::DateTime& value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
 
     /**
      * <p>The time at which the certificate was issued. This value exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline void SetIssuedAt(Aws::Utils::DateTime&& value) { m_issuedAtHasBeenSet = true; m_issuedAt = std::move(value); }
 
     /**
      * <p>The time at which the certificate was issued. This value exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline CertificateDetail& WithIssuedAt(const Aws::Utils::DateTime& value) { SetIssuedAt(value); return *this;}
 
     /**
      * <p>The time at which the certificate was issued. This value exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
+     * certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline CertificateDetail& WithIssuedAt(Aws::Utils::DateTime&& value) { SetIssuedAt(std::move(value)); return *this;}
 
 
     /**
      * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>.</p>
+     * only when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetImportedAt() const{ return m_importedAt; }
 
     /**
      * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>.</p>
+     * only when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline void SetImportedAt(const Aws::Utils::DateTime& value) { m_importedAtHasBeenSet = true; m_importedAt = value; }
 
     /**
      * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>.</p>
+     * only when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline void SetImportedAt(Aws::Utils::DateTime&& value) { m_importedAtHasBeenSet = true; m_importedAt = std::move(value); }
 
     /**
      * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>.</p>
+     * only when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline CertificateDetail& WithImportedAt(const Aws::Utils::DateTime& value) { SetImportedAt(value); return *this;}
 
     /**
      * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>.</p>
+     * only when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline CertificateDetail& WithImportedAt(Aws::Utils::DateTime&& value) { SetImportedAt(std::move(value)); return *this;}
 
@@ -529,62 +531,62 @@ namespace Model
 
     /**
      * <p>The time at which the certificate was revoked. This value exists only when
-     * the certificate status is <code>REVOKED</code>.</p>
+     * the certificate status is <code>REVOKED</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetRevokedAt() const{ return m_revokedAt; }
 
     /**
      * <p>The time at which the certificate was revoked. This value exists only when
-     * the certificate status is <code>REVOKED</code>.</p>
+     * the certificate status is <code>REVOKED</code>. </p>
      */
     inline void SetRevokedAt(const Aws::Utils::DateTime& value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
 
     /**
      * <p>The time at which the certificate was revoked. This value exists only when
-     * the certificate status is <code>REVOKED</code>.</p>
+     * the certificate status is <code>REVOKED</code>. </p>
      */
     inline void SetRevokedAt(Aws::Utils::DateTime&& value) { m_revokedAtHasBeenSet = true; m_revokedAt = std::move(value); }
 
     /**
      * <p>The time at which the certificate was revoked. This value exists only when
-     * the certificate status is <code>REVOKED</code>.</p>
+     * the certificate status is <code>REVOKED</code>. </p>
      */
     inline CertificateDetail& WithRevokedAt(const Aws::Utils::DateTime& value) { SetRevokedAt(value); return *this;}
 
     /**
      * <p>The time at which the certificate was revoked. This value exists only when
-     * the certificate status is <code>REVOKED</code>.</p>
+     * the certificate status is <code>REVOKED</code>. </p>
      */
     inline CertificateDetail& WithRevokedAt(Aws::Utils::DateTime&& value) { SetRevokedAt(std::move(value)); return *this;}
 
 
     /**
      * <p>The reason the certificate was revoked. This value exists only when the
-     * certificate status is <code>REVOKED</code>.</p>
+     * certificate status is <code>REVOKED</code>. </p>
      */
     inline const RevocationReason& GetRevocationReason() const{ return m_revocationReason; }
 
     /**
      * <p>The reason the certificate was revoked. This value exists only when the
-     * certificate status is <code>REVOKED</code>.</p>
+     * certificate status is <code>REVOKED</code>. </p>
      */
     inline void SetRevocationReason(const RevocationReason& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = value; }
 
     /**
      * <p>The reason the certificate was revoked. This value exists only when the
-     * certificate status is <code>REVOKED</code>.</p>
+     * certificate status is <code>REVOKED</code>. </p>
      */
     inline void SetRevocationReason(RevocationReason&& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = std::move(value); }
 
     /**
      * <p>The reason the certificate was revoked. This value exists only when the
-     * certificate status is <code>REVOKED</code>.</p>
+     * certificate status is <code>REVOKED</code>. </p>
      */
     inline CertificateDetail& WithRevocationReason(const RevocationReason& value) { SetRevocationReason(value); return *this;}
 
     /**
      * <p>The reason the certificate was revoked. This value exists only when the
-     * certificate status is <code>REVOKED</code>.</p>
+     * certificate status is <code>REVOKED</code>. </p>
      */
     inline CertificateDetail& WithRevocationReason(RevocationReason&& value) { SetRevocationReason(std::move(value)); return *this;}
 
@@ -642,32 +644,27 @@ namespace Model
 
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm that was used to generate the public-private key pair.</p>
      */
     inline const KeyAlgorithm& GetKeyAlgorithm() const{ return m_keyAlgorithm; }
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm that was used to generate the public-private key pair.</p>
      */
     inline void SetKeyAlgorithm(const KeyAlgorithm& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm that was used to generate the public-private key pair.</p>
      */
     inline void SetKeyAlgorithm(KeyAlgorithm&& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = std::move(value); }
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm that was used to generate the public-private key pair.</p>
      */
     inline CertificateDetail& WithKeyAlgorithm(const KeyAlgorithm& value) { SetKeyAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm that was used to generate the public-private key pair.</p>
      */
     inline CertificateDetail& WithKeyAlgorithm(KeyAlgorithm&& value) { SetKeyAlgorithm(std::move(value)); return *this;}
 
@@ -710,49 +707,49 @@ namespace Model
 
     /**
      * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources.</p>
+     * certificate can be used by multiple AWS resources. </p>
      */
     inline const Aws::Vector<Aws::String>& GetInUseBy() const{ return m_inUseBy; }
 
     /**
      * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources.</p>
+     * certificate can be used by multiple AWS resources. </p>
      */
     inline void SetInUseBy(const Aws::Vector<Aws::String>& value) { m_inUseByHasBeenSet = true; m_inUseBy = value; }
 
     /**
      * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources.</p>
+     * certificate can be used by multiple AWS resources. </p>
      */
     inline void SetInUseBy(Aws::Vector<Aws::String>&& value) { m_inUseByHasBeenSet = true; m_inUseBy = std::move(value); }
 
     /**
      * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources.</p>
+     * certificate can be used by multiple AWS resources. </p>
      */
     inline CertificateDetail& WithInUseBy(const Aws::Vector<Aws::String>& value) { SetInUseBy(value); return *this;}
 
     /**
      * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources.</p>
+     * certificate can be used by multiple AWS resources. </p>
      */
     inline CertificateDetail& WithInUseBy(Aws::Vector<Aws::String>&& value) { SetInUseBy(std::move(value)); return *this;}
 
     /**
      * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources.</p>
+     * certificate can be used by multiple AWS resources. </p>
      */
     inline CertificateDetail& AddInUseBy(const Aws::String& value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
     /**
      * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources.</p>
+     * certificate can be used by multiple AWS resources. </p>
      */
     inline CertificateDetail& AddInUseBy(Aws::String&& value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources.</p>
+     * certificate can be used by multiple AWS resources. </p>
      */
     inline CertificateDetail& AddInUseBy(const char* value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
@@ -761,7 +758,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline const FailureReason& GetFailureReason() const{ return m_failureReason; }
 
@@ -769,7 +766,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline void SetFailureReason(const FailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
@@ -777,7 +774,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline void SetFailureReason(FailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
@@ -785,7 +782,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithFailureReason(const FailureReason& value) { SetFailureReason(value); return *this;}
 
@@ -793,7 +790,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithFailureReason(FailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 
@@ -808,7 +805,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline const CertificateType& GetType() const{ return m_type; }
 
@@ -822,7 +819,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -836,7 +833,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -850,7 +847,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithType(const CertificateType& value) { SetType(value); return *this;}
 
@@ -864,7 +861,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
 
@@ -908,6 +905,113 @@ namespace Model
      * type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& WithRenewalSummary(RenewalSummary&& value) { SetRenewalSummary(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value
+     * that identifies the purpose of the public key contained in the certificate.
+     * Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.</p>
+     */
+    inline const Aws::Vector<KeyUsage>& GetKeyUsages() const{ return m_keyUsages; }
+
+    /**
+     * <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value
+     * that identifies the purpose of the public key contained in the certificate.
+     * Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.</p>
+     */
+    inline void SetKeyUsages(const Aws::Vector<KeyUsage>& value) { m_keyUsagesHasBeenSet = true; m_keyUsages = value; }
+
+    /**
+     * <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value
+     * that identifies the purpose of the public key contained in the certificate.
+     * Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.</p>
+     */
+    inline void SetKeyUsages(Aws::Vector<KeyUsage>&& value) { m_keyUsagesHasBeenSet = true; m_keyUsages = std::move(value); }
+
+    /**
+     * <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value
+     * that identifies the purpose of the public key contained in the certificate.
+     * Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.</p>
+     */
+    inline CertificateDetail& WithKeyUsages(const Aws::Vector<KeyUsage>& value) { SetKeyUsages(value); return *this;}
+
+    /**
+     * <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value
+     * that identifies the purpose of the public key contained in the certificate.
+     * Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.</p>
+     */
+    inline CertificateDetail& WithKeyUsages(Aws::Vector<KeyUsage>&& value) { SetKeyUsages(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value
+     * that identifies the purpose of the public key contained in the certificate.
+     * Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.</p>
+     */
+    inline CertificateDetail& AddKeyUsages(const KeyUsage& value) { m_keyUsagesHasBeenSet = true; m_keyUsages.push_back(value); return *this; }
+
+    /**
+     * <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value
+     * that identifies the purpose of the public key contained in the certificate.
+     * Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.</p>
+     */
+    inline CertificateDetail& AddKeyUsages(KeyUsage&& value) { m_keyUsagesHasBeenSet = true; m_keyUsages.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object
+     * specifies a purpose for which the certificate public key can be used and
+     * consists of a name and an object identifier (OID). </p>
+     */
+    inline const Aws::Vector<ExtendedKeyUsage>& GetExtendedKeyUsages() const{ return m_extendedKeyUsages; }
+
+    /**
+     * <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object
+     * specifies a purpose for which the certificate public key can be used and
+     * consists of a name and an object identifier (OID). </p>
+     */
+    inline void SetExtendedKeyUsages(const Aws::Vector<ExtendedKeyUsage>& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages = value; }
+
+    /**
+     * <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object
+     * specifies a purpose for which the certificate public key can be used and
+     * consists of a name and an object identifier (OID). </p>
+     */
+    inline void SetExtendedKeyUsages(Aws::Vector<ExtendedKeyUsage>&& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages = std::move(value); }
+
+    /**
+     * <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object
+     * specifies a purpose for which the certificate public key can be used and
+     * consists of a name and an object identifier (OID). </p>
+     */
+    inline CertificateDetail& WithExtendedKeyUsages(const Aws::Vector<ExtendedKeyUsage>& value) { SetExtendedKeyUsages(value); return *this;}
+
+    /**
+     * <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object
+     * specifies a purpose for which the certificate public key can be used and
+     * consists of a name and an object identifier (OID). </p>
+     */
+    inline CertificateDetail& WithExtendedKeyUsages(Aws::Vector<ExtendedKeyUsage>&& value) { SetExtendedKeyUsages(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object
+     * specifies a purpose for which the certificate public key can be used and
+     * consists of a name and an object identifier (OID). </p>
+     */
+    inline CertificateDetail& AddExtendedKeyUsages(const ExtendedKeyUsage& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages.push_back(value); return *this; }
+
+    /**
+     * <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object
+     * specifies a purpose for which the certificate public key can be used and
+     * consists of a name and an object identifier (OID). </p>
+     */
+    inline CertificateDetail& AddExtendedKeyUsages(ExtendedKeyUsage&& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -973,6 +1077,12 @@ namespace Model
 
     RenewalSummary m_renewalSummary;
     bool m_renewalSummaryHasBeenSet;
+
+    Aws::Vector<KeyUsage> m_keyUsages;
+    bool m_keyUsagesHasBeenSet;
+
+    Aws::Vector<ExtendedKeyUsage> m_extendedKeyUsages;
+    bool m_extendedKeyUsagesHasBeenSet;
   };
 
 } // namespace Model

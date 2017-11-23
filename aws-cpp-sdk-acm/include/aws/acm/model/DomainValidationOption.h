@@ -34,8 +34,8 @@ namespace Model
 
   /**
    * <p>Contains information about the domain names that you want ACM to use to send
-   * you emails to validate your ownership of the domain.</p><p><h3>See Also:</h3>  
-   * <a
+   * you emails that enable you to validate domain ownership.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DomainValidationOption">AWS
    * API Reference</a></p>
    */

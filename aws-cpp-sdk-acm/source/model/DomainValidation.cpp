@@ -33,7 +33,10 @@ DomainValidation::DomainValidation() :
     m_validationEmailsHasBeenSet(false),
     m_validationDomainHasBeenSet(false),
     m_validationStatus(DomainStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false)
+    m_validationStatusHasBeenSet(false),
+    m_resourceRecordHasBeenSet(false),
+    m_validationMethod(ValidationMethod::NOT_SET),
+    m_validationMethodHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ DomainValidation::DomainValidation(const JsonValue& jsonValue) :
     m_validationEmailsHasBeenSet(false),
     m_validationDomainHasBeenSet(false),
     m_validationStatus(DomainStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false)
+    m_validationStatusHasBeenSet(false),
+    m_resourceRecordHasBeenSet(false),
+    m_validationMethod(ValidationMethod::NOT_SET),
+    m_validationMethodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +86,20 @@ DomainValidation& DomainValidation::operator =(const JsonValue& jsonValue)
     m_validationStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceRecord"))
+  {
+    m_resourceRecord = jsonValue.GetObject("ResourceRecord");
+
+    m_resourceRecordHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ValidationMethod"))
+  {
+    m_validationMethod = ValidationMethodMapper::GetValidationMethodForName(jsonValue.GetString("ValidationMethod"));
+
+    m_validationMethodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +133,17 @@ JsonValue DomainValidation::Jsonize() const
   if(m_validationStatusHasBeenSet)
   {
    payload.WithString("ValidationStatus", DomainStatusMapper::GetNameForDomainStatus(m_validationStatus));
+  }
+
+  if(m_resourceRecordHasBeenSet)
+  {
+   payload.WithObject("ResourceRecord", m_resourceRecord.Jsonize());
+
+  }
+
+  if(m_validationMethodHasBeenSet)
+  {
+   payload.WithString("ValidationMethod", ValidationMethodMapper::GetNameForValidationMethod(m_validationMethod));
   }
 
   return payload;

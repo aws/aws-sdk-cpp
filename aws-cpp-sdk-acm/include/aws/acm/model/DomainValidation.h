@@ -18,6 +18,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/DomainStatus.h>
+#include <aws/acm/model/ResourceRecord.h>
+#include <aws/acm/model/ValidationMethod.h>
 #include <utility>
 
 namespace Aws
@@ -51,43 +53,43 @@ namespace Model
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
-     * <code>www.example.com</code> or <code>example.com</code>.</p>
+     * <code>www.example.com</code> or <code>example.com</code>. </p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
-     * <code>www.example.com</code> or <code>example.com</code>.</p>
+     * <code>www.example.com</code> or <code>example.com</code>. </p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
-     * <code>www.example.com</code> or <code>example.com</code>.</p>
+     * <code>www.example.com</code> or <code>example.com</code>. </p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
-     * <code>www.example.com</code> or <code>example.com</code>.</p>
+     * <code>www.example.com</code> or <code>example.com</code>. </p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
-     * <code>www.example.com</code> or <code>example.com</code>.</p>
+     * <code>www.example.com</code> or <code>example.com</code>. </p>
      */
     inline DomainValidation& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
-     * <code>www.example.com</code> or <code>example.com</code>.</p>
+     * <code>www.example.com</code> or <code>example.com</code>. </p>
      */
     inline DomainValidation& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
-     * <code>www.example.com</code> or <code>example.com</code>.</p>
+     * <code>www.example.com</code> or <code>example.com</code>. </p>
      */
     inline DomainValidation& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -170,29 +172,106 @@ namespace Model
 
 
     /**
-     * <p>The validation status of the domain name.</p>
+     * <p>The validation status of the domain name. This can be one of the following
+     * values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p>
+     * <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>
      */
     inline const DomainStatus& GetValidationStatus() const{ return m_validationStatus; }
 
     /**
-     * <p>The validation status of the domain name.</p>
+     * <p>The validation status of the domain name. This can be one of the following
+     * values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p>
+     * <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>
      */
     inline void SetValidationStatus(const DomainStatus& value) { m_validationStatusHasBeenSet = true; m_validationStatus = value; }
 
     /**
-     * <p>The validation status of the domain name.</p>
+     * <p>The validation status of the domain name. This can be one of the following
+     * values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p>
+     * <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>
      */
     inline void SetValidationStatus(DomainStatus&& value) { m_validationStatusHasBeenSet = true; m_validationStatus = std::move(value); }
 
     /**
-     * <p>The validation status of the domain name.</p>
+     * <p>The validation status of the domain name. This can be one of the following
+     * values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p>
+     * <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>
      */
     inline DomainValidation& WithValidationStatus(const DomainStatus& value) { SetValidationStatus(value); return *this;}
 
     /**
-     * <p>The validation status of the domain name.</p>
+     * <p>The validation status of the domain name. This can be one of the following
+     * values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p>
+     * <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>
      */
     inline DomainValidation& WithValidationStatus(DomainStatus&& value) { SetValidationStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains the CNAME record that you add to your DNS database for domain
+     * validation. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * DNS to Validate Domain Ownership</a>.</p>
+     */
+    inline const ResourceRecord& GetResourceRecord() const{ return m_resourceRecord; }
+
+    /**
+     * <p>Contains the CNAME record that you add to your DNS database for domain
+     * validation. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * DNS to Validate Domain Ownership</a>.</p>
+     */
+    inline void SetResourceRecord(const ResourceRecord& value) { m_resourceRecordHasBeenSet = true; m_resourceRecord = value; }
+
+    /**
+     * <p>Contains the CNAME record that you add to your DNS database for domain
+     * validation. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * DNS to Validate Domain Ownership</a>.</p>
+     */
+    inline void SetResourceRecord(ResourceRecord&& value) { m_resourceRecordHasBeenSet = true; m_resourceRecord = std::move(value); }
+
+    /**
+     * <p>Contains the CNAME record that you add to your DNS database for domain
+     * validation. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * DNS to Validate Domain Ownership</a>.</p>
+     */
+    inline DomainValidation& WithResourceRecord(const ResourceRecord& value) { SetResourceRecord(value); return *this;}
+
+    /**
+     * <p>Contains the CNAME record that you add to your DNS database for domain
+     * validation. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * DNS to Validate Domain Ownership</a>.</p>
+     */
+    inline DomainValidation& WithResourceRecord(ResourceRecord&& value) { SetResourceRecord(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the domain validation method.</p>
+     */
+    inline const ValidationMethod& GetValidationMethod() const{ return m_validationMethod; }
+
+    /**
+     * <p>Specifies the domain validation method.</p>
+     */
+    inline void SetValidationMethod(const ValidationMethod& value) { m_validationMethodHasBeenSet = true; m_validationMethod = value; }
+
+    /**
+     * <p>Specifies the domain validation method.</p>
+     */
+    inline void SetValidationMethod(ValidationMethod&& value) { m_validationMethodHasBeenSet = true; m_validationMethod = std::move(value); }
+
+    /**
+     * <p>Specifies the domain validation method.</p>
+     */
+    inline DomainValidation& WithValidationMethod(const ValidationMethod& value) { SetValidationMethod(value); return *this;}
+
+    /**
+     * <p>Specifies the domain validation method.</p>
+     */
+    inline DomainValidation& WithValidationMethod(ValidationMethod&& value) { SetValidationMethod(std::move(value)); return *this;}
 
   private:
 
@@ -207,6 +286,12 @@ namespace Model
 
     DomainStatus m_validationStatus;
     bool m_validationStatusHasBeenSet;
+
+    ResourceRecord m_resourceRecord;
+    bool m_resourceRecordHasBeenSet;
+
+    ValidationMethod m_validationMethod;
+    bool m_validationMethodHasBeenSet;
   };
 
 } // namespace Model

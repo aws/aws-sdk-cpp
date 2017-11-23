@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 
 RequestCertificateRequest::RequestCertificateRequest() : 
     m_domainNameHasBeenSet(false),
+    m_validationMethod(ValidationMethod::NOT_SET),
+    m_validationMethodHasBeenSet(false),
     m_subjectAlternativeNamesHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
     m_domainValidationOptionsHasBeenSet(false)
@@ -38,6 +40,11 @@ Aws::String RequestCertificateRequest::SerializePayload() const
   {
    payload.WithString("DomainName", m_domainName);
 
+  }
+
+  if(m_validationMethodHasBeenSet)
+  {
+   payload.WithString("ValidationMethod", ValidationMethodMapper::GetNameForValidationMethod(m_validationMethod));
   }
 
   if(m_subjectAlternativeNamesHasBeenSet)

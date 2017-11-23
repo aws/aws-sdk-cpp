@@ -17,6 +17,7 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/acm/ACMRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/acm/model/Filters.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <utility>
@@ -47,39 +48,80 @@ namespace Model
 
 
     /**
-     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
+     * <p>Filter the certificate list by status value.</p>
      */
     inline const Aws::Vector<CertificateStatus>& GetCertificateStatuses() const{ return m_certificateStatuses; }
 
     /**
-     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
+     * <p>Filter the certificate list by status value.</p>
      */
     inline void SetCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = value; }
 
     /**
-     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
+     * <p>Filter the certificate list by status value.</p>
      */
     inline void SetCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = std::move(value); }
 
     /**
-     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
+     * <p>Filter the certificate list by status value.</p>
      */
     inline ListCertificatesRequest& WithCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { SetCertificateStatuses(value); return *this;}
 
     /**
-     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
+     * <p>Filter the certificate list by status value.</p>
      */
     inline ListCertificatesRequest& WithCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { SetCertificateStatuses(std::move(value)); return *this;}
 
     /**
-     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
+     * <p>Filter the certificate list by status value.</p>
      */
     inline ListCertificatesRequest& AddCertificateStatuses(const CertificateStatus& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
 
     /**
-     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
+     * <p>Filter the certificate list by status value.</p>
      */
     inline ListCertificatesRequest& AddCertificateStatuses(CertificateStatus&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Filter the certificate list by one or more of the following values. For more
+     * information, see the <a>Filters</a> structure.</p> <ul> <li>
+     * <p>extendedKeyUsage</p> </li> <li> <p>keyUsage</p> </li> <li> <p>keyTypes</p>
+     * </li> </ul>
+     */
+    inline const Filters& GetIncludes() const{ return m_includes; }
+
+    /**
+     * <p>Filter the certificate list by one or more of the following values. For more
+     * information, see the <a>Filters</a> structure.</p> <ul> <li>
+     * <p>extendedKeyUsage</p> </li> <li> <p>keyUsage</p> </li> <li> <p>keyTypes</p>
+     * </li> </ul>
+     */
+    inline void SetIncludes(const Filters& value) { m_includesHasBeenSet = true; m_includes = value; }
+
+    /**
+     * <p>Filter the certificate list by one or more of the following values. For more
+     * information, see the <a>Filters</a> structure.</p> <ul> <li>
+     * <p>extendedKeyUsage</p> </li> <li> <p>keyUsage</p> </li> <li> <p>keyTypes</p>
+     * </li> </ul>
+     */
+    inline void SetIncludes(Filters&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
+
+    /**
+     * <p>Filter the certificate list by one or more of the following values. For more
+     * information, see the <a>Filters</a> structure.</p> <ul> <li>
+     * <p>extendedKeyUsage</p> </li> <li> <p>keyUsage</p> </li> <li> <p>keyTypes</p>
+     * </li> </ul>
+     */
+    inline ListCertificatesRequest& WithIncludes(const Filters& value) { SetIncludes(value); return *this;}
+
+    /**
+     * <p>Filter the certificate list by one or more of the following values. For more
+     * information, see the <a>Filters</a> structure.</p> <ul> <li>
+     * <p>extendedKeyUsage</p> </li> <li> <p>keyUsage</p> </li> <li> <p>keyTypes</p>
+     * </li> </ul>
+     */
+    inline ListCertificatesRequest& WithIncludes(Filters&& value) { SetIncludes(std::move(value)); return *this;}
 
 
     /**
@@ -163,6 +205,9 @@ namespace Model
 
     Aws::Vector<CertificateStatus> m_certificateStatuses;
     bool m_certificateStatusesHasBeenSet;
+
+    Filters m_includes;
+    bool m_includesHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

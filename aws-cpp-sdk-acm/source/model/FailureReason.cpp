@@ -34,6 +34,7 @@ namespace Aws
         static const int ADDITIONAL_VERIFICATION_REQUIRED_HASH = HashingUtils::HashString("ADDITIONAL_VERIFICATION_REQUIRED");
         static const int DOMAIN_NOT_ALLOWED_HASH = HashingUtils::HashString("DOMAIN_NOT_ALLOWED");
         static const int INVALID_PUBLIC_DOMAIN_HASH = HashingUtils::HashString("INVALID_PUBLIC_DOMAIN");
+        static const int CAA_ERROR_HASH = HashingUtils::HashString("CAA_ERROR");
         static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 
 
@@ -55,6 +56,10 @@ namespace Aws
           else if (hashCode == INVALID_PUBLIC_DOMAIN_HASH)
           {
             return FailureReason::INVALID_PUBLIC_DOMAIN;
+          }
+          else if (hashCode == CAA_ERROR_HASH)
+          {
+            return FailureReason::CAA_ERROR;
           }
           else if (hashCode == OTHER_HASH)
           {
@@ -82,6 +87,8 @@ namespace Aws
             return "DOMAIN_NOT_ALLOWED";
           case FailureReason::INVALID_PUBLIC_DOMAIN:
             return "INVALID_PUBLIC_DOMAIN";
+          case FailureReason::CAA_ERROR:
+            return "CAA_ERROR";
           case FailureReason::OTHER:
             return "OTHER";
           default:

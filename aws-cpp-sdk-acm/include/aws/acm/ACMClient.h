@@ -162,7 +162,7 @@ namespace Model
          * to identify and organize your AWS resources. Each tag consists of a
          * <code>key</code> and an optional <code>value</code>. You specify the certificate
          * on input by its Amazon Resource Name (ARN). You specify the tag by using a
-         * key-value pair.</p> <p>You can apply a tag to just one certificate if you want
+         * key-value pair. </p> <p>You can apply a tag to just one certificate if you want
          * to identify a specific characteristic of that certificate, or you can apply the
          * same tag to multiple certificates if you want to filter for a common
          * relationship among those certificates. Similarly, you can apply the same tag to
@@ -171,10 +171,10 @@ namespace Model
          * Balancing load balancer to indicate that they are both used by the same website.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-         * Certificates</a>.</p> <p>To remove one or more tags, use the
+         * Certificates</a>. </p> <p>To remove one or more tags, use the
          * <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been
-         * applied to the certificate, use the <a>ListTagsForCertificate</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * applied to the certificate, use the <a>ListTagsForCertificate</a> action.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">AWS
          * API Reference</a></p>
          */
@@ -185,7 +185,7 @@ namespace Model
          * to identify and organize your AWS resources. Each tag consists of a
          * <code>key</code> and an optional <code>value</code>. You specify the certificate
          * on input by its Amazon Resource Name (ARN). You specify the tag by using a
-         * key-value pair.</p> <p>You can apply a tag to just one certificate if you want
+         * key-value pair. </p> <p>You can apply a tag to just one certificate if you want
          * to identify a specific characteristic of that certificate, or you can apply the
          * same tag to multiple certificates if you want to filter for a common
          * relationship among those certificates. Similarly, you can apply the same tag to
@@ -194,10 +194,10 @@ namespace Model
          * Balancing load balancer to indicate that they are both used by the same website.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-         * Certificates</a>.</p> <p>To remove one or more tags, use the
+         * Certificates</a>. </p> <p>To remove one or more tags, use the
          * <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been
-         * applied to the certificate, use the <a>ListTagsForCertificate</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * applied to the certificate, use the <a>ListTagsForCertificate</a> action.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">AWS
          * API Reference</a></p>
          *
@@ -210,7 +210,7 @@ namespace Model
          * to identify and organize your AWS resources. Each tag consists of a
          * <code>key</code> and an optional <code>value</code>. You specify the certificate
          * on input by its Amazon Resource Name (ARN). You specify the tag by using a
-         * key-value pair.</p> <p>You can apply a tag to just one certificate if you want
+         * key-value pair. </p> <p>You can apply a tag to just one certificate if you want
          * to identify a specific characteristic of that certificate, or you can apply the
          * same tag to multiple certificates if you want to filter for a common
          * relationship among those certificates. Similarly, you can apply the same tag to
@@ -219,10 +219,10 @@ namespace Model
          * Balancing load balancer to indicate that they are both used by the same website.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-         * Certificates</a>.</p> <p>To remove one or more tags, use the
+         * Certificates</a>. </p> <p>To remove one or more tags, use the
          * <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been
-         * applied to the certificate, use the <a>ListTagsForCertificate</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * applied to the certificate, use the <a>ListTagsForCertificate</a> action.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">AWS
          * API Reference</a></p>
          *
@@ -231,11 +231,11 @@ namespace Model
         virtual void AddTagsToCertificateAsync(const Model::AddTagsToCertificateRequest& request, const AddTagsToCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an ACM Certificate and its associated private key. If this action
-         * succeeds, the certificate no longer appears in the list of ACM Certificates that
-         * can be displayed by calling the <a>ListCertificates</a> action or be retrieved
-         * by calling the <a>GetCertificate</a> action. The certificate will not be
-         * available for use by other AWS services. </p> <note> <p>You cannot delete an ACM
+         * <p>Deletes a certificate and its associated private key. If this action
+         * succeeds, the certificate no longer appears in the list that can be displayed by
+         * calling the <a>ListCertificates</a> action or be retrieved by calling the
+         * <a>GetCertificate</a> action. The certificate will not be available for use by
+         * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
          * Certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -245,11 +245,11 @@ namespace Model
         virtual Model::DeleteCertificateOutcome DeleteCertificate(const Model::DeleteCertificateRequest& request) const;
 
         /**
-         * <p>Deletes an ACM Certificate and its associated private key. If this action
-         * succeeds, the certificate no longer appears in the list of ACM Certificates that
-         * can be displayed by calling the <a>ListCertificates</a> action or be retrieved
-         * by calling the <a>GetCertificate</a> action. The certificate will not be
-         * available for use by other AWS services. </p> <note> <p>You cannot delete an ACM
+         * <p>Deletes a certificate and its associated private key. If this action
+         * succeeds, the certificate no longer appears in the list that can be displayed by
+         * calling the <a>ListCertificates</a> action or be retrieved by calling the
+         * <a>GetCertificate</a> action. The certificate will not be available for use by
+         * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
          * Certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -261,11 +261,11 @@ namespace Model
         virtual Model::DeleteCertificateOutcomeCallable DeleteCertificateCallable(const Model::DeleteCertificateRequest& request) const;
 
         /**
-         * <p>Deletes an ACM Certificate and its associated private key. If this action
-         * succeeds, the certificate no longer appears in the list of ACM Certificates that
-         * can be displayed by calling the <a>ListCertificates</a> action or be retrieved
-         * by calling the <a>GetCertificate</a> action. The certificate will not be
-         * available for use by other AWS services. </p> <note> <p>You cannot delete an ACM
+         * <p>Deletes a certificate and its associated private key. If this action
+         * succeeds, the certificate no longer appears in the list that can be displayed by
+         * calling the <a>ListCertificates</a> action or be retrieved by calling the
+         * <a>GetCertificate</a> action. The certificate will not be available for use by
+         * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
          * Certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -305,24 +305,24 @@ namespace Model
         virtual void DescribeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves an ACM Certificate and certificate chain for the certificate
-         * specified by an ARN. The chain is an ordered list of certificates that contains
-         * the ACM Certificate, intermediate certificates of subordinate CAs, and the root
+         * <p>Retrieves a certificate specified by an ARN and its certificate chain . The
+         * chain is an ordered list of certificates that contains the end entity
+         * ertificate, intermediate certificates of subordinate CAs, and the root
          * certificate in that order. The certificate and certificate chain are base64
-         * encoded. If you want to decode the certificate chain to see the individual
-         * certificate fields, you can use OpenSSL.</p><p><h3>See Also:</h3>   <a
+         * encoded. If you want to decode the certificate to see the individual fields, you
+         * can use OpenSSL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCertificateOutcome GetCertificate(const Model::GetCertificateRequest& request) const;
 
         /**
-         * <p>Retrieves an ACM Certificate and certificate chain for the certificate
-         * specified by an ARN. The chain is an ordered list of certificates that contains
-         * the ACM Certificate, intermediate certificates of subordinate CAs, and the root
+         * <p>Retrieves a certificate specified by an ARN and its certificate chain . The
+         * chain is an ordered list of certificates that contains the end entity
+         * ertificate, intermediate certificates of subordinate CAs, and the root
          * certificate in that order. The certificate and certificate chain are base64
-         * encoded. If you want to decode the certificate chain to see the individual
-         * certificate fields, you can use OpenSSL.</p><p><h3>See Also:</h3>   <a
+         * encoded. If you want to decode the certificate to see the individual fields, you
+         * can use OpenSSL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">AWS
          * API Reference</a></p>
          *
@@ -331,12 +331,12 @@ namespace Model
         virtual Model::GetCertificateOutcomeCallable GetCertificateCallable(const Model::GetCertificateRequest& request) const;
 
         /**
-         * <p>Retrieves an ACM Certificate and certificate chain for the certificate
-         * specified by an ARN. The chain is an ordered list of certificates that contains
-         * the ACM Certificate, intermediate certificates of subordinate CAs, and the root
+         * <p>Retrieves a certificate specified by an ARN and its certificate chain . The
+         * chain is an ordered list of certificates that contains the end entity
+         * ertificate, intermediate certificates of subordinate CAs, and the root
          * certificate in that order. The certificate and certificate chain are base64
-         * encoded. If you want to decode the certificate chain to see the individual
-         * certificate fields, you can use OpenSSL.</p><p><h3>See Also:</h3>   <a
+         * encoded. If you want to decode the certificate to see the individual fields, you
+         * can use OpenSSL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">AWS
          * API Reference</a></p>
          *
@@ -345,33 +345,39 @@ namespace Model
         virtual void GetCertificateAsync(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports an SSL/TLS certificate into AWS Certificate Manager (ACM) to use with
-         * <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">ACM's
-         * integrated AWS services</a>.</p> <note> <p>ACM does not provide <a
+         * <p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
+         * that are integrated with ACM. For more information, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">Integrated
+         * Services</a>. </p> <note> <p>ACM does not provide <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
          * renewal</a> for certificates that you import.</p> </note> <p>For more
          * information about importing certificates into ACM, including the differences
          * between certificates that you import and those that ACM provides, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">
-         * Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
-         * <p>To import a certificate, you must provide the certificate and the matching
-         * private key. When the certificate is not self-signed, you must also provide a
-         * certificate chain. You can omit the certificate chain when importing a
-         * self-signed certificate.</p> <p>The certificate, private key, and certificate
-         * chain must be PEM-encoded. For more information about converting these items to
-         * PEM format, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html#import-certificate-troubleshooting">Importing
-         * Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User
-         * Guide</i>.</p> <p>To import a new certificate, omit the
-         * <code>CertificateArn</code> field. Include this field only when you want to
-         * replace a previously imported certificate.</p> <p>When you import a certificate
-         * by using the CLI or one of the SDKs, you must specify the certificate, chain,
-         * and private key parameters as file names preceded by <code>file://</code>. For
-         * example, you can specify a certificate saved in the <code>C:\temp</code> folder
-         * as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or
-         * HTTPS Query request, include these parameters as BLOBs. </p> <p>This operation
-         * returns the <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <p>In
+         * general, you can import almost any valid certificate. However, services
+         * integrated with ACM allow only certificate types they support to be associated
+         * with their resources. The following guidelines are also important:</p> <ul> <li>
+         * <p>You must enter the private key that matches the certificate you are
+         * importing.</p> </li> <li> <p>The private key must be unencrypted. You cannot
+         * import a private key that is protected by a password or a passphrase.</p> </li>
+         * <li> <p>If the certificate you are importing is not self-signed, you must enter
+         * its certificate chain.</p> </li> <li> <p>If a certificate chain is included, the
+         * issuer must be the subject of one of the certificates in the chain.</p> </li>
+         * <li> <p>The certificate, private key, and certificate chain must be
+         * PEM-encoded.</p> </li> <li> <p>The current time must be between the <code>Not
+         * Before</code> and <code>Not After</code> certificate fields.</p> </li> <li>
+         * <p>The <code>Issuer</code> field must not be empty.</p> </li> <li> <p>The OCSP
+         * authority URL must not exceed 1000 characters.</p> </li> <li> <p>To import a new
+         * certificate, omit the <code>CertificateArn</code> field. Include this field only
+         * when you want to replace a previously imported certificate.</p> </li> <li>
+         * <p>When you import a certificate by using the CLI or one of the SDKs, you must
+         * specify the certificate, certificate chain, and private key parameters as file
+         * names preceded by <code>file://</code>. For example, you can specify a
+         * certificate saved in the <code>C:\temp</code> folder as
+         * <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or
+         * HTTPS Query request, include these parameters as BLOBs. </p> </li> </ul> <p>This
+         * operation returns the <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
          * Resource Name (ARN)</a> of the imported certificate.</p><p><h3>See Also:</h3>  
          * <a
@@ -381,33 +387,39 @@ namespace Model
         virtual Model::ImportCertificateOutcome ImportCertificate(const Model::ImportCertificateRequest& request) const;
 
         /**
-         * <p>Imports an SSL/TLS certificate into AWS Certificate Manager (ACM) to use with
-         * <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">ACM's
-         * integrated AWS services</a>.</p> <note> <p>ACM does not provide <a
+         * <p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
+         * that are integrated with ACM. For more information, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">Integrated
+         * Services</a>. </p> <note> <p>ACM does not provide <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
          * renewal</a> for certificates that you import.</p> </note> <p>For more
          * information about importing certificates into ACM, including the differences
          * between certificates that you import and those that ACM provides, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">
-         * Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
-         * <p>To import a certificate, you must provide the certificate and the matching
-         * private key. When the certificate is not self-signed, you must also provide a
-         * certificate chain. You can omit the certificate chain when importing a
-         * self-signed certificate.</p> <p>The certificate, private key, and certificate
-         * chain must be PEM-encoded. For more information about converting these items to
-         * PEM format, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html#import-certificate-troubleshooting">Importing
-         * Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User
-         * Guide</i>.</p> <p>To import a new certificate, omit the
-         * <code>CertificateArn</code> field. Include this field only when you want to
-         * replace a previously imported certificate.</p> <p>When you import a certificate
-         * by using the CLI or one of the SDKs, you must specify the certificate, chain,
-         * and private key parameters as file names preceded by <code>file://</code>. For
-         * example, you can specify a certificate saved in the <code>C:\temp</code> folder
-         * as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or
-         * HTTPS Query request, include these parameters as BLOBs. </p> <p>This operation
-         * returns the <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <p>In
+         * general, you can import almost any valid certificate. However, services
+         * integrated with ACM allow only certificate types they support to be associated
+         * with their resources. The following guidelines are also important:</p> <ul> <li>
+         * <p>You must enter the private key that matches the certificate you are
+         * importing.</p> </li> <li> <p>The private key must be unencrypted. You cannot
+         * import a private key that is protected by a password or a passphrase.</p> </li>
+         * <li> <p>If the certificate you are importing is not self-signed, you must enter
+         * its certificate chain.</p> </li> <li> <p>If a certificate chain is included, the
+         * issuer must be the subject of one of the certificates in the chain.</p> </li>
+         * <li> <p>The certificate, private key, and certificate chain must be
+         * PEM-encoded.</p> </li> <li> <p>The current time must be between the <code>Not
+         * Before</code> and <code>Not After</code> certificate fields.</p> </li> <li>
+         * <p>The <code>Issuer</code> field must not be empty.</p> </li> <li> <p>The OCSP
+         * authority URL must not exceed 1000 characters.</p> </li> <li> <p>To import a new
+         * certificate, omit the <code>CertificateArn</code> field. Include this field only
+         * when you want to replace a previously imported certificate.</p> </li> <li>
+         * <p>When you import a certificate by using the CLI or one of the SDKs, you must
+         * specify the certificate, certificate chain, and private key parameters as file
+         * names preceded by <code>file://</code>. For example, you can specify a
+         * certificate saved in the <code>C:\temp</code> folder as
+         * <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or
+         * HTTPS Query request, include these parameters as BLOBs. </p> </li> </ul> <p>This
+         * operation returns the <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
          * Resource Name (ARN)</a> of the imported certificate.</p><p><h3>See Also:</h3>  
          * <a
@@ -419,33 +431,39 @@ namespace Model
         virtual Model::ImportCertificateOutcomeCallable ImportCertificateCallable(const Model::ImportCertificateRequest& request) const;
 
         /**
-         * <p>Imports an SSL/TLS certificate into AWS Certificate Manager (ACM) to use with
-         * <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">ACM's
-         * integrated AWS services</a>.</p> <note> <p>ACM does not provide <a
+         * <p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
+         * that are integrated with ACM. For more information, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">Integrated
+         * Services</a>. </p> <note> <p>ACM does not provide <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
          * renewal</a> for certificates that you import.</p> </note> <p>For more
          * information about importing certificates into ACM, including the differences
          * between certificates that you import and those that ACM provides, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">
-         * Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
-         * <p>To import a certificate, you must provide the certificate and the matching
-         * private key. When the certificate is not self-signed, you must also provide a
-         * certificate chain. You can omit the certificate chain when importing a
-         * self-signed certificate.</p> <p>The certificate, private key, and certificate
-         * chain must be PEM-encoded. For more information about converting these items to
-         * PEM format, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html#import-certificate-troubleshooting">Importing
-         * Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User
-         * Guide</i>.</p> <p>To import a new certificate, omit the
-         * <code>CertificateArn</code> field. Include this field only when you want to
-         * replace a previously imported certificate.</p> <p>When you import a certificate
-         * by using the CLI or one of the SDKs, you must specify the certificate, chain,
-         * and private key parameters as file names preceded by <code>file://</code>. For
-         * example, you can specify a certificate saved in the <code>C:\temp</code> folder
-         * as <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or
-         * HTTPS Query request, include these parameters as BLOBs. </p> <p>This operation
-         * returns the <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <p>In
+         * general, you can import almost any valid certificate. However, services
+         * integrated with ACM allow only certificate types they support to be associated
+         * with their resources. The following guidelines are also important:</p> <ul> <li>
+         * <p>You must enter the private key that matches the certificate you are
+         * importing.</p> </li> <li> <p>The private key must be unencrypted. You cannot
+         * import a private key that is protected by a password or a passphrase.</p> </li>
+         * <li> <p>If the certificate you are importing is not self-signed, you must enter
+         * its certificate chain.</p> </li> <li> <p>If a certificate chain is included, the
+         * issuer must be the subject of one of the certificates in the chain.</p> </li>
+         * <li> <p>The certificate, private key, and certificate chain must be
+         * PEM-encoded.</p> </li> <li> <p>The current time must be between the <code>Not
+         * Before</code> and <code>Not After</code> certificate fields.</p> </li> <li>
+         * <p>The <code>Issuer</code> field must not be empty.</p> </li> <li> <p>The OCSP
+         * authority URL must not exceed 1000 characters.</p> </li> <li> <p>To import a new
+         * certificate, omit the <code>CertificateArn</code> field. Include this field only
+         * when you want to replace a previously imported certificate.</p> </li> <li>
+         * <p>When you import a certificate by using the CLI or one of the SDKs, you must
+         * specify the certificate, certificate chain, and private key parameters as file
+         * names preceded by <code>file://</code>. For example, you can specify a
+         * certificate saved in the <code>C:\temp</code> folder as
+         * <code>C:\temp\certificate_to_import.pem</code>. If you are making an HTTP or
+         * HTTPS Query request, include these parameters as BLOBs. </p> </li> </ul> <p>This
+         * operation returns the <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
          * Resource Name (ARN)</a> of the imported certificate.</p><p><h3>See Also:</h3>  
          * <a
@@ -457,18 +475,18 @@ namespace Model
         virtual void ImportCertificateAsync(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of ACM Certificates and the domain name for each. You can
-         * optionally filter the list to return only the certificates that match the
-         * specified status.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of certificate ARNs and domain names. You can request that
+         * only certificates that match a specific status be listed. You can also filter by
+         * specific attributes of the certificate. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">AWS
          * API Reference</a></p>
          */
         virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
 
         /**
-         * <p>Retrieves a list of ACM Certificates and the domain name for each. You can
-         * optionally filter the list to return only the certificates that match the
-         * specified status.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of certificate ARNs and domain names. You can request that
+         * only certificates that match a specific status be listed. You can also filter by
+         * specific attributes of the certificate. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">AWS
          * API Reference</a></p>
          *
@@ -477,9 +495,9 @@ namespace Model
         virtual Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const Model::ListCertificatesRequest& request) const;
 
         /**
-         * <p>Retrieves a list of ACM Certificates and the domain name for each. You can
-         * optionally filter the list to return only the certificates that match the
-         * specified status.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of certificate ARNs and domain names. You can request that
+         * only certificates that match a specific status be listed. You can also filter by
+         * specific attributes of the certificate. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">AWS
          * API Reference</a></p>
          *
@@ -491,8 +509,8 @@ namespace Model
          * <p>Lists the tags that have been applied to the ACM Certificate. Use the
          * certificate's Amazon Resource Name (ARN) to specify the certificate. To add a
          * tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To delete
-         * a tag, use the <a>RemoveTagsFromCertificate</a> action.</p><p><h3>See Also:</h3>
-         * <a
+         * a tag, use the <a>RemoveTagsFromCertificate</a> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">AWS
          * API Reference</a></p>
          */
@@ -502,8 +520,8 @@ namespace Model
          * <p>Lists the tags that have been applied to the ACM Certificate. Use the
          * certificate's Amazon Resource Name (ARN) to specify the certificate. To add a
          * tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To delete
-         * a tag, use the <a>RemoveTagsFromCertificate</a> action.</p><p><h3>See Also:</h3>
-         * <a
+         * a tag, use the <a>RemoveTagsFromCertificate</a> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">AWS
          * API Reference</a></p>
          *
@@ -515,8 +533,8 @@ namespace Model
          * <p>Lists the tags that have been applied to the ACM Certificate. Use the
          * certificate's Amazon Resource Name (ARN) to specify the certificate. To add a
          * tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To delete
-         * a tag, use the <a>RemoveTagsFromCertificate</a> action.</p><p><h3>See Also:</h3>
-         * <a
+         * a tag, use the <a>RemoveTagsFromCertificate</a> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">AWS
          * API Reference</a></p>
          *
@@ -528,10 +546,11 @@ namespace Model
          * <p>Remove one or more tags from an ACM Certificate. A tag consists of a
          * key-value pair. If you do not specify the value portion of the tag when calling
          * this function, the tag will be removed regardless of value. If you specify a
-         * value, the tag is removed only if it is associated with the specified value.</p>
-         * <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To
-         * view all of the tags that have been applied to a specific ACM Certificate, use
-         * the <a>ListTagsForCertificate</a> action.</p><p><h3>See Also:</h3>   <a
+         * value, the tag is removed only if it is associated with the specified value.
+         * </p> <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a>
+         * action. To view all of the tags that have been applied to a specific ACM
+         * Certificate, use the <a>ListTagsForCertificate</a> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">AWS
          * API Reference</a></p>
          */
@@ -541,10 +560,11 @@ namespace Model
          * <p>Remove one or more tags from an ACM Certificate. A tag consists of a
          * key-value pair. If you do not specify the value portion of the tag when calling
          * this function, the tag will be removed regardless of value. If you specify a
-         * value, the tag is removed only if it is associated with the specified value.</p>
-         * <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To
-         * view all of the tags that have been applied to a specific ACM Certificate, use
-         * the <a>ListTagsForCertificate</a> action.</p><p><h3>See Also:</h3>   <a
+         * value, the tag is removed only if it is associated with the specified value.
+         * </p> <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a>
+         * action. To view all of the tags that have been applied to a specific ACM
+         * Certificate, use the <a>ListTagsForCertificate</a> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">AWS
          * API Reference</a></p>
          *
@@ -556,10 +576,11 @@ namespace Model
          * <p>Remove one or more tags from an ACM Certificate. A tag consists of a
          * key-value pair. If you do not specify the value portion of the tag when calling
          * this function, the tag will be removed regardless of value. If you specify a
-         * value, the tag is removed only if it is associated with the specified value.</p>
-         * <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To
-         * view all of the tags that have been applied to a specific ACM Certificate, use
-         * the <a>ListTagsForCertificate</a> action.</p><p><h3>See Also:</h3>   <a
+         * value, the tag is removed only if it is associated with the specified value.
+         * </p> <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a>
+         * action. To view all of the tags that have been applied to a specific ACM
+         * Certificate, use the <a>ListTagsForCertificate</a> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">AWS
          * API Reference</a></p>
          *
@@ -582,7 +603,7 @@ namespace Model
          * Domain Ownership</a>. </p> <p>After receiving approval from the domain owner,
          * the ACM Certificate is issued. For more information, see the <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
-         * User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * User Guide</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
          * API Reference</a></p>
          */
@@ -603,7 +624,7 @@ namespace Model
          * Domain Ownership</a>. </p> <p>After receiving approval from the domain owner,
          * the ACM Certificate is issued. For more information, see the <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
-         * User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * User Guide</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
          * API Reference</a></p>
          *
@@ -626,7 +647,7 @@ namespace Model
          * Domain Ownership</a>. </p> <p>After receiving approval from the domain owner,
          * the ACM Certificate is issued. For more information, see the <a
          * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
-         * User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * User Guide</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
          * API Reference</a></p>
          *

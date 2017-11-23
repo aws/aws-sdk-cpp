@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 ListCertificatesRequest::ListCertificatesRequest() : 
     m_certificateStatusesHasBeenSet(false),
+    m_includesHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxItems(0),
     m_maxItemsHasBeenSet(false)
@@ -42,6 +43,12 @@ Aws::String ListCertificatesRequest::SerializePayload() const
      certificateStatusesJsonList[certificateStatusesIndex].AsString(CertificateStatusMapper::GetNameForCertificateStatus(m_certificateStatuses[certificateStatusesIndex]));
    }
    payload.WithArray("CertificateStatuses", std::move(certificateStatusesJsonList));
+
+  }
+
+  if(m_includesHasBeenSet)
+  {
+   payload.WithObject("Includes", m_includes.Jsonize());
 
   }
 

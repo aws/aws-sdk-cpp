@@ -54,7 +54,9 @@ CertificateDetail::CertificateDetail() :
     m_failureReasonHasBeenSet(false),
     m_type(CertificateType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_renewalSummaryHasBeenSet(false)
+    m_renewalSummaryHasBeenSet(false),
+    m_keyUsagesHasBeenSet(false),
+    m_extendedKeyUsagesHasBeenSet(false)
 {
 }
 
@@ -84,7 +86,9 @@ CertificateDetail::CertificateDetail(const JsonValue& jsonValue) :
     m_failureReasonHasBeenSet(false),
     m_type(CertificateType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_renewalSummaryHasBeenSet(false)
+    m_renewalSummaryHasBeenSet(false),
+    m_keyUsagesHasBeenSet(false),
+    m_extendedKeyUsagesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -247,6 +251,26 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
     m_renewalSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeyUsages"))
+  {
+    Array<JsonValue> keyUsagesJsonList = jsonValue.GetArray("KeyUsages");
+    for(unsigned keyUsagesIndex = 0; keyUsagesIndex < keyUsagesJsonList.GetLength(); ++keyUsagesIndex)
+    {
+      m_keyUsages.push_back(keyUsagesJsonList[keyUsagesIndex].AsObject());
+    }
+    m_keyUsagesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExtendedKeyUsages"))
+  {
+    Array<JsonValue> extendedKeyUsagesJsonList = jsonValue.GetArray("ExtendedKeyUsages");
+    for(unsigned extendedKeyUsagesIndex = 0; extendedKeyUsagesIndex < extendedKeyUsagesJsonList.GetLength(); ++extendedKeyUsagesIndex)
+    {
+      m_extendedKeyUsages.push_back(extendedKeyUsagesJsonList[extendedKeyUsagesIndex].AsObject());
+    }
+    m_extendedKeyUsagesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -381,6 +405,28 @@ JsonValue CertificateDetail::Jsonize() const
   if(m_renewalSummaryHasBeenSet)
   {
    payload.WithObject("RenewalSummary", m_renewalSummary.Jsonize());
+
+  }
+
+  if(m_keyUsagesHasBeenSet)
+  {
+   Array<JsonValue> keyUsagesJsonList(m_keyUsages.size());
+   for(unsigned keyUsagesIndex = 0; keyUsagesIndex < keyUsagesJsonList.GetLength(); ++keyUsagesIndex)
+   {
+     keyUsagesJsonList[keyUsagesIndex].AsObject(m_keyUsages[keyUsagesIndex].Jsonize());
+   }
+   payload.WithArray("KeyUsages", std::move(keyUsagesJsonList));
+
+  }
+
+  if(m_extendedKeyUsagesHasBeenSet)
+  {
+   Array<JsonValue> extendedKeyUsagesJsonList(m_extendedKeyUsages.size());
+   for(unsigned extendedKeyUsagesIndex = 0; extendedKeyUsagesIndex < extendedKeyUsagesJsonList.GetLength(); ++extendedKeyUsagesIndex)
+   {
+     extendedKeyUsagesJsonList[extendedKeyUsagesIndex].AsObject(m_extendedKeyUsages[extendedKeyUsagesIndex].Jsonize());
+   }
+   payload.WithArray("ExtendedKeyUsages", std::move(extendedKeyUsagesJsonList));
 
   }
 
