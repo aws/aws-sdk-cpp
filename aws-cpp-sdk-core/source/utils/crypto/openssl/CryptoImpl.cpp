@@ -169,7 +169,7 @@ namespace Aws
                 EVP_DigestInit_ex(ctx, EVP_md5(), nullptr);
 
                 auto currentPos = stream.tellg();
-                if (currentPos == -1)
+                if (currentPos == std::streampos(-1))
                 {
                     currentPos = 0;
                     stream.clear();
@@ -218,7 +218,7 @@ namespace Aws
                 EVP_DigestInit_ex(ctx, EVP_sha256(), nullptr);
 
                 auto currentPos = stream.tellg();
-                if (currentPos == -1)
+                if (currentPos == std::streampos(-1))
                 {
                     currentPos = 0;
                     stream.clear();
