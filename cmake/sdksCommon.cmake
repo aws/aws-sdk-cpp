@@ -55,6 +55,11 @@ list(APPEND C2J_LIST "dms:2016-01-01")
 list(APPEND C2J_LIST "ds:2015-04-16")
 list(APPEND C2J_LIST "dynamodb:2012-08-10")
 list(APPEND C2J_LIST "dynamodbstreams:2012-08-10")
+list(APPEND C2J_LIST "mediapackage:2017-10-12")
+list(APPEND C2J_LIST "medialive:2017-10-14")
+list(APPEND C2J_LIST "mediaconvert:2017-08-29")
+list(APPEND C2J_LIST "mediastore:2017-09-01")
+list(APPEND C2J_LIST "mediastore-data:2017-09-01")
 
 if(NOT PLATFORM_ANDROID OR NOT CMAKE_HOST_WIN32)  # ec2 isn't building for android on windows atm due to an internal compiler error, TODO: investigate further
     list(APPEND C2J_LIST "ec2:2016-11-15")
