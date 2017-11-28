@@ -181,8 +181,6 @@ public class CppViewHelperTest {
         assertEquals("Integer", CppViewHelper.computeJsonCppType(shape));
         shape.setType("string");
         assertEquals("String", CppViewHelper.computeJsonCppType(shape));
-        shape.setType("timestamp");
-        assertEquals("Double", CppViewHelper.computeJsonCppType(shape));
         shape.setType("boolean");
         assertEquals("Bool", CppViewHelper.computeJsonCppType(shape));
         shape.setType("double");
@@ -198,6 +196,14 @@ public class CppViewHelperTest {
         shape.setType("structure");
         assertEquals("Object", CppViewHelper.computeJsonCppType(shape));
         shape.setType("blob");
+        assertEquals("String", CppViewHelper.computeJsonCppType(shape));
+        shape.setType("timestamp");
+        assertEquals("Double", CppViewHelper.computeJsonCppType(shape));
+        shape.setTimestampFormat("iso8601");
+        assertEquals("String", CppViewHelper.computeJsonCppType(shape));
+        shape.setTimestampFormat("UnixTimestamp");
+        assertEquals("Double", CppViewHelper.computeJsonCppType(shape));
+        shape.setTimestampFormat("rfc822");
         assertEquals("String", CppViewHelper.computeJsonCppType(shape));
         shape.setType("Any thing else");
         assertNull(CppViewHelper.computeJsonCppType(shape));

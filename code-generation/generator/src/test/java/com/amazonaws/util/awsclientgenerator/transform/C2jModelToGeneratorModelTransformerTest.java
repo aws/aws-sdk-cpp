@@ -43,6 +43,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         c2jMetadata.setSignatureVersion("v4");
         c2jMetadata.setTargetPrefix("ServiceAbbr.");
         c2jMetadata.setUid("service-9089-34-54");
+        c2jMetadata.setTimestampFormat("iso8601");
 
         c2jServiceModel.setMetadata(c2jMetadata);
         C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, false);
@@ -55,6 +56,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         assertEquals(c2jMetadata.getServiceFullName(), metadata.getServiceFullName());
         assertEquals(c2jMetadata.getSignatureVersion(), metadata.getSignatureVersion());
         assertEquals(c2jMetadata.getTargetPrefix(), metadata.getTargetPrefix());
+        assertEquals(c2jMetadata.getTimestampFormat(), metadata.getTimestampFormat());
 
         c2jMetadata.setServiceAbbreviation(null);
 
@@ -95,26 +97,34 @@ public class C2jModelToGeneratorModelTransformerTest {
         C2jServiceModel c2jServiceModel = new C2jServiceModel();
         c2jServiceModel.setMetadata(new C2jMetadata());
         c2jServiceModel.getMetadata().setUid("service-7869-05-67");
+        c2jServiceModel.getMetadata().setTimestampFormat("unixTimestamp");
 
         Map<String, C2jShape> c2jShapeMap = new HashMap<>();
 
         C2jShape stringShape = new C2jShape();
         stringShape.setDocumentation("String Shape Documentation");
         stringShape.setType("string");
-
         c2jShapeMap.put("StringShape", stringShape);
 
         C2jShape numberShape = new C2jShape();
         numberShape.setType("integer");
-
         c2jShapeMap.put("NumberShape", numberShape);
+
+        C2jShape timestampShape = new C2jShape();
+        timestampShape.setType("timestamp");
+        c2jShapeMap.put("TimestampShape", timestampShape);
 
         C2jShape inputShape = new C2jShape();
         inputShape.setType("structure");
         C2jShapeMember inputStringShapeMember = new C2jShapeMember();
         inputStringShapeMember.setShape("StringShape");
+
+        C2jShapeMember inputTimestampShapeMember = new C2jShapeMember();
+        inputTimestampShapeMember.setShape("TimestampShape");
+
         inputShape.setMembers(new HashMap<>());
         inputShape.getMembers().put("StringShape", inputStringShapeMember);
+        inputShape.getMembers().put("TimestampShape", inputTimestampShapeMember);
         inputShape.setMember(inputStringShapeMember);
 
         c2jShapeMap.put("InputShape", inputShape);
@@ -134,15 +144,19 @@ public class C2jModelToGeneratorModelTransformerTest {
         c2jModelToGeneratorModelTransformer.convertShapes();
 
         Map<String, Shape> shapes = c2jModelToGeneratorModelTransformer.shapes;
-        assertEquals(4, shapes.size());
+        assertEquals(5, shapes.size());
         assertEquals("StringShape", shapes.get("StringShape").getName());
+        assertEquals("TimestampShape", shapes.get("TimestampShape").getName());
         assertEquals("NumberShape", shapes.get("NumberShape").getName());
         assertEquals("InputShape", shapes.get("InputShape").getName());
         assertEquals("OutputShape", shapes.get("OutputShape").getName());
-        assertEquals(1, shapes.get("InputShape").getMembers().size());
+        assertEquals(2, shapes.get("InputShape").getMembers().size());
         assertEquals("StringShape", shapes.get("InputShape").getMembers().get("StringShape").getShape().getName());
+        assertEquals("TimestampShape", shapes.get("InputShape").getMembers().get("TimestampShape").getShape().getName());
         assertEquals(1, shapes.get("OutputShape").getMembers().size());
         assertEquals("NumberShape", shapes.get("OutputShape").getMembers().get("NumberShape").getShape().getName());
+        assertEquals("unixTimestamp", shapes.get("TimestampShape").getTimestampFormat());
+
     }
 
     @Test

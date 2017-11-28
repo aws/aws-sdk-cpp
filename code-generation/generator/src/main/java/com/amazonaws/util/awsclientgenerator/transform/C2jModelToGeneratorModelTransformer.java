@@ -107,6 +107,7 @@ public class C2jModelToGeneratorModelTransformer {
         metadata.setSignatureVersion(c2jMetadata.getSignatureVersion());
         metadata.setTargetPrefix(c2jMetadata.getTargetPrefix());
         metadata.setGlobalEndpoint(c2jMetadata.getGlobalEndpoint());
+        metadata.setTimestampFormat(c2jMetadata.getTimestampFormat());
 
         if (metadata.getNamespace() == null || metadata.getNamespace().isEmpty()) {
             metadata.setNamespace(sanitizeServiceAbbreviation(metadata.getServiceFullName()));
@@ -185,7 +186,12 @@ public class C2jModelToGeneratorModelTransformer {
         shape.setLocationName(c2jShape.getLocationName());
         shape.setPayload(c2jShape.getPayload());
         shape.setFlattened(c2jShape.isFlattened());
-
+        if("timestamp".equalsIgnoreCase(shape.getType())) {
+            // shape's specific timestampFormat overrides the timestampFormat specified in metadata (if any)
+            shape.setTimestampFormat(c2jShape.getTimestampFormat() != null ?
+                    c2jShape.getTimestampFormat() :
+                    c2jServiceModel.getMetadata().getTimestampFormat());
+        }
         return shape;
     }
 

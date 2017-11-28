@@ -39,4 +39,5 @@ public class C2jShape {
     private boolean flattened;
     private C2jErrorInfo error;
     private boolean exception;
+    private String timestampFormat;
 }
