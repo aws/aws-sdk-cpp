@@ -533,37 +533,44 @@ namespace Model
 
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
+     * <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+     * <p>Default: <code>paravirtual</code> </p>
      */
     inline const Aws::String& GetVirtualizationType() const{ return m_virtualizationType; }
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
+     * <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+     * <p>Default: <code>paravirtual</code> </p>
      */
     inline void SetVirtualizationType(const Aws::String& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
+     * <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+     * <p>Default: <code>paravirtual</code> </p>
      */
     inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::move(value); }
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
+     * <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+     * <p>Default: <code>paravirtual</code> </p>
      */
     inline void SetVirtualizationType(const char* value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType.assign(value); }
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
+     * <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+     * <p>Default: <code>paravirtual</code> </p>
      */
     inline RegisterImageRequest& WithVirtualizationType(const Aws::String& value) { SetVirtualizationType(value); return *this;}
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
+     * <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+     * <p>Default: <code>paravirtual</code> </p>
      */
     inline RegisterImageRequest& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
+     * <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+     * <p>Default: <code>paravirtual</code> </p>
      */
     inline RegisterImageRequest& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
 

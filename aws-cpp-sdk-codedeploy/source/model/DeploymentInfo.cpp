@@ -59,7 +59,10 @@ DeploymentInfo::DeploymentInfo() :
     m_loadBalancerInfoHasBeenSet(false),
     m_additionalDeploymentStatusInfoHasBeenSet(false),
     m_fileExistsBehavior(FileExistsBehavior::NOT_SET),
-    m_fileExistsBehaviorHasBeenSet(false)
+    m_fileExistsBehaviorHasBeenSet(false),
+    m_deploymentStatusMessagesHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false)
 {
 }
 
@@ -94,7 +97,10 @@ DeploymentInfo::DeploymentInfo(const JsonValue& jsonValue) :
     m_loadBalancerInfoHasBeenSet(false),
     m_additionalDeploymentStatusInfoHasBeenSet(false),
     m_fileExistsBehavior(FileExistsBehavior::NOT_SET),
-    m_fileExistsBehaviorHasBeenSet(false)
+    m_fileExistsBehaviorHasBeenSet(false),
+    m_deploymentStatusMessagesHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -276,6 +282,23 @@ DeploymentInfo& DeploymentInfo::operator =(const JsonValue& jsonValue)
     m_fileExistsBehaviorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deploymentStatusMessages"))
+  {
+    Array<JsonValue> deploymentStatusMessagesJsonList = jsonValue.GetArray("deploymentStatusMessages");
+    for(unsigned deploymentStatusMessagesIndex = 0; deploymentStatusMessagesIndex < deploymentStatusMessagesJsonList.GetLength(); ++deploymentStatusMessagesIndex)
+    {
+      m_deploymentStatusMessages.push_back(deploymentStatusMessagesJsonList[deploymentStatusMessagesIndex].AsString());
+    }
+    m_deploymentStatusMessagesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("computePlatform"))
+  {
+    m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
+
+    m_computePlatformHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -425,6 +448,22 @@ JsonValue DeploymentInfo::Jsonize() const
   if(m_fileExistsBehaviorHasBeenSet)
   {
    payload.WithString("fileExistsBehavior", FileExistsBehaviorMapper::GetNameForFileExistsBehavior(m_fileExistsBehavior));
+  }
+
+  if(m_deploymentStatusMessagesHasBeenSet)
+  {
+   Array<JsonValue> deploymentStatusMessagesJsonList(m_deploymentStatusMessages.size());
+   for(unsigned deploymentStatusMessagesIndex = 0; deploymentStatusMessagesIndex < deploymentStatusMessagesJsonList.GetLength(); ++deploymentStatusMessagesIndex)
+   {
+     deploymentStatusMessagesJsonList[deploymentStatusMessagesIndex].AsString(m_deploymentStatusMessages[deploymentStatusMessagesIndex]);
+   }
+   payload.WithArray("deploymentStatusMessages", std::move(deploymentStatusMessagesJsonList));
+
+  }
+
+  if(m_computePlatformHasBeenSet)
+  {
+   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
   }
 
   return payload;

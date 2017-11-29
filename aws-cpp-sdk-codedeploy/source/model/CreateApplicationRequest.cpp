@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateApplicationRequest::CreateApplicationRequest() : 
-    m_applicationNameHasBeenSet(false)
+    m_applicationNameHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,11 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   {
    payload.WithString("applicationName", m_applicationName);
 
+  }
+
+  if(m_computePlatformHasBeenSet)
+  {
+   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
   }
 
   return payload.WriteReadable();

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/CacheClusterSize.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/apigateway/model/DeploymentCanarySettings.h>
 #include <utility>
 
 namespace Aws
@@ -352,6 +353,37 @@ namespace Model
      */
     inline CreateDeploymentRequest& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The input configuration for the canary deployment when the deployment is a
+     * canary release deployment. </p>
+     */
+    inline const DeploymentCanarySettings& GetCanarySettings() const{ return m_canarySettings; }
+
+    /**
+     * <p>The input configuration for the canary deployment when the deployment is a
+     * canary release deployment. </p>
+     */
+    inline void SetCanarySettings(const DeploymentCanarySettings& value) { m_canarySettingsHasBeenSet = true; m_canarySettings = value; }
+
+    /**
+     * <p>The input configuration for the canary deployment when the deployment is a
+     * canary release deployment. </p>
+     */
+    inline void SetCanarySettings(DeploymentCanarySettings&& value) { m_canarySettingsHasBeenSet = true; m_canarySettings = std::move(value); }
+
+    /**
+     * <p>The input configuration for the canary deployment when the deployment is a
+     * canary release deployment. </p>
+     */
+    inline CreateDeploymentRequest& WithCanarySettings(const DeploymentCanarySettings& value) { SetCanarySettings(value); return *this;}
+
+    /**
+     * <p>The input configuration for the canary deployment when the deployment is a
+     * canary release deployment. </p>
+     */
+    inline CreateDeploymentRequest& WithCanarySettings(DeploymentCanarySettings&& value) { SetCanarySettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_restApiId;
@@ -374,6 +406,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_variables;
     bool m_variablesHasBeenSet;
+
+    DeploymentCanarySettings m_canarySettings;
+    bool m_canarySettingsHasBeenSet;
   };
 
 } // namespace Model

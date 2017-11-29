@@ -29,6 +29,8 @@
 #include <aws/codedeploy/model/BlueGreenDeploymentConfiguration.h>
 #include <aws/codedeploy/model/LoadBalancerInfo.h>
 #include <aws/codedeploy/model/FileExistsBehavior.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codedeploy/model/ComputePlatform.h>
 #include <utility>
 
 namespace Aws
@@ -869,6 +871,78 @@ namespace Model
      */
     inline DeploymentInfo& WithFileExistsBehavior(FileExistsBehavior&& value) { SetFileExistsBehavior(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Messages that contain information about the status of a deployment.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDeploymentStatusMessages() const{ return m_deploymentStatusMessages; }
+
+    /**
+     * <p>Messages that contain information about the status of a deployment.</p>
+     */
+    inline void SetDeploymentStatusMessages(const Aws::Vector<Aws::String>& value) { m_deploymentStatusMessagesHasBeenSet = true; m_deploymentStatusMessages = value; }
+
+    /**
+     * <p>Messages that contain information about the status of a deployment.</p>
+     */
+    inline void SetDeploymentStatusMessages(Aws::Vector<Aws::String>&& value) { m_deploymentStatusMessagesHasBeenSet = true; m_deploymentStatusMessages = std::move(value); }
+
+    /**
+     * <p>Messages that contain information about the status of a deployment.</p>
+     */
+    inline DeploymentInfo& WithDeploymentStatusMessages(const Aws::Vector<Aws::String>& value) { SetDeploymentStatusMessages(value); return *this;}
+
+    /**
+     * <p>Messages that contain information about the status of a deployment.</p>
+     */
+    inline DeploymentInfo& WithDeploymentStatusMessages(Aws::Vector<Aws::String>&& value) { SetDeploymentStatusMessages(std::move(value)); return *this;}
+
+    /**
+     * <p>Messages that contain information about the status of a deployment.</p>
+     */
+    inline DeploymentInfo& AddDeploymentStatusMessages(const Aws::String& value) { m_deploymentStatusMessagesHasBeenSet = true; m_deploymentStatusMessages.push_back(value); return *this; }
+
+    /**
+     * <p>Messages that contain information about the status of a deployment.</p>
+     */
+    inline DeploymentInfo& AddDeploymentStatusMessages(Aws::String&& value) { m_deploymentStatusMessagesHasBeenSet = true; m_deploymentStatusMessages.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Messages that contain information about the status of a deployment.</p>
+     */
+    inline DeploymentInfo& AddDeploymentStatusMessages(const char* value) { m_deploymentStatusMessagesHasBeenSet = true; m_deploymentStatusMessages.push_back(value); return *this; }
+
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline DeploymentInfo& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline DeploymentInfo& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -945,6 +1019,12 @@ namespace Model
 
     FileExistsBehavior m_fileExistsBehavior;
     bool m_fileExistsBehaviorHasBeenSet;
+
+    Aws::Vector<Aws::String> m_deploymentStatusMessages;
+    bool m_deploymentStatusMessagesHasBeenSet;
+
+    ComputePlatform m_computePlatform;
+    bool m_computePlatformHasBeenSet;
   };
 
 } // namespace Model

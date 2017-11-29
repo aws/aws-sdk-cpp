@@ -28,6 +28,7 @@
 #include <aws/cognito-idp/model/SmsConfigurationType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
+#include <aws/cognito-idp/model/UserPoolAddOnsType.h>
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
@@ -49,8 +50,8 @@ namespace Model
 {
 
   /**
-   * <p>A container for information about the user pool type.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A container for information about the user pool.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolType">AWS
    * API Reference</a></p>
    */
@@ -136,53 +137,53 @@ namespace Model
 
 
     /**
-     * <p>A container for the policies associated with a user pool.</p>
+     * <p>The policies associated with the user pool.</p>
      */
     inline const UserPoolPolicyType& GetPolicies() const{ return m_policies; }
 
     /**
-     * <p>A container for the policies associated with a user pool.</p>
+     * <p>The policies associated with the user pool.</p>
      */
     inline void SetPolicies(const UserPoolPolicyType& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**
-     * <p>A container for the policies associated with a user pool.</p>
+     * <p>The policies associated with the user pool.</p>
      */
     inline void SetPolicies(UserPoolPolicyType&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
 
     /**
-     * <p>A container for the policies associated with a user pool.</p>
+     * <p>The policies associated with the user pool.</p>
      */
     inline UserPoolType& WithPolicies(const UserPoolPolicyType& value) { SetPolicies(value); return *this;}
 
     /**
-     * <p>A container for the policies associated with a user pool.</p>
+     * <p>The policies associated with the user pool.</p>
      */
     inline UserPoolType& WithPolicies(UserPoolPolicyType&& value) { SetPolicies(std::move(value)); return *this;}
 
 
     /**
-     * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
+     * <p>The AWS Lambda triggers associated with tue user pool.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
+     * <p>The AWS Lambda triggers associated with tue user pool.</p>
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
+     * <p>The AWS Lambda triggers associated with tue user pool.</p>
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
+     * <p>The AWS Lambda triggers associated with tue user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
+     * <p>The AWS Lambda triggers associated with tue user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
@@ -927,6 +928,32 @@ namespace Model
      */
     inline UserPoolType& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The user pool add-ons.</p>
+     */
+    inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
+
+    /**
+     * <p>The user pool add-ons.</p>
+     */
+    inline void SetUserPoolAddOns(const UserPoolAddOnsType& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = value; }
+
+    /**
+     * <p>The user pool add-ons.</p>
+     */
+    inline void SetUserPoolAddOns(UserPoolAddOnsType&& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = std::move(value); }
+
+    /**
+     * <p>The user pool add-ons.</p>
+     */
+    inline UserPoolType& WithUserPoolAddOns(const UserPoolAddOnsType& value) { SetUserPoolAddOns(value); return *this;}
+
+    /**
+     * <p>The user pool add-ons.</p>
+     */
+    inline UserPoolType& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1003,6 +1030,9 @@ namespace Model
 
     AdminCreateUserConfigType m_adminCreateUserConfig;
     bool m_adminCreateUserConfigHasBeenSet;
+
+    UserPoolAddOnsType m_userPoolAddOns;
+    bool m_userPoolAddOnsHasBeenSet;
   };
 
 } // namespace Model

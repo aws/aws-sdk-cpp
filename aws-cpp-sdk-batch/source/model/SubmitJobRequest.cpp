@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 SubmitJobRequest::SubmitJobRequest() : 
     m_jobNameHasBeenSet(false),
     m_jobQueueHasBeenSet(false),
+    m_arrayPropertiesHasBeenSet(false),
     m_dependsOnHasBeenSet(false),
     m_jobDefinitionHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -46,6 +47,12 @@ Aws::String SubmitJobRequest::SerializePayload() const
   if(m_jobQueueHasBeenSet)
   {
    payload.WithString("jobQueue", m_jobQueue);
+
+  }
+
+  if(m_arrayPropertiesHasBeenSet)
+  {
+   payload.WithObject("arrayProperties", m_arrayProperties.Jsonize());
 
   }
 

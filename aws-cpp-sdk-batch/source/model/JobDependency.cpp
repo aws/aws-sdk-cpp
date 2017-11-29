@@ -29,12 +29,16 @@ namespace Model
 {
 
 JobDependency::JobDependency() : 
-    m_jobIdHasBeenSet(false)
+    m_jobIdHasBeenSet(false),
+    m_type(ArrayJobDependency::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
 JobDependency::JobDependency(const JsonValue& jsonValue) : 
-    m_jobIdHasBeenSet(false)
+    m_jobIdHasBeenSet(false),
+    m_type(ArrayJobDependency::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +52,13 @@ JobDependency& JobDependency::operator =(const JsonValue& jsonValue)
     m_jobIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = ArrayJobDependencyMapper::GetArrayJobDependencyForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -59,6 +70,11 @@ JsonValue JobDependency::Jsonize() const
   {
    payload.WithString("jobId", m_jobId);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ArrayJobDependencyMapper::GetNameForArrayJobDependency(m_type));
   }
 
   return payload;

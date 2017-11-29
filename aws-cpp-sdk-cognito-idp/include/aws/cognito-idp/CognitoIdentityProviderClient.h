@@ -34,12 +34,16 @@
 #include <aws/cognito-idp/model/AdminLinkProviderForUserResult.h>
 #include <aws/cognito-idp/model/AdminListDevicesResult.h>
 #include <aws/cognito-idp/model/AdminListGroupsForUserResult.h>
+#include <aws/cognito-idp/model/AdminListUserAuthEventsResult.h>
 #include <aws/cognito-idp/model/AdminResetUserPasswordResult.h>
 #include <aws/cognito-idp/model/AdminRespondToAuthChallengeResult.h>
+#include <aws/cognito-idp/model/AdminSetUserMFAPreferenceResult.h>
 #include <aws/cognito-idp/model/AdminSetUserSettingsResult.h>
+#include <aws/cognito-idp/model/AdminUpdateAuthEventFeedbackResult.h>
 #include <aws/cognito-idp/model/AdminUpdateDeviceStatusResult.h>
 #include <aws/cognito-idp/model/AdminUpdateUserAttributesResult.h>
 #include <aws/cognito-idp/model/AdminUserGlobalSignOutResult.h>
+#include <aws/cognito-idp/model/AssociateSoftwareTokenResult.h>
 #include <aws/cognito-idp/model/ChangePasswordResult.h>
 #include <aws/cognito-idp/model/ConfirmDeviceResult.h>
 #include <aws/cognito-idp/model/ConfirmForgotPasswordResult.h>
@@ -55,6 +59,7 @@
 #include <aws/cognito-idp/model/DeleteUserPoolDomainResult.h>
 #include <aws/cognito-idp/model/DescribeIdentityProviderResult.h>
 #include <aws/cognito-idp/model/DescribeResourceServerResult.h>
+#include <aws/cognito-idp/model/DescribeRiskConfigurationResult.h>
 #include <aws/cognito-idp/model/DescribeUserImportJobResult.h>
 #include <aws/cognito-idp/model/DescribeUserPoolResult.h>
 #include <aws/cognito-idp/model/DescribeUserPoolClientResult.h>
@@ -67,6 +72,7 @@
 #include <aws/cognito-idp/model/GetUICustomizationResult.h>
 #include <aws/cognito-idp/model/GetUserResult.h>
 #include <aws/cognito-idp/model/GetUserAttributeVerificationCodeResult.h>
+#include <aws/cognito-idp/model/GetUserPoolMfaConfigResult.h>
 #include <aws/cognito-idp/model/GlobalSignOutResult.h>
 #include <aws/cognito-idp/model/InitiateAuthResult.h>
 #include <aws/cognito-idp/model/ListDevicesResult.h>
@@ -80,11 +86,15 @@
 #include <aws/cognito-idp/model/ListUsersInGroupResult.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeResult.h>
 #include <aws/cognito-idp/model/RespondToAuthChallengeResult.h>
+#include <aws/cognito-idp/model/SetRiskConfigurationResult.h>
 #include <aws/cognito-idp/model/SetUICustomizationResult.h>
+#include <aws/cognito-idp/model/SetUserMFAPreferenceResult.h>
+#include <aws/cognito-idp/model/SetUserPoolMfaConfigResult.h>
 #include <aws/cognito-idp/model/SetUserSettingsResult.h>
 #include <aws/cognito-idp/model/SignUpResult.h>
 #include <aws/cognito-idp/model/StartUserImportJobResult.h>
 #include <aws/cognito-idp/model/StopUserImportJobResult.h>
+#include <aws/cognito-idp/model/UpdateAuthEventFeedbackResult.h>
 #include <aws/cognito-idp/model/UpdateDeviceStatusResult.h>
 #include <aws/cognito-idp/model/UpdateGroupResult.h>
 #include <aws/cognito-idp/model/UpdateIdentityProviderResult.h>
@@ -92,6 +102,7 @@
 #include <aws/cognito-idp/model/UpdateUserAttributesResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolClientResult.h>
+#include <aws/cognito-idp/model/VerifySoftwareTokenResult.h>
 #include <aws/cognito-idp/model/VerifyUserAttributeResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -155,13 +166,17 @@ namespace Model
         class AdminLinkProviderForUserRequest;
         class AdminListDevicesRequest;
         class AdminListGroupsForUserRequest;
+        class AdminListUserAuthEventsRequest;
         class AdminRemoveUserFromGroupRequest;
         class AdminResetUserPasswordRequest;
         class AdminRespondToAuthChallengeRequest;
+        class AdminSetUserMFAPreferenceRequest;
         class AdminSetUserSettingsRequest;
+        class AdminUpdateAuthEventFeedbackRequest;
         class AdminUpdateDeviceStatusRequest;
         class AdminUpdateUserAttributesRequest;
         class AdminUserGlobalSignOutRequest;
+        class AssociateSoftwareTokenRequest;
         class ChangePasswordRequest;
         class ConfirmDeviceRequest;
         class ConfirmForgotPasswordRequest;
@@ -183,6 +198,7 @@ namespace Model
         class DeleteUserPoolDomainRequest;
         class DescribeIdentityProviderRequest;
         class DescribeResourceServerRequest;
+        class DescribeRiskConfigurationRequest;
         class DescribeUserImportJobRequest;
         class DescribeUserPoolRequest;
         class DescribeUserPoolClientRequest;
@@ -196,6 +212,7 @@ namespace Model
         class GetUICustomizationRequest;
         class GetUserRequest;
         class GetUserAttributeVerificationCodeRequest;
+        class GetUserPoolMfaConfigRequest;
         class GlobalSignOutRequest;
         class InitiateAuthRequest;
         class ListDevicesRequest;
@@ -209,11 +226,15 @@ namespace Model
         class ListUsersInGroupRequest;
         class ResendConfirmationCodeRequest;
         class RespondToAuthChallengeRequest;
+        class SetRiskConfigurationRequest;
         class SetUICustomizationRequest;
+        class SetUserMFAPreferenceRequest;
+        class SetUserPoolMfaConfigRequest;
         class SetUserSettingsRequest;
         class SignUpRequest;
         class StartUserImportJobRequest;
         class StopUserImportJobRequest;
+        class UpdateAuthEventFeedbackRequest;
         class UpdateDeviceStatusRequest;
         class UpdateGroupRequest;
         class UpdateIdentityProviderRequest;
@@ -221,6 +242,7 @@ namespace Model
         class UpdateUserAttributesRequest;
         class UpdateUserPoolRequest;
         class UpdateUserPoolClientRequest;
+        class VerifySoftwareTokenRequest;
         class VerifyUserAttributeRequest;
 
         typedef Aws::Utils::Outcome<AddCustomAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AddCustomAttributesOutcome;
@@ -239,13 +261,17 @@ namespace Model
         typedef Aws::Utils::Outcome<AdminLinkProviderForUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminLinkProviderForUserOutcome;
         typedef Aws::Utils::Outcome<AdminListDevicesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminListDevicesOutcome;
         typedef Aws::Utils::Outcome<AdminListGroupsForUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminListGroupsForUserOutcome;
+        typedef Aws::Utils::Outcome<AdminListUserAuthEventsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminListUserAuthEventsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminRemoveUserFromGroupOutcome;
         typedef Aws::Utils::Outcome<AdminResetUserPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminResetUserPasswordOutcome;
         typedef Aws::Utils::Outcome<AdminRespondToAuthChallengeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminRespondToAuthChallengeOutcome;
+        typedef Aws::Utils::Outcome<AdminSetUserMFAPreferenceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminSetUserMFAPreferenceOutcome;
         typedef Aws::Utils::Outcome<AdminSetUserSettingsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminSetUserSettingsOutcome;
+        typedef Aws::Utils::Outcome<AdminUpdateAuthEventFeedbackResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminUpdateAuthEventFeedbackOutcome;
         typedef Aws::Utils::Outcome<AdminUpdateDeviceStatusResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminUpdateDeviceStatusOutcome;
         typedef Aws::Utils::Outcome<AdminUpdateUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminUpdateUserAttributesOutcome;
         typedef Aws::Utils::Outcome<AdminUserGlobalSignOutResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminUserGlobalSignOutOutcome;
+        typedef Aws::Utils::Outcome<AssociateSoftwareTokenResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AssociateSoftwareTokenOutcome;
         typedef Aws::Utils::Outcome<ChangePasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ChangePasswordOutcome;
         typedef Aws::Utils::Outcome<ConfirmDeviceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ConfirmDeviceOutcome;
         typedef Aws::Utils::Outcome<ConfirmForgotPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ConfirmForgotPasswordOutcome;
@@ -267,6 +293,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolDomainOutcome;
         typedef Aws::Utils::Outcome<DescribeIdentityProviderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeIdentityProviderOutcome;
         typedef Aws::Utils::Outcome<DescribeResourceServerResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeResourceServerOutcome;
+        typedef Aws::Utils::Outcome<DescribeRiskConfigurationResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeRiskConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeUserImportJobResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserImportJobOutcome;
         typedef Aws::Utils::Outcome<DescribeUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolOutcome;
         typedef Aws::Utils::Outcome<DescribeUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolClientOutcome;
@@ -280,6 +307,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetUICustomizationResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUICustomizationOutcome;
         typedef Aws::Utils::Outcome<GetUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserOutcome;
         typedef Aws::Utils::Outcome<GetUserAttributeVerificationCodeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserAttributeVerificationCodeOutcome;
+        typedef Aws::Utils::Outcome<GetUserPoolMfaConfigResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserPoolMfaConfigOutcome;
         typedef Aws::Utils::Outcome<GlobalSignOutResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GlobalSignOutOutcome;
         typedef Aws::Utils::Outcome<InitiateAuthResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> InitiateAuthOutcome;
         typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListDevicesOutcome;
@@ -293,11 +321,15 @@ namespace Model
         typedef Aws::Utils::Outcome<ListUsersInGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ListUsersInGroupOutcome;
         typedef Aws::Utils::Outcome<ResendConfirmationCodeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ResendConfirmationCodeOutcome;
         typedef Aws::Utils::Outcome<RespondToAuthChallengeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> RespondToAuthChallengeOutcome;
+        typedef Aws::Utils::Outcome<SetRiskConfigurationResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SetRiskConfigurationOutcome;
         typedef Aws::Utils::Outcome<SetUICustomizationResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SetUICustomizationOutcome;
+        typedef Aws::Utils::Outcome<SetUserMFAPreferenceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SetUserMFAPreferenceOutcome;
+        typedef Aws::Utils::Outcome<SetUserPoolMfaConfigResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SetUserPoolMfaConfigOutcome;
         typedef Aws::Utils::Outcome<SetUserSettingsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SetUserSettingsOutcome;
         typedef Aws::Utils::Outcome<SignUpResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> SignUpOutcome;
         typedef Aws::Utils::Outcome<StartUserImportJobResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> StartUserImportJobOutcome;
         typedef Aws::Utils::Outcome<StopUserImportJobResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> StopUserImportJobOutcome;
+        typedef Aws::Utils::Outcome<UpdateAuthEventFeedbackResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateAuthEventFeedbackOutcome;
         typedef Aws::Utils::Outcome<UpdateDeviceStatusResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateDeviceStatusOutcome;
         typedef Aws::Utils::Outcome<UpdateGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateIdentityProviderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateIdentityProviderOutcome;
@@ -305,6 +337,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserAttributesOutcome;
         typedef Aws::Utils::Outcome<UpdateUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserPoolOutcome;
         typedef Aws::Utils::Outcome<UpdateUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserPoolClientOutcome;
+        typedef Aws::Utils::Outcome<VerifySoftwareTokenResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> VerifySoftwareTokenOutcome;
         typedef Aws::Utils::Outcome<VerifyUserAttributeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> VerifyUserAttributeOutcome;
 
         typedef std::future<AddCustomAttributesOutcome> AddCustomAttributesOutcomeCallable;
@@ -323,13 +356,17 @@ namespace Model
         typedef std::future<AdminLinkProviderForUserOutcome> AdminLinkProviderForUserOutcomeCallable;
         typedef std::future<AdminListDevicesOutcome> AdminListDevicesOutcomeCallable;
         typedef std::future<AdminListGroupsForUserOutcome> AdminListGroupsForUserOutcomeCallable;
+        typedef std::future<AdminListUserAuthEventsOutcome> AdminListUserAuthEventsOutcomeCallable;
         typedef std::future<AdminRemoveUserFromGroupOutcome> AdminRemoveUserFromGroupOutcomeCallable;
         typedef std::future<AdminResetUserPasswordOutcome> AdminResetUserPasswordOutcomeCallable;
         typedef std::future<AdminRespondToAuthChallengeOutcome> AdminRespondToAuthChallengeOutcomeCallable;
+        typedef std::future<AdminSetUserMFAPreferenceOutcome> AdminSetUserMFAPreferenceOutcomeCallable;
         typedef std::future<AdminSetUserSettingsOutcome> AdminSetUserSettingsOutcomeCallable;
+        typedef std::future<AdminUpdateAuthEventFeedbackOutcome> AdminUpdateAuthEventFeedbackOutcomeCallable;
         typedef std::future<AdminUpdateDeviceStatusOutcome> AdminUpdateDeviceStatusOutcomeCallable;
         typedef std::future<AdminUpdateUserAttributesOutcome> AdminUpdateUserAttributesOutcomeCallable;
         typedef std::future<AdminUserGlobalSignOutOutcome> AdminUserGlobalSignOutOutcomeCallable;
+        typedef std::future<AssociateSoftwareTokenOutcome> AssociateSoftwareTokenOutcomeCallable;
         typedef std::future<ChangePasswordOutcome> ChangePasswordOutcomeCallable;
         typedef std::future<ConfirmDeviceOutcome> ConfirmDeviceOutcomeCallable;
         typedef std::future<ConfirmForgotPasswordOutcome> ConfirmForgotPasswordOutcomeCallable;
@@ -351,6 +388,7 @@ namespace Model
         typedef std::future<DeleteUserPoolDomainOutcome> DeleteUserPoolDomainOutcomeCallable;
         typedef std::future<DescribeIdentityProviderOutcome> DescribeIdentityProviderOutcomeCallable;
         typedef std::future<DescribeResourceServerOutcome> DescribeResourceServerOutcomeCallable;
+        typedef std::future<DescribeRiskConfigurationOutcome> DescribeRiskConfigurationOutcomeCallable;
         typedef std::future<DescribeUserImportJobOutcome> DescribeUserImportJobOutcomeCallable;
         typedef std::future<DescribeUserPoolOutcome> DescribeUserPoolOutcomeCallable;
         typedef std::future<DescribeUserPoolClientOutcome> DescribeUserPoolClientOutcomeCallable;
@@ -364,6 +402,7 @@ namespace Model
         typedef std::future<GetUICustomizationOutcome> GetUICustomizationOutcomeCallable;
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
         typedef std::future<GetUserAttributeVerificationCodeOutcome> GetUserAttributeVerificationCodeOutcomeCallable;
+        typedef std::future<GetUserPoolMfaConfigOutcome> GetUserPoolMfaConfigOutcomeCallable;
         typedef std::future<GlobalSignOutOutcome> GlobalSignOutOutcomeCallable;
         typedef std::future<InitiateAuthOutcome> InitiateAuthOutcomeCallable;
         typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
@@ -377,11 +416,15 @@ namespace Model
         typedef std::future<ListUsersInGroupOutcome> ListUsersInGroupOutcomeCallable;
         typedef std::future<ResendConfirmationCodeOutcome> ResendConfirmationCodeOutcomeCallable;
         typedef std::future<RespondToAuthChallengeOutcome> RespondToAuthChallengeOutcomeCallable;
+        typedef std::future<SetRiskConfigurationOutcome> SetRiskConfigurationOutcomeCallable;
         typedef std::future<SetUICustomizationOutcome> SetUICustomizationOutcomeCallable;
+        typedef std::future<SetUserMFAPreferenceOutcome> SetUserMFAPreferenceOutcomeCallable;
+        typedef std::future<SetUserPoolMfaConfigOutcome> SetUserPoolMfaConfigOutcomeCallable;
         typedef std::future<SetUserSettingsOutcome> SetUserSettingsOutcomeCallable;
         typedef std::future<SignUpOutcome> SignUpOutcomeCallable;
         typedef std::future<StartUserImportJobOutcome> StartUserImportJobOutcomeCallable;
         typedef std::future<StopUserImportJobOutcome> StopUserImportJobOutcomeCallable;
+        typedef std::future<UpdateAuthEventFeedbackOutcome> UpdateAuthEventFeedbackOutcomeCallable;
         typedef std::future<UpdateDeviceStatusOutcome> UpdateDeviceStatusOutcomeCallable;
         typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
         typedef std::future<UpdateIdentityProviderOutcome> UpdateIdentityProviderOutcomeCallable;
@@ -389,6 +432,7 @@ namespace Model
         typedef std::future<UpdateUserAttributesOutcome> UpdateUserAttributesOutcomeCallable;
         typedef std::future<UpdateUserPoolOutcome> UpdateUserPoolOutcomeCallable;
         typedef std::future<UpdateUserPoolClientOutcome> UpdateUserPoolClientOutcomeCallable;
+        typedef std::future<VerifySoftwareTokenOutcome> VerifySoftwareTokenOutcomeCallable;
         typedef std::future<VerifyUserAttributeOutcome> VerifyUserAttributeOutcomeCallable;
 } // namespace Model
 
@@ -410,13 +454,17 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminLinkProviderForUserRequest&, const Model::AdminLinkProviderForUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminLinkProviderForUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminListDevicesRequest&, const Model::AdminListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminListDevicesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminListGroupsForUserRequest&, const Model::AdminListGroupsForUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminListGroupsForUserResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminListUserAuthEventsRequest&, const Model::AdminListUserAuthEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminListUserAuthEventsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminRemoveUserFromGroupRequest&, const Model::AdminRemoveUserFromGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminRemoveUserFromGroupResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminResetUserPasswordRequest&, const Model::AdminResetUserPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminResetUserPasswordResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminRespondToAuthChallengeRequest&, const Model::AdminRespondToAuthChallengeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminRespondToAuthChallengeResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminSetUserMFAPreferenceRequest&, const Model::AdminSetUserMFAPreferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminSetUserMFAPreferenceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminSetUserSettingsRequest&, const Model::AdminSetUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminSetUserSettingsResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminUpdateAuthEventFeedbackRequest&, const Model::AdminUpdateAuthEventFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminUpdateAuthEventFeedbackResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminUpdateDeviceStatusRequest&, const Model::AdminUpdateDeviceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminUpdateDeviceStatusResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminUpdateUserAttributesRequest&, const Model::AdminUpdateUserAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminUpdateUserAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminUserGlobalSignOutRequest&, const Model::AdminUserGlobalSignOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminUserGlobalSignOutResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AssociateSoftwareTokenRequest&, const Model::AssociateSoftwareTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSoftwareTokenResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ChangePasswordRequest&, const Model::ChangePasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangePasswordResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ConfirmDeviceRequest&, const Model::ConfirmDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmDeviceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ConfirmForgotPasswordRequest&, const Model::ConfirmForgotPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmForgotPasswordResponseReceivedHandler;
@@ -438,6 +486,7 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolDomainRequest&, const Model::DeleteUserPoolDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPoolDomainResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeIdentityProviderRequest&, const Model::DescribeIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeResourceServerRequest&, const Model::DescribeResourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourceServerResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeRiskConfigurationRequest&, const Model::DescribeRiskConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRiskConfigurationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserImportJobRequest&, const Model::DescribeUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserImportJobResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserPoolRequest&, const Model::DescribeUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserPoolClientRequest&, const Model::DescribeUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserPoolClientResponseReceivedHandler;
@@ -451,6 +500,7 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUICustomizationRequest&, const Model::GetUICustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUICustomizationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserAttributeVerificationCodeRequest&, const Model::GetUserAttributeVerificationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserAttributeVerificationCodeResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserPoolMfaConfigRequest&, const Model::GetUserPoolMfaConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserPoolMfaConfigResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GlobalSignOutRequest&, const Model::GlobalSignOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GlobalSignOutResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::InitiateAuthRequest&, const Model::InitiateAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateAuthResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
@@ -464,11 +514,15 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUsersInGroupRequest&, const Model::ListUsersInGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersInGroupResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ResendConfirmationCodeRequest&, const Model::ResendConfirmationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResendConfirmationCodeResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::RespondToAuthChallengeRequest&, const Model::RespondToAuthChallengeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RespondToAuthChallengeResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetRiskConfigurationRequest&, const Model::SetRiskConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRiskConfigurationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetUICustomizationRequest&, const Model::SetUICustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUICustomizationResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetUserMFAPreferenceRequest&, const Model::SetUserMFAPreferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUserMFAPreferenceResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetUserPoolMfaConfigRequest&, const Model::SetUserPoolMfaConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUserPoolMfaConfigResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetUserSettingsRequest&, const Model::SetUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUserSettingsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SignUpRequest&, const Model::SignUpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignUpResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::StartUserImportJobRequest&, const Model::StartUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartUserImportJobResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::StopUserImportJobRequest&, const Model::StopUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopUserImportJobResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateAuthEventFeedbackRequest&, const Model::UpdateAuthEventFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAuthEventFeedbackResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateDeviceStatusRequest&, const Model::UpdateDeviceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceStatusResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateIdentityProviderRequest&, const Model::UpdateIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIdentityProviderResponseReceivedHandler;
@@ -476,6 +530,7 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserAttributesRequest&, const Model::UpdateUserAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserPoolRequest&, const Model::UpdateUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserPoolClientRequest&, const Model::UpdateUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPoolClientResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::VerifySoftwareTokenRequest&, const Model::VerifySoftwareTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifySoftwareTokenResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::VerifyUserAttributeRequest&, const Model::VerifyUserAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyUserAttributeResponseReceivedHandler;
 
   /**
@@ -602,24 +657,34 @@ namespace Model
         virtual void AdminConfirmSignUpAsync(const Model::AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new user in the specified user pool and sends a welcome message via
-         * email or phone (SMS). This message is based on a template that you configured in
-         * your call to <a href="API_CreateUserPool.html">CreateUserPool</a> or <a
-         * href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your
-         * custom sign-up instructions and placeholders for user name and temporary
-         * password.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new user in the specified user pool.</p> <p>If
+         * <code>MessageAction</code> is not set, the default is to send a welcome message
+         * via email or phone (SMS).</p> <note> <p>This message is based on a template that
+         * you configured in your call to or . This template includes your custom sign-up
+         * instructions and placeholders for user name and temporary password.</p> </note>
+         * <p>Alternatively, you can call AdminCreateUser with “SUPPRESS” for the
+         * <code>MessageAction</code> parameter, and Amazon Cognito will not send any
+         * email. </p> <p>In either case, the user will be in the
+         * <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change their
+         * password.</p> <p>AdminCreateUser requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminCreateUserOutcome AdminCreateUser(const Model::AdminCreateUserRequest& request) const;
 
         /**
-         * <p>Creates a new user in the specified user pool and sends a welcome message via
-         * email or phone (SMS). This message is based on a template that you configured in
-         * your call to <a href="API_CreateUserPool.html">CreateUserPool</a> or <a
-         * href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your
-         * custom sign-up instructions and placeholders for user name and temporary
-         * password.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new user in the specified user pool.</p> <p>If
+         * <code>MessageAction</code> is not set, the default is to send a welcome message
+         * via email or phone (SMS).</p> <note> <p>This message is based on a template that
+         * you configured in your call to or . This template includes your custom sign-up
+         * instructions and placeholders for user name and temporary password.</p> </note>
+         * <p>Alternatively, you can call AdminCreateUser with “SUPPRESS” for the
+         * <code>MessageAction</code> parameter, and Amazon Cognito will not send any
+         * email. </p> <p>In either case, the user will be in the
+         * <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change their
+         * password.</p> <p>AdminCreateUser requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
          * API Reference</a></p>
          *
@@ -628,12 +693,17 @@ namespace Model
         virtual Model::AdminCreateUserOutcomeCallable AdminCreateUserCallable(const Model::AdminCreateUserRequest& request) const;
 
         /**
-         * <p>Creates a new user in the specified user pool and sends a welcome message via
-         * email or phone (SMS). This message is based on a template that you configured in
-         * your call to <a href="API_CreateUserPool.html">CreateUserPool</a> or <a
-         * href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your
-         * custom sign-up instructions and placeholders for user name and temporary
-         * password.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new user in the specified user pool.</p> <p>If
+         * <code>MessageAction</code> is not set, the default is to send a welcome message
+         * via email or phone (SMS).</p> <note> <p>This message is based on a template that
+         * you configured in your call to or . This template includes your custom sign-up
+         * instructions and placeholders for user name and temporary password.</p> </note>
+         * <p>Alternatively, you can call AdminCreateUser with “SUPPRESS” for the
+         * <code>MessageAction</code> parameter, and Amazon Cognito will not send any
+         * email. </p> <p>In either case, the user will be in the
+         * <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change their
+         * password.</p> <p>AdminCreateUser requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
          * API Reference</a></p>
          *
@@ -704,24 +774,22 @@ namespace Model
          * sign-in. If the user to disable is a linked external IdP user, any link between
          * that user and an existing user is removed. The next time the external user (no
          * longer attached to the previously linked <code>DestinationUser</code>) signs in,
-         * they must create a new user account. See <a
-         * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.</p>
-         * <p>This action is enabled only for admin access and requires developer
-         * credentials.</p> <p>The <code>ProviderName</code> must match the value specified
-         * when creating an IdP for the pool. </p> <p>To disable a native username +
-         * password user, the <code>ProviderName</code> value must be <code>Cognito</code>
-         * and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>,
-         * with the <code>ProviderAttributeValue</code> being the name that is used in the
-         * user pool for the user.</p> <p>The <code>ProviderAttributeName</code> must
-         * always be <code>Cognito_Subject</code> for social identity providers. The
+         * they must create a new user account. See .</p> <p>This action is enabled only
+         * for admin access and requires developer credentials.</p> <p>The
+         * <code>ProviderName</code> must match the value specified when creating an IdP
+         * for the pool. </p> <p>To disable a native username + password user, the
+         * <code>ProviderName</code> value must be <code>Cognito</code> and the
+         * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>, with
+         * the <code>ProviderAttributeValue</code> being the name that is used in the user
+         * pool for the user.</p> <p>The <code>ProviderAttributeName</code> must always be
+         * <code>Cognito_Subject</code> for social identity providers. The
          * <code>ProviderAttributeValue</code> must always be the exact subject that was
          * used when the user was originally linked as a source user.</p> <p>For de-linking
          * a SAML identity, there are two scenarios. If the linked identity has not yet
          * been used to sign-in, the <code>ProviderAttributeName</code> and
          * <code>ProviderAttributeValue</code> must be the same values that were used for
-         * the <code>SourceUser</code> when the identities were originally linked in the <a
-         * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> call. (If
-         * the linking was done with <code>ProviderAttributeName</code> set to
+         * the <code>SourceUser</code> when the identities were originally linked in the
+         * call. (If the linking was done with <code>ProviderAttributeName</code> set to
          * <code>Cognito_Subject</code>, the same applies here). However, if the user has
          * already signed in, the <code>ProviderAttributeName</code> must be
          * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the
@@ -738,24 +806,22 @@ namespace Model
          * sign-in. If the user to disable is a linked external IdP user, any link between
          * that user and an existing user is removed. The next time the external user (no
          * longer attached to the previously linked <code>DestinationUser</code>) signs in,
-         * they must create a new user account. See <a
-         * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.</p>
-         * <p>This action is enabled only for admin access and requires developer
-         * credentials.</p> <p>The <code>ProviderName</code> must match the value specified
-         * when creating an IdP for the pool. </p> <p>To disable a native username +
-         * password user, the <code>ProviderName</code> value must be <code>Cognito</code>
-         * and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>,
-         * with the <code>ProviderAttributeValue</code> being the name that is used in the
-         * user pool for the user.</p> <p>The <code>ProviderAttributeName</code> must
-         * always be <code>Cognito_Subject</code> for social identity providers. The
+         * they must create a new user account. See .</p> <p>This action is enabled only
+         * for admin access and requires developer credentials.</p> <p>The
+         * <code>ProviderName</code> must match the value specified when creating an IdP
+         * for the pool. </p> <p>To disable a native username + password user, the
+         * <code>ProviderName</code> value must be <code>Cognito</code> and the
+         * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>, with
+         * the <code>ProviderAttributeValue</code> being the name that is used in the user
+         * pool for the user.</p> <p>The <code>ProviderAttributeName</code> must always be
+         * <code>Cognito_Subject</code> for social identity providers. The
          * <code>ProviderAttributeValue</code> must always be the exact subject that was
          * used when the user was originally linked as a source user.</p> <p>For de-linking
          * a SAML identity, there are two scenarios. If the linked identity has not yet
          * been used to sign-in, the <code>ProviderAttributeName</code> and
          * <code>ProviderAttributeValue</code> must be the same values that were used for
-         * the <code>SourceUser</code> when the identities were originally linked in the <a
-         * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> call. (If
-         * the linking was done with <code>ProviderAttributeName</code> set to
+         * the <code>SourceUser</code> when the identities were originally linked in the
+         * call. (If the linking was done with <code>ProviderAttributeName</code> set to
          * <code>Cognito_Subject</code>, the same applies here). However, if the user has
          * already signed in, the <code>ProviderAttributeName</code> must be
          * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the
@@ -774,24 +840,22 @@ namespace Model
          * sign-in. If the user to disable is a linked external IdP user, any link between
          * that user and an existing user is removed. The next time the external user (no
          * longer attached to the previously linked <code>DestinationUser</code>) signs in,
-         * they must create a new user account. See <a
-         * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.</p>
-         * <p>This action is enabled only for admin access and requires developer
-         * credentials.</p> <p>The <code>ProviderName</code> must match the value specified
-         * when creating an IdP for the pool. </p> <p>To disable a native username +
-         * password user, the <code>ProviderName</code> value must be <code>Cognito</code>
-         * and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>,
-         * with the <code>ProviderAttributeValue</code> being the name that is used in the
-         * user pool for the user.</p> <p>The <code>ProviderAttributeName</code> must
-         * always be <code>Cognito_Subject</code> for social identity providers. The
+         * they must create a new user account. See .</p> <p>This action is enabled only
+         * for admin access and requires developer credentials.</p> <p>The
+         * <code>ProviderName</code> must match the value specified when creating an IdP
+         * for the pool. </p> <p>To disable a native username + password user, the
+         * <code>ProviderName</code> value must be <code>Cognito</code> and the
+         * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>, with
+         * the <code>ProviderAttributeValue</code> being the name that is used in the user
+         * pool for the user.</p> <p>The <code>ProviderAttributeName</code> must always be
+         * <code>Cognito_Subject</code> for social identity providers. The
          * <code>ProviderAttributeValue</code> must always be the exact subject that was
          * used when the user was originally linked as a source user.</p> <p>For de-linking
          * a SAML identity, there are two scenarios. If the linked identity has not yet
          * been used to sign-in, the <code>ProviderAttributeName</code> and
          * <code>ProviderAttributeValue</code> must be the same values that were used for
-         * the <code>SourceUser</code> when the identities were originally linked in the <a
-         * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> call. (If
-         * the linking was done with <code>ProviderAttributeName</code> set to
+         * the <code>SourceUser</code> when the identities were originally linked in the
+         * call. (If the linking was done with <code>ProviderAttributeName</code> set to
          * <code>Cognito_Subject</code>, the same applies here). However, if the user has
          * already signed in, the <code>ProviderAttributeName</code> must be
          * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the
@@ -987,8 +1051,7 @@ namespace Model
          * </p> <important> <p>Because this API allows a user with an external federated
          * identity to sign in as an existing user in the user pool, it is critical that it
          * only be used with external identity providers and provider attributes that have
-         * been trusted by the application owner.</p> </important> <p>See also <a
-         * href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.</p>
+         * been trusted by the application owner.</p> </important> <p>See also .</p>
          * <p>This action is enabled only for admin access and requires developer
          * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">AWS
@@ -1009,8 +1072,7 @@ namespace Model
          * </p> <important> <p>Because this API allows a user with an external federated
          * identity to sign in as an existing user in the user pool, it is critical that it
          * only be used with external identity providers and provider attributes that have
-         * been trusted by the application owner.</p> </important> <p>See also <a
-         * href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.</p>
+         * been trusted by the application owner.</p> </important> <p>See also .</p>
          * <p>This action is enabled only for admin access and requires developer
          * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">AWS
@@ -1033,8 +1095,7 @@ namespace Model
          * </p> <important> <p>Because this API allows a user with an external federated
          * identity to sign in as an existing user in the user pool, it is critical that it
          * only be used with external identity providers and provider attributes that have
-         * been trusted by the application owner.</p> </important> <p>See also <a
-         * href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.</p>
+         * been trusted by the application owner.</p> </important> <p>See also .</p>
          * <p>This action is enabled only for admin access and requires developer
          * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">AWS
@@ -1099,6 +1160,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AdminListGroupsForUserAsync(const Model::AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists a history of user activity and any risks detected as part of Amazon
+         * Cognito advanced security.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserAuthEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AdminListUserAuthEventsOutcome AdminListUserAuthEvents(const Model::AdminListUserAuthEventsRequest& request) const;
+
+        /**
+         * <p>Lists a history of user activity and any risks detected as part of Amazon
+         * Cognito advanced security.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserAuthEvents">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AdminListUserAuthEventsOutcomeCallable AdminListUserAuthEventsCallable(const Model::AdminListUserAuthEventsRequest& request) const;
+
+        /**
+         * <p>Lists a history of user activity and any risks detected as part of Amazon
+         * Cognito advanced security.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserAuthEvents">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AdminListUserAuthEventsAsync(const Model::AdminListUserAuthEventsRequest& request, const AdminListUserAuthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified user from the specified group.</p> <p>Requires
@@ -1212,6 +1301,34 @@ namespace Model
         virtual void AdminRespondToAuthChallengeAsync(const Model::AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the user's multi-factor authentication (MFA) preference.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AdminSetUserMFAPreferenceOutcome AdminSetUserMFAPreference(const Model::AdminSetUserMFAPreferenceRequest& request) const;
+
+        /**
+         * <p>Sets the user's multi-factor authentication (MFA) preference.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AdminSetUserMFAPreferenceOutcomeCallable AdminSetUserMFAPreferenceCallable(const Model::AdminSetUserMFAPreferenceRequest& request) const;
+
+        /**
+         * <p>Sets the user's multi-factor authentication (MFA) preference.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AdminSetUserMFAPreferenceAsync(const Model::AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sets all the user settings for a specified user name. Works on any user.</p>
          * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">AWS
@@ -1238,6 +1355,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AdminSetUserSettingsAsync(const Model::AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides feedback for an authentication event as to whether it was from a
+         * valid user. This feedback is used for improving the risk evaluation decision for
+         * the user pool as part of Amazon Cognito advanced security.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateAuthEventFeedback">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AdminUpdateAuthEventFeedbackOutcome AdminUpdateAuthEventFeedback(const Model::AdminUpdateAuthEventFeedbackRequest& request) const;
+
+        /**
+         * <p>Provides feedback for an authentication event as to whether it was from a
+         * valid user. This feedback is used for improving the risk evaluation decision for
+         * the user pool as part of Amazon Cognito advanced security.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateAuthEventFeedback">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AdminUpdateAuthEventFeedbackOutcomeCallable AdminUpdateAuthEventFeedbackCallable(const Model::AdminUpdateAuthEventFeedbackRequest& request) const;
+
+        /**
+         * <p>Provides feedback for an authentication event as to whether it was from a
+         * valid user. This feedback is used for improving the risk evaluation decision for
+         * the user pool as part of Amazon Cognito advanced security.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateAuthEventFeedback">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AdminUpdateAuthEventFeedbackAsync(const Model::AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the device status as an administrator.</p> <p>Requires developer
@@ -1334,6 +1485,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AdminUserGlobalSignOutAsync(const Model::AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a unique generated shared secret key code for the user account. The
+         * request takes an access token or a session string, but not both.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateSoftwareTokenOutcome AssociateSoftwareToken(const Model::AssociateSoftwareTokenRequest& request) const;
+
+        /**
+         * <p>Returns a unique generated shared secret key code for the user account. The
+         * request takes an access token or a session string, but not both.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateSoftwareTokenOutcomeCallable AssociateSoftwareTokenCallable(const Model::AssociateSoftwareTokenRequest& request) const;
+
+        /**
+         * <p>Returns a unique generated shared secret key code for the user account. The
+         * request takes an access token or a session string, but not both.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateSoftwareTokenAsync(const Model::AssociateSoftwareTokenRequest& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the password for a specified user in a user pool.</p><p><h3>See
@@ -1891,6 +2073,31 @@ namespace Model
         virtual void DescribeResourceServerAsync(const Model::DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the risk configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeRiskConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRiskConfigurationOutcome DescribeRiskConfiguration(const Model::DescribeRiskConfigurationRequest& request) const;
+
+        /**
+         * <p>Describes the risk configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeRiskConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRiskConfigurationOutcomeCallable DescribeRiskConfigurationCallable(const Model::DescribeRiskConfigurationRequest& request) const;
+
+        /**
+         * <p>Describes the risk configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeRiskConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRiskConfigurationAsync(const Model::DescribeRiskConfigurationRequest& request, const DescribeRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the user import job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">AWS
          * API Reference</a></p>
@@ -2029,9 +2236,8 @@ namespace Model
          * phone number. Otherwise, if a verified email exists, the confirmation code is
          * sent to the email. If neither a verified phone number nor a verified email
          * exists, <code>InvalidParameterException</code> is thrown. To use the
-         * confirmation code for resetting the password, call <a
-         * href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * confirmation code for resetting the password, call .</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
          * API Reference</a></p>
          */
@@ -2045,9 +2251,8 @@ namespace Model
          * phone number. Otherwise, if a verified email exists, the confirmation code is
          * sent to the email. If neither a verified phone number nor a verified email
          * exists, <code>InvalidParameterException</code> is thrown. To use the
-         * confirmation code for resetting the password, call <a
-         * href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * confirmation code for resetting the password, call .</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
          * API Reference</a></p>
          *
@@ -2063,9 +2268,8 @@ namespace Model
          * phone number. Otherwise, if a verified email exists, the confirmation code is
          * sent to the email. If neither a verified phone number nor a verified email
          * exists, <code>InvalidParameterException</code> is thrown. To use the
-         * confirmation code for resetting the password, call <a
-         * href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * confirmation code for resetting the password, call .</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
          * API Reference</a></p>
          *
@@ -2271,6 +2475,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetUserAttributeVerificationCodeAsync(const Model::GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the user pool multi-factor authentication (MFA)
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolMfaConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetUserPoolMfaConfigOutcome GetUserPoolMfaConfig(const Model::GetUserPoolMfaConfigRequest& request) const;
+
+        /**
+         * <p>Gets the user pool multi-factor authentication (MFA)
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolMfaConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetUserPoolMfaConfigOutcomeCallable GetUserPoolMfaConfigCallable(const Model::GetUserPoolMfaConfigRequest& request) const;
+
+        /**
+         * <p>Gets the user pool multi-factor authentication (MFA)
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolMfaConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetUserPoolMfaConfigAsync(const Model::GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Signs out users from all devices.</p><p><h3>See Also:</h3>   <a
@@ -2619,6 +2851,43 @@ namespace Model
         virtual void RespondToAuthChallengeAsync(const Model::RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Configures actions on detected risks. To delete the risk configuration for
+         * <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four
+         * configuration types.</p> <p>To enable Amazon Cognito advanced security features,
+         * update the user pool to include the <code>UserPoolAddOns</code>
+         * key<code>AdvancedSecurityMode</code>.</p> <p>See .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetRiskConfigurationOutcome SetRiskConfiguration(const Model::SetRiskConfigurationRequest& request) const;
+
+        /**
+         * <p>Configures actions on detected risks. To delete the risk configuration for
+         * <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four
+         * configuration types.</p> <p>To enable Amazon Cognito advanced security features,
+         * update the user pool to include the <code>UserPoolAddOns</code>
+         * key<code>AdvancedSecurityMode</code>.</p> <p>See .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetRiskConfigurationOutcomeCallable SetRiskConfigurationCallable(const Model::SetRiskConfigurationRequest& request) const;
+
+        /**
+         * <p>Configures actions on detected risks. To delete the risk configuration for
+         * <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four
+         * configuration types.</p> <p>To enable Amazon Cognito advanced security features,
+         * update the user pool to include the <code>UserPoolAddOns</code>
+         * key<code>AdvancedSecurityMode</code>.</p> <p>See .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetRiskConfigurationAsync(const Model::SetRiskConfigurationRequest& request, const SetRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sets the UI customization information for a user pool's built-in app UI.</p>
          * <p>You can specify app UI customization settings for a single client (with a
          * specific <code>clientId</code>) or for all clients (by setting the
@@ -2669,6 +2938,59 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SetUICustomizationAsync(const Model::SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Set the user's multi-factor authentication (MFA) method
+         * preference.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetUserMFAPreferenceOutcome SetUserMFAPreference(const Model::SetUserMFAPreferenceRequest& request) const;
+
+        /**
+         * <p>Set the user's multi-factor authentication (MFA) method
+         * preference.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetUserMFAPreferenceOutcomeCallable SetUserMFAPreferenceCallable(const Model::SetUserMFAPreferenceRequest& request) const;
+
+        /**
+         * <p>Set the user's multi-factor authentication (MFA) method
+         * preference.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetUserMFAPreferenceAsync(const Model::SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Set the user pool MFA configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetUserPoolMfaConfigOutcome SetUserPoolMfaConfig(const Model::SetUserPoolMfaConfigRequest& request) const;
+
+        /**
+         * <p>Set the user pool MFA configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetUserPoolMfaConfigOutcomeCallable SetUserPoolMfaConfigCallable(const Model::SetUserPoolMfaConfigRequest& request) const;
+
+        /**
+         * <p>Set the user pool MFA configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetUserPoolMfaConfigAsync(const Model::SetUserPoolMfaConfigRequest& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the user settings like multi-factor authentication (MFA). If MFA is to
@@ -2781,6 +3103,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopUserImportJobAsync(const Model::StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides the feedback for an authentication event whether it was from a valid
+         * user or not. This feedback is used for improving the risk evaluation decision
+         * for the user pool as part of Amazon Cognito advanced security.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAuthEventFeedbackOutcome UpdateAuthEventFeedback(const Model::UpdateAuthEventFeedbackRequest& request) const;
+
+        /**
+         * <p>Provides the feedback for an authentication event whether it was from a valid
+         * user or not. This feedback is used for improving the risk evaluation decision
+         * for the user pool as part of Amazon Cognito advanced security.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAuthEventFeedbackOutcomeCallable UpdateAuthEventFeedbackCallable(const Model::UpdateAuthEventFeedbackRequest& request) const;
+
+        /**
+         * <p>Provides the feedback for an authentication event whether it was from a valid
+         * user or not. This feedback is used for improving the risk evaluation decision
+         * for the user pool as part of Amazon Cognito advanced security.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAuthEventFeedbackAsync(const Model::UpdateAuthEventFeedbackRequest& request, const UpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the device status.</p><p><h3>See Also:</h3>   <a
@@ -2976,6 +3332,37 @@ namespace Model
         virtual void UpdateUserPoolClientAsync(const Model::UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use this API to register a user's entered TOTP code and mark the user's
+         * software token MFA status as "verified" if successful,</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::VerifySoftwareTokenOutcome VerifySoftwareToken(const Model::VerifySoftwareTokenRequest& request) const;
+
+        /**
+         * <p>Use this API to register a user's entered TOTP code and mark the user's
+         * software token MFA status as "verified" if successful,</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::VerifySoftwareTokenOutcomeCallable VerifySoftwareTokenCallable(const Model::VerifySoftwareTokenRequest& request) const;
+
+        /**
+         * <p>Use this API to register a user's entered TOTP code and mark the user's
+         * software token MFA status as "verified" if successful,</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void VerifySoftwareTokenAsync(const Model::VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Verifies the specified user attributes in the user pool.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">AWS
@@ -3024,13 +3411,17 @@ namespace Model
         void AdminLinkProviderForUserAsyncHelper(const Model::AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminListDevicesAsyncHelper(const Model::AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminListGroupsForUserAsyncHelper(const Model::AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AdminListUserAuthEventsAsyncHelper(const Model::AdminListUserAuthEventsRequest& request, const AdminListUserAuthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminRemoveUserFromGroupAsyncHelper(const Model::AdminRemoveUserFromGroupRequest& request, const AdminRemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminResetUserPasswordAsyncHelper(const Model::AdminResetUserPasswordRequest& request, const AdminResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminRespondToAuthChallengeAsyncHelper(const Model::AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AdminSetUserMFAPreferenceAsyncHelper(const Model::AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminSetUserSettingsAsyncHelper(const Model::AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AdminUpdateAuthEventFeedbackAsyncHelper(const Model::AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminUpdateDeviceStatusAsyncHelper(const Model::AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminUpdateUserAttributesAsyncHelper(const Model::AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminUserGlobalSignOutAsyncHelper(const Model::AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateSoftwareTokenAsyncHelper(const Model::AssociateSoftwareTokenRequest& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ChangePasswordAsyncHelper(const Model::ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmDeviceAsyncHelper(const Model::ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmForgotPasswordAsyncHelper(const Model::ConfirmForgotPasswordRequest& request, const ConfirmForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3052,6 +3443,7 @@ namespace Model
         void DeleteUserPoolDomainAsyncHelper(const Model::DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIdentityProviderAsyncHelper(const Model::DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResourceServerAsyncHelper(const Model::DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRiskConfigurationAsyncHelper(const Model::DescribeRiskConfigurationRequest& request, const DescribeRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserImportJobAsyncHelper(const Model::DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserPoolAsyncHelper(const Model::DescribeUserPoolRequest& request, const DescribeUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserPoolClientAsyncHelper(const Model::DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3065,6 +3457,7 @@ namespace Model
         void GetUICustomizationAsyncHelper(const Model::GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAttributeVerificationCodeAsyncHelper(const Model::GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetUserPoolMfaConfigAsyncHelper(const Model::GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GlobalSignOutAsyncHelper(const Model::GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InitiateAuthAsyncHelper(const Model::InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3078,11 +3471,15 @@ namespace Model
         void ListUsersInGroupAsyncHelper(const Model::ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResendConfirmationCodeAsyncHelper(const Model::ResendConfirmationCodeRequest& request, const ResendConfirmationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RespondToAuthChallengeAsyncHelper(const Model::RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetRiskConfigurationAsyncHelper(const Model::SetRiskConfigurationRequest& request, const SetRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetUICustomizationAsyncHelper(const Model::SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetUserMFAPreferenceAsyncHelper(const Model::SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetUserPoolMfaConfigAsyncHelper(const Model::SetUserPoolMfaConfigRequest& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetUserSettingsAsyncHelper(const Model::SetUserSettingsRequest& request, const SetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SignUpAsyncHelper(const Model::SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartUserImportJobAsyncHelper(const Model::StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopUserImportJobAsyncHelper(const Model::StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAuthEventFeedbackAsyncHelper(const Model::UpdateAuthEventFeedbackRequest& request, const UpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeviceStatusAsyncHelper(const Model::UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIdentityProviderAsyncHelper(const Model::UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3090,6 +3487,7 @@ namespace Model
         void UpdateUserAttributesAsyncHelper(const Model::UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserPoolAsyncHelper(const Model::UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserPoolClientAsyncHelper(const Model::UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void VerifySoftwareTokenAsyncHelper(const Model::VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifyUserAttributeAsyncHelper(const Model::VerifyUserAttributeRequest& request, const VerifyUserAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

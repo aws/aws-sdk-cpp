@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cognito-idp/model/AnalyticsConfigurationType.h>
 #include <aws/cognito-idp/model/ExplicitAuthFlowsType.h>
 #include <aws/cognito-idp/model/OAuthFlowType.h>
 #include <utility>
@@ -689,6 +690,32 @@ namespace Model
      */
     inline UserPoolClientType& WithAllowedOAuthFlowsUserPoolClient(bool value) { SetAllowedOAuthFlowsUserPoolClient(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
+     */
+    inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
+     */
+    inline void SetAnalyticsConfiguration(const AnalyticsConfigurationType& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
+     */
+    inline void SetAnalyticsConfiguration(AnalyticsConfigurationType&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
+     */
+    inline UserPoolClientType& WithAnalyticsConfiguration(const AnalyticsConfigurationType& value) { SetAnalyticsConfiguration(value); return *this;}
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
+     */
+    inline UserPoolClientType& WithAnalyticsConfiguration(AnalyticsConfigurationType&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_userPoolId;
@@ -741,6 +768,9 @@ namespace Model
 
     bool m_allowedOAuthFlowsUserPoolClient;
     bool m_allowedOAuthFlowsUserPoolClientHasBeenSet;
+
+    AnalyticsConfigurationType m_analyticsConfiguration;
+    bool m_analyticsConfigurationHasBeenSet;
   };
 
 } // namespace Model

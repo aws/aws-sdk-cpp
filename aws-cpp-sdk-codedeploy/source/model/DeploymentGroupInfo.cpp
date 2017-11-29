@@ -47,7 +47,9 @@ DeploymentGroupInfo::DeploymentGroupInfo() :
     m_lastSuccessfulDeploymentHasBeenSet(false),
     m_lastAttemptedDeploymentHasBeenSet(false),
     m_ec2TagSetHasBeenSet(false),
-    m_onPremisesTagSetHasBeenSet(false)
+    m_onPremisesTagSetHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false)
 {
 }
 
@@ -70,7 +72,9 @@ DeploymentGroupInfo::DeploymentGroupInfo(const JsonValue& jsonValue) :
     m_lastSuccessfulDeploymentHasBeenSet(false),
     m_lastAttemptedDeploymentHasBeenSet(false),
     m_ec2TagSetHasBeenSet(false),
-    m_onPremisesTagSetHasBeenSet(false)
+    m_onPremisesTagSetHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -222,6 +226,13 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(const JsonValue& jsonValue)
     m_onPremisesTagSetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("computePlatform"))
+  {
+    m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
+
+    m_computePlatformHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -361,6 +372,11 @@ JsonValue DeploymentGroupInfo::Jsonize() const
   {
    payload.WithObject("onPremisesTagSet", m_onPremisesTagSet.Jsonize());
 
+  }
+
+  if(m_computePlatformHasBeenSet)
+  {
+   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
   }
 
   return payload;

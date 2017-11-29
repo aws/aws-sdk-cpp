@@ -26,6 +26,7 @@
 #include <aws/codedeploy/model/LastDeploymentInfo.h>
 #include <aws/codedeploy/model/EC2TagSet.h>
 #include <aws/codedeploy/model/OnPremisesTagSet.h>
+#include <aws/codedeploy/model/ComputePlatform.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/TagFilter.h>
 #include <aws/codedeploy/model/AutoScalingGroup.h>
@@ -702,6 +703,37 @@ namespace Model
      */
     inline DeploymentGroupInfo& WithOnPremisesTagSet(OnPremisesTagSet&& value) { SetOnPremisesTagSet(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The destination platform type for the deployment group (<code>Lambda</code>
+     * or <code>Server</code>).</p>
+     */
+    inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+
+    /**
+     * <p>The destination platform type for the deployment group (<code>Lambda</code>
+     * or <code>Server</code>).</p>
+     */
+    inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
+
+    /**
+     * <p>The destination platform type for the deployment group (<code>Lambda</code>
+     * or <code>Server</code>).</p>
+     */
+    inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
+
+    /**
+     * <p>The destination platform type for the deployment group (<code>Lambda</code>
+     * or <code>Server</code>).</p>
+     */
+    inline DeploymentGroupInfo& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
+
+    /**
+     * <p>The destination platform type for the deployment group (<code>Lambda</code>
+     * or <code>Server</code>).</p>
+     */
+    inline DeploymentGroupInfo& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -760,6 +792,9 @@ namespace Model
 
     OnPremisesTagSet m_onPremisesTagSet;
     bool m_onPremisesTagSetHasBeenSet;
+
+    ComputePlatform m_computePlatform;
+    bool m_computePlatformHasBeenSet;
   };
 
 } // namespace Model

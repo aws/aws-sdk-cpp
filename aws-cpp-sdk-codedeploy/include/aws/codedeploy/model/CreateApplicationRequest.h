@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codedeploy/model/ComputePlatform.h>
 #include <utility>
 
 namespace Aws
@@ -90,10 +91,44 @@ namespace Model
      */
     inline CreateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
+    /**
+     * <p>The destination platform type for the deployment <code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+
+    /**
+     * <p>The destination platform type for the deployment <code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
+
+    /**
+     * <p>The destination platform type for the deployment <code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
+
+    /**
+     * <p>The destination platform type for the deployment <code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline CreateApplicationRequest& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
+
+    /**
+     * <p>The destination platform type for the deployment <code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline CreateApplicationRequest& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
+    ComputePlatform m_computePlatform;
+    bool m_computePlatformHasBeenSet;
   };
 
 } // namespace Model

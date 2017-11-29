@@ -116,6 +116,12 @@ GetStageResult& GetStageResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("canarySettings"))
+  {
+    m_canarySettings = jsonValue.GetObject("canarySettings");
+
+  }
+
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");

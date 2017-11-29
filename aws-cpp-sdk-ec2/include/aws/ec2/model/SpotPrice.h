@@ -37,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the maximum hourly price (bid) for any Spot instance launched to
-   * fulfill the request.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the maximum price per hour that you are willing to pay for a Spot
+   * Instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotPrice">AWS API
    * Reference</a></p>
    */
@@ -90,27 +90,27 @@ namespace Model
 
 
     /**
-     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
+     * <p>The instance type.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
+     * <p>The instance type.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
+     * <p>The instance type.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
+     * <p>The instance type.</p>
      */
     inline SpotPrice& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
+     * <p>The instance type.</p>
      */
     inline SpotPrice& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -142,37 +142,44 @@ namespace Model
 
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot
+     * Instance.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot
+     * Instance.</p>
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot
+     * Instance.</p>
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot
+     * Instance.</p>
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot
+     * Instance.</p>
      */
     inline SpotPrice& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot
+     * Instance.</p>
      */
     inline SpotPrice& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot
+     * Instance.</p>
      */
     inline SpotPrice& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 

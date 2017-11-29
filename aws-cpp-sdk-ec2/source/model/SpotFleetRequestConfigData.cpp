@@ -40,6 +40,7 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_fulfilledCapacityHasBeenSet(false),
     m_iamFleetRoleHasBeenSet(false),
     m_launchSpecificationsHasBeenSet(false),
+    m_launchTemplateConfigsHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
@@ -67,6 +68,7 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_fulfilledCapacityHasBeenSet(false),
     m_iamFleetRoleHasBeenSet(false),
     m_launchSpecificationsHasBeenSet(false),
+    m_launchTemplateConfigsHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
@@ -132,6 +134,18 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
       }
 
       m_launchSpecificationsHasBeenSet = true;
+    }
+    XmlNode launchTemplateConfigsNode = resultNode.FirstChild("launchTemplateConfigs");
+    if(!launchTemplateConfigsNode.IsNull())
+    {
+      XmlNode launchTemplateConfigsMember = launchTemplateConfigsNode.FirstChild("item");
+      while(!launchTemplateConfigsMember.IsNull())
+      {
+        m_launchTemplateConfigs.push_back(launchTemplateConfigsMember);
+        launchTemplateConfigsMember = launchTemplateConfigsMember.NextNode("item");
+      }
+
+      m_launchTemplateConfigsHasBeenSet = true;
     }
     XmlNode spotPriceNode = resultNode.FirstChild("spotPrice");
     if(!spotPriceNode.IsNull())
@@ -230,6 +244,17 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       }
   }
 
+  if(m_launchTemplateConfigsHasBeenSet)
+  {
+      unsigned launchTemplateConfigsIdx = 1;
+      for(auto& item : m_launchTemplateConfigs)
+      {
+        Aws::StringStream launchTemplateConfigsSs;
+        launchTemplateConfigsSs << location << index << locationValue << ".LaunchTemplateConfigs." << launchTemplateConfigsIdx++;
+        item.OutputToStream(oStream, launchTemplateConfigsSs.str().c_str());
+      }
+  }
+
   if(m_spotPriceHasBeenSet)
   {
       oStream << location << index << locationValue << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
@@ -309,6 +334,16 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
         Aws::StringStream launchSpecificationsSs;
         launchSpecificationsSs << location <<  ".LaunchSpecifications." << launchSpecificationsIdx++;
         item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
+      }
+  }
+  if(m_launchTemplateConfigsHasBeenSet)
+  {
+      unsigned launchTemplateConfigsIdx = 1;
+      for(auto& item : m_launchTemplateConfigs)
+      {
+        Aws::StringStream launchTemplateConfigsSs;
+        launchTemplateConfigsSs << location <<  ".LaunchTemplateConfigs." << launchTemplateConfigsIdx++;
+        item.OutputToStream(oStream, launchTemplateConfigsSs.str().c_str());
       }
   }
   if(m_spotPriceHasBeenSet)

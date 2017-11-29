@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Spot fleet request that was successfully canceled.</p><p><h3>See
+   * <p>Describes a Spot Fleet request that was successfully canceled.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequestsSuccessItem">AWS
    * API Reference</a></p>
@@ -52,89 +52,89 @@ namespace Model
 
 
     /**
-     * <p>The current state of the Spot fleet request.</p>
+     * <p>The current state of the Spot Fleet request.</p>
      */
     inline const BatchState& GetCurrentSpotFleetRequestState() const{ return m_currentSpotFleetRequestState; }
 
     /**
-     * <p>The current state of the Spot fleet request.</p>
+     * <p>The current state of the Spot Fleet request.</p>
      */
     inline void SetCurrentSpotFleetRequestState(const BatchState& value) { m_currentSpotFleetRequestStateHasBeenSet = true; m_currentSpotFleetRequestState = value; }
 
     /**
-     * <p>The current state of the Spot fleet request.</p>
+     * <p>The current state of the Spot Fleet request.</p>
      */
     inline void SetCurrentSpotFleetRequestState(BatchState&& value) { m_currentSpotFleetRequestStateHasBeenSet = true; m_currentSpotFleetRequestState = std::move(value); }
 
     /**
-     * <p>The current state of the Spot fleet request.</p>
+     * <p>The current state of the Spot Fleet request.</p>
      */
     inline CancelSpotFleetRequestsSuccessItem& WithCurrentSpotFleetRequestState(const BatchState& value) { SetCurrentSpotFleetRequestState(value); return *this;}
 
     /**
-     * <p>The current state of the Spot fleet request.</p>
+     * <p>The current state of the Spot Fleet request.</p>
      */
     inline CancelSpotFleetRequestsSuccessItem& WithCurrentSpotFleetRequestState(BatchState&& value) { SetCurrentSpotFleetRequestState(std::move(value)); return *this;}
 
 
     /**
-     * <p>The previous state of the Spot fleet request.</p>
+     * <p>The previous state of the Spot Fleet request.</p>
      */
     inline const BatchState& GetPreviousSpotFleetRequestState() const{ return m_previousSpotFleetRequestState; }
 
     /**
-     * <p>The previous state of the Spot fleet request.</p>
+     * <p>The previous state of the Spot Fleet request.</p>
      */
     inline void SetPreviousSpotFleetRequestState(const BatchState& value) { m_previousSpotFleetRequestStateHasBeenSet = true; m_previousSpotFleetRequestState = value; }
 
     /**
-     * <p>The previous state of the Spot fleet request.</p>
+     * <p>The previous state of the Spot Fleet request.</p>
      */
     inline void SetPreviousSpotFleetRequestState(BatchState&& value) { m_previousSpotFleetRequestStateHasBeenSet = true; m_previousSpotFleetRequestState = std::move(value); }
 
     /**
-     * <p>The previous state of the Spot fleet request.</p>
+     * <p>The previous state of the Spot Fleet request.</p>
      */
     inline CancelSpotFleetRequestsSuccessItem& WithPreviousSpotFleetRequestState(const BatchState& value) { SetPreviousSpotFleetRequestState(value); return *this;}
 
     /**
-     * <p>The previous state of the Spot fleet request.</p>
+     * <p>The previous state of the Spot Fleet request.</p>
      */
     inline CancelSpotFleetRequestsSuccessItem& WithPreviousSpotFleetRequestState(BatchState&& value) { SetPreviousSpotFleetRequestState(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId.assign(value); }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline CancelSpotFleetRequestsSuccessItem& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline CancelSpotFleetRequestsSuccessItem& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline CancelSpotFleetRequestsSuccessItem& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 

@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an event in the history of the Spot fleet request.</p><p><h3>See
+   * <p>Describes an event in the history of the Spot Fleet request.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HistoryRecord">AWS
    * API Reference</a></p>
@@ -80,8 +80,8 @@ namespace Model
 
     /**
      * <p>The event type.</p> <ul> <li> <p> <code>error</code> - An error with the Spot
-     * fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
-     * the status or configuration of the Spot fleet request.</p> </li> <li> <p>
+     * Fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
+     * the status or configuration of the Spot Fleet request.</p> </li> <li> <p>
      * <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
      * <li> <p> <code>Information</code> - An informational event.</p> </li> </ul>
      */
@@ -89,8 +89,8 @@ namespace Model
 
     /**
      * <p>The event type.</p> <ul> <li> <p> <code>error</code> - An error with the Spot
-     * fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
-     * the status or configuration of the Spot fleet request.</p> </li> <li> <p>
+     * Fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
+     * the status or configuration of the Spot Fleet request.</p> </li> <li> <p>
      * <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
      * <li> <p> <code>Information</code> - An informational event.</p> </li> </ul>
      */
@@ -98,8 +98,8 @@ namespace Model
 
     /**
      * <p>The event type.</p> <ul> <li> <p> <code>error</code> - An error with the Spot
-     * fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
-     * the status or configuration of the Spot fleet request.</p> </li> <li> <p>
+     * Fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
+     * the status or configuration of the Spot Fleet request.</p> </li> <li> <p>
      * <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
      * <li> <p> <code>Information</code> - An informational event.</p> </li> </ul>
      */
@@ -107,8 +107,8 @@ namespace Model
 
     /**
      * <p>The event type.</p> <ul> <li> <p> <code>error</code> - An error with the Spot
-     * fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
-     * the status or configuration of the Spot fleet request.</p> </li> <li> <p>
+     * Fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
+     * the status or configuration of the Spot Fleet request.</p> </li> <li> <p>
      * <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
      * <li> <p> <code>Information</code> - An informational event.</p> </li> </ul>
      */
@@ -116,8 +116,8 @@ namespace Model
 
     /**
      * <p>The event type.</p> <ul> <li> <p> <code>error</code> - An error with the Spot
-     * fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
-     * the status or configuration of the Spot fleet request.</p> </li> <li> <p>
+     * Fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
+     * the status or configuration of the Spot Fleet request.</p> </li> <li> <p>
      * <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
      * <li> <p> <code>Information</code> - An informational event.</p> </li> </ul>
      */

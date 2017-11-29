@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The result type of the authentication result.</p><p><h3>See Also:</h3>   <a
+   * <p>The authentication result.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AuthenticationResultType">AWS
    * API Reference</a></p>
    */
@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The access token of the authentication result.</p>
+     * <p>The access token.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>The access token of the authentication result.</p>
+     * <p>The access token.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>The access token of the authentication result.</p>
+     * <p>The access token.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>The access token of the authentication result.</p>
+     * <p>The access token.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>The access token of the authentication result.</p>
+     * <p>The access token.</p>
      */
     inline AuthenticationResultType& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>The access token of the authentication result.</p>
+     * <p>The access token.</p>
      */
     inline AuthenticationResultType& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>The access token of the authentication result.</p>
+     * <p>The access token.</p>
      */
     inline AuthenticationResultType& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
@@ -100,109 +100,109 @@ namespace Model
 
 
     /**
-     * <p>The token type of the authentication result.</p>
+     * <p>The token type.</p>
      */
     inline const Aws::String& GetTokenType() const{ return m_tokenType; }
 
     /**
-     * <p>The token type of the authentication result.</p>
+     * <p>The token type.</p>
      */
     inline void SetTokenType(const Aws::String& value) { m_tokenTypeHasBeenSet = true; m_tokenType = value; }
 
     /**
-     * <p>The token type of the authentication result.</p>
+     * <p>The token type.</p>
      */
     inline void SetTokenType(Aws::String&& value) { m_tokenTypeHasBeenSet = true; m_tokenType = std::move(value); }
 
     /**
-     * <p>The token type of the authentication result.</p>
+     * <p>The token type.</p>
      */
     inline void SetTokenType(const char* value) { m_tokenTypeHasBeenSet = true; m_tokenType.assign(value); }
 
     /**
-     * <p>The token type of the authentication result.</p>
+     * <p>The token type.</p>
      */
     inline AuthenticationResultType& WithTokenType(const Aws::String& value) { SetTokenType(value); return *this;}
 
     /**
-     * <p>The token type of the authentication result.</p>
+     * <p>The token type.</p>
      */
     inline AuthenticationResultType& WithTokenType(Aws::String&& value) { SetTokenType(std::move(value)); return *this;}
 
     /**
-     * <p>The token type of the authentication result.</p>
+     * <p>The token type.</p>
      */
     inline AuthenticationResultType& WithTokenType(const char* value) { SetTokenType(value); return *this;}
 
 
     /**
-     * <p>The refresh token of the authentication result.</p>
+     * <p>The refresh token.</p>
      */
     inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
 
     /**
-     * <p>The refresh token of the authentication result.</p>
+     * <p>The refresh token.</p>
      */
     inline void SetRefreshToken(const Aws::String& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
 
     /**
-     * <p>The refresh token of the authentication result.</p>
+     * <p>The refresh token.</p>
      */
     inline void SetRefreshToken(Aws::String&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
 
     /**
-     * <p>The refresh token of the authentication result.</p>
+     * <p>The refresh token.</p>
      */
     inline void SetRefreshToken(const char* value) { m_refreshTokenHasBeenSet = true; m_refreshToken.assign(value); }
 
     /**
-     * <p>The refresh token of the authentication result.</p>
+     * <p>The refresh token.</p>
      */
     inline AuthenticationResultType& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
 
     /**
-     * <p>The refresh token of the authentication result.</p>
+     * <p>The refresh token.</p>
      */
     inline AuthenticationResultType& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
 
     /**
-     * <p>The refresh token of the authentication result.</p>
+     * <p>The refresh token.</p>
      */
     inline AuthenticationResultType& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
 
 
     /**
-     * <p>The ID token of the authentication result.</p>
+     * <p>The ID token.</p>
      */
     inline const Aws::String& GetIdToken() const{ return m_idToken; }
 
     /**
-     * <p>The ID token of the authentication result.</p>
+     * <p>The ID token.</p>
      */
     inline void SetIdToken(const Aws::String& value) { m_idTokenHasBeenSet = true; m_idToken = value; }
 
     /**
-     * <p>The ID token of the authentication result.</p>
+     * <p>The ID token.</p>
      */
     inline void SetIdToken(Aws::String&& value) { m_idTokenHasBeenSet = true; m_idToken = std::move(value); }
 
     /**
-     * <p>The ID token of the authentication result.</p>
+     * <p>The ID token.</p>
      */
     inline void SetIdToken(const char* value) { m_idTokenHasBeenSet = true; m_idToken.assign(value); }
 
     /**
-     * <p>The ID token of the authentication result.</p>
+     * <p>The ID token.</p>
      */
     inline AuthenticationResultType& WithIdToken(const Aws::String& value) { SetIdToken(value); return *this;}
 
     /**
-     * <p>The ID token of the authentication result.</p>
+     * <p>The ID token.</p>
      */
     inline AuthenticationResultType& WithIdToken(Aws::String&& value) { SetIdToken(std::move(value)); return *this;}
 
     /**
-     * <p>The ID token of the authentication result.</p>
+     * <p>The ID token.</p>
      */
     inline AuthenticationResultType& WithIdToken(const char* value) { SetIdToken(value); return *this;}
 

@@ -28,7 +28,9 @@ AdminRespondToAuthChallengeRequest::AdminRespondToAuthChallengeRequest() :
     m_challengeName(ChallengeNameType::NOT_SET),
     m_challengeNameHasBeenSet(false),
     m_challengeResponsesHasBeenSet(false),
-    m_sessionHasBeenSet(false)
+    m_sessionHasBeenSet(false),
+    m_analyticsMetadataHasBeenSet(false),
+    m_contextDataHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,18 @@ Aws::String AdminRespondToAuthChallengeRequest::SerializePayload() const
   if(m_sessionHasBeenSet)
   {
    payload.WithString("Session", m_session);
+
+  }
+
+  if(m_analyticsMetadataHasBeenSet)
+  {
+   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
+
+  }
+
+  if(m_contextDataHasBeenSet)
+  {
+   payload.WithObject("ContextData", m_contextData.Jsonize());
 
   }
 

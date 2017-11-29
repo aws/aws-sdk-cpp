@@ -36,7 +36,8 @@ LambdaConfigType::LambdaConfigType() :
     m_postAuthenticationHasBeenSet(false),
     m_defineAuthChallengeHasBeenSet(false),
     m_createAuthChallengeHasBeenSet(false),
-    m_verifyAuthChallengeResponseHasBeenSet(false)
+    m_verifyAuthChallengeResponseHasBeenSet(false),
+    m_preTokenGenerationHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ LambdaConfigType::LambdaConfigType(const JsonValue& jsonValue) :
     m_postAuthenticationHasBeenSet(false),
     m_defineAuthChallengeHasBeenSet(false),
     m_createAuthChallengeHasBeenSet(false),
-    m_verifyAuthChallengeResponseHasBeenSet(false)
+    m_verifyAuthChallengeResponseHasBeenSet(false),
+    m_preTokenGenerationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +113,13 @@ LambdaConfigType& LambdaConfigType::operator =(const JsonValue& jsonValue)
     m_verifyAuthChallengeResponseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PreTokenGeneration"))
+  {
+    m_preTokenGeneration = jsonValue.GetString("PreTokenGeneration");
+
+    m_preTokenGenerationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +172,12 @@ JsonValue LambdaConfigType::Jsonize() const
   if(m_verifyAuthChallengeResponseHasBeenSet)
   {
    payload.WithString("VerifyAuthChallengeResponse", m_verifyAuthChallengeResponse);
+
+  }
+
+  if(m_preTokenGenerationHasBeenSet)
+  {
+   payload.WithString("PreTokenGeneration", m_preTokenGeneration);
 
   }
 

@@ -132,50 +132,71 @@ namespace Model
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
-     * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
+     * validation on the code you are publishing. If you provide this parameter, the
+     * value must match the SHA256 of the $LATEST version for the publication to
+     * succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to
+     * verify the hash value that will be returned before publishing your new
+     * version.</p>
      */
     inline const Aws::String& GetCodeSha256() const{ return m_codeSha256; }
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
-     * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
+     * validation on the code you are publishing. If you provide this parameter, the
+     * value must match the SHA256 of the $LATEST version for the publication to
+     * succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to
+     * verify the hash value that will be returned before publishing your new
+     * version.</p>
      */
     inline void SetCodeSha256(const Aws::String& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = value; }
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
-     * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
+     * validation on the code you are publishing. If you provide this parameter, the
+     * value must match the SHA256 of the $LATEST version for the publication to
+     * succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to
+     * verify the hash value that will be returned before publishing your new
+     * version.</p>
      */
     inline void SetCodeSha256(Aws::String&& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = std::move(value); }
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
-     * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
+     * validation on the code you are publishing. If you provide this parameter, the
+     * value must match the SHA256 of the $LATEST version for the publication to
+     * succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to
+     * verify the hash value that will be returned before publishing your new
+     * version.</p>
      */
     inline void SetCodeSha256(const char* value) { m_codeSha256HasBeenSet = true; m_codeSha256.assign(value); }
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
-     * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
+     * validation on the code you are publishing. If you provide this parameter, the
+     * value must match the SHA256 of the $LATEST version for the publication to
+     * succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to
+     * verify the hash value that will be returned before publishing your new
+     * version.</p>
      */
     inline PublishVersionRequest& WithCodeSha256(const Aws::String& value) { SetCodeSha256(value); return *this;}
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
-     * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
+     * validation on the code you are publishing. If you provide this parameter, the
+     * value must match the SHA256 of the $LATEST version for the publication to
+     * succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to
+     * verify the hash value that will be returned before publishing your new
+     * version.</p>
      */
     inline PublishVersionRequest& WithCodeSha256(Aws::String&& value) { SetCodeSha256(std::move(value)); return *this;}
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
-     * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
+     * validation on the code you are publishing. If you provide this parameter, the
+     * value must match the SHA256 of the $LATEST version for the publication to
+     * succeed. You can use the <b>DryRun</b> parameter of <a>UpdateFunctionCode</a> to
+     * verify the hash value that will be returned before publishing your new
+     * version.</p>
      */
     inline PublishVersionRequest& WithCodeSha256(const char* value) { SetCodeSha256(value); return *this;}
 

@@ -55,145 +55,152 @@ namespace Model
   public:
 
     /**
-     * <p>The user-specified name for a logical grouping of bids.</p> <p>When you
+     * <p>The user-specified name for a logical grouping of requests.</p> <p>When you
      * specify an Availability Zone group in a Spot Instance request, all Spot
-     * instances in the request are launched in the same Availability Zone. Instance
+     * Instances in the request are launched in the same Availability Zone. Instance
      * proximity is maintained with this parameter, but the choice of Availability Zone
-     * is not. The group applies only to bids for Spot Instances of the same instance
-     * type. Any additional Spot instance requests that are specified with the same
-     * Availability Zone group name are launched in that same Availability Zone, as
-     * long as at least one instance from the group is still active.</p> <p>If there is
-     * no active instance running in the Availability Zone group that you specify for a
-     * new Spot instance request (all instances are terminated, the bid is expired, or
-     * the bid falls below current market), then Amazon EC2 launches the instance in
-     * any Availability Zone where the constraint can be met. Consequently, the
-     * subsequent set of Spot instances could be placed in a different zone from the
-     * original request, even if you specified the same Availability Zone group.</p>
-     * <p>Default: Instances are launched in any available Availability Zone.</p>
+     * is not. The group applies only to requests for Spot Instances of the same
+     * instance type. Any additional Spot Instance requests that are specified with the
+     * same Availability Zone group name are launched in that same Availability Zone,
+     * as long as at least one instance from the group is still active.</p> <p>If there
+     * is no active instance running in the Availability Zone group that you specify
+     * for a new Spot Instance request (all instances are terminated, the request is
+     * expired, or the maximum price you specified falls below current Spot price),
+     * then Amazon EC2 launches the instance in any Availability Zone where the
+     * constraint can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you specified
+     * the same Availability Zone group.</p> <p>Default: Instances are launched in any
+     * available Availability Zone.</p>
      */
     inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
 
     /**
-     * <p>The user-specified name for a logical grouping of bids.</p> <p>When you
+     * <p>The user-specified name for a logical grouping of requests.</p> <p>When you
      * specify an Availability Zone group in a Spot Instance request, all Spot
-     * instances in the request are launched in the same Availability Zone. Instance
+     * Instances in the request are launched in the same Availability Zone. Instance
      * proximity is maintained with this parameter, but the choice of Availability Zone
-     * is not. The group applies only to bids for Spot Instances of the same instance
-     * type. Any additional Spot instance requests that are specified with the same
-     * Availability Zone group name are launched in that same Availability Zone, as
-     * long as at least one instance from the group is still active.</p> <p>If there is
-     * no active instance running in the Availability Zone group that you specify for a
-     * new Spot instance request (all instances are terminated, the bid is expired, or
-     * the bid falls below current market), then Amazon EC2 launches the instance in
-     * any Availability Zone where the constraint can be met. Consequently, the
-     * subsequent set of Spot instances could be placed in a different zone from the
-     * original request, even if you specified the same Availability Zone group.</p>
-     * <p>Default: Instances are launched in any available Availability Zone.</p>
+     * is not. The group applies only to requests for Spot Instances of the same
+     * instance type. Any additional Spot Instance requests that are specified with the
+     * same Availability Zone group name are launched in that same Availability Zone,
+     * as long as at least one instance from the group is still active.</p> <p>If there
+     * is no active instance running in the Availability Zone group that you specify
+     * for a new Spot Instance request (all instances are terminated, the request is
+     * expired, or the maximum price you specified falls below current Spot price),
+     * then Amazon EC2 launches the instance in any Availability Zone where the
+     * constraint can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you specified
+     * the same Availability Zone group.</p> <p>Default: Instances are launched in any
+     * available Availability Zone.</p>
      */
     inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
 
     /**
-     * <p>The user-specified name for a logical grouping of bids.</p> <p>When you
+     * <p>The user-specified name for a logical grouping of requests.</p> <p>When you
      * specify an Availability Zone group in a Spot Instance request, all Spot
-     * instances in the request are launched in the same Availability Zone. Instance
+     * Instances in the request are launched in the same Availability Zone. Instance
      * proximity is maintained with this parameter, but the choice of Availability Zone
-     * is not. The group applies only to bids for Spot Instances of the same instance
-     * type. Any additional Spot instance requests that are specified with the same
-     * Availability Zone group name are launched in that same Availability Zone, as
-     * long as at least one instance from the group is still active.</p> <p>If there is
-     * no active instance running in the Availability Zone group that you specify for a
-     * new Spot instance request (all instances are terminated, the bid is expired, or
-     * the bid falls below current market), then Amazon EC2 launches the instance in
-     * any Availability Zone where the constraint can be met. Consequently, the
-     * subsequent set of Spot instances could be placed in a different zone from the
-     * original request, even if you specified the same Availability Zone group.</p>
-     * <p>Default: Instances are launched in any available Availability Zone.</p>
+     * is not. The group applies only to requests for Spot Instances of the same
+     * instance type. Any additional Spot Instance requests that are specified with the
+     * same Availability Zone group name are launched in that same Availability Zone,
+     * as long as at least one instance from the group is still active.</p> <p>If there
+     * is no active instance running in the Availability Zone group that you specify
+     * for a new Spot Instance request (all instances are terminated, the request is
+     * expired, or the maximum price you specified falls below current Spot price),
+     * then Amazon EC2 launches the instance in any Availability Zone where the
+     * constraint can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you specified
+     * the same Availability Zone group.</p> <p>Default: Instances are launched in any
+     * available Availability Zone.</p>
      */
     inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
 
     /**
-     * <p>The user-specified name for a logical grouping of bids.</p> <p>When you
+     * <p>The user-specified name for a logical grouping of requests.</p> <p>When you
      * specify an Availability Zone group in a Spot Instance request, all Spot
-     * instances in the request are launched in the same Availability Zone. Instance
+     * Instances in the request are launched in the same Availability Zone. Instance
      * proximity is maintained with this parameter, but the choice of Availability Zone
-     * is not. The group applies only to bids for Spot Instances of the same instance
-     * type. Any additional Spot instance requests that are specified with the same
-     * Availability Zone group name are launched in that same Availability Zone, as
-     * long as at least one instance from the group is still active.</p> <p>If there is
-     * no active instance running in the Availability Zone group that you specify for a
-     * new Spot instance request (all instances are terminated, the bid is expired, or
-     * the bid falls below current market), then Amazon EC2 launches the instance in
-     * any Availability Zone where the constraint can be met. Consequently, the
-     * subsequent set of Spot instances could be placed in a different zone from the
-     * original request, even if you specified the same Availability Zone group.</p>
-     * <p>Default: Instances are launched in any available Availability Zone.</p>
+     * is not. The group applies only to requests for Spot Instances of the same
+     * instance type. Any additional Spot Instance requests that are specified with the
+     * same Availability Zone group name are launched in that same Availability Zone,
+     * as long as at least one instance from the group is still active.</p> <p>If there
+     * is no active instance running in the Availability Zone group that you specify
+     * for a new Spot Instance request (all instances are terminated, the request is
+     * expired, or the maximum price you specified falls below current Spot price),
+     * then Amazon EC2 launches the instance in any Availability Zone where the
+     * constraint can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you specified
+     * the same Availability Zone group.</p> <p>Default: Instances are launched in any
+     * available Availability Zone.</p>
      */
     inline void SetAvailabilityZoneGroup(const char* value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup.assign(value); }
 
     /**
-     * <p>The user-specified name for a logical grouping of bids.</p> <p>When you
+     * <p>The user-specified name for a logical grouping of requests.</p> <p>When you
      * specify an Availability Zone group in a Spot Instance request, all Spot
-     * instances in the request are launched in the same Availability Zone. Instance
+     * Instances in the request are launched in the same Availability Zone. Instance
      * proximity is maintained with this parameter, but the choice of Availability Zone
-     * is not. The group applies only to bids for Spot Instances of the same instance
-     * type. Any additional Spot instance requests that are specified with the same
-     * Availability Zone group name are launched in that same Availability Zone, as
-     * long as at least one instance from the group is still active.</p> <p>If there is
-     * no active instance running in the Availability Zone group that you specify for a
-     * new Spot instance request (all instances are terminated, the bid is expired, or
-     * the bid falls below current market), then Amazon EC2 launches the instance in
-     * any Availability Zone where the constraint can be met. Consequently, the
-     * subsequent set of Spot instances could be placed in a different zone from the
-     * original request, even if you specified the same Availability Zone group.</p>
-     * <p>Default: Instances are launched in any available Availability Zone.</p>
+     * is not. The group applies only to requests for Spot Instances of the same
+     * instance type. Any additional Spot Instance requests that are specified with the
+     * same Availability Zone group name are launched in that same Availability Zone,
+     * as long as at least one instance from the group is still active.</p> <p>If there
+     * is no active instance running in the Availability Zone group that you specify
+     * for a new Spot Instance request (all instances are terminated, the request is
+     * expired, or the maximum price you specified falls below current Spot price),
+     * then Amazon EC2 launches the instance in any Availability Zone where the
+     * constraint can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you specified
+     * the same Availability Zone group.</p> <p>Default: Instances are launched in any
+     * available Availability Zone.</p>
      */
     inline RequestSpotInstancesRequest& WithAvailabilityZoneGroup(const Aws::String& value) { SetAvailabilityZoneGroup(value); return *this;}
 
     /**
-     * <p>The user-specified name for a logical grouping of bids.</p> <p>When you
+     * <p>The user-specified name for a logical grouping of requests.</p> <p>When you
      * specify an Availability Zone group in a Spot Instance request, all Spot
-     * instances in the request are launched in the same Availability Zone. Instance
+     * Instances in the request are launched in the same Availability Zone. Instance
      * proximity is maintained with this parameter, but the choice of Availability Zone
-     * is not. The group applies only to bids for Spot Instances of the same instance
-     * type. Any additional Spot instance requests that are specified with the same
-     * Availability Zone group name are launched in that same Availability Zone, as
-     * long as at least one instance from the group is still active.</p> <p>If there is
-     * no active instance running in the Availability Zone group that you specify for a
-     * new Spot instance request (all instances are terminated, the bid is expired, or
-     * the bid falls below current market), then Amazon EC2 launches the instance in
-     * any Availability Zone where the constraint can be met. Consequently, the
-     * subsequent set of Spot instances could be placed in a different zone from the
-     * original request, even if you specified the same Availability Zone group.</p>
-     * <p>Default: Instances are launched in any available Availability Zone.</p>
+     * is not. The group applies only to requests for Spot Instances of the same
+     * instance type. Any additional Spot Instance requests that are specified with the
+     * same Availability Zone group name are launched in that same Availability Zone,
+     * as long as at least one instance from the group is still active.</p> <p>If there
+     * is no active instance running in the Availability Zone group that you specify
+     * for a new Spot Instance request (all instances are terminated, the request is
+     * expired, or the maximum price you specified falls below current Spot price),
+     * then Amazon EC2 launches the instance in any Availability Zone where the
+     * constraint can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you specified
+     * the same Availability Zone group.</p> <p>Default: Instances are launched in any
+     * available Availability Zone.</p>
      */
     inline RequestSpotInstancesRequest& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The user-specified name for a logical grouping of bids.</p> <p>When you
+     * <p>The user-specified name for a logical grouping of requests.</p> <p>When you
      * specify an Availability Zone group in a Spot Instance request, all Spot
-     * instances in the request are launched in the same Availability Zone. Instance
+     * Instances in the request are launched in the same Availability Zone. Instance
      * proximity is maintained with this parameter, but the choice of Availability Zone
-     * is not. The group applies only to bids for Spot Instances of the same instance
-     * type. Any additional Spot instance requests that are specified with the same
-     * Availability Zone group name are launched in that same Availability Zone, as
-     * long as at least one instance from the group is still active.</p> <p>If there is
-     * no active instance running in the Availability Zone group that you specify for a
-     * new Spot instance request (all instances are terminated, the bid is expired, or
-     * the bid falls below current market), then Amazon EC2 launches the instance in
-     * any Availability Zone where the constraint can be met. Consequently, the
-     * subsequent set of Spot instances could be placed in a different zone from the
-     * original request, even if you specified the same Availability Zone group.</p>
-     * <p>Default: Instances are launched in any available Availability Zone.</p>
+     * is not. The group applies only to requests for Spot Instances of the same
+     * instance type. Any additional Spot Instance requests that are specified with the
+     * same Availability Zone group name are launched in that same Availability Zone,
+     * as long as at least one instance from the group is still active.</p> <p>If there
+     * is no active instance running in the Availability Zone group that you specify
+     * for a new Spot Instance request (all instances are terminated, the request is
+     * expired, or the maximum price you specified falls below current Spot price),
+     * then Amazon EC2 launches the instance in any Availability Zone where the
+     * constraint can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you specified
+     * the same Availability Zone group.</p> <p>Default: Instances are launched in any
+     * available Availability Zone.</p>
      */
     inline RequestSpotInstancesRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
 
 
     /**
-     * <p>The required duration for the Spot instances (also known as Spot blocks), in
+     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
      * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot instance receives
+     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
      * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * instance for termination and provides a Spot instance termination notice, which
+     * Instance for termination and provides a Spot Instance termination notice, which
      * gives the instance a two-minute warning before it terminates.</p> <p>Note that
      * you can't specify an Availability Zone group or a launch group if you specify a
      * duration.</p>
@@ -201,11 +208,11 @@ namespace Model
     inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
 
     /**
-     * <p>The required duration for the Spot instances (also known as Spot blocks), in
+     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
      * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot instance receives
+     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
      * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * instance for termination and provides a Spot instance termination notice, which
+     * Instance for termination and provides a Spot Instance termination notice, which
      * gives the instance a two-minute warning before it terminates.</p> <p>Note that
      * you can't specify an Availability Zone group or a launch group if you specify a
      * duration.</p>
@@ -213,11 +220,11 @@ namespace Model
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
-     * <p>The required duration for the Spot instances (also known as Spot blocks), in
+     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
      * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot instance receives
+     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
      * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * instance for termination and provides a Spot instance termination notice, which
+     * Instance for termination and provides a Spot Instance termination notice, which
      * gives the instance a two-minute warning before it terminates.</p> <p>Note that
      * you can't specify an Availability Zone group or a launch group if you specify a
      * duration.</p>
@@ -315,65 +322,65 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of Spot instances to launch.</p> <p>Default: 1</p>
+     * <p>The maximum number of Spot Instances to launch.</p> <p>Default: 1</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The maximum number of Spot instances to launch.</p> <p>Default: 1</p>
+     * <p>The maximum number of Spot Instances to launch.</p> <p>Default: 1</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The maximum number of Spot instances to launch.</p> <p>Default: 1</p>
+     * <p>The maximum number of Spot Instances to launch.</p> <p>Default: 1</p>
      */
     inline RequestSpotInstancesRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
 
     /**
-     * <p>The instance launch group. Launch groups are Spot instances that launch
+     * <p>The instance launch group. Launch groups are Spot Instances that launch
      * together and terminate together.</p> <p>Default: Instances are launched and
      * terminated individually</p>
      */
     inline const Aws::String& GetLaunchGroup() const{ return m_launchGroup; }
 
     /**
-     * <p>The instance launch group. Launch groups are Spot instances that launch
+     * <p>The instance launch group. Launch groups are Spot Instances that launch
      * together and terminate together.</p> <p>Default: Instances are launched and
      * terminated individually</p>
      */
     inline void SetLaunchGroup(const Aws::String& value) { m_launchGroupHasBeenSet = true; m_launchGroup = value; }
 
     /**
-     * <p>The instance launch group. Launch groups are Spot instances that launch
+     * <p>The instance launch group. Launch groups are Spot Instances that launch
      * together and terminate together.</p> <p>Default: Instances are launched and
      * terminated individually</p>
      */
     inline void SetLaunchGroup(Aws::String&& value) { m_launchGroupHasBeenSet = true; m_launchGroup = std::move(value); }
 
     /**
-     * <p>The instance launch group. Launch groups are Spot instances that launch
+     * <p>The instance launch group. Launch groups are Spot Instances that launch
      * together and terminate together.</p> <p>Default: Instances are launched and
      * terminated individually</p>
      */
     inline void SetLaunchGroup(const char* value) { m_launchGroupHasBeenSet = true; m_launchGroup.assign(value); }
 
     /**
-     * <p>The instance launch group. Launch groups are Spot instances that launch
+     * <p>The instance launch group. Launch groups are Spot Instances that launch
      * together and terminate together.</p> <p>Default: Instances are launched and
      * terminated individually</p>
      */
     inline RequestSpotInstancesRequest& WithLaunchGroup(const Aws::String& value) { SetLaunchGroup(value); return *this;}
 
     /**
-     * <p>The instance launch group. Launch groups are Spot instances that launch
+     * <p>The instance launch group. Launch groups are Spot Instances that launch
      * together and terminate together.</p> <p>Default: Instances are launched and
      * terminated individually</p>
      */
     inline RequestSpotInstancesRequest& WithLaunchGroup(Aws::String&& value) { SetLaunchGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The instance launch group. Launch groups are Spot instances that launch
+     * <p>The instance launch group. Launch groups are Spot Instances that launch
      * together and terminate together.</p> <p>Default: Instances are launched and
      * terminated individually</p>
      */
@@ -407,70 +414,70 @@ namespace Model
 
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
-     * request.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
+     * The default is the On-Demand price.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
-     * request.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
+     * The default is the On-Demand price.</p>
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
-     * request.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
+     * The default is the On-Demand price.</p>
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
-     * request.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
+     * The default is the On-Demand price.</p>
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
-     * request.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
+     * The default is the On-Demand price.</p>
      */
     inline RequestSpotInstancesRequest& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
-     * request.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
+     * The default is the On-Demand price.</p>
      */
     inline RequestSpotInstancesRequest& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
-     * request.</p>
+     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
+     * The default is the On-Demand price.</p>
      */
     inline RequestSpotInstancesRequest& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
 
     /**
-     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
+     * <p>The Spot Instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline const SpotInstanceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
+     * <p>The Spot Instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline void SetType(const SpotInstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
+     * <p>The Spot Instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline void SetType(SpotInstanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
+     * <p>The Spot Instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline RequestSpotInstancesRequest& WithType(const SpotInstanceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
+     * <p>The Spot Instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline RequestSpotInstancesRequest& WithType(SpotInstanceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -480,8 +487,7 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p> <p>Default: The request is effective
-     * indefinitely.</p>
+     * until it expires or is canceled.</p>
      */
     inline const Aws::Utils::DateTime& GetValidFrom() const{ return m_validFrom; }
 
@@ -490,8 +496,7 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p> <p>Default: The request is effective
-     * indefinitely.</p>
+     * until it expires or is canceled.</p>
      */
     inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
 
@@ -500,8 +505,7 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p> <p>Default: The request is effective
-     * indefinitely.</p>
+     * until it expires or is canceled.</p>
      */
     inline void SetValidFrom(Aws::Utils::DateTime&& value) { m_validFromHasBeenSet = true; m_validFrom = std::move(value); }
 
@@ -510,8 +514,7 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p> <p>Default: The request is effective
-     * indefinitely.</p>
+     * until it expires or is canceled.</p>
      */
     inline RequestSpotInstancesRequest& WithValidFrom(const Aws::Utils::DateTime& value) { SetValidFrom(value); return *this;}
 
@@ -520,8 +523,7 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p> <p>Default: The request is effective
-     * indefinitely.</p>
+     * until it expires or is canceled.</p>
      */
     inline RequestSpotInstancesRequest& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(std::move(value)); return *this;}
 
@@ -530,8 +532,8 @@ namespace Model
      * <p>The end date of the request. If this is a one-time request, the request
      * remains active until all instances launch, the request is canceled, or this date
      * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date and time is reached.</p> <p>Default: The request is effective
-     * indefinitely.</p>
+     * or this date is reached. The default end date is 7 days from the current
+     * date.</p>
      */
     inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
@@ -539,8 +541,8 @@ namespace Model
      * <p>The end date of the request. If this is a one-time request, the request
      * remains active until all instances launch, the request is canceled, or this date
      * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date and time is reached.</p> <p>Default: The request is effective
-     * indefinitely.</p>
+     * or this date is reached. The default end date is 7 days from the current
+     * date.</p>
      */
     inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
@@ -548,8 +550,8 @@ namespace Model
      * <p>The end date of the request. If this is a one-time request, the request
      * remains active until all instances launch, the request is canceled, or this date
      * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date and time is reached.</p> <p>Default: The request is effective
-     * indefinitely.</p>
+     * or this date is reached. The default end date is 7 days from the current
+     * date.</p>
      */
     inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
 
@@ -557,8 +559,8 @@ namespace Model
      * <p>The end date of the request. If this is a one-time request, the request
      * remains active until all instances launch, the request is canceled, or this date
      * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date and time is reached.</p> <p>Default: The request is effective
-     * indefinitely.</p>
+     * or this date is reached. The default end date is 7 days from the current
+     * date.</p>
      */
     inline RequestSpotInstancesRequest& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
 
@@ -566,39 +568,39 @@ namespace Model
      * <p>The end date of the request. If this is a one-time request, the request
      * remains active until all instances launch, the request is canceled, or this date
      * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date and time is reached.</p> <p>Default: The request is effective
-     * indefinitely.</p>
+     * or this date is reached. The default end date is 7 days from the current
+     * date.</p>
      */
     inline RequestSpotInstancesRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether a Spot instance stops or terminates when it is
-     * interrupted.</p>
+     * <p>The behavior when a Spot Instance is interrupted. The default is
+     * <code>terminate</code>.</p>
      */
     inline const InstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
 
     /**
-     * <p>Indicates whether a Spot instance stops or terminates when it is
-     * interrupted.</p>
+     * <p>The behavior when a Spot Instance is interrupted. The default is
+     * <code>terminate</code>.</p>
      */
     inline void SetInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
 
     /**
-     * <p>Indicates whether a Spot instance stops or terminates when it is
-     * interrupted.</p>
+     * <p>The behavior when a Spot Instance is interrupted. The default is
+     * <code>terminate</code>.</p>
      */
     inline void SetInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = std::move(value); }
 
     /**
-     * <p>Indicates whether a Spot instance stops or terminates when it is
-     * interrupted.</p>
+     * <p>The behavior when a Spot Instance is interrupted. The default is
+     * <code>terminate</code>.</p>
      */
     inline RequestSpotInstancesRequest& WithInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { SetInstanceInterruptionBehavior(value); return *this;}
 
     /**
-     * <p>Indicates whether a Spot instance stops or terminates when it is
-     * interrupted.</p>
+     * <p>The behavior when a Spot Instance is interrupted. The default is
+     * <code>terminate</code>.</p>
      */
     inline RequestSpotInstancesRequest& WithInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
 

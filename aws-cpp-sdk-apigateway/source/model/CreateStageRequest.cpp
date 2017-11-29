@@ -32,7 +32,8 @@ CreateStageRequest::CreateStageRequest() :
     m_cacheClusterSize(CacheClusterSize::NOT_SET),
     m_cacheClusterSizeHasBeenSet(false),
     m_variablesHasBeenSet(false),
-    m_documentationVersionHasBeenSet(false)
+    m_documentationVersionHasBeenSet(false),
+    m_canarySettingsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,12 @@ Aws::String CreateStageRequest::SerializePayload() const
   if(m_documentationVersionHasBeenSet)
   {
    payload.WithString("documentationVersion", m_documentationVersion);
+
+  }
+
+  if(m_canarySettingsHasBeenSet)
+  {
+   payload.WithObject("canarySettings", m_canarySettings.Jsonize());
 
   }
 

@@ -274,6 +274,53 @@ namespace Model
      */
     inline AdminGetUserResult& AddMFAOptions(MFAOptionType&& value) { m_mFAOptions.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetPreferredMfaSetting() const{ return m_preferredMfaSetting; }
+
+    
+    inline void SetPreferredMfaSetting(const Aws::String& value) { m_preferredMfaSetting = value; }
+
+    
+    inline void SetPreferredMfaSetting(Aws::String&& value) { m_preferredMfaSetting = std::move(value); }
+
+    
+    inline void SetPreferredMfaSetting(const char* value) { m_preferredMfaSetting.assign(value); }
+
+    
+    inline AdminGetUserResult& WithPreferredMfaSetting(const Aws::String& value) { SetPreferredMfaSetting(value); return *this;}
+
+    
+    inline AdminGetUserResult& WithPreferredMfaSetting(Aws::String&& value) { SetPreferredMfaSetting(std::move(value)); return *this;}
+
+    
+    inline AdminGetUserResult& WithPreferredMfaSetting(const char* value) { SetPreferredMfaSetting(value); return *this;}
+
+
+    
+    inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const{ return m_userMFASettingList; }
+
+    
+    inline void SetUserMFASettingList(const Aws::Vector<Aws::String>& value) { m_userMFASettingList = value; }
+
+    
+    inline void SetUserMFASettingList(Aws::Vector<Aws::String>&& value) { m_userMFASettingList = std::move(value); }
+
+    
+    inline AdminGetUserResult& WithUserMFASettingList(const Aws::Vector<Aws::String>& value) { SetUserMFASettingList(value); return *this;}
+
+    
+    inline AdminGetUserResult& WithUserMFASettingList(Aws::Vector<Aws::String>&& value) { SetUserMFASettingList(std::move(value)); return *this;}
+
+    
+    inline AdminGetUserResult& AddUserMFASettingList(const Aws::String& value) { m_userMFASettingList.push_back(value); return *this; }
+
+    
+    inline AdminGetUserResult& AddUserMFASettingList(Aws::String&& value) { m_userMFASettingList.push_back(std::move(value)); return *this; }
+
+    
+    inline AdminGetUserResult& AddUserMFASettingList(const char* value) { m_userMFASettingList.push_back(value); return *this; }
+
   private:
 
     Aws::String m_username;
@@ -289,6 +336,10 @@ namespace Model
     UserStatusType m_userStatus;
 
     Aws::Vector<MFAOptionType> m_mFAOptions;
+
+    Aws::String m_preferredMfaSetting;
+
+    Aws::Vector<Aws::String> m_userMFASettingList;
   };
 
 } // namespace Model

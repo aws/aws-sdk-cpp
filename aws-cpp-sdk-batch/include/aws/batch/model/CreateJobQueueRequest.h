@@ -148,7 +148,7 @@ namespace Model
      * relative to each other. The job scheduler uses this parameter to determine which
      * compute environment should execute a given job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to 3 compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue.</p>
      */
     inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const{ return m_computeEnvironmentOrder; }
 
@@ -157,7 +157,7 @@ namespace Model
      * relative to each other. The job scheduler uses this parameter to determine which
      * compute environment should execute a given job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to 3 compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue.</p>
      */
     inline void SetComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
 
@@ -166,7 +166,7 @@ namespace Model
      * relative to each other. The job scheduler uses this parameter to determine which
      * compute environment should execute a given job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to 3 compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue.</p>
      */
     inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
 
@@ -175,7 +175,7 @@ namespace Model
      * relative to each other. The job scheduler uses this parameter to determine which
      * compute environment should execute a given job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to 3 compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue.</p>
      */
     inline CreateJobQueueRequest& WithComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { SetComputeEnvironmentOrder(value); return *this;}
 
@@ -184,7 +184,7 @@ namespace Model
      * relative to each other. The job scheduler uses this parameter to determine which
      * compute environment should execute a given job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to 3 compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue.</p>
      */
     inline CreateJobQueueRequest& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
 
@@ -193,7 +193,7 @@ namespace Model
      * relative to each other. The job scheduler uses this parameter to determine which
      * compute environment should execute a given job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to 3 compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue.</p>
      */
     inline CreateJobQueueRequest& AddComputeEnvironmentOrder(const ComputeEnvironmentOrder& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
 
@@ -202,7 +202,7 @@ namespace Model
      * relative to each other. The job scheduler uses this parameter to determine which
      * compute environment should execute a given job. Compute environments must be in
      * the <code>VALID</code> state before you can associate them with a job queue. You
-     * can associate up to 3 compute environments with a job queue.</p>
+     * can associate up to three compute environments with a job queue.</p>
      */
     inline CreateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 

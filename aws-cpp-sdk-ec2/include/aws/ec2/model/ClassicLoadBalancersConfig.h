@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the Classic Load Balancers to attach to a Spot fleet. Spot fleet
-   * registers the running Spot instances with these Classic Load
+   * <p>Describes the Classic Load Balancers to attach to a Spot Fleet. Spot Fleet
+   * registers the running Spot Instances with these Classic Load
    * Balancers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClassicLoadBalancersConfig">AWS
    * API Reference</a></p>

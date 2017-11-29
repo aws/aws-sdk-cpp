@@ -32,7 +32,8 @@ RevisionLocation::RevisionLocation() :
     m_revisionType(RevisionLocationType::NOT_SET),
     m_revisionTypeHasBeenSet(false),
     m_s3LocationHasBeenSet(false),
-    m_gitHubLocationHasBeenSet(false)
+    m_gitHubLocationHasBeenSet(false),
+    m_stringHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ RevisionLocation::RevisionLocation(const JsonValue& jsonValue) :
     m_revisionType(RevisionLocationType::NOT_SET),
     m_revisionTypeHasBeenSet(false),
     m_s3LocationHasBeenSet(false),
-    m_gitHubLocationHasBeenSet(false)
+    m_gitHubLocationHasBeenSet(false),
+    m_stringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,13 @@ RevisionLocation& RevisionLocation::operator =(const JsonValue& jsonValue)
     m_gitHubLocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("string"))
+  {
+    m_string = jsonValue.GetObject("string");
+
+    m_stringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -89,6 +98,12 @@ JsonValue RevisionLocation::Jsonize() const
   if(m_gitHubLocationHasBeenSet)
   {
    payload.WithObject("gitHubLocation", m_gitHubLocation.Jsonize());
+
+  }
+
+  if(m_stringHasBeenSet)
+  {
+   payload.WithObject("string", m_string.Jsonize());
 
   }
 

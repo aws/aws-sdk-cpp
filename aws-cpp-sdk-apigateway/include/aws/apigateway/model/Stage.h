@@ -20,6 +20,7 @@
 #include <aws/apigateway/model/CacheClusterStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/AccessLogSettings.h>
+#include <aws/apigateway/model/CanarySettings.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/apigateway/model/MethodSetting.h>
 #include <utility>
@@ -485,29 +486,55 @@ namespace Model
 
 
     /**
-     * <p>The access log settings in this stage.</p>
+     * <p>Settings for logging access in this stage.</p>
      */
     inline const AccessLogSettings& GetAccessLogSettings() const{ return m_accessLogSettings; }
 
     /**
-     * <p>The access log settings in this stage.</p>
+     * <p>Settings for logging access in this stage.</p>
      */
     inline void SetAccessLogSettings(const AccessLogSettings& value) { m_accessLogSettingsHasBeenSet = true; m_accessLogSettings = value; }
 
     /**
-     * <p>The access log settings in this stage.</p>
+     * <p>Settings for logging access in this stage.</p>
      */
     inline void SetAccessLogSettings(AccessLogSettings&& value) { m_accessLogSettingsHasBeenSet = true; m_accessLogSettings = std::move(value); }
 
     /**
-     * <p>The access log settings in this stage.</p>
+     * <p>Settings for logging access in this stage.</p>
      */
     inline Stage& WithAccessLogSettings(const AccessLogSettings& value) { SetAccessLogSettings(value); return *this;}
 
     /**
-     * <p>The access log settings in this stage.</p>
+     * <p>Settings for logging access in this stage.</p>
      */
     inline Stage& WithAccessLogSettings(AccessLogSettings&& value) { SetAccessLogSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline const CanarySettings& GetCanarySettings() const{ return m_canarySettings; }
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline void SetCanarySettings(const CanarySettings& value) { m_canarySettingsHasBeenSet = true; m_canarySettings = value; }
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline void SetCanarySettings(CanarySettings&& value) { m_canarySettingsHasBeenSet = true; m_canarySettings = std::move(value); }
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline Stage& WithCanarySettings(const CanarySettings& value) { SetCanarySettings(value); return *this;}
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline Stage& WithCanarySettings(CanarySettings&& value) { SetCanarySettings(std::move(value)); return *this;}
 
 
     /**
@@ -595,6 +622,9 @@ namespace Model
 
     AccessLogSettings m_accessLogSettings;
     bool m_accessLogSettingsHasBeenSet;
+
+    CanarySettings m_canarySettings;
+    bool m_canarySettingsHasBeenSet;
 
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;

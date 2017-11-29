@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestId = value; }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestId = std::move(value); }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestId.assign(value); }
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline RequestSpotFleetResponse& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline RequestSpotFleetResponse& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Spot fleet request.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
     inline RequestSpotFleetResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 

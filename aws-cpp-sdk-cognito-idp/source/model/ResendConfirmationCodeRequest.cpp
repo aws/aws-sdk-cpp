@@ -25,7 +25,9 @@ using namespace Aws::Utils;
 ResendConfirmationCodeRequest::ResendConfirmationCodeRequest() : 
     m_clientIdHasBeenSet(false),
     m_secretHashHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_userContextDataHasBeenSet(false),
+    m_usernameHasBeenSet(false),
+    m_analyticsMetadataHasBeenSet(false)
 {
 }
 
@@ -45,9 +47,21 @@ Aws::String ResendConfirmationCodeRequest::SerializePayload() const
 
   }
 
+  if(m_userContextDataHasBeenSet)
+  {
+   payload.WithObject("UserContextData", m_userContextData.Jsonize());
+
+  }
+
   if(m_usernameHasBeenSet)
   {
    payload.WithString("Username", m_username);
+
+  }
+
+  if(m_analyticsMetadataHasBeenSet)
+  {
+   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
 
   }
 

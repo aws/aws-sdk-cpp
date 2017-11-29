@@ -55,7 +55,9 @@ RunInstancesRequest::RunInstancesRequest() :
     m_networkInterfacesHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
     m_elasticGpuSpecificationHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
+    m_instanceMarketOptionsHasBeenSet(false)
 {
 }
 
@@ -233,6 +235,16 @@ Aws::String RunInstancesRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+    m_launchTemplate.OutputToStream(ss, "LaunchTemplate");
+  }
+
+  if(m_instanceMarketOptionsHasBeenSet)
+  {
+    m_instanceMarketOptions.OutputToStream(ss, "InstanceMarketOptions");
   }
 
   ss << "Version=2016-11-15";

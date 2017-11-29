@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the data feed for a Spot instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the data feed for a Spot Instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotDatafeedSubscription">AWS
    * API Reference</a></p>
    */
@@ -52,63 +52,63 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
+     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
+     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
+     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
+     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
+     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
      */
     inline SpotDatafeedSubscription& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
+     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
      */
     inline SpotDatafeedSubscription& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
+     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
      */
     inline SpotDatafeedSubscription& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p>The fault codes for the Spot instance request, if any.</p>
+     * <p>The fault codes for the Spot Instance request, if any.</p>
      */
     inline const SpotInstanceStateFault& GetFault() const{ return m_fault; }
 
     /**
-     * <p>The fault codes for the Spot instance request, if any.</p>
+     * <p>The fault codes for the Spot Instance request, if any.</p>
      */
     inline void SetFault(const SpotInstanceStateFault& value) { m_faultHasBeenSet = true; m_fault = value; }
 
     /**
-     * <p>The fault codes for the Spot instance request, if any.</p>
+     * <p>The fault codes for the Spot Instance request, if any.</p>
      */
     inline void SetFault(SpotInstanceStateFault&& value) { m_faultHasBeenSet = true; m_fault = std::move(value); }
 
     /**
-     * <p>The fault codes for the Spot instance request, if any.</p>
+     * <p>The fault codes for the Spot Instance request, if any.</p>
      */
     inline SpotDatafeedSubscription& WithFault(const SpotInstanceStateFault& value) { SetFault(value); return *this;}
 
     /**
-     * <p>The fault codes for the Spot instance request, if any.</p>
+     * <p>The fault codes for the Spot Instance request, if any.</p>
      */
     inline SpotDatafeedSubscription& WithFault(SpotInstanceStateFault&& value) { SetFault(std::move(value)); return *this;}
 
@@ -186,27 +186,27 @@ namespace Model
 
 
     /**
-     * <p>The state of the Spot instance data feed subscription.</p>
+     * <p>The state of the Spot Instance data feed subscription.</p>
      */
     inline const DatafeedSubscriptionState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the Spot instance data feed subscription.</p>
+     * <p>The state of the Spot Instance data feed subscription.</p>
      */
     inline void SetState(const DatafeedSubscriptionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the Spot instance data feed subscription.</p>
+     * <p>The state of the Spot Instance data feed subscription.</p>
      */
     inline void SetState(DatafeedSubscriptionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the Spot instance data feed subscription.</p>
+     * <p>The state of the Spot Instance data feed subscription.</p>
      */
     inline SpotDatafeedSubscription& WithState(const DatafeedSubscriptionState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the Spot instance data feed subscription.</p>
+     * <p>The state of the Spot Instance data feed subscription.</p>
      */
     inline SpotDatafeedSubscription& WithState(DatafeedSubscriptionState&& value) { SetState(std::move(value)); return *this;}
 

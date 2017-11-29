@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/CacheClusterSize.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/apigateway/model/CanarySettings.h>
 #include <utility>
 
 namespace Aws
@@ -85,80 +86,80 @@ namespace Model
 
 
     /**
-     * <p>The name for the <a>Stage</a> resource.</p>
+     * <p>{Required] The name for the <a>Stage</a> resource.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>The name for the <a>Stage</a> resource.</p>
+     * <p>{Required] The name for the <a>Stage</a> resource.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>The name for the <a>Stage</a> resource.</p>
+     * <p>{Required] The name for the <a>Stage</a> resource.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>The name for the <a>Stage</a> resource.</p>
+     * <p>{Required] The name for the <a>Stage</a> resource.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>The name for the <a>Stage</a> resource.</p>
+     * <p>{Required] The name for the <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>The name for the <a>Stage</a> resource.</p>
+     * <p>{Required] The name for the <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the <a>Stage</a> resource.</p>
+     * <p>{Required] The name for the <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
 
     /**
-     * <p>The identifier of the <a>Deployment</a> resource for the <a>Stage</a>
-     * resource.</p>
+     * <p>[Required] The identifier of the <a>Deployment</a> resource for the
+     * <a>Stage</a> resource.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>The identifier of the <a>Deployment</a> resource for the <a>Stage</a>
-     * resource.</p>
+     * <p>[Required] The identifier of the <a>Deployment</a> resource for the
+     * <a>Stage</a> resource.</p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>The identifier of the <a>Deployment</a> resource for the <a>Stage</a>
-     * resource.</p>
+     * <p>[Required] The identifier of the <a>Deployment</a> resource for the
+     * <a>Stage</a> resource.</p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * <p>The identifier of the <a>Deployment</a> resource for the <a>Stage</a>
-     * resource.</p>
+     * <p>[Required] The identifier of the <a>Deployment</a> resource for the
+     * <a>Stage</a> resource.</p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>The identifier of the <a>Deployment</a> resource for the <a>Stage</a>
-     * resource.</p>
+     * <p>[Required] The identifier of the <a>Deployment</a> resource for the
+     * <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The identifier of the <a>Deployment</a> resource for the <a>Stage</a>
-     * resource.</p>
+     * <p>[Required] The identifier of the <a>Deployment</a> resource for the
+     * <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the <a>Deployment</a> resource for the <a>Stage</a>
-     * resource.</p>
+     * <p>[Required] The identifier of the <a>Deployment</a> resource for the
+     * <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
@@ -361,6 +362,32 @@ namespace Model
      */
     inline CreateStageRequest& WithDocumentationVersion(const char* value) { SetDocumentationVersion(value); return *this;}
 
+
+    /**
+     * <p>The canary deployment settings of this stage.</p>
+     */
+    inline const CanarySettings& GetCanarySettings() const{ return m_canarySettings; }
+
+    /**
+     * <p>The canary deployment settings of this stage.</p>
+     */
+    inline void SetCanarySettings(const CanarySettings& value) { m_canarySettingsHasBeenSet = true; m_canarySettings = value; }
+
+    /**
+     * <p>The canary deployment settings of this stage.</p>
+     */
+    inline void SetCanarySettings(CanarySettings&& value) { m_canarySettingsHasBeenSet = true; m_canarySettings = std::move(value); }
+
+    /**
+     * <p>The canary deployment settings of this stage.</p>
+     */
+    inline CreateStageRequest& WithCanarySettings(const CanarySettings& value) { SetCanarySettings(value); return *this;}
+
+    /**
+     * <p>The canary deployment settings of this stage.</p>
+     */
+    inline CreateStageRequest& WithCanarySettings(CanarySettings&& value) { SetCanarySettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_restApiId;
@@ -386,6 +413,9 @@ namespace Model
 
     Aws::String m_documentationVersion;
     bool m_documentationVersionHasBeenSet;
+
+    CanarySettings m_canarySettings;
+    bool m_canarySettingsHasBeenSet;
   };
 
 } // namespace Model

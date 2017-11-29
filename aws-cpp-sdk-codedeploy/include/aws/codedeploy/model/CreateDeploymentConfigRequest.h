@@ -18,6 +18,8 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/MinimumHealthyHosts.h>
+#include <aws/codedeploy/model/TrafficRoutingConfig.h>
+#include <aws/codedeploy/model/ComputePlatform.h>
 #include <utility>
 
 namespace Aws
@@ -165,6 +167,63 @@ namespace Model
      */
     inline CreateDeploymentConfigRequest& WithMinimumHealthyHosts(MinimumHealthyHosts&& value) { SetMinimumHealthyHosts(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration specifying how the deployment traffic will be routed.</p>
+     */
+    inline const TrafficRoutingConfig& GetTrafficRoutingConfig() const{ return m_trafficRoutingConfig; }
+
+    /**
+     * <p>The configuration specifying how the deployment traffic will be routed.</p>
+     */
+    inline void SetTrafficRoutingConfig(const TrafficRoutingConfig& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = value; }
+
+    /**
+     * <p>The configuration specifying how the deployment traffic will be routed.</p>
+     */
+    inline void SetTrafficRoutingConfig(TrafficRoutingConfig&& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = std::move(value); }
+
+    /**
+     * <p>The configuration specifying how the deployment traffic will be routed.</p>
+     */
+    inline CreateDeploymentConfigRequest& WithTrafficRoutingConfig(const TrafficRoutingConfig& value) { SetTrafficRoutingConfig(value); return *this;}
+
+    /**
+     * <p>The configuration specifying how the deployment traffic will be routed.</p>
+     */
+    inline CreateDeploymentConfigRequest& WithTrafficRoutingConfig(TrafficRoutingConfig&& value) { SetTrafficRoutingConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>&gt;).</p>
+     */
+    inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>&gt;).</p>
+     */
+    inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>&gt;).</p>
+     */
+    inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>&gt;).</p>
+     */
+    inline CreateDeploymentConfigRequest& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>&gt;).</p>
+     */
+    inline CreateDeploymentConfigRequest& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deploymentConfigName;
@@ -172,6 +231,12 @@ namespace Model
 
     MinimumHealthyHosts m_minimumHealthyHosts;
     bool m_minimumHealthyHostsHasBeenSet;
+
+    TrafficRoutingConfig m_trafficRoutingConfig;
+    bool m_trafficRoutingConfigHasBeenSet;
+
+    ComputePlatform m_computePlatform;
+    bool m_computePlatformHasBeenSet;
   };
 
 } // namespace Model

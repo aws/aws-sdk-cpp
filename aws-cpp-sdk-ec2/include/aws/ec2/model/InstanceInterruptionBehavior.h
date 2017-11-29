@@ -26,6 +26,7 @@ namespace Model
   enum class InstanceInterruptionBehavior
   {
     NOT_SET,
+    hibernate,
     stop,
     terminate
   };

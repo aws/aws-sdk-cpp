@@ -62,6 +62,12 @@ GetAliasResult& GetAliasResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("RoutingConfig"))
+  {
+    m_routingConfig = jsonValue.GetObject("RoutingConfig");
+
+  }
+
 
 
   return *this;

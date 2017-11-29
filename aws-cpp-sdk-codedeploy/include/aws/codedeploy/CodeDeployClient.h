@@ -47,6 +47,7 @@
 #include <aws/codedeploy/model/ListDeploymentsResult.h>
 #include <aws/codedeploy/model/ListGitHubAccountTokenNamesResult.h>
 #include <aws/codedeploy/model/ListOnPremisesInstancesResult.h>
+#include <aws/codedeploy/model/PutLifecycleEventHookExecutionStatusResult.h>
 #include <aws/codedeploy/model/StopDeploymentResult.h>
 #include <aws/codedeploy/model/UpdateDeploymentGroupResult.h>
 #include <aws/core/NoResult.h>
@@ -126,6 +127,7 @@ namespace Model
         class ListDeploymentsRequest;
         class ListGitHubAccountTokenNamesRequest;
         class ListOnPremisesInstancesRequest;
+        class PutLifecycleEventHookExecutionStatusRequest;
         class RegisterApplicationRevisionRequest;
         class RegisterOnPremisesInstanceRequest;
         class RemoveTagsFromOnPremisesInstancesRequest;
@@ -165,6 +167,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDeploymentsResult, Aws::Client::AWSError<CodeDeployErrors>> ListDeploymentsOutcome;
         typedef Aws::Utils::Outcome<ListGitHubAccountTokenNamesResult, Aws::Client::AWSError<CodeDeployErrors>> ListGitHubAccountTokenNamesOutcome;
         typedef Aws::Utils::Outcome<ListOnPremisesInstancesResult, Aws::Client::AWSError<CodeDeployErrors>> ListOnPremisesInstancesOutcome;
+        typedef Aws::Utils::Outcome<PutLifecycleEventHookExecutionStatusResult, Aws::Client::AWSError<CodeDeployErrors>> PutLifecycleEventHookExecutionStatusOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> RegisterApplicationRevisionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> RegisterOnPremisesInstanceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> RemoveTagsFromOnPremisesInstancesOutcome;
@@ -204,6 +207,7 @@ namespace Model
         typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
         typedef std::future<ListGitHubAccountTokenNamesOutcome> ListGitHubAccountTokenNamesOutcomeCallable;
         typedef std::future<ListOnPremisesInstancesOutcome> ListOnPremisesInstancesOutcomeCallable;
+        typedef std::future<PutLifecycleEventHookExecutionStatusOutcome> PutLifecycleEventHookExecutionStatusOutcomeCallable;
         typedef std::future<RegisterApplicationRevisionOutcome> RegisterApplicationRevisionOutcomeCallable;
         typedef std::future<RegisterOnPremisesInstanceOutcome> RegisterOnPremisesInstanceOutcomeCallable;
         typedef std::future<RemoveTagsFromOnPremisesInstancesOutcome> RemoveTagsFromOnPremisesInstancesOutcomeCallable;
@@ -246,6 +250,7 @@ namespace Model
     typedef std::function<void(const CodeDeployClient*, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentsResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::ListGitHubAccountTokenNamesRequest&, const Model::ListGitHubAccountTokenNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGitHubAccountTokenNamesResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::ListOnPremisesInstancesRequest&, const Model::ListOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOnPremisesInstancesResponseReceivedHandler;
+    typedef std::function<void(const CodeDeployClient*, const Model::PutLifecycleEventHookExecutionStatusRequest&, const Model::PutLifecycleEventHookExecutionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleEventHookExecutionStatusResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::RegisterApplicationRevisionRequest&, const Model::RegisterApplicationRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterApplicationRevisionResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::RegisterOnPremisesInstanceRequest&, const Model::RegisterOnPremisesInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterOnPremisesInstanceResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::RemoveTagsFromOnPremisesInstancesRequest&, const Model::RemoveTagsFromOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromOnPremisesInstancesResponseReceivedHandler;
@@ -256,11 +261,12 @@ namespace Model
 
   /**
    * <fullname>AWS CodeDeploy</fullname> <p>AWS CodeDeploy is a deployment service
-   * that automates application deployments to Amazon EC2 instances or on-premises
-   * instances running in your own facility.</p> <p>You can deploy a nearly unlimited
-   * variety of application content, such as code, web and configuration files,
-   * executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can
-   * deploy application content stored in Amazon S3 buckets, GitHub repositories, or
+   * that automates application deployments to Amazon EC2 instances, on-premises
+   * instances running in your own facility, or serverless AWS Lambda functions.</p>
+   * <p>You can deploy a nearly unlimited variety of application content, such as an
+   * updated Lambda function, code, web and configuration files, executables,
+   * packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy
+   * application content stored in Amazon S3 buckets, GitHub repositories, or
    * Bitbucket repositories. You do not need to make changes to your existing code
    * before you can use AWS CodeDeploy.</p> <p>AWS CodeDeploy makes it easier for you
    * to rapidly release new features, helps you avoid downtime during application
@@ -272,22 +278,27 @@ namespace Model
    * deploy. AWS CodeDeploy uses this name, which functions as a container, to ensure
    * the correct combination of revision, deployment configuration, and deployment
    * group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment
-   * group</b>: A set of individual instances. A deployment group contains
-   * individually tagged instances, Amazon EC2 instances in Auto Scaling groups, or
-   * both. </p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment
-   * rules and deployment success and failure conditions used by AWS CodeDeploy
-   * during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process, and the
-   * components involved in the process, of installing content on one or more
-   * instances. </p> </li> <li> <p> <b>Application revisions</b>: An archive file
-   * containing source content—source code, web pages, executable files, and
-   * deployment scripts—along with an application specification file (AppSpec file).
-   * Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3,
-   * a revision is uniquely identified by its Amazon S3 object key and its ETag,
-   * version, or both. For GitHub, a revision is uniquely identified by its commit
-   * ID.</p> </li> </ul> <p>This guide also contains information to help you get
-   * details about the instances in your deployments and to make on-premises
-   * instances available for AWS CodeDeploy deployments.</p> <p> <b>AWS CodeDeploy
-   * Information Resources</b> </p> <ul> <li> <p> <a
+   * group</b>: A set of individual instances or CodeDeploy Lambda applications. A
+   * Lambda deployment group contains a group of applications. An EC2/On-premises
+   * deployment group contains individually tagged instances, Amazon EC2 instances in
+   * Auto Scaling groups, or both. </p> </li> <li> <p> <b>Deployment
+   * configuration</b>: A set of deployment rules and deployment success and failure
+   * conditions used by AWS CodeDeploy during a deployment.</p> </li> <li> <p>
+   * <b>Deployment</b>: The process, and the components involved in the process, of
+   * updating a Lambda function or of installing content on one or more instances.
+   * </p> </li> <li> <p> <b>Application revisions</b>: For an AWS Lambda deployment
+   * this is an AppSpec file that specifies the Lambda function to update and one or
+   * more functions to validate deployment lifecycle events. For an EC2/On-premises
+   * deployment, this is an archive file containing source content—source code, web
+   * pages, executable files, and deployment scripts—along with an application
+   * specification file (AppSpec file). Revisions are stored in Amazon S3 buckets or
+   * GitHub repositories. For Amazon S3, a revision is uniquely identified by its
+   * Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is
+   * uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also
+   * contains information to help you get details about the instances in your
+   * deployments, to make on-premises instances available for AWS CodeDeploy
+   * deployments, and to get details about a Lambda function deployment.</p> <p>
+   * <b>AWS CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
    * User Guide</a> </p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy
@@ -1180,6 +1191,40 @@ namespace Model
         virtual void ListOnPremisesInstancesAsync(const Model::ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the result of a Lambda validation function. The function validates one
+         * or both lifecycle events (<code>BeforeAllowTraffic</code> and
+         * <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
+         * <code>Failed</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutLifecycleEventHookExecutionStatusOutcome PutLifecycleEventHookExecutionStatus(const Model::PutLifecycleEventHookExecutionStatusRequest& request) const;
+
+        /**
+         * <p>Sets the result of a Lambda validation function. The function validates one
+         * or both lifecycle events (<code>BeforeAllowTraffic</code> and
+         * <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
+         * <code>Failed</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutLifecycleEventHookExecutionStatusOutcomeCallable PutLifecycleEventHookExecutionStatusCallable(const Model::PutLifecycleEventHookExecutionStatusRequest& request) const;
+
+        /**
+         * <p>Sets the result of a Lambda validation function. The function validates one
+         * or both lifecycle events (<code>BeforeAllowTraffic</code> and
+         * <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
+         * <code>Failed</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutLifecycleEventHookExecutionStatusAsync(const Model::PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Registers with AWS CodeDeploy a revision for the specified
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision">AWS
@@ -1408,6 +1453,7 @@ namespace Model
         void ListDeploymentsAsyncHelper(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGitHubAccountTokenNamesAsyncHelper(const Model::ListGitHubAccountTokenNamesRequest& request, const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOnPremisesInstancesAsyncHelper(const Model::ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutLifecycleEventHookExecutionStatusAsyncHelper(const Model::PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterApplicationRevisionAsyncHelper(const Model::RegisterApplicationRevisionRequest& request, const RegisterApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterOnPremisesInstanceAsyncHelper(const Model::RegisterOnPremisesInstanceRequest& request, const RegisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromOnPremisesInstancesAsyncHelper(const Model::RemoveTagsFromOnPremisesInstancesRequest& request, const RemoveTagsFromOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -28,7 +28,9 @@ namespace Model
     NOT_SET,
     tar,
     tgz,
-    zip
+    zip,
+    YAML,
+    JSON
   };
 
 namespace BundleTypeMapper

@@ -17,6 +17,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/BatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/batch/model/ArrayProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ContainerOverrides.h>
@@ -98,87 +99,168 @@ namespace Model
 
 
     /**
-     * <p>The job queue into which the job will be submitted. You can specify either
-     * the name or the Amazon Resource Name (ARN) of the queue. </p>
+     * <p>The job queue into which the job is submitted. You can specify either the
+     * name or the Amazon Resource Name (ARN) of the queue. </p>
      */
     inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
 
     /**
-     * <p>The job queue into which the job will be submitted. You can specify either
-     * the name or the Amazon Resource Name (ARN) of the queue. </p>
+     * <p>The job queue into which the job is submitted. You can specify either the
+     * name or the Amazon Resource Name (ARN) of the queue. </p>
      */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
 
     /**
-     * <p>The job queue into which the job will be submitted. You can specify either
-     * the name or the Amazon Resource Name (ARN) of the queue. </p>
+     * <p>The job queue into which the job is submitted. You can specify either the
+     * name or the Amazon Resource Name (ARN) of the queue. </p>
      */
     inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
-     * <p>The job queue into which the job will be submitted. You can specify either
-     * the name or the Amazon Resource Name (ARN) of the queue. </p>
+     * <p>The job queue into which the job is submitted. You can specify either the
+     * name or the Amazon Resource Name (ARN) of the queue. </p>
      */
     inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
 
     /**
-     * <p>The job queue into which the job will be submitted. You can specify either
-     * the name or the Amazon Resource Name (ARN) of the queue. </p>
+     * <p>The job queue into which the job is submitted. You can specify either the
+     * name or the Amazon Resource Name (ARN) of the queue. </p>
      */
     inline SubmitJobRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
 
     /**
-     * <p>The job queue into which the job will be submitted. You can specify either
-     * the name or the Amazon Resource Name (ARN) of the queue. </p>
+     * <p>The job queue into which the job is submitted. You can specify either the
+     * name or the Amazon Resource Name (ARN) of the queue. </p>
      */
     inline SubmitJobRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
-     * <p>The job queue into which the job will be submitted. You can specify either
-     * the name or the Amazon Resource Name (ARN) of the queue. </p>
+     * <p>The job queue into which the job is submitted. You can specify either the
+     * name or the Amazon Resource Name (ARN) of the queue. </p>
      */
     inline SubmitJobRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
 
     /**
-     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 20 jobs. </p>
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline const ArrayProperties& GetArrayProperties() const{ return m_arrayProperties; }
+
+    /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline void SetArrayProperties(const ArrayProperties& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
+
+    /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline void SetArrayProperties(ArrayProperties&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
+
+    /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline SubmitJobRequest& WithArrayProperties(const ArrayProperties& value) { SetArrayProperties(value); return *this;}
+
+    /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline SubmitJobRequest& WithArrayProperties(ArrayProperties&& value) { SetArrayProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs so that each index child of this
+     * job must wait for the corresponding index child of each dependency to complete
+     * before it can begin.</p>
      */
     inline const Aws::Vector<JobDependency>& GetDependsOn() const{ return m_dependsOn; }
 
     /**
-     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 20 jobs. </p>
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs so that each index child of this
+     * job must wait for the corresponding index child of each dependency to complete
+     * before it can begin.</p>
      */
     inline void SetDependsOn(const Aws::Vector<JobDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
 
     /**
-     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 20 jobs. </p>
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs so that each index child of this
+     * job must wait for the corresponding index child of each dependency to complete
+     * before it can begin.</p>
      */
     inline void SetDependsOn(Aws::Vector<JobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
 
     /**
-     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 20 jobs. </p>
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs so that each index child of this
+     * job must wait for the corresponding index child of each dependency to complete
+     * before it can begin.</p>
      */
     inline SubmitJobRequest& WithDependsOn(const Aws::Vector<JobDependency>& value) { SetDependsOn(value); return *this;}
 
     /**
-     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 20 jobs. </p>
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs so that each index child of this
+     * job must wait for the corresponding index child of each dependency to complete
+     * before it can begin.</p>
      */
     inline SubmitJobRequest& WithDependsOn(Aws::Vector<JobDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
 
     /**
-     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 20 jobs. </p>
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs so that each index child of this
+     * job must wait for the corresponding index child of each dependency to complete
+     * before it can begin.</p>
      */
     inline SubmitJobRequest& AddDependsOn(const JobDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
 
     /**
-     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
-     * of 20 jobs. </p>
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs so that each index child of this
+     * job must wait for the corresponding index child of each dependency to complete
+     * before it can begin.</p>
      */
     inline SubmitJobRequest& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 
@@ -428,6 +510,9 @@ namespace Model
 
     Aws::String m_jobQueue;
     bool m_jobQueueHasBeenSet;
+
+    ArrayProperties m_arrayProperties;
+    bool m_arrayPropertiesHasBeenSet;
 
     Aws::Vector<JobDependency> m_dependsOn;
     bool m_dependsOnHasBeenSet;

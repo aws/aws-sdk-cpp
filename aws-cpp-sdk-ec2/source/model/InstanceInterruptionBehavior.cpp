@@ -30,6 +30,7 @@ namespace Aws
       namespace InstanceInterruptionBehaviorMapper
       {
 
+        static const int hibernate_HASH = HashingUtils::HashString("hibernate");
         static const int stop_HASH = HashingUtils::HashString("stop");
         static const int terminate_HASH = HashingUtils::HashString("terminate");
 
@@ -37,7 +38,11 @@ namespace Aws
         InstanceInterruptionBehavior GetInstanceInterruptionBehaviorForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == stop_HASH)
+          if (hashCode == hibernate_HASH)
+          {
+            return InstanceInterruptionBehavior::hibernate;
+          }
+          else if (hashCode == stop_HASH)
           {
             return InstanceInterruptionBehavior::stop;
           }
@@ -59,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceInterruptionBehavior::hibernate:
+            return "hibernate";
           case InstanceInterruptionBehavior::stop:
             return "stop";
           case InstanceInterruptionBehavior::terminate:

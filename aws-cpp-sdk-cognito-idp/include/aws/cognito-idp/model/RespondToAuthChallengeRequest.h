@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/ChallengeNameType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/cognito-idp/model/AnalyticsMetadataType.h>
+#include <aws/cognito-idp/model/UserContextDataType.h>
 #include <utility>
 
 namespace Aws
@@ -87,36 +89,31 @@ namespace Model
 
 
     /**
-     * <p>The challenge name. For more information, see <a
-     * href="API_InitiateAuth.html">InitiateAuth</a>.</p> <p>
+     * <p>The challenge name. For more information, see .</p> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline const ChallengeNameType& GetChallengeName() const{ return m_challengeName; }
 
     /**
-     * <p>The challenge name. For more information, see <a
-     * href="API_InitiateAuth.html">InitiateAuth</a>.</p> <p>
+     * <p>The challenge name. For more information, see .</p> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline void SetChallengeName(const ChallengeNameType& value) { m_challengeNameHasBeenSet = true; m_challengeName = value; }
 
     /**
-     * <p>The challenge name. For more information, see <a
-     * href="API_InitiateAuth.html">InitiateAuth</a>.</p> <p>
+     * <p>The challenge name. For more information, see .</p> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline void SetChallengeName(ChallengeNameType&& value) { m_challengeNameHasBeenSet = true; m_challengeName = std::move(value); }
 
     /**
-     * <p>The challenge name. For more information, see <a
-     * href="API_InitiateAuth.html">InitiateAuth</a>.</p> <p>
+     * <p>The challenge name. For more information, see .</p> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline RespondToAuthChallengeRequest& WithChallengeName(const ChallengeNameType& value) { SetChallengeName(value); return *this;}
 
     /**
-     * <p>The challenge name. For more information, see <a
-     * href="API_InitiateAuth.html">InitiateAuth</a>.</p> <p>
+     * <p>The challenge name. For more information, see .</p> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
     inline RespondToAuthChallengeRequest& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(std::move(value)); return *this;}
@@ -366,6 +363,73 @@ namespace Model
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const char* key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>RespondToAuthChallenge</code> calls.</p>
+     */
+    inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>RespondToAuthChallenge</code> calls.</p>
+     */
+    inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>RespondToAuthChallenge</code> calls.</p>
+     */
+    inline void SetAnalyticsMetadata(AnalyticsMetadataType&& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = std::move(value); }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>RespondToAuthChallenge</code> calls.</p>
+     */
+    inline RespondToAuthChallengeRequest& WithAnalyticsMetadata(const AnalyticsMetadataType& value) { SetAnalyticsMetadata(value); return *this;}
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>RespondToAuthChallenge</code> calls.</p>
+     */
+    inline RespondToAuthChallengeRequest& WithAnalyticsMetadata(AnalyticsMetadataType&& value) { SetAnalyticsMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline void SetUserContextData(const UserContextDataType& value) { m_userContextDataHasBeenSet = true; m_userContextData = value; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline void SetUserContextData(UserContextDataType&& value) { m_userContextDataHasBeenSet = true; m_userContextData = std::move(value); }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline RespondToAuthChallengeRequest& WithUserContextData(const UserContextDataType& value) { SetUserContextData(value); return *this;}
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline RespondToAuthChallengeRequest& WithUserContextData(UserContextDataType&& value) { SetUserContextData(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientId;
@@ -379,6 +443,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_challengeResponses;
     bool m_challengeResponsesHasBeenSet;
+
+    AnalyticsMetadataType m_analyticsMetadata;
+    bool m_analyticsMetadataHasBeenSet;
+
+    UserContextDataType m_userContextData;
+    bool m_userContextDataHasBeenSet;
   };
 
 } // namespace Model

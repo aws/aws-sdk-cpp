@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a running instance in a Spot fleet.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a running instance in a Spot Fleet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ActiveInstance">AWS
    * API Reference</a></p>
    */
@@ -123,37 +123,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Spot instance request.</p>
+     * <p>The ID of the Spot Instance request.</p>
      */
     inline const Aws::String& GetSpotInstanceRequestId() const{ return m_spotInstanceRequestId; }
 
     /**
-     * <p>The ID of the Spot instance request.</p>
+     * <p>The ID of the Spot Instance request.</p>
      */
     inline void SetSpotInstanceRequestId(const Aws::String& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
-     * <p>The ID of the Spot instance request.</p>
+     * <p>The ID of the Spot Instance request.</p>
      */
     inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = std::move(value); }
 
     /**
-     * <p>The ID of the Spot instance request.</p>
+     * <p>The ID of the Spot Instance request.</p>
      */
     inline void SetSpotInstanceRequestId(const char* value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId.assign(value); }
 
     /**
-     * <p>The ID of the Spot instance request.</p>
+     * <p>The ID of the Spot Instance request.</p>
      */
     inline ActiveInstance& WithSpotInstanceRequestId(const Aws::String& value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot instance request.</p>
+     * <p>The ID of the Spot Instance request.</p>
      */
     inline ActiveInstance& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Spot instance request.</p>
+     * <p>The ID of the Spot Instance request.</p>
      */
     inline ActiveInstance& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 

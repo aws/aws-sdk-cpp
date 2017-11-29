@@ -27,6 +27,7 @@
 #include <aws/cognito-idp/model/SmsConfigurationType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
+#include <aws/cognito-idp/model/UserPoolAddOnsType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
 #include <aws/cognito-idp/model/UsernameAttributeType.h>
@@ -710,6 +711,37 @@ namespace Model
      */
     inline CreateUserPoolRequest& AddSchema(SchemaAttributeType&& value) { m_schemaHasBeenSet = true; m_schema.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline void SetUserPoolAddOns(const UserPoolAddOnsType& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = value; }
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline void SetUserPoolAddOns(UserPoolAddOnsType&& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = std::move(value); }
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline CreateUserPoolRequest& WithUserPoolAddOns(const UserPoolAddOnsType& value) { SetUserPoolAddOns(value); return *this;}
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline CreateUserPoolRequest& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_poolName;
@@ -765,6 +797,9 @@ namespace Model
 
     Aws::Vector<SchemaAttributeType> m_schema;
     bool m_schemaHasBeenSet;
+
+    UserPoolAddOnsType m_userPoolAddOns;
+    bool m_userPoolAddOnsHasBeenSet;
   };
 
 } // namespace Model

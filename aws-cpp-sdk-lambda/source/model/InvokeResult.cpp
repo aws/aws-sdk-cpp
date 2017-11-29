@@ -35,7 +35,8 @@ InvokeResult::InvokeResult(InvokeResult&& toMove) :
     m_statusCode(toMove.m_statusCode),
     m_functionError(std::move(toMove.m_functionError)),
     m_logResult(std::move(toMove.m_logResult)),
-    m_payload(std::move(toMove.m_payload))
+    m_payload(std::move(toMove.m_payload)),
+    m_executedVersion(std::move(toMove.m_executedVersion))
 {
 }
 
@@ -50,6 +51,7 @@ InvokeResult& InvokeResult::operator=(InvokeResult&& toMove)
    m_functionError = std::move(toMove.m_functionError);
    m_logResult = std::move(toMove.m_logResult);
    m_payload = std::move(toMove.m_payload);
+   m_executedVersion = std::move(toMove.m_executedVersion);
 
    return *this;
 }
@@ -75,6 +77,12 @@ InvokeResult& InvokeResult::operator =(Aws::AmazonWebServiceResult<ResponseStrea
   if(logResultIter != headers.end())
   {
     m_logResult = logResultIter->second;
+  }
+
+  const auto& executedVersionIter = headers.find("x-amz-executed-version");
+  if(executedVersionIter != headers.end())
+  {
+    m_executedVersion = executedVersionIter->second;
   }
 
   m_statusCode = static_cast<int>(result.GetResponseCode());

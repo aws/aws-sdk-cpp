@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>Describes the Classic Load Balancers and target groups to attach to a Spot
-   * fleet request.</p><p><h3>See Also:</h3>   <a
+   * Fleet request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LoadBalancersConfig">AWS
    * API Reference</a></p>
    */

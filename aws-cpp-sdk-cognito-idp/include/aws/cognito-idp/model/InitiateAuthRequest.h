@@ -19,6 +19,8 @@
 #include <aws/cognito-idp/model/AuthFlowType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cognito-idp/model/AnalyticsMetadataType.h>
+#include <aws/cognito-idp/model/UserContextDataType.h>
 #include <utility>
 
 namespace Aws
@@ -448,6 +450,73 @@ namespace Model
      */
     inline InitiateAuthRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>InitiateAuth</code> calls.</p>
+     */
+    inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>InitiateAuth</code> calls.</p>
+     */
+    inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>InitiateAuth</code> calls.</p>
+     */
+    inline void SetAnalyticsMetadata(AnalyticsMetadataType&& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = std::move(value); }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>InitiateAuth</code> calls.</p>
+     */
+    inline InitiateAuthRequest& WithAnalyticsMetadata(const AnalyticsMetadataType& value) { SetAnalyticsMetadata(value); return *this;}
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>InitiateAuth</code> calls.</p>
+     */
+    inline InitiateAuthRequest& WithAnalyticsMetadata(AnalyticsMetadataType&& value) { SetAnalyticsMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline void SetUserContextData(const UserContextDataType& value) { m_userContextDataHasBeenSet = true; m_userContextData = value; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline void SetUserContextData(UserContextDataType&& value) { m_userContextDataHasBeenSet = true; m_userContextData = std::move(value); }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline InitiateAuthRequest& WithUserContextData(const UserContextDataType& value) { SetUserContextData(value); return *this;}
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline InitiateAuthRequest& WithUserContextData(UserContextDataType&& value) { SetUserContextData(std::move(value)); return *this;}
+
   private:
 
     AuthFlowType m_authFlow;
@@ -461,6 +530,12 @@ namespace Model
 
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
+    AnalyticsMetadataType m_analyticsMetadata;
+    bool m_analyticsMetadataHasBeenSet;
+
+    UserContextDataType m_userContextData;
+    bool m_userContextDataHasBeenSet;
   };
 
 } // namespace Model

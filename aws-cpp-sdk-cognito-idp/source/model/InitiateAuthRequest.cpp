@@ -27,7 +27,9 @@ InitiateAuthRequest::InitiateAuthRequest() :
     m_authFlowHasBeenSet(false),
     m_authParametersHasBeenSet(false),
     m_clientMetadataHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+    m_clientIdHasBeenSet(false),
+    m_analyticsMetadataHasBeenSet(false),
+    m_userContextDataHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,18 @@ Aws::String InitiateAuthRequest::SerializePayload() const
   if(m_clientIdHasBeenSet)
   {
    payload.WithString("ClientId", m_clientId);
+
+  }
+
+  if(m_analyticsMetadataHasBeenSet)
+  {
+   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
+
+  }
+
+  if(m_userContextDataHasBeenSet)
+  {
+   payload.WithObject("UserContextData", m_userContextData.Jsonize());
 
   }
 

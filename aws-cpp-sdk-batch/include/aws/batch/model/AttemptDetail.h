@@ -74,45 +74,45 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the attempt was started (when the task
-     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
+     * <p>The Unix time stamp for when the attempt was started (when the attempt
+     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
      * state).</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix timestamp for when the attempt was started (when the task
-     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
+     * <p>The Unix time stamp for when the attempt was started (when the attempt
+     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
      * state).</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the attempt was started (when the task
-     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
+     * <p>The Unix time stamp for when the attempt was started (when the attempt
+     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
      * state).</p>
      */
     inline AttemptDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
 
     /**
-     * <p>The Unix timestamp for when the attempt was stopped (when the task
-     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
-     * state).</p>
+     * <p>The Unix time stamp for when the attempt was stopped (when the attempt
+     * transitioned from the <code>RUNNING</code> state to a terminal state, such as
+     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline long long GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix timestamp for when the attempt was stopped (when the task
-     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
-     * state).</p>
+     * <p>The Unix time stamp for when the attempt was stopped (when the attempt
+     * transitioned from the <code>RUNNING</code> state to a terminal state, such as
+     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the attempt was stopped (when the task
-     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
-     * state).</p>
+     * <p>The Unix time stamp for when the attempt was stopped (when the attempt
+     * transitioned from the <code>RUNNING</code> state to a terminal state, such as
+     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline AttemptDetail& WithStoppedAt(long long value) { SetStoppedAt(value); return *this;}
 

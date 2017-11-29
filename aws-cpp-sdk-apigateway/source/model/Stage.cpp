@@ -43,6 +43,7 @@ Stage::Stage() :
     m_variablesHasBeenSet(false),
     m_documentationVersionHasBeenSet(false),
     m_accessLogSettingsHasBeenSet(false),
+    m_canarySettingsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
 {
@@ -63,6 +64,7 @@ Stage::Stage(const JsonValue& jsonValue) :
     m_variablesHasBeenSet(false),
     m_documentationVersionHasBeenSet(false),
     m_accessLogSettingsHasBeenSet(false),
+    m_canarySettingsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
 {
@@ -152,6 +154,13 @@ Stage& Stage::operator =(const JsonValue& jsonValue)
     m_accessLogSettings = jsonValue.GetObject("accessLogSettings");
 
     m_accessLogSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("canarySettings"))
+  {
+    m_canarySettings = jsonValue.GetObject("canarySettings");
+
+    m_canarySettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdDate"))
@@ -246,6 +255,12 @@ JsonValue Stage::Jsonize() const
   if(m_accessLogSettingsHasBeenSet)
   {
    payload.WithObject("accessLogSettings", m_accessLogSettings.Jsonize());
+
+  }
+
+  if(m_canarySettingsHasBeenSet)
+  {
+   payload.WithObject("canarySettings", m_canarySettings.Jsonize());
 
   }
 

@@ -112,7 +112,7 @@ namespace Model
      * <p>Number of simultaneous executions of your function per region. For more
      * information or to request a limit increase for concurrent executions, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda
-     * Function Concurrent Executions</a>. The default limit is 100.</p>
+     * Function Concurrent Executions</a>. The default limit is 1000.</p>
      */
     inline int GetConcurrentExecutions() const{ return m_concurrentExecutions; }
 
@@ -120,7 +120,7 @@ namespace Model
      * <p>Number of simultaneous executions of your function per region. For more
      * information or to request a limit increase for concurrent executions, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda
-     * Function Concurrent Executions</a>. The default limit is 100.</p>
+     * Function Concurrent Executions</a>. The default limit is 1000.</p>
      */
     inline void SetConcurrentExecutions(int value) { m_concurrentExecutionsHasBeenSet = true; m_concurrentExecutions = value; }
 
@@ -128,7 +128,7 @@ namespace Model
      * <p>Number of simultaneous executions of your function per region. For more
      * information or to request a limit increase for concurrent executions, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda
-     * Function Concurrent Executions</a>. The default limit is 100.</p>
+     * Function Concurrent Executions</a>. The default limit is 1000.</p>
      */
     inline AccountLimit& WithConcurrentExecutions(int value) { SetConcurrentExecutions(value); return *this;}
 

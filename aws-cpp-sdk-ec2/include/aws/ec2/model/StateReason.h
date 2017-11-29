@@ -93,7 +93,7 @@ namespace Model
      * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
      * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
-     * Spot Instance was terminated due to an increase in the market price.</p> </li>
+     * Spot Instance was terminated due to an increase in the Spot price.</p> </li>
      * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
      * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
@@ -117,7 +117,7 @@ namespace Model
      * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
      * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
-     * Spot Instance was terminated due to an increase in the market price.</p> </li>
+     * Spot Instance was terminated due to an increase in the Spot price.</p> </li>
      * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
      * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
@@ -141,7 +141,7 @@ namespace Model
      * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
      * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
-     * Spot Instance was terminated due to an increase in the market price.</p> </li>
+     * Spot Instance was terminated due to an increase in the Spot price.</p> </li>
      * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
      * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
@@ -165,7 +165,7 @@ namespace Model
      * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
      * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
-     * Spot Instance was terminated due to an increase in the market price.</p> </li>
+     * Spot Instance was terminated due to an increase in the Spot price.</p> </li>
      * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
      * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
@@ -189,7 +189,7 @@ namespace Model
      * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
      * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
-     * Spot Instance was terminated due to an increase in the market price.</p> </li>
+     * Spot Instance was terminated due to an increase in the Spot price.</p> </li>
      * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
      * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
@@ -213,7 +213,7 @@ namespace Model
      * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
      * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
-     * Spot Instance was terminated due to an increase in the market price.</p> </li>
+     * Spot Instance was terminated due to an increase in the Spot price.</p> </li>
      * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
      * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
@@ -237,7 +237,7 @@ namespace Model
      * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
      * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
-     * Spot Instance was terminated due to an increase in the market price.</p> </li>
+     * Spot Instance was terminated due to an increase in the Spot price.</p> </li>
      * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
      * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using

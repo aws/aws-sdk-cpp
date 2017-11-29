@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>The type of code delivery details being returned from the
-   * server.</p><p><h3>See Also:</h3>   <a
+   * <p>The code delivery details being returned from the server.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CodeDeliveryDetailsType">AWS
    * API Reference</a></p>
    */
@@ -111,37 +111,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the attribute in the code delivery details type.</p>
+     * <p>The attribute name.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
-     * <p>The name of the attribute in the code delivery details type.</p>
+     * <p>The attribute name.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
-     * <p>The name of the attribute in the code delivery details type.</p>
+     * <p>The attribute name.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
-     * <p>The name of the attribute in the code delivery details type.</p>
+     * <p>The attribute name.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
-     * <p>The name of the attribute in the code delivery details type.</p>
+     * <p>The attribute name.</p>
      */
     inline CodeDeliveryDetailsType& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
-     * <p>The name of the attribute in the code delivery details type.</p>
+     * <p>The attribute name.</p>
      */
     inline CodeDeliveryDetailsType& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the attribute in the code delivery details type.</p>
+     * <p>The attribute name.</p>
      */
     inline CodeDeliveryDetailsType& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

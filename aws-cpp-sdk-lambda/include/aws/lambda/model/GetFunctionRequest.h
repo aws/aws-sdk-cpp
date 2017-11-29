@@ -137,79 +137,79 @@ namespace Model
 
 
     /**
-     * <p>Using this optional parameter to specify a function version or an alias name.
+     * <p>Use this optional parameter to specify a function version or an alias name.
      * If you specify function version, the API uses qualified function ARN for the
      * request and returns information about the specific Lambda function version. If
      * you specify an alias name, the API uses the alias ARN and returns information
      * about the function version to which the alias points. If you don't provide this
      * parameter, the API uses unqualified function ARN and returns information about
-     * the <code>$LATEST</code> version of the Lambda function.</p>
+     * the <code>$LATEST</code> version of the Lambda function. </p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
 
     /**
-     * <p>Using this optional parameter to specify a function version or an alias name.
+     * <p>Use this optional parameter to specify a function version or an alias name.
      * If you specify function version, the API uses qualified function ARN for the
      * request and returns information about the specific Lambda function version. If
      * you specify an alias name, the API uses the alias ARN and returns information
      * about the function version to which the alias points. If you don't provide this
      * parameter, the API uses unqualified function ARN and returns information about
-     * the <code>$LATEST</code> version of the Lambda function.</p>
+     * the <code>$LATEST</code> version of the Lambda function. </p>
      */
     inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
 
     /**
-     * <p>Using this optional parameter to specify a function version or an alias name.
+     * <p>Use this optional parameter to specify a function version or an alias name.
      * If you specify function version, the API uses qualified function ARN for the
      * request and returns information about the specific Lambda function version. If
      * you specify an alias name, the API uses the alias ARN and returns information
      * about the function version to which the alias points. If you don't provide this
      * parameter, the API uses unqualified function ARN and returns information about
-     * the <code>$LATEST</code> version of the Lambda function.</p>
+     * the <code>$LATEST</code> version of the Lambda function. </p>
      */
     inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
-     * <p>Using this optional parameter to specify a function version or an alias name.
+     * <p>Use this optional parameter to specify a function version or an alias name.
      * If you specify function version, the API uses qualified function ARN for the
      * request and returns information about the specific Lambda function version. If
      * you specify an alias name, the API uses the alias ARN and returns information
      * about the function version to which the alias points. If you don't provide this
      * parameter, the API uses unqualified function ARN and returns information about
-     * the <code>$LATEST</code> version of the Lambda function.</p>
+     * the <code>$LATEST</code> version of the Lambda function. </p>
      */
     inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
 
     /**
-     * <p>Using this optional parameter to specify a function version or an alias name.
+     * <p>Use this optional parameter to specify a function version or an alias name.
      * If you specify function version, the API uses qualified function ARN for the
      * request and returns information about the specific Lambda function version. If
      * you specify an alias name, the API uses the alias ARN and returns information
      * about the function version to which the alias points. If you don't provide this
      * parameter, the API uses unqualified function ARN and returns information about
-     * the <code>$LATEST</code> version of the Lambda function.</p>
+     * the <code>$LATEST</code> version of the Lambda function. </p>
      */
     inline GetFunctionRequest& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
 
     /**
-     * <p>Using this optional parameter to specify a function version or an alias name.
+     * <p>Use this optional parameter to specify a function version or an alias name.
      * If you specify function version, the API uses qualified function ARN for the
      * request and returns information about the specific Lambda function version. If
      * you specify an alias name, the API uses the alias ARN and returns information
      * about the function version to which the alias points. If you don't provide this
      * parameter, the API uses unqualified function ARN and returns information about
-     * the <code>$LATEST</code> version of the Lambda function.</p>
+     * the <code>$LATEST</code> version of the Lambda function. </p>
      */
     inline GetFunctionRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
-     * <p>Using this optional parameter to specify a function version or an alias name.
+     * <p>Use this optional parameter to specify a function version or an alias name.
      * If you specify function version, the API uses qualified function ARN for the
      * request and returns information about the specific Lambda function version. If
      * you specify an alias name, the API uses the alias ARN and returns information
      * about the function version to which the alias points. If you don't provide this
      * parameter, the API uses unqualified function ARN and returns information about
-     * the <code>$LATEST</code> version of the Lambda function.</p>
+     * the <code>$LATEST</code> version of the Lambda function. </p>
      */
     inline GetFunctionRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 

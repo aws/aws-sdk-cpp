@@ -31,7 +31,8 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_cacheClusterEnabledHasBeenSet(false),
     m_cacheClusterSize(CacheClusterSize::NOT_SET),
     m_cacheClusterSizeHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+    m_variablesHasBeenSet(false),
+    m_canarySettingsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,12 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
      variablesJsonMap.WithString(variablesItem.first, variablesItem.second);
    }
    payload.WithObject("variables", std::move(variablesJsonMap));
+
+  }
+
+  if(m_canarySettingsHasBeenSet)
+  {
+   payload.WithObject("canarySettings", m_canarySettings.Jsonize());
 
   }
 

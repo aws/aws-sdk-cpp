@@ -29,7 +29,8 @@ namespace Model
     attaching,
     attached,
     detaching,
-    detached
+    detached,
+    busy
   };
 
 namespace VolumeAttachmentStateMapper

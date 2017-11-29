@@ -58,6 +58,7 @@
 #include <aws/codedeploy/model/ListDeploymentsRequest.h>
 #include <aws/codedeploy/model/ListGitHubAccountTokenNamesRequest.h>
 #include <aws/codedeploy/model/ListOnPremisesInstancesRequest.h>
+#include <aws/codedeploy/model/PutLifecycleEventHookExecutionStatusRequest.h>
 #include <aws/codedeploy/model/RegisterApplicationRevisionRequest.h>
 #include <aws/codedeploy/model/RegisterOnPremisesInstanceRequest.h>
 #include <aws/codedeploy/model/RemoveTagsFromOnPremisesInstancesRequest.h>
@@ -1213,6 +1214,41 @@ void CodeDeployClient::ListOnPremisesInstancesAsync(const ListOnPremisesInstance
 void CodeDeployClient::ListOnPremisesInstancesAsyncHelper(const ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListOnPremisesInstances(request), context);
+}
+
+PutLifecycleEventHookExecutionStatusOutcome CodeDeployClient::PutLifecycleEventHookExecutionStatus(const PutLifecycleEventHookExecutionStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutLifecycleEventHookExecutionStatusOutcome(PutLifecycleEventHookExecutionStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutLifecycleEventHookExecutionStatusOutcome(outcome.GetError());
+  }
+}
+
+PutLifecycleEventHookExecutionStatusOutcomeCallable CodeDeployClient::PutLifecycleEventHookExecutionStatusCallable(const PutLifecycleEventHookExecutionStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutLifecycleEventHookExecutionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLifecycleEventHookExecutionStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeDeployClient::PutLifecycleEventHookExecutionStatusAsync(const PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutLifecycleEventHookExecutionStatusAsyncHelper( request, handler, context ); } );
+}
+
+void CodeDeployClient::PutLifecycleEventHookExecutionStatusAsyncHelper(const PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutLifecycleEventHookExecutionStatus(request), context);
 }
 
 RegisterApplicationRevisionOutcome CodeDeployClient::RegisterApplicationRevision(const RegisterApplicationRevisionRequest& request) const

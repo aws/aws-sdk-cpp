@@ -49,109 +49,109 @@ namespace Model
 
 
     /**
-     * <p>The old password in the change password request.</p>
+     * <p>The old password.</p>
      */
     inline const Aws::String& GetPreviousPassword() const{ return m_previousPassword; }
 
     /**
-     * <p>The old password in the change password request.</p>
+     * <p>The old password.</p>
      */
     inline void SetPreviousPassword(const Aws::String& value) { m_previousPasswordHasBeenSet = true; m_previousPassword = value; }
 
     /**
-     * <p>The old password in the change password request.</p>
+     * <p>The old password.</p>
      */
     inline void SetPreviousPassword(Aws::String&& value) { m_previousPasswordHasBeenSet = true; m_previousPassword = std::move(value); }
 
     /**
-     * <p>The old password in the change password request.</p>
+     * <p>The old password.</p>
      */
     inline void SetPreviousPassword(const char* value) { m_previousPasswordHasBeenSet = true; m_previousPassword.assign(value); }
 
     /**
-     * <p>The old password in the change password request.</p>
+     * <p>The old password.</p>
      */
     inline ChangePasswordRequest& WithPreviousPassword(const Aws::String& value) { SetPreviousPassword(value); return *this;}
 
     /**
-     * <p>The old password in the change password request.</p>
+     * <p>The old password.</p>
      */
     inline ChangePasswordRequest& WithPreviousPassword(Aws::String&& value) { SetPreviousPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The old password in the change password request.</p>
+     * <p>The old password.</p>
      */
     inline ChangePasswordRequest& WithPreviousPassword(const char* value) { SetPreviousPassword(value); return *this;}
 
 
     /**
-     * <p>The new password in the change password request.</p>
+     * <p>The new password.</p>
      */
     inline const Aws::String& GetProposedPassword() const{ return m_proposedPassword; }
 
     /**
-     * <p>The new password in the change password request.</p>
+     * <p>The new password.</p>
      */
     inline void SetProposedPassword(const Aws::String& value) { m_proposedPasswordHasBeenSet = true; m_proposedPassword = value; }
 
     /**
-     * <p>The new password in the change password request.</p>
+     * <p>The new password.</p>
      */
     inline void SetProposedPassword(Aws::String&& value) { m_proposedPasswordHasBeenSet = true; m_proposedPassword = std::move(value); }
 
     /**
-     * <p>The new password in the change password request.</p>
+     * <p>The new password.</p>
      */
     inline void SetProposedPassword(const char* value) { m_proposedPasswordHasBeenSet = true; m_proposedPassword.assign(value); }
 
     /**
-     * <p>The new password in the change password request.</p>
+     * <p>The new password.</p>
      */
     inline ChangePasswordRequest& WithProposedPassword(const Aws::String& value) { SetProposedPassword(value); return *this;}
 
     /**
-     * <p>The new password in the change password request.</p>
+     * <p>The new password.</p>
      */
     inline ChangePasswordRequest& WithProposedPassword(Aws::String&& value) { SetProposedPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The new password in the change password request.</p>
+     * <p>The new password.</p>
      */
     inline ChangePasswordRequest& WithProposedPassword(const char* value) { SetProposedPassword(value); return *this;}
 
 
     /**
-     * <p>The access token in the change password request.</p>
+     * <p>The access token.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>The access token in the change password request.</p>
+     * <p>The access token.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>The access token in the change password request.</p>
+     * <p>The access token.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>The access token in the change password request.</p>
+     * <p>The access token.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>The access token in the change password request.</p>
+     * <p>The access token.</p>
      */
     inline ChangePasswordRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>The access token in the change password request.</p>
+     * <p>The access token.</p>
      */
     inline ChangePasswordRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>The access token in the change password request.</p>
+     * <p>The access token.</p>
      */
     inline ChangePasswordRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 

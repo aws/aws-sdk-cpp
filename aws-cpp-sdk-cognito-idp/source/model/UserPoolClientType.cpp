@@ -47,7 +47,8 @@ UserPoolClientType::UserPoolClientType() :
     m_allowedOAuthFlowsHasBeenSet(false),
     m_allowedOAuthScopesHasBeenSet(false),
     m_allowedOAuthFlowsUserPoolClient(false),
-    m_allowedOAuthFlowsUserPoolClientHasBeenSet(false)
+    m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
+    m_analyticsConfigurationHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ UserPoolClientType::UserPoolClientType(const JsonValue& jsonValue) :
     m_allowedOAuthFlowsHasBeenSet(false),
     m_allowedOAuthScopesHasBeenSet(false),
     m_allowedOAuthFlowsUserPoolClient(false),
-    m_allowedOAuthFlowsUserPoolClientHasBeenSet(false)
+    m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
+    m_analyticsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -220,6 +222,13 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
     m_allowedOAuthFlowsUserPoolClientHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AnalyticsConfiguration"))
+  {
+    m_analyticsConfiguration = jsonValue.GetObject("AnalyticsConfiguration");
+
+    m_analyticsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -364,6 +373,12 @@ JsonValue UserPoolClientType::Jsonize() const
   if(m_allowedOAuthFlowsUserPoolClientHasBeenSet)
   {
    payload.WithBool("AllowedOAuthFlowsUserPoolClient", m_allowedOAuthFlowsUserPoolClient);
+
+  }
+
+  if(m_analyticsConfigurationHasBeenSet)
+  {
+   payload.WithObject("AnalyticsConfiguration", m_analyticsConfiguration.Jsonize());
 
   }
 

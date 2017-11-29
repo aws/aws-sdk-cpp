@@ -27,7 +27,9 @@ RespondToAuthChallengeRequest::RespondToAuthChallengeRequest() :
     m_challengeName(ChallengeNameType::NOT_SET),
     m_challengeNameHasBeenSet(false),
     m_sessionHasBeenSet(false),
-    m_challengeResponsesHasBeenSet(false)
+    m_challengeResponsesHasBeenSet(false),
+    m_analyticsMetadataHasBeenSet(false),
+    m_userContextDataHasBeenSet(false)
 {
 }
 
@@ -60,6 +62,18 @@ Aws::String RespondToAuthChallengeRequest::SerializePayload() const
      challengeResponsesJsonMap.WithString(challengeResponsesItem.first, challengeResponsesItem.second);
    }
    payload.WithObject("ChallengeResponses", std::move(challengeResponsesJsonMap));
+
+  }
+
+  if(m_analyticsMetadataHasBeenSet)
+  {
+   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
+
+  }
+
+  if(m_userContextDataHasBeenSet)
+  {
+   payload.WithObject("UserContextData", m_userContextData.Jsonize());
 
   }
 

@@ -32,6 +32,7 @@ namespace Aws
 
         static const int S3_HASH = HashingUtils::HashString("S3");
         static const int GitHub_HASH = HashingUtils::HashString("GitHub");
+        static const int String_HASH = HashingUtils::HashString("String");
 
 
         RevisionLocationType GetRevisionLocationTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == GitHub_HASH)
           {
             return RevisionLocationType::GitHub;
+          }
+          else if (hashCode == String_HASH)
+          {
+            return RevisionLocationType::String;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "S3";
           case RevisionLocationType::GitHub:
             return "GitHub";
+          case RevisionLocationType::String:
+            return "String";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

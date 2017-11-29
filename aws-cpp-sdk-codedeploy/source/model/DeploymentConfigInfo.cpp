@@ -32,7 +32,10 @@ DeploymentConfigInfo::DeploymentConfigInfo() :
     m_deploymentConfigIdHasBeenSet(false),
     m_deploymentConfigNameHasBeenSet(false),
     m_minimumHealthyHostsHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false),
+    m_trafficRoutingConfigHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ DeploymentConfigInfo::DeploymentConfigInfo(const JsonValue& jsonValue) :
     m_deploymentConfigIdHasBeenSet(false),
     m_deploymentConfigNameHasBeenSet(false),
     m_minimumHealthyHostsHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false),
+    m_trafficRoutingConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +81,20 @@ DeploymentConfigInfo& DeploymentConfigInfo::operator =(const JsonValue& jsonValu
     m_createTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("computePlatform"))
+  {
+    m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
+
+    m_computePlatformHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("trafficRoutingConfig"))
+  {
+    m_trafficRoutingConfig = jsonValue.GetObject("trafficRoutingConfig");
+
+    m_trafficRoutingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +123,17 @@ JsonValue DeploymentConfigInfo::Jsonize() const
   if(m_createTimeHasBeenSet)
   {
    payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
+  }
+
+  if(m_computePlatformHasBeenSet)
+  {
+   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
+  }
+
+  if(m_trafficRoutingConfigHasBeenSet)
+  {
+   payload.WithObject("trafficRoutingConfig", m_trafficRoutingConfig.Jsonize());
+
   }
 
   return payload;

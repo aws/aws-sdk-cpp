@@ -24,7 +24,10 @@ using namespace Aws::Utils;
 
 CreateDeploymentConfigRequest::CreateDeploymentConfigRequest() : 
     m_deploymentConfigNameHasBeenSet(false),
-    m_minimumHealthyHostsHasBeenSet(false)
+    m_minimumHealthyHostsHasBeenSet(false),
+    m_trafficRoutingConfigHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false)
 {
 }
 
@@ -42,6 +45,17 @@ Aws::String CreateDeploymentConfigRequest::SerializePayload() const
   {
    payload.WithObject("minimumHealthyHosts", m_minimumHealthyHosts.Jsonize());
 
+  }
+
+  if(m_trafficRoutingConfigHasBeenSet)
+  {
+   payload.WithObject("trafficRoutingConfig", m_trafficRoutingConfig.Jsonize());
+
+  }
+
+  if(m_computePlatformHasBeenSet)
+  {
+   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
   }
 
   return payload.WriteReadable();

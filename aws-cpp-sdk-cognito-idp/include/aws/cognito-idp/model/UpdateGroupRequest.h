@@ -204,19 +204,19 @@ namespace Model
 
     /**
      * <p>The new precedence value for the group. For more information about this
-     * parameter, see <a href="API_CreateGroup.html">CreateGroup</a>.</p>
+     * parameter, see .</p>
      */
     inline int GetPrecedence() const{ return m_precedence; }
 
     /**
      * <p>The new precedence value for the group. For more information about this
-     * parameter, see <a href="API_CreateGroup.html">CreateGroup</a>.</p>
+     * parameter, see .</p>
      */
     inline void SetPrecedence(int value) { m_precedenceHasBeenSet = true; m_precedence = value; }
 
     /**
      * <p>The new precedence value for the group. For more information about this
-     * parameter, see <a href="API_CreateGroup.html">CreateGroup</a>.</p>
+     * parameter, see .</p>
      */
     inline UpdateGroupRequest& WithPrecedence(int value) { SetPrecedence(value); return *this;}
 

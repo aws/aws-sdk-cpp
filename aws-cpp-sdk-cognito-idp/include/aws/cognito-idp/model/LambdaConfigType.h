@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the type of configuration for AWS Lambda triggers.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the configuration for AWS Lambda triggers.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/LambdaConfigType">AWS
    * API Reference</a></p>
    */
@@ -334,6 +334,42 @@ namespace Model
      */
     inline LambdaConfigType& WithVerifyAuthChallengeResponse(const char* value) { SetVerifyAuthChallengeResponse(value); return *this;}
 
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline const Aws::String& GetPreTokenGeneration() const{ return m_preTokenGeneration; }
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline void SetPreTokenGeneration(const Aws::String& value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration = value; }
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline void SetPreTokenGeneration(Aws::String&& value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration = std::move(value); }
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline void SetPreTokenGeneration(const char* value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration.assign(value); }
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline LambdaConfigType& WithPreTokenGeneration(const Aws::String& value) { SetPreTokenGeneration(value); return *this;}
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline LambdaConfigType& WithPreTokenGeneration(Aws::String&& value) { SetPreTokenGeneration(std::move(value)); return *this;}
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
+    inline LambdaConfigType& WithPreTokenGeneration(const char* value) { SetPreTokenGeneration(value); return *this;}
+
   private:
 
     Aws::String m_preSignUp;
@@ -359,6 +395,9 @@ namespace Model
 
     Aws::String m_verifyAuthChallengeResponse;
     bool m_verifyAuthChallengeResponseHasBeenSet;
+
+    Aws::String m_preTokenGeneration;
+    bool m_preTokenGenerationHasBeenSet;
   };
 
 } // namespace Model

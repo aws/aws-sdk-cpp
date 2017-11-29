@@ -51,7 +51,7 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume, but the data is not guaranteed to persist after the containers
+     * data volume. However, the data is not guaranteed to persist after the containers
      * associated with it stop running.</p>
      */
     inline const Host& GetHost() const{ return m_host; }
@@ -60,7 +60,7 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume, but the data is not guaranteed to persist after the containers
+     * data volume. However, the data is not guaranteed to persist after the containers
      * associated with it stop running.</p>
      */
     inline void SetHost(const Host& value) { m_hostHasBeenSet = true; m_host = value; }
@@ -69,7 +69,7 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume, but the data is not guaranteed to persist after the containers
+     * data volume. However, the data is not guaranteed to persist after the containers
      * associated with it stop running.</p>
      */
     inline void SetHost(Host&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
@@ -78,7 +78,7 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume, but the data is not guaranteed to persist after the containers
+     * data volume. However, the data is not guaranteed to persist after the containers
      * associated with it stop running.</p>
      */
     inline Volume& WithHost(const Host& value) { SetHost(value); return *this;}
@@ -87,7 +87,7 @@ namespace Model
      * <p>The contents of the <code>host</code> parameter determine whether your data
      * volume persists on the host container instance and where it is stored. If the
      * host parameter is empty, then the Docker daemon assigns a host path for your
-     * data volume, but the data is not guaranteed to persist after the containers
+     * data volume. However, the data is not guaranteed to persist after the containers
      * associated with it stop running.</p>
      */
     inline Volume& WithHost(Host&& value) { SetHost(std::move(value)); return *this;}

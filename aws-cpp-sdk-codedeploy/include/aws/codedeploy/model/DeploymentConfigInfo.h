@@ -18,6 +18,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/MinimumHealthyHosts.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/codedeploy/model/ComputePlatform.h>
+#include <aws/codedeploy/model/TrafficRoutingConfig.h>
 #include <utility>
 
 namespace Aws
@@ -171,6 +173,68 @@ namespace Model
      */
     inline DeploymentConfigInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline DeploymentConfigInfo& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline DeploymentConfigInfo& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration specifying how the deployment traffic will be routed. Only
+     * deployments with a Lambda compute platform can specify this.</p>
+     */
+    inline const TrafficRoutingConfig& GetTrafficRoutingConfig() const{ return m_trafficRoutingConfig; }
+
+    /**
+     * <p>The configuration specifying how the deployment traffic will be routed. Only
+     * deployments with a Lambda compute platform can specify this.</p>
+     */
+    inline void SetTrafficRoutingConfig(const TrafficRoutingConfig& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = value; }
+
+    /**
+     * <p>The configuration specifying how the deployment traffic will be routed. Only
+     * deployments with a Lambda compute platform can specify this.</p>
+     */
+    inline void SetTrafficRoutingConfig(TrafficRoutingConfig&& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = std::move(value); }
+
+    /**
+     * <p>The configuration specifying how the deployment traffic will be routed. Only
+     * deployments with a Lambda compute platform can specify this.</p>
+     */
+    inline DeploymentConfigInfo& WithTrafficRoutingConfig(const TrafficRoutingConfig& value) { SetTrafficRoutingConfig(value); return *this;}
+
+    /**
+     * <p>The configuration specifying how the deployment traffic will be routed. Only
+     * deployments with a Lambda compute platform can specify this.</p>
+     */
+    inline DeploymentConfigInfo& WithTrafficRoutingConfig(TrafficRoutingConfig&& value) { SetTrafficRoutingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deploymentConfigId;
@@ -184,6 +248,12 @@ namespace Model
 
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
+    ComputePlatform m_computePlatform;
+    bool m_computePlatformHasBeenSet;
+
+    TrafficRoutingConfig m_trafficRoutingConfig;
+    bool m_trafficRoutingConfigHasBeenSet;
   };
 
 } // namespace Model

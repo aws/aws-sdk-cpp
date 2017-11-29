@@ -38,7 +38,8 @@ UpdateUserPoolRequest::UpdateUserPoolRequest() :
     m_emailConfigurationHasBeenSet(false),
     m_smsConfigurationHasBeenSet(false),
     m_userPoolTagsHasBeenSet(false),
-    m_adminCreateUserConfigHasBeenSet(false)
+    m_adminCreateUserConfigHasBeenSet(false),
+    m_userPoolAddOnsHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,12 @@ Aws::String UpdateUserPoolRequest::SerializePayload() const
   if(m_adminCreateUserConfigHasBeenSet)
   {
    payload.WithObject("AdminCreateUserConfig", m_adminCreateUserConfig.Jsonize());
+
+  }
+
+  if(m_userPoolAddOnsHasBeenSet)
+  {
+   payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
 
   }
 

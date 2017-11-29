@@ -56,7 +56,8 @@ UserPoolType::UserPoolType() :
     m_userPoolTagsHasBeenSet(false),
     m_smsConfigurationFailureHasBeenSet(false),
     m_emailConfigurationFailureHasBeenSet(false),
-    m_adminCreateUserConfigHasBeenSet(false)
+    m_adminCreateUserConfigHasBeenSet(false),
+    m_userPoolAddOnsHasBeenSet(false)
 {
 }
 
@@ -88,7 +89,8 @@ UserPoolType::UserPoolType(const JsonValue& jsonValue) :
     m_userPoolTagsHasBeenSet(false),
     m_smsConfigurationFailureHasBeenSet(false),
     m_emailConfigurationFailureHasBeenSet(false),
-    m_adminCreateUserConfigHasBeenSet(false)
+    m_adminCreateUserConfigHasBeenSet(false),
+    m_userPoolAddOnsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -285,6 +287,13 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
     m_adminCreateUserConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UserPoolAddOns"))
+  {
+    m_userPoolAddOns = jsonValue.GetObject("UserPoolAddOns");
+
+    m_userPoolAddOnsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -460,6 +469,12 @@ JsonValue UserPoolType::Jsonize() const
   if(m_adminCreateUserConfigHasBeenSet)
   {
    payload.WithObject("AdminCreateUserConfig", m_adminCreateUserConfig.Jsonize());
+
+  }
+
+  if(m_userPoolAddOnsHasBeenSet)
+  {
+   payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
 
   }
 
